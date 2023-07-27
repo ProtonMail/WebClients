@@ -25,6 +25,7 @@ const recipient1 = { Address: 'test 1' };
 const recipient2 = { Address: 'test 2' };
 const recipient3 = { Address: 'test 3' };
 const recipient4 = { Address: 'test 4' };
+const recipient5 = { Address: 'test 5' };
 
 const message = {
     ID,
@@ -177,6 +178,42 @@ describe('messageDraft', () => {
             expect(result.data?.ToList).toEqual([recipient1]);
             expect(result.data?.CCList).toEqual([recipient2]);
             expect(result.data?.BCCList).toEqual([recipient3]);
+        });
+
+        it('should keep other user addresses in the CC list on reply all', () => {
+            // The email is received on recipient1 (addressID) and recipient5 is another userAddress on which we received the email
+            // When we reply to this message, recipient1 must be removed from CCList, and recipient5 must be present
+
+            const addressID = 'addressID';
+            const message = {
+                ID,
+                Time,
+                Subject,
+                ToList: [recipient1, recipient5],
+                CCList: [recipient2],
+                BCCList: [recipient3],
+                ReplyTos: [recipient4],
+                AddressID: addressID,
+            };
+
+            const result = handleActions(
+                MESSAGE_ACTIONS.REPLY_ALL,
+                {
+                    data: {
+                        ...message,
+                        Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                    },
+                } as MessageStateWithData,
+                [
+                    { ID: addressID, Email: recipient1.Address } as Address,
+                    { ID: 'otherID', Email: recipient5.Address } as Address,
+                ] as Address[]
+            );
+
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient4]);
+            expect(result.data?.CCList).toEqual([recipient5, recipient2]);
+            expect(result.data?.BCCList).toEqual(undefined);
         });
 
         it('should prepare a forward', () => {
