@@ -18,6 +18,7 @@ export type EventManagerConfig<T extends {}> = {
 };
 
 export type EventManager<T extends {}> = {
+    state: EventManagerState;
     setEventID: (eventID: string) => void;
     getEventID: () => string | undefined;
     start: () => void;
@@ -68,7 +69,7 @@ export const eventManager = <T extends {}>({
     };
 
     /* Start the event manager, does nothing if it is already started */
-    const start = (callFn: () => void) => {
+    const start = (callFn: () => Promise<void>) => {
         if (!state.timeoutHandle) {
             const ms = state.interval * FIBONACCI_LIST[state.retryIndex];
             state.timeoutHandle = setTimeout(callFn, ms);
@@ -157,5 +158,8 @@ export const eventManager = <T extends {}>({
         call,
         reset,
         subscribe: listeners.subscribe,
+        get state() {
+            return state;
+        },
     };
 };
