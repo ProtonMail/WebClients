@@ -69,7 +69,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
     const hasURL = Boolean(values.url) || values.urls.some(({ url }) => !isEmptyString(url));
 
     return (
-        <FieldBox icon={<Icon name="earth" size={20} style={{ color: 'var(--fieldset-cluster-icon-color)' }} />}>
+        <FieldBox icon="earth">
             <label
                 htmlFor="next-url-field"
                 className="field-two-label text-sm"
