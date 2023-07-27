@@ -34,12 +34,12 @@ const useAddressFlagsActionsList = (address: Address) => {
     return [
         encryptionDisabled
             ? {
-                  text: c('Address action').t`Disable E2EE`,
-                  onClick: () => handleSetAddressFlags(true, true),
-              }
-            : {
                   text: c('Address action').t`Enable E2EE`,
                   onClick: () => handleSetAddressFlags(false, false),
+              }
+            : {
+                  text: c('Address action').t`Disable E2EE`,
+                  onClick: () => handleSetAddressFlags(true, true),
               },
     ];
 };
