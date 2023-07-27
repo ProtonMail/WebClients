@@ -10,7 +10,7 @@ import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import type { EventManagerEvent } from '../../../events/manager';
+import type { EventCursor, EventManagerEvent } from '../../../events/manager';
 import { setUserPlan, syncIntent, userEvent } from '../../actions';
 import type { UserPlanState } from '../../reducers';
 import { selectAllAddresses, selectLatestEventId } from '../../selectors/user';
@@ -68,9 +68,10 @@ export const createUserChannel = (api: Api, eventID: string) =>
     eventChannelFactory<UserEvent>({
         api,
         interval: INTERVAL_EVENT_TIMER,
-        eventID,
-        getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
+        initialEventID: eventID,
         query: getEvents,
+        getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
+        getLatestEventID: () => api<EventCursor>(getLatestID()).then(({ EventID }) => EventID),
         onEvent: onUserEvent,
         onClose: () => logger.info(`[Saga::UserChannel] closing channel`),
     });
@@ -78,10 +79,7 @@ export const createUserChannel = (api: Api, eventID: string) =>
 export function* userChannel(api: Api, options: WorkerRootSagaOptions) {
     logger.info(`[Saga::UserChannel] start polling for user events`);
 
-    const eventID =
-        ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ??
-        ((yield api(getLatestID())) as { EventID: string }).EventID;
-
+    const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);
     const events = fork(channelEventsWorker<UserEvent>, eventsChannel, options);
     const wakeup = fork(channelWakeupWorker<UserEvent>, eventsChannel);
