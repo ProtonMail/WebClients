@@ -10,8 +10,7 @@ const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
 const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/gi;
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\s*absolute/gi;
-const REGEXP_MEDIA_DARK_STYLE = /\(\s*prefers-color-scheme\s*:\s*dark\s*\)/gi;
-const REGEXP_MEDIA_DARK_STYLE_2 = /Color-scheme/g;
+const REGEXP_MEDIA_DARK_STYLE_2 = /Color-scheme/gi;
 
 export const escape = (string: string) => {
     const UNESCAPE_HTML_REGEX = /[&<>"']/g;
@@ -127,8 +126,6 @@ export const escapeForbiddenStyle = (style: string): string => {
 
             return `${prop}: unset`;
         })
-        // "never" is not a valid value, it's meant to be invalid and break the media query
-        .replaceAll(REGEXP_MEDIA_DARK_STYLE, '(prefers-color-scheme: never)')
         // To replace if we support dark styles in the future.
         // Disable the Color-scheme so that the message do not use dark mode, message always being displayed on a white bg today
         .replaceAll(REGEXP_MEDIA_DARK_STYLE_2, 'proton-disabled-Color-scheme');
