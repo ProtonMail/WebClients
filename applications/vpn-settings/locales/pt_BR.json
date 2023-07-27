@@ -345,7 +345,7 @@
         "Tentar outro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
+        "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
       "Unlock": [
         "Desbloquear"
@@ -1469,7 +1469,7 @@
         "Domínio indisponível. Tente novamente mais tarde."
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Enter 6 digits": [
         "Insira 6 dígitos"
@@ -1481,31 +1481,31 @@
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Invalid ${ name } code": [
-        "Código ${ name } inválido"
+        "O código ${ name } não é válido."
       ],
       "Invalid card number": [
-        "Número do cartão inválido"
+        "O número do cartão não é válido."
       ],
       "Invalid code": [
-        "Código inválido"
+        "O código não é válido."
       ],
       "Invalid expiration date": [
-        "Data de validade inválida"
+        "A data de validade não é válida."
       ],
       "Invalid invitation link": [
-        "Link de convite inválido"
+        "O link de convite não é válido."
       ],
       "Invalid postal code": [
-        "Código postal inválido"
+        "O código postal não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Name on card required": [
         "Nome do cartão de credito obrigatório"
@@ -1523,7 +1523,7 @@
         "Processo de pagamento concluído"
       ],
       "Payment process failed": [
-        "Falha no processo de pagamento"
+        "Erro no processo de pagamento"
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
@@ -1547,7 +1547,7 @@
         "A solicitação expirou"
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -2503,7 +2503,7 @@
         "É necessária a assinatura Plus ou Visionária"
       ],
       "Preview failed to be loaded": [
-        "A pré-visualização falhou ao carregar"
+        "Não foi possível carregar a pré-visualização."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -2518,7 +2518,7 @@
         "leia nosso guia de autenticação de dois fatores primeiro"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
+        "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
@@ -5124,7 +5124,7 @@
         "Verificação humana"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Invoices": [
         "Faturas"
@@ -5169,7 +5169,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -5271,7 +5271,7 @@
         "Navegador não suportado"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verifying your card...": [
         "Verificando seu cartão..."

@@ -1554,11 +1554,17 @@
       "Request timed out": [
         "Upłynął limit czasu żądania"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut lub sprawdź naszą ${ statusPageLink }"
+      ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
+      ],
+      "status page": [
+        "stronę statusu"
       ],
       "Tab closed": [
         "Karta została zamknięta"
