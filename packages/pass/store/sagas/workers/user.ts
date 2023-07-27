@@ -44,7 +44,7 @@ export const getUserPlan = async ({ plan }: UserState, options?: { force: boolea
         if (!options?.force && plan && epoch - (plan?.requestedAt ?? 0) < UNIX_DAY) return plan;
 
         logger.info(`[Saga::UserPlan] syncing user access plan`);
-        const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'post' })).Access!;
+        const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'get' })).Access!;
         return { ...Plan, requestedAt: getEpoch() };
     } catch (_) {
         return plan ?? { requestedAt: -1, Type: PlanType.free, InternalName: '', DisplayName: '' };
