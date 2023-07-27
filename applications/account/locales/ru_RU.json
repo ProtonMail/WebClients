@@ -1044,20 +1044,8 @@
       "Disable": [
         "Отключить"
       ],
-      "Disable encryption": [
-        "Отключить шифрование"
-      ],
-      "Disable expect signed": [
-        "Выключить ожидание ЭЦП"
-      ],
       "Enable": [
         "Включить"
-      ],
-      "Enable encryption": [
-        "Включить шифрование"
-      ],
-      "Enable expect signed": [
-        "Включить ожидание ЭЦП"
       ],
       "Generate missing keys": [
         "Создать недостающие ключи"
@@ -12831,7 +12819,7 @@
     },
     "vpn_2step: billing": {
       "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, будет пролонгирован ${ formattedEndTime }"
+        "${ billedText }, следующая — ${ formattedEndTime }"
       ],
       "Billed every 15 months": [
         "Оплата раз в 15 месяцев"
@@ -12851,21 +12839,37 @@
     },
     "vpn_2step: discount": {
       "1-year": [
-        "1-летний"
+        "год"
       ],
       "2-year": [
-        "2-летний"
+        "2 года"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Скидка ${ discount } при подписке на ${ billingCycle }"
       ],
       "monthly": [
-        "ежемесячной"
+        "месяц"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Продвинутые функции VPN"
+      ],
+      "No ads": [
+        "Без рекламы"
       ]
     },
     "vpn_2step: info": {
       "Try ${ upsellPlanName } risk-free": [
-        "Испытайте ${ upsellPlanName } без риска"
+        "Попробуйте ${ upsellPlanName } без риска"
       ],
       "Your ${ selected } plan": [
         "Ваш тариф ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Доступ к серверам Secure Core, высокая скорость скачивания через P2P-сети и BitTorrent, VPN с Tor и многое другое."
       ]
     },
     "Warning": {

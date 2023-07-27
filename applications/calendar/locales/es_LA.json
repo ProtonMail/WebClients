@@ -2224,7 +2224,7 @@
         "Firma del contacto no verificada"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Error de descifrado: falló el descifrado del contenido de este evento."
+        "Error de descifrado: no se pudo descifrar el contenido de este evento."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleccione al menos ${ calendarsToFixCount } calendario",
@@ -2392,11 +2392,14 @@
       "Self invitation not allowed": [
         "Autoinvitación no permitida"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final"
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
@@ -2547,7 +2553,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -2599,7 +2605,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -2608,7 +2614,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -6174,8 +6180,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6555,10 +6561,10 @@
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Falló el descifrado del contenido cifrado."
+        "Error en el descifrado del contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Falló la verificación de la firma de los datos del contacto."
+        "Error en la verificación de la firma de los datos del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."

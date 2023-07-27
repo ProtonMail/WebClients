@@ -2392,6 +2392,9 @@
       "Self invitation not allowed": [
         "Δεν επιτρέπεται η αυτοπρόσκληση"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "Η ώρα έναρξης πρέπει να είναι πριν από την ώρα λήξης"
+      ],
+      "status page": [
+        "σελίδα κατάστασης"
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να είναι κακογραμμένη"

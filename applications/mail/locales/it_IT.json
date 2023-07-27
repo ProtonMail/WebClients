@@ -3352,6 +3352,9 @@
       "Require at least one condition": [
         "Richiede almeno una condizione"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Siamo spiacenti, ${ BRAND_NAME } non può decifrare il messaggio. Si prega di controllare che tutte le chiavi siano attive."
+      ],
+      "status page": [
+        "pagina di stato"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "L'allegato non può essere decifrato.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decifrare il file con un programma come GnuPG.",
@@ -4404,7 +4410,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Gli inviti importati vengono visualizzati in ${ CALENDAR_APP_NAME } come semplici eventi senza i dettagli dell'organizzatore e del partecipante. Per ricevere aggiornamenti sull'evento e vedere i partecipanti, chiedi agli organizzatori di invitarti utilizzando il tuo indirizzo email ${ BRAND_NAME }."
+        "Gli inviti importati vengono visualizzati in ${ CALENDAR_APP_NAME } come semplici eventi senza i dettagli dell'organizzatore e del partecipante. Per ricevere aggiornamenti sull'evento e vedere i partecipanti, chiedi agli organizzatori d'invitarti utilizzando il tuo indirizzo email ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Questo file contiene un invito all'evento:",
@@ -8882,8 +8888,8 @@
         "Immagine"
       ],
       "Import as simple event?": [
-        "Importa come semplice evento?",
-        "Importare come semplici eventi?"
+        "Importare come evento senza i dettagli?",
+        "Importare come eventi senza i dettagli?"
       ],
       "Import contacts": [
         "Importa i contatti"

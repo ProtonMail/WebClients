@@ -3392,6 +3392,9 @@
       "Require at least one condition": [
         "Co najmniej jeden warunek jest wymagany"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut lub sprawdź naszą ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
       ],
@@ -3427,6 +3430,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
+      ],
+      "status page": [
+        "stronę statusu"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Odszyfrowanie załącznika nie powiodło się.\nJeśli posiadasz odpowiedni klucz prywatny, nadal możesz odszyfrować\nplik programem, takim jak GnuPG.",

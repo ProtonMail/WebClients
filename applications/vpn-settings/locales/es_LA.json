@@ -345,7 +345,7 @@
         "Intente otro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
       "Unlock": [
         "Desbloquear"
@@ -1546,11 +1546,17 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
+      ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "Tab closed": [
         "Pestaña cerrada"

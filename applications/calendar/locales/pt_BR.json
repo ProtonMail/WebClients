@@ -704,13 +704,13 @@
         "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Invalid ICS file": [
-        "Arquivo ICS inválido"
+        "O arquivo ICS não é válido."
       ],
       "Invalid method": [
-        "Método inválido"
+        "O método não é válido."
       ],
       "Unsupported calendar component": [
         "Componente de calendário não suportado"
@@ -913,7 +913,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "Falha ao recuperar a informação de contato para ${ address }"
+        "Erro ao recuperar a informação de contato para ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -952,7 +952,7 @@
         "O link do calendário está temporariamente inacessível"
       ],
       "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
+        "Erro ao sincronizar calendário"
       ],
       "More than 12 hours passed since last update": [
         "Mais de 12 horas se passaram desde a última atualização"
@@ -2174,8 +2174,8 @@
         "Alguns contatos não têm endereço de e-mail: ${ list }"
       ],
       "${ list } has invalid emails": [
-        "${ list } possui e-mails inválidos",
-        "Alguns grupos têm e-mails inválidos: ${ list }"
+        "${ list } tem e-mails incorretos.",
+        "Alguns grupos têm e-mails incorretos: ${ list }"
       ],
       "${ list } has no contacts": [
         "${ list } não tem contatos",
@@ -2194,7 +2194,7 @@
         "Já é membro desse calendário"
       ],
       "Answer failed to be sent": [
-        "A resposta falhou ao ser enviada"
+        "Não foi possível enviar a resposta."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -2224,7 +2224,7 @@
         "Assinatura do contato não foi verificada"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Erro ao descriptografar: A descriptografia deste evento falhou."
+        "Erro ao descriptografar: Não foi possível descriptografar este evento."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -2244,7 +2244,7 @@
         "O endereço de e-mail é obrigatório"
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Ends on date cannot be empty": [
         "A data de término não pode estar vazia"
@@ -2262,19 +2262,19 @@
         "Erro: ${ errorMessage }"
       ],
       "Failed to get original occurrence in series": [
-        "Falha em obter a ocorrência original em série"
+        "Não foi possível obter a ocorrência original em série."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
       ],
       "Image upload failed": [
-        "Falha no carregamento da imagem"
+        "Erro no carregamento da imagem"
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
@@ -2283,19 +2283,19 @@
         "O intervalo não pode estar vazio"
       ],
       "Invalid email address": [
-        "Endereço de e-mail inválido"
+        "O endereço de e-mail não é válido."
       ],
       "Invalid link to the event": [
-        "Link para o evento inválido"
+        "O link para o evento não é válido."
       ],
       "Invalid name": [
-        "Nome inválido"
+        "O nome não é válido."
       ],
       "Invalid public key file": [
-        "Arquivo de chave pública inválido"
+        "O arquivo de chave pública não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Invitation failed to be sent": [
         "O convite não foi enviado"
@@ -2396,7 +2396,7 @@
         "Assinatura não verificada"
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Some contacts could not be deleted": [
         "Não foi possível excluir alguns contatos."
@@ -2432,13 +2432,13 @@
         "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Escolha um nome diferente."
+        "O nome do marcador não é válido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
@@ -2471,7 +2471,7 @@
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Trusted keys are not valid for sending": [
-        "As chaves confiáveis não são válidas para o envio"
+        "As chaves de confiança não são válidas para o envio"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -2533,7 +2533,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
+        "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -2547,7 +2547,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "vCard versions < 3.0 not supported": [
         "versões vCard <3.0 não são suportadas"
@@ -2599,7 +2599,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "End time out of bounds": [
         "Hora de término fora dos limites"
@@ -2608,7 +2608,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -2617,7 +2617,7 @@
         "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Journal entry": [
         "Entradas periódicas"
@@ -2626,13 +2626,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválido"
+        "A hora de término não é válida."
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválido"
+        "A hora de início não é válida."
       ],
       "Missing start time": [
         "Falta o horário de início"
@@ -2679,7 +2679,7 @@
         "Erro: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL inválida"
+        "O URL não é válido."
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -2736,10 +2736,10 @@
         "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "O convite não é válido."
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "A resposta não é válida."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
@@ -2754,7 +2754,7 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Tipo de resposta não suportado"
+        "A categoria de resposta não é suportado."
       ],
       "We could not cancel the event in your calendar": [
         "Não foi possível cancelar o evento no seu calendário"
@@ -3119,7 +3119,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -3457,7 +3457,7 @@
         "Os participantes adicionados e removidos serão notificados."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+        "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
@@ -3743,7 +3743,7 @@
         "Ocorrências previamente atualizadas pelo organizador serão mantidas."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
+        "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é compatível apenas com o formato de Texto Simples."
@@ -3837,7 +3837,7 @@
         "Não foi possível notificar o organizador de que você alterou sua resposta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com este tipo de eventos recorrentes."
+        "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com esta categoria de eventos recorrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
         "O organizador deste evento será notificado de que você recusou o convite. Você gostaria de excluir este evento?"
@@ -3963,7 +3963,7 @@
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
-        "Você pode importar um tipo de dado por vez."
+        "Você pode importar uma categoria de dado por vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -4904,7 +4904,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "A adição do calendário de feriados falhou"
+        "Não foi possível adicionar o calendário de feriados."
       ],
       "Calendar added": [
         "Calendário adicionado"
@@ -5356,7 +5356,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Falha ao atualizar configurações"
+        "Erro ao atualizar configurações"
       ]
     },
     "Share calendar assistive text": {
@@ -6184,10 +6184,10 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Falha na importação"
+        "Erro na importação"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
@@ -6549,16 +6549,16 @@
         "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
-        "Falha ao carregar o contato."
+        "Erro ao carregar o contato."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "A descriptografia do conteúdo criptografado falhou."
+        "Não foi possível descriptografar o conteúdo criptografado."
       ],
       "The verification of the contact details' signature failed.": [
-        "A verificação da assinatura dos detalhes de contato falhou."
+        "Não foi possível verificar a assinatura dos detalhes de contato."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
