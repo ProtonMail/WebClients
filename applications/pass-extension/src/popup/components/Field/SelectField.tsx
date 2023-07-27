@@ -4,6 +4,7 @@ import { type FieldProps } from 'formik';
 
 import { InputFieldTwo, SelectTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
@@ -25,7 +26,7 @@ export const SelectField: FC<SelectFieldProps> = ({
 }) => {
     const { error } = useFieldControl({ field, form, meta });
     return (
-        <FieldBox className={className} icon={icon}>
+        <FieldBox className={clsx('flex-align-items-center', className)} icon={icon}>
             <InputFieldTwo<typeof SelectTwo>
                 unstyled
                 as={SelectTwo}
