@@ -325,7 +325,7 @@
         "Entendido"
       ],
       "Grid layout": [
-        "Disposição em quadrícula"
+        "Disposição em grelha"
       ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
@@ -1058,7 +1058,7 @@
         "Anguilla"
       ],
       "Antarctica": [
-        "Antárctica"
+        "Antártica"
       ],
       "Antigua and Barbuda": [
         "Antígua e Barbuda"
@@ -1142,7 +1142,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "Burquina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -2000,13 +2000,13 @@
         "O ficheiro \"${ item.name }\" não pode ser carregado devido ao erro \"${ error }\"."
       ],
       "File \"${ name }\" is already downloading": [
-        "O fichero \"${ name }\" já está a ser descarregado."
+        "O ficheiro \"${ name }\" já está a ser descarregado."
       ],
       "File cannot be merged with folder": [
         "O ficheiro não pode ser unido à pasta."
       ],
       "File selection is already downloading": [
-        "Os ficheiros selecionados já estão sendo transferidos."
+        "Os ficheiros selecionados já estão a ser transferidos."
       ],
       "Folder \"${ name }\" is already downloading": [
         "A pasta \"${ name }\" já está a ser descarregada."
@@ -2081,7 +2081,7 @@
         "A palavra-passe é obrigatória."
       ],
       "Passwords do not match": [
-        "As palavras-passe não coincidem."
+        "As palavras-passe não correspondem."
       ],
       "Please activate your search again": [
         "Ative a pesquisa novamente."
@@ -2139,7 +2139,7 @@
         "Ocorreu um problema. ${ refresh } para continuar. Se ainda vir esta mensagem de erro, contacte a nossa ${ supportTeam }."
       ],
       "The email addresses do not match": [
-        "Os endereços de e-mail não coincidem."
+        "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
@@ -2417,7 +2417,7 @@
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
       ],
       "You may also refresh the page or try again later.": [
-        "Também pode actualizar a página ou tentar novamente mais tarde."
+        "Também pode atualizar a página ou tentar novamente mais tarde."
       ]
     },
     "Error notification": {
@@ -3334,7 +3334,7 @@
         "São suportados os ficheiros CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e algumas outras aplicações, bem como os formatos vCard 3.1 e 4.0 (codificação UTF-8)."
       ],
       "Current version": [
-        "Versão actual"
+        "Versão atual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
@@ -3404,7 +3404,7 @@
         "A pesquisa encriptada está aqui"
       ],
       "End-to-end encrypted": [
-        "Cifrado de ponta a ponta"
+        "Encriptado de ponta a ponta"
       ],
       "Enter password": [
         "Inserir a palavra-passe"
@@ -3864,7 +3864,7 @@
         "Sincronizar as pasta do seu computador"
       ],
       "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Sincronize as pastas com facilidade utilizando a nossa aplicação para computador, garantindo que os seus ficheiros estão sempre actualizados e acessíveis a partir de qualquer lugar."
+        "Sincronize as pastas com facilidade utilizando a nossa aplicação para computador, garantindo que os seus ficheiros estão sempre atualizados e acessíveis a partir de qualquer lugar."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -4000,7 +4000,7 @@
         "Enviado"
       ],
       "Uploading": [
-        "A enviar"
+        "A carregar"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Enviar centenas de ficheiros de uma só vez pode ter impacto no desempenho."
@@ -4117,7 +4117,7 @@
         "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e hiperligações de partilha. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "O seu navigador actual não suporta a transferência de ficheiros grandes devido à indisponibilidade de fornecedores de serviços. A transferência de ficheiros grandes pode falhar ou fazer com que o navegdor deixe de responder. Utilize a versão mais recente de um ${ recommendedBrowser } e tente novamente."
+        "O seu navegador atual não suporta a transferência de ficheiros grandes devido à indisponibilidade de service workers. A transferência de ficheiros grandes pode falhar ou fazer com que o navegador deixe de responder. Utilize a versão mais recente de um ${ recommendedBrowser } e tente novamente."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
@@ -5846,8 +5846,8 @@
         "${ numberOfFailedTransfer.total } transferências falharam"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } carregamento falhado",
-        "${ numberOfFailedTransfer.total } carregamentos falhados"
+        "${ numberOfFailedTransfer.total } erro de carregamento",
+        "${ numberOfFailedTransfer.total } erros de carregamento"
       ],
       "(active)": [
         "(ativo)"
@@ -6046,7 +6046,7 @@
         "Grupos"
       ],
       "Hm, we couldn't find that one": [
-        "Não é possível encontraresteelemento."
+        "Hm, não encontrámos esse"
       ],
       "Human verification": [
         "Verificação humana"
@@ -6185,7 +6185,7 @@
         "Resultados da pesquisa"
       ],
       "Searching…": [
-        "Pesquisa…"
+        "A procurar…"
       ],
       "Select a theme": [
         "Seleccionar um tema"
@@ -6197,10 +6197,10 @@
         "Seleccionar grupo de contactos"
       ],
       "Select link expiration date": [
-        "Seleccionar data de validade da ligação"
+        "Selecionar data de validade da ligação"
       ],
       "Select link expiration time": [
-        "Seleccionar data de validade da ligação"
+        "Selecionar data de validade da ligação"
       ],
       "Send feedback": [
         "Enviar comentários"
@@ -6215,7 +6215,7 @@
         "Partilhado"
       ],
       "Show actions": [
-        "Mostrar acções"
+        "Mostrar ações"
       ],
       "Sign in and grant access": [
         "Faça login e conceda acesso"
@@ -6423,7 +6423,7 @@
         "O nome não pode incluir carateres invisíveis, / ou \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "O nome deve ter no máximo ${ MAX_NAME_LENGTH } carateres",
+        "O nome deve ter no máximo ${ MAX_NAME_LENGTH } carácter",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } carateres"
       ],
       "Name must not be empty": [

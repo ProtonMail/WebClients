@@ -473,6 +473,9 @@
       "Hide labels": [
         "Ascundere etichete"
       ],
+      "Hide plan features": [
+        "Ascundere caracteristici plan"
+      ],
       "I have a question": [
         "Am o întrebare"
       ],
@@ -1042,20 +1045,8 @@
       "Disable": [
         "Dezactivare"
       ],
-      "Disable encryption": [
-        "Dezactivare criptare"
-      ],
-      "Disable expect signed": [
-        "Dezactivare se așteaptă ca semnat"
-      ],
       "Enable": [
         "Activare"
-      ],
-      "Enable encryption": [
-        "Activare criptare"
-      ],
-      "Enable expect signed": [
-        "Activare se așteaptă ca semnat"
       ],
       "Generate missing keys": [
         "Generare chei lipsă"
@@ -9081,6 +9072,9 @@
         "${ n } conexiuni VPN per utilizator",
         "${ n } de conexiuni VPN per utilizator"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } cu aliasuri hide-my-email nelimitate"
+      ],
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
@@ -9372,6 +9366,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9501,6 +9498,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Utilizare cont"
       ]
@@ -9727,11 +9727,19 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Măriți spațiul de stocare la ${ bundleStorage } per utilizator"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
+      ],
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
       ]
     },
     "Notification": {
@@ -12967,6 +12975,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Treceți la un plan cu plată ${ MAIL_SHORT_APP_NAME } pentru a vă partaja calendarul."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Recomandat"
       ]
     },
     "User referee invited via email": {

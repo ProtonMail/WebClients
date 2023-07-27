@@ -203,12 +203,6 @@
       "Proceed": [
         "Prosseguir"
       ],
-      "Rate Pass": [
-        "Avalie o Pass"
-      ],
-      "Refresh extension": [
-        "Atualizar extensão"
-      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -327,26 +321,26 @@
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "A descriptografia do seu arquivo de exportação do ${ PASS_APP_NAME } falhou. ${ errorDetail }"
+        "Não foi possível descriptografar o seu arquivo de exportação do ${ PASS_APP_NAME }. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Falha ao excluir item"
+        "Erro ao excluir item"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Falha ao excluir o cofre \"${ payload.content.name }\""
+        "Erro ao excluir o cofre \"${ payload.content.name }\""
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Foi detectada ${ errors.length } linha corrompida no arquivo CSV.",
         "Foram detectadas ${ errors.length } linhas corrompidas no arquivo CSV."
       ],
       "Editing item failed": [
-        "Falha ao editar o item"
+        "Erro ao editar o item"
       ],
       "Empty CSV file": [
         "Arquivo CSV vazio"
       ],
       "Emptying trash failed": [
-        "Falha ao esvaziar a lixeira"
+        "Erro ao esvaziar a lixeira"
       ],
       "Encrypted JSON not supported": [
         "JSON criptografado não suportado"
@@ -358,25 +352,25 @@
         "Não foi possível analisar o arquivo."
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Falha na importação para o cofre \"${ vaultData.name }\": ${ description }"
+        "Erro na importação para o cofre \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
-        "Falha ao importar itens"
+        "Erro ao importar itens"
       ],
       "Invalid password manager": [
-        "Gerenciador de senhas inválido"
+        "O gerenciador de senhas não é valido."
       ],
       "Item content cannot exceed 40kb": [
         "O conteúdo do item não pode exceder 40 kb"
       ],
       "Item creation failed": [
-        "Falha na criação do item"
+        "Erro na criação do item"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "O LastPass exportará um arquivo CSV corrompido se algum campo do item contiver vírgulas, aspas ou várias linhas inesperadas."
       ],
       "Moving item failed": [
-        "Falha ao mover o item"
+        "Erro ao mover o item"
       ],
       "Passphrase is incorrect": [
         "A frase de acesso está incorreta"
@@ -394,19 +388,19 @@
         "A solicitação expirou"
       ],
       "Requesting alias details failed": [
-        "Falha ao solicitar detalhes do alias"
+        "Erro ao solicitar detalhes do alias"
       ],
       "Requesting alias options failed": [
-        "Falha ao solicitar opções de alias"
+        "Erro ao solicitar opções de alias"
       ],
       "Restoring item failed": [
-        "Falha ao restaurar item"
+        "Erro ao restaurar item"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
-        "Falha ao definir \"${ payload.name }\" como cofre principal"
+        "Erro ao definir \"${ payload.name }\" como cofre principal"
       ],
       "Settings update failed": [
-        "Falha ao atualizar as configurações"
+        "Erro ao atualizar as configurações"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Alguns cofres não estão mais acessíveis devido a uma redefinição de senha. Reative suas chaves de conta para recuperar o acesso. ${ reactivateLink }"
@@ -424,7 +418,7 @@
         "Muitas tentativas erradas. Inicie sessão novamente."
       ],
       "Trashing item failed": [
-        "Falha ao mover item para a lixeira"
+        "Erro ao mover item para a lixeira"
       ],
       "Unable to boot": [
         "Não foi possível iniciar"
@@ -445,10 +439,10 @@
         "Formato de arquivo do 1Password não suportado"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Falha ao atualizar o cofre \"${ payload.content.name }\""
+        "Erro ao atualizar o cofre \"${ payload.content.name }\""
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Falha ao criar o cofre \"${ payload.content.name }\""
+        "Erro ao criar o cofre \"${ payload.content.name }\""
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
         "Não foi possível criar o cofre \"${ vaultData.name }\""
@@ -805,7 +799,7 @@
         "Não é possível copiar para a área de transferência"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Desbloqueie com seu PIN para acessar as configurações"
+        "Desbloqueie com seu código PIN para acessar as configurações"
       ],
       "Update login": [
         "Atualizar início de sessão"
@@ -918,7 +912,7 @@
         "Todos os cofres"
       ],
       "Alphabetical": [
-        "Em Ordem Alfabética"
+        "Em ordem alfabética"
       ],
       "Application logs": [
         "Registros do aplicativo"
@@ -1371,7 +1365,7 @@
         "Aproveite sua avaliação gratuita"
       ],
       "Enter your Pin": [
-        "Digite seu PIN"
+        "Digite seu código PIN"
       ],
       "Get the mobile apps": [
         "Obtenha os aplicativos móveis"
@@ -1460,7 +1454,7 @@
         "O campo do URL não pode estar vazio"
       ],
       "Url is invalid": [
-        "URL é inválido"
+        "O URL não é valido."
       ]
     },
     "Warning": {
@@ -1489,7 +1483,7 @@
         "A data de expiração não é válida."
       ],
       "Invalid alias prefix": [
-        "Prefixo de alias inválido"
+        "O prefixo de alias não é valido."
       ],
       "Maximum length is ${ maxLength } characters": [
         "O comprimento máximo é ${ maxLength } caracteres"

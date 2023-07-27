@@ -3352,6 +3352,9 @@
       "Require at least one condition": [
         "Requiere al menos una condición."
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intenta de nuevo en unos minutos o comprueba nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } no puede desafortunadamente descifrar tu mensaje. Verifica que todas tus claves están activas."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se ha podido descifrar.\nSi tienes la clave privada correspondiente, aún podrás descifrar\nel archivo con un programa como GnuPG.",
@@ -8840,7 +8846,7 @@
         "Contenido del correo electrónico"
       ],
       "Email settings": [
-        "Configuración del correo electrónico"
+        "Ajustes del correo"
       ],
       "Enable message content search": [
         "Habilitar la búsqueda de contenido de mensajes"
@@ -8882,8 +8888,8 @@
         "Imagen"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"

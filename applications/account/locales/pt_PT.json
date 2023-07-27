@@ -473,6 +473,9 @@
       "Hide labels": [
         "Ocultar etiquetas"
       ],
+      "Hide plan features": [
+        "Ocultar as funcionalidades do plano"
+      ],
       "I have a question": [
         "Tenho uma dúvida"
       ],
@@ -1040,20 +1043,8 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable encryption": [
-        "Desativar a encriptação"
-      ],
-      "Disable expect signed": [
-        "Desativar a espera de assinatura"
-      ],
       "Enable": [
         "Ativar"
-      ],
-      "Enable encryption": [
-        "Ativar a encriptação"
-      ],
-      "Enable expect signed": [
-        "Ativar a espera de assinatura"
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
@@ -1708,7 +1699,7 @@
         "não acaba com"
       ],
       "does not match": [
-        "não coincide com"
+        "não corresponde com"
       ],
       "ends with": [
         "acaba com"
@@ -1720,7 +1711,7 @@
         "não é"
       ],
       "matches": [
-        "coincide com"
+        "corresponde com"
       ]
     },
     "Confirm modal title": {
@@ -1855,7 +1846,7 @@
         "Anguilla"
       ],
       "Antarctica": [
-        "Antárctica"
+        "Antártica"
       ],
       "Antigua and Barbuda": [
         "Antígua e Barbuda"
@@ -1939,7 +1930,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "Burquina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -3195,7 +3186,7 @@
         "A palavra-passe é obrigatória."
       ],
       "Passwords do not match": [
-        "As palavras-passe não coincidem."
+        "As palavras-passe não correspondem."
       ],
       "Payment process canceled": [
         "Processo de pagamento cancelado"
@@ -3308,7 +3299,7 @@
         "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Utilize outro navegador ou inicie sessão a partir de um computador."
       ],
       "The email addresses do not match": [
-        "Os endereços de e-mail não coincidem."
+        "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta não é válido. Escolha um nome diferente."
@@ -5050,7 +5041,7 @@
         "${ firstRemainingCalendarName } passará a ser o calendário predefinido."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } pode também ser utilizado com uma única palavra-passe que substitui ambas as palavras-passe de início de sessão e caixa de correio. Para mudar para o modo de uma única palavra-passe, digite a palavra-passe única que gostaria de usar e clique em guardar."
+        "${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } suporta assinaturas DKIM em domínios personalizados. Para utilizar a autenticação DKIM, adicione o seguinte registo CNAME às suas definições DNS para este domínio. Tipicamente, pode ser feito no painel de controlo do registo do seu nome de domínio."
@@ -5174,7 +5165,7 @@
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Um ficheiro de recuperação permite desbloquear e visualizar o seus dados após uma reposição de conta."
+        "Um ficheiro de recuperação permite desbloquear e visualizar os seus dados após uma reposição de conta."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Uma frase de recuperação permite aceder à sua conta e recuperar as suas mensagens encriptadas se se esquecer da sua palavra-passe."
@@ -5198,13 +5189,13 @@
         "Tamanho da conta"
       ],
       "Account successfully updated": [
-        "Conta actualizada"
+        "Conta atualizada"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\"."
+        "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
       "Add a recovery email address": [
         "Adicionar um e-mail de recuperação"
@@ -5333,7 +5324,7 @@
         "Tem a certeza de que deseja eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Tem certeza de que deseja desativar a autenticação em dois passos?"
+        "Tem a certeza de que pretende desativar a autenticação de dois fatores?"
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
@@ -5426,7 +5417,7 @@
         "Bloquiar os remetentes de verem se e quando abriu a mensagem"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
+        "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
@@ -5481,7 +5472,7 @@
         "Crie e gira sub-contas e atribua-lhes endereços de e-mail no seu domínio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Crie endereços de email para outras pessoas, gira o ${ MAIL_APP_NAME } para uma empresa, escola ou grupo. Comece por adicionar o nome da organização e o domínio personalizado (e.g. @asuaempresa.com). "
+        "Crie endereços de e-mail para outras pessoas, faça a gestão de ${ MAIL_APP_NAME } para uma empresa, escola ou grupo. Comece por adicionar o nome da sua organização e o domínio personalizado (por exemplo, @suaempresa.com). "
       ],
       "Create in": [
         "Criar em"
@@ -5535,13 +5526,13 @@
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NÃO se esqueçe desta palavra-passe. Se se esquecer dela, não conseguirá iniciar sessão ou desencriptar as suas mensagens."
+        "NÃO se esqueça desta palavra-passe. Se se esquecer dela, não conseguirá iniciar sessão ou desencriptar as suas mensagens."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Não utilize as credenciais OpenVPN/IKEv2 nas aplicações ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "Quer revogar todas as outras sessões que não a actual?"
+        "Quer revogar todas as outras sessões que não a atual?"
       ],
       "domain used": [
         "domínio utilizado",
@@ -5593,10 +5584,10 @@
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
-        "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está actualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
+        "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
       "Emailing preference saved": [
-        "Preferências do correio electronico actualizadas"
+        "Preferências de e-mail guardadas"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Mensagens armazenadas nesta pasta não serão eliminadas e continuam na pasta Todo o correio."
@@ -5614,7 +5605,7 @@
         "Se ativar novamente a recuperação por frase, será gerada uma nova frase de recuperação."
       ],
       "Encryption setting updated": [
-        "Definição de encriptação actualizada"
+        "Definição de encriptação atualizada"
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
@@ -5668,7 +5659,7 @@
         "expira em ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "Erro ao obter os diários."
+        "Falha na obtenção dos registos."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
@@ -5728,7 +5719,7 @@
         "Se não for do seu agrado, devolvemos-lhe o seu dinheiro."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Se o fuso horário do sistema não coincidir com a definição actual de fuso horário, ser-lhe-á pedido que o actualize (no máximo uma vez por dia)."
+        "Se o fuso horário do sistema não coincidir com a definição atual de fuso horário, ser-lhe-á pedido que o atualize (no máximo uma vez por dia)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Se este domínio está actualmente a receber correios electronicos, selecione o separador ${ boldAddresses } e adicione todos os endereços de correio electronico ativos antes de alterar o registo MX para assegurar uma transição fluida."
@@ -5764,10 +5755,10 @@
         "Se perder a sua palavra-passe e precisar de reinicializar a sua conta, ${ boldImperative } que tenha um ${ boldAccountRecovery } em vigor."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Se perder a sua palavra-passe e precisar de redefinir a sua conta, ${ boldImperative } tem de ter uma ${ boldAccountAndRecovery }, caso contrário poderá não conseguir aceder a nenhum dos seus e-mails, contactos ou ficheiros."
+        "Se perder a sua palavra-passe e precisar de redefinir a sua conta, ${ boldImperative } que tenha uma ${ boldAccountAndRecovery } implementada, caso contrário poderá não conseguir aceder a nenhum dos seus e-mails, contactos ou ficheiros."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Se perder o seu dispositivo habilitado com a autenticação de dois factores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão na sua conta. Cada código poderá ser utilizado apenas uma vez."
+        "Se perder o seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão na sua conta. Cada código poderá ser utilizado apenas uma vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ao mudar para uma subscrição mais barata, perderá o acesso às funcionalidades pagas do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5880,7 +5871,7 @@
         "Confirme apenas a sua seleção e faremos o resto."
       ],
       "Just send them your personal referral link.": [
-        "Basta enviar-lhes o seu link de referência pessoal."
+        "Basta enviar-lhes a sua ligação de referência pessoal."
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantenha estes registos no seu DNS enquanto utilizar DKIM."
@@ -5925,7 +5916,7 @@
         "Tipo de ligação"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "O conteúdo carregado está protegido pelo nosso proxy quando a protecção do rastreador é ativada."
+        "O conteúdo carregado está protegido pelo nosso proxy quando a proteção do rastreador é ativada."
       ],
       "Loading": [
         "A carregar"
@@ -5946,7 +5937,7 @@
         "Certifique-se de que ${ addARecoveryMethod } para que possa voltar à sua conta se se esquecer da palavra-passe."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduza manualmente esta informação no seu dispositivo de autenticação de dois factores para configurar a sua conta. ${ switchButton }."
+        "Introduza manualmente esta informação no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -6054,13 +6045,13 @@
         "A sua organização tem mais administradores. Deve comunicar-lhes a nova palavra-passe."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "Ficheiro de recuperação desactualizado; actualize-o para garantir o acesso aos seus dados"
+        "Ficheiro de recuperação desatualizado; atualize-o para garantir o acesso aos seus dados"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Métodos de recuperação desactualizados; actualize para garantir o acesso aos seus dados"
+        "Métodos de recuperação desatualizados; atualize para garantir o acesso aos seus dados"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Frase de recuperação desactualizada; actualize para garantir o acesso aos seus dados"
+        "Frase de recuperação desatualizada; atualize para garantir o acesso aos seus dados"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Mais de 100 milhões de pessoas e empresas criaram uma conta da ${ BRAND_NAME }"
@@ -6186,7 +6177,7 @@
         "Em espera"
       ],
       "read our two-factor authentication guide first": [
-        "leia primeiro o nosso guia de autenticação de dois factores"
+        "leia primeiro o nosso guia de autenticação de dois fatores"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
@@ -6216,7 +6207,7 @@
         "A frase de recuperação não está associada com nenhuma das chaves."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "A frase de recuperação não está associada com nenhuma das chaves desactualizadas."
+        "A frase de recuperação não está associada com nenhuma das chaves desatualizadas."
       ],
       "Referral link copied to your clipboard": [
         "Ligação de referência copiada para a área de transferência"
@@ -6306,10 +6297,10 @@
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de utilização, os domínios personalizados que gostaria de utilizar e os números de correio eletrónico previstos por hora e por dia."
+        "A submissão SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através de ${ MAIL_APP_NAME } para os seus endereços de domínio personalizados. Para solicitar acesso, por favor ${ createTicket } descreva os seus casos de utilização, os domínios personalizados que gostaria de utilizar e os volumes de e-mails previstos por hora e por dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para utilizar esta funcionalidade, comece por gerar um novo token."
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para utilizar esta funcionalidade, comece por gerar um novo token."
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas."
@@ -6397,7 +6388,7 @@
         "Os endereços seguintes não foram criados."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Os seguintes membros receberão uma mensagem por e-mail a solicitar-lhes que ativem a autenticação de dois factores o mais rapidamente possível."
+        "Os seguintes membros receberão uma mensagem por e-mail a solicitar-lhes que ativem a autenticação de dois fatores o mais rapidamente possível."
       ],
       "The format of your CSV file is incorrect.": [
         "O formato do seu ficheiro CSV é incorreto."
@@ -6409,13 +6400,13 @@
         "A ligação para comunicar que não configurou uma conta da ${ BRAND_NAME } expirou. Entre em contacto com a nossa equipa de apoio para resolver este problema."
       ],
       "The name will be visible to your users while they are signed in.": [
-        "O nome será visível aos seus utilizadroes enquanto eles estiverem ligados."
+        "O nome será visível para os seus utilizadores enquanto estes tiverem sessão iniciada."
       ],
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar em linha."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
+        "O processo de verificação abrirá um novo separador do navegador. Desative quaisquer bloqueadores de pop-ups ativos."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes ficheiros de configuração permitem escolher o servidor ${ VPN_APP_NAME } a que ligar ao usar uma aplicação de VPN de terceiros ou ao configurar uma ligação VPN num router."
@@ -6469,13 +6460,13 @@
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esta acção cancelará a sua subscrição paga actual e perderá quaisquer benefícios de fidelidade que tenha acumulado."
+        "Esta ação cancelará a sua subscrição paga atual e perderá quaisquer benefícios de fidelidade que tenha acumulado."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Isto cancelará a sua subscrição paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
+        "Isto cancelará a sua subscrição paga atual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Isto criará uma chave de encriptação para a sua organização. Chaves de 4096-bit só funcionam em computadores de alto desempenho, para a maioria do utilizadores recomendamos chaves de 2048-bit."
+        "Isto criará uma chave de encriptação para a sua organização. Chaves de 4096-bit só funcionam em computadores de alto desempenho, para a maioria dos utilizadores recomendamos chaves de 2048-bit."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Isto eliminará todas as versões anteriores dos seus ficheiros com mais de ${ rententionLabel }."
@@ -6484,7 +6475,7 @@
         "Isto irá eliminar todas as versões anteriores dos seus ficheiros."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Isto irá desativar a sua frase de recuperação actual. Não será possível utilizá-la para aceder à sua conta ou desencriptar os seus dados."
+        "Isto irá desativar a sua frase de recuperação atual. Não será possível utilizá-la para aceder à sua conta ou desencriptar os seus dados."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Isto descarregará um ficheiro que contém a sua chave privada. Proteja este ficheiro encriptando-o com uma palavra-passe."
@@ -6505,7 +6496,7 @@
         "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois factores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este assistente ativará a autenticação de dois factores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois factores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
+        "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar a perda de dados, elimine-o apenas se souber o que está a fazer ou se tiver exportado uma cópia."
@@ -6538,7 +6529,7 @@
         "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Para se manter actualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários e-mails e ${ blogLink } de vez em quando."
+        "Para se manter atualizado com o último desenvolvimento dos produtos ${ BRAND_NAME }, pode subscrever os nossos vários e-mails e ${ blogLink } de vez em quando."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, selecione um método de recuperação de conta para podermos verificar o pedido."
@@ -6556,7 +6547,7 @@
         "Para funcionar corretamente, cada filtro precisa de ter pelo menos um nome e um código Sieve válido. É possível ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
+        "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
       "Tor": [
         "Tor"
@@ -6577,16 +6568,16 @@
         "autenticação de dois factores (A2F)"
       ],
       "Two-factor authentication disabled": [
-        "Autenticação em dois passos desativada"
+        "Autenticação de dois fatores desativada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticação em dois passos ativada"
+        "Autenticação de dois fatores ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
+        "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar a sua caixa de correio. (Avançado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de duas palavras-passe usa palavras-passe separadas para iniciar a sessão e decrifrar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de palavra-passe única para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, primeiro introduza a palavra-passe para o início de sessão e depois para a caixa de correio."
+        "O modo de duas palavras-passe utiliza palavras-passe separadas para início de sessão e desencriptação da caixa de correio. Isto proporciona uma pequena vantagem de segurança em algumas situações, mas recomendamos o modo de uma palavra-passe para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, defina primeiro uma palavra-passe de início de sessão e, em seguida, uma palavra-passe para a caixa de correio."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do ficheiro de recuperação. Por favor, contacte o suporte."
@@ -6616,19 +6607,19 @@
         "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
       "Update recovery file": [
-        "Actualizar o ficheiro de recuperação"
+        "Atualizar o ficheiro de recuperação"
       ],
       "Update recovery phrase": [
-        "Actualizar a frase de recuperação"
+        "Atualizar a frase de recuperação"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
       "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Actualize para uma conta paga para ativar ${ PROTON_SENTINEL_NAME }."
+        "Atualize para uma conta paga para ativar ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Actualize o seu plano para adicionar um endereço curto @pm.me para a sua conta para a partilhar facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
+        "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
       "Upgrade to unlock": [
         "Actualize para desbloquear"
@@ -6664,7 +6655,7 @@
         "A verificação pode demorar alguns minutos."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "A verificação abrirá um novo separador, desative os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
+        "A verificação abrirá um novo separador, pelo que deve desativar os bloqueadores de pop-ups. Não lhe será cobrado nada. Qualquer montante utilizado para verificar o cartão será reembolsado imediatamente."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
@@ -6736,7 +6727,7 @@
         "Enviaremos um código de reposição para o endereço de correio e-mail que forneceu para a recuperação da conta."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estamos a actualizar o seu plano actual para um plano melhorado que oferece mais pelo mesmo preço. Enquanto os nossos sistemas estiverem a ser actualizados, não será possível alterar o plano. Enviar-lhe-emos um e-mail assim que a actualização estiver concluída."
+        "Estamos a atualizar o seu plano atual para um plano melhorado que oferece mais pelo mesmo preço. Enquanto os nossos sistemas estiverem a ser atualizados, não será possível alterar o plano. Enviar-lhe-emos um e-mail assim que a atualização estiver concluída."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
@@ -6760,7 +6751,7 @@
         "Com um endereço da ${ BRAND_NAME } encriptado, pode utilizar todos os serviços da ${ BRAND_NAME_TWO }"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Com o seu plano actual, pode apenas receber mensagens através do seu endereço @pm.me. Actualize para enviar mensagens e criar endereços adicionais utilizando @pm.me"
+        "Com o seu plano atual, pode apenas receber mensagens através do seu endereço @pm.me. Atualize para enviar mensagens e criar endereços adicionais utilizando @pm.me"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, não poderá criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
@@ -6827,7 +6818,7 @@
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Pode usar o ${ MAIL_APP_NAME } com qualquer cliente de e-mail  que suporte IMAP/SMTP, incluindo o Outlook, o Apple Mail e o Thunderbird."
+        "Pode usar o ${ MAIL_APP_NAME } com qualquer cliente de e-mail que suporte IMAP/SMTP, incluindo o Outlook, o Apple Mail e o Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Pode utilizar as seguintes credenciais quando se liga a um servidor do ${ VPN_APP_NAME } utilizando uma aplicação de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
@@ -6921,7 +6912,7 @@
         "A sua palavra-passe do ${ BRAND_NAME }"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "A sua ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão ligadas. Para eliminar ambas, inicie sessão em ${ loginLink } e elimine aí a sua conta."
+        "As suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão ligadas. Para eliminar ambas, inicie sessão em ${ loginLink } e elimine a sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -6936,13 +6927,13 @@
         "O método de recuperação da sua conta está definido."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "A conta será actualizada assim que o pagamento for aprovado."
+        "A conta será atualizada assim que o pagamento for aprovado."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
-        "O método de recuperação de seus dados está definido."
+        "O método de recuperação dos seus dados está definido."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
@@ -6973,7 +6964,7 @@
         "A palavra-passe da organização pode ser partilhada com outros utilizadores a quem quer atribuir privilégios de administração. É também um código de recuperação de emergência para obter acesso à sua organização caso perca o acesso à sua conta. Guarde esta palavra-passe num local seguro."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Os e-mails da sua organização são protegidos com encriptação de ponta a ponta usando a chave da organização. Esta impressão digital pode ser utilizada para verificar se todos os administradores na sua conta têm a mesma chave."
+        "Os e-mails da sua organização estão protegidos com encriptação de ponta a ponta utilizando a chave da organização. Esta impressão digital pode ser utilizada para verificar se todos os administradores da sua conta têm a mesma chave."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -8992,6 +8983,9 @@
         "${ n } ligação VPN por utilizador",
         "${ n } ligações VPN por utilizador"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } com aliases hide-my-email Ilimitados"
+      ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
@@ -9281,6 +9275,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -9409,6 +9406,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Utilização da sua conta"
       ]
@@ -9634,11 +9634,18 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Adicione mais personalização com 15 endereços de e-mail e suporte para 3 domínios de e-mail personalizados."
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumente o seu espaço de armazenamento para um total de ${ bundleStorage } por utilizador."
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente o seu espaço de armazenamento para um total de ${ bundleStorage }."
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Beneficie-se de ainda mais possibilidades com o suporte a 10 domínios de e-mail personalizados."
+      ],
+      "Create up to ${ n } calendar": [
+        "Crie até ${ n } calendário",
+        "Crie até ${ n } calendários"
       ]
     },
     "Notification": {
@@ -12756,7 +12763,7 @@
         "Utilize as barras de deslocação predefinidas do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
@@ -12850,6 +12857,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Subscreva um plano pago ${ MAIL_SHORT_APP_NAME } para partilhar o seu calendário."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "User referee invited via email": {
@@ -13050,7 +13062,7 @@
         "Não é possível verificar o servidor de e-mail. Se confia nele, pode saltar esta verificação."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Tem de ${ activateLink } chaves da organização antes de adicionar um endereço de e-mail a um membro não privado."

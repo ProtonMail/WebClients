@@ -179,6 +179,9 @@
       "Hide": [
         "Сховати"
       ],
+      "Hide plan features": [
+        "Приховати особливості плану"
+      ],
       "I have a question": [
         "У мене є питання"
       ],
@@ -2927,7 +2930,7 @@
     },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
-        "Ви можете запобігти закінченню терміну дії, відновивши підписку"
+        "Ви можете запобігти закінченню терміну дії, відновивши передплату"
       ]
     },
     "Info when deleting payment method": {
@@ -3607,6 +3610,9 @@
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднань на користувача"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
+      ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
       ],
@@ -3924,6 +3930,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3953,6 +3962,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Використання вашого облікового запису"
       ]
@@ -4166,11 +4178,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Збільште обсяг сховища до ${ bundleStorage } на користувача"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
+      ],
+      "Create up to ${ n } calendar": [
+        "Створіть до ${ n } календаря",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів"
       ]
     },
     "Notification": {
@@ -4370,6 +4391,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Підтвердження номера телефону посилює безпеку вашого облікового запису та розширює можливості відновлення."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Спільне використання ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -5449,6 +5475,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Ця версія браузера Tor не підтримується. Будь ласка, оновіть до найновішої версії ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Рекомендовано"
       ]
     },
     "Validation": {

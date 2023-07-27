@@ -3415,6 +3415,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
+      "Enter the device name to confirm removal.": [
+        "Kaldırma işlemini onaylamak için aygıt adını yazın."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
@@ -3917,6 +3920,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
         "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Bu işlem, ${ DRIVE_APP_NAME } uygulamasından ${ deviceName } aygıtının eşitlemesini kaldıracak ve Bilgisayarlarım altına eklediğiniz klasörlerin eşitlemesini durduracak."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
