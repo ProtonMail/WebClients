@@ -11,20 +11,20 @@
     },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Automatically clear out messages older than 30 days from trash or spam. Enjoy this and other benefits when you upgrade."
+        "Automatically clear out messages that have been in Trash or Spam for over 30 days. Enjoy this and other benefits when you upgrade."
       ]
     },
     "Error": {
       "Require at least one action": [
-        "At least one action is required."
+        "Add at least one action"
       ],
       "Require at least one condition": [
-        "At least one condition is required."
+        "Add at least one condition"
       ]
     },
     "familyOffer_2023:Family plan": {
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Accounts with custom domains cannot join a Visionary or Family plan."
+        "Accounts with custom domains cannot join a Visionary or family plan."
       ],
       "Manage addresses.": [
         "Manage addresses"
@@ -51,7 +51,7 @@
         "${ numberOfUTMTrackers } cleaned links"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Contact unassigned from group ${ contactGroupName }"
+        "Contact removed from ${ contactGroupName }"
       ],
       "file attached": [
         "attachment",
@@ -61,12 +61,12 @@
         "No cleaned links"
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Upgrade to automatically delete messages that have been in trash or spam for more than 30 days."
+        "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days."
       ]
     },
     "Label": {
       "Synchronize with system": [
-        "Synchronize with system settings"
+        "Sync with system"
       ]
     },
     "Oauth instructions video alternative": {
