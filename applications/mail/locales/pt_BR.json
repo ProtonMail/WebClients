@@ -995,7 +995,7 @@
         "Pular verificação"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Algumas imagens com proteção de rastreamento falharam ao tentarem ser carregadas."
+        "Não foi possível carregar algumas imagens com proteção de rastreamento."
       ],
       "Star": [
         "Favorito"
@@ -1050,7 +1050,7 @@
         "Tentar outro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
+        "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
       "Unblock": [
         "Desbloquear"
@@ -1191,7 +1191,7 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Falha ao adicionar participante"
+        "Erro ao adicionar participante"
       ],
       "Invitation sent and participant added": [
         "Convite enviado e participante adicionado"
@@ -1279,13 +1279,13 @@
         "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Invalid ICS file": [
-        "Arquivo ICS inválido"
+        "O arquivo ICS não é válido."
       ],
       "Invalid method": [
-        "Método inválido"
+        "O método não é válido."
       ],
       "Unsupported calendar component": [
         "Componente de calendário não suportado"
@@ -1296,7 +1296,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "Falha na verificação do remetente"
+        "Erro na verificação do remetente"
       ],
       "Sender verification passed": [
         "Verificação do remetente bem-sucedida"
@@ -1625,7 +1625,7 @@
         "Este convite está desatualizado. O evento foi atualizado."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Esta nova proposta de horário não coincide com os detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
+        "Esta nova proposta de horário não corresponde com os detalhes do seu convite. Verifique os detalhes do convite no seu calendário."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Esta resposta não corresponde aos detalhes do seu convite. Verifique os detalhes do convite em seu calendário."
@@ -1929,7 +1929,7 @@
         "não termina com"
       ],
       "does not match": [
-        "não coincide"
+        "não corresponde"
       ],
       "ends with": [
         "termina com"
@@ -1941,7 +1941,7 @@
         "não é"
       ],
       "matches": [
-        "coincide"
+        "corresponde"
       ]
     },
     "Confirm modal title": {
@@ -3169,7 +3169,7 @@
         "Não é possível ativar a pesquisa de conteúdo neste navegador. Saia do modo de navegação privada ou use outro navegador."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Erro ao descriptografar: a decodificação do conteúdo criptografado desta mensagem falhou."
+        "Erro ao descriptografar: não foi possível a decodificar o conteúdo criptografado desta mensagem."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -3192,7 +3192,7 @@
         "O endereço de e-mail é obrigatório"
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Empty condition": [
         "Condição vazia"
@@ -3216,7 +3216,7 @@
         "Erro ao carregar anexos. Mensagem não enviada."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Falha na criptografia do anexo. Tente novamente."
+        "Erro na criptografia do anexo. Tente novamente."
       ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome."
@@ -3225,31 +3225,31 @@
         "O nome da pasta não pode ser vazio."
       ],
       "Image upload failed": [
-        "Falha no carregamento da imagem"
+        "Erro no carregamento da imagem"
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Invalid email address": [
-        "Endereço de e-mail inválido"
+        "O endereço de e-mail não é válido."
       ],
       "Invalid expiration time": [
-        "Tempo de expiração inválido"
+        "O tempo de expiração não é válido."
       ],
       "Invalid name": [
-        "Nome inválido"
+        "O nome não é válido."
       ],
       "Invalid public key file": [
-        "Arquivo de chave pública inválido"
+        "O arquivo de chave pública não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
@@ -3359,7 +3359,7 @@
         "Erro na verificação da assinatura."
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Some contacts could not be deleted": [
         "Não foi possível excluir alguns contatos."
@@ -3396,7 +3396,7 @@
         "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
@@ -3405,7 +3405,7 @@
         "Não foi possível extrair as propriedades da chave do ${ emailAddress }."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Escolha um nome diferente."
+        "O nome do marcador não é válido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
@@ -3450,7 +3450,7 @@
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Trusted keys are not valid for sending": [
-        "As chaves confiáveis não são válidas para o envio"
+        "As chaves de confiança não são válidas para o envio"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -3468,7 +3468,7 @@
         "O nome de usuário deve terminar com uma letra ou dígito"
       ],
       "Wrong mailbox password": [
-        "Senha da caixa de correio inválida"
+        "A senha da caixa de correio não é válida."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Você não pode enviar um e-mail para mais de 100 destinatários"
@@ -3546,7 +3546,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
+        "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -3560,7 +3560,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "vCard versions < 3.0 not supported": [
         "versões vCard <3.0 não são suportadas"
@@ -3612,7 +3612,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "End time out of bounds": [
         "Hora de término fora dos limites"
@@ -3621,7 +3621,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -3630,7 +3630,7 @@
         "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Journal entry": [
         "Entradas periódicas"
@@ -3639,13 +3639,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválido"
+        "A hora de término não é válida."
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválido"
+        "A hora de início não é válida."
       ],
       "Missing start time": [
         "Falta o horário de início"
@@ -3741,10 +3741,10 @@
         "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "O convite não é válido."
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "A resposta não é válida."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
@@ -3759,7 +3759,7 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Tipo de resposta não suportado"
+        "A categoria de resposta não é suportado."
       ],
       "We could not cancel the event in your calendar": [
         "Não foi possível cancelar o evento no seu calendário"
@@ -4396,7 +4396,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -4529,7 +4529,7 @@
         "Evento de calendário criado"
       ],
       "Creating calendar event failed": [
-        "Falha ao criar evento no calendário"
+        "Erro ao criar evento no calendário"
       ]
     },
     "Import instructions": {
@@ -4829,7 +4829,7 @@
         "Adicionar a URL da imagem"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+        "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
       "Align left": [
         "Alinhar à esquerda"
@@ -5251,7 +5251,7 @@
         "Esquerda para direita"
       ],
       "Link type": [
-        "Tipo de link"
+        "Categoria de link"
       ],
       "Links cleaned:": [
         "Links limpos:"
@@ -5381,7 +5381,7 @@
         "de"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
+        "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
@@ -5420,7 +5420,7 @@
         "Selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Selecione o tipo de link que você deseja inserir e preencha em todos os campos."
+        "Selecione a categoria de link que você deseja inserir e preencha em todos os campos."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
@@ -5439,7 +5439,7 @@
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
       "Preview failed to be loaded": [
-        "A pré-visualização falhou ao carregar"
+        "Não foi possível carregar a pré-visualização."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -5562,7 +5562,7 @@
         "O SimpleLogin é um serviço da ${ BRAND_NAME }, e sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não confiáveis nos quais você não quer expor o seu endereço de e-mail real."
+        "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não de confiança nos quais você não quer expor o seu endereço de e-mail real."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
@@ -5619,11 +5619,11 @@
         "O remetente solicitou uma confirmação de leitura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "A verificação de ${ contactName } falhou: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar uma mensagem para ${ contactAddress } ou editar o contato."
+        "Não foi possível verificar ${ contactName }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar uma mensagem para ${ contactAddress } ou editar o contato."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "A verificação de ${ contactNames } falhou: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar a mensagem para ${ contactAddresses } ou editar o contato.",
-        "A verificação de ${ contactNames } falhou: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente os contatos para poder enviar a mensagem para ${ contactAddresses } ou editar os contatos."
+        "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar a mensagem para ${ contactAddresses } ou editar o contato.",
+        "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente os contatos para poder enviar a mensagem para ${ contactAddresses } ou editar os contatos."
       ],
       "Themes can give your inbox a new look.": [
         "Os temas podem dar uma nova aparência à sua caixa de entrada."
@@ -5877,7 +5877,7 @@
         "Ao distribuir seu e-mail, use um alias exclusivo e descartável do Hide-my-email em vez do seu endereço de e-mail real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "Quando você ativou as chaves confiáveis para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
+        "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
@@ -5913,7 +5913,7 @@
         "Você pode atualizar sua pesquisa ou limpar"
       ],
       "You can import one data type at a time.": [
-        "Você pode importar um tipo de dado por vez."
+        "Você pode importar uma categoria de dado por vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -6088,13 +6088,13 @@
         "Você deseja confiar as chaves públicas principals com as seguintes impressões digitais?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Você ativou a verificação de endereço com chaves confiáveis para este endereço de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar em uma chave válida para enviar uma mensagem para este endereço de e-mail.",
-        "Você ativou a verificação de endereço com chaves confiáveis para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem a estes endereços de e-mail."
+        "Você ativou a verificação de endereço com chaves de confiança para este endereço de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar em uma chave válida para enviar uma mensagem para este endereço de e-mail.",
+        "Você ativou a verificação de endereço com chaves de confiança para estes endereços de e-mail,\nmas nenhuma chave de criptografia ativa foi confiada.\nVocê deve confiar nas chaves válidas para envio, para poder enviar uma mensagem a estes endereços de e-mail."
       ]
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        "A validação chave do destinatário falhou: ${ validationErrorsMessage }"
+        "Não foi possível validar a chave do destinatário: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -7729,7 +7729,7 @@
         "Mensagem assinada por PGP de um remetente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensagem assinada pelo PGP. Falha na verificação do remetente"
+        "Mensagem assinada pelo PGP. Erro na verificação do remetente"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero"
@@ -7757,7 +7757,7 @@
         "Resposta enviada"
       ],
       "Answering invitation failed": [
-        "Falha ao responder convite"
+        "Erro ao responder convite"
       ],
       "Calendar event created": [
         "Evento de calendário criado"
@@ -7769,7 +7769,7 @@
         "Não é possível enviar para o endereço do organizador: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again.": [
-        "Falha ao criptografar o convite. Tente novamente."
+        "Erro ao criptografar o convite. Tente novamente."
       ]
     },
     "Search - no results": {
@@ -7886,22 +7886,22 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensagem criptografada pelo PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+        "Mensagem criptografada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensagem assinada pelo PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+        "Mensagem assinada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "Não foi possível verificar o remetente: a mensagem não foi assinada."
       ],
       "Sender verification failed": [
-        "Falha na verificação do remetente"
+        "Erro na verificação do remetente"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        "Falha na verificação do remetente: ${ verificationErrorsMessage }"
+        "Erro na verificação do remetente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "Falha na verificação de chaves confiáveis do remetente"
+        "Erro na verificação de chaves de confiança do remetente"
       ]
     },
     "Signing preference for emails": {
@@ -8895,13 +8895,13 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Falha na importação"
+        "Erro na importação"
       ],
       "Insert contacts": [
         "Inserir contatos"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Keep your inbox organized": [
         "Mantenha sua caixa de entrada organizada"
@@ -9365,23 +9365,23 @@
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Falha na verificação da assinatura do anexo.\nVocê ainda pode baixar este anexo, mas ele pode ter sido adulterado.",
-        "Algumas das assinaturas dos anexos falharam na verificação.\nVocê ainda pode baixar esses anexos, mas eles podem ter sido adulterados."
+        "Não foi possível verificar a assinatura do anexo.\nVocê ainda pode baixar este anexo, mas ele pode ter sido adulterado.",
+        "Não foi possível verificar algumas das assinaturas dos anexos.\nVocê ainda pode baixar esses anexos, mas eles podem ter sido adulterados."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
-        "Falha ao carregar o contato."
+        "Erro ao carregar o contato."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "A descriptografia do conteúdo criptografado falhou."
+        "Não foi possível descriptografar o conteúdo criptografado."
       ],
       "The verification of the contact details' signature failed.": [
-        "A verificação da assinatura dos detalhes de contato falhou."
+        "Não foi possível verificar a assinatura dos detalhes de contato."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
