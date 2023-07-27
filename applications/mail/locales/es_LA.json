@@ -1050,7 +1050,7 @@
         "Intente otro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
       "Unblock": [
         "Desbloquear"
@@ -1296,7 +1296,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "Falló la verificación del remitente"
+        "Error en la verificación del remitente"
       ],
       "Sender verification passed": [
         "Verificación del remitente aprobada"
@@ -3352,6 +3352,9 @@
       "Require at least one condition": [
         "Requiere al menos una condición"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -3359,7 +3362,7 @@
         "Error al verificar la firma."
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, ${ BRAND_NAME } no puede descifrar su mensaje. Verifique que todas sus claves están activas."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se pudo descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nel archivo con un programa como GnuPG.",
@@ -3560,7 +3566,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -3612,7 +3618,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -3621,7 +3627,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -6094,7 +6100,7 @@
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        "Falló la validación de la clave del destinatario: ${ validationErrorsMessage }"
+        "Error en la validación de la clave del destinatario: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -7729,7 +7735,7 @@
         "Mensaje PGP firmado de remitente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensaje firmado con PGP. Falló la verificación del remitente."
+        "Mensaje firmado con PGP. Error en la verificación del remitente."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
@@ -7886,22 +7892,22 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensaje PGP cifrado. Falló la verificación del remitente: ${ verificationErrorsMessage }"
+        "Mensaje PGP cifrado. Error en la verificación del remitente: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensaje PGP firmado. Falló la verificación del remitente: ${ verificationErrorsMessage }"
+        "Mensaje PGP firmado. Error en la verificación del remitente: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "El remitente no pudo ser verificado: mensaje no firmado"
       ],
       "Sender verification failed": [
-        "Falló la verificación del remitente"
+        "Error en la verificación del remitente"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        "Falló la verificación del remitente: ${ verificationErrorsMessage }"
+        "Error en la verificación del remitente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "Falló la verificación de las claves de confianza del remitente"
+        "Error en la verificación de las claves de confianza del remitente"
       ]
     },
     "Signing preference for emails": {
@@ -8885,8 +8891,8 @@
         "Imagen"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -9365,8 +9371,8 @@
         "Algunos de los contactos a combinar tienen errores. Revíselos individualmente."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Falló la verificación de la firma del archivo adjunto.\nTodavía puede descargar este archivo adjunto, pero puede haber sido manipulado.",
-        "Falló la verificación de algunas firmas de los archivos adjuntos.\nTodavía puede descargar estos archivos adjuntos, pero pueden haber sido manipulados."
+        "Error en la verificación de la firma del archivo adjunto.\nTodavía puede descargar este archivo adjunto, pero puede haber sido manipulado.",
+        "Error en la verificación de algunas firmas de los archivos adjuntos.\nTodavía puede descargar estos archivos adjuntos, pero pueden haber sido manipulados."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Los datos del contacto están corruptos y no pueden mostrarse."
@@ -9378,10 +9384,10 @@
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Falló el descifrado del contenido cifrado."
+        "Error en el descifrado del contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Falló la verificación de la firma de los datos del contacto."
+        "Error en la verificación de la firma de los datos del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."

@@ -2105,6 +2105,9 @@
       "Search failed": [
         "Sökning misslyckades"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
@@ -2134,6 +2137,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
+      ],
+      "status page": [
+        "statussida"
       ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
@@ -2591,7 +2597,7 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Din penumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
+        "*Din prenumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
       ],
       "Discounts are based on the standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."

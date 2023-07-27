@@ -473,6 +473,9 @@
       "Hide labels": [
         "Skrýt štítky"
       ],
+      "Hide plan features": [
+        "Skrýt funkce tarifu"
+      ],
       "I have a question": [
         "Mám dotaz"
       ],
@@ -1044,20 +1047,8 @@
       "Disable": [
         "Vypnout"
       ],
-      "Disable encryption": [
-        "Zakázat šifrování"
-      ],
-      "Disable expect signed": [
-        "Zakázat očekávat podepsané"
-      ],
       "Enable": [
         "Zapnout"
-      ],
-      "Enable encryption": [
-        "Povolit šifrování"
-      ],
-      "Enable expect signed": [
-        "Povolit očekávat podepsané"
       ],
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
@@ -4478,7 +4469,7 @@
         "${ MAIL_APP_NAME } aplikace"
       ],
       "account logins": [
-        "přihlášení k účtu"
+        "přihlášení k účtům"
       ],
       "Auto-forward Gmail": [
         "Automatické přeposílání Gmailu"
@@ -4496,7 +4487,7 @@
         "Objevte funkce ochrany soukromí"
       ],
       "Get the ${ strongText } on Android or iOS": [
-        "Získání ${ strongText } v systému Android nebo iOS"
+        "Získání ${ strongText } pro Android nebo iOS"
       ],
       "Get the App": [
         "Získat aplikaci"
@@ -4505,7 +4496,7 @@
         "funkce ochrany soukromí"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Nastavení ${ strongText } ze služby Gmail"
+        "Nastavit ${ strongText } z Gmailu"
       ],
       "Update your logins": [
         "Aktualizace přihlašovacích údajů"
@@ -5158,7 +5149,7 @@
         "${ numGroups } skupin kontaktů"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před zlými hráči a bezpečnostními hrozbami."
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
@@ -9179,6 +9170,9 @@
         "${ n } připojení VPN na uživatele",
         "${ n } připojení VPN na uživatele"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } s neomezeným počtem aliasů hide-my-email"
+      ],
       "${ size } attachment size": [
         "${ size } velikost přílohy"
       ],
@@ -9472,6 +9466,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9602,6 +9599,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Využití vašeho účtu"
       ]
@@ -9670,7 +9670,7 @@
         "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. pro nákupní účty JohnShopper@${ domain }."
+        "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
@@ -9829,11 +9829,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Získejte 15 e-mailových adres a podporu pro 3 vlastní e-mailové domény"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Navyšte úložný prostor na ${ bundleStorage } pro každého uživatele"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zvyšte úložný prostor na ${ bundleStorage } celkem"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
+      ],
+      "Create up to ${ n } calendar": [
+        "Vytvořte až ${ n } kalendář",
+        "Vytvořte až ${ n } kalendáře",
+        "Vytvořte až ${ n } kalendářů",
+        "Vytvořte až ${ n } kalendářů"
       ]
     },
     "Notification": {
@@ -10246,6 +10255,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Podívejte se na funkce ${ appName }"
+      ],
       "Continue": [
         "Pokračovat"
       ],
@@ -10334,13 +10346,13 @@
         "${ PASS_APP_NAME } je k dispozici jako rozšíření prohlížeče ve webovém obchodě Chrome."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky přísnému koncovému šifrování."
+        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky přísnému koncovému šifrování. Chcete-li ke svému stávajícímu předplatnému přidat prémiové funkce ${ PASS_APP_NAME_2 }, doporučujeme přejít na plán ${ upsellPlanName }."
+        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování. Chcete-li ke svému stávajícímu předplatnému přidat prémiové funkce ${ PASS_APP_NAME_2 }, doporučujeme přejít na tarif ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky přísnému koncovému šifrování. Váš současný tarif vám již poskytuje přístup k prémiovým funkcím ${ PASS_APP_NAME_2 } - není třeba jej kupovat znovu."
+        "${ PASS_APP_NAME } uchovává vaše hesla a identitu v bezpečí díky silnému koncovému šifrování. Váš současný tarif vám již poskytuje přístup k prémiovým funkcím ${ PASS_APP_NAME_2 } - není třeba jej kupovat znovu."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } za měsíc"
@@ -10349,10 +10361,10 @@
         "Všechny prémiové služby ${ BRAND_NAME }."
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ale můžete si odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } upgradem na **${ upsellPlanTitle }** - je to jen ${ relativePrice } měsíčně navíc."
+        "Ale můžete si odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }** - je to jen ${ relativePrice } měsíčně navíc."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
-        "Pokračováním souhlasíte s našimi ${ termsAndConditions }"
+        "Pokračováním přijímáte naše ${ termsAndConditions }"
       ],
       "Creating your account": [
         "Vytváření vašeho účtu"
@@ -10361,7 +10373,7 @@
         "Objevte ${ PASS_APP_NAME },${ br }náš nový šifrovaný správce hesel"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
-        "Stáhněte a nainstalujte příslušné aplikace a rozšíření, abyste mohli začít používat ${ PASS_APP_NAME }"
+        "Pro používání ${ PASS_APP_NAME } si stáhněte a nainstalujte příslušné aplikace a rozšíření."
       ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Stáhněte si aplikaci ${ PASS_APP_NAME } z Google Play, nainstalujte ji a začněte používat ${ PASS_APP_NAME2 } v telefonu."
@@ -10406,7 +10418,7 @@
         "Instalace aplikace a rozšíření"
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Je to jediný způsob, jak plně obnovit účet, a proto si tuto sadu **obnovení** uložte na bezpečné místo."
+        "Je to jediný způsob, jak plně obnovit účet, a proto si tuto **sadu pro obnovení** uložte na bezpečné místo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Připojte se k více než 100 milionům lidí, kteří si zvolili ${ BRAND_NAME }, aby zůstali v bezpečí online."
@@ -10435,6 +10447,9 @@
       "per month, billed every two years": [
         "za měsíc, účtováno kažké dva roky"
       ],
+      "Preparing your Recovery Kit": [
+        "Příprava sady pro obnovení"
+      ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
       ],
@@ -10445,16 +10460,19 @@
         "Přihlášení do ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Speciální nabídka pro uvedení na trh: Získejte ${ title } za ${ price } navždy!"
+        "Speciální akce při uvedení na trh: Získejte ${ title } za ${ price } navždy!"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
-        "Vámi vybraná nabídka není pro předplatitele ${ currentPlanTitle } k dispozici."
+        "Vámi vybraná nabídka není k dispozici pro předplatitele ${ currentPlanTitle }."
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "a začněte používat ${ PASS_APP_NAME } na vašem telefonu"
       ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Odemknutí prémiových funkcí ${ PASS_APP_NAME } upgradem"
+        "Odemkněte prémiové funkce ${ PASS_APP_NAME } navýšením tarifu"
+      ],
+      "Updating your account": [
+        "Aktualizace vašeho účtu"
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
@@ -10472,7 +10490,7 @@
         "Momentálně máte"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Vaše organizace má přístup k ${ free }. Pokud chcete mít přístup k prémiovým funkcím ${ appName }, požádejte správce své organizace o upgrade."
+        "Vaše organizace má přístup k ${ free }. Pokud chcete mít přístup k prémiovým funkcím ${ appName }, požádejte správce své organizace o navýšení."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -13106,6 +13124,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Pro sdílení vašeho kalendáře si pořiďte ${ MAIL_SHORT_APP_NAME } předplatné."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Doporučeno"
       ]
     },
     "User referee invited via email": {

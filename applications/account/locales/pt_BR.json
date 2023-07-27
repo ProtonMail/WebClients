@@ -882,7 +882,7 @@
         "Tentar outro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
+        "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
       "Underline": [
         "Sublinhado"
@@ -1043,20 +1043,8 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable encryption": [
-        "Desativar criptografia"
-      ],
-      "Disable expect signed": [
-        "Desativar a espera de assinatura"
-      ],
       "Enable": [
         "Ativar"
-      ],
-      "Enable encryption": [
-        "Ativar criptografia"
-      ],
-      "Enable expect signed": [
-        "Ativar a espera de assinatura"
       ],
       "Generate missing keys": [
         "Gerar chaves ausentes"
@@ -1142,13 +1130,13 @@
         "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Invalid ICS file": [
-        "Arquivo ICS inválido"
+        "O arquivo ICS não é válido."
       ],
       "Invalid method": [
-        "Método inválido"
+        "O método não é válido."
       ],
       "Unsupported calendar component": [
         "Componente de calendário não suportado"
@@ -1220,7 +1208,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "Falha em encontrar a última versão"
+        "Não foi possível encontrar a última versão."
       ]
     },
     "Bug category": {
@@ -1423,7 +1411,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "Falha ao recuperar a informação de contato para ${ address }"
+        "Erro ao recuperar a informação de contato para ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -1468,7 +1456,7 @@
         "O link do calendário está temporariamente inacessível"
       ],
       "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
+        "Erro ao sincronizar calendário"
       ],
       "More than 12 hours passed since last update": [
         "Mais de 12 horas se passaram desde a última atualização"
@@ -1711,7 +1699,7 @@
         "não termina com"
       ],
       "does not match": [
-        "não coincide"
+        "não corresponde"
       ],
       "ends with": [
         "termina com"
@@ -1723,7 +1711,7 @@
         "não é"
       ],
       "matches": [
-        "coincide"
+        "corresponde"
       ]
     },
     "Confirm modal title": {
@@ -2793,16 +2781,16 @@
         "${ name } adicionado"
       ],
       "${ name } deletion failed": [
-        "Falha na exclusão de ${ name }"
+        "Erro na exclusão de ${ name }"
       ],
       "${ name } failed to move to allow list": [
-        "Falha ao mover ${ name } para a lista de endereços permitidos"
+        "Erro ao mover ${ name } para a lista de endereços permitidos"
       ],
       "${ name } failed to move to block list": [
-        "Falha ao mover ${ name } para a lista de endereços bloqueados"
+        "Erro ao mover ${ name } para a lista de endereços bloqueados"
       ],
       "${ name } failed to move to spam list": [
-        "${ name } falhou ao mover para a lista de spam"
+        "Não foi possível mover ${ name } para a lista de spam."
       ],
       "${ name } moved to allow list": [
         "${ name } movido para a lista de endereços permitidos"
@@ -2927,16 +2915,16 @@
         "${ name } adicionado"
       ],
       "${ name } deletion failed": [
-        "Falha na exclusão de ${ name }"
+        "Erro na exclusão de ${ name }"
       ],
       "${ name } failed to move to allow list": [
-        "Falha ao mover ${ name } para a lista de endereços permitidos"
+        "Erro ao mover ${ name } para a lista de endereços permitidos"
       ],
       "${ name } failed to move to block list": [
-        "Falha ao mover ${ name } para a lista de endereços bloqueados"
+        "Erro ao mover ${ name } para a lista de endereços bloqueados"
       ],
       "${ name } failed to move to spam list": [
-        "${ name } falhou ao mover para a lista de spam"
+        "Não foi possível mover ${ name } para a lista de spam."
       ],
       "${ name } moved to allow list": [
         "${ name } movido para a lista de endereços permitidos"
@@ -3065,7 +3053,7 @@
         "O endereço de e-mail é obrigatório"
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Empty condition": [
         "Condição vazia"
@@ -3086,7 +3074,7 @@
         "Expirado"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Falha ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
+        "Erro ao obter sessões ativas. ${ refresh } ou tente novamente mais tarde."
       ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome."
@@ -3098,49 +3086,49 @@
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Incorrect password": [
-        "Senha inválida"
+        "A senha não é válida."
       ],
       "Invalid ${ name } code": [
-        "Código ${ name } inválido"
+        "O código ${ name } não é válido."
       ],
       "Invalid card number": [
-        "Número do cartão inválido"
+        "O número do cartão não é válido."
       ],
       "Invalid code": [
-        "Código inválido"
+        "O código não é válido."
       ],
       "Invalid domain": [
-        "Domínio inválido"
+        "O domínio não é válido."
       ],
       "Invalid email address": [
-        "Endereço de e-mail inválido"
+        "O endereço de e-mail não é válido."
       ],
       "Invalid expiration date": [
-        "Data de validade inválida"
+        "A data de validade não é válida."
       ],
       "Invalid invitation link": [
-        "Link de convite inválido"
+        "O link de convite não é válido."
       ],
       "Invalid name": [
-        "Nome inválido"
+        "O nome não é válido."
       ],
       "Invalid postal code": [
-        "Código postal inválido"
+        "O código postal não é válido."
       ],
       "Invalid private key file": [
-        "Arquivo de chave privada inválido"
+        "O arquivo de chave privada não é válido."
       ],
       "Invalid Sieve code": [
-        "Código Sieve inválido"
+        "O código Sieve não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
@@ -3156,7 +3144,7 @@
         "Assinatura ausente"
       ],
       "Name does not match": [
-        "Nome não confere"
+        "Nome não corresponde"
       ],
       "Name on card required": [
         "Nome do cartão de credito obrigatório"
@@ -3207,7 +3195,7 @@
         "Processo de pagamento concluído"
       ],
       "Payment process failed": [
-        "Falha no processo de pagamento"
+        "Erro no processo de pagamento"
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
@@ -3281,7 +3269,7 @@
         "Assinatura não verificada"
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pastas estão indisponíveis. Personalize a importação para editar esses nomes."
@@ -3314,7 +3302,7 @@
         "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
@@ -3326,7 +3314,7 @@
         "As chaves em seu arquivo de recuperação não podem ser validadas.Carregue-as individualmente para obter mais informações."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Escolha um nome diferente."
+        "O nome do marcador não é válido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
@@ -3374,7 +3362,7 @@
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Trusted keys are not valid for sending": [
-        "As chaves confiáveis não são válidas para o envio"
+        "As chaves de confiança não são válidas para o envio"
       ],
       "Try again later": [
         "Tente novamente mais tarde"
@@ -3479,7 +3467,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
+        "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -3493,7 +3481,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "vCard versions < 3.0 not supported": [
         "versões vCard <3.0 não são suportadas"
@@ -3545,7 +3533,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "End time out of bounds": [
         "Hora de término fora dos limites"
@@ -3554,7 +3542,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -3563,7 +3551,7 @@
         "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Journal entry": [
         "Entradas periódicas"
@@ -3572,13 +3560,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválido"
+        "A hora de término não é válida."
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválido"
+        "A hora de início não é válida."
       ],
       "Missing start time": [
         "Falta o horário de início"
@@ -3642,7 +3630,7 @@
         "Erro: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL inválida"
+        "O URL não é válido."
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -3720,10 +3708,10 @@
         "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "O convite não é válido."
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "A resposta não é válida."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
@@ -3738,7 +3726,7 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Tipo de resposta não suportado"
+        "A categoria de resposta não é suportado."
       ],
       "We could not cancel the event in your calendar": [
         "Não foi possível cancelar o evento no seu calendário"
@@ -3803,7 +3791,7 @@
         "Não foi possível exportar alguns dos seus eventos."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "A conexão com a internet foi interrompida, causando falha no processo de exportação. Tente novamente."
+        "A conexão com a internet foi interrompida causando erro no processo de exportação. Tente novamente."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Você pode salvar um arquivo ICS dos eventos exportados."
@@ -4541,7 +4529,7 @@
         "Obter ajuda"
       ],
       "Key type": [
-        "Tipo de chave"
+        "Categoria de chave"
       ],
       "Label": [
         "Marcador"
@@ -4697,7 +4685,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -5041,7 +5029,7 @@
         "${ DRIVE_APP_NAME } não manterá mais as versões anteriores de seus arquivos."
       ],
       "${ emailAddress } is invalid": [
-        "${ emailAddress } é inválido"
+        "${ emailAddress } não é válido."
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho real"
@@ -5671,7 +5659,7 @@
         "expira em ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "Falha ao buscar os registros."
+        "Erro ao buscar os registros."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
@@ -5761,7 +5749,7 @@
         "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos você ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Se você configurou SPF e DKIM, DMARC permite que você especifique como outros serviços de e-mail devem entregar e-mail para seu domínio se as verificações de SPF e DKIM falharem. Isso pode tornar mais difícil para os remetentes de spam fingirem ser você, mas também pode causar problemas de entrega se não for feito corretamente."
+        "Se você configurou SPF e DKIM, DMARC, permite que você especifique como outros serviços de e-mail devem entregar e-mail para seu domínio em caso de erros ao verificar SPF e DKIM. Isso pode tornar mais difícil para os remetentes de spam fingirem ser você, mas também pode causar problemas de entrega se não for feito corretamente."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Se você perder sua senha e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um ${ boldAccountRecovery } definido."
@@ -5925,7 +5913,7 @@
         "Link excluído"
       ],
       "Link type": [
-        "Tipo de link"
+        "Categoria de link"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "O conteúdo carregado está sendo protegido por nosso proxy quando a proteção do rastreador é ativada."
@@ -6144,7 +6132,7 @@
         "Selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Selecione o tipo de link que você deseja inserir e preencha em todos os campos."
+        "Selecione a categoria de link que você deseja inserir e preencha em todos os campos."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
@@ -6162,7 +6150,7 @@
         "É necessária a assinatura Plus ou Visionária"
       ],
       "Preview failed to be loaded": [
-        "A pré-visualização falhou ao carregar"
+        "Não foi possível carregar a pré-visualização."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -6192,7 +6180,7 @@
         "leia nosso guia de autenticação de dois fatores primeiro"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
+        "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
@@ -6291,7 +6279,7 @@
         "Configurando seu Drive"
       ],
       "Settings update failed": [
-        "Falha ao atualizar configurações"
+        "Erro ao atualizar configurações"
       ],
       "Settings updated": [
         "Configurações atualizadas"
@@ -6388,8 +6376,8 @@
         "O seguinte endereço está disponível:"
       ],
       "The following address is invalid.": [
-        "O seguinte endereço é inválido.",
-        "Os seguintes endereços são inválidos."
+        "O seguinte endereço não é válido.",
+        "Os seguintes endereços não são válidos."
       ],
       "The following address is unavailable.": [
         "O seguinte endereço está indisponível.",
@@ -6649,7 +6637,7 @@
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use os diferentes tipos de endereços de e-mail e aliases oferecidos por ${ BRAND_NAME }."
+        "Use as diferentes categorias de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -6802,7 +6790,7 @@
         "Você pode ativar o registro de autenticação para ver quando sua conta e de qual IP ela é acessada. Registramos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
       "You can import one data type at a time.": [
-        "Você pode importar um tipo de dado por vez."
+        "Você pode importar uma categoria de dado por vez."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
@@ -6906,7 +6894,7 @@
         "Você não poderá recuperar dados bloqueados após uma redefinição de conta usando seus arquivos de recuperação baixados."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Você não poderá recuperar dados bloqueados usando seus arquivos de recuperação baixados. Isso também anulará informações confiáveis de recuperação de dispositivos."
+        "Você não poderá recuperar dados bloqueados usando seus arquivos de recuperação baixados. Isso também anulará informações de confiança de recuperação de dispositivos."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Você permanecerá conectado mesmo depois de fechar o navegador."
@@ -7447,7 +7435,7 @@
         "Endereço"
       ],
       "Address type": [
-        "Tipo de endereço"
+        "Categoria de endereço"
       ],
       "Addresses": [
         "Endereços"
@@ -8053,7 +8041,7 @@
         "Senha anterior"
       ],
       "Prompt to trust keys": [
-        "Solicitar chaves confiáveis"
+        "Solicitar chaves de confiança"
       ],
       "Proration": [
         "Cálculo proporcional"
@@ -8101,7 +8089,7 @@
         "Enviar resposta automática"
       ],
       "Send crash reports": [
-        "Enviar relatórios de falhas"
+        "Enviar relatórios de erros"
       ],
       "Send in": [
         "Enviar"
@@ -9691,7 +9679,7 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "A adição do calendário de feriados falhou"
+        "Não foi possível adicionar o calendário de feriados."
       ],
       "Calendar added": [
         "Calendário adicionado"
@@ -10687,7 +10675,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Falha ao atualizar configurações"
+        "Erro ao atualizar configurações"
       ]
     },
     "Settings/filters": {
@@ -12063,8 +12051,8 @@
         "Configurações externas do PGP"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Falha ao criar ${ failedUsers.length } conta\nde usuário.",
-        "Falhar ao criar ${ failedUsers.length } contas de usuário."
+        "Erro ao criar ${ failedUsers.length } conta\nde usuário.",
+        "Erro ao criar ${ failedUsers.length } contas de usuário."
       ],
       "Filters": [
         "Filtros"
@@ -12131,7 +12119,7 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Falha na importação"
+        "Erro na importação"
       ],
       "Import key": [
         "Importar chave"
@@ -12149,7 +12137,7 @@
         "Aumente sua privacidade com mais endereços"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Invitations": [
         "Convites"
@@ -12245,7 +12233,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Falha no pagamento"
+        "Erro no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -12484,7 +12472,7 @@
         "Verificação"
       ],
       "Verification failed": [
-        "Falha na verificação"
+        "Erro na verificação"
       ],
       "Verify email address": [
         "Verificar endereço de e-mail"
@@ -12601,7 +12589,7 @@
         "Impressão digital"
       ],
       "Key type": [
-        "Tipo de chave"
+        "Categoria de chave"
       ],
       "Status": [
         "Status"
@@ -12733,7 +12721,7 @@
         "Mostrar a imagem de cada remetente na lista de mensagens. Em seguida, as iniciais do remetente será mostrada se uma foto não estiver disponível."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "As assinaturas efetuadas com esta chave são tratadas como inválidas. Por isso, não é possível usar essa chave para criptografar."
+        "As assinaturas criadas com esta chave são tratadas como incorretas. Por isso, não é possível usar essa chave para criptografar."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
@@ -12822,7 +12810,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Ao receber um e-mail de outro usuário do ${ MAIL_APP_NAME } que não tem chaves confiáveis em seus contatos, um banner perguntará se você deseja habilitar as chaves confiáveis."
+        "Ao receber um e-mail de outro usuário do ${ MAIL_APP_NAME } que não tem chaves de confiança em seus contatos, um banner perguntará se você deseja habilitar as chaves de confiança."
       ]
     },
     "Tooltip sign external messages": {

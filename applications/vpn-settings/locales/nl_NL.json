@@ -2322,6 +2322,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Wanneer je opzegt, zal je ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -2694,6 +2697,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "We gebruiken 3-D Secure om je betalingen te beschermen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -4022,6 +4028,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
+      ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } kalender",
+        "Maak tot ${ n } kalenders"
       ]
     },
     "Notification": {
@@ -4075,8 +4085,19 @@
       "Creating your account": [
         "Account aan het aanmaken"
       ],
+      "Preparing your Recovery Kit": [
+        "Uw herstelkit voorbereiden"
+      ],
+      "Updating your account": [
+        "Uw account wordt bijgewerkt"
+      ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
       ]
     },
     "Payment method option": {
@@ -4208,6 +4229,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Gedeeld door ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -5319,6 +5345,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Probeer risicoloos ${ upsellPlanName }"
       ],
@@ -5328,7 +5362,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, Double hop en meer."
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "Warning": {

@@ -3523,6 +3523,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Увядзіце ўліковыя даныя ад электроннай пошты з якой вы хочаце імпартаваць даныя."
       ],
+      "Enter the device name to confirm removal.": [
+        "Увядзіце назву прылады, каб пацвердзіць выдаленне."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
       ],
@@ -4035,6 +4038,9 @@
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
         "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Гэта прывядзе да выдаленне сінхранізаванай прылады з назвай ${ deviceName } з ${ DRIVE_APP_NAME } і спыніць сінхранізацыю папак, якія вы дадалі ў \"Мой камп'ютар\"."
       ],
       "This will replace the existing file with the folder": [
         "Гэта заменіць існуючы файл папкай"

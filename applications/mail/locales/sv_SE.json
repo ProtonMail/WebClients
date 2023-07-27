@@ -3349,6 +3349,9 @@
       "Require at least one condition": [
         "Kräver minst ett villkor"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
@@ -3384,6 +3387,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } kan inte dekryptera ditt meddelande. Kontrollera att alla dina nycklar är aktiva."
+      ],
+      "status page": [
+        "statussida"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Bilagan kunde inte dekrypteras.\nOm du har motsvarande privat nyckel kommer du fortfarande att kunna dekryptera\nfilen med ett program som exempelvis GnuPG.",
@@ -3889,7 +3895,7 @@
     },
     "familyOffer_2023:Footer": {
       "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Din penumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
+        "*Din prenumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
       ],
       "Discounts are based on the standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
