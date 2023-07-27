@@ -8,23 +8,24 @@ import type {
     ItemRevision,
     MaybeNull,
     PassEventListResponse,
-    ServerEvent,
     Share,
     ShareKeyResponse,
     TypedOpenedShare,
 } from '@proton/pass/types';
-import { ChannelType, ShareType } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 
+import type { EventManagerEvent } from '../../../events/manager';
 import {
     itemDeleteSync,
     itemEditSync,
     itemLastUseTimeUpdated,
     shareDeleteSync,
     shareEditSync,
+    shareEvent,
     vaultDeleteSuccess,
 } from '../../actions';
 import { selectAllShares, selectShare } from '../../selectors';
@@ -35,128 +36,124 @@ import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
+export type ShareEventResponse = { Events: PassEventListResponse };
+
 /* It is Important to call onShareEventItemsDeleted before
  * actually dispatching the resulting action : we may be dealing
  * with a share or an item being selected in the pop-up and need
  * to run the side-effect before clearing the data from the store
  * FIXME: support ItemShares */
-export function* onShareEvent(
-    event: ServerEvent<ChannelType.SHARE>,
-    _: EventChannel<ChannelType.SHARE>,
-    { onItemsChange, onShareEventItemsDeleted }: WorkerRootSagaOptions
-) {
-    if (event.error) throw event.error;
+const onShareEvent = (shareId: string) =>
+    function* (
+        event: EventManagerEvent<ShareEventResponse>,
+        _: EventChannel<ShareEventResponse>,
+        { onItemsChange, onShareEventItemsDeleted }: WorkerRootSagaOptions
+    ) {
+        if ('error' in event) throw event.error;
 
-    const { Events, shareId } = event;
-    const { LatestEventID, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
-    logger.info(`[Saga::ShareChannel] event ${logId(LatestEventID)} for share ${logId(shareId)}`);
+        yield put(shareEvent({ ...event, shareId }));
 
-    if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
-        const shareKeys: ShareKeyResponse[] = yield getAllShareKeys(UpdatedShare.ShareID);
-        const share: MaybeNull<TypedOpenedShare<ShareType.Vault>> = yield PassCrypto.openShare({
-            encryptedShare: UpdatedShare,
-            shareKeys,
-        });
+        const { Events } = event;
+        const { LatestEventID, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
+        logger.info(`[Saga::ShareChannel] event ${logId(LatestEventID)} for share ${logId(shareId)}`);
 
-        if (share) {
-            yield put(
-                shareEditSync({
-                    id: share.shareId,
-                    share: {
-                        shareId: share.shareId,
-                        vaultId: share.vaultId,
-                        targetId: share.targetId,
-                        targetType: share.targetType,
-                        content: decodeVaultContent(share.content),
-                        primary: Boolean(UpdatedShare.Primary),
-                        eventId: LatestEventID,
-                    },
-                })
-            );
+        if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
+            const shareKeys: ShareKeyResponse[] = yield getAllShareKeys(UpdatedShare.ShareID);
+            const share: MaybeNull<TypedOpenedShare<ShareType.Vault>> = yield PassCrypto.openShare({
+                encryptedShare: UpdatedShare,
+                shareKeys,
+            });
+
+            if (share) {
+                yield put(
+                    shareEditSync({
+                        id: share.shareId,
+                        share: {
+                            shareId: share.shareId,
+                            vaultId: share.vaultId,
+                            targetId: share.targetId,
+                            targetType: share.targetType,
+                            content: decodeVaultContent(share.content),
+                            primary: Boolean(UpdatedShare.Primary),
+                            eventId: LatestEventID,
+                        },
+                    })
+                );
+            }
         }
-    }
 
-    if (DeletedItemIDs.length > 0) {
-        onShareEventItemsDeleted?.(event.shareId, DeletedItemIDs);
-    }
+        if (DeletedItemIDs.length > 0) {
+            onShareEventItemsDeleted?.(shareId, DeletedItemIDs);
+        }
 
-    yield all([
-        ...DeletedItemIDs.map((itemId) => put(itemDeleteSync({ itemId, shareId }))),
-        ...UpdatedItems.map((encryptedItem) =>
-            call(function* () {
-                try {
-                    const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
-                    yield put(itemEditSync({ shareId: item.shareId, itemId: item.itemId, item }));
-                } catch (_) {}
-            })
-        ),
-        ...(LastUseItems ?? []).map(({ ItemID, LastUseTime }) =>
-            put(itemLastUseTimeUpdated({ shareId, itemId: ItemID, lastUseTime: LastUseTime }))
-        ),
-    ]);
+        yield all([
+            ...DeletedItemIDs.map((itemId) => put(itemDeleteSync({ itemId, shareId }))),
+            ...UpdatedItems.map((encryptedItem) =>
+                call(function* () {
+                    try {
+                        const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
+                        yield put(itemEditSync({ shareId: item.shareId, itemId: item.itemId, item }));
+                    } catch (_) {}
+                })
+            ),
+            ...(LastUseItems ?? []).map(({ ItemID, LastUseTime }) =>
+                put(itemLastUseTimeUpdated({ shareId, itemId: ItemID, lastUseTime: LastUseTime }))
+            ),
+        ]);
 
-    const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
-    if (itemsMutated) onItemsChange?.();
-}
+        const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
+        if (itemsMutated) onItemsChange?.();
+    };
 
-function* onShareEventError(
-    error: unknown,
-    { channel, shareId }: EventChannel<ChannelType.SHARE>,
-    { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions
-) {
-    const { code } = getApiError(error);
+const onShareEventError = (shareId: string) =>
+    function* (
+        error: unknown,
+        { channel }: EventChannel<ShareEventResponse>,
+        { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions
+    ) {
+        const { code } = getApiError(error);
 
-    /* share was deleted or user lost access */
-    if (code === 300004) {
-        logger.info(`[Saga::SharesChannel] share ${logId(shareId)} disabled`);
+        /* share was deleted or user lost access */
+        if (code === 300004) {
+            logger.info(`[Saga::SharesChannel] share ${logId(shareId)} disabled`);
+            channel.close();
+
+            const share: Share = yield select(selectShare(shareId));
+            onShareEventDisabled?.(shareId);
+            onItemsChange?.();
+            yield put(shareDeleteSync(share));
+        }
+    };
+
+const onShareDeleted = (shareId: string) =>
+    function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
+        yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.id === shareId);
+        logger.info(`[Saga::ShareChannel] share ${logId(shareId)} deleted`);
         channel.close();
-
-        const share: Share = yield select(selectShare(shareId));
-        onShareEventDisabled?.(shareId);
-        onItemsChange?.();
-        yield put(shareDeleteSync(share));
-    }
-}
-
-function* onShareDeleted({ channel, shareId }: EventChannel<ChannelType.SHARE>): Generator {
-    yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.id === shareId);
-    logger.info(`[Saga::ShareChannel] share ${logId(shareId)} deleted`);
-    channel.close();
-}
+    };
 
 /* We need to lift the response to the correct data
  * structure by leveraging ApiOptions::mapResponse
  * (see type definition and create-api.ts for specs) */
 export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
-    eventChannelFactory<ChannelType.SHARE>({
+    eventChannelFactory<ShareEventResponse>({
         api,
-        type: ChannelType.SHARE,
         interval: INTERVAL_EVENT_TIMER,
-        shareId,
         eventID: eventId,
-        mapEvent: (event) => ({ ...event, shareId }),
+        getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
         onClose: () => logger.info(`[Saga::ShareChannel] closing channel for ${logId(shareId)}`),
-        onEvent: onShareEvent,
-        onError: onShareEventError,
-        query: (eventId) => {
-            return {
-                url: `pass/v1/share/${shareId}/event/${eventId}`,
-                mapResponse: (response: { Events: PassEventListResponse }) => ({
-                    ...response,
-                    EventID: response.Events.LatestEventID,
-                    More: response.Events.EventsPending,
-                }),
-            };
-        },
+        onEvent: onShareEvent(shareId),
+        onError: onShareEventError(shareId),
+        query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
     });
 
 export const getShareChannelForks = (api: Api, options: WorkerRootSagaOptions) => (share: Share) => {
     logger.info(`[Saga::ShareChannel] start polling for share ${logId(share.shareId)}`);
 
     const eventsChannel = createShareChannel(api, share);
-    const events = fork(channelEventsWorker<ChannelType.SHARE>, eventsChannel, options);
-    const wakeup = fork(channelWakeupWorker<ChannelType.SHARE>, eventsChannel);
-    const onDelete = fork(onShareDeleted, eventsChannel);
+    const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
+    const wakeup = fork(channelWakeupWorker<ShareEventResponse>, eventsChannel);
+    const onDelete = fork(onShareDeleted(share.shareId), eventsChannel);
 
     return [events, wakeup, onDelete];
 };
