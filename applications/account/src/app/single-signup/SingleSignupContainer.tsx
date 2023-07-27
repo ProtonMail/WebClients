@@ -291,14 +291,14 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                     step: Steps.Loading,
                                 });
 
-                                metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
                                     status: 'success',
                                     account_type: accountType,
                                 });
                             } catch (error) {
                                 handleError(error);
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                    metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
                                         status,
                                         account_type: accountType,
                                     })
@@ -319,6 +319,12 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                             }
                             const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
                             try {
+                                /**
+                                 * Stop the metrics batching process. This prevents a race condition where
+                                 * handleSetupUser sets an auth cookie before the metrics batch request
+                                 */
+                                metrics.stopBatchingProcess();
+
                                 if (cache.type === 'signup') {
                                     const result = await handleSetupNewUser(cache);
                                     setModelDiff({
@@ -344,6 +350,11 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                     cache: undefined,
                                     step: Steps.Account,
                                 });
+                            } finally {
+                                /**
+                                 * Batch process can now resume since the auth cookie will have been set
+                                 */
+                                metrics.startBatchingProcess();
                             }
                         }}
                     />
