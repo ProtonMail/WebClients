@@ -111,10 +111,13 @@ export const replyAll = (
 
     const ToList = data.ReplyTos;
 
-    // Remove user address in CCList and ToList
-    const userAddresses = addresses.map(({ Email = '' }) => canonicalizeInternalEmail(Email));
     const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
-    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonicalizeInternalEmail(Address)));
+
+    // Keep other user addresses in the CC list, but remove the address on which the user received the message (using ref message addressID)
+    const userAddress = canonicalizeInternalEmail(
+        addresses.find((address) => address.ID === data.AddressID)?.Email || ''
+    );
+    const CCList: Recipient[] = CCListAll.filter(({ Address }) => Address !== userAddress);
 
     return { data: { Subject, ToList, CCList, Attachments }, messageImages };
 };
