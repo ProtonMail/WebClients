@@ -291,14 +291,14 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
                                     step: Steps.Loading,
                                 });
 
-                                metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
                                     status: 'success',
                                     account_type: accountType,
                                 });
                             } catch (error) {
                                 handleError(error);
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step1_account_creation_total.increment({
+                                    metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
                                         status,
                                         account_type: accountType,
                                     })
