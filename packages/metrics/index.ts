@@ -59,7 +59,7 @@ class Metrics extends MetricsBase {
 
     public core_vpn_single_signup_fetchDependencies_total: Counter<WebCoreVpnSingleSignupFetchDependenciesTotal>;
 
-    public core_vpn_single_signup_step1_account_creation_total: Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>;
+    public core_vpn_single_signup_step1_accountCreation_total: Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>;
 
     public core_vpn_single_signup_step1_interaction_total: Counter<WebCoreVpnSingleSignupStep1InteractionTotal>;
 
@@ -152,9 +152,9 @@ class Metrics extends MetricsBase {
             { name: 'web_core_vpn_single_signup_step1_payment_total', version: 1 },
             this.requestService
         );
-        this.core_vpn_single_signup_step1_account_creation_total =
+        this.core_vpn_single_signup_step1_accountCreation_total =
             new Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>(
-                { name: 'web_core_vpn_single_signup_step1_account_creation_total', version: 1 },
+                { name: 'web_core_vpn_single_signup_step1_accountCreation_total', version: 1 },
                 this.requestService
             );
         this.core_vpn_single_signup_step2_setup_2_total = new Counter<WebCoreVpnSingleSignupStep2Setup2Total>(
