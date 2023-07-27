@@ -179,6 +179,9 @@
       "Hide": [
         "Схаваць"
       ],
+      "Hide plan features": [
+        "Схаваць функцыі тарыфнага плана"
+      ],
       "I have a question": [
         "У мяне ёсць пытанне"
       ],
@@ -222,7 +225,7 @@
         "Аплаціць"
       ],
       "Pay ${ price } now": [
-        "Аплаціце ${ price } зараз"
+        "Аплаціць ${ price }"
       ],
       "Previous": [
         "Папярэдні"
@@ -2670,16 +2673,16 @@
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
       ],
       "Total email addresses": [
-        "Усяго адрасоў электроннай пошты"
+        "Колькасць адрасоў электроннай пошты"
       ],
       "Total storage": [
         "Агульны аб'ём сховішча"
       ],
       "Total supported domains": [
-        "Усяго падтрымліваецца даменаў"
+        "Колькасць даменаў, якія падтрымліваюцца"
       ],
       "Total VPN connections": [
-        "Усяго падключэнняў па VPN"
+        "Колькасць падключэнняў па VPN"
       ],
       "two-factor authentication (2FA)": [
         "двухфактарнай праверкі сапраўднасці (2ФА)"
@@ -3607,6 +3610,9 @@
         "${ n } падключэнняў па VPN на карыстальніка",
         "${ n } падключэнні па VPN на карыстальніка"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
+      ],
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
       ],
@@ -3924,6 +3930,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3953,6 +3962,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Выкарыстанне вашага ўліковага запісу"
       ]
@@ -4166,11 +4178,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай 3 карыстальніцкіх даменаў"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -4370,6 +4391,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Абагулена ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -5449,6 +5475,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Рэкамендавана"
       ]
     },
     "Validation": {
