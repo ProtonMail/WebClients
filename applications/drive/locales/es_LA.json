@@ -652,7 +652,7 @@
         "Probarlo gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
       "Undo": [
         "Deshacer"
@@ -2106,13 +2106,16 @@
         "Tiempo de espera agotado"
       ],
       "Search failed": [
-        "Falló la búsqueda"
+        "Error en la búsqueda"
+      ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
       ],
       "Signature not verified": [
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -2261,7 +2267,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -2313,7 +2319,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -2322,7 +2328,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -3438,7 +3444,7 @@
         "Tiempo restante estimado..."
       ],
       "Failed": [
-        "Fallido"
+        "Error"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -3565,7 +3571,7 @@
         "Conexión a internet restaurada."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece ser que recientemente ha intentado subir ${ uploadName }. Si la carga falló, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
+        "Parece ser que recientemente ha intentado subir ${ uploadName }. Si no se pudo cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borre permanentemente"
@@ -5841,16 +5847,16 @@
         "${ emailsCount } direcciones de correo"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } descarga fallida",
-        "${ numberOfFailedTransfer.total } descargas fallidas"
+        "${ numberOfFailedTransfer.total } error de descarga",
+        "${ numberOfFailedTransfer.total } errores de descarga"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transferencia fallida",
-        "${ numberOfFailedTransfer.total } transferencias fallidas"
+        "${ numberOfFailedTransfer.total } error de transferencia",
+        "${ numberOfFailedTransfer.total } errores de transferencia"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } carga fallida",
-        "${ numberOfFailedTransfer.total } cargas fallidas"
+        "${ numberOfFailedTransfer.total } error de carga",
+        "${ numberOfFailedTransfer.total } errores de carga"
       ],
       "(active)": [
         "(activo)"
@@ -6021,7 +6027,7 @@
         "Exportando contactos"
       ],
       "Failed": [
-        "Fallida"
+        "Error"
       ],
       "Feedback": [
         "Comentarios"
@@ -6055,8 +6061,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6496,10 +6502,10 @@
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Falló el descifrado del contenido cifrado."
+        "Error en el descifrado del contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Falló la verificación de la firma de los datos del contacto."
+        "Error en la verificación de la firma de los datos del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."

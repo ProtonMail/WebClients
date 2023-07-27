@@ -5942,7 +5942,7 @@
         "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "Un transfer a eșuat",
+        "${ numberOfFailedTransfer.total } transfer a eșuat",
         "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
         "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
       ],
