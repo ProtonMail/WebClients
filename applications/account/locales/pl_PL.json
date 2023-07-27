@@ -1047,20 +1047,14 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable encryption": [
-        "Wyłącz szyfrowanie"
-      ],
-      "Disable expect signed": [
-        "Wyłącz podpisywanie"
+      "Disable E2EE": [
+        "Wyłącz E2EE"
       ],
       "Enable": [
         "Włącz"
       ],
-      "Enable encryption": [
-        "Włącz szyfrowanie"
-      ],
-      "Enable expect signed": [
-        "Włącz podpisywanie"
+      "Enable E2EE": [
+        "Włącz E2EE"
       ],
       "Generate missing keys": [
         "Generuj brakujące klucze"
@@ -3305,6 +3299,9 @@
       "Require at least one condition": [
         "Co najmniej jeden warunek jest wymagany"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut lub sprawdź naszą ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
       ],
@@ -3328,6 +3325,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
+      ],
+      "status page": [
+        "stronę statusu"
       ],
       "Tab closed": [
         "Karta została zamknięta"

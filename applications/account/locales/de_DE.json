@@ -1043,20 +1043,8 @@
       "Disable": [
         "Deaktivieren"
       ],
-      "Disable encryption": [
-        "Verschlüsselung deaktivieren"
-      ],
-      "Disable expect signed": [
-        "„Signatur erwartet“ deaktiviert"
-      ],
       "Enable": [
         "Aktivieren"
-      ],
-      "Enable encryption": [
-        "Verschlüsselung aktivieren"
-      ],
-      "Enable expect signed": [
-        "„Signatur erwartet“ aktivieren"
       ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
@@ -8536,7 +8524,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
+        "${ twoFAMembers.length }/${ members.length } Mitglied/er deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
         "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
       ],
       "Almost there": [
@@ -10211,7 +10199,7 @@
         "Nur so kannst du dein Konto vollständig wiederherstellen, also bewahre dieses **Wiederherstellungs-Kit** an einem sicheren Ort auf."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben"
+        "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird gestartet"

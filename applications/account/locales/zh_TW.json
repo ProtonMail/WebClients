@@ -473,6 +473,9 @@
       "Hide labels": [
         "隱藏標籤"
       ],
+      "Hide plan features": [
+        "隱藏方案功能"
+      ],
       "I have a question": [
         "我要發問"
       ],
@@ -1038,20 +1041,8 @@
       "Disable": [
         "停用"
       ],
-      "Disable encryption": [
-        "停用加密"
-      ],
-      "Disable expect signed": [
-        "停用期望簽章"
-      ],
       "Enable": [
         "啟用"
-      ],
-      "Enable encryption": [
-        "啟用加密"
-      ],
-      "Enable expect signed": [
-        "啟用期望簽章"
       ],
       "Generate missing keys": [
         "產生遺漏的金鑰"
@@ -8885,6 +8876,9 @@
       "${ n } VPN connections per user": [
         "${ n } 個 VPN 連線 / 每一位使用者"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } 的附件大小"
       ],
@@ -9172,6 +9166,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9299,6 +9296,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }試用"
+      ],
       "Your account's usage": [
         "您帳號的使用情況"
       ]
@@ -9523,11 +9523,17 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
+      ],
+      "Create up to ${ n } calendars": [
+        "建立多達 ${ n } 個行事曆"
       ]
     },
     "Notification": {
@@ -12681,6 +12687,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "升級至 ${ MAIL_SHORT_APP_NAME } 付費方案，以便分享您的行事曆。"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "推薦使用"
       ]
     },
     "User referee invited via email": {
