@@ -179,6 +179,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide plan features": [
+        "Ocultar las funciones del plan"
+      ],
       "I have a question": [
         "Tengo una pregunta."
       ],
@@ -1543,11 +1546,17 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intenta de nuevo en unos minutos o comprueba nuestra ${ statusPageLink }."
+      ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "Tab closed": [
         "Pestaña cerrada"
@@ -3541,6 +3550,9 @@
         "${ n } conexión VPN por usuario",
         "${ n } conexiones VPN por usuario"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } con alias hide-my-email ilimitados"
+      ],
       "${ size } attachment size": [
         "${ size } en archivos adjuntos"
       ],
@@ -3854,6 +3866,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -3881,6 +3896,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Uso de la cuenta"
       ]
@@ -4092,11 +4110,18 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Añade más personalización con 15 direcciones de correo electrónico y soporte para 3 dominios de correo personalizados"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Aumenta tu espacio de almacenamiento a un total de ${ bundleStorage } por usuario."
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumenta tu espacio de almacenamiento a un total de ${ bundleStorage }."
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Cubre más posibilidades con 10 dominios de correo electrónico personalizados."
+      ],
+      "Create up to ${ n } calendar": [
+        "Crea hasta ${ n } calendario",
+        "Crea hasta ${ n } calendarios"
       ]
     },
     "Notification": {
@@ -5340,6 +5365,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "Validation": {
