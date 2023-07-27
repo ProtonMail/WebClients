@@ -1546,11 +1546,17 @@
       "Request timed out": [
         "Timeout della richiesta"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
+      ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
+      ],
+      "status page": [
+        "pagina di stato"
       ],
       "Tab closed": [
         "Scheda chiusa"
