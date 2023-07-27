@@ -183,13 +183,11 @@ export const createAuthService = ({
                  * removing the session-lock mechanism (and moving to biometrics)
                  * make sure to catch 403 in this catch block. It is handled by
                  * the session lock check in the AuthService::login call right now */
-                const accessResponse = await api({ url: `pass/v1/user/access`, method: 'post' }).catch((e) => {
-                    if (!api.getStatus().sessionLocked) throw e;
-                });
-
-                if (accessResponse?.Access) {
-                    store.dispatch(setUserPlan({ ...accessResponse.Access.Plan, requestedAt: getEpoch() }));
-                }
+                await api({ url: `pass/v1/user/access`, method: 'get' })
+                    .then(({ Access }) => store.dispatch(setUserPlan({ ...Access!.Plan, requestedAt: getEpoch() })))
+                    .catch((e) => {
+                        if (!api.getStatus().sessionLocked) throw e;
+                    });
 
                 return {
                     payload: {
