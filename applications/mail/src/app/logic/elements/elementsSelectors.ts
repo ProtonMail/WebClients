@@ -36,7 +36,7 @@ const pendingRequest = (state: RootState) => state.elements.pendingRequest;
 export const pendingActions = (state: RootState) => state.elements.pendingActions;
 const retry = (state: RootState) => state.elements.retry;
 const invalidated = (state: RootState) => state.elements.invalidated;
-const total = (state: RootState) => state.elements.total;
+export const total = (state: RootState) => state.elements.total;
 export const taskRunning = (state: RootState) => state.elements.taskRunning;
 
 const currentPage = (_: RootState, { page }: { page: number }) => page;

@@ -1,28 +1,22 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Info, Label, Progress, Toggle, Tooltip, useModalState } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
+import EnableEncryptedSearchModal from '../AdvancedSearchFields/EnableEncryptedSearchModal';
 
 interface Props {
     esState: ESIndexingState;
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const {
-        enableEncryptedSearch,
-        enableContentSearch,
-        getESDBStatus,
-        pauseIndexing,
-        toggleEncryptedSearch,
-        getProgressRecorderRef,
-    } = useEncryptedSearchContext();
+    const { enableContentSearch, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+        useEncryptedSearchContext();
     const {
         isEnablingContentSearch,
         esEnabled,
@@ -34,7 +28,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
 
-    const [enableESModalProps, setEnableESModalOpen] = useModalState();
+    const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     // Switches
     const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
@@ -167,32 +161,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
         </Button>
     );
 
-    const handleEnableES = async () => {
-        enableESModalProps.onClose();
-        void enableEncryptedSearch().then((success) => (success ? enableContentSearch() : undefined));
-    };
-
     return (
         <div className="pt-0">
             <div className="flex flex-column">
                 <div className="flex flex-nowrap flex-align-items-center mb-4">
                     {esHeader}
                     {esCTA}
-                    <Prompt
-                        title={c('Title').t`Enable message content search`}
-                        buttons={[
-                            <Button color="norm" onClick={handleEnableES} data-testid="encrypted-search:enable">{c(
-                                'Action'
-                            ).t`Enable`}</Button>,
-                            <Button onClick={enableESModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
-                        ]}
-                        {...enableESModalProps}
-                    >
-                        {c('Action')
-                            .t`To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.`}
-                        <br />
-                        <Href href={getKnowledgeBaseUrl('/search-message-content')}>{c('Info').t`Learn more`}</Href>
-                    </Prompt>
                 </div>
             </div>
             {showSubTitleSection && <div className="mb-4">{subTitleSection}</div>}
@@ -222,6 +196,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                     </span>
                 </div>
             )}
+            {renderEnableESModal && <EnableEncryptedSearchModal {...enableESModalProps} />}
         </div>
     );
 };
