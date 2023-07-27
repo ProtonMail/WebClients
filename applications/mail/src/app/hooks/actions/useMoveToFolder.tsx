@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -9,12 +10,16 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
+import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
+import { SearchParameters } from 'proton-mail/models/tools';
+
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
 import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
-import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isMessage as testIsMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { isCustomLabel, isLabel } from '../../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import {
@@ -34,6 +39,7 @@ const { TRASH } = MAILBOX_LABEL_IDS;
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
+    const location = useLocation();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
@@ -41,6 +47,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const [mailSettings] = useMailSettings();
     const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
+
+    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
+    const isSearch = testIsSearch(searchParameters);
 
     const [canUndo, setCanUndo] = useState(true); // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
@@ -172,7 +181,10 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 };
 
                 const suggestMoveAll =
-                    elements.length === PAGE_SIZE && folderID === TRASH && !isCustomLabel(fromLabelID, labels);
+                    elements.length === PAGE_SIZE &&
+                    folderID === TRASH &&
+                    !isCustomLabel(fromLabelID, labels) &&
+                    !isSearch;
 
                 const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID, TRASH) : undefined;
 
