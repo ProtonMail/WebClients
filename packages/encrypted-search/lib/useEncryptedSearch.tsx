@@ -491,6 +491,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const enableEncryptedSearch: EnableEncryptedSearch = async ({
         isRefreshed = false,
         isBackgroundIndexing = false,
+        showErrorNotification = true,
     } = {}) => {
         // If indexing instance is already in progress, don't start a new one
         const { isEnablingEncryptedSearch } = esStatus;
@@ -504,13 +505,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }));
 
         const handleError = async (esSupported = true) => {
-            createNotification({
-                text: esSupported
-                    ? c('Error').t`A problem occurred, please try again.`
-                    : c('Error')
-                          .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
-                type: 'error',
-            });
+            if (showErrorNotification) {
+                createNotification({
+                    text: esSupported
+                        ? c('Error').t`A problem occurred, please try again.`
+                        : c('Error')
+                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
+                    type: 'error',
+                });
+            }
             await esDelete();
             return false;
         };
