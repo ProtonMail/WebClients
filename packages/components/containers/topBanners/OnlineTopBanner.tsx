@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
 import { ping } from '@proton/shared/lib/api/tests';
-import { PROTON_WEBSITES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useDebounceInput } from '../../components';
@@ -12,6 +10,7 @@ import { useOnline } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import useApiStatus from '../../hooks/useApiStatus';
 import TopBanner from './TopBanner';
+import UnreachableTopBanner from './UnreachableTopBanner';
 
 const OFFLINE_TIMEOUT = 5000;
 
@@ -61,19 +60,7 @@ const OnlineTopBanner = () => {
     if (safeOnlineStatus) {
         // If the device is known to be online, and the API is unreachable
         if (apiUnreachable) {
-            // translator: At the end of a longer sentence "Servers are unreachable. Please try again in a few minutes or check our status page"
-            const statusPageLink = (
-                <Href href={PROTON_WEBSITES.PROTON_STATUS_PAGE} target="_blank">{c('Error').t`status page`}</Href>
-            );
-            return (
-                <TopBanner className="bg-danger">
-                    {
-                        // translator: full sentence "Servers are unreachable. Please try again in a few minutes or check our status page"
-                        c('Error')
-                            .jt`Servers are unreachable. Please try again in a few minutes or check our ${statusPageLink}`
-                    }
-                </TopBanner>
-            );
+            return <UnreachableTopBanner errorMessage={apiUnreachable} />;
         }
         return null;
     }
