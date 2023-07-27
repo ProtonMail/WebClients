@@ -8,6 +8,15 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add new item": [
+        "Nieuw item toevoegen"
+      ],
+      "Advanced": [
+        "Geavanceerd"
+      ],
+      "Advanced options": [
+        "Geavanceerde instellingen"
+      ],
       "Back": [
         "Terug"
       ],
@@ -32,29 +41,62 @@
       "Close": [
         "Sluiten"
       ],
+      "Close advanced options": [
+        "Geavanceerde instellingen sluiten"
+      ],
       "Close navigation": [
         "Navigatie sluiten"
       ],
       "Confirm": [
         "Bevestigen"
       ],
+      "Copy and close": [
+        "Kopiëren en sluiten"
+      ],
       "Create": [
         "Aanmaken"
+      ],
+      "Create alias": [
+        "Alias aanmaken"
       ],
       "Create an account": [
         "Een account aanmaken"
       ],
+      "Create login": [
+        "Login aanmaken"
+      ],
+      "Create note": [
+        "Notitie aanmaken"
+      ],
+      "Create vault": [
+        "Kluis aanmaken"
+      ],
+      "Creating vault": [
+        "Kluis aanmaken"
+      ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete alias": [
+        "Verwijder alias"
       ],
       "Delete all": [
         "Alles verwijderen"
       ],
+      "Delete password": [
+        "Wachtwoord verwijderen"
+      ],
       "Delete permanently": [
         "Permanent verwijderen"
       ],
+      "Delete vault": [
+        "Kluis verwijderen"
+      ],
       "Discard": [
         "Verwijderen"
+      ],
+      "Dismiss": [
+        "Negeren"
       ],
       "Done": [
         "Klaar"
@@ -62,8 +104,32 @@
       "Edit": [
         "Bewerken"
       ],
+      "Edit vault": [
+        "Kluis bewerken"
+      ],
       "Export": [
         "Exporteren"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Fill password": [
+        "Wachtwoord invullen"
+      ],
+      "Generate alias": [
+        "Alias genereren"
+      ],
+      "Generate password": [
+        "Wachtwoord genereren"
+      ],
+      "Generated password": [
+        "Gegenereerd wachtwoord"
+      ],
+      "Get mobile apps": [
+        "Download mobiele apps"
+      ],
+      "Help us improve": [
+        "Help ons verbeteren"
       ],
       "Hide": [
         "Verbergen"
@@ -77,8 +143,17 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Manually sync your data": [
+        "Synchroniseer uw data manueel"
+      ],
       "More options": [
         "Meer opties"
+      ],
+      "Move to another vault": [
+        "Verplaatsen naar andere kluis"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
@@ -86,17 +161,35 @@
       "Open navigation": [
         "Navigatie openen"
       ],
+      "Pass for Android": [
+        "Proton Pass voor Android"
+      ],
+      "Pass for iOS": [
+        "Proton Pass voor iOS"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
+      "Regenerate": [
+        "Opnieuw genereren"
+      ],
+      "Reload extension": [
+        "Extensie opnieuw laden"
+      ],
       "Request a feature": [
         "Vraag een functie aan"
+      ],
+      "Restore item": [
+        "Item herstellen"
       ],
       "Retry": [
         "Opnieuw proberen"
       ],
       "Save": [
         "Opslaan"
+      ],
+      "Send us a message": [
+        "Stuur ons een bericht"
       ],
       "Show": [
         "Tonen"
@@ -118,6 +211,12 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade to keep these features": [
+        "Upgraden om deze functies te behouden"
+      ],
+      "Write us on Reddit": [
+        "Schrijf ons op Reddit"
       ]
     },
     "Collapsible tooltip": {
@@ -129,11 +228,60 @@
       ]
     },
     "Error": {
+      "Authentication error": [
+        "Authenticatiefout"
+      ],
+      "Deleting item failed": [
+        "Item verwijderen mislukt"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } corrupte csv-rij gedetecteerd",
+        "${ errors.length } corrupte csv-rijen gedetecteerd"
+      ],
+      "Editing item failed": [
+        "Item bewerken mislukt"
+      ],
+      "Emptying trash failed": [
+        "Prullenbak leegmaken mislukt"
+      ],
+      "Error reporting problem": [
+        "Fout bij melden van het probleem"
+      ],
+      "Importing items failed": [
+        "Items importeren mislukt"
+      ],
       "Invalid password manager": [
         "Ongeldige wachtwoordbeheerder"
       ],
+      "Item creation failed": [
+        "Item aanmaken mislukt"
+      ],
+      "Moving item failed": [
+        "Item verplaatsen mislukt"
+      ],
+      "Passphrase is incorrect": [
+        "Wachtzin is onjuist"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
+      ],
+      "Restoring item failed": [
+        "Item herstellen mislukt"
+      ],
+      "Settings update failed": [
+        "Bijwerken instellingen mislukt"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
+      ],
+      "Trashing item failed": [
+        "Item verwijderen mislukt"
+      ],
+      "Unable to boot": [
+        "Kon niet opstarten"
+      ],
+      "Unable to sync": [
+        "Kon niet synchroniseren"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -181,11 +329,40 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
+      ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } zal enkel logins en notities importeren. Kredietkaarten, paspoorten, bijlagen, etc. worden niet ondersteund op dit moment."
       ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } keer",
+        "${ revisionNumber } keer"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } item",
+        "${ totalImportedItems } items"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } item",
+        "${ totalItems } items"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag over",
+        "${ trialDaysLeft } dagen over"
+      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
+      ],
+      "Custom fields": [
+        "Aangepaste velden"
+      ],
+      "Decrypting your data": [
+        "Uw data ontsleutelen"
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -199,8 +376,24 @@
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
       ],
+      "Enter your PIN code": [
+        "Voer je PIN-code in"
+      ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Gegenereerde wachtwoorden zullen voor een dag bewaard worden."
+      ],
+      "Import in progress :": [
+        "Bezig met importeren:"
+      ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } item geïmporteerd",
+        "${ payload.total } items geïmporteerd"
+      ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Om uw data van een andere wachtwoordbeheerder naar ${ PASS_APP_NAME } te migreren, exporteer uw wachtwoorden en gebruik onderstaand formulier om ze te importeren. Eens geïmporteerd, verwijder dan het eerder geëxporteerd bestand."
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde 2FA-authenticator"
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -212,11 +405,32 @@
       "Loading": [
         "Laden"
       ],
+      "Loading extension": [
+        "Extensie wordt geladen"
+      ],
       "Loading...": [
         "Laden..."
       ],
+      "Multiple vaults": [
+        "Meerdere kluizen"
+      ],
+      "None": [
+        "Geen"
+      ],
       "Open the Extensions menu": [
         "Open het Extensie-menu"
+      ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Wachtwoorden ouder dan een dag worden automatisch gewist uit geschiedenis."
+      ],
+      "Please consider leaving a review.": [
+        "Overweeg om een review te schrijven."
+      ],
+      "Press Enter to copy": [
+        "Druk op Enter om te kopiëren"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Privacy is van groot belang voor ons. Ontdek waarom ${ PASS_APP_NAME } anders is."
       ],
       "Save login": [
         "Bewaar login"
@@ -227,59 +441,426 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Sign in to your account": [
+        "Inloggen bij uw account"
+      ],
+      "Signing you in": [
+        "U wordt ingelogd"
+      ],
+      "Successfully exported all your items": [
+        "Alle items succesvol geëxporteerd"
+      ],
+      "Syncing your vaults…": [
+        "Uw kluizen synchroniseren..."
+      ],
+      "The following item could not be imported :": [
+        "Het volgende item kon niet worden geïmporteerd:",
+        "De volgende ${ result.ignored.length } items konden niet geïmporteerd worden"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "De tekst die u probeert te plakken is langer dan de maximaal toegelaten lengte van ${ maxLength } tekens."
+      ],
+      "Unable to copy to clipboard": [
+        "Kan niet kopiëren naar Klembord"
+      ],
       "Update login": [
         "Update login"
+      ],
+      "Verification code": [
+        "Verificatiecode"
+      ],
+      "You are about to create:": [
+        "U staat op het punt volgende aan te maken:"
+      ],
+      "You have ${ daysRemaining } day left in your trial period.": [
+        "U heeft nog ${ daysRemaining } dag over van uw proefperiode.",
+        "U heeft nog ${ daysRemaining } dagen over van uw proefperiode."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "U hebt de limiet bereikt van het aantal kluizen die u kan aanmaken."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } teken",
+        "${ passwordOptions.options.length } tekens"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } woord",
+        "${ passwordOptions.options.wordCount } woorden"
+      ],
+      "1 hour": [
+        "1 uur"
+      ],
+      "1 minute": [
+        "1 minuut"
+      ],
+      "10 minutes": [
+        "10 minuten"
+      ],
+      "15 minutes": [
+        "15 minuten"
+      ],
+      "2FA secret (TOTP)": [
+        "2FA-geheim (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA-token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minuten"
+      ],
+      "30 seconds": [
+        "30 seconden"
+      ],
+      "5 minutes": [
+        "5 minuten"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Aliases": [
+        "Aliassen"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "All vaults": [
+        "Alle kluizen"
+      ],
+      "Alphabetical": [
+        "Alfabetisch"
+      ],
+      "Application logs": [
+        "Toepassingslogboek"
+      ],
+      "Auto-lock after": [
+        "Automatisch vergrendelen na"
+      ],
+      "Autofill": [
+        "Autom. aanvullen"
+      ],
+      "Autosave": [
+        "Automatisch opslaan"
+      ],
+      "Capital letters (A-Z)": [
+        "Hoofdletters (A-Z)"
+      ],
+      "Capitalise": [
+        "Kapitaliseren"
+      ],
       "Card number": [
         "Kaartnummer"
+      ],
+      "Cardholder name": [
+        "Naam kaarthouder"
+      ],
+      "Cards": [
+        "Kaarten"
+      ],
+      "Confirm vault name": [
+        "Bevestig naam van kluis"
+      ],
+      "Create a credit card": [
+        "Kredietkaart aanmaken"
+      ],
+      "Create a login": [
+        "Login aanmaken"
+      ],
+      "Create an encrypted note": [
+        "Versleutelde notitie aanmaken"
+      ],
+      "Create new vault": [
+        "Nieuwe kluis aanmaken"
       ],
       "Created": [
         "Aangemaakt"
       ],
+      "Credit Card": [
+        "Kredietkaart"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "Display": [
+        "Weergeven"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "${ PASS_APP_NAME }-icoon weergeven op loginvelden"
+      ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
+      "Email aliases": [
+        "E-mailaliassen"
+      ],
+      "Empty trash": [
+        "Prullenbak leegmaken"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Versleutel uw ${ PASS_APP_NAME }-data exportbestand"
+      ],
+      "Expires on": [
+        "Vervalt op"
+      ],
+      "Export": [
+        "Exporteren"
+      ],
+      "Forwards to": [
+        "Stuurt door na"
+      ],
+      "General": [
+        "Algemeen"
+      ],
+      "Grant": [
+        "Verlenen"
+      ],
+      "Hidden": [
+        "Verborgen"
+      ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "Import": [
+        "Importeren"
+      ],
+      "Import passwords": [
+        "Wachtwoorden importeren"
+      ],
+      "Imported from : ": [
+        "Geïmporteerd van: "
+      ],
+      "Imported on : ": [
+        "Geïmporteerd op: "
+      ],
+      "Include numbers": [
+        "Nummers toevoegen"
+      ],
+      "Include numbers (0-9)": [
+        "Nummers toevoegen (0-9)"
+      ],
+      "Label": [
+        "Label"
+      ],
+      "Last 2 weeks": [
+        "Afgelopen 2 weken"
+      ],
+      "Last month": [
+        "Afgelopen maand"
+      ],
+      "Last week": [
+        "Vorige week"
+      ],
+      "Latest import": [
+        "Laatste import"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Login": [
+        "Inloggen"
       ],
       "Modified": [
         "Gewijzigd"
       ],
+      "Most recent": [
+        "Meest recent"
+      ],
+      "Move items to": [
+        "Items verplaatsen naar"
+      ],
       "Name": [
         "Naam"
+      ],
+      "New vault": [
+        "Nieuwe kluis"
+      ],
+      "New-Old": [
+        "Nieuw-Oud"
+      ],
+      "Newest to oldest": [
+        "Van nieuw naar oud"
+      ],
+      "No history": [
+        "Geen geschiedenis"
+      ],
+      "Not recently used": [
+        "Niet recent gebruikt"
+      ],
+      "Note": [
+        "Notitie"
+      ],
+      "Notes": [
+        "Notities"
+      ],
+      "Old-New": [
+        "Oud-Nieuw"
+      ],
+      "Oldest to newest": [
+        "Van oud naar nieuw"
+      ],
+      "Passphrase": [
+        "Wachtzin"
       ],
       "Password": [
         "Wachtwoord"
       ],
+      "Password history": [
+        "Wachtwoordgeschiedenis"
+      ],
+      "Passwords": [
+        "Wachtwoorden"
+      ],
+      "Permanently delete items": [
+        "Items definitief verwijderen"
+      ],
+      "PIN": [
+        "PIN-code"
+      ],
+      "Prefix": [
+        "Prefix"
+      ],
+      "Primary vault": [
+        "Primaire kluis"
+      ],
+      "Recent": [
+        "Recent"
+      ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
+      "Restore all items": [
+        "Alle items herstellen"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Security": [
+        "Beveiliging"
+      ],
+      "Select an email address": [
+        "Selecteer een e-mailadres"
       ],
       "Select your password manager": [
         "Selecteer uw wachtwoordbeheerder"
       ],
+      "Selected": [
+        "Geselecteerd"
+      ],
+      "Set PIN code": [
+        "PIN-code instellen"
+      ],
       "Settings": [
         "Instellingen"
+      ],
+      "Special characters (!&*)": [
+        "Speciale tekens (!&*)"
+      ],
+      "Suffix": [
+        "Achtervoegsel"
+      ],
+      "Support": [
+        "Ondersteuning"
       ],
       "Text": [
         "Tekst"
       ],
+      "Title": [
+        "Titel"
+      ],
+      "Today": [
+        "Vandaag"
+      ],
+      "Total imported items : ": [
+        "Totaal geïmporteerde items: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ],
       "Type": [
         "Soort"
       ],
+      "Unnamed Credit Card": [
+        "Naamloze kredietkaart"
+      ],
+      "Unnamed item": [
+        "Naamloos item"
+      ],
+      "Unnamed note": [
+        "Naamloze notitie"
+      ],
+      "Untitled": [
+        "Naamloos"
+      ],
+      "Update": [
+        "Bijwerken"
+      ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "Username (alias)": [
+        "Gebruikersnaam (alias)"
+      ],
+      "Username (new alias)": [
+        "Gebruikersnaam (nieuwe alias)"
+      ],
+      "Vault": [
+        "Kluis"
+      ],
+      "Vaults": [
+        "Kluizen"
+      ],
+      "Verification number": [
+        "Verificatienummer"
+      ],
+      "View logs": [
+        "Logboeken bekijken"
+      ],
+      "Websites": [
+        "Websites"
+      ],
+      "Write a review": [
+        "Schrijf een review"
+      ],
+      "You are about to create": [
+        "U staat op het punt volgende aan te maken"
       ]
     },
     "Placeholder": {
+      "Add note": [
+        "Notitie toevoegen"
+      ],
+      "Add text": [
+        "Tekst toevoegen"
+      ],
+      "Pick a vault": [
+        "Kies een kluis"
+      ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Search in Trash": [
+        "Zoeken in prullenbak"
       ]
     },
     "Title": {
       "Use my email": [
         "Gebruik mijn e-mail"
+      ],
+      "Welcome!": [
+        "Welkom"
       ]
     },
     "Warning": {
