@@ -2392,6 +2392,9 @@
       "Self invitation not allowed": [
         "No puedes invitarte a ti mismo."
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "No hay conexión con los servidores. Intenta de nuevo en unos minutos o comprueba nuestra ${ statusPageLink }."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
@@ -6138,7 +6144,7 @@
         "Direcciones de correo electrónico"
       ],
       "Email settings": [
-        "Configuración del correo electrónico"
+        "Ajustes del correo"
       ],
       "Encrypted event": [
         "Evento cifrado"
@@ -6171,8 +6177,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
