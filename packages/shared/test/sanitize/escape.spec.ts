@@ -21,7 +21,9 @@ describe('Escape', () => {
         });
 
         it('Should disable dark styles media queries', () => {
-            expect(escapeForbiddenStyle('(prefers-color-scheme: dark)')).toBe('(prefers-color-scheme: never)');
+            expect(escapeForbiddenStyle('(prefers-color-scheme: dark)')).toBe(
+                '(prefers-proton-disabled-Color-scheme: dark)'
+            );
         });
     });
 
