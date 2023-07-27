@@ -3352,6 +3352,9 @@
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
       ],
+      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
+        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
+      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Λυπούμαστε, το ${ BRAND_NAME } δεν μπορεί να αποκρυπτογραφήσει το μήνυμά σας. Παρακαλούμε ελέγξτε αν είναι ενεργά όλα τα κλειδιά σας."
+      ],
+      "status page": [
+        "σελίδα κατάστασης"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Δεν ήταν δυνατή η αποκρυπτογράφηση του συνημμένου.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτο αρχείο με ένα πρόγραμμα όπως το GnuPG.",
