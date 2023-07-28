@@ -3388,6 +3388,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, ${ BRAND_NAME } kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
       ],
+      "status page": [
+        "status pagina"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
         "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
@@ -4153,6 +4156,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } in de Play Store"
       ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Hulde voor het meer veiliger, handiger en relevanter maken van je e-mail! We hebben je gratis opslag verhoogd naar 1 GB."
+      ],
       "Checklist complete": [
         "Controlelijst voltooid"
       ],
@@ -4189,8 +4195,14 @@
       "Import your contacts or messages": [
         "Importeer uw contacten of berichten"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } je privacy beschermd en e-mail vereenvoudigd."
+      ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Maak ${ BRAND_NAME } je go-to inbox"
       ],
       "Maybe later": [
         "Misschien later"
@@ -5857,9 +5869,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "U kunt uw zoekopdracht bewerken of ${ button }"
-      ],
-      "You can either update your search query or clear it": [
-        "U kunt uw zoekopdracht bewerken of wissen"
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
@@ -7769,6 +7778,11 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "We hebben enkele waarschuwingen gedetecteerd. Het volgende e-mailadres ontvangt mogelijk geen e-mails:",
         "We hebben enkele waarschuwingen gedetecteerd. De volgende e-mailadressen ontvangen mogelijk geen e-mails:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Zender verificatie"
       ]
     },
     "Sent email icon": {

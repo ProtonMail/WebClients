@@ -3109,6 +3109,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } för <${ email }>. Du kan lägga till en annan nyckel eller inaktivera kryptering för denna kontakt för att lösa problemet."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -3348,9 +3351,6 @@
       ],
       "Require at least one condition": [
         "Kräver minst ett villkor"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -4813,6 +4813,10 @@
       "(No Recipient)": [
         "(Ingen mottagare)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** resultat hittades i ${ labelName }",
+        "**${ elementsFoundCount }** resultat hittades i ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
@@ -4967,6 +4971,9 @@
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt borttagen från grupp ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "Kopierad till urklipp"
@@ -5142,6 +5149,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "För meddelanden nyare än ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "För fler sökresultat, prova att söka i innehållet i dina e-postmeddelanden"
       ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
@@ -5762,6 +5775,9 @@
       "Trackers blocked:": [
         "Spårare blockerade:"
       ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Stäng av för att endast söka efter datum, namn, e-postadress eller ämnesrad. För att inaktivera sökning i meddelandeinnehåll och ta bort nedladdade meddelanden, gå till inställningar."
+      ],
       "Turn on to search the content of your messages": [
         "Slå på för att söka efter innehållet i dina meddelanden"
       ],
@@ -5906,9 +5922,6 @@
       "You can either update your search query or ${ button }": [
         "Du kan antingen uppdatera din sökfråga eller ${ button }"
       ],
-      "You can either update your search query or clear it": [
-        "Du kan antingen uppdatera din sökfråga eller rensa den"
-      ],
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
       ],
@@ -5979,6 +5992,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -8504,6 +8520,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
       ]
     },
     "summer2023:Info": {

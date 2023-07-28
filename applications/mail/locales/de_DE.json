@@ -3388,6 +3388,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Entschuldigung, ${ BRAND_NAME } kann deine Nachricht nicht entschlüsseln. Bitte prüfe, dass alle deine Schlüssel aktiv sind."
       ],
+      "status page": [
+        "Statusseite"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
         "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
@@ -5909,9 +5912,6 @@
       "You can either update your search query or ${ button }": [
         "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
       ],
-      "You can either update your search query or clear it": [
-        "Du kannst deine Suchanfrage entweder aktualisieren oder löschen"
-      ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
@@ -6078,7 +6078,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Ein Klick auf „Vertrauenswürdiger Schlüssel” verknüpft diesen öffentlichen Schlüssel mit dem Absender und E-Mails von dieser Adresse werden automatisch kryptographisch verifiziert."
+        "Ein Klick auf „Vertrauenswürdiger Schlüssel” verknüpft diesen öffentlichen Schlüssel mit dem Absender und E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Wenn du auf „Schlüssel vertrauen“ klickst, wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel mit diesem Absender verknüpft. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
