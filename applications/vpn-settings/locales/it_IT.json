@@ -1453,6 +1453,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
+      ],
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
       ],
@@ -1545,9 +1548,6 @@
       ],
       "Request timed out": [
         "Timeout della richiesta"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
