@@ -1,10 +1,23 @@
 import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
+import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import {
+    generateContentKeys,
+    generateLookupHash,
+    generateNodeKeys,
+    sign as signMessage,
+} from '@proton/shared/lib/keys/driveKeys';
 
 import { encryptFileExtendedAttributes } from '../../_links';
+import {
+    getCaptureDateTime,
+    getExifInfo,
+    getPhotoDimensions,
+    getPhotoExtendedAttributes,
+} from '../../_photos/exifInfo';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link, VerificationData } from '../interface';
 import { ThumbnailData } from '../thumbnail';
 import { getErrorString } from '../utils';
@@ -66,11 +79,14 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
  */
 async function start(
     file: File,
+    mimeType: string,
+    isPhoto: boolean,
     thumbnailData: ThumbnailData | undefined,
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
+    parentHashKey: Uint8Array,
     verificationData: VerificationData
 ) {
     const hashInstance = new Sha1();
@@ -100,29 +116,63 @@ async function start(
         const fileHash = buffer.hash;
         const sha1Digest = hashInstance.finish().result;
 
-        const [signature, xattr] = await Promise.all([
+        const [signature, exifInfo] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
+            isPhoto && !isSVG(mimeType)
+                ? await file.arrayBuffer().then((buffer) => {
+                      // In case of error with return empty exif
+                      try {
+                          return getExifInfo(buffer);
+                      } catch (err) {
+                          return {};
+                      }
+                  })
+                : {},
+        ]);
+
+        const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
+
+        const { width, height } = {
+            width: thumbnailData?.originalWidth || photoDimensions.width,
+            height: thumbnailData?.originalHeight || photoDimensions.height,
+        };
+
+        const sha1 = sha1Digest ? arrayToHexString(sha1Digest) : undefined;
+
+        const [xattr] = await Promise.all([
             encryptFileExtendedAttributes(
                 {
                     file,
                     media:
-                        thumbnailData?.originalWidth && thumbnailData?.originalHeight
+                        width && height
                             ? {
-                                  width: thumbnailData.originalWidth,
-                                  height: thumbnailData.originalHeight,
+                                  width,
+                                  height,
                               }
                             : undefined,
-                    digests: sha1Digest
+                    digests: sha1
                         ? {
-                              sha1: arrayToHexString(sha1Digest),
+                              sha1,
                           }
                         : undefined,
+                    ...getPhotoExtendedAttributes(exifInfo),
                 },
                 privateKey,
                 addressPrivateKey
             ),
         ]);
-        uploadWorker.postDone(signature, addressEmail, xattr);
+
+        uploadWorker.postDone(
+            signature,
+            addressEmail,
+            xattr,
+            isPhoto
+                ? {
+                      captureTime: getUnixTime(getCaptureDateTime(file, exifInfo.exif)),
+                      contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
+                  }
+                : undefined
+        );
     };
     startUploadJobs(
         pauser,

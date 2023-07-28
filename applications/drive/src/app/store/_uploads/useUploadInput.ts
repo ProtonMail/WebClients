@@ -8,15 +8,15 @@ import { logError } from '../../utils/errorHandling';
 import { useUploadProvider } from './UploadProvider';
 import { UploadFileItem, UploadFileList } from './interface';
 
-export function useFileUploadInput(shareId: string, linkId: string) {
-    return useUploadInput(shareId, linkId, false);
+export function useFileUploadInput(shareId: string, linkId: string, isPhoto: boolean = false) {
+    return useUploadInput(shareId, linkId, false, isPhoto);
 }
 
-export function useFolderUploadInput(shareId: string, linkId: string) {
-    return useUploadInput(shareId, linkId, true);
+export function useFolderUploadInput(shareId: string, linkId: string, isPhoto: boolean = false) {
+    return useUploadInput(shareId, linkId, true, isPhoto);
 }
 
-function useUploadInput(shareId: string, linkId: string, forFolders?: boolean) {
+function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, isPhoto?: boolean) {
     const { uploadFiles } = useUploadProvider();
     const { createNotification } = useNotifications();
 
@@ -87,7 +87,7 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean) {
             filesToUpload = filesToUpload.filter((item) => !!(item as UploadFileItem).file);
         }
 
-        uploadFiles(shareId, linkId, filesToUpload).catch(logError);
+        uploadFiles(shareId, linkId, filesToUpload, isPhoto).catch(logError);
     };
 
     return { inputRef, handleClick, handleChange };

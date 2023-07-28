@@ -2,10 +2,17 @@ import { FC } from 'react';
 
 import { Toolbar } from '@proton/components';
 
-type Props = {};
+import { PhotosUploadButton } from './PhotosUploadButton';
 
-export const PhotosToolbar: FC<Props> = () => {
-    return <Toolbar />;
+interface Props {
+    shareId: string;
+    linkId: string;
+}
+
+export const PhotosToolbar: FC<Props> = ({ shareId, linkId }) => {
+    return (
+        <Toolbar>
+            <PhotosUploadButton shareId={shareId} linkId={linkId} />
+        </Toolbar>
+    );
 };
-
-export default PhotosToolbar;

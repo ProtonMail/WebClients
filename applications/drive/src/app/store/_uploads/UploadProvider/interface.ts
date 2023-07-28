@@ -18,6 +18,8 @@ interface LinkUpload {
     resumeState?: TransferState; // resumeState is set only when state is paused.
     error?: Error;
     originalIsDraft?: boolean;
+
+    isPhoto?: boolean; // tell if the upload is for photos
 }
 
 export interface FileUpload extends LinkUpload {
