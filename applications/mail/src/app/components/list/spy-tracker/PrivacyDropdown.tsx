@@ -153,7 +153,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                 ref={anchorRef}
             />
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="bottom-end">
-                <div className="p-4">
+                <div className="p-4" data-testid="privacy:dropdown-content">
                     <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="block m-auto" />
                     <div className="flex text-center flex-justify-center">
                         <span className="my-4">
@@ -162,7 +162,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                             </h5>
                             {description && <span data-testid="privacy:description">{description}</span>}
                             <br />
-                            <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learnmore">{c(
+                            <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learn-more">{c(
                                 'Info'
                             ).t`Learn more`}</Href>
                         </span>
@@ -196,6 +196,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                         <button
                                             onClick={handleShowImageTrackersDetails}
                                             className="interactive w100 rounded-sm"
+                                            data-testId="privacy:spy-trackers-row"
                                         >
                                             {imageTrackerRow}
                                         </button>
@@ -209,6 +210,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                         <button
                                             onClick={handleShowUTMTrackersDetails}
                                             className="interactive w100 rounded-sm"
+                                            data-testId="privacy:link-trackers-row"
                                         >
                                             {utmTrackerRow}
                                         </button>
