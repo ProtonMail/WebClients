@@ -3,29 +3,33 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Copy, Input, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
+    const reject = <strong key="reject">p=reject</strong>;
     const quarantine = <strong key="quarantine">p=quarantine</strong>;
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard` });
-    const dmarcValue = 'v=DMARC1; p=none';
+    const dmarcValue = 'v=DMARC1; p=quarantine';
     const [value, setValue] = useState(dmarcValue);
     return (
         <>
             <Alert className="mb-4">
                 {c('Info')
-                    .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.`}
-                <div>
-                    <Href href={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>{c('Link').t`Learn more`}</Href>
-                </div>
+                    .t`Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.`}
+                <br />
+                {c('Info')
+                    .t`DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The "p=' (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the  "p=quarantine" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).`}
+                <br />
+                <Href href={getBlogURL('/what-is-dmarc')}>{c('Link').t`Learn more`}</Href>
             </Alert>
-            <Label>{c('Label').t`Here is a basic DMARC record that does nothing except email you reports.`}</Label>
-            <Table responsive="cards">
+            <Label>{c('Label')
+                .t`Please add the following TXT record. Note: DNS records can take several hours to update.`}</Label>
+            <Table responsive="cards" className="mt-4">
                 <TableHeader
                     cells={[
                         c('Header for domain modal').t`Type`,
@@ -61,8 +65,28 @@ const DMARCSection = () => {
                 </TableBody>
             </Table>
             <Alert className="mb-4">
+                {/*
+                 * translator:
+                 * ${quarantine}: quarantine in bold
+                 * full sentence for reference: "p=quarantine: Asking the recipient platforms to mark the unauthorized emails as spam or quarantine them."
+                 */}
                 {c('Info')
-                    .jt`${none} has no effect on email delivery, but we recommend ${quarantine} for better security.`}
+                    .jt`${quarantine}: Asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.`}
+                <br />
+                {/*
+                 * translator:
+                 * ${reject}: reject in bold
+                 * full sentence for reference: "p=reject: Asking the recipient platforms to reject the unauthorized emails."
+                 */}
+                {c('Info').jt`${reject}: Asking the recipient platforms to reject the unauthorized emails.`}
+                <br />
+                {/*
+                 * translator:
+                 * ${none}: none in bold
+                 * full sentence for reference: "p=none: Do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test."
+                 */}
+                {c('Info')
+                    .jt`${none}: Do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.`}
             </Alert>
         </>
     );
