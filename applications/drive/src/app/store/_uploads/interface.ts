@@ -38,13 +38,14 @@ export interface UploadCallbacks {
         parentPrivateKey: PrivateKeyReference;
     }>;
     getVerificationData: (abortSignal: AbortSignal) => Promise<VerificationData>;
+    getParentHashKey: (abortSignal: AbortSignal) => Promise<Uint8Array>;
     createFileRevision: (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => Promise<InitializedFileMeta>;
     createBlockLinks: (
         abortSignal: AbortSignal,
         fileBlocks: FileRequestBlock[],
         thumbnailBlock?: ThumbnailRequestBlock
     ) => Promise<{ fileLinks: Link[]; thumbnailLink?: Link }>;
-    finalize: (signature: string, signatureAddress: string, xattr: string) => Promise<void>;
+    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => Promise<void>;
     onError?: (error: Error) => void;
 }
 
@@ -121,6 +122,12 @@ export type BlockTokenHash = {
 export type BlockToken = {
     index: number;
     token: string;
+};
+
+export type Photo = {
+    encryptedExif?: string;
+    captureTime: number;
+    contentHash?: string;
 };
 
 export enum TransferConflictStrategy {

@@ -63,12 +63,17 @@ export function useSharesStateProvider() {
         return findDefaultShareId(Object.entries(state).map(([, share]) => share));
     }, [state]);
 
+    const getPhotosShare = useCallback((): Share | ShareWithKey | undefined => {
+        return Object.values(state).find((share) => share.type === ShareType.photos);
+    }, [state]);
+
     return {
         setShares,
         removeShares,
         getShare,
         getLockedShares,
         getDefaultShareId,
+        getPhotosShare,
         setLockedVolumesForRestore,
         lockedVolumesForRestore,
     };

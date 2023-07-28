@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
+import { DS_STORE } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import {
@@ -26,8 +27,6 @@ import {
     UploadQueue,
     UploadUserError,
 } from './interface';
-
-const DS_STORE = '.DS_Store';
 
 export default function useUploadQueue() {
     const [queue, setQueue] = useState<UploadQueue[]>([]);
@@ -70,49 +69,52 @@ export default function useUploadQueue() {
         return { nextFileUpload, nextFolderUpload };
     }, [allUploads, fileUploads, folderUploads]);
 
-    const add = useCallback(async (shareId: string, parentId: string, list: UploadFileList): Promise<void> => {
-        return new Promise((resolve, reject) => {
-            setQueue((queue) => {
-                const errors: Error[] = [];
-                const conflictErrors: UploadConflictError[] = [];
+    const add = useCallback(
+        async (shareId: string, parentId: string, list: UploadFileList, isPhoto: boolean = false): Promise<void> => {
+            return new Promise((resolve, reject) => {
+                setQueue((queue) => {
+                    const errors: Error[] = [];
+                    const conflictErrors: UploadConflictError[] = [];
 
-                const queueItem = queue.find((item) => item.shareId === shareId && item.linkId === parentId) || {
-                    shareId,
-                    linkId: parentId,
-                    files: [],
-                    folders: [],
-                };
-                for (const item of list) {
-                    if ((item as UploadFileItem).file?.name === DS_STORE) {
-                        continue;
-                    }
-                    try {
-                        addItemToQueue(shareId, queueItem, item);
-                    } catch (err: any) {
-                        if ((err as Error).name === 'UploadConflictError') {
-                            conflictErrors.push(err);
-                        } else {
-                            errors.push(err);
+                    const queueItem = queue.find((item) => item.shareId === shareId && item.linkId === parentId) || {
+                        shareId,
+                        linkId: parentId,
+                        files: [],
+                        folders: [],
+                    };
+                    for (const item of list) {
+                        if ((item as UploadFileItem).file?.name === DS_STORE) {
+                            continue;
+                        }
+                        try {
+                            addItemToQueue(shareId, queueItem, item, isPhoto);
+                        } catch (err: any) {
+                            if ((err as Error).name === 'UploadConflictError') {
+                                conflictErrors.push(err);
+                            } else {
+                                errors.push(err);
+                            }
                         }
                     }
-                }
-                const newQueue = [
-                    ...queue.filter((item) => item.shareId !== shareId || item.linkId !== parentId),
-                    queueItem,
-                ];
+                    const newQueue = [
+                        ...queue.filter((item) => item.shareId !== shareId || item.linkId !== parentId),
+                        queueItem,
+                    ];
 
-                if (conflictErrors.length > 0) {
-                    errors.push(new UploadConflictError(conflictErrors[0].filename, conflictErrors.length - 1));
-                }
-                if (errors.length > 0) {
-                    reject(errors);
-                } else {
-                    resolve();
-                }
-                return newQueue;
+                    if (conflictErrors.length > 0) {
+                        errors.push(new UploadConflictError(conflictErrors[0].filename, conflictErrors.length - 1));
+                    }
+                    if (errors.length > 0) {
+                        reject(errors);
+                    } else {
+                        resolve();
+                    }
+                    return newQueue;
+                });
             });
-        });
-    }, []);
+        },
+        []
+    );
 
     const update = useCallback(
         (
@@ -271,7 +273,12 @@ function convertNewStateToFunction(newStateOrCallback: UpdateState) {
     return typeof newStateOrCallback === 'function' ? newStateOrCallback : () => newStateOrCallback;
 }
 
-export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: UploadFileItem | UploadFolderItem) {
+export function addItemToQueue(
+    shareId: string,
+    newQueue: UploadQueue,
+    item: UploadFileItem | UploadFolderItem,
+    isPhoto: boolean = false
+) {
     const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
     if (!name) {
         throw new UploadUserError(c('Notification').t`File or folder is missing a name`);
@@ -288,6 +295,7 @@ export function addItemToQueue(shareId: string, newQueue: UploadQueue, item: Upl
         parentId: part.linkId,
         state: part.linkId ? TransferState.Pending : TransferState.Initializing,
         startDate: new Date(),
+        isPhoto,
     };
     if ((item as UploadFileItem).file) {
         const fileItem = item as UploadFileItem;

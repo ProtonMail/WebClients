@@ -1,9 +1,12 @@
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import getRandomString from '@proton/utils/getRandomString';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
 import {
     FileKeys,
     FileRequestBlock,
+    Photo,
     ThumbnailRequestBlock,
     UploadCallbacks,
     UploadFileControls,
@@ -15,7 +18,16 @@ import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
-    { initialize, createFileRevision, getVerificationData, createBlockLinks, finalize, onError }: UploadCallbacks
+    isPhoto: boolean,
+    {
+        initialize,
+        createFileRevision,
+        createBlockLinks,
+        getVerificationData,
+        getParentHashKey,
+        finalize,
+        onError,
+    }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -34,7 +46,6 @@ export function initUploadFileWorker(
                 return undefined;
             })
         );
-
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
                 new URL(
@@ -52,16 +63,23 @@ export function initUploadFileWorker(
                                     onInit?.(mimeType, fileRevision.fileName);
 
                                     return Promise.all([
+                                        () =>
+                                            isPhoto
+                                                ? Promise.resolve(stringToUint8Array(getRandomString(64)))
+                                                : getParentHashKey(abortController.signal),
                                         thumbnailDataPromise,
                                         getVerificationData(abortController.signal),
-                                    ]).then(async ([thumbnailData, verificationData]) => {
+                                    ]).then(async ([parentHashKey, thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
+                                            mimeType,
+                                            isPhoto,
                                             thumbnailData,
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
                                             fileRevision.sessionKey,
+                                            parentHashKey,
                                             verificationData
                                         );
                                     });
@@ -78,9 +96,9 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (signature: string, signatureAddress: string, xattr: string) => {
+                finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => {
                     onFinalize?.();
-                    finalize(signature, signatureAddress, xattr).then(resolve).catch(reject);
+                    finalize(signature, signatureAddress, xattr, photo).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: string) => {
                     onNetworkError?.(error);
