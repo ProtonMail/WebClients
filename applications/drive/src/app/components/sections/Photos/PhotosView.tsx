@@ -3,13 +3,16 @@ import { FC, useEffect } from 'react';
 import { Loader } from '@proton/components/components';
 
 import { useDefaultShare } from '../../../store';
+import { usePhotos as usePhotosProvider } from '../../../store';
 import { usePhotos } from '../../../store/_photos/usePhotos';
+import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import { PhotosEmptyView } from './PhotosEmptyView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosToolbar } from './toolbar';
 
 export const PhotosView: FC<void> = () => {
     const { getPhotos } = usePhotos();
+    const { shareId, linkId } = usePhotosProvider();
     const isLoading = false;
     const isEmpty = false;
     const { getDefaultShare } = useDefaultShare();
@@ -37,14 +40,14 @@ export const PhotosView: FC<void> = () => {
         return <Loader />;
     }
 
-    if (isEmpty) {
+    if (isEmpty || !shareId || !linkId) {
         return <PhotosEmptyView />;
     }
 
     return (
-        <>
-            <PhotosToolbar />
+        <UploadDragDrop isPhoto shareId={shareId} linkId={linkId}>
+            <PhotosToolbar shareId={shareId} linkId={linkId} />
             <PhotosGrid />
-        </>
+        </UploadDragDrop>
     );
 };

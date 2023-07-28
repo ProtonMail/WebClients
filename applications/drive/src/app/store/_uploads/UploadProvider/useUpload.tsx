@@ -71,7 +71,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
      * number of files, and it adds files to the queue. User is notified if
      * there is any issue adding files to the queue.
      */
-    const uploadFiles = async (shareId: string, parentId: string, list: UploadFileList) => {
+    const uploadFiles = async (shareId: string, parentId: string, list: UploadFileList, isPhoto: boolean = false) => {
         const { hasEnoughSpace, total } = await checkHasEnoughSpace(list);
         if (!hasEnoughSpace) {
             showNotEnoughSpaceNotification(total);
@@ -100,7 +100,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             });
         }
 
-        await queue.add(shareId, parentId, list).catch((err: any) => {
+        await queue.add(shareId, parentId, list, isPhoto).catch((err: any) => {
             const errors = Array.isArray(err) ? err : [err];
             errors.forEach((err) => {
                 if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
@@ -198,7 +198,8 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             nextFileUpload.shareId,
             nextFileUpload.parentId,
             nextFileUpload.file,
-            getFileConflictHandler(nextFileUpload.id)
+            getFileConflictHandler(nextFileUpload.id),
+            nextFileUpload.isPhoto
         );
         control.add(nextFileUpload.id, controls);
         void preventLeave(
