@@ -54,7 +54,7 @@ const getOverlayedElement = (options: {
                 /* exclude elements not in the current form stack */
                 if (!form.contains(el)) return false;
                 /* exclude "placeholder" overlays */
-                if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.9) return false;
+                if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.85) return false;
 
                 return true;
             }) ?? null
@@ -78,7 +78,7 @@ const computeIconInjectionStyles = (
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { top: boxTop, height: boxMaxHeight } = inputBox.getBoundingClientRect();
-    const { top: wrapperTop, right: wrapperRight } = control.getBoundingClientRect();
+    const { top: controlTop, right: controlRight } = control.getBoundingClientRect();
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
@@ -119,10 +119,10 @@ const computeIconInjectionStyles = (
     /* `mt` represents the vertical offset needed to align the
      * center of the injected icon with the top-most part of
      * the bounding box :
-     * mt = boxTop - boxOffset.top - wrapperTop - size / 2
+     * mt = boxTop - boxOffset.top - controlTop - size / 2
      * top = mt + boxHeight / 2 */
-    const top = boxTop - wrapperTop + boxOffset.top + (boxHeight - size) / 2;
-    const right = wrapperRight - inputRight + iconPaddingRight + overlayDx;
+    const top = boxTop - controlTop + boxOffset.top + (boxHeight - size) / 2;
+    const right = controlRight - inputRight + iconPaddingRight + overlayDx;
 
     return {
         input: {
@@ -189,9 +189,9 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
 };
 
 /* The injection styles application is a two pass process :
- * - First correctly position the wrapper element by computing
+ * - First correctly position the control element by computing
  *   its possible margin left offset + max width
- * - Use the re-renderer wrapper element for positioning the icon
+ * - Use the re-renderer control element for positioning the icon
  * + Pre-compute shared styles and DOMRects between two passes */
 export const applyInjectionStyles = (elements: InjectionElements) => {
     const { input, inputBox } = elements;
