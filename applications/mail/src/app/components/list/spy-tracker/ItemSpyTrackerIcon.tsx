@@ -40,7 +40,7 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
     );
 
     const trackerText = needsMoreProtection ? (
-        c('Info').t`Email tracker protection is disabled`
+        <span>{c('Info').t`Email tracker protection is disabled`}</span>
     ) : (
         <>
             <div className="flex flex-justify-space-between">
@@ -73,7 +73,7 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
             >
                 <div>
                     {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
-                    <Tooltip title={trackerText} data-testid="privacy:icon-tooltip">
+                    <Tooltip title={trackerText}>
                         <div className="flex" ref={anchorRef}>
                             <PrivacyDropdown message={message} />
                         </div>
