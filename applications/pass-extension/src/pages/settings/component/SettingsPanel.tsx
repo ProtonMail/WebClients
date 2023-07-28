@@ -61,12 +61,6 @@ const getSettings = (
                 checked: settings.autosave.prompt,
                 onChange: (checked) => onSettingsUpdate({ autosave: { prompt: checked } }),
             },
-            {
-                label: c('Label').t`Use ${PASS_APP_NAME} as default autosave manager`,
-                description: c('Info').t`This will disable your browser's default auto-saving capabilities.`,
-                checked: settings.autosave.browserDefault,
-                onChange: (checked) => onSettingsUpdate({ autosave: { browserDefault: checked } }),
-            },
         ],
     },
     {

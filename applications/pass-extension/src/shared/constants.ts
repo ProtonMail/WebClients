@@ -24,7 +24,7 @@ export const INITIAL_POPUP_STATE: PopupInitialState = {
 
 export const INITIAL_SETTINGS: ProxiedSettings = {
     autofill: { inject: true, openOnFocus: true },
-    autosave: { prompt: true, browserDefault: true },
+    autosave: { prompt: true },
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
