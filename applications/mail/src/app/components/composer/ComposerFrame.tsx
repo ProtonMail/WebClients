@@ -128,6 +128,7 @@ const ComposerFrame = ({
             onClick={handleClick}
             onDragEnter={handleDragEnter}
             tabIndex={-1}
+            data-testid={composerID}
         >
             <ComposerTitleBar
                 title={subject}

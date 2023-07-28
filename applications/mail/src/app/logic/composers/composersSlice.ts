@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import generateUID from '@proton/atoms/generateUID';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { RecipientType } from '../../models/address';
@@ -11,6 +10,11 @@ const initialState: ComposersState = {
     composers: {},
 };
 
+const getComposerUID = (() => {
+    let current = 0;
+    return () => `composer-${current++}`;
+})();
+
 const composersSlice = createSlice({
     name: 'composers',
     initialState,
@@ -19,7 +23,7 @@ const composersSlice = createSlice({
             state,
             action: PayloadAction<Pick<Composer, 'messageID' | 'type' | 'senderEmailAddress' | 'recipients'>>
         ) {
-            const composerID = generateUID('composer-');
+            const composerID = getComposerUID();
             const { messageID, type, senderEmailAddress, recipients } = action.payload;
 
             state.composers[composerID] = {
