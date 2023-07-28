@@ -30,7 +30,7 @@ export type ProxiedSettings = Omit<SettingsState, 'sessionLockToken' | 'sessionL
 
 const INITIAL_STATE: SettingsState = {
     autofill: { inject: true, openOnFocus: true },
-    autosave: { prompt: true, browserDefault: true },
+    autosave: { prompt: true },
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
