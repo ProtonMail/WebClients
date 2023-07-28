@@ -164,7 +164,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
             if (mutation.type === 'attributes') {
                 const target = mutation.target as HTMLElement;
-                return target !== document.body && mutation.type === 'attributes' && hasUnprocessedFields(target);
+                return mutation.type === 'attributes' && hasUnprocessedFields(target);
             }
 
             return false;
