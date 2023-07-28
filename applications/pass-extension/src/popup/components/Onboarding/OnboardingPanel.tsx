@@ -17,7 +17,7 @@ import { useExtensionContext } from '../../../shared/hooks';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { FreeTrialModal } from './FreeTrialModal';
 import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
-import { OnboardingShieldIcon, OnboardingStarIcon } from './OnboardingIcon';
+import { OnboardingFiveStarIcon, OnboardingShieldIcon } from './OnboardingIcon';
 
 import './OnboardingPanel.scss';
 
@@ -121,9 +121,9 @@ export const OnboardingPanel: VFC = () => {
                 title: c('Title').t`Enjoying ${PASS_APP_NAME}?`,
                 message: c('Info').t`Please consider leaving a review.`,
                 className: 'ui-lime',
-                icon: <OnboardingStarIcon />,
+                icon: <OnboardingFiveStarIcon />,
                 action: {
-                    label: c('Label').t`Write a review`,
+                    label: c('Label').t`Rate us`,
                     type: 'button',
                     onClick: () => window.open(webStoreURL, '_blank'),
                 },
