@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες επαφές δεν έχουν έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου: ${ list }"
@@ -2391,9 +2394,6 @@
       ],
       "Self invitation not allowed": [
         "Δεν επιτρέπεται η αυτοπρόσκληση"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
