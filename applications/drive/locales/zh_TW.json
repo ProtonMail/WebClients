@@ -3361,6 +3361,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
+      "Enter the device name to confirm removal.": [
+        "輸入裝置名稱以確認移除。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
@@ -3858,6 +3861,9 @@
       ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "這將會從 ${ DRIVE_APP_NAME } 移除裝置 ${ deviceName }，並停止同步您新增到「我的電腦」的資料夾。"
       ],
       "This will replace the existing file with the folder": [
         "這將會使用資料夾取代既有檔案"
