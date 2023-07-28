@@ -15,9 +15,10 @@
  * [ ] event-loop item creation -> noop
  */
 import { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectItemIdByOptimisticId } from '@proton/pass/store';
+import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import { invert } from '@proton/pass/utils/fp';
 import { belongsToShare, itemEq } from '@proton/pass/utils/pass/items';
 
@@ -44,16 +45,28 @@ export function handleVaultDeletionEffects(
 }
 
 export const ItemEffects = () => {
-    const { ready } = usePopupContext();
+    const dispatch = useDispatch();
+    const popup = usePopupContext();
     const { selectedItem, selectItem, unselectItem, isCreating, isEditing, inTrash } = useNavigationContext();
     const {
-        filtering: { shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
+        filtering: { debouncedSearch, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
         filtered: filteredItems,
     } = useItems();
     const { searched: trashedItems } = useTrashItems();
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
-    const autoselect = !(isEditing || isCreating) && ready;
+    const autoselect = !(isEditing || isCreating) && popup.ready;
+
+    const popupTabState = useMemo(
+        () => ({
+            tabId: popup.context!.tabId,
+            domain: popup.url.subdomain ?? popup.url.domain ?? null,
+            selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
+            search: debouncedSearch,
+            filters: { sort, type, shareId },
+        }),
+        [selectedItem, debouncedSearch, sort, type, shareId]
+    );
 
     useShareEventEffect(
         useMemo(
@@ -130,6 +143,10 @@ export const ItemEffects = () => {
             }
         }
     }, [shareBeingDeleted, items]);
+
+    useEffect(() => {
+        dispatch(popupTabStateSave(popupTabState));
+    });
 
     return null;
 };
