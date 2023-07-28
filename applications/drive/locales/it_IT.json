@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" esiste già"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -2107,9 +2110,6 @@
       ],
       "Search failed": [
         "Ricerca fallita"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Firma non verificata"

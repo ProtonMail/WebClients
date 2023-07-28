@@ -1937,6 +1937,9 @@
       "\"${ name }\" already exists": [
         "”${ name }” finns redan"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -2104,9 +2107,6 @@
       ],
       "Search failed": [
         "Sökning misslyckades"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -3293,6 +3293,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt borttagen från grupp ${ contactGroupName }"
+      ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp disken senare"
       ],
@@ -4094,6 +4097,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -5718,6 +5724,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
       ]
     },
     "summer2023:Info": {
