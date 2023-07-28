@@ -1,7 +1,7 @@
 import { FormEvent, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { add, fromUnixTime, getUnixTime, isAfter, isBefore, sub } from 'date-fns';
+import { add, fromUnixTime, getUnixTime, isAfter, isBefore, isEqual, sub } from 'date-fns';
 import { History } from 'history';
 import { c } from 'ttag';
 
@@ -246,10 +246,15 @@ const AdvancedSearch = ({
                                     id="end-date"
                                     data-testid="advanced-search:end-date"
                                     value={model.end}
-                                    onChange={(end) =>
-                                        (!model.begin || isAfter(end || Infinity, model.begin)) &&
-                                        updateModel({ ...model, end })
-                                    }
+                                    onChange={(end) => {
+                                        if (
+                                            !model.begin ||
+                                            isEqual(model.begin, end || Infinity) ||
+                                            isAfter(end || Infinity, model.begin)
+                                        ) {
+                                            updateModel({ ...model, end });
+                                        }
+                                    }}
                                 />
                             </div>
                         </div>
