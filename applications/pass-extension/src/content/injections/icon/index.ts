@@ -4,7 +4,6 @@ import {
     createElement,
     createStyleCompute,
     getComputedHeight,
-    getComputedWidth,
     pixelEncoder,
     pixelParser,
     repaint,
@@ -29,11 +28,7 @@ type SharedInjectionOptions = {
 };
 
 /* input styles we may override */
-type InputInitialStyles = {
-    width?: string;
-    ['max-width']?: string;
-    ['padding-right']?: string;
-};
+type InputInitialStyles = { ['padding-right']?: string };
 
 const getOverlayedElement = (options: {
     x: number;
@@ -84,7 +79,6 @@ const computeIconInjectionStyles = (
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { top: boxTop, height: boxMaxHeight } = inputBox.getBoundingClientRect();
     const { top: wrapperTop, right: wrapperRight } = control.getBoundingClientRect();
-    const { value: inputWidth } = getComputedWidth(getInputStyle, { node: input, mode: 'outer' });
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
@@ -122,18 +116,6 @@ const computeIconInjectionStyles = (
      * overlayed element offset */
     const newPaddingRight = Math.max(pr, size + iconPaddingLeft + iconPaddingRight + overlayDx);
 
-    /* When dealing with input elements that are
-     * of type box-sizing: content-box - updating
-     * the padding will cause the input box to grow.
-     * In order to avoid this, substract the horizontal
-     * paddings and the vertical borders from the previously
-     * computed input width */
-    const isContentBox = getInputStyle('box-sizing', String) === 'content-box';
-    const blw = getInputStyle('border-left-width', pixelParser);
-    const brw = getInputStyle('border-right-width', pixelParser);
-    const computedWidth = inputWidth - newPaddingRight - pl - (blw + brw);
-    const newWidth = isContentBox ? computedWidth : getInputStyle('width', pixelParser);
-
     /* `mt` represents the vertical offset needed to align the
      * center of the injected icon with the top-most part of
      * the bounding box :
@@ -144,7 +126,6 @@ const computeIconInjectionStyles = (
 
     return {
         input: {
-            width: pixelEncoder(newWidth),
             paddingRight: pixelEncoder(newPaddingRight),
         },
         icon: {
@@ -181,8 +162,8 @@ export const cleanupInjectionStyles = ({ control, input }: Pick<InjectionElement
 
 const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInjectionOptions) => {
     const { icon, input } = elements;
-    const inputWidthBefore = input.getBoundingClientRect().width;
     const styles = computeIconInjectionStyles(elements, shared);
+    const widthBefore = input.getBoundingClientRect().width;
 
     icon.style.top = styles.icon.top;
     icon.style.right = styles.icon.right;
@@ -194,19 +175,16 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     /* Content-script may be destroyed and re-injected
      * on extension update or on code hot-reload. Keep
      * track of the previous input styles for clean-up */
-    const initialInputStyles: InputInitialStyles = {
-        width: input.style.width,
-        'max-width': input.style.maxWidth,
-        'padding-right': input.style.paddingRight,
-    };
-
-    input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify(initialInputStyles));
+    input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify({ 'padding-right': input.style.paddingRight }));
     input.style.setProperty('padding-right', styles.input.paddingRight, 'important');
-    const inputWidthAfter = input.getBoundingClientRect().width;
+    const widthAfter = input.getBoundingClientRect().width;
 
-    if (shared.getInputStyle('box-sizing') === 'content-box' || inputWidthBefore !== inputWidthAfter) {
-        input.style.setProperty('width', styles.input.width, 'important');
-        input.style.setProperty('max-width', styles.input.width, 'important');
+    /* when dealing with `content-box` box-sized elements or certain
+     * flexbox edge-cases : adapting the padding may lead to input width
+     * growing - if we detect this: remove the padding override. */
+    if (widthAfter !== widthBefore) {
+        input.style.removeProperty('padding-right');
+        input.style.setProperty('padding-right', input.style.paddingRight);
     }
 };
 
