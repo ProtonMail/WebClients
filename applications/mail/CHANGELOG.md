@@ -1,12 +1,28 @@
-## Release 5.0.26.0 — Aug 02, 2023
+## Release 5.0.27 — Aug 16, 2023
+
+### New features
+
+-   Add the option to subscribe and unsubscribe to new product dedicated newsletters
+
+
+### Improvements
+
+-   Suggest to enable message content search when search result is empty
 
 ### Fixes
 
--   Fixed an issue where the “Label as” shortcut would not work on Firefox when message content is in focus
--   Fixed an issue where uploading big inline images into the composer would slow it down
--   Fixed an issue where on some rare cases, embedded link in newsletters would not be clickable
+-   Fix moving all messages to Archive from the Sent and Drive folder when Keep messages in Sent/Drafts settings is enabled
+-   Fix attachments dropzone in composer with plain text
 
-## Release 5.0.25.0 — July 19, 2023
+## Release 5.0.26 — Aug 02, 2023
+
+### Fixes
+
+-   Fix an issue where the “Label as” shortcut would not work on Firefox when message content is in focus
+-   Fix an issue where uploading big inline images into the composer would slow it down
+-   Fix an issue where on some rare cases, embedded link in newsletters would not be clickable
+
+## Release 5.0.25 — July 19, 2023
 
 ### New features
 
@@ -24,14 +40,14 @@
 
 -   Our [Terms and Conditions](https://proton.me/legal/terms) have been updated
 
-## Release 5.0.24.0 — June 28, 2023
+## Release 5.0.24 — June 28, 2023
 
 ### Improvements
 
 -   Increase the click surface on email list items' checkboxes
 -   Improvements of the drop zone in all apps
 
-## Release 5.0.23.0 — June 14, 2023
+## Release 5.0.23 — June 14, 2023
 
 ### Improvements
 
@@ -46,7 +62,7 @@
 -   Message content search fixes and optimisations
 -   Other contact fixes
 
-## Release 5.0.22.0 — May 17, 2023
+## Release 5.0.22 — May 17, 2023
 
 ### Improvements
 
@@ -61,7 +77,7 @@
 -   Remove empty lines added in composer after an automatic signature is removed
 -   Fix contacts imported from Proton Mail to be compatible with Thunderbird import
 
-## Release 5.0.21.0 — Apr 26, 2023
+## Release 5.0.21 — Apr 26, 2023
 
 ### New features
 
@@ -77,7 +93,7 @@
 
 -   Fix unread email counters changing when performing a search
 
-## Release 5.0.20.0 — April 5, 2023
+## Release 5.0.20 — April 5, 2023
 
 ### New features
 
@@ -89,7 +105,7 @@
 -   Re-open the apps side panel on app refresh if it was previously open
 -   Use the search keyword in labels and filters to automatically fill the name in the creation form if there was no result matching
 
-## Release 5.0.19.0 — March 22, 2023
+## Release 5.0.19 — March 22, 2023
 
 ### Improvements
 
@@ -97,7 +113,7 @@
 -   Scroll down automatically when entering many recipients in the email composer
 -   Improve insert contact modal opened from the email composer
 
-## Release 5.0.18.0 — March 8, 2023
+## Release 5.0.18 — March 8, 2023
 
 ### New features
 
@@ -113,7 +129,7 @@
 -   Fix opening a message from a conversation thread when previous messages were deleted
 -   Fix forward of emails with encrypted attachments
 
-## Release 5.0.17.0 — February 15th, 2023
+## Release 5.0.17 — February 15th, 2023
 
 ### Improvements
 
@@ -129,7 +145,7 @@
 -   Render correctly images when they include comments
 -   Other small fixes
 
-## Release 5.0.16.0 — January 25th, 2023
+## Release 5.0.16 — January 25th, 2023
 
 ### New features
 
@@ -145,7 +161,7 @@
 -   Fix port number missing in link confirmation
 -   Other small bug fixes
 
-## Release 5.0.15.0 — January 18th, 2023
+## Release 5.0.15 — January 18th, 2023
 
 ### New features
 
@@ -157,7 +173,7 @@
 -   Fix ordered list display when the font size is big in the composer
 -   Other small bug fixes
 
-## Release 5.0.14.0 — December 14th, 2022
+## Release 5.0.14 — December 14th, 2022
 
 ### Bug fixes
 
@@ -195,7 +211,7 @@
 
 -   Bug fixes on block sender
 
-## Release 5.0.10.0 — October 19, 2022
+## Release 5.0.10 — October 19, 2022
 
 ### Improvements
 
