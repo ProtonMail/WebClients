@@ -2749,6 +2749,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås upp obegränsade mappar, etiketter och fler premiumfunktioner när du uppgraderar."
       ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Merförsäljningsikon som innehåller ${ BRAND_NAME }-logga följt av ett plustecken"
+      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsätta bjuda in vänner, men du kommer inte kunna tjäna fler krediter"
       ],
@@ -2982,6 +2985,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } är ditt användarnamn. För att skapa ${ Local }@${ Domain } går du till Inställningar > Meddelanden och komponera > Kort domän (pm.me)"
       ],
@@ -3262,9 +3268,6 @@
       ],
       "Require at least one condition": [
         "Kräver minst ett villkor"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -6384,6 +6387,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Med appen Import-Export kan du exportera meddelanden för lokala säkerhetskopior och återställa tidigare säkerhetskopior för ditt konto."
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Länken att rapportera att du inte har ställt in ett ${ BRAND_NAME }-konto har löpt ut. Kontakta vårt supportteam för att lösa problemet."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
@@ -9635,6 +9641,9 @@
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nyckel med fingeravtryck ${ fp } har tagits bort."
       ],
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN/IKEv2-inloggningsuppgifter återskapat"
+      ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
       ],
@@ -10096,6 +10105,9 @@
     "pass_signup_2023: Info": {
       "${ PASS_APP_NAME } benefits": [
         "Förmåner med ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Firefox-tillägg."
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Chrome Web Store."
@@ -11472,6 +11484,11 @@
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
       ]
     },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
+      ]
+    },
     "summer2023:Info": {
       "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
         "Under en begränsad tid får du det bästa ${ BRAND_NAME } har att erbjuda till en exklusiv rabatt."
@@ -12394,6 +12411,9 @@
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
+      ],
+      "Two-factor authentication enforcement": [
+        "Genomförande av tvåfaktorsautentisering"
       ],
       "Two-factor authentication reminders": [
         "Påminnelser om tvåfaktorsautentisering"

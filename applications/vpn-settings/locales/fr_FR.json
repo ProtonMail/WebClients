@@ -1453,6 +1453,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+      ],
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
       ],
@@ -3238,7 +3241,7 @@
         "Options de l'abonnement"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"

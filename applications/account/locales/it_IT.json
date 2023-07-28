@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } è il tuo nome utente. Per creare ${ Local }@${ Domain }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
       ],
@@ -3270,9 +3273,6 @@
       ],
       "Require at least one condition": [
         "Richiede almeno una condizione"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Firma non verificata"
