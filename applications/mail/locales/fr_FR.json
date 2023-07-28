@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pour <${ email }>. Pour résoudre le problème, vous pouvez ajouter une autre clé ou désactiver le chiffrement pour ce contact."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -4810,6 +4813,10 @@
       "(No Recipient)": [
         "(aucun destinataire)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** résultat trouvé dans ${ labelName }",
+        "**${ elementsFoundCount }** résultats trouvés dans ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
@@ -5142,6 +5149,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pour les messages après le ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Pour plus de résultats de recherche, essayez de chercher ce mot-clé dans le contenu de vos messages."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Pour plus de résultats de recherche, essayez de chercher dans le contenu de vos messages"
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -5908,9 +5921,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "Vous pouvez mettre à jour votre requête de recherche ou ${ button }."
-      ],
-      "You can either update your search query or clear it": [
-        "Vous pouvez mettre à jour votre recherche ou l'effacer."
       ],
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
@@ -6698,7 +6708,7 @@
         "Adresse postale"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"

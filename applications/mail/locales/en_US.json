@@ -46,10 +46,6 @@
       ]
     },
     "Info": {
-      "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } cleaned link",
-        "${ numberOfUTMTrackers } cleaned links"
-      ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contact removed from ${ contactGroupName }"
       ],
@@ -57,8 +53,8 @@
         "attachment",
         "attachments"
       ],
-      "No links cleaned": [
-        "No cleaned links"
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Turn off this option to search only by date, name, e-mail address or message subject. To disable search in message content (and delete messages that have been downloaded to enable this feature), go to Settings."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days."
