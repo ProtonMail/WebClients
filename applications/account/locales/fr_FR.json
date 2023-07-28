@@ -1044,7 +1044,7 @@
         "Désactiver"
       ],
       "Disable E2EE": [
-        "Désactiver le chiffrement de bout en bout"
+        "Désactiver le chiffrement E2E"
       ],
       "Enable": [
         "Activer"
@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
@@ -8149,7 +8152,7 @@
         "Options de l'abonnement"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"
