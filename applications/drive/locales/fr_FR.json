@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "« ${ name } » existe déjà."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -4596,7 +4599,7 @@
         "Adresse postale"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"

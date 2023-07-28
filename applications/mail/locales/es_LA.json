@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } para <${ email }>. Puede añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -3351,9 +3354,6 @@
       ],
       "Require at least one condition": [
         "Requiere al menos una condición"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -4816,6 +4816,10 @@
       "(No Recipient)": [
         "(Sin destinatario)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** resultado encontrado en ${ labelName }",
+        "**${ elementsFoundCount }** resultados encontrados en ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
@@ -5148,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensajes más nuevos que ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Para más resultados de búsqueda, intente buscar esta palabra clave en el contenido de sus mensajes"
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Para más resultados de búsqueda, intente buscar en el contenido de sus mensajes"
       ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
@@ -5914,9 +5924,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "Puede actualizar su consulta de búsqueda o ${ button }"
-      ],
-      "You can either update your search query or clear it": [
-        "Puede actualizar su consulta de búsqueda o borrarla"
       ],
       "You can import one data type at a time.": [
         "Puede importar un tipo de datos a la vez."

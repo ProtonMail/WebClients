@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } per <${ email }>. Puoi aggiungere un'altra chiave o disabilitare la crittografia per questo contatto per risolvere il problema."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -3351,9 +3354,6 @@
       ],
       "Require at least one condition": [
         "Richiede almeno una condizione"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "I server non sono raggiungibili. Riprova tra qualche minuto o controlla ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Firma non verificata"
@@ -4816,6 +4816,10 @@
       "(No Recipient)": [
         "(Nessun Destinatario)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** risultato trovato in ${ labelName }",
+        "**${ elementsFoundCount }** risultati trovati in ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
       ],
@@ -5148,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Per i messaggi più recenti di ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Per ulteriori risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi di posta elettronica."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Per ulteriori risultati di ricerca, prova a cercare nel contenuto dei tuoi messaggi di posta elettronica"
       ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
@@ -5914,9 +5924,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "Puoi aggiornare la tua ricerca o ${ button }"
-      ],
-      "You can either update your search query or clear it": [
-        "Puoi aggiornare la query di ricerca o cancellarla"
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."

@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } no tiene una dirección de correo válida.",
         "Algunos contactos no tienen una dirección de correo válida: ${ list }."
@@ -2391,9 +2394,6 @@
       ],
       "Self invitation not allowed": [
         "No puedes invitarte a ti mismo."
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "No hay conexión con los servidores. Intenta de nuevo en unos minutos o comprueba nuestra ${ statusPageLink }."
       ],
       "Signature not verified": [
         "Firma no verificada"

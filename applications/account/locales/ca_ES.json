@@ -1043,8 +1043,14 @@
       "Disable": [
         "Desactiva"
       ],
+      "Disable E2EE": [
+        "Desactivar el xifratge E2E"
+      ],
       "Enable": [
         "Habilitar"
+      ],
+      "Enable E2EE": [
+        "Activar el xifratge"
       ],
       "Generate missing keys": [
         "Genera les claus que falten"
@@ -1302,7 +1308,7 @@
         "Enviar"
       ],
       "Tweet": [
-        "Piulada"
+        "Piula"
       ]
     },
     "Calendar access select label": {
@@ -2813,10 +2819,10 @@
         "Faig ús d'un compte ${ BRAND_NAME } diferent"
       ],
       "Missing feature(s)": [
-        "Falten característiques"
+        "Característiques que falten"
       ],
       "My reason isn't listed, please comment": [
-        "La meva raó no es troba a la llista. Deixeu-nos un comentari."
+        "La meva raó no es troba a la llista (deixeu-nos un comentari)."
       ],
       "Streaming service unsupported": [
         "Servei de reproducció en línia no admès"
@@ -8875,43 +8881,43 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        "Continueu revisant"
+        "Continua revisant"
       ],
       "Continue with Free": [
-        "Continuar amb el compte gratuït"
+        "Continua amb el pla gratuït"
       ],
       "Delete account": [
         "Elimina el compte"
       ],
       "Downgrade account": [
-        "Passa a un pla inferior"
+        "Passa el compte a un pla inferior"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Obté ${ BRAND_NAME } gratuïtament"
+        "Obtén ${ BRAND_NAME } gratuïtament"
       ],
       "Get ${ mostPopularShortPlan.title }": [
-        "Obteniu ${ mostPopularShortPlan.title }"
+        "Obtén ${ mostPopularShortPlan.title }"
       ],
       "Get ${ planName }": [
-        "Obteniu ${ planName }"
+        "Obtén ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Obtenir ${ upsellShortPlan.title }"
+        "Obtén ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        "D'acord"
+        "Entesos"
       ],
       "Keep ${ plan }": [
-        "Conservar ${ plan }"
+        "Segueix amb ${ plan }"
       ],
       "Keep account": [
-        "Mantenir compte"
+        "Conserva el compte"
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ],
       "Switch plan": [
-        "Canviar plan"
+        "Canvia de pla"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
@@ -9262,7 +9268,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el vostre compte es desactivarà."
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
@@ -9406,10 +9412,10 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminar compte?"
+        "Voleu eliminar el compte?"
       ],
       "Downgrade account?": [
-        "Voleu passar a un pla amb menys funcions?"
+        "Voleu passar a un pla inferior?"
       ],
       "Improved plans coming soon!": [
         "Aviat arribaran plans millorats!"
@@ -9418,10 +9424,10 @@
         "Reviseu la subscripció i pagueu"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
-        "Comença a explorar l'univers de ${ BRAND_NAME }"
+        "Comenceu a explorar l'univers de ${ BRAND_NAME }"
       ],
       "Switch plans?": [
-        "Canviar plan?"
+        "Voleu canviar de pla?"
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
@@ -11017,7 +11023,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Canviant el pla. Espereu un moment."
+        "S'està passant a un pla inferior. Espereu un moment."
       ]
     },
     "Step in filter modal": {
@@ -11134,31 +11140,31 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "D'acord"
+        "Entesos"
       ],
       "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de Apple App Store i després premeu ${ subscriptions }."
+        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, premeu ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de Play Store i després premeu ${ subscriptions }."
+        "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestioneu la vostra subscripció en ${ subscriptionManager }"
       ],
       "Subscription is managed by ${ subscriptionManager }": [
-        "Subscripció gestionada per ${ subscriptionManager }"
+        "La subscripció és gestionada per ${ subscriptionManager }"
       ],
       "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La subscripció de l'usuari ID-${ userId } s'ha fet mitjançant una compra en l'aplicació. Per gestionar la subscripció, l'usuari ha de navegar a la secció Subscripció del seu compte ${ subscriptionManager }."
+        "La subscripció de l'usuari ID-${ userId } s'ha fet mitjançant una compra en l'aplicació. Per gestionar-la, l'usuari ha de navegar a la secció Subscripció del seu compte ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subscripcions"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "El vostre pla es va comprar mitjançant una aplicació d'Android. Per tal de fer canvis al pla o actualitzar els detalls del pagament, haureu d'anar a la Google Play Store."
+        "El vostre pla es va comprar mitjançant una aplicació d'Android. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a la Play Store de Google."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "El vostre pla es va comprar mitjançant una aplicació iOS. Per a fer canvis al pla o actualitzar els detalls del pagament, haureu d'anar a l'Apple App Store."
+        "El vostre pla es va comprar mitjançant una aplicació d'iOS. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a l'App Store d'Apple."
       ]
     },
     "Subscription price": {
@@ -11871,7 +11877,7 @@
         "Creeu la vostra adreça ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
-        "S'estan creant els comptes d'usuari"
+        "Creació dels comptes d'usuari"
       ],
       "Credentials": [
         "Credencials"
