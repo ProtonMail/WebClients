@@ -34,10 +34,12 @@ const useAddressFlagsActionsList = (address: Address) => {
     return [
         encryptionDisabled
             ? {
+                  // translator: this is in a small space, so the string should be short, max 25 characters
                   text: c('Address action').t`Enable E2EE`,
                   onClick: () => handleSetAddressFlags(false, false),
               }
             : {
+                  // translator: this is in a small space, so the string should be short, max 25 characters
                   text: c('Address action').t`Disable E2EE`,
                   onClick: () => handleSetAddressFlags(true, true),
               },
