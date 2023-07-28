@@ -145,6 +145,9 @@
       "Carbon Copy": [
         "Másolat"
       ],
+      "Change email": [
+        "E-mail cím módosítása"
+      ],
       "Change page": [
         "Lapozás"
       ],
@@ -2932,6 +2935,9 @@
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Kapcsold be az email követő védelmet,hogy megakadályozd a hirdetők,és mások számára azt,hogy nyomon kövessék a tartózkodási helyedet,és az internetes aktivitásodat"
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
       ],
@@ -2943,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Nem találtunk egyetlen ismert URL,és egyéb követőt ebben az emailben."
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
@@ -4132,17 +4141,44 @@
       ]
     },
     "Get started checklist instructions": {
+      "Congratulation, you completed all the steps!": [
+        "Gratulálunk,minden lépést teljesítettél!"
+      ],
+      "Continue setting up your email": [
+        "Folytasd az e-mail címed beállítását"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Duplázd meg az ingyenes tárhelyedet 1 GB-ra,az alábbi lépések elvégzésével:"
+      ],
+      "Get free storage": [
+        "Ingyenes tároló szerzése"
+      ],
+      "Get mobile app": [
+        "Mobil alkalmazás beszerzése"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
       ],
       "Import contacts or emails": [
         "Importálja névjegyeit vagy üzeneteit"
       ],
+      "Import data": [
+        "Adat importálása"
+      ],
       "Import your contacts or messages": [
         "Importálja a névjegyeit vagy az üzeneteit"
       ],
+      "Open checklist": [
+        "Ellenőrzőlista megnyitása"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
+      ],
+      "Send a message": [
+        "Üzenet küldése"
+      ],
+      "Set recovery method": [
+        "Helyreállítási módszer beállítása"
       ]
     },
     "Gmail forwarding": {
@@ -5702,8 +5738,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "A következő hirdetők és szervezetek számára megakadályoztuk, hogy lássák, mikor nyitod meg ezt az e-mailt, milyen eszközt használsz, és hol tartózkodsz."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "A következő linkekről eltávolítottuk a nyomkövető információkat,hogy megvédjünk a hirdetők,és mások, online tevékenységednek a nyomon követésétől."
       ],
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
@@ -5761,9 +5803,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
-      ],
-      "You can either update your search query or clear it": [
-        "Próbálkozzon másik kereséssel vagy törölje a keresést"
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -8787,6 +8826,9 @@
       "Previous message": [
         "Előző üzenet"
       ],
+      "Protect yourself from trackers": [
+        "Védje magát a követőktől"
+      ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
       ],
@@ -8934,6 +8976,10 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Megvédtünk téged ${ trackersCount } követőtől",
+        "Megvédtünk téged ${ trackersCount } követőtől"
       ],
       "Welcome": [
         "Üdvözöljük"
