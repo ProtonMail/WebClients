@@ -30,6 +30,12 @@ export interface UpdateFileRevision {
     ManifestSignature: string;
     SignatureAddress: string;
     XAttr?: string;
+    Photo?: {
+        MainPhotoLinkID: string | null;
+        CaptureTime: number;
+        Exif?: string;
+        ContentHash?: string;
+    };
 }
 
 export interface CreateFileResult {

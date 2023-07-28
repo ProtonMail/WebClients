@@ -17,6 +17,7 @@ import {
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
+import getRandomString from '@proton/utils/getRandomString';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
@@ -32,6 +33,7 @@ import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
     FileKeys,
     FileRequestBlock,
+    Photo,
     ThumbnailRequestBlock,
     TransferConflictStrategy,
     UploadFileControls,
@@ -60,7 +62,7 @@ export default function useUploadFile() {
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
-    const { getShareCreatorKeys } = useShare();
+    const { getShareCreatorKeys, getSharePrivateKey } = useShare();
     const { findAvailableName, getLinkByName } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -69,7 +71,8 @@ export default function useUploadFile() {
         shareId: string,
         parentId: string,
         file: File,
-        getFileConflictStrategy: ConflictStrategyHandler
+        getFileConflictStrategy: ConflictStrategyHandler,
+        isPhoto: boolean = false
     ): UploadFileControls => {
         let shareKeysCache: Awaited<ReturnType<typeof getShareCreatorKeys>>;
         const getShareKeys = async (abortSignal: AbortSignal) => {
@@ -95,7 +98,7 @@ export default function useUploadFile() {
 
             const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                 getShareKeys(abortSignal),
-                getLinkPrivateKey(abortSignal, shareId, parentId),
+                isPhoto ? getSharePrivateKey(abortSignal, shareId) : getLinkPrivateKey(abortSignal, shareId, parentId),
             ]);
 
             const Name = await encryptName(filename, parentPrivateKey, addressKeyInfo.privateKey);
@@ -144,7 +147,9 @@ export default function useUploadFile() {
             }
 
             const [privateKey, sessionKey] = await Promise.all([
-                getLinkPrivateKey(abortSignal, shareId, link.linkId),
+                isPhoto
+                    ? getSharePrivateKey(abortSignal, shareId)
+                    : getLinkPrivateKey(abortSignal, shareId, link.linkId),
                 getLinkSessionKey(abortSignal, shareId, link.linkId),
             ]);
             if (!sessionKey) {
@@ -235,6 +240,10 @@ export default function useUploadFile() {
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
+                // Photos upload doesn't need any conflict check, so we directly create the file
+                if (isPhoto) {
+                    return createFile(abortSignal, file.name, mimeType, getRandomString(64), keys);
+                }
                 const {
                     filename: newName,
                     hash,
@@ -292,16 +301,21 @@ export default function useUploadFile() {
         // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
-        return initUploadFileWorker(file, {
+        return initUploadFileWorker(file, isPhoto, {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                     getShareKeys(abortSignal),
-                    getLinkPrivateKey(abortSignal, shareId, parentId),
+                    isPhoto
+                        ? getSharePrivateKey(abortSignal, shareId)
+                        : getLinkPrivateKey(abortSignal, shareId, parentId),
                 ]);
                 return {
                     addressPrivateKey: addressKeyInfo.privateKey,
                     parentPrivateKey,
                 };
+            },
+            getParentHashKey: async (abortSignal: AbortSignal) => {
+                return getLinkHashKey(abortSignal, shareId, parentId);
             },
             createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
                 createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
@@ -404,7 +418,7 @@ export default function useUploadFile() {
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (signature: string, signatureAddress: string, xattr: string) => {
+                async (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -420,6 +434,14 @@ export default function useUploadFile() {
                             ManifestSignature: signature,
                             SignatureAddress: signatureAddress,
                             XAttr: xattr,
+                            Photo: photo
+                                ? {
+                                      MainPhotoLinkID: null, // This is for live photos
+                                      CaptureTime: photo.captureTime,
+                                      Exif: photo.encryptedExif,
+                                      ContentHash: photo.contentHash,
+                                  }
+                                : undefined,
                         })
                     );
 

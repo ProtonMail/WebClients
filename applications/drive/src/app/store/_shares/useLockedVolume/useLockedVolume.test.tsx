@@ -66,6 +66,7 @@ const sharesStateMock: ReturnType<typeof useSharesState> = {
     getDefaultShareId: jest.fn(),
     setLockedVolumesForRestore: jest.fn(),
     lockedVolumesForRestore: [],
+    getPhotosShare: jest.fn(),
 };
 
 const generateAddressKeys = async () => {

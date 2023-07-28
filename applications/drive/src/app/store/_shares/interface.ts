@@ -9,6 +9,7 @@ export enum ShareType {
     default = 1,
     standard,
     device,
+    photos,
 }
 
 export interface Share {

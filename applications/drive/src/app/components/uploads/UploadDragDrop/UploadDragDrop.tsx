@@ -4,22 +4,24 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
+import { DS_STORE } from '@proton/shared/lib/drive/constants';
+import { isImage } from '@proton/shared/lib/helpers/mimetype';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useUpload } from '../../../store';
-import { UploadFileList } from '../../../store';
+import { UploadFileList, mimeTypeFromFile, useUpload } from '../../../store';
 import { isTransferCancelError } from '../../../utils/transfer';
 
 interface UploadDragDropProps {
     children: ReactNode;
-    disabled?: boolean;
+    shareId: string;
+    linkId: string;
     className?: string;
+    disabled?: boolean;
+    isPhoto?: boolean;
 }
 
-const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) => {
+const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhoto = false }: UploadDragDropProps) => {
     const { createNotification } = useNotifications();
-    const { activeFolder } = useActiveShare();
     const { uploadFiles } = useUpload();
 
     const [overlayIsVisible, setOverlayIsVisible] = useState(false);
@@ -55,11 +57,23 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
             const filesToUpload: UploadFileList = [];
 
+            let unSupportedFiles = false;
+
             const traverseDirectories = async (item: any, path: string[] = []) => {
                 if (item.isFile) {
                     return new Promise<void>((resolve, reject) => {
                         item.file(
-                            (file: File) => {
+                            async (file: File) => {
+                                // For photos, we check if the image format is supported
+                                if (
+                                    isPhoto &&
+                                    !(await mimeTypeFromFile(file).then(isImage)) &&
+                                    file.name !== DS_STORE
+                                ) {
+                                    unSupportedFiles = true;
+                                    resolve();
+                                    return;
+                                }
                                 filesToUpload.push({ path, file });
                                 resolve();
                             },
@@ -77,23 +91,26 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 if (item.isDirectory) {
                     const reader = item.createReader();
 
-                    const modificationTime = await new Promise<Date | undefined>((resolve, reject) => {
-                        item.getMetadata(resolve, reject);
-                    })
-                        .then((metadata: any) => {
-                            return metadata.modificationTime;
+                    // For photos we don't push folder
+                    if (!isPhoto) {
+                        const modificationTime = await new Promise<Date | undefined>((resolve, reject) => {
+                            item.getMetadata(resolve, reject);
                         })
-                        .catch(() => {
-                            // For example, Firefox does not support `getMetadata`
-                            // and there is no other way to get modification time
-                            // at this moment.
-                            return undefined;
+                            .then((metadata: any) => {
+                                return metadata.modificationTime;
+                            })
+                            .catch(() => {
+                                // For example, Firefox does not support `getMetadata`
+                                // and there is no other way to get modification time
+                                // at this moment.
+                                return undefined;
+                            });
+                        filesToUpload.push({
+                            path,
+                            folder: item.name,
+                            modificationTime,
                         });
-                    filesToUpload.push({
-                        path,
-                        folder: item.name,
-                        modificationTime,
-                    });
+                    }
 
                     // Iterates over folders recursively and puts them into filesToUpload list
                     const getEntries = async () => {
@@ -105,7 +122,10 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                 (entries: any[]) => {
                                     if (entries.length) {
                                         entries.forEach((entry) =>
-                                            promises.push(traverseDirectories(entry, [...path, item.name]))
+                                            promises.push(
+                                                // For photos we don't push file/folder structure
+                                                traverseDirectories(entry, isPhoto ? [] : [...path, item.name])
+                                            )
                                         );
                                         resolve(getEntries());
                                     } else {
@@ -135,6 +155,13 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
             // Need to wait for all files to have been read
             const results = await Promise.allSettled(promises);
+
+            if (unSupportedFiles) {
+                createNotification({
+                    type: 'warning',
+                    text: c('Error').t`Some files were ignored because they are not supported in Photos`,
+                });
+            }
             const errors = results.reduce((err, result) => {
                 if (result.status === 'rejected') {
                     err.push(result.reason);
@@ -146,7 +173,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 console.error(errors);
             }
 
-            uploadFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload).catch((err) => {
+            uploadFiles(shareId, linkId, filesToUpload, isPhoto).catch((err) => {
                 if (!isTransferCancelError(err)) {
                     console.error(err);
                 }

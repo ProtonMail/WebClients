@@ -50,6 +50,8 @@ function DriveView() {
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
             <UploadDragDrop
+                shareId={activeFolder.shareId}
+                linkId={activeFolder.linkId}
                 className="flex flex-column flex-nowrap flex-item-fluid"
                 disabled={folderView.isActiveLinkReadOnly}
             >
