@@ -5,7 +5,6 @@ export type AutoFillSettings = {
 
 export type AutoSaveSettings = {
     prompt: boolean;
-    browserDefault: boolean;
 };
 
 export type AutoSuggestSettings = {
