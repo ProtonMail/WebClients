@@ -54,6 +54,6 @@ export const useSelectItemClick = () => {
                 )
             );
         },
-        []
+        [search]
     );
 };
