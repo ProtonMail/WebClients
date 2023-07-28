@@ -249,7 +249,12 @@ export const fileDescriptions: { [type: string]: string } = {
     [SupportedMimeTypes.zip]: 'ZIP archive',
 };
 
+export const DS_STORE = '.DS_Store';
+
 // Delete once sharing between members is fully implemented.
 export const MEMBER_SHARING_ENABLED = false;
 
 export const PHOTOS_PAGE_SIZE = 500;
+
+// Accepted files for photos. This value must be used in input `accept` attribute
+export const PHOTOS_ACCEPTED_INPUT = `image/*,${SupportedMimeTypes.heic},${SupportedMimeTypes.heif}`;
