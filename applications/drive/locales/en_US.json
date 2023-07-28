@@ -30,6 +30,9 @@
     "Info": {
       "Contact unassigned to group ${ contactGroupName }": [
         "Contact removed from ${ contactGroupName }"
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to Computers."
       ]
     },
     "Label": {

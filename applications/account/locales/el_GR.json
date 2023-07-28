@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, παρακαλούμε πηγαίνετε Ρυθμίσεις > Μηνύματα και σύνταξη > Σύντομο domain (pm.me)"
       ],
@@ -3270,9 +3273,6 @@
       ],
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"

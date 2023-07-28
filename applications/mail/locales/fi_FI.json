@@ -3347,10 +3347,10 @@
         "Pyyntö aikakatkaistiin"
       ],
       "Require at least one action": [
-        "Ainakin yksi toiminto vaaditaan"
+        "Lisää ainakin yksi toiminto"
       ],
       "Require at least one condition": [
-        "Ainakin yksi ehto vaaditaan"
+        "Lisää ainakin yksi ehto"
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -4960,7 +4960,7 @@
         "Poistu sulkemalla tämä ruutu."
       ],
       "Confirm phishing report": [
-        "Vahvista tietojenkalasteluraportti"
+        "Vahvista tietojenkalasteluilmoitus"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
@@ -5224,7 +5224,7 @@
         "Internet-yhteys katkesi"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Ei Internet-yhteyttä. Tarkista laitteesi yhteydet."
+        "Ei yhteyttä. Tarkista laitteesi yhteydet."
       ],
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
@@ -5287,8 +5287,8 @@
         "Yhdistetty"
       ],
       "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Viesti ladattu: ${ currentProgress }/${ totalProgress }",
-        "Viestejä ladattu: ${ currentProgress }/${ totalProgress }"
+        "Viestin lataus: ${ currentProgress }/${ totalProgress }",
+        "Viestien lataus: ${ currentProgress }/${ totalProgress }"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Viestin erääntyminen toimii heti lähetettäessä viestejä muille ${ MAIL_APP_NAME } -käyttäjille. Lähettääksesi erääntyviä viestejä ${ BRAND_NAME }in ulkopuolisille käyttäjille, peru lähetys ja suojaa viesti salasanalla."
@@ -5908,9 +5908,6 @@
       ],
       "You can either update your search query or ${ button }": [
         "Voit joko muuttaa hakuasi tai ${ button }"
-      ],
-      "You can either update your search query or clear it": [
-        "Voit joko muuttaa hakuasi tai tyhjentää sen"
       ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
@@ -7408,7 +7405,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Tervetuloa ${ appName }iin"
+        "Tervetuloa ${ appName } -sovellukseen"
       ],
       "Where privacy and security meet productivity and ease of use.": [
         "Missä yksityisyys ja suojaus kohtaavat tuottavuuden ja käytettävyyden."
@@ -8435,7 +8432,7 @@
         "Salasana kopioitiin leikepöydälle"
       ],
       "Phishing reported": [
-        "Tietojenkalastelusta ilmoitettu"
+        "Tietojenkalastelu ilmoitettiin"
       ],
       "Phone number copied to clipboard": [
         "Puhelinnumero kopioitiin leikepöydälle"

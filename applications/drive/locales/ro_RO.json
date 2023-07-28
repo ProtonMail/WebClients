@@ -3469,6 +3469,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
+      "Enter the device name to confirm removal.": [
+        "Introduceți numele dispozitivului pentru a confirma ștergerea."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -3976,6 +3979,9 @@
         "Această operație va șterge și elimina accesul la fișier sau folder pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și va opri sincronizarea folderelor pe care le-ați adăugat la secțiunea „Calculatoare”."
       ],
       "This will replace the existing file with the folder": [
         "Aceasta va înlocui fișierul existent cu folderul."
@@ -5942,7 +5948,7 @@
         "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transfer a eșuat",
+        "A eșuat ${ numberOfFailedTransfer.total } transfer.",
         "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
         "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
       ],
