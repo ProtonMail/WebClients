@@ -1044,7 +1044,7 @@
         "Deshabilitar"
       ],
       "Disable E2EE": [
-        "Deshabilitar cifrado"
+        "Deshabilitar cifrado E2E"
       ],
       "Enable": [
         "Habilitar"
@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } es su usuario. Para crear ${ Local }@${ Domain }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
       ],
@@ -3270,9 +3273,6 @@
       ],
       "Require at least one condition": [
         "Requiere al menos una condición"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "No hay conexión con los servidores. Intente de nuevo en unos minutos o compruebe nuestra ${ statusPageLink }."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -11886,7 +11886,7 @@
         "Cree su dirección de ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
-        "Creando cuentas de usuario"
+        "Creación de cuentas de usuario"
       ],
       "Credentials": [
         "Credenciales"

@@ -771,7 +771,7 @@
         "Code senden"
       ],
       "Send email reminder": [
-        "Erinnerungs-E-Mail senden"
+        "Erinnerungs-Mail senden"
       ],
       "Send messages with @pm.me": [
         "Nachrichten mit @pm.me senden"
@@ -1043,8 +1043,14 @@
       "Disable": [
         "Deaktivieren"
       ],
+      "Disable E2EE": [
+        "E2EE deaktivieren"
+      ],
       "Enable": [
         "Aktivieren"
+      ],
+      "Enable E2EE": [
+        "E2EE aktivieren"
       ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
@@ -3288,6 +3294,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "status page": [
+        "Statusseite"
       ],
       "Tab closed": [
         "Tab geschlossen"
@@ -8510,7 +8519,7 @@
         "Anleitung anzeigen"
       ],
       "visit our blog": [
-        "Blog besuchen"
+        "Blog anschauen"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Was ist der Unterschied zwischen UDP- und TCP-Protokollen?"
@@ -8975,7 +8984,7 @@
         "${ n } VPN-Verbindungen pro Benutzer"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } mit unbegrenzten Hide-my-email-Aliassen"
+        "${ PASS_APP_NAME } mit unbegrenzten hide-my-email-Aliassen"
       ],
       "${ size } attachment size": [
         "Anhänge mit einer Größe von ${ size }"
@@ -9466,7 +9475,7 @@
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Erstelle bis zu ${ n } E-Mail-Adressen/Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten."
+        "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxMustermann@${ domain } für Einkaufskonten."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
@@ -11627,7 +11636,7 @@
     },
     "Title": {
       "${ appName } Free": [
-        "${ appName } Free"
+        "${ appName } Gratis"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }-Tastaturkürzel"
