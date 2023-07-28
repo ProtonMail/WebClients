@@ -37,7 +37,7 @@ const AddressesSection = ({ onClose }: Props) => {
                     ).t`Add user`}</ButtonLike>
                 </div>
                 <Alert className="mb-4">{c('Info for domain modal')
-                    .t`Add a new address for any user of your organization.`}</Alert>
+                    .t`Add a new address for the existing users of your organization.`}</Alert>
                 <div className="mb-4">
                     <ButtonLike as={SettingsLink} color="norm" onClick={() => onClose?.()} path="/users-addresses">{c(
                         'Action'
