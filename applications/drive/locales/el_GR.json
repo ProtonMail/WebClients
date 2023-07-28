@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" υπάρχει ήδη"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -2107,9 +2110,6 @@
       ],
       "Search failed": [
         "Αποτυχία αναζήτησης"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Οι διακομιστές δεν είναι προσβάσιμοι. Δοκιμάστε ξανά σε λίγα λεπτά ή ελέγξτε την ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
