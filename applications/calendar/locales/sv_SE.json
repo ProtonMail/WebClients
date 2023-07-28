@@ -2162,6 +2162,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } har ingen giltig e-postadress",
         "Vissa kontakter har ingen giltig e-postadress: ${ list }"
@@ -2388,9 +2391,6 @@
       ],
       "Self invitation not allowed": [
         "Självinbjudan är inte tillåten"
-      ],
-      "Servers are unreachable. Please try again in a few minutes or check our ${ statusPageLink }": [
-        "Servrarna går inte att nå. Försök igen om några minuter eller kolla vår ${ statusPageLink }"
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -3518,6 +3518,9 @@
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Kontakt borttagen från grupp ${ contactGroupName }"
+      ],
       "Country code": [
         "Landskod"
       ],
@@ -4000,6 +4003,9 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du kommer att uppdatera alla händelser i denna serie. Borttagna deltagare kommer att aviseras."
+      ],
+      "You've reached the maximum number of addresses in the contact group(s):": [
+        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -5878,6 +5884,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
       ]
     },
     "summer2023:Info": {

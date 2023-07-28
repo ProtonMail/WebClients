@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } n'a pas d’adresse e-mail valide.",
         "Certains contacts n'ont pas d’adresse e-mail valide : ${ list }."
@@ -4434,7 +4437,7 @@
         "Adresse postale"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"
