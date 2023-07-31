@@ -251,6 +251,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 {model.step === Steps.Account && (
                     <Step1
                         mode={signupParameters.mode}
+                        defaultEmail={signupParameters.email}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
                         selectedPlan={selectedPlan}
                         isB2bPlan={isB2bPlan}
