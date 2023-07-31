@@ -371,6 +371,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                     <Step3
                         email={cache?.accountData.email || ''}
                         password={cache?.accountData.password || ''}
+                        product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
                         isDarkBg={isDarkBg}
                         onComplete={async (newPassword: string | undefined) => {
