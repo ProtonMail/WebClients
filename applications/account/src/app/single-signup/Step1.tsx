@@ -14,7 +14,6 @@ import {
     CurrencySelector,
     PayPalButton,
     Payment as PaymentComponent,
-    PlanCustomization,
     StyledPayPalButton,
     usePayment,
 } from '@proton/components/containers';
@@ -55,6 +54,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
+    ADDON_NAMES,
     APPS,
     BRAND_NAME,
     CYCLE,
@@ -85,6 +85,7 @@ import { getFreeSubscriptionData, getFreeTitle } from '../single-signup-v2/helpe
 import { OptimisticOptions, SignupModelV2 } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
+import AddonSummary from './AddonSummary';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
 import Guarantee from './Guarantee';
@@ -98,6 +99,8 @@ import swissFlag from './flag.svg';
 import { getBillingCycleText, getOffText, getUpsellShortPlan } from './helper';
 import { Measure } from './interface';
 import { TelemetryPayType } from './measure';
+import PlanCustomizer from './planCustomizer/PlanCustomizer';
+import getAddonsPricing from './planCustomizer/getAddonsPricing';
 
 const today = new Date();
 
@@ -693,6 +696,13 @@ const Step1 = ({
         }
     })();
 
+    const addonsPricing = getAddonsPricing({
+        currentPlan: options.plan,
+        plansMap: model.plansMap,
+        planIDs: options.planIDs,
+        cycle: options.cycle,
+    });
+
     return (
         <Layout hasDecoration className={className} bottomRight={<SignupSupportDropdown />} isB2bPlan={isB2bPlan}>
             <div className="flex flex-align-items-center flex-column">
@@ -974,15 +984,21 @@ const Step1 = ({
                                         }}
                                         method="post"
                                     >
-                                        <PlanCustomization
-                                            mode="signup"
-                                            loading={false}
-                                            currency={model.subscriptionData.currency}
-                                            cycle={model.subscriptionData.cycle}
-                                            plansMap={model.plansMap}
-                                            planIDs={model.subscriptionData.planIDs}
-                                            onChangePlanIDs={(planIDs: PlanIDs) => handleOptimistic({ planIDs })}
-                                        />
+                                        {isB2bPlan && (
+                                            <>
+                                                <PlanCustomizer
+                                                    currency={model.subscriptionData.currency}
+                                                    cycle={model.subscriptionData.cycle}
+                                                    plansMap={model.plansMap}
+                                                    planIDs={model.subscriptionData.planIDs}
+                                                    currentPlan={selectedPlan}
+                                                    onChangePlanIDs={(planIDs: PlanIDs) =>
+                                                        handleOptimistic({ planIDs })
+                                                    }
+                                                />
+                                                <div className="border-bottom border-weak my-6" />
+                                            </>
+                                        )}
                                         {options.checkResult.AmountDue ? (
                                             <PaymentComponent
                                                 api={normalApi}
@@ -1223,6 +1239,53 @@ const Step1 = ({
                                                     </div>
                                                 );
                                             })()}
+
+                                            {addonsPricing.length > 0 ? (
+                                                <>
+                                                    <div className="mx-3 mt-1 flex flex-column gap-2">
+                                                        {(() => {
+                                                            return addonsPricing.map(
+                                                                ({ addonPricePerCycle, cycle, value, addon }) => {
+                                                                    if (
+                                                                        addon.Name === ADDON_NAMES.MEMBER_VPN_PRO ||
+                                                                        addon.Name === ADDON_NAMES.MEMBER_VPN_BUSINESS
+                                                                    ) {
+                                                                        return (
+                                                                            <AddonSummary
+                                                                                key={addon.Name}
+                                                                                label={c('Checkout summary').t`Users`}
+                                                                                numberOfItems={value}
+                                                                                currency={options.currency}
+                                                                                price={addonPricePerCycle / cycle}
+                                                                                subline={
+                                                                                    <>
+                                                                                        /{' '}
+                                                                                        {c('Checkout summary').t`month`}
+                                                                                    </>
+                                                                                }
+                                                                            />
+                                                                        );
+                                                                    }
+
+                                                                    if (addon.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+                                                                        return (
+                                                                            <AddonSummary
+                                                                                key={addon.Name}
+                                                                                label={c('Checkout summary').t`Servers`}
+                                                                                numberOfItems={value}
+                                                                                currency={options.currency}
+                                                                                price={addonPricePerCycle / cycle}
+                                                                            />
+                                                                        );
+                                                                    }
+                                                                }
+                                                            );
+                                                        })()}
+                                                    </div>
+                                                    <div className="mx-3 border-bottom border-weak" />
+                                                </>
+                                            ) : null}
+
                                             <div className="mx-3 flex flex-column gap-2">
                                                 {showLifetimeDeal && totals.discountPercentage > 0 && (
                                                     <div className={clsx('flex flex-justify-space-between text-rg')}>
