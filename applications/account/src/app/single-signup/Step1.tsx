@@ -390,16 +390,16 @@ const Step1 = ({
 
     const handleChangePlanIds = async (planIDs: PlanIDs, planName: PLANS) => {
         handleUpdate('plan');
-        measure({
+        void measure({
             event: TelemetryAccountSignupEvents.planSelect,
             dimensions: { plan: planName },
         });
-        handleOptimistic({ planIDs });
+        void handleOptimistic({ planIDs });
     };
 
     const handleChangeCurrency = async (currency: Currency) => {
         handleUpdate('plan');
-        measure({
+        void measure({
             event: TelemetryAccountSignupEvents.currencySelect,
             dimensions: { currency: currency },
         });
@@ -416,7 +416,7 @@ const Step1 = ({
 
     const handleChangeCycle = async (cycle: Cycle, mode?: 'upsell') => {
         if (mode === 'upsell') {
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.interactUpsell,
                 dimensions: {
                     upsell_to: `${options.plan.Name}_${cycle}m`,
@@ -424,7 +424,7 @@ const Step1 = ({
                 },
             });
         } else {
-            measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
+            void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         }
         handleOptimistic({ cycle })
             .then((result) => {
@@ -478,7 +478,7 @@ const Step1 = ({
         if (!options.plan) {
             return;
         }
-        measure({
+        void measure({
             event,
             dimensions: {
                 type: type,
@@ -675,7 +675,7 @@ const Step1 = ({
                                     <InlineLinkButton
                                         className="color-weak"
                                         onClick={() => {
-                                            measure({
+                                            void measure({
                                                 event: TelemetryAccountSignupEvents.planSelect,
                                                 dimensions: { plan: PLANS.FREE },
                                             });
@@ -822,7 +822,7 @@ const Step1 = ({
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');
                                             if (autocomplete) {
-                                                measure({
+                                                void measure({
                                                     event: TelemetryAccountSignupEvents.interactCreditCard,
                                                     dimensions: { field: autocomplete as any },
                                                 });
@@ -894,7 +894,7 @@ const Step1 = ({
                                                     if (method && newMethod && method !== newMethod) {
                                                         const value = getPaymentMethod(newMethod);
                                                         if (value) {
-                                                            measure({
+                                                            void measure({
                                                                 event: TelemetryAccountSignupEvents.paymentSelect,
                                                                 dimensions: { type: value },
                                                             });
@@ -1174,7 +1174,7 @@ const Step1 = ({
                                     shape="outline"
                                     onClick={() => {
                                         upsellModalProps.onClose();
-                                        handleChangePlanIds({}, PLANS.FREE);
+                                        void handleChangePlanIds({}, PLANS.FREE);
                                     }}
                                 >
                                     {c('Info').t`Continue with ${freeName}`}
