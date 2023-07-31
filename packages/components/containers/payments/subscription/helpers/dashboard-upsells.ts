@@ -9,6 +9,7 @@ import {
     CYCLE,
     DASHBOARD_UPSELL_PATHS,
     FAMILY_MAX_USERS,
+    FREE_VPN_CONNECTIONS,
     PLANS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -39,12 +40,13 @@ import {
     getNAddressesFeatureB2B,
     getNDomainsFeature,
 } from '../../features/mail';
-import { getProtonPassFeature } from '../../features/pass';
+import { FREE_PASS_ALIASES, getProtonPassFeature } from '../../features/pass';
 import { getShortPlan } from '../../features/plan';
 import {
     getAdvancedVPNFeature,
     getB2BHighSpeedVPNConnectionsFeature,
     getHighSpeedVPNConnectionsFeature,
+    getVPNConnectionsFeature,
 } from '../../features/vpn';
 import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
@@ -136,16 +138,16 @@ const getMailPlusUpsell = ({
     isTrialEnding,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
-    const bundlePlan = plansMap[PLANS.MAIL];
+    const mailPlusPlan = plansMap[PLANS.MAIL];
 
     const features: MaybeUpsellFeature[] = [
-        getStorageFeature(bundlePlan?.MaxSpace ?? 15),
+        getStorageFeature(mailPlusPlan?.MaxSpace ?? 15),
         getNAddressesFeature({ n: 10 }),
         getNDomainsFeature({ n: 1 }),
         getFoldersAndLabelsFeature('unlimited'),
         getNCalendarsFeature(MAX_CALENDARS_PAID),
-        getHighSpeedVPNConnectionsFeature(),
-        getProtonPassFeature(),
+        getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
+        getProtonPassFeature(FREE_PASS_ALIASES),
     ];
 
     return getUpsell({
