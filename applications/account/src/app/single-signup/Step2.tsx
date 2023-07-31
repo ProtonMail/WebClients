@@ -32,7 +32,7 @@ const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; produc
                 <Content>
                     <div className="text-center pt-6" role="alert">
                         <h1 className="h2 text-bold">{c('Info').t`Thank you`}</h1>
-                        <span className="color-weak">{c('Info').t`For choosing ${product}`}</span>
+                        <span className="color-weak">{c('Info').t`for choosing ${product}`}</span>
                     </div>
                     <div className="pb-4 text-center m-auto w100 on-mobile-w100">{img}</div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
