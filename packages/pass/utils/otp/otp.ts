@@ -42,7 +42,8 @@ export const parseOTPValue = (
                 ).toString();
             }
 
-            let maybeBase32Secret = input.split(' ').join('');
+            /* remove spaces, dashes and underscores */
+            let maybeBase32Secret = input.replace(/\s|-|_/g, '');
             let secret = Secret.fromBase32(maybeBase32Secret);
 
             return new TOTP(
