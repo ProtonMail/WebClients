@@ -1,5 +1,15 @@
 User-agent: *
 Disallow: /refer-a-friend
+Disallow: /pre-invite
 Disallow: /trial
 Disallow: /lite
 Disallow: /storage
+Disallow: /switch
+Disallow: /oauth/authorize
+Disallow: /oauth/confirm
+Disallow: /auth-ext
+Disallow: /authorize
+Disallow: /unsubscribe
+Disallow: /verify-email
+Disallow: /remove-email
+Disallow: /disable-account

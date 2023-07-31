@@ -48,6 +48,7 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
 };
 
 export const getSignupSearchParams = (
+    pathname: string,
     searchParams: URLSearchParams,
     defaults?: { cycle?: CYCLE; preSelectedPlan?: PLANS }
 ) => {
@@ -65,7 +66,7 @@ export const getSignupSearchParams = (
     const maybeDomains = Number(searchParams.get('domains'));
     const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
 
-    const { product } = getProductParams(window.location.pathname, searchParams);
+    const { product } = getProductParams(pathname, searchParams);
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');

@@ -17,6 +17,7 @@ import { ChallengePayload } from '@proton/shared/lib/authentication/interface';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID } from '@proton/shared/lib/helpers/sentry';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -25,18 +26,30 @@ import noop from '@proton/utils/noop';
 
 const unAuthStorageKey = 'ua_uid';
 
+const createPromise = <T>() => {
+    let resolve!: (value: T | PromiseLike<T>) => void;
+    let reject!: (reason?: any) => void;
+
+    const promise = new Promise<T>((innerResolve, innerReject) => {
+        resolve = innerResolve;
+        reject = innerReject;
+    });
+
+    return { promise, resolve, reject };
+};
+
 const context: {
     UID: string | undefined;
     auth: boolean;
     api: Api;
     refresh: () => void;
     abortController: AbortController;
-    challenge: ChallengePayload;
+    challenge: ReturnType<typeof createPromise<ChallengePayload | undefined>>;
 } = {
     UID: undefined,
     api: undefined,
     abortController: new AbortController(),
-    challenge: undefined,
+    challenge: createPromise<ChallengePayload | undefined>(),
     auth: false,
     refresh: () => {},
 } as any;
@@ -55,8 +68,11 @@ export const updateUID = (UID: string) => {
 export const init = createOnceHandler(async () => {
     context.abortController.abort();
 
+    const challengePromise = context.challenge.promise.catch(noop);
+    const challengePayload = await Promise.race([challengePromise, wait(300)]);
+
     const response = await context.api<Response>({
-        ...createSession(context.challenge ? { Payload: context.challenge } : undefined),
+        ...createSession(challengePayload ? { Payload: challengePayload } : undefined),
         headers: {
             // This is here because it's required for clients that aren't in the min version
             // And we won't put e.g. the standalone login for apps there
@@ -67,7 +83,20 @@ export const init = createOnceHandler(async () => {
 
     const { UID, AccessToken, RefreshToken } = await response.json();
     await context.api(withAuthHeaders(UID, AccessToken, setCookies({ UID, RefreshToken, State: getRandomString(24) })));
+
     updateUID(UID);
+
+    if (!challengePayload) {
+        challengePromise
+            .then((challengePayload) => {
+                if (!challengePayload) {
+                    return;
+                }
+                context.api(withUIDHeaders(UID, payload(challengePayload))).catch(noop);
+            })
+            .catch(noop);
+    }
+
     return response;
 });
 
@@ -178,9 +207,8 @@ export const setApi = (api: Api) => {
     context.api = api;
 };
 
-export const setChallenge = async (data: ChallengePayload) => {
-    context.challenge = data;
-    await apiCallback(payload(data));
+export const setChallenge = (data: ChallengePayload | undefined) => {
+    context.challenge.resolve(data);
 };
 
 export const startUnAuthFlow = createOnceHandler(async () => {

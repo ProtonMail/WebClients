@@ -56,13 +56,14 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { Paths } from '../content/helper';
 import { getPlanFromPlanIDs } from '../signup/helper';
 import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { getSignupMeta } from '../signup/signupPagesJson';
-import { useMetaTags } from '../useMetaTags';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
@@ -141,15 +142,27 @@ interface Props {
     clientType: CLIENT_TYPES;
     activeSessions?: LocalSessionPersisted[];
     fork: boolean;
+    metaTags: MetaTags;
+    paths: Paths;
 }
 
 let ranPreload = false;
 
-const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
+const SingleSignupContainerV2 = ({
+    paths,
+    metaTags,
+    fork,
+    activeSessions,
+    loader,
+    onLogin,
+    productParam,
+    clientType,
+}: Props) => {
+    const location = useLocationWithoutLocale();
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
 
-    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial: false, isMailRefer: false }));
+    useMetaTags(metaTags);
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
@@ -239,7 +252,7 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
 
     const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(searchParams, {
+        const result = getSignupSearchParams(location.pathname, searchParams, {
             cycle: defaults.cycle,
             preSelectedPlan: defaults.plan,
         });
@@ -655,6 +668,7 @@ const SingleSignupContainerV2 = ({ toApp, fork, activeSessions, loader, onLogin,
             {preload}
             {renderLoginModal && (
                 <LoginModal
+                    paths={paths}
                     {...loginModalProps}
                     defaultUsername={tmpLoginEmail}
                     onLogin={async (props) => {

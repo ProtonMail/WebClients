@@ -1,9 +1,17 @@
 import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const defaultValue = { title: undefined, description: undefined };
+import { stripLocaleTagPrefix } from './locales';
+import { getLocalePathPrefix } from './useLocationWithoutLocale';
 
-export const useMetaTags = (options: { title: string; description: string } | null) => {
+const defaultValue: MetaTags = { title: undefined, description: undefined };
+
+export interface MetaTags {
+    title: string | undefined;
+    description: string | undefined;
+}
+
+export const useMetaTags = (options: MetaTags | null) => {
     const { title, description } = options || defaultValue;
 
     useEffect(() => {
@@ -30,7 +38,11 @@ export const useMetaTags = (options: { title: string; description: string } | nu
         og?.setAttribute('content', title);
     }, [title]);
 
-    const location = useLocation();
+    // Use location to trigger update on route changes
+    useLocation();
+    // Use window.location.pathname to also include locale prefix
+    const fullPathname = window.location.pathname;
+
     useEffect(() => {
         if (options === null) {
             return;
@@ -40,11 +52,36 @@ export const useMetaTags = (options: { title: string; description: string } | nu
         if (!canonical) {
             return;
         }
+
+        const fullPathWithoutLocalePrefix = stripLocaleTagPrefix(fullPathname);
+
+        const updateAlternateLinkHref = (link: Element) => {
+            const hrefValue = link.getAttribute('href');
+            if (!hrefValue) {
+                return;
+            }
+            const href = new URL(hrefValue);
+
+            const noLocalePrefix = stripLocaleTagPrefix(href.pathname);
+            const newHref = `${href.origin}${getLocalePathPrefix(noLocalePrefix.localePrefix)}${
+                fullPathWithoutLocalePrefix.pathname
+            }`;
+
+            link.setAttribute('href', newHref);
+        };
+
         try {
-            const url = new URL(canonical.getAttribute('href') || '');
-            const content = `${url.origin}${location.pathname}`;
+            const hrefValue = canonical.getAttribute('href');
+            if (!hrefValue) {
+                return;
+            }
+            const url = new URL(hrefValue);
+            const content = `${url.origin}${fullPathname}`;
             canonical.setAttribute('href', content);
             og?.setAttribute('content', content);
+
+            const links = document.querySelectorAll('link[rel="alternate"]');
+            links.forEach(updateAlternateLinkHref);
         } catch (e) {}
-    }, [location.pathname]);
+    }, [fullPathname]);
 };
