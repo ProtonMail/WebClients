@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { EmptyViewContainer, Icon, PrimaryButton } from '@proton/components';
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
-import emptyDevicesImg from '@proton/styles/assets/img/illustrations/empty-devices.png';
+import emptyDevicesImg from '@proton/styles/assets/img/illustrations/empty-devices.svg';
 
 import { logError } from '../../../utils/errorHandling';
 
