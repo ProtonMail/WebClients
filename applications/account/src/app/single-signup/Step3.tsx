@@ -27,6 +27,7 @@ import {
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
@@ -71,6 +72,51 @@ const CopyPasswordModal = ({
     );
 };
 
+const GeneratedPasswordDisplay = ({
+    password,
+    measure,
+    setCopied,
+    className,
+}: {
+    password: string;
+    measure: Measure;
+    setCopied: (copied: boolean) => void;
+    className?: string;
+}) => {
+    const { createNotification } = useNotifications();
+
+    return (
+        <div
+            className={clsx(
+                'pl-4 py-1 bg-weak rounded flex flex-justify-space-between flex-align-items-center',
+                className
+            )}
+        >
+            <div
+                className="user-select text-pre-wrap break"
+                onCopy={() => {
+                    setCopied(true);
+                }}
+            >
+                {password}
+            </div>
+            <Copy
+                tooltipText={c('Info').t`Copy the suggested password to clipboard`}
+                shape="ghost"
+                value={password}
+                onCopy={() => {
+                    void measure({
+                        event: TelemetryAccountSignupEvents.interactPassword,
+                        dimensions: { click: 'copy' },
+                    });
+                    setCopied(true);
+                    createNotification({ text: c('Info').t`Password copied to clipboard` });
+                }}
+            />
+        </div>
+    );
+};
+
 const Step3 = ({
     onComplete,
     password,
@@ -78,6 +124,7 @@ const Step3 = ({
     measure,
     isB2bPlan,
     isDarkBg,
+    product,
 }: {
     password: string;
     email: string;
@@ -85,8 +132,8 @@ const Step3 = ({
     measure: Measure;
     isB2bPlan: boolean;
     isDarkBg: boolean;
+    product: string;
 }) => {
-    const { createNotification } = useNotifications();
     const [setOwnPasswordMode, setSetOwnPasswordMode] = useState(false);
     const [copyModalProps, setCopyModal, renderCopyModal] = useModalState();
 
@@ -98,7 +145,7 @@ const Step3 = ({
     const { validator, onFormSubmit, reset } = useFormErrors();
 
     useEffect(() => {
-        measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
+        void measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
     }, []);
 
     useEffect(() => {
@@ -114,29 +161,6 @@ const Step3 = ({
         metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'given_password' });
     }, [setOwnPasswordMode]);
 
-    const content = (
-        <div className="pl-4 py-1 mb-4 bg-weak rounded flex flex-justify-space-between flex-align-items-center">
-            <div
-                className="user-select text-pre-wrap break"
-                onCopy={() => {
-                    setCopied(true);
-                }}
-            >
-                {password}
-            </div>
-            <Copy
-                tooltipText={c('Info').t`Copy the suggested password to clipboard`}
-                shape="ghost"
-                value={password}
-                onCopy={() => {
-                    measure({ event: TelemetryAccountSignupEvents.interactPassword, dimensions: { click: 'copy' } });
-                    setCopied(true);
-                    createNotification({ text: c('Info').t`Password copied to clipboard` });
-                }}
-            />
-        </div>
-    );
-
     const finalPassword = setOwnPasswordMode ? newPassword : undefined;
     const onBack = setOwnPasswordMode
         ? () => {
@@ -150,7 +174,11 @@ const Step3 = ({
     return (
         <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
             <Main>
-                <Header title={c('Title').t`Set your password`} onBack={onBack} />
+                <Header
+                    title={c('Title').t`Set your password`}
+                    subTitle={c('Info').t`to continue to ${product}`}
+                    onBack={onBack}
+                />
                 <Content>
                     <div className="flex gap-2 mb-6">
                         <Avatar color="weak">{getInitials(email)}</Avatar>
@@ -165,12 +193,12 @@ const Step3 = ({
                             }
 
                             if (!setOwnPasswordMode) {
-                                measure({
+                                void measure({
                                     event: TelemetryAccountSignupEvents.interactPassword,
                                     dimensions: { click: 'continue_suggested' },
                                 });
                             } else {
-                                measure({
+                                void measure({
                                     event: TelemetryAccountSignupEvents.interactPassword,
                                     dimensions: { click: 'continue_custom' },
                                 });
@@ -185,7 +213,12 @@ const Step3 = ({
                         method="post"
                     >
                         {!setOwnPasswordMode ? (
-                            <>{content}</>
+                            <>
+                                <GeneratedPasswordDisplay password={password} setCopied={setCopied} measure={measure} />
+                                <div className="mt-1 mb-4 color-weak text-sm">
+                                    {c('Info').t`We generated a strong password for you`}
+                                </div>
+                            </>
                         ) : (
                             <>
                                 <InputFieldTwo
@@ -231,7 +264,7 @@ const Step3 = ({
                                 loading={loading}
                                 className="mt-2"
                                 onClick={() => {
-                                    measure({
+                                    void measure({
                                         event: TelemetryAccountSignupEvents.interactPassword,
                                         dimensions: { click: 'set_custom' },
                                     });
@@ -248,7 +281,14 @@ const Step3 = ({
             {renderCopyModal && (
                 <CopyPasswordModal
                     {...copyModalProps}
-                    children={content}
+                    children={
+                        <GeneratedPasswordDisplay
+                            className="mb-4"
+                            password={password}
+                            setCopied={setCopied}
+                            measure={measure}
+                        />
+                    }
                     onEdit={() => {
                         setSetOwnPasswordMode(true);
                         reset();
