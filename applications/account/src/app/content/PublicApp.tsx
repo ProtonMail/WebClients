@@ -174,7 +174,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     // Either another app wants to fork, or a specific route is requested on this app
     const maybePreAppIntent = getPreAppIntent(forkState);
-    const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent);
+    const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
@@ -340,7 +340,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         setActiveSessions(sessions);
 
         if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
-            const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState));
+            const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState), productParam);
             history.replace(paths.signup);
             return;
         }
@@ -362,7 +362,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             }
             if (!sessions.length && location.pathname === SSO_PATHS.SWITCH) {
                 // This is recalculated because the set locale might have changed
-                const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent);
+                const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
                 history.replace(paths.login);
             }
             return false;
@@ -518,6 +518,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.SIGNUP,
                                                         SSO_PATHS.REFER,
                                                         SSO_PATHS.TRIAL,
+                                                        SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,

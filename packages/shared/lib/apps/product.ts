@@ -4,7 +4,7 @@ import { captureMessage } from '../helpers/sentry';
 
 export const otherProductParamValues = ['generic', 'business'] as const;
 export type OtherProductParam = (typeof otherProductParamValues)[number];
-export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
+export type ProductParam = APP_NAMES | OtherProductParam | undefined;
 
 export const normalizeProduct = (product: ProductParam) => {
     if (!product) {
@@ -26,7 +26,7 @@ export interface ProductHeaderContext {
 }
 
 function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
-    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'none', 'pass'].includes(
+    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass'].includes(
         '' + normalizedProduct
     );
     if (!isAllowed) {
