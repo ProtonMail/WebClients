@@ -161,6 +161,7 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
                                             key={2}
                                             address={address}
                                             member={member}
+                                            user={user}
                                             organizationKey={organizationKey}
                                             onSetDefault={setDefaultAddress(i)}
                                             savingIndex={savingIndex}
