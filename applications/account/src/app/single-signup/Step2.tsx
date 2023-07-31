@@ -16,11 +16,13 @@ const Step2 = ({
     product,
     img,
     isB2bPlan,
+    isDarkBg,
 }: {
     onSetup: () => Promise<void>;
     product: string;
     img: ReactNode;
     isB2bPlan: boolean;
+    isDarkBg: boolean;
 }) => {
     const steps: string[] = [
         c('Info').t`Verifying your payment`,
@@ -37,7 +39,7 @@ const Step2 = ({
     }, []);
 
     return (
-        <Layout hasDecoration={false} isB2bPlan={isB2bPlan}>
+        <Layout hasDecoration={false} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
             <Main>
                 <Content>
                     <div className="text-center pt-6" role="alert">

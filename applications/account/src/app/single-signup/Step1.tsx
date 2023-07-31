@@ -312,6 +312,7 @@ const Step1 = ({
     mode,
     selectedPlan,
     isB2bPlan,
+    isDarkBg,
     onComplete,
     model,
     setModel,
@@ -328,6 +329,7 @@ const Step1 = ({
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
     isB2bPlan: boolean;
+    isDarkBg: boolean;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     vpnServersCountData: VPNServersCountData;
     onComplete: (data: {
@@ -345,7 +347,7 @@ const Step1 = ({
     className?: string;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
-    const { isDesktop } = useActiveBreakpoint();
+    const { isDesktop, isTinyMobile } = useActiveBreakpoint();
     const { APP_NAME } = useConfig();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
@@ -706,7 +708,13 @@ const Step1 = ({
     });
 
     return (
-        <Layout hasDecoration className={className} bottomRight={<SignupSupportDropdown />} isB2bPlan={isB2bPlan}>
+        <Layout
+            hasDecoration
+            className={className}
+            bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg && !isTinyMobile} />}
+            isDarkBg={isDarkBg}
+            isB2bPlan={isB2bPlan}
+        >
             <div className="flex flex-align-items-center flex-column">
                 <div className="signup-v1-header mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">

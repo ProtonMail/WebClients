@@ -77,12 +77,14 @@ const Step3 = ({
     email,
     measure,
     isB2bPlan,
+    isDarkBg,
 }: {
     password: string;
     email: string;
     onComplete: (newPassword: string | undefined) => Promise<void>;
     measure: Measure;
     isB2bPlan: boolean;
+    isDarkBg: boolean;
 }) => {
     const { createNotification } = useNotifications();
     const [setOwnPasswordMode, setSetOwnPasswordMode] = useState(false);
@@ -146,7 +148,7 @@ const Step3 = ({
         : undefined;
 
     return (
-        <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan}>
+        <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
             <Main>
                 <Header title={c('Title').t`Set your password`} onBack={onBack} />
                 <Content>
