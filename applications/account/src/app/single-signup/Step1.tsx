@@ -88,6 +88,7 @@ import { useFlowRef } from '../useFlowRef';
 import AddonSummary from './AddonSummary';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
+import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
 import RightPlanSummary from './RightPlanSummary';
@@ -355,6 +356,7 @@ const Step1 = ({
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const createPaymentToken = usePaymentToken();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
+    const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
 
     const createFlow = useFlowRef();
 
@@ -430,13 +432,7 @@ const Step1 = ({
 
             setOptimisticDiff(newOptimistic);
 
-            const checkResult = await getSubscriptionPrices(
-                silentApi,
-                newPlanIDs,
-                newCurrency,
-                newCycle,
-                model.subscriptionData.checkResult.Coupon?.Code
-            );
+            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, couponCode);
 
             if (!validateFlow()) {
                 return;
@@ -706,6 +702,23 @@ const Step1 = ({
         planIDs: options.planIDs,
         cycle: options.cycle,
     });
+
+    const coupon = (() => {
+        const {
+            currency,
+            checkResult: { Coupon, CouponDiscount },
+        } = model.subscriptionData;
+
+        if (!Coupon || !CouponDiscount) {
+            return;
+        }
+        return {
+            code: Coupon.Code,
+            description: Coupon.Description,
+            discount: CouponDiscount,
+            currency,
+        };
+    })();
 
     return (
         <Layout
@@ -1296,6 +1309,58 @@ const Step1 = ({
                                                     <div className="mx-3 border-bottom border-weak" />
                                                 </>
                                             ) : null}
+
+                                            {isB2bPlan && (
+                                                <>
+                                                    <div className="mx-3">
+                                                        <GiftCodeSummary
+                                                            coupon={coupon}
+                                                            onApplyCode={async (code) => {
+                                                                const checkResult = await getSubscriptionPrices(
+                                                                    silentApi,
+                                                                    options.planIDs,
+                                                                    options.currency,
+                                                                    options.cycle,
+                                                                    code
+                                                                );
+
+                                                                setModel((old) => ({
+                                                                    ...old,
+                                                                    subscriptionData: {
+                                                                        ...model.subscriptionData,
+                                                                        checkResult,
+                                                                    },
+                                                                }));
+
+                                                                setCouponCode(code);
+
+                                                                if (!checkResult.Coupon) {
+                                                                    throw new Error(c('Notification').t`Invalid code`);
+                                                                }
+                                                            }}
+                                                            onRemoveCode={async () => {
+                                                                const checkResult = await getSubscriptionPrices(
+                                                                    silentApi,
+                                                                    options.planIDs,
+                                                                    options.currency,
+                                                                    options.cycle
+                                                                );
+
+                                                                setModel((old) => ({
+                                                                    ...old,
+                                                                    subscriptionData: {
+                                                                        ...model.subscriptionData,
+                                                                        checkResult,
+                                                                    },
+                                                                }));
+
+                                                                setCouponCode(undefined);
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className="mx-3 border-bottom border-weak" />
+                                                </>
+                                            )}
 
                                             <div className="mx-3 flex flex-column gap-2">
                                                 {showLifetimeDeal && totals.discountPercentage > 0 && (
