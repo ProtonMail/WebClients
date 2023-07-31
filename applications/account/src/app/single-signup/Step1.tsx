@@ -308,6 +308,7 @@ type HasBeenCountedState = {
 };
 
 const Step1 = ({
+    defaultEmail,
     mode,
     selectedPlan,
     isB2bPlan,
@@ -323,6 +324,7 @@ const Step1 = ({
     onChallengeLoaded,
     className,
 }: {
+    defaultEmail?: string;
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
     isB2bPlan: boolean;
@@ -799,6 +801,7 @@ const Step1 = ({
                             <BoxContent>
                                 <div className="relative">
                                     <AccountStepDetails
+                                        defaultEmail={defaultEmail}
                                         passwordFields={false}
                                         model={model}
                                         measure={measure}
