@@ -67,8 +67,10 @@ export const getSignupSearchParams = (
     const coupon = searchParams.get('coupon') || undefined;
     const type = searchParams.get('type') || undefined;
     const hideFreePlan = searchParams.get('hfp') || undefined;
+    const email = searchParams.get('email') || undefined;
 
     return {
+        email,
         coupon,
         currency,
         cycle: cycle || defaults?.cycle || DEFAULT_CYCLE,
