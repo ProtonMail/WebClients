@@ -121,7 +121,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
             get2FAAuthenticator(true),
-            getCustomFields(),
+            getCustomFields(true),
             getSupport('priority'),
         ],
     };

@@ -109,10 +109,10 @@ export const getVaults = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCustomFields = (): PlanCardFeatureDefinition => {
+export const getCustomFields = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Custom fields`,
-        included: true,
+        included,
         icon: 'pen-square',
     };
 };
@@ -220,14 +220,14 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             name: 'forwarding-mailboxes',
             plans: {
                 [PLANS.FREE]: getCustomFields(),
-                [PLANS.BUNDLE]: getCustomFields(),
+                [PLANS.BUNDLE]: getCustomFields(true),
                 [PLANS.MAIL]: getCustomFields(),
                 [PLANS.VPN]: getCustomFields(),
                 [PLANS.DRIVE]: getCustomFields(),
-                [PLANS.PASS_PLUS]: getCustomFields(),
-                [PLANS.FAMILY]: getCustomFields(),
+                [PLANS.PASS_PLUS]: getCustomFields(true),
+                [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.MAIL_PRO]: getCustomFields(),
-                [PLANS.BUNDLE_PRO]: getCustomFields(),
+                [PLANS.BUNDLE_PRO]: getCustomFields(true),
             },
         },
         {
