@@ -1,3 +1,13 @@
+## Release 5.0.13.0 — Aug 9, 2023
+
+### Improvements
+
+-   Add the ability to easily see the addresses of events' participants, copy them and create or view linked contacts  
+
+### Fixes
+
+-   Small fixes when sending or replying to invitations
+
 ## Release 5.0.12.0 — July 12, 2023
 
 ### Improvements
