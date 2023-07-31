@@ -14,7 +14,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 
 import { MailImportFields } from './CustomizeMailImportModal.interface';
 import Addresses from './CustomizeMailImportModalAddresses';
-import ConfirmLeaveModal from './CustomizeMailImportModalConfirmLeaveModal';
+import CustomizeMailImportModalConfirmLeaveModal from './CustomizeMailImportModalConfirmLeaveModal';
 import ImportMappingToggle from './CustomizeMailImportModalCustomizeFoldersToggle';
 import GmailCategories from './CustomizeMailImportModalGmailCategories';
 import Header from './CustomizeMailImportModalHeader';
@@ -119,7 +119,7 @@ const CustomizeMailImportModal = ({
             </ModalTwo>
 
             {renderConfirmLeaveModal && (
-                <ConfirmLeaveModal
+                <CustomizeMailImportModalConfirmLeaveModal
                     onContinue={() => {
                         openConfirmLeaveModal(false);
                     }}
@@ -127,7 +127,7 @@ const CustomizeMailImportModal = ({
                         openConfirmLeaveModal(false);
                         modalProps.onClose();
                     }}
-                    modalProps={confirmLeaveModalProps}
+                    {...confirmLeaveModalProps}
                 />
             )}
         </>
