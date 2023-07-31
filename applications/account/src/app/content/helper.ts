@@ -1,5 +1,6 @@
 import type { ActiveSessionData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     getIsCalendarApp,
     getIsDriveApp,
@@ -39,7 +40,8 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
 export const getSignupUrl = (
     localePath: string,
     forkState: ActiveSessionData | undefined,
-    app: APP_NAMES | undefined
+    app: APP_NAMES | undefined,
+    productParam: ProductParam
 ) => {
     const { path, params } = (() => {
         if (forkState?.type === SSOType.OAuth) {
@@ -67,6 +69,9 @@ export const getSignupUrl = (
         if (getIsVPNApp(app)) {
             return { path: SSO_PATHS.VPN_SIGNUP, params };
         }
+        if (productParam === 'business') {
+            return { path: SSO_PATHS.BUSINESS_SIGNUP, params };
+        }
         return { path: SSO_PATHS.SIGNUP, params };
     })();
 
@@ -83,13 +88,14 @@ export interface Paths {
 export const getPaths = (
     maybeLocalePrefix: string,
     forkState: ActiveSessionData | undefined,
-    app: APP_NAMES | undefined
+    app: APP_NAMES | undefined,
+    productParam: ProductParam
 ): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
     const prefix = getLocalePathPrefix(localePrefix);
     return {
         login: getLoginUrl(prefix, app),
-        signup: getSignupUrl(prefix, forkState, app),
+        signup: getSignupUrl(prefix, forkState, app, productParam),
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
     };

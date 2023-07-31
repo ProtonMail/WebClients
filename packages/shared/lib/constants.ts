@@ -220,6 +220,7 @@ export const SSO_PATHS = {
     CALENDAR_SIGN_IN: '/calendar',
     DRIVE_SIGNUP: '/drive/signup',
     DRIVE_SIGN_IN: '/drive',
+    BUSINESS_SIGNUP: '/business/signup',
     VPN_SIGNUP: '/vpn/signup',
     VPN_PRICING: '/vpn/pricing',
     VPN_SIGN_IN: '/vpn',
