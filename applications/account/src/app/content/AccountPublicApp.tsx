@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useState } from 'react';
-import * as React from 'react';
 
 import * as H from 'history';
 import { c } from 'ttag';
@@ -25,14 +24,22 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 interface Props {
     location: H.Location;
     locales?: TtagLocaleMap;
-    children: React.ReactNode;
+    children: ReactNode;
     onActiveSessions: (data: GetActiveSessionsResult) => boolean;
     onLogin: ProtonLoginCallback;
-    loader: ReactNode;
+    onLoaded: () => void;
+    pathLocale: string;
 }
 
-const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
-    const [loading, setLoading] = useState(true);
+const AccountPublicApp = ({
+    pathLocale,
+    onLoaded,
+    location,
+    locales = {},
+    children,
+    onActiveSessions,
+    onLogin,
+}: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -44,7 +51,7 @@ const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSe
             const languageCookie = getCookie('Locale');
             const browserLocale = getBrowserLocale();
             const localeCode =
-                getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
+                getClosestLocaleMatch(pathLocale || languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             await Promise.all([
                 loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT)),
@@ -53,7 +60,7 @@ const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSe
             ]);
             const activeSessionsResult = await getActiveSessions(silentApi);
             if (!onActiveSessions(activeSessionsResult)) {
-                setLoading(false);
+                onLoaded();
             }
         };
 
@@ -86,10 +93,6 @@ const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSe
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
-    }
-
-    if (loading) {
-        return <>{loader}</>;
     }
 
     return <>{children}</>;

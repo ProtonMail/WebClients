@@ -11,7 +11,6 @@ import {
     Loader,
     OnLoginCallbackArguments,
     useApi,
-    useConfig,
     useErrorHandler,
     useModals,
     useNotifications,
@@ -35,8 +34,7 @@ import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { getLoginMeta } from '../login/loginPagesJson';
-import { useMetaTags } from '../useMetaTags';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -49,6 +47,7 @@ interface Props {
     activeSessions?: LocalSessionPersisted[];
     onSignOut: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
     onAddAccount: () => void;
+    metaTags: MetaTags;
 }
 
 const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => {
@@ -64,13 +63,12 @@ const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => 
     return 0;
 };
 
-const SwitchAccountContainer = ({ toApp, toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
-    const { APP_NAME } = useConfig();
+const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
 
-    useMetaTags(getLoginMeta(toApp, APP_NAME));
+    useMetaTags(metaTags);
 
     const [localActiveSessions, setLocalActiveSessions] = useState(activeSessions);
     const [loading, withLoading] = useLoading(!localActiveSessions);

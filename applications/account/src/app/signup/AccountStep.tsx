@@ -30,7 +30,6 @@ import {
     CALENDAR_APP_NAME,
     CLIENT_TYPES,
     MAIL_APP_NAME,
-    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -79,6 +78,7 @@ interface Props {
         payload: ChallengeResult;
     }) => Promise<void>;
     loading?: boolean;
+    loginUrl: string;
 }
 
 const AccountStep = ({
@@ -96,6 +96,7 @@ const AccountStep = ({
     hasChallenge = true,
     domains,
     loading: loadingDependencies,
+    loginUrl,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -259,7 +260,7 @@ const AccountStep = ({
     );
 
     const signIn = (
-        <Link key="signin" className="link link-focus text-nowrap" to={SSO_PATHS.LOGIN}>
+        <Link key="signin" className="link link-focus text-nowrap" to={loginUrl}>
             {c('Link').t`Sign in`}
         </Link>
     );

@@ -128,10 +128,12 @@ module.exports = ({
             template: path.resolve('./src/app.ejs'),
             templateParameters: {
                 appName: faviconConfig.favicons.appName,
-                appDescription: faviconConfig.favicons.appDescription,
+                title: faviconConfig.favicons.appName,
+                description: faviconConfig.favicons.appDescription,
                 url: faviconConfig.url,
                 locales: faviconConfig.locales,
                 ogImage: faviconConfig.ogImage,
+                lang: 'en-US',
             },
             inject: 'body',
             scriptLoading: 'defer',
