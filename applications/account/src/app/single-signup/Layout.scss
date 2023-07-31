@@ -10,6 +10,19 @@
 	}
 }
 
+.signup-v1-bg--dark {
+	@include media('>xsmall') {
+		background: linear-gradient(359.26deg, #1b1340 29.47%, #392982 114.26%);
+
+		--optional-promotion-text-color: white;
+		--text-norm: white;
+	}
+
+	.vpn-for-business-logo {
+		color: var(--optional-promotion-text-color);
+	}
+}
+
 .signup-v1-header {
 	max-inline-size: rem(850);
 
