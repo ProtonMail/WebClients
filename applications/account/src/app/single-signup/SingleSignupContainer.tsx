@@ -122,6 +122,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
     const isB2bPlan = [PLANS.VPN_PRO, PLANS.VPN_BUSINESS].includes(selectedPlan?.Name as PLANS);
+    const isDarkBg = isB2bPlan;
 
     useEffect(() => {
         const getSubscriptionData = async (
@@ -255,6 +256,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
                         selectedPlan={selectedPlan}
                         isB2bPlan={isB2bPlan}
+                        isDarkBg={isDarkBg}
                         vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         model={model}
@@ -317,6 +319,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                     <Step2
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
+                        isDarkBg={isDarkBg}
                         img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                         onSetup={async () => {
                             if (!cache || cache.type !== 'signup') {
@@ -369,6 +372,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         email={cache?.accountData.email || ''}
                         password={cache?.accountData.password || ''}
                         isB2bPlan={isB2bPlan}
+                        isDarkBg={isDarkBg}
                         onComplete={async (newPassword: string | undefined) => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');

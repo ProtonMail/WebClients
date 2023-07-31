@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { PublicTopBanners, VpnForBusinessLogo, VpnLogo, useConfig } from '@proton/components';
+import { PublicTopBanners, VpnForBusinessLogo, VpnLogo, useActiveBreakpoint, useConfig } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -22,6 +22,7 @@ export interface Props {
     languageSelect?: boolean;
     onBack?: () => void;
     className?: string;
+    isDarkBg?: boolean;
     isB2bPlan?: boolean;
 }
 
@@ -33,11 +34,17 @@ const Layout = ({
     headerClassName,
     languageSelect = true,
     onBack,
-    isB2bPlan = false,
+    isDarkBg,
+    isB2bPlan,
 }: Props) => {
     const { APP_NAME } = useConfig();
+    const { isTinyMobile } = useActiveBreakpoint();
 
-    const protonLogo = isB2bPlan ? <VpnForBusinessLogo /> : <VpnLogo variant="with-wordmark" />;
+    const protonLogo = isB2bPlan ? (
+        <VpnForBusinessLogo className="vpn-for-business-logo" />
+    ) : (
+        <VpnLogo variant="with-wordmark" />
+    );
 
     const href = (() => {
         if (APP_NAME !== APPS.PROTONVPN_SETTINGS) {
@@ -54,7 +61,8 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex-no-min-children flex-nowrap flex-column h100 signup-v1-bg scroll-if-needed relative',
+                'flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative',
+                isDarkBg ? 'signup-v1-bg--dark' : 'signup-v1-bg',
                 className
             )}
         >
@@ -76,6 +84,7 @@ const Layout = ({
                         <div className="flex-item-noshrink">{protonLogo}</div>
                     )
                 }
+                isDarkBg={isDarkBg && !isTinyMobile}
             />
             <main className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-12 mx-6">
                 <div>
@@ -89,7 +98,12 @@ const Layout = ({
                                 <footer className="flex flex-justify-space-between w100 on-mobile-flex-column">
                                     <div className="flex gap-1 flex-column on-mobile-flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
-                                        <span className="text-sm color-weak on-mobile-text-center mb-4 lg:mb-0">
+                                        <span
+                                            className={clsx(
+                                                'text-sm on-mobile-text-center mb-4 lg:mb-0',
+                                                isDarkBg && !isTinyMobile ? 'color-norm opacity-70' : 'color-weak'
+                                            )}
+                                        >
                                             {
                                                 // translator: full sentence 'Proton. Privacy by default.'
                                                 c('Footer').t`${BRAND_NAME}. Privacy by default.`
