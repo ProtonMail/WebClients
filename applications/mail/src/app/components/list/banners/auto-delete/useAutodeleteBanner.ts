@@ -1,9 +1,9 @@
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature, useMailSettings, useUser } from '@proton/components/hooks';
 
-import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';
+import { isAllowedAutoDeleteLabelID } from '../../../../helpers/autoDelete';
 
-type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'free-banner' | 'hide';
+export type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'free-banner' | 'hide';
 
 const useAutoDeleteBanner = (labelID: string) => {
     const { feature } = useFeature(FeatureCode.AutoDelete);

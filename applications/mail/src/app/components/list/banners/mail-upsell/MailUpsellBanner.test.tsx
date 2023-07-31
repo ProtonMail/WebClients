@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import range from '@proton/utils/range';
 
-import { render } from '../../helpers/test/render';
+import { render } from '../../../../helpers/test/render';
 import MailUpsellBanner from './MailUpsellBanner';
 
 const props = {
