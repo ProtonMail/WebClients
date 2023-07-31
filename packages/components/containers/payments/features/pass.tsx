@@ -20,9 +20,16 @@ export const getCustomDomains = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getProtonPassFeature = (): PlanCardFeatureDefinition => {
+export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`${PASS_APP_NAME} with unlimited hide-my-email aliases`,
+        text:
+            n === 'unlimited'
+                ? c('new_plans: feature').t`${PASS_APP_NAME} with unlimited hide-my-email aliases`
+                : c('new_plans: feature').ngettext(
+                      msgid`${PASS_APP_NAME} with ${n} hide-my-email alias`,
+                      `${PASS_APP_NAME} with ${n} hide-my-email aliases`,
+                      n
+                  ),
         icon: 'pass-all-vaults',
         included: true,
         hideInDowngrade: true,

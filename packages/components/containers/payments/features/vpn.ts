@@ -4,6 +4,7 @@ import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    FREE_VPN_CONNECTIONS,
     MAIL_SHORT_APP_NAME,
     PLANS,
     VPN_APP_NAME,
@@ -52,15 +53,21 @@ export const getHighSpeedVPNConnectionsText = (n: number) => {
     );
 };
 
-export const getHighSpeedVPNConnectionsFeature = (): PlanCardFeatureDefinition => ({
+export const getHighSpeedVPNConnectionsFeature = (n: number = VPN_CONNECTIONS): PlanCardFeatureDefinition => ({
     icon: 'brand-proton-vpn',
-    text: getHighSpeedVPNConnectionsText(VPN_CONNECTIONS),
+    text: getHighSpeedVPNConnectionsText(n),
     included: true,
 });
 
 export const getVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
 };
+
+export const getVPNConnectionsFeature = (n: number = VPN_CONNECTIONS): PlanCardFeatureDefinition => ({
+    icon: 'brand-proton-vpn',
+    text: getVPNConnectionsText(n),
+    included: true,
+});
 
 export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
     return {
@@ -333,14 +340,14 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             name: 'vpn',
             target: Audience.B2C,
             plans: {
-                [PLANS.FREE]: getVPNConnections(1),
+                [PLANS.FREE]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.BUNDLE]: getVPNConnections(VPN_CONNECTIONS),
-                [PLANS.MAIL]: getVPNConnections(1),
+                [PLANS.MAIL]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.VPN]: getVPNConnections(VPN_CONNECTIONS),
-                [PLANS.DRIVE]: getVPNConnections(1),
-                [PLANS.PASS_PLUS]: getVPNConnections(1),
+                [PLANS.DRIVE]: getVPNConnections(FREE_VPN_CONNECTIONS),
+                [PLANS.PASS_PLUS]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.FAMILY]: getVPNConnections(VPN_CONNECTIONS),
-                [PLANS.MAIL_PRO]: getVPNConnections(1),
+                [PLANS.MAIL_PRO]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS),
             },
         },
