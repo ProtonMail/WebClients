@@ -14,7 +14,7 @@ import { FeatureCode } from '../features';
 
 interface Props {
     onSaved: () => void;
-    settingValue: AutoDeleteSpamAndTrashDaysSetting;
+    settingValue: AutoDeleteSpamAndTrashDaysSetting | null;
 }
 
 const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
