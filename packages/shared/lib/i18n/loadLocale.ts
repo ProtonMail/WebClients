@@ -4,7 +4,7 @@ import { DEFAULT_LOCALE } from '../constants';
 import { TtagLocaleMap } from '../interfaces/Locale';
 import { Options, getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales from './dateFnLocales';
-import { getClosestLocaleMatch, getLanguageCode } from './helper';
+import { getClosestLocaleMatch, getLangAttribute, getLanguageCode } from './helper';
 import { setDateLocales, setLocales } from './index';
 
 export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => {
@@ -25,7 +25,7 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
         languageCode,
     });
 
-    document.documentElement.lang = languageCode;
+    document.documentElement.lang = getLangAttribute(localeCode);
 };
 
 export const loadDateLocale = async (localeCode: string, browserLocaleCode?: string, options?: Options) => {
