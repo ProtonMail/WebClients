@@ -279,13 +279,15 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     );
 };
 
-const BoxHeader = ({ step, title, right }: { step: number; title: string; right?: ReactNode }) => {
+const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
         <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
             <div className="flex flex-align-items-center on-mobile-flex-column md:gap-4 gap-2">
-                <div className="flex-item-noshrink">
-                    <StepLabel step={step} />
-                </div>
+                {step !== undefined && (
+                    <div className="flex-item-noshrink">
+                        <StepLabel step={step} />
+                    </div>
+                )}
                 <h2 className="text-bold text-4xl flex-item-fluid">{title}</h2>
             </div>
             {right && <div className="flex-item-noshrink">{right}</div>}
@@ -676,6 +678,7 @@ const Step1 = ({
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE;
 
+    const showStepLabel = !isB2bPlan;
     let step = 1;
     const padding = 'sm:p-11';
 
@@ -725,7 +728,7 @@ const Step1 = ({
                 {!hasSelectedFree && mode === 'pricing' && (
                     <Box className={`mt-8 w100 ${padding}`}>
                         <BoxHeader
-                            step={step++}
+                            step={showStepLabel ? step++ : undefined}
                             title={c('Header').t`Select your pricing plan`}
                             right={
                                 <CurrencySelector
@@ -779,7 +782,10 @@ const Step1 = ({
                 <Box className="mt-8 w100">
                     <div className="flex flex-justify-space-between on-tablet-flex-column ">
                         <div className={`flex-item-fluid ${padding}`}>
-                            <BoxHeader step={step++} title={c('Header').t`Create your account`}></BoxHeader>
+                            <BoxHeader
+                                step={showStepLabel ? step++ : undefined}
+                                title={c('Header').t`Create your account`}
+                            ></BoxHeader>
                             <BoxContent>
                                 <div className="relative">
                                     <AccountStepDetails
@@ -904,7 +910,7 @@ const Step1 = ({
                 </Box>
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w100 ${padding}`}>
-                        <BoxHeader step={step++} title={c('Header').t`Checkout`} />
+                        <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
                             <div className="flex flex-justify-space-between md:gap-14 gap-6 on-tablet-flex-column">
                                 <div className="flex-item-fluid md:pr-1 on-tablet-order-1">
