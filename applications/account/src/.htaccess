@@ -6,42 +6,16 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+RewriteOptions AllowNoSlash
+DirectorySlash Off
 
-# Redirect nothing to app
-RewriteRule ^$ /index.html [NC,L]
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# Redirect these routes to html files for SEO purposes
-RewriteRule ^login$ /login.html [NC,L]
-RewriteRule ^switch$ /switch.html [NC,L]
-RewriteRule ^reset-password$ /reset-password.html [NC,L]
-RewriteRule ^forgot-username$ /forgot-username.html [NC,L]
-RewriteRule ^signup$ /signup.html [NC,L]
-RewriteRule ^calendar/signup$ /calendar.signup.html [NC,L]
-RewriteRule ^calendar$ /calendar.html [NC,L]
-RewriteRule ^mail/signup$ /mail.signup.html [NC,L]
-RewriteRule ^mail$ /mail.html [NC,L]
-RewriteRule ^vpn/signup$ /vpn.signup.html [NC,L]
-RewriteRule ^vpn$ /vpn.html [NC,L]
-RewriteRule ^drive/signup$ /drive.signup.html [NC,L]
-RewriteRule ^drive$ /drive.html [NC,L]
-RewriteRule ^pass/signup$ /pass.signup.html [NC,L]
-RewriteRule ^pass$ /pass.html [NC,L]
-RewriteRule ^refer-a-friend$ /refer-a-friend.html [NC,L]
-RewriteRule ^trial$ /trial.html [NC,L]
-
-# Hide .git stuff
-RewriteRule ^.*?\.git.* /index.html [NC,L]
-
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
+RewriteRule (.*) $1/index.html [L]
 
-RewriteRule ^lite.* /lite.html [NC,L]
-RewriteRule ^(.*) /index.html [NC,L]
-
-# Error pages
-ErrorDocument 403   /assets/errors/403.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) /index.html [L]
 
 <Files ~ "(\.html|version.json)">
     FileETag None

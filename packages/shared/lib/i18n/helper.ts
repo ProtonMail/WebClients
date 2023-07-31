@@ -1,7 +1,12 @@
 import { DEFAULT_LOCALE } from '../constants';
 
 export const getNormalizedLocale = (locale = '') => {
-    return locale.toLowerCase().replaceAll('-', '_');
+    return locale.toLowerCase().replace(/-/g, '_');
+};
+
+// Attempts to convert the original locale (en_US) to BCP 47 (en-US) as supported by the lang attribute
+export const getLangAttribute = (locale: string) => {
+    return locale.replace(/_/g, '-').replace('es-LA', 'es');
 };
 
 /**
@@ -24,7 +29,7 @@ export const getNaiveCountryCode = (locale = '') => {
  * Basically transforms zh_ZH => zh-ZH, es-es => es-es (Intl cares about the dash, but not about capitalization)
  */
 export const getIntlLocale = (locale = '') => {
-    return getNormalizedLocale(locale).replaceAll('_', '-');
+    return getNormalizedLocale(locale).replace(/_/g, '-');
 };
 
 export const getBrowserLanguageTags = (): string[] => {

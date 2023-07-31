@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -37,11 +36,11 @@ import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/inter
 import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { getSubscriptionMetricsData, handleDone, handleSetPassword, handleSetupUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { getSignupMeta } from '../signup/signupPagesJson';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import { SignupModelV2, Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
-import { useMetaTags } from '../useMetaTags';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -58,9 +57,10 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
+    metaTags: MetaTags;
 }
 
-const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productParam }: Props) => {
+const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productParam }: Props) => {
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -68,16 +68,16 @@ const SingleSignupContainer = ({ toApp, clientType, loader, onLogin, productPara
     const [error, setError] = useState<any>();
     const [vpnServersCountData] = useVPNServersCount();
     const handleError = useErrorHandler();
-    const location = useLocation();
+    const location = useLocationWithoutLocale();
 
-    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial: false, isMailRefer: false }));
+    useMetaTags(metaTags);
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
     const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(searchParams, {
+        const result = getSignupSearchParams(location.pathname, searchParams, {
             preSelectedPlan: PLANS.VPN,
         });
 
