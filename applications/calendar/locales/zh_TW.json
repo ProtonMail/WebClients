@@ -2154,6 +2154,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -2402,6 +2405,9 @@
       ],
       "Start time must be before end time": [
         "起始時間必須在結束時間之前"
+      ],
+      "status page": [
+        "狀態頁面"
       ],
       "The address might be misspelled": [
         "位址可能拼錯了"

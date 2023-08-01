@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } heeft geen geldig e-mailadres",
         "Sommige contacten hebben geen geldig e-mailadres: ${ list }"

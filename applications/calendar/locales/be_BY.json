@@ -2187,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "У ${ list } няма сапраўднага адраса электроннай пошты",
         "У некаторых кантактаў няма сапраўдных адрасоў электроннай пошты: ${ list }",
@@ -2468,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Час пачатку павінен быць ранейшым за час завяршэння"
+      ],
+      "status page": [
+        "статус старонкі"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -3564,7 +3570,7 @@
         "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне пра ўсе падзеі ў гэтай серыі."
       ],
       "Added and removed participants will be notified.": [
-        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
+        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
