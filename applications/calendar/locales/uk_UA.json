@@ -2187,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } не має дійсної адреси е-пошти",
         "Деякі контакти не мають дійсної адреси е-пошти: ${ list }",
@@ -2468,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Час початку повинен бути раніше часу завершення"
+      ],
+      "status page": [
+        "сторінка стану"
       ],
       "The address might be misspelled": [
         "Ймовірно, адреса неправильна"
