@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
@@ -16,6 +16,7 @@ import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddres
 interface Props {
     address: Address;
     member?: Member; // undefined if self
+    user: UserModel;
     organizationKey?: CachedOrganizationKey;
     onSetDefault?: () => Promise<unknown>;
     savingIndex?: number;
@@ -23,9 +24,11 @@ interface Props {
     permissions: AddressPermissions;
 }
 
-const useAddressFlagsActionsList = (address: Address) => {
+const useAddressFlagsActionsList = (address: Address, user: UserModel, member: Member | undefined) => {
     const addressFlags = useAddressFlags(address);
-    if (!addressFlags) {
+    const isPaid = member !== undefined;
+    const isPaidMail = user.hasPaidMail;
+    if (!addressFlags || !isPaid || !isPaidMail) {
         return [];
     }
 
@@ -49,6 +52,7 @@ const useAddressFlagsActionsList = (address: Address) => {
 const AddressActions = ({
     address,
     member,
+    user,
     organizationKey,
     onSetDefault,
     savingIndex,
@@ -59,7 +63,7 @@ const AddressActions = ({
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const addressFlagsActionsList = useAddressFlagsActionsList(address);
+    const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
