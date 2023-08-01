@@ -62,7 +62,7 @@ const CheckListItem = ({
                         '--h-custom': smallVariant ? '1.5rem' : '3rem',
                     }}
                     alt=""
-                    data-testId={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
+                    data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
                 />
             )}
             <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
