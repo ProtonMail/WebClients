@@ -172,7 +172,7 @@
         "İçe aktarmayı özelleştir"
       ],
       "Decline invite": [
-        "Çağrıyı reddet"
+        "Daveti reddet"
       ],
       "Delete": [
         "Sil"
@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } içinde geçerli bir e-posta adresi yok",
         "Bazı kişilerin geçerli bir e-posta adresi yok: ${ list }"
@@ -2425,6 +2428,9 @@
       "Start time must be before end time": [
         "Başlangıç saati bitiş saatinden önce olmalıdır"
       ],
+      "status page": [
+        "durum sayfası"
+      ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
       ],
@@ -2509,7 +2515,7 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "Çağrılan adres bulunamadı"
+        "Davet edilen adres bulunamadı"
       ]
     },
     "Error importing calendar": {
@@ -3972,7 +3978,7 @@
         "Anahtarlarınızı yeniden kullanıma aldınız ve artık şu takvimlere bağlı etkinliklerin şifresi çözülebilir."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
-        "Daha önce bu çağrıyı reddetmişsiniz. Yeniden çağırması için sahibi ile görüşün"
+        "Daha önce bu daveti reddetmişsiniz. Yeniden davet etmesi için sahibi ile görüşün"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama alanınızı %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -4921,7 +4927,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Takvim çağrısı geri çevrildi"
+        "Takvim daveti geri çevrildi"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName } (${ senderEmail }) takvimine katınıldı"
@@ -5372,7 +5378,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
+        "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir davet gönderilecek."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -6578,10 +6584,10 @@
     },
     "Warning in modal to accept calendar invitation; Description": {
       "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
-        "Bu paylaşılan takvime erişebilmek için bu adresi kullanıma alın ya da ${ boldCalendarOwnerEmail } ile görüşerek bir çağrı ya da kullanımdaki bir adresi göndermesini isteyin."
+        "Bu paylaşılan takvime erişebilmek için bu adresi kullanıma alın ya da ${ boldCalendarOwnerEmail } ile görüşerek bir adrese yeni bir davet göndermesini isteyin."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Çağrıldığınız e-posta adresi (${ boldInvitedAddress }) kullanımdan kaldırılmış olduğundan bu takvime katılamazsınız."
+        "Davet edildiğiniz e-posta adresi (${ boldInvitedAddress }) kullanımdan kaldırılmış olduğundan bu takvime katılamazsınız."
       ]
     },
     "Weekly recurring event, frequency": {

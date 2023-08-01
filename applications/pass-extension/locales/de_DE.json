@@ -144,7 +144,7 @@
         "Passwort generieren"
       ],
       "Generated password": [
-        "Generierte Passwörter"
+        "Passwort generiert"
       ],
       "Get mobile apps": [
         "Mobile Apps holen"
@@ -734,6 +734,9 @@
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Bitte bestätige deinen PIN-Code, um die Registrierung der Einstellungen für die automatische Sperre abzuschließen."
       ],
+      "Please consider leaving a review.": [
+        "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
+      ],
       "Please enter your current pin code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
@@ -791,9 +794,6 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
-      ],
-      "This will disable your browser's default auto-saving capabilities.": [
-        "Dadurch wird die standardmäßige automatische Speicherfunktion deines Browsers deaktiviert."
       ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
@@ -1127,6 +1127,9 @@
       "Prompt for auto-save": [
         "Aufforderung zum Auto-Speichern"
       ],
+      "Rate us": [
+        "Bewerte uns"
+      ],
       "Recent": [
         "Kürzlich"
       ],
@@ -1211,9 +1214,6 @@
       "Update": [
         "Aktualisieren"
       ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "${ PASS_APP_NAME } als Standard-Auto-Speichern-Manager verwenden"
-      ],
       "Username": [
         "Benutzername"
       ],
@@ -1237,9 +1237,6 @@
       ],
       "Websites": [
         "Websites"
-      ],
-      "Write a review": [
-        "Schreib eine Bewertung"
       ],
       "You are about to create": [
         "Folgender Alias wird erstellt:"
@@ -1346,6 +1343,9 @@
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
       ],
+      "Auto-lock update": [
+        "Aktualisierung der automatischen Sperre"
+      ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
@@ -1439,7 +1439,7 @@
     },
     "Validation": {
       "Duplicated url": [
-        "Doppelte URL"
+        "Duplizierte URL"
       ],
       "Label is required": [
         "Bezeichnung ist erforderlich"

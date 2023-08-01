@@ -1943,6 +1943,9 @@
       "\"${ name }\" already exists": [
         "„${ name }” există deja."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -2146,6 +2149,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."

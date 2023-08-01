@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } não tem um endereço de e-mail válido",
         "Alguns contatos não têm endereço de e-mail: ${ list }"
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "A hora de início deve ser antes da hora de término"
+      ],
+      "status page": [
+        "Página de status"
       ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"

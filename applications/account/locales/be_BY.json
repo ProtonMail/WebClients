@@ -1047,8 +1047,14 @@
       "Disable": [
         "Адключыць"
       ],
+      "Disable E2EE": [
+        "Адключыць E2EE"
+      ],
       "Enable": [
         "Уключыць"
+      ],
+      "Enable E2EE": [
+        "Уключыць E2EE"
       ],
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
@@ -3002,6 +3008,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } ваша імя карыстальніка. Каб стварыць ${ Local }@${ Domain }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
       ],
@@ -3316,6 +3325,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
+      ],
+      "status page": [
+        "статус старонкі"
       ],
       "Tab closed": [
         "Укладка закрыта"
@@ -5287,7 +5299,7 @@
         "Уліковы запіс паспяхова абноўлены"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Актывуйце прынамсі адзін метад аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты паролю."
+        "Актывуйце прынамсі адзін метад аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -9827,7 +9839,7 @@
         "Доступ да пашыраных функцый VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай 3 карыстальніцкіх даменаў"
+        "Дадайце больш персаналізацыі з 15 адрасамі электроннай пошты і падтрымкай 3 карыстальніцкіх даменаў"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
@@ -11969,7 +11981,7 @@
         "Дадаць назву групы кантактаў"
       ],
       "Add credit/debit card": [
-        "Дадаць банкаўскую картку"
+        "Дадаць крэдытную/плацежную картку"
       ],
       "Add credits": [
         "Дадаць крэдыты"
@@ -11990,7 +12002,7 @@
         "Дадаць фільтр Sieve"
       ],
       "Add to allow list": [
-        "Спіс дазволеных адрасоў"
+        "Дадаць у спіс дазволеных"
       ],
       "Add to block list": [
         "Дадаць у спіс заблакіраваных адрасоў"

@@ -8,8 +8,26 @@
       "Add": [
         "Добавить"
       ],
+      "Add current url": [
+        "Добавить текущий URL"
+      ],
+      "Add more": [
+        "И ещё"
+      ],
+      "Add new item": [
+        "Добавить новый элемент"
+      ],
+      "Advanced": [
+        "Продвинутые"
+      ],
+      "Advanced options": [
+        "Расширенные настройки"
+      ],
       "Back": [
         "Назад"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Не можете найти свой менеджер паролей? Пожалуйста, сообщите нам!"
       ],
       "Cancel": [
         "Отменить"
@@ -29,6 +47,9 @@
       "Close": [
         "Закрыть"
       ],
+      "Close advanced options": [
+        "Закрыть расширенные настройки"
+      ],
       "Close navigation": [
         "Закрыть панель навигации"
       ],
@@ -38,26 +59,62 @@
       "Continue without pinning": [
         "Продолжить без закрепления"
       ],
+      "Copy & fill in": [
+        "Скопировать и заполнить"
+      ],
+      "Copy and close": [
+        "Скопировать и закрыть"
+      ],
       "Copy to clipboard": [
         "Скопировать в буфер обмена"
       ],
       "Create": [
         "Создать"
       ],
+      "Create a ${ BRAND_NAME } account": [
+        "Создать аккаунт ${ BRAND_NAME }"
+      ],
+      "Create alias": [
+        "Создать псевдоним"
+      ],
       "Create an account": [
         "Создать аккаунт"
+      ],
+      "Create login": [
+        "Создать логин"
+      ],
+      "Create note": [
+        "Создать заметку"
+      ],
+      "Create vault": [
+        "Создать хранилище"
+      ],
+      "Creating vault": [
+        "Сохранение хранилища"
       ],
       "Delete": [
         "Удалить"
       ],
+      "Delete alias": [
+        "Удалить псевдоним"
+      ],
       "Delete all": [
         "Удалить все"
+      ],
+      "Delete password": [
+        "Удалить пароль"
       ],
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
+      "Delete vault": [
+        "Удалить хранилище"
+      ],
       "Discard": [
         "Сбросить"
+      ],
+      "Dismiss": [
+        "Отклонить"
       ],
       "Done": [
         "Готово"
@@ -65,32 +122,101 @@
       "Edit": [
         "Изменить"
       ],
+      "Edit vault": [
+        "Редактировать хранилище"
+      ],
       "Export": [
         "Экспорт"
+      ],
+      "Feedback": [
+        "Обратная связь"
+      ],
+      "Fill password": [
+        "Заполнить пароль"
+      ],
+      "Filter vault items": [
+        "Фильтровать элементы хранилища"
+      ],
+      "Generate alias": [
+        "Сгенерировать псевдоним"
+      ],
+      "Generate password": [
+        "Создать пароль"
+      ],
+      "Generated password": [
+        "Сгенерированный пароль"
+      ],
+      "Get mobile apps": [
+        "Получить мобильные приложения"
+      ],
+      "Help us improve": [
+        "Помогите нам совершенствоваться"
       ],
       "Hide": [
         "Скрыть"
       ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
       "Import": [
         "Импортировать"
+      ],
+      "Import your passwords": [
+        "Импортировать ваши пароли"
+      ],
+      "Importing": [
+        "Идёт импорт"
       ],
       "Learn more": [
         "Подробнее"
       ],
+      "Lock extension": [
+        "Заблокировать расширение"
+      ],
+      "Manually sync your data": [
+        "Синхронизировать ваши данные вручную"
+      ],
       "More options": [
         "Дополнительные параметры"
+      ],
+      "Move to another vault": [
+        "Переместить в другое хранилище"
+      ],
+      "Move to Trash": [
+        "Переместить в корзину"
       ],
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "Not now": [
+        "Не сейчас"
+      ],
       "Open navigation": [
         "Открыть панель навигации"
+      ],
+      "Pass for Android": [
+        "Pass для Android"
+      ],
+      "Pass for iOS": [
+        "Pass для iOS"
+      ],
+      "Proceed": [
+        "Продолжить"
       ],
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "Regenerate": [
+        "Перегенерировать"
+      ],
+      "Reload extension": [
+        "Перезагрузить расширение"
+      ],
       "Request a feature": [
         "Запросить функцию"
+      ],
+      "Restore item": [
+        "Восстановить элемент"
       ],
       "Retry": [
         "Повторить"
@@ -98,17 +224,35 @@
       "Save": [
         "Сохранить"
       ],
+      "Saving": [
+        "Сохранение"
+      ],
+      "Send us a message": [
+        "Отправить нам сообщение"
+      ],
       "Show": [
         "Показать"
+      ],
+      "Sign back in": [
+        "Войти обратно"
       ],
       "Sign in": [
         "Войти"
       ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Войти с ${ BRAND_NAME }"
+      ],
       "Sign out": [
         "Выйти"
       ],
+      "Sort vault items": [
+        "Сортировать элементы хранилища"
+      ],
       "Submit": [
         "Отправить"
+      ],
+      "Submitting report...": [
+        "Отправка отчёта..."
       ],
       "Try again": [
         "Попробовать снова"
@@ -116,8 +260,20 @@
       "Update": [
         "Обновить"
       ],
+      "Updating": [
+        "Обновление"
+      ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Upgrade to keep these features": [
+        "Улучшите, чтобы сохранить эти функции"
+      ],
+      "Write us on Reddit": [
+        "Написать нам в Reddit"
+      ],
+      "Write us on Twitter": [
+        "Написать нам в Twitter"
       ]
     },
     "Button": {
@@ -134,6 +290,12 @@
       ]
     },
     "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } не может быть обработан. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Параметры псевдонима не могут быть определены"
+      ],
       "Authentication error": [
         "Ошибка аутентификации"
       ],
@@ -142,6 +304,9 @@
       ],
       "Auto-lock could not be disabled": [
         "Автоблокировка не может быть выключена"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Не могу создать псевдоним (${ error })."
       ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
@@ -187,6 +352,9 @@
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Сбой при импорте для хранилища \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
         "Сбой импорта элементов"
@@ -248,6 +416,9 @@
       "The file you are trying to import is empty": [
         "Файл, который вы пытаетесь импортировать, пуст"
       ],
+      "Too many failed attempts. Please sign in again.": [
+        "Слишком много неудачных попыток. Пожалуйста, войдите снова."
+      ],
       "Trashing item failed": [
         "Ошибка при перемещении элемента в корзину"
       ],
@@ -274,6 +445,9 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Сбой при создании хранилища \"${ payload.content.name }\""
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Хранилище \"${ vaultData.name }\" не может быть создано"
       ],
       "Vault name does not match": [
         "Название хранилища не совпадает"
@@ -334,6 +508,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Перейдите на платный план, чтобы создать несколько хранилищ."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" был отклонен"
       ],
@@ -379,6 +556,15 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
       ],
+      "Access ${ PASS_APP_NAME } via this icon": [
+        "Доступ к ${ PASS_APP_NAME } можно получить с помощью этой иконки"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+        "Для доступа к ${ PASS_APP_NAME } потребуется PIN-код для разблокировки вашей сессии"
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдоним \"${ item.aliasEmail }\" перемещен в корзину - это остановит пересылку писем в ваш почтовый ящик"
       ],
@@ -415,11 +601,17 @@
       "Deleted items will be moved here first": [
         "Удаленные элементы будут сначала перемещены сюда"
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Откройте видео ${ PASS_APP_NAME } на YouTube"
+      ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
       ],
       "Drop to import": [
         "Импортировать"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Включите ${ PASS_APP_NAME }, подключив вашу учетную запись ${ BRAND_NAME }"
@@ -451,6 +643,24 @@
       "Here you will find all the necessary information to get you started.": [
         "Здесь вы найдете всю необходимую информацию для начала работы."
       ],
+      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "Если отключено, ${ PASS_APP_NAME } не будет отображать иконку сайта, загруженную через анонимный прокси-сервер ${ BRAND_NAME }."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
+        "Если отключено, ${ PASS_APP_NAME } не будет предлагать сохранять или обновлять учетные данные."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
+        "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание псевдонима адреса электронной почты в формах регистрации."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
+        "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание надежных паролей в формах регистрации."
+      ],
+      "If enabled, the autosave dropdown will automatically open on field focus.": [
+        "Если включено, выпадающий список автосохранения будет автоматически открываться при переключении на соответствующее поле."
+      ],
+      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Если включено, вы можете быстро заполнять свои учетные данные, щелкнув по иконке ${ PASS_APP_NAME }."
+      ],
       "Import in progress :": [
         "Выполняется импорт :"
       ],
@@ -465,6 +675,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для того чтобы получить лучший опыт использования ${ PASS_APP_NAME }, пожалуйста, предоставьте необходимые разрешения расширению."
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "Для переноса ваших данных в ${ PASS_APP_NAME } из другого менеджера паролей, экспортируйте свои пароли и импортируйте их с помощью формы ниже. После того как все ваши элементы будут импортированы, удалите ранее экспортированный файл."
       ],
       "Integrated 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
@@ -538,11 +751,17 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
       ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Пожалуйста, подтвердите свой PIN-код, чтобы снять регистрацию текущей блокировки.\nПриложение ${ PASS_APP_NAME } больше не будет блокироваться."
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "Пожалуйста, подтвердите ваш PIN-код, чтобы изменить эту настройку."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Пожалуйста, подтвердите ваш PIN-код, чтобы завершить регистрацию настроек автоблокировки вашего устройства."
+      ],
+      "Please consider leaving a review.": [
+        "Пожалуйста, подумайте о том, чтобы оставить отзыв."
       ],
       "Please enter your current pin code to continue": [
         "Пожалуйста, введите свой текущий PIN-код для продолжения"
@@ -555,6 +774,9 @@
       ],
       "Save login": [
         "Сохранить логин"
+      ],
+      "Select the destination vault for each imported vault.": [
+        "Выберите хранилище для сохранения каждого импортированного хранилища."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -604,6 +826,9 @@
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
       ],
+      "Unlock it with your PIN to access the settings": [
+        "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
+      ],
       "Update login": [
         "Обновить логин"
       ],
@@ -621,6 +846,9 @@
       ],
       "Vault \"${ share.content.name }\" was disabled": [
         "Хранилище \"${ share.content.name }\" было выключено"
+      ],
+      "Verification code": [
+        "Код подтверждения"
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
@@ -640,6 +868,9 @@
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы достигли лимита на количество псевдонимов, которые можно создать. Создавайте неограниченное количество псевдонимов, улучшив свою подписку."
       ],
+      "You have reached the limit of vaults you can create.": [
+        "Вы достигли предельного количества сейфов, которое вам можно создать."
+      ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
       ],
@@ -648,6 +879,9 @@
       ],
       "You're about to create": [
         "Вы собираетесь создать"
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
@@ -927,6 +1161,9 @@
       "Prompt for auto-save": [
         "Предлагать автосохранение"
       ],
+      "Rate us": [
+        "Оцените нас"
+      ],
       "Recent": [
         "Недавние"
       ],
@@ -1011,9 +1248,6 @@
       "Update": [
         "Обновить"
       ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "Использовать ${ PASS_APP_NAME } как менеджер паролей по умолчанию"
-      ],
       "Username": [
         "Имя пользователя"
       ],
@@ -1042,32 +1276,335 @@
         "Вы собираетесь создать"
       ]
     },
+    "Option": {
+      "Commas": [
+        "Запятые"
+      ],
+      "Hyphens": [
+        "Дефисы"
+      ],
+      "Memorable Password": [
+        "Запоминающийся пароль"
+      ],
+      "Numbers": [
+        "Цифры"
+      ],
+      "Numbers and Symbols": [
+        "Цифры и символы"
+      ],
+      "Periods": [
+        "Точки"
+      ],
+      "Random Password": [
+        "Случайный пароль"
+      ],
+      "Spaces": [
+        "Пробелы"
+      ],
+      "Underscores": [
+        "Подчеркивания"
+      ]
+    },
     "Placeholder": {
+      "Add 2FA secret": [
+        "Добавить секрет 2FA"
+      ],
+      "Add hidden text": [
+        "Добавить скрытый текст"
+      ],
       "Add note": [
         "Добавить заметку"
       ],
+      "Add text": [
+        "Добавить текст"
+      ],
+      "Enter a note...": [
+        "Введите заметку..."
+      ],
+      "Enter a prefix": [
+        "Введите префикс"
+      ],
+      "Enter email or username": [
+        "Введите эл. почту или имя пользователя"
+      ],
+      "Enter password": [
+        "Введите пароль"
+      ],
+      "Full Name": [
+        "Полное имя"
+      ],
+      "MM/YYYY": [
+        "ММ/ГГГГ"
+      ],
+      "Move items to another vault (optional)": [
+        "Переместить элементы в другое хранилище (по желанию)"
+      ],
+      "Pick a vault": [
+        "Выберите хранилище"
+      ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Введите \"${ vaultName }\", чтобы подтвердить удаление"
+      ],
+      "Search in ${ vault.content.name }": [
+        "Искать в ${ vault.content.name }"
+      ],
+      "Search in all vaults": [
+        "Искать во всех хранилищах"
+      ],
+      "Search in Trash": [
+        "Искать в корзине"
+      ],
+      "Select a suffix": [
+        "Выберите суффикс"
+      ],
+      "Unknown origin": [
+        "Неизвестное происхождение"
+      ],
+      "Untitled": [
+        "Без названия"
+      ],
+      "Used on ${ url }": [
+        "Использовать на ${ url }"
       ],
       "Write your note": [
         "Напишите свою заметку"
       ]
     },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "Настройки ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock update": [
+        "Обновление авто-блокировки"
+      ],
+      "Confirm PIN code": [
+        "Подтвердите ПИН-код"
+      ],
+      "Connect your ${ BRAND_NAME } account": [
+        "Подключить ваш аккаунт ${ BRAND_NAME }"
+      ],
+      "Create PIN code": [
+        "Создать PIN-код"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Удалить хранилище \"${ vaultName }\"?"
+      ],
+      "Discard changes ?": [
+        "Сбросить изменения ?"
+      ],
+      "Enjoy your free trial": [
+        "Наслаждайтесь своей бесплатной пробной версией"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Наслаждаетесь ${ PASS_APP_NAME }?"
+      ],
+      "Enter your Pin": [
+        "Введите ваш Pin"
+      ],
+      "Get the mobile apps": [
+        "Получить мобильные приложения"
+      ],
+      "Grant permissions": [
+        "Предоставить разрешения"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "Import - ${ date }": [
+        "Импорт - ${ date }"
+      ],
+      "Import to vaults": [
+        "Импорт в хранилища"
+      ],
+      "Permanently remove all items ?": [
+        "Безвозвратно удалить все элементы?"
+      ],
+      "Pin the extension": [
+        "Закрепить расширение"
+      ],
+      "Secure your data": [
+        "Защитите свои данные"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Переключаетесь на ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Спасибо за установку ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Расширение теперь готово к использованию"
+      ],
+      "Trash empty": [
+        "Корзина пуста"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Разблокировать ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Разблокировать ${ PASS_APP_NAME }"
+      ],
+      "Update available": [
+        "Доступно обновление"
+      ],
+      "Use my email": [
+        "Использовать мою эл. почту"
+      ],
+      "Use secure password": [
+        "Использовать надёжный пароль"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Добро пожаловать в ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Добро пожаловать в ${ PASS_APP_NAME }"
+      ],
+      "Welcome!": [
+        "Добро пожаловать"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Почему ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Ваше хранилище пусто"
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "Повторяющийся url"
+      ],
+      "Label is required": [
+        "Метка обязательна"
+      ],
+      "OTP Secret or URI is invalid": [
+        "Секрет OTP либо URI недействительны"
+      ],
+      "OTP Secret or URI required": [
+        "Требуется секрет OTP либо URI"
+      ],
+      "Url already exists": [
+        "Url уже существует"
+      ],
+      "Url cannot be empty": [
+        "Url не может быть пустым"
+      ],
+      "Url is invalid": [
+        "Url недействителен"
+      ]
+    },
     "Warning": {
+      "A description of the problem is required": [
+        "Требуется описание проблемы"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Псевдоним \"${ name }\" в настоящее время используется в элементе входа \"${ relatedLoginName }\". Вы также перестанете получать электронные письма, отправленные на \"${ aliasEmail }\"."
+      ],
+      "All your trashed items will be permanently deleted. You can not undo this action.": [
+        "Все ваши удаленные элементы будут безвозвратно удалены. Вы не сможете отменить это действие."
+      ],
+      "An error occured while exporting your data": [
+        "При экспорте ваших данных произошла ошибка"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Не удалось получить почтовые ящики для этого псевдонима в данный момент"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Не могу создать хранилище \"${ vaultName }\""
+      ],
       "Empty note": [
         "Пустая заметка"
+      ],
+      "Expiration Date is incomplete": [
+        "Срок годности не заполнен до конца"
+      ],
+      "Invalid alias prefix": [
+        "Недопустимый префикс псевдонима"
       ],
       "Maximum length is ${ maxLength } characters": [
         "Максимальная длина ${ maxLength } символов"
       ],
+      "Missing alias prefix": [
+        "Отсутствует префикс псевдонима"
+      ],
+      "Missing alias suffix": [
+        "Отсутствует суффикс псевдонима"
+      ],
+      "No items": [
+        "Нет элементов"
+      ],
+      "No items in trash matching": [
+        "В корзине нет совпадающих элементов"
+      ],
+      "No items matching": [
+        "Нет совпадающих элементов"
+      ],
       "No password manager selected": [
         "Не выбран менеджер паролей"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
       ],
       "Passphrase is required": [
         "Требуется кодовая фраза"
       ],
+      "PGP encrypted export file requires passphrase": [
+        "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
+      ],
+      "Please log back in": [
+        "Пожалуйста, войдите обратно"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Что-то пошло не так при запуске ${ PASS_APP_NAME }. Пожалуйста, попробуйте обновить или перезагрузить расширение"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Префикс псевдонима не может быть длиннее 40 символов"
+      ],
+      "Title is required": [
+        "Название обязательно"
+      ],
+      "Trash alias ?": [
+        "Переместить псевдоним в корзину?"
+      ],
+      "Unable to save": [
+        "Не могу сохранить"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Хранилище \"${ vaultName }\" и все его элементы будут полностью удалены. Вы не сможете отменить это действие"
+      ],
+      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
+        "Хранилище \"${ vaultName }\" будет окончательно удалено, и все его элементы будут перемещены в \"${ destinationVaultName }\""
+      ],
+      "Vault name is required": [
+        "Требуется название хранилища"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
+      ],
+      "You have unsaved changes, are you sure you want to discard them?": [
+        "У вас есть несохраненные изменения. Вы уверены, что хотите отменить их?"
+      ],
+      "You must select at least one mailbox": [
+        "Вы должны выбрать хотя бы один почтовый ящик"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Ваш тариф не позволяет вам создать больше псевдонимов"
+      ],
+      "Your plan only allows you to autofill from your primary vault": [
+        "На вашем тарифе автозаполнение разрешено только для основного хранилища."
+      ],
+      "Your session was locked due to inactivity": [
+        "Ваша сессия заблокирована из-за отсутствия активности"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше основное хранилище. Чтобы импортировать в несколько хранилищ, улучшите свою подписку."
       ]
     }
   }

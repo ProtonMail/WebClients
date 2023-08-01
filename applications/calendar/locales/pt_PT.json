@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } não tem um endereço de e-mail válido.",
         "Alguns contactos não têm um endereço de e-mail válido: ${ list }"
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "A hora inicial tem de ser anterior à hora final"
+      ],
+      "status page": [
+        "página de status"
       ],
       "The address might be misspelled": [
         "O endereço pode estar errado"
@@ -5861,7 +5867,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Armazene as suas palavaras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavaras-passe ilimitadas, preenchimento automático, gerador de palavaras-passe e mais."
+        "Armazene as suas palavras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavras-passe ilimitadas, preenchimento automático, gerador de palavras-passe e mais."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -5871,7 +5877,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+        "Crie detalhes de início de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2A integrado, preenchimento automático de cartões de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui mais de 2950 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
@@ -5880,7 +5886,7 @@
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteja os seus arquivos com armazenamento encriptado na nuvem. Inclui histórico de versões, partilhamento de ficheiros encriptados e muito mais."
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
       ]
     },
     "summer2023:Footer": {
@@ -5896,7 +5902,7 @@
         "Por tempo limitado, obtenha o melhor da ${ BRAND_NAME } com um desconto exclusivo."
       ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "Estamos a celebrar o 9º aniversário do nosso crowdfunding!"
+        "Estamos a celebrar o nono aniversário do nosso crowdfunding!"
       ]
     },
     "summer2023:Offer title": {

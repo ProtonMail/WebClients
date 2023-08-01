@@ -734,6 +734,9 @@
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Confirmeu el codi PIN per a acabar de registrar les preferències de bloqueig automàtic."
       ],
+      "Please consider leaving a review.": [
+        "Considereu deixar una ressenya."
+      ],
       "Please enter your current pin code to continue": [
         "Introduïu el codi PIN actual per a continuar"
       ],
@@ -791,9 +794,6 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
-      ],
-      "This will disable your browser's default auto-saving capabilities.": [
-        "Això desactivarà les capacitats de desament automàtic predeterminades del navegador."
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
@@ -1127,6 +1127,9 @@
       "Prompt for auto-save": [
         "Demana el desament automàtic"
       ],
+      "Rate us": [
+        "Avalueu-nos"
+      ],
       "Recent": [
         "Recents"
       ],
@@ -1210,9 +1213,6 @@
       ],
       "Update": [
         "Actualitza"
-      ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "Usa ${ PASS_APP_NAME } com a gestor de desament automàtic predeterminat"
       ],
       "Username": [
         "Nom d'usuari"
@@ -1363,6 +1363,9 @@
       ],
       "Enjoy your free trial": [
         "Gaudiu de la prova gratuïta"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Gaudint ${ PASS_APP_NAME }?"
       ],
       "Enter your Pin": [
         "Introduïu el PIN"

@@ -1937,6 +1937,9 @@
       "\"${ name }\" already exists": [
         "「${ name }」已存在"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -2128,6 +2131,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "status page": [
+        "狀態頁面"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"

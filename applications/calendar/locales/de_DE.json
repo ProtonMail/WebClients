@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } enthält keine gültige E-Mail-Adresse",
         "Einige Kontakte enthalten keine gültige E-Mail-Adresse: ${ list }"

@@ -2936,7 +2936,7 @@
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi seurata sijaintiasi ja verkkotoimintaasi."
+        "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Avaa mukautettu viestien ajoitus sekä muita etuja päivittämällä tilauksesi."
@@ -2951,7 +2951,7 @@
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seuraajia tai seuranta-URL-osoitteita."
+        "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seurantoja tai seurantaan käytettäviä URL-osoitteita."
       ],
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
@@ -3111,6 +3111,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } osoitteelle <${ email }>. Voit ratkaista ongelman lisäämällä eri avaimen tai poistamalla salauksen käytöstä tältä yhteystiedolta."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Valitettavasti ${ BRAND_NAME } ei voi purkaa viestin salausta. Tarkista, että kaikki avaimesi ovat aktiivisia."
+      ],
+      "status page": [
+        "tilasivu"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Liitteen salausta ei voitu purkaa. Jos sinulla on vastaava yksityinen avain, voit silti purkaa tiedoston salauksen GnuPG:n kaltaisella sovelluksella.",
@@ -4810,6 +4816,10 @@
       "(No Recipient)": [
         "(Ei vastaanottajia)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** osuma löydetty paikasta ${ labelName }",
+        "**${ elementsFoundCount }** osumaa löydetty paikasta ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
@@ -5142,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } uudemmille viesteille"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Jos haluat enemmän hakutuloksia, kokeile etsiä myös sähköpostiviestien sisällöstä"
       ],
       "Free up some space or add more storage space.": [
         "Vapauta tai hanki lisää tallennustilaa."
@@ -5850,7 +5866,7 @@
         "Lähettäjän luotettuja avaimia ei voitu vahvistaa."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Poistimme jäljitystiedot seuraavista linkeistä suojellaksemme sinua mainostajilta ja muilta tahoilta, jotka yrittävät jäljittää verkkotoimintaasi."
+        "Poistimme seurantatiedot seuraavista linkeistä suojellaksemme sinua mainostajilta ja muilta tahoilta, jotka yrittävät valvoa verkkotoimintaasi."
       ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
