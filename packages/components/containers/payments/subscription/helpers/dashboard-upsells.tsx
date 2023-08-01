@@ -358,7 +358,7 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
             openSubscriptionModal({
                 cycle,
                 plan: PLANS.VPN_BUSINESS,
-                step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
                 disablePlanSelection: true,
             }),
         defaultCtaOverrides: {

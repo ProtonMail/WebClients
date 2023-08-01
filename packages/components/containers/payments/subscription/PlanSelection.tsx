@@ -33,7 +33,7 @@ import {
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
-import { ShortPlan, ShortPlanLike, isShortPlanLike } from '../features/interface';
+import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
@@ -243,7 +243,7 @@ const PlanSelection = ({
         );
     };
 
-    const renderShortPlanCard = (plan: ShortPlan | ShortPlanLike) => {
+    const renderShortPlanCard = (plan: ShortPlanLike) => {
         return (
             <PlanCard
                 isCurrentPlan={false}

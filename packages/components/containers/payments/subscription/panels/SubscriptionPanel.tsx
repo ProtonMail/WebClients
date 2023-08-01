@@ -337,7 +337,7 @@ const SubscriptionPanel = ({
                 className="px-2"
                 onClick={() =>
                     openSubscriptionModal({
-                        step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                        step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
                         disablePlanSelection: true,
                     })
                 }

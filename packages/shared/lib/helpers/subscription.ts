@@ -7,6 +7,7 @@ import {
     COUPON_CODES,
     CYCLE,
     IPS_INCLUDED_IN_PLAN,
+    MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
@@ -243,24 +244,135 @@ export const hasTwoYears = (subscription?: Subscription) => {
     return subscription?.Cycle === CYCLE.TWO_YEARS;
 };
 
-export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
-    return Object.entries(planIDs).reduce(
+interface PricingForCycles {
+    [CYCLE.MONTHLY]: number;
+    [CYCLE.YEARLY]: number;
+    [CYCLE.TWO_YEARS]: number;
+    [CYCLE.FIFTEEN]: number;
+    [CYCLE.THIRTY]: number;
+}
+
+export interface AggregatedPricing {
+    all: PricingForCycles;
+    /**
+     * That's pricing that counts only aggregate of cost for members. That's useful for rendering of
+     * "per user per month" pricing.
+     * Examples:
+     * - If you have a B2C plan with 1 user, then this price will be the same as `all`.
+     * - If you have Mail Plus plan with several users, then this price will be the same as `all`, because each
+     *     additional member counts to the price of members.
+     * - If you have Bundle Pro with several users and with the default (minimum) number of custom domains, then
+     *     this price will be the same as `all`.
+     *
+     * Here things become different:
+     * - If you have Bundle Pro with several users and with more than the default (minimum) number of custom domains,
+     *     then this price will be `all - extra custom domains price`.
+     * - For VPN Business the behavior is more complex. It also has two addons: member and IPs/servers. By default it
+     *     has 2 members and 1 IP. The price for members should exclude price for the 1 default IP.
+     */
+    members: PricingForCycles;
+    membersNumber: number;
+    plans: PricingForCycles;
+}
+
+function getPlanMembers(plan: Plan, quantity: number): number {
+    const hasMembers =
+        plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && plan.Name.startsWith(MEMBER_ADDON_PREFIX));
+
+    let membersNumberInPlan = 0;
+    // even though Family plan can have up to 6 users in the org, for the price displaying purposes we count it as
+    // 1 member.
+    if (plan.Name === PLANS.FAMILY) {
+        membersNumberInPlan = 1;
+    } else if (hasMembers) {
+        membersNumberInPlan = plan.MaxMembers || 1;
+    }
+
+    return membersNumberInPlan * quantity;
+}
+
+export const INCLUDED_IP_PRICING_PER_MONTH: Pricing = {
+    [CYCLE.MONTHLY]: 4999,
+    [CYCLE.YEARLY]: 3999 * CYCLE.YEARLY,
+    [CYCLE.TWO_YEARS]: 3599 * CYCLE.TWO_YEARS,
+};
+
+function getIpPrice(cycle: CYCLE): number {
+    if (cycle === CYCLE.MONTHLY) {
+        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.MONTHLY];
+    }
+
+    if (cycle === CYCLE.YEARLY) {
+        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.YEARLY];
+    }
+
+    if (cycle === CYCLE.TWO_YEARS) {
+        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.TWO_YEARS];
+    }
+
+    return 0;
+}
+
+function getPricePerMember(plan: Plan, cycle: CYCLE): number {
+    const totalPrice = plan.Pricing[cycle] || 0;
+
+    if (plan.Name === PLANS.VPN_PRO) {
+        // Because VPN Pro has 2 members by default.
+        return totalPrice / 2;
+    }
+
+    if (plan.Name === PLANS.VPN_BUSINESS) {
+        // For VPN business, we exclude IP price from calculation. And we also divide by 2,
+        // because it has 2 members by default too.
+        const IP_PRICE = getIpPrice(cycle);
+        return (totalPrice - IP_PRICE) / 2;
+    }
+
+    return totalPrice;
+}
+
+export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
+    const initial = {
+        [CYCLE.MONTHLY]: 0,
+        [CYCLE.YEARLY]: 0,
+        [CYCLE.TWO_YEARS]: 0,
+        [CYCLE.FIFTEEN]: 0,
+        [CYCLE.THIRTY]: 0,
+    };
+
+    return Object.entries(planIDs).reduce<AggregatedPricing>(
         (acc, [planName, quantity]) => {
             const plan = plansMap[planName as keyof PlansMap];
             if (!plan) {
                 return acc;
             }
 
-            const add = (target: any, cycle: CYCLE) => {
+            const members = getPlanMembers(plan, quantity);
+            acc.membersNumber += members;
+
+            const add = (target: PricingForCycles, cycle: CYCLE) => {
                 const price = plan.Pricing[cycle];
                 if (price) {
                     target[cycle] += quantity * price;
                 }
             };
 
+            const addMembersPricing = (target: PricingForCycles, cycle: CYCLE) => {
+                const price = getPricePerMember(plan, cycle);
+                if (price) {
+                    target[cycle] += members * price;
+                }
+            };
+
             allCycles.forEach((cycle) => {
                 add(acc.all, cycle);
             });
+
+            if (members !== 0) {
+                allCycles.forEach((cycle) => {
+                    addMembersPricing(acc.members, cycle);
+                });
+            }
 
             if (plan.Type === PLAN_TYPES.PLAN) {
                 allCycles.forEach((cycle) => {
@@ -271,14 +383,14 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap) => {
             return acc;
         },
         {
-            all: { [CYCLE.MONTHLY]: 0, [CYCLE.YEARLY]: 0, [CYCLE.TWO_YEARS]: 0, [CYCLE.THIRTY]: 0, [CYCLE.FIFTEEN]: 0 },
-            plans: {
-                [CYCLE.MONTHLY]: 0,
-                [CYCLE.YEARLY]: 0,
-                [CYCLE.TWO_YEARS]: 0,
-                [CYCLE.THIRTY]: 0,
-                [CYCLE.FIFTEEN]: 0,
+            all: { ...initial },
+            members: {
+                ...initial,
             },
+            plans: {
+                ...initial,
+            },
+            membersNumber: 0,
         }
     );
 };
@@ -289,19 +401,23 @@ export interface TotalPricing {
     totalPerMonth: number;
     totalNoDiscountPerMonth: number;
     discountPercentage: number;
+    perUserPerMonth: number;
 }
 
-export const getTotalFromPricing = (pricing: ReturnType<typeof getPricingFromPlanIDs>, cycle: CYCLE): TotalPricing => {
+export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): TotalPricing => {
     const total = pricing.all[cycle];
     const totalPerMonth = pricing.all[cycle] / cycle;
     const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
+    const perUserPerMonth = Math.floor(pricing.members[cycle] / cycle / pricing.membersNumber);
+
     return {
         discount,
         discountPercentage: Math.round((discount / totalNoDiscount) * 100),
         total,
         totalPerMonth,
         totalNoDiscountPerMonth: totalNoDiscount / cycle,
+        perUserPerMonth,
     };
 };
 
