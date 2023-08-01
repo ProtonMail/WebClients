@@ -1946,6 +1946,9 @@
       "\"${ name }\" already exists": [
         "«${ name }» вже існує"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
+      ],
+      "status page": [
+        "сторінка стану"
       ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"

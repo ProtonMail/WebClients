@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" on jo olemassa"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
+      ],
+      "status page": [
+        "tilasivu"
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
