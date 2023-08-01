@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" já existe"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "status page": [
+        "Página de status"
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."

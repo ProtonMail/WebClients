@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" zaten var"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
+      "status page": [
+        "durum sayfası"
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"

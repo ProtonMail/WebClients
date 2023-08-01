@@ -1946,6 +1946,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" již existuje"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
+      ],
+      "status page": [
+        "stavová stránka"
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
