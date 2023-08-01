@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APPS, APP_NAMES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
@@ -88,11 +88,16 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             })
         );
 
+        const step =
+            newPlanIDs[PLANS.VPN_BUSINESS] || newPlanIDs[PLANS.VPN_PRO]
+                ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+                : SUBSCRIPTION_STEPS.CUSTOMIZATION;
+
         open({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             coupon: Coupon?.Code,
-            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            step,
             cycle,
             currency,
             defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BPlan(planID as any))
