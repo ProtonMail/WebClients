@@ -1045,8 +1045,14 @@
       "Disable": [
         "Dezactivare"
       ],
+      "Disable E2EE": [
+        "Dezactivare criptare"
+      ],
       "Enable": [
         "Activare"
+      ],
+      "Enable E2EE": [
+        "Activare criptare"
       ],
       "Generate missing keys": [
         "Generare chei lipsă"
@@ -2993,6 +2999,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)."
       ],
@@ -3302,6 +3311,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "Tab closed": [
         "Filă închisă."

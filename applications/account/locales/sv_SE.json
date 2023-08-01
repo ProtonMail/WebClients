@@ -1177,6 +1177,11 @@
         "Nuvarande session"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: den integritetsprioriterade e-post och kalenderlösningen för dina vardagliga kommunikationsbehov."
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
         "Förnyas automatiskt den ${ formattedEndTime }"
@@ -3659,6 +3664,9 @@
       "Contact ${ BRAND_NAME }": [
         "Kontakta ${ BRAND_NAME }"
       ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "${ signIn } för att skicka om en begäran om verifiering via e-post för återställning."
+      ],
       "sign in": [
         "logga in"
       ],
@@ -5584,6 +5592,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
+      ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
       ],
@@ -5736,6 +5747,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Om du har en anpassad domän med ${ MAIL_APP_NAME } kan du ställa in en catch-all e-postadress för att ta emot meddelanden skickade till din domän men till en ogiltig e-postadress (t.ex. på grund av stavfel)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
@@ -6565,6 +6579,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera din brevlåda. (Avancerat)"
       ],
+      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
+        "Två-lösenordsläge använder separata lösenord för inloggning och dekryptering av brevlåda. Detta ger en mindre säkerhetsfördel i vissa situationer, men vi rekommenderar ett lösenordsläge för de flesta användare. För att växla till två-lösenordsläge, ställ först in ett inloggningslösenord och sedan ett lösenord för brevlådan."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Det gick inte att verifiera återställningsfilens signatur. Kontakta support."
       ],
@@ -7168,6 +7185,9 @@
       "Discard draft": [
         "Kasta utkast"
       ],
+      "Expand / contract composer": [
+        "Expandera/dra ihop skrivfönster"
+      ],
       "Forward": [
         "Vidarebefordra"
       ],
@@ -7218,6 +7238,9 @@
       ],
       "Mark as unread": [
         "Markera som oläst"
+      ],
+      "Minimize / maximize composer": [
+        "Minimera/maximera skrivfönster"
       ],
       "Move down": [
         "Flytta ner"
@@ -11485,6 +11508,9 @@
       ]
     },
     "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+      ],
       "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
         "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
       ]

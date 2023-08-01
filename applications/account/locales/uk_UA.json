@@ -1047,8 +1047,14 @@
       "Disable": [
         "Вимкнути"
       ],
+      "Disable E2EE": [
+        "Вимкнути E2EE"
+      ],
       "Enable": [
         "Увімкнути"
+      ],
+      "Enable E2EE": [
+        "Ввімкнути E2EE"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -3002,6 +3008,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
       ],
@@ -3316,6 +3325,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
+      ],
+      "status page": [
+        "сторінка стану"
       ],
       "Tab closed": [
         "Вкладку закрито"
