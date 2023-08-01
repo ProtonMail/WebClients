@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import { EmailSubscriptionToggles } from '@proton/components';
 import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import PublicFooter from './PublicFooter';
 import PublicLayout from './PublicLayout';
@@ -28,7 +28,7 @@ const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscrip
                 </div>
             }
             footer={
-                <ButtonLike fullWidth as="a" href="/switch" target="_self">
+                <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
                     {c('Action').t`Sign in`}
                 </ButtonLike>
             }

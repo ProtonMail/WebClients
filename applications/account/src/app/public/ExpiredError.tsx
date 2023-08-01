@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { BugModal } from '@proton/components/containers';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import expired from './expired-link.svg';
 
@@ -39,7 +39,7 @@ const getTexts = (type: Props['type']) => {
             description: c('Info')
                 .t`The email verification link has expired. Please sign in to resend a verification link.`,
             cta: (
-                <ButtonLike as="a" href="/switch" target="_self">
+                <ButtonLike as="a" href={SSO_PATHS.SWITCH} target="_self">
                     {c('Error message, recovery').t`Sign in to verify`}
                 </ButtonLike>
             ),

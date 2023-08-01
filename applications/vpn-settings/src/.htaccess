@@ -6,28 +6,16 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect nothing to app
-RewriteRule ^$ /index.html [NC,L]
+RewriteOptions AllowNoSlash
+DirectorySlash Off
 
-# Redirect these routes to html files for SEO purposes
-RewriteRule ^login$ /login.html [NC,L]
-RewriteRule ^reset-password$ /reset-password.html [NC,L]
-RewriteRule ^forgot-username$ /forgot-username.html [NC,L]
-RewriteRule ^signup$ /signup.html [NC,L]
-RewriteRule ^pricing$ /pricing.html [NC,L]
+RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# Hide .git stuff
-RewriteRule ^.*?\.git.* /index.html [NC,L]
-
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
+RewriteRule (.*) $1/index.html [L]
 
-RewriteRule ^(.*) /index.html [NC,L]
-
-# Error pages
-ErrorDocument 403   /assets/errors/403.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) /index.html [L]
 
 <Files ~ "(\.html|version.json)">
     FileETag None

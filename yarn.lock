@@ -4700,6 +4700,7 @@ __metadata:
     "@babel/runtime": ^7.22.5
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
     "@sentry/webpack-plugin": ^1.20.1
+    "@types/webpack": ^5.28.1
     autoprefixer: ^10.4.14
     babel-loader: ^9.1.2
     babel-plugin-transform-react-remove-prop-types: ^0.4.24
@@ -7759,6 +7760,17 @@ __metadata:
     anymatch: ^3.0.0
     source-map: ^0.6.0
   checksum: 6ab86a5b57276044e5b54d2caf04d01940a29ba8269f9cb406ef592f1b72adeebce55a88ef94ff3c5488571e17a212ec4e0854ff0498d18161dd78d9051fe2fb
+  languageName: node
+  linkType: hard
+
+"@types/webpack@npm:^5.28.1":
+  version: 5.28.1
+  resolution: "@types/webpack@npm:5.28.1"
+  dependencies:
+    "@types/node": "*"
+    tapable: ^2.2.0
+    webpack: ^5
+  checksum: 9f9bfe041382acfab36015f95011f6539705ba116fd9b3b8d7599a6396d996b7efcdb71947dba6d24a1a1bf397d15fdfb3c50d2f73e0aa5366a76198d5ec98b3
   languageName: node
   linkType: hard
 
@@ -25868,6 +25880,7 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.62
     "@types/react-dom": ^17.0.20
     "@types/react-router-dom": ^5.3.3
+    "@types/webpack": ^5.28.1
     babel-jest: ^29.5.0
     cross-env: ^7.0.3
     date-fns: ^2.30.0
@@ -25879,6 +25892,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router-dom: ^5.3.4
+    ts-node: ^10.9.1
     ttag: ^1.7.24
     typescript: ^5.1.6
   languageName: unknown
@@ -32677,6 +32691,43 @@ fsevents@^1.2.7:
   bin:
     webpack: bin/webpack.js
   checksum: 726e7e05ab2e7c142609a673dd6aa1a711ed97f349418a2a393d650c5ddad172d191257f60e1e37f6b2a77261571c202aabd5ce9240791a686774f0801cf5ec2
+  languageName: node
+  linkType: hard
+
+"webpack@npm:^5":
+  version: 5.88.2
+  resolution: "webpack@npm:5.88.2"
+  dependencies:
+    "@types/eslint-scope": ^3.7.3
+    "@types/estree": ^1.0.0
+    "@webassemblyjs/ast": ^1.11.5
+    "@webassemblyjs/wasm-edit": ^1.11.5
+    "@webassemblyjs/wasm-parser": ^1.11.5
+    acorn: ^8.7.1
+    acorn-import-assertions: ^1.9.0
+    browserslist: ^4.14.5
+    chrome-trace-event: ^1.0.2
+    enhanced-resolve: ^5.15.0
+    es-module-lexer: ^1.2.1
+    eslint-scope: 5.1.1
+    events: ^3.2.0
+    glob-to-regexp: ^0.4.1
+    graceful-fs: ^4.2.9
+    json-parse-even-better-errors: ^2.3.1
+    loader-runner: ^4.2.0
+    mime-types: ^2.1.27
+    neo-async: ^2.6.2
+    schema-utils: ^3.2.0
+    tapable: ^2.1.1
+    terser-webpack-plugin: ^5.3.7
+    watchpack: ^2.4.0
+    webpack-sources: ^3.2.3
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+  bin:
+    webpack: bin/webpack.js
+  checksum: 79476a782da31a21f6dd38fbbd06b68da93baf6a62f0d08ca99222367f3b8668f5a1f2086b7bb78e23172e31fa6df6fa7ab09b25e827866c4fc4dc2b30443ce2
   languageName: node
   linkType: hard
 

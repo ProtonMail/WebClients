@@ -39,6 +39,16 @@ export const getIsVPNApp = (toApp?: APP_NAMES, clientType?: CLIENT_TYPES) => {
     return vpnApps.includes(toApp as any) || clientType === CLIENT_TYPES.VPN;
 };
 
+export const getIsMailApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONMAIL;
+};
+export const getIsCalendarApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONCALENDAR;
+};
+export const getIsDriveApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONDRIVE;
+};
+
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);
 };

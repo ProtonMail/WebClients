@@ -15,7 +15,7 @@ const isWSL = () => {
     return false;
 };
 
-module.exports = ({ isProduction }) => ({
+module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({ isProduction }) => ({
     // Needs to be single because we embed two entry points
     runtimeChunk: 'single',
     minimize: isProduction,

@@ -2,7 +2,6 @@ import { OtherProductParam, ProductParam, otherProductParamValues } from '@proto
 import { APP_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
 import { SERVICES } from './interfaces';
@@ -11,18 +10,8 @@ export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefi
     return maybeProduct ? SERVICES[maybeProduct] : undefined;
 };
 
-// Returns 'none' when referrer from static site e.g. proton.me, otherwise 'generic'.
-const getDefaultProductParam = () => {
-    try {
-        const url = new URL(document.referrer);
-        const base = getSecondLevelDomain(window.location.hostname);
-        if (base === url.hostname) {
-            return 'none';
-        }
-        return 'generic';
-    } catch (e) {
-        return 'generic';
-    }
+const getDefaultProductParam = (): 'generic' => {
+    return 'generic';
 };
 
 const productParams = new Set(otherProductParamValues);
@@ -43,11 +32,12 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
     const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
     const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
     const product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
-    const productParam = getProductParam(product, maybeProductParam);
+    const productParam = getProductParam(product, maybeProductParam || maybeProductPathname);
     return { product, productParam };
 };
 
 export const getSignupSearchParams = (
+    pathname: string,
     searchParams: URLSearchParams,
     defaults?: { cycle?: CYCLE; preSelectedPlan?: PLANS }
 ) => {
@@ -65,7 +55,7 @@ export const getSignupSearchParams = (
     const maybeDomains = Number(searchParams.get('domains'));
     const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
 
-    const { product } = getProductParams(window.location.pathname, searchParams);
+    const { product } = getProductParams(pathname, searchParams);
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');

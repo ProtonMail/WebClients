@@ -6,7 +6,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone --logical",
+        "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=standalone --logical",
         "check-types": "tsc",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
         "i18n:validate": "proton-i18n validate lint-functions",
@@ -14,7 +14,7 @@
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "start": "proton-pack dev-server --logical",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --logical",
         "test": "echo 123"
     },
     "dependencies": {
