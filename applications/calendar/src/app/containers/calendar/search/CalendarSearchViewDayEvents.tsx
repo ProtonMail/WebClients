@@ -32,7 +32,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem }: Pr
     return (
         <div
             className="flex flex-nowrap border-bottom border-weak search-result-line w100 px-4 py-2 on-tablet-flex-column"
-            style={{ scrollPaddingTop: '80px' }}
+            style={{ scrollPaddingTop: '5em' }}
         >
             <div
                 data-testid="month-day-block"
