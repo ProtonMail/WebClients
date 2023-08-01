@@ -6,6 +6,32 @@ import { isIgnoredError } from '../../utils/errorHandling';
 import { DecryptedLink, EncryptedLink } from './interface';
 import useLink from './useLink';
 
+const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink): DecryptedLink => ({
+    encryptedName: encryptedLink.name,
+    name: 'xxxxx',
+    linkId: encryptedLink.linkId,
+    createTime: encryptedLink.createTime,
+    corruptedLink: true,
+    activeRevision: encryptedLink.activeRevision,
+    digests: { sha1: '' },
+    hash: encryptedLink.hash,
+    size: encryptedLink.size,
+    fileModifyTime: 0,
+    metaDataModifyTime: encryptedLink.metaDataModifyTime,
+    isFile: encryptedLink.isFile,
+    mimeType: encryptedLink.mimeType,
+    hasThumbnail: encryptedLink.hasThumbnail,
+    isShared: encryptedLink.isShared,
+    parentLinkId: encryptedLink.parentLinkId,
+    rootShareId: encryptedLink.rootShareId,
+    signatureIssues: encryptedLink.signatureIssues,
+    originalDimensions: {
+        height: 0,
+        width: 0,
+    },
+    trashed: encryptedLink.trashed,
+});
+
 export default function useLinks() {
     const { decryptLink, getLink } = useLink();
 
@@ -27,6 +53,10 @@ export default function useLinks() {
                 .catch((err) => {
                     if (!isIgnoredError(err)) {
                         errors.push(err);
+                    }
+
+                    if (err.message.startsWith('Error decrypting')) {
+                        return { encrypted, decrypted: generateCorruptDecryptedLink(encrypted) };
                     }
                 });
         });
