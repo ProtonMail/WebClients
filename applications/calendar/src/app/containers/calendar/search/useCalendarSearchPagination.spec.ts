@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { RenderHookResult, act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { mockUseHistory } from '@proton/testing/index';
 
@@ -17,14 +17,8 @@ describe('useCalendarSearchPagination', () => {
     });
 
     describe('when no maxItemsPerPage is provided', () => {
-        let hook: RenderHookResult<unknown, ReturnType<typeof useCalendarSearchPagination>>;
-
-        beforeEach(() => {
-            hook = renderHook(() => useCalendarSearchPagination(array));
-        });
-
         it('should return 100 first items', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array));
             expect(result.current.items).toStrictEqual(
                 Array(100)
                     .fill(null)
@@ -35,7 +29,7 @@ describe('useCalendarSearchPagination', () => {
         });
 
         it('should handle `next` pagination', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array));
 
             act(() => result.current.next());
 
@@ -68,7 +62,7 @@ describe('useCalendarSearchPagination', () => {
         });
 
         it('should handle `previous` pagination', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array));
             // current page is first one => disable previous
             expect(result.current.isPreviousEnabled).toBe(false);
 
@@ -113,14 +107,9 @@ describe('useCalendarSearchPagination', () => {
     });
 
     describe('when maxItemsPerPage is provided', () => {
-        let hook: RenderHookResult<unknown, ReturnType<typeof useCalendarSearchPagination>>;
-
-        beforeEach(() => {
-            hook = renderHook(() => useCalendarSearchPagination(array, 40));
-        });
-
         it('should return `maxItemsPerPage` first items', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array, 40));
+
             expect(result.current.items).toStrictEqual(
                 Array(40)
                     .fill(null)
@@ -131,7 +120,8 @@ describe('useCalendarSearchPagination', () => {
         });
 
         it('should increment pagination by `maxItemsPerPage`', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array, 40));
+
             act(() => result.current.next());
             expect(result.current.items).toStrictEqual(
                 Array(40)
@@ -141,7 +131,8 @@ describe('useCalendarSearchPagination', () => {
         });
 
         it('should decrement pagination by `maxItemsPerPage`', () => {
-            const { result } = hook;
+            const { result } = renderHook(() => useCalendarSearchPagination(array, 40));
+
             act(() => result.current.next());
 
             act(() => result.current.previous());

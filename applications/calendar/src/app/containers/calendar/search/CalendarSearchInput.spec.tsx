@@ -76,7 +76,7 @@ describe('CalendarSearchInput', () => {
             renderComponent(baseProps);
 
             expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarSearchSpotlight', false, {
+            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
                 alpha: 1653480000000,
                 beta: 1653480000000,
                 default: 1653480000000,
@@ -95,7 +95,7 @@ describe('CalendarSearchInput', () => {
                 renderComponent(baseProps);
 
                 expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarSearchSpotlight', false, {
+                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
                     alpha: 1653480000000,
                     beta: 1653480000000,
                     default: 1653480000000,
@@ -108,7 +108,7 @@ describe('CalendarSearchInput', () => {
                 renderComponent(baseProps);
 
                 expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarSearchSpotlight', true, {
+                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', true, {
                     alpha: 1653480000000,
                     beta: 1653480000000,
                     default: 1653480000000,
@@ -123,7 +123,7 @@ describe('CalendarSearchInput', () => {
             renderComponent(baseProps);
 
             expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarSearchSpotlight', false, {
+            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
                 alpha: 1653480000000,
                 beta: 1653480000000,
                 default: 1653480000000,
@@ -137,7 +137,6 @@ describe('CalendarSearchInput', () => {
 
         beforeEach(() => {
             mockUseSpotlightOnFeature({ show: true, onClose: onSpotlightClose });
-            renderComponent({ ...baseProps, onOpen });
         });
 
         afterEach(() => {
@@ -146,6 +145,7 @@ describe('CalendarSearchInput', () => {
         });
 
         it('should call onOpen', async () => {
+            renderComponent({ ...baseProps, onOpen });
             const input = screen.getByRole('textbox');
             await userEvent.click(input);
 
@@ -155,6 +155,7 @@ describe('CalendarSearchInput', () => {
         });
 
         it('should hide spotlight', async () => {
+            renderComponent({ ...baseProps, onOpen });
             const input = screen.getByRole('textbox');
             await userEvent.click(input);
 

@@ -53,7 +53,6 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch, onBackFromSearch }: 
 
     return (
         <>
-            {/*<MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>*/}
             {isNarrow ? (
                 <TopNavbarListItemSearchButton onClick={handleOpen} />
             ) : (
@@ -66,7 +65,6 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch, onBackFromSearch }: 
                     loading={loading}
                 />
             )}
-            {/*</MailSearchSpotlight>*/}
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
                     isNarrow={isNarrow}
