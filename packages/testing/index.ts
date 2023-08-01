@@ -11,5 +11,6 @@ export * from './lib/mockNotifications';
 export * from './lib/mockUseContactEmailsCache';
 export * from './lib/event-manager';
 export * from './lib/mockRandomValues';
+export * from './lib/mockUseConfig';
 export * from './lib/providers';
 export * from './lib/server';
