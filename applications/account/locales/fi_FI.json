@@ -1043,8 +1043,14 @@
       "Disable": [
         "Poista käytöstä"
       ],
+      "Disable E2EE": [
+        "Poista päästä päähän -salaus käytöstä"
+      ],
       "Enable": [
         "Ota käyttöön"
+      ],
+      "Enable E2EE": [
+        "Ota päästä päähän -salaus käyttöön"
       ],
       "Generate missing keys": [
         "Luo puuttuvat avaimet"
@@ -2984,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ Local }@${ Domain }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
       ],
@@ -3288,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
+      ],
+      "status page": [
+        "tilasivu"
       ],
       "Tab closed": [
         "Välilehti suljettiin"
@@ -9138,8 +9150,8 @@
         "Ensisijainen tuki ja live-chat"
       ],
       "Protect ${ n } device at a time": [
-        "Suojaa ${ n } laite kerrallaan",
-        "Suojaa ${ n } laitetta kerrallaan"
+        "Suojaa samanaikaisesti ${ n } laite",
+        "Suojaa samanaikaisesti ${ n } laitetta"
       ],
       "Router support": [
         "Reititintuki"

@@ -473,6 +473,9 @@
       "Hide labels": [
         "ラベルを隠す"
       ],
+      "Hide plan features": [
+        "プランの機能を隠す"
+      ],
       "I have a question": [
         "サポートに質問"
       ],
@@ -525,7 +528,7 @@
         "メールにラベル付け"
       ],
       "Leave": [
-        "離れる"
+        "退出"
       ],
       "Load more": [
         "さらに読み込む"
@@ -744,7 +747,7 @@
         "設定の検索"
       ],
       "See plan features": [
-        "プランの特徴を見る"
+        "プランの機能を見る"
       ],
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
@@ -1041,6 +1044,9 @@
       "Enable": [
         "有効化"
       ],
+      "Enable E2EE": [
+        "エンドツーエンド暗号化を有効にする"
+      ],
       "Generate missing keys": [
         "紛失した鍵の生成"
       ],
@@ -1323,6 +1329,9 @@
     "Calendar invite status label": {
       "Declined": [
         "拒否済み"
+      ],
+      "Invite sent": [
+        "招待状を送信しました"
       ]
     },
     "Calendar link purpose update success message": {
@@ -2683,6 +2692,9 @@
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
         "このカレンダーの全予定が削除されます。"
+      ],
+      "You will no longer have access to this calendar.": [
+        "このカレンダーにはアクセスできなくなります。"
       ]
     },
     "Delinquent modal title": {
@@ -2709,11 +2721,14 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail ロゴとプラスマーク"
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "${ MAIL_APP_NAME }フッターを削除するには、プレミアム機能にアップグレードしてさらに多くのロックを解除します。"
+        "${ MAIL_APP_NAME }フッターを削除するには、アップグレードしてさらなるプレミアム機能をアンロックしましょう。"
       ],
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
@@ -2726,6 +2741,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "アップグレードすると、フォルダーやラベルを無制限に作成するなどのプレミアム機能が利用できます。"
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "${ BRAND_NAME } ロゴの後にプラス記号が続くアップセル アイコン"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "友達を招待し続けることはできますが、さらにクレジットを獲得することはできません。"
@@ -2767,6 +2785,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } が許可リストに移動されました"
       ],
       "${ name } moved to block list": [
         "${ name } がブロック リストに移動されました"
@@ -2890,8 +2911,20 @@
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } を許可リストに移動できませんでした"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } をブロックリストに移動できませんでした"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } が許可リストに移動されました"
+      ],
+      "${ name } moved to block list": [
+        "${ name } がブロックリストに移動されました"
       ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
@@ -3387,6 +3420,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
       ],
+      "Your forward will not be processed.": [
+        "転送は処理されません。"
+      ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
       ],
@@ -3642,6 +3678,9 @@
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
         "予定 @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "${ timeString }, ${ rruleString } からの予定"
       ]
     },
     "Event invitation error": {
@@ -3774,7 +3813,7 @@
         "既存の ${ BRAND_NAME } ユーザーを招待"
       ],
       "Invite member to your family": [
-        "家族をメンバーに招待してください"
+        "家族をメンバーに招待"
       ],
       "Set up family group": [
         "家族グループを設定"
@@ -3836,14 +3875,26 @@
       "Invited by: ${ inviteEmail }": [
         "招待者: ${ inviteEmail }"
       ],
+      "Leave family plan": [
+        "ファミリープランから脱退"
+      ],
+      "Leave visionary plan": [
+        "Visionaryプランから脱退"
+      ],
       "Manage addresses.": [
         "アドレスの管理"
       ],
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "6ヶ月間に作成できる承認済み招待は10個までです。"
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "メンバーがいるプランのオーナーは他のグループプランに加入できません。"
+      ],
+      "Pending": [
+        "保留中"
       ],
       "Pending invitation": [
         "保留中の招待状"
@@ -3860,6 +3911,9 @@
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "サブスクリプション料金は Visionary またはファミリープランのプライマリー管理者に請求されます。"
       ],
+      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+        "移行を容易にするため、${ BRAND_NAME } Unlimited* の30日間無料トライアルを提供します。"
+      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
       ],
@@ -3869,14 +3923,32 @@
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
       ],
+      "You are part of ${ organization.Name }.": [
+        "あなたは ${ organization.Name } に所属しています"
+      ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "六ヶ月の間に受けられる招待は最大で３つまでです。例外措置が必要な場合は ${ supportLink } にお問い合わせください。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "6ヶ月間で最大10の承認済み招待の上限に到達しました。"
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "6ヶ月間で最大10の承認済み招待の上限に到達しました。追加でユーザーを招待できるようになるとこのボタンは再度クリックできるようになります。"
+      ],
       "You have successfully joined the Family plan": [
         "ファミリープランに参加しました"
+      ],
+      "You need to configure a custom domain before adding multiple users.": [
+        "複数のユーザーを追加する前にカスタムドメインを設定する必要があります。"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
+      ],
+      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
+        "${ BRAND_NAME } Family に含まれるすべてのプレミアム機能とストレージ容量が使えなくなります"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
@@ -3905,8 +3977,35 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*無料トライアルは1ユーザーにつき1回のみとなります。"
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "デフォルトでは、ストレージの ${ formattedStorage } が管理者アカウントに割り当てられます。 割り当てられたストレージを管理して、後で追加のユーザーに分散することができます。"
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "ファミリー メンバーを作成および管理し、${ DRIVE_APP_NAME } と ${ MAIL_APP_NAME } の間で共有されるストレージ スペースをファミリー メンバーに割り当てます。"
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
+      ],
       "Online privacy, for your whole family": [
         "家族全員のオンラインプライバシー"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "招待はキャンセルされ、ユーザーは ${ organization.Name } に参加できなくなります。"
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "新しいユーザーを作成するには、構成されたカスタム ドメインが必要です。"
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "このユーザーのストレージを増減できます。"
+      ],
+      "You left this plan": [
+        "あなたはこのプランをやめました"
       ]
     },
     "familyOffer_2023:Info for members section": {
@@ -3969,7 +4068,7 @@
         "家族名"
       ],
       "Family plan": [
-        "家族プラン"
+        "ファミリープラン"
       ],
       "Introducing ${ planName }": [
         "${ planName } のご紹介"
@@ -4377,6 +4476,15 @@
       "App version": [
         "アプリのバージョン"
       ],
+      "Best deal": [
+        "最高の取引"
+      ],
+      "Checkout": [
+        "チェックアウト"
+      ],
+      "Create your account": [
+        "アカウントを作成"
+      ],
       "Device": [
         "デバイス"
       ],
@@ -4406,6 +4514,12 @@
       ],
       "Permissions": [
         "権限"
+      ],
+      "Protection": [
+        "保護"
+      ],
+      "Select your pricing plan": [
+        "料金プランを選択してください"
       ],
       "Status": [
         "状態"
@@ -4864,6 +4978,9 @@
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
+      "${ discountPercentage } forever": [
+        "永久に ${ discountPercentage } 割引"
+      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } はファイルの以前のバージョンを保持しなくなります。"
       ],
@@ -5097,6 +5214,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "最低金額 (${ amount }) を下回っています。"
+      ],
+      "An error occurred while communicating with the extension": [
+        "拡張機能との通信中にエラーが発生しました"
       ],
       "and": [
         "と"
@@ -5669,7 +5789,7 @@
         "インターネット接続が回復しました。"
       ],
       "Invites successfully sent": [
-        "招待は正常に送信されました"
+        "招待状が正常に送信されました"
       ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
@@ -6620,7 +6740,7 @@
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "今後24時間で送信できる招待メールの数は合計${ emailSendLimitNumber }件です。"
+        "今後 24 時間は ${ emailSendLimitNumber } 件を超える招待メールを送信できません"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } のユーザーは招待できません"
@@ -7304,6 +7424,9 @@
       ],
       "Auto-unsubscribe": [
         "自動登録解除"
+      ],
+      "Awarded": [
+        "進呈"
       ],
       "Billing address": [
         "ご請求先住所"
@@ -8742,6 +8865,9 @@
       "${ n } VPN connections per user": [
         "1 ユーザーあたり ${ n } 件の VPN 接続"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス付きの ${ PASS_APP_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } の添付ファイル"
       ],
@@ -8775,6 +8901,9 @@
       "Auto-reply": [
         "自動返信"
       ],
+      "Autofill credit cards (coming soon)": [
+        "クレジットカードの自動入力 (近日公開)"
+      ],
       "Available on all platforms": [
         "すべてのプラットフォームで利用可能"
       ],
@@ -8794,7 +8923,7 @@
         "連絡先グループ管理"
       ],
       "Custom domains for email aliases": [
-        "メールエイリアスのカスタムドメイン"
+        "エイリアス用カスタムドメイン"
       ],
       "Custom email domains": [
         "独自メールドメイン"
@@ -8874,8 +9003,14 @@
       "Limited support": [
         "限定的なサポート"
       ],
+      "Multiple admin roles": [
+        "複数の管理者役職"
+      ],
       "No-logs policy": [
         "ノーログポリシー"
+      ],
+      "Organize items with multiple vaults": [
+        "複数の保管庫でアイテムを管理"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -8922,6 +9057,9 @@
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "2 つの簡単なステップでオンラインで身を守り始めましょう"
+      ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
       ],
@@ -8946,8 +9084,14 @@
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
       ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
+      ],
       "Unlimited labels": [
         "ラベル制限なし"
+      ],
+      "Unlimited logins and notes": [
+        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
@@ -9011,6 +9155,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: info": {
@@ -9138,6 +9285,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
       "Your account's usage": [
         "アカウントの使用率"
       ]
@@ -9181,6 +9331,12 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
       ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "アドレスには完全な送受信機能があります。 ユーザーには複数のアドレスを割り当てることができます。 ただし、1 つのアドレスを複数のユーザーに割り当てることはできません。"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "同時に複数のネットワークにアクセスできます。たとえば、ローカルの検索結果を取得しながら、別の国から映画をストリーミングできます。"
+      ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "受信メッセージへの自動返信が可能になります"
       ],
@@ -9196,8 +9352,14 @@
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します (例: ショッピング アカウントの JohnShopper@${ domain })。"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "複数のサーバーを経由してインターネットトラフィックを送受信することで、VPNプライバシー上の脅威からあなたを保護します。"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "同僚、家族、友人とカレンダーをリンクで簡単に共有できます。"
@@ -9207,6 +9369,9 @@
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "メールアドレスが存在しない、存在しなくなった、入力ミスがあった場合などでも、あなたのドメイン宛に送信されたすべてのメールを受信できます"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "ユーザーの資格情報が侵害されたと考えられる場合、ユーザー セッションから強制的にサインアウトします。"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
@@ -9220,14 +9385,50 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
       ],
+      "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
+        "フォルダーと同様、ボールトはアイテムを整理するのに便利な方法です。 友人や家族との保管庫の共有は現在開発中です。"
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "プランのカスタマイズなど、サブスクリプションを管理することができます。お支払い方法は、クレジットカード、PayPal、暗号資産、および電信送金に対応しています。"
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "営業日であれば、リクエストから 24 時間以内に ${ BRAND_NAME } カスタマー サポート チームからのサポートを受けられます"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "1 つの VPN 接続により、いつでも 1 つのデバイスが ${ BRAND_NAME } VPN に接続できます。 たとえば、電話とラップトップを ${ BRAND_NAME_TWO } VPN に同時に接続するには、2 つの VPN 接続が必要です。"
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "管理者がユーザーの追加と削除、ストレージの割り当て、ドメインの構成、およびその他のタスクを実行できるようにする組織管理ツール"
       ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "当社の堅牢なインフラストラクチャにより、必要なときにアカウントにアクセスできるようになります。"
+      ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "サーバー内のハードディスクは複数のパスワードの層で完全に暗号化されており、不正アクセスが行われた際でもデータを保護します"
+      ],
+      "Password management and identity protection": [
+        "パスワード管理と個人情報保護"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用して電子メールの署名をパーソナライズします"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "ユーザーが 6 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマー サクセス チームから電話サポートをご利用いただけます"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読むことができるのは、送信者と対象の受信者だけです。"
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "WiFi ネットワークに接続されているすべてのデバイスを保護します。 VPN 設定を直接サポートしていないデバイスをお持ちの場合にも役立ちます。"
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "有害な Web サイトから家族を守り、高速 VPN サーバーにアクセスしてお気に入りのコンテンツをストリーミングしましょう"
+      ],
+      "Quickly set up out-of-office messages": [
+        "不在時のメッセージをすばやく設定する"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "メール、カレンダー、連絡先を任意のプロバイダーからすばやく転送する"
@@ -9243,6 +9444,15 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "電話番号、住所、誕生日、個人的なメモなどの連絡先の詳細を安全に保存します。 ゼロアクセス暗号化により、${ BRAND_NAME } であってもアクセスできなくなります。"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "必要な数の連絡先グループを作成することで、大規模なグループにメールを迅速かつ簡単に送信できます (グループあたり最大 100 件の連絡先)。"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "フィルタを設定してメールに自動的に返信、並べ替え、ラベルを付ける"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "安全で共有可能なリンクを使用して、ファイルやフォルダを誰とでも共有できます"
@@ -9265,11 +9475,23 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent などのファイル共有プロトコルに対応します"
       ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "オンライン ID を保護し、受信トレイに何を送信するかを制御できる、独自のオンザフライ電子メール アドレス。 ${ BRAND_NAME } による SimpleLogin から。"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使う"
       ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "当社は、オンラインでの行動に関するセッション使用ログを保持せず、プライバシーを侵害する可能性のあるメタデータも記録しません。"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "当社は、HIPAA/HITECH 規制の対象となるお客様が保護対象医療情報 (PHI) を保護できるよう支援することに尽力しています。 署名済み BAA は、${ BRAND_NAME } for Business のすべての顧客が利用できます。"
+      ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "VPN に接続すると DNS クエリは暗号化された VPN トンネルを経由します。これにより、追加のプライバシーとセキュリティを確保できます。"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "他の ${ MAIL_APP_NAME } ユーザーに送信する場合、暗号化は自動的に行われます。 ${ MAIL_APP_NAME_TWO } 以外のユーザーに送信するには、送信前にパスワードを設定する必要があります。"
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "複数の管理者を置くことができます。すべての管理者はユーザーの追加と管理を行うことができますが、課金に関するコントロールは主管理者のみが行うことができます。"
@@ -9290,8 +9512,17 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "ストレージ容量をユーザーあたり ${ bundleStorage } に増量します"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
+      ],
+      "Create up to ${ n } calendars": [
+        "最大 ${ n } 個までのカレンダーを作成"
       ]
     },
     "Notification": {
@@ -9680,6 +9911,18 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Continue to ${ free }": [
+        "${ free } に進む"
+      ],
+      "Create another account instead": [
+        "代わりに別のアカウントを作成してください"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } の使用を開始する"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "月額わずか ${ relativePrice } の追加料金でアップグレードできます"
+      ],
       "Use ${ free } instead": [
         "代わりに ${ free } を使用してください"
       ]
@@ -10070,9 +10313,15 @@
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "登録解除を行うと、このカレンダーにアクセスできなくなります。このカレンダーのすべての予定はアカウントから削除されますが、元の公開リンクはそのまま残ります。"
+      ],
+      "You will no longer have access to this calendar.": [
+        "このカレンダーにはアクセスできなくなります。"
       ]
     },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "このカレンダーを退出する場合は、オーナーに再度参加を依頼する必要があります。"
+      ],
       "This calendar will be removed from your account.": [
         "このカレンダーはアカウントから削除されます。"
       ]
@@ -10082,7 +10331,7 @@
         "カレンダーを削除しますか?"
       ],
       "Leave calendar?": [
-        "カレンダーを去りますか?"
+        "カレンダーから退出しますか？"
       ],
       "Remove calendar": [
         "カレンダーを削除"
@@ -11033,6 +11282,9 @@
       "Import": [
         "インポート"
       ],
+      "List": [
+        "リスト"
+      ],
       "Marked as": [
         "指定"
       ],
@@ -11085,6 +11337,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"
       ],
@@ -11308,7 +11563,7 @@
         "アカウントの作成に失敗しました"
       ],
       "Create ${ selectedUserIds.length } users": [
-        "ユーザー ${ selectedUserIds.length } を作成"
+        "${ selectedUserIds.length } ユーザーを作成します"
       ],
       "Create multiple user accounts": [
         "アカウントを複数作成する"
@@ -11485,7 +11740,7 @@
         "外部 PGP 設定"
       ],
       "Failed to create ${ failedUsers.length } user accounts.": [
-        "ユーザーアカウント${ failedUsers.length } の作成に失敗しました。"
+        "${ failedUsers.length } ユーザー アカウントの作成に失敗しました。"
       ],
       "Filters": [
         "フィルター"
@@ -11566,7 +11821,7 @@
         "Import-Export アプリ"
       ],
       "Increase your privacy with more addresses": [
-        "より多くのメールアドレスを使用してプライバシーを向上させてください"
+        "より多くのメールアドレスを使用してプライバシーを向上させましょう"
       ],
       "Invalid verification code": [
         "無効な検証コードです"
@@ -11851,10 +12106,10 @@
         "完了"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "ユーザーアカウント${ localSuccessfullyCreatedUsers.length }を作成しました"
+        "${ localSuccessfullyCreatedUsers.length } ユーザー アカウントが正常に作成されました"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "アカウント${ successfullyCreatedUsers.length }のを作成しました"
+        "${ successfullyCreatedUsers.length }ユーザー アカウントが正常に作成されました"
       ],
       "Switch to one-password mode": [
         "標準のパスワードモードに切り替える"
@@ -12223,6 +12478,11 @@
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: エンドツーエンドの暗号化パスワード マネージャー"
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "この設定を有効にすると、あなたが送信する各メッセージに公開鍵が自動的に追加されます。受信者はこれを使用して、メッセージの信頼性を検証し、あなたに暗号化されたメッセージを送信できます。"
@@ -12276,6 +12536,16 @@
       ],
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "カレンダーを共有するには、${ MAIL_SHORT_APP_NAME } 有料プランにアップグレードしてください。"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "おすすめ"
       ]
     },
     "User referee invited via email": {
@@ -12334,12 +12604,65 @@
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
       ]
     },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }、${ formattedEndTime } に更新されます"
+      ],
+      "Billed every 15 months": [
+        "15 か月ごとに請求されます"
+      ],
+      "Billed every 2 years": [
+        "2年ごとに請求される"
+      ],
+      "Billed every 30 months": [
+        "30 か月ごとに請求されます"
+      ],
+      "Billed monthly": [
+        "毎月請求される"
+      ],
+      "Billed yearly": [
+        "毎年請求される"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1年"
+      ],
+      "2-year": [
+        "2年"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "${ billingCycle } サブスクリプションで ${ discount } 割引をゲット"
+      ],
+      "monthly": [
+        "毎月"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "高度な VPN カスタマイズ"
+      ],
+      "No ads": [
+        "広告なし"
+      ]
+    },
     "vpn_2step: info": {
       "${ n } months": [
         "${ n } か月"
       ],
       "${ n } years": [
         "${ n }年"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "${ upsellPlanName } をリスクなしでお試しください"
+      ],
+      "Your ${ selected } plan": [
+        "あなたの ${ selected } プラン"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "セキュアなコアサーバーへのアクセス、高速 P2P/BitTorrent ダウンロード、Tor over VPN、ダブルホップなど。"
       ]
     },
     "Warning": {
