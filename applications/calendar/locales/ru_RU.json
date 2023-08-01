@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Продолжить с Google"
       ],
+      "Copy email address": [
+        "Копировать адрес электронной почты"
+      ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
       ],
@@ -2184,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "У ${ list } нет действительного адреса электронной почты",
         "У ${ list } нет действительных адресов электронной почты",
@@ -2465,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Время начала должно быть раньше времени окончания"
+      ],
+      "status page": [
+        "страница статуса"
       ],
       "The address might be misspelled": [
         "Возможно, адрес указан неверно"

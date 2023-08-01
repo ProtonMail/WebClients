@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder die Verschlüsselung für diesen Kontakt deaktivieren, um das Problem zu beheben."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -4813,6 +4816,10 @@
       "(No Recipient)": [
         "(Kein Empfänger)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** Ergebnis in ${ labelName } gefunden",
+        "**${ elementsFoundCount }** Ergebnisse in ${ labelName } gefunden"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -5145,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Um mehr Suchergebnisse zu erhalten, suche im Inhalt deiner E-Mails."
       ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."

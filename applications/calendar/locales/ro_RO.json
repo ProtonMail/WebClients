@@ -2176,6 +2176,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } nu are o adresă de e-mail validă.",
         "Unele contacte nu au o adresă de e-mail validă: ${ list }",
@@ -2446,6 +2449,9 @@
       ],
       "Start time must be before end time": [
         "Timpul de începere trebuie să fie înainte de cel de sfârșit."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"

@@ -2187,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } nemá platnou e-mailovou adresu",
         "Některé kontakty nemají platnou e-mailovou adresu: ${ list }",
@@ -2468,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Čas začátku musí být před časem konce"
+      ],
+      "status page": [
+        "stavová stránka"
       ],
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"

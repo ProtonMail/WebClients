@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } para <${ email }>. Você pode adicionar outra chave ou desligar a criptografia para este contato para resolver o problema."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Desculpe, a ${ BRAND_NAME } não pode descriptografar sua mensagem. Verifique se todas as suas chaves estão ativas."
+      ],
+      "status page": [
+        "Página de status"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Não foi possível descriptografar o anexo.\nCaso tenha a chave privada correspondente, você ainda será capaz de descriptografar\no arquivo com um programa como o GnuPG.",
@@ -4810,6 +4816,10 @@
       "(No Recipient)": [
         "(Nenhum destinatário)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }**resultado encontrado em ${ labelName }",
+        "**${ elementsFoundCount }**resultados encontrados em ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
@@ -5142,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Para obter mais resultados de pesquisa, tente pesquisar essa palavra-chave no conteúdo de suas mensagens de e-mail."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Para obter mais resultados de pesquisa, tente pesquisar no conteúdo de suas mensagens de e-mail"
       ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."

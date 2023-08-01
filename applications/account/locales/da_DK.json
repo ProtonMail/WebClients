@@ -9334,6 +9334,264 @@
         "Dig"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Continue": [
+        "Fortsæt"
+      ],
+      "Continue to ${ free }": [
+        "Fortsæt til ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsæt med Bitcoin"
+      ],
+      "create a new account": [
+        "opret en ny konto"
+      ],
+      "Create another account instead": [
+        "Opret endnu en konto i stedet"
+      ],
+      "Download again ${ size }": [
+        "Download igen ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Download for at fortsætte ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Behold dette abonnement og brug ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Eller ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Begynd at bruge ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Begynd at bruge ${ appName } nu"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Opgradér for kun ${ relativePrice } ekstra om måneden"
+      ],
+      "Upgrade my plan": [
+        "Opgradér mit abonnement"
+      ],
+      "Use ${ free } instead": [
+        "Brug ${ free } i stedet for"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-end krypteret"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Swiss based": [
+        "Baseret i Schweiz"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Betaling"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Fortsæt med din ${ BRAND_NAME }-konto"
+      ],
+      "Limited time offer": [
+        "Tidsbegrænset tilbud"
+      ],
+      "Recommended": [
+        "Anbefalet"
+      ],
+      "Select your plan": [
+        "Vælg dit abonnement"
+      ],
+      "Upgrade your plan": [
+        "Opgradér dit abonnement"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME }-fordele"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } er tilgængelig som en browserudvidelse i Firefox Add-ons."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } er tilgængelig som en browserudvidelse i Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } holder dine adgangskoder og din identitet sikker ved streng end-to-end kryptering."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } holder dine adgangskoder og din identitet sikker med streng end-to-end kryptering. For at tilføje premium-funktioner fra ${ PASS_APP_NAME_2 } til dit nuværende abonnement, foreslår vi, at du opgraderer til ${ upsellPlanName }-abonnementet."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } holder dine adgangskoder og din identitet sikker med streng end-to-end kryptering. Dit nuværende abonnement giver dig allerede adgang til premium ${ PASS_APP_NAME_2 }-funktioner — der er ingen grund til at købe igen."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pr. måned"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Alle premium ${ BRAND_NAME }-tjenester"
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }** — det er kun ${ relativePrice } ekstra om måneden."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Ved at fortsætte, accepterer du vores ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Opretter din konto"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Udforsk ${ PASS_APP_NAME },${ br }vores nye krypterede adgangskodeadministrator"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Download og installér de relevante apps og udvidelser for at starte med at bruge ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Download ${ PASS_APP_NAME } appen fra Google Play og installér den for at starte med at bruge ${ PASS_APP_NAME2 } på din telefon."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Download ${ PASS_APP_NAME } appen fra App Store og installér den for at starte med at bruge ${ PASS_APP_NAME2 } på din telefon."
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "Krypteret adgangskodeadministrator der også beskytter din identitet"
+      ],
+      "End-to-end encrypted notes": [
+        "End-to-end krypterede noter"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
+      ],
+      "Free forever": [
+        "Gratis for evigt"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Få ${ appName } til ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Få ${ appName } til ${ browserName } snart"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email-aliasser beskytter din e-mail mod datalæk"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil dit **gendannelseskit** give dig mulighed for at logge ind og gendanne dine data."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Indeholder grundlæggende ${ appName }-funktioner:"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "Installér ${ PASS_APP_NAME }"
+      ],
+      "Install app": [
+        "Installér app"
+      ],
+      "Install app and extension": [
+        "Installér app og udvidelse"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Det er den eneste måde at gendanne din konto fuldt på, så vær sikker på at du opbevarer dette **gendannelseskit** et sikkert sted."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Slut dig til over 100 millioner personer, som har valgt ${ BRAND_NAME } for at holde sig sikre online"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Starter ${ PASS_APP_NAME }"
+      ],
+      "One easy subscription.": [
+        "Ét nemt abonnement."
+      ],
+      "Open-source and audited": [
+        "Open source og revideret"
+      ],
+      "per month, billed annually": [
+        "pr. måned, faktureres årligt"
+      ],
+      "per month, billed every 15 months": [
+        "pr. måned, faktureres hver 15. måned"
+      ],
+      "per month, billed every 30 months": [
+        "pr. måned, faktureres hver 30. måned"
+      ],
+      "per month, billed every month": [
+        "pr. måned, faktureres hver måned"
+      ],
+      "per month, billed every two years": [
+        "pr. måned, faktureres hver andet år"
+      ],
+      "Preparing your Recovery Kit": [
+        "Forbereder dit gendannelseskit"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Save your recovery kit to continue": [
+        "Gem dit gendannelseskit for at fortsætte"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Logger ind på ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Særligt lanceringstilbud: Få ${ title } for ${ price } for evigt!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Det valgte tilbud er ikke tilgængeligt for ${ currentPlanTitle }-abonnenter."
+      ],
+      "to start using ${ PASS_APP_NAME } on your phone": [
+        "for at starte med at bruge ${ PASS_APP_NAME } på din telefon"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Lås op for ${ PASS_APP_NAME }-premiumfunktioner ved at opgradere"
+      ],
+      "Updating your account": [
+        "Opdaterer din konto"
+      ],
+      "Verifying your payment": [
+        "Verificerer din betaling"
+      ],
+      "Welcome to ${ plan }": [
+        "Velkommen til ${ plan }"
+      ],
+      "Works on all devices": [
+        "Virker på alle enheder"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Du har allerede adgang til premium ${ appName }-funktioner — ingen grund til at købe igen."
+      ],
+      "You currently have": [
+        "Du har i øjeblikket"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Din organisation har adgang til ${ free }. Hvis du vil have adgang til premium ${ appName }-funktioner, skal du bede din organisations administrator om at opgradere."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Velkommen til ${ PASS_APP_NAME }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Opret din ${ BRAND_NAME }-konto"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Bed din organisationsadministrator om at opgradere"
+      ],
+      "Secure your account": [
+        "Beskyt din konto"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit / betalingskort"

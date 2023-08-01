@@ -1047,8 +1047,14 @@
       "Disable": [
         "Vypnout"
       ],
+      "Disable E2EE": [
+        "Zakázat E2EE"
+      ],
       "Enable": [
         "Zapnout"
+      ],
+      "Enable E2EE": [
+        "Povolit E2EE"
       ],
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
@@ -3002,6 +3008,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } je vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
       ],
@@ -3316,6 +3325,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
+      ],
+      "status page": [
+        "stavová stránka"
       ],
       "Tab closed": [
         "Záložka zavřena"
