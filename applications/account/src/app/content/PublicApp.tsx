@@ -1,7 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import * as H from 'history';
+import type { Location } from 'history';
 
 import {
     ExperimentsProvider,
@@ -47,8 +48,11 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import forgotUsernamePage from '../../pages/forgot-username';
+import resetPasswordPage from '../../pages/reset-password';
 import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
+import { getLoginMeta } from '../login/loginPagesJson';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
@@ -60,15 +64,17 @@ import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams } from '../signup/searchParams';
+import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
-import { getSignupUrl } from './helper';
+import { getPaths } from './helper';
 
-export const getSearchParams = (search: string) => {
-    const searchParams = new URLSearchParams(search);
-    const { product, productParam } = getProductParams(window.location.pathname, searchParams);
+export const getSearchParams = (location: Location) => {
+    const searchParams = new URLSearchParams(location.search);
+    const { product, productParam } = getProductParams(location.pathname, searchParams);
     return { product, productParam };
 };
 
@@ -131,7 +137,7 @@ interface Props {
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
     const config = useConfig();
-    const location = useLocation<{ from?: H.Location }>();
+    const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const api = useApi();
@@ -142,7 +148,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
     const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
-        return getSearchParams(location.search);
+        return getSearchParams(location);
     }, []);
 
     const [maybeLocalRedirect] = useState(() => {
@@ -158,11 +164,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return getLocalRedirect(getPathFromLocation(localLocation));
     });
 
+    const getPreAppIntent = (forkState: ActiveSessionData | undefined) => {
+        return (
+            (forkState?.type === SSOType.Proton && forkState.payload?.app) ||
+            maybeLocalRedirect?.toApp ||
+            maybeQueryAppIntent
+        );
+    };
+
     // Either another app wants to fork, or a specific route is requested on this app
-    const maybePreAppIntent =
-        (forkState?.type === SSOType.Proton && forkState.payload?.app) ||
-        maybeLocalRedirect?.toApp ||
-        maybeQueryAppIntent;
+    const maybePreAppIntent = getPreAppIntent(forkState);
+    const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
@@ -215,7 +227,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { loginPassword, keyPassword, UID, LocalID, User: user, persistent, trusted, appIntent } = args;
 
-        const toApp = getToApp(appIntent?.app || maybePreAppIntent || maybeLocalRedirect?.toApp, user);
+        const toApp = getToApp(appIntent?.app || maybePreAppIntent, user);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect = (() => {
@@ -328,16 +340,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         setActiveSessions(sessions);
 
         if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
-            history.replace(getSignupUrl(newForkState, maybePreAppIntent));
+            const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState), productParam);
+            history.replace(paths.signup);
             return;
         }
 
-        history.replace(sessions.length >= 1 ? SSO_PATHS.SWITCH : '/login');
+        history.replace(sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login);
     };
 
     const handleInvalidFork = () => {
         ignoreAutoRef.current = true;
-        history.replace('/login');
+        history.replace(paths.login);
     };
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
@@ -348,7 +361,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 setHasBackToSwitch(true);
             }
             if (!sessions.length && location.pathname === SSO_PATHS.SWITCH) {
-                history.replace('/login');
+                // This is recalculated because the set locale might have changed
+                const paths = getPaths(location.localePrefix, forkState, maybePreAppIntent, productParam);
+                history.replace(paths.login);
             }
             return false;
         }
@@ -372,14 +387,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (!updatedActiveSessions?.length) {
             setActiveSessions([]);
             setHasBackToSwitch(false);
-            history.push('/login');
+            history.push(paths.login);
             return;
         }
         setActiveSessions(updatedActiveSessions || []);
     };
 
     const handleAddAccount = () => {
-        history.push('/login');
+        history.push(paths.login);
     };
 
     const toOAuthName =
@@ -401,6 +416,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     const loader = <AccountLoaderPage />;
+    const [loaded, setLoaded] = useState(0);
+    const SwitchOrLoader = loaded === 2 ? Switch : () => loader;
 
     return (
         <>
@@ -454,18 +471,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path="*">
                     <AccountPublicApp
+                        pathLocale={location.fullLocale}
                         location={location}
                         locales={locales}
                         onLogin={handleLogin}
                         onActiveSessions={handleActiveSessions}
-                        loader={loader}
+                        onLoaded={() => setLoaded((old) => ++old)}
                     >
-                        <UnAuthenticatedApiProvider loader={loader}>
+                        <UnAuthenticatedApiProvider onLoaded={() => setLoaded((old) => ++old)}>
                             <FeaturesProvider>
                                 <ExperimentsProvider>
                                     <UnAuthenticated>
                                         <ForceRefreshContext.Provider value={refresh}>
-                                            <Switch location={location}>
+                                            <SwitchOrLoader location={location}>
                                                 {confirmForkData && toAppName && (
                                                     <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                         <OAuthConfirmForkContainer
@@ -486,6 +504,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 )}
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <SwitchAccountContainer
+                                                        metaTags={getLoginMeta(maybePreAppIntent)}
                                                         activeSessions={activeSessions}
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
@@ -499,24 +518,31 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.SIGNUP,
                                                         SSO_PATHS.REFER,
                                                         SSO_PATHS.TRIAL,
+                                                        SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                     ]}
                                                 >
                                                     <SignupContainer
+                                                        metaTags={getSignupMeta(maybePreAppIntent)}
+                                                        loginUrl={paths.login}
                                                         productParam={productParam}
                                                         clientType={clientType}
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         onLogin={handleLogin}
                                                         onBack={
-                                                            hasBackToSwitch ? () => history.push('/login') : undefined
+                                                            hasBackToSwitch
+                                                                ? () => history.push(paths.login)
+                                                                : undefined
                                                         }
                                                     />
                                                 </Route>
                                                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                                                     <SingleSignupContainerV2
+                                                        paths={paths}
+                                                        metaTags={getSignupMeta(APPS.PROTONPASS)}
                                                         activeSessions={activeSessions}
                                                         loader={loader}
                                                         productParam={APPS.PROTONPASS}
@@ -526,12 +552,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         onLogin={handleLogin}
                                                         fork={!!forkState}
                                                         onBack={
-                                                            hasBackToSwitch ? () => history.push('/login') : undefined
+                                                            hasBackToSwitch
+                                                                ? () => history.push(paths.login)
+                                                                : undefined
                                                         }
                                                     />
                                                 </Route>
                                                 <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
                                                     <SingleSignupContainer
+                                                        metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
                                                         loader={loader}
                                                         productParam={APPS.PROTONVPN_SETTINGS}
                                                         clientType={CLIENT_TYPES.VPN}
@@ -539,7 +568,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
                                                         onLogin={handleLogin}
                                                         onBack={
-                                                            hasBackToSwitch ? () => history.push('/login') : undefined
+                                                            hasBackToSwitch
+                                                                ? () => history.push(paths.login)
+                                                                : undefined
                                                         }
                                                     />
                                                 </Route>
@@ -549,22 +580,27 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         clientType={clientType}
                                                         onValid={(inviteData) =>
                                                             history.replace({
-                                                                pathname: '/signup',
+                                                                pathname: paths.signup,
                                                                 state: { invite: inviteData },
                                                             })
                                                         }
-                                                        onInvalid={() => history.push('/signup')}
+                                                        onInvalid={() => history.push(paths.signup)}
                                                     />
                                                 </Route>
                                                 <Route path={SSO_PATHS.RESET_PASSWORD}>
                                                     <ResetPasswordContainer
+                                                        metaTags={resetPasswordPage()}
                                                         toApp={maybePreAppIntent}
                                                         onLogin={handleLogin}
                                                         setupVPN={setupVPN}
+                                                        loginUrl={paths.login}
                                                     />
                                                 </Route>
                                                 <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                                    <ForgotUsernameContainer />
+                                                    <ForgotUsernameContainer
+                                                        metaTags={forgotUsernamePage()}
+                                                        loginUrl={paths.login}
+                                                    />
                                                 </Route>
                                                 <Route
                                                     path={[
@@ -578,20 +614,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     exact
                                                 >
                                                     <LoginContainer
+                                                        metaTags={getLoginMeta(maybePreAppIntent)}
                                                         toAppName={toAppName}
                                                         toApp={maybePreAppIntent}
                                                         showContinueTo={!!toOAuthName}
                                                         onLogin={handleLogin}
                                                         onBack={
-                                                            hasBackToSwitch ? () => history.push('/switch') : undefined
+                                                            hasBackToSwitch
+                                                                ? () => history.push(SSO_PATHS.SWITCH)
+                                                                : undefined
                                                         }
                                                         setupVPN={setupVPN}
-                                                        signupUrl={getSignupUrl(forkState, maybePreAppIntent)}
+                                                        paths={paths}
                                                     />
                                                 </Route>
                                                 <Redirect
                                                     to={{
-                                                        pathname: SSO_PATHS.LOGIN,
+                                                        pathname: paths.login,
                                                         state: {
                                                             ...(typeof location.state === 'object'
                                                                 ? location.state
@@ -600,7 +639,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         },
                                                     }}
                                                 />
-                                            </Switch>
+                                            </SwitchOrLoader>
                                         </ForceRefreshContext.Provider>
                                     </UnAuthenticated>
                                 </ExperimentsProvider>

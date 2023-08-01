@@ -3,13 +3,13 @@
     "description": "Human Verification",
     "license": "GPL-3.0",
     "scripts": {
-        "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
+        "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=standalone",
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
-        "start": "proton-pack dev-server --appMode=standalone",
+        "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "jest --coverage --runInBand --ci",
         "test:dev": "jest --watch"
     },

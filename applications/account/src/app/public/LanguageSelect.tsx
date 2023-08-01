@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+
 import { addDays } from 'date-fns';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -9,6 +11,9 @@ import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import clsx from '@proton/utils/clsx';
+
+import { getLocaleMapping } from '../locales';
+import useLocationWithoutLocale, { getLocalePathPrefix } from '../useLocationWithoutLocale';
 
 interface Props {
     className?: string;
@@ -23,6 +28,8 @@ const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
 const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Props) => {
     const { LOCALES = {} } = useConfig();
     const forceRefresh = useForceRefresh();
+    const location = useLocationWithoutLocale();
+    const history = useHistory();
 
     const handleChange = async (newLocale: string) => {
         const localeCode = getClosestLocaleCode(newLocale, locales);
@@ -35,6 +42,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Pro
             path: '/',
         });
         forceRefresh();
+        history.push(`${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}`);
     };
 
     const menu = (
