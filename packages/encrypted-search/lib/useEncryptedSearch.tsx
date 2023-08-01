@@ -1335,8 +1335,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
     }, [isSearch]);
 
-    const esFunctions: EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ESItemContent> = useMemo(
-        () => ({
+    const esFunctions: EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ESItemContent> = useMemo(() => {
+        return {
             encryptedSearch,
             cacheIndexedDB,
             getESDBStatus,
@@ -1354,9 +1354,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             handleEvent,
             initializeES,
             resetCache,
-        }),
-        [userID, esStatus]
-    );
+        };
+    }, [userID, esStatus, inputESHelpers]);
 
     return esFunctions;
 };

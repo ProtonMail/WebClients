@@ -34,6 +34,7 @@ import {
     useModalState,
     useNotifications,
     useOpenDrawerOnLoad,
+    useProgressiveRollout,
     useSpotlightOnFeature,
     useSpotlightShow,
     useToggle,
@@ -151,6 +152,7 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
+    const isCalendarEncryptedSearchEnabled = useProgressiveRollout(FeatureCode.CalendarEncryptedSearch);
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
         useModalState();
@@ -519,7 +521,24 @@ const CalendarContainerView = ({
                 searchBox={
                     <CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} onBackFromSearch={onBackFromSearch} />
                 }
-                searchDropdown={<CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} onBackFromSearch={onBackFromSearch} />}
+                {...(isCalendarEncryptedSearchEnabled && {
+                    searchBox: (
+                        <CalendarSearch
+                            isNarrow={isNarrow}
+                            containerRef={containerRef}
+                            onSearch={onSearch}
+                            onBackFromSearch={onBackFromSearch}
+                        />
+                    ),
+                    searchDropdown: (
+                        <CalendarSearch
+                            isNarrow={isNarrow}
+                            containerRef={containerRef}
+                            onSearch={onSearch}
+                            onBackFromSearch={onBackFromSearch}
+                        />
+                    ),
+                })}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />

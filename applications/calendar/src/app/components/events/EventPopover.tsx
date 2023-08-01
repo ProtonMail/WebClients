@@ -113,7 +113,6 @@ const EventPopover = ({
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const isSearchView = view === VIEWS.SEARCH;
-    const isDrawerApp = getIsCalendarAppInDrawer(view);
 
     const recurrenceDate = toLocalDate(fromUTCDate(start));
     const recurrenceTimestamp = getUnixTime(recurrenceDate);

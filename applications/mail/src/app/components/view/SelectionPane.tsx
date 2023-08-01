@@ -56,7 +56,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [folders] = useFolders();
 
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { isEnablingContentSearch, isPaused, contentIndexingDone, isEnablingEncryptedSearch } = getESDBStatus();
+    const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
+        getESDBStatus();
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
@@ -72,7 +73,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
     const encryptedSearchEnabled =
-        isEnablingContentSearch || isPaused || contentIndexingDone || isEnablingEncryptedSearch;
+        isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     /*
      * With ttag we cannot have JSX in plural forms

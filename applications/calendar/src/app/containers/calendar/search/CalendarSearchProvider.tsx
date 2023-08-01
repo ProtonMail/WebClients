@@ -64,7 +64,9 @@ const CalendarSearchProvider = ({ children }: Props) => {
         }
 
         void withLoading(
-            encryptedSearch(setItems).then(async () => {
+            encryptedSearch((items) => {
+                setItems(items);
+            }).then(() => {
                 setHasSearchedCounter((c) => c + 1);
             })
         );
