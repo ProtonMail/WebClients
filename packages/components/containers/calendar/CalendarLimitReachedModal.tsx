@@ -33,7 +33,7 @@ const CalendarLimitReachedModal = ({ open, onClose, isFreeUser }: Props) => {
                 <ButtonLike color="norm" as={SettingsLink} path={submitButtonPath}>
                     {submitButtonText}
                 </ButtonLike>,
-                <Button onClick={onClose}>{c('Modal action').t`Close`}</Button>,
+                <Button onClick={onClose}>{c('Modal action').t`Cancel`}</Button>,
             ]}
             onClose={onClose}
         >
