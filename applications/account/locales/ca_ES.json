@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } és el vostre nom d'usuari. Per a crear ${ Local }@${ Domain }, aneu a Preferències > Missatges i redacció > Domini curt (pm.me)"
       ],
@@ -3294,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
+      ],
+      "status page": [
+        "pàgina d'estat"
       ],
       "Tab closed": [
         "Pestanya tancada"
@@ -3871,10 +3877,10 @@
     },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
-        "Grup familiar no reconegut. Torneu-ho a provar."
+        "No s'ha reconegut el grup familiar. Torneu-ho a provar."
       ],
       "Organization not recognized. Try again.": [
-        "Organització no reconeguda. Torneu-ho a provar."
+        "No s'ha reconegut l'organització. Torneu-ho a provar."
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -6997,7 +7003,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contacteu amb nosaltres al ${ email } per rebre instruccions per com fer un pagament en efectiu."
+        "Contacteu amb nosaltres en ${ email } per a rebre instruccions de com fer un pagament en efectiu."
       ]
     },
     "Info for domain modal": {
@@ -9348,7 +9354,7 @@
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
+        "El compte d'inici sense cost dissenyat per a dotar de privadesa a tothom de manera predeterminada."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
@@ -9435,13 +9441,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME } calendari xifrat d'extrem a extrem"
+        "${ CALENDAR_APP_NAME }: calendari xifrat d'extrem a extrem"
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME } emmagatzematge al núvol xifrat d'extrem a extrem"
+        "${ DRIVE_APP_NAME }: emmagatzematge al núvol xifrat d'extrem a extrem"
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME } correu electrònic xifrat d'extrem a extrem"
+        "${ MAIL_APP_NAME }: correu electrònic xifrat d'extrem a extrem"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME } desbloquegeu continguts, navegueu privadament"
@@ -9465,14 +9471,14 @@
         "Controleu l'accés als vostres fitxers compartits afegint protecció per contrasenya i dates d'expiració d'enllaços."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia, p. ex. JohnShopper@${ domain } per a comptes de compres, JohnNews@${ domain } per a la subscripció a notícies"
+        "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
         "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Creeu fins a ${ n } adreces de correu electrònic/àlies que pugueu assignar als membres de la família. Utilitzeu-les per a les identitats en línia, p. ex., JoanCompra@${ domain } per als comptes de compres."
+        "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -9481,10 +9487,10 @@
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Compartiu fàcilment els vostres calendaris amb els vostres col·legues de treball, família i amics mitjançant un enllaç."
+        "Compartiu fàcilment els vostres calendaris amb els col·legues de treball, la família i els amics mitjançant un enllaç."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Compartiu fàcilment els vostres calendaris amb la vostra família, amics o col·legues."
+        "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -9496,7 +9502,7 @@
         "El suport IMAP es limita a l'ús d'aplicacions d'escriptori (p. ex., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Actualment no s'admeten les integracions IMAP basades en el núvol."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Mantingueu els vostres plans en privat per a vosaltres i la vostra família amb un calendari xifrat."
+        "Manteniu els vostres plans en privat amb la vostra família amb un calendari xifrat."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Us manté protegit bloquejant totes les connexions de xarxa quan esteu inesperadament desconnectat del nostre servidor VPN."
@@ -9517,7 +9523,7 @@
         "Una connexió VPN permet que un dispositiu es connecti a ${ BRAND_NAME } VPN en qualsevol moment. Per exemple, per connectar un telèfon i un portàtil alhora a ${ BRAND_NAME_TWO } VPN, necessiteu dues connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Opció per veure les bústies d'usuari no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
+        "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Eina de gestió d'organitzacions que permet als administradors afegir i suprimir usuaris, assignar emmagatzematge, configurar dominis i realitzar altres tasques"
@@ -9535,7 +9541,7 @@
         "Personalitzeu la vostra signatura de correu electrònic amb logotips, imatges, icones de xarxes socials, enllaços als detalls de contacte i més"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'equip d'atenció al client de ${ BRAND_NAME } ofereix assistència telefònica a l'horari laboral europeu als clients que tenen, com a mínim, 6 usuaris."
+        "L'Equip d'Èxit al Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -9556,7 +9562,7 @@
         "Requereix un codi enviat a un telèfon mòbil per iniciar la sessió. Això assegura que, fins i tot si una contrasenya està compromesa, el compte roman segur."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Restableix les contrasenyes dels usuaris i l'autenticació de dos factors dels usuaris."
+        "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
@@ -9580,16 +9586,16 @@
         "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comenceu amb ${ freeStorageSize } i desbloquegeu més emmagatzematge sobre la marxa. L'espai d'emmagatzematge es comparteix amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+        "Comenceu amb ${ freeStorageSize } i desbloquegeu més emmagatzematge sobre la marxa. L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix compartit entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "L'espai d'emmagatzematge es comparteix amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
+        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre usuaris i entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }"
+        "L'espai d'emmagatzematge es comparteix entre usuaris i entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
