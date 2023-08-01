@@ -3134,6 +3134,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pro <${ email }>. Problém můžete vyřešit přidáním jiného klíče nebo vypnutím šifrování pro tento kontakt."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -3427,6 +3430,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Omlouváme se, ${ BRAND_NAME } nemůže dešifrovat vaší zprávu. Prosím zkontrolujte, že jsou všechny vaše klíče aktivní."
+      ],
+      "status page": [
+        "stavová stránka"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Přílohu nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubor nadále dešifrovat \nprogramem, jako je např. GnuPG.",
@@ -4958,6 +4964,12 @@
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** výsledek nalezen v ${ labelName }",
+        "**${ elementsFoundCount }** výsledky nalezeny v ${ labelName }",
+        "**${ elementsFoundCount }** výsledků nalezeno v ${ labelName }",
+        "**${ elementsFoundCount }** výsledků nalezeno v ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
@@ -5314,6 +5326,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Chcete-li získat více výsledků vyhledávání, zkuste hledat v obsahu svých e-mailových zpráv"
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."

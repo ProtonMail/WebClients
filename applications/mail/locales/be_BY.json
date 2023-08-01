@@ -3134,6 +3134,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Вы можаце дадаць іншы ключ або адключыць шыфраванне для гэтага кантакту, каб вырашыць праблему."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -3427,6 +3430,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "На жаль, ${ BRAND_NAME } не змог расшыфраваць ваша паведамленне. Пераканайцеся, што ўсе вашы ключы актыўныя."
+      ],
+      "status page": [
+        "статус старонкі"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не атрымалася расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
@@ -4958,6 +4964,12 @@
       "(No Recipient)": [
         "(Няма атрымальніка)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** вынік знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікі знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікаў знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікаў знойдзены ў ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
@@ -5314,6 +5326,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Для паведамленняў больш новых, чым ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Паспрабуйце пашукаць па гэтым ключавым слове ў змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Паспрабуйце пашукаць у змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку"
       ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."

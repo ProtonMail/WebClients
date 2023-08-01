@@ -3123,6 +3123,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -3407,6 +3410,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Atașamentul nu a putut fi decriptat.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierul cu un program cum ar fi GnuPG.",
@@ -4884,6 +4890,11 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "S-a găsit **${ elementsFoundCount }** în ${ labelName }",
+        "S-au găsit **${ elementsFoundCount }** în ${ labelName }",
+        "S-au găsit **${ elementsFoundCount }** în ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -5228,6 +5239,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
