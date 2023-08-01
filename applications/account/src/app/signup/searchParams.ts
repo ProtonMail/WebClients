@@ -1,5 +1,5 @@
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APP_NAMES, CYCLE, DEFAULT_CYCLE, MEMBER_ADDON_PREFIX, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
@@ -107,7 +107,7 @@ export const getPlanIDsFromParams = (plans: Plan[], signupParameters: SignupPara
 
     if (signupParameters.users !== undefined) {
         const usersAddon = plans.find(
-            ({ Name }) => Name.startsWith('1member') && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) => Name.startsWith(MEMBER_ADDON_PREFIX) && supportedAddons[Name as keyof typeof supportedAddons]
         );
         const amount = signupParameters.users - plan.MaxMembers;
         if (usersAddon && amount > 0) {

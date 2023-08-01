@@ -1,4 +1,4 @@
-import { ADDON_NAMES, PLANS } from '../constants';
+import { ADDON_NAMES, MEMBER_ADDON_PREFIX, PLANS } from '../constants';
 import { Organization, Plan, PlanIDs } from '../interfaces';
 
 const {
@@ -118,7 +118,7 @@ export const switchPlan = ({
             const plan = plans.find(({ Name }) => Name === planID);
 
             // Transfer member addons
-            if (addon.startsWith('1member') && plan && organization) {
+            if (addon.startsWith(MEMBER_ADDON_PREFIX) && plan && organization) {
                 const memberAddon = plans.find(({ Name }) => Name === addon);
                 const diffAddresses = (organization.UsedAddresses || 0) - plan.MaxAddresses;
                 const diffSpace =

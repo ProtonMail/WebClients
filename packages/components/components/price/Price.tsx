@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -15,7 +17,7 @@ export interface Props {
     currency?: Currency | string;
     className?: string;
     divisor?: number;
-    suffix?: string;
+    suffix?: ReactNode;
     prefix?: string;
     isDisplayedInSentence?: boolean;
     large?: boolean;
