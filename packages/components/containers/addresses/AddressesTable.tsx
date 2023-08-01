@@ -49,6 +49,7 @@ const AddressesTable = ({
                                 <AddressActions
                                     member={member}
                                     address={address}
+                                    user={user}
                                     organizationKey={organizationKey}
                                     permissions={getPermissions({
                                         addressIndex: i,
