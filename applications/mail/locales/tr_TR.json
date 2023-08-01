@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini kapatabilirsiniz."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Ne yazık ki, ${ BRAND_NAME } iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
+      ],
+      "status page": [
+        "durum sayfası"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
@@ -4810,6 +4816,10 @@
       "(No Recipient)": [
         "(Alıcı yok)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "${ labelName } içinde **${ elementsFoundCount }** sonuç bulundu",
+        "${ labelName } içinde **${ elementsFoundCount }** sonuç bulundu"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
@@ -5142,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini aramayı deneyin"
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
@@ -7766,7 +7782,7 @@
         "Düzenleyici adresine gönderilemedi: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again.": [
-        "Yeniden şifreleme çağrısı yapılamadı. Lütfen yeniden deneyin."
+        "Yeniden şifreleme daveti yapılamadı. Lütfen yeniden deneyin."
       ]
     },
     "Search - no results": {
