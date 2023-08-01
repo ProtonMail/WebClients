@@ -179,6 +179,9 @@
       "Hide": [
         "Verbergen"
       ],
+      "Hide plan features": [
+        "Verberg abonnementsfuncties"
+      ],
       "I have a question": [
         "Ik heb een vraag"
       ],
@@ -1450,6 +1453,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
       ],
@@ -1578,6 +1584,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try again later": [
+        "Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -1992,6 +2001,12 @@
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 e-mails per jaar)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails per jaar)"
+      ],
       "(during your first month)": [
         "(gedurende uw eerste maand)"
       ]
@@ -2027,6 +2042,9 @@
       "Best deal": [
         "Beste deal"
       ],
+      "Checkout": [
+        "Afrekenen"
+      ],
       "Create your account": [
         "Maak uw account aan"
       ],
@@ -2052,11 +2070,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } voor altijd"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
@@ -2132,6 +2156,9 @@
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Bedrag boven maximum (${ amount })."
       ],
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
@@ -2355,6 +2382,9 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
       ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
       ],
@@ -2429,6 +2459,9 @@
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
+      ],
+      "Open source": [
+        "Open source"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -2536,6 +2569,9 @@
         "Stap ${ step }",
         "Stap ${ step }"
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
@@ -2592,6 +2628,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
@@ -2831,6 +2870,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw herstelzin of uw ${ oldPassword } nodig."
       ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
       ],
@@ -2952,6 +2994,9 @@
       "Authenticator app": [
         "Authenticator-app"
       ],
+      "Billing address": [
+        "Facturatie adres"
+      ],
       "Billing cycle": [
         "Facturatieperiode"
       ],
@@ -2972,6 +3017,9 @@
       ],
       "BTC amount": [
         "BTC bedrag"
+      ],
+      "Card details": [
+        "Kaart details"
       ],
       "Card holder": [
         "Kaarthouder"
@@ -3244,6 +3292,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } belangrijke aankondigingen"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-nieuwsbrief"
       ],
@@ -3499,6 +3550,9 @@
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
+      ],
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
@@ -3635,6 +3689,9 @@
       "No-logs policy": [
         "Beleid zonder logboeken"
       ],
+      "Organize items with multiple vaults": [
+        "Organiseer items met meerdere kluizen"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -3674,6 +3731,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Begin jezelf online te beschermen in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -3806,6 +3866,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3833,6 +3896,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
       "Your account's usage": [
         "Verbruik van uw account"
       ]
@@ -3855,6 +3921,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: end-to-end versleutelde agenda"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: end-to-end versleutelde cloudopslag"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: end-to-end versleutelde e-mail"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: inhoud deblokkeren, privé browsen"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
@@ -3879,6 +3957,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
         "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
@@ -3933,6 +4014,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "De harde schijven van onze servers zijn volledig versleuteld met meerdere wachtwoordlagen, zodat uw gegevens ook beveiligd zijn als onze hardware in gevaar komt"
+      ],
+      "Password management and identity protection": [
+        "Wachtwoordbeheer en identiteitsbescherming"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
@@ -4025,6 +4109,9 @@
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
@@ -4643,6 +4730,9 @@
     "Subscription status": {
       "Active": [
         "Actief"
+      ],
+      "Expiring": [
+        "Verlopen"
       ],
       "Upcoming": [
         "Binnenkort"
@@ -5264,12 +5354,22 @@
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: end-to-end gecodeerde wachtwoordbeheerder"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabiele release"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Aanbevolen"
       ]
     },
     "Validation": {
