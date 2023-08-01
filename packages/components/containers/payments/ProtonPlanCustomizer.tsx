@@ -51,6 +51,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     organization?: Organization;
     loading?: boolean;
     mode?: CustomiserMode;
+    forceHideDescriptions?: boolean;
 }
 
 const ButtonNumberInput = ({
@@ -198,17 +199,17 @@ const AccountSizeCustomiser = ({
     maxUsers,
     price,
     input,
-    mode,
+    showDescription = true,
 }: {
     addon: Plan;
     maxUsers: number;
     price: ReactElement;
     input: ReactElement;
-    mode?: CustomiserMode;
+    showDescription?: boolean;
 }) => {
     return (
-        <div className="mb-8">
-            {mode !== 'signup' && (
+        <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
+            {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Account size`}</h2>
                     <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
@@ -234,16 +235,16 @@ const AdditionalOptionsCustomiser = ({
     addon,
     price,
     input,
-    mode,
+    showDescription = true,
 }: {
     addon: Plan;
     price: ReactElement;
     input: ReactElement;
-    mode: CustomiserMode;
+    showDescription?: boolean;
 }) => {
     return (
         <>
-            {mode !== 'signup' && (
+            {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Additional options`}</h2>
                     <div className="mb-4">
@@ -275,20 +276,20 @@ const IPsNumberCustomiser = ({
     maxIPs,
     price,
     input,
-    mode,
+    showDescription = true,
 }: {
     addon: Plan;
     maxIPs: number;
     price: ReactElement;
     input: ReactElement;
-    mode?: CustomiserMode;
+    showDescription?: boolean;
 }) => {
     const ipsString = c('plan customizer, ips')
         .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}. Should you need more than ${maxIPs} IPs, please ${contactHref} our Sales team.`;
 
     return (
-        <div className="mb-8">
-            {mode !== 'signup' && (
+        <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
+            {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Dedicated IP addresses `}</h2>
                     <div className="mb-4">{ipsString}</div>
@@ -322,9 +323,11 @@ const ProtonPlanCustomizer = ({
     organization,
     loading,
     className,
+    forceHideDescriptions,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
+    const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
 
     return (
         <div className={clsx(['plan-customiser', className])} {...rest}>
@@ -423,7 +426,7 @@ const ProtonPlanCustomizer = ({
                             price={addonPriceInline}
                             input={input}
                             maxUsers={maxTotal}
-                            mode={mode}
+                            showDescription={showAddonDescriptions}
                         />
                     );
                 }
@@ -440,7 +443,7 @@ const ProtonPlanCustomizer = ({
                             addon={addon}
                             price={addonPriceInline}
                             input={input}
-                            mode={mode}
+                            showDescription={showAddonDescriptions}
                         />
                     );
                 }
@@ -452,7 +455,7 @@ const ProtonPlanCustomizer = ({
                             addon={addon}
                             price={addonPriceInline}
                             input={input}
-                            mode={mode}
+                            showDescription={showAddonDescriptions}
                             maxIPs={maxTotal}
                         />
                     );
