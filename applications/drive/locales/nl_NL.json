@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" bestaat reeds"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -3418,6 +3421,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
+      "Enter the device name to confirm removal.": [
+        "Voer de apparaatnaam in om de verwijdering te bevestigen."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
@@ -3920,6 +3926,9 @@
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Hiermee wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd van ${ DRIVE_APP_NAME } en worden de mappen die u aan Mijn computers hebt toegevoegd, niet meer gesynchroniseerd."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"

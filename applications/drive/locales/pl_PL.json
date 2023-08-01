@@ -1946,6 +1946,9 @@
       "\"${ name }\" already exists": [
         "Plik \"${ name }\" już istnieje"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
