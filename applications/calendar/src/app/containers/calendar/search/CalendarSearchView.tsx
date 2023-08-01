@@ -5,7 +5,7 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { SkeletonLoader } from '@proton/components/components/skeletonLoader';
 import { IllustrationPlaceholder } from '@proton/components/containers';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -161,8 +161,23 @@ const CalendarSearchView = ({
 
     if (loading || !visualItems) {
         return (
-            <div className="flex flex-column flex-justify-center flex-align-items-center w100 h100">
-                <CircleLoader size="medium" className="color-primary" />
+            <div className="h-full">
+                {/* Custom py to have the same height as normal state's header */}
+                <div className="py-custom px-5 border-bottom border-weak" style={{ '--py-custom': '0.912rem' }}>
+                    <div className="h6">
+                        <SkeletonLoader width="5em" index={0} />
+                    </div>
+                </div>
+                <div className="p-12">
+                    <div className="max-w-custom" style={{ '--max-w-custom': '22em' }}>
+                        <SkeletonLoader width="100%" index={1} />
+                        <SkeletonLoader width="80%" index={2} className="mb-8" />
+                        <SkeletonLoader width="100%" index={3} />
+                        <SkeletonLoader width="90%" index={4} className="mb-8" />
+                        <SkeletonLoader width="100%" index={5} />
+                        <SkeletonLoader width="70%" index={6} />
+                    </div>
+                </div>
             </div>
         );
     }
@@ -174,12 +189,12 @@ const CalendarSearchView = ({
 
     return (
         <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">
-            <div className="flex flex-row flex-justify-space-between flex-align-items-center w100 py-3 px-5 bg-norm border-bottom">
+            <div className="flex flex-justify-space-between flex-align-items-center w100 py-3 px-5 bg-norm border-bottom">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
                 {hasResults && (
-                    <div className="flex-row">
+                    <div>
                         <Button
                             color="weak"
                             shape="ghost"
@@ -205,7 +220,7 @@ const CalendarSearchView = ({
             </div>
 
             {hasResults ? (
-                <div className="w100 flex-1 scroll-if-needed">
+                <div className="w100 flex-item-fluid overflow-auto">
                     {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
