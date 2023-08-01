@@ -792,9 +792,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será encriptada e qualquer pessoa com acesso ao ficheiro exportado poderá ver as suas palavras-passe. Por razões de segurança, elimine-o quando terminar de o utilizar."
       ],
-      "This will disable your browser's default auto-saving capabilities.": [
-        "Isto irá desativar as capacidades de gravação automática predefinidas do seu navegador."
-      ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
       ],
@@ -1127,6 +1124,9 @@
       "Prompt for auto-save": [
         "Pedido de gravação automática"
       ],
+      "Rate us": [
+        "Avalie-nos"
+      ],
       "Recent": [
         "Recente"
       ],
@@ -1210,9 +1210,6 @@
       ],
       "Update": [
         "Actualizar"
-      ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "Utilizar ${ PASS_APP_NAME } como gestor de gravação automática predefinido"
       ],
       "Username": [
         "Nome de utilizador"
@@ -1363,6 +1360,9 @@
       ],
       "Enjoy your free trial": [
         "Aproveite o seu período de teste gratuito"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Está a gostar do ${ PASS_APP_NAME }?"
       ],
       "Enter your Pin": [
         "Introduza o seu PIN"
