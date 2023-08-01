@@ -2187,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "Grupa ${ list } nie posiada prawidłowego adresu e-mail",
         "Niektóre kontakty nie posiadają prawidłowego adresu e-mail: ${ list }",
