@@ -2,10 +2,10 @@ import get from 'lodash/get';
 import { c } from 'ttag';
 import X2JS from 'x2js';
 
-import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import { ImportProviderError, ImportReaderError } from '../helpers/error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportVault } from '../types';
 import { type ImportPayload } from '../types';
@@ -16,25 +16,21 @@ const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value
 const getKeePassProtectInMemoryValue = (Value: KeePassEntryValue): string =>
     typeof Value === 'string' ? '' : Value._ProtectInMemory;
 
-const isLegacyTotpDefinition = (item: KeePassItem) => item.totpSeed != null && item.totpSettings != null;
+const isLegacyTotpDefinition = (item: KeePassItem) => Boolean(item.totpSeed && item.totpSettings);
 
-function formatOtpAuthUriFromLegacyTotpDefinition(item: KeePassItem) {
-    const splitTotpSettings = (<string>item.totpSettings).split(';');
-    const period = parseInt(splitTotpSettings[0]);
-    const digits = parseInt(splitTotpSettings[1]);
+const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<string> => {
+    try {
+        const [period, digits] = item.totpSettings!.split(';').map((value) => parseInt(value, 10));
+        if (isNaN(period) || isNaN(digits)) throw new Error();
 
-    if (splitTotpSettings.length != 2 || isNaN(period) || isNaN(digits)) {
-        throw new ImportReaderError(
-            `The legacy TOTP settings of item "${item.name}" are not in the expected format ("period;digits")`
-        );
+        return `otpauth://totp/${item.name}:none?secret=${item.totpSeed}&period=${period}&digits=${digits}`;
+    } catch (e) {
+        logger.warn(`[Importer::KeePass] legacy TOTP settings for item "${item.name}" are not in the expected format`);
     }
-
-    return `otpauth://totp/${item.name}:none?secret=${item.totpSeed}&period=${period}&digits=${digits}`;
-}
-
-const formatOtpAuthUri = (item: KeePassItem) => {
-    return isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 };
+
+const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
+    isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
