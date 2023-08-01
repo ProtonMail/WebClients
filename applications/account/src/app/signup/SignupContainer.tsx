@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -47,10 +47,13 @@ import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import mailReferPage from '../../pages/refer-a-friend';
+import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
-import { useMetaTags } from '../useMetaTags';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -91,7 +94,6 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
-import { getSignupMeta } from './signupPagesJson';
 
 const {
     AccountCreationUsername,
@@ -113,18 +115,29 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
+    loginUrl: string;
+    metaTags: MetaTags;
 }
 
-const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
+const SignupContainer = ({
+    metaTags,
+    toApp,
+    toAppName,
+    onBack,
+    onLogin,
+    clientType,
+    productParam,
+    loginUrl,
+}: Props) => {
     const { APP_NAME } = useConfig();
 
-    const location = useLocation<{ invite?: InviteData }>();
+    const location = useLocationWithoutLocale<{ invite?: InviteData }>();
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
     const { isTinyMobile } = useActiveBreakpoint();
 
-    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial, isMailRefer }));
+    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
     const normalApi = useApi();
     const history = useHistory();
@@ -136,7 +149,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         toAppName = MAIL_APP_NAME;
     }
     const [signupParameters] = useState(() => {
-        const params = getSignupSearchParams(new URLSearchParams(location.search));
+        const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search));
         if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
@@ -552,6 +565,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         <>
             {step === AccountCreationUsername && (
                 <AccountStep
+                    loginUrl={loginUrl}
                     toApp={toApp}
                     clientType={clientType}
                     onBack={handleBackStep}

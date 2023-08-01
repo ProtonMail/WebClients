@@ -1,6 +1,7 @@
 import { ReactNode, useContext, useEffect, useRef, useState } from 'react';
 
 import { Challenge, ChallengeRef } from '@proton/components/containers';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -10,23 +11,22 @@ import { apiCallback, setApi, setChallenge, setup } from './unAuthenticatedApi';
 
 interface Props {
     children: ReactNode;
-    loader: ReactNode;
+    onLoaded: () => void;
 }
 
-const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
+const UnAuthenticatedApiProvider = ({ children, onLoaded }: Props) => {
     const api: Api = useContext(ApiContext);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
 
     useEffect(() => {
-        setApi(api);
+        setApi(getSilentApi(api));
     });
 
     useEffect(() => {
         setup()
             .then(() => {
-                setLoading(false);
+                onLoaded();
             })
             .catch((e) => {
                 setError(e);
@@ -35,10 +35,6 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
-    }
-
-    if (loading) {
-        return <>{loader}</>;
     }
 
     return (
@@ -52,13 +48,11 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
                 type={0}
                 onSuccess={async () => {
                     const challenge = await challengeRefLogin.current?.getChallenge().catch(noop);
-                    if (!challenge) {
-                        return;
-                    }
-                    // Challenge is set dynamically for a faster loading experience
-                    await setChallenge(challenge);
+                    setChallenge(challenge);
                 }}
-                onError={noop}
+                onError={() => {
+                    setChallenge(undefined);
+                }}
             />
             {children}
         </ApiContext.Provider>
