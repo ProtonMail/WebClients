@@ -2,7 +2,16 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_NAMES,
+    BRAND_NAME,
+    CYCLE,
+    FREE_VPN_CONNECTIONS,
+    PLANS,
+    PLAN_NAMES,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -35,6 +44,7 @@ import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
     getHighSpeedVPNConnectionsText,
+    getVPNConnectionsFeature,
     getVPNConnectionsText,
 } from '../../features/vpn';
 import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
@@ -153,10 +163,7 @@ const SubscriptionPanel = ({
 
     const getVpnAppFree = () => {
         const items: Item[] = [
-            {
-                icon: 'brand-proton-vpn',
-                text: getVPNConnectionsText(1),
-            },
+            getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
             {
                 icon: 'earth',
                 text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),

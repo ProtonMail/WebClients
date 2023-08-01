@@ -229,11 +229,11 @@ export const mailPlusUpsell = {
         },
         {
             icon: 'brand-proton-vpn',
-            text: '10 high-speed VPN connections',
+            text: '1 VPN connection',
             included: true,
         },
         {
-            text: 'Proton Pass with unlimited hide-my-email aliases',
+            text: 'Proton Pass with 10 hide-my-email aliases',
             icon: 'pass-all-vaults',
             included: true,
             hideInDowngrade: true,
