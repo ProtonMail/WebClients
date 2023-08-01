@@ -70,7 +70,9 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
                 Calendars?: CalendarEventManager[];
                 Refresh?: number;
             }) => {
-                // TODO: Also the "More" parameter should be taken into account to fetch more events
+                /**
+                 * If we have `More` core events to handle, the application itself will take care of the pagination so this handler will automatically get called next.
+                 */
                 const esEvent = await processCoreEvents(userID, Calendars, Refresh, EventID, api, getCalendarEventRaw);
                 return esLibraryFunctions.handleEvent(esEvent);
             }
@@ -90,7 +92,9 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
                 CalendarEvents?: CalendarEventsEventManager[];
                 Refresh?: number;
             }) => {
-                // TODO: Also the "More" parameter should be taken into account to fetch more events
+                /**
+                 * If we have `More` calendar events (e.g: in case of a large import) to handle, the application itself will take care of the pagination so this handler will automatically get called next.
+                 */
                 const esEvent = await processCalendarEvents(
                     CalendarEvents,
                     Refresh,

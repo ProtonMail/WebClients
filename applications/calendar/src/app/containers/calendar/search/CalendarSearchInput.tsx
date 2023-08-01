@@ -27,11 +27,11 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
     const inputRef = useRef<HTMLInputElement>(null);
     const spotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const {
-        show: showHolidaysSpotlight,
+        show: showCalendarEsSpotlight,
         onDisplayed: onSpotlightDisplayed,
         onClose: onCloseSpotlight,
     } = useSpotlightOnFeature(
-        FeatureCode.CalendarSearchSpotlight,
+        FeatureCode.CalendarEncryptedSearchSpotlight,
         isBefore(new Date(user.CreateTime * SECOND), sub(new Date(), { weeks: 1 })) && !isNarrow && !isWelcomeFlow,
         // TODO: update
         {
@@ -41,7 +41,7 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
         }
     );
 
-    const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
+    const shouldShowCalendarEsSpotlight = useSpotlightShow(showCalendarEsSpotlight);
 
     const handleClear = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
@@ -50,7 +50,7 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
 
     const handleFocus = () => {
         // close spotlight if it's on display
-        if (shouldShowHolidaysSpotlight) {
+        if (shouldShowCalendarEsSpotlight) {
             onCloseSpotlight();
         }
 
@@ -64,7 +64,7 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
             <div ref={ref} className="w100 m-auto">
                 <Spotlight
                     originalPlacement="bottom-start"
-                    show={shouldShowHolidaysSpotlight}
+                    show={shouldShowCalendarEsSpotlight}
                     onDisplayed={onSpotlightDisplayed}
                     type="new"
                     anchorRef={spotlightAnchorRef}

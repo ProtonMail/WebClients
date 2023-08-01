@@ -10,6 +10,11 @@ import clsx from '@proton/utils/clsx';
 import { useCalendarSearch } from './CalendarSearchProvider';
 import { SearchModel } from './interface';
 
+/**
+ * TODO: Support searching in specific time range to turn this to false
+ */
+const HIDE_SEARCH_FORM = true;
+
 interface Props {
     model: SearchModel;
     isNarrow: boolean;
@@ -72,7 +77,7 @@ const CalendarSearchForm = ({ model, isNarrow, showMore, canReset, updateModel, 
                 )}
             </div>
             <div className="my-4 mx-5 flex flex-align-items-center flex-justify-space-between">
-                {!showMore && (
+                {!showMore && !HIDE_SEARCH_FORM && (
                     <Button
                         data-testid="advanced-search:show-more"
                         className="mb-2 on-mobile-w100"

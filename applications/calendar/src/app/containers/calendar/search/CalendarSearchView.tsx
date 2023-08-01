@@ -5,12 +5,16 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Icon } from '@proton/components/components';
 import { SkeletonLoader } from '@proton/components/components/skeletonLoader';
 import { IllustrationPlaceholder } from '@proton/components/containers';
+import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noop from '@proton/utils/noop';
+import unique from '@proton/utils/unique';
 
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getCalendarEventsCache from '../eventStore/cache/getCalendarEventsCache';
@@ -32,6 +36,23 @@ import {
 import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
 import './SearchView.scss';
+
+const formatListWithAnd = (items: string[]) => {
+    if (items.length <= 1) {
+        return <i className="text-nowrap">{items[0]}</i>;
+    }
+
+    const firstItems = items.slice(0, items.length - 1).reduce((acc: React.JSX.Element[], cur: string) => {
+        return acc.length
+            ? [...acc, <span>{', '}</span>, <i className="text-nowrap">{cur}</i>]
+            : [...acc, <i className="text-nowrap">{cur}</i>];
+    }, []);
+
+    const lastItem = <i className="text-nowrap">{items[items.length - 1]}</i>;
+
+    // translator: This is the list of the calendar with visibility turned off, used to warn the user when he gets no result on search but has some in hidden calendars
+    return c('Info').jt`${firstItems} and ${lastItem}`;
+};
 
 interface Props {
     calendars: VisualCalendar[];
@@ -58,20 +79,45 @@ const CalendarSearchView = ({
     const { items, hasSearchedCounter, loading } = useCalendarSearch();
     const [calendarViewEvents, setCalendarViewEvents] = useState<CalendarViewEvent[]>([]);
 
+    const calendarsById = toMap(calendars, 'ID');
+
     const calendarsMap = calendars.reduce<SimpleMap<VisualCalendar>>((acc, calendar) => {
         acc[calendar.ID] = calendar;
-
         return acc;
     }, {});
 
+    const [visibleItems, hiddenItems] = useMemo(
+        () =>
+            items.reduce(
+                ([visibleItems, hiddenItems]: [typeof items, typeof items], item) => {
+                    if (calendarsById[item.CalendarID].Display !== CALENDAR_DISPLAY.HIDDEN) {
+                        visibleItems.push(item);
+                    } else {
+                        hiddenItems.push(item);
+                    }
+
+                    return [visibleItems, hiddenItems];
+                },
+                [[], []]
+            ),
+        [items, calendarsById]
+    );
+
+    const shouldDisplayCalendarDisplayWarning = !visibleItems.length && !!hiddenItems.length;
+
+    const hiddenWithItemsCalendarNames = useMemo(
+        () => unique(hiddenItems.map((item) => calendarsById[item.CalendarID].Name)),
+        [hiddenItems, calendarsById]
+    );
+
     const visualItems = useMemo(() => {
         return getVisualSearchItems({
-            items: expandAndOrderItems(items, calendarsEventsCacheRef.current),
+            items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current),
             calendarsMap,
             tzid,
             date,
         });
-    }, [hasSearchedCounter]);
+    }, [visibleItems, hasSearchedCounter]);
 
     const loadPopoverContent = (
         calendarID: string,
@@ -246,11 +292,30 @@ const CalendarSearchView = ({
                     }, [])}
                 </div>
             ) : (
-                <div className="flex flex-column flex-justify-center flex-align-items-center w100 h100">
-                    <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
-                    <div className="text-center">
-                        {c('Info calendar search')
-                            .t`You can either update your search query or close search to go back to calendar views`}
+                <div className="flex flex-column w100 h100">
+                    {shouldDisplayCalendarDisplayWarning && (
+                        <div className="bg-weak rounded m-2 px-4 py-2 flex">
+                            <div className="flex-item-noshrink">
+                                <Icon name="magnifier" className="mr-2" />
+                            </div>
+                            <div className="flex-item-fluid pl-1">
+                                {
+                                    // translator: This is a warning displayed to the user when he gets no result on current search but has some in hidden calendars
+                                    c('Info')
+                                        .jt`Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${formatListWithAnd(
+                                        hiddenWithItemsCalendarNames
+                                    )}.`
+                                }
+                            </div>
+                        </div>
+                    )}
+
+                    <div className="flex flex-column flex-justify-center flex-align-items-center flex-item-grow w100">
+                        <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
+                        <div className="text-center">
+                            {c('Info calendar search')
+                                .t`You can either update your search query or close search to go back to calendar views`}
+                        </div>
                     </div>
                 </div>
             )}
