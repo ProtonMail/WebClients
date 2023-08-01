@@ -446,6 +446,7 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
             encryptedName: original.decrypted.encryptedName,
             name: original.decrypted.name,
             fileModifyTime: original.decrypted.fileModifyTime,
+            corruptedLink: original.decrypted.corruptedLink,
             ...getDecryptedLinkComputedData(
                 original.decrypted,
                 newLink.encrypted.activeRevision?.id,
