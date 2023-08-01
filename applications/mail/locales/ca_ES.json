@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } per a <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per a aquest contacte per a resoldre el problema."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } no pot desxifrar el vostre missatge. Comproveu que totes les vostres claus estiguin actives."
+      ],
+      "status page": [
+        "pàgina d'estat"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "No s'ha pogut desxifrar el fitxer adjunt.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nel fitxer amb un programa com GnuPG.",
@@ -4810,6 +4816,10 @@
       "(No Recipient)": [
         "(Cap Destinatari)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** resultat trobat a ${ labelName }",
+        "**${ elementsFoundCount }** resultats trobats a ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
@@ -5142,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges més nous que ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Per obtenir més resultats de cerca, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Per obtenir més resultats de cerca, proveu de cercar al contingut dels vostres missatges de correu electrònic."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
