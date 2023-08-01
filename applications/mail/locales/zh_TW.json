@@ -3101,6 +3101,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "關於 <${ email }> 的 ${ error.message }。您可以針對此聯絡人加入另一組金鑰或是停用加密以解決問題。"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -3370,6 +3373,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "抱歉，${ BRAND_NAME } 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
+      ],
+      "status page": [
+        "狀態頁面"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -4736,6 +4742,9 @@
       "(No Recipient)": [
         "(無收件人)"
       ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "於${ labelName }找到**${ elementsFoundCount }**"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
       ],
@@ -5056,6 +5065,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息。"
       ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"

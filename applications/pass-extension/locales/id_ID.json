@@ -17,6 +17,9 @@
       "Add new item": [
         "Tambahkan item baru"
       ],
+      "Advanced": [
+        "Lanjutan"
+      ],
       "Advanced options": [
         "Opsi lanjutan"
       ],
@@ -128,6 +131,9 @@
       "Generate password": [
         "Buat kata sandi"
       ],
+      "Help us improve": [
+        "Bantu kami untuk berkembang"
+      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -164,6 +170,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Pass for Android": [
+        "Pass untuk Android"
+      ],
       "Proceed": [
         "Lanjut"
       ],
@@ -190,6 +199,9 @@
       ],
       "Saving": [
         "Menyimpan"
+      ],
+      "Send us a message": [
+        "Kirim pesan kepada kami"
       ],
       "Show": [
         "Tampilkan"
@@ -245,6 +257,9 @@
       ]
     },
     "Error": {
+      "Authentication error": [
+        "Kesalahan autentikasi"
+      ],
       "Auto-lock could not be activated": [
         "Pengunci otomatis tidak dapat diaktifkan"
       ],
@@ -682,9 +697,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas yang Anda ekspor akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus ekspor ini setelah tidak lagi digunakan."
       ],
-      "This will disable your browser's default auto-saving capabilities.": [
-        "Hal ini akan menonaktifkan kemampuan penyimpanan otomatis bawaan pada peramban Anda."
-      ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
@@ -708,6 +720,9 @@
       ],
       "Vault \"${ share.content.name }\" was disabled": [
         "Berkas \"${ share.content.name }\" telah dinonaktifkan"
+      ],
+      "Verification code": [
+        "Kode verifikasi"
       ],
       "You are about to create:": [
         "Anda akan membuat:"
@@ -825,6 +840,9 @@
       "Card number": [
         "Nomor kartu"
       ],
+      "Cardholder name": [
+        "Nama pemilik kartu"
+      ],
       "Cards": [
         "Kartu"
       ],
@@ -846,6 +864,9 @@
       "Created": [
         "Waktu Dibuat"
       ],
+      "Credit Card": [
+        "Kartu kredit"
+      ],
       "Current plan": [
         "Paket saat ini"
       ],
@@ -866,6 +887,9 @@
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Enkripsi data ekspor ${ PASS_APP_NAME } Anda"
+      ],
+      "Expires on": [
+        "Kedaluwarsa pada"
       ],
       "Export": [
         "Ekspor"
@@ -1071,9 +1095,6 @@
       "Update": [
         "Perbarui"
       ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "Gunakan ${ PASS_APP_NAME } sebagai aplikasi pengelola penyimpanan otomatis default"
-      ],
       "Username": [
         "Nama Pengguna"
       ],
@@ -1088,6 +1109,9 @@
       ],
       "Vaults": [
         "Brankas"
+      ],
+      "Verification number": [
+        "Nomor verifikasi"
       ],
       "View logs": [
         "Lihat log"
@@ -1214,6 +1238,9 @@
       ],
       "Grant permissions": [
         "Berikan izin"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Impor - ${ date }"

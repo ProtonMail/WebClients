@@ -781,9 +781,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
       ],
-      "This will disable your browser's default auto-saving capabilities.": [
-        "此會停用瀏覽器預設的自動填入"
-      ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
@@ -1054,7 +1051,7 @@
         "最近"
       ],
       "Move items to": [
-        "將項移置置"
+        "將項目移至"
       ],
       "Name": [
         "名稱"
@@ -1112,6 +1109,9 @@
       ],
       "Prompt for auto-save": [
         "提示自動儲存"
+      ],
+      "Rate us": [
+        "評分我們"
       ],
       "Recent": [
         "最近"
@@ -1197,9 +1197,6 @@
       "Update": [
         "更新"
       ],
-      "Use ${ PASS_APP_NAME } as default autosave manager": [
-        "使用${ PASS_APP_NAME }為預設自動管理器"
-      ],
       "Username": [
         "使用者名稱"
       ],
@@ -1223,9 +1220,6 @@
       ],
       "Websites": [
         "網頁"
-      ],
-      "Write a review": [
-        "寫下評論"
       ],
       "You are about to create": [
         "您將要創建"

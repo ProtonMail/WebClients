@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de versleuteling voor dit contact uitschakelen om het probleem op te lossen."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -4156,8 +4159,26 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } in de Play Store"
       ],
+      "account logins": [
+        "account logins"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail automatisch doorsturen"
+      ],
+      "auto-forwarding": [
+        "automatisch doorsturen"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Blokkeer e-mailcommunicatie van oplichters permanent."
+      ],
+      "Block unsavory senders": [
+        "Blokkeer ongewenste afzenders"
+      ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Hulde voor het meer veiliger, handiger en relevanter maken van je e-mail! We hebben je gratis opslag verhoogd naar 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Wijzig ${ strongText } in uw adres ${ BRAND_NAME }"
       ],
       "Checklist complete": [
         "Controlelijst voltooid"
@@ -4171,8 +4192,20 @@
       "Continue setting up your email": [
         "Ga door met het instellen van uw e-mail"
       ],
+      "Discover how our ${ strongText } protect you": [
+        "Ontdek hoe onze ${ strongText } u beschermt"
+      ],
+      "Discover privacy features": [
+        "Ontdek privacyfuncties"
+      ],
       "Double your free storage to 1 GB when you complete the following:": [
         "Verdubbel je gratis opslag naar 1 GB wanneer je het volgende hebt voltooid:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken."
+      ],
+      "For your eyes only": [
+        "Alleen voor jouw ogen"
       ],
       "Get free storage": [
         "Verkrijg gratis opslag"
@@ -4182,6 +4215,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Download de ${ strongText } op Android of iOS"
       ],
       "Get the App": [
         "Download de app"
@@ -4216,6 +4252,9 @@
       "Popular online services": [
         "Populaire online diensten"
       ],
+      "privacy features": [
+        "privacy-functies"
+      ],
       "Protect and simplify your email": [
         "Bescherm en vereenvoudig je e-mail"
       ],
@@ -4231,8 +4270,14 @@
       "Set recovery method": [
         "Herstelmethode instellen"
       ],
+      "Set up ${ strongText } from Gmail": [
+        "Stel ${ strongText } in vanuit Gmail"
+      ],
       "Sign in to the mobile app to complete this step": [
         "Log in op de mobiele app om deze stap te voltooien"
+      ],
+      "Update your logins": [
+        "Werk uw aanmeldingen bij"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Met gebruik van je mobiele apparaat scan je deze QR-code of bezoek je de iOS of Android winkel."
@@ -4771,6 +4816,10 @@
       "(No Recipient)": [
         "(Geen ontvanger)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** resultaat gevonden in ${ labelName }",
+        "**${ elementsFoundCount }** resultaten gevonden in ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
@@ -5103,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Probeer voor meer zoekresultaten te zoeken in de inhoud van uw e-mailberichten"
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -7429,6 +7484,9 @@
       ],
       "Travel": [
         "Reizen"
+      ],
+      "Utilities": [
+        "Hulpprogramma's"
       ]
     },
     "Option": {

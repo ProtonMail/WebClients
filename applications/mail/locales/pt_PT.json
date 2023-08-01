@@ -2936,7 +2936,7 @@
         "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro é maior, divida-o em ficheiros mais pequenos."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Ative a proteção contra os rastreadores de e-mail para evitar que anunciantes e outros de rastrear a sua localização e atividade em linha."
+        "Ative a proteção contra os rastreadores de e-mail para evitar que anunciantes e outros rastreiem a sua localização e atividade online."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloqueie o agendamento de mensagens personalizadas e outros benefícios quando efetuar upgrade ao seu plano."
@@ -2951,7 +2951,7 @@
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
+        "Não encontrámos nenhum rastreador conhecido nem URLs de rastreio neste e-mail."
       ],
       "When do you want your message to be sent?": [
         "Quando quer que a sua mensagem seja enviada?"
@@ -3111,6 +3111,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } para <${ email }>. Pode adicionar outra chave ou desativar a encriptação para este contacto para resolver o problema."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Lamentamos, mas ${ BRAND_NAME } não consegue desencriptar a sua mensagem. Verifique se todas as suas chaves estão ativas."
+      ],
+      "status page": [
+        "página de status"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "O anexo não pôde ser desencriptado.\nSe tiver a chave privada correspondente, ainda será capaz de o desencriptar com um programa como o GnuPG.",
@@ -4226,13 +4232,13 @@
         "Importar contactos ou mensagens"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Continue utilizando o ${ MAIL_APP_NAME } para descobrir mais sobre como o ${ BRAND_NAME } protege sua privacidade e simplifica a gestão de e-mails."
+        "Continue a utilizar ${ MAIL_APP_NAME } para descobrir mais formas da ${ BRAND_NAME } proteger a sua privacidade e simplificar a gestão de e-mails."
       ],
       "Learn more": [
         "Saiba mais"
       ],
       "Make ${ BRAND_NAME } your go-to inbox": [
-        "Faça do ${ BRAND_NAME } sua caixa de entrada"
+        "Faça do ${ BRAND_NAME } a sua caixa de entrada"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -4244,7 +4250,7 @@
         "Abrir a lista de verificação"
       ],
       "Popular online services": [
-        "Serviços em linha populares"
+        "Serviços online populares"
       ],
       "privacy features": [
         "funcionalidades de privacidade"
@@ -4288,7 +4294,7 @@
         "Encaminhe automaticamente"
       ],
       "Gmail messages to your inbox": [
-        "os mensagens do Gmail para a sua caixa de entrada"
+        "mensagens do Gmail para a sua caixa de entrada"
       ],
       "Sign in with Google": [
         "Iniciar sessão com o Google"
@@ -4810,6 +4816,10 @@
       "(No Recipient)": [
         "(sem destinatário)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }**resultado encontrado em ${ labelName }",
+        "**${ elementsFoundCount }**resultados encontrados em ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
@@ -5142,6 +5152,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais recentes que ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Para obter mais resultados de pesquisa, tente pesquisar esta palavra-chave no conteúdo das suas mensagens de e-mail."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Para obter mais resultados de pesquisa, tente pesquisar no conteúdo das suas mensagens de e-mail."
       ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
@@ -5850,7 +5866,7 @@
         "Não foi possível verificar as chaves confiadas do remetente."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Removemos as informações de rastreamento nas seguintes ligações para ajudar na sua proteção contra anunciantes e outras pessoas que tentam rastrear a sua atividade em linha."
+        "Removemos as informações de rastreio das seguintes ligações para ajudar a protegê-lo dos anunciantes e de outras pessoas que tentam rastrear a sua atividade online."
       ],
       "We'll notify you when the import is done.": [
         "Vamos avisá-lo quando a importação for concluída."
@@ -7452,7 +7468,7 @@
         "Cripto"
       ],
       "E-commerce and Retail": [
-        "Comércio eletrônico e na loja"
+        "Comércio eletrónico e retalho"
       ],
       "Entertainment": [
         "Entretenimento"
@@ -8493,7 +8509,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Armazene as suas palavaras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavaras-passe ilimitadas, preenchimento automático, gerador de palavaras-passe e mais."
+        "Armazene as suas palavras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavras-passe ilimitadas, preenchimento automático, gerador de palavras-passe e mais."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -8503,7 +8519,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crie detalhes seguros de início de sessão em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2F integrada, preenchimento automático de cartão de crédito e muito mais."
+        "Crie detalhes de início de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, 20 cofres, A2A integrado, preenchimento automático de cartões de crédito e muito mais."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inclui mais de 2950 servidores em mais de 65 países, ligue até 10 dispositivos, aceda a serviços de streaming em todo o mundo, malware e bloqueador de anúncios e muito mais."
@@ -8512,7 +8528,7 @@
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteja os seus arquivos com armazenamento encriptado na nuvem. Inclui histórico de versões, partilhamento de ficheiros encriptados e muito mais."
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
       ]
     },
     "summer2023:Footer": {
@@ -8528,7 +8544,7 @@
         "Por tempo limitado, obtenha o melhor da ${ BRAND_NAME } com um desconto exclusivo."
       ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "Estamos a celebrar o 9º aniversário do nosso crowdfunding!"
+        "Estamos a celebrar o nono aniversário do nosso crowdfunding!"
       ]
     },
     "summer2023:Offer title": {

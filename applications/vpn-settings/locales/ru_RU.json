@@ -179,6 +179,9 @@
       "Hide": [
         "Скрыть"
       ],
+      "Hide plan features": [
+        "Скрыть возможности тарифа"
+      ],
       "I have a question": [
         "У меня есть вопрос"
       ],
@@ -1458,6 +1461,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
@@ -1556,6 +1562,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
+      ],
+      "status page": [
+        "страница статуса"
       ],
       "Tab closed": [
         "Вкладка закрыта"
@@ -3575,6 +3584,9 @@
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } с неограниченным количеством псевдонимов hide-my-email"
+      ],
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
@@ -3880,6 +3892,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3909,6 +3924,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -4104,11 +4122,20 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Увеличьте хранилище до ${ bundleStorage } на пользователя"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
+      ],
+      "Create up to ${ n } calendar": [
+        "Создайте до ${ n } календаря",
+        "Создайте до ${ n } календарей",
+        "Создайте до ${ n } календарей",
+        "Создайте до ${ n } календарей"
       ]
     },
     "Notification": {
@@ -5355,6 +5382,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Рекомендованное"
       ]
     },
     "Validation": {
