@@ -3008,6 +3008,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "Twoja nazwa użytkownika to ${ Local }. Aby utworzyć adres ${ Local }@${ Domain }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (@pm.me)"
       ],

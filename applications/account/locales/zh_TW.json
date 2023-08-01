@@ -1041,8 +1041,14 @@
       "Disable": [
         "停用"
       ],
+      "Disable E2EE": [
+        "停用端對端加密"
+      ],
       "Enable": [
         "啟用"
+      ],
+      "Enable E2EE": [
+        "啟用端對端加密"
       ],
       "Generate missing keys": [
         "產生遺漏的金鑰"
@@ -2975,6 +2981,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } 是您的使用者名稱。如要建立 ${ Local }@${ Domain }，請前往「設定」 > 「郵件與撰寫」 > 「短域名 (pm.me)」"
       ],
@@ -3274,6 +3283,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "status page": [
+        "狀態頁面"
       ],
       "Tab closed": [
         "分頁已關閉"

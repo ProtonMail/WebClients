@@ -720,7 +720,7 @@
         "Diğer tüm oturumları kapat"
       ],
       "Revoke this invitation": [
-        "Bu çağrıyı geri çek"
+        "Bu daveti geri çek"
       ],
       "Save": [
         "Kaydet"
@@ -1043,8 +1043,14 @@
       "Disable": [
         "Kullanımdan kaldır"
       ],
+      "Disable E2EE": [
+        "Dışarı iletmeyi kapat"
+      ],
       "Enable": [
         "Kullanıma al"
+      ],
+      "Enable E2EE": [
+        "Dışarı iletmeyi aç"
       ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
@@ -1073,7 +1079,7 @@
         "Eksik anahtarlar"
       ],
       "No E2EE": [
-        "E2EE kullanılmasın"
+        "İletilmiyor"
       ],
       "No signing": [
         "İmzalanmasın"
@@ -1330,7 +1336,7 @@
         "Reddedildi"
       ],
       "Invite sent": [
-        "Çağrı gönderildi"
+        "Davet gönderildi"
       ]
     },
     "Calendar link purpose update success message": {
@@ -2984,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } kullanıcı adınızdır. ${ Local }@${ Domain } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
       ],
@@ -3288,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
+      "status page": [
+        "durum sayfası"
       ],
       "Tab closed": [
         "Sekme kapatıldı"
@@ -9681,10 +9693,10 @@
     },
     "Notification in share calendar modal": {
       "Invitation deleted": [
-        "Çağrı silindi"
+        "Davet silindi"
       ],
       "Invitation revoked": [
-        "Çağrı geri çekildi"
+        "Davet geri çekildi"
       ],
       "Member added": [
         "Üye eklendi",
@@ -9696,7 +9708,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Takvim çağrısı geri çevrildi"
+        "Takvim daveti geri çevrildi"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName } (${ senderEmail }) takvimine katınıldı"
@@ -10705,7 +10717,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
+        "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir davet gönderilecek."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -12508,7 +12520,7 @@
         "Abonelikleriniz"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
+        "${ MAIL_APP_NAME } uygulamasını denemeye davet edildiniz"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

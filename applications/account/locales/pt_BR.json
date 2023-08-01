@@ -2990,6 +2990,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações > Mensagens e composição > Domínio curto (pm.me)"
       ],
@@ -3294,6 +3297,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "status page": [
+        "Página de status"
       ],
       "Tab closed": [
         "Guia fechada"
