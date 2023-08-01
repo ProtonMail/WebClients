@@ -2165,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } ei sisällä kelvollista sähköpostiosoitetta",
         "Joidenkin yhteystietojen sähköpostiosoitteet eivät kelpaa: ${ list }"
@@ -2424,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "Aloitusajan on oltava ennen päätösaikaa"
+      ],
+      "status page": [
+        "tilasivu"
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"

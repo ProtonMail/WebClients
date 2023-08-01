@@ -3134,6 +3134,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } dla adresu <${ email }>. Aby rozwiązać problem, możesz dodać inny klucz lub wyłączyć szyfrowanie dla tego kontaktu."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -4960,6 +4963,12 @@
       ],
       "(No Recipient)": [
         "(Brak odbiorców)"
+      ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "Znaleziono **${ elementsFoundCount }** wynik w ${ labelName }",
+        "Znaleziono **${ elementsFoundCount }** wyniki w ${ labelName }",
+        "Znaleziono **${ elementsFoundCount }** wyników w ${ labelName }",
+        "Znaleziono **${ elementsFoundCount }** wyników w ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"

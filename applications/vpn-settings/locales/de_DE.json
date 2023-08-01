@@ -1453,6 +1453,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
       ],

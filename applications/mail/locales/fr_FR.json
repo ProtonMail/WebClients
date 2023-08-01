@@ -3391,6 +3391,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } ne peut malheureusement pas déchiffrer votre message. Nous vous invitons à vérifier que toutes vos clés sont actives."
       ],
+      "status page": [
+        "page d'état"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "La pièce jointe n'a pas pu être déchiffrée.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer le fichier avec un programme tel que GnuPG.",
         "Certaines pièces jointes n'ont pas pu être déchiffrées.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer les fichiers avec un programme tel que GnuPG."

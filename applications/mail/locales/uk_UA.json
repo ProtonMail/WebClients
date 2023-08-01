@@ -3134,6 +3134,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Щоб розв'язати проблему, можете додати інший ключ або вимкнути шифрування для цього контакту."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3427,6 +3430,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але ${ BRAND_NAME } не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
+      ],
+      "status page": [
+        "сторінка стану"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
@@ -4958,6 +4964,12 @@
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** результат знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результати знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
@@ -5314,6 +5326,12 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Для повідомлень новіших ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
+      ],
+      "For more search results, try searching in the content of your email messages": [
+        "Щоб отримати більше результатів пошуку, спробуйте шукати у вмісті повідомлень вашої пошти"
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
