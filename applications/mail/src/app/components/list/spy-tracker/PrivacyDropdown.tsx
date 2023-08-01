@@ -196,7 +196,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                         <button
                                             onClick={handleShowImageTrackersDetails}
                                             className="interactive w100 rounded-sm"
-                                            data-testId="privacy:spy-trackers-row"
+                                            data-testid="privacy:spy-trackers-row"
                                         >
                                             {imageTrackerRow}
                                         </button>
@@ -210,7 +210,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                         <button
                                             onClick={handleShowUTMTrackersDetails}
                                             className="interactive w100 rounded-sm"
-                                            data-testId="privacy:link-trackers-row"
+                                            data-testid="privacy:link-trackers-row"
                                         >
                                             {utmTrackerRow}
                                         </button>
