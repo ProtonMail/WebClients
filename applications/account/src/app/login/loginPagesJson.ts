@@ -1,25 +1,18 @@
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
-const loginJsonContext = require.context('../../pages', true, /login.json$/, 'sync');
+import { Parameters } from '../../pages/interface';
+
+const loginJsonContext = require.context('../../pages', true, /login.ts$/, 'sync');
 
 const loginJsonKeys = loginJsonContext.keys();
 
-const getContext = (key: string) => {
+const getContext = (key: string): { default: () => Parameters } => {
     if (loginJsonKeys.some((otherKey) => otherKey === key)) {
         return loginJsonContext(key);
     }
-    return loginJsonContext('./login.json');
+    return loginJsonContext('./login.ts');
 };
-
-export const getLoginMeta = (toApp: APP_NAMES | undefined, app: APP_NAMES) => {
-    const productName = ((app === APPS.PROTONVPN_SETTINGS ? APPS.PROTONVPN_SETTINGS : toApp) || '')
-        .replace('proton-', '')
-        .replace('-settings', '');
-
-    const value = getContext(`./${productName}.login.json`);
-
-    return {
-        title: value.appTitle,
-        description: value.appDescription,
-    };
+export const getLoginMeta = (toApp: APP_NAMES | undefined): Parameters => {
+    const productName = (toApp || '').replace('proton-', '').replace('-settings', '');
+    return getContext(`./${productName}.login.ts`).default();
 };

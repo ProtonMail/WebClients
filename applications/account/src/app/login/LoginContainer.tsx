@@ -28,19 +28,19 @@ import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
+import type { Paths } from '../content/helper';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import { useFlowRef } from '../useFlowRef';
-import { useMetaTags } from '../useMetaTags';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
-import { getLoginMeta } from './loginPagesJson';
 
 interface RenderProps {
     title: string;
@@ -58,8 +58,9 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     setupVPN: boolean;
-    signupUrl: string;
+    paths: Paths;
     modal?: boolean;
+    metaTags: MetaTags | null;
     render?: (renderProps: RenderProps) => ReactNode;
 }
 
@@ -73,6 +74,7 @@ const defaultRender = (data: RenderProps) => {
 };
 
 const LoginContainer = ({
+    metaTags,
     defaultUsername,
     onLogin,
     onBack,
@@ -81,14 +83,14 @@ const LoginContainer = ({
     showContinueTo,
     setupVPN,
     hasRemember = true,
-    signupUrl,
+    paths,
     modal,
     render = defaultRender,
 }: Props) => {
     const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
 
-    useMetaTags(modal ? null : getLoginMeta(toApp, APP_NAME));
+    useMetaTags(metaTags);
 
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -184,7 +186,7 @@ const LoginContainer = ({
                         content: (
                             <LoginForm
                                 signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
-                                signupUrl={signupUrl}
+                                paths={paths}
                                 defaultUsername={previousUsernameRef.current}
                                 hasRemember={hasRemember}
                                 trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}

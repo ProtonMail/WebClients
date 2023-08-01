@@ -21,6 +21,7 @@ import {
     NEWSLETTER_SUBSCRIPTIONS,
     NEWSLETTER_SUBSCRIPTIONS_BITS,
     NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getBits } from '@proton/shared/lib/helpers/bitset';
@@ -163,7 +164,7 @@ const EmailUnsubscribeContainer = () => {
                         );
                     }
                     const signIn = (
-                        <a key="1" href="/login" target="_self">
+                        <a key="1" href={SSO_PATHS.SWITCH} target="_self">
                             {c('Error message, unsubscribe').t`sign in`}
                         </a>
                     );

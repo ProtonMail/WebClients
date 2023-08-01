@@ -17,14 +17,12 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import forgotUsernamePage from '../../pages/forgot-username.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import { useFlowRef } from '../useFlowRef';
-import { useMetaTags } from '../useMetaTags';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -36,11 +34,13 @@ const ForgotUsernameForm = ({
     onChangeMethod,
     method,
     defaultCountry,
+    loginUrl,
 }: {
     onSubmit: (data: { email: string; method: 'email' } | { phone: string; method: 'phone' }) => Promise<void>;
     onChangeMethod: (method: Method) => void;
     method: Method;
     defaultCountry?: string;
+    loginUrl: string;
 }) => {
     const history = useHistory();
     const [loading, withLoading] = useLoading();
@@ -123,7 +123,7 @@ const ForgotUsernameForm = ({
                 shape="ghost"
                 fullWidth
                 className="mt-2"
-                onClick={() => history.push(SSO_PATHS.LOGIN)}
+                onClick={() => history.push(loginUrl)}
             >{c('Action').t`Return to sign in`}</Button>
         </form>
     );
@@ -131,10 +131,12 @@ const ForgotUsernameForm = ({
 
 interface Props {
     onBack?: () => void;
+    loginUrl: string;
+    metaTags: MetaTags;
 }
 
-const ForgotUsernameContainer = ({ onBack }: Props) => {
-    useMetaTags({ title: forgotUsernamePage.appTitle, description: forgotUsernamePage.appDescription });
+const ForgotUsernameContainer = ({ metaTags, onBack, loginUrl }: Props) => {
+    useMetaTags(metaTags);
     const history = useHistory();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -149,7 +151,7 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
         return (
             onBack ||
             (() => {
-                history.push('/login');
+                history.push(loginUrl);
             })
         );
     })();
@@ -159,6 +161,7 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
             <Header title={c('Title').t`Find email or username`} onBack={handleBackStep} />
             <Content>
                 <ForgotUsernameForm
+                    loginUrl={loginUrl}
                     method={method}
                     onChangeMethod={setMethod}
                     defaultCountry={defaultCountry}
@@ -176,7 +179,7 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
                                         : c('Success')
                                               .t`If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.`;
                                 createNotification({ text });
-                                history.push('/login');
+                                history.push(loginUrl);
                             }
                         } catch (e: any) {
                             errorHandler(e);

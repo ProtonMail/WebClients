@@ -1,3 +1,8 @@
 {
-    "extends": "../../tsconfig.base.json"
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "esModuleInterop": true
+    }
 }
