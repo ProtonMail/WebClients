@@ -8,6 +8,7 @@ import {
     AccessibilitySection,
     AccountRecoverySection,
     AutomaticSubscriptionModal,
+    CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
     CreditsSection,
     DataRecoverySection,
@@ -74,6 +75,7 @@ const AccountSettingsRouter = ({
                             <InvoicesSection />
                             <EmailSubscriptionSection />
                             <CancelSubscriptionSection />
+                            <CancelB2bSubscriptionSection />
                             <DowngradeSubscriptionSection />
                         </PrivateMainSettingsArea>
                     </SubscriptionModalProvider>
