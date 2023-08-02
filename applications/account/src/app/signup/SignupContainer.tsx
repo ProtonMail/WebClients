@@ -807,7 +807,7 @@ const SignupContainer = ({
                     onChangeCurrency={handleChangeCurrency}
                     onChangeCycle={handleChangeCycle}
                     onChangePlanIDs={handleChangePlanIDs}
-                    onPay={async (payment) => {
+                    onPay={async (payment, type) => {
                         try {
                             if (!cache) {
                                 throw new Error('Missing cache');
@@ -815,6 +815,7 @@ const SignupContainer = ({
                             const subscriptionData = {
                                 ...model.subscriptionData,
                                 payment,
+                                type,
                             };
 
                             const validateFlow = createFlow();
