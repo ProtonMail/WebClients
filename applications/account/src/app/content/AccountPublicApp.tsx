@@ -14,10 +14,9 @@ import {
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS } from '@proton/shared/lib/constants';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { APPS, DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
@@ -49,11 +48,8 @@ const AccountPublicApp = ({
         const runGetSessions = async () => {
             const searchParams = new URLSearchParams(location.search);
             const languageParams = searchParams.get('language');
-            const languageCookie = getCookie('Locale');
             const browserLocale = getBrowserLocale();
-            const localeCode =
-                getClosestLocaleMatch(pathLocale || languageParams || languageCookie || '', locales) ||
-                getClosestLocaleCode(browserLocale, locales);
+            const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
             await Promise.all([
                 loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT)),
                 loadLocale(localeCode, locales),
