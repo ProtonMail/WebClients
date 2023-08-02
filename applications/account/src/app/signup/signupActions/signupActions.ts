@@ -3,7 +3,6 @@ import { format } from 'date-fns';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -245,18 +244,6 @@ export const handleSetupRecoveryPhrase = async ({
     };
 };
 
-export const getPaymentMethodType = (method: PAYMENT_METHOD_TYPES | undefined) => {
-    if (method === PAYMENT_METHOD_TYPES.CARD) {
-        return 'cc';
-    }
-    if (method === PAYMENT_METHOD_TYPES.PAYPAL || method === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
-        return 'pp';
-    }
-    if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
-        return 'btc';
-    }
-};
-
 export const getSubscriptionMetricsData = (
     subscriptionData: SubscriptionData
 ): {
@@ -268,7 +255,7 @@ export const getSubscriptionMetricsData = (
         };
     }
     return {
-        type: getPaymentMethodType(subscriptionData.payment?.Type) || 'cc',
+        type: subscriptionData.type || 'cc',
     };
 };
 
