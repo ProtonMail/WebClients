@@ -11,7 +11,17 @@ import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
 import Layout from './Layout';
 
-const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; product: string; img: ReactNode }) => {
+const Step2 = ({
+    onSetup,
+    product,
+    img,
+    isB2bPlan,
+}: {
+    onSetup: () => Promise<void>;
+    product: string;
+    img: ReactNode;
+    isB2bPlan: boolean;
+}) => {
     const steps: string[] = [
         c('Info').t`Verifying your payment`,
         c('Info').t`Creating your account`,
@@ -27,7 +37,7 @@ const Step2 = ({ onSetup, product, img }: { onSetup: () => Promise<void>; produc
     }, []);
 
     return (
-        <Layout hasDecoration={false}>
+        <Layout hasDecoration={false} isB2bPlan={isB2bPlan}>
             <Main>
                 <Content>
                     <div className="text-center pt-6" role="alert">

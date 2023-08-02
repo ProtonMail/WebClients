@@ -81,7 +81,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             preSelectedPlan: PLANS.VPN,
         });
 
-        const validValues = ['free', PLANS.BUNDLE, PLANS.VPN];
+        const validValues = ['free', PLANS.BUNDLE, PLANS.VPN, PLANS.VPN_PRO, PLANS.VPN_BUSINESS];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
             delete result.preSelectedPlan;
         }
@@ -120,6 +120,8 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
     const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
+
+    const isB2bPlan = [PLANS.VPN_PRO, PLANS.VPN_BUSINESS].includes(selectedPlan?.Name as PLANS);
 
     useEffect(() => {
         const getSubscriptionData = async (
@@ -228,7 +230,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             wait(3500),
         ]);
 
-        measure(getSignupTelemetryData(model.plans, cache));
+        void measure(getSignupTelemetryData(model.plans, cache));
 
         return result.cache;
     };
@@ -251,6 +253,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         mode={signupParameters.mode}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
                         selectedPlan={selectedPlan}
+                        isB2bPlan={isB2bPlan}
                         vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         model={model}
@@ -312,6 +315,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 {model.step === Steps.Loading && (
                     <Step2
                         product={VPN_APP_NAME}
+                        isB2bPlan={isB2bPlan}
                         img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                         onSetup={async () => {
                             if (!cache || cache.type !== 'signup') {
@@ -363,6 +367,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                     <Step3
                         email={cache?.accountData.email || ''}
                         password={cache?.accountData.password || ''}
+                        isB2bPlan={isB2bPlan}
                         onComplete={async (newPassword: string | undefined) => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
