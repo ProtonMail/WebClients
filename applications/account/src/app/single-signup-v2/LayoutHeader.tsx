@@ -34,7 +34,7 @@ const LayoutHeader = ({
                 </div>
                 <div className="flex-item-noshrink">{logo}</div>
             </div>
-            {hasDecoration && languageSelect && <LanguageSelect className="max-w100 ml-4" globe locales={locales} />}
+            {hasDecoration && languageSelect && <LanguageSelect className="max-w100 ml-4 flex-item-noshrink" globe locales={locales} />}
         </header>
     );
 };
