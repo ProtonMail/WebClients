@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
@@ -111,7 +113,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const totalProgress = getProgressRecorderRef().current[1];
     const currentProgress = Math.min(esProgress, totalProgress);
     isEstimating ||= currentProgress === 0;
-    let progressStatus: string = '';
+    let progressStatus: ReactNode = '';
     if (isPaused) {
         progressStatus = c('Info').t`Downloading paused`;
     } else if (isEstimating) {
@@ -119,12 +121,19 @@ const EncryptedSearchField = ({ esState }: Props) => {
     } else if (isRefreshing) {
         progressStatus = c('Info').t`Updating message content search...`;
     } else {
-        // translator: esProgress is a number representing the current message being fetched, totalIndexingItems is the total number of message in the mailbox
-        progressStatus = c('Info').ngettext(
-            msgid`Message downloaded: ${currentProgress} out of ${totalProgress}`,
-            `Messages downloaded: ${currentProgress} out of ${totalProgress}`,
-            currentProgress
-        ) as string;
+        // translator: currentProgress is a number representing the current message being fetched, totalProgress is the total number of message in the mailbox
+        progressStatus = (
+            <>
+                <span>{c('Info').t`Message download status:`}</span>
+                <span className="ml-2">
+                    {c('Info').ngettext(
+                        msgid`${currentProgress} out of ${totalProgress}`,
+                        `${currentProgress} out of ${totalProgress}`,
+                        totalProgress
+                    )}
+                </span>
+            </>
+        );
     }
 
     const etaMessage =
