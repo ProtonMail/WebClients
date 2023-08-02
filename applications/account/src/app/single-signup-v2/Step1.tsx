@@ -590,7 +590,7 @@ const Step1 = ({
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
-                                onPay={async (payment) => {
+                                onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');
                                         return;
@@ -598,6 +598,7 @@ const Step1 = ({
                                     await handleCompletion({
                                         ...model.subscriptionData,
                                         payment,
+                                        type,
                                     });
                                 }}
                                 onValidate={() => {
