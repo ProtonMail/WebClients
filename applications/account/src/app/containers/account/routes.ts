@@ -12,7 +12,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasVPN } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
@@ -55,6 +55,7 @@ export const getAccountAppRoutes = ({
 
     // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
     const hasVpnPlan = hasVPN(subscription);
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -105,9 +106,14 @@ export const getAccountAppRoutes = ({
                         available: isPaid && canPay && hasVpnPlan && subscription?.Renew === Renew.Enabled,
                     },
                     {
+                        text: c('Title').t`Cancel subscription`,
+                        id: 'cancel-b2b-subscription',
+                        available: isPaid && canPay && !hasVpnPlan && hasVpnB2BPlan,
+                    },
+                    {
                         text: c('Title').t`Downgrade account`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay && !hasVpnPlan,
+                        available: isPaid && canPay && !hasVpnPlan && !hasVpnB2BPlan,
                     },
                 ],
             },

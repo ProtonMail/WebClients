@@ -35,3 +35,23 @@ export const reportPhishing = ({ MessageID, MIMEType, Body }: PhishingPayload) =
     url: 'reports/phishing',
     data: { MessageID, MIMEType, Body },
 });
+
+interface CancelPlanPayload {
+    Reason: string;
+    Message: string;
+    Email: string;
+    OS: string;
+    OSVersion: string;
+    Browser: string | undefined;
+    BrowserVersion: string | undefined;
+    Client: string;
+    ClientVersion: string;
+    ClientType: CLIENT_TYPES;
+    Tags: string[];
+}
+
+export const reportCancelPlan = (data: CancelPlanPayload) => ({
+    method: 'post',
+    url: 'core/v4/reports/cancel-plan',
+    data,
+});
