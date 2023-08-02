@@ -44,7 +44,7 @@ export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
     onBack?: () => void;
-    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
+    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined, type: 'cc' | 'pp') => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
@@ -92,7 +92,7 @@ const PaymentStep = ({
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
         onPaypalPay({ Payment }: TokenPaymentMethod) {
-            return withLoading(onPay(Payment));
+            return withLoading(onPay(Payment, 'pp'));
         },
     });
 
@@ -196,7 +196,7 @@ const PaymentStep = ({
                                 };
                                 const data = await createPaymentToken(paymentParameters, { amountAndCurrency });
 
-                                return onPay(data.Payment);
+                                return onPay(data.Payment, 'cc');
                             };
                             withLoading(handle()).catch(noop);
                         }}
