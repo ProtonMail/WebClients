@@ -43,12 +43,14 @@ const useComposerDrag = (iframeRef: RefObject<HTMLIFrameElement>, onAddAttachmen
         iframeDoc?.addEventListener('dragover', handleDragOver);
 
         const handleDrop = (event: DragEvent) => {
-            event.preventDefault();
-            // reset drag state to display the composer content
-            counter.current = 0;
-            setDragState('outside');
-            if (event.dataTransfer?.files) {
-                onAddAttachments?.([...event.dataTransfer.files]);
+            if (isDragFile(event)) {
+                event.preventDefault();
+                // reset drag state to display the composer content
+                counter.current = 0;
+                setDragState('outside');
+                if (event.dataTransfer?.files && onAddAttachments) {
+                    onAddAttachments([...event.dataTransfer.files]);
+                }
             }
         };
 
