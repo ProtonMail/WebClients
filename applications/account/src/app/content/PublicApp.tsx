@@ -416,8 +416,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     const loader = <AccountLoaderPage />;
-    const [loaded, setLoaded] = useState(0);
-    const SwitchOrLoader = loaded === 2 ? Switch : () => loader;
 
     return (
         <>
@@ -476,14 +474,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         locales={locales}
                         onLogin={handleLogin}
                         onActiveSessions={handleActiveSessions}
-                        onLoaded={() => setLoaded((old) => ++old)}
+                        loader={loader}
                     >
-                        <UnAuthenticatedApiProvider onLoaded={() => setLoaded((old) => ++old)}>
+                        <UnAuthenticatedApiProvider loader={loader}>
                             <FeaturesProvider>
                                 <ExperimentsProvider>
                                     <UnAuthenticated>
                                         <ForceRefreshContext.Provider value={refresh}>
-                                            <SwitchOrLoader location={location}>
+                                            <Switch location={location}>
                                                 {confirmForkData && toAppName && (
                                                     <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                         <OAuthConfirmForkContainer
@@ -639,7 +637,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         },
                                                     }}
                                                 />
-                                            </SwitchOrLoader>
+                                            </Switch>
                                         </ForceRefreshContext.Provider>
                                     </UnAuthenticated>
                                 </ExperimentsProvider>
