@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon } from '../../components';
 
@@ -85,7 +86,7 @@ const PromotionBanner = ({
                     </>
                 )}
             </div>
-            {Boolean(hasDismissAction && !loading) && (
+            {isTruthy(hasDismissAction && !loading) && (
                 <Button
                     onClick={handleClose}
                     icon
