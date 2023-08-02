@@ -18,12 +18,13 @@ interface Props {
     location: H.Location;
     locales?: TtagLocaleMap;
     children: ReactNode;
-    onLoaded: () => void;
+    loader: ReactNode;
     pathLocale: string;
 }
 
-const VPNPublicApp = ({ pathLocale, onLoaded, location, locales = {}, children }: Props) => {
+const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const run = async () => {
@@ -39,7 +40,7 @@ const VPNPublicApp = ({ pathLocale, onLoaded, location, locales = {}, children }
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);
-            onLoaded();
+            setLoading(false);
         };
 
         wrapUnloadError(run()).catch((error) => {
@@ -51,6 +52,10 @@ const VPNPublicApp = ({ pathLocale, onLoaded, location, locales = {}, children }
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
+    }
+
+    if (loading) {
+        return <>{loader}</>;
     }
 
     return <>{children}</>;
