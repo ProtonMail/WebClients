@@ -38,10 +38,6 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    if (loading) {
-        return <>{loader}</>;
-    }
-
     return (
         <ApiContext.Provider value={apiCallback}>
             <Challenge
@@ -59,7 +55,7 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
                     setChallenge(undefined);
                 }}
             />
-            {children}
+            {loading ? loader : children}
         </ApiContext.Provider>
     );
 };
