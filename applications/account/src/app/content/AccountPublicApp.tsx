@@ -27,19 +27,20 @@ interface Props {
     children: ReactNode;
     onActiveSessions: (data: GetActiveSessionsResult) => boolean;
     onLogin: ProtonLoginCallback;
-    onLoaded: () => void;
+    loader: ReactNode;
     pathLocale: string;
 }
 
 const AccountPublicApp = ({
     pathLocale,
-    onLoaded,
+    loader,
     location,
     locales = {},
     children,
     onActiveSessions,
     onLogin,
 }: Props) => {
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -60,7 +61,7 @@ const AccountPublicApp = ({
             ]);
             const activeSessionsResult = await getActiveSessions(silentApi);
             if (!onActiveSessions(activeSessionsResult)) {
-                onLoaded();
+                setLoading(false);
             }
         };
 
@@ -93,6 +94,10 @@ const AccountPublicApp = ({
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
+    }
+
+    if (loading) {
+        return <>{loader}</>;
     }
 
     return <>{children}</>;

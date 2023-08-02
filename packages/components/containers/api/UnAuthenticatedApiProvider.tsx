@@ -11,11 +11,12 @@ import { apiCallback, setApi, setChallenge, setup } from './unAuthenticatedApi';
 
 interface Props {
     children: ReactNode;
-    onLoaded: () => void;
+    loader: ReactNode;
 }
 
-const UnAuthenticatedApiProvider = ({ children, onLoaded }: Props) => {
+const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
     const api: Api = useContext(ApiContext);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
 
@@ -26,7 +27,7 @@ const UnAuthenticatedApiProvider = ({ children, onLoaded }: Props) => {
     useEffect(() => {
         setup()
             .then(() => {
-                onLoaded();
+                setLoading(false);
             })
             .catch((e) => {
                 setError(e);
@@ -35,6 +36,10 @@ const UnAuthenticatedApiProvider = ({ children, onLoaded }: Props) => {
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
+    }
+
+    if (loading) {
+        return <>{loader}</>;
     }
 
     return (
