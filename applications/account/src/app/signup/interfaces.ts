@@ -14,8 +14,8 @@ import {
     Currency,
     Cycle,
     HumanVerificationMethodType,
-    Organization,
     KeyTransparencyActivation,
+    Organization,
     Plan,
     Subscription,
     SubscriptionCheckResponse,
@@ -75,6 +75,7 @@ export interface SubscriptionData {
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
     payment?: CardPayment | TokenPayment | PaypalPayment;
+    type?: 'cc' | 'pp' | 'btc';
 }
 
 export interface ReferralData {

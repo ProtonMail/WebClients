@@ -452,10 +452,14 @@ const Step1 = ({
         return onComplete({ subscriptionData, accountData, type: 'signup' });
     };
 
-    const onPay = async (payment: PaypalPayment | TokenPayment | CardPayment | undefined) => {
-        const subscriptionData = {
+    const onPay = async (
+        payment: PaypalPayment | TokenPayment | CardPayment | undefined,
+        type: 'cc' | 'pp' | undefined
+    ) => {
+        const subscriptionData: SubscriptionData = {
             ...model.subscriptionData,
             payment,
+            type,
         };
         return handleCompletion(subscriptionData);
     };
@@ -534,7 +538,7 @@ const Step1 = ({
             metrics.core_vpn_single_signup_step1_payment_total.increment({
                 status: 'success',
             });
-            return withLoadingSignup(onPay(Payment));
+            return withLoadingSignup(onPay(Payment, 'pp'));
         },
     });
 
@@ -839,7 +843,7 @@ const Step1 = ({
                                                 measurePaySubmit(type);
 
                                                 if (amountAndCurrency.Amount <= 0) {
-                                                    return onPay(undefined);
+                                                    return onPay(undefined, undefined);
                                                 }
 
                                                 if (!paymentParameters) {
@@ -853,7 +857,7 @@ const Step1 = ({
                                                     metrics.core_vpn_single_signup_step1_payment_total.increment({
                                                         status: 'success',
                                                     });
-                                                    return await onPay(data.Payment);
+                                                    return await onPay(data.Payment, 'cc');
                                                 } catch (error) {
                                                     observeApiError(error, (status) => {
                                                         measurePayError(type);
