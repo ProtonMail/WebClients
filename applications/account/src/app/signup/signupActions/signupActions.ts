@@ -8,6 +8,8 @@ import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
+import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
+import { updateOrganizationKeysV2, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
@@ -20,13 +22,24 @@ import {
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession, persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { CLIENT_TYPES, COUPON_CODES } from '@proton/shared/lib/constants';
+import {
+    CLIENT_TYPES,
+    COUPON_CODES,
+    ENCRYPTION_CONFIGS,
+    ENCRYPTION_TYPES,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
+import {
+    generateKeySaltAndPassphrase,
+    generateOrganizationKeys,
+    getDecryptedUserKeysHelper,
+    handleSetupKeys,
+} from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
@@ -230,6 +243,48 @@ export const handleSetPassword = async ({
         },
         to: SignupSteps.Congratulations,
     };
+};
+
+export const handleSetupOrg = async ({
+    api,
+    password,
+    keyPassword,
+    orgName,
+}: {
+    api: Api;
+    password: string;
+    keyPassword: string;
+    orgName: string;
+}) => {
+    const members = await getAllMembers(api);
+    const selfMember = members.find(({ Self }) => !!Self);
+    const selfMemberID = selfMember?.ID;
+
+    if (!selfMemberID) {
+        throw new Error('Missing member id');
+    }
+
+    // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
+    // So that other users can get connections allocated.
+    await api(updateVPN(selfMemberID, VPN_CONNECTIONS));
+    await api(updateOrganizationName(orgName));
+
+    const { privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } = await generateOrganizationKeys({
+        keyPassword,
+        backupPassword: password,
+        encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+    });
+
+    await srpAuth({
+        api,
+        credentials: { password },
+        config: updateOrganizationKeysV2({
+            PrivateKey: privateKeyArmored,
+            BackupPrivateKey: backupArmoredPrivateKey,
+            BackupKeySalt: backupKeySalt,
+            Members: [],
+        }),
+    });
 };
 
 export const handleSetupRecoveryPhrase = async ({

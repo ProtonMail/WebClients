@@ -25,6 +25,7 @@ export const enum Steps {
     Account,
     Loading,
     Custom,
+    SetupOrg,
 }
 
 export interface SignupModelV2 {
