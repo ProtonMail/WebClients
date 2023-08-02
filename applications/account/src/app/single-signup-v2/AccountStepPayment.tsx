@@ -59,7 +59,10 @@ interface Props {
     selectedPlanCard?: PlanCard;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
-    onPay: (payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
+    onPay: (
+        payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined,
+        type: 'pp' | 'btc' | 'cc' | undefined
+    ) => Promise<void>;
     onValidate: () => boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
@@ -155,7 +158,7 @@ const AccountStepPayment = ({
             return onValidate() && validatePayment();
         },
         onPaypalPay({ Payment, type }) {
-            return withLoadingSignup(onPay(Payment)).catch(() => {
+            return withLoadingSignup(onPay(Payment, 'pp')).catch(() => {
                 measurePayError(type === PAYMENT_METHOD_TYPES.PAYPAL ? 'pay_pp' : 'pay_pp_no_cc');
             });
         },
@@ -207,7 +210,7 @@ const AccountStepPayment = ({
 
                         const run = async () => {
                             if (amountAndCurrency.Amount <= 0) {
-                                return onPay(undefined);
+                                return onPay(undefined, undefined);
                             }
 
                             if (!paymentParameters) {
@@ -220,7 +223,7 @@ const AccountStepPayment = ({
                                 normalApi,
                                 { amountAndCurrency }
                             );
-                            return onPay(data.Payment);
+                            return onPay(data.Payment, 'cc');
                         };
 
                         const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
@@ -245,7 +248,7 @@ const AccountStepPayment = ({
                             method={method}
                             onBitcoinTokenValidated={(data) => {
                                 measurePaySubmit('pay_btc');
-                                return withLoadingSignup(onPay(data.Payment)).catch(() => {
+                                return withLoadingSignup(onPay(data.Payment, 'btc')).catch(() => {
                                     measurePayError('pay_btc');
                                 });
                             }}
@@ -311,7 +314,7 @@ const AccountStepPayment = ({
                                     onClick={() => {
                                         measurePaySubmit('pay_btc');
                                         if (onValidate() && validatePayment()) {
-                                            withLoadingSignup(onPay('signup-token')).catch(() => {
+                                            withLoadingSignup(onPay('signup-token', undefined)).catch(() => {
                                                 measurePayError('pay_btc');
                                             });
                                         }

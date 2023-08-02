@@ -161,10 +161,13 @@ it('should call onPay with the new token', async () => {
         fireEvent.click(payButton);
     });
 
-    expect(props.onPay).toHaveBeenCalledWith({
-        Details: {
-            Token: 'token123',
+    expect(props.onPay).toHaveBeenCalledWith(
+        {
+            Details: {
+                Token: 'token123',
+            },
+            Type: 'token',
         },
-        Type: 'token',
-    });
+        'cc'
+    );
 });
