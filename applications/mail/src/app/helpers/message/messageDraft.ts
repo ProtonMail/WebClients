@@ -117,7 +117,7 @@ export const replyAll = (
     const userAddress = canonicalizeInternalEmail(
         addresses.find((address) => address.ID === data.AddressID)?.Email || ''
     );
-    const CCList: Recipient[] = CCListAll.filter(({ Address }) => Address !== userAddress);
+    const CCList: Recipient[] = CCListAll.filter(({ Address }) => canonicalizeInternalEmail(Address) !== userAddress);
 
     return { data: { Subject, ToList, CCList, Attachments }, messageImages };
 };
