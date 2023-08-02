@@ -78,6 +78,7 @@ export const getSignupSearchParams = (
     const type = searchParams.get('type') || undefined;
     const hideFreePlan = searchParams.get('hfp') || undefined;
     const email = searchParams.get('email') || undefined;
+    const orgName = searchParams.get('orgName') || undefined;
 
     return {
         email,
@@ -93,6 +94,7 @@ export const getSignupSearchParams = (
         invite,
         type,
         hideFreePlan: hideFreePlan === 'true',
+        orgName,
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
