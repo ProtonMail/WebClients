@@ -1312,6 +1312,24 @@ const Step1 = ({
 
                                             {isB2bPlan && (
                                                 <>
+                                                    <div className="mx-3 text-bold flex flex-justify-space-between text-rg gap-2">
+                                                        <span>{getTotalBillingText(options.cycle)}</span>
+                                                        <span>
+                                                            {loadingPaymentDetails ? (
+                                                                <CircleLoader />
+                                                            ) : (
+                                                                <Price currency={options.currency}>
+                                                                    {options.checkResult.Amount}
+                                                                </Price>
+                                                            )}
+                                                        </span>
+                                                    </div>
+                                                    <div className="mx-3 border-bottom border-weak" />
+                                                </>
+                                            )}
+
+                                            {isB2bPlan && (
+                                                <>
                                                     <div className="mx-3">
                                                         <GiftCodeSummary
                                                             coupon={coupon}
@@ -1380,7 +1398,7 @@ const Step1 = ({
                                                 <div
                                                     className={clsx(
                                                         'text-bold',
-                                                        'flex flex-justify-space-between text-rg'
+                                                        'flex flex-justify-space-between text-rg gap-2'
                                                     )}
                                                 >
                                                     <span>
