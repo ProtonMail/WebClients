@@ -103,9 +103,12 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                 {isSearch ? (
                     // TODO: Add a link on clear it when search will work
                     <>
-                        {c('Info').t`For more search results, try searching in the content of your email messages`}
-                        {!encryptedSearchEnabled && (
+                        {encryptedSearchEnabled ? (
+                            <>{c('Info').t`You can either update your search query or clear it`}</>
+                        ) : (
                             <>
+                                {c('Info')
+                                    .t`For more search results, try searching for this keyword in the content of your email messages.`}
                                 <br />
                                 <Href href={getKnowledgeBaseUrl('/search-message-content')}>
                                     {c('Info').t`Learn more`}
