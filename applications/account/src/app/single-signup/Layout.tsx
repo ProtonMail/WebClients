@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { PublicTopBanners, VpnLogo, useConfig } from '@proton/components';
+import { PublicTopBanners, VpnForBusinessLogo, VpnLogo, useConfig } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -22,6 +22,7 @@ export interface Props {
     languageSelect?: boolean;
     onBack?: () => void;
     className?: string;
+    isB2bPlan?: boolean;
 }
 
 const Layout = ({
@@ -32,10 +33,23 @@ const Layout = ({
     headerClassName,
     languageSelect = true,
     onBack,
+    isB2bPlan = false,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const protonLogo = <VpnLogo variant="with-wordmark" />;
+    const protonLogo = isB2bPlan ? <VpnForBusinessLogo /> : <VpnLogo variant="with-wordmark" />;
+
+    const href = (() => {
+        if (APP_NAME !== APPS.PROTONVPN_SETTINGS) {
+            return getStaticURL('');
+        }
+
+        if (isB2bPlan) {
+            return undefined;
+        }
+
+        return 'https://protonvpn.com';
+    })();
 
     return (
         <div
@@ -51,10 +65,10 @@ const Layout = ({
                 hasDecoration={hasDecoration}
                 onBack={onBack}
                 logo={
-                    hasDecoration ? (
+                    hasDecoration && href ? (
                         <Href
                             className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
-                            href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
+                            href={href}
                         >
                             {protonLogo}
                         </Href>
