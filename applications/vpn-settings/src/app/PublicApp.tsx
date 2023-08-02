@@ -54,26 +54,18 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
-    const [loaded, setLoaded] = useState(0);
 
     const loader = <AccountLoaderPage />;
-    const SwitchOrLoader = loaded === 2 ? Switch : () => loader;
-
     const paths = getPaths(location.localePrefix);
 
     return (
-        <VPNPublicApp
-            location={location}
-            pathLocale={location.localePrefix}
-            onLoaded={() => setLoaded((old) => ++old)}
-            locales={locales}
-        >
-            <UnAuthenticatedApiProvider onLoaded={() => setLoaded((old) => ++old)}>
+        <VPNPublicApp location={location} pathLocale={location.localePrefix} loader={loader} locales={locales}>
+            <UnAuthenticatedApiProvider loader={loader}>
                 <FeaturesProvider>
                     <ExperimentsProvider>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
-                                <SwitchOrLoader location={location}>
+                                <Switch location={location}>
                                     <Route path="/reset-password">
                                         <AccountResetPasswordContainer
                                             metaTags={resetPasswordPage()}
@@ -129,7 +121,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             },
                                         }}
                                     />
-                                </SwitchOrLoader>
+                                </Switch>
                             </UnAuthenticated>
                         </ForceRefreshContext.Provider>
                     </ExperimentsProvider>
