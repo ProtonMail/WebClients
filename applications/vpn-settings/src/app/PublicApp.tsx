@@ -59,7 +59,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const paths = getPaths(location.localePrefix);
 
     return (
-        <VPNPublicApp location={location} pathLocale={location.localePrefix} loader={loader} locales={locales}>
+        <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
             <UnAuthenticatedApiProvider loader={loader}>
                 <FeaturesProvider>
                     <ExperimentsProvider>
