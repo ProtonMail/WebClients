@@ -34,7 +34,13 @@ import noop from '@proton/utils/noop';
 import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
 import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
-import { getSubscriptionMetricsData, handleDone, handleSetPassword, handleSetupUser } from '../signup/signupActions';
+import {
+    getSubscriptionMetricsData,
+    handleDone,
+    handleSetPassword,
+    handleSetupOrg,
+    handleSetupUser,
+} from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import { SignupModelV2, Steps } from '../single-signup-v2/interface';
@@ -44,6 +50,7 @@ import { MetaTags, useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Step4 from './Step4';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
 import { TelemetryMeasurementData } from './measure';
@@ -242,6 +249,28 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
     const cache = model.cache;
 
+    const done = async (cache: (typeof model)['cache']) => {
+        if (cache?.type !== 'signup') {
+            throw new Error('wrong cache type');
+        }
+
+        const { session } = handleDone({ cache });
+
+        metrics.core_vpn_single_signup_step4_setup_total.increment({
+            status: 'success',
+        });
+
+        await Promise.all([
+            measure({
+                event: TelemetryAccountSignupEvents.onboardFinish,
+                dimensions: {},
+            }),
+            metrics.processAllRequests(),
+        ]).catch(noop);
+
+        await onLogin(session);
+    };
+
     return (
         <>
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
@@ -378,26 +407,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
                             }
-                            const done = async (cache: (typeof model)['cache']) => {
-                                if (cache?.type !== 'signup') {
-                                    throw new Error('wrong cache type');
-                                }
-                                const [result] = await Promise.all([await handleDone({ cache })]);
 
-                                metrics.core_vpn_single_signup_step4_setup_total.increment({
-                                    status: 'success',
-                                });
+                            let newCache = model.cache;
 
-                                await Promise.all([
-                                    measure({
-                                        event: TelemetryAccountSignupEvents.onboardFinish,
-                                        dimensions: {},
-                                    }),
-                                    metrics.processAllRequests(),
-                                ]);
-
-                                await onLogin(result.session);
-                            };
                             if (newPassword) {
                                 try {
                                     const result = await handleSetPassword({
@@ -405,27 +417,49 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                         api: silentApi,
                                         newPassword,
                                     });
-                                    setModelDiff({ cache: result.cache, step: Steps.Custom });
-                                    metrics.core_vpn_single_signup_step3_complete_total.increment({
-                                        status: 'success',
-                                    });
-                                    await done(result.cache);
+                                    newCache = result.cache;
                                 } catch (error) {
                                     observeApiError(error, (status) =>
                                         metrics.core_vpn_single_signup_step3_complete_total.increment({ status })
                                     );
-
                                     handleError(error);
+                                    return;
                                 }
+                            }
+
+                            metrics.core_vpn_single_signup_step3_complete_total.increment({
+                                status: 'success',
+                            });
+
+                            const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
+                            if (gotoB2bSetup) {
+                                setModelDiff({ cache: newCache, step: Steps.SetupOrg });
                             } else {
-                                metrics.core_vpn_single_signup_step3_complete_total.increment({
-                                    status: 'success',
-                                });
-                                setModelDiff({ step: Steps.Custom });
+                                setModelDiff({ cache: newCache, step: Steps.Custom });
                                 await done(model.cache);
                             }
                         }}
                         measure={measure}
+                    />
+                )}
+                {model.step === Steps.SetupOrg && (
+                    <Step4
+                        product={VPN_APP_NAME}
+                        isB2bPlan={isB2bPlan}
+                        isDarkBg={isDarkBg}
+                        onSetup={async () => {
+                            if (!cache || cache.type !== 'signup') {
+                                throw new Error('Missing cache');
+                            }
+
+                            const password = cache.accountData.password;
+                            const keyPassword = cache.setupData?.keyPassword || '';
+                            const orgName = signupParameters.orgName || '';
+
+                            await handleSetupOrg({ api: silentApi, password, keyPassword, orgName }).catch(noop);
+
+                            await done(cache);
+                        }}
                     />
                 )}
             </UnAuthenticated>
