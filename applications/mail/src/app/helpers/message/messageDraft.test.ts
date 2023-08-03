@@ -1,3 +1,4 @@
+import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
@@ -21,11 +22,12 @@ import {
 const ID = 'ID';
 const Time = 0;
 const Subject = 'test';
-const recipient1 = { Address: 'test 1' };
-const recipient2 = { Address: 'test 2' };
-const recipient3 = { Address: 'test 3' };
-const recipient4 = { Address: 'test 4' };
-const recipient5 = { Address: 'test 5' };
+const addressID = 'addressID';
+const recipient1 = { Address: 'test1@proton.me' };
+const recipient2 = { Address: 'test2@proton.me' };
+const recipient3 = { Address: 'test3@proton.me' };
+const recipient4 = { Address: 'test4@proton.me' };
+const recipient5 = { Address: 'test5@proton.me' };
 
 const message = {
     ID,
@@ -184,7 +186,6 @@ describe('messageDraft', () => {
             // The email is received on recipient1 (addressID) and recipient5 is another userAddress on which we received the email
             // When we reply to this message, recipient1 must be removed from CCList, and recipient5 must be present
 
-            const addressID = 'addressID';
             const message = {
                 ID,
                 Time,
@@ -213,6 +214,40 @@ describe('messageDraft', () => {
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
             expect(result.data?.ToList).toEqual([recipient4]);
             expect(result.data?.CCList).toEqual([recipient5, recipient2]);
+            expect(result.data?.BCCList).toEqual(undefined);
+        });
+
+        it('should prepare recipient list correctly on reply all to alias addresses', () => {
+            const recipient1Alias = { Address: addPlusAlias(recipient1.Address, 'alias') };
+            const recipient2Alias = { Address: 'test2.2@proton.me' };
+            const recipient3Alias = { Address: addPlusAlias(recipient3.Address, 'alias') };
+            const recipient4Alias = { Address: 'test4.4@proton.me' };
+
+            const message = {
+                ID,
+                Time,
+                Subject,
+                ToList: [recipient1Alias],
+                CCList: [recipient2Alias],
+                BCCList: [recipient3Alias],
+                ReplyTos: [recipient4Alias],
+                AddressID: addressID,
+            };
+
+            const result = handleActions(
+                MESSAGE_ACTIONS.REPLY_ALL,
+                {
+                    data: {
+                        ...message,
+                        Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                    },
+                } as MessageStateWithData,
+                [{ ID: addressID, Email: recipient1.Address } as Address] as Address[]
+            );
+
+            expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
+            expect(result.data?.ToList).toEqual([recipient4Alias]);
+            expect(result.data?.CCList).toEqual([recipient2Alias]);
             expect(result.data?.BCCList).toEqual(undefined);
         });
 
