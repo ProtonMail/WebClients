@@ -26,6 +26,7 @@ const address: Address = {
     Signature: 'Testing signature',
     Status: ADDRESS_STATUS.STATUS_ENABLED,
     Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+    ProtonMX: false,
 };
 
 const isLabelMapping = false;
