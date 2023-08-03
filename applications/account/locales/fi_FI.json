@@ -8636,6 +8636,29 @@
         "Sovelluksesta ${ appName } on saatavilla uusi versio. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Kirjaudu"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Rekisteröidy"
+      ],
+      "Create a new ${ appName } account": [
+        "Luo uusi ${ appName } -tili"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Löydä ${ BRAND_NAME } -tilin käyttäjätunnus"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se tästä palautuskoodilla, sähköpostitse tai tekstiviestitse, niin voit taas kirjautua mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } -palveluihin."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Nollaa ${ BRAND_NAME } -tilisi salasana"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Lisää yleiset vapaapäivät"
