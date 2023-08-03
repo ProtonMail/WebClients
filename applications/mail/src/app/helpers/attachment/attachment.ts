@@ -1,4 +1,5 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
 
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -29,7 +30,7 @@ export const getPureAttachments = (attachments: Attachment[], isNumAttachmentsWi
         // In the attachment list, we want to hide embedded images so we need to filter them
         if (Headers) {
             const contentDisposition = extractContentValue(Headers['content-disposition']);
-            return Headers && !(contentDisposition === 'inline' && 'content-id' in Headers);
+            return Headers && !(contentDisposition === ATTACHMENT_DISPOSITION.INLINE && 'content-id' in Headers);
         }
         return true;
     });

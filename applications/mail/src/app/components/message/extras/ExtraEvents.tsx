@@ -49,7 +49,7 @@ import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calend
 import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { useGetAttachment } from '../../../hooks/useAttachment';
+import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { MessageErrors, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';

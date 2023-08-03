@@ -2,9 +2,10 @@ import { useCallback } from 'react';
 
 import { useAuthentication } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { ATTACHMENT_ACTION, upload } from '../../helpers/attachment/attachmentUploader';
+import { upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
@@ -47,7 +48,7 @@ export const useSendModifications = () => {
                     [file],
                     message,
                     messageKeys,
-                    isPlainTextMessage ? ATTACHMENT_ACTION.ATTACHMENT : ATTACHMENT_ACTION.INLINE,
+                    isPlainTextMessage ? ATTACHMENT_DISPOSITION.ATTACHMENT : ATTACHMENT_DISPOSITION.INLINE,
                     auth.UID,
                     cid
                 );
