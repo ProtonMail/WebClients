@@ -2166,7 +2166,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "${ list } doesn't have a valid email address": [
         "${ list } n'a pas d’adresse e-mail valide.",
@@ -4630,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Fermer"
+      "Cancel": [
+        "Annuler"
       ],
       "Manage calendars": [
         "Gérer les calendriers"
