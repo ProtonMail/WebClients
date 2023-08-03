@@ -8555,6 +8555,14 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
+    "Metadata title": {
+      "Private and secure email, no credit card required": [
+        "隱私與安全保護的電子郵件，免信用卡身分驗證"
+      ],
+      "Try ${ planName } for free with this link": [
+        "免費 ${ planName } 試用連結請點擊這裡"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "新增公眾假期"
@@ -8887,6 +8895,9 @@
       ],
       "${ n } VPN connections per user": [
         "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
+        "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"

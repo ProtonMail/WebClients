@@ -2862,6 +2862,11 @@
         "90 минут"
       ]
     },
+    "Email": {
+      "You can safely close this tab.": [
+        "Вы можете безопасно закрыть эту вкладку."
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Описание: ${ eventDescription }"
@@ -2943,6 +2948,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "Подписки на рассылки"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Какую электронную почту вы хотите получать от ${ BRAND_NAME }?"
       ],
@@ -4469,6 +4477,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Create your account": [
+        "Создать аккаунт"
+      ],
       "Device": [
         "Устройство"
       ],
@@ -5048,6 +5059,9 @@
         "${ numGroups } группы контактов",
         "${ numGroups } групп контактов",
         "${ numGroups } групп контактов"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } - это продвинутая программа для защиты аккаунта, которая защищает вас от злоумышленников и угроз безопасности при помощи мощных ИИ и круглосуточно работающих специалистов."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -6057,6 +6071,9 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Устаревшая фраза восстановления; обновите ее, чтобы обеспечить доступ к данным"
       ],
+      "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
+        "В сервисах ${ BRAND_NAME } зарегистрировалось более 100 миллионов человек."
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Оплачен тариф за ${ rewardMonths } месяц",
         "Оплачен тариф за ${ rewardMonths } месяца",
@@ -6300,6 +6317,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "SMTP-отправка позволяет сторонним сервисам или устройствам отправлять электронные письма через ${ MAIL_APP_NAME } для адресов вашего пользовательского домена. Чтобы запросить доступ, пожалуйста ${ createTicket }, описав ваши потребности, какие пользовательские домены вы хотели бы использовать, а также ежечасные и ежедневные ожидаемые объемы электронных писем."
+      ],
       "Some keys successfully reactivated": [
         "Некоторые ключи успешно реактивированы"
       ],
@@ -6335,6 +6355,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
+      ],
+      "Summary": [
+        "Сводка"
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -6891,6 +6914,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Вы НЕ сможете расшифровать никакие сообщения, файлы или другие данные, зашифрованные этим ключом. Данные, подписанные этим ключом, больше не будут проходить проверку программами ${ BRAND_NAME }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
@@ -6959,6 +6985,9 @@
       ],
       "Your import will not be processed.": [
         "Ваш импорт не будет обработан."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -9027,6 +9056,12 @@
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
       ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } с неограниченным количеством псевдонимов hide-my-email"
       ],
@@ -9080,6 +9115,9 @@
       ],
       "Contact groups management": [
         "Управление группами контактов"
+      ],
+      "Custom domains for email aliases": [
+        "Пользовательские домены для псевдонимов электронной почты"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -10082,17 +10120,50 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Посмотрите на возможности ${ appName }"
+      ],
       "Continue": [
         "Продолжить"
       ],
       "Continue to ${ free }": [
         "Продолжить с ${ free }"
       ],
+      "Continue with Bitcoin": [
+        "Продолжить с Bitcoin"
+      ],
+      "create a new account": [
+        "создайте новый аккаунт"
+      ],
+      "Create another account instead": [
+        "Вместо этого создать другой аккаунт"
+      ],
       "Download again ${ size }": [
         "Скачать снова ${ size }"
       ],
       "Download to continue ${ size }": [
         "Скачать для продолжения ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Сохраните этот план и используйте ${ appName }"
+      ],
+      "Or ${ createANewAccount }": [
+        "Или ${ createANewAccount }"
+      ],
+      "Start using ${ appName }": [
+        "Начните использовать ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Начать использовать ${ appName } сейчас"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Улучшите всего за ${ relativePrice } в месяц дополнительно"
+      ],
+      "Upgrade my plan": [
+        "Улучшить мой план"
+      ],
+      "Use ${ free } instead": [
+        "Вместо этого использовать ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10109,6 +10180,26 @@
         "Расположен в Швейцарии"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Checkout": [
+        "Оформление покупки"
+      ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Продолжите с вашим аккаунтом ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Ограниченное предложение"
+      ],
+      "Recommended": [
+        "Рекомендовано"
+      ],
+      "Select your plan": [
+        "Выберете себе план"
+      ],
+      "Upgrade your plan": [
+        "Улучшите свой план"
+      ]
+    },
     "pass_signup_2023: Info": {
       "${ PASS_APP_NAME } benefits": [
         "Преимущества ${ PASS_APP_NAME }"
@@ -10118,6 +10209,24 @@
       ],
       "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
         "${ PASS_APP_NAME } доступно в виде расширения браузера в Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } защищает ваши пароли и личные данные с помощью строгого сквозного шифрования."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } в месяц"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Все премиальные сервисы ${ BRAND_NAME }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditions }"
+      ],
+      "Creating your account": [
+        "Создание вашего аккаунта"
+      ],
+      "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
+        "Откройте для себя ${ PASS_APP_NAME },${ br }наш \nновый зашифрованный менеджер паролей"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Скачайте и установите соответствующие приложения и расширения, чтобы начать использовать ${ PASS_APP_NAME }"
@@ -10134,6 +10243,12 @@
       "End-to-end encrypted notes": [
         "Заметки со сквозным шифрованием"
       ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Бесплатно навсегда"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Получить ${ appName } для ${ browserName }"
       ],
@@ -10145,6 +10260,9 @@
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Если вы потеряете доступ в свою учетную запись ${ BRAND_NAME }, ваш **набор для восстановления** позволит вам войти и восстановить свои данные."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Включает базовые функции ${ appName }:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Установить ${ PASS_APP_NAME }"
@@ -10164,8 +10282,29 @@
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
       ],
+      "One easy subscription.": [
+        "Одна лёгкая подписка"
+      ],
       "Open-source and audited": [
         "Открытый исходный код, проверенный на безопасность"
+      ],
+      "per month, billed annually": [
+        "в месяц, оплата за год"
+      ],
+      "per month, billed every 15 months": [
+        "в месяц, оплачивается каждые 15 месяцев"
+      ],
+      "per month, billed every 30 months": [
+        "в месяц, оплачивается каждые 30 месяцев"
+      ],
+      "per month, billed every month": [
+        "в месяц, оплачивается ежемесячно"
+      ],
+      "per month, billed every two years": [
+        "в месяц, оплачивается каждые два года"
+      ],
+      "Preparing your Recovery Kit": [
+        "Подготовка вашего набора для восстановления"
       ],
       "Protected by Swiss privacy laws": [
         "Защищено швейцарскими законами о конфиденциальности"
@@ -10176,14 +10315,38 @@
       "Signing in to ${ PASS_APP_NAME }": [
         "Вход в ${ PASS_APP_NAME }"
       ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Специальное стартовое предложение: Получите ${ title } навсегда за ${ price }!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Предложение выбранное вами, недоступно для подписчиков ${ currentPlanTitle }."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "чтобы начать использовать ${ PASS_APP_NAME } на вашем телефоне"
       ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
         "Разблокируйте премиумные функции ${ PASS_APP_NAME }, улучшив подписку"
       ],
+      "Updating your account": [
+        "Обновление вашего аккаунта"
+      ],
+      "Verifying your payment": [
+        "Подтверждение вашего платежа"
+      ],
+      "Welcome to ${ plan }": [
+        "Добро пожаловать в ${ plan }"
+      ],
       "Works on all devices": [
         "Работает на всех устройствах"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "У вас уже есть доступ к премиальным функциям ${ appName } - нет необходимости покупать снова."
+      ],
+      "You currently have": [
+        "У Вас сейчас"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "У вашей организации есть доступ к ${ free }. Если вы хотите получить доступ к премиальным функциям ${ appName }, пожалуйста, попросите администратора вашей организации улучшить тариф."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10192,6 +10355,18 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "тариф ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Создайте свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Просите администратора вашей организации улучшить"
+      ],
       "Secure your account": [
         "Обезопасьте ваш аккаунт"
       ]
@@ -10625,6 +10800,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Добавить ярлык"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Доступ предоставил ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11572,6 +11752,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } бесплатно"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Быстрые клавиши"
       ],
@@ -12148,6 +12331,9 @@
       "Other calendars": [
         "Другие календари"
       ],
+      "Other preferences": [
+        "Другие настройки"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -12168,6 +12354,9 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
+      ],
+      "Personalise your e-mail footer": [
+        "Настройте нижний колонтитул вашего электронного письма"
       ],
       "Phone": [
         "Телефон"
@@ -12315,6 +12504,9 @@
       ],
       "Signed in to member account": [
         "Выполнен вход в аккаунт пользователя"
+      ],
+      "SMTP submission": [
+        "Отправки через SMTP"
       ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
@@ -12898,6 +13090,18 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Попробуйте ${ upsellPlanName } без риска"
       ],
