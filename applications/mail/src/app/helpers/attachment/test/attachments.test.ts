@@ -1,4 +1,5 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { getPureAttachments, updateKeyPackets } from '../attachment';
@@ -52,19 +53,19 @@ describe('getPureAttachments', () => {
         {
             Name: 'normal attachment',
             Headers: {
-                'content-disposition': 'attachment',
+                'content-disposition': ATTACHMENT_DISPOSITION.ATTACHMENT,
             },
         } as Attachment,
         {
             Name: 'invalid inline image',
             Headers: {
-                'content-disposition': 'inline',
+                'content-disposition': ATTACHMENT_DISPOSITION.INLINE,
             },
         } as Attachment,
         {
             Name: 'inline image',
             Headers: {
-                'content-disposition': 'inline',
+                'content-disposition': ATTACHMENT_DISPOSITION.INLINE,
                 'content-id': 'content-id',
             },
         } as Attachment,

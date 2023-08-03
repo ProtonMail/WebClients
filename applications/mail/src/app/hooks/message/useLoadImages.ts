@@ -21,7 +21,7 @@ import {
     MessageStateWithData,
 } from '../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../logic/store';
-import { useGetAttachment } from '../useAttachment';
+import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 

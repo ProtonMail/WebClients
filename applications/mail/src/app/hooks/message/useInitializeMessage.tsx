@@ -49,7 +49,7 @@ import {
 } from '../../logic/messages/read/messagesReadActions';
 import { useAppDispatch } from '../../logic/store';
 import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
-import { useGetAttachment } from '../useAttachment';
+import { useGetAttachment } from '../attachments/useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
