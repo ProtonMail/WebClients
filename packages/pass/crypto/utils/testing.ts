@@ -57,6 +57,7 @@ export function randomAddress(): Address {
         Status: 0,
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
         ID: '345',
+        ProtonMX: true,
     };
 }
 
