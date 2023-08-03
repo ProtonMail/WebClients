@@ -3425,6 +3425,23 @@
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Anmeldung"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registrierung"
+      ],
+      "Create a new ${ appName } account": [
+        "Erstelle ein neues ${ appName }-Konto"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }-Kontopasswort zurücksetzen"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Melde dich an, um auf dein ${ appName }-Konto zuzugreifen."
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -3549,6 +3566,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN‐Verbindung pro Benutzer",
         "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } mit unbegrenzten hide-my-email-Aliassen"
