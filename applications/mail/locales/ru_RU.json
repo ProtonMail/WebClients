@@ -4268,6 +4268,9 @@
       "Learn more": [
         "Подробнее"
       ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Сделайте ${ BRAND_NAME } своим основным почтовым ящиком."
+      ],
       "Maybe later": [
         "Может быть позже"
       ],
@@ -5290,9 +5293,6 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
-      ],
-      "For more search results, try searching in the content of your email messages": [
-        "Для получения дополнительных результатов поиска попробуйте искать в содержимом ваших электронных сообщений"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -7644,9 +7644,17 @@
         "Используйте переключатель приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "У вас есть аккаунт одного из этих сервисов? Просто кликните, чтобы изменить адрес электронной почты на ваш адрес ${ MAIL_APP_NAME }."
+      ]
+    },
     "Online Accounts Name": {
       "Banking": [
         "Банковское дело"
+      ],
+      "Crypto": [
+        "Крипто"
       ],
       "E-commerce and Retail": [
         "Электронная коммерция и розничная торговля"
@@ -7656,6 +7664,18 @@
       ],
       "Food and beverage": [
         "Продукты питания и напитки"
+      ],
+      "Gaming": [
+        "Игровые"
+      ],
+      "Most popular": [
+        "Самые популярные"
+      ],
+      "Travel": [
+        "Путешествия"
+      ],
+      "Utilities": [
+        "Коммунальные услуги"
       ]
     },
     "Option": {
