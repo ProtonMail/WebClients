@@ -24,7 +24,11 @@ import { APPS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import {
+    canonicalizeEmail,
+    canonicalizeEmailByGuess,
+    canonicalizeInternalEmail,
+} from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -176,9 +180,7 @@ const PopoverEventContent = ({
             const initials = getInitials(displayName);
             const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou: isCurrentUser });
             const extraText = attendee.role === ICAL_ATTENDEE_ROLE.OPTIONAL ? c('Attendee role').t`Optional` : '';
-            const contactEmail = displayContact?.displayEmail
-                ? contactEmailsMap[displayContact.displayEmail]
-                : undefined;
+            const contactEmail = contactEmailsMap[canonicalizeEmail(attendeeEmail)];
 
             return {
                 title,
