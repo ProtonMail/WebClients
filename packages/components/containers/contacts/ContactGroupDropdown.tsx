@@ -7,6 +7,7 @@ import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
 } from '@proton/shared/lib/contacts/helpers/contactGroup';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -100,9 +101,11 @@ const ContactGroupDropdown = ({
     const [lock, setLock] = useState(false);
     const { applyGroups, contactGroupLimitReachedModal } = useApplyGroups(setLock, setLoading, onSelectEmails);
 
-    // If contact is not created yet, creating a contact group would create a group with an empty contact in it.
-    // So we hide it in that case
-    const canCreateNewGroup = contactEmails[0]?.Name !== '';
+    // If the name and email are not empty, we can create a new group, otherwise we disable the button
+    const canCreateNewGroup =
+        contactEmails[0]?.Email !== '' &&
+        validateEmailAddress(contactEmails[0]?.Email ?? '') &&
+        contactEmails[0]?.Name !== '';
 
     useEffect(() => onLockWidget?.(isOpen), [isOpen]);
 
@@ -231,8 +234,14 @@ const ContactGroupDropdown = ({
                 <form onSubmit={handleSubmit}>
                     <div className="flex flex-justify-space-between flex-align-items-center m-4 mb-0">
                         <strong>{c('Label').t`Add to group`}</strong>
-                        {canCreateNewGroup && (
-                            <Tooltip title={c('Info').t`Create a new contact group`}>
+                        <Tooltip
+                            title={
+                                canCreateNewGroup
+                                    ? c('Info').t`Create a new contact group`
+                                    : c('Info').t`Please provide a name and an email address for creating a group.`
+                            }
+                        >
+                            <div>
                                 <Button
                                     icon
                                     color="norm"
@@ -240,12 +249,12 @@ const ContactGroupDropdown = ({
                                     onClick={handleAdd}
                                     className="flex flex-align-items-center"
                                     data-prevent-arrow-navigation
-                                    disabled
+                                    disabled={!canCreateNewGroup}
                                 >
                                     <Icon name="users" alt={c('Action').t`Create a new contact group`} /> +
                                 </Button>
-                            </Tooltip>
-                        )}
+                            </div>
+                        </Tooltip>
                     </div>
                     <div className="m-4 mb-0">
                         <SearchInput
