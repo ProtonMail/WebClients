@@ -246,7 +246,9 @@ const SetupAddressContainer = () => {
     const generateAddress = generateAddressRef.current;
 
     if (!generateAddress) {
-        throw new Error('Missing dependencies');
+        const error: any = new Error('Missing dependencies');
+        error.trace = false;
+        throw error;
     }
 
     return (
