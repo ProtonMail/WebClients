@@ -1941,7 +1941,7 @@
         "« ${ name } » existe déjà."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -3928,7 +3928,7 @@
         "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "L'appareil synchronisé ${ deviceName } sera supprimé de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Mes Ordinateurs ne seront plus synchronisés."
+        "L'appareil synchronisé ${ deviceName } sera supprimé de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Ordinateurs ne seront plus synchronisés."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
