@@ -48,12 +48,13 @@ const AddressStatus = ({
             } as const),
         isNotEncrypted &&
             ({
-                text: c('Address status').t`No E2EE`,
+                // translator: E2EE stands for end-to-end encryption. If possible, keep the abbreviation as the UI will be best with a short translated string.
+                text: c('Address status').t`No E2EE mail`,
                 type: 'error',
             } as const),
         isSignatureNotExpected &&
             ({
-                text: c('Address status').t`No signing`,
+                text: c('Address status').t`Allow unsigned mail`,
                 type: 'error',
             } as const),
     ]
