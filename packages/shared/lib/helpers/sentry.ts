@@ -130,6 +130,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         'Request timed out',
         'No network connection',
         'Failed to fetch',
+        'Load failed',
         'NetworkError when attempting to fetch resource.',
         'webkitExitFullScreen', // Bug in Firefox for iOS.
         'InactiveSession',
@@ -202,8 +203,8 @@ function main({
                 return null;
             }
 
-            // Not interested in uncaught API errors
-            if (error instanceof ApiError) {
+            // Not interested in uncaught API errors, or known errors
+            if (error instanceof ApiError || error?.trace === false) {
                 return null;
             }
 

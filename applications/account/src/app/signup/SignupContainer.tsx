@@ -338,7 +338,9 @@ const SignupContainer = ({
     };
 
     if (step === NoSignup) {
-        throw new Error('Missing dependencies');
+        const error: any = new Error('Missing dependencies');
+        error.trace = false;
+        throw error;
     }
 
     const [defaultCountry] = useMyCountry();
