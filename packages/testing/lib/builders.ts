@@ -166,6 +166,7 @@ export const addressBuilder = build<Address>('Address', {
         Signature: '',
         Status: 1,
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+        ProtonMX: true,
     },
     postBuild: (address) => {
         address.Keys = [addressKeyBuilder()];
@@ -481,6 +482,7 @@ export const generateTestAddress = (compelled?: Partial<Address>): Address => {
         Priority: 1,
         Signature: '-----BEGIN PGP SIGNATURE-----...',
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+        ProtonMX: true,
         ...compelled,
     };
 };
