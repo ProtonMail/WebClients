@@ -18,6 +18,7 @@ export interface Address {
     Status: ADDRESS_STATUS;
     Type: ADDRESS_TYPE;
     Flags?: ADDRESS_FLAGS;
+    ProtonMX: boolean;
 }
 
 export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {
