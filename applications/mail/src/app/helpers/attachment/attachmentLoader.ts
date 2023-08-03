@@ -16,22 +16,21 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
-
-export const decrypt = async (
+export const decryptAndVerify = async (
     encryptedBinaryBuffer: ArrayBuffer,
     sessionKey: SessionKey,
     signature?: string,
-    publicKeys?: PublicKeyReference | PublicKeyReference[]
+    publicKeys?: PublicKeyReference | PublicKeyReference[],
+    encSignature?: string
 ): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {
-        // eslint-disable-next-line @typescript-eslint/return-await
         return await CryptoProxy.decryptMessage({
-            // a promise is returned here, just not detected properly by TS
             binaryMessage: encryptedBinary,
             sessionKeys: [sessionKey],
             armoredSignature: signature,
+            armoredEncryptedSignature: encSignature,
             verificationKeys: publicKeys,
             format: 'binary',
         });
@@ -62,7 +61,7 @@ export const getDecryptedAttachment = async (
             const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
             // verify attachment signature only when sender is verified
             const publicKeys = verification?.pinnedKeysVerified ? verification.senderPinnedKeys : undefined;
-            return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
+            return await decryptAndVerify(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
         }
         const sessionKey = await getEOSessionKey(attachment, messageKeys.password);
         // eslint-disable-next-line @typescript-eslint/return-await

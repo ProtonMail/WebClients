@@ -177,6 +177,10 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	&.es-three-rows {
 		block-size: auto;
 	}
+
+	.item-titlesender {
+		min-block-size: rem(36);
+	}
 }
 
 .item-container {

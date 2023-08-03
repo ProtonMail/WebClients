@@ -20,7 +20,7 @@ import { findSender } from '../helpers/message/messageRecipients';
 import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
 import { useAppDispatch } from '../logic/store';
-import { useGetAttachment } from './useAttachment';
+import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';
 

@@ -1,6 +1,6 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { AttachmentInfo } from '@proton/shared/lib/interfaces/mail/Message';
+import { AttachmentInfo, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
     ID: string;
@@ -22,6 +22,7 @@ export interface Conversation {
     /** Only present in metadata call. Mot present in conversations/ID call */
     ContextExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+    AttachmentsMetadata?: AttachmentsMetadata[];
 }
 
 export interface ConversationLabel {

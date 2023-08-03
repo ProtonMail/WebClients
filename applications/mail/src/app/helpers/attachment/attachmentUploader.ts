@@ -7,6 +7,7 @@ import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
@@ -26,11 +27,6 @@ type UploadQueryResult = Promise<{
     Attachment: Attachment;
     Error?: string;
 }>;
-
-export enum ATTACHMENT_ACTION {
-    ATTACHMENT = 'attachment',
-    INLINE = 'inline',
-}
 
 export interface UploadResult {
     attachment: Attachment;
@@ -119,7 +115,7 @@ const buildHeaders = ({ Inline }: Packets, message: MessageStateWithData) => {
 
     const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
     return {
-        'content-disposition': 'inline',
+        'content-disposition': ATTACHMENT_DISPOSITION.INLINE,
         'content-id': cid,
     };
 };
@@ -162,12 +158,12 @@ export const upload = (
     files: File[] = [],
     message: MessageStateWithData,
     messageKeys: PublicPrivateKey,
-    action = ATTACHMENT_ACTION.ATTACHMENT,
+    action = ATTACHMENT_DISPOSITION.ATTACHMENT,
     uid: string,
     cid = ''
 ): Upload<UploadResult>[] => {
     return files.map((file) => {
-        const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
+        const inline = isEmbeddable(file.type) && action === ATTACHMENT_DISPOSITION.INLINE;
         return uploadFile(file, message, messageKeys, inline, uid, cid);
     });
 };
@@ -176,9 +172,9 @@ export const uploadEO = (
     file: File,
     message: MessageStateWithData,
     publicKey: PublicKeyReference[],
-    action = ATTACHMENT_ACTION.ATTACHMENT
+    action = ATTACHMENT_DISPOSITION.ATTACHMENT
 ) => {
-    const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
+    const inline = isEmbeddable(file.type) && action === ATTACHMENT_DISPOSITION.INLINE;
     return uploadEOFile(file, message, publicKey, inline);
 };
 

@@ -25,6 +25,7 @@ export type ESBaseMessage = Pick<
     | 'ExpirationTime'
     | 'LabelIDs'
     | 'AttachmentInfo'
+    | 'AttachmentsMetadata'
 >;
 
 export interface ESMessageContent {
