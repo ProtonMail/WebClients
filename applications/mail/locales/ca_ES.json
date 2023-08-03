@@ -490,7 +490,7 @@
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
       ],
       "Image will be loaded without a proxy": [
-        "La imatge es carregarà sense proxy"
+        "La imatge es carregarà sense proxy."
       ],
       "Images will be loaded without a proxy": [
         "Les imatges es carregaran sense proxy"
@@ -3681,7 +3681,7 @@
         "Fus horari"
       ],
       "Time zone not supported": [
-        "Zona horària no compatible"
+        "Fus horari no compatible"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -3731,7 +3731,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "La valoració és obligatòria"
+        "Es requereix la valoració"
       ]
     },
     "Error sending calendar invitation": {
@@ -4817,8 +4817,8 @@
         "(Cap Destinatari)"
       ],
       "**${ elementsFoundCount }** result found in ${ labelName }": [
-        "**${ elementsFoundCount }** resultat trobat a ${ labelName }",
-        "**${ elementsFoundCount }** resultats trobats a ${ labelName }"
+        "S'ha trobat **${ elementsFoundCount }** resultat en ${ labelName }",
+        "S'han trobat **${ elementsFoundCount }** resultats en ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
@@ -5133,8 +5133,8 @@
         "Caduca el ${ formattedDate }"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "Caduca en ${ minutesDiff } minut",
-        "Caduca en ${ minutesDiff } minuts"
+        "Caduca en ${ minutesDiff } minut.",
+        "Caduca en ${ minutesDiff } minuts."
       ],
       "Expires in less than ${ hoursDiff } hour": [
         "Caduca en menys d'${ hoursDiff } hora",
@@ -5155,9 +5155,6 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per obtenir més resultats de cerca, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
-      ],
-      "For more search results, try searching in the content of your email messages": [
-        "Per obtenir més resultats de cerca, proveu de cercar al contingut dels vostres missatges de correu electrònic."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -6878,7 +6875,7 @@
         "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Heu assolit el nombre màxim de calendaris disponibles en el vostre pla."
+        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
       ]
     },
     "Link": {
@@ -7567,7 +7564,7 @@
         "Adreça de correu electrònic"
       ],
       "End date": [
-        "Data de fi"
+        "Data de finalització"
       ],
       "Filter folders": [
         "Filtra les carpetes"
@@ -7655,8 +7652,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } contacte exportat de ${ countContacts }.",
-        "${ contactsExported.length } contactes exportats de ${ countContacts }."
+        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
+        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
@@ -8404,7 +8401,7 @@
         "Missatge esborrat"
       ],
       "Message expiration cancelled": [
-        "La caducitat del missatge s'ha cancel·lat"
+        "La caducitat del missatge s'ha cancel·lat."
       ],
       "Message marked as legitimate": [
         "Missatge marcat com a legítim"
@@ -8463,7 +8460,7 @@
         "Clau pública de confiança"
       ],
       "Read receipt sent": [
-        "S'ha enviat la confirmació de lectura"
+        "S'ha enviat la confirmació de lectura."
       ],
       "Self-destruction removed": [
         "S'ha suprimit la destrucció automàtica"
@@ -8509,7 +8506,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica, generador de contrasenyes."
+        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica i generador de contrasenyes."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -8707,7 +8704,7 @@
         "Bloqueja l'emissor"
       ],
       "Cannot add more addresses": [
-        "No es poden afegir més adreces"
+        "No es poden afegir més adreces."
       ],
       "Carbon Copy": [
         "Copia Carbó"
@@ -8895,8 +8892,8 @@
         "Imatge"
       ],
       "Import as simple event?": [
-        "Importar com a un esdeveniment sense detalls?",
-        "Importar com a esdeveniments sense detalls?"
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -9079,7 +9076,7 @@
         "Notifica un problema"
       ],
       "Request new code": [
-        "Demana un nou codi"
+        "Demana un codi nou"
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
@@ -9277,7 +9274,7 @@
         "No s'ha pogut carregar la imatge"
       ],
       "The image could not be loaded using proxy": [
-        "No s'ha pogut carregar la imatge a través del proxy"
+        "No s'ha pogut carregar la imatge a través del proxy."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."

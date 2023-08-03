@@ -1454,7 +1454,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
@@ -3425,6 +3425,32 @@
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName } : connexion"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName } : inscription"
+      ],
+      "Create a new ${ appName } account": [
+        "Créer un nouveau compte ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Trouver le nom d'utilisateur du compte ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié le mot de passe de votre compte ${ BRAND_NAME } ? Réinitialisez-le ici à l'aide d'un code de récupération, d'un e-mail ou d'un SMS et accédez à nouveau à vos comptes ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }…"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié votre nom d'utilisateur pour votre compte ${ BRAND_NAME } ? Retrouvez-le en utilisant votre e-mail ou votre numéro de téléphone de récupération et accédez de nouveau à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et aux autres services Proton."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Connectez-vous pour accéder à votre compte ${ appName }"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -3549,6 +3575,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexion VPN par utilisateur",
         "${ n } connexions VPN par utilisateur"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } avec des alias « hide-my-email » illimités"

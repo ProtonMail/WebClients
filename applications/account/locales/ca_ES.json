@@ -3608,7 +3608,7 @@
         "Fus horari"
       ],
       "Time zone not supported": [
-        "Zona horària no compatible"
+        "Fus horari no compatible"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -8418,7 +8418,7 @@
         "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Heu assolit el nombre màxim de calendaris disponibles en el vostre pla."
+        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
       ]
     },
     "Link": {
@@ -8634,6 +8634,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "Create a new ${ appName } account": [
+        "Crear un compte de ${ appName }"
       ]
     },
     "Modal title": {
@@ -8985,6 +8990,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexió VPN per usuari",
         "${ n } connexions VPN per usuari"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } amb àlies hide-my-email il·limitats"
@@ -11485,7 +11494,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica, generador de contrasenyes."
+        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica i generador de contrasenyes."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -12100,8 +12109,8 @@
         "Importació i exportació"
       ],
       "Import as simple event?": [
-        "Importar com a un esdeveniment sense detalls?",
-        "Importar com a esdeveniments sense detalls?"
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -12284,7 +12293,7 @@
         "Notifica un problema"
       ],
       "Request new code": [
-        "Demana un nou codi"
+        "Demana un codi nou"
       ],
       "Reset organization keys": [
         "Restablir les claus d'organització"

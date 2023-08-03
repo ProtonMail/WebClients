@@ -349,7 +349,7 @@
         "Redigera e-postadress"
       ],
       "Edit encryption": [
-        "Ändra kryptering"
+        "Redigera kryptering"
       ],
       "Edit folder": [
         "Redigera mapp"
@@ -382,7 +382,7 @@
         "exkludera meddelandeinnehåll"
       ],
       "Expand composer": [
-        "Utöka redigeringsfönstret"
+        "Expandera redigeringsfönstret"
       ],
       "Expand URL": [
         "Expandera URL"
@@ -725,7 +725,7 @@
         "Öppna i ${ CALENDAR_APP_NAME }"
       ],
       "Open composer": [
-        "Öppna skrivverktyget"
+        "Öppna redigeringsfönstret"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1025,7 +1025,7 @@
         "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den första nedladdningen kan ta en stund."
       ],
       "Toggle Calendar app": [
-        "Växla Kalendar-app"
+        "Växla kalendar-app"
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
@@ -4839,7 +4839,7 @@
         "Lägg till bild-URL"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adressverifiering med Säkra Nycklar är aktiverat för denna adress. För att kunna skicka till denna adress ska de publika nycklarna, som kan användas för att skicka, först göras säkra."
+        "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
       "Align left": [
         "Vänsterjustera"
@@ -5155,9 +5155,6 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
-      ],
-      "For more search results, try searching in the content of your email messages": [
-        "För fler sökresultat, prova att söka i innehållet i dina e-postmeddelanden"
       ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
@@ -5485,7 +5482,7 @@
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "Ett meddelande rapporterat för nätfiskeförsök kommer skickas till oss, så att vi kan analysera det och förbättra våra filter. Det betyder att vi kommer kunna se hela meddelandets innehåll."
+        "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
       ],
       "Request read receipt": [
         "Begär läskvitto"
@@ -5924,6 +5921,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "Du kan antingen uppdatera din sökfråga eller ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Du kan antingen uppdatera din sökfråga eller rensa den"
       ],
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."

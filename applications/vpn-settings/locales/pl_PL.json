@@ -3463,6 +3463,32 @@
         "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Zaloguj się"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Zarejestruj się"
+      ],
+      "Create a new ${ appName } account": [
+        "Utwórz nowe konto ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Znajdź konto ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Zresetuj konto za pomocą kodu odzyskiwania, adresu e-mail lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Znajdź je za pomocą adresu pomocniczego lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Resetowanie hasła ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Zaloguj się do konta ${ appName }"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dolar"
@@ -3615,6 +3641,12 @@
         "${ n } połączenia VPN na użytkownika",
         "${ n } połączeń VPN na użytkownika",
         "${ n } połączeń VPN na użytkownika"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
+        "${ PASS_APP_NAME } z ${ n } aliasami hide-my-email",
+        "${ PASS_APP_NAME } z ${ n } aliasami hide-my-email",
+        "${ PASS_APP_NAME } z ${ n } aliasami hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } z nieograniczoną liczbą aliasów hide-my-email"

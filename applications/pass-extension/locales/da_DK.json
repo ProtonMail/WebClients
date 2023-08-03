@@ -1,471 +1,471 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n > 1);",
-    "language": "tr_TR"
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "da_DK"
   },
   "contexts": {
     "Action": {
       "Add": [
-        "Ekle"
+        "Tilføj"
       ],
       "Add current url": [
-        "Geçerli adresi ekle"
+        "Tilføj nuværende URL"
       ],
       "Add more": [
-        "Başka ekle"
+        "Tilføj mere"
       ],
       "Add new item": [
-        "Yeni öge ekle"
+        "Tilføj nyt element"
       ],
       "Advanced": [
-        "Gelişmiş"
+        "Avanceret"
       ],
       "Advanced options": [
-        "Gelişmiş seçenekler"
+        "Avancerede indstillinger"
       ],
       "Back": [
-        "Geri"
+        "Tilbage"
       ],
       "Can't find your password manager? Please let us know!": [
-        "Parola yöneticinizi bulamadınız mı? Lütfen bize bildirin!"
+        "Kan du ikke finde din adgangskodeadministrator? Giv os besked!"
       ],
       "Cancel": [
-        "İptal"
+        "Annullér"
       ],
       "Change": [
-        "Değiştir"
+        "Skift"
       ],
       "Choose a file or drag it here": [
-        "Bir dosya seçin ya da sürükleyip buraya bırakın"
+        "Vælg en fil eller træk den hertil"
       ],
       "Clear": [
-        "Temizle"
+        "Ryd"
       ],
       "Clear search": [
-        "Aramayı temizle"
+        "Ryd søgning"
       ],
       "Close": [
-        "Kapat"
+        "Luk"
       ],
       "Close advanced options": [
-        "Gelişmiş seçenekleri kapat"
+        "Luk avancerede indstillinger"
       ],
       "Close navigation": [
-        "Gezinmeyi kapat"
+        "Luk navigation"
       ],
       "Confirm": [
-        "Onayla"
+        "Bekræft"
       ],
       "Continue without pinning": [
-        "Sabitlemeden ilerle"
+        "Fortsæt uden at fastgøre"
       ],
       "Copy & fill in": [
-        "Kopyala ve doldur"
+        "Kopiér og udfyld"
       ],
       "Copy and close": [
-        "Kopyala ve kapat"
+        "Kopiér og luk"
       ],
       "Copy to clipboard": [
-        "Panoya kopyala"
+        "Kopiér til udklipsholder"
       ],
       "Create": [
-        "Ekle"
+        "Opret"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Bir ${ BRAND_NAME } hesabı açın"
+        "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
-        "Takma ad oluştur"
+        "Opret alias"
       ],
       "Create an account": [
-        "Hesap açın"
+        "Opret en konto"
       ],
       "Create login": [
-        "Oturum açma kaydı oluştur"
+        "Opret login"
       ],
       "Create note": [
-        "Not oluştur"
+        "Opret note"
       ],
       "Create vault": [
-        "Kasa oluştur"
+        "Opret boks"
       ],
       "Creating vault": [
-        "Kasa oluşturuluyor"
+        "Opretter boks"
       ],
       "Delete": [
-        "Sil"
+        "Slet"
       ],
       "Delete alias": [
-        "Takma adı sil"
+        "Slet alias"
       ],
       "Delete all": [
-        "Tümünü sil"
+        "Slet alle"
       ],
       "Delete password": [
-        "Parolayı sil"
+        "Slet adgangskode"
       ],
       "Delete permanently": [
-        "Kalıcı olarak sil"
+        "Slet permanent"
       ],
       "Delete vault": [
-        "Kasayı sil"
+        "Slet boks"
       ],
       "Discard": [
-        "Sil"
+        "Kassér"
       ],
       "Dismiss": [
-        "Yok say"
+        "Afvis"
       ],
       "Done": [
-        "Tamam"
+        "Udført"
       ],
       "Edit": [
-        "Düzenle"
+        "Redigér"
       ],
       "Edit vault": [
-        "Kasayı düzenle"
+        "Redigér boks"
       ],
       "Export": [
-        "Dışa aktar"
+        "Eksportér"
       ],
       "Feedback": [
-        "Geri bildirim"
+        "Feedback"
       ],
       "Fill password": [
-        "Parolayı doldur"
+        "Udfyld adgangskode"
       ],
       "Filter vault items": [
-        "Kasa ögelerini süz"
+        "Filtrér elementer i boks"
       ],
       "Generate alias": [
-        "Takma ad üret"
+        "Generér alias"
       ],
       "Generate password": [
-        "Parola üret"
+        "Generér adgangskode"
       ],
       "Generated password": [
-        "Oluşturulan parola"
+        "Genereret adgangskode"
       ],
       "Get mobile apps": [
-        "Mobil uygulamaları edinin"
+        "Hent mobilapps"
       ],
       "Help us improve": [
-        "Kendimizi geliştirmemize yardımcı olun"
+        "Hjælp os med at blive bedre"
       ],
       "Hide": [
-        "Gizle"
+        "Skjul"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
+        "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "Import": [
-        "İçe aktar"
+        "Importér"
       ],
       "Import your passwords": [
-        "Parolalarınızı içe aktarın"
+        "Importér dine adgangskoder"
       ],
       "Importing": [
-        "İçe aktarılıyor"
+        "Importerer"
       ],
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Få mere at vide"
       ],
       "Lock extension": [
-        "Eklentiyi kilitle"
+        "Lås udvidelse"
       ],
       "Manually sync your data": [
-        "Verilerinizi el ile eşitleyin"
+        "Synkronisér dine data manuelt"
       ],
       "More options": [
-        "Diğer seçenekler"
+        "Flere muligheder"
       ],
       "Move to another vault": [
-        "Başka bir kasaya taşı"
+        "Flyt til en anden boks"
       ],
       "Move to Trash": [
-        "Çöpe at"
+        "Flyt til papirkurv"
       ],
       "Move to trash": [
-        "Çöpe at"
+        "Flyt til papirkurv"
       ],
       "Not now": [
-        "Şimdi değil"
+        "Ikke nu"
       ],
       "Open navigation": [
-        "Gezinmeyi aç"
+        "Åbn navigation"
       ],
       "Pass for Android": [
-        "Android için Proton Pass"
+        "Pass til Android"
       ],
       "Pass for iOS": [
-        "iOS için Proton Pass"
+        "Pass til iOS"
       ],
       "Proceed": [
-        "İlerle"
+        "Fortsæt"
       ],
       "Refresh the page": [
-        "Sayfayı yenile"
+        "Opdater siden"
       ],
       "Regenerate": [
-        "Yeniden üret"
+        "Regenerér"
       ],
       "Reload extension": [
-        "Eklentiyi yeniden yükle"
+        "Genindlæs udvidelse"
       ],
       "Request a feature": [
-        "Bir özellik istiyorum"
+        "Anmod om en funktion"
       ],
       "Restore item": [
-        "Ögeyi geri yükle"
+        "Gendan element"
       ],
       "Retry": [
-        "Yeniden dene"
+        "Prøv igen"
       ],
       "Save": [
-        "Kaydet"
+        "Gem"
       ],
       "Saving": [
-        "Kaydediliyor"
+        "Gemmer"
       ],
       "Send us a message": [
-        "Bize ileti gönderin"
+        "Send en besked til os"
       ],
       "Show": [
-        "Göster"
+        "Vis"
       ],
       "Sign back in": [
-        "Yeniden oturum aç"
+        "Log ind igen"
       ],
       "Sign in": [
-        "Oturum aç"
+        "Log ind"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "${ BRAND_NAME } ile oturum aç"
+        "Log ind på ${ BRAND_NAME }"
       ],
       "Sign out": [
-        "Oturumu kapat"
+        "Log ud"
       ],
       "Sort vault items": [
-        "Kasa ögelerini sırala"
+        "Sortér elementer i boks"
       ],
       "Submit": [
-        "Gönder"
+        "Indsend"
       ],
       "Submitting report...": [
-        "Rapor gönderiliyor..."
+        "Indsender rapport..."
       ],
       "Try again": [
-        "Yeniden dene"
+        "Prøv igen"
       ],
       "Update": [
-        "Güncelle"
+        "Opdatér"
       ],
       "Updating": [
-        "Güncelleniyor"
+        "Opdaterer"
       ],
       "Upgrade": [
-        "Yükselt"
+        "Opgradér"
       ],
       "Upgrade to keep these features": [
-        "Bu özelliği korumak için tarifenizi yükseltin"
+        "Opgradér for at beholde disse funktioner"
       ],
       "Write us on Reddit": [
-        "Bize Reddit üzerinden yazın"
+        "Skriv til os på Reddit"
       ],
       "Write us on Twitter": [
-        "Bize Twitter üzerinden yazın"
+        "Skriv til os på Twitter"
       ]
     },
     "Button": {
       "More info": [
-        "Diğer bilgiler"
+        "Yderligere info"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Daralt"
+        "Fold sammen"
       ],
       "Expand": [
-        "Genişlet"
+        "Udvid"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider } dosyası işlenemedi. ${ errorDetail }"
+        "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Takma ad seçenekleri çözümlenemedi"
+        "Aliasindstillinger kunne ikke løses"
       ],
       "Authentication error": [
-        "Kimlik doğrulayıcı sorunu"
+        "Godkendelsesfejl"
       ],
       "Auto-lock could not be activated": [
-        "Otomatik kilit özelliği açılamadı"
+        "Autolås kunne ikke aktiveres"
       ],
       "Auto-lock could not be disabled": [
-        "Otomatik kilitleme kapatılamadı"
+        "Autolås kunne ikke deaktiveres"
       ],
       "Cannot create alias (${ error }).": [
-        "Takma ad oluşturulamadı (${ error })."
+        "Kan ikke oprette alias (${ error })."
       ],
       "Could not open created vault": [
-        "Oluşturulan kasa açılamadı"
+        "Kunne ikke åbne den oprettede boks"
       ],
       "Could not open updated vault": [
-        "Güncellenen kasa açılamadı"
+        "Kunne ikke åbne den opdaterede boks"
       ],
       "Could not resume your session : ${ description }": [
-        "Oturumunuz sürdürülemedi: ${ description }"
+        "Kunne ikke genoptage din session : ${ description }"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
+        "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "${ PASS_APP_NAME } dış aktarma dosyanızın şifresi çözülemedi. ${ errorDetail }"
+        "Dekryptering af din ${ PASS_APP_NAME } eksport-fil mislykkedes. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Öge silinemedi"
+        "Sletning af element mislykkedes"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "\"${ payload.content.name }\" kasası silinemedi"
+        "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } bozuk CSV satırı bulundu",
-        "${ errors.length } bozuk CSV satırı bulundu"
+        "Opdagede ${ errors.length } beskadiget CSV-række",
+        "Opdagede ${ errors.length } beskadigede CSV-rækker"
       ],
       "Editing item failed": [
-        "Öge düzenlenemedi"
+        "Redigering af element mislykkedes"
       ],
       "Empty CSV file": [
-        "CSV dosyası boş"
+        "Tom CSV-fil"
       ],
       "Emptying trash failed": [
-        "Çöp kutusu boşaltılamadı"
+        "Tømning af papirkurv mislykkedes"
       ],
       "Encrypted JSON not supported": [
-        "Şifrelenmiş JSON desteklenmiyor"
+        "Krypteret JSON er ikke understøttet"
       ],
       "Error reporting problem": [
-        "Sorun bildirilirken sorun çıktı"
+        "Problem med fejlrapportering"
       ],
       "File could not be parsed": [
-        "Dosya işlenemedi"
+        "Fil kunne ikke fortolkes"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
+        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ description }"
       ],
       "Importing items failed": [
-        "Ögeler içe aktarılamadı"
+        "Import af elementer mislykkedes"
       ],
       "Invalid password manager": [
-        "Parola yöneticisi geçersiz"
+        "Ugyldig adgangskodeadministrator"
       ],
       "Item content cannot exceed 40kb": [
-        "Öge içeriği 40KB üzerinde olamaz"
+        "Element-indhold kan ikke overstige 40 kb"
       ],
       "Item creation failed": [
-        "Öge oluşturulamadı"
+        "Oprettelse af element mislykkedes"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
+        "LastPass vil eksportere en korrupteret CSV-fil hvis nogle af dine element-felter indeholder uventede kommaet, citationstegn eller flere linjer."
       ],
       "Moving item failed": [
-        "Öge taşınamadı"
+        "Flytning af element mislykkedes"
       ],
       "Passphrase is incorrect": [
-        "Parola ifadesi doğru değil"
+        "Adgangssætning er forkert"
       ],
       "PIN codes do not match": [
-        "PIN kodu ile onayı aynı değil"
+        "Pinkoder stemmer ikke overens"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "İlerlemek için lütfen ${ PASS_APP_NAME } için gerekli eklenti izinlerini verin"
+        "Giv venligst ${ PASS_APP_NAME } de nødvendige udvidelsestilladelser for at kunne fortsætte"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
+        "Fastgør udvidelsen, eller vælg \"Fortsæt uden at fastgøre\"."
       ],
       "Request timed out": [
-        "İstek zaman aşımına uğradı"
+        "Forespørgsel fik timeout"
       ],
       "Requesting alias details failed": [
-        "Takma ad ayrıntıları istenemedi"
+        "Anmodning om alias-detaljer mislykkedes"
       ],
       "Requesting alias options failed": [
-        "Takma ad seçenekleri istenemedi"
+        "Anmodning om alias-indstillinger mislykkedes"
       ],
       "Restoring item failed": [
-        "Öge geri yüklenemedi"
+        "Genoprettelse af element mislykkedes"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\" kasası birincil kasa olarak ayarlanamadı"
+        "Det mislykkedes at indstille \"${ payload.name }\" som den primære boks"
       ],
       "Settings update failed": [
-        "Ayarlar güncellenemedi"
+        "Ændring af indstillinger mislykkedes"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Parola sıfırlandığı için bazı kasalara artık erişilemiyor. Yeniden erişebilmek için hesap anahtarlarınızı yeniden kullanıma alın. ${ reactivateLink }"
+        "Nogle bokse er ikke længere tilgængelige grundet en nulstilling af adgangskoden. Genaktiver dine kontonøgler for at få adgang igen. ${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Bir sorun çıktı"
+        "Noget gik galt"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Bir sorun çıktı. Lütfen ${ PASS_APP_NAME } eklentisini yeniden yükleyin. Bu sorun günlüğe kaydedildi"
+        "Noget gik galt. Genindlæs venligst ${ PASS_APP_NAME }-udvidelsen. Dette problem er blevet registreret"
       ],
       "The file you are trying to import is empty": [
-        "İçe aktarmak istediğiniz dosya boş"
+        "Filen du prøver at importere er tom"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
+        "For mange mislykkede forsøg. Log venligst ind igen."
       ],
       "Trashing item failed": [
-        "Öge çöpe atılamadı"
+        "Sletning af element mislykkedes"
       ],
       "Unable to boot": [
-        "Başlatılamadı"
+        "Kan ikke logge boote"
       ],
       "Unable to generate an OTP code for this item": [
-        "Bu öge için tek kullanımlık parola üretilemedi"
+        "Kunne ikke generere en OTP-kode for dette element"
       ],
       "Unable to sync": [
-        "Eşitlenemedi"
+        "Synkronisering mislykkedes"
       ],
       "Unknown error": [
-        "Bilinmeyen sorun"
+        "Ukendt fejl"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
+        "Ikke-understøttet ${ PASS_APP_NAME } filformat"
       ],
       "Unsupported 1Password file format": [
-        "Desteklenmeyen 1Password dosya biçimi"
+        "Ikke-understøttet 1Password filformat"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "\"${ payload.content.name }\" kasası güncellenemedi"
+        "Opdatering af boksen \"${ payload.content.name }\" mislykkedes"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "\"${ payload.content.name }\" kasası oluşturulamadı"
+        "Oprettelse af boksen \"${ payload.content.name }\" mislykkedes"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "\"${ vaultData.name }\" kasası oluşturulamadı"
+        "Boks \"${ vaultData.name }\" kunne ikke oprettes"
       ],
       "Vault name does not match": [
-        "Kasa adı aynı değil"
+        "Boksens navn matcher ikke"
       ],
       "Wrong PIN code. Try again.": [
-        "PIN kodu yanlış. Yeniden deneyin."
+        "Forkert pinkode. Prøv igen."
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+        "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
-        "Bir şeyler ters gitti"
+        "Noget gik galt"
       ]
     },
     "file size format": {
       "byte": [
-        "bayt",
-        "bayt"
+        "byte",
+        "bytes"
       ],
       "GB": [
         "GB"
@@ -479,1098 +479,1095 @@
     },
     "file size format, long": {
       "Byte": [
-        "Bayt",
-        "Bayt"
+        "Byte",
+        "Bytes"
       ],
       "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
+        "Gigabyte",
+        "Gigabytes"
       ],
       "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
+        "Kilobyte",
+        "Kilobytes"
       ],
       "Megabyte": [
-        "Megabayt",
-        "Megabayt"
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Birden çok kasa oluşturmak için ücretli bir tarifeye yükseltin."
+        "Opgradér til et betalt abonnement for at oprette flere bokse."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
+        "\"${ payload.item.data.metadata.name }\" element blev afvist"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
+        "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
       "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" birincil kasa olarak ayarlandı"
+        "\"${ payload.name }\" indstillet som primær boks"
       ],
       "${ count } item": [
-        "${ count } öge",
-        "${ count } öge"
+        "${ count } element",
+        "${ count } elementer"
       ],
       "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } yalnızca oturum açma ve not kayıtlarını içe aktarır. Şu anda kredi kartları, pasaportlar, ek dosyalar gibi ögeler desteklenmiyor."
+        "${ PASS_APP_NAME } vil kun importere login og noter. Kreditkort, pas, vedhæftede filer osv er ikke understøttet på nuværende tidspunkt."
       ],
       "${ revisionNumber } time": [
-        "${ revisionNumber } kez",
-        "${ revisionNumber } kez"
+        "${ revisionNumber } gang",
+        "${ revisionNumber } gange"
       ],
       "${ totalImportedItems } item": [
-        "${ totalImportedItems } öge",
-        "${ totalImportedItems } öge"
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elementer"
       ],
       "${ totalItems } item": [
-        "${ totalItems } öge",
-        "${ totalItems } öge"
+        "${ totalItems } element",
+        "${ totalItems } elementer"
       ],
       "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } gün kaldı",
-        "${ trialDaysLeft } gün kaldı"
+        "${ trialDaysLeft } dag tilbage",
+        "${ trialDaysLeft } dage tilbage"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
+        "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
-        "${ PASS_APP_NAME } uygulamasına bu simge ile erişin"
+        "Tilgå ${ PASS_APP_NAME } via dette ikon"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } uygulamasına erişerek oturumunuzun kilidini açmak için PIN kodunuz istenecek"
+        "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
+        "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
+        "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
       ],
       "All items permanently removed": [
-        "Tüm ögeler kalıcı olarak silindi"
+        "Alle elementer blev fjernet permanent"
       ],
       "All items successfully restored": [
-        "Tüm ögeler geri yüklendi"
+        "Alle elementer blev gendannet"
       ],
       "An item previously shared with you was disabled": [
-        "Daha önce paylaştığınız bir öge kullanımdan kaldırılmış"
+        "Et element der tidligere var delt med dig er blevet deaktiveret"
       ],
       "Auto-lock successfully disabled": [
-        "Otomatik kilitleme kapatıldı"
+        "Autolås deaktiveret"
       ],
       "Autosaved on ${ submissionURL }": [
-        "${ submissionURL } üzerinden otomatik olarak kaydedildi"
+        "Autogemt på ${ submissionURL }"
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
-        "Tüm ücretli özellikleri sınırlı bir süre için deneyimleyebilirsiniz."
+        "Se alle de eksklusive funktioner, der er tilgængelige for dig i en begrænset periode."
       ],
       "Copied to clipboard": [
-        "Panoya kopyalandı"
+        "Kopieret til udklipsholder"
       ],
       "Creating alias...": [
-        "Takma ad oluşturuluyor..."
+        "Opretter alias..."
       ],
       "Custom fields": [
-        "Özel alanlar"
+        "Brugerdefinerede felter"
       ],
       "Decrypting your data": [
-        "Verilerinizin şifresi çözülüyor"
+        "Dekrypterer dine data"
       ],
       "Deleted items will be moved here first": [
-        "Silinen ögeler önce buraya taşınır"
+        "Slettede elementer vil blive flytte hertil først"
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } YouTube bölümüne bakın"
+        "Opdag ${ PASS_APP_NAME } YouTube-video"
       ],
       "Drop file here to upload": [
-        "Yüklemek için dosyayı buraya bırakın"
+        "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
-        "İçe aktarmak için bırakın"
+        "Slip for at importere"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
+        "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
+        "Aktiver ${ PASS_APP_NAME } ved at forbinde din ${ BRAND_NAME }-konto"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
+        "Indtast verifikationskode. Ciffer ${ digit }."
       ],
       "Enter your pin code": [
-        "PIN kodunuzu yazın"
+        "Indtast din pinkode"
       ],
       "Enter your PIN code": [
-        "PIN kodunuzu yazın"
+        "Indtast din pinkode"
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Dışa aktarma PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
+        "Eksporten er krypteret med PGP og kræver en stærk adgangssætning."
       ],
       "Follow these simple steps to get the best experience:": [
-        "En iyi deneyimi elde etmek için şu basit adımları izleyin:"
+        "Følg disse enkle trin for at få den bedste oplevelse:"
       ],
       "Free Trial": [
-        "Ücretsiz deneme"
+        "Gratis prøveperiode"
       ],
       "Generated passwords will be stored for a period of one day.": [
-        "Üretilen parolalar bir gün süre ile saklanır."
+        "Genererede adgangskoder vil blive gemt i en dag."
       ],
       "Generating alias...": [
-        "Takma ad üretiliyor..."
+        "Genererer alias..."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
+        "Her finder du alle de nødvendige oplysninger, for at du kan komme i gang."
       ],
       "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin internet simgesini görüntülemez."
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
       ],
       "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi sormaz."
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke bede dig om at gemme eller opdatere legitimationsoplysninger."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } oturum açma formlarında bir e-posta takma adı oluşturmayı önermez."
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette et e-mail-alias på tilmeldingsformularer."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önermez."
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette stærke adgangskoder på tilmeldingsformularer."
       ],
       "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Bu seçenek açıldığında, alana gelindiğinde otomatik kaydetme açılan kutusu otomatik olarak açılır."
+        "Hvis aktiveret, vil autogem-dropdown automatisk åbne, når feltet fokuseres."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Bu seçenek açıldığında, kimlik doğrulama bilgilerinizi kolayca ${ PASS_APP_NAME } simgesine tıklayarak otomatik olarak doldurabilirsiniz."
+        "Hvis aktiveret, kan du hurtigt udfylde dine legitimationsoplysninger automatisk ved at klikke på ikonet for ${ PASS_APP_NAME }."
       ],
       "Import in progress :": [
-        "İçe aktarılıyor:"
+        "Import i gang :"
       ],
       "Imported ${ payload.total } item": [
-        "${ payload.total } öge içe aktarıldı",
-        "${ payload.total } öge içe aktarıldı"
+        "Importerede ${ payload.total } element",
+        "Importerede ${ payload.total } elementer"
       ],
       "Imported on ${ date }": [
-        "${ date } tarihinde içe aktarıldı"
+        "Importeret ${ date }"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
+        "For at få den bedste oplevelse ud af ${ PASS_APP_NAME }, bedes du give de nødvendige udvidelsestilladelser"
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Başka bir parola yöneticisindeki verilerinizi ${ PASS_APP_NAME } üzerine aktarmak için, parolalarınızı dışa aktarın ve aşağıdaki formu kullanarak içe aktarın. Tüm ögeleriniz içe aktarıldığında dışa aktarma dosyasını silin."
+        "For at migrere dine data til ${ PASS_APP_NAME } fra en anden adgangskodeadministrator skal du eksportere dine adgangskoder og importere dem ved hjælp af nedenstående formular. Når alle dine elementer er blevet importeret, skal du slette den tidligere eksporterede fil."
       ],
       "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı doğrulayıcı"
+        "Integreret 2FA-godkendelse"
       ],
       "Internet connection lost": [
-        "İnternet bağlantısı kesildi"
+        "Internetforbindelse mistet"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
+        "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
       ],
       "item": [
-        "öge",
-        "öge"
+        "element",
+        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
+        "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "\"${ payload.item.data.metadata.name }\" ögesi güncellendi"
+        "Elementet \"${ payload.item.data.metadata.name }\" opdateret"
       ],
       "Item moved to trash": [
-        "Öge çöpe atıldı"
+        "Element flyttet til papirkurv"
       ],
       "Item permanently deleted": [
-        "Öge kalıcı olarak silindi"
+        "Element slettet permanent"
       ],
       "Item restored": [
-        "Öge geri yüklendi"
+        "Element gendannet"
       ],
       "Item successfully moved": [
-        "Öge taşındı"
+        "Element flyttet"
       ],
       "Let's get you started by creating your first item": [
-        "İlk ögenizi ekleyerek başlayalım"
+        "Lad os få dig i gang ved at oprette dit første element"
       ],
       "Loading": [
-        "Yükleniyor"
+        "Indlæser"
       ],
       "Loading extension": [
-        "Eklenti yükleniyor"
+        "Indlæser udvidelse"
       ],
       "Loading...": [
-        "Yükleniyor..."
+        "Indlæser..."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
+        "Mere end en adgangskodeadministrator, ${ PASS_APP_NAME } beskytter dine adgangskoder og din personlige e-mailadresse via e-mail-aliasser. Med den samme teknologi, som ligger bag ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
       "Multiple vaults": [
-        "Birden çok kasa"
+        "Flere bokse"
       ],
       "N/A": [
-        "Kullanılamaz"
+        "Ikke tilgængelig"
       ],
       "No login found": [
-        "Herhangi bir oturum açma kaydı bulunamadı"
+        "Intet login fundet"
       ],
       "None": [
-        "Yok"
-      ],
-      "Open the Extensions menu": [
-        "Uzantı menüsünü açın"
+        "Ingen"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
-        "1 günden eski parolalar geçmişten otomatik olarak silinir."
+        "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
+        "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
+        "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın.\nBu durumda ${ PASS_APP_NAME } asla kilitlenmez."
+        "Bekræft venligst din pinkode for at afregistrere din nuværende lås.\n${ PASS_APP_NAME } vil derefter aldrig låse."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
+        "Bekræft din pinkode for at ændre denne indstilling."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Otomatik kilitleme ayarlarınızı kaydetmek için lütfen PIN kodunuzu yazın."
+        "Bekræft din pinkode for at afslutte registreringen af dine auto-lås indstillinger."
       ],
       "Please consider leaving a review.": [
-        "Lütfen bir yorum yazmayı değerlendirin."
+        "Skriv gerne en anmeldelse."
       ],
       "Please enter your current pin code to continue": [
-        "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
+        "Indtast din nuværende pinkode for at fortsætte"
       ],
       "Press Enter to copy": [
-        "Kopyalamak için Enter tuşuna basın"
+        "Tryk Enter for at kopiere"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Gizliliğe çok önem veriyoruz. ${ PASS_APP_NAME } neden farklı öğrenin."
+        "Vi bekymrer os om dit privatliv. Få mere at vide om, hvorfor ${ PASS_APP_NAME } er anderledes."
       ],
       "Save login": [
-        "Oturum açmayı kaydet"
+        "Gem login"
       ],
       "Select the destination vault for each imported vault.": [
-        "İçe aktarılacak her kasanın hedef kasasını seçin."
+        "Vælg destinationsboks for hver importeret boks."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+        "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
       "Session timed out": [
-        "Oturum zaman aşımına uğradı"
+        "Session er udløbet"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Verilerinizi kolayca kilitlemek için bir PIN kodu ayarlayın"
+        "Konfigurer en pinkode for nemt at låse dine data"
       ],
       "Settings successfully updated": [
-        "Ayarlar güncellendi"
+        "Indstillingerne blev opdateret"
       ],
       "Sign in or create an account to continue.": [
-        "İlerlemek için oturum ya da hesap açın."
+        "Log ind eller opret en konto for at fortsætte."
       ],
       "Sign in to your account": [
-        "Hesabınızda oturum açın"
+        "Log ind på din konto"
       ],
       "Signing you in": [
-        "Oturumunuz açılıyor"
+        "Logger dig ind"
       ],
       "Successfully exported all your items": [
-        "Tüm ögeleriniz dışa aktarıldı"
+        "Eksporterede alle dine elementer"
       ],
       "Successfully synced all vaults": [
-        "Tüm kasalar eşitlendi"
+        "Synkroniserede alle bokse"
       ],
       "Syncing your vaults…": [
-        "Kasalarınız eşitleniyor…"
+        "Synkroniserer dine bokse…"
       ],
       "Thank you, the problem has been reported": [
-        "Teşekkürler. Sorununuz bildirildi"
+        "Tak, problemet er blevet rapporteret"
       ],
       "The following item could not be imported :": [
-        "Şu öge içe aktarılamadı:",
-        "Şu ${ result.ignored.length } öge içe aktarılamadı"
+        "Det følgende element kunne ikke importeres :",
+        "De følgende ${ result.ignored.length } elementer kunne ikke importeres"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
+        "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+        "Denne eksport vil ikke være krypteret og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den når du er færdig med at bruge den."
       ],
       "Unable to copy to clipboard": [
-        "Panoya kopyalanamadı"
+        "Kunne ikke kopiere til udklipsholder"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
+        "Lås den op med din pinkode for at få adgang til indstillingerne."
       ],
       "Update login": [
-        "Oturum açma kaydını güncelle"
+        "Opdatér login"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını yükselt"
+        "Opgrader ${ PASS_APP_NAME }"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "\"${ payload.content.name }\" kasası silindi"
+        "Boksen \"${ payload.content.name }\" blev slettet"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "\"${ payload.share.content.name }\" kasası oluşturuldu"
+        "Boksen \"${ payload.share.content.name }\" blev oprettet"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "\"${ payload.share.content.name }\" kasası güncellendi"
+        "Boksen \"${ payload.share.content.name }\" blev opdateret"
       ],
       "Vault \"${ share.content.name }\" was disabled": [
-        "\"${ share.content.name }\" kasası kullanımdan kaldırılmış"
+        "Boksen \"${ share.content.name }\" blev deaktiveret"
       ],
       "Verification code": [
-        "Doğrulama kodu"
+        "Bekræftelseskode"
       ],
       "You are about to create:": [
-        "Şunu oluşturmak üzeresiniz:"
+        "Du er ved at oprette:"
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
-        "Deneme sürenizin bitmesine ${ daysRemaining } gün kaldı.",
-        "Deneme sürenizin bitmesine ${ daysRemaining } gün kaldı."
+        "Du har ${ daysRemaining } dag tilbage af din prøveperiode",
+        "Du har ${ daysRemaining } dage tilbage af din prøveperiode"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Ögeler yalnızca birincil kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til din primære boks. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Yeni ögeler yalnızca birincil kasanızda oluşturulabilir. Tüm kasalarınızda yeni ögeler oluşturabilmek için abonelik tarifenizi yükseltin."
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i din primære boks. For at oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
+        "Du har nået grænsen for, hvor mange aliasser du kan oprette. Opret et ubegrænset antal aliasser, når du opgraderer dit abonnement."
       ],
       "You have reached the limit of vaults you can create.": [
-        "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız."
+        "Du har nået grænsen for, hvor mange bokse du kan oprette."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
+        "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
+        "Du skal bruge denne pinkode til at låse ${ PASS_APP_NAME } op, når den låses automatisk efter en periode med inaktivitet."
       ],
       "You're about to create": [
-        "Şunu oluşturmak üzeresiniz"
+        "Du er ved at oprette"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
-        "${ PASS_APP_NAME } oturumunuz kilitlendi"
+        "Din ${ PASS_APP_NAME }-session er låst"
       ],
       "Your files will be encrypted and then saved": [
-        "Dosyalarınız şifrelendikten sonra kaydedilir"
+        "Din filer vil blive krypteret og derefter gemt"
       ]
     },
     "Label": {
       "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } karakter",
-        "${ passwordOptions.options.length } karakter"
+        "${ passwordOptions.options.length } tegn",
+        "${ passwordOptions.options.length } tegn"
       ],
       "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sözcük",
-        "${ passwordOptions.options.wordCount } sözcük"
+        "${ passwordOptions.options.wordCount } ord",
+        "${ passwordOptions.options.wordCount } ord"
       ],
       "1 hour": [
-        "1 saat"
+        "1 time"
       ],
       "1 minute": [
-        "1 dakika"
+        "1 minut"
       ],
       "10 minutes": [
-        "10 dakika"
+        "10 minutter"
       ],
       "15 minutes": [
-        "15 dakika"
+        "15 minutter"
       ],
       "2FA secret (TOTP)": [
-        "İki adımlı doğrulama kodu (tek kullanımlık)"
+        "2FA hemmelighed (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "İki adımlı doğrulama kodu (tek kullanımlık)"
+        "2FA token (TOTP)"
       ],
       "30 minutes": [
-        "30 dakika"
+        "30 minutter"
       ],
       "30 seconds": [
-        "30 saniye"
+        "30 sekunder"
       ],
       "5 minutes": [
-        "5 dakika"
+        "5 minutter"
       ],
       "A-Z": [
         "A-Z"
       ],
       "Alias": [
-        "Takma ad"
+        "Alias"
       ],
       "Alias address": [
-        "Takma ad adresi"
+        "Alias-adresse"
       ],
       "Aliases": [
-        "Takma adlar"
+        "Aliasser"
       ],
       "All": [
-        "Tümü"
+        "Alle"
       ],
       "All vaults": [
-        "Tüm kasalar"
+        "Alle bokse"
       ],
       "Alphabetical": [
-        "Alfabetik"
+        "Alfabetisk"
       ],
       "Application logs": [
-        "Uygulama günlükleri"
+        "Applikationslogs"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } otomatik kilitleme"
+        "Autolås ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
-        "Otomatik kilitleme süresi"
+        "Lås automatisk efter"
       ],
       "Autofill": [
-        "Otomatik doldurma"
+        "Autofyld"
       ],
       "Automatically open autofill when focusing login fields": [
-        "Oturum açma alanına geçildiğinde otomatik doldurma açılsın"
+        "Åbn automatisk autofyld, når der fokuseres på login-felter"
       ],
       "Autosave": [
-        "Otomatik kaydet"
+        "Gem automatisk"
       ],
       "Autosuggest": [
-        "Otomatik öneri"
+        "Auto-forslag"
       ],
       "Capital letters (A-Z)": [
-        "Büyük harfler (A-Z)"
+        "Store bogstaver (A-Z)"
       ],
       "Capitalise": [
-        "Büyüt"
+        "Brug store bogstaver"
       ],
       "Card number": [
-        "Kart numarası"
+        "Kortnummer"
       ],
       "Cardholder name": [
-        "Kart sahibinin adı"
+        "Kortholders navn"
       ],
       "Cards": [
-        "Kartlar"
+        "Kort"
       ],
       "Confirm vault name": [
-        "Kasa adı onayı"
+        "Bekræft boks-navn"
       ],
       "Create a credit card": [
-        "Kredi kartı ekle"
+        "Opret et kreditkort"
       ],
       "Create a hide-my-email alias": [
-        "Bir hide-my-email takma adı oluştur"
+        "Opret et hide-my-email alias"
       ],
       "Create a login": [
-        "Oturum açma kaydı oluştur"
+        "Opret et login"
       ],
       "Create an encrypted note": [
-        "Şifrelenmiş bir not oluştur"
+        "Opret en krypteret note"
       ],
       "Create new vault": [
-        "Yeni kasa oluştur"
+        "Opret ny boks"
       ],
       "Created": [
-        "Oluşturulma"
+        "Oprettet"
       ],
       "Credit Card": [
-        "Kredi kartı"
+        "Kreditkort"
       ],
       "Current plan": [
-        "Geçerli tarife"
+        "Nuværende abonnement"
       ],
       "Display": [
-        "Görünüm"
+        "Visning"
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Oturum açma alanlarında ${ PASS_APP_NAME } simgesi görüntülensin"
+        "Vis ${ PASS_APP_NAME }-ikon på login-felter"
       ],
       "Download logs": [
-        "Günlükleri indir"
+        "Hent logfiler"
       ],
       "Email aliases": [
-        "E-posta takma adları"
+        "E-mail-aliasser"
       ],
       "Empty trash": [
-        "Çöp kutusunu boşalt"
+        "Tøm papirkurv"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "${ PASS_APP_NAME } veri dışa aktarma dosyanızı şifreleyin"
+        "Krypter din ${ PASS_APP_NAME } dataeksportfil"
       ],
       "Expires on": [
-        "Son kullanma tarihi"
+        "Udløber"
       ],
       "Export": [
-        "Dışa aktar"
+        "Eksportér"
       ],
       "Forwards to": [
-        "Şuraya iletiyor"
+        "Videresender til"
       ],
       "General": [
-        "Genel"
+        "Generelt"
       ],
       "Grant": [
-        "İzin ver"
+        "Tildel"
       ],
       "Hidden": [
-        "Gizli"
+        "Skjult"
       ],
       "Hide password": [
-        "Parolayı gizle"
+        "Skjul adgangskode"
       ],
       "Import": [
-        "İçe aktar"
+        "Importér"
       ],
       "Import passwords": [
-        "Parolaları içe aktar"
+        "Importér adgangskoder"
       ],
       "Imported from : ": [
-        "Şuradan içe aktarıldı: "
+        "Importeret fra : "
       ],
       "Imported on : ": [
-        "Şu zamanda içe aktarıldı: "
+        "Importeret : "
       ],
       "Include numbers": [
-        "Sayılar katılsın"
+        "Inkluder tal"
       ],
       "Include numbers (0-9)": [
-        "Sayılar katılsın (0-9)"
+        "Inkluder tal (0-9)"
       ],
       "Label": [
-        "Etiket"
+        "Etikette"
       ],
       "Last 2 weeks": [
-        "Son 2 hafta"
+        "Sidste 2 uger"
       ],
       "Last autofill": [
-        "Son otomatik doldurma"
+        "Sidste autofyld"
       ],
       "Last month": [
-        "Son bir ay"
+        "Sidste måned"
       ],
       "Last week": [
-        "Son bir hafta"
+        "Sidste uge"
       ],
       "Latest import": [
-        "Son içe aktarma"
+        "Seneste import"
       ],
       "Learn more": [
-        "Ayrıntılı bilgi alın"
+        "Lær mere"
       ],
       "Login": [
-        "Oturum açma"
+        "Log ind"
       ],
       "Logins": [
-        "Oturum açma kayıtları"
+        "Logins"
       ],
       "Modified": [
-        "Değiştirilme"
+        "Ændret"
       ],
       "Most recent": [
-        "En yeni"
+        "Seneste"
       ],
       "Move items to": [
-        "Ögeleri şuraya taşı"
+        "Flyt elementer til"
       ],
       "Name": [
-        "Ad"
+        "Navn"
       ],
       "New vault": [
-        "Yeni kasa"
+        "Ny boks"
       ],
       "New-Old": [
-        "Yeniden eskiye"
+        "Nyt-Gammelt"
       ],
       "Newest to oldest": [
-        "Yeniden eskiye"
+        "Nyeste til ældste"
       ],
       "No history": [
-        "Geçmiş yok"
+        "Ingen historik"
       ],
       "Not recently used": [
-        "Yakında kullanılmadı"
+        "Ikke brugt for nyligt"
       ],
       "Note": [
-        "Not"
+        "Note"
       ],
       "Notes": [
-        "Notlar"
+        "Noter"
       ],
       "Old-New": [
-        "Eskiden yeniye"
+        "Gammelt-Nyt"
       ],
       "Oldest to newest": [
-        "Eskiden yeniye"
+        "Ældste til nyeste"
       ],
       "Passphrase": [
-        "Parola ifadesi"
+        "Adgangssætning"
       ],
       "Password": [
-        "Parola"
+        "Adgangskode"
       ],
       "Password history": [
-        "Parola geçmişi"
+        "Adgangskodehistorik"
       ],
       "Passwords": [
-        "Parolalar"
+        "Adgangskoder"
       ],
       "Permanently delete items": [
-        "Ögeleri kalıcı olarak sil"
+        "Slet elementer permanent"
       ],
       "PIN": [
-        "PIN"
+        "Pinkode"
       ],
       "Prefix": [
-        "Ön ek"
+        "Præfiks"
       ],
       "Primary vault": [
-        "Birincil kasa"
+        "Primær boks"
       ],
       "Prompt for auto-save": [
-        "Otomatik kaydetme uyarısı"
+        "Spørg om auto-gem"
       ],
       "Rate us": [
-        "Bizi değerlendirin"
+        "Bedøm os"
       ],
       "Recent": [
-        "Son"
+        "Seneste"
       ],
       "Report a problem": [
-        "Bir sorun bildireceğim"
+        "Anmeld et problem"
       ],
       "Restore all items": [
-        "Tüm ögeleri geri yükle"
+        "Gendan alle emner"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Vis adgangskode"
       ],
       "Security": [
-        "Güvenlik"
+        "Sikkerhed"
       ],
       "Select an email address": [
-        "Bir e-posta adresi seçin"
+        "Vælg en e-mailadresse"
       ],
       "Select your password manager": [
-        "Parola yöneticinizi seçin"
+        "Vælg din adgangskodeadministrator"
       ],
       "Selected": [
-        "Seçilmiş"
+        "Valgte"
       ],
       "Session locking": [
-        "Oturum kilitleme"
+        "Sessionslåsning"
       ],
       "Set PIN code": [
-        "PIN kodu ayarla"
+        "Angiv pinkode"
       ],
       "Settings": [
-        "Ayarlar"
+        "Indstillinger"
       ],
       "Show website thumbnails": [
-        "Site küçük görselleri görüntülensin"
+        "Vis websteds-miniaturebilleder"
       ],
       "Special characters (!&*)": [
-        "Özel karakterler (!&*)"
+        "Specielle tegn (!&*)"
       ],
       "Suffix": [
-        "Son ek"
+        "Suffiks"
       ],
       "Support": [
-        "Destek"
+        "Support"
       ],
       "Text": [
-        "Metin"
+        "Tekst"
       ],
       "Title": [
-        "Başlık"
+        "Titel"
       ],
       "Today": [
-        "Bugün"
+        "I dag"
       ],
       "Total imported items : ": [
-        "Toplam içe aktarılan öge: "
+        "Samlet antal importerede elementer : "
       ],
       "Total items : ": [
-        "Toplam öge: "
+        "Elementer i alt : "
       ],
       "TOTP": [
-        "Tek kullanımlık parola"
+        "TOTP"
       ],
       "Trash": [
-        "Çöp kutusu"
+        "Papirkurv"
       ],
       "Type": [
-        "Tür"
+        "Type"
       ],
       "Unnamed Credit Card": [
-        "Adsız kredi kartı"
+        "Unavngivet kreditkort"
       ],
       "Unnamed item": [
-        "Adsız öge"
+        "Unavngivet element"
       ],
       "Unnamed note": [
-        "Adsız not"
+        "Unavngivet note"
       ],
       "Untitled": [
-        "Adsız"
+        "Unavngivet"
       ],
       "Update": [
-        "Güncelle"
+        "Opdatér"
       ],
       "Username": [
-        "Kullanıcı adı"
+        "Brugernavn"
       ],
       "Username (alias)": [
-        "Kullanıcı adı (takma ad)"
+        "Brugernavn (alias)"
       ],
       "Username (new alias)": [
-        "Kullanıcı adı (yeni takma ad)"
+        "Brugernavn (nyt alias)"
       ],
       "Vault": [
-        "Kasa"
+        "Boks"
       ],
       "Vaults": [
-        "Kasalar"
+        "Bokse"
       ],
       "Verification number": [
-        "Doğrulama numarası"
+        "Verifikationsnummer"
       ],
       "View logs": [
-        "Günlükleri görüntüle"
+        "Vis logfiler"
       ],
       "Websites": [
-        "Siteler"
+        "Websider"
       ],
       "You are about to create": [
-        "Şunu oluşturmak üzeresiniz"
+        "Du er ved at oprette"
       ]
     },
     "Option": {
       "Commas": [
-        "Virgül"
+        "Kommaer"
       ],
       "Hyphens": [
-        "Tire"
+        "Bindestreger"
       ],
       "Memorable Password": [
-        "Hatırlanabilir parola"
+        "Huskværdig adgangskode"
       ],
       "Numbers": [
-        "Rakamlar"
+        "Tal"
       ],
       "Numbers and Symbols": [
-        "Rakamlar ve simgeler"
+        "Tal og Symboler"
       ],
       "Periods": [
-        "Nokta"
+        "Pumktummer"
       ],
       "Random Password": [
-        "Rastgele parola"
+        "Tilfældig adgangskode"
       ],
       "Spaces": [
-        "Boşluk"
+        "Mellemrum"
       ],
       "Underscores": [
-        "Alt çizgi"
+        "Bundstreger"
       ]
     },
     "Placeholder": {
       "Add 2FA secret": [
-        "İki adımlı doğrulama parolası ekle"
+        "Tilføj 2FA-hemmelighed"
       ],
       "Add hidden text": [
-        "Gizli metin ekle"
+        "Tilføj skjult tekst"
       ],
       "Add note": [
-        "Not ekle"
+        "Tilføj note"
       ],
       "Add text": [
-        "Metin ekle"
+        "Tilføj tekst"
       ],
       "Enter a note...": [
-        "Bir not yazın..."
+        "Indtast en note..."
       ],
       "Enter a prefix": [
-        "Bir ön ek yazın"
+        "Indtast et præfiks"
       ],
       "Enter email or username": [
-        "E-posta adresi ya da kullanıcı adı yazın"
+        "Indtast e-mail eller brugernavn"
       ],
       "Enter password": [
-        "Parolayı yazın"
+        "Indtast adgangskode"
       ],
       "Full Name": [
-        "Ad Soyad"
+        "Fuldt navn"
       ],
       "MM/YYYY": [
-        "AA/YYYY"
+        "MM/ÅÅÅÅ"
       ],
       "Move items to another vault (optional)": [
-        "Ögeler başka bir kasaya taşınsın (isteğe bağlı)"
+        "Flyt elementer til en anden boks (valgfrit)"
       ],
       "Pick a vault": [
-        "Bir kasa seçin"
+        "Vælg en boks"
       ],
       "Please describe the problem and include any error messages": [
-        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+        "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
+        "Indtast \"${ vaultName }\" igen for at bekræfte sletning"
       ],
       "Search in ${ vault.content.name }": [
-        "${ vault.content.name } içinde ara"
+        "Søg i ${ vault.content.name }"
       ],
       "Search in all vaults": [
-        "Tüm kasalarda ara"
+        "Søg i alle bokse"
       ],
       "Search in Trash": [
-        "Çöp kutusunda ara"
+        "Søg i papirkurv"
       ],
       "Select a suffix": [
-        "Bir son ek yazın"
+        "Vælg et suffiks"
       ],
       "Unknown origin": [
-        "Kaynak bilinmiyor"
+        "Ukendt oprindelse"
       ],
       "Untitled": [
-        "Adsız"
+        "Uden titel"
       ],
       "Used on ${ url }": [
-        "${ url } üzerinde kullanılmış"
+        "Brugt på ${ url }"
       ],
       "Write your note": [
-        "Notunuzu yazın"
+        "Skriv din note"
       ]
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "${ PASS_APP_NAME } ayarları"
+        "${ PASS_APP_NAME }-indstillinger"
       ],
       "Auto-lock update": [
-        "Ootmatik kilitleme güncellemesi"
+        "Autolås-opdatering"
       ],
       "Confirm PIN code": [
-        "PIN kodu onayı"
+        "Bekræft pinkode"
       ],
       "Connect your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesabınızı bağlayın"
+        "Tilslut din ${ BRAND_NAME }-konto"
       ],
       "Create PIN code": [
-        "PIN kodu oluştur"
+        "Opret pinkode"
       ],
       "Delete vault \"${ vaultName }\" ?": [
-        "\"${ vaultName }\" kasası silinsin mi?"
+        "Slet boksen \"${ vaultName }\"?"
       ],
       "Discard changes ?": [
-        "Değişiklikler yok sayılsın mı?"
+        "Kassér ændringer?"
       ],
       "Enjoy your free trial": [
-        "Ücretsiz denemenizin tadını çıkarın"
+        "Nyd din gratis prøveperiode"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } hoşunuza gitti mi?"
+        "Glad for ${ PASS_APP_NAME }?"
       ],
       "Enter your Pin": [
-        "PIN kodunuzu yazın"
+        "Indtast din pinkode"
       ],
       "Get the mobile apps": [
-        "Mobil uygulamaları edinin"
+        "Hent mobil-appsene"
       ],
       "Grant permissions": [
-        "İzinleri ver"
+        "Giv tilladelser"
       ],
       "Hide my email": [
-        "Hide My Email"
+        "Hide my email"
       ],
       "Import - ${ date }": [
-        "İçe aktarma - ${ date }"
+        "Import - ${ date }"
       ],
       "Import to vaults": [
-        "Kasalar içine aktar"
+        "Importér til bokse"
       ],
       "Permanently remove all items ?": [
-        "Tüm ögeler kalıcı olarak silinsin mi?"
+        "Fjern alle elementer permanent?"
       ],
       "Pin the extension": [
-        "Eklentiyi sabitle"
+        "Fastgør udvidelsen"
       ],
       "Secure your data": [
-        "Verilerinizi koruyun"
+        "Beskyt dine data"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
+        "Skifter du til ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
+        "Tak fordi du installerede ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
-        "Eklenti kullanılmaya hazır."
+        "Udvidelsen er nu klar til at blive brugt."
       ],
       "Trash empty": [
-        "Çöp kutusu boş"
+        "Papirkurv tom"
       ],
       "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } kilidini aç"
+        "Lås op for ${ brandNameJSX }"
       ],
       "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } kilidini aç"
+        "Lås op for ${ PASS_APP_NAME }"
       ],
       "Update available": [
-        "Güncelleme yayınlanmış"
+        "Opdatering tilgængelig"
       ],
       "Use my email": [
-        "E-postamı kullan"
+        "Brug min e-mail"
       ],
       "Use secure password": [
-        "Güvenli parola kullanılsın"
+        "Brug sikker adgangskode"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } uygulamasına hoş geldiniz"
+        "Velkommen til ${ brandNameJSX }"
       ],
       "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasına hoş geldiniz"
+        "Velkommen til ${ PASS_APP_NAME }"
       ],
       "Welcome!": [
-        "Hoş geldiniz!"
+        "Velkommen!"
       ],
       "Why ${ PASS_APP_NAME }?": [
-        "Neden ${ PASS_APP_NAME }?"
+        "Hvorfor ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "Kasanız boş"
+        "Din boks er tom"
       ]
     },
     "Validation": {
       "Duplicated url": [
-        "Çift adres"
+        "Duplikeret URL"
       ],
       "Label is required": [
-        "Etiketin yazılması zorunludur"
+        "Etiket er påkrævet"
       ],
       "OTP Secret or URI is invalid": [
-        "Tek kullanımlık parola kodu ya da adresi geçersiz"
+        "OTP-hemmelighed eller URI er ugyldig"
       ],
       "OTP Secret or URI required": [
-        "Tek kullanımlık parola kodu ya da adresi gerekli"
+        "OTP-hemmelighed eller URI påkrævet"
       ],
       "Url already exists": [
-        "Adres zaten var"
+        "URL eksisterer allerede"
       ],
       "Url cannot be empty": [
-        "Adres boş olamaz"
+        "URL må ikke være tom"
       ],
       "Url is invalid": [
-        "Adres geçersiz"
+        "URL er ugyldig"
       ]
     },
     "Warning": {
       "A description of the problem is required": [
-        "Sorunun açıklamasının yazılması zorunludur"
+        "En beskrivelse af problemet er påkrævet"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "\"${ name }\" e-posta takma adı şu anda \"${ relatedLoginName }\" oturum açma ögesi için kullanılıyor. \"${ aliasEmail }\" adresine gönderilen e-postaların alınmasını da durdurabilirsiniz"
+        "Aliasset \"${ name }\" bruges i øjeblikket i login-elementet \"${ relatedLoginName }\". Du vil også stoppe med at modtage e-mails sendt til \"${ aliasEmail }\"."
       ],
       "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Çöpe attığınız tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+        "Alle elementerne i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
       ],
       "An error occured while exporting your data": [
-        "Verileriniz dışa aktarılırken bir sorun çıktı"
+        "Der opstod en fejl under eksport af dine data"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Bu takma adın e-posta kutuları şu anda alınamadı"
+        "Kan ikke hente postkasser for dette alias lige nu"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "\"${ vaultName }\" kasası oluşturulamadı"
+        "Kunne ikke oprette boksen \"${ vaultName }\""
       ],
       "Empty note": [
-        "Boş not"
+        "Tom note"
       ],
       "Expiration Date is incomplete": [
-        "Son kullanma tarihi eksik."
+        "Udløbsdato er ukomplet"
       ],
       "Invalid alias prefix": [
-        "Takma ad ön eki geçersiz"
+        "Ugyldigt alias-præfiks"
       ],
       "Maximum length is ${ maxLength } characters": [
-        "En fazla uzunluk ${ maxLength } karakter"
+        "Maksimal længde er ${ maxLength } tegn"
       ],
       "Missing alias prefix": [
-        "Takma ad ön eki eksik"
+        "Mangler alias-præfiks"
       ],
       "Missing alias suffix": [
-        "Takma ad son eki eksik"
+        "Mangler alias-suffiks"
       ],
       "No items": [
-        "Herhangi bir öge yok"
+        "Ingen elementer"
       ],
       "No items in trash matching": [
-        "Çöp kutusunda eşleşen bir öge bulunamadı"
+        "Ingen matchende elementer i papirkurven"
       ],
       "No items matching": [
-        "Eşleşen bir öge bulunamadı"
+        "Ingen elementer matcher"
       ],
       "No password manager selected": [
-        "Herhangi bir parola yöneticisi seçilmemiş"
+        "Ingen adgangskodeadministrator valgt"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+        "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
       ],
       "Passphrase is required": [
-        "Parola ifadesinin yazılması zorunludur"
+        "Adgangssætning er påkrævet"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
+        "PGP-krypteret eksportfil kræver adgangssætning"
       ],
       "Please log back in": [
-        "Lütfen yeniden oturum açın"
+        "Log venligst ind igen"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
+        "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Takma ad ön ekiniz 40 karakterden uzun olamaz"
+        "Alias-præfikset må højest være 40 tegn langt."
       ],
       "Title is required": [
-        "Başlığın yazılması zorunludur"
+        "Titel er påkrævet"
       ],
       "Trash alias ?": [
-        "Takma ad çöpe atılsın mı?"
+        "Kassér alias?"
       ],
       "Unable to save": [
-        "Kaydedilemedi"
+        "Kunne ikke gemme"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
+        "Kunne ikke logge ind på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "\"${ vaultName }\" kasası ve içindeki tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz"
+        "Boksen \"${ vaultName }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling"
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "\"${ vaultName }\" kasası kalıcı olarak silinecek ve içindeki ögeler \"${ destinationVaultName }\" kasasına taşınacak"
+        "Boksen \"${ vaultName }\" vil blive slettet permanent og alle dens elementer flyttet til \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
-        "Kasa adının yazılması zorunludur"
+        "Navn på boks er påkrævet"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
+        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
-        "Kaydedilmemiş değişiklikleriniz var, bunları silmek istediğinize emin misiniz?"
+        "Du har ikke-gemte ændringer, er du sikker på, at du vil kassere dem?"
       ],
       "You must select at least one mailbox": [
-        "En az bir e-posta kutusu seçmelisiniz"
+        "Du skal vælge mindst en postkasse"
       ],
       "Your plan does not allow you to create more aliases": [
-        "Tarifenizin sınırları daha fazla takma ad oluşturmanıza izin vermiyor"
+        "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
       ],
       "Your plan only allows you to autofill from your primary vault": [
-        "Tarifeniz yalnızca birincil kasadan otomatik doldurmaya izin veriyor"
+        "Dit abonnement tillader kun autofyld fra din primære boks."
       ],
       "Your session was locked due to inactivity": [
-        "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"
+        "Din session blev låst grundet inaktivitet"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler birincil kasanız içine aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+        "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din primære boks. For at importere til flere bokse skal du opgradere dit abonnement."
       ]
     }
   }
