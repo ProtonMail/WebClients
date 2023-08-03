@@ -4,6 +4,11 @@ export const getAttachment = (attachmentID: string) => ({
     output: 'arrayBuffer',
 });
 
+export const getAttachmentsMetadata = (attachmentID: string) => ({
+    method: 'get',
+    url: `mail/v4/attachments/${attachmentID}/metadata`,
+});
+
 export const uploadAttachment = (data: {
     Filename: string;
     MessageID: string;

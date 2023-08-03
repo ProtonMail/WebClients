@@ -12,7 +12,7 @@ import { MessageErrors, MessageStateWithDataFull } from '../../logic/messages/me
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 import { useAppDispatch } from '../../logic/store';
 import { useContactsMap } from '../contact/useContacts';
-import { useGetAttachment } from '../useAttachment';
+import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
