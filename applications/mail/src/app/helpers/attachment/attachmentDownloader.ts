@@ -52,7 +52,7 @@ export const formatDownload = async (
             return {
                 attachment: {
                     Name: `${attachment.Name}.pgp`,
-                    MIMEType: 'application/pgp',
+                    MIMEType: 'application/pgp-encrypted',
                     ID: attachment.ID,
                 },
                 data: error.binary,

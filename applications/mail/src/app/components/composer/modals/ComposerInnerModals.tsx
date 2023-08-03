@@ -4,8 +4,8 @@ import { Href } from '@proton/atoms';
 import { Alert, ErrorButton } from '@proton/components';
 import { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange } from '../Composer';
@@ -23,7 +23,7 @@ interface Props {
     handleCloseInnerModal: () => void;
     handleScheduleSend: (scheduledAt: number) => void;
     handleCloseInsertImageModal: () => void;
-    handleAddAttachmentsUpload: ((action: ATTACHMENT_ACTION, files?: File[]) => Promise<void>) & Cancellable;
+    handleAddAttachmentsUpload: ((action: ATTACHMENT_DISPOSITION, files?: File[]) => Promise<void>) & Cancellable;
     handleDelete: () => void;
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;

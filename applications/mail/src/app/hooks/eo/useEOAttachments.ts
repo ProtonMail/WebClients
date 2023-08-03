@@ -3,12 +3,13 @@ import { RefObject, useState } from 'react';
 import { useHandler, useNotifications } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { ATTACHMENT_ACTION, checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
+import { checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -33,7 +34,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
-    const handleAddAttachmentsUpload = useHandler(async (action: ATTACHMENT_ACTION, files: File[] = []) => {
+    const handleAddAttachmentsUpload = useHandler(async (action: ATTACHMENT_DISPOSITION, files: File[] = []) => {
         if (publicKey) {
             files.forEach((file: File) => {
                 void uploadEO(file, message as MessageStateWithData, publicKey, action).then(
@@ -44,7 +45,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
                             const Attachments = [...getAttachments(message.data), attachment];
                             const embeddedImages = getEmbeddedImages(message);
 
-                            if (action === ATTACHMENT_ACTION.INLINE) {
+                            if (action === ATTACHMENT_DISPOSITION.INLINE) {
                                 embeddedImages.push(createEmbeddedImageFromUpload(attachment));
                             }
 
@@ -58,7 +59,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
                             return { data: { Attachments }, messageImages };
                         });
 
-                        if (action === ATTACHMENT_ACTION.INLINE) {
+                        if (action === ATTACHMENT_DISPOSITION.INLINE) {
                             editorActionsRef.current?.insertEmbedded(attachment, packets.Preview);
                         }
                     }
@@ -88,7 +89,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
         if (!plainText && embeddable) {
             setImagesToInsert(files);
         } else {
-            void handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+            void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
         }
     });
 
@@ -116,7 +117,7 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
         });
     });
 
-    const handleUploadImage = (action: ATTACHMENT_ACTION) => {
+    const handleUploadImage = (action: ATTACHMENT_DISPOSITION) => {
         void handleAddAttachmentsUpload(action, imagesToInsert);
         setImagesToInsert([]);
     };
