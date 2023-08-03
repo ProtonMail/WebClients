@@ -28,6 +28,8 @@ export const setPrimaryAddressKey = async (
     );
     const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
     await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList }));
+    const newActivePrimaryKey = updatedActiveKeys.find((activeKey) => activeKey.ID === ID)!!;
+    return [newActivePrimaryKey, updatedActiveKeys] as const;
 };
 
 export const deleteAddressKey = async (

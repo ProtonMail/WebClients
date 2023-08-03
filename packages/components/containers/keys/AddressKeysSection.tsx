@@ -29,6 +29,7 @@ import {
 } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import { useKTVerifier } from '../keyTransparency';
+import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
@@ -56,6 +57,7 @@ const AddressKeysSection = () => {
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
+    const resignSKLWithPrimaryKey = useResignSKLWithPrimaryKey();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -96,8 +98,16 @@ const AddressKeysSection = () => {
 
         try {
             setLoadingKeyID(ID);
-            await setPrimaryAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
-            await keyTransparencyCommit(userKeys);
+            const [newPrimaryKey] = await setPrimaryAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
+            await Promise.all([
+                resignSKLWithPrimaryKey({
+                    address: Address,
+                    newPrimaryKey: newPrimaryKey.privateKey,
+                    formerPrimaryKey: addressKeys[0].publicKey,
+                    userKeys,
+                }),
+                keyTransparencyCommit(userKeys),
+            ]);
             await call();
         } finally {
             setLoadingKeyID('');
@@ -203,8 +213,15 @@ const AddressKeysSection = () => {
             keyPassword: authentication.getPassword(),
             keyTransparencyVerify,
         });
-
-        await keyTransparencyCommit(userKeys);
+        await Promise.all([
+            resignSKLWithPrimaryKey({
+                address: Address,
+                newPrimaryKey: newKey.privateKey,
+                formerPrimaryKey: addressKeys[0].publicKey,
+                userKeys,
+            }),
+            keyTransparencyCommit(userKeys),
+        ]);
         await call();
         return newKey.fingerprint;
     };
