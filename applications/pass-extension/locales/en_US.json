@@ -3,5 +3,35 @@
     "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "en_US"
   },
-  "contexts": {}
+  "contexts": {
+    "Action": {
+      "Generated password": [
+        "Generated passwords"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade to a paid plan to create multiple vaults."
+      ]
+    },
+    "Title": {
+      "Delete vault \"${ vaultName }\" ?": [
+        "Delete vault \"${ vaultName }\"?"
+      ],
+      "Discard changes ?": [
+        "Discard changes?"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ]
+    },
+    "Warning": {
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action."
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Your subscription does not allow you to create more vaults."
+      ]
+    }
+  }
 }
