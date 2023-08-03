@@ -14,6 +14,8 @@ const getConfig = (env: any): webpack.Configuration => {
     const isProduction = process.env.NODE_ENV === 'production';
     const isRelease = !!process.env.CI_COMMIT_TAG;
 
+    const assetsFolder = 'assets';
+
     const options = {
         isProduction,
         isRelease,
@@ -40,11 +42,13 @@ const getConfig = (env: any): webpack.Configuration => {
         logical: env.logical || false,
     };
 
+    const version = options.buildData.version;
+
     return {
         target: `browserslist:${options.browserslist}`,
-        mode: options.isProduction ? 'production' : 'development',
-        bail: options.isProduction,
-        devtool: options.isProduction ? 'source-map' : 'cheap-module-source-map',
+        mode: isProduction ? 'production' : 'development',
+        bail: isProduction,
+        devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
         watchOptions: {
             ignored: /node_modules|(i18n\/*.json)|\*\.(gif|jpeg|jpg|ico|png)/,
             aggregateTimeout: 600,
@@ -67,10 +71,14 @@ const getConfig = (env: any): webpack.Configuration => {
             unsupported: [require.resolve('@proton/shared/lib/supported/unsupported.ts')],
         },
         output: {
-            filename: options.isProduction ? '[name].[contenthash:8].js' : '[name].js',
+            filename: isProduction
+                ? `${assetsFolder}/[name].[contenthash:8].js?v=${version}`
+                : `${assetsFolder}/[name].js?v=${version}`,
             publicPath: options.publicPath,
             chunkFilename: (pathData) => {
-                const result = options.isProduction ? '[name].[contenthash:8].chunk.js' : '[name].chunk.js';
+                const result = isProduction
+                    ? `${assetsFolder}/[name].[contenthash:8].chunk.js?v=${version}`
+                    : `${assetsFolder}/[name].chunk.js?v=${version}`;
                 const chunkName = pathData?.chunk?.name;
                 if (chunkName && (chunkName.startsWith('date-fns/') || chunkName.startsWith('locales/'))) {
                     // @ts-ignore
@@ -86,9 +94,9 @@ const getConfig = (env: any): webpack.Configuration => {
                 const name = base.slice(0, base.length - ext.length);
                 if (name.includes('.var')) {
                     const replacedNamed = name.replace('.var', '-var');
-                    return `assets/${replacedNamed}.[hash][ext][query]`;
+                    return `${assetsFolder}/${replacedNamed}.[hash][ext]?v=${version}`;
                 }
-                return 'assets/[name].[hash][ext][query]';
+                return `${assetsFolder}/[name].[hash][ext]?v=${version}`;
             },
             crossOriginLoading: 'anonymous',
         },
@@ -104,10 +112,15 @@ const getConfig = (env: any): webpack.Configuration => {
             strictExportPresence: true, // Make missing exports an error instead of warning
             rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders()],
         },
-        plugins: getPlugins(options),
+        plugins: getPlugins({
+            ...options,
+            cssName: isProduction
+                ? `${assetsFolder}/[name].[contenthash:8].css?v=${version}`
+                : `${assetsFolder}/[name].css?v=${version}`,
+        }),
         optimization: getOptimizations(options),
         devServer: {
-            hot: !options.isProduction,
+            hot: !isProduction,
             devMiddleware: {
                 stats: 'minimal',
                 publicPath: options.publicPath,
