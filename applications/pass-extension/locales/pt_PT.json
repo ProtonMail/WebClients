@@ -267,7 +267,7 @@
         "Actualizar"
       ],
       "Upgrade to keep these features": [
-        "Actualize para manter estas funcionalidades"
+        "Atualize para manter estas funcionalidades"
       ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
@@ -382,7 +382,7 @@
         "Conceda a ${ PASS_APP_NAME } as permissões de extensão necessárias para continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixe a extensão ou selecione Continua sem fixar."
+        "Fixe a extensão ou selecione \"Continuar sem fixar\"."
       ],
       "Request timed out": [
         "O pedido expirou"
@@ -497,13 +497,13 @@
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        "Melhore para um plano pago para um plano pago para criar vários cofres."
+        " Atualize para um plano pago para criar vários cofres."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "O item \"${ payload.item.data.metadata.name }\" foi descartado"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "A actualização do \"${ payload.item.data.metadata.name }\" foi descartada."
+        "A atualização do \"${ payload.item.data.metadata.name }\" foi descartada."
       ],
       "\"${ payload.name }\" set as primary vault": [
         "\"${ payload.name }\" definido como cofre primário"
@@ -717,7 +717,7 @@
         "Abrir o menu Extensões"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
-        "As palavras-passe geradas com mais de 1 dia dia serão automaticamente eliminadas do histórico."
+        "As palavras-passe geradas com mais de 1 dia serão automaticamente eliminadas do histórico."
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixe ${ PASS_APP_NAME } na sua barra de ferramentas"
@@ -734,6 +734,9 @@
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Confirme o seu código PIN para finalizar o registo das definições de bloqueio automático."
       ],
+      "Please consider leaving a review.": [
+        "Considere deixar um comentário."
+      ],
       "Please enter your current pin code to continue": [
         "Introduza o seu código Pin actual para continuar"
       ],
@@ -747,7 +750,7 @@
         "Guardar login"
       ],
       "Select the destination vault for each imported vault.": [
-        "Selecione o cofre de destino para cada cofre importado."
+        "Seleccione o cofre de destino para cada cofre importado."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
@@ -1338,7 +1341,7 @@
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "Configurações do ${ PASS_APP_NAME }"
+        "${ PASS_APP_NAME } Definições"
       ],
       "Auto-lock update": [
         "Actualização de bloqueio automático"
@@ -1383,7 +1386,7 @@
         "Importar para os cofres"
       ],
       "Permanently remove all items ?": [
-        "Remover permanentemente todos os itens ?"
+        "Remover permanentemente todos os itens?"
       ],
       "Pin the extension": [
         "Fixe a extensão"
@@ -1395,7 +1398,7 @@
         "Passar para o ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
-        "Agradecemos-lhe por por instalar o ${ PASS_APP_NAME }"
+        "Agradecemos-lhe por instalar o ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
         "A extensão está pronta a ser utilizada."
@@ -1480,7 +1483,7 @@
         "Nota vazia"
       ],
       "Expiration Date is incomplete": [
-        "A data de expiração não é válida."
+        "A data de expiração está incompleta"
       ],
       "Invalid alias prefix": [
         "Prefixo de alias inválido"
@@ -1504,7 +1507,7 @@
         "Nenhum item correspondente"
       ],
       "No password manager selected": [
-        "Não está selecionado nenhum gestor de palavras-passe selecionado."
+        "Nenhum gestor de palavras-passe selecionado"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Só são permitidos caracteres alfanuméricos, pontos, hífenes e sublinhados"
@@ -1540,7 +1543,7 @@
         "Não é possível iniciar sessão no ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "O cofre \"${ vaultName }\" e todos os seus itens serão eliminados permanentemente. Não é possível anular esta acção."
+        "O cofre \"${ vaultName }\" e todos os seus itens serão eliminados permanentemente. Não é possível anular esta ação."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "O cofre \"${ vaultName }\" será eliminado permanentemente, e todos os seus itens serão movidos para \"${ destinationVaultName }\"."
@@ -1567,7 +1570,7 @@
         "A sua sessão foi bloqueada devido à inatividade."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu cofre principal. Para importar para vários cofres, actualize a sua subscrição."
+        "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu cofre principal. Para importar para vários cofres, atualize a sua subscrição."
       ]
     }
   }

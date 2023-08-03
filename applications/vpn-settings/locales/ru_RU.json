@@ -2056,6 +2056,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Create your account": [
+        "Создать аккаунт"
+      ],
       "Get help": [
         "Получить помощь"
       ],
@@ -2588,6 +2591,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
+      "Summary": [
+        "Сводка"
+      ],
       "support team": [
         "служба поддержки"
       ],
@@ -2887,6 +2893,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Ваши сообщения, календари или контакты будут заблокированы. Чтобы восстановить эти данные, вам понадобится фраза восстановления или ваш ${ oldPassword }."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Ваша информация в безопасности с нами. Мы будем связываться с вами только когда это требуется для предоставления наших сервисов."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
@@ -3584,6 +3593,12 @@
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
       ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } с неограниченным количеством псевдонимов hide-my-email"
       ],
@@ -3634,6 +3649,9 @@
       ],
       "Contact groups management": [
         "Управление группами контактов"
+      ],
+      "Custom domains for email aliases": [
+        "Пользовательские домены для псевдонимов электронной почты"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -4180,6 +4198,30 @@
         "Стандартные конфигурации сервера"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Start using ${ appName }": [
+        "Начните использовать ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "Создание вашего аккаунта"
+      ],
+      "Preparing your Recovery Kit": [
+        "Подготовка вашего набора для восстановления"
+      ],
+      "Updating your account": [
+        "Обновление вашего аккаунта"
+      ],
+      "Verifying your payment": [
+        "Подтверждение вашего платежа"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
@@ -4311,6 +4353,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Доступ предоставил ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -4959,6 +5006,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } бесплатно"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
       ],
@@ -5477,6 +5527,18 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Попробуйте ${ upsellPlanName } без риска"
       ],

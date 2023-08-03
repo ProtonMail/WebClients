@@ -3463,7 +3463,7 @@
         "Tillagda och borttagna deltagare kommer att aviseras."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adressverifiering med Säkra Nycklar är aktiverat för denna adress. För att kunna skicka till denna adress ska de publika nycklarna, som kan användas för att skicka, först göras säkra."
+        "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
@@ -4630,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Stäng"
+      "Cancel": [
+        "Avbryt"
       ],
       "Manage calendars": [
         "Hantera kalendrar"

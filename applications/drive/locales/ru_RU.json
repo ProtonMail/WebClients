@@ -3529,6 +3529,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
+      "Enter the device name to confirm removal.": [
+        "Введите имя устройства, чтобы подтвердить удаление."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
@@ -4041,6 +4044,9 @@
         "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
         "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
         "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки."
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Это удалит синхронизированное устройство ${ deviceName } из ${ DRIVE_APP_NAME } и остановит синхронизацию папок, которые вы добавили в «Мои компьютеры»."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
