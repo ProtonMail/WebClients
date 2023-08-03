@@ -18,6 +18,7 @@ import {
     UnAuthenticatedApiProvider,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import ModalsChildren from '@proton/components/containers/modals/Children';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -60,6 +61,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
+            <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
                 <FeaturesProvider>
                     <ExperimentsProvider>
