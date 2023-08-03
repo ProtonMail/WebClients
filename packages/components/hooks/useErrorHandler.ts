@@ -13,6 +13,10 @@ const useErrorHandler = () => {
     const { createNotification } = useNotifications();
 
     return useCallback((error: any, { notify = true, trace = true }: { notify?: boolean; trace?: boolean } = {}) => {
+        if (!error) {
+            return;
+        }
+
         const apiErrorMessage = getApiErrorMessage(error);
         const errorMessage = error.message || c('Error').t`Unknown error`;
 
@@ -23,7 +27,7 @@ const useErrorHandler = () => {
             createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
         }
 
-        const shouldTrace = trace && !apiErrorMessage;
+        const shouldTrace = trace && error.trace !== false && !apiErrorMessage;
         if (shouldTrace) {
             traceError(error);
         }
