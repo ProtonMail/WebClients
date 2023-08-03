@@ -288,8 +288,9 @@ export const handleUnlock = async ({
 
     const unlockResult = await handleUnlockKey(user, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        const error = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
+        const error: any = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
         error.name = 'PasswordError';
+        error.trace = false;
         throw error;
     }
 
@@ -400,10 +401,11 @@ export const handleTotp = async ({
 
     await api(auth2FA({ TwoFactorCode: totp })).catch((e) => {
         if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
-            const error = new Error(
+            const error: any = new Error(
                 getApiErrorMessage(e) || c('Error').t`Incorrect login credentials. Please try again.`
             );
             error.name = 'TOTPError';
+            error.trace = false;
             throw error;
         }
         throw e;

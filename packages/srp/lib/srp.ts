@@ -172,7 +172,11 @@ export const getSrp = async (
     authVersion = Version
 ) => {
     if (!checkUsername(authVersion, username, Username)) {
-        throw new Error('Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).');
+        const error: any = new Error(
+            'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
+        );
+        error.trace = false;
+        throw error;
     }
 
     const modulusArray = await verifyAndGetModulus(serverModulus);
