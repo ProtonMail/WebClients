@@ -1041,6 +1041,9 @@
       "Disable": [
         "無効にする"
       ],
+      "Disable E2EE": [
+        "エンドツーエンド暗号化を無効にする"
+      ],
       "Enable": [
         "有効化"
       ],
@@ -3729,7 +3732,7 @@
     },
     "Event title": {
       "(no title)": [
-        "（タイトルなし）"
+        "(タイトルなし)"
       ]
     },
     "Export calendar": {
@@ -4043,6 +4046,9 @@
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organization.Name }": [
         "${ member.Name } が ${ organization.Name } から削除されました"
+      ],
+      "An error occurred, please try again": [
+        "エラーが発生しました。もう一度お試しください"
       ],
       "Member updated": [
         "メンバーが更新されました"
@@ -6080,7 +6086,7 @@
         "プレビューの読み込みに失敗しました"
       ],
       "Preview for this file type is not supported": [
-        "申し訳ございません、このファイル形式はサポートされておりません"
+        "このファイル形式はサポートされておりません。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
@@ -6785,7 +6791,7 @@
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
+        "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "暗号化されたデータを復元する必要が生じたときのために、この鍵のバックアップをエクスポートしておくことを推奨します。"
@@ -9353,7 +9359,7 @@
         "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します (例: ショッピング アカウントの JohnShopper@${ domain })。"
+        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します (例: ショッピングアカウントのJohnShopper@${ domain })。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
@@ -9419,7 +9425,7 @@
         "ユーザーが 6 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマー サクセス チームから電話サポートをご利用いただけます"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読むことができるのは、送信者と対象の受信者だけです。"
+        "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "WiFi ネットワークに接続されているすべてのデバイスを保護します。 VPN 設定を直接サポートしていないデバイスをお持ちの場合にも役立ちます。"

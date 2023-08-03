@@ -8071,10 +8071,10 @@
         "Passwort wiederholen"
       ],
       "Require 2FA for administrators": [
-        "2FA für Administratoren verlangen"
+        "2FA für Administratoren erfordern"
       ],
       "Require 2FA for everyone": [
-        "2FA für alle verlangen"
+        "2FA für jeden erfordern"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -8636,6 +8636,38 @@
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Anmeldung"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registrierung"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Erstelle ein ${ BRAND_NAME }-Konto, um alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr mit einer zentralen Anmeldung zu nutzen . Hol dir ein kostenloses ${ BRAND_NAME }-Konto"
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Erstelle ein ${ BRAND_NAME }-Konto | Hol dir deine Privatsphäre zurück"
+      ],
+      "Create a new ${ appName } account": [
+        "Erstelle ein neues ${ appName }-Konto"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }-Kontopasswort zurücksetzen"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Melde dich an, um auf dein ${ appName }-Konto zuzugreifen."
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Melde dich bei deinem ${ BRAND_NAME }-Konto an, um auf alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr zuzugreifen. Du hast kein Konto? Erstelle KOSTENLOS eines."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Anmelden | ${ BRAND_NAME } Konto - Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und mehr"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Probiere ${ planName } über diesen Link kostenlos aus"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Feiertage hinzufügen"
@@ -8985,6 +9017,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN‐Verbindung pro Benutzer",
         "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } mit unbegrenzten hide-my-email-Aliassen"
@@ -12439,7 +12475,7 @@
         "Zwei‐Faktor‐Authentifizierung"
       ],
       "Two-factor authentication enforcement": [
-        "Verlangen der Zwei-Faktor-Authentifizierung"
+        "Erzwingen der Zwei-Faktor-Authentifizierung"
       ],
       "Two-factor authentication reminders": [
         "Erinnerungen an die Zwei-Faktor-Authentifizierung"
