@@ -3099,7 +3099,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } (${ email }) この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
+        "<${ email }> は次のエラーを発生しました: ${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -3755,7 +3755,7 @@
     },
     "Event title": {
       "(no title)": [
-        "（タイトルなし）"
+        "(タイトルなし)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5349,7 +5349,7 @@
         "プレビューの読み込みに失敗しました"
       ],
       "Preview for this file type is not supported": [
-        "申し訳ございません、このファイル形式はサポートされておりません"
+        "このファイル形式はサポートされておりません。"
       ],
       "Primary": [
         "プライマリー"
@@ -5859,7 +5859,7 @@
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
+        "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "このフォルダー内の **${ count } 件の会話**を選択中"
@@ -5877,7 +5877,7 @@
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "連絡先グループのアドレス数の上限に達しました。"
+        "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "連絡先グループのアドレス数の上限に達しました。"

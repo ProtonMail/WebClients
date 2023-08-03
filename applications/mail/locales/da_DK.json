@@ -2935,6 +2935,9 @@
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Slå e-mail-trackerbeskyttelse til for at forhindre annoncører og andre i at spore din placering og onlineaktivitet."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Få adgang til brugerdefineret planlægning af beskeder og andre fordele, når du opgraderer dit abonnement."
       ],
@@ -2946,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Vi har ikke fundet nogen kendte trackere og tracking-URL'er i denne e-mail."
       ],
       "When do you want your message to be sent?": [
         "Hvornår skal din besked sendes?"
@@ -3105,6 +3111,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } for <${ email }>. Du kan tilføje en anden nøgle eller deaktivere kryptering for denne kontakt for at løse problemet."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
@@ -3381,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Beklager, ${ BRAND_NAME } kan ikke dekryptere din besked. Kontroller at alle dine nøgler er aktive."
+      ],
+      "status page": [
+        "statusside"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
@@ -4768,6 +4780,10 @@
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** resultat fundet i ${ labelName }",
+        "**${ elementsFoundCount }** resultater fundet i ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
       ],
@@ -4967,7 +4983,7 @@
         "Brugerdefineret årlig"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
+        "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
       "Daily": [
         "Daglig"
@@ -5100,6 +5116,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "For beskeder nyere end ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Hvis du ønsker flere søgeresultater, kan du prøve at søge efter dette nøgleord i indholdet af dine e-mails."
       ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
@@ -5801,8 +5820,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Vi beklager. Dette kan være en fejl fra vores side. Kan du bekræfte, at du ønsker at markere denne e-mail som en legitim én?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Vi har forhindret følgende annoncører og organisationer i at se, hvornår du åbner denne e-mail, hvilken enhed du bruger, og hvor du befinder dig."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Vi kunne ikke bekræfte afsenderens betroede nøgler."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Vi har fjernet sporingsoplysninger fra følgende links for at beskytte dig mod annoncører og andre, der forsøger at spore din onlineaktivitet."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -8432,6 +8457,16 @@
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
       ]
     },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris ved slutningen af din faktureringscyklus."
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Jubilæumssalg"
+      ]
+    },
     "Table header": {
       "Action": [
         "Handling"
@@ -8925,6 +8960,9 @@
       "Previous message": [
         "Forrige besked"
       ],
+      "Protect yourself from trackers": [
+        "Beskyt dig selv mod trackere"
+      ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
       ],
@@ -9072,6 +9110,10 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Vi beskyttede dig mod ${ trackersCount } tracker",
+        "Vi beskyttede dig mod ${ trackersCount } trackere"
       ],
       "Welcome": [
         "Velkommen"

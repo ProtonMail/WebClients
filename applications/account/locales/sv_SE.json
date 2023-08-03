@@ -8636,6 +8636,50 @@
         "En ny version av ${ appName } är tillgänglig. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Logga in"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registrera"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Skapa ett ${ BRAND_NAME }-konto för att använda alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler, med endast en inloggning. Skaffa ett gratis ${ BRAND_NAME }-konto."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Skapa ett ${ BRAND_NAME }-konto | Ta tillbaka din integritet"
+      ],
+      "Create a new ${ appName } account": [
+        "Skapa ett nytt ${ appName }-konto"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Hitta användarnamn för ${ BRAND_NAME }-konto"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Har du glömt lösenordet till ditt ${ BRAND_NAME }-konto? Återställ det här med en återställningskod, e-post eller sms och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Har du glömt ditt användarnamn för ditt ${ BRAND_NAME }-konto? Hitta den med din e-postadress eller ditt telefonnummer för återställning och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
+      ],
+      "Private and secure email, no credit card required": [
+        "Privat och säker e-post, inget kreditkort krävs"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Återställ lösenordet för ditt ${ BRAND_NAME }-konto"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Logga in för att komma åt ditt ${ appName }-konto"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Logga in | ${ BRAND_NAME }-konto - Åtkomst till ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och mer"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prova ${ planName } gratis med denna länk"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Lägg till allmänna helgdagar"
@@ -8985,6 +9029,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"

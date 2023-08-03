@@ -4764,8 +4764,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Закрыть"
+      "Cancel": [
+        "Отменить"
       ],
       "Manage calendars": [
         "Управление календарями"
@@ -5587,6 +5587,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Поделиться с пользователями ${ BRAND_NAME }"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Доступ предоставил ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
