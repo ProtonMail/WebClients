@@ -276,7 +276,7 @@
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
       ],
       "Image will be loaded without a proxy": [
-        "La imatge es carregarà sense proxy"
+        "La imatge es carregarà sense proxy."
       ],
       "Import": [
         "Importa"
@@ -2668,7 +2668,7 @@
         "Fus horari"
       ],
       "Time zone not supported": [
-        "Zona horària no compatible"
+        "Fus horari no compatible"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -2715,7 +2715,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "La valoració és obligatòria"
+        "Es requereix la valoració"
       ]
     },
     "Event canceled status badge": {
@@ -4518,7 +4518,7 @@
         "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Heu assolit el nombre màxim de calendaris disponibles en el vostre pla."
+        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
       ]
     },
     "Link": {
@@ -4630,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Tanca"
+      "Cancel": [
+        "Cancel·la"
       ],
       "Manage calendars": [
         "Gestiona els calendaris"
@@ -5276,8 +5276,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } contacte exportat de ${ countContacts }.",
-        "${ contactsExported.length } contactes exportats de ${ countContacts }."
+        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
+        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
@@ -5867,7 +5867,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica, generador de contrasenyes."
+        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica i generador de contrasenyes."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -6055,7 +6055,7 @@
         "Alarma de calendari"
       ],
       "Cannot add more addresses": [
-        "No es poden afegir més adreces"
+        "No es poden afegir més adreces."
       ],
       "Change my answer": [
         "Canviar la meva resposta"
@@ -6177,8 +6177,8 @@
         "Verificació humana"
       ],
       "Import as simple event?": [
-        "Importar com a un esdeveniment sense detalls?",
-        "Importar com a esdeveniments sense detalls?"
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -6253,7 +6253,7 @@
         "Notifica un problema"
       ],
       "Request new code": [
-        "Demana un nou codi"
+        "Demana un codi nou"
       ],
       "Reshare your calendars": [
         "Torneu a compartir els vostres calendaris"
@@ -6460,7 +6460,7 @@
         "No s'ha pogut carregar la imatge"
       ],
       "The image could not be loaded using proxy": [
-        "No s'ha pogut carregar la imatge a través del proxy"
+        "No s'ha pogut carregar la imatge a través del proxy."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
