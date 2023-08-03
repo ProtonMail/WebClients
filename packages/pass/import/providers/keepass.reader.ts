@@ -2,7 +2,7 @@ import get from 'lodash/get';
 import { c } from 'ttag';
 import X2JS from 'x2js';
 
-import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import { ImportProviderError } from '../helpers/error';
@@ -15,6 +15,22 @@ const getKeePassEntryValue = (Value: KeePassEntryValue): string => (typeof Value
 
 const getKeePassProtectInMemoryValue = (Value: KeePassEntryValue): string =>
     typeof Value === 'string' ? '' : Value._ProtectInMemory;
+
+const isLegacyTotpDefinition = (item: KeePassItem) => Boolean(item.totpSeed && item.totpSettings);
+
+const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<string> => {
+    try {
+        const [period, digits] = item.totpSettings!.split(';').map((value) => parseInt(value, 10));
+        if (isNaN(period) || isNaN(digits)) throw new Error();
+
+        return `otpauth://totp/${item.name}:none?secret=${item.totpSeed}&period=${period}&digits=${digits}`;
+    } catch (e) {
+        logger.warn(`[Importer::KeePass] legacy TOTP settings for item "${item.name}" are not in the expected format`);
+    }
+};
+
+const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
+    isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 
 const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
@@ -39,7 +55,13 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
                     acc.url = getKeePassEntryValue(Value);
                     break;
                 case 'otp':
-                    acc.totp = getKeePassEntryValue(Value);
+                    acc.otpauth = getKeePassEntryValue(Value);
+                    break;
+                case 'TOTP Seed':
+                    acc.totpSeed = getKeePassEntryValue(Value);
+                    break;
+                case 'TOTP Settings':
+                    acc.totpSettings = getKeePassEntryValue(Value);
                     break;
                 default:
                     const type = getKeePassProtectInMemoryValue(Value) ? 'hidden' : 'text';
@@ -62,7 +84,7 @@ const entryToItem = (entry: KeePassEntry): ItemImportIntent<'login'> => {
         username: item.username,
         password: item.password,
         urls: [item.url],
-        totp: item.totp,
+        totp: formatOtpAuthUri(item),
         extraFields: item.customFields,
     });
 };
