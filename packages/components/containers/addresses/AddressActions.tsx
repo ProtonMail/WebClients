@@ -32,21 +32,36 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
         return [];
     }
 
-    const { encryptionDisabled, handleSetAddressFlags } = addressFlags;
+    const { allowDisablingEncryption, encryptionDisabled, expectSignatureDisabled, handleSetAddressFlags } =
+        addressFlags;
 
-    return [
-        encryptionDisabled
-            ? {
-                  // translator: this is in a small space, so the string should be short, max 25 characters
-                  text: c('Address action').t`Enable E2EE`,
-                  onClick: () => handleSetAddressFlags(false, false),
-              }
-            : {
-                  // translator: this is in a small space, so the string should be short, max 25 characters
-                  text: c('Address action').t`Disable E2EE`,
-                  onClick: () => handleSetAddressFlags(true, true),
-              },
-    ];
+    const actions = [];
+
+    if (!encryptionDisabled && allowDisablingEncryption) {
+        actions.push({
+            // translator: this is in a small space, so the string should be short, max 25 characters
+            text: c('Address action').t`Disable E2EE mail`,
+            onClick: () => handleSetAddressFlags(true, expectSignatureDisabled),
+        });
+    }
+
+    if (encryptionDisabled) {
+        actions.push({
+            // translator: this is in a small space, so the string should be short, max 25 characters
+            text: c('Address action').t`Enable E2EE mail`,
+            onClick: () => handleSetAddressFlags(false, expectSignatureDisabled),
+        });
+    }
+
+    if (expectSignatureDisabled) {
+        actions.push({
+            // translator: this is in a small space, so the string should be short, max 25 characters
+            text: c('Address action').t`Disallow unsigned mail`,
+            onClick: () => handleSetAddressFlags(encryptionDisabled, false),
+        });
+    }
+
+    return actions;
 };
 
 const AddressActions = ({
