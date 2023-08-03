@@ -8717,6 +8717,29 @@
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Conectare"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Înregistrare"
+      ],
+      "Create a new ${ appName } account": [
+        "Creare cont ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Găsiți numele de utilizator al contului ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "V-ați uitat parola contului ${ BRAND_NAME }? Resetați-o aici folosind un cod de recuperare, e-mail sau SMS și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Resetare parolă cont ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Conectați-vă pentru a vă accesa contul ${ appName }"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Adăugare sărbătoare publică"
@@ -9084,6 +9107,11 @@
         "${ n } conexiuni VPN per utilizator",
         "${ n } de conexiuni VPN per utilizator"
       ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } de aliasuri hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } cu aliasuri hide-my-email nelimitate"
       ],
@@ -9290,7 +9318,7 @@
         "Gestionare echipă"
       ],
       "Tor over VPN": [
-        "Tor peste VPN"
+        "Tor prin VPN"
       ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
@@ -9542,13 +9570,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendar criptat la ambele capete."
+        "${ CALENDAR_APP_NAME }: calendar criptat în ambele sensuri."
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: stocare în cloud criptată la ambele capete."
+        "${ DRIVE_APP_NAME }: stocare în cloud criptată în ambele sensuri."
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: e-mail criptat la ambele capete."
+        "${ MAIL_APP_NAME }: e-mail criptat în ambele sensuri."
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME }: deblocare conținut, navigare anonimă"
@@ -10247,13 +10275,13 @@
         "${ PASS_APP_NAME } este disponibil ca o extensie de navigator pe magazinul Chrome Web."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete."
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete. Pentru a adăuga funcții premium de la ${ PASS_APP_NAME_2 } la abonamentul actual, vă recomandăm să faceți treceți la planul ${ upsellPlanName }."
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri. Pentru a adăuga funcții premium de la ${ PASS_APP_NAME_2 } la abonamentul actual, vă recomandăm să faceți treceți la planul ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă la ambele capete. Planul actual vă oferă deja acces la funcțiile premium ${ PASS_APP_NAME_2 } - nu este nevoie să cumpărați din nou."
+        "${ PASS_APP_NAME } vă păstrează parolele și identitatea în siguranță cu criptare riguroasă în ambele sensuri. Planul actual vă oferă deja acces la funcțiile premium ${ PASS_APP_NAME_2 } - nu este nevoie să cumpărați din nou."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pe lună"
@@ -10286,7 +10314,7 @@
         "Manager de parole criptate care vă protejează și identitatea"
       ],
       "End-to-end encrypted notes": [
-        "Note criptate la ambele capete"
+        "Note criptate în ambele sensuri"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
@@ -12929,7 +12957,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: manager de parole criptat la ambele capete."
+        "${ PASS_APP_NAME }: manager de parole criptat în ambele sensuri."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -13129,7 +13157,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesa la servere Secure Core, descărcări rapide P2P / BitTorrent, Tor peste VPN și altele."
+        "Accesa la servere Secure Core, descărcări rapide P2P / BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

@@ -8636,6 +8636,50 @@
         "Μια νέα έκδοση του ${ appName } είναι διαθέσιμη. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Σύνδεση"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Εγγραφή"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Δημιουργήστε ένα ${ BRAND_NAME } λογαριασμό για να χρησιμοποιήσετε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα, με μία μόνο σύνδεση. Αποκτήστε έναν δωρεάν λογαριασμό ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Δημιουργήστε ένα ${ BRAND_NAME } λογαριασμό | Ανακτήστε το απόρρητό σας"
+      ],
+      "Create a new ${ appName } account": [
+        "Δημιουργήστε ένα νέο ${ appName } λογαριασμό"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Εύρεση Ονόματος χρήστη του ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Ξεχάσατε τον κωδικό πρόσβασης του ${ BRAND_NAME } λογαριασμού σας; Επαναφέρετε το εδώ χρησιμοποιώντας έναν κωδικό ανάκτησης, email ή SMS και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας και παραπάνω."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Ξεχάσατε τον όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας; Βρείτε το χρησιμοποιώντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τον αριθμό τηλεφώνου ανάκτησης και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας, και παραπάνω."
+      ],
+      "Private and secure email, no credit card required": [
+        "Ιδιωτικό και ασφαλές email, δίχως την απαίτηση πιστωτικής κάρτας"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Επαναφορά κωδικού πρόσβασης του ${ BRAND_NAME } λογαριασμού σας"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Συνδεθείτε για να αποκτήσετε πρόσβαση στον ${ appName } λογαριασμό σας"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Σύνδεση | Λογαριασμός ${ BRAND_NAME } - Πρόσβαση ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και περισσότερα"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Δοκιμάστε το ${ planName } δωρεάν με αυτόν τον σύνδεσμο"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Προσθήκη αργιών"
@@ -8985,6 +9029,10 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } με απεριόριστα hide-my-email ψευδώνυμα"

@@ -330,8 +330,8 @@
         "Löschen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } beschädigte csv-Zeile gefunden",
-        "${ errors.length } beschädigte csv-Zeilen gefunden"
+        "${ errors.length } beschädigte CSV-Zeile gefunden",
+        "${ errors.length } beschädigte CSV-Zeilen gefunden"
       ],
       "Editing item failed": [
         "Fehler beim Bearbeiten des Eintrags."
@@ -711,7 +711,7 @@
         "Keine Zugangsdaten gefunden."
       ],
       "None": [
-        "Keine"
+        "Keine Sperre"
       ],
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
@@ -1371,7 +1371,7 @@
         "PIN eingeben"
       ],
       "Get the mobile apps": [
-        "Apps für Mobilgeräte herunterladen"
+        "Apps für Mobilgeräte holen"
       ],
       "Grant permissions": [
         "Berechtigungen erteilen"

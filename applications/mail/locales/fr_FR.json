@@ -3113,7 +3113,7 @@
         "${ error.message } pour <${ email }>. Pour résoudre le problème, vous pouvez ajouter une autre clé ou désactiver le chiffrement pour ce contact."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }"
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -5154,10 +5154,7 @@
         "Pour les messages après le ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "Pour plus de résultats de recherche, essayez de chercher ce mot-clé dans le contenu de vos messages."
-      ],
-      "For more search results, try searching in the content of your email messages": [
-        "Pour plus de résultats de recherche, essayez de chercher dans le contenu de vos messages"
+        "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -5924,6 +5921,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "Vous pouvez mettre à jour votre requête de recherche ou ${ button }."
+      ],
+      "You can either update your search query or clear it": [
+        "Vous pouvez mettre à jour votre recherche ou l'effacer."
       ],
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
