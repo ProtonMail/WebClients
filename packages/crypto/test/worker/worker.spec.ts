@@ -29,6 +29,7 @@ import {
 } from './decryptMessageLegacy.data';
 import { ecc25519Key, eddsaElGamalSubkey, keyWithThirdPartyCertifications, rsa512BitsKey } from './keys.data';
 import {
+    messageWithEmptySignature,
     key as mimeKey,
     multipartMessageWithAttachment,
     multipartSignedMessage,
@@ -588,6 +589,17 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(attachment.content.length > 0).to.be.true;
         expect(attachment.content.length).to.equal(attachment.size);
         expect(utf8ArrayToString(attachment.content)).to.equal('this is the attachment text\n');
+    });
+
+    it('processMIME - it can parse message with empty signature', async () => {
+        const { body, signatures, verified, attachments } = await CryptoWorker.processMIME({
+            data: messageWithEmptySignature,
+        });
+        expect(verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(signatures).to.have.length(0);
+        expect(body).to.equal('<div>Hello</div>\n');
+        expect(attachments).to.have.length(1); // signature part that failed to parse
+        expect(attachments[0].content).to.have.length(0);
     });
 
     it('getMessageInfo - it returns correct keyIDs', async () => {
