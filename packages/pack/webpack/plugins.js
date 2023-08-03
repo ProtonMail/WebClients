@@ -30,6 +30,7 @@ module.exports = ({
     warningLogs,
     errorLogs,
     logical,
+    cssName,
 }) => {
     return [
         ...(isProduction
@@ -120,8 +121,8 @@ module.exports = ({
         }),
 
         new MiniCssExtractPlugin({
-            filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
-            chunkFilename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
+            filename: cssName,
+            chunkFilename: cssName,
         }),
 
         new HtmlWebpackPlugin({
