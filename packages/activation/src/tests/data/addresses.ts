@@ -37,6 +37,7 @@ export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRES
         Signature: 'Testing signature',
         Status: 1,
         Type: type ?? 1,
+        ProtonMX: true,
     };
 };
 
