@@ -50,7 +50,7 @@ export const modifyEventModelPartstat = (
 
 export const getOrganizerDisplayData = (
     organizer = { email: '', cn: '' },
-    isOrganizer: boolean,
+    isSelfOrganizer: boolean,
     contactEmailsMap: SimpleMap<ContactEmail>,
     displayNameEmailMap: SimpleMap<DisplayNameEmail>
 ) => {
@@ -60,16 +60,17 @@ export const getOrganizerDisplayData = (
         return { name: '', title: '' };
     }
 
-    const { displayName, displayEmail } = displayNameEmailMap[canonicalizeEmailByGuess(email)] || {};
-    const { ContactID: contactID } = contactEmailsMap[displayEmail || canonicalizeEmail(email)] || {};
+    const { displayName } = displayNameEmailMap[canonicalizeEmailByGuess(email)] || {};
+    const { ContactID: contactID } = contactEmailsMap[canonicalizeEmail(email)] || {};
 
-    if (isOrganizer) {
+    if (isSelfOrganizer) {
         return {
             name: c('Event info. Organizer name').t`You`,
             title: `${email}`,
             contactID,
         };
     }
+
     const name = displayName || cn || email;
     const title = name === email ? email : `${name} <${email}>`;
 
