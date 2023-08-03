@@ -6,6 +6,9 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Ignore any requests to the assets folder, to avoid the index.html fallback and return 404 there
+RewriteRule ^assets/ - [L]
+
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
 
@@ -22,8 +25,7 @@ RewriteRule ^(.*) /index.html [NC,L]
 SetEnvIf x-atlas-secret "(.+)" ATLAS_SECRET=$1
 Header add Set-Cookie "AtlasSecret=%{ATLAS_SECRET}e; Path=/; HttpOnly; Secure; Max-Age=3600" env=ATLAS_SECRET
 
-# Error pages
-ErrorDocument 403 /assets/errors/403.html
+ErrorDocument 404 /assets/404.html
 
 <Files ~ "(index.html|version.json)">
     FileETag None
