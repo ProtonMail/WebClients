@@ -54,13 +54,13 @@ export const handleEvent = (renderEl: HTMLElement | undefined, eventPayload: Eve
 };
 
 export const getStyleSrcUrls = () => {
-    return [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')]
-        .map((x) => {
-            return new URL(x.href, window.location.origin).toString();
-        })
-        .filter((url) => {
-            return url.startsWith(window.location.origin) && url.endsWith('.css');
-        });
+    return [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')].reduce<string[]>((acc, link) => {
+        const url = new URL(link.href, window.location.origin);
+        if (url.origin.startsWith(window.location.origin) && url.pathname.endsWith('.css')) {
+            acc.push(url.toString());
+        }
+        return acc;
+    }, []);
 };
 
 export const getStyleSrcsData = (styleSrcUrls: string[]) => {
@@ -69,8 +69,8 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
             const response = await fetch(styleSrcUrls);
             const text = await response.text();
             const trimmedText = text.replace(/^\s+/, '');
-            if (trimmedText[0] === '<') {
-                throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
+            if (!(response.status >= 200 && response.status < 300) || trimmedText[0] === '<') {
+                throw new Error('Invalid asset loading');
             }
             return [...trimmedText.matchAll(/url\(\/(assets\/[^)]+)\)/g)]
                 .map((matchArray) => {

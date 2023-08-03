@@ -9,6 +9,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteOptions AllowNoSlash
 DirectorySlash Off
 
+# Ignore any requests to the assets folder, to avoid the index.html fallback and return 404 there
+RewriteRule ^assets/ - [L]
+
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} -d
@@ -16,6 +19,8 @@ RewriteRule (.*) $1/index.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule (.*) /index.html [L]
+
+ErrorDocument 404 /assets/404.html
 
 <Files ~ "(\.html|version.json)">
     FileETag None
