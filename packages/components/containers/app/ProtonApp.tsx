@@ -45,6 +45,7 @@ import NotificationsChildren from '../notifications/Children';
 import NotificationsProvider from '../notifications/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 import ThemeProvider from '../themes/ThemeProvider';
+import { UnleashFlagProvider } from '../unleash';
 import Signout from './Signout';
 import clearKeyCache from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
@@ -328,37 +329,41 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                     <AuthenticationProvider store={authenticationValue}>
                                                         <CacheProvider cache={cacheRef.current}>
                                                             <FeaturesProvider>
-                                                                <ExperimentsProvider>
-                                                                    <GlobalLoaderProvider>
-                                                                        <DrawerProvider>
-                                                                            <GlobalLoader />
-                                                                            <NotificationsChildren />
-                                                                            {(() => {
-                                                                                if (isLoggingOut) {
-                                                                                    return (
-                                                                                        <Signout
-                                                                                            onDone={() => {
-                                                                                                handleFinalizeLogout({
-                                                                                                    clearDeviceRecoveryData:
-                                                                                                        authData.clearDeviceRecoveryData,
-                                                                                                    persistedSession:
-                                                                                                        authData.persistedSession,
-                                                                                                });
-                                                                                            }}
-                                                                                            onLogout={() =>
-                                                                                                consumerLogoutPromise
-                                                                                            }
-                                                                                        />
-                                                                                    );
-                                                                                }
-                                                                                if (pathRef.current) {
-                                                                                    return null;
-                                                                                }
-                                                                                return children;
-                                                                            })()}
-                                                                        </DrawerProvider>
-                                                                    </GlobalLoaderProvider>
-                                                                </ExperimentsProvider>
+                                                                <UnleashFlagProvider config={config} UID={UID}>
+                                                                    <ExperimentsProvider>
+                                                                        <GlobalLoaderProvider>
+                                                                            <DrawerProvider>
+                                                                                <GlobalLoader />
+                                                                                <NotificationsChildren />
+                                                                                {(() => {
+                                                                                    if (isLoggingOut) {
+                                                                                        return (
+                                                                                            <Signout
+                                                                                                onDone={() => {
+                                                                                                    handleFinalizeLogout(
+                                                                                                        {
+                                                                                                            clearDeviceRecoveryData:
+                                                                                                                authData.clearDeviceRecoveryData,
+                                                                                                            persistedSession:
+                                                                                                                authData.persistedSession,
+                                                                                                        }
+                                                                                                    );
+                                                                                                }}
+                                                                                                onLogout={() =>
+                                                                                                    consumerLogoutPromise
+                                                                                                }
+                                                                                            />
+                                                                                        );
+                                                                                    }
+                                                                                    if (pathRef.current) {
+                                                                                        return null;
+                                                                                    }
+                                                                                    return children;
+                                                                                })()}
+                                                                            </DrawerProvider>
+                                                                        </GlobalLoaderProvider>
+                                                                    </ExperimentsProvider>
+                                                                </UnleashFlagProvider>
                                                             </FeaturesProvider>
                                                         </CacheProvider>
                                                     </AuthenticationProvider>
