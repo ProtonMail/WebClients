@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { TextDecoder, TextEncoder } from 'util';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockUnleash';
 
 // Getting ReferenceError: TextDecoder is not defined without
 global.TextEncoder = TextEncoder;

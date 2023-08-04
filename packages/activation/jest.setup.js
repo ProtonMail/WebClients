@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import 'whatwg-fetch';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockUnleash';
 
 import ResizeObserver from './src/tests/mock/ResizeObserver';
 
