@@ -27,6 +27,8 @@ export interface PlanCardFeature {
         [PLANS.FAMILY]: PlanCardFeatureDefinition | null;
         [PLANS.MAIL_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
     };
 }
 
@@ -54,7 +56,19 @@ export interface ShortPlan {
         | PLANS.MAIL_PRO
         | PLANS.VPN
         | PLANS.NEW_VISIONARY
-        | PLANS.FAMILY;
+        | PLANS.FAMILY
+        | PLANS.VPN_PRO
+        | PLANS.VPN_BUSINESS;
     cta: string;
     features: PlanCardFeatureDefinition[];
+}
+
+export type ShortPlanLike = {
+    plan: string;
+    cta?: string;
+    isPlanLike: true;
+} & Pick<ShortPlan, 'label' | 'description' | 'title' | 'features'>;
+
+export function isShortPlanLike(plan: any): plan is ShortPlanLike {
+    return !!plan && plan.isPlanLike;
 }

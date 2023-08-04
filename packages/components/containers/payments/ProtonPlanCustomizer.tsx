@@ -15,12 +15,14 @@ import {
     MAX_VPN_ADDON,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, Organization, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, MaxKeys, Organization, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
 
-const AddonKey = {
+const AddonKey: Readonly<{
+    [K in ADDON_NAMES]: MaxKeys;
+}> = {
     [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
     [ADDON_NAMES.MEMBER]: 'MaxMembers',
     [ADDON_NAMES.DOMAIN]: 'MaxDomains',
@@ -161,6 +163,14 @@ const addonLimit = {
     [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
 } as const;
 
+// translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
+const contactString = c('plan customizer, users').t`contact`;
+const contactHref = (
+    <a key={1} href="mailto:enterprise@proton.me">
+        {contactString}
+    </a>
+);
+
 // Since ttag doesn't support ngettext with jt, we manually replace the string with a react node...
 const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
     // translator: This string is followed up by the string "Should you need more than ${maxUsers} user accounts, please <contact> our Sales team"
@@ -168,13 +178,7 @@ const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
         .jt`Select the number of users to include in your plan. Each additional user costs ${price}.`;
 
     const contact = '_TMPL_';
-    // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
-    const contactString = c('plan customizer, users').t`contact`;
-    const contactHref = (
-        <a key={1} href="mailto:enterprise@proton.me">
-            {contactString}
-        </a>
-    );
+
     const second = c('plan customizer, users').ngettext(
         msgid`Should you need more than ${maxUsers} user account, please ${contact} our Sales team.`,
         `Should you need more than ${maxUsers} user accounts, please ${contact} our Sales team.`,
@@ -263,6 +267,47 @@ const AdditionalOptionsCustomiser = ({
                 {input}
             </div>
         </>
+    );
+};
+
+const IPsNumberCustomiser = ({
+    addon,
+    maxIPs,
+    price,
+    input,
+    mode,
+}: {
+    addon: Plan;
+    maxIPs: number;
+    price: ReactElement;
+    input: ReactElement;
+    mode?: CustomiserMode;
+}) => {
+    const ipsString = c('plan customizer, ips')
+        .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}. Should you need more than ${maxIPs} IPs, please ${contactHref} our Sales team.`;
+
+    return (
+        <div className="mb-8">
+            {mode !== 'signup' && (
+                <>
+                    <h2 className="text-2xl text-bold mb-4">{c('Info').t`Dedicated IP addresses `}</h2>
+                    <div className="mb-4">{ipsString}</div>
+                </>
+            )}
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
+                <label
+                    htmlFor={addon.Name}
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
+                >
+                    {c('Info').t`Number of IP addresses`}
+                    <Info
+                        buttonClass="ml-2"
+                        title={c('Info').t`Number of dedicated IP addresses in the organization`}
+                    />
+                </label>
+                {input}
+            </div>
+        </div>
     );
 };
 
@@ -367,6 +412,8 @@ const ProtonPlanCustomizer = ({
                         ADDON_NAMES.MEMBER_DRIVE_PRO,
                         ADDON_NAMES.MEMBER_MAIL_PRO,
                         ADDON_NAMES.MEMBER_ENTERPRISE,
+                        ADDON_NAMES.MEMBER_VPN_PRO,
+                        ADDON_NAMES.MEMBER_VPN_BUSINESS,
                     ].includes(addonNameKey)
                 ) {
                     return (
@@ -394,6 +441,19 @@ const ProtonPlanCustomizer = ({
                             price={addonPriceInline}
                             input={input}
                             mode={mode}
+                        />
+                    );
+                }
+
+                if (addonNameKey === ADDON_NAMES.IP_VPN_BUSINESS) {
+                    return (
+                        <IPsNumberCustomiser
+                            key={`${addon.Name}-ips`}
+                            addon={addon}
+                            price={addonPriceInline}
+                            input={input}
+                            mode={mode}
+                            maxIPs={maxTotal}
                         />
                     );
                 }

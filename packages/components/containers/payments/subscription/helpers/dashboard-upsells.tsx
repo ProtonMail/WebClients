@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { ButtonLikeProps } from '@proton/atoms/Button';
@@ -23,6 +25,8 @@ import {
     hasMailPro,
     hasPassPlus,
     hasVPN,
+    hasVpnBusiness,
+    hasVpnPro,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -41,15 +45,18 @@ import {
     getNDomainsFeature,
 } from '../../features/mail';
 import { FREE_PASS_ALIASES, getProtonPassFeature } from '../../features/pass';
-import { getShortPlan } from '../../features/plan';
+import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
 import {
     getAdvancedVPNFeature,
     getB2BHighSpeedVPNConnectionsFeature,
+    getDedicatedAccountManagerVPNFeature,
+    getDedicatedServersVPNFeature,
     getHighSpeedVPNConnectionsFeature,
     getVPNConnectionsFeature,
 } from '../../features/vpn';
 import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
+import VpnEnterpriseAction from './VpnEnterpriseAction';
 
 const cycle = CYCLE.TWO_YEARS;
 
@@ -63,6 +70,10 @@ type MaybeUpsellFeature = UpsellFeature | undefined;
 export type ButtonShape = ButtonLikeProps<'button'>['shape'];
 export type ButtonColor = ButtonLikeProps<'button'>['color'];
 
+/**
+ * CTA stands for Call To Action. That's meant to be used with buttons that will start the upgrading flow.
+ * For example, "Buy plan XYZ for $X/month"
+ */
 export interface UpsellCta {
     label: string | string[];
     action: () => void;
@@ -71,22 +82,39 @@ export interface UpsellCta {
     color?: ButtonColor;
 }
 
+export function isUpsellCta(item: any): item is UpsellCta {
+    return item && typeof item === 'object' && 'label' in item && 'action' in item;
+}
+
 interface Price {
     value: number;
     currency: Currency;
 }
 
 export interface Upsell {
-    plan: PLANS;
+    plan?: PLANS;
+    /**
+     * Unique key for React rednering.
+     */
+    planKey: string;
     title: string;
     description: string;
     isRecommended?: boolean;
     features: UpsellFeature[];
-    price: Price;
+    /**
+     * If there is a fully custom plan, like VPN Enterprise, then there is no need for price.
+     * It can be used together with ignoreDefaultCta
+     */
+    price?: Price;
     onUpgrade: () => void;
-    otherCtas: UpsellCta[];
+    defaultCtaOverrides?: Partial<UpsellCta>;
+    otherCtas: (UpsellCta | ReactNode)[];
     upsellRefLink?: string;
     isTrialEnding?: boolean;
+    /**
+     * The default CTA won't be rendered at all if this is true.
+     */
+    ignoreDefaultCta?: boolean;
 }
 type MaybeUpsell = Upsell | null;
 
@@ -121,6 +149,7 @@ const getUpsell = ({ plan, plansMap, currency, upsellPath, app, ...upsellFields 
 
     return {
         plan,
+        planKey: plan,
         title: upsellFields.isTrialEnding ? c('new_plans: Title').t`${shortPlan.title} Trial` : shortPlan.title,
         description: shortPlan.description,
         upsellRefLink,
@@ -317,6 +346,45 @@ const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPla
     });
 };
 
+const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    const features: UpsellFeature[] = [getDedicatedServersVPNFeature()];
+
+    return getUpsell({
+        plan: PLANS.VPN_BUSINESS,
+        plansMap,
+        features,
+        upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle,
+                plan: PLANS.VPN_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                disablePlanSelection: true,
+            }),
+        defaultCtaOverrides: {
+            shape: 'solid',
+            color: 'norm',
+        },
+        ...rest,
+    });
+};
+
+const getVpnEnterpriseUpsell = (): Upsell => {
+    const VPN_ENTERPRISE_COUNTRIES = 65;
+
+    const vpnEnteriprisePlan = getVPNEnterprisePlan(undefined);
+
+    return {
+        planKey: 'VPN_ENTERPRISE',
+        title: vpnEnteriprisePlan.title,
+        description: vpnEnteriprisePlan.description,
+        features: [getDedicatedServersVPNFeature(VPN_ENTERPRISE_COUNTRIES), getDedicatedAccountManagerVPNFeature()],
+        ignoreDefaultCta: true,
+        otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
+        onUpgrade: () => console.log('onUpgrade'),
+    };
+};
+
 const hasOnePlusSubscription = (subscription: Subscription) => {
     return hasMail(subscription) || hasDrive(subscription) || hasPassPlus(subscription) || hasVPN(subscription);
 };
@@ -375,6 +443,10 @@ export const resolveUpsellsToDisplay = ({
                 return [getFamilyUpsell(upsellsPayload)];
             case hasMailPro(subscription):
                 return [getBundleProUpsell(upsellsPayload)];
+            case hasVpnPro(subscription):
+                return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell()];
+            case hasVpnBusiness(subscription):
+                return [getVpnEnterpriseUpsell()];
             default:
                 return [];
         }
