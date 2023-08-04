@@ -1,4 +1,5 @@
 import { isValid } from 'date-fns';
+import { c } from 'ttag';
 
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -11,6 +12,10 @@ import {
     generateNewGroupName,
     getVCardProperties,
 } from './properties';
+
+export const getFallbackFNValue = () => {
+    return c('Default display name vcard').t`Unknown`;
+};
 
 export const prepareForEdition = (vCardContact: VCardContact) => {
     const result = { ...vCardContact };
