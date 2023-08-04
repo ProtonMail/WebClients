@@ -26,9 +26,11 @@ interface Props {
 
 const useAddressFlagsActionsList = (address: Address, user: UserModel, member: Member | undefined) => {
     const addressFlags = useAddressFlags(address);
-    const isPaid = member !== undefined;
     const isPaidMail = user.hasPaidMail;
-    if (!addressFlags || !isPaid || !isPaidMail) {
+    // Only allow on the user's own settings address list, not in org admin management panel.
+    // This still allows an admin logged in as sub-user to manage the preferences.
+    const isSelf = member === undefined || !!member.Self;
+    if (!addressFlags || !isPaidMail || !isSelf) {
         return [];
     }
 
