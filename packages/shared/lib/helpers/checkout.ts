@@ -19,7 +19,15 @@ import {
     PLANS,
     PLAN_TYPES,
 } from '../constants';
-import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse, VPNServersCountData } from '../interfaces';
+import {
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
+    VPNServersCountData,
+    getPlanMaxIPs,
+} from '../interfaces';
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
 import { customCycles, getNormalCycleFromCustomCycle } from './subscription';
@@ -40,6 +48,9 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
     if (addon.Name.startsWith('1member')) {
         return quantity * (addon.MaxMembers || 0);
     }
+    if (addon.Name.startsWith('1ip')) {
+        return quantity * getPlanMaxIPs(addon);
+    }
     return 0;
 };
 
@@ -51,6 +62,10 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
     if (addonName.startsWith('1member')) {
         const users = quantity;
         return c('Addon').ngettext(msgid`+ ${users} user`, `+ ${users} users`, users);
+    }
+    if (addonName.startsWith('1ip')) {
+        const ips = quantity;
+        return c('Addon').ngettext(msgid`+ ${ips} IP address`, `+ ${ips} IP addresses`, ips);
     }
     return '';
 };
