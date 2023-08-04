@@ -52,13 +52,12 @@ const indentStyle = (level: number) => {
 };
 
 const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorSaved }: Props) => {
-    const hasError = folderItem.errors.length > 0;
+    const { disabled, checked, errors, systemFolder, protonPath, providerPath, isLabel } = folderItem;
+    const hasError = errors.length > 0 && checked;
 
     const inputRef = useRef<HTMLInputElement>(null);
-    const folderProtonName = folderItem.systemFolder
-        ? folderItem.systemFolder
-        : folderItem.protonPath[folderItem.protonPath.length - 1];
-    const folderProviderName = folderItem.providerPath[folderItem.providerPath.length - 1];
+    const folderProtonName = systemFolder ? systemFolder : protonPath[protonPath.length - 1];
+    const folderProviderName = providerPath[providerPath.length - 1];
     const [inputValue, setInputValue] = useState(folderProtonName);
 
     const [editMode, setEditMode] = useState(hasError);
@@ -82,16 +81,11 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
 
     return (
         <li className="border-bottom">
-            <Wrapper
-                checked={folderItem.checked}
-                editMode={editMode}
-                disabled={folderItem.disabled}
-                checkboxId={folderItem.id}
-            >
+            <Wrapper checked={checked} editMode={editMode} disabled={disabled} checkboxId={folderItem.id}>
                 <div className="flex w50 flex-nowrap flex-align-items-center flex-item-noshrink pr-2">
                     <div
                         className="flex-item-noshrink ml-custom"
-                        style={indentStyle(folderItem.providerPath.length)}
+                        style={indentStyle(providerPath.length)}
                         data-testid="CustomizeModal:sourceItem"
                     >
                         <Checkbox
@@ -99,8 +93,8 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                 onToggleCheck(index, checked);
                             }}
                             id={folderItem.id}
-                            checked={folderItem.checked}
-                            disabled={folderItem.disabled}
+                            checked={checked}
+                            disabled={disabled}
                             data-testid="CustomizeModal:checkbox"
                         />
                     </div>
@@ -115,16 +109,16 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                 <div className="flex w50 pl-2">
                     <div
                         className={clsx(['flex flex-nowrap flex-align-items-center ml-custom'])}
-                        style={indentStyle(folderItem.protonPath.length)}
+                        style={indentStyle(protonPath.length)}
                         data-testid="CustomizeModal:destinationItem"
                     >
-                        {((folderItem.isLabel && folderItem.systemFolder) || !folderItem.isLabel) && (
+                        {((isLabel && systemFolder) || !isLabel) && (
                             <Icon
-                                name={folderItem.systemFolder ? FOLDER_ICONS[folderItem.systemFolder] : 'folder'}
+                                name={systemFolder ? FOLDER_ICONS[systemFolder] : 'folder'}
                                 className={clsx([
                                     'flex-item-noshrink mr-2',
                                     hasError && 'color-danger',
-                                    folderItem.errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
+                                    errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                                 ])}
                             />
                         )}
@@ -134,28 +128,27 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                         className={clsx([
                             'flex flex-nowrap flex-item-fluid flex-align-items-center',
                             hasError && 'color-danger',
-                            folderItem.errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
+                            errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                         ])}
                     >
-                        {editMode && !folderItem.disabled ? (
+                        {editMode && !disabled && checked ? (
                             <ManageFolderRowInput
-                                disabled={!folderItem.checked}
-                                errors={folderItem.errors}
+                                disabled={!checked}
+                                errors={errors}
                                 handleChange={handleChange}
                                 handleSave={handleSave}
                                 hasError={hasError}
                                 inputRef={inputRef}
                                 inputValue={inputValue}
-                                isLabelMapping={folderItem.isLabel}
+                                isLabelMapping={isLabel}
                             />
                         ) : (
                             <>
-                                {folderItem.isLabel && !folderItem.systemFolder ? (
+                                {isLabel && !systemFolder ? (
                                     <div
                                         className={clsx([
                                             'flex-item-fluid-auto text-ellipsis flex flex-align-items-center',
-                                            (hasError ||
-                                                folderItem.errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
+                                            (hasError || errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
                                                 'text-bold',
                                         ])}
                                         title={folderProtonName}
@@ -171,17 +164,13 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                             className="max-w100 flex-item-fluid"
                                         />
 
-                                        <ManageFoldersRowLabelErrors
-                                            checked={folderItem.checked}
-                                            errors={folderItem.errors}
-                                        />
+                                        <ManageFoldersRowLabelErrors checked={checked} errors={errors} />
                                     </div>
                                 ) : (
                                     <div
                                         className={clsx([
                                             'text-ellipsis flex flex-align-items-center',
-                                            (hasError ||
-                                                folderItem.errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
+                                            (hasError || errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
                                                 'text-bold',
                                         ])}
                                         title={folderProtonName}
@@ -191,8 +180,8 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                         </div>
 
                                         <ManageFoldersRowFolderErrors
-                                            checked={folderItem.checked}
-                                            errors={folderItem.errors}
+                                            checked={checked}
+                                            errors={errors}
                                             isSystemFolderChild={folderItem.isSystemFolderChild}
                                         />
                                     </div>
@@ -200,12 +189,12 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                             </>
                         )}
                     </div>
-                    {((editMode && !folderItem.disabled) || hasError) && (
+                    {checked && ((editMode && !disabled) || hasError) && (
                         <InlineLinkButton
                             onClick={handleSave}
                             className={clsx(['ml-2 p-2', hasError && DIMMED_OPACITY_CLASSNAMES])}
                             aria-disabled={hasError}
-                            disabled={hasError || !folderItem.checked}
+                            disabled={hasError || !checked}
                             data-testid="CustomizeModal:rowSave"
                         >
                             {c('Action').t`Save`}

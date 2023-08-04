@@ -17,15 +17,9 @@ export const formatItems = ({ isLabelMapping, mapping, labels, folders }: Format
         .map<FolderMapItem>((item, index, collection) => {
             const disabled = (() => {
                 const isRootFolder = item.providerPath.length === 1;
-                const prevItem = collection[index - 1];
-                if (
-                    item.checked ||
-                    isRootFolder ||
-                    (prevItem && prevItem.checked && prevItem.folderChildIDS.includes(item.id))
-                ) {
-                    return false;
-                }
-                return true;
+                const parentItem = collection.find((val) => val.id === item.folderParentID);
+
+                return !(item.checked || isRootFolder || (parentItem && parentItem.checked));
             })();
 
             return {
