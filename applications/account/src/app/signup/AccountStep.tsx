@@ -55,7 +55,7 @@ import { SignupType } from './interfaces';
 
 import './AccountStep.scss';
 
-interface Props {
+export interface AccountStepProps {
     clientType: CLIENT_TYPES;
     onBack?: () => void;
     defaultUsername?: string;
@@ -97,7 +97,7 @@ const AccountStep = ({
     domains,
     loading: loadingDependencies,
     loginUrl,
-}: Props) => {
+}: AccountStepProps) => {
     const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
     const anchorRef = useRef<HTMLButtonElement | null>(null);
