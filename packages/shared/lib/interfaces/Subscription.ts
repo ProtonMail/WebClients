@@ -12,7 +12,7 @@ export interface Pricing {
     [CYCLE.FIFTEEN]?: number;
 }
 
-export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier';
+export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier' | 'MaxIPs';
 
 export type Quantity = number;
 
@@ -46,6 +46,14 @@ export interface Plan {
     State: number;
     Offers: Offer[];
 }
+
+export const getPlanMaxIPs = (plan: Plan) => {
+    if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+        return 1;
+    }
+
+    return 0;
+};
 
 export enum Renew {
     Disabled = 0,
