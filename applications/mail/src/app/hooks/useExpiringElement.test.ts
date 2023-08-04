@@ -116,6 +116,27 @@ describe('useExpiringElement', () => {
             expect(result.result.current.hasExpiration).toBe(true);
             expect(result.result.current.expirationTime).toBe(dateTimestamp);
         });
+
+        it('should look for ContextExpirationTime in Labels', async () => {
+            const result = await renderHook(() =>
+                useExpiringElement(
+                    {
+                        ...element,
+                        Labels: [
+                            {
+                                ID: labelID,
+                                ContextExpirationTime: dateTimestamp,
+                            },
+                        ],
+                    },
+                    labelID,
+                    true
+                )
+            );
+
+            expect(result.result.current.hasExpiration).toBe(true);
+            expect(result.result.current.expirationTime).toBe(dateTimestamp);
+        });
     });
 
     describe('Conversation mode OFF', () => {
