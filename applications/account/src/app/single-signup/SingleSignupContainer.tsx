@@ -217,11 +217,17 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         void withLoadingDependencies(
             fetchDependencies()
                 .then(() => {
-                    metrics.core_vpn_single_signup_fetchDependencies_total.increment({ status: 'success' });
+                    metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
+                        status: 'success',
+                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                    });
                 })
                 .catch((error) => {
                     observeApiError(error, (status) =>
-                        metrics.core_vpn_single_signup_fetchDependencies_total.increment({ status })
+                        metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
+                            status,
+                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                        })
                     );
                     setError(error);
                 })
@@ -256,8 +262,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
         const { session } = handleDone({ cache });
 
-        metrics.core_vpn_single_signup_step4_setup_total.increment({
+        metrics.core_vpn_single_signup_step4_setup_2_total.increment({
             status: 'success',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
         });
 
         await Promise.all([
@@ -326,16 +333,18 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                     step: Steps.Loading,
                                 });
 
-                                metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
+                                metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
                                     status: 'success',
                                     account_type: accountType,
+                                    flow: isB2bPlan ? 'b2b' : 'b2c',
                                 });
                             } catch (error) {
                                 handleError(error);
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step1_accountCreation_total.increment({
+                                    metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
                                         status,
                                         account_type: accountType,
+                                        flow: isB2bPlan ? 'b2b' : 'b2c',
                                     })
                                 );
                             }
@@ -369,16 +378,18 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                         step: Steps.Custom,
                                     });
 
-                                    metrics.core_vpn_single_signup_step2_setup_2_total.increment({
+                                    metrics.core_vpn_single_signup_step2_setup_3_total.increment({
                                         status: 'success',
                                         ...subscriptionMetricsData,
+                                        flow: isB2bPlan ? 'b2b' : 'b2c',
                                     });
                                 }
                             } catch (error) {
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step2_setup_2_total.increment({
+                                    metrics.core_vpn_single_signup_step2_setup_3_total.increment({
                                         status,
                                         ...subscriptionMetricsData,
+                                        flow: isB2bPlan ? 'b2b' : 'b2c',
                                     })
                                 );
 
@@ -420,15 +431,19 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                     newCache = result.cache;
                                 } catch (error) {
                                     observeApiError(error, (status) =>
-                                        metrics.core_vpn_single_signup_step3_complete_total.increment({ status })
+                                        metrics.core_vpn_single_signup_step3_complete_2_total.increment({
+                                            status,
+                                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                                        })
                                     );
                                     handleError(error);
                                     return;
                                 }
                             }
 
-                            metrics.core_vpn_single_signup_step3_complete_total.increment({
+                            metrics.core_vpn_single_signup_step3_complete_2_total.increment({
                                 status: 'success',
+                                flow: isB2bPlan ? 'b2b' : 'b2c',
                             });
 
                             const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
@@ -452,11 +467,26 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                 throw new Error('Missing cache');
                             }
 
-                            const password = cache.accountData.password;
-                            const keyPassword = cache.setupData?.keyPassword || '';
-                            const orgName = signupParameters.orgName || '';
+                            try {
+                                const password = cache.accountData.password;
+                                const keyPassword = cache.setupData?.keyPassword || '';
+                                const orgName = signupParameters.orgName || '';
 
-                            await handleSetupOrg({ api: silentApi, password, keyPassword, orgName }).catch(noop);
+                                await handleSetupOrg({ api: silentApi, password, keyPassword, orgName }).catch(noop);
+
+                                metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
+                                    status: 'success',
+                                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                                });
+                            } catch (error) {
+                                handleError(error);
+                                observeApiError(error, (status) =>
+                                    metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
+                                        status,
+                                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                                    })
+                                );
+                            }
 
                             await done(cache);
                         }}

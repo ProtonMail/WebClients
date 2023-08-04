@@ -17,17 +17,18 @@ import { WebCoreSignupRecoveryStepSetRecoveryMethodTotal } from './types/web_cor
 import { WebCoreSignupReferralStepPlanSelectionTotal } from './types/web_core_signup_referralStep_planSelection_total_v2.schema.d';
 import { WebCoreSignupUpsellStepPlanSelectionTotal } from './types/web_core_signup_upsellStep_planSelection_total_v2.schema.d';
 import { WebCoreSignupVerificationStepVerificationTotal } from './types/web_core_signup_verificationStep_verification_total_v2.schema.d';
-import { WebCoreVpnSingleSignupFetchDependenciesTotal } from './types/web_core_vpn_single_signup_fetchDependencies_total_v1.schema';
-import { WebCoreVpnSingleSignupPageLoadTotal } from './types/web_core_vpn_single_signup_pageLoad_total_v1.schema';
-import { WebCoreVpnSingleSignupPasswordSelectionStepTotal } from './types/web_core_vpn_single_signup_passwordSelection_step_total_v1.schema';
-import { WebCoreVpnSingleSignupStep1AccountCreationTotal } from './types/web_core_vpn_single_signup_step1_accountCreation_total_v1.schema';
-import { WebCoreVpnSingleSignupStep1CurrencyChangeTotal } from './types/web_core_vpn_single_signup_step1_currencyChange_total_v1.schema';
-import { WebCoreVpnSingleSignupStep1CycleChangeTotal } from './types/web_core_vpn_single_signup_step1_cycleChange_total_v1.schema';
-import { WebCoreVpnSingleSignupStep1InteractionTotal } from './types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import { WebCoreVpnSingleSignupStep1PaymentTotal } from './types/web_core_vpn_single_signup_step1_payment_total_v1.schema';
-import { WebCoreVpnSingleSignupStep2Setup2Total } from './types/web_core_vpn_single_signup_step2_setup_2_total_v1.schema';
-import { WebCoreVpnSingleSignupStep3CompleteTotal } from './types/web_core_vpn_single_signup_step3_complete_total_v1.schema';
-import { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
+import { WebCoreVpnSingleSignupFetchDependencies2Total } from './types/web_core_vpn_single_signup_fetchDependencies_2_total_v1.schema';
+import { WebCoreVpnSingleSignupPageLoad2Total } from './types/web_core_vpn_single_signup_pageLoad_2_total_v1.schema';
+import { WebCoreVpnSingleSignupPasswordSelectionStep2Total } from './types/web_core_vpn_single_signup_passwordSelection_step_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1AccountCreation2Total } from './types/web_core_vpn_single_signup_step1_accountCreation_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1CurrencyChange2Total } from './types/web_core_vpn_single_signup_step1_currencyChange_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1CycleChange2Total } from './types/web_core_vpn_single_signup_step1_cycleChange_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1Interaction2Total } from './types/web_core_vpn_single_signup_step1_interaction_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep1Payment2Total } from './types/web_core_vpn_single_signup_step1_payment_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep2Setup3Total } from './types/web_core_vpn_single_signup_step2_setup_3_total_v1.schema';
+import { WebCoreVpnSingleSignupStep3Complete2Total } from './types/web_core_vpn_single_signup_step3_complete_2_total_v1.schema';
+import { WebCoreVpnSingleSignupStep4OrgSetupTotal } from './types/web_core_vpn_single_signup_step4_orgSetup_total_v1.schema';
+import { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vpn_single_signup_step4_setup_2_total_v1.schema';
 
 export { default as observeApiError } from './lib/observeApiError';
 export * from './lib/observeApiError';
@@ -55,27 +56,29 @@ class Metrics extends MetricsBase {
 
     public core_signup_backButton_total: Counter<WebCoreSignupBackButtonTotal>;
 
-    public core_vpn_single_signup_pageLoad_total: Counter<WebCoreVpnSingleSignupPageLoadTotal>;
+    public core_vpn_single_signup_pageLoad_2_total: Counter<WebCoreVpnSingleSignupPageLoad2Total>;
 
-    public core_vpn_single_signup_fetchDependencies_total: Counter<WebCoreVpnSingleSignupFetchDependenciesTotal>;
+    public core_vpn_single_signup_fetchDependencies_2_total: Counter<WebCoreVpnSingleSignupFetchDependencies2Total>;
 
-    public core_vpn_single_signup_step1_accountCreation_total: Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>;
+    public core_vpn_single_signup_step1_accountCreation_2_total: Counter<WebCoreVpnSingleSignupStep1AccountCreation2Total>;
 
-    public core_vpn_single_signup_step1_interaction_total: Counter<WebCoreVpnSingleSignupStep1InteractionTotal>;
+    public core_vpn_single_signup_step1_interaction_2_total: Counter<WebCoreVpnSingleSignupStep1Interaction2Total>;
 
-    public core_vpn_single_signup_step1_currencyChange_total: Counter<WebCoreVpnSingleSignupStep1CurrencyChangeTotal>;
+    public core_vpn_single_signup_step1_currencyChange_2_total: Counter<WebCoreVpnSingleSignupStep1CurrencyChange2Total>;
 
-    public core_vpn_single_signup_step1_cycleChange_total: Counter<WebCoreVpnSingleSignupStep1CycleChangeTotal>;
+    public core_vpn_single_signup_step1_cycleChange_2_total: Counter<WebCoreVpnSingleSignupStep1CycleChange2Total>;
 
-    public core_vpn_single_signup_step1_payment_total: Counter<WebCoreVpnSingleSignupStep1PaymentTotal>;
+    public core_vpn_single_signup_step1_payment_2_total: Counter<WebCoreVpnSingleSignupStep1Payment2Total>;
 
-    public core_vpn_single_signup_step2_setup_2_total: Counter<WebCoreVpnSingleSignupStep2Setup2Total>;
+    public core_vpn_single_signup_step2_setup_3_total: Counter<WebCoreVpnSingleSignupStep2Setup3Total>;
 
-    public core_vpn_single_signup_passwordSelection_step_total: Counter<WebCoreVpnSingleSignupPasswordSelectionStepTotal>;
+    public core_vpn_single_signup_passwordSelection_step_2_total: Counter<WebCoreVpnSingleSignupPasswordSelectionStep2Total>;
 
-    public core_vpn_single_signup_step3_complete_total: Counter<WebCoreVpnSingleSignupStep3CompleteTotal>;
+    public core_vpn_single_signup_step3_complete_2_total: Counter<WebCoreVpnSingleSignupStep3Complete2Total>;
 
-    public core_vpn_single_signup_step4_setup_total: Counter<WebCoreVpnSingleSignupStep4SetupTotal>;
+    public core_vpn_single_signup_step4_setup_2_total: Counter<WebCoreVpnSingleSignupStep4Setup2Total>;
+
+    public core_vpn_single_signup_step4_orgSetup_total: Counter<WebCoreVpnSingleSignupStep4OrgSetupTotal>;
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
@@ -127,51 +130,58 @@ class Metrics extends MetricsBase {
             { name: 'web_core_signup_backButton_total', version: 1 },
             this.requestService
         );
-        this.core_vpn_single_signup_pageLoad_total = new Counter<WebCoreVpnSingleSignupPageLoadTotal>(
-            { name: 'web_core_vpn_single_signup_pageLoad_total', version: 1 },
+        this.core_vpn_single_signup_pageLoad_2_total = new Counter<WebCoreVpnSingleSignupPageLoad2Total>(
+            { name: 'web_core_vpn_single_signup_pageLoad_2_total', version: 1 },
             this.requestService
         );
-        this.core_vpn_single_signup_fetchDependencies_total = new Counter<WebCoreVpnSingleSignupFetchDependenciesTotal>(
-            { name: 'web_core_vpn_single_signup_fetchDependencies_total', version: 1 },
-            this.requestService
-        );
-        this.core_vpn_single_signup_step1_interaction_total = new Counter<WebCoreVpnSingleSignupStep1InteractionTotal>(
-            { name: 'web_core_vpn_single_signup_step1_interaction_total', version: 1 },
-            this.requestService
-        );
-        this.core_vpn_single_signup_step1_currencyChange_total =
-            new Counter<WebCoreVpnSingleSignupStep1CurrencyChangeTotal>(
-                { name: 'web_core_vpn_single_signup_step1_currencyChange_total', version: 1 },
+        this.core_vpn_single_signup_fetchDependencies_2_total =
+            new Counter<WebCoreVpnSingleSignupFetchDependencies2Total>(
+                { name: 'web_core_vpn_single_signup_fetchDependencies_2_total', version: 1 },
                 this.requestService
             );
-        this.core_vpn_single_signup_step1_cycleChange_total = new Counter<WebCoreVpnSingleSignupStep1CycleChangeTotal>(
-            { name: 'web_core_vpn_single_signup_step1_cycleChange_total', version: 1 },
-            this.requestService
-        );
-        this.core_vpn_single_signup_step1_payment_total = new Counter<WebCoreVpnSingleSignupStep1PaymentTotal>(
-            { name: 'web_core_vpn_single_signup_step1_payment_total', version: 1 },
-            this.requestService
-        );
-        this.core_vpn_single_signup_step1_accountCreation_total =
-            new Counter<WebCoreVpnSingleSignupStep1AccountCreationTotal>(
-                { name: 'web_core_vpn_single_signup_step1_accountCreation_total', version: 1 },
+        this.core_vpn_single_signup_step1_interaction_2_total =
+            new Counter<WebCoreVpnSingleSignupStep1Interaction2Total>(
+                { name: 'web_core_vpn_single_signup_step1_interaction_2_total', version: 1 },
                 this.requestService
             );
-        this.core_vpn_single_signup_step2_setup_2_total = new Counter<WebCoreVpnSingleSignupStep2Setup2Total>(
-            { name: 'web_core_vpn_single_signup_step2_setup_2_total', version: 1 },
-            this.requestService
-        );
-        this.core_vpn_single_signup_passwordSelection_step_total =
-            new Counter<WebCoreVpnSingleSignupPasswordSelectionStepTotal>(
-                { name: 'web_core_vpn_single_signup_passwordSelection_step_total', version: 1 },
+        this.core_vpn_single_signup_step1_currencyChange_2_total =
+            new Counter<WebCoreVpnSingleSignupStep1CurrencyChange2Total>(
+                { name: 'web_core_vpn_single_signup_step1_currencyChange_2_total', version: 1 },
                 this.requestService
             );
-        this.core_vpn_single_signup_step3_complete_total = new Counter<WebCoreVpnSingleSignupStep3CompleteTotal>(
-            { name: 'web_core_vpn_single_signup_step3_complete_total', version: 1 },
+        this.core_vpn_single_signup_step1_cycleChange_2_total =
+            new Counter<WebCoreVpnSingleSignupStep1CycleChange2Total>(
+                { name: 'web_core_vpn_single_signup_step1_cycleChange_2_total', version: 1 },
+                this.requestService
+            );
+        this.core_vpn_single_signup_step1_payment_2_total = new Counter<WebCoreVpnSingleSignupStep1Payment2Total>(
+            { name: 'web_core_vpn_single_signup_step1_payment_2_total', version: 1 },
             this.requestService
         );
-        this.core_vpn_single_signup_step4_setup_total = new Counter<WebCoreVpnSingleSignupStep4SetupTotal>(
-            { name: 'web_core_vpn_single_signup_step4_setup_total', version: 1 },
+        this.core_vpn_single_signup_step1_accountCreation_2_total =
+            new Counter<WebCoreVpnSingleSignupStep1AccountCreation2Total>(
+                { name: 'web_core_vpn_single_signup_step1_accountCreation_2_total', version: 1 },
+                this.requestService
+            );
+        this.core_vpn_single_signup_step2_setup_3_total = new Counter<WebCoreVpnSingleSignupStep2Setup3Total>(
+            { name: 'web_core_vpn_single_signup_step2_setup_3_total', version: 1 },
+            this.requestService
+        );
+        this.core_vpn_single_signup_passwordSelection_step_2_total =
+            new Counter<WebCoreVpnSingleSignupPasswordSelectionStep2Total>(
+                { name: 'web_core_vpn_single_signup_passwordSelection_step_2_total', version: 1 },
+                this.requestService
+            );
+        this.core_vpn_single_signup_step3_complete_2_total = new Counter<WebCoreVpnSingleSignupStep3Complete2Total>(
+            { name: 'web_core_vpn_single_signup_step3_complete_2_total', version: 1 },
+            this.requestService
+        );
+        this.core_vpn_single_signup_step4_setup_2_total = new Counter<WebCoreVpnSingleSignupStep4Setup2Total>(
+            { name: 'web_core_vpn_single_signup_step4_setup_2_total', version: 1 },
+            this.requestService
+        );
+        this.core_vpn_single_signup_step4_orgSetup_total = new Counter<WebCoreVpnSingleSignupStep4OrgSetupTotal>(
+            { name: 'web_core_vpn_single_signup_step4_orgSetup_total', version: 1 },
             this.requestService
         );
     }

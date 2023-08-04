@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import metrics from '@proton/metrics';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -28,6 +29,13 @@ const Step4 = ({
 
     useEffect(() => {
         onSetup().catch(noop);
+    }, []);
+
+    useEffect(() => {
+        metrics.core_vpn_single_signup_pageLoad_2_total.increment({
+            step: 'org_setup',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, []);
 
     return (
