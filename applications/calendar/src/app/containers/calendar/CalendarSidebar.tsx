@@ -117,11 +117,10 @@ const CalendarSidebar = ({
     } = useSpotlightOnFeature(
         FeatureCode.HolidaysCalendarsSpotlight,
         !isWelcomeFlow && !isNarrow && !holidaysCalendars.length,
-        // TODO: update
         {
             alpha: Date.UTC(2023, 4, 25, 12),
-            beta: Date.UTC(2023, 4, 25, 12),
-            default: Date.UTC(2023, 4, 25, 12),
+            beta: Date.UTC(2023, 7, 7, 12),
+            default: Date.UTC(2023, 7, 10, 12),
         }
     );
     const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
