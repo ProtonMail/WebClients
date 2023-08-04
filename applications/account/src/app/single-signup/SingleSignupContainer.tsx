@@ -193,11 +193,11 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
             const plansMap = toMap(Plans, 'Name') as PlansMap;
 
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
                 dimensions: {},
             });
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
                 dimensions: getPaymentMethodsAvailable(paymentMethodStatus),
             });
