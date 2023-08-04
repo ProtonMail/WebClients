@@ -1,7 +1,6 @@
 import { ReactNode, useContext, useEffect, useRef, useState } from 'react';
 
 import { Challenge, ChallengeRef } from '@proton/components/containers';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -21,7 +20,7 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
     const challengeRefLogin = useRef<ChallengeRef>();
 
     useEffect(() => {
-        setApi(getSilentApi(api));
+        setApi(api);
     });
 
     useEffect(() => {
