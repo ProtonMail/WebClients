@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import devToolsEnhancer from 'remote-redux-devtools';
 
-import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
@@ -48,7 +48,9 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
     getEventInterval: () =>
-        WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
+        // WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
+        // FIXME: this is a temporary fix to avoid service worker being killed
+        ACTIVE_POLLING_TIMEOUT,
 
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
