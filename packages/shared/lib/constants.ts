@@ -25,6 +25,9 @@ export const MAX_DOMAIN_PRO_ADDON = 99;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
 export const MAX_SPACE_ADDON = 20;
+// VPN B2B limits
+export const MAX_MEMBER_VPN_B2B_ADDON = 500;
+export const MAX_IPS_ADDON = 10;
 
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
@@ -719,6 +722,9 @@ export enum ADDON_NAMES {
     DOMAIN_BUNDLE_PRO = '1domain-bundlepro2022',
     MEMBER_ENTERPRISE = '1member-enterprise2022',
     DOMAIN_ENTERPRISE = '1domain-enterprise2022',
+    MEMBER_VPN_PRO = '1member-vpnpro2023',
+    MEMBER_VPN_BUSINESS = '1member-vpnbiz2023',
+    IP_VPN_BUSINESS = '1ip-vpnbiz2023',
 }
 
 export enum PLAN_TYPES {
@@ -762,6 +768,8 @@ export enum PLANS {
     ENTERPRISE = 'enterprise2022',
     FAMILY = 'family2022',
     NEW_VISIONARY = 'visionary2022',
+    VPN_PRO = 'vpnpro2023',
+    VPN_BUSINESS = 'vpnbiz2023',
 }
 
 export const PLAN_NAMES = {
@@ -782,6 +790,8 @@ export const PLAN_NAMES = {
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.NEW_VISIONARY]: 'Visionary',
+    [PLANS.VPN_PRO]: 'VPN Essentials',
+    [PLANS.VPN_BUSINESS]: 'VPN Business',
 };
 
 export const MEMBER_PLAN_MAPPING = {
@@ -789,6 +799,8 @@ export const MEMBER_PLAN_MAPPING = {
     [ADDON_NAMES.MEMBER_MAIL_PRO]: PLANS.MAIL_PRO,
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: PLANS.DRIVE_PRO,
     [ADDON_NAMES.MEMBER_ENTERPRISE]: PLANS.ENTERPRISE,
+    [ADDON_NAMES.MEMBER_VPN_PRO]: PLANS.VPN_PRO,
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS.VPN_BUSINESS,
 };
 
 export enum COUPON_CODES {
@@ -1121,3 +1133,7 @@ export enum RELEASE_CATEGORIES {
 export enum PROTON_WEBSITES {
     PROTON_STATUS_PAGE = 'https://status.proton.me',
 }
+
+export const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
+    [PLANS.VPN_BUSINESS]: 1,
+} as const;

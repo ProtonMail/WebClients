@@ -1,8 +1,21 @@
 import { ADDON_NAMES, PLANS } from '../constants';
 import { Organization, Plan, PlanIDs } from '../interfaces';
 
-const { MAIL, DRIVE, PASS_PLUS, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO } =
-    PLANS;
+const {
+    MAIL,
+    DRIVE,
+    PASS_PLUS,
+    VPN,
+    FAMILY,
+    NEW_VISIONARY,
+    ENTERPRISE,
+    BUNDLE,
+    BUNDLE_PRO,
+    MAIL_PRO,
+    DRIVE_PRO,
+    VPN_PRO,
+    VPN_BUSINESS,
+} = PLANS;
 const NEW_PLANS = [
     MAIL,
     DRIVE,
@@ -15,11 +28,13 @@ const NEW_PLANS = [
     BUNDLE_PRO,
     MAIL_PRO,
     DRIVE_PRO,
+    VPN_PRO,
+    VPN_BUSINESS,
 ];
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
-export const clearPlanIDs = (planIDs: PlanIDs) => {
+export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     return Object.entries(planIDs).reduce<PlanIDs>((acc, [planName, quantity = 0]) => {
         if (quantity <= 0) {
             return acc;
@@ -55,9 +70,24 @@ export const getSupportedAddons = (planIDs: PlanIDs) => {
         supported[ADDON_NAMES.DOMAIN_ENTERPRISE] = true;
     }
 
+    if (planIDs[VPN_PRO]) {
+        supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
+    }
+
+    if (planIDs[VPN_BUSINESS]) {
+        supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
+        supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
+    }
+
     return supported;
 };
 
+/**
+ * Transfer addons from one plan to another. In different plans, addons have different names
+ * and potentially different resource limits, so they must be converted manually using this function.
+ *
+ * @returns
+ */
 export const switchPlan = ({
     planIDs,
     planID,
@@ -68,7 +98,7 @@ export const switchPlan = ({
     planID?: PLANS | ADDON_NAMES;
     organization?: Organization;
     plans: Plan[];
-}) => {
+}): PlanIDs => {
     if (planID === undefined) {
         return {};
     }
@@ -99,6 +129,12 @@ export const switchPlan = ({
                 const diffCalendars = (organization.UsedCalendars || 0) - plan.MaxCalendars;
 
                 if (memberAddon) {
+                    // Find out the smallest number of member addons that could accommodate the previously known usage
+                    // of the resources. For example, if the user had 5 addresses, and each member addon only
+                    // provides 1 additional address, then we would need to add 5 member addons to cover the previous
+                    // usage. The maximum is chosen across all types of resources (space, addresses, VPNs, members,
+                    // calendars) so as to ensure that the new plan covers the maximum usage of any single resource.
+                    // In addition, we explicitely check how many members were used previously.
                     newPlanIDs[addon] = Math.max(
                         diffSpace > 0 && memberAddon.MaxSpace ? Math.ceil(diffSpace / memberAddon.MaxSpace) : 0,
                         diffAddresses > 0 && memberAddon.MaxAddresses
@@ -112,7 +148,9 @@ export const switchPlan = ({
                         (planIDs[ADDON_NAMES.MEMBER_BUNDLE_PRO] || 0) +
                             (planIDs[ADDON_NAMES.MEMBER_DRIVE_PRO] || 0) +
                             (planIDs[ADDON_NAMES.MEMBER_MAIL_PRO] || 0) +
-                            (planIDs[ADDON_NAMES.MEMBER_ENTERPRISE] || 0)
+                            (planIDs[ADDON_NAMES.MEMBER_ENTERPRISE] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_VPN_PRO] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_VPN_BUSINESS] || 0)
                     );
                 }
             }
