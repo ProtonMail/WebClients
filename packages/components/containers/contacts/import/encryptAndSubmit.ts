@@ -66,7 +66,7 @@ const submitContacts = async ({
         });
         responses = Responses;
     } catch (error: any) {
-        const { Code = 0, Error = error.message } = error.data || {};
+        const { Code = 0, Error = `${error}` } = error.data || {};
         responses = contacts.map((contact, index) => ({
             Index: index,
             Response: { Code, Error },
