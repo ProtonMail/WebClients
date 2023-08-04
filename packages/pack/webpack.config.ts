@@ -140,8 +140,9 @@ const getConfig = (env: any): webpack.Configuration => {
             },
             webSocketServer: 'ws',
             ...(options.api && {
-                proxy: {
-                    '/api': {
+                proxy: [
+                    {
+                        context: ['/api', '/internal-api'],
                         target: options.api,
                         secure: false,
                         changeOrigin: true,
@@ -158,7 +159,7 @@ const getConfig = (env: any): webpack.Configuration => {
                             );
                         },
                     },
-                },
+                ],
             }),
         },
     };
