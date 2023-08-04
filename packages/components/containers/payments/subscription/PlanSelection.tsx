@@ -35,6 +35,7 @@ import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
 import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
+import useVpnB2bPlansFeature from '../useVpnB2bPlansFeature';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
@@ -122,6 +123,7 @@ const PlanSelection = ({
     const { APP_NAME } = useConfig();
     const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
+    const [showVpnB2bPlans, featureLoading] = useVpnB2bPlansFeature();
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
@@ -134,16 +136,11 @@ const PlanSelection = ({
 
     const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]].filter(isTruthy);
 
-    let B2BPlans: (Plan | ShortPlanLike)[] = [
-        hasFreePlan ? FREE_PLAN : null,
-        getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) || plansMap[PLANS.MAIL_PRO],
-        plansMap[PLANS.BUNDLE_PRO],
-    ].filter(isTruthy);
-
+    let B2BPlans: (Plan | ShortPlanLike)[] = [];
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      */
-    if (isVpnSettingsApp) {
+    if (isVpnSettingsApp && showVpnB2bPlans && !featureLoading) {
         const vpnB2BPlans = [
             plansMap[PLANS.VPN_PRO],
             plansMap[PLANS.VPN_BUSINESS],
@@ -156,6 +153,13 @@ const PlanSelection = ({
         if (vpnB2BPlans.length !== 0) {
             B2BPlans = vpnB2BPlans;
         }
+    } else {
+        B2BPlans = [
+            hasFreePlan ? FREE_PLAN : null,
+            getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) ||
+                plansMap[PLANS.MAIL_PRO],
+            plansMap[PLANS.BUNDLE_PRO],
+        ].filter(isTruthy);
     }
 
     const isSignupMode = mode === 'signup';
