@@ -105,7 +105,6 @@ describe('YourPlanSection', () => {
 
             // Subscription Panel
             expect(subscriptionPanel).toBeTruthy();
-            within(subscriptionPanel as HTMLElement).getByText('Your Plan');
             within(subscriptionPanel as HTMLElement).getByText('Proton Unlimited');
             within(subscriptionPanel as HTMLElement).getByText('Edit billing details');
             within(subscriptionPanel as HTMLElement).getByText('Explore other Proton plans');
@@ -139,7 +138,6 @@ describe('YourPlanSection', () => {
 
             // Subscription Panel
             expect(subscriptionPanel).toBeTruthy();
-            within(subscriptionPanel as HTMLElement).getByText('Your Plan');
             within(subscriptionPanel as HTMLElement).getByText('Proton Unlimited');
             within(subscriptionPanel as HTMLElement).getByText('Edit billing details');
             within(subscriptionPanel as HTMLElement).getByText('Explore other Proton plans');
@@ -166,7 +164,6 @@ describe('YourPlanSection', () => {
 
             // Subscription Panel
             expect(subscriptionPanel).toBeTruthy();
-            within(subscriptionPanel as HTMLElement).getByText('Your Plan');
             within(subscriptionPanel as HTMLElement).getByText('Proton Pro');
 
             // Upsell Panel

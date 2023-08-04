@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,7 +15,16 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasB2BPlan, getPrimaryPlan, hasPassPlus, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasB2BPlan,
+    getHasVpnB2BPlan,
+    getPrimaryPlan,
+    getVPNDedicatedIPs,
+    hasPassPlus,
+    hasVPN,
+    hasVpnBusiness,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 import {
     Address,
     Currency,
@@ -28,7 +39,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../components';
+import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../components';
 import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     FREE_PASS_ALIASES,
@@ -55,6 +66,7 @@ import Panel from './Panel';
 interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];
     included?: PlanCardFeatureDefinition['included'];
+    actionElement?: ReactNode;
 }
 
 interface SubscriptionListProps {
@@ -64,23 +76,92 @@ interface SubscriptionListProps {
 const SubscriptionItems = ({ items }: SubscriptionListProps) => {
     return (
         <>
-            {items.map(({ icon = 'checkmark', text, included = true, status = 'available', tooltip }) => {
-                if (!included) {
-                    return null;
+            {items.map(
+                ({ icon = 'checkmark', text, included = true, status = 'available', tooltip, actionElement }) => {
+                    if (!included) {
+                        return null;
+                    }
+
+                    const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+
+                    return (
+                        <StripedItem
+                            key={key}
+                            className={clsx(status === 'coming-soon' && 'color-weak')}
+                            left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
+                        >
+                            <div className="flex flex-justify-space-between flex-align-items-baseline">
+                                {text}
+                                {actionElement}
+                            </div>
+                        </StripedItem>
+                    );
                 }
+            )}
+        </>
+    );
+};
 
-                const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
+const ActionButtons = ({
+    user,
+    subscription,
+    openSubscriptionModal,
+}: {
+    user: UserModel;
+    subscription?: Subscription;
+    openSubscriptionModal: OpenSubscriptionModalCallback;
+}) => {
+    const handleCustomizeSubscription = () =>
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            disablePlanSelection: true,
+        });
+    const handleExplorePlans = () =>
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+        });
+    const handleEditPayment = () =>
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
+            disablePlanSelection: true,
+        });
 
-                return (
-                    <StripedItem
-                        key={key}
-                        className={clsx(status === 'coming-soon' && 'color-weak')}
-                        left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
-                    >
-                        {text}
-                    </StripedItem>
-                );
-            })}
+    return (
+        <>
+            {
+                // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
+                user.isPaid && user.canPay ? (
+                    <Button
+                        onClick={handleEditPayment}
+                        className="mb-2"
+                        size="large"
+                        color="weak"
+                        fullWidth
+                        data-testid="edit-billing-details"
+                    >{c('Action').t`Edit billing details`}</Button>
+                ) : null
+            }
+            {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
+                <Button
+                    onClick={handleCustomizeSubscription}
+                    className="mb-2"
+                    color="weak"
+                    size="large"
+                    shape="outline"
+                    data-testid="customize-plan"
+                    fullWidth
+                >{c('Action').t`Customize plan`}</Button>
+            ) : null}
+            {user.canPay ? (
+                <Button
+                    onClick={handleExplorePlans}
+                    size="large"
+                    shape={user.isPaid ? 'ghost' : 'outline'}
+                    color={user.isPaid ? 'norm' : 'weak'}
+                    fullWidth
+                    data-testid="explore-other-plan"
+                >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>
+            ) : null}
         </>
     );
 };
@@ -129,21 +210,6 @@ const SubscriptionPanel = ({
     const humanMaxSpace = humanSize(MaxSpace);
     const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const MaxAddresses = OrganizationMaxAddresses || 1;
-
-    const handleCustomizeSubscription = () =>
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
-            disablePlanSelection: true,
-        });
-    const handleExplorePlans = () =>
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-        });
-    const handleEditPayment = () =>
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-        });
 
     if (!user.canPay) {
         return null;
@@ -260,6 +326,57 @@ const SubscriptionPanel = ({
         );
     };
 
+    const getVpnB2B = () => {
+        const ipAddresses = getVPNDedicatedIPs(subscription);
+
+        const getMoreButton = (
+            <Button
+                color="norm"
+                shape="outline"
+                size="small"
+                className="px-2"
+                onClick={() =>
+                    openSubscriptionModal({
+                        step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                        disablePlanSelection: true,
+                    })
+                }
+            >
+                {
+                    // translator: "Get more" means "Upgrade my business plan to get more user, more dedicated servers, etc"
+                    c('Action').t`Get more`
+                }
+            </Button>
+        );
+
+        const items: Item[] = [
+            {
+                icon: 'users' as IconName,
+                text: c('Subscription attribute').ngettext(
+                    msgid`${UsedMembers} of ${MaxMembers} user`,
+                    `${UsedMembers} of ${MaxMembers} users`,
+                    MaxMembers
+                ),
+                actionElement: getMoreButton,
+            },
+            {
+                icon: 'servers',
+                text: c('Subscription attribute').ngettext(
+                    msgid`${ipAddresses} dedicated server`,
+                    `${ipAddresses} dedicated servers`,
+                    ipAddresses
+                ),
+                actionElement: hasVpnBusiness(subscription) ? getMoreButton : null,
+            },
+        ].filter(isTruthy) as Item[];
+
+        return (
+            <StripedList alternate="odd">
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
     const getDefault = () => {
         const items: (Item | false)[] = [
             (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
@@ -329,21 +446,40 @@ const SubscriptionPanel = ({
         );
     };
 
+    const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && (
+        <Price
+            className="h3 color-weak"
+            currency={currency}
+            suffix={subscription && amount ? c('Suffix').t`/month` : ''}
+            data-testid="plan-price"
+        >
+            {amount}
+        </Price>
+    );
+
+    const planTitleElement = (
+        <h2 className="h3 m-0 pt-0 pb-1">
+            <strong data-testid="plan-name">{planTitle}</strong>
+        </h2>
+    );
+
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+
+    // For the VPN B2B plan, we don't want to show the action buttons
+    // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
+    const showActionButtons = !hasVpnB2BPlan;
+
     return (
-        <Panel data-testid="current-plan" title={c('Title').t`Your Plan`}>
-            <div className="flex flex-wrap flex-align-items-center flex-justify-space-between color-weak">
-                <strong data-testid="plan-name">{planTitle}</strong>
-                {user.hasPaidMail && (
-                    <Price
-                        className="h3 color-weak"
-                        currency={currency}
-                        suffix={subscription && amount ? c('Suffix').t`/month` : ''}
-                        data-testid="plan-price"
-                    >
-                        {amount}
-                    </Price>
-                )}
-            </div>
+        <Panel
+            data-testid="current-plan"
+            titleDataTestId="plan-name"
+            titleElement={planTitleElement}
+            secondaryTitleElement={planPriceElement}
+            // If there are no action buttons, we want to reduce the bottom padding of the panel
+            // On the other hand, if there are action buttons, we want to keep the additional space
+            // after between the last button and the border
+            className={clsx(!showActionButtons && 'p-6 pb-1')}
+        >
             {(() => {
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
@@ -357,42 +493,15 @@ const SubscriptionPanel = ({
                 if (hasPassPlus(subscription)) {
                     return getPassAppPassPlus();
                 }
+                if (getHasVpnB2BPlan(subscription)) {
+                    return getVpnB2B();
+                }
+
                 return getDefault();
             })()}
             <SubscriptionPanelManageUserButton />
-            {
-                // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
-                user.isPaid && user.canPay ? (
-                    <Button
-                        onClick={handleEditPayment}
-                        className="mb-2"
-                        size="large"
-                        color="weak"
-                        fullWidth
-                        data-testid="edit-billing-details"
-                    >{c('Action').t`Edit billing details`}</Button>
-                ) : null
-            }
-            {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
-                <Button
-                    onClick={handleCustomizeSubscription}
-                    className="mb-2"
-                    color="weak"
-                    size="large"
-                    shape="outline"
-                    data-testid="customize-plan"
-                    fullWidth
-                >{c('Action').t`Customize plan`}</Button>
-            ) : null}
-            {user.canPay ? (
-                <Button
-                    onClick={handleExplorePlans}
-                    size="large"
-                    shape={user.isPaid ? 'ghost' : 'outline'}
-                    color={user.isPaid ? 'norm' : 'weak'}
-                    fullWidth
-                    data-testid="explore-other-plan"
-                >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>
+            {showActionButtons ? (
+                <ActionButtons user={user} subscription={subscription} openSubscriptionModal={openSubscriptionModal} />
             ) : null}
         </Panel>
     );

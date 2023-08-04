@@ -7,7 +7,7 @@ import { Icon, InlineLinkButton, StripedItem, StripedList } from '@proton/compon
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers';
+import { ButtonColor, ButtonShape, UpsellCta, UpsellFeature, isUpsellCta } from '../helpers';
 import Panel from './Panel';
 
 import './UpsellPanel.scss';
@@ -17,7 +17,7 @@ export interface UpsellPanelProps {
     children?: ReactNode;
     features: UpsellFeature[];
     isRecommended?: boolean;
-    ctas?: UpsellCta[];
+    ctas?: (UpsellCta | ReactNode)[];
 }
 
 type GetButtonColorAndShape = (opt: Pick<UpsellCta, 'color' | 'shape'> & Pick<UpsellPanelProps, 'isRecommended'>) => {
@@ -91,18 +91,24 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
             )}
 
             <div className="flex column gap-4">
-                {ctas.map((cta) => (
-                    <Button
-                        key={`upsell-action-${cta.label}`}
-                        data-testid="upsell-cta"
-                        size="large"
-                        {...getButtonColorAndShape({ shape: cta.shape, color: cta.color, isRecommended })}
-                        onClick={cta.action}
-                        fullWidth
-                    >
-                        {cta.label}
-                    </Button>
-                ))}
+                {ctas.map((cta) => {
+                    if (isUpsellCta(cta)) {
+                        return (
+                            <Button
+                                key={`upsell-action-${cta.label}`}
+                                data-testid="upsell-cta"
+                                size="large"
+                                {...getButtonColorAndShape({ shape: cta.shape, color: cta.color, isRecommended })}
+                                onClick={cta.action}
+                                fullWidth
+                            >
+                                {cta.label}
+                            </Button>
+                        );
+                    }
+
+                    return cta;
+                })}
             </div>
         </Panel>
     );

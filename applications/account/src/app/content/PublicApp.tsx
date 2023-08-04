@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
-import * as H from 'history';
 import type { Location } from 'history';
+import * as H from 'history';
 
 import {
     ExperimentsProvider,
@@ -12,7 +12,6 @@ import {
     UnAuthenticated,
     UnAuthenticatedApiProvider,
     useApi,
-    useConfig,
 } from '@proton/components';
 import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
@@ -136,7 +135,6 @@ interface Props {
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
-    const config = useConfig();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -266,7 +264,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: joinPaths(getSlugFromApp(toApp), getInvoicesPathname(config.APP_NAME)),
+                path: joinPaths(getSlugFromApp(toApp), getInvoicesPathname()),
             });
         }
 
