@@ -1,6 +1,16 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
-import { ADDON_NAMES, APPS, APP_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    APPS,
+    APP_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    IPS_INCLUDED_IN_PLAN,
+    PLANS,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+} from '../constants';
 import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -22,6 +32,8 @@ const {
     BUNDLE,
     BUNDLE_PRO,
     FAMILY,
+    VPN_PRO,
+    VPN_BUSINESS,
 } = PLANS;
 
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
@@ -82,6 +94,8 @@ export const hasMailProfessional = (subscription: Subscription | undefined) => h
 export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
 export const hasFamily = (subscription: Subscription | undefined) => hasSomePlan(subscription, FAMILY);
+export const hasVpnPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_PRO);
+export const hasVpnBusiness = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_BUSINESS);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
@@ -103,7 +117,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP
 };
 
 export const getIsB2BPlan = (planName: PLANS | ADDON_NAMES) => {
-    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE].includes(planName as any);
+    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
@@ -112,6 +126,10 @@ export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
 
 export const getHasB2BPlan = (subscription: Subscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
+};
+
+export const getHasVpnB2BPlan = (subscription: Subscription | undefined) => {
+    return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
 
 export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
@@ -317,4 +335,23 @@ export const getPlanOffer = (plan: Plan) => {
         result.valid = true;
     }
     return result;
+};
+
+/**
+ * Currently there is no convinent way to get the number of IPs for a VPN subscription.
+ * There is no dedicated field for that in the API.
+ * That's a hack that counts the number of IP addons.
+ */
+export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
+    const planName = getPlanName(subscription, PLAN_SERVICES.VPN);
+
+    // If you have other VPN plans, they don't have dedicated IPs
+    if (!planName) {
+        return 0;
+    }
+
+    return (subscription as Subscription).Plans.reduce(
+        (acc, { Name, Quantity }) => acc + (Name.startsWith('1ip') ? Quantity : 0),
+        IPS_INCLUDED_IN_PLAN[planName] || 0 // 1 IP is included in the Business plan
+    );
 };
