@@ -8,12 +8,14 @@ import {
     GIGA,
     MAX_ADDRESS_ADDON,
     MAX_DOMAIN_PRO_ADDON,
+    MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
+    MAX_MEMBER_VPN_B2B_ADDON,
     MAX_SPACE_ADDON,
     MAX_VPN_ADDON,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Organization, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
@@ -30,6 +32,9 @@ const AddonKey = {
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
+    [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
 } as const;
 
 export type CustomiserMode = 'signup' | undefined;
@@ -151,6 +156,9 @@ const addonLimit = {
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
+    [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
 } as const;
 
 // Since ttag doesn't support ngettext with jt, we manually replace the string with a react node...
@@ -287,16 +295,45 @@ const ProtonPlanCustomizer = ({
 
                 const isSupported = !!supportedAddons[addonNameKey];
                 const addonMaxKey = AddonKey[addonNameKey];
-                const addonMultiplier = addon[addonMaxKey] ?? 1;
-                const min = currentPlan[addonMaxKey] ?? 0;
+                /**
+                 * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
+                 * That will sctructure all these Max* properties in a different way.
+                 * For now, we need to handle MaxIPs separately.
+                 * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
+                 * with the exception of MaxIPs.
+                 */
+                let addonMultiplier: number;
+                if (addonMaxKey === 'MaxIPs') {
+                    addonMultiplier = getPlanMaxIPs(addon);
+                    if (addonMultiplier === 0) {
+                        addonMultiplier = 1;
+                    }
+                } else {
+                    addonMultiplier = addon[addonMaxKey] ?? 1;
+                }
+
+                // The same workaround as above
+                let min: number;
+                if (addonMaxKey === 'MaxIPs') {
+                    min = getPlanMaxIPs(currentPlan);
+                } else {
+                    min = currentPlan[addonMaxKey] ?? 0;
+                }
                 const max = addonLimit[addonNameKey] * addonMultiplier;
                 // Member addon comes with MaxSpace + MaxAddresses
                 const value = isSupported
                     ? min + quantity * addonMultiplier
-                    : Object.entries(planIDs).reduce(
-                          (acc, [planName, quantity]) => acc + plansMap[planName][addonMaxKey] * quantity,
-                          0
-                      );
+                    : Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
+                          // and the same workaround as above
+                          let multiplier: number;
+                          if (addonMaxKey === 'MaxIPs') {
+                              multiplier = getPlanMaxIPs(plansMap[planName]);
+                          } else {
+                              multiplier = plansMap[planName][addonMaxKey];
+                          }
+
+                          return acc + quantity * multiplier;
+                      }, 0);
                 const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
                 const maxTotal = max / divider;
 
