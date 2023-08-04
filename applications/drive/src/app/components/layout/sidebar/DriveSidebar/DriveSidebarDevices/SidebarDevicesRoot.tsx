@@ -43,7 +43,7 @@ export function SidebarDevicesRoot({
                     <ExpandButton className="flex-item-noshrink" expanded={isExpanded} onClick={() => toggleExpand()} />
                 )
             )}
-            {featureDriveWindowsGA && (
+            {featureDriveWindowsGA && driveMyDevicesProps.show && (
                 <NewFeatureTag
                     featureKey={FeatureCode.DriveWindowsGA}
                     endDate={new Date('2023-08-31')}
