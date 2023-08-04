@@ -35,7 +35,14 @@ const PlanCustomization = ({
     const currentPlan = plansMap?.[currentPlanName as keyof PlansMap];
     const hasPlanCustomiser =
         currentPlan &&
-        [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE].includes(currentPlan.Name as PLANS);
+        [
+            PLANS.MAIL_PRO,
+            PLANS.DRIVE_PRO,
+            PLANS.BUNDLE_PRO,
+            PLANS.ENTERPRISE,
+            PLANS.VPN_PRO,
+            PLANS.VPN_BUSINESS,
+        ].includes(currentPlan.Name as PLANS);
 
     return (
         <>

@@ -64,6 +64,48 @@ const bundleProDomain: Partial<Plan> = {
     },
 };
 
+const vpnProPlan: Partial<Plan> = {
+    Name: PLANS.VPN_PRO,
+    Title: 'VPN',
+    MaxMembers: 1,
+    Pricing: {
+        [CYCLE.MONTHLY]: 749,
+        [CYCLE.YEARLY]: 7499,
+        [CYCLE.TWO_YEARS]: 7499 * 2,
+    },
+};
+
+const vpnProMember: Partial<Plan> = {
+    Name: ADDON_NAMES.MEMBER_VPN_PRO,
+    MaxMembers: 1,
+    Pricing: {
+        [CYCLE.MONTHLY]: 749,
+        [CYCLE.YEARLY]: 7499,
+        [CYCLE.TWO_YEARS]: 7499 * 2,
+    },
+};
+
+const vpnBusinessPlan: Partial<Plan> = {
+    Name: PLANS.VPN_BUSINESS,
+    Title: 'VPN Business',
+    MaxMembers: 1,
+    Pricing: {
+        [CYCLE.MONTHLY]: 949,
+        [CYCLE.YEARLY]: 9499,
+        [CYCLE.TWO_YEARS]: 9499 * 2,
+    },
+};
+
+const vpnBusinessMember: Partial<Plan> = {
+    Name: ADDON_NAMES.MEMBER_VPN_BUSINESS,
+    MaxMembers: 1,
+    Pricing: {
+        [CYCLE.MONTHLY]: 949,
+        [CYCLE.YEARLY]: 9499,
+        [CYCLE.TWO_YEARS]: 9499 * 2,
+    },
+};
+
 describe('should get checkout result', () => {
     it('should calculate vpn plus', () => {
         expect(
@@ -191,6 +233,83 @@ describe('should get checkout result', () => {
             withDiscountPerMonth: 3387,
             discountPerCycle: 23040,
             discountPercent: 22,
+        });
+    });
+
+    it('should calculate VPN PRO with addons', () => {
+        const twoYearPrice3Members =
+            (vpnProPlan.Pricing?.[CYCLE.TWO_YEARS] || 0) + (vpnProMember.Pricing?.[CYCLE.TWO_YEARS] || 0) * 2;
+
+        const cost24MonthlyCycles3Members =
+            (vpnProPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 + (vpnProMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
+
+        expect(
+            getCheckout({
+                planIDs: {
+                    [PLANS.VPN_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
+                },
+                checkResult: {
+                    Amount: twoYearPrice3Members,
+                    AmountDue: twoYearPrice3Members,
+                    CouponDiscount: 0,
+                    Cycle: CYCLE.TWO_YEARS,
+                    Coupon: null,
+                },
+                plansMap: {
+                    [PLANS.VPN_PRO]: getPlan(vpnProPlan),
+                    [ADDON_NAMES.MEMBER_VPN_PRO]: getAddon(vpnProMember),
+                },
+            })
+        ).toEqual({
+            planTitle: 'VPN',
+            planName: PLANS.VPN_PRO,
+            usersTitle: '3 users',
+            users: 3,
+            addons: [],
+            withDiscountPerCycle: twoYearPrice3Members,
+            withDiscountPerMonth: twoYearPrice3Members / 24,
+            discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
+            discountPercent: 17,
+        });
+    });
+
+    it('should calculate VPN Business with addons', () => {
+        const twoYearPrice3Members =
+            (vpnBusinessPlan.Pricing?.[CYCLE.TWO_YEARS] || 0) + (vpnBusinessMember.Pricing?.[CYCLE.TWO_YEARS] || 0) * 2;
+
+        const cost24MonthlyCycles3Members =
+            (vpnBusinessPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 +
+            (vpnBusinessMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
+
+        expect(
+            getCheckout({
+                planIDs: {
+                    [PLANS.VPN_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
+                },
+                checkResult: {
+                    Amount: twoYearPrice3Members,
+                    AmountDue: twoYearPrice3Members,
+                    CouponDiscount: 0,
+                    Cycle: CYCLE.TWO_YEARS,
+                    Coupon: null,
+                },
+                plansMap: {
+                    [PLANS.VPN_BUSINESS]: getPlan(vpnBusinessPlan),
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: getAddon(vpnBusinessMember),
+                },
+            })
+        ).toEqual({
+            planTitle: 'VPN Business',
+            planName: PLANS.VPN_BUSINESS,
+            usersTitle: '3 users',
+            users: 3,
+            addons: [],
+            withDiscountPerCycle: twoYearPrice3Members,
+            withDiscountPerMonth: twoYearPrice3Members / 24,
+            discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
+            discountPercent: 17,
         });
     });
 

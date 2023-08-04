@@ -167,6 +167,9 @@ export const switchPlan = ({
                     );
                 }
             }
+
+            // '1ip' case remains unhandled. We currently have only one plan with an IP addon, so for now it is not transferable.
+            // When/if we have the other plans with the same addon type, then it must be handled here.
         });
 
         return clearPlanIDs(newPlanIDs);

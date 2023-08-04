@@ -27,6 +27,8 @@ const getUsers = (): PlanCardFeature => {
             },
             [PLANS.MAIL_PRO]: null,
             [PLANS.BUNDLE_PRO]: null,
+            [PLANS.VPN_PRO]: null,
+            [PLANS.VPN_BUSINESS]: null,
         },
     };
 };
@@ -74,6 +76,8 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.MAIL_PRO]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
+                [PLANS.VPN_PRO]: getSupport('priority'),
+                [PLANS.VPN_BUSINESS]: getSupport('priority'),
             },
         },
         {
@@ -88,6 +92,8 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEasySwitch(),
                 [PLANS.MAIL_PRO]: getEasySwitch(),
                 [PLANS.BUNDLE_PRO]: getEasySwitch(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];
