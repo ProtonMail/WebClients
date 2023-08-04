@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockUnleash';
 
 const { getComputedStyle } = window;
 
