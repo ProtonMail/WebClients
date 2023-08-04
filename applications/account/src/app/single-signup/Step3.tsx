@@ -41,15 +41,20 @@ const CopyPasswordModal = ({
     onConfirm,
     onEdit,
     children,
+    isB2bPlan,
     ...rest
 }: ModalProps & {
     password: string;
     onEdit: () => void;
     onConfirm: () => void;
     children: ReactNode;
+    isB2bPlan: boolean;
 }) => {
     useEffect(() => {
-        metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'copy_password_modal' });
+        metrics.core_vpn_single_signup_passwordSelection_step_2_total.increment({
+            step: 'copy_password_modal',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, []);
 
     return (
@@ -149,16 +154,25 @@ const Step3 = ({
     }, []);
 
     useEffect(() => {
-        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'password_selection' });
+        metrics.core_vpn_single_signup_pageLoad_2_total.increment({
+            step: 'password_selection',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, []);
 
     useEffect(() => {
         if (setOwnPasswordMode) {
-            metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'own_password' });
+            metrics.core_vpn_single_signup_passwordSelection_step_2_total.increment({
+                step: 'own_password',
+                flow: isB2bPlan ? 'b2b' : 'b2c',
+            });
             return;
         }
 
-        metrics.core_vpn_single_signup_passwordSelection_step_total.increment({ step: 'given_password' });
+        metrics.core_vpn_single_signup_passwordSelection_step_2_total.increment({
+            step: 'given_password',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, [setOwnPasswordMode]);
 
     const finalPassword = setOwnPasswordMode ? newPassword : undefined;
@@ -295,6 +309,7 @@ const Step3 = ({
                     }}
                     onConfirm={() => onComplete(finalPassword).catch(noop)}
                     password={password}
+                    isB2bPlan={isB2bPlan}
                 />
             )}
         </Layout>

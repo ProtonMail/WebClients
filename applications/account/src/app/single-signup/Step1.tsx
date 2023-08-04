@@ -367,7 +367,10 @@ const Step1 = ({
     const { plansMap, paymentMethodStatus } = model;
 
     useEffect(() => {
-        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'plan_username_payment' });
+        metrics.core_vpn_single_signup_pageLoad_2_total.increment({
+            step: 'plan_username_payment',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, []);
 
     const showLifetimeDeal = !isB2bPlan;
@@ -388,7 +391,10 @@ const Step1 = ({
 
     const handleUpdate = (step: StepId) => {
         if (!hasBeenCountedRef.current[step]) {
-            metrics.core_vpn_single_signup_step1_interaction_total.increment({ step });
+            metrics.core_vpn_single_signup_step1_interaction_2_total.increment({
+                step,
+                flow: isB2bPlan ? 'b2b' : 'b2c',
+            });
 
             hasBeenCountedRef.current = {
                 ...hasBeenCountedRef.current,
@@ -483,11 +489,17 @@ const Step1 = ({
         });
         handleOptimistic({ currency })
             .then(() => {
-                metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status: 'success' });
+                metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+                    status: 'success',
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                });
             })
             .catch((error) => {
                 observeApiError(error, (status) =>
-                    metrics.core_vpn_single_signup_step1_currencyChange_total.increment({ status })
+                    metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+                        status,
+                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                    })
                 );
             });
     };
@@ -506,12 +518,18 @@ const Step1 = ({
         }
         handleOptimistic({ cycle })
             .then((result) => {
-                metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status: 'success' });
+                metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
+                    status: 'success',
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                });
                 return result;
             })
             .catch((error) => {
                 observeApiError(error, (status) =>
-                    metrics.core_vpn_single_signup_step1_cycleChange_total.increment({ status })
+                    metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
+                        status,
+                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                    })
                 );
             });
     };
@@ -600,8 +618,9 @@ const Step1 = ({
         onPaypalError: (error, type) => {
             observeApiError(error, (status) => {
                 measurePayError(type);
-                metrics.core_vpn_single_signup_step1_payment_total.increment({
+                metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                     status,
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
                 });
             });
         },
@@ -613,8 +632,9 @@ const Step1 = ({
             return true;
         },
         onPaypalPay({ Payment }: TokenPaymentMethod) {
-            metrics.core_vpn_single_signup_step1_payment_total.increment({
+            metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                 status: 'success',
+                flow: isB2bPlan ? 'b2b' : 'b2c',
             });
             return withLoadingSignup(onPay(Payment, 'pp'));
         },
@@ -989,15 +1009,17 @@ const Step1 = ({
                                                     const data = await createPaymentToken(paymentParameters, {
                                                         amountAndCurrency,
                                                     });
-                                                    metrics.core_vpn_single_signup_step1_payment_total.increment({
+                                                    metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                                                         status: 'success',
+                                                        flow: isB2bPlan ? 'b2b' : 'b2c',
                                                     });
                                                     return await onPay(data.Payment, 'cc');
                                                 } catch (error) {
                                                     observeApiError(error, (status) => {
                                                         measurePayError(type);
-                                                        metrics.core_vpn_single_signup_step1_payment_total.increment({
+                                                        metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                                                             status,
+                                                            flow: isB2bPlan ? 'b2b' : 'b2c',
                                                         });
                                                     });
                                                 }
