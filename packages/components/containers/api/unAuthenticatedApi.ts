@@ -73,6 +73,7 @@ export const init = createOnceHandler(async () => {
 
     const response = await context.api<Response>({
         ...createSession(challengePayload ? { Payload: challengePayload } : undefined),
+        silence: true,
         headers: {
             // This is here because it's required for clients that aren't in the min version
             // And we won't put e.g. the standalone login for apps there
@@ -82,7 +83,10 @@ export const init = createOnceHandler(async () => {
     });
 
     const { UID, AccessToken, RefreshToken } = await response.json();
-    await context.api(withAuthHeaders(UID, AccessToken, setCookies({ UID, RefreshToken, State: getRandomString(24) })));
+    await context.api({
+        ...withAuthHeaders(UID, AccessToken, setCookies({ UID, RefreshToken, State: getRandomString(24) })),
+        silence: true,
+    });
 
     updateUID(UID);
 
@@ -92,7 +96,13 @@ export const init = createOnceHandler(async () => {
                 if (!challengePayload) {
                     return;
                 }
-                context.api(withUIDHeaders(UID, payload(challengePayload))).catch(noop);
+                context
+                    .api({
+                        ...withUIDHeaders(UID, payload(challengePayload)),
+                        ignoreHandler: [HTTP_ERROR_CODES.UNAUTHORIZED],
+                        silence: true,
+                    })
+                    .catch(noop);
             })
             .catch(noop);
     }
