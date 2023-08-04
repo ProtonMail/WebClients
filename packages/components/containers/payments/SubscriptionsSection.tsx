@@ -7,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, getPlanIDs, getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Cycle, Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -58,6 +58,7 @@ interface SubscriptionRowProps {
     asterisk?: ReactElement;
     actions?: ReactElement;
     showPeriodEndWarning?: boolean;
+    servers?: number;
 }
 
 const SubscriptionRow = ({
@@ -72,6 +73,7 @@ const SubscriptionRow = ({
     asterisk,
     actions,
     showPeriodEndWarning = false,
+    servers,
 }: SubscriptionRowProps) => {
     return (
         <TableRow>
@@ -87,6 +89,11 @@ const SubscriptionRow = ({
             <TableCell label={c('Title subscription').t`Users`}>
                 <span data-testid="amountOfUsersId">{users}</span>
             </TableCell>
+            {servers === undefined ? null : (
+                <TableCell label={c('Title subscription').t`Servers`}>
+                    <span data-testid="amountOfServersId">{servers > 0 ? servers : '-'}</span>
+                </TableCell>
+            )}
             <TableCell label={c('Title subscription').t`Start date`}>
                 <Time format="PP" sameDayFormat={false} data-testid="planStartTimeId">
                     {PeriodStart}
@@ -132,7 +139,7 @@ const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
     const [current, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const upcoming = current?.UpcomingSubscription;
+    const upcoming = current?.UpcomingSubscription ?? undefined;
     const api = useApi();
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
@@ -192,6 +199,9 @@ const SubscriptionsSection = () => {
     ].filter(isTruthy);
     const actions = <DropdownActions size="small" list={dropdownActions} />;
 
+    const servers = getHasVpnB2BPlan(current) ? getVPNDedicatedIPs(current) : undefined;
+    const serversUpcoming = getHasVpnB2BPlan(upcoming) ? getVPNDedicatedIPs(upcoming) : undefined;
+
     return (
         <SettingsSectionWide>
             <div style={{ overflow: 'auto' }}>
@@ -201,6 +211,9 @@ const SubscriptionsSection = () => {
                             <TableCell type="header">{c('Title subscription').t`Plan`}</TableCell>
                             <TableCell type="header">{c('Title subscription').t`Duration`}</TableCell>
                             <TableCell type="header">{c('Title subscription').t`Users`}</TableCell>
+                            {servers === undefined && serversUpcoming === undefined ? null : (
+                                <TableCell type="header">{c('Title subscription').t`Servers`}</TableCell>
+                            )}
                             <TableCell type="header">{c('Title subscription').t`Start date`}</TableCell>
                             <TableCell type="header">{c('Title subscription').t`End date`}</TableCell>
                             <TableCell type="header" className="text-right">{c('Title subscription')
@@ -227,6 +240,7 @@ const SubscriptionsSection = () => {
                             asterisk={renewEnabled ? asteriskForCurrent : undefined}
                             actions={actions}
                             showPeriodEndWarning={subscriptionExpiresSoon}
+                            servers={servers}
                         ></SubscriptionRow>
                         {upcoming && (
                             <SubscriptionRow
@@ -235,6 +249,7 @@ const SubscriptionsSection = () => {
                                 PricePerCycle={upcoming.RenewAmount}
                                 status={{ type: 'info', label: c('Subscription status').t`Upcoming` }}
                                 asterisk={renewEnabled ? asterisk : undefined}
+                                servers={serversUpcoming}
                             ></SubscriptionRow>
                         )}
                     </TableBody>

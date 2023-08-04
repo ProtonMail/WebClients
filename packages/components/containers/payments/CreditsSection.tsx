@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 
 import { useModalState, useModalTwo } from '../../components/modalTwo';
 import { useSubscription, useUser } from '../../hooks';
@@ -16,26 +16,30 @@ const CreditsSection = () => {
 
     const [{ Credit }] = useUser();
 
+    const hasVpnB2B = getHasVpnB2BPlan(subscription);
+
     return (
         <SettingsSection>
             <SettingsParagraph>
                 {c('Info')
                     .t`When your subscription renews, we will apply any available credits before we charge the payment method above.`}
             </SettingsParagraph>
-            <div className="mb-7">
-                <Button
-                    loading={loadingSubscription}
-                    shape="outline"
-                    onClick={() => {
-                        if (isManagedExternally(subscription)) {
-                            showExternalSubscriptionModal({ subscription, key: 'external-subscription-modal' });
-                            return;
-                        }
+            {hasVpnB2B ? null : (
+                <div className="mb-7">
+                    <Button
+                        loading={loadingSubscription}
+                        shape="outline"
+                        onClick={() => {
+                            if (isManagedExternally(subscription)) {
+                                showExternalSubscriptionModal({ subscription, key: 'external-subscription-modal' });
+                                return;
+                            }
 
-                        setCreditModalOpen(true);
-                    }}
-                >{c('Action').t`Add credits`}</Button>
-            </div>
+                            setCreditModalOpen(true);
+                        }}
+                    >{c('Action').t`Add credits`}</Button>
+                </div>
+            )}
             <div className="px-4 mb-4 flex flex-justify-space-between">
                 <span className="text-bold" data-testid="unused-credits">{c('Credits').t`Available credits`}</span>
                 <span className="text-bold" data-testid="avalaible-credits">

@@ -5,7 +5,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Loader, useModalState } from '../../components';
+import { Icon, Loader, useModalState } from '../../components';
 import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
@@ -43,12 +43,14 @@ const PaymentMethodsSection = () => {
             </SettingsParagraph>
             <div className="mb-4">
                 <Button shape="outline" className="mr-4" onClick={() => setCreditCardModalOpen(true)}>
-                    {c('Action').t`Add credit / debit card`}
+                    <Icon name="credit-card" className="mr-2" />
+                    <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
 
                 {!hasPayPal && (
                     <Button shape="outline" onClick={() => setPaypalModalOpen(true)}>
-                        {c('Action').t`Add PayPal`}
+                        <Icon name="brand-paypal" className="mr-2" />
+                        <span>{c('Action').t`Add PayPal`}</span>
                     </Button>
                 )}
             </div>
