@@ -5,5 +5,11 @@
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
     "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data", "pmcrypto"],
-    "ignorePaths": ["**/node_modules/**"]
+    "ignorePaths": ["**/node_modules/**"],
+    "packageRules": [
+        {
+            "groupName": "Playwright",
+            "matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"]
+        }
+    ]
 }
