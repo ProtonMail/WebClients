@@ -3999,18 +3999,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.0.14":
-  version: 0.0.14
-  resolution: "@openpgp/web-stream-tools@npm:0.0.14"
-  peerDependencies:
-    typescript: ">=4.2"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: b5a1940c83f601e25ad15f4e2aab13b50bd386ce4544888d21e7eafaa8a1d7e464aa92e93c5a25a2cfc4f42cb9738152c3fc8e0a3bbd3a770e3080bf7104f62e
-  languageName: node
-  linkType: hard
-
 "@opentelemetry/api@npm:^1.4.1":
   version: 1.4.1
   resolution: "@opentelemetry/api@npm:1.4.1"
@@ -26521,7 +26509,7 @@ fsevents@^1.2.7:
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": 0.1.0
-    "@openpgp/web-stream-tools": ^0.0.14
+    "@openpgp/web-stream-tools": ^0.0.13
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
