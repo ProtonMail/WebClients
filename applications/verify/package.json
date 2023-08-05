@@ -28,11 +28,11 @@
     "devDependencies": {
         "@proton/i18n": "workspace:packages/i18n",
         "@proton/pack": "workspace:packages/pack",
-        "babel-jest": "^29.5.0",
+        "babel-jest": "^29.6.2",
         "cross-env": "^7.0.3",
-        "eslint": "^8.43.0",
-        "jest": "^29.5.0",
-        "jest-environment-jsdom": "^29.5.0",
+        "eslint": "^8.46.0",
+        "jest": "^29.6.2",
+        "jest-environment-jsdom": "^29.6.2",
         "jest-junit": "^16.0.0",
         "typescript": "^5.1.6"
     }
