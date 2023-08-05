@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { type FieldProps } from 'formik';
-import { type InputMask, type InputMaskElement } from 'imask/esm';
+import type { FieldProps } from 'formik';
+import type { InputMask, InputMaskElement } from 'imask';
 import IMask from 'imask/esm/imask';
-import { type FactoryOpts } from 'imask/esm/masked/factory';
+import type { FactoryOpts } from 'imask/masked/factory';
 
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';

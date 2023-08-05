@@ -1,4 +1,4 @@
-import { type FactoryOpts } from 'imask/esm';
+import type { FactoryOpts } from 'imask';
 import MaskedRange from 'imask/esm/masked/range';
 
 export const cardNumberMask = (value: string): FactoryOpts => {
