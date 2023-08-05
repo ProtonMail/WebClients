@@ -68,12 +68,8 @@ module.exports = {
         'import/named': 'off',
         'import/default': 'off',
         'import/namespace': 'off',
-        'import/order': [
-            'error',
-            {
-                groups: [['builtin', 'external']],
-            },
-        ],
+        // Off since we use @trivago/prettier-plugin-sort-imports
+        'import/order': 'off',
         'import/no-extraneous-dependencies': 'off',
         'import/no-named-as-default': 'off',
         'import/no-named-as-default-member': 'off',
