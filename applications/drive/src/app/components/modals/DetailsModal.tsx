@@ -65,11 +65,12 @@ export function RevisionDetailsModal({
     const [xattrs, setXattrs] = useState<ParsedExtendedAttributes>();
     const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
     const [signatureNetworkError, setSignatureNetworkError] = useState<boolean>(false);
+    const [isLoading, withIsLoading] = useLoading();
     const [isSignatureLoading, withSignatureLoading] = useLoading();
     useEffect(() => {
         const ac = new AbortController();
-        void getRevisionDecryptedXattrs(ac.signal, revision.XAttr, revision.SignatureAddress).then(
-            (decryptedXattrs) => {
+        void withIsLoading(
+            getRevisionDecryptedXattrs(ac.signal, revision.XAttr, revision.SignatureAddress).then((decryptedXattrs) => {
                 if (!decryptedXattrs) {
                     return;
                 }
@@ -79,7 +80,7 @@ export function RevisionDetailsModal({
                 } else {
                     setSignatureIssues(decryptedXattrs.signatureIssues);
                 }
-            }
+            })
         );
         return () => {
             ac.abort();
@@ -127,8 +128,10 @@ export function RevisionDetailsModal({
                 <DetailsRow label={c('Title').t`Modified`}>
                     {xattrs?.Common.ModificationTime ? (
                         <TimeCell time={xattrs.Common.ModificationTime} />
-                    ) : (
+                    ) : isLoading ? (
                         <EllipsisLoader />
+                    ) : (
+                        '-'
                     )}
                 </DetailsRow>
                 <DetailsRow
@@ -143,13 +146,15 @@ export function RevisionDetailsModal({
                 >
                     <span title={bytesSize(revision.Size)}>{humanSize(revision.Size)}</span>
                 </DetailsRow>
-                {xattrs?.Common.Size ? (
-                    <DetailsRow label={c('Title').t`Original size`}>
+                <DetailsRow label={c('Title').t`Original size`}>
+                    {xattrs?.Common.Size ? (
                         <span title={bytesSize(xattrs?.Common.Size)}>{humanSize(xattrs?.Common.Size)}</span>
-                    </DetailsRow>
-                ) : (
-                    <EllipsisLoader />
-                )}
+                    ) : isLoading ? (
+                        <EllipsisLoader />
+                    ) : (
+                        '-'
+                    )}
+                </DetailsRow>
                 {xattrs?.Common.Digests && (
                     // This should not be visible in the UI, but needed for e2e
                     <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
@@ -223,7 +228,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     <TimeCell time={link.createTime} />
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Modified`}>
-                    <TimeCell time={link.fileModifyTime} />
+                    {link.corruptedLink ? '-' : <TimeCell time={link.fileModifyTime} />}
                 </DetailsRow>
                 {link.isFile && (
                     <>
