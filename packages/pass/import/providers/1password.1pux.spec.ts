@@ -62,7 +62,7 @@ describe('Import 1password 1pux', () => {
         expect(loginItemMultiTOTP.content).toEqual({
             username: 'john@wick.com',
             password: 'password',
-            urls: ['http://localhost:7777'],
+            urls: ['http://localhost:7777/dashboard/'],
             totpUri:
                 'otpauth://totp/Login%20item%20with%20two%20TOTP%20and%20one%20text%20extra%20fields?secret=BASE32SECRET3232&algorithm=SHA1&digits=6&period=30',
         });
@@ -131,7 +131,7 @@ describe('Import 1password 1pux', () => {
         expect(specialCharItem.content).toEqual({
             username: 'somewhere',
             password: 'somepassword with " in it',
-            urls: ['https://slashdot.org'],
+            urls: ['https://slashdot.org/'],
             totpUri: '',
         });
 
