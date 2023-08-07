@@ -17,6 +17,8 @@ import {
 import { SUBSCRIPTION_STEPS } from '../constants';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
+jest.mock('@proton/metrics');
+
 describe('resolveUpsellsToDisplay', () => {
     let mockedOpenSubscriptionModal: jest.Mock;
     let base: Parameters<typeof resolveUpsellsToDisplay>[0];
@@ -56,6 +58,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
 
             upsells[1].onUpgrade();
@@ -65,6 +70,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -97,6 +105,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
 
             upsells[1].onUpgrade();
@@ -106,6 +117,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -134,6 +148,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
 
             upsells[1].onUpgrade();
@@ -143,6 +160,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -172,6 +192,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -201,6 +224,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE_PRO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -222,6 +248,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -243,6 +272,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.PASS_PLUS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
             });
         });
     });
@@ -274,6 +306,9 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.VPN_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                metrics: {
+                    source: 'upsells',
+                },
             });
 
             expect(upsell2).toMatchObject(vpnEnterpriseUpsell);
