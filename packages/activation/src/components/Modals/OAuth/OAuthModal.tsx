@@ -27,7 +27,7 @@ const OAuthModal = () => {
 
     const step = useEasySwitchSelector(selectOauthImportStateStep);
     const provider = useEasySwitchSelector(selectOauthDraftProvider);
-    const confirmQuit = useEasySwitchSelector(selectOauthDraftStepConfirmModalDisplay);
+    const confirmLeave = useEasySwitchSelector(selectOauthDraftStepConfirmModalDisplay);
 
     const { triggerOAuth, initialLoading } = useOAuthModal();
 
@@ -56,7 +56,7 @@ const OAuthModal = () => {
             {step === 'prepare-import' && <StepPrepare />}
             {step === 'importing' && <StepLoadingImporting />}
             {step === 'success' && <StepSuccess />}
-            {confirmQuit && <ConfirmLeaveModal handleClose={handleClose} handleContinue={handleContinue} />}
+            {confirmLeave && <ConfirmLeaveModal handleClose={handleClose} handleContinue={handleContinue} />}
         </>
     );
 };
