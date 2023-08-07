@@ -22,6 +22,7 @@ const QuickSettingsRemindersSection = ({ inAppReminders = [] }: Props) => {
                   icon: 'exclamation-circle-filled',
                   color: insideDropdownRecoveryNotification.color,
                   callback: () => goToSettings(insideDropdownRecoveryNotification.path),
+                  testID: 'recovery',
               }
             : undefined;
 
@@ -35,7 +36,13 @@ const QuickSettingsRemindersSection = ({ inAppReminders = [] }: Props) => {
     return (
         <QuickSettingsSection>
             {reminders.map((reminder) => {
-                return <QuickSettingsReminder reminder={reminder} key={reminder.text} />;
+                return (
+                    <QuickSettingsReminder
+                        reminder={reminder}
+                        key={reminder.text}
+                        data-testid={`drawer-quick-settings:${reminder.testID}-button`}
+                    />
+                );
             })}
         </QuickSettingsSection>
     );

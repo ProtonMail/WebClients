@@ -66,6 +66,7 @@ const ThemeCards = ({ themeIdentifier, onChange, disabled, className, list, size
                             selected={themeIdentifier === identifier}
                             onChange={() => onChange(identifier)}
                             disabled={disabled}
+                            data-testid={`theme-card:theme-${label}`}
                         />
                     </li>
                 );
