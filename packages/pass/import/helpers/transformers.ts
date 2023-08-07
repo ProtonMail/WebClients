@@ -54,7 +54,7 @@ export const importLoginItem = (options: {
         content: {
             username: options.username || '',
             password: options.password || '',
-            urls: urls.map(prop('origin')).filter((origin) => origin !== 'null'),
+            urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
             totpUri: getTOTPvalue(options.totp),
         },
         extraFields:

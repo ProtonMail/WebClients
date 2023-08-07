@@ -43,7 +43,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem1.metadata.note).toEqual('Secure note');
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
 
         /* Note */
         const noteItem1 = primary.items[1] as ItemImportIntent<'login'>;
@@ -73,7 +73,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem2.metadata.note).toEqual('');
         expect(loginItem2.content.username).toEqual('admin');
         expect(loginItem2.content.password).toEqual('proton123');
-        expect(loginItem2.content.urls[0]).toEqual('https://proton.me');
+        expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
 
         /* Login */
         const loginItem3 = secondary.items[1] as ItemImportIntent<'login'>;
@@ -82,7 +82,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem3.metadata.note).toEqual('This is a twitter note');
         expect(loginItem3.content.username).toEqual('@nobody');
         expect(loginItem3.content.password).toEqual('proton123');
-        expect(loginItem3.content.urls[0]).toEqual('https://twitter.com');
+        expect(loginItem3.content.urls[0]).toEqual('https://twitter.com/login');
         expect(loginItem3.content.totpUri).toEqual(
             'otpauth://totp/Twitter?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
         );
@@ -94,7 +94,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem4.metadata.note).toEqual('');
         expect(loginItem4.content.username).toEqual('@nobody');
         expect(loginItem4.content.password).toEqual('proton123');
-        expect(loginItem4.content.urls[0]).toEqual('https://fb.com');
+        expect(loginItem4.content.urls[0]).toEqual('https://fb.com/login');
         expect(loginItem4.content.totpUri).toEqual(
             'otpauth://totp/fb.com?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
         );
