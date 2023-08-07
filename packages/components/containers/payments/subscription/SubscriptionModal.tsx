@@ -744,6 +744,7 @@ const SubscriptionModal = ({
                                     void withBlockCycleSelector(checkPromise);
                                 }, 300)}
                                 forceHideDescriptions
+                                showUsersTooltip={false}
                             />
                             <div className="mx-auto max-w37e subscriptionCheckout-options ">
                                 {!disableCycleSelector && (

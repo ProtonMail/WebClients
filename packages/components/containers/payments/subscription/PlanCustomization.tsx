@@ -13,6 +13,7 @@ interface Props {
     mode?: CustomiserMode;
     organization?: Organization;
     forceHideDescriptions?: boolean;
+    showUsersTooltip?: boolean;
 }
 
 const PlanCustomization = ({
@@ -25,6 +26,7 @@ const PlanCustomization = ({
     loading,
     organization,
     forceHideDescriptions,
+    ...rest
 }: Props) => {
     const [currentPlanName] =
         Object.entries(planIDs).find(([planName, planQuantity]) => {
@@ -61,6 +63,7 @@ const PlanCustomization = ({
                     onChangePlanIDs={onChangePlanIDs}
                     forceHideDescriptions={forceHideDescriptions}
                     className="pb-7 mb-8"
+                    {...rest}
                 />
             )}
         </>
