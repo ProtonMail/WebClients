@@ -46,7 +46,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem.content.username).toEqual('nobodyA@proton.me');
         expect(loginItem.content.password).toEqual('proton123');
-        expect(loginItem.content.urls).toEqual(['https://account.proton.me']);
+        expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem.content.totpUri).toEqual(
             'otpauth://totp/Entry%20A:nobodyA%40proton.me%40account.proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
         );
@@ -124,7 +124,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls).toEqual(['https://account.proton.me']);
+        expect(loginItem1.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem1.content.totpUri).toEqual('');
         expect(loginItem1.extraFields).toEqual([]);
         expect(loginItem1.platformSpecific).toBeUndefined();
