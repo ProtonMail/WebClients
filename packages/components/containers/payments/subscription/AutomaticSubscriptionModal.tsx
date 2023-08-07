@@ -84,6 +84,9 @@ const AutomaticSubscriptionModal = () => {
             step,
             disablePlanSelection,
             disableCycleSelector,
+            metrics: {
+                source: 'automatic',
+            },
         });
     }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
 
