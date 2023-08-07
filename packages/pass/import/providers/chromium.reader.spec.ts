@@ -33,7 +33,7 @@ describe('Import Chrome CSV', () => {
         expect(loginItem1.metadata.note).toEqual('');
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/switch');
 
         /* Login */
         const loginItem2 = items[1] as ItemImportIntent<'login'>;
@@ -51,7 +51,7 @@ describe('Import Chrome CSV', () => {
         expect(loginItem3.metadata.note).toEqual('');
         expect(loginItem3.content.username).toEqual('missingpw@proton.me');
         expect(loginItem3.content.password).toEqual('');
-        expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me/switch');
 
         /* Login broken url */
         const loginItem4 = items[3] as ItemImportIntent<'login'>;
@@ -79,7 +79,7 @@ describe('Import Chrome CSV', () => {
         expect(loginItem1.metadata.note).toEqual('');
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/switch');
 
         /* Login */
         const loginItem2 = items[1] as ItemImportIntent<'login'>;
@@ -97,6 +97,6 @@ describe('Import Chrome CSV', () => {
         expect(loginItem3.metadata.note).toEqual('');
         expect(loginItem3.content.username).toEqual('missingpw@proton.me');
         expect(loginItem3.content.password).toEqual('');
-        expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem3.content.urls[0]).toEqual('https://account.proton.me/switch');
     });
 });

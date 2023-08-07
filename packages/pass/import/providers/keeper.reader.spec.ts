@@ -45,7 +45,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItem2FA.content).toEqual({
             username: '2fa@example.com',
             password: 'pass',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri:
                 'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30',
         });
@@ -80,7 +80,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCommaQuotes.content).toEqual({
             username: 'username with comma, quotes "',
             password: 'password with comma, quotes "',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri: '',
         });
         expect(loginItemCommaQuotes.trashed).toEqual(false);
@@ -97,7 +97,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCustomFields.content).toEqual({
             username: 'john',
             password: 'pass',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri: '',
         });
         expect(loginItemCustomFields.trashed).toEqual(false);
@@ -150,7 +150,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleLines.content).toEqual({
             username: 'john',
             password: 'pass',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri: '',
         });
         expect(loginItemMultipleLines.trashed).toEqual(false);
@@ -167,7 +167,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleUrls.content).toEqual({
             username: '',
             password: '',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri: '',
         });
         expect(loginItemMultipleUrls.trashed).toEqual(false);
@@ -199,7 +199,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemPaymentCard.content).toEqual({
             username: '',
             password: 'b5pIs[ISaru7@)44rn,xT',
-            urls: ['https://example.com'],
+            urls: ['https://example.com/'],
             totpUri: '',
         });
         expect(loginItemPaymentCard.trashed).toEqual(false);

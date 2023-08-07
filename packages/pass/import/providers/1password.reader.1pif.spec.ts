@@ -35,7 +35,7 @@ describe('Import 1password 1pif', () => {
         expect(loginItem1.metadata.note).toEqual('Item notes');
         expect(loginItem1.content.username).toEqual('somewhere');
         expect(loginItem1.content.password).toEqual('somepassword with " in it');
-        expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org');
+        expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org/');
         expect(loginItem1.content.urls.length).toEqual(1);
 
         /* Note item */
@@ -100,7 +100,7 @@ describe('Import 1password 1pif', () => {
         expect(loginItemMultiTOTP.content).toEqual({
             username: 'john@wick.com',
             password: 'password',
-            urls: ['http://localhost:7777'],
+            urls: ['http://localhost:7777/dashboard/'],
             totpUri: '',
         });
         expect(loginItemMultiTOTP.trashed).toEqual(false);
@@ -143,7 +143,7 @@ describe('Import 1password 1pif', () => {
         expect(specialCharItem.content).toEqual({
             username: 'somewhere',
             password: 'somepassword with " in it',
-            urls: ['https://slashdot.org'],
+            urls: ['https://slashdot.org/'],
             totpUri: '',
         });
 
