@@ -36,7 +36,7 @@ describe('Import Firefox CSV', () => {
         expect(loginItem.content).toEqual({
             username: 'nobody@example.com',
             password: 'proton123',
-            urls: ['https://account.proton.me'],
+            urls: ['https://account.proton.me/'],
             totpUri: '',
         });
         expect(loginItem.trashed).toEqual(false);
@@ -70,7 +70,7 @@ describe('Import Firefox CSV', () => {
         expect(loginItemMissingPassword.content).toEqual({
             username: 'missingpw@example.com',
             password: '',
-            urls: ['https://account.proton.me'],
+            urls: ['https://account.proton.me/'],
             totpUri: '',
         });
         expect(loginItemMissingPassword.trashed).toEqual(false);
@@ -104,7 +104,7 @@ describe('Import Firefox CSV', () => {
         expect(loginItemLocalhost.content).toEqual({
             username: 'winston@example.com',
             password: 'password',
-            urls: ['http://localhost:1234'],
+            urls: ['http://localhost:1234/'],
             totpUri: '',
         });
         expect(loginItemLocalhost.trashed).toEqual(false);
@@ -121,7 +121,7 @@ describe('Import Firefox CSV', () => {
         expect(loginItemCommaQuote.content).toEqual({
             username: 'username with comma, quotes "',
             password: 'password with comma, quotes "',
-            urls: ['https://account.example.com'],
+            urls: ['https://account.example.com/'],
             totpUri: '',
         });
         expect(loginItemCommaQuote.trashed).toEqual(false);
