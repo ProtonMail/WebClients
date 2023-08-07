@@ -10,8 +10,10 @@ export const isNameTooLong = (folderPath: string) => new Blob([folderPath]).size
 
 export const isNameReserved = (folderPath: string) => RESERVED_NAMES.includes(folderPath.toLowerCase());
 
-export const isNameAlreadyUsed = (name: string, paths: string[]) =>
-    paths.some((i) => i.toLowerCase().trim() === name.toLowerCase().trim());
+// To avoid creating issue if a children has the same name as a parent (somewhere in the tree),
+// we need to compare the id of the item with the id of the item in the collection since they are unique and should be different
+export const isNameAlreadyUsed = (itemName: string, itemId: string, paths: string[]) =>
+    paths.some((i) => i.toLowerCase().trim() === itemName.toLowerCase().trim() && i.trim() === itemId.trim());
 
 export const isNameEmpty = (name: string | undefined) => !name || !name.trim();
 
@@ -46,12 +48,15 @@ export const mappingHasUnavailableNames = (
     isLabelMapping: boolean
 ) => {
     const destinations = mapping
-        .map((m) => (isLabelMapping ? m.protonPath.join(m.separator) : m.protonPath.join(m.separator)))
+        .map((m) => ({
+            id: m.id,
+            dest: isLabelMapping ? m.protonPath.join(m.separator) : m.protonPath.join(m.separator),
+        }))
         .filter(isTruthy);
 
     const paths = collection.map((m) => m.Path);
 
-    return destinations.some((dest) => isNameAlreadyUsed(dest, paths));
+    return destinations.some(({ dest, id }) => isNameAlreadyUsed(dest, id, paths));
 };
 
 export const mappingHasReservedNames = (mapping: MailImportFolder[]) =>

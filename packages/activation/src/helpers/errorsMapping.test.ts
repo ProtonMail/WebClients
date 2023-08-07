@@ -46,53 +46,65 @@ describe('Activation errors mapping', () => {
     describe('isNameAlreadyUsed', () => {
         it('Should return false is name not present in array', () => {
             const paths = ['path1', 'path2'];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(false);
         });
         it('Should return true is name present in array', () => {
             const paths = ['path1', 'path2', 'path3'];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return false is name present in an empty array', () => {
             const paths: string[] = [];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(false);
         });
         it('Should return true if the name present in an array contains a space before', () => {
             const paths = ['path1', 'path2', ' path3'];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name present in an array contains a space after', () => {
             const paths = ['path1', 'path2', 'path3 '];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name present in an array contains a space before and after', () => {
             const paths = ['path1', 'path2', ' path3 '];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name present in an array contains a space before and after and is capitalized', () => {
             const paths = ['path1', 'path2', ' path3 '];
-            const res = isNameAlreadyUsed('Path3', paths);
+            const res = isNameAlreadyUsed('Path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name present in an array contains two space before', () => {
             const paths = ['path1', 'path2', '  path3'];
-            const res = isNameAlreadyUsed('path3', paths);
+            const res = isNameAlreadyUsed('path3', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name passed contains a space before and after', () => {
             const paths = ['path1', 'path2', 'path3'];
-            const res = isNameAlreadyUsed(' path3 ', paths);
+            const res = isNameAlreadyUsed(' path3 ', 'path3', paths);
             expect(res).toBe(true);
         });
         it('Should return true if the name passed contains a space before and after and is capitalized', () => {
             const paths = ['path1', 'path2', 'path3'];
-            const res = isNameAlreadyUsed(' Path3 ', paths);
+            const res = isNameAlreadyUsed(' Path3 ', 'path3', paths);
             expect(res).toBe(true);
+        });
+
+        it('Should not return an error when parent has same name', () => {
+            const paths = ['marco', 'marco/marco', 'marco/marco/marco'];
+            const res = isNameAlreadyUsed('marco', 'marco/marco', paths);
+            expect(res).toBe(false);
+        });
+
+        it('Should not return an error when parent has same name and space', () => {
+            const paths = ['marco', ' marco/marco ', 'marco/marco/marco'];
+            const res = isNameAlreadyUsed('marco', 'marco/marco', paths);
+            expect(res).toBe(false);
         });
     });
 
@@ -227,10 +239,12 @@ describe('Activation errors mapping', () => {
         it('Should return true if the mapping has duplicate folder names', () => {
             const mapping = [
                 {
+                    id: 'folder1',
                     protonPath: ['folder1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
+                    id: 'folder2',
                     protonPath: ['folder2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -267,10 +281,12 @@ describe('Activation errors mapping', () => {
         it('Should return false if the mapping has duplicate label names', () => {
             const mapping = [
                 {
+                    id: 'label1',
                     protonPath: ['label1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
+                    id: 'label2',
                     protonPath: ['label2'],
                     separator: '/',
                 } as MailImportFolder,
