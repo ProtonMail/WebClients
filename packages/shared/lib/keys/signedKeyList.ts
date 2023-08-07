@@ -14,13 +14,14 @@ import {
 import { SimpleMap } from '../interfaces/utils';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 
-export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference) => {
+export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference, date?: Date) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
         signingKeys: [signingKey],
         detached: true,
         context: KT_SKL_SIGNING_CONTEXT,
+        date,
     });
     return signature;
 };
