@@ -133,6 +133,7 @@ interface Props {
     nextSubscriptionStart?: number;
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
+    showPlanDescription?: boolean;
 }
 
 const SubscriptionCheckout = ({
@@ -151,6 +152,7 @@ const SubscriptionCheckout = ({
     nextSubscriptionStart,
     showDiscount = true,
     enableDetailedAddons = false,
+    showPlanDescription = true,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -192,7 +194,7 @@ const SubscriptionCheckout = ({
             loading={loading}
             hasGuarantee={isVPNPlanSelected}
             hasPayments={!isOptimistic}
-            description={<PlanDescription list={list} />}
+            description={showPlanDescription ? <PlanDescription list={list} /> : null}
         >
             <div className="mb-4 flex flex-column">
                 <strong className="mb-1">{planTitle}</strong>

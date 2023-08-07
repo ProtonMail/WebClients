@@ -843,6 +843,7 @@ const SubscriptionModal = ({
                                     nextSubscriptionStart={subscription.PeriodEnd}
                                     showDiscount={false}
                                     enableDetailedAddons={true}
+                                    showPlanDescription={false}
                                 />
                             </div>
                         </div>
