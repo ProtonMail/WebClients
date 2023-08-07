@@ -12,7 +12,7 @@ interface Props {
     className?: string;
 }
 
-const ShortcutsToggle = ({ id, className }: Props) => {
+const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
     const { call } = useEventManager();
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
     const { createNotification } = useNotifications();
@@ -26,7 +26,7 @@ const ShortcutsToggle = ({ id, className }: Props) => {
         createNotification({ text: c('Success').t`Keyboard shortcuts preferences updated` });
     };
 
-    return <Toggle id={id} className={className} checked={state} onChange={handleChange} loading={loading} />;
+    return <Toggle id={id} className={className} checked={state} onChange={handleChange} loading={loading} {...rest} />;
 };
 
 export default ShortcutsToggle;
