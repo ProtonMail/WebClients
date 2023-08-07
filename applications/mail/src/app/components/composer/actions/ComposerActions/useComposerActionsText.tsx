@@ -32,8 +32,8 @@ const useComposerSendActionsText = ({ opening, syncInProgress, date }: Props) =>
         } else if (isYesterday(date)) {
             dateMessage = c('Info').t`Saved yesterday`;
         } else {
-            // translator: Full sentense could be: "Saved on Tuesday" or "Saved on Apr 29, 1453"
-            dateMessage = c('Info').t`Saved on ${dateString}`;
+            // translator: Full sentense could be: "Saved: Tuesday" or "Saved: Apr 29, 1453"
+            dateMessage = c('Info').t`Saved: ${dateString}`;
         }
     } else {
         dateMessage = c('Action').t`Not saved`;
