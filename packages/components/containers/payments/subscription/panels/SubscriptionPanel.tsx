@@ -111,19 +111,29 @@ const ActionButtons = ({
     subscription?: Subscription;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }) => {
+    /**
+     * Since all the components here are used in the same context, we can use the same metrics source for all of them.
+     */
+    const metrics = {
+        source: 'plans' as 'plans',
+    };
+
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
             disablePlanSelection: true,
+            metrics,
         });
     const handleExplorePlans = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            metrics,
         });
     const handleEditPayment = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
+            metrics,
         });
 
     return (
@@ -339,6 +349,9 @@ const SubscriptionPanel = ({
                     openSubscriptionModal({
                         step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
                         disablePlanSelection: true,
+                        metrics: {
+                            source: 'vpn-get-more',
+                        },
                     })
                 }
             >

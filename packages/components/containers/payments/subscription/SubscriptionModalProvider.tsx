@@ -1,6 +1,7 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
-import { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
+import { APP_NAMES, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -17,13 +18,14 @@ import noop from '@proton/utils/noop';
 import { useModalState } from '../../../components';
 import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
 import InAppPurchaseModal from './InAppPurchaseModal';
-import SubscriptionModal from './SubscriptionModal';
+import SubscriptionModal, { Props as SubscriptionProps } from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { SelectedProductPlans, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;
+    metrics: SubscriptionProps['metrics'];
     defaultAudience?: Audience;
     defaultSelectedProductPlans?: SelectedProductPlans;
     plan?: PLANS;
@@ -74,6 +76,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         onClose?: () => void;
         onSuccess?: () => void;
         fullscreen?: boolean;
+        metrics: SubscriptionProps['metrics'];
+        fromPlan: WebPaymentsSubscriptionStepsTotal['Labels']['fromPlan'];
     } | null>(null);
     const [modalState, setModalState, render] = useModalState();
 
@@ -124,6 +128,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                         onClose,
                         onSuccess,
                         fullscreen,
+                        metrics,
                     }) => {
                         if (loading || render) {
                             return;
@@ -155,6 +160,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             audience = defaultAudience ?? Audience.B2C;
                         }
 
+                        const fromPlan = isFreeSubscription(subscription) ? 'free' : 'paid';
+
                         subscriptionProps.current = {
                             planIDs,
                             step,
@@ -170,6 +177,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             onClose,
                             onSuccess,
                             fullscreen,
+                            metrics,
+                            fromPlan,
                         };
                         setModalState(true);
                     },

@@ -114,6 +114,9 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             fullscreen,
             disableThanksStep: true,
             disableCycleSelector: Boolean(maybeDisableCycleSelector),
+            metrics: {
+                source: 'lite-subscribe',
+            },
         });
     }, [user, loading, loadingPlans]);
 
