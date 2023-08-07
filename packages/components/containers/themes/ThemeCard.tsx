@@ -18,6 +18,7 @@ interface Props {
     as?: React.ElementType;
     className?: string;
     borderRadius?: 'sm' | 'md';
+    'data-testid'?: string;
 }
 
 const ThemeCard = ({
@@ -31,6 +32,7 @@ const ThemeCard = ({
     borderRadius = 'md',
     as: Component = Button,
     className,
+    'data-testid': dataTestId,
 }: Props) => {
     return (
         <Component
@@ -53,6 +55,7 @@ const ThemeCard = ({
             type={Component === Button ? 'button' : undefined}
             aria-label={c('Action').t`Use ${label} theme`}
             title={c('Action').t`Use ${label} theme`}
+            data-testid={dataTestId}
         >
             <ThemeSvg className={clsx('block theme-card-image on-rtl-mirror')} size={size} colors={colors} />
             <span
