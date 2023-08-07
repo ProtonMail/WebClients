@@ -34,7 +34,7 @@ const useShowUpsellBanner = (labelID: string, otherBannerDisplayed: boolean) => 
     - If a value is found in the localStorage that should trigger a new display
      */
     const canDisplayUpsellBanner =
-        !user.hasPaidMail &&
+        user.isFree &&
         Date.now() > threeDaysAfterCreationDate &&
         isInbox &&
         needToShowUpsellBanner.current &&
