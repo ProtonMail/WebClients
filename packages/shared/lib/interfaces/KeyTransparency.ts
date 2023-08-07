@@ -1,4 +1,4 @@
-import { PublicKeyReference } from '@proton/crypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
@@ -91,3 +91,12 @@ export interface KeyTransparencyVerificationResult {
 export type UploadMissingSKL = (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => Promise<void>;
 
 export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeReset: Address[]) => Promise<void>;
+
+export interface ResignSKLWithPrimaryKeyArguments {
+    address: Address;
+    newPrimaryKey: PrivateKeyReference;
+    formerPrimaryKey: PublicKeyReference;
+    userKeys: DecryptedKey[];
+}
+
+export type ResignSKLWithPrimaryKey = (args: ResignSKLWithPrimaryKeyArguments) => Promise<void>;
