@@ -98,7 +98,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem5.content.username).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls.length).toEqual(1);
-        expect(loginItem5.content.urls[0]).toEqual('https://example.com');
+        expect(loginItem5.content.urls[0]).toEqual('https://example.com/');
         expect(loginItem5.content.totpUri).toEqual('');
         expect(loginItem5.trashed).toEqual(false);
         expect(loginItem5.extraFields).toEqual([]);
@@ -112,7 +112,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem6.content.username).toEqual('test@example.com');
         expect(loginItem6.content.password).toEqual('ndnndc');
         expect(loginItem6.content.urls.length).toEqual(1);
-        expect(loginItem6.content.urls[0]).toEqual('https://test');
+        expect(loginItem6.content.urls[0]).toEqual('https://test/');
         expect(loginItem6.content.totpUri).toEqual('');
         expect(loginItem6.trashed).toEqual(false);
         expect(loginItem6.extraFields).toEqual([]);
@@ -126,7 +126,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem7.content.username).toEqual('john');
         expect(loginItem7.content.password).toEqual('password,"comma"');
         expect(loginItem7.content.urls.length).toEqual(1);
-        expect(loginItem7.content.urls[0]).toEqual('https://example.com');
+        expect(loginItem7.content.urls[0]).toEqual('https://example.com/comma,');
         expect(loginItem7.content.totpUri).toEqual('');
         expect(loginItem7.trashed).toEqual(false);
         expect(loginItem7.extraFields).toEqual([]);

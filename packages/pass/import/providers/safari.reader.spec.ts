@@ -53,7 +53,7 @@ describe('Import Safari CSV', () => {
         expect(loginItem2faScanned.content).toEqual({
             username: '2fa-scanned',
             password: 'pass',
-            urls: ['https://2fa.example.com'],
+            urls: ['https://2fa.example.com/'],
             totpUri:
                 'otpauth://totp/Proton:db%40example.com?issuer=Proton&secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&algorithm=SHA1&digits=6&period=30',
         });
@@ -71,7 +71,7 @@ describe('Import Safari CSV', () => {
         expect(loginItemCommaQuote.content).toEqual({
             username: 'username with comma, quotes "',
             password: 'password with comma, quotes "',
-            urls: ['https://account.example.com'],
+            urls: ['https://account.example.com/'],
             totpUri: '',
         });
         expect(loginItemCommaQuote.trashed).toEqual(false);
@@ -88,7 +88,7 @@ describe('Import Safari CSV', () => {
         expect(loginItemMultipleLines.content).toEqual({
             username: 'login-with-multiple-lines',
             password: 'pass',
-            urls: ['http://localhost:7777'],
+            urls: ['http://localhost:7777/'],
             totpUri: '',
         });
         expect(loginItemMultipleLines.trashed).toEqual(false);
@@ -107,7 +107,7 @@ describe('Import Safari CSV', () => {
         expect(loginItem2faManuallyEntered.content).toEqual({
             username: '2fa-manually-entered-string@example.com',
             password: 'proton123',
-            urls: ['https://account.proton.me'],
+            urls: ['https://account.proton.me/'],
             totpUri:
                 'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30',
         });
