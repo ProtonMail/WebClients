@@ -7,7 +7,7 @@ import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -21,12 +21,15 @@ const SentinelSection = () => {
     const sentinelEligible =
         !!settings.HighSecurity.Eligible || settings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
     const { call } = useEventManager();
+    const { createNotification } = useNotifications();
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
             await api(enableHighSecurity());
+            createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been enabled` });
         } else {
             await api(disableHighSecurity());
+            createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been disabled` });
         }
         await call();
     };
