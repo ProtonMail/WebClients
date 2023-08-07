@@ -52,6 +52,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     loading?: boolean;
     mode?: CustomiserMode;
     forceHideDescriptions?: boolean;
+    showUsersTooltip?: boolean;
 }
 
 const ButtonNumberInput = ({
@@ -200,12 +201,14 @@ const AccountSizeCustomiser = ({
     price,
     input,
     showDescription = true,
+    showTooltip = true,
 }: {
     addon: Plan;
     maxUsers: number;
     price: ReactElement;
     input: ReactElement;
     showDescription?: boolean;
+    showTooltip?: boolean;
 }) => {
     return (
         <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
@@ -221,10 +224,13 @@ const AccountSizeCustomiser = ({
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
                     {c('Info').t`Number of users`}
-                    <Info
-                        buttonClass="ml-2"
-                        title={c('Info').t`A user is an account associated with a single username, mailbox, and person`}
-                    />
+                    {showTooltip && (
+                        <Info
+                            buttonClass="ml-2"
+                            title={c('Info')
+                                .t`A user is an account associated with a single username, mailbox, and person`}
+                        />
+                    )}
                 </label>
                 {input}
             </div>
@@ -324,6 +330,7 @@ const ProtonPlanCustomizer = ({
     loading,
     className,
     forceHideDescriptions,
+    showUsersTooltip,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -427,6 +434,7 @@ const ProtonPlanCustomizer = ({
                             input={input}
                             maxUsers={maxTotal}
                             showDescription={showAddonDescriptions}
+                            showTooltip={showUsersTooltip}
                         />
                     );
                 }
