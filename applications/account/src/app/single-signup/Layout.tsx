@@ -3,7 +3,14 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { PublicTopBanners, VpnForBusinessLogo, VpnLogo, useActiveBreakpoint, useConfig } from '@proton/components';
+import {
+    ProtonForBusinessLogo,
+    PublicTopBanners,
+    VpnForBusinessLogo,
+    VpnLogo,
+    useActiveBreakpoint,
+    useConfig,
+} from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -41,7 +48,10 @@ const Layout = ({
     const { isTinyMobile } = useActiveBreakpoint();
 
     const protonLogo = isB2bPlan ? (
-        <VpnForBusinessLogo className="vpn-for-business-logo" />
+        <>
+            <ProtonForBusinessLogo className="proton-for-business-logo" />
+            <VpnForBusinessLogo className="vpn-for-business-logo" />
+        </>
     ) : (
         <VpnLogo variant="with-wordmark" />
     );
@@ -81,7 +91,7 @@ const Layout = ({
                             {protonLogo}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink">{protonLogo}</div>
+                        <div className="flex-item-noshrink flex flex-align-item-center">{protonLogo}</div>
                     )
                 }
                 isDarkBg={isDarkBg && !isTinyMobile}
