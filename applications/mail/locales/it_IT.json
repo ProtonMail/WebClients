@@ -4686,6 +4686,10 @@
         "${ count } messaggio non letto",
         "${ count } messaggi non letti"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } su ${ totalProgress }",
+        "${ currentProgress } su ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } immagine incorporata",
         "${ embeddedAttachmentsCount } immagini incorporate"
@@ -4887,6 +4891,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Vuoi davvero ignorare le modifiche?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Sei sicuro di voler eliminare la tua importazione?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Sei sicuro di voler spostare tutti i messaggi in questa posizione nell'Archivio?"
@@ -5299,9 +5306,8 @@
       "Merged": [
         "Unito"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Messaggio scaricato: ${ currentProgress } su ${ totalProgress }",
-        "Messaggi scaricati: ${ currentProgress } su ${ totalProgress }"
+      "Message download status:": [
+        "Stato del download del messaggio:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Il messaggio con scadenza funziona quando si inviano email ad altri utenti di ${ MAIL_APP_NAME }. Per inviare email che scadono agli utenti non ${ BRAND_NAME }, annulla e aggiungi una protezione con password alla tua email."
@@ -5428,6 +5434,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
       "Please select the folders you would like to import:": [
         "Si prega di selezionare le cartelle che si desidera importare:"
@@ -5923,7 +5932,7 @@
         "Puoi aggiornare la tua ricerca o ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "È possibile aggiornare la query di ricerca o cancellarla"
+        "Puoi aggiornare la query di ricerca o cancellarla"
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
@@ -6028,9 +6037,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
-      ],
-      "Your import will not be processed.": [
-        "La tua importazione non verrà elaborata."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -9341,9 +9347,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Vuoi davvero ignorare la tua importazione?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } gruppo di contatti?",
