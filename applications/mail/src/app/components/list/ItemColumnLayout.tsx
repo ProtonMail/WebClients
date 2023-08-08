@@ -57,7 +57,7 @@ const ItemColumnLayout = ({
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = getESDBStatus();
 
-    const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
+    const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
     const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;
