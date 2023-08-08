@@ -4778,6 +4778,12 @@
         "${ count } непрачытаных паведамленняў",
         "${ count } непрачытаныя паведамленні"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } убудаваны відарыс",
         "${ embeddedAttachmentsCount } убудаваныя відарысы",
@@ -5477,11 +5483,8 @@
       "Merged": [
         "Аб'яднана"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Спампавана паведамленне: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }"
+      "Message download status:": [
+        "Статус спампоўвання паведамлення:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Тэрмін дзеяння для паведамленняў працуе без дадатковых патрабаванняў пры адпраўцы лістоў іншым карыстальнікам ${ MAIL_APP_NAME }. Для адпраўкі паведамленняў з тэрмінам дзеяння карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, скасуйце адпраўку і абараніце свой ліст паролем."
@@ -5608,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Забяспечце назву і адрас электроннай пошты для стварэння групы."
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
@@ -6110,6 +6116,9 @@
       "You can either update your search query or ${ button }": [
         "Вы можаце змяніць ваш пошукавы запыт або ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Вы можаце змяніць ваш пошукавы запыт або ачысціць яго"
+      ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
       ],
@@ -6229,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
-      "Your import will not be processed.": [
-        "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
@@ -9684,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } групу кантактаў?",

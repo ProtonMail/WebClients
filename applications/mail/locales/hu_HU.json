@@ -3112,6 +3112,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -3387,6 +3390,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Az üzenetet a ${ BRAND_NAME } nem tudta visszafejteni. Kérjük ellenőrizze, hogy minden kulcsa aktív-e."
+      ],
+      "status page": [
+        "állapot lap"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
@@ -4102,6 +4108,9 @@
     "Font face option": {
       "System default": [
         "Rendszer alapértelmezett"
+      ],
+      "Theme font": [
+        "Téma betűtípus"
       ]
     },
     "Font Size Default": {
@@ -4141,6 +4150,24 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } az App Store-ban"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } a Play Áruházban"
+      ],
+      "Block email communications from scammers permanently.": [
+        "A csalók e-mail kommunikációjának végleges blokkolása"
+      ],
+      "Block unsavory senders": [
+        "Blokkolja a kellemetlen feladókat"
+      ],
+      "Checklist complete": [
+        "Az ellenőrző lista kész"
+      ],
+      "Close": [
+        "Bezár"
+      ],
       "Congratulation, you completed all the steps!": [
         "Gratulálunk,minden lépést teljesítettél!"
       ],
@@ -4149,6 +4176,12 @@
       ],
       "Double your free storage to 1 GB when you complete the following:": [
         "Duplázd meg az ingyenes tárhelyedet 1 GB-ra,az alábbi lépések elvégzésével:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "A titkosítás olyan erős, hogy csak Ön és a tervezett címzettek láthatják az e-mail üzeneteit"
+      ],
+      "For your eyes only": [
+        "Csak Önnek látható"
       ],
       "Get free storage": [
         "Ingyenes tároló szerzése"
@@ -4168,8 +4201,29 @@
       "Import your contacts or messages": [
         "Importálja a névjegyeit vagy az üzeneteit"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } az adatvédelmet és hogyan egyszerűsíti az e-mailezést."
+      ],
+      "Learn more": [
+        "Tudjon meg többet"
+      ],
+      "Maybe later": [
+        "Talán később"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Kiváló! Minden szolgáltatást frissített ebben a kategóriában"
+      ],
       "Open checklist": [
         "Ellenőrzőlista megnyitása"
+      ],
+      "Popular online services": [
+        "Népszerű online szolgáltatások"
+      ],
+      "Protect and simplify your email": [
+        "Megvédi és leegyszerűsíti az ön elektronikus levelezését"
+      ],
+      "Protection from trackers": [
+        "Védelem a nyomkövetőkkel szemben"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
@@ -4179,6 +4233,18 @@
       ],
       "Set recovery method": [
         "Helyreállítási módszer beállítása"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Megakadályozzuk, hogy a hirdetők és az adatgyűjtők profilokat készítsenek Önről"
+      ],
+      "You've unlocked 1 GB": [
+        "Ön feloldott 1 GB-ot"
       ]
     },
     "Gmail forwarding": {
@@ -4577,6 +4643,10 @@
       "${ count } unread message": [
         "${ count } olvasatlan üzenet",
         "${ count } olvasatlan üzenet"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }",
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } beszúrt kép",
@@ -5038,6 +5108,9 @@
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
       ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "További keresési eredményekért próbáljon meg erre a kulcsszóra keresni az email üzenetek tartalmában"
+      ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
       ],
@@ -5181,9 +5254,8 @@
       "Merged": [
         "Egyesítve"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Letöltve: ${ currentProgress } üzenet. Összesen: ${ totalProgress }",
-        "Letöltve: ${ currentProgress } üzenet. Összesen: ${ totalProgress }"
+      "Message download status:": [
+        "Üzenet letöltés aktuális állapot:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "${ MAIL_APP_NAME } felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Nem ${ BRAND_NAME } címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
@@ -5310,6 +5382,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Csoport létrehozásához adjon meg egy nevet és egy e-mail címet."
       ],
       "Please select the folders you would like to import:": [
         "Válassza ki az importálásra kerülő mappákat:"
@@ -5804,6 +5879,9 @@
       "You can either update your search query or ${ button }": [
         "Próbálkozzon másik kereséssel vagy ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Módosíthatja a keresési lekérdezést, vagy törölheti azt"
+      ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
       ],
@@ -5907,9 +5985,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
-      ],
-      "Your import will not be processed.": [
-        "Az importálás nem lesz feldolgozva."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
@@ -7334,6 +7409,32 @@
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankolás"
+      ],
+      "E-commerce and Retail": [
+        "Elektronikus kereskedelem és kiskereskedelem"
+      ],
+      "Entertainment": [
+        "Szórakoztatás"
+      ],
+      "Food and beverage": [
+        "Étel és ital"
+      ],
+      "Gaming": [
+        "Játék"
+      ],
+      "Most popular": [
+        "Legnépszerűbb"
+      ],
+      "Travel": [
+        "Utazás"
+      ],
+      "Utilities": [
+        "Segédeszközök"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
@@ -8333,6 +8434,50 @@
         "Visszajelzés elküldve"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 év"
+      ],
+      "2 years": [
+        "2 év"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémium tárhely"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémium levelezés és naptár"
+      ],
+      "Premium Password Manager": [
+        "Prémium jelszókezelő"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Jelszókezelő"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "A kedvezmények a standard havi árakon alapulnak. Ez az ajánlat csak az első alkalommal előfizetők számára érhető el."
+      ]
+    },
+    "summer2023:Info": {
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Közösségi finanszírozásunk kilenc éves jubileumát ünnepeljük!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } jubileumi kiárusítás"
+      ]
+    },
     "Table header": {
       "Action": [
         "Művelet"
@@ -9122,9 +9267,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",

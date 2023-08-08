@@ -152,7 +152,7 @@
         "Zmień stronę"
       ],
       "Chat with us": [
-        "Czatuj z nami"
+        "Czat z nami"
       ],
       "Check import progress": [
         "Sprawdź postęp importowania"
@@ -4778,6 +4778,12 @@
         "${ count } nieprzeczytanych wiadomości",
         "${ count } nieprzeczytanych wiadomości"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } osadzony obraz",
         "${ embeddedAttachmentsCount } osadzone obrazy",
@@ -5041,6 +5047,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Czy na pewno chcesz przenieść wszystkie wiadomości do Archiwum?"
@@ -5477,11 +5486,8 @@
       "Merged": [
         "Scalony"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
-        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
-        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }",
-        "Pobieranie wiadomości: ${ currentProgress } / ${ totalProgress }"
+      "Message download status:": [
+        "Status pobierania wiadomości:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Wygasająca wiadomość działa podczas wysyłania wiadomości do innych użytkowników ${ MAIL_APP_NAME }. Aby wysłać wygasającą wiadomość do użytkowników spoza ${ BRAND_NAME }, anuluj wysyłanie i dodaj hasło wiadomości."
@@ -5608,6 +5614,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
       ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
@@ -6232,9 +6241,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
-      ],
-      "Your import will not be processed.": [
-        "Twój import nie zostanie przetworzony."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -9690,9 +9696,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Czy na pewno chcesz trwale usunąć grupę kontaktów?",
