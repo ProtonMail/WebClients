@@ -5299,10 +5299,6 @@
       "Merged": [
         "Συγχωνευμένα"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Λήψη μηνύματος: ${ currentProgress } από ${ totalProgress }",
-        "Λήψη μηνυμάτων: ${ currentProgress } από ${ totalProgress }"
-      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Η λήξη μηνυμάτων λειτουργεί εκτός πλαισίου κατά την αποστολή μηνυμάτων σε άλλους χρήστες του ${ MAIL_APP_NAME }. Για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου που λήγουν σε μη-χρήστες ${ BRAND_NAME }, παρακαλούμε να ακυρώσετε και να προσθέσετε προστασία με κωδικό πρόσβασης στο email σας."
       ],
@@ -6028,9 +6024,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
-      ],
-      "Your import will not be processed.": [
-        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
@@ -9341,9 +9334,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",

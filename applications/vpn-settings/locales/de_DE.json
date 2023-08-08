@@ -427,6 +427,10 @@
         "+ ${ domains } eigene Domain",
         "${ domains } eigene Domains"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-Adresse",
+        "+ ${ ips } IP-Adressen"
+      ],
       "+ ${ users } user": [
         "+ ${ users } Benutzer",
         "+ ${ users } Benutzer"
@@ -2639,7 +2643,7 @@
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink } besuchen."
+        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
@@ -3392,7 +3396,7 @@
         "Anleitung anzeigen"
       ],
       "visit our blog": [
-        "Blog anschauen"
+        "Blog besuchen"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Was ist der Unterschied zwischen UDP- und TCP-Protokollen?"
@@ -3434,6 +3438,15 @@
       ],
       "Create a new ${ appName } account": [
         "Erstelle ein neues ${ appName }-Konto"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME }-Kontoname finden"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Du hast dein ${ BRAND_NAME }-Passwort vergessen? Setze es mit mithilfe eines Wiederherstellungscodes, einer E-Mail oder einer SMS zurück und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME }-Kontopasswort zurücksetzen"
@@ -5352,7 +5365,7 @@
         "Gesamt"
       ],
       "Total paid": [
-        "Insgesamt gezahlt"
+        "Insgesamt bezahlt"
       ],
       "Users": [
         "Benutzer"

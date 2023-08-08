@@ -4686,6 +4686,10 @@
         "${ count } lukematon viesti",
         "${ count } lukematonta viestiä"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress }",
+        "${ currentProgress } / ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } upotettu kuva",
         "${ embeddedAttachmentsCount } upotettua kuvaa"
@@ -5299,9 +5303,8 @@
       "Merged": [
         "Yhdistetty"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Viestin lataus: ${ currentProgress }/${ totalProgress }",
-        "Viestien lataus: ${ currentProgress }/${ totalProgress }"
+      "Message download status:": [
+        "Viestin lataustila:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Viestin erääntyminen toimii heti lähetettäessä viestejä muille ${ MAIL_APP_NAME } -käyttäjille. Lähettääksesi erääntyviä viestejä ${ BRAND_NAME }in ulkopuolisille käyttäjille, peru lähetys ja suojaa viesti salasanalla."
@@ -5428,6 +5431,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
       ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
@@ -5922,6 +5928,9 @@
       "You can either update your search query or ${ button }": [
         "Voit joko muuttaa hakuasi tai ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Voit joko muuttaa hakuasi tai tyhjentää sen"
+      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -6025,9 +6034,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
-      ],
-      "Your import will not be processed.": [
-        "Tuontiasi ei käsitellä."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -9338,9 +9344,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Haluatko varmasti hylätä tuonnin?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Haluatko varmasti poistaa ${ count } yhteystietoryhmän pysyvästi?",

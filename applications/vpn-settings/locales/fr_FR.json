@@ -120,7 +120,7 @@
         "Terminé"
       ],
       "Downgrade": [
-        "Passer à un plan inférieur"
+        "Passer à un abonnement inférieur"
       ],
       "Downgrade account": [
         "Passer à un plan inférieur"
@@ -426,6 +426,10 @@
       "+ ${ domains } custom domain": [
         "+ ${ domains } domaine personnalisé",
         "+ ${ domains } domaines personnalisés"
+      ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } adresse IP",
+        "+ ${ ips } adresses IP"
       ],
       "+ ${ users } user": [
         "+ ${ users } utilisateur",
@@ -3887,7 +3891,7 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En supprimant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous créez un nouveau compte."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous voulez vous réabonner."
+        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
     "new_plans: Info": {

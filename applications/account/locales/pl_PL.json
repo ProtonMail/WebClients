@@ -174,7 +174,7 @@
         "Zmień hasło"
       ],
       "Chat with us": [
-        "Czatuj z nami"
+        "Czat z nami"
       ],
       "Check import progress": [
         "Sprawdź postęp importowania"
@@ -1033,6 +1033,12 @@
         "+ ${ domains } niestandardowych domen",
         "+ ${ domains } niestandardowych domen"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } adres IP",
+        "+ ${ ips } adresy IP",
+        "+ ${ ips } adresów IP",
+        "+ ${ ips } adresów IP"
+      ],
       "+ ${ users } user": [
         "+ ${ users } użytkownik",
         "+ ${ users } użytkowników",
@@ -1047,13 +1053,16 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable E2EE": [
+      "Disable E2EE mail": [
         "Wyłącz E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "Nie zezwalaj na niepodpisane wiadomości"
       ],
       "Enable": [
         "Włącz"
       ],
-      "Enable E2EE": [
+      "Enable E2EE mail": [
         "Włącz E2EE"
       ],
       "Generate missing keys": [
@@ -1070,6 +1079,9 @@
       "Active": [
         "Aktywny"
       ],
+      "Allow unsigned mail": [
+        "Zezwalaj na niepodpisane wiadomości"
+      ],
       "Default": [
         "Domyślny"
       ],
@@ -1082,11 +1094,8 @@
       "Missing keys": [
         "Brak kluczy"
       ],
-      "No E2EE": [
+      "No E2EE mail": [
         "Brak E2EE"
-      ],
-      "No signing": [
-        "Brak podpisywania"
       ],
       "Orphan": [
         "Osierocony"
@@ -5442,6 +5451,9 @@
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Czy na pewno chcesz odrzucić swój import?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Czy na pewno chcesz trwale usunąć wszystkie logi?"
       ],
@@ -7091,9 +7103,6 @@
         "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony.",
         "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony.",
         "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony."
-      ],
-      "Your import will not be processed.": [
-        "Twój import nie zostanie przetworzony."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
@@ -9910,6 +9919,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "Filtr ${ Filter.Name } został utworzony"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } został wyłączony"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } został włączony"
       ],
       "A disabled address cannot be default": [
         "Wyłączony adres nie może zostać domyślnym adresem"
@@ -13349,9 +13364,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Czy na pewno chcesz usunąć ten adres?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Czy na pewno chcesz odrzucić swój import?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Usuwając ten adres, stracisz możliwość otrzymywania codziennych powiadomień e-mail."
