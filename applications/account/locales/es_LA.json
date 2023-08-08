@@ -1031,6 +1031,10 @@
         "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominio personalizado"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } dirección IP",
+        "+ ${ ips } direcciones IP"
+      ],
       "+ ${ users } user": [
         "+ ${ users } usuario",
         "+ ${ users } usuarios"
@@ -1043,14 +1047,17 @@
       "Disable": [
         "Deshabilitar"
       ],
-      "Disable E2EE": [
-        "Deshabilitar cifrado E2E"
+      "Disable E2EE mail": [
+        "Deshabilitar correo E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "No permitir correos sin firma"
       ],
       "Enable": [
         "Habilitar"
       ],
-      "Enable E2EE": [
-        "Habilitar cifrado"
+      "Enable E2EE mail": [
+        "Habilitar correo E2EE"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -1066,6 +1073,9 @@
       "Active": [
         "Activa"
       ],
+      "Allow unsigned mail": [
+        "Permitir correos sin firma"
+      ],
       "Default": [
         "Por defecto"
       ],
@@ -1078,11 +1088,8 @@
       "Missing keys": [
         "Claves faltantes"
       ],
-      "No E2EE": [
-        "Sin cifrado"
-      ],
-      "No signing": [
-        "Sin firma"
+      "No E2EE mail": [
+        "Sin correo E2EE"
       ],
       "Orphan": [
         "Huérfana"
@@ -5338,6 +5345,9 @@
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que desea descartar los cambios?"
       ],
+      "Are you sure you want to discard your import?": [
+        "¿En verdad desea descartar su importación?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "¿En verdad desea eliminar permanentemente todos sus registros?"
       ],
@@ -6953,9 +6963,6 @@
       "Your import from ${ accounts } is temporarily delayed.": [
         "Su importación desde ${ accounts } está retrasada temporalmente.",
         "Sus importaciones desde ${ accounts } están retrasadas temporalmente."
-      ],
-      "Your import will not be processed.": [
-        "Su importación no será procesada."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Su información está segura con nosotros. Solo le contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -9702,6 +9709,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } creado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido activado."
       ],
       "A disabled address cannot be default": [
         "Una dirección deshabilitada no puede ser principal"
@@ -13043,9 +13056,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "¿En verdad desea eliminar esta dirección?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "¿En verdad desea descartar su importación?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."
