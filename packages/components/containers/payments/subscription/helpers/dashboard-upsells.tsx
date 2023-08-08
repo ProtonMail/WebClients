@@ -30,8 +30,9 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { Currency, Plan, Subscription } from '@proton/shared/lib/interfaces';
+import { Currency, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { getNCalendarsFeature } from '../../features/calendar';
 import { getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
@@ -369,19 +370,18 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
     });
 };
 
-const getVpnEnterpriseUpsell = (): Upsell => {
-    const VPN_ENTERPRISE_COUNTRIES = 65;
-
-    const vpnEnteriprisePlan = getVPNEnterprisePlan(undefined);
+const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): Upsell => {
+    const vpnEnteriprisePlan = getVPNEnterprisePlan(serversCount);
 
     return {
         planKey: 'VPN_ENTERPRISE',
         title: vpnEnteriprisePlan.title,
         description: vpnEnteriprisePlan.description,
-        features: [getDedicatedServersVPNFeature(VPN_ENTERPRISE_COUNTRIES), getDedicatedAccountManagerVPNFeature()],
+        features: [getDedicatedServersVPNFeature(serversCount), getDedicatedAccountManagerVPNFeature()],
         ignoreDefaultCta: true,
         otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
-        onUpgrade: () => console.log('onUpgrade'),
+        // because we have a custom CTA (<VpnEnterpriseAction />), the onUpgrade callback will never be used
+        onUpgrade: noop,
     };
 };
 
@@ -393,6 +393,7 @@ export const resolveUpsellsToDisplay = ({
     app,
     subscription,
     plans,
+    serversCount,
     canPay,
     isFree,
     ...rest
@@ -401,6 +402,7 @@ export const resolveUpsellsToDisplay = ({
     currency: Currency;
     subscription?: Subscription;
     plans: Plan[];
+    serversCount: VPNServersCountData;
     canPay?: boolean;
     isFree?: boolean;
     hasPaidMail?: boolean;
@@ -444,9 +446,9 @@ export const resolveUpsellsToDisplay = ({
             case hasMailPro(subscription):
                 return [getBundleProUpsell(upsellsPayload)];
             case hasVpnPro(subscription):
-                return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell()];
+                return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
             case hasVpnBusiness(subscription):
-                return [getVpnEnterpriseUpsell()];
+                return [getVpnEnterpriseUpsell(serversCount)];
             default:
                 return [];
         }
