@@ -1033,6 +1033,12 @@
         "+ ${ domains } власних доменів",
         "+ ${ domains } власних доменів"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-адреса",
+        "+ ${ ips } IP-адреси",
+        "+ ${ ips } IP-адрес",
+        "+ ${ ips } IP-адрес"
+      ],
       "+ ${ users } user": [
         "+ ${ users } користувач",
         "+ ${ users } користувачі",
@@ -1047,14 +1053,17 @@
       "Disable": [
         "Вимкнути"
       ],
-      "Disable E2EE": [
-        "Вимкнути E2EE"
+      "Disable E2EE mail": [
+        "Вимкнути E2EE пошти"
+      ],
+      "Disallow unsigned mail": [
+        "Заборонити непідписані листи"
       ],
       "Enable": [
         "Увімкнути"
       ],
-      "Enable E2EE": [
-        "Ввімкнути E2EE"
+      "Enable E2EE mail": [
+        "Ввімкнути E2EE пошти"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -1070,6 +1079,9 @@
       "Active": [
         "Активна"
       ],
+      "Allow unsigned mail": [
+        "Дозволити непідписані листи"
+      ],
       "Default": [
         "Типова"
       ],
@@ -1082,11 +1094,8 @@
       "Missing keys": [
         "Відсутні ключі"
       ],
-      "No E2EE": [
-        "Без наскрізного шифрування"
-      ],
-      "No signing": [
-        "Без підпису"
+      "No E2EE mail": [
+        "Без E2EE пошти"
       ],
       "Orphan": [
         "Не прив'язано"
@@ -7092,9 +7101,6 @@
         "Ваші імпортування з ${ accounts } тимчасово затримано.",
         "Ваші імпортування з ${ accounts } тимчасово затримано."
       ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
@@ -8798,6 +8804,50 @@
         "Доступна нова версія ${ appName }. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Увійти"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зареєструватися"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Створіть ${ BRAND_NAME }, щоб користуватися всіма зашифрованими сервісами ${ BRAND_NAME }, такими як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та іншими, за допомогою одного входу. Отримайте безплатний обліковий запис ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Створіть обліковий запис ${ BRAND_NAME } | Поверніть свою приватність"
+      ],
+      "Create a new ${ appName } account": [
+        "Створіть новий обліковий запис ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Знайдіть ім'я користувача облікового запису ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забули свій пароль від облікового запису ${ BRAND_NAME }? Відновіть його тут за допомогою коду відновлення, пошти або SMS і отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } тощо."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забули своє ім'я користувача ${ BRAND_NAME }? Знайдіть його за допомогою пошти або номера телефону для відновлення та отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та багато іншого."
+      ],
+      "Private and secure email, no credit card required": [
+        "Приватна та захищена електронна пошта, кредитна картка не потрібна"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Скинути пароль облікового запису ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Увійдіть, щоб отримати доступ до свого облікового запису ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Увійдіть у свій обліковий запис ${ BRAND_NAME }, щоб отримати доступ до всіх зашифрованих сервісів ${ BRAND_NAME }, таких як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } тощо. Не маєте облікового запису? Створіть його БЕЗПЛАТНО."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Увійти | Обліковий запис ${ BRAND_NAME } - Доступ до ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та багато іншого"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Спробуйте ${ planName } безплатно за цим посиланням"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Додати державні свята"
@@ -9181,6 +9231,12 @@
         "${ n } VPN-з'єднання на користувача",
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднань на користувача"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімом",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
@@ -13296,9 +13352,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Видаливши цю адресу, ви більше не зможете отримувати щоденні сповіщення електронної пошти."

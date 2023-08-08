@@ -1025,7 +1025,7 @@
         "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den första nedladdningen kan ta en stund."
       ],
       "Toggle Calendar app": [
-        "Växla kalendar-app"
+        "Växla kalender-app"
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
@@ -4686,6 +4686,10 @@
         "${ count } oläst meddelande",
         "${ count } olästa meddelanden"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } av ${ totalProgress }",
+        "${ currentProgress } av ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } inbäddad bild",
         "${ embeddedAttachmentsCount } inbäddade bilder"
@@ -4887,6 +4891,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Är du säker på att du vill kasta din import?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Är du säker på att du vill flytta alla meddelanden på denna plats till arkiv?"
@@ -5299,9 +5306,8 @@
       "Merged": [
         "Sammanslagna"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Meddelande nedladdat: ${ currentProgress } av ${ totalProgress }",
-        "Meddelanden nedladdade: ${ currentProgress } av ${ totalProgress }"
+      "Message download status:": [
+        "Meddelande för nedladdningsstatus:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Meddelandets förfallodatum fungerar bara när e-post skickas till andra ${ MAIL_APP_NAME }-användare. För att skicka e-postmeddelanden med förfallodag till användare utan ${ BRAND_NAME }, vänligen avbryt och lägg istället till lösenordsskydd till din e-post."
@@ -5428,6 +5434,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Ange ett namn och en e-postadress för att skapa en grupp."
       ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
@@ -6028,9 +6037,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
-      ],
-      "Your import will not be processed.": [
-        "Din import kommer inte att bearbetas."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
@@ -9341,9 +9347,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Är du säker på att du vill kasta din import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Är du säker på att du vill ta bort ${ count } kontaktgrupp permanent?",

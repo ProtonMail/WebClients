@@ -4778,6 +4778,12 @@
         "${ count } nepřečtených zpráv",
         "${ count } nepřečtených zpráv"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } ze ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázek",
         "${ embeddedAttachmentsCount } vložené obrázky",
@@ -5477,11 +5483,8 @@
       "Merged": [
         "Sloučený"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Stahování zprávy: ${ currentProgress } z ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } ze ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }"
+      "Message download status:": [
+        "Stav stahování zprávy:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Vypršení platnosti zprávy funguje mezi uživateli služby ${ MAIL_APP_NAME }. Pro zaslání e-mailů s omezenou platností uživatelům, kteří nepoužívají službu ${ BRAND_NAME }, prosím nepokračujte a přidejte k e-mailu ochranu heslem."
@@ -5608,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
@@ -6110,6 +6116,9 @@
       "You can either update your search query or ${ button }": [
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Vyhledávací dotaz můžete buď aktualizovat, nebo vyčistit"
+      ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
@@ -6229,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
-      ],
-      "Your import will not be processed.": [
-        "Váš import nebude zpracován."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -9684,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Jste si jistí, že chcete zahodit váš import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Opravdu chcete nevratně smazat ${ count } skupinu kontaktů?",

@@ -2151,6 +2151,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -2399,6 +2402,9 @@
       ],
       "Start time must be before end time": [
         "開始日時は終了日時の前に設定してください。"
+      ],
+      "status page": [
+        "ステータスページ"
       ],
       "The address might be misspelled": [
         "アドレスの綴りが違う可能性があります"
@@ -3976,9 +3982,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
-      ],
-      "Your import will not be processed.": [
-        "インポートできませんでした。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -6374,9 +6377,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "インポートを破棄してよろしいですか?"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "${ count } 件の連絡先グループを完全に削除してよろしいですか？"

@@ -5299,10 +5299,6 @@
       "Merged": [
         "Combinats"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "S'ha descarregat el missatge: ${ currentProgress } de ${ totalProgress }",
-        "S'han descarregat els missatges: ${ currentProgress } de ${ totalProgress }"
-      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ${ MAIL_APP_NAME }. Per enviar correus electrònics que caduquin a usuaris que no siguin de ${ BRAND_NAME }, torneu enrere i afegiu la protecció de contrasenya al correu electrònic."
       ],
@@ -5922,6 +5918,9 @@
       "You can either update your search query or ${ button }": [
         "Podeu actualitzar la cerca de consulta o ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Podeu actualitzar la vostra consulta de cerca o esborrar-la."
+      ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
@@ -6025,9 +6024,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
-      ],
-      "Your import will not be processed.": [
-        "La vostra importació no es processarà."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -9338,9 +9334,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Esteu segur que voleu descartar la seva importació?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",

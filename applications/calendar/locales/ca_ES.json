@@ -303,7 +303,7 @@
         "Uneix-me al calendari"
       ],
       "Keep current time zone": [
-        "Manté la zona horària actual"
+        "Mantén la zona horària actual"
       ],
       "Load": [
         "Carrega"
@@ -459,7 +459,7 @@
         "Seleccionar-ho tot"
       ],
       "Select time zone": [
-        "Selecciona la zona horària"
+        "Selecciona el fus horari"
       ],
       "Send": [
         "Enviar"
@@ -2173,8 +2173,8 @@
         "Alguns contactes no tenen una adreça de correu electrònic vàlida: ${ list }"
       ],
       "${ list } doesn't have an email address": [
-        "${ list } no té una adreça de correu electrònic",
-        "Alguns contactes no tenen una adreça de correu electrònic: ${ list }"
+        "${ list } no té una adreça de correu electrònic.",
+        "Alguns contactes no tenen una adreça de correu electrònic: ${ list }."
       ],
       "${ list } has invalid emails": [
         "${ list } té correus electrònics incorrectes.",
@@ -4046,9 +4046,6 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
-      "Your import will not be processed.": [
-        "La vostra importació no es processarà."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
       ],
@@ -4104,8 +4101,8 @@
     },
     "Information about why calendar event cannot be saved": {
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Es permet un màxim d'${ MAX_ATTENDEES } participant per invitació",
-        "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació"
+        "Es permet un màxim d'${ MAX_ATTENDEES } participant per invitació.",
+        "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació."
       ],
       "Creating invites in a shared calendar is not allowed": [
         "No es permet crear invitacions en un calendari compartit"
@@ -6061,10 +6058,10 @@
         "Canviar la meva resposta"
       ],
       "Choose how many times this event will repeat": [
-        "Trieu quantes vegades es repetirà aquest esdeveniment"
+        "Trieu quantes vegades es repetirà aquest esdeveniment."
       ],
       "Choose how often this event repeats": [
-        "Trieu la freqüència amb què es repeteix aquest esdeveniment"
+        "Trieu la freqüència amb què es repeteix aquest esdeveniment."
       ],
       "Clearing data": [
         "Netejant dades"
@@ -6126,7 +6123,7 @@
         "Eliminant contactes"
       ],
       "Drop to upload": [
-        "Arrossegueu aquí per carregar"
+        "Arrossegueu per a carregar"
       ],
       "Edit contact": [
         "Editar contacte"
@@ -6217,7 +6214,7 @@
         "Obrir el menú de preferències"
       ],
       "Organizer cannot be notified": [
-        "No es pot notificar a l'organitzador"
+        "No es pot notificar a l'organitzador."
       ],
       "Other information": [
         "Altres dades"
@@ -6226,7 +6223,7 @@
         "Altres noms"
       ],
       "Participants cannot be notified": [
-        "No es pot notificar als participants"
+        "No es pot notificar als participants."
       ],
       "Phone numbers": [
         "Números de telèfon"
@@ -6256,13 +6253,13 @@
         "Demana un codi nou"
       ],
       "Reshare your calendars": [
-        "Torneu a compartir els vostres calendaris"
+        "Compartiu de nou els vostres calendaris."
       ],
       "Save changes": [
         "Desa els canvis"
       ],
       "Select a day in the month": [
-        "Seleccioneu un dia del mes"
+        "Seleccioneu un dia del mes."
       ],
       "Select a theme": [
         "Seleccioneu un tema"
@@ -6274,7 +6271,7 @@
         "Seleccionar grup de contactes"
       ],
       "Select event end date": [
-        "Seleccioneu la data final de l'esdeveniment"
+        "Seleccioneu la data final de l'esdeveniment."
       ],
       "Select event end time": [
         "Seleccioneu l'hora de finalització de l'esdeveniment."
@@ -6286,28 +6283,28 @@
         "Seleccioneu l'interval de freqüència de l'esdeveniment"
       ],
       "Select event start date": [
-        "Seleccioneu la data d'inici de l'esdeveniment"
+        "Seleccioneu la data d'inici de l'esdeveniment."
       ],
       "Select event start time": [
         "Seleccioneu l'hora d'inici de l'esdeveniment"
       ],
       "Select event's last date": [
-        "Seleccioneu la data final de l'esdeveniment"
+        "Seleccioneu l'última data de l'esdeveniment."
       ],
       "Select the time to send this notification": [
-        "Seleccioneu l'hora per enviar aquesta notificació"
+        "Seleccioneu l'hora per enviar aquesta notificació."
       ],
       "Select the time zone for the event end time": [
         "Seleccioneu el fus horari per a l'hora de finalització de l'esdeveniment."
       ],
       "Select the time zone for the event start time": [
-        "Seleccioneu la zona horària per a l'hora d'inici de l'esdeveniment"
+        "Seleccioneu el fus horari per a l'hora d'inici de l'esdeveniment."
       ],
       "Select the way to send this notification": [
         "Seleccioneu la manera d’enviar aquesta notificació"
       ],
       "Select when this event will stop happening": [
-        "Seleccioneu quan deixarà de succeir aquest esdeveniment"
+        "Seleccioneu quan deixarà de succeir aquest esdeveniment."
       ],
       "Select when you want this notification to be sent": [
         "Selecciona quan vols que s'enviï aquesta notificació"
@@ -6515,9 +6512,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Esteu segur que voleu descartar la seva importació?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",

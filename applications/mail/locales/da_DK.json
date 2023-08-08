@@ -3918,6 +3918,9 @@
       "Configure your family account and invite users ": [
         "Konfigurer din familie-konto og inviter brugere "
       ],
+      "Set up your family": [
+        "Opret din familie"
+      ],
       "Set up your family account": [
         "Konfigurer din familie-konto"
       ]
@@ -4650,6 +4653,10 @@
         "${ count } ulæst besked",
         "${ count } ulæste beskeder"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } ud af ${ totalProgress }",
+        "${ currentProgress } ud af ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } indlejret billede",
         "${ embeddedAttachmentsCount } indlejrede billeder"
@@ -5263,9 +5270,8 @@
       "Merged": [
         "Flettet"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Besked downloadet: ${ currentProgress } ud af ${ totalProgress }",
-        "Beskeder downloadet: ${ currentProgress } ud af ${ totalProgress }"
+      "Message download status:": [
+        "Status for download af besked:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Beskedudløb virker uden videre, når du sender e-mails til andre ${ MAIL_APP_NAME }-brugere. For at sende e-mails med udløb til ikke-${ BRAND_NAME }-brugere bedes du annullere og tilføje adgangskodebeskyttelse til din e-mail."
@@ -5392,6 +5398,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Angiv et navn og en e-mailadresse for at oprette en gruppe."
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
@@ -5886,6 +5895,9 @@
       "You can either update your search query or ${ button }": [
         "Du kan enten opdatere din søgeforespørgsel eller ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Du kan enten opdatere din søgeforespørgsel eller slette den"
+      ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
@@ -5989,9 +6001,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
-      ],
-      "Your import will not be processed.": [
-        "Din import vil ikke blive behandlet."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
@@ -7403,6 +7412,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Udforsk alle ${ BRAND_NAME }-tjenester"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Flere temamuligheder er tilgængelige i din kontos Indstillinger > Udseende."
+      ],
       "Select a theme": [
         "Vælg et tema"
       ],
@@ -7419,6 +7431,9 @@
       ]
     },
     "Online Accounts Name": {
+      "Banking": [
+        "Bankvirksomhed"
+      ],
       "Crypto": [
         "Krypto"
       ],
@@ -7439,6 +7454,9 @@
       ],
       "Travel": [
         "Rejser"
+      ],
+      "Utilities": [
+        "Forsyningsselskaber"
       ]
     },
     "Option": {
@@ -7902,6 +7920,11 @@
         "Specialtilbud"
       ]
     },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Få Unlimited"
+      ]
+    },
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } dag",
@@ -7979,6 +8002,9 @@
       ]
     },
     "specialoffer: Label": {
+      "Lifetime deal": [
+        "Livsvarigt tilbud"
+      ],
       "Limited time only": [
         "Kun i begrænset tid"
       ],
@@ -8064,6 +8090,9 @@
       "Cyber Week Sale": [
         "Cyber Week-udsalg"
       ],
+      "End of year offer": [
+        "Tilbud i slutningen af året"
+      ],
       "End of Year Sale": [
         "Udsalg ved årets afslutning"
       ],
@@ -8124,6 +8153,9 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
+      ],
+      "Search just got smarter and faster": [
+        "Søgning er lige blevet smartere og hurtigere"
       ],
       "Try it today.": [
         "Prøv det i dag."
@@ -8440,6 +8472,9 @@
       ],
       "Premium Mail and Calendar": [
         "Premium Mail og Kalender"
+      ],
+      "Premium Password Manager": [
+        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Describe Proton Pass": {
@@ -8453,13 +8488,33 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
       ]
     },
     "summer2023:Footer": {
       "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
         "*Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatter er baseret på den månedlige standardpris. Dette tilbud er kun tilgængeligt for førstegangsabonnenter."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "I en begrænset periode kan du få det bedste, ${ BRAND_NAME } har at tilbyde til en eksklusiv rabat."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Vi fejrer niårsdagen for vores crowdfunding!"
       ]
     },
     "summer2023:Offer title": {
@@ -9256,9 +9311,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Er du sikker på, at du vil kassere din import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",

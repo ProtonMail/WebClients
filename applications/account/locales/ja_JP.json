@@ -1041,14 +1041,17 @@
       "Disable": [
         "無効にする"
       ],
-      "Disable E2EE": [
-        "エンドツーエンド暗号化を無効にする"
+      "Disable E2EE mail": [
+        "エンドツーエンド暗号化メールを無効にする"
+      ],
+      "Disallow unsigned mail": [
+        "署名のないメールを拒否する"
       ],
       "Enable": [
         "有効化"
       ],
-      "Enable E2EE": [
-        "エンドツーエンド暗号化を有効にする"
+      "Enable E2EE mail": [
+        "エンドツーエンド暗号化メールを有効にする"
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
@@ -1064,6 +1067,9 @@
       "Active": [
         "有効"
       ],
+      "Allow unsigned mail": [
+        "署名なしメールを許可する"
+      ],
       "Default": [
         "既定"
       ],
@@ -1076,11 +1082,8 @@
       "Missing keys": [
         "キーがありません"
       ],
-      "No E2EE": [
-        "エンドツーエンド暗号化されていません"
-      ],
-      "No signing": [
-        "署名されていません"
+      "No E2EE mail": [
+        "エンドツーエンド暗号化メールなし"
       ],
       "Orphan": [
         "元ドメインなし"
@@ -2970,12 +2973,20 @@
         "${ categoriesJsx } のメールを購読停止しました"
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } および ${ lastCategoryTitle }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2要素認証"
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メッセージと作成 > 短縮ドメイン (pm.me) に移動してください。"
       ],
@@ -3275,6 +3286,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
+      ],
+      "status page": [
+        "ステータスページ"
       ],
       "Tab closed": [
         "タブが閉じられました"
@@ -4391,6 +4405,9 @@
       ],
       "(4-6 emails per year)": [
         "(毎年 4～6 通のメール)"
+      ],
+      "(during your first month)": [
+        "(最初の1ヶ月間)"
       ]
     },
     "Get started checklist instructions": {
@@ -6868,9 +6885,6 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
-      "Your import will not be processed.": [
-        "インポートできませんでした。"
-      ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "${ accounts } からのインポートが一時的に遅延しています。"
       ],
@@ -8233,6 +8247,9 @@
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business ニュースレター"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } の重要なお知らせ"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } ニュースレター"
@@ -9917,17 +9934,35 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "${ appName } の機能をチェックしてください"
+      ],
+      "Continue": [
+        "続ける"
+      ],
       "Continue to ${ free }": [
         "${ free } に進む"
       ],
       "Create another account instead": [
         "代わりに別のアカウントを作成してください"
       ],
+      "Download to continue ${ size }": [
+        "ダウンロードして続行 ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "このプランを維持し、${ appName } を使用してください"
+      ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
       ],
+      "Start using ${ appName } now": [
+        "今すぐ ${ appName } の使用を開始してください"
+      ],
       "Upgrade for only ${ relativePrice } extra per month": [
         "月額わずか ${ relativePrice } の追加料金でアップグレードできます"
+      ],
+      "Upgrade my plan": [
+        "プランのアップグレード"
       ],
       "Use ${ free } instead": [
         "代わりに ${ free } を使用してください"
@@ -9968,6 +10003,15 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } benefits": [
+        "${ PASS_APP_NAME } の特典"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } は、Firefox アドオンのブラウザ拡張機能として利用できます。"
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } は、Chrome ウェブストアでブラウザ拡張機能として入手できます。"
+      ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "${ PASS_APP_NAME } は、厳格なエンドツーエンド暗号化によりパスワードと ID を安全に保ちます。"
       ],
@@ -9983,8 +10027,32 @@
       "All premium ${ BRAND_NAME } services.": [
         "すべてのプレミアム ${ BRAND_NAME } サービス。"
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。月額 ${ relativePrice } の追加料金がかかるだけです。"
+      ],
+      "By continuing, you agree to our ${ termsAndConditions }": [
+        "続行すると、${ termsAndConditions } に同意したことになります。"
+      ],
+      "Creating your account": [
+        "アカウントの作成"
+      ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "${ PASS_APP_NAME }、${ br }の新しい暗号化パスワード マネージャーをご覧ください"
+      ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } の使用を開始するには、関連するアプリと拡張機能をダウンロードしてインストールしてください"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "${ PASS_APP_NAME } アプリを Google Play からダウンロードしてインストールすると、スマートフォンで ${ PASS_APP_NAME2 } を使用できるようになります。"
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "${ PASS_APP_NAME } アプリを App Store からダウンロードしてインストールすると、携帯電話で ${ PASS_APP_NAME2 } の使用を開始できます。"
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "個人情報も保護する暗号化パスワード・マネージャー"
+      ],
+      "End-to-end encrypted notes": [
+        "エンドツーエンド暗号化されたメモ"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**月額 ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
@@ -9992,14 +10060,44 @@
       "Free forever": [
         "永久無料"
       ],
+      "Get ${ appName } for ${ browserName }": [
+        "${ browserName }の ${ appName } を取得"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "${ appName } を ${ browserName } ですぐに入手してください"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Hide-my-email エイリアスは電子メールをデータ侵害から保護します"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME } アカウントからロックアウトされた場合でも、**回復キット**を使用してログインしてデータを回復できます。"
+      ],
       "Includes basic ${ appName } features:": [
         "基本的な ${ appName } 機能が含まれています。"
+      ],
+      "Install ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } をインストールします"
       ],
       "Install app": [
         "アプリをインストール"
       ],
+      "Install app and extension": [
+        "アプリと拡張機能をインストールする"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "これがアカウントを完全に復元する唯一の方法であるため、この**回復キット**は安全な場所に保管してください。"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "オンラインでの安全を確保するために ${ BRAND_NAME } を選択した 1 億人以上の人々に加わりましょう"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を起動しています"
+      ],
       "One easy subscription.": [
         "1 回の簡単なサブスクリプション。"
+      ],
+      "Open-source and audited": [
+        "オープンソースで監査済み"
       ],
       "per month, billed annually": [
         "月払い、年払い"
@@ -10016,11 +10114,50 @@
       "per month, billed every two years": [
         "月額、2年ごとに請求"
       ],
+      "Preparing your Recovery Kit": [
+        "リカバリーキットの準備"
+      ],
+      "Protected by Swiss privacy laws": [
+        "スイスのプライバシー法によって保護されています"
+      ],
+      "Save your recovery kit to continue": [
+        "続行するにはリカバリ キットを保存してください"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } にログインしています"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "発売記念特別オファー: ${ title } を ${ price } で永久に手に入れましょう!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "選択したオファーは、${ currentPlanTitle } サブスクリプションには利用できません。"
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "してモバイル端末で ${ PASS_APP_NAME } を使い始めましょう"
       ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "アップグレードして ${ PASS_APP_NAME } のプレミアム機能をロック解除しましょう"
+      ],
+      "Updating your account": [
+        "アカウントの更新"
+      ],
+      "Verifying your payment": [
+        "お支払いの確認"
+      ],
+      "Welcome to ${ plan }": [
+        "${ plan } へようこそ"
+      ],
+      "Works on all devices": [
+        "すべてのデバイスで動作します"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "すでにプレミアム ${ appName } 機能にアクセスできます。再度購入する必要はありません。"
+      ],
       "You currently have": [
         "あなたは現在"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "あなたの組織は ${ free } にアクセスできます。 ${ appName } のプレミアム機能にアクセスしたい場合は、組織の管理者にアップグレードを依頼してください。"
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -10358,6 +10495,9 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
+      ],
+      "Reading emails of non-private users": [
+        "非公開ユーザーの電子メールの閲覧"
       ]
     },
     "Select file": {
@@ -12683,9 +12823,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "インポートを破棄してよろしいですか?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "このアドレスを削除することで、今後毎日のメール通知を受け取ることができなくなります。"
