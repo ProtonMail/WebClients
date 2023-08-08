@@ -153,6 +153,7 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
 
                 if (product === ImportType.CONTACTS) {
                     try {
+                        // TODO check if returning contacts is necessary
                         const { Contacts } = await thunkAPI.extra.api<{ Contacts: any }>({
                             ...getContactsImportData(ImporterID),
                             silence: true,
@@ -169,6 +170,12 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                         if (isTimeout) {
                             return {
                                 importType: product,
+                            };
+                        } else if (status === 422 && code === IMPORT_ERROR.TOO_LARGE) {
+                            return {
+                                importType: product,
+                                //TODO validate copy
+                                error: c('Error').t`You have reached the contacts limit for your account`,
                             };
                         } else if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
                             return {
@@ -215,8 +222,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
             calendars: { error: calendarData?.error, calendars: calendarResponse, initialFields: calendarResponse },
             contacts: {
                 error: contactData?.error,
-                numContact: contactData?.Contacts?.NumContacts ?? NaN,
-                numGroups: contactData?.Contacts?.NumGroups ?? NaN,
             },
         };
     }
