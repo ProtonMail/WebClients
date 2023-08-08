@@ -249,6 +249,9 @@ const PlanSelection = ({
 
     const renderShortPlanCard = (plan: ShortPlanLike) => {
         return (
+            // this render contains some assumptions that are valid only because we currently have the only UI plan.
+            // If we get more later, then this code must be generalized. Examples: "Let's talk" price might be
+            // different, so is the actionElement.
             <PlanCard
                 isCurrentPlan={false}
                 actionElement={<VpnEnterpriseAction />}
