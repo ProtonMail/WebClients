@@ -3488,6 +3488,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
       ],
+      "Are you sure you want to discard your import?": [
+        "¿Estás seguro de que quieres descartar tu importación?"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -3762,6 +3765,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indica un nombre y una dirección de correo para crear un grupo."
       ],
       "Please remove the duplicates and try again.": [
         "Elimina los duplicados y vuelve a intentarlo."
@@ -4045,9 +4051,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
-      ],
-      "Your import will not be processed.": [
-        "No se procesará tu importación."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -6515,9 +6518,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
-      ],
-      "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } grupo de contactos?",
