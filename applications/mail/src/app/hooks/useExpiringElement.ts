@@ -8,7 +8,7 @@ import { useGetAllMessages, useGetMessage } from './message/useMessage';
 
 const isConversationMode = (element: Element, conversationMode: boolean): element is Conversation => conversationMode;
 
-export const useExpiringElement = (element: Element, conversationMode = false) => {
+export const useExpiringElement = (element: Element, labelID: string, conversationMode = false) => {
     const getAllMessages = useGetAllMessages();
     const getMessage = useGetMessage();
 
@@ -20,6 +20,13 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
     const expirationTime = useMemo(() => {
         if (element) {
             if (isConversationMode(element, conversationMode)) {
+                if (element.ContextExpirationTime) {
+                    return element.ContextExpirationTime;
+                }
+                const label = element.Labels?.find((label) => label.ID === labelID);
+                if (label?.ContextExpirationTime) {
+                    return label.ContextExpirationTime;
+                }
                 // If the element is a conversation we check all messages to find a message having draft flags and being in the conversation
                 const allMessages = getAllMessages();
                 const expiringMessageFromConversation = allMessages.find(
@@ -32,8 +39,11 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
                 const expirationTime =
                     expiringMessageFromConversation?.data?.ExpirationTime || draftExpirationTime || 0;
 
-                return element.ContextExpirationTime || expirationTime;
+                return expirationTime;
             } else {
+                if (element.ExpirationTime) {
+                    return element.ExpirationTime;
+                }
                 // If the element is a message we check if we have an expiration time in draftFlags
                 const message = getMessage(element.ID);
 
@@ -42,7 +52,7 @@ export const useExpiringElement = (element: Element, conversationMode = false) =
                     : 0;
                 const expirationTime = message?.data?.ExpirationTime || draftExpirationTime || 0;
 
-                return element.ExpirationTime || expirationTime;
+                return expirationTime;
             }
         }
         return undefined;
