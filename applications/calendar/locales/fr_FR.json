@@ -3488,6 +3488,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
+      "Are you sure you want to discard your import?": [
+        "Voulez-vous vraiment annuler votre importation ?"
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -3762,6 +3765,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indiquez un nom et une addresse e-mail pour créer un groupe."
       ],
       "Please remove the duplicates and try again.": [
         "Supprimez les doublons et réessayez."
@@ -4045,9 +4051,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
-      ],
-      "Your import will not be processed.": [
-        "Votre importation ne sera pas traitée."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
@@ -6515,9 +6518,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",

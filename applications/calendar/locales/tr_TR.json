@@ -3763,6 +3763,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
+      ],
       "Please remove the duplicates and try again.": [
         "Lütfen çift kayıtları kaldırıp yeniden deneyin."
       ],
@@ -4045,9 +4048,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
-      ],
-      "Your import will not be processed.": [
-        "İçe aktarma işleminiz yapılmayacak."
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -4630,6 +4630,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "İptal"
+      ],
       "Manage calendars": [
         "Takvim yönetimi"
       ],
@@ -5364,7 +5367,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "${ BRAND_NAME } kullanmayan kişileri çağırmak için takviminizi bir bağlantı ile paylaşın."
+        "${ BRAND_NAME } kullanmayan kişileri davet etmek için takviminizi bir bağlantı ile paylaşın."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5662,7 +5665,7 @@
         "${ credits } tutarına kadar kredi kazanın."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
       "Public holidays are here!": [
         "Resmi tatiller burada!"
@@ -6512,9 +6515,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
-      ],
-      "Are you sure you want to discard your import?": [
-        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
