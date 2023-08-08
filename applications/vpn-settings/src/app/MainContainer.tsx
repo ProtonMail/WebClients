@@ -8,6 +8,7 @@ import {
     AccountRecoverySection,
     AuthenticatedBugModal,
     AutomaticSubscriptionModal,
+    CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
     CreditsSection,
     DeleteSection,
@@ -215,6 +216,7 @@ const MainContainer = () => {
                                             <InvoicesSection />
                                             <CancelSubscriptionSection />
                                             <DowngradeSubscriptionSection />
+                                            <CancelB2bSubscriptionSection />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>

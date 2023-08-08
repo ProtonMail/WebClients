@@ -60,7 +60,12 @@ export const getRoutes = (user: UserModel, subscription?: Subscription) => {
                 {
                     text: c('Title').t`Downgrade account`,
                     id: 'downgrade-account',
-                    available: user.isPaid && !hasVpnPlan,
+                    available: user.isPaid && !hasVpnPlan && !hasVpnB2BPlan,
+                },
+                {
+                    text: c('Title').t`Cancel subscription`,
+                    id: 'cancel-b2b-subscription',
+                    available: user.isPaid && !hasVpnPlan && hasVpnB2BPlan,
                 },
             ],
         },
