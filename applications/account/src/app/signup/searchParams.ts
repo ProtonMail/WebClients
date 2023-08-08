@@ -1,9 +1,19 @@
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CYCLE, DEFAULT_CYCLE, MEMBER_ADDON_PREFIX, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import {
+    ADDON_NAMES,
+    APP_NAMES,
+    CYCLE,
+    DEFAULT_CYCLE,
+    MEMBER_ADDON_PREFIX,
+    PLANS,
+    PLAN_TYPES,
+} from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
+import clamp from '@proton/utils/clamp';
 
+import { addonLimit } from '../single-signup/planCustomizer/PlanCustomizer';
 import { SERVICES } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
@@ -67,8 +77,11 @@ export const getSignupSearchParams = (
     const coupon = searchParams.get('coupon') || undefined;
     const type = searchParams.get('type') || undefined;
     const hideFreePlan = searchParams.get('hfp') || undefined;
+    const email = searchParams.get('email') || undefined;
+    const orgName = searchParams.get('orgName') || undefined;
 
     return {
+        email,
         coupon,
         currency,
         cycle: cycle || defaults?.cycle || DEFAULT_CYCLE,
@@ -81,6 +94,7 @@ export const getSignupSearchParams = (
         invite,
         type,
         hideFreePlan: hideFreePlan === 'true',
+        orgName,
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
@@ -109,7 +123,13 @@ export const getPlanIDsFromParams = (plans: Plan[], signupParameters: SignupPara
         const usersAddon = plans.find(
             ({ Name }) => Name.startsWith(MEMBER_ADDON_PREFIX) && supportedAddons[Name as keyof typeof supportedAddons]
         );
-        const amount = signupParameters.users - plan.MaxMembers;
+
+        const clampedUsers = clamp(
+            signupParameters.users,
+            0,
+            usersAddon ? addonLimit[usersAddon.Name as ADDON_NAMES] : 0
+        );
+        const amount = clampedUsers - plan.MaxMembers;
         if (usersAddon && amount > 0) {
             planIDs[usersAddon.Name] = amount;
         }

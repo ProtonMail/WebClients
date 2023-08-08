@@ -75,19 +75,19 @@ export interface ErrorDetails {
     passwordConfirm: string | undefined;
 }
 
-const defaultInputs = {
-    email: '',
+const getDefaultInputs = ({ defaultEmail = '' }: { defaultEmail?: string } = {}) => ({
+    email: defaultEmail,
     emailConfirm: '',
     password: '',
     passwordConfirm: '',
-};
+});
 
-const defaultInputStates = {
-    email: {},
-    emailConfirm: {},
-    password: {},
-    passwordConfirm: {},
-};
+const getDefaultInputStates = ({ email, emailConfirm, password, passwordConfirm }: AccountDetails) => ({
+    email: !!email ? { interactive: true, focus: true } : {},
+    emailConfirm: !!emailConfirm ? { interactive: true, focus: true } : {},
+    password: !!password ? { interactive: true, focus: true } : {},
+    passwordConfirm: !!passwordConfirm ? { interactive: true, focus: true } : {},
+});
 
 export interface AccountStepDetailsRef {
     validate: () => boolean;
@@ -168,6 +168,7 @@ interface Props {
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
     footer: (details: AccountDetails) => ReactNode;
+    defaultEmail?: string;
 }
 
 const AccountStepDetails = ({
@@ -182,13 +183,14 @@ const AccountStepDetails = ({
     onChallengeError,
     measure,
     passwordFields,
+    defaultEmail,
 }: Props) => {
     const challengeRefEmail = useRef<ChallengeRef>();
     const formInputRef = useRef<HTMLFormElement>(null);
     const inputValuesRef = useRef({ email: false, emailConfirm: false });
 
-    const [details, setDetails] = useState<AccountDetails>(defaultInputs);
-    const [states, setStates] = useState<AccountDetailsInputState>(defaultInputStates);
+    const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({ defaultEmail }));
+    const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
 
     const trimmedEmail = details.email.trim();
 
