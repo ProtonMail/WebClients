@@ -290,15 +290,16 @@ const IPsNumberCustomiser = ({
     input: ReactElement;
     showDescription?: boolean;
 }) => {
-    const ipsString = c('plan customizer, ips')
+    const title = c('Info').t`Dedicated servers`;
+    const description = c('plan customizer, ips')
         .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}. Should you need more than ${maxIPs} IPs, please ${contactHref} our Sales team.`;
 
     return (
         <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
             {showDescription && (
                 <>
-                    <h2 className="text-2xl text-bold mb-4">{c('Info').t`Dedicated IP addresses `}</h2>
-                    <div className="mb-4">{ipsString}</div>
+                    <h2 className="text-2xl text-bold mb-4">{title}</h2>
+                    <div className="mb-4">{description}</div>
                 </>
             )}
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
@@ -306,11 +307,8 @@ const IPsNumberCustomiser = ({
                     htmlFor={addon.Name}
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
-                    {c('Info').t`Number of IP addresses`}
-                    <Info
-                        buttonClass="ml-2"
-                        title={c('Info').t`Number of dedicated IP addresses in the organization`}
-                    />
+                    {title}
+                    <Info buttonClass="ml-2" title={c('Info').t`Number of dedicated servers in the organization`} />
                 </label>
                 {input}
             </div>
