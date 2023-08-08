@@ -710,20 +710,22 @@ export enum LINK_WARNING {
     VALUE = 'dontAsk',
 }
 
+export const MEMBER_ADDON_PREFIX = '1member';
+
 export enum ADDON_NAMES {
     ADDRESS = '5address',
     MEMBER = '1member',
     DOMAIN = '1domain',
     SPACE = '1gb',
     VPN = '1vpn',
-    MEMBER_DRIVE_PRO = '1member-drivepro2022',
-    MEMBER_MAIL_PRO = '1member-mailpro2022',
-    MEMBER_BUNDLE_PRO = '1member-bundlepro2022',
+    MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
+    MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
+    MEMBER_BUNDLE_PRO = `${MEMBER_ADDON_PREFIX}-bundlepro2022`,
     DOMAIN_BUNDLE_PRO = '1domain-bundlepro2022',
-    MEMBER_ENTERPRISE = '1member-enterprise2022',
+    MEMBER_ENTERPRISE = `${MEMBER_ADDON_PREFIX}-enterprise2022`,
     DOMAIN_ENTERPRISE = '1domain-enterprise2022',
-    MEMBER_VPN_PRO = '1member-vpnpro2023',
-    MEMBER_VPN_BUSINESS = '1member-vpnbiz2023',
+    MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
+    MEMBER_VPN_BUSINESS = `${MEMBER_ADDON_PREFIX}-vpnbiz2023`,
     IP_VPN_BUSINESS = '1ip-vpnbiz2023',
 }
 

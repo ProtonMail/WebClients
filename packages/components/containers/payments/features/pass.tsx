@@ -165,6 +165,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getLoginsAndNotes(),
                 [PLANS.MAIL_PRO]: getLoginsAndNotes(),
                 [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -179,6 +181,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDevices(),
                 [PLANS.MAIL_PRO]: getDevices(),
                 [PLANS.BUNDLE_PRO]: getDevices(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -193,6 +197,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
                 [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -207,6 +213,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.MAIL_PRO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.BUNDLE_PRO]: getHideMyEmailAliases('unlimited'),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -221,6 +229,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: get2FAAuthenticator(true),
                 [PLANS.MAIL_PRO]: get2FAAuthenticator(),
                 [PLANS.BUNDLE_PRO]: get2FAAuthenticator(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -235,6 +245,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.MAIL_PRO]: getCustomFields(),
                 [PLANS.BUNDLE_PRO]: getCustomFields(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -249,6 +261,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getSharing(true),
                 [PLANS.MAIL_PRO]: getSharing(),
                 [PLANS.BUNDLE_PRO]: getSharing(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -263,6 +277,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.MAIL_PRO]: getDataBreachMonitoring(),
                 [PLANS.BUNDLE_PRO]: getDataBreachMonitoring(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];

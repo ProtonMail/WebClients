@@ -12,6 +12,8 @@ interface Props {
     plansMap: PlansMap;
     mode?: CustomiserMode;
     organization?: Organization;
+    forceHideDescriptions?: boolean;
+    showUsersTooltip?: boolean;
 }
 
 const PlanCustomization = ({
@@ -23,6 +25,8 @@ const PlanCustomization = ({
     onChangePlanIDs,
     loading,
     organization,
+    forceHideDescriptions,
+    ...rest
 }: Props) => {
     const [currentPlanName] =
         Object.entries(planIDs).find(([planName, planQuantity]) => {
@@ -35,7 +39,14 @@ const PlanCustomization = ({
     const currentPlan = plansMap?.[currentPlanName as keyof PlansMap];
     const hasPlanCustomiser =
         currentPlan &&
-        [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE].includes(currentPlan.Name as PLANS);
+        [
+            PLANS.MAIL_PRO,
+            PLANS.DRIVE_PRO,
+            PLANS.BUNDLE_PRO,
+            PLANS.ENTERPRISE,
+            PLANS.VPN_PRO,
+            PLANS.VPN_BUSINESS,
+        ].includes(currentPlan.Name as PLANS);
 
     return (
         <>
@@ -50,7 +61,9 @@ const PlanCustomization = ({
                     currentPlan={currentPlan}
                     organization={organization}
                     onChangePlanIDs={onChangePlanIDs}
+                    forceHideDescriptions={forceHideDescriptions}
                     className="pb-7 mb-8"
+                    {...rest}
                 />
             )}
         </>

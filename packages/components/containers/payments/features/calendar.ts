@@ -108,6 +108,8 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),
                 [PLANS.MAIL_PRO]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -122,6 +124,8 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -136,6 +140,8 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY, calendarSharingEnabled),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, calendarSharingEnabled, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, calendarSharingEnabled, Audience.B2B),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -150,6 +156,8 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
                 [PLANS.FAMILY]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];

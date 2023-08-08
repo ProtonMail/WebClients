@@ -67,7 +67,16 @@ describe('resolveUpsellsToDisplay', () => {
                 } as Subscription,
             });
 
-            expect(upsells).toMatchObject([trialMailPlusUpsell, { ...unlimitedUpsell, isRecommended: true }]);
+            // .toMatchObject can't match functions, so we need to remove them
+            const trialMailPlusUpsellWithoutAction = {
+                ...trialMailPlusUpsell,
+                otherCtas: trialMailPlusUpsell.otherCtas.map(({ action, ...rest }) => rest),
+            };
+
+            expect(upsells).toMatchObject([
+                trialMailPlusUpsellWithoutAction,
+                { ...unlimitedUpsell, isRecommended: true },
+            ]);
 
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);

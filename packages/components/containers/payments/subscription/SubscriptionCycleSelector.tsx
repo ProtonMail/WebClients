@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -19,7 +19,7 @@ import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopie
 import RenewalNotice from '../RenewalNotice';
 import { getShortBillingText } from '../helper';
 
-interface Props {
+export interface Props {
     cycle: CYCLE;
     minimumCycle?: CYCLE;
     mode: 'select' | 'buttons';
@@ -28,6 +28,7 @@ interface Props {
     plansMap: PlansMap;
     planIDs: PlanIDs;
     disabled?: boolean;
+    faded?: boolean;
 }
 
 type TotalPricings = {
@@ -53,6 +54,7 @@ const CycleItemView = ({
     totalPerMonth,
     discount,
     freeMonths,
+    cycle,
 }: {
     currency: Currency;
     text: string;
@@ -61,6 +63,7 @@ const CycleItemView = ({
     totalPerMonth: number;
     discount: number;
     freeMonths: number;
+    cycle: CYCLE;
 }) => {
     return (
         <>
@@ -83,7 +86,10 @@ const CycleItemView = ({
                     </strong>
                 </div>
                 <div className="flex flex-align-items-center">
-                    <span className="color-weak flex flex-item-fluid-auto">
+                    <span
+                        className="color-weak flex flex-item-fluid-auto"
+                        data-testid={`price-per-user-per-month-${cycle}`}
+                    >
                         <Price currency={currency} suffix={monthlySuffix}>
                             {totalPerMonth}
                         </Price>
@@ -110,7 +116,7 @@ const CycleItem = ({
 }) => {
     const replacementCycle = getNormalCycleFromCustomCycle(cycle) || cycle;
     const freeMonths = getMonthsFree(cycle);
-    const { total, totalPerMonth, discount } = totals[replacementCycle];
+    const { total, perUserPerMonth, discount } = totals[replacementCycle];
 
     return (
         <CycleItemView
@@ -120,7 +126,8 @@ const CycleItem = ({
             monthlySuffix={monthlySuffix}
             freeMonths={freeMonths}
             total={total}
-            totalPerMonth={totalPerMonth}
+            totalPerMonth={perUserPerMonth}
+            cycle={cycle}
         />
     );
 };
@@ -130,7 +137,7 @@ const singleClassName =
 
 const getMonthlySuffix = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
-    return Object.keys(supportedAddons).some((addon) => addon.startsWith('1member'))
+    return Object.keys(supportedAddons).some((addon) => addon.startsWith(MEMBER_ADDON_PREFIX))
         ? c('Suffix').t`/user per month`
         : c('Suffix').t`/month`;
 };
@@ -161,6 +168,7 @@ export const SubscriptionCheckoutCycleItem = ({
                 freeMonths={freeMonths}
                 total={result.withDiscountPerCycle}
                 totalPerMonth={result.withDiscountPerMonth}
+                cycle={cycle}
             />
         </div>
     );
@@ -175,6 +183,7 @@ const SubscriptionCycleSelector = ({
     disabled,
     planIDs,
     plansMap,
+    faded,
 }: Props) => {
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
 
@@ -183,17 +192,20 @@ const SubscriptionCycleSelector = ({
     const monthlySuffix = getMonthlySuffix(planIDs);
 
     const pricing = getPricingFromPlanIDs(planIDs, plansMap);
-    const totals = allCycles.reduce<{ [key in CYCLE]: ReturnType<typeof getTotalFromPricing> }>((acc, cycle) => {
+
+    const totals = allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
         acc[cycle] = getTotalFromPricing(pricing, cycle);
         return acc;
     }, {} as any);
+
+    const fadedClasses = clsx(faded && 'opacity-50 no-pointer-events-children');
 
     if (cycles.length === 1) {
         const cycle = cycles[0];
 
         return (
             <>
-                <div className={clsx(singleClassName, 'mb-2')}>
+                <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
                     <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
                 </div>
                 <RenewalNotice renewCycle={cycleSelected} />
@@ -203,7 +215,7 @@ const SubscriptionCycleSelector = ({
 
     if (mode === 'select') {
         return (
-            <>
+            <div className={fadedClasses}>
                 <InputField
                     label={c('Label').t`Billing cycle`}
                     as={SelectTwo}
@@ -212,7 +224,7 @@ const SubscriptionCycleSelector = ({
                     onValue={(value: any) => onChangeCycle(value)}
                     assistiveText={
                         <Price currency={currency} suffix={monthlySuffix}>
-                            {totals[cycleSelected].totalPerMonth}
+                            {totals[cycleSelected].perUserPerMonth}
                         </Price>
                     }
                 >
@@ -235,13 +247,13 @@ const SubscriptionCycleSelector = ({
                     })}
                 </InputField>
                 <RenewalNotice renewCycle={cycleSelected} className="mt-2" />
-            </>
+            </div>
         );
     }
 
     return (
         <>
-            <ul className="unstyled m-0 plan-cycle-selector">
+            <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
                 {cycles.map((cycle) => {
                     const isSelected = cycle === cycleSelected;
                     return (
