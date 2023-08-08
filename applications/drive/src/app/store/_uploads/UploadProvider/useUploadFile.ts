@@ -17,7 +17,6 @@ import {
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
-import getRandomString from '@proton/utils/getRandomString';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
@@ -62,7 +61,7 @@ export default function useUploadFile() {
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
-    const { getShareCreatorKeys, getSharePrivateKey } = useShare();
+    const { getShareCreatorKeys } = useShare();
     const { findAvailableName, getLinkByName } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -98,7 +97,7 @@ export default function useUploadFile() {
 
             const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                 getShareKeys(abortSignal),
-                isPhoto ? getSharePrivateKey(abortSignal, shareId) : getLinkPrivateKey(abortSignal, shareId, parentId),
+                getLinkPrivateKey(abortSignal, shareId, parentId),
             ]);
 
             const Name = await encryptName(filename, parentPrivateKey, addressKeyInfo.privateKey);
@@ -147,9 +146,7 @@ export default function useUploadFile() {
             }
 
             const [privateKey, sessionKey] = await Promise.all([
-                isPhoto
-                    ? getSharePrivateKey(abortSignal, shareId)
-                    : getLinkPrivateKey(abortSignal, shareId, link.linkId),
+                getLinkPrivateKey(abortSignal, shareId, link.linkId),
                 getLinkSessionKey(abortSignal, shareId, link.linkId),
             ]);
             if (!sessionKey) {
@@ -240,10 +237,6 @@ export default function useUploadFile() {
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
-                // Photos upload doesn't need any conflict check, so we directly create the file
-                if (isPhoto) {
-                    return createFile(abortSignal, file.name, mimeType, getRandomString(64), keys);
-                }
                 const {
                     filename: newName,
                     hash,
@@ -305,9 +298,7 @@ export default function useUploadFile() {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                     getShareKeys(abortSignal),
-                    isPhoto
-                        ? getSharePrivateKey(abortSignal, shareId)
-                        : getLinkPrivateKey(abortSignal, shareId, parentId),
+                    getLinkPrivateKey(abortSignal, shareId, parentId),
                 ]);
                 return {
                     addressPrivateKey: addressKeyInfo.privateKey,
