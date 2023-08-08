@@ -1,4 +1,4 @@
-import { FeatureCode, useFeature } from '@proton/components';
+import { FeatureCode, useFeature, useDriveWindowsGASpotlight } from '@proton/components';
 import { IsActiveInEnvironmentContainer, Loader, NewFeatureTag } from '@proton/components/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -6,7 +6,6 @@ import { useDevicesListing } from '../../../../../store/_devices';
 import { getDevicesSectionName } from '../../../../sections/Devices/constants';
 import ExpandButton from '../DriveSidebarFolders/ExpandButton';
 import DriveSidebarListItem from '../DriveSidebarListItem';
-import { useDriveMyDevicesSpotlight } from './useDriveMyDevicesSpotlight';
 
 export function SidebarDevicesRoot({
     path,
@@ -20,7 +19,7 @@ export function SidebarDevicesRoot({
     const { cachedDevices, isLoading } = useDevicesListing();
     const sectionTitle = getDevicesSectionName();
 
-    const [driveMyDevicesProps, setShowDriveMyDevices] = useDriveMyDevicesSpotlight();
+    const [driveMyDevicesProps, setShowDriveMyDevices] = useDriveWindowsGASpotlight();
     const isActiveInEnvironment: IsActiveInEnvironmentContainer = { alpha: true, default: true };
 
     const featureDriveWindowsGA = !!useFeature(FeatureCode.DriveWindowsGA).feature?.Value;

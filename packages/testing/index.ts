@@ -15,3 +15,8 @@ export * from './lib/mockUseContactEmailsCache';
 export * from './lib/payments';
 export * from './lib/providers';
 export * from './lib/server';
+export * from './lib/mockSpotlight';
+export * from './lib/mockUseActiveBreakpoint';
+export * from './lib/mockUseUser';
+export * from './lib/mockUseSpotlightOnFeature';
+export * from './lib/mockUseFeature';
