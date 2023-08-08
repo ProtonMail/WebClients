@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { ThemeColorUnion } from '@proton/colors/types';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
@@ -17,9 +18,10 @@ interface Props {
     outlined?: boolean;
     globe?: boolean;
     locales?: TtagLocaleMap;
+    color?: ThemeColorUnion;
 }
 
-const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Props) => {
+const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color = 'norm' }: Props) => {
     const { LOCALES = {} } = useConfig();
     const forceRefresh = useForceRefresh();
     const location = useLocationWithoutLocale();
@@ -66,7 +68,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Pro
                 as={ButtonLike}
                 shape="outline"
                 size="small"
-                color="norm"
+                color={color}
                 type="button"
                 content={content}
                 className={className}
@@ -82,7 +84,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Pro
             as={Button}
             shape="ghost"
             size="small"
-            color="norm"
+            color={color}
             content={content}
             className={clsx(className, 'language-dropdown')}
             style={style}
