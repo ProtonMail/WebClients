@@ -1,6 +1,4 @@
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import getRandomString from '@proton/utils/getRandomString';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
 import {
@@ -63,10 +61,7 @@ export function initUploadFileWorker(
                                     onInit?.(mimeType, fileRevision.fileName);
 
                                     return Promise.all([
-                                        () =>
-                                            isPhoto
-                                                ? Promise.resolve(stringToUint8Array(getRandomString(64)))
-                                                : getParentHashKey(abortController.signal),
+                                        getParentHashKey(abortController.signal),
                                         thumbnailDataPromise,
                                         getVerificationData(abortController.signal),
                                     ]).then(async ([parentHashKey, thumbnailData, verificationData]) => {
