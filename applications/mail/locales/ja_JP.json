@@ -3101,6 +3101,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "<${ email }> は次のエラーを発生しました: ${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3370,6 +3373,9 @@
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } はメッセージを復号できません。すべてのキーが有効か確認してください。"
+      ],
+      "status page": [
+        "ステータスページ"
       ],
       "The email addresses do not match": [
         "メールアドレスが一致しません"
@@ -4733,6 +4739,9 @@
       "(No Recipient)": [
         "(宛先なし)"
       ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "${ labelName } 内で **${ elementsFoundCount }** 件見つかりました"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
@@ -5218,9 +5227,6 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "メッセージは明日の ${ formattedTime } に送信されます"
-      ],
-      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "ダウンロード済みメッセージ: ${ currentProgress } / ${ totalProgress }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "30日以上経過したごみ箱のメールと迷惑メールは自動的に削除されます。"
@@ -5908,9 +5914,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
-      ],
-      "Your import will not be processed.": [
-        "インポートできませんでした。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -9147,9 +9150,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "インポートを破棄してよろしいですか?"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "${ count } 件の連絡先グループを完全に削除してよろしいですか？"

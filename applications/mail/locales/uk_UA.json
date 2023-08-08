@@ -4778,6 +4778,12 @@
         "${ count } непрочитаних повідомлень",
         "${ count } непрочитаних повідомлень"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } вбудоване зображення",
         "${ embeddedAttachmentsCount } вбудовані зображення",
@@ -5477,11 +5483,8 @@
       "Merged": [
         "Об'єднано"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Завантажено повідомлення: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }"
+      "Message download status:": [
+        "Статус завантаження повідомлення:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ${ MAIL_APP_NAME }. Щоб надсилати повідомлення з терміном дії не користувачам ${ BRAND_NAME }, скасуйте це і додайте парольний захист до свого повідомлення."
@@ -5608,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Будь ласка, вкажіть ім'я та адресу пошти для створення групи."
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
@@ -6110,6 +6116,9 @@
       "You can either update your search query or ${ button }": [
         "Ви можете оновити свій пошуковий запит, або ${ button }"
       ],
+      "You can either update your search query or clear it": [
+        "Ви можете оновити пошуковий запит або очистити його"
+      ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
@@ -6229,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
-      ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -9684,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",

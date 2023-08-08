@@ -5183,9 +5183,6 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "邮件将于明天 ${ formattedTime } 发送"
       ],
-      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "已下载 ${ currentProgress }/${ totalProgress } 封邮件"
-      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
       ],
@@ -5866,9 +5863,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "您的文件将被加密保存。"
-      ],
-      "Your import will not be processed.": [
-        "此次导入将不会进行。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -9099,9 +9093,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您确定要放弃导入吗？"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"

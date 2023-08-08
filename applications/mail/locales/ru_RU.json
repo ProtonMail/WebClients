@@ -4214,6 +4214,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } в Play Store"
       ],
+      "Auto-forward Gmail": [
+        "Автоматическая пересылка Gmail"
+      ],
       "Block email communications from scammers permanently.": [
         "Навсегда заблокируйте коммуникации с мошенниками."
       ],
@@ -4253,6 +4256,9 @@
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
       ],
+      "Get the App": [
+        "Скачать приложение"
+      ],
       "Import contacts or emails": [
         "Импортируйте контакты или электронные письма"
       ],
@@ -4282,6 +4288,9 @@
       ],
       "Popular online services": [
         "Популярные сервисы в сети"
+      ],
+      "privacy features": [
+        "функции конфиденциальности"
       ],
       "Protect and simplify your email": [
         "Защитите и упростите свою электронную почту"
@@ -5441,12 +5450,6 @@
       "Merged": [
         "Объединённые"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Сообщение загружено: ${ currentProgress } из ${ totalProgress }",
-        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }",
-        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }",
-        "Сообщения загружены: ${ currentProgress } из ${ totalProgress }"
-      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Истечение срока действия сообщения работает по умолчанию при отправке писем другим пользователям ${ MAIL_APP_NAME }. Чтобы отправлять письма с истекающим сроком действия пользователям, вне ${ BRAND_NAME }, пожалуйста, отмените и добавьте защиту паролем к своей электронной почте."
       ],
@@ -6193,9 +6196,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
-      ],
-      "Your import will not be processed.": [
-        "Ваш импорт не будет обработан."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -9648,9 +9648,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы уверены, что хотите сбросить импорт?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы уверены, что хотите навсегда удалить ${ count } группу контактов?",
