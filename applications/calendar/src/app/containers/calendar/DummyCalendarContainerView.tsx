@@ -47,7 +47,7 @@ const DummyCalendarContainerView = ({ drawerView }: Props) => {
             tzid={tzid}
             setTzid={noop}
             containerRef={null}
-            setcontainerRef={noop}
+            setContainerRef={noop}
             onSearch={noop}
             addresses={[]}
             calendars={[]}

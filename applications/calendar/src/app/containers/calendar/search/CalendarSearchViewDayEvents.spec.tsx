@@ -40,8 +40,16 @@ describe('CalendarSearchViewDayEvents', () => {
         mockUseAddresses();
     });
 
+    const dummyRef = () => {};
+
     it('should correctly displayed day events', () => {
-        render(<CalendarSearchViewDayEvents dailyEvents={dailyEvents} onClickSearchItem={jest.fn()} />);
+        render(
+            <CalendarSearchViewDayEvents
+                dailyEvents={dailyEvents}
+                onClickSearchItem={jest.fn()}
+                closestToDateRef={dummyRef}
+            />
+        );
 
         expect(screen.getByText('1'));
         expect(screen.getByText('Wed, Sep 2021'));
@@ -72,14 +80,26 @@ describe('CalendarSearchViewDayEvents', () => {
         });
 
         it('should correctly render empty today line', () => {
-            render(<CalendarSearchViewDayEvents dailyEvents={[]} onClickSearchItem={jest.fn()} />);
+            render(
+                <CalendarSearchViewDayEvents
+                    dailyEvents={[]}
+                    onClickSearchItem={jest.fn()}
+                    closestToDateRef={dummyRef}
+                />
+            );
 
             expect(screen.getByText('17'));
             expect(screen.getByText('Mon, Jul 2023'));
         });
 
         it('should set `aria-current` attribute', () => {
-            render(<CalendarSearchViewDayEvents dailyEvents={[]} onClickSearchItem={jest.fn()} />);
+            render(
+                <CalendarSearchViewDayEvents
+                    dailyEvents={[]}
+                    onClickSearchItem={jest.fn()}
+                    closestToDateRef={dummyRef}
+                />
+            );
             expect(screen.getByTestId('month-day-block')).toHaveAttribute('aria-current', 'date');
         });
     });
@@ -87,7 +107,13 @@ describe('CalendarSearchViewDayEvents', () => {
     describe('when user click on an event', () => {
         it('should call `onClickSearchItem`', async () => {
             const onClickSearchItem = jest.fn();
-            render(<CalendarSearchViewDayEvents dailyEvents={dailyEvents} onClickSearchItem={onClickSearchItem} />);
+            render(
+                <CalendarSearchViewDayEvents
+                    dailyEvents={dailyEvents}
+                    onClickSearchItem={onClickSearchItem}
+                    closestToDateRef={dummyRef}
+                />
+            );
 
             const events = screen.getAllByRole('button');
 
@@ -119,7 +145,13 @@ describe('CalendarSearchViewDayEvents', () => {
                 },
             } as unknown as VisualSearchItem;
 
-            render(<CalendarSearchViewDayEvents dailyEvents={[cancelledEvent]} onClickSearchItem={jest.fn()} />);
+            render(
+                <CalendarSearchViewDayEvents
+                    dailyEvents={[cancelledEvent]}
+                    onClickSearchItem={jest.fn()}
+                    closestToDateRef={dummyRef}
+                />
+            );
 
             const event = screen.getByRole('button');
             expect(event).toBeInTheDocument();
@@ -154,7 +186,13 @@ describe('CalendarSearchViewDayEvents', () => {
                 },
             } as unknown as VisualSearchItem;
 
-            render(<CalendarSearchViewDayEvents dailyEvents={[inviteEvent]} onClickSearchItem={jest.fn()} />);
+            render(
+                <CalendarSearchViewDayEvents
+                    dailyEvents={[inviteEvent]}
+                    onClickSearchItem={jest.fn()}
+                    closestToDateRef={dummyRef}
+                />
+            );
 
             const event = screen.getByRole('button');
             expect(event).toBeInTheDocument();

@@ -33,6 +33,7 @@ export const buildAddress = (value?: Partial<Address>): Address => {
             } as AddressKey,
         ],
         SignedKeyList: null,
+        ProtonMX: true,
         ...value,
     };
 };

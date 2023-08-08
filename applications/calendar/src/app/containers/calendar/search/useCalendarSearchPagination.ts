@@ -2,14 +2,27 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import {
-    extractSearchParametersFromURL,
+    extractSearchParameters,
     generatePathnameWithSearchParams,
     parseSearchParams,
 } from '../../../helpers/encryptedSearch/esUtils';
+import { VisualSearchItem } from './interface';
 
-export const useCalendarSearchPagination = <T>(items: T[], maxItemsPerPage = 100) => {
+export const DEFAULT_MAX_ITEMS_PER_PAGE = 100;
+
+const getInitialPage = (items: VisualSearchItem[], maxItemsPerPage = DEFAULT_MAX_ITEMS_PER_PAGE) => {
+    const index = items.findIndex(({ isClosestToDate }) => isClosestToDate);
+
+    return index === -1 ? 0 : Math.floor(index / maxItemsPerPage);
+};
+
+export const useCalendarSearchPagination = (
+    items: VisualSearchItem[],
+    date: Date,
+    maxItemsPerPage = DEFAULT_MAX_ITEMS_PER_PAGE
+) => {
     const maxPage = Math.floor(items.length / maxItemsPerPage);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(getInitialPage(items, maxItemsPerPage));
     const history = useHistory();
 
     const isPreviousEnabled = currentPage > 0;
@@ -17,9 +30,13 @@ export const useCalendarSearchPagination = <T>(items: T[], maxItemsPerPage = 100
 
     const setPage = (page: number) => {
         setCurrentPage(page);
+        const searchParams = extractSearchParameters(history.location);
+
         history.push(
             generatePathnameWithSearchParams(history.location, {
-                ...extractSearchParametersFromURL(history.location),
+                keyword: searchParams.keyword,
+                begin: searchParams.begin ? String(searchParams.begin) : undefined,
+                end: searchParams.end ? String(searchParams.end) : undefined,
                 ...(!!page && { page: page.toString() }),
             })
         );
@@ -31,6 +48,11 @@ export const useCalendarSearchPagination = <T>(items: T[], maxItemsPerPage = 100
             setCurrentPage(esSearchParams?.page);
         }
     }, [history.location]);
+
+    useEffect(() => {
+        // on each new search, or if users change the selecte date, re-compute initial page
+        setCurrentPage(getInitialPage(items, maxItemsPerPage));
+    }, [items, date]);
 
     return {
         currentPage,

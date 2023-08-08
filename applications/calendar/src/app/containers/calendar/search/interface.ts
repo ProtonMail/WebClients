@@ -12,7 +12,7 @@ export type VisualSearchItem = ESCalendarMetadata & {
     localStart?: Date;
     localEnd?: Date;
     isSingleOccurrence?: boolean;
-    isFirst: boolean;
+    isClosestToDate?: boolean;
 };
 
 export interface SearchModel {
