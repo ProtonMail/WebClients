@@ -19,6 +19,7 @@ module.exports = {
         'selector-pseudo-class-no-unknown': true,
         'selector-pseudo-element-no-unknown': true,
         'selector-type-no-unknown': true,
+        'selector-anb-no-unmatchable': null,
         'media-feature-name-no-unknown': true,
         'at-rule-no-unknown': [
             true,
@@ -49,7 +50,6 @@ module.exports = {
         'no-duplicate-at-import-rules': true,
         'no-duplicate-selectors': true,
         'no-empty-source': true,
-        'no-extra-semicolons': true,
         'no-invalid-double-slash-comments': null,
 
         'alpha-value-notation': 'number',
