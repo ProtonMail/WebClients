@@ -55,5 +55,10 @@ export const importerHasErrors = (
         hasErrors.push(limitReached);
     }
 
+    if (products?.includes(ImportType.CONTACTS)) {
+        const limitReached = !!importerData.contacts?.error;
+        hasErrors.push(limitReached);
+    }
+
     return hasErrors.some(isTruthy);
 };
