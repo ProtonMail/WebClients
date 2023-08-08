@@ -1854,22 +1854,22 @@
         "Ir a Archivo"
       ],
       "Go to Drafts": [
-        "Ir a la carpeta de Borradores"
+        "Ir a Borradores"
       ],
       "Go to Inbox": [
-        "Ir a la Bandeja de entrada"
+        "Ir a Bandeja de entrada"
       ],
       "Go to Sent": [
-        "Ir a la carpeta de Enviados"
+        "Ir a Enviados"
       ],
       "Go to Spam": [
-        "Ir a la carpeta de Spam"
+        "Ir a Spam"
       ],
       "Go to Starred": [
-        "Ir a la carpeta de Destacados"
+        "Ir a Destacados"
       ],
       "Go to Trash": [
-        "Ir a la Papelera"
+        "Ir a Papelera"
       ],
       "New message": [
         "Nuevo mensaje"
@@ -4686,6 +4686,10 @@
         "${ count } mensaje sin leer",
         "${ count } mensajes sin leer"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } de ${ totalProgress }",
+        "${ currentProgress } de ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagen incrustada",
         "${ embeddedAttachmentsCount } imágenes incrustadas"
@@ -4887,6 +4891,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "¿Estás seguro de que quieres mover todos los mensajes de esta carpeta al Archivo?"
@@ -5299,9 +5306,8 @@
       "Merged": [
         "Combinado"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Mensaje descargado: ${ currentProgress } de ${ totalProgress }",
-        "Mensajes descargados: ${ currentProgress } de ${ totalProgress }"
+      "Message download status:": [
+        "Estado de descarga del mensaje:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "La expiración del mensaje funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos electrónicos que expiren a usuarios que no sean de ${ BRAND_NAME }, cancela y añade la protección con contraseña a tu correo electrónico."
@@ -5428,6 +5434,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indica un nombre y una dirección de correo para crear un grupo."
       ],
       "Please select the folders you would like to import:": [
         "Selecciona las carpetas que te gustaría importar:"
@@ -5922,6 +5931,9 @@
       "You can either update your search query or ${ button }": [
         "Puedes actualizar tu consulta de búsqueda o ${ button }."
       ],
+      "You can either update your search query or clear it": [
+        "Puedes actualizar tus términos de búsqueda o borrarlos."
+      ],
       "You can import one data type at a time.": [
         "Puedes importar un tipo de datos a la vez."
       ],
@@ -6025,9 +6037,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
-      ],
-      "Your import will not be processed.": [
-        "No se procesará tu importación."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -9338,9 +9347,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
-      ],
-      "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } grupo de contactos?",
