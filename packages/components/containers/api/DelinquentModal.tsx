@@ -2,15 +2,13 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
-import { UNPAID_STATE } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, UNPAID_STATE } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt, SettingsLink } from '../../components';
-import { useConfig, useUser } from '../../hooks';
+import { useUser } from '../../hooks';
 
 const DelinquentModal = (props: ModalProps) => {
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
     const title = c('Delinquent modal title').t`Overdue invoice`;
 
     const delinquentMessage = c('Info')
@@ -32,7 +30,7 @@ const DelinquentModal = (props: ModalProps) => {
         <Prompt
             title={title}
             buttons={[
-                <ButtonLike color="norm" as={SettingsLink} path={getInvoicesPathname(APP_NAME)} onClick={props.onClose}>
+                <ButtonLike color="norm" as={SettingsLink} path={getInvoicesPathname()} onClick={props.onClose}>
                     {c('Action').t`View invoice`}
                 </ButtonLike>,
             ]}

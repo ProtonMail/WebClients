@@ -8,6 +8,8 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
+import { UpsellCta } from '../helpers';
+
 export const plans = [
     {
         Type: 1,
@@ -192,6 +194,7 @@ export const plans = [
 
 export const mailPlusUpsell = {
     plan: PLANS.MAIL,
+    planKey: PLANS.MAIL,
     title: 'Mail Plus',
     description: 'Secure email with advanced features for your everyday communications.',
     upsellRefLink: 'upsell_mail-button-mailplus-dashboard_settings',
@@ -252,10 +255,11 @@ export const trialMailPlusUpsell = {
     otherCtas: [
         {
             label: 'Explore all Proton plans',
+            action: () => {},
             color: 'norm',
             shape: 'ghost',
         },
-    ],
+    ] as UpsellCta[],
     isTrialEnding: true,
     hasVPN: false,
     hasPaidMail: false,
@@ -263,6 +267,7 @@ export const trialMailPlusUpsell = {
 
 export const unlimitedUpsell = {
     plan: PLANS.BUNDLE,
+    planKey: PLANS.BUNDLE,
     title: 'Proton Unlimited',
     description: 'Comprehensive privacy and security with all Proton services combined.',
     upsellRefLink: 'upsell_mail-button-unlimited-dashboard_settings',
@@ -319,6 +324,7 @@ export const unlimitedUpsell = {
 
 export const familyUpsell = {
     plan: PLANS.FAMILY,
+    planKey: PLANS.FAMILY,
     title: 'Proton Family',
     description: 'Protect your family’s privacy with all Proton services combined.',
     upsellRefLink: 'upsell_mail-button-family-dashboard_settings',
@@ -365,6 +371,7 @@ export const familyUpsell = {
 
 export const businessUpsell = {
     plan: PLANS.BUNDLE_PRO,
+    planKey: PLANS.BUNDLE_PRO,
     title: 'Business',
     description: 'Privacy and security suite for businesses, including all premium Proton services.',
     upsellRefLink: 'upsell_mail-button-business-dashboard_settings',
@@ -399,6 +406,7 @@ export const businessUpsell = {
 
 export const drivePlusUpsell = {
     plan: PLANS.DRIVE,
+    planKey: PLANS.DRIVE,
     title: 'Drive Plus',
     description: 'Secure cloud storage that lets you store, sync, and share files easily and securely.',
     upsellRefLink: 'upsell_drive-button-drive-dashboard_settings',
@@ -442,6 +450,7 @@ export const drivePlusUpsell = {
 
 export const passPlusUpsell = {
     plan: PLANS.PASS_PLUS,
+    planKey: PLANS.PASS_PLUS,
     title: 'Pass Plus',
     description: 'For next-level password management and identity protection.',
     upsellRefLink: 'upsell_pass-button-pass-dashboard_settings',

@@ -4,18 +4,17 @@ import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { UNPAID_STATE } from '@proton/shared/lib/constants';
 
 import { SettingsLink } from '../../components';
-import { useConfig, useUser } from '../../hooks';
+import { useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const DelinquentTopBanner = () => {
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
 
     if (!user.Delinquent) {
         return null;
     }
     const payInvoiceLink = (
-        <SettingsLink key="pay-invoices" className="color-inherit" path={getInvoicesPathname(APP_NAME)}>{c('Link')
+        <SettingsLink key="pay-invoices" className="color-inherit" path={getInvoicesPathname()}>{c('Link')
             .t`Pay invoice`}</SettingsLink>
     );
     if (user.canPay) {

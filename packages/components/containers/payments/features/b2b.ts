@@ -76,6 +76,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getTwoFA(),
                 [PLANS.BUNDLE_PRO]: getTwoFA(),
+                [PLANS.VPN_PRO]: getTwoFA(),
+                [PLANS.VPN_BUSINESS]: getTwoFA(),
             },
         },
         {
@@ -91,6 +93,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getConsole(),
                 [PLANS.BUNDLE_PRO]: getConsole(),
+                [PLANS.VPN_PRO]: getConsole(),
+                [PLANS.VPN_BUSINESS]: getConsole(),
             },
         },
         {
@@ -106,6 +110,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getBilling(),
                 [PLANS.BUNDLE_PRO]: getBilling(),
+                [PLANS.VPN_PRO]: getBilling(),
+                [PLANS.VPN_BUSINESS]: getBilling(),
             },
         },
         {
@@ -121,6 +127,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getAdmins(),
                 [PLANS.BUNDLE_PRO]: getAdmins(),
+                [PLANS.VPN_PRO]: getAdmins(),
+                [PLANS.VPN_BUSINESS]: getAdmins(),
             },
         },
         {
@@ -136,6 +144,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getSignIn(),
                 [PLANS.BUNDLE_PRO]: getSignIn(),
+                [PLANS.VPN_PRO]: getSignIn(),
+                [PLANS.VPN_BUSINESS]: getSignIn(),
             },
         },
         {
@@ -151,6 +161,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getCredentials(),
                 [PLANS.BUNDLE_PRO]: getCredentials(),
+                [PLANS.VPN_PRO]: getCredentials(),
+                [PLANS.VPN_BUSINESS]: getCredentials(),
             },
         },
         {
@@ -166,6 +178,8 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getSessions(),
                 [PLANS.BUNDLE_PRO]: getSessions(),
+                [PLANS.VPN_PRO]: getSessions(),
+                [PLANS.VPN_BUSINESS]: getSessions(),
             },
         },
     ];
@@ -224,6 +238,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getGDPR(),
                 [PLANS.BUNDLE_PRO]: getGDPR(),
+                [PLANS.VPN_PRO]: getGDPR(),
+                [PLANS.VPN_BUSINESS]: getGDPR(),
             },
         },
         {
@@ -239,6 +255,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getHIPAA(),
                 [PLANS.BUNDLE_PRO]: getHIPAA(),
+                [PLANS.VPN_PRO]: getHIPAA(),
+                [PLANS.VPN_BUSINESS]: getHIPAA(),
             },
         },
         {
@@ -254,6 +272,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getSupport(),
                 [PLANS.BUNDLE_PRO]: getSupport(),
+                [PLANS.VPN_PRO]: getSupport(),
+                [PLANS.VPN_BUSINESS]: getSupport(),
             },
         },
         {
@@ -269,6 +289,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getPhoneSupport(),
                 [PLANS.BUNDLE_PRO]: getPhoneSupport(),
+                [PLANS.VPN_PRO]: getPhoneSupport(),
+                [PLANS.VPN_BUSINESS]: getPhoneSupport(),
             },
         },
         {
@@ -284,6 +306,8 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getSLA(),
                 [PLANS.BUNDLE_PRO]: getSLA(),
+                [PLANS.VPN_PRO]: getSLA(),
+                [PLANS.VPN_BUSINESS]: getSLA(),
             },
         },
     ];
