@@ -128,6 +128,8 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             return keyReference;
         },
         generateE2EEForwardingMaterial: (opts) => getWorker().generateE2EEForwardingMaterial(opts),
+        doesKeySupportE2EEForwarding: async (opts) => getWorker().doesKeySupportE2EEForwarding(opts),
+
         replaceUserIDs: async (opts) => {
             await Promise.all(getAllWorkers().map((worker) => worker.replaceUserIDs(opts)));
         },
