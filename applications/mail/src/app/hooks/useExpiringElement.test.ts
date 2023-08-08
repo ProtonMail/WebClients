@@ -59,10 +59,11 @@ describe('useExpiringElement', () => {
         const element = {
             ID: conversationID,
         } as Conversation;
+        const labelID = '0';
 
         it('Should not have expiration when no `contextExpirationTime` on the Element and no `expiresIn` draftFlag in messages from store', async () => {
             store.dispatch(initialize(getStoreMessage({ conversationID })));
-            const result = await renderHook(() => useExpiringElement(element, true));
+            const result = await renderHook(() => useExpiringElement(element, labelID, true));
 
             expect(result.result.current.hasExpiration).toBe(false);
             expect(result.result.current.expirationTime).toBe(0);
@@ -78,7 +79,7 @@ describe('useExpiringElement', () => {
                     })
                 )
             );
-            const result = await renderHook(() => useExpiringElement(element, true));
+            const result = await renderHook(() => useExpiringElement(element, labelID, true));
 
             expect(result.result.current.hasExpiration).toBe(false);
             expect(result.result.current.expirationTime).toBe(0);
@@ -91,6 +92,7 @@ describe('useExpiringElement', () => {
                         ...element,
                         ContextExpirationTime: dateTimestamp,
                     },
+                    labelID,
                     true
                 )
             );
@@ -110,7 +112,28 @@ describe('useExpiringElement', () => {
                 )
             );
 
-            const result = await renderHook(() => useExpiringElement(element, true));
+            const result = await renderHook(() => useExpiringElement(element, labelID, true));
+            expect(result.result.current.hasExpiration).toBe(true);
+            expect(result.result.current.expirationTime).toBe(dateTimestamp);
+        });
+
+        it('should look for ContextExpirationTime in Labels', async () => {
+            const result = await renderHook(() =>
+                useExpiringElement(
+                    {
+                        ...element,
+                        Labels: [
+                            {
+                                ID: labelID,
+                                ContextExpirationTime: dateTimestamp,
+                            },
+                        ],
+                    },
+                    labelID,
+                    true
+                )
+            );
+
             expect(result.result.current.hasExpiration).toBe(true);
             expect(result.result.current.expirationTime).toBe(dateTimestamp);
         });
@@ -120,10 +143,11 @@ describe('useExpiringElement', () => {
         const element = {
             ID: MESSAGE_ID,
         } as Message;
+        const labelID = '0';
 
         it('Should not have expiration when no `ExpirationTime` on the Element and no `ExpirationTime` data or `expiresIn` draftFlag in message store', async () => {
             store.dispatch(initialize(getStoreMessage({ types: [], expirationTime: dateTimestamp })));
-            const result = await renderHook(() => useExpiringElement(element, false));
+            const result = await renderHook(() => useExpiringElement(element, labelID, false));
 
             expect(result.result.current.hasExpiration).toBe(false);
             expect(result.result.current.expirationTime).toBe(0);
@@ -137,6 +161,7 @@ describe('useExpiringElement', () => {
                         ...element,
                         ExpirationTime: dateTimestamp,
                     },
+                    labelID,
                     false
                 )
             );
@@ -149,7 +174,7 @@ describe('useExpiringElement', () => {
             store.dispatch(
                 initialize(getStoreMessage({ types: ['withDraftFlagExpiresIn'], expirationTime: dateTimestamp }))
             );
-            const result = await renderHook(() => useExpiringElement(element, false));
+            const result = await renderHook(() => useExpiringElement(element, labelID, false));
 
             expect(result.result.current.hasExpiration).toBe(true);
             expect(result.result.current.expirationTime).toBe(dateTimestamp);
@@ -159,7 +184,7 @@ describe('useExpiringElement', () => {
             store.dispatch(
                 initialize(getStoreMessage({ types: ['withDataExpirationTime'], expirationTime: dateTimestamp }))
             );
-            const result = await renderHook(() => useExpiringElement(element, false));
+            const result = await renderHook(() => useExpiringElement(element, labelID, false));
 
             expect(result.result.current.hasExpiration).toBe(true);
             expect(result.result.current.expirationTime).toBe(dateTimestamp);
