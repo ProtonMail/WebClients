@@ -251,7 +251,7 @@ const getDNSLeak = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getKillSwitch = (): PlanCardFeatureDefinition => {
+export const getKillSwitch = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Kill switch/always-on VPN`,
         tooltip: c('new_plans: tooltip')
@@ -332,6 +332,86 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
+export const getDedicatedServersVPNFeature = (n?: number): PlanCardFeatureDefinition => {
+    let text: string;
+
+    if (n === undefined) {
+        text = c('new_plans: Upsell attribute').t`Dedicated server locations in North America and Europe`;
+    } else {
+        text = c('new_plans: Upsell attribute').t`Dedicated server locations in ${n}+ countries`;
+    }
+
+    return {
+        icon: 'checkmark',
+        included: true,
+        text,
+        tooltip: c('new_plans: tooltip')
+            .t`Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control`,
+    };
+};
+
+export const getDedicatedAccountManagerVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Dedicated Account manager`,
+});
+
+export const getAESEncryptionVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`AES 256-bit VPN encryption`,
+});
+
+export const getCensorshipCircumventionVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Censorship circumvention`,
+});
+
+export const getCentralControlPanelVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Central control panel`,
+});
+
+export const getAutoConnectVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Auto-connect`,
+});
+
+export const getMultiPlatformSupportVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Multi-platform support`,
+});
+
+export const get24x7SupportVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`24/7 support`,
+});
+
+export const getRequire2FAVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Require 2FA`,
+});
+
+export const getBrowserExtensionVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Browser extension`,
+});
+
+export const getPrivateGatewaysVPNFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark',
+    included: true,
+    text: c('new_plans: Upsell attribute').t`Private gateways`,
+    tooltip: c('new_plans: tooltip')
+        .t`Lock down your company resources from the public internet and make them accessible only via your private gateways`,
+});
+
 export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeature[] => {
     const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
     const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
@@ -349,6 +429,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.VPN_PRO]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.VPN_BUSINESS]: getVPNConnections(VPN_CONNECTIONS),
             },
         },
         {
@@ -364,6 +446,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
                 [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
@@ -379,6 +463,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
                 [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
@@ -393,6 +479,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getCountries(plusServers),
                 [PLANS.MAIL_PRO]: getCountries(freeServers),
                 [PLANS.BUNDLE_PRO]: getCountries(plusServers),
+                [PLANS.VPN_PRO]: getCountries(plusServers),
+                [PLANS.VPN_BUSINESS]: getCountries(plusServers),
             },
         },
         {
@@ -407,6 +495,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getVPNSpeed('highest'),
                 [PLANS.MAIL_PRO]: getVPNSpeed('medium'),
                 [PLANS.BUNDLE_PRO]: getVPNSpeed('highest'),
+                [PLANS.VPN_PRO]: getVPNSpeed('highest'),
+                [PLANS.VPN_BUSINESS]: getVPNSpeed('highest'),
             },
         },
         {
@@ -421,6 +511,9 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getNetShield(true),
                 [PLANS.MAIL_PRO]: getNetShield(false),
                 [PLANS.BUNDLE_PRO]: getNetShield(true),
+                [PLANS.VPN_PRO]: getNetShield(true),
+
+                [PLANS.VPN_BUSINESS]: getNetShield(true),
             },
         },
         {
@@ -435,6 +528,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getStreaming(true),
                 [PLANS.MAIL_PRO]: getStreaming(false),
                 [PLANS.BUNDLE_PRO]: getStreaming(true),
+                [PLANS.VPN_PRO]: getStreaming(true),
+                [PLANS.VPN_BUSINESS]: getStreaming(true),
             },
         },
         {
@@ -449,6 +544,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getP2P(true),
                 [PLANS.MAIL_PRO]: getP2P(false),
                 [PLANS.BUNDLE_PRO]: getP2P(true),
+                [PLANS.VPN_PRO]: getP2P(true),
+                [PLANS.VPN_BUSINESS]: getP2P(true),
             },
         },
         {
@@ -463,6 +560,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getDoubleHop(true, true),
                 [PLANS.MAIL_PRO]: getDoubleHop(false),
                 [PLANS.BUNDLE_PRO]: getDoubleHop(true, true),
+                [PLANS.VPN_PRO]: getDoubleHop(true, true),
+                [PLANS.VPN_BUSINESS]: getDoubleHop(true, true),
             },
         },
         {
@@ -477,6 +576,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getSecureCore(true),
                 [PLANS.MAIL_PRO]: getSecureCore(false),
                 [PLANS.BUNDLE_PRO]: getSecureCore(true),
+                [PLANS.VPN_PRO]: getSecureCore(true),
+                [PLANS.VPN_BUSINESS]: getSecureCore(true),
             },
         },
         {
@@ -491,6 +592,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getTor(true),
                 [PLANS.MAIL_PRO]: getTor(false),
                 [PLANS.BUNDLE_PRO]: getTor(true),
+                [PLANS.VPN_PRO]: getTor(true),
+                [PLANS.VPN_BUSINESS]: getTor(true),
             },
         },
         {
@@ -505,6 +608,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getNoLogs(),
                 [PLANS.MAIL_PRO]: getNoLogs(),
                 [PLANS.BUNDLE_PRO]: getNoLogs(),
+                [PLANS.VPN_PRO]: getNoLogs(),
+                [PLANS.VPN_BUSINESS]: getNoLogs(),
             },
         },
         {
@@ -519,6 +624,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getBandwidth(),
                 [PLANS.MAIL_PRO]: getBandwidth(),
                 [PLANS.BUNDLE_PRO]: getBandwidth(),
+                [PLANS.VPN_PRO]: getBandwidth(),
+                [PLANS.VPN_BUSINESS]: getBandwidth(),
             },
         },
         {
@@ -533,6 +640,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getDNSLeak(),
                 [PLANS.MAIL_PRO]: getDNSLeak(),
                 [PLANS.BUNDLE_PRO]: getDNSLeak(),
+                [PLANS.VPN_PRO]: getDNSLeak(),
+                [PLANS.VPN_BUSINESS]: getDNSLeak(),
             },
         },
         {
@@ -547,6 +656,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getKillSwitch(),
                 [PLANS.MAIL_PRO]: getKillSwitch(),
                 [PLANS.BUNDLE_PRO]: getKillSwitch(),
+                [PLANS.VPN_PRO]: getKillSwitch(),
+                [PLANS.VPN_BUSINESS]: getKillSwitch(),
             },
         },
         {
@@ -561,6 +672,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getEncryption(),
                 [PLANS.MAIL_PRO]: getEncryption(),
                 [PLANS.BUNDLE_PRO]: getEncryption(),
+                [PLANS.VPN_PRO]: getEncryption(),
+                [PLANS.VPN_BUSINESS]: getEncryption(),
             },
         },
         {
@@ -575,6 +688,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getRouterSupport(),
                 [PLANS.MAIL_PRO]: getRouterSupport(),
                 [PLANS.BUNDLE_PRO]: getRouterSupport(),
+                [PLANS.VPN_PRO]: getRouterSupport(),
+                [PLANS.VPN_BUSINESS]: getRouterSupport(),
             },
         },
         {
@@ -589,6 +704,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.FAMILY]: getSplitTunnel(),
                 [PLANS.MAIL_PRO]: getSplitTunnel(),
                 [PLANS.BUNDLE_PRO]: getSplitTunnel(),
+                [PLANS.VPN_PRO]: getSplitTunnel(),
+                [PLANS.VPN_BUSINESS]: getSplitTunnel(),
             },
         },
     ];

@@ -36,6 +36,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
+import debounce from '@proton/utils/debounce';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -164,6 +165,7 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.CHECKOUT]: c('new_plans: title').t`Review subscription and pay`,
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
         [SUBSCRIPTION_STEPS.THANKS]: '',
+        [SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION]: c('new_plans: title').t`Review subscription and pay`,
     };
 
     const topRef = useRef<HTMLDivElement>(null);
@@ -183,6 +185,8 @@ const SubscriptionModal = ({
 
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
+    const [blockCycleSelector, withBlockCycleSelector] = useLoading();
+    const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
     const [audience, setAudience] = useState(defaultAudience);
@@ -206,6 +210,8 @@ const SubscriptionModal = ({
     const latestValidCouponCodeRef = useRef('');
 
     const giftCodeRef = useRef<HTMLInputElement>(null);
+
+    const abortControllerRef = useRef<AbortController>();
 
     const handleUnsubscribe = async () => {
         if (hasVPN(subscription)) {
@@ -368,14 +374,18 @@ const SubscriptionModal = ({
         }
 
         try {
-            const result = await api<SubscriptionCheckResponse>(
-                checkSubscription({
+            abortControllerRef.current?.abort();
+            abortControllerRef.current = new AbortController();
+
+            const result = await api<SubscriptionCheckResponse>({
+                ...checkSubscription({
                     Plans: newModel.planIDs,
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
                     Codes: getCodes(newModel),
-                })
-            );
+                }),
+                signal: abortControllerRef.current.signal,
+            });
 
             const { Gift = 0 } = result;
             const { Code = '' } = result.Coupon || {}; // Coupon can equal null
@@ -453,7 +463,9 @@ const SubscriptionModal = ({
         if (loadingCheck || cycle === model.cycle) {
             return;
         }
-        withLoadingCheck(check({ ...model, cycle }));
+        const checkPromise = check({ ...model, cycle });
+        withLoadingCheck(checkPromise);
+        withBlockAccountSizeSelector(checkPromise);
     };
 
     useEffect(() => {
@@ -497,10 +509,14 @@ const SubscriptionModal = ({
                     SUBSCRIPTION_STEPS.PLAN_SELECTION,
                     SUBSCRIPTION_STEPS.CUSTOMIZATION,
                     SUBSCRIPTION_STEPS.CHECKOUT,
+                    SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
                 ].includes(model.step) && 'subscription-modal--fixed-height',
                 [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step) && 'subscription-modal--large-width',
-                [SUBSCRIPTION_STEPS.CUSTOMIZATION, SUBSCRIPTION_STEPS.CHECKOUT].includes(model.step) &&
-                    'subscription-modal--medium-width',
+                [
+                    SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                    SUBSCRIPTION_STEPS.CHECKOUT,
+                    SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                ].includes(model.step) && 'subscription-modal--medium-width',
             ])}
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
@@ -540,7 +556,16 @@ const SubscriptionModal = ({
                         mode="modal"
                         subscription={subscription}
                         onChangePlanIDs={(planIDs) =>
-                            withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))
+                            withLoadingCheck(
+                                check({
+                                    ...model,
+                                    planIDs,
+                                    step:
+                                        !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]
+                                            ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+                                            : SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                                })
+                            )
                         }
                         onChangeCycle={handleChangeCycle}
                         onChangeCurrency={handleChangeCurrency}
@@ -696,6 +721,129 @@ const SubscriptionModal = ({
                                     onChangeCurrency={handleChangeCurrency}
                                     showProration={showProration}
                                     nextSubscriptionStart={subscription.PeriodEnd}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
+                {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
+                    <div className="subscriptionCheckout-top-container">
+                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                            <PlanCustomization
+                                loading={blockAccountSizeSelector}
+                                currency={model.currency}
+                                cycle={model.cycle}
+                                plansMap={plansMap}
+                                planIDs={model.planIDs}
+                                organization={organization}
+                                onChangePlanIDs={debounce((planIDs) => {
+                                    const newModel = { ...model, planIDs };
+                                    setModel(newModel);
+                                    const checkPromise = check(newModel);
+                                    void withLoadingCheck(checkPromise);
+                                    void withBlockCycleSelector(checkPromise);
+                                }, 300)}
+                                forceHideDescriptions
+                                showUsersTooltip={false}
+                            />
+                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                                {!disableCycleSelector && (
+                                    <>
+                                        <h2 className="text-2xl text-bold mb-4">{c('Label')
+                                            .t`Subscription options`}</h2>
+                                        <div className="mb-8">
+                                            <SubscriptionCycleSelector
+                                                mode="buttons"
+                                                plansMap={plansMap}
+                                                planIDs={model.planIDs}
+                                                cycle={model.cycle}
+                                                currency={model.currency}
+                                                onChangeCycle={handleChangeCycle}
+                                                disabled={loadingCheck}
+                                                faded={blockCycleSelector}
+                                            />
+                                        </div>
+                                    </>
+                                )}
+                                {/* avoid mounting/unmounting the component which re-triggers the hook */}
+                                <div className={amountDue ? undefined : 'hidden'}>
+                                    <Payment
+                                        api={api}
+                                        type="subscription"
+                                        paypal={paypal}
+                                        paypalCredit={paypalCredit}
+                                        method={method}
+                                        amount={amountDue}
+                                        currency={checkResult?.Currency}
+                                        coupon={couponCode}
+                                        card={card}
+                                        onMethod={setMethod}
+                                        onCard={setCard}
+                                        cardErrors={cardErrors}
+                                        creditCardTopRef={creditCardTopRef}
+                                    />
+                                </div>
+                                <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                    <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
+                                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
+                                    {checkResult?.Credit && creditsRemaining ? (
+                                        <div className="mb-4">{c('Info')
+                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                                    ) : null}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                            <div className="subscriptionCheckout-container sticky-top">
+                                <SubscriptionCheckout
+                                    submit={
+                                        <SubscriptionSubmitButton
+                                            currency={model.currency}
+                                            onClose={onClose}
+                                            paypal={paypal}
+                                            step={model.step}
+                                            loading={loading}
+                                            method={method}
+                                            checkResult={checkResult}
+                                            className="w100"
+                                            disabled={isFreeUserWithFreePlanSelected || !canPay}
+                                        />
+                                    }
+                                    plansMap={plansMap}
+                                    checkResult={checkResult}
+                                    vpnServers={vpnServers}
+                                    loading={loadingCheck}
+                                    currency={model.currency}
+                                    cycle={model.cycle}
+                                    planIDs={model.planIDs}
+                                    gift={
+                                        <>
+                                            {couponCode && (
+                                                <div className="flex flex-align-items-center mb-1">
+                                                    <Icon name="gift" className="mr-2 mb-1" />
+                                                    <Tooltip title={couponDescription}>
+                                                        <code>{couponCode.toUpperCase()}</code>
+                                                    </Tooltip>
+                                                </div>
+                                            )}
+                                            <PaymentGiftCode
+                                                giftCodeRef={giftCodeRef}
+                                                key={
+                                                    /* Reset the toggle state when a coupon code gets applied */
+                                                    couponCode
+                                                }
+                                                giftCode={model.gift}
+                                                onApply={handleGift}
+                                                loading={loadingGift}
+                                            />
+                                        </>
+                                    }
+                                    onChangeCurrency={handleChangeCurrency}
+                                    showProration={showProration}
+                                    nextSubscriptionStart={subscription.PeriodEnd}
+                                    showDiscount={false}
+                                    enableDetailedAddons={true}
+                                    showPlanDescription={false}
                                 />
                             </div>
                         </div>

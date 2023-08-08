@@ -105,6 +105,7 @@ export enum FeatureCode {
     PassSignup = 'PassSignup',
     OnboardingChecklist = 'OnboardingChecklist',
     NewOnboardingChecklist = 'NewOnboardingChecklist',
+    VpnB2bPlans = 'VpnB2bPlans',
 }
 
 export interface FeaturesContextValue {

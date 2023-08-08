@@ -11,11 +11,13 @@ export * from './Hotkeys';
 export * from './IncomingDefault';
 export * from './Key';
 export * from './KeySalt';
+export * from './KeyTransparency';
 export * from './Label';
 export * from './MailSettings';
 export * from './Member';
 export * from './Organization';
 export * from './OrganizationKey';
+export * from './PendingInvitation';
 export * from './Referrals';
 export * from './SignedKeyList';
 export * from './Subscription';
@@ -24,8 +26,6 @@ export * from './UserSettings';
 export * from './VPN';
 export * from './config';
 export * from './utils';
-export * from './KeyTransparency';
-export * from './PendingInvitation';
 
 export interface EncryptionConfig {
     type?: 'ecc' | 'rsa';

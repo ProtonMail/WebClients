@@ -136,6 +136,8 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
             }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360),
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000),
+            [PLANS.VPN_PRO]: null,
+            [PLANS.VPN_BUSINESS]: null,
         },
     };
 };
@@ -155,6 +157,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -169,6 +173,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getShareFeature(),
                 [PLANS.MAIL_PRO]: getShareFeature(),
                 [PLANS.BUNDLE_PRO]: getShareFeature(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -183,6 +189,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getAdvancedShareFeature(),
                 [PLANS.MAIL_PRO]: getAdvancedShareFeature(),
                 [PLANS.BUNDLE_PRO]: getAdvancedShareFeature(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -198,6 +206,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getTeamManagement(),
                 [PLANS.MAIL_PRO]: getTeamManagement(),
                 [PLANS.BUNDLE_PRO]: getTeamManagement(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -213,6 +223,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDocumentEditor(),
                 [PLANS.MAIL_PRO]: getDocumentEditor(),
                 [PLANS.BUNDLE_PRO]: getDocumentEditor(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];
