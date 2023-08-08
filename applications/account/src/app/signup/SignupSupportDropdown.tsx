@@ -2,10 +2,15 @@ import { c } from 'ttag';
 
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import SupportDropdown from '../public/SupportDropdown';
 
-const SignupSupportDropdown = () => {
+interface Props {
+    isDarkBg?: boolean;
+}
+
+const SignupSupportDropdown = ({ isDarkBg }: Props) => {
     const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const handleBugReportClick = () => {
@@ -15,7 +20,7 @@ const SignupSupportDropdown = () => {
     return (
         <>
             {render && <BugModal {...bugReportModal} />}
-            <SupportDropdown buttonClassName="signup-link link-focus">
+            <SupportDropdown buttonClassName={clsx('signup-link link-focus', isDarkBg && 'color-norm opacity-70')}>
                 <DropdownMenuLink
                     href={getKnowledgeBaseUrl('/common-sign-up-problems-and-solutions')}
                     target="_blank"

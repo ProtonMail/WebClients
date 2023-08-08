@@ -6,4 +6,5 @@ export { default as Logo } from './Logo';
 export * from './Logo';
 export { default as ProtonLogo } from './ProtonLogo';
 export { default as VpnLogo } from './VpnLogo';
+export { default as VpnForBusinessLogo } from './VpnForBusinessLogo';
 export { default as PassLogo } from './PassLogo';
