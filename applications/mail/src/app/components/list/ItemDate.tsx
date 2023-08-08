@@ -69,7 +69,11 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
     );
 
     if (useTooltip) {
-        return <Tooltip title={fullDate}>{itemDate}</Tooltip>;
+        return (
+            <Tooltip title={fullDate}>
+                <span>{itemDate}</span>
+            </Tooltip>
+        );
     }
 
     return <>{itemDate}</>;
