@@ -7,10 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import {
-    extractSearchParametersFromURL,
-    generatePathnameWithSearchParams,
-} from '../../../helpers/encryptedSearch/esUtils';
+import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
 import CalendarSearchActivation from './CalendarSearchActivation';
 import CalendarSearchForm from './CalendarSearchForm';
 import SearchField from './SearchField';
@@ -21,7 +18,7 @@ const DEFAULT_MODEL: SearchModel = {
 };
 
 const initializeModel = (history: History, searchInputValue: string) => () => {
-    const { keyword, begin, end } = extractSearchParametersFromURL(history.location);
+    const { keyword, begin, end } = extractSearchParameters(history.location);
 
     return {
         keyword: searchInputValue ? keyword || '' : '',
@@ -94,7 +91,8 @@ const AdvancedSearch = ({
 
     const canReset = !!(model.keyword || model.startDate || model.endDate);
 
-    // mousedown and touchstart avoid issue with the click in portal (modal, notification, composer, dropdown)
+    // Taken from the useClickMailContent component
+    // '' mousedown and touchstart avoid issue with the click in portal (modal, notification, dropdown) ''
     useEffect(() => {
         if (!containerRef) {
             return;

@@ -16,3 +16,5 @@ export enum TYPE {
     TIMEGRID,
     MORE,
 }
+
+export const ADVANCED_SEARCH_OVERLAY_OPEN_EVENT = 'advancedsearchopen';

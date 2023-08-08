@@ -16,9 +16,10 @@ import './SearchView.scss';
 interface Props {
     dailyEvents?: VisualSearchItem[];
     onClickSearchItem?: (e: MouseEvent<HTMLButtonElement>, item: VisualSearchItem) => void;
+    closestToDateRef: (element: HTMLDivElement | null) => void;
 }
 
-const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem }: Props) => {
+const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, closestToDateRef }: Props) => {
     const [addresses] = useAddresses();
     const now = new Date();
     const startDate = dailyEvents.length ? dailyEvents[0].fakeUTCStartDate : new Date();
@@ -56,6 +57,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem }: Pr
                             isAllDay,
                             plusDaysToEnd,
                             Summary,
+                            isClosestToDate,
                         } = event;
 
                         const { isCancelled, isUnanswered } = getEventTraits(event, addresses);
@@ -85,7 +87,10 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem }: Pr
                                     )}
                                     style={{ '--calendar-color': visualCalendar.Color }}
                                 />
-                                <span className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column">
+                                <span
+                                    className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column"
+                                    ref={isClosestToDate ? closestToDateRef : null}
+                                >
                                     <span className="text-lg min-w14e pl-2 lg:pl-0 search-event-time">
                                         {timeString}
                                     </span>

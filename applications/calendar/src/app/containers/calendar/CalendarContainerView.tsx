@@ -104,7 +104,7 @@ interface Props {
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
     containerRef: HTMLDivElement | null;
-    setcontainerRef: Ref<HTMLDivElement>;
+    setContainerRef: Ref<HTMLDivElement>;
     onSearch: () => void;
     addresses: Address[];
     user: UserModel;
@@ -138,7 +138,7 @@ const CalendarContainerView = ({
 
     children,
     containerRef,
-    setcontainerRef,
+    setContainerRef,
     onSearch,
 
     addresses,
@@ -152,7 +152,7 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-    const isCalendarEncryptedSearchEnabled = useProgressiveRollout(FeatureCode.CalendarEncryptedSearch);
+    const isCalendarEncryptedSearchEnabled = useProgressiveRollout(FeatureCode.CalendarEncryptedSearch) || true;
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
         useModalState();
@@ -518,9 +518,6 @@ const CalendarContainerView = ({
                         <Icon size={24} name="plus" className="m-auto" />
                     </FloatingButton>
                 }
-                searchBox={
-                    <CalendarSearch isNarrow={isNarrow} containerRef={containerRef} onSearch={onSearch} onBackFromSearch={onBackFromSearch} />
-                }
                 {...(isCalendarEncryptedSearchEnabled && {
                     searchBox: (
                         <CalendarSearch
@@ -621,7 +618,7 @@ const CalendarContainerView = ({
             bottom={bottom}
             sidebar={sidebar}
             header={header}
-            containerRef={setcontainerRef}
+            containerRef={setContainerRef}
             drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
             drawerApp={
                 isDrawerApp ? null : (

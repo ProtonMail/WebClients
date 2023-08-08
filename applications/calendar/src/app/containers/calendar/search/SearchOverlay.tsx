@@ -23,6 +23,8 @@ import { Portal } from '@proton/components/components/portal';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { ADVANCED_SEARCH_OVERLAY_OPEN_EVENT } from '../../../components/calendar/interactions/constants';
+
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;
 }
@@ -94,6 +96,7 @@ const SearchOverlay = ({
         if (!isOpen) {
             return;
         }
+        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT));
         if (sameAnchorWidth) {
             anchorRectRef.current = anchorRef.current?.getBoundingClientRect();
         }

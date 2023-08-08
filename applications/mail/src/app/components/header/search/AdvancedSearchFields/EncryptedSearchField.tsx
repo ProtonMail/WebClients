@@ -114,7 +114,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     const totalProgress = getProgressRecorderRef().current[1];
     const currentProgress = Math.min(esProgress, totalProgress);
     isEstimating ||= currentProgress === 0;
-    let progressStatus: string = '';
+    let progressStatus: ReactNode = '';
     if (isContentIndexingPaused) {
         progressStatus = c('Info').t`Downloading paused`;
     } else if (isEstimating) {
