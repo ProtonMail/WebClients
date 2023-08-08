@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
 import { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -11,11 +13,11 @@ const CURRENCIES = {
 };
 
 export interface Props {
-    children: number;
+    children: number | string;
     currency?: Currency | string;
     className?: string;
     divisor?: number;
-    suffix?: string;
+    suffix?: ReactNode;
     prefix?: string;
     isDisplayedInSentence?: boolean;
     large?: boolean;
@@ -41,9 +43,9 @@ const Price = ({
     currencyClassName,
     amountClassName,
 }: Props) => {
-    const value = humanPrice(amount, divisor);
+    const value = typeof amount === 'string' ? amount : humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
-    const p = amount < 0 ? <span className="prefix">-</span> : null;
+    const p = typeof amount === 'number' && amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
         <span className={clsx(['amount', 'amount--large', amountClassName])} data-testid={dataTestId}>
             <span className="integer">{integer}</span>

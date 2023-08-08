@@ -39,6 +39,7 @@ import {
     TopBanners,
     TopNavbarUpsell,
     UnAuthenticated,
+    UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
     WireGuardConfigurationSection,
@@ -206,9 +207,12 @@ const MainContainer = () => {
                                         <PrivateMainSettingsArea config={routes.dashboard}>
                                             <PlansSection app={APPS.PROTONVPN_SETTINGS} />
                                             <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
+                                            <UpgradeVpnSection app={APPS.PROTONVPN_SETTINGS} />
                                             <SubscriptionsSection />
+                                            <PaymentMethodsSection />
                                             <CreditsSection />
                                             <GiftCodeSection />
+                                            <InvoicesSection />
                                             <CancelSubscriptionSection />
                                             <DowngradeSubscriptionSection />
                                         </PrivateMainSettingsArea>
@@ -241,14 +245,6 @@ const MainContainer = () => {
                                     <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            {getIsSectionAvailable(routes.payments) && (
-                                <Route path={routes.payments.to}>
-                                    <PrivateMainSettingsArea config={routes.payments}>
-                                        <PaymentMethodsSection />
-                                        <InvoicesSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
                             <Redirect
                                 to={getIsSectionAvailable(routes.dashboard) ? routes.dashboard.to : routes.downloads.to}
                             />

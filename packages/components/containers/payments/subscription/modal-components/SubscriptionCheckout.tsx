@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
 import {
+    AddonDescription,
     Included,
     RequiredCheckResponse,
     getCheckout,
@@ -22,6 +23,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
     Info,
+    Price,
 } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
@@ -71,6 +73,50 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
     );
 };
 
+const BilledText = ({ cycle }: { cycle: Cycle }) => {
+    let text: string = useMemo(() => {
+        switch (cycle) {
+            case CYCLE.TWO_YEARS:
+                return c('Subscription').t`Billed every 2 years`;
+            case CYCLE.YEARLY:
+                return c('Subscription').t`Billed yearly`;
+            case CYCLE.MONTHLY:
+                return c('Subscription').t`Billed monthly`;
+            case CYCLE.FIFTEEN:
+                return c('Subscription').t`Billed every 15 months`;
+            case CYCLE.THIRTY:
+                return c('Subscription').t`Billed every 30 months`;
+        }
+    }, [cycle]);
+
+    return <span className="color-weak text-sm">{text}</span>;
+};
+
+const AddonTooltip = ({
+    addon,
+    pricePerAddon,
+    currency,
+}: {
+    addon: AddonDescription;
+    pricePerAddon: number;
+    currency: Currency;
+}) => {
+    const price = <Price currency={currency}>{pricePerAddon}</Price>;
+
+    let text: ReactNode;
+    if (addon.name.startsWith('1domain')) {
+        text = c('Addon').jt`${price} per domain`;
+    } else if (addon.name.startsWith(MEMBER_ADDON_PREFIX)) {
+        text = c('Addon').jt`${price} per user`;
+    } else if (addon.name.startsWith('1ip')) {
+        text = c('Addon').jt`${price} per IP address`;
+    } else {
+        return null;
+    }
+
+    return <Info title={text} className="ml-2" />;
+};
+
 interface Props {
     submit?: ReactNode;
     loading?: boolean;
@@ -85,6 +131,9 @@ interface Props {
     isOptimistic?: boolean;
     showProration?: boolean;
     nextSubscriptionStart?: number;
+    showDiscount?: boolean;
+    enableDetailedAddons?: boolean;
+    showPlanDescription?: boolean;
 }
 
 const SubscriptionCheckout = ({
@@ -101,10 +150,21 @@ const SubscriptionCheckout = ({
     loading,
     showProration = true,
     nextSubscriptionStart,
+    showDiscount = true,
+    enableDetailedAddons = false,
+    showPlanDescription = true,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const { planTitle, usersTitle, discountPercent, withDiscountPerMonth, withDiscountPerCycle, addons } = getCheckout({
+    const {
+        planTitle,
+        usersTitle,
+        discountPercent,
+        withDiscountPerCycle,
+        addons,
+        membersPerMonth,
+        withDiscountPerMonth,
+    } = getCheckout({
         planIDs,
         plansMap,
         checkResult,
@@ -115,7 +175,7 @@ const SubscriptionCheckout = ({
     }
 
     const isFreePlanSelected = !hasPlanIDs(planIDs);
-    const isVPNPlanSelected = !!planIDs?.[PLANS.VPN];
+    const isVPNPlanSelected = !!planIDs?.[PLANS.VPN] || !!planIDs?.[PLANS.VPN_PRO] || !!planIDs?.[PLANS.VPN_BUSINESS];
 
     const proration = checkResult.Proration ?? 0;
     const credit = checkResult.Credit ?? 0;
@@ -134,33 +194,57 @@ const SubscriptionCheckout = ({
             loading={loading}
             hasGuarantee={isVPNPlanSelected}
             hasPayments={!isOptimistic}
-            description={<PlanDescription list={list} />}
+            description={showPlanDescription ? <PlanDescription list={list} /> : null}
         >
-            <div className="mb-4">
-                <strong>{planTitle}</strong>
+            <div className="mb-4 flex flex-column">
+                <strong className="mb-1">{planTitle}</strong>
+                <BilledText cycle={cycle} />
             </div>
             <CheckoutRow
                 title={
                     <>
                         {usersTitle}
-                        {discountPercent > 0 && (
+                        {showDiscount && discountPercent > 0 && (
                             <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
                                 -{discountPercent}%
                             </Badge>
                         )}
                     </>
                 }
-                amount={withDiscountPerMonth}
+                amount={enableDetailedAddons ? membersPerMonth : withDiscountPerMonth}
                 currency={currency}
-                suffix={c('Suffix').t`/month`}
+                suffix={<span className="color-weak text-sm">{c('Suffix').t`/month`}</span>}
+                suffixNextLine={enableDetailedAddons}
+                loading={loading}
             />
-            {addons.map((addon) => {
-                return (
-                    <div className="mb-4" key={addon.name}>
-                        {addon.title}
-                    </div>
-                );
-            })}
+            {enableDetailedAddons
+                ? addons.map((addon) => {
+                      return (
+                          <CheckoutRow
+                              key={addon.name}
+                              title={
+                                  <>
+                                      {addon.title}
+                                      <AddonTooltip
+                                          addon={addon}
+                                          pricePerAddon={(addon.pricing[cycle] || 0) / cycle}
+                                          currency={currency}
+                                      />
+                                  </>
+                              }
+                              amount={(addon.quantity * (addon.pricing[cycle] || 0)) / cycle}
+                              currency={currency}
+                              loading={loading}
+                          />
+                      );
+                  })
+                : addons.map((addon) => {
+                      return (
+                          <div className="mb-4" key={addon.name}>
+                              + {addon.title}
+                          </div>
+                      );
+                  })}
             {!isFreePlanSelected && (
                 <>
                     <div className="mb-4">
@@ -171,6 +255,7 @@ const SubscriptionCheckout = ({
                         title={<span className="mr-2">{getTotalBillingText(cycle)}</span>}
                         amount={withDiscountPerCycle}
                         currency={currency}
+                        loading={loading}
                     />
                 </>
             )}
@@ -212,6 +297,7 @@ const SubscriptionCheckout = ({
                         title={c('Title').t`Amount due`}
                         amount={amountDue}
                         currency={currency}
+                        loading={loading}
                         className="text-bold m-0 text-2xl"
                         data-testid="subscription-amout-due"
                     />

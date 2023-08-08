@@ -15,6 +15,7 @@ import {
     CYCLE,
     DEFAULT_CYCLE,
     FAMILY_MAX_USERS,
+    MEMBER_ADDON_PREFIX,
     MEMBER_PLAN_MAPPING,
     PLANS,
     PLAN_TYPES,
@@ -23,6 +24,7 @@ import {
     Plan,
     PlanIDs,
     PlansMap,
+    Pricing,
     Subscription,
     SubscriptionCheckResponse,
     VPNServersCountData,
@@ -30,7 +32,7 @@ import {
 } from '../interfaces';
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
-import { customCycles, getNormalCycleFromCustomCycle } from './subscription';
+import { INCLUDED_IP_PRICING_PER_MONTH, customCycles, getNormalCycleFromCustomCycle } from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -45,7 +47,7 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
     if (addon.Name.startsWith('1domain')) {
         return quantity * (addon.MaxDomains || 0);
     }
-    if (addon.Name.startsWith('1member')) {
+    if (addon.Name.startsWith(MEMBER_ADDON_PREFIX)) {
         return quantity * (addon.MaxMembers || 0);
     }
     if (addon.Name.startsWith('1ip')) {
@@ -57,27 +59,36 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
 export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
     if (addonName.startsWith('1domain')) {
         const domains = quantity;
-        return c('Addon').ngettext(msgid`+ ${domains} custom domain`, `+ ${domains} custom domains`, domains);
+        return c('Addon').ngettext(msgid`${domains} custom domain`, `${domains} custom domains`, domains);
     }
-    if (addonName.startsWith('1member')) {
+    if (addonName.startsWith(MEMBER_ADDON_PREFIX)) {
         const users = quantity;
-        return c('Addon').ngettext(msgid`+ ${users} user`, `+ ${users} users`, users);
+        return c('Addon').ngettext(msgid`${users} user`, `${users} users`, users);
     }
     if (addonName.startsWith('1ip')) {
         const ips = quantity;
-        return c('Addon').ngettext(msgid`+ ${ips} IP address`, `+ ${ips} IP addresses`, ips);
+        return c('Addon').ngettext(msgid`${ips} server`, `${ips} servers`, ips);
     }
     return '';
 };
+
+export interface AddonDescription {
+    name: ADDON_NAMES;
+    title: string;
+    quantity: number;
+    pricing: Pricing;
+}
 
 interface SubscriptionCheckoutData {
     planName: PLANS | null;
     planTitle: string;
     usersTitle: string;
     users: number;
-    addons: { name: ADDON_NAMES; title: string; quantity: number }[];
+    addons: AddonDescription[];
     withDiscountPerCycle: number;
     withDiscountPerMonth: number;
+    membersPerMonth: number;
+    addonsPerMonth: number;
     discountPerCycle: number;
     discountPercent: number;
 }
@@ -87,19 +98,11 @@ export type RequiredCheckResponse = Pick<
     'Amount' | 'AmountDue' | 'Cycle' | 'CouponDiscount' | 'Proration' | 'Credit' | 'Coupon' | 'Gift'
 >;
 
-export const getCheckout = ({
-    planIDs,
-    plansMap,
-    checkResult,
-}: {
-    planIDs: PlanIDs;
-    plansMap: PlansMap;
-    checkResult?: RequiredCheckResponse;
-}): SubscriptionCheckoutData => {
-    const result = Object.entries(planIDs).reduce<
+export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
+    return Object.entries(planIDs).reduce<
         Pick<SubscriptionCheckoutData, 'planName' | 'planTitle'> & {
             users: number;
-            addons: { name: ADDON_NAMES; quantity: number }[];
+            addons: AddonDescription[];
         }
     >(
         (acc, [planName, quantity]) => {
@@ -110,7 +113,27 @@ export const getCheckout = ({
             if (plan.Type === PLAN_TYPES.PLAN) {
                 acc.planName = plan.Name as PLANS;
                 acc.planTitle = plan.Title;
-                acc.users += plan.MaxMembers;
+
+                // MaxMembers is the number of users allowed in a plan. Right? Not quite.
+                // There are some plans like VPN Plus that don't have access to Mail, and that's why their
+                // MaxMembers is set to 0. For the purposes of price calculation, we need to set it to 1.
+                // The only reason to use || 1 here is because it does handle all the corner cases (yet).
+                // A proper solution would be either a full table tha maps plans and addons to number of users,
+                // or a new property in a response that tells us how many users are included in a plan.
+                acc.users += plan.MaxMembers || 1;
+
+                if (plan.Name === PLANS.VPN_BUSINESS) {
+                    const name = ADDON_NAMES.IP_VPN_BUSINESS;
+                    const quantity = 1;
+                    const title = getAddonTitle(name, quantity);
+
+                    acc.addons.push({
+                        name,
+                        quantity,
+                        pricing: INCLUDED_IP_PRICING_PER_MONTH,
+                        title,
+                    });
+                }
             }
             if (plan.Type === PLAN_TYPES.ADDON) {
                 const memberMapping = MEMBER_PLAN_MAPPING[plan.Name as keyof typeof MEMBER_PLAN_MAPPING];
@@ -119,19 +142,44 @@ export const getCheckout = ({
                     // Members are not shown as addons
                     acc.users += totalQuantity;
                 } else {
-                    acc.addons.push({
-                        name: plan.Name as ADDON_NAMES,
-                        quantity: totalQuantity,
-                    });
+                    const addonIndex = acc.addons.findIndex(({ name }) => name === plan.Name);
+                    if (addonIndex > -1) {
+                        const addon = acc.addons[addonIndex];
+                        addon.quantity = addon.quantity + totalQuantity;
+                        addon.title = getAddonTitle(addon.name, addon.quantity);
+                    } else {
+                        const name = plan.Name as ADDON_NAMES;
+                        const quantity = totalQuantity;
+                        const title = getAddonTitle(name, quantity);
+
+                        acc.addons.push({
+                            name,
+                            quantity,
+                            title,
+                            pricing: plan.Pricing,
+                        });
+                    }
                 }
             }
             return acc;
         },
         { planName: null, planTitle: '', users: 0, addons: [] }
     );
+};
+
+export const getCheckout = ({
+    planIDs,
+    plansMap,
+    checkResult,
+}: {
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    checkResult?: RequiredCheckResponse;
+}): SubscriptionCheckoutData => {
+    const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
     const amount = checkResult?.Amount || 0;
-    const cycle = checkResult?.Cycle || 1;
+    const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
     const couponDiscount = Math.abs(checkResult?.CouponDiscount || 0);
 
     const withDiscountPerCycle = amount - couponDiscount;
@@ -153,18 +201,18 @@ export const getCheckout = ({
             ? Math.round(100 * (discountPerNormalCycle / withoutDiscountPerNormalCycle))
             : 0;
 
+    const addonsPerMonth = usersAndAddons.addons.reduce((acc, { quantity, pricing }) => {
+        return acc + ((pricing[cycle] || 0) * quantity) / cycle;
+    }, 0);
+
     return {
-        ...result,
-        addons: result.addons.map((addon) => {
-            return {
-                ...addon,
-                title: getAddonTitle(addon.name, addon.quantity),
-            };
-        }),
-        usersTitle: getUserTitle(result.users || 1), // VPN and free plan has no users
-        users: result.users || 1,
+        ...usersAndAddons,
+        usersTitle: getUserTitle(usersAndAddons.users || 1), // VPN and free plan has no users
+        users: usersAndAddons.users || 1,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
+        membersPerMonth: amount / cycle - addonsPerMonth,
+        addonsPerMonth,
         discountPerCycle,
         discountPercent,
     };
