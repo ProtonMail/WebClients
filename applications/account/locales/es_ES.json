@@ -1031,6 +1031,10 @@
         "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominios personalizados"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } dirección IP",
+        "+ ${ ips } direcciones IP"
+      ],
       "+ ${ users } user": [
         "+ ${ users } usuario",
         "+ ${ users } usuarios"
@@ -1043,14 +1047,17 @@
       "Disable": [
         "Deshabilitar"
       ],
-      "Disable E2EE": [
-        "Deshabilitar el cifrado E2E"
+      "Disable E2EE mail": [
+        "Deshabiliar correo E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "Non permitir correos sin firma"
       ],
       "Enable": [
         "Habilitar"
       ],
-      "Enable E2EE": [
-        "Habilitar el cifrado"
+      "Enable E2EE mail": [
+        "Habiliar correo E2EE"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -1066,6 +1073,9 @@
       "Active": [
         "Activa"
       ],
+      "Allow unsigned mail": [
+        "Permitir correos sin firma"
+      ],
       "Default": [
         "Por defecto"
       ],
@@ -1078,11 +1088,8 @@
       "Missing keys": [
         "Claves faltantes"
       ],
-      "No E2EE": [
-        "Sin cifrado"
-      ],
-      "No signing": [
-        "Sin firma"
+      "No E2EE mail": [
+        "Sin correo E2EE"
       ],
       "Orphan": [
         "Huérfana"
@@ -3431,7 +3438,7 @@
         "Has utilizado todas las direcciones de tu plan. Pasa a un plan superior para añadir una dirección."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un usuario."
+        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
@@ -5338,6 +5345,9 @@
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
+      "Are you sure you want to discard your import?": [
+        "¿Estás seguro de que quieres descartar tu importación?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "¿Estás seguro de que quieres eliminar permanentemente todos tus registros?"
       ],
@@ -6954,9 +6964,6 @@
         "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
         "Tus importaciones desde ${ accounts } se han retrasado temporalmente."
       ],
-      "Your import will not be processed.": [
-        "No se procesará tu importación."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
@@ -8104,7 +8111,7 @@
         "Mostrar imágenes del remitente"
       ],
       "Show unread count in Favicon": [
-        "Mostrar contador sin leer en el favicono"
+        "Mostrar contador sin leer en el favicon"
       ],
       "Show week numbers": [
         "Mostrar los números de la semana"
@@ -8643,6 +8650,12 @@
       "${ appName }: Sign-up": [
         "${ appName }: Registrarte"
       ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Crea una cuenta de ${ BRAND_NAME } para usar todos los servicios cifrados de ${ BRAND_NAME } como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más con solo un inicio de sesión. Obtén una cuenta de ${ BRAND_NAME } gratuita."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Crea una cuenta de ${ BRAND_NAME } | Recupera Tu privacidad."
+      ],
       "Create a new ${ appName } account": [
         "Cree una cuenta de ${ appName }"
       ],
@@ -8652,11 +8665,26 @@
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Has olvidado la contraseña de tu cuenta de ${ BRAND_NAME }? Restablécela aquí con un código de recuperación, un correo o SMS y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "¿Has olvidado tu nombre de usuario de ${ BRAND_NAME }? Encuéntralo con tu correo de recuperación o número de teléfono y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+      ],
+      "Private and secure email, no credit card required": [
+        "Correo seguro y privado, sin tarjeta de crédito"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicia sesión para acceder a tu cuenta de ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Inicia sesión en tu cuenta de ${ BRAND_NAME } para acceder a todos los servicios cifrados de ${ BRAND_NAME } como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más. ¿No tienes una cuenta? Crea una GRATIS."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Iniciar sesión | Cuenta de ${ BRAND_NAME } - Accede a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y más"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prueba ${ planName } gratis con este enlace"
       ]
     },
     "Modal title": {
@@ -9681,6 +9709,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } creado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido activado."
       ],
       "A disabled address cannot be default": [
         "Una dirección deshabilitada no puede ser la dirección por defecto."
@@ -13019,9 +13053,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "¿Estás seguro de que quieres eliminar esta dirección?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si eliminas esta dirección, ya no podrás recibir notificaciones diarias por correo electrónico."
