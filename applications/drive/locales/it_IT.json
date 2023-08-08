@@ -3224,6 +3224,9 @@
       "Are you sure you want to discard your changes?": [
         "Vuoi davvero ignorare le modifiche?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Sei sicuro di voler eliminare la tua importazione?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
       ],
@@ -3730,6 +3733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
+      ],
       "Please select the folders you would like to import:": [
         "Si prega di selezionare le cartelle che si desidera importare:"
       ],
@@ -4139,9 +4145,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
-      ],
-      "Your import will not be processed.": [
-        "La tua importazione non verrà elaborata."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -6456,9 +6459,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Vuoi davvero ignorare la tua importazione?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } gruppo di contatti?",

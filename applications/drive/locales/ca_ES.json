@@ -649,7 +649,7 @@
         "Proveu amb un altre mètode"
       ],
       "Try for free": [
-        "Proveu-ho de forma gratuïta"
+        "Proveu-lo gratuïtament"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
@@ -3258,7 +3258,7 @@
         "No s'ha pogut carregar l'enllaç"
       ],
       "Cannot load links": [
-        "No s'han pogut carregar els enllaços"
+        "No s'han pogut carregar els enllaços."
       ],
       "Cannot load shared link": [
         "No s'ha pogut carregar l'enllaç compartit"
@@ -3374,7 +3374,7 @@
         "La baixada ha acabat"
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "Es cancel·larà la descàrrega de ${ downloadFileName }"
+        "La descàrrega de ${ downloadFileName } serà cancel·lada"
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "La descàrrega s'ha posat en pausa a causa d'un problema de connexió. Es reprendrà automàticament"
@@ -4139,9 +4139,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Es xifraran els fitxers i després es desaran."
-      ],
-      "Your import will not be processed.": [
-        "La vostra importació no es processarà."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
@@ -5063,7 +5060,7 @@
         "No s'ha pogut carregar la subcarpeta."
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "No s'ha pogut eliminar l'enllaç a \"${ name }\""
+        "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
       ],
       "The link to \"${ name }\" was deleted": [
         "S'ha eliminat l'enllaç a «${ name }»"
@@ -5985,7 +5982,7 @@
         "Baixa una carpeta no verificada?"
       ],
       "Drop to upload": [
-        "Arrossegueu aquí per carregar"
+        "Arrossegueu per a carregar"
       ],
       "Duplicate file found": [
         "Trobat un fitxer duplicat"
@@ -6456,9 +6453,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Esteu segur que voleu descartar la seva importació?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "N'esteu segur, de voler eliminar permanentment ${ count } grup de contactes?",

@@ -3172,6 +3172,9 @@
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
+      "Are you sure you want to discard your import?": [
+        "您確定要捨棄您的匯入嗎？"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
@@ -3673,6 +3676,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "請提供一個名子和電子郵件地址以創建群組。"
+      ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
       ],
@@ -4080,9 +4086,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
-      ],
-      "Your import will not be processed.": [
-        "將不會處理您的匯入。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -6337,9 +6340,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您確定要捨棄您的匯入嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"
