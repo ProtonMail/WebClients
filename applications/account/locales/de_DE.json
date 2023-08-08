@@ -771,7 +771,7 @@
         "Code senden"
       ],
       "Send email reminder": [
-        "Erinnerungs-Mail senden"
+        "Erinnerungs-E-Mail senden"
       ],
       "Send messages with @pm.me": [
         "Nachrichten mit @pm.me senden"
@@ -1031,6 +1031,10 @@
         "+ ${ domains } eigene Domain",
         "${ domains } eigene Domains"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-Adresse",
+        "+ ${ ips } IP-Adressen"
+      ],
       "+ ${ users } user": [
         "+ ${ users } Benutzer",
         "+ ${ users } Benutzer"
@@ -1043,14 +1047,17 @@
       "Disable": [
         "Deaktivieren"
       ],
-      "Disable E2EE": [
-        "E2EE deaktivieren"
+      "Disable E2EE mail": [
+        "E2EE-E-Mail deaktivieren"
+      ],
+      "Disallow unsigned mail": [
+        "Unsig. E-Mails blockieren"
       ],
       "Enable": [
         "Aktivieren"
       ],
-      "Enable E2EE": [
-        "E2EE aktivieren"
+      "Enable E2EE mail": [
+        "E2EE-E-Mail aktivieren"
       ],
       "Generate missing keys": [
         "Fehlende Schlüssel erzeugen"
@@ -1066,6 +1073,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Allow unsigned mail": [
+        "Unsig. E-Mails zulassen"
+      ],
       "Default": [
         "Standard"
       ],
@@ -1078,11 +1088,8 @@
       "Missing keys": [
         "Fehlende Schlüssel"
       ],
-      "No E2EE": [
-        "Keine Ende-zu-Ende-Verschlüsselung (E2EE)"
-      ],
-      "No signing": [
-        "Keine Signatur"
+      "No E2EE mail": [
+        "Keine E2EE-E-Mails"
       ],
       "Orphan": [
         "Verwaist"
@@ -2790,19 +2797,19 @@
         "${ name } konnte nicht gelöscht werden"
       ],
       "${ name } failed to move to allow list": [
-        "${ name } konnte nicht in die Liste zugelassener E-Mail-Adressen verschoben werden."
+        "${ name } konnte nicht in die Liste zugelassener Domains verschoben werden."
       ],
       "${ name } failed to move to block list": [
-        "${ name } konnte nicht in die Liste gesperrter E-Mail-Adressen verschoben werden."
+        "${ name } konnte nicht in die Liste gesperrter Domains verschoben werden."
       ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
       "${ name } moved to allow list": [
-        "${ name } wurde in die Liste zugelassener E-Mail-Adressen verschoben."
+        "${ name } wurde in die Liste zugelassener Domains verschoben."
       ],
       "${ name } moved to block list": [
-        "${ name } wurde in die Liste gesperrter E-Mail-Adressen verschoben."
+        "${ name } wurde in die Liste gesperrter Domains verschoben."
       ],
       "${ name } moved to spam list": [
         "${ name } in Spamliste verschoben."
@@ -5083,7 +5090,7 @@
         "${ numGroups } Kontaktgruppen"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten angetrieben wird, die rund um die Uhr arbeiten, um dich vor bösen Akteuren und Sicherheitsbedrohungen zu schützen."
+        "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten betrieben wird, die rund um die Uhr arbeiten, um dich vor böswilligen Akteuren und Sicherheitsbedrohungen zu schützen."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
@@ -5337,6 +5344,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Möchtest du deine Änderungen wirklich verwerfen?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Möchtest du alle deine Protokolle wirklich dauerhaft löschen?"
@@ -6261,7 +6271,7 @@
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Versende E-Mails, um deine Mitglieder anzuregen, ihre Konten mit 2FA zu schützen."
+        "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6303,10 +6313,10 @@
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Die SMTP Submission ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
+        "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Die SMTP Submission ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
+        "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
@@ -6394,7 +6404,7 @@
         "Die folgenden E-Mail-Adressen wurden nicht erstellt."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Die folgenden Mitglieder erhalten eine E-Mail, in der sie aufgefordert werden, die Zwei-Faktor-Authentifizierung so bald wie möglich zu aktivieren."
+        "Die folgenden Mitglieder werden eine E-Mail erhalten, in der sie aufgefordert werden, die Zwei-Faktor-Authentifizierung so bald wie möglich zu aktivieren."
       ],
       "The format of your CSV file is incorrect.": [
         "Das Format der CSV-Datei ist ungültig."
@@ -6535,7 +6545,7 @@
         "Um Termine zu importieren, erstelle zuerst einen Kalender in ${ CALENDAR_APP_NAME }. Dort werden die Termine nach dem Import angezeigt."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink } besuchen."
+        "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
@@ -6953,9 +6963,6 @@
       "Your import from ${ accounts } is temporarily delayed.": [
         "Dein Import von ${ accounts } verzögert sich vorübergehend.",
         "Deine Importe von ${ accounts } verzögern sich vorübergehend."
-      ],
-      "Your import will not be processed.": [
-        "Dein Import wird nicht verarbeitet."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
@@ -8522,7 +8529,7 @@
         "Anleitung anzeigen"
       ],
       "visit our blog": [
-        "Blog anschauen"
+        "Blog besuchen"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Was ist der Unterschied zwischen UDP- und TCP-Protokollen?"
@@ -8536,7 +8543,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } Mitglied/er deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
+        "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
         "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
       ],
       "Almost there": [
@@ -8651,6 +8658,18 @@
       ],
       "Create a new ${ appName } account": [
         "Erstelle ein neues ${ appName }-Konto"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME }-Kontoname finden"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Du hast dein ${ BRAND_NAME }-Passwort vergessen? Setze es mit mithilfe eines Wiederherstellungscodes, einer E-Mail oder einer SMS zurück und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
+      ],
+      "Private and secure email, no credit card required": [
+        "Private und sichere E-Mails, keine Kreditkarte erforderlich"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME }-Kontopasswort zurücksetzen"
@@ -9691,6 +9710,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } erstellt"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } wurde deaktiviert."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } wurde aktiviert."
+      ],
       "A disabled address cannot be default": [
         "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
       ],
@@ -9707,10 +9732,10 @@
         "Eine Erinnerung wurde versandt"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "Die Zwei-Faktor-Authentifizierung wurde für Administratoren verlangt."
+        "Die Zwei-Faktor-Authentifizierung wurde für Administratoren zur Pflicht."
       ],
       "Two-factor authentication has been enforced for all members": [
-        "Die Zwei-Faktor-Authentifizierung wurde für alle verlangt."
+        "Die Zwei-Faktor-Authentifizierung wurde für alle zur Pflicht."
       ],
       "Two-factor authentication is not required anymore": [
         "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
@@ -11614,7 +11639,7 @@
         "Importieren"
       ],
       "List": [
-        "Liste"
+        "Sortierung"
       ],
       "Marked as": [
         "Markiert als"
@@ -12422,7 +12447,7 @@
         "In Mitgliedskonto angemeldet"
       ],
       "SMTP submission": [
-        "SMTP Submission"
+        "SMTP-Übermittlung"
       ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"
@@ -12659,7 +12684,7 @@
         "Gesamt"
       ],
       "Total paid": [
-        "Insgesamt gezahlt"
+        "Insgesamt bezahlt"
       ],
       "Users": [
         "Benutzer"
@@ -13028,9 +13053,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Möchtest du diese Adresse wirklich löschen?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Wenn du diese Adresse löschst, wirst du keine täglichen E-Mail-Benachrichtigungen mehr erhalten."

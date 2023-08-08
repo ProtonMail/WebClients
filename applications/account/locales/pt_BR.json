@@ -1031,6 +1031,10 @@
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
       ],
+      "+ ${ ips } IP address": [
+        "+ endereço de IP ${ ips }",
+        "+ endereços de IP ${ ips }"
+      ],
       "+ ${ users } user": [
         "+ ${ users } usuário",
         "+ ${ users } usuários"
@@ -1043,14 +1047,17 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE": [
-        "Desativar criptografia E2E"
+      "Disable E2EE mail": [
+        "Desativar e-mail E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "Não permitir e-mails sem assinatura"
       ],
       "Enable": [
         "Ativar"
       ],
-      "Enable E2EE": [
-        "Ativar E2EE"
+      "Enable E2EE mail": [
+        "Ativar e-mail E2EE"
       ],
       "Generate missing keys": [
         "Gerar chaves ausentes"
@@ -1066,6 +1073,9 @@
       "Active": [
         "Ativo"
       ],
+      "Allow unsigned mail": [
+        "Permitir e-mails sem assinatura."
+      ],
       "Default": [
         "Padrão"
       ],
@@ -1078,11 +1088,8 @@
       "Missing keys": [
         "Chaves ausentes"
       ],
-      "No E2EE": [
-        "Sem E2EE"
-      ],
-      "No signing": [
-        "Sem assinatura"
+      "No E2EE mail": [
+        "Sem e-mail E2EE"
       ],
       "Orphan": [
         "Órfão"
@@ -6963,9 +6970,6 @@
         "Sua importação de ${ accounts } está temporariamente atrasada.",
         "Suas importações de ${ accounts } estão temporariamente atrasadas."
       ],
-      "Your import will not be processed.": [
-        "Sua importação não será processada."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Suas informações estão seguras conosco. Só entraremos em contato quando for necessário para fornecer nossos serviços."
       ],
@@ -8576,10 +8580,10 @@
         "Ativar ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs": [
-        "Habilitar registros avançados"
+        "Ativar registros avançados"
       ],
       "Enable authentication logs": [
-        "Habilitar registros de autenticação"
+        "Ativar registros de autenticação"
       ]
     },
     "Mail import summary": {
@@ -8643,6 +8647,50 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Uma nova versão do ${ appName } está disponível. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Entrar"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inscrever-se"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Crie uma conta ${ BRAND_NAME } para, com um único nome de usuário, utilizar todos os serviços ${ BRAND_NAME } criptografados como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais. Obtenha gratuitamente uma conta ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Crie uma conta ${ BRAND_NAME } | Recupere sua privacidade"
+      ],
+      "Create a new ${ appName } account": [
+        "Criar uma conta no ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+      ],
+      "Private and secure email, no credit card required": [
+        "Email privado e seguro, sem necessidade de cartão de crédito"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Redefina a senha da sua conta ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Faça login para acessar sua conta ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Acesse a sua conta ${ BRAND_NAME } para ter acesso a todos os serviços criptografados de ${ BRAND_NAME }, como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais. Ainda não tem uma conta? Crie uma GRATUITAMENTE."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Entrar | Conta ${ BRAND_NAME } — Acessar ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e muito mais."
+      ],
+      "Try ${ planName } for free with this link": [
+        "Experimente ${ planName } gratuitamente com este link"
       ]
     },
     "Modal title": {
@@ -9667,6 +9715,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME }foi desativado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME }foi ativado"
       ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser padrão"
@@ -12701,7 +12755,7 @@
         "Ativar/desativar notificações na área de trabalho e dispositivos móveis"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Habilitar registros avançados registra o endereço IP para cada evento no registro de segurança."
+        "Ativar registros avançados registra o endereço IP para cada evento no registro de segurança."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
@@ -13022,9 +13076,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Tem a certeza de que quer apagar esta endereço?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Você tem certeza de que quer descartar sua importação?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao excluir este endereço, você não poderá mais receber notificações diárias por e-mail."
