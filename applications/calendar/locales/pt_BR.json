@@ -3763,6 +3763,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Forneça um nome e um endereço de e-mail para criar um grupo."
+      ],
       "Please remove the duplicates and try again.": [
         "Remova as duplicatas e tente novamente."
       ],
@@ -4046,9 +4049,6 @@
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
-      "Your import will not be processed.": [
-        "Sua importação não será processada."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
@@ -4268,7 +4268,7 @@
         "E-mails (último mês)"
       ],
       "Enable Beta Access": [
-        "Habilitar acesso beta"
+        "Ativar acesso beta"
       ],
       "Encrypt emails": [
         "Criptografar e-mails"
@@ -6518,9 +6518,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Você tem certeza de que quer descartar sua importação?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } grupo de contatos?",

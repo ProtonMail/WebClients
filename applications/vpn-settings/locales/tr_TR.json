@@ -427,6 +427,10 @@
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP adresi",
+        "+ ${ ips } IP adresi"
+      ],
       "+ ${ users } user": [
         "+ ${ users } kullanıcı",
         "+ ${ users } kullanıcı"
@@ -3425,6 +3429,32 @@
         "${ appName } uygulamasının yeni bir sürümü yayınlanmış ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Oturum aç"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Hesap aç"
+      ],
+      "Create a new ${ appName } account": [
+        "Yeni bir ${ appName } hesabı açın"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } hesabı kullanıcı adınızı bulun"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } hesabınızın parolasını unuttunuz mu? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "${ appName } hesabınıza erişmek için oturum açın"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dolar"
@@ -4581,7 +4611,7 @@
         "${ credits } tutarına kadar kredi kazanın."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
     "State": {

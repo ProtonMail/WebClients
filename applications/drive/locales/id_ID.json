@@ -1937,6 +1937,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" telah ada"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -2128,6 +2131,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
+      ],
+      "status page": [
+        "halaman status"
       ],
       "The email addresses do not match": [
         "Alamat surel tidak cocok"
@@ -2686,6 +2692,9 @@
     "Font face option": {
       "System default": [
         "Bawaan sistem"
+      ],
+      "Theme font": [
+        "Jenis tulisan tema"
       ]
     },
     "Font size option": {
@@ -3358,6 +3367,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
+      "Enter the device name to confirm removal.": [
+        "Masukkan nama perangkat untuk mengonfirmasi penghapusan."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
@@ -3660,6 +3672,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -4065,9 +4080,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Berkas Anda akan dienkripsi dan disimpan."
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -5032,7 +5044,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
+        "Atur organisasi Anda, tautkan nama domain Anda, dan buat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
@@ -5578,9 +5590,54 @@
         "2 tahun"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Password Manager": [
+        "Password Manager Premium"
+      ]
+    },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Simpan sandi Anda secara aman dan otomatis isi pada situs web. Termasuk sandi tidak terbatas, pengisi otomatis, pembuat sandi, dan banyak fitur lainnya."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Pengelola kata sandi"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Langganan Anda akan secara otomatis diperbarui dengan harga diskon standar pada akhir siklus tagihan."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Besar diskon didasarkan pada harga bulanan standar. Penawaran ini hanya tersedia bagi pelanggan kali pertama."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Untuk waktu yang terbatas, dapatkan penawaran terbaik ${ BRAND_NAME } dengan diskon eksklusif."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Kami merayakan ulang tahun kesembilan upaya urun dana kami!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Diskon Ulang Tahun ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -6271,9 +6328,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"

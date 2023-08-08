@@ -1031,6 +1031,10 @@
         "+ ${ domains } özel etki alanı",
         "+ ${ domains } özel etki alanı"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP adresi",
+        "+ ${ ips } IP adresi"
+      ],
       "+ ${ users } user": [
         "+ ${ users } kullanıcı",
         "+ ${ users } kullanıcı"
@@ -1043,14 +1047,17 @@
       "Disable": [
         "Kullanımdan kaldır"
       ],
-      "Disable E2EE": [
-        "Dışarı iletmeyi kapat"
+      "Disable E2EE mail": [
+        "E2EE e-postasını kapat"
+      ],
+      "Disallow unsigned mail": [
+        "İmzasız e-posta kullanma"
       ],
       "Enable": [
         "Kullanıma al"
       ],
-      "Enable E2EE": [
-        "Dışarı iletmeyi aç"
+      "Enable E2EE mail": [
+        "E2EE e-postasını aç"
       ],
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
@@ -1066,6 +1073,9 @@
       "Active": [
         "Etkin"
       ],
+      "Allow unsigned mail": [
+        "İmzasız e-posta kullan"
+      ],
       "Default": [
         "Varsayılan"
       ],
@@ -1078,11 +1088,8 @@
       "Missing keys": [
         "Eksik anahtarlar"
       ],
-      "No E2EE": [
-        "İletilmiyor"
-      ],
-      "No signing": [
-        "İmzalanmasın"
+      "No E2EE mail": [
+        "E2EE e-postası yok"
       ],
       "Orphan": [
         "Sahipsiz"
@@ -2724,7 +2731,7 @@
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya çağırarak ${ credits } krediye kadar hediye kazanın."
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet ederek ${ credits } krediye kadar hediye kazanın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -2758,7 +2765,7 @@
         "${ BRAND_NAME } logosu ardından bir artı işareti bulunan ek satış simgesi"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Arkadaşlarınızı çağırmayı sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
+        "Arkadaşlarınızı davet etmeyi sürdürebilirsiniz ancak artık daha fazla kredi kazanamazsınız"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -5150,7 +5157,7 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
-        "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya çağırın"
+        "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
       "10 email addresses": [
         "10 e-posta adresi"
@@ -6954,9 +6961,6 @@
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
         "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
       ],
-      "Your import will not be processed.": [
-        "İçe aktarma işleminiz yapılmayacak."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
@@ -8634,6 +8638,50 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } uygulamasının yeni bir sürümü yayınlanmış ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Oturum aç"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Hesap aç"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabı açarak, tek hesap ile ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerini kullanın. Ücretsiz bir ${ BRAND_NAME } hesabı açın."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Bir ${ BRAND_NAME } hesabı açın | Gizliliğinizi geri alın"
+      ],
+      "Create a new ${ appName } account": [
+        "Yeni bir ${ appName } hesabı açın"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } hesabı kullanıcı adınızı bulun"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } hesabınızın parolasını unuttunuz mu? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Private and secure email, no credit card required": [
+        "Gizli ve güvenli e-posta. Kredi kartı bilgilerinizi vermeniz gerekmez"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "${ appName } hesabınıza erişmek için oturum açın"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "| ${ BRAND_NAME } hesabınızda oturum açın - ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve diğer uygulamalara erişin"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Bu bağlantı ile ${ planName } tarifesini ücretsiz olarak deneyin"
       ]
     },
     "Modal title": {
@@ -10710,7 +10758,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "${ BRAND_NAME } kullanmayan kişileri çağırmak için takviminizi bir bağlantı ile paylaşın."
+        "${ BRAND_NAME } kullanmayan kişileri davet etmek için takviminizi bir bağlantı ile paylaşın."
       ]
     },
     "Share calendar max shares reached error": {
@@ -11028,7 +11076,7 @@
         "${ credits } tutarına kadar kredi kazanın."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
     "State": {
@@ -12996,9 +13044,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Bu adresi silmek istediğinize emin misiniz?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Bu adresi sildikten sonra günlük gönderilen e-posta bildirimlerini alamazsınız."
