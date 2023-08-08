@@ -1,4 +1,4 @@
-import { APPS, COUPON_CODES, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { Subscription } from '@proton/shared/lib/interfaces';
 
 import {
@@ -11,7 +11,10 @@ import {
     subscription,
     trialMailPlusUpsell,
     unlimitedUpsell,
+    vpnBusinessUpsell,
+    vpnEnterpriseUpsell,
 } from '../__mocks__/data';
+import { SUBSCRIPTION_STEPS } from '../constants';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
 describe('resolveUpsellsToDisplay', () => {
@@ -24,7 +27,17 @@ describe('resolveUpsellsToDisplay', () => {
             app: APPS.PROTONMAIL,
             currency: 'EUR',
             subscription,
-            plans: plans,
+            plans,
+            serversCount: {
+                paid: {
+                    servers: 100,
+                    countries: 10,
+                },
+                free: {
+                    servers: 10,
+                    countries: 1,
+                },
+            },
             canPay: true,
             isFree: true,
             hasPaidMail: false,
@@ -41,17 +54,17 @@ describe('resolveUpsellsToDisplay', () => {
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 disablePlanSelection: true,
-                plan: 'mail2022',
-                step: 3,
+                plan: PLANS.MAIL,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
 
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'bundle2022',
-                step: 3,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -82,17 +95,17 @@ describe('resolveUpsellsToDisplay', () => {
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 disablePlanSelection: true,
-                plan: 'mail2022',
-                step: 3,
+                plan: PLANS.MAIL,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
 
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'bundle2022',
-                step: 3,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -117,19 +130,19 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[0].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'bundle2022',
-                step: 3,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
 
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'family2022',
-                step: 3,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -155,10 +168,10 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'family2022',
-                step: 3,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -184,10 +197,10 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'bundlepro2022',
-                step: 3,
+                plan: PLANS.BUNDLE_PRO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -205,10 +218,10 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'drive2022',
-                step: 3,
+                plan: PLANS.DRIVE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
         });
     });
@@ -226,11 +239,76 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: 24,
+                cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: 'pass2023',
-                step: 3,
+                plan: PLANS.PASS_PLUS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
             });
+        });
+    });
+
+    describe('VPN Essentials', () => {
+        it('should return VPN Business and VPN Enterprise upselss', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.VPN_PRO,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+                app: APPS.PROTONACCOUNT,
+                isFree: false,
+            });
+
+            const [upsell1, upsell2] = upsells;
+
+            expect(upsell1).toMatchObject(vpnBusinessUpsell);
+
+            upsell1.onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.VPN_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+            });
+
+            expect(upsell2).toMatchObject(vpnEnterpriseUpsell);
+            expect(upsell2.ignoreDefaultCta).toEqual(true);
+            expect(upsell2.otherCtas).toHaveLength(1);
+
+            upsell2.onUpgrade();
+            // that's right, the VPN Enterprise upsell should not call the modal. It must have noop because it has
+            // custom CTA. The 1 comes from the previous call
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('VPN Business', () => {
+        it('should return VPN Enterprise upsell', () => {
+            const [upsell] = resolveUpsellsToDisplay({
+                ...base,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.VPN_BUSINESS,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+                app: APPS.PROTONACCOUNT,
+                isFree: false,
+            });
+
+            expect(upsell).toMatchObject(vpnEnterpriseUpsell);
+            expect(upsell.ignoreDefaultCta).toEqual(true);
+            expect(upsell.otherCtas).toHaveLength(1);
+
+            upsell.onUpgrade();
+            expect(mockedOpenSubscriptionModal).not.toHaveBeenCalled();
         });
     });
 });
