@@ -637,7 +637,7 @@
         "Tema"
       ],
       "Toggle Calendar app": [
-        "Växla kalendar-app"
+        "Växla kalender-app"
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
@@ -3224,6 +3224,9 @@
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Är du säker på att du vill kasta din import?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Är du säker på att du vill tömma papperskorgen och ta bort alla objekt?"
       ],
@@ -3730,6 +3733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Ange ett namn och en e-postadress för att skapa en grupp."
+      ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
       ],
@@ -4139,9 +4145,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dina filer kommer krypteras och sedan sparas."
-      ],
-      "Your import will not be processed.": [
-        "Din import kommer inte att bearbetas."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
@@ -6456,9 +6459,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Är du säker på att du vill kasta din import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Är du säker på att du vill ta bort ${ count } kontaktgrupp permanent?",
