@@ -20,6 +20,16 @@
 
 	.vpn-for-business-logo {
 		color: var(--optional-promotion-text-color);
+		@include media('<xsmall') {
+			display: none;
+		}
+	}
+
+	.proton-for-business-logo {
+		color: var(--optional-promotion-text-color);
+		@include media('>xsmall') {
+			display: none;
+		}
 	}
 }
 
