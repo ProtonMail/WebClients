@@ -1,5 +1,11 @@
-import { FC } from 'react';
+import { CSSProperties, FC } from 'react';
 
-export const PhotosCard: FC = () => {
-    return <div>PhotosCard</div>;
+import { Photo } from '../../../../store/_photos/interfaces';
+
+type Props = {
+    photo: Photo;
+    style: CSSProperties;
+};
+export const PhotosCard: FC<Props> = ({ style }) => {
+    return <div style={style}>abc</div>;
 };
