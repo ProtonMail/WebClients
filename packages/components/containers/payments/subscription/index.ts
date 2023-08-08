@@ -10,3 +10,4 @@ export * from './SubscriptionModalProvider';
 export { default as SubscriptionModalProvider } from './SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './UpgradeVpnSection';
 export { default as YourPlanSection } from './YourPlanSection';
+export { default as CancelB2bSubscriptionSection } from './cancelB2bSubscription/CancelB2bSubscriptionSection';
