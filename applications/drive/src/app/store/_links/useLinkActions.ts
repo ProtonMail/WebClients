@@ -99,6 +99,11 @@ export default function useLinkActions() {
             getLink(abortSignal, shareId, linkId),
             getShareCreatorKeys(abortSignal, shareId),
         ]);
+
+        if (meta.corruptedLink) {
+            throw new Error('Cannot rename corrupted file');
+        }
+
         const [parentPrivateKey, parentHashKey] = await Promise.all([
             meta.parentLinkId
                 ? getLinkPrivateKey(abortSignal, shareId, meta.parentLinkId)
