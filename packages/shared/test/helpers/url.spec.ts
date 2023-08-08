@@ -37,13 +37,36 @@ describe('getApiSubdomainUrl', () => {
 
     it('should return api subdomain url for localhost', () => {
         mockWindowLocation({ origin: 'https://localhost', hostname: 'localhost' });
-
         expect(getApiSubdomainUrl(path).href).toEqual(`https://localhost/api${path}`);
+    });
+
+    it('should return api subdomain url for DoH', () => {
+        mockWindowLocation({ origin: 'https://34-234.whatever.compute.amazonaws.com' });
+        expect(getApiSubdomainUrl(path).href).toEqual(`https://34-234.whatever.compute.amazonaws.com/api${path}`);
+    });
+
+    it('should return api subdomain url for DoH IPv4', () => {
+        mockWindowLocation({ origin: 'https://34.234.12.145' });
+        expect(getApiSubdomainUrl(path).href).toEqual(`https://34.234.12.145/api${path}`);
+    });
+
+    it('should return api subdomain url for DoH IPv4 with port', () => {
+        mockWindowLocation({ origin: 'https://34.234.12.145:65' });
+        expect(getApiSubdomainUrl(path).href).toEqual(`https://34.234.12.145:65/api${path}`);
+    });
+
+    it('should return api subdomain url for DoH IPv6', () => {
+        mockWindowLocation({ origin: 'https://[2001:db8::8a2e:370:7334]' });
+        expect(getApiSubdomainUrl(path).href).toEqual(`https://[2001:db8::8a2e:370:7334]/api${path}`);
+    });
+
+    it('should return api subdomain url for DoH IPv6 with port', () => {
+        mockWindowLocation({ origin: 'https://[2001:db8::8a2e:370:7334]:65' });
+        expect(getApiSubdomainUrl(path).href).toEqual(`https://[2001:db8::8a2e:370:7334]:65/api${path}`);
     });
 
     it('should return api subdomain url', () => {
         mockWindowLocation({ hostname: windowHostname });
-
         expect(getApiSubdomainUrl(path).href).toEqual(`https://mail-api.proton.pink${path}`);
     });
 });
