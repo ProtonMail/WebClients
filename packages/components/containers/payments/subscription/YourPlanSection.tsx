@@ -38,13 +38,13 @@ const YourPlanSection = ({ app }: Props) => {
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [vpnServers] = useVPNServersCount();
+    const [serversCount, serversCountLoading] = useVPNServersCount();
     const [invites = []] = usePendingUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
 
     useLoad();
 
-    const loading = loadingSubscription || loadingOrganization || loadingPlans;
+    const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
 
     if (loading) {
         return <Loader />;
@@ -62,6 +62,7 @@ const YourPlanSection = ({ app }: Props) => {
         currency,
         subscription,
         plans,
+        serversCount,
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
@@ -98,7 +99,7 @@ const YourPlanSection = ({ app }: Props) => {
                     organization={organization}
                     user={user}
                     addresses={addresses}
-                    vpnServers={vpnServers}
+                    vpnServers={serversCount}
                     openSubscriptionModal={openSubscriptionModal}
                 />
 
