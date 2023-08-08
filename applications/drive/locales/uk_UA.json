@@ -3844,6 +3844,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Будь ласка, вкажіть ім'я та адресу пошти для створення групи."
+      ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
       ],
@@ -4257,9 +4260,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
-      ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -6688,9 +6688,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",

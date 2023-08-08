@@ -3881,6 +3881,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Забяспечце назву і адрас электроннай пошты для стварэння групы."
+      ],
       "Please remove the duplicates and try again.": [
         "Выдаліце дублікаты і паспрабуйце яшчэ раз."
       ],
@@ -3960,7 +3963,7 @@
         "Немагчыма апавясціць арганізатара, што вы хочаце змяніць свой адказ:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "Немагчыма апавясціць арганізатара, што вы змянілі свой адказ:"
+        "Не ўдалося апавясціць арганізатара, што вы змянілі свой адказ:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Арганізатар абнавіў некаторыя падзеі ў гэтай серыі. Змяненне календара пакуль не падтрымліваецца для дадзенага тыпу перыядычных падзей."
@@ -4165,9 +4168,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
-      "Your import will not be processed.": [
-        "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
@@ -4764,6 +4764,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "Скасаваць"
+      ],
       "Manage calendars": [
         "Кіраванне календарамі"
       ],
@@ -6754,9 +6757,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } групу кантактаў?",

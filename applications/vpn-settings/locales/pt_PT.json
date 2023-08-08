@@ -189,7 +189,7 @@
         "Aumentar"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
-        "Mantenha a minha subscrição ${ vpnPlanNameShort }"
+        "Manter a minha subscrição ${ vpnPlanNameShort }"
       ],
       "Load more": [
         "Carregar mais"
@@ -294,7 +294,7 @@
         "Enviar código"
       ],
       "Send my username": [
-        "Enviar nome de utilizador"
+        "Enviar o meu nome de utilizador"
       ],
       "Set new password": [
         "Definir uma nova palavra-passe"
@@ -324,7 +324,7 @@
         "Registe-se gratuitamente"
       ],
       "Signing in": [
-        "Inicio de sessão"
+        "A iniciar sessão"
       ],
       "Signing out": [
         "A terminar sessão"
@@ -1490,22 +1490,22 @@
         "Palavra-passe da caixa de correio incorreta. Tente novamente."
       ],
       "Invalid ${ name } code": [
-        "O código ${ name } não é válido."
+        "O código ${ name } é inválido."
       ],
       "Invalid card number": [
-        "O número de cartão não é válido."
+        "O número de cartão é inválido."
       ],
       "Invalid code": [
-        "O código não é válido."
+        "O código é inválido."
       ],
       "Invalid expiration date": [
-        "A data de expiração não é válida."
+        "A data de expiração é inválida."
       ],
       "Invalid invitation link": [
         "A ligação de convite é inválida."
       ],
       "Invalid postal code": [
-        "O código postal não é válido."
+        "O código postal é inválido."
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -1532,7 +1532,7 @@
         "Processo de pagamento não suportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão actualmente disponíveis. Tente novamente mais tarde."
+        "Os pagamentos não estão atualmente disponíveis. Tente novamente mais tarde."
       ],
       "Please generate keys before you try to change your password": [
         "Gere chaves antes de tentar alterar a sua palavra-passe."
@@ -1610,7 +1610,7 @@
         "Não tem faturas."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização tem uma factura em atraso. Regularize a situação."
+        "A sua conta ou organização tem uma fatura em atraso. Regularize a situação."
       ]
     },
     "Error message": {
@@ -2191,16 +2191,16 @@
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Billed every 12 months": [
-        "Faturação  a cada 12 meses"
+        "Faturação a cada 12 meses"
       ],
       "Billed every 15 months": [
-        "Faturação  a cada 15 meses"
+        "Faturação a cada 15 meses"
       ],
       "Billed every 24 months": [
-        "Faturação  a cada 24 meses"
+        "Faturação a cada 24 meses"
       ],
       "Billed every 30 months": [
-        "Faturação  a cada 30 meses"
+        "Faturação a cada 30 meses"
       ],
       "Billed every month": [
         "Faturação mensal"
@@ -2227,7 +2227,7 @@
         "Continuar com ${ freeName }"
       ],
       "Copy the suggested password to clipboard": [
-        "Copiar a palavra-passe sugerida para a área de transferência."
+        "Copie a palavra-passe sugerida para a área de transferência"
       ],
       "Country code": [
         "Código de país"
@@ -2470,7 +2470,7 @@
         "P2P"
       ],
       "Password copied to clipboard": [
-        "A palavra-passe é copiada para a área de transferência."
+        "Palavra-passe copiada para a área de transferência"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -2841,7 +2841,7 @@
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Manterá a sessão iniciada mesmo depois de fechar o navegador."
+        "Manterá a sessão iniciada mesmo após fechar o navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
@@ -2877,7 +2877,7 @@
         "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou do seu ${ oldPassword }."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "As suas informações estão seguras connosco. Só entraremos em contato quando tal for necessário para fornecer os nossos serviços."
+        "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -3429,6 +3429,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Está disponível uma nova versão de ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: início de sessão"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inscrição"
+      ],
+      "Create a new ${ appName } account": [
+        "Criar uma conta do ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Redefina-o aqui utilizando um código de recuperação, e-mail ou SMS e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Encontre-o utilizando o seu e-mail ou número de telefone de recuperação e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Redefina a palavra-passe da sua conta ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Inicie sessão para aceder à sua conta ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -4963,13 +4989,13 @@
         "(ativo)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Dê um nome a configuração a ser gerada"
+        "1. Dê um nome à configuração a ser gerada"
       ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
       "2. Select platform": [
-        "2. Seleccionar plataforma"
+        "2. Selecionar plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -4978,7 +5004,7 @@
         "3. Seleccionar configuração e transferir"
       ],
       "3. Select VPN options": [
-        "3. Selecione as opções da VPN"
+        "3. Selecione as opções de VPN"
       ],
       "4. Select a server to connect to": [
         "4. Selecione o servidor para ligar"

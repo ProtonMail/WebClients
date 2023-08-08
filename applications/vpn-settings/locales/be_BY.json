@@ -429,6 +429,12 @@
         "+ ${ domains } карыстальніцкіх даменаў",
         "+ ${ domains } карыстальніцкія дамены"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-адрас",
+        "+ ${ ips } IP-адрасы",
+        "+ ${ ips } IP-адрасоў",
+        "+ ${ ips } IP-адрасоў"
+      ],
       "+ ${ users } user": [
         "+ ${ users } карыстальнік",
         "+ ${ users } карыстальнікі",
@@ -2931,7 +2937,7 @@
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі."
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі."
       ]
     },
     "Info subscription": {
@@ -3461,6 +3467,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Даступна новая версія ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Увайсці"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зарэгістравацца"
+      ],
+      "Create a new ${ appName } account": [
+        "Стварыць новы ўліковы запіс ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Знайдзіце імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Увайсці, каб атрымаць доступ да свайго ўліковага запісу ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -4015,7 +4047,7 @@
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "Адрасы з'яўляюцца поўнафункцыянальнымі для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
+        "Адрасы маюць поўныя магчымасці для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
@@ -4317,7 +4349,7 @@
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі"
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі"
       ]
     },
     "plan customizer, users": {

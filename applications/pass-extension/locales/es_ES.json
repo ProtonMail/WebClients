@@ -60,7 +60,7 @@
         "Continuar sin fijar"
       ],
       "Copy & fill in": [
-        "Copiar y llenar"
+        "Copiar y rellenar"
       ],
       "Copy and close": [
         "Copiar y cerrar"
@@ -409,7 +409,7 @@
         "Se ha producido un error."
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Ha ocurrido un error. Recarga la extensión ${ PASS_APP_NAME }. Este fallo ha sido registrado."
+        "Se ha producido un error. Recarga la extensión ${ PASS_APP_NAME }. El fallo ha sido registrado."
       ],
       "The file you are trying to import is empty": [
         "El archivo que intentas importar está vacío."
@@ -500,13 +500,13 @@
         "Mejora a un plan de pago para crear varias bóvedas."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "El elemento \"${ payload.item.data.metadata.name }\" ha sido descartado."
+        "Se ha descartado el elemento \"${ payload.item.data.metadata.name }\"."
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
       "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" ha sido establecida como bóveda principal."
+        "Se ha establecido \"${ payload.name }\" como bóveda principal."
       ],
       "${ count } item": [
         "${ count } elemento",
@@ -544,7 +544,7 @@
         "Accede a tus contraseñas sobre la marcha con nuestras aplicaciones móviles."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "El alias \"${ item.aliasEmail }\" ha sido movido a la papelera. Dejará de reenviar correos a tu buzón."
+        "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
       "All items permanently removed": [
         "Se han eliminado permanentemente todos los elementos"
@@ -723,7 +723,7 @@
         "Fija ${ PASS_APP_NAME } en tu barra de herramientas"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "El código PIN ha sido registrado. Utilízalo para desbloquear ${ PASS_APP_NAME }."
+        "Se ha registrado el código PIN. Utilízalo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Confirma tu código PIN para cancelar el registro de tu bloqueo actual.\n${ PASS_APP_NAME } nunca se bloqueará."
@@ -735,7 +735,7 @@
         "Confirma tu código PIN para finalizar el registro de tus ajustes de bloqueo automático."
       ],
       "Please consider leaving a review.": [
-        "Considera dejar una reseña."
+        "Te invitamos a dejar una reseña."
       ],
       "Please enter your current pin code to continue": [
         "Introduce tu código PIN actual para continuar"
@@ -750,7 +750,7 @@
         "Guardar el inicio de sesión"
       ],
       "Select the destination vault for each imported vault.": [
-        "Seleccione la bóveda de destino para cada bóveda importada."
+        "Selecciona la bóveda de destino para cada bóveda importada."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -774,16 +774,16 @@
         "Iniciando sesión"
       ],
       "Successfully exported all your items": [
-        "Todos tus elementos han sido exportados correctamente"
+        "Se han exportado correctamente todos tus elementos."
       ],
       "Successfully synced all vaults": [
-        "Todas las bóvedas han sido sincronizadas con éxito"
+        "Se han sincronizado con éxito todas las bóvedas."
       ],
       "Syncing your vaults…": [
         "Sincronizando tus bóvedas…"
       ],
       "Thank you, the problem has been reported": [
-        "Gracias, el problema ha sido notificado."
+        "Gracias por notificar el problema."
       ],
       "The following item could not be imported :": [
         "No se ha podido importar el siguiente elemento:",
@@ -808,16 +808,16 @@
         "Actualizar ${ PASS_APP_NAME }"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "La bóveda \"${ payload.content.name }\" ha sido eliminada."
+        "Se ha eliminado la bóveda \"${ payload.content.name }\"."
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "La bóveda \"${ payload.share.content.name }\" ha sido creada."
+        "Se ha creado la bóveda \"${ payload.share.content.name }\"."
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "La bóveda \"${ payload.share.content.name }\" ha sido actualizada."
+        "Se ha actualizado la bóveda \"${ payload.share.content.name }\"."
       ],
       "Vault \"${ share.content.name }\" was disabled": [
-        "La bóveda \"${ share.content.name }\" ha sido deshabilitada."
+        "Se ha desbilitado la bóveda \"${ share.content.name }\"."
       ],
       "Verification code": [
         "Código de verificación"

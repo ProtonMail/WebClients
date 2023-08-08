@@ -179,6 +179,9 @@
       "Hide": [
         "Sembunyikan"
       ],
+      "Hide plan features": [
+        "Sembunyikan fitur paket"
+      ],
       "I have a question": [
         "Saya memiliki pertanyaan"
       ],
@@ -390,7 +393,7 @@
         "Verifikasi kode"
       ],
       "Verify code again": [
-        "Verifikasi kode lagi"
+        "Verifikasi ulang kode"
       ],
       "View": [
         "Lihat"
@@ -422,6 +425,9 @@
     "Addon": {
       "+ ${ domains } custom domains": [
         "+ ${ domains } domain khusus"
+      ],
+      "+ ${ ips } IP addresses": [
+        "+ ${ ips } alamat IP"
       ],
       "+ ${ users } users": [
         "+ ${ users } pengguna"
@@ -1446,6 +1452,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
       "Amount above the maximum.": [
         "Jumlah melebihi nilai maksimum."
       ],
@@ -1544,6 +1553,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
+      ],
+      "status page": [
+        "halaman status"
       ],
       "Tab closed": [
         "Tab ditutup"
@@ -1950,6 +1962,9 @@
     "Font face option": {
       "System default": [
         "Bawaan sistem"
+      ],
+      "Theme font": [
+        "Jenis tulisan tema"
       ]
     },
     "Font size option": {
@@ -1978,6 +1993,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email per bulan)"
+      ],
+      "(2-4 emails per year)": [
+        "(2-4 email per tahun)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 email per tahun)"
       ],
       "(during your first month)": [
         "(pada bulan pertama Anda)"
@@ -2014,6 +2035,12 @@
       "Best deal": [
         "Penawaran terbaik"
       ],
+      "Checkout": [
+        "Checkout"
+      ],
+      "Create your account": [
+        "Buat akun Anda"
+      ],
       "Get help": [
         "Dapatkan bantuan"
       ],
@@ -2044,6 +2071,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } selamanya"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
@@ -2420,6 +2450,9 @@
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
+      "Open source": [
+        "Open source"
+      ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
       ],
@@ -2598,7 +2631,7 @@
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
+        "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan hubungkan diri Anda ke server yang tersedia."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
@@ -2693,6 +2726,9 @@
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
       ],
+      "We use 3-D Secure to protect your payments": [
+        "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
@@ -2745,7 +2781,7 @@
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus seluruh tautan kalender bersama yang ada sebelum Anda membatalkan langganan."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela percakapan lainnya yang terbuka sebelum memulai percakapan baru."
+        "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Mohon tutup jendela lainnya yang terbuka sebelum memulai percakapan baru."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
@@ -2815,6 +2851,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan frasa pemulihan atau ${ oldPassword }."
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda ketika tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
@@ -2936,6 +2975,9 @@
       "Authenticator app": [
         "Aplikasi autentikator"
       ],
+      "Billing address": [
+        "Alamat tagihan"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -2956,6 +2998,9 @@
       ],
       "BTC amount": [
         "Jumlah BTC"
+      ],
+      "Card details": [
+        "Rincian kartu"
       ],
       "Card holder": [
         "Pemegang kartu"
@@ -3228,6 +3273,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Buletin ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Pengumuman penting ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Buletin ${ BRAND_NAME }"
       ],
@@ -3324,6 +3372,9 @@
       "View guide": [
         "Lihat panduan"
       ],
+      "visit our blog": [
+        "kunjungi blog kami"
+      ],
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
       ],
@@ -3353,6 +3404,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Masuk"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Daftar"
+      ],
+      "Create a new ${ appName } account": [
+        "Buat akun ${ appName } baru"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Temukan nama pengguna Akun ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Lupakan kata sandi Akun ${ BRAND_NAME } Anda? Atur ulang kata sandi Anda di sini dengan menggunakan kode, email, atau SMS pemulihan untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Lupakan nama pengguna Akun ${ BRAND_NAME } Anda? Temukan nama pengguna Anda dengan menggunakan email atau nomor telepon pemulihan Anda untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Atur ulang kata sandi Akun ${ BRAND_NAME } Anda?"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Masuk untuk mengakses akun ${ appName } Anda"
       ]
     },
     "Monetary unit": {
@@ -3465,6 +3542,12 @@
       ],
       "${ n } VPN connections per user": [
         "${ n } koneksi VPN per pengguna"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
+        "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } dengan jumlah alias hide-my-email yang tak terbatas"
       ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
@@ -3643,6 +3726,9 @@
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Mulai lindungi diri Anda secara online dengan 2 langkah mudah"
+      ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
       ],
@@ -3774,6 +3860,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3800,6 +3889,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
       "Your account's usage": [
         "Penggunaan akun Anda"
       ]
@@ -4012,6 +4104,9 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
+      ],
+      "Create up to ${ n } calendars": [
+        "Buat hingga ${ n } kalender"
       ]
     },
     "Notification": {
@@ -4054,6 +4149,11 @@
       ],
       "Standard server configs": [
         "Konfigurasi server standar"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Preparing your Recovery Kit": [
+        "Menyiapkan Peralatan Pemulihan Anda"
       ]
     },
     "Payment method option": {
@@ -4184,6 +4284,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dibagikan oleh ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -4685,9 +4790,54 @@
         "2 tahun"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Password Manager": [
+        "Password Manager Premium"
+      ]
+    },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Simpan sandi Anda secara aman dan otomatis isi pada situs web. Termasuk sandi tidak terbatas, pengisi otomatis, pembuat sandi, dan banyak fitur lainnya."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Pengelola kata sandi"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Langganan Anda akan secara otomatis diperbarui dengan harga diskon standar pada akhir siklus tagihan."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Besar diskon didasarkan pada harga bulanan standar. Penawaran ini hanya tersedia bagi pelanggan kali pertama."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Untuk waktu yang terbatas, dapatkan penawaran terbaik ${ BRAND_NAME } dengan diskon eksklusif."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Kami merayakan ulang tahun kesembilan upaya urun dana kami!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Diskon Ulang Tahun ${ BRAND_NAME }"
       ]
     },
     "Tab subscription modal": {
@@ -5157,6 +5307,11 @@
         "Versi Tor Browser ini sudah tidak lagi didukung. Silakan perbarui Tor Browser Anda ke ${ stableRelease } terbaru"
       ]
     },
+    "upsell panel": {
+      "Recommended": [
+        "Direkomendasikan"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "Kata sandi harus mengandung minimal ${ length } karakter"
@@ -5182,6 +5337,38 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed every 2 years": [
+        "Ditagih setiap 2 tahun"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 tahun"
+      ],
+      "2-year": [
+        "2 tahun"
+      ],
+      "monthly": [
+        "bulanan"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Kustomisasi VPN tingkat lanjut"
+      ],
+      "No ads": [
+        "Tanpa iklan"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } months": [
+        "${ n } bulan"
+      ],
+      "${ n } years": [
+        "${ n } tahun"
       ]
     },
     "Warning": {

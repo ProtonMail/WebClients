@@ -60,7 +60,7 @@
         "Ativar ${ user.Name }@pm.me"
       ],
       "Activate organization key": [
-        "Ativar a chave de organização"
+        "Ativar a chave da organização"
       ],
       "Activate recovery": [
         "Ativar recuperação"
@@ -522,13 +522,13 @@
         "Manter"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
-        "Mantenha a minha subscrição ${ vpnPlanNameShort }"
+        "Manter a minha subscrição ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "etiquetar e-mail como"
       ],
       "Leave": [
-        "Abandonar"
+        "Deixar"
       ],
       "Load more": [
         "Carregar mais"
@@ -627,7 +627,7 @@
         "Referencie um amigo"
       ],
       "Refresh status": [
-        "Actualizar estado"
+        "Atualizar estado"
       ],
       "Refresh the page": [
         "Actualizar a página"
@@ -777,7 +777,7 @@
         "Enviar mensagens com @pm.me"
       ],
       "Send my username": [
-        "Enviar nome de utilizador"
+        "Enviar o meu nome de utilizador"
       ],
       "Send reminder": [
         "Enviar um lembrete"
@@ -837,7 +837,7 @@
         "Registe-se gratuitamente"
       ],
       "Signing in": [
-        "Inicio de sessão"
+        "A iniciar sessão"
       ],
       "Signing out": [
         "A terminar sessão"
@@ -918,7 +918,7 @@
         "Actualizar agora"
       ],
       "Upgrade your plan": [
-        "Melhorar o seu plano"
+        "Atualize o seu plano"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -1043,14 +1043,8 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE": [
-        "Desativar a encriptação E2E"
-      ],
       "Enable": [
         "Ativar"
-      ],
-      "Enable E2EE": [
-        "Ativar a encriptação E2E"
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
@@ -1077,12 +1071,6 @@
       ],
       "Missing keys": [
         "Chaves em falta"
-      ],
-      "No E2EE": [
-        "Sem encriptação de ponta a ponta"
-      ],
-      "No signing": [
-        "Sem assinatura"
       ],
       "Orphan": [
         "Órfão"
@@ -3024,7 +3012,7 @@
         "Erro de autenticação."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "A resposta automática é uma funcionalidade paga. Actualize para uma conta paga para utilizar esta funcionalidade."
+        "A resposta automática é uma funcionalidade paga. Atualize para uma conta paga para utilizar esta funcionalidade."
       ],
       "Calendar cannot be found": [
         "Não é possível encontrar o calendário."
@@ -3104,22 +3092,22 @@
         "Palavra-passe incorreta"
       ],
       "Invalid ${ name } code": [
-        "O código ${ name } não é válido."
+        "O código ${ name } é inválido."
       ],
       "Invalid card number": [
-        "O número de cartão não é válido."
+        "O número de cartão é inválido."
       ],
       "Invalid code": [
-        "O código não é válido."
+        "O código é inválido."
       ],
       "Invalid domain": [
-        "O domínio não é válido."
+        "O domínio é inválido"
       ],
       "Invalid email address": [
         "Endereço de email inválido"
       ],
       "Invalid expiration date": [
-        "A data de expiração não é válida."
+        "A data de expiração é inválida."
       ],
       "Invalid invitation link": [
         "A ligação de convite é inválida."
@@ -3128,13 +3116,13 @@
         "O nome não é válido."
       ],
       "Invalid postal code": [
-        "O código postal não é válido."
+        "O código postal é inválido."
       ],
       "Invalid private key file": [
         "O ficheiro de chave privada não é válido."
       ],
       "Invalid Sieve code": [
-        "O código Sieve não é válido."
+        "Código Sieve inválido"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -3210,7 +3198,7 @@
         "Processo de pagamento não suportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Os pagamentos não estão actualmente disponíveis. Tente novamente mais tarde."
+        "Os pagamentos não estão atualmente disponíveis. Tente novamente mais tarde."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
@@ -3320,7 +3308,7 @@
         "O nome da pasta é demasiado longo. Por favor, escolha um nome diferente."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Não é possível validar as chaves no seu ficheiro de recuperação. Contacte o suporte."
+        "Não é possível validar as chaves no seu ficheiro de recuperação. Contacte o apoio ao cliente."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "Não é possível validar as chaves no seu ficheiro de recuperação. Para mais informações, carregue-as individualmente."
@@ -3437,16 +3425,16 @@
         "Tem de ativar as chaves de organização. Sem ativação, não será possível criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
       ],
       "You must privatize all users before generating new organization keys": [
-        "Tem de privatizar todos os utilizadores antes de gerar novas chaves de organização."
+        "É necessário privatizar todos os utilizadores antes de gerar novas chaves de organização"
       ],
       "You must set a name": [
         "Tem de definir um nome"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Precise de ter um domíno personalizado para gerar um token de envio SMTP"
+        "Precisa de ter um domínio personalizado para gerar um token de envio SMTP"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "A sua conta ou organização tem uma factura em atraso. Regularize a situação."
+        "A sua conta ou organização tem uma fatura em atraso. Regularize a situação."
       ],
       "Your forward will not be processed.": [
         "O seu encaminhamento não será processado."
@@ -5009,13 +4997,13 @@
         "A ${ BRAND_NAME } é privacidade em que pode confiar, garantida por encriptação forte, código aberto e leis de privacidade suíças. Acreditamos que ninguém deve ser capaz de explorar os seus dados, ponto final. A nossa tecnologia e negócio baseiam-se nesta definição fundamentalmente mais forte de privacidade."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "O ${ BRAND_NAME } pausou uma importação porque perdeu a ligação ao outro fornecedor de email. Restabeleça a ligação."
+        "O ${ BRAND_NAME } pausou uma importação porque perdeu a ligação ao outro provedor de email. Restabeleça a ligação."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "O ${ BRAND_NAME } pausou uma importação porque a sua conta tem pouco espaço disponível. Pode:"
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "O ${ BRAND_NAME } tentará retomar a importação assim que o seu fornecedor de email reiniciar o ${ bandwidthLimitLink } da sua conta. Não precisa fazer nada. Se cancelar a sua importação, não será possível retomá-la e terá de recomeçar."
+        "O ${ BRAND_NAME } tentará retomar a importação assim que o seu provedor de email reiniciar o ${ bandwidthLimitLink } da sua conta. Não precisa fazer nada. Se cancelar a sua importação, não será possível retomá-la e terá de recomeçar."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
@@ -5186,7 +5174,7 @@
         "Um utilizador é uma conta associada com um único nome de utilizador, caixa de correio e pessoa."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Tenha acesse às suas palavras-passe e proteja a sua identidade em linha de forma integrada entre os seus dispositivos. Instale o ${ PASS_APP_NAME } e as suas extensões."
+        "Aceda às suas palavras-passe e proteja as suas identidades online de forma integrada nos seus dispositivos. Descarregue e instale as aplicações e extensões ${ PASS_APP_NAME } relevantes."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta restringido devido a faturas por pagar. Contacte o administrador."
@@ -5399,22 +5387,22 @@
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Antes de conseguir receber emails para os seus endereços de domínio personalizado no ${ MAIL_APP_NAME }, necessita de adicionar o seguinte registo MX ao seu DNS. Normalmente, isto pode ser feito no painel de controlo do seu fornecedor de serviços de registo de nomes de domínio."
+        "Antes de conseguir receber emails para os seus endereços de domínio personalizado no ${ MAIL_APP_NAME }, necessita de adicionar o seguinte registo MX ao seu DNS. Normalmente, isto pode ser feito no painel de controlo do seu registador de nomes de domínio."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
       ],
       "Billed every 12 months": [
-        "Faturação  a cada 12 meses"
+        "Faturação a cada 12 meses"
       ],
       "Billed every 15 months": [
-        "Faturação  a cada 15 meses"
+        "Faturação a cada 15 meses"
       ],
       "Billed every 24 months": [
-        "Faturação  a cada 24 meses"
+        "Faturação a cada 24 meses"
       ],
       "Billed every 30 months": [
-        "Faturação  a cada 30 meses"
+        "Faturação a cada 30 meses"
       ],
       "Billed every month": [
         "Faturação mensal"
@@ -5459,7 +5447,7 @@
         "Ao continuar, isto ligará a sua conta da ${ BRAND_NAME } a ${ name }."
       ],
       "Copy the suggested password to clipboard": [
-        "Copiar a palavra-passe sugerida para a área de transferência."
+        "Copie a palavra-passe sugerida para a área de transferência"
       ],
       "Copy your referral link": [
         "Copiar a sua ligação de referência"
@@ -5478,7 +5466,7 @@
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
       "Create a new account and share the email address and password with the user.": [
-        "Crie uma conta e compartilhe o endereço de e-mail e a palavra-passe com o utilizador."
+        "Crie uma nova conta e partilhe o e-mail e a palavra-passe com o utilizador."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crie e gira sub-contas e atribua-lhes endereços de e-mail no seu domínio personalizado."
@@ -5734,7 +5722,7 @@
         "Se o fuso horário do sistema não coincidir com a definição atual de fuso horário, ser-lhe-á pedido que o atualize (no máximo uma vez por dia)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Se este domínio está actualmente a receber correios electronicos, selecione o separador ${ boldAddresses } e adicione todos os endereços de correio electronico ativos antes de alterar o registo MX para assegurar uma transição fluida."
+        "Se este domínio está atualmente a receber e-mails, selecione o separador ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registo MX para assegurar uma transição fluida."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Se isto for devido a uma reposição de uma palavra-passe antiga, poderá impedir que a mensagem volte a aparecer."
@@ -5761,7 +5749,7 @@
         "Se nunca utilizou autenticação em dois passos antes, recomendamos vivamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Se tiver definido o SPF e o DKIM, o DMARC permitirá especificar de que forma outros serviços de e-mail devem entregar e-mails para o seu domínio, se as verificações SPF e DKIM falharem. Esta acção pode impedir a usurpação da sua identidade por parte de spammers, mas também pode causar problemas de entrega se não for executada corretamente."
+        "Se tiver definido o SPF e o DKIM, o DMARC permitirá especificar de que forma outros serviços de e-mail devem entregar e-mails para o seu domínio, se as verificações SPF e DKIM falharem. Isto pode dificultar a tarefa dos spammers que se fazem passar por si, mas também pode causar problemas de entrega se não for feito corretamente."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Se perder a sua palavra-passe e precisar de reinicializar a sua conta, ${ boldImperative } que tenha um ${ boldAccountRecovery } em vigor."
@@ -6079,7 +6067,7 @@
         "Pago para o plano mensal"
       ],
       "Password copied to clipboard": [
-        "A palavra-passe é copiada para a área de transferência."
+        "Palavra-passe copiada para a área de transferência"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -6111,7 +6099,7 @@
         "Verifique se existem erros no seu ficheiro ou contacte o apoio ao cliente para obter mais informações."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Verifique o seu arquivo, ou tente utilizar a nossa ${ csvTemplateButton }."
+        "Verifique o seu ficheiro ou tente utilizar o nosso ${ csvTemplateButton }."
       ],
       "Please contact the administrator of the organisation to manage the subscription.": [
         "Contacte o administrador da organização para gerir a subscrição."
@@ -6267,7 +6255,7 @@
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Envie mensagens por e-mail para incentivar os seus membros a protegerem as suas contas com 2FA."
+        "Envie mensagens por e-mail para incentivar os seus membros a protegerem as suas contas com A2F."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6291,10 +6279,10 @@
         "Configurando o seu Drive"
       ],
       "Settings update failed": [
-        "Erro de actualização das definições"
+        "Erro de atualização das definições"
       ],
       "Settings updated": [
-        "As definições foram actualizadas."
+        "As definições foram atualizadas."
       ],
       "Show original message": [
         "Mostrar mensagem original"
@@ -6318,7 +6306,7 @@
         "Algumas chaves foram reativadas."
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "O SPF é usado para especificar quem tem permissão para enviar emails para o domínio, por isso recomendamos fortemente incluir o ${ MAIL_APP_NAME } no seu registo SPF. Adicione o seguinte registo TXT no seu DNS. Isso normalmente pode ser feito no painel de controlo do seu fornecedor do registo de domínio."
+        "O SPF é usado para especificar quem tem permissão para enviar emails para o domínio, por isso recomendamos fortemente incluir o ${ MAIL_APP_NAME } no seu registo SPF. Adicione o seguinte registo TXT no seu DNS. Isso normalmente pode ser feito no painel de controlo do seu registador de nomes de domínio."
       ],
       "Step ${ step }": [
         "Passo ${ step }",
@@ -6403,7 +6391,7 @@
         "Os seguintes membros receberão uma mensagem por e-mail a solicitar-lhes que ativem a autenticação de dois fatores o mais rapidamente possível."
       ],
       "The format of your CSV file is incorrect.": [
-        "O formato do seu ficheiro CSV é incorreto."
+        "O formato do seu ficheiro CSV está incorreto."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "A aplicação Import-Export permite exportar mensagens para cópias de segurança locais e restaurar cópias de segurança anteriores à sua conta."
@@ -6439,7 +6427,7 @@
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Isto pode demorar até 15 minutos. Não feche esta página ou desligue-se da internet."
+        "Isto pode demorar até 15 minutos. Não feche esta página nem se desligue da Internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi pedida para definir."
@@ -6532,7 +6520,7 @@
         "Para garantir o acesso contínuo à sua conta, defina um método de recuperação de conta"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efectuam alterações. Selecione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
+        "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efetuam alterações. Selecione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
@@ -6703,7 +6691,7 @@
         "Precisamos autenticar o seu pagamento com o seu banco."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Recomendamos notificar os membros da organização e pedir-lhes que configurem a 2FA para as suas contas antes de impor a utilização da 2FA."
+        "Recomendamos notificar os membros da organização e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
       ],
       "We recommend using your recovery phrase instead.": [
         "Em vez disso, recomendamos que utilize a sua frase de recuperação."
@@ -6909,7 +6897,7 @@
         "Não será possível recuperar dados bloqueados utilizando os ficheiros de recuperação descarregados. Isto também anulará as informações de recuperação de dispositivos fiáveis."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Manterá a sessão iniciada mesmo depois de fechar o navegador."
+        "Manterá a sessão iniciada mesmo após fechar o navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
@@ -6963,11 +6951,8 @@
         "A sua importação de ${ accounts } está temporariamente atrasada.",
         "A suas importações de ${ accounts } estão temporariamente atrasadas."
       ],
-      "Your import will not be processed.": [
-        "A sua importação não será processada."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "As suas informações estão seguras connosco. Só entraremos em contato quando tal for necessário para fornecer os nossos serviços."
+        "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será guardada após concluir a importação."
@@ -8643,6 +8628,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Está disponível uma nova versão de ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: início de sessão"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inscrição"
+      ],
+      "Create a new ${ appName } account": [
+        "Criar uma conta do ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Redefina-o aqui utilizando um código de recuperação, e-mail ou SMS e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Encontre-o utilizando o seu e-mail ou número de telefone de recuperação e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Redefina a palavra-passe da sua conta ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Inicie sessão para aceder à sua conta ${ appName }"
       ]
     },
     "Modal title": {
@@ -11673,13 +11684,13 @@
         "(ativo)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Dê um nome a configuração a ser gerada"
+        "1. Dê um nome à configuração a ser gerada"
       ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
       "2. Select platform": [
-        "2. Seleccionar plataforma"
+        "2. Selecionar plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -11688,7 +11699,7 @@
         "3. Seleccionar configuração e transferir"
       ],
       "3. Select VPN options": [
-        "3. Selecione as opções da VPN"
+        "3. Selecione as opções de VPN"
       ],
       "4. Select a server to connect to": [
         "4. Selecione o servidor para ligar"
@@ -13022,9 +13033,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Tem a certeza de que pretende eliminar este endereço?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Tem certeza de que deseja descartar a importação?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ao eliminar este endereço, já não poderá receber notificações diárias do correio."

@@ -427,6 +427,10 @@
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
       ],
+      "+ ${ ips } IP address": [
+        "+ endereço de IP ${ ips }",
+        "+ endereços de IP ${ ips }"
+      ],
       "+ ${ users } user": [
         "+ ${ users } usuário",
         "+ ${ users } usuários"
@@ -3429,6 +3433,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Uma nova versão do ${ appName } está disponível. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Entrar"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inscrever-se"
+      ],
+      "Create a new ${ appName } account": [
+        "Criar uma conta no ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Redefina a senha da sua conta ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Faça login para acessar sua conta ${ appName }"
       ]
     },
     "Monetary unit": {

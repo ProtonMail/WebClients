@@ -1033,6 +1033,12 @@
         "+ ${ domains } карыстальніцкіх даменаў",
         "+ ${ domains } карыстальніцкія дамены"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-адрас",
+        "+ ${ ips } IP-адрасы",
+        "+ ${ ips } IP-адрасоў",
+        "+ ${ ips } IP-адрасоў"
+      ],
       "+ ${ users } user": [
         "+ ${ users } карыстальнік",
         "+ ${ users } карыстальнікі",
@@ -1047,14 +1053,17 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable E2EE": [
-        "Адключыць E2EE"
+      "Disable E2EE mail": [
+        "Адключыць пошту E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "Забар. непадпіс. пошту"
       ],
       "Enable": [
         "Уключыць"
       ],
-      "Enable E2EE": [
-        "Уключыць E2EE"
+      "Enable E2EE mail": [
+        "Уключыць пошту E2EE"
       ],
       "Generate missing keys": [
         "Згенерыраваць ключы, якія адсутнічаюць"
@@ -1070,6 +1079,9 @@
       "Active": [
         "Актыўны"
       ],
+      "Allow unsigned mail": [
+        "Дазвол. непадпіс. пошту"
+      ],
       "Default": [
         "Прадвызначана"
       ],
@@ -1082,11 +1094,8 @@
       "Missing keys": [
         "Адсутнічаюць ключы"
       ],
-      "No E2EE": [
-        "Без E2EE"
-      ],
-      "No signing": [
-        "Без подпісу"
+      "No E2EE mail": [
+        "Без пошты E2EE"
       ],
       "Orphan": [
         "Не прывязана"
@@ -5332,7 +5341,7 @@
         "адрас",
         "адрасы",
         "адрасоў",
-        "адрасы"
+        "адрасоў"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         "Праверка адраса - гэта дадатковая функцыя бяспекі. Уключайце яе толькі тады, калі ведаеце, што яна робіць."
@@ -7092,9 +7101,6 @@
         "Вашы імпартаванні з ${ accounts } часова адкладзены.",
         "Вашы імпартаванні з ${ accounts } часова адкладзены."
       ],
-      "Your import will not be processed.": [
-        "Ваша імпартаванне не будзе апрацавана."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
@@ -7162,7 +7168,7 @@
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі."
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі."
       ]
     },
     "Info on errors": {
@@ -7596,7 +7602,7 @@
         "Апавяшчэнні пра падзеі на ўвесь дзень"
       ],
       "Allow": [
-        "Аўтарызаваныя адрасы"
+        "Дазволіць"
       ],
       "Allow notifications by email": [
         "Дазволіць апавяшчэнні па электроннай пошце"
@@ -8798,6 +8804,50 @@
         "Даступна новая версія ${ appName }. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Увайсці"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зарэгістравацца"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Стварыце ўліковы запіс ${ BRAND_NAME }, каб карыстацца ўсімі зашыфраванымі сэрвісамі ${ BRAND_NAME }, такімі як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншымі. Атрымайце бясплатны ўліковы запіс ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Стварыце ўліковы запіс ${ BRAND_NAME } | Вярніце сабе сваю прыватнасць"
+      ],
+      "Create a new ${ appName } account": [
+        "Стварыць новы ўліковы запіс ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Знайдзіце імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Private and secure email, no credit card required": [
+        "Прыватная і бяспечная электронная пошта, якая не патрабуе крэдытную картку"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Увайсці, каб атрымаць доступ да свайго ўліковага запісу ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Увайдзіце ў свой уліковы запіс ${ BRAND_NAME }, каб атрымаць доступ да ўсіх зашыфраваных сэрвісаў ${ BRAND_NAME }, такіх як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых. Не маеце ўліковага запісу? Стварыце яго БЯСПЛАТНА."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Увайсці | Уліковы запіс ${ BRAND_NAME } - Доступ да ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і іншых"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Паспрабуйце тарыфны план ${ planName } бясплатна па гэтай спасылцы"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Дадаць дзяржаўныя святы"
@@ -8987,7 +9037,7 @@
         "Усе"
       ],
       "Allow": [
-        "Аўтарызаваныя адрасы"
+        "Дазволіць"
       ],
       "Back": [
         "Назад"
@@ -9664,7 +9714,7 @@
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "Адрасы з'яўляюцца поўнафункцыянальнымі для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
+        "Адрасы маюць поўныя магчымасці для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
@@ -9866,6 +9916,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } створаны"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } было адключана"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } было ўключана"
       ],
       "A disabled address cannot be default": [
         "Адключаны адрас не можа быць прадвызначаным"
@@ -10654,7 +10710,7 @@
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі"
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі"
       ]
     },
     "plan customizer, users": {
@@ -13302,9 +13358,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Вы сапраўды хочаце выдаліць гэты адрас?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Выдаліўшы гэты адрас, вы больш не зможаце атрымліваць штодзённыя апавяшчэнні па электроннай пошце."
