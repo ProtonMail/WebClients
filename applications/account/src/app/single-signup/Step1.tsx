@@ -357,6 +357,7 @@ const Step1 = ({
     const createPaymentToken = usePaymentToken();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
+    const [checkingSubscription, setCheckingSubscription] = useState(false);
 
     const createFlow = useFlowRef();
 
@@ -407,6 +408,8 @@ const Step1 = ({
     };
 
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
+        setCheckingSubscription(true);
+
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
@@ -458,6 +461,8 @@ const Step1 = ({
                 ...old,
                 optimistic: {},
             }));
+        } finally {
+            setCheckingSubscription(false);
         }
     };
 
@@ -1087,6 +1092,7 @@ const Step1 = ({
                                                         type="submit"
                                                         size="large"
                                                         loading={loadingSignup}
+                                                        disabled={checkingSubscription}
                                                         color="norm"
                                                         fullWidth
                                                     >
