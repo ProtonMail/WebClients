@@ -95,7 +95,7 @@ import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
 import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
-import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
+import { ACTIONS, ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, TYPE } from '../../components/calendar/interactions/constants';
 import {
     MouseDownAction,
     MouseUpAction,
@@ -606,6 +606,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleMouseDown = (mouseDownAction: MouseDownAction) => {
+        // Manually dispatch a mousedown event, since it has been blocked by our custom mouse handlers
+        containerRef?.dispatchEvent(new Event('mousedown'));
+
         if (isSavingEvent.current) {
             return;
         }
@@ -1426,7 +1429,12 @@ const InteractiveCalendarView = ({
             autoCloseRef?.current?.({ ask: true });
         };
         containerRef.addEventListener('click', handler);
-        return () => containerRef.removeEventListener('click', handler);
+        document.addEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, closeAllPopovers);
+
+        return () => {
+            containerRef.removeEventListener('click', handler);
+            document.removeEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, closeAllPopovers);
+        };
     }, [containerRef]);
 
     const formatDate = useCallback(

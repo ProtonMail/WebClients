@@ -16,7 +16,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarEventsIDsQuery, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
@@ -30,29 +30,6 @@ export const generateID = (calendarID: string, eventID: string) => `${calendarID
 export const getCalendarIDFromItemID = (itemID: string) => itemID.split('.')[0];
 export const getEventIDFromItemID = (itemID: string) => itemID.split('.')[1];
 
-const parseHashParams = (urlHash: string) => {
-    const result: SimpleMap<string> = {};
-
-    return urlHash
-        .slice(1)
-        .split('&')
-        .reduce(function (res, item) {
-            const [key, value] = item.split('=');
-            res[key] = value;
-            return res;
-        }, result);
-};
-
-export const extractSearchParametersFromURL = (location: Location) => {
-    const { keyword, begin, end } = parseHashParams(location.hash);
-
-    return {
-        keyword: keyword ? decodeURIComponent(keyword) : undefined,
-        begin,
-        end,
-    };
-};
-
 export const generateOrder = async (ID: string) => {
     const numericalID = ID.split('').map((char) => char.charCodeAt(0));
     const digest = await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: Uint8Array.from(numericalID) });
@@ -62,7 +39,7 @@ export const generateOrder = async (ID: string) => {
 };
 
 const checkIsSearch = (searchParams: ESCalendarSearchParams) =>
-    !!searchParams.calendarID || !!searchParams.begin || !!searchParams.end || !!searchParams.normalizedKeywords;
+    !!searchParams.calendarID || !!searchParams.begin || !!searchParams.end || !!searchParams.keyword;
 
 const stringToInt = (string: string | undefined): number | undefined => {
     if (string === undefined) {
@@ -81,12 +58,13 @@ export const generatePathnameWithSearchParams = (location: Location, searchQuery
     return pathname + hash;
 };
 
-const extractSearchParameters = (location: Location): ESCalendarSearchParams => {
+export const extractSearchParameters = (location: Location): ESCalendarSearchParams => {
     const { calendarID, keyword, begin, end, page } = getSearchParamsFromURL(location.hash);
+
     return {
         calendarID,
         page: stringToInt(page),
-        normalizedKeywords: !!keyword ? normalizeKeyword(keyword) : undefined,
+        keyword: keyword ?? undefined,
         begin: stringToInt(begin),
         end: stringToInt(end),
     };
@@ -98,7 +76,12 @@ export const parseSearchParams = (location: Location) => {
 
     return {
         isSearch,
-        esSearchParams: isSearch ? searchParameters : undefined,
+        esSearchParams: {
+            ...searchParameters,
+            ...(isSearch && searchParameters?.keyword
+                ? { normalizedKeywords: normalizeKeyword(searchParameters.keyword) }
+                : undefined),
+        },
     };
 };
 

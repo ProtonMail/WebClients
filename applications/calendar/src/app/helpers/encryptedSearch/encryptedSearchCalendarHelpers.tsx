@@ -2,11 +2,12 @@ import { History } from 'history';
 
 import {
     CachedItem,
-    ESHelpers,
+    ESCallbacks,
     ESItemInfo,
     EventsObject,
     checkVersionedESDB,
     metadataIndexingProgress,
+    normalizeKeyword,
     testKeywords,
 } from '@proton/encrypted-search';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
@@ -53,13 +54,13 @@ const popOneCalendar = (
     };
 };
 
-export const getESHelpers = ({
+export const getESCallbacks = ({
     api,
     calendarIDs,
     history,
     userID,
     getCalendarEventRaw,
-}: Props): ESHelpers<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent> => {
+}: Props): ESCallbacks<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent> => {
     // We need to keep the recovery point for metadata indexing in memory
     // for cases where IDB couldn't be instantiated but we still want to
     // index content
@@ -152,7 +153,8 @@ export const getESHelpers = ({
         };
     };
 
-    const getKeywords = (esSearchParams: ESCalendarSearchParams) => esSearchParams.normalizedKeywords;
+    const getKeywords = (esSearchParams: ESCalendarSearchParams) =>
+        esSearchParams.keyword ? normalizeKeyword(esSearchParams.keyword) : [];
 
     const searchKeywords = (
         keywords: string[],

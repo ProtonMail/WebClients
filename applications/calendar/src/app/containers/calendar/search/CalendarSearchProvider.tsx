@@ -5,7 +5,7 @@ import { ESItem } from '@proton/encrypted-search/lib';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import { extractSearchParametersFromURL } from '../../../helpers/encryptedSearch/esUtils';
+import { extractSearchParameters } from '../../../helpers/encryptedSearch/esUtils';
 import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 
@@ -52,7 +52,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
         return setRenderCounter((c) => c + 1);
     }, []);
 
-    const searchParams = extractSearchParametersFromURL(history.location);
+    const searchParams = extractSearchParameters(history.location);
     const keyword = searchParams?.keyword || '';
 
     const [items, setItems] = useState<ESItem<ESCalendarMetadata, ESCalendarContent>[]>([]);

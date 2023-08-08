@@ -15,7 +15,6 @@ interface Props {
     onOpen: () => void;
     value: string;
     loading: boolean;
-    onChange: (newValue: string) => void;
     onClear: () => void;
 }
 

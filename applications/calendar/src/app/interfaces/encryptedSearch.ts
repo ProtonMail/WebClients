@@ -21,7 +21,7 @@ export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEve
 
 export interface ESCalendarContent {}
 export interface ESCalendarSearchParams {
-    normalizedKeywords?: string[];
+    keyword?: string;
     calendarID?: string;
     begin?: number;
     end?: number;
