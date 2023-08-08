@@ -1,8 +1,7 @@
-import { ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import metrics from '@proton/metrics';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -10,32 +9,25 @@ import Content from '../public/Content';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
 import Layout from './Layout';
+import illustration from './business-onboarding-illustration.svg';
 
-const Step2 = ({
+const Step4 = ({
     onSetup,
     product,
-    img,
     isB2bPlan,
     isDarkBg,
 }: {
     onSetup: () => Promise<void>;
     product: string;
-    img: ReactNode;
     isB2bPlan: boolean;
     isDarkBg: boolean;
 }) => {
-    const steps: string[] = [
-        c('Info').t`Verifying your payment`,
-        c('Info').t`Creating your account`,
-        c('Info').t`Securing your account`,
-    ].filter(isTruthy);
+    const steps: string[] = [c('Info').t`Saving your password`, c('Info').t`Setting up your organization`].filter(
+        isTruthy
+    );
 
     useEffect(() => {
         onSetup().catch(noop);
-    }, []);
-
-    useEffect(() => {
-        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'account_setup' });
     }, []);
 
     return (
@@ -43,10 +35,12 @@ const Step2 = ({
             <Main>
                 <Content>
                     <div className="text-center pt-6" role="alert">
-                        <h1 className="h2 text-bold">{c('Info').t`Thank you`}</h1>
-                        <span className="color-weak">{c('Info').t`for choosing ${product}`}</span>
+                        <h1 className="h2 text-bold">{c('Info').t`Welcome`}</h1>
+                        <span className="color-weak">{c('Info').t`to ${product} Business`}</span>
                     </div>
-                    <div className="pb-4 text-center m-auto w100">{img}</div>
+                    <div className="pb-4 text-center m-auto w100">
+                        <img src={illustration} alt={c('Onboarding').t`Welcome to ${product}`} />
+                    </div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
                         <div className="inline-block w70">
                             <LoadingTextStepper steps={steps} />
@@ -58,4 +52,4 @@ const Step2 = ({
     );
 };
 
-export default Step2;
+export default Step4;
