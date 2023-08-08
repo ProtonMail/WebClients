@@ -427,6 +427,10 @@
         "+ ${ domains } eigen domein",
         "+ ${ domains } eigen domeinen"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-adres",
+        "+ ${ ips } IP-adressen"
+      ],
       "+ ${ users } user": [
         "+ ${ users } gebruiker",
         "+ ${ users } gebruikers"
@@ -3425,6 +3429,32 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Log in"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inschrijven"
+      ],
+      "Create a new ${ appName } account": [
+        "Maak een nieuwe ${ appName }-account aan"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Vind ${ BRAND_NAME } Account gebruikersnaam"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } wachtwoord vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } Account gebruikersnaam vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Reset uw ${ BRAND_NAME } Account wachtwoord"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Log in om toegang te krijgen tot uw ${ appName } account"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -3549,6 +3579,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"

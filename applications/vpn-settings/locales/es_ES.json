@@ -427,6 +427,10 @@
         "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominios personalizados"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } dirección IP",
+        "+ ${ ips } direcciones IP"
+      ],
       "+ ${ users } user": [
         "+ ${ users } usuario",
         "+ ${ users } usuarios"
@@ -3440,6 +3444,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Has olvidado la contraseña de tu cuenta de ${ BRAND_NAME }? Restablécela aquí con un código de recuperación, un correo o SMS y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "¿Has olvidado tu nombre de usuario de ${ BRAND_NAME }? Encuéntralo con tu correo de recuperación o número de teléfono y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
