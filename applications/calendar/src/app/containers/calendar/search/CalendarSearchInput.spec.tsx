@@ -20,7 +20,6 @@ const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     loading: false,
     onOpen: jest.fn(),
     onClear: jest.fn(),
-    onChange: jest.fn(),
 };
 
 const renderComponent = (props: ComponentProps<typeof CalendarSearchInput>) => {
@@ -37,7 +36,7 @@ describe('CalendarSearchInput', () => {
 
     beforeEach(() => {
         mockedUseUser = mockUseUser([{ CreateTime: Math.floor(sub(new Date(), { weeks: 4 }).getTime() / SECOND) }]);
-        mockedUseSpotlightOnFeature = mockUseSpotlightOnFeature();
+        mockedUseSpotlightOnFeature = mockUseSpotlightOnFeature({});
         mockUseActiveBreakpoint();
         mockUseWelcomeFlags();
     });
@@ -168,8 +167,8 @@ describe('CalendarSearchInput', () => {
     describe('when Search button is hit', () => {
         it('should open', async () => {
             const onOpen = jest.fn();
-            const onChange = jest.fn();
-            renderComponent({ ...baseProps, value: 'test', onOpen, onChange });
+
+            renderComponent({ ...baseProps, value: 'test', onOpen });
 
             const button = screen.getByText('Search');
             await userEvent.click(button);
@@ -179,7 +178,6 @@ describe('CalendarSearchInput', () => {
             });
 
             expect(onOpen).toHaveBeenCalledWith();
-            expect(onChange).toHaveBeenCalledTimes(0);
         });
     });
 

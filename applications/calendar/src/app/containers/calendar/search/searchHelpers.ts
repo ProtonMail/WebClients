@@ -15,7 +15,7 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ESCalendarMetadata, ESCalendarContent } from '../../../interfaces/encryptedSearch';
+import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { getCurrentEvent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
 import { CalendarsEventsCache } from '../eventStore/interface';
@@ -58,7 +58,6 @@ const getVisualSearchItem = ({
         visualCalendar: calendar,
         fakeUTCStartDate,
         fakeUTCEndDate,
-        isFirst: false,
     };
 };
 
@@ -66,45 +65,51 @@ export const getVisualSearchItems = ({
     items,
     calendarsMap,
     tzid,
-    date,
 }: {
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[];
     calendarsMap: SimpleMap<VisualCalendar>;
     tzid: string;
-    date: Date;
 }) => {
-    const visualItems = items.map((item) => getVisualSearchItem({ item, calendarsMap, tzid })).filter(isTruthy);
-    const dateTimestamp = getUnixTime(date);
-    const firstIndex = visualItems.findIndex(
-        ({ StartTime, EndTime }) => StartTime >= dateTimestamp || EndTime >= dateTimestamp
-    );
+    return items.map((item) => getVisualSearchItem({ item, calendarsMap, tzid })).filter(isTruthy);
+};
 
-    const totalItems = visualItems.length;
-    if (firstIndex === -1) {
+export const markClosestToDate = (items: VisualSearchItem[], date: Date) => {
+    const dateTimestamp = getUnixTime(date);
+    const index = items.findIndex(({ StartTime, EndTime }) => StartTime >= dateTimestamp || EndTime >= dateTimestamp);
+
+    const totalItems = items.length;
+    if (index === -1) {
         if (totalItems) {
             // set last element in the list as first
-            visualItems[totalItems - 1].isFirst = true;
+            items[totalItems - 1].isClosestToDate = true;
         }
     } else {
-        visualItems[firstIndex].isFirst = true;
+        items[index].isClosestToDate = true;
     }
-
-    return visualItems;
 };
 
 const expandSearchItem = (
     item: ESItem<ESCalendarMetadata, ESCalendarContent>,
-    cache: Partial<OccurrenceIterationCache> = {}
-): MaybeArray<ESItem<ESCalendarMetadata, ESCalendarContent>> => {
+    cache: Partial<OccurrenceIterationCache> = {},
+    recurrenceIDs?: number[]
+): MaybeArray<ESItem<ESCalendarMetadata, ESCalendarContent> | undefined> => {
     if (!item.RRule) {
         return item;
     }
     const component = getComponentFromCalendarEventWithoutBlob(item);
 
-    return getOccurrences({ component, maxCount: 500, cache }).map((recurrence) => {
+    const occurrences = getOccurrences({ component, maxCount: 500, cache });
+    const isSingleOccurrence = occurrences.length === 1;
+
+    return occurrences.map((recurrence) => {
         const { dtstart, dtend } = getCurrentEvent(component, recurrence);
 
         const { localStart, localEnd, occurrenceNumber } = recurrence;
+        const startTime = getUnixTime(propertyToUTCDate(dtstart));
+
+        if (recurrenceIDs?.includes(startTime)) {
+            return;
+        }
 
         return {
             ...item,
@@ -113,24 +118,42 @@ const expandSearchItem = (
             occurrenceNumber,
             localStart,
             localEnd,
-            // TODO: treat single edits
-            isSingleOccurrence: false,
+            isSingleOccurrence,
         };
     });
 };
+
+const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
 
 export const expandAndOrderItems = (
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[],
     calendarsEventsCache: CalendarsEventsCache
 ) => {
+    const recurrenceIDsMap = items.reduce<SimpleMap<number[]>>((acc, { CalendarID, UID, RecurrenceID }) => {
+        if (!RecurrenceID) {
+            return acc;
+        }
+        const key = getEventKey(CalendarID, UID);
+        const entry = acc[key];
+        if (entry) {
+            entry.push(RecurrenceID);
+        } else {
+            acc[key] = [RecurrenceID];
+        }
+
+        return acc;
+    }, {});
     const expanded = items
         .map((item) => {
-            const recurringEvents = calendarsEventsCache.calendars[item.CalendarID]?.recurringEvents;
-            const { cache } = recurringEvents?.get(item.UID) || {};
+            const { CalendarID, UID } = item;
+            const recurringEvents = calendarsEventsCache.calendars[CalendarID]?.recurringEvents;
+            const { cache } = recurringEvents?.get(UID) || {};
+            const recurrenceIDs = recurrenceIDsMap[getEventKey(CalendarID, UID)];
 
-            return expandSearchItem(item, cache);
+            return expandSearchItem(item, cache, recurrenceIDs);
         })
-        .flat();
+        .flat()
+        .filter(isTruthy);
 
     return expanded.sort(({ StartTime: startA }, { StartTime: startB }) => {
         return startA - startB;

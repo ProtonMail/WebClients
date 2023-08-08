@@ -1355,7 +1355,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             initializeES,
             resetCache,
         };
-    }, [userID, esStatus, inputESHelpers]);
+    }, [userID, esStatus, inputESCallbacks]);
 
     return esFunctions;
 };

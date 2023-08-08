@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { TopNavbarListItemSearchButton, generateUID, usePopperAnchor, useToggle } from '@proton/components';
 
-import { extractSearchParametersFromURL } from '../../../helpers/encryptedSearch/esUtils';
+import { extractSearchParameters } from '../../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import AdvancedSearch from './AdvancedSearch';
 import CalendarSearchInput from './CalendarSearchInput';
@@ -23,7 +23,7 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch, onBackFromSearch }: 
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
-    const searchParams = extractSearchParametersFromURL(history.location);
+    const searchParams = extractSearchParameters(history.location);
     const [searchInputValue, setSearchInputValue] = useState(searchParams.keyword || '');
 
     const { cacheIndexedDB } = useEncryptedSearchLibrary();
@@ -59,7 +59,6 @@ const CalendarSearch = ({ isNarrow, containerRef, onSearch, onBackFromSearch }: 
                 <CalendarSearchInput
                     ref={anchorRef}
                     value={searchInputValue}
-                    onChange={setSearchInputValue}
                     onOpen={handleOpen}
                     onClear={onBackFromSearch}
                     loading={loading}

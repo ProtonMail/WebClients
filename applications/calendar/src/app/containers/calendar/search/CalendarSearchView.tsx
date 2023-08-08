@@ -1,5 +1,4 @@
-import React, { MouseEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { MouseEvent, MutableRefObject, useEffect, useMemo, useState } from 'react';
 
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -9,7 +8,6 @@ import { Icon } from '@proton/components/components';
 import { SkeletonLoader } from '@proton/components/components/skeletonLoader';
 import { IllustrationPlaceholder } from '@proton/components/containers';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
@@ -32,6 +30,7 @@ import {
     getCalendarViewEventWithMetadata,
     getVisualSearchItems,
     groupItemsByDay,
+    markClosestToDate,
 } from './searchHelpers';
 import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
@@ -73,26 +72,29 @@ const CalendarSearchView = ({
     setInteractiveData,
     getOpenedMailEvents,
 }: Props) => {
-    const history = useHistory();
-    const firstItemRef = useRef<HTMLDivElement | null>(null);
+    const [closestToDateRef, setClosestToDateRef] = useState<HTMLDivElement | null>(null);
 
-    const { items, hasSearchedCounter, loading } = useCalendarSearch();
+    const { items, loading } = useCalendarSearch();
     const [calendarViewEvents, setCalendarViewEvents] = useState<CalendarViewEvent[]>([]);
 
-    const calendarsById = toMap(calendars, 'ID');
-
-    const calendarsMap = calendars.reduce<SimpleMap<VisualCalendar>>((acc, calendar) => {
-        acc[calendar.ID] = calendar;
-        return acc;
-    }, {});
+    const calendarsMap = useMemo(
+        () =>
+            calendars.reduce<SimpleMap<VisualCalendar>>((acc, calendar) => {
+                acc[calendar.ID] = calendar;
+                return acc;
+            }, {}),
+        [calendars]
+    );
 
     const [visibleItems, hiddenItems] = useMemo(
         () =>
             items.reduce(
                 ([visibleItems, hiddenItems]: [typeof items, typeof items], item) => {
-                    if (calendarsById[item.CalendarID].Display !== CALENDAR_DISPLAY.HIDDEN) {
+                    const calendarDisplay = calendarsMap[item.CalendarID]?.Display;
+
+                    if (calendarDisplay === CALENDAR_DISPLAY.VISIBLE) {
                         visibleItems.push(item);
-                    } else {
+                    } else if (calendarDisplay === CALENDAR_DISPLAY.HIDDEN) {
                         hiddenItems.push(item);
                     }
 
@@ -100,24 +102,33 @@ const CalendarSearchView = ({
                 },
                 [[], []]
             ),
-        [items, calendarsById]
+        [items, calendarsMap]
     );
 
     const shouldDisplayCalendarDisplayWarning = !visibleItems.length && !!hiddenItems.length;
 
     const hiddenWithItemsCalendarNames = useMemo(
-        () => unique(hiddenItems.map((item) => calendarsById[item.CalendarID].Name)),
-        [hiddenItems, calendarsById]
+        () => unique(hiddenItems.map((item) => calendarsMap[item.CalendarID]!.Name)),
+        [hiddenItems, calendarsMap]
     );
+
+    const hiddenWithItemsCalendarList = formatListWithAnd(hiddenWithItemsCalendarNames);
 
     const visualItems = useMemo(() => {
         return getVisualSearchItems({
             items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current),
             calendarsMap,
             tzid,
-            date,
         });
-    }, [visibleItems, hasSearchedCounter]);
+    }, [visibleItems]);
+
+    useEffect(() => {
+        markClosestToDate(visualItems, date);
+    }, [date, visualItems]);
+
+    useEffect(() => {
+        closestToDateRef?.scrollIntoView(true);
+    }, [closestToDateRef]);
 
     const loadPopoverContent = (
         calendarID: string,
@@ -153,19 +164,14 @@ const CalendarSearchView = ({
         metadataOnly: false,
     });
 
-    // visualItems is sorted by StartTime so we can paginate it directly without sorting it again
+    // visualItems are sorted by StartTime, so we can paginate them directly without sorting them again
     const {
-        currentPage,
         items: paginatedItems,
         isNextEnabled,
         isPreviousEnabled,
         next,
         previous,
-    } = useCalendarSearchPagination(visualItems);
-
-    useEffect(() => {
-        firstItemRef.current?.scrollIntoView(true);
-    }, [history.location, currentPage]);
+    } = useCalendarSearchPagination(visualItems, date);
 
     const handleClickSearchItem = (e: MouseEvent<HTMLButtonElement>, item: VisualSearchItem) => {
         const calendarsEventsCache = calendarsEventsCacheRef.current;
@@ -285,6 +291,7 @@ const CalendarSearchView = ({
                                 : []),
                             <CalendarSearchViewDayEvents
                                 key={utcStartDate.toString()}
+                                closestToDateRef={setClosestToDateRef}
                                 dailyEvents={dailyEvents}
                                 onClickSearchItem={handleClickSearchItem}
                             />,
@@ -302,9 +309,7 @@ const CalendarSearchView = ({
                                 {
                                     // translator: This is a warning displayed to the user when he gets no result on current search but has some in hidden calendars
                                     c('Info')
-                                        .jt`Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${formatListWithAnd(
-                                        hiddenWithItemsCalendarNames
-                                    )}.`
+                                        .jt`Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${hiddenWithItemsCalendarList}.`
                                 }
                             </div>
                         </div>

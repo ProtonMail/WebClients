@@ -8,7 +8,7 @@ import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proto
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
-import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchCalendarHelpers';
+import { getESCallbacks } from '../helpers/encryptedSearch/encryptedSearchCalendarHelpers';
 import { processCalendarEvents, processCoreEvents } from '../helpers/encryptedSearch/esUtils';
 import {
     ESCalendarContent,
@@ -42,7 +42,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
 
     const [isLibraryInitialized, setIsLibraryInitialized] = useState(false);
 
-    const esHelpers = getESHelpers({
+    const esCallbacks = getESCallbacks({
         api,
         calendarIDs,
         history,
@@ -54,7 +54,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
 
     const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
-        esHelpers,
+        esCallbacks,
         successMessage,
     });
 

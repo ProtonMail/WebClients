@@ -5,7 +5,9 @@ export const mockUseActiveBreakpoint = (value?: Partial<ReturnType<typeof useAct
 
     const values = {
         breakpoint: 'desktop',
-        isDesktop: true,
+        isLargeDesktop: true,
+        isMediumDesktop: false,
+        isSmallDesktop: false,
         isTablet: false,
         isMobile: false,
         isTinyMobile: false,
@@ -14,7 +16,8 @@ export const mockUseActiveBreakpoint = (value?: Partial<ReturnType<typeof useAct
 
     mockedUseActiveBreakpoint.mockReturnValue({
         ...values,
-        isNarrow: values.isMobile || values.isTinyMobile,
+        isNarrow: value?.isNarrow ?? (values.isMobile || values.isTinyMobile),
+        isDesktop: value?.isNarrow ?? (values.isLargeDesktop || values.isMediumDesktop || values.isSmallDesktop),
     });
 
     return mockedUseActiveBreakpoint;
