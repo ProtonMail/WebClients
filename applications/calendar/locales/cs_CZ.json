@@ -3881,6 +3881,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
+      ],
       "Please remove the duplicates and try again.": [
         "Odstraňte prosím duplikáty a zkuste to znovu."
       ],
@@ -4165,9 +4168,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
-      ],
-      "Your import will not be processed.": [
-        "Váš import nebude zpracován."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -4764,6 +4764,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "Zrušit"
+      ],
       "Manage calendars": [
         "Spravovat kalendáře"
       ],
@@ -6754,9 +6757,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Jste si jistí, že chcete zahodit váš import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Opravdu chcete nevratně smazat ${ count } skupinu kontaktů?",

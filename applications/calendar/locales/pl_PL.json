@@ -88,7 +88,7 @@
         "Anuluj"
       ],
       "Chat with us": [
-        "Czatuj z nami"
+        "Czat z nami"
       ],
       "Check import progress": [
         "Sprawdź postęp importowania"
@@ -3602,6 +3602,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Każdy, kto posiada link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
       ],
+      "Are you sure you want to discard your import?": [
+        "Czy na pewno chcesz odrzucić swój import?"
+      ],
       "Attention required": [
         "Wymagana uwaga"
       ],
@@ -3880,6 +3883,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
       ],
       "Please remove the duplicates and try again.": [
         "Usuń duplikaty i spróbuj ponownie."
@@ -4165,9 +4171,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
-      ],
-      "Your import will not be processed.": [
-        "Twój import nie zostanie przetworzony."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -6760,9 +6763,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Czy na pewno chcesz trwale usunąć grupę kontaktów?",
