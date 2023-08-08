@@ -3730,6 +3730,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
+      ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
       ],
@@ -4139,9 +4142,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Tiedostosi salataan ja tallennetaan."
-      ],
-      "Your import will not be processed.": [
-        "Tuontiasi ei käsitellä."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
@@ -6456,9 +6456,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Haluatko varmasti hylätä tuonnin?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Haluatko varmasti poistaa ${ count } yhteystietoryhmän pysyvästi?",
