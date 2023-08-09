@@ -454,7 +454,7 @@ export const getPlanOffer = (plan: Plan) => {
 };
 
 /**
- * Currently there is no convinent way to get the number of IPs for a VPN subscription.
+ * Currently there is no convenient way to get the number of IPs for a VPN subscription.
  * There is no dedicated field for that in the API.
  * That's a hack that counts the number of IP addons.
  */
