@@ -188,7 +188,7 @@ function GeneratedLinkState({
                         ) : (
                             <>
                                 <div className="flex-no-min-children flex-nowrap mb-4 on-mobile-flex-column mb-2 md:mb-0">
-                                    <Label htmlFor="passwordModeToggle">
+                                    <Label htmlFor="passwordModeToggle" data-testid="sharing-modal-passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
@@ -203,7 +203,6 @@ function GeneratedLinkState({
                                                     setPassword(customPassword);
                                                 }
                                             }}
-                                            data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
@@ -233,7 +232,10 @@ function GeneratedLinkState({
                                     </div>
                                 </div>
                                 <div className="flex-no-min-children flex-nowrap on-mobile-flex-column mb-2 md:mb-4">
-                                    <Label htmlFor="expirationTimeModeToggle">
+                                    <Label
+                                        htmlFor="expirationTimeModeToggle"
+                                        data-testid="sharing-modal-expirationTimeModeToggle"
+                                    >
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
@@ -243,7 +245,6 @@ function GeneratedLinkState({
                                             disabled={saving}
                                             checked={expirationToggledOn}
                                             onChange={onIncludeExpirationTimeToogle}
-                                            data-testid="sharing-modal-expirationTimeModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
