@@ -116,6 +116,9 @@ export const isBounced = (message: Pick<Message, 'Sender' | 'Subject'>) => {
 };
 
 export const getSender = (message?: Pick<Message, 'Sender'>) => message?.Sender;
+
+export const hasSimpleLoginSender = (message: Pick<Message, 'Sender'>) => !!message.Sender?.IsSimpleLogin;
+
 export const getRecipients = (message?: Partial<Message>) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
     return [...ToList, ...CCList, ...BCCList];
