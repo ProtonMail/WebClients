@@ -51,7 +51,10 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                         <>
                             <QuickSettingsSectionHeadline>
                                 {c('Label').t`Theme`}:
-                                <span className="color-weak ml-1 text-no-bold">
+                                <span
+                                    className="color-weak ml-1 text-no-bold"
+                                    data-testid="drawer-quick-settings:current-theme"
+                                >
                                     {PROTON_THEMES_MAP[information.theme].label}
                                 </span>
                             </QuickSettingsSectionHeadline>
@@ -73,6 +76,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 className="ml-6"
                                 checked={settings.Mode === ThemeModeSetting.Auto}
                                 onChange={(e) => setAutoTheme(e.target.checked)}
+                                data-testid="drawer-quick-settings:auto-theme-toggle"
                             />
                         }
                     />
@@ -130,6 +134,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                     loading={betaToggleLoading}
                                     checked={earlyAccess.value}
                                     onChange={handleChangeEarlyAccess}
+                                    data-testid="drawer-quick-settings:beta-access-toggle"
                                 />
                             }
                         />

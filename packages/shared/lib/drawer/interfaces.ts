@@ -236,4 +236,5 @@ export interface QuickSettingsReminders {
     color?: ThemeColor;
     text?: string;
     callback: () => void;
+    testID: string;
 }

@@ -80,6 +80,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
                                             'rounded-sm border',
                                             themeIdentifier === identifier ? 'border-primary' : 'border-weak'
                                         )}
+                                        data-testid={`theme-card:theme-${label}`}
                                     />
                                 </span>
                                 <span className="">{label}</span>
