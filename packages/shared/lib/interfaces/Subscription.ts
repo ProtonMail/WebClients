@@ -3,14 +3,16 @@ import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
 export type Currency = 'EUR' | 'CHF' | 'USD';
 export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS | CYCLE.THIRTY | CYCLE.FIFTEEN;
 
-export interface Pricing {
-    [CYCLE.MONTHLY]: number;
-    [CYCLE.YEARLY]: number;
-    [CYCLE.TWO_YEARS]: number;
+export interface CycleMapping<T> {
+    [CYCLE.MONTHLY]: T;
+    [CYCLE.YEARLY]: T;
+    [CYCLE.TWO_YEARS]: T;
     // Not always included for all plans
-    [CYCLE.THIRTY]?: number;
-    [CYCLE.FIFTEEN]?: number;
+    [CYCLE.THIRTY]?: T;
+    [CYCLE.FIFTEEN]?: T;
 }
+
+export type Pricing = CycleMapping<number>;
 
 export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier' | 'MaxIPs';
 

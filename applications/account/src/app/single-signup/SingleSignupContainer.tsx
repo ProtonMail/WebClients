@@ -21,12 +21,12 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CLIENT_TYPES, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsVpnB2BPlan, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Api, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Api, Cycle, CycleMapping, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
@@ -135,7 +135,8 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         const getSubscriptionData = async (
             api: Api,
             plans: Plan[],
-            signupParameters: SignupParameters
+            signupParameters: SignupParameters,
+            cycle: Cycle
         ): Promise<SubscriptionData> => {
             const prePlanIDs = getPlanIDsFromParams(plans, signupParameters);
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
@@ -143,7 +144,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 api,
                 prePlanIDs || {},
                 currency,
-                signupParameters.cycle,
+                cycle,
                 signupParameters.coupon
             )
                 .then((checkResult) => {
@@ -158,7 +159,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         checkResult: getFreeCheckResult(
                             signupParameters.currency,
                             // "Reset" the cycle because the custom cycles are only valid with a coupon
-                            getNormalCycleFromCustomCycle(signupParameters.cycle)
+                            getNormalCycleFromCustomCycle(cycle)
                         ),
                         planIDs: undefined,
                     };
@@ -170,6 +171,28 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 checkResult,
                 planIDs: planIDs || {},
                 skipUpsell: !!planIDs,
+            };
+        };
+
+        const getInitialSubscriptionDataForAllCycles = async (Plans: Plan[]) => {
+            const [subscriptionDataMonthly, subscriptionDataYearly, subscriptionDataTwoYears] = await Promise.all(
+                [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].map((cycle) =>
+                    getSubscriptionData(silentApi, Plans, signupParameters, cycle)
+                )
+            );
+
+            const subscriptionDataCycleMapping: CycleMapping<SubscriptionData> = {
+                [CYCLE.MONTHLY]: subscriptionDataMonthly,
+                [CYCLE.YEARLY]: subscriptionDataYearly,
+                [CYCLE.TWO_YEARS]: subscriptionDataTwoYears,
+            };
+
+            const subscriptionData: SubscriptionData =
+                subscriptionDataCycleMapping[signupParameters.cycle] ?? subscriptionDataCycleMapping[CYCLE.TWO_YEARS];
+
+            return {
+                subscriptionData,
+                subscriptionDataCycleMapping,
             };
         };
 
@@ -190,7 +213,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 ).then(({ Plans }) => Plans),
             ]);
 
-            const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
+            const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles(
+                Plans
+            );
             const plansMap = toMap(Plans, 'Name') as PlansMap;
 
             void measure({
@@ -211,6 +236,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 plansMap,
                 paymentMethodStatus,
                 subscriptionData,
+                subscriptionDataCycleMapping,
             });
         };
 

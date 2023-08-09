@@ -64,11 +64,11 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { browserLocaleCode } from '@proton/shared/lib/i18n';
-import { Currency, Cycle, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -426,11 +426,15 @@ const Step1 = ({
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
 
-        const optimisticCheckResult = getOptimisticCheckResult({
-            plansMap: model.plansMap,
-            planIDs: newPlanIDs,
-            cycle: newCycle,
-        });
+        // Try a pre-saved check first. If it's not available, then use the default optimistic one.
+        // With the regular cycles, it should be available.
+        const optimisticCheckResult =
+            model.subscriptionDataCycleMapping[newCycle]?.checkResult ??
+            getOptimisticCheckResult({
+                plansMap: model.plansMap,
+                planIDs: newPlanIDs,
+                cycle: newCycle,
+            });
 
         const newOptimistic = {
             ...optimistic,
@@ -447,7 +451,8 @@ const Step1 = ({
 
             setOptimisticDiff(newOptimistic);
 
-            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, couponCode);
+            const coupon = couponCode ?? model.subscriptionDataCycleMapping[newCycle]?.checkResult.Coupon?.Code;
+            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, coupon);
 
             if (!validateFlow()) {
                 return;
@@ -678,6 +683,27 @@ const Step1 = ({
 
     const totals = getTotalFromPricing(pricing, options.cycle);
 
+    const getCheckoutForCycle = (cycle: Cycle) => {
+        // This is an assumption that this page always uses so-called regular cycles:
+        // monthly, yearly and two-yearly. 15 and 30 were temporary promotions.
+        // If this react component must handle other cycles, then this code should be changed.
+        const regularCycle = cycle as CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS;
+
+        return getCheckout({
+            planIDs: options.planIDs,
+            plansMap,
+            checkResult: model.subscriptionDataCycleMapping[regularCycle].checkResult,
+        });
+    };
+
+    const checkoutMapping: CycleMapping<SubscriptionCheckoutData> = {
+        [CYCLE.MONTHLY]: getCheckoutForCycle(CYCLE.MONTHLY),
+        [CYCLE.YEARLY]: getCheckoutForCycle(CYCLE.YEARLY),
+        [CYCLE.TWO_YEARS]: getCheckoutForCycle(CYCLE.TWO_YEARS),
+    };
+
+    const selectedCycleCheckout = checkoutMapping[options.cycle] as SubscriptionCheckoutData;
+
     const cycles = isDesktop
         ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
         : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
@@ -805,7 +831,6 @@ const Step1 = ({
                         <BoxContent>
                             <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
                                 <CycleSelector
-                                    pricing={pricing}
                                     onGetTheDeal={(cycle) => {
                                         handleUpdate('plan');
                                         setToggleUpsell(undefined);
@@ -822,6 +847,7 @@ const Step1 = ({
                                             handleChangeCycle(cycle, upsellFrom !== undefined ? 'upsell' : undefined)
                                         ).catch(noop);
                                     }}
+                                    checkoutMapping={checkoutMapping}
                                 />
                             </div>
                             <div className="flex flex-justify-end mt-10 on-tablet-flex-justify-center">
@@ -1158,8 +1184,12 @@ const Step1 = ({
                                                     return null;
                                                 }
 
-                                                const pricePerMonth = totals.totalPerMonth;
-                                                const price = getSimplePriceString(options.currency, pricePerMonth, '');
+                                                const pricePerMonth = getSimplePriceString(
+                                                    options.currency,
+                                                    selectedCycleCheckout.withDiscountPerMonth,
+                                                    ''
+                                                );
+
                                                 const regularPrice = getSimplePriceString(
                                                     options.currency,
                                                     totals.totalNoDiscountPerMonth,
@@ -1189,7 +1219,9 @@ const Step1 = ({
                                                                         {planInformation.title}
                                                                     </div>
                                                                     {!isB2bPlan && (
-                                                                        <div className="text-rg text-bold">{price}</div>
+                                                                        <div className="text-rg text-bold">
+                                                                            {pricePerMonth}
+                                                                        </div>
                                                                     )}
                                                                 </div>
                                                                 <div className="flex-item-fluid flex flex-align-items-center gap-2">
@@ -1197,10 +1229,12 @@ const Step1 = ({
                                                                         <span className="color-weak mr-1">
                                                                             {getBilledText(options.cycle)}
                                                                         </span>
-                                                                        {totals.discountPercentage > 0 && (
+                                                                        {selectedCycleCheckout.discountPercent > 0 && (
                                                                             <SaveLabel2
                                                                                 highlightPrice={true}
-                                                                                percent={totals.discountPercentage}
+                                                                                percent={
+                                                                                    selectedCycleCheckout.discountPercent
+                                                                                }
                                                                             />
                                                                         )}
                                                                     </div>
@@ -1211,16 +1245,17 @@ const Step1 = ({
                                                                         </div>
                                                                     )}
 
-                                                                    {!isB2bPlan && totals.discountPercentage > 0 && (
-                                                                        <span className="inline-flex">
-                                                                            <span className="text-sm color-weak text-strike text-ellipsis">
-                                                                                {regularPrice}
+                                                                    {!isB2bPlan &&
+                                                                        selectedCycleCheckout.discountPercent > 0 && (
+                                                                            <span className="inline-flex">
+                                                                                <span className="text-sm color-weak text-strike text-ellipsis">
+                                                                                    {regularPrice}
+                                                                                </span>
+                                                                                <span className="text-sm color-weak ml-1">{` ${c(
+                                                                                    'Suffix'
+                                                                                ).t`/month`}`}</span>
                                                                             </span>
-                                                                            <span className="text-sm color-weak ml-1">{` ${c(
-                                                                                'Suffix'
-                                                                            ).t`/month`}`}</span>
-                                                                        </span>
-                                                                    )}
+                                                                        )}
 
                                                                     {free && (
                                                                         <span className="text-sm color-weak ml-1">{` ${c(
@@ -1277,11 +1312,11 @@ const Step1 = ({
                                                                             if (!toCycle) {
                                                                                 return null;
                                                                             }
-                                                                            const totals = getTotalFromPricing(
-                                                                                pricing,
-                                                                                toCycle
-                                                                            );
-                                                                            const discount = `${totals.discountPercentage}%`;
+
+                                                                            const toCycleCheckout =
+                                                                                getCheckoutForCycle(toCycle);
+
+                                                                            const discount = `${toCycleCheckout.discountPercent}%`;
                                                                             const billingCycle =
                                                                                 getBillingCycleText(toCycle);
                                                                             if (!billingCycle) {
@@ -1415,13 +1450,13 @@ const Step1 = ({
                                             )}
 
                                             <div className="mx-3 flex flex-column gap-2">
-                                                {showLifetimeDeal && totals.discountPercentage > 0 && (
+                                                {showLifetimeDeal && selectedCycleCheckout.discountPercent > 0 && (
                                                     <div className={clsx('flex flex-justify-space-between text-rg')}>
                                                         <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
                                                         <span>
                                                             <span className="color-success">
                                                                 {(() => {
-                                                                    const discountPercentage = `−${totals.discountPercentage}%`;
+                                                                    const discountPercentage = `−${selectedCycleCheckout.discountPercent}%`;
                                                                     return c('Info').t`${discountPercentage} forever`;
                                                                 })()}
                                                             </span>
