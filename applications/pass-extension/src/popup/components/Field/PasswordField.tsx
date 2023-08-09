@@ -1,12 +1,14 @@
 import { type VFC, useCallback } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import { PasswordGeneratorButton } from '../PasswordGenerator/PasswordGeneratorButton';
 import { TextField, type TextFieldProps } from './TextField';
 
 type Props = { onPasswordGenerated: (password: string) => void } & TextFieldProps;
 
 export const PasswordField: VFC<Props> = (props) => {
-    const { field, form, onPasswordGenerated, ...rest } = props;
+    const { field, form, onPasswordGenerated, className, ...rest } = props;
 
     const handlePasswordGeneratorDone = useCallback(
         async (password: string) => {
@@ -21,5 +23,14 @@ export const PasswordField: VFC<Props> = (props) => {
             <PasswordGeneratorButton key="password-generator-button" onSubmit={handlePasswordGeneratorDone} />
         ) : undefined;
 
-    return <TextField hidden field={field} form={form} {...rest} actions={actions} />;
+    return (
+        <TextField
+            hidden
+            field={field}
+            form={form}
+            {...rest}
+            actions={actions}
+            className={clsx('text-monospace', className)}
+        />
+    );
 };
