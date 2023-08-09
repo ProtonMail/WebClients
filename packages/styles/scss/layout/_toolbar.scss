@@ -1,13 +1,16 @@
 .toolbar {
 	--padding-toolbar-button: #{em(9)};
 	--padding-toolbar-button-dropdown: #{em(9)};
+	--height-toolbar-button: #{rem(36)};
 
 	position: relative;
 	z-index: 1;
-	block-size: rem($toolbar-height);
-	border-block-end: 1px solid var(--toolbar-border-bottom-color);
 	background-color: var(--toolbar-background-color);
 	color: var(--toolbar-text-color);
+
+	&:not(#{&}--in-container) {
+		border-block-end: 1px solid var(--toolbar-border-bottom-color);
+	}
 
 	// this adds the same border radius as .main
 	// needed to fix a bug in safari where the toolbar escapes overflow: hidden
@@ -19,21 +22,34 @@
 		border-start-end-radius: var(--border-radius-md);
 	}
 
-	&-inner {
-		margin-inline: em(5.5);
-		padding-block: em(3.5);
-		gap: em(8);
-		align-items: stretch;
+	&--heavy {
+		block-size: rem(45);
+	}
+
+	&--in-container {
+		block-size: 100%;
 	}
 
 	&-button {
 		@extend .interactive;
 
 		position: relative;
-		display: flex; // alignment fix on Chrome
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
 		padding-inline: var(--padding-toolbar-button);
 		border-radius: var(--border-radius-md);
 		border: 1px solid transparent;
+		block-size: var(--height-toolbar-button);
+
+		&--small {
+			--height-toolbar-button: #{rem(28)};
+		}
+
+		&--small-icon {
+			--padding-toolbar-button: #{em(5)};
+			--padding-toolbar-button-dropdown: #{em(5)};
+		}
 
 		// Increase click area to toolbar height
 		&::before {
@@ -46,10 +62,8 @@
 			padding-inline: var(--padding-toolbar-button-dropdown);
 
 			&-more-selections {
-				margin-inline-start: em(2); // move it closer to checkbox
-				margin-inline-end: em(8); // more space to buttons on the right
-
-				--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
+				--padding-toolbar-button-dropdown: 0;
+				--height-toolbar-button: rem(20) !important;
 			}
 		}
 	}
@@ -60,8 +74,9 @@
 	}
 
 	.vr.vr {
-		block-size: #{em(28)};
+		block-size: rem(24);
 		align-self: center;
+		border-inline-end-color: var(--toolbar-border-bottom-color);
 	}
 
 	button[aria-disabled='true'],
@@ -84,11 +99,23 @@
 
 	// select all
 	.select-all {
-		&-container {
-			margin-inline-start: em(16);
+		&-wrapper {
+			block-size: rem(28);
 
-			@include media('>small') {
-				margin-inline-start: em(25);
+			&:hover {
+				background: var(--interaction-default-hover);
+
+				button {
+					background-color: transparent;
+				}
+			}
+
+			&:has(:hover, :focus, [aria-expanded='true']) {
+				background: var(--interaction-default-hover);
+
+				button {
+					background-color: transparent;
+				}
 			}
 		}
 
@@ -97,19 +124,20 @@
 		}
 	}
 
-	// adaptations for compact mode
-	.is-compact & {
-		.select-all-container {
-			margin-inline-start: em(10);
-
-			@include media('>small') {
-				margin-inline-start: em(7);
-				padding-inline-start: 0;
-			}
-		}
-	}
-
 	@include media('<=small') {
 		border-radius: 0;
+	}
+
+	&-page-number-dropdown {
+		&#{&} {
+			min-inline-size: em(64);
+			padding: 0;
+			display: block;
+			text-align: center;
+		}
+
+		span {
+			margin-inline: em(1);
+		}
 	}
 }

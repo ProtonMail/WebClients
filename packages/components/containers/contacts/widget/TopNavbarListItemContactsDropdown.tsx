@@ -17,7 +17,7 @@ import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 import { generateUID } from '@proton/components/helpers';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -97,7 +97,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
             handleClose();
         } else {
             if (isNarrow) {
-                toggleDrawerApp({ app: APPS.PROTONCONTACTS })();
+                toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
             } else {
                 toggle();
             }

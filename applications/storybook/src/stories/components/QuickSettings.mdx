@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
+
+import {
+    DefaultQuickSettings,
+    QuickSettingsMain,
+    QuickSettingsSection,
+    QuickSettingsSectionHeadline,
+    QuickSettingsSectionRow,
+} from '@proton/components/components/drawer/views/quickSettings';
+
+# QuickSettings
+
+The QuickSettings are shown in the Drawer. QuickSettings can be added using `QuickSettingsSection` and `QuickSettingsSectionRow` in combination with the existing `Toggle` and `Select` components.
+
+<Canvas withSource="open">
+    <Story id="components-quicksettings--basic" />
+</Canvas>
+
+<ArgsTable story={PRIMARY_STORY} />

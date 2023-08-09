@@ -1,36 +1,17 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks';
-import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { TimeZoneSelector } from '../../../components';
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import SecondaryTimezoneSelector from './SecondaryTimezoneSelector';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
 }
 
-const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, DisplaySecondaryTimezone } }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-    const [loadingSecondaryTimeZone, withLoadingSecondaryTimeZone] = useLoading();
-
-    const [timezone] = useState(() => getTimezone());
-
-    const handleChange = async (data: Partial<CalendarUserSettings>) => {
-        await api(updateCalendarUserSettings(data));
-        await call();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
-
+const SecondaryTimezoneSection = ({ calendarUserSettings }: Props) => {
     const timeZoneSelectorId = 'secondary-timezone';
 
     return (
@@ -41,14 +22,10 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-                <TimeZoneSelector
+                <SecondaryTimezoneSelector
                     id={timeZoneSelectorId}
+                    calendarUserSettings={calendarUserSettings}
                     data-testid="settings/secondary-time-zone:dropdown"
-                    loading={loadingSecondaryTimeZone}
-                    disabled={!DisplaySecondaryTimezone}
-                    timezone={SecondaryTimezone || timezone}
-                    onChange={(SecondaryTimezone) => withLoadingSecondaryTimeZone(handleChange({ SecondaryTimezone }))}
-                    telemetrySource="secondary_timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>

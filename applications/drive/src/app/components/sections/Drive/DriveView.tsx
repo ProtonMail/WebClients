@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { PrivateMainArea, Toolbar } from '@proton/components';
+import { Toolbar } from '@proton/components';
 import { LinkURLType, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
@@ -9,6 +9,7 @@ import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
+import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import Drive from './Drive';
 import DriveToolbar from './DriveToolbar';
 
@@ -33,28 +34,27 @@ function DriveView() {
         }
     }, [folderView.error]);
 
+    const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
+
+    const toolbar = activeFolder ? (
+        <DriveToolbar
+            isLinkReadOnly={folderView.isActiveLinkReadOnly}
+            shareId={activeFolder.shareId}
+            linkId={activeFolder.linkId}
+            items={folderView.items}
+        />
+    ) : (
+        <Toolbar className="toolbar--in-container" />
+    );
+
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
             <UploadDragDrop
                 className="flex flex-column flex-nowrap flex-item-fluid"
                 disabled={folderView.isActiveLinkReadOnly}
             >
-                {activeFolder ? (
-                    <DriveToolbar
-                        isLinkReadOnly={folderView.isActiveLinkReadOnly}
-                        shareId={activeFolder.shareId}
-                        linkId={activeFolder.linkId}
-                        items={folderView.items}
-                    />
-                ) : (
-                    <Toolbar />
-                )}
-                <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                    <div className="max-w100 py-2 px-3 border-bottom section--header">
-                        {activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />}
-                    </div>
-                    {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
-                </PrivateMainArea>
+                <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
+                {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
             </UploadDragDrop>
         </FileBrowserStateProvider>
     );

@@ -1,5 +1,8 @@
 export interface Breakpoints {
     breakpoint: string;
+    isLargeDesktop: boolean;
+    isMediumDesktop: boolean;
+    isSmallDesktop: boolean;
     isDesktop: boolean;
     isTablet: boolean;
     isMobile: boolean;

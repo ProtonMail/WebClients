@@ -10,6 +10,7 @@ import {
     FeatureCode,
     Icon,
     Sidebar,
+    SidebarContactItem,
     SidebarList,
     SidebarListItemHeaderLink,
     SidebarNav,
@@ -19,6 +20,7 @@ import {
     Spotlight,
     Tooltip,
     useApi,
+    useDrawer,
     useEventManager,
     useFeature,
     useModalState,
@@ -31,6 +33,7 @@ import CalendarLimitReachedModal from '@proton/components/containers/calendar/Ca
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
+import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { useLoading } from '@proton/hooks';
 import { updateMember } from '@proton/shared/lib/api/calendars';
@@ -39,6 +42,7 @@ import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/cal
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -74,6 +78,7 @@ const CalendarSidebar = ({
     const api = useApi();
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
+    const { toggleDrawerApp } = useDrawer();
 
     const [loadingVisibility, withLoadingVisibility] = useLoading();
     const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
@@ -308,6 +313,8 @@ const CalendarSidebar = ({
         </SidebarList>
     ) : null;
 
+    const displayContactsInHeader = useDisplayContactsWidget();
+
     return (
         <Sidebar
             appsDropdown={<AppsDropdown app={APPS.PROTONCALENDAR} />}
@@ -316,6 +323,16 @@ const CalendarSidebar = ({
             onToggleExpand={onToggleExpand}
             primary={primaryAction}
             version={<CalendarSidebarVersion />}
+            contactsButton={
+                displayContactsInHeader && (
+                    <SidebarContactItem
+                        onClick={() => {
+                            onToggleExpand();
+                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
+                        }}
+                    />
+                )
+            }
         >
             {renderCalendarModal && (
                 <CalendarModal

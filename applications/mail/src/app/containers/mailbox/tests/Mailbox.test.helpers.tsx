@@ -1,3 +1,5 @@
+import { MutableRefObject, ReactElement, ReactNode } from 'react';
+
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -49,6 +51,9 @@ export const props = {
     elementID: undefined,
     onCompose: jest.fn(),
     isComposerOpened: false,
+    drawerSidebarButtons: [] as ReactElement[],
+    drawerSettingsButton: null as ReactNode,
+    drawerSpotlightSeenRef: { current: false } as MutableRefObject<boolean>,
 };
 
 const defaultSort = { sort: 'Time', desc: true } as Sort;

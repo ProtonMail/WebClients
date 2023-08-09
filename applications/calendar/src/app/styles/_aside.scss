@@ -7,11 +7,7 @@
 
 .calendar-primary-timezone-cell,
 .calendar-secondary-timezone-cell {
-	border-block-end: 1px solid var(--border-norm);
-}
-
-.calendar-secondary-timezone-cell {
-	border-inline-end: 1px solid var(--border-norm);
+	border-inline: 1px solid var(--border-norm);
 	background-color: var(--background-weak);
 
 	&--header {
@@ -22,6 +18,11 @@
 	}
 }
 
-.sticky-title .calendar-grid-dayLine::after {
-	border-inline-start: 0;
+.calendar-primary-timezone-cell {
+	border-color: transparent;
+	background-color: transparent;
+
+	&--header {
+		border-color: transparent;
+	}
 }

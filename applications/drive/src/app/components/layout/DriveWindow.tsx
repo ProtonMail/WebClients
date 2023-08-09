@@ -7,9 +7,10 @@ import {
     ContactDrawerAppButton,
     DrawerApp,
     DrawerSidebar,
-    DrawerVisibilityButton,
     MainLogo,
     PrivateAppContainer,
+    PrivateMainArea,
+    QuickSettingsAppButton,
     TopBanners,
     useDrawer,
     useOpenDrawerOnLoad,
@@ -18,11 +19,13 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
+import DriveQuickSettings from '../drawer/DriveQuickSettings';
 import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
 import ActionMenuButton from './sidebar/ActionMenu/ActionMenuButton';
@@ -41,7 +44,7 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
 
     useOpenDrawerOnLoad();
-    const { showDrawerSidebar, appInView } = useDrawer();
+    const { appInView } = useDrawer();
     const location = useLocation();
 
     const drawerSpotlightSeenRef = useRef(false);
@@ -69,7 +72,7 @@ const DriveWindow = ({ children }: Props) => {
         permissions.contacts && (
             <ContactDrawerAppButton
                 onClick={markSpotlightAsSeen}
-                aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
+                aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)}
             />
         ),
         permissions.calendar && (
@@ -79,6 +82,10 @@ const DriveWindow = ({ children }: Props) => {
             />
         ),
     ].filter(isTruthy);
+
+    const drawerSettingsButton = (
+        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
+    );
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
 
@@ -91,21 +98,26 @@ const DriveWindow = ({ children }: Props) => {
         />
     );
 
-    const canShowDrawer = drawerSidebarButtons.length > 0;
-
     return (
         <PrivateAppContainer
             top={top}
             header={header}
             sidebar={sidebar}
-            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} spotlightSeenRef={drawerSpotlightSeenRef} />}
-            drawerVisibilityButton={
-                canShowDrawer ? <DrawerVisibilityButton spotlightSeenRef={drawerSpotlightSeenRef} /> : undefined
-            }
-            drawerApp={<DrawerApp />}
-            mainBordered={canShowDrawer && showDrawerSidebar}
+            drawerApp={<DrawerApp customAppSettings={<DriveQuickSettings />} />}
         >
-            <AppErrorBoundary>{children}</AppErrorBoundary>
+            <PrivateMainArea
+                drawerSidebar={
+                    <DrawerSidebar
+                        buttons={drawerSidebarButtons}
+                        spotlightSeenRef={drawerSpotlightSeenRef}
+                        settingsButton={drawerSettingsButton}
+                    />
+                }
+            >
+                <div className="flex flex-column flex-nowrap w100">
+                    <AppErrorBoundary>{children}</AppErrorBoundary>
+                </div>
+            </PrivateMainArea>
         </PrivateAppContainer>
     );
 };

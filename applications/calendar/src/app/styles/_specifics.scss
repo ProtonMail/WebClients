@@ -1,10 +1,26 @@
+@import '~@proton/styles/scss/lib';
+
 .calendar-fullday-row {
 	border-block-end: $calendar-grid-border;
 	padding-block-end: $calendar-gridcell-gutter;
+
+	.calendar-aside {
+		margin-block-end: -$calendar-gridcell-gutter;
+	}
+}
+
+.calendar-row-heading {
+	z-index: 1;
+
+	> div {
+		padding-inline-end: rem(11);
+	}
 }
 
 .calendar-first-row-heading {
-	border-block-end: $calendar-grid-border;
+	@include media('<=medium') {
+		font-size: rem(12);
+	}
 }
 
 .address-item {

@@ -37,6 +37,7 @@ const useKeyTransparencyNotification = (): ThemeColor | undefined => {
         ktActivation,
     } = useKeyTransparencyContext();
     const showNotification = ktActivation === KeyTransparencyActivation.SHOW_UI && selfAuditResult;
+
     if (!showNotification) {
         return;
     }

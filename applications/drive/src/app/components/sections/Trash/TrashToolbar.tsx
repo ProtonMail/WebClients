@@ -40,9 +40,10 @@ const TrashToolbar = ({ items }: Props) => {
     };
 
     return (
-        <Toolbar>
-            {renderSelectionActions()}
-            <span className="ml-auto flex">
+        <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
+            <div className="gap-2 flex flex-nowrap flex-item-noshrink">{renderSelectionActions()}</div>
+            <span className="ml-auto flex flex-nowrap flex-item-noshrink">
+                {selectedItems.length > 0 && <Vr className="no-mobile no-tablet mx-2" />}
                 <LayoutButton />
             </span>
         </Toolbar>

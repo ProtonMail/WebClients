@@ -56,7 +56,7 @@ export const GridHeader = <T extends string>({
         <thead onContextMenu={stopPropagation}>
             <TableRowSticky scrollAreaRef={scrollAreaRef}>
                 <TableHeaderCell className="file-browser-header-checkbox-cell">
-                    <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
+                    <div role="presentation" key="select-all" className="flex pl-2" onClick={stopPropagation}>
                         <Checkbox
                             indeterminate={selection?.selectionState === SelectionState.SOME}
                             className="increase-click-surface mr-1"
@@ -69,7 +69,7 @@ export const GridHeader = <T extends string>({
                             }
                         >
                             {selectedCount ? (
-                                <span className="ml-4">{c('Info').jt`${selectedCount} selected`}</span>
+                                <span className="ml-2">{c('Info').jt`${selectedCount} selected`}</span>
                             ) : null}
                         </Checkbox>
                         {selection?.selectionState !== SelectionState.NONE && isLoading ? (

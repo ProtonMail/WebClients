@@ -4,15 +4,17 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     onOpen: () => void;
     value: string;
     onChange: (newValue: string) => void;
     loading: boolean;
+    adaptWidth: boolean;
 }
 
-const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<HTMLInputElement>) => {
+const MailSearchInput = ({ value, onOpen, onChange, loading, adaptWidth }: Props, ref: Ref<HTMLInputElement>) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const handleClear = () => {
@@ -27,7 +29,7 @@ const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<H
     };
 
     return (
-        <div className="searchbox flex" role="search">
+        <div className={clsx('searchbox flex', adaptWidth && 'searchbox--adaptWidth')} role="search">
             <div ref={ref} className="w100 m-auto">
                 <Input
                     ref={inputRef}
