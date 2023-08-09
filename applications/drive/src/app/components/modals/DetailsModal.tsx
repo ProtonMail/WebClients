@@ -209,6 +209,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
                     signatureAddress={link.signatureAddress}
+                    corruptedLink={link.corruptedLink}
                     isFile={link.isFile}
                     name={link.name}
                     className="mb-4"
