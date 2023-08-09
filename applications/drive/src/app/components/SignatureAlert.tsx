@@ -13,6 +13,7 @@ type Props = {
     signatureAddress: string | undefined;
     isFile: boolean;
     name: string;
+    corruptedLink?: boolean;
     className?: string;
 };
 
@@ -20,6 +21,7 @@ export default function SignatureAlert({
     loading,
     signatureIssues,
     signatureNetworkError,
+    corruptedLink,
     className,
     ...props
 }: Props) {
@@ -27,6 +29,15 @@ export default function SignatureAlert({
         return (
             <Alert type="info" className={className}>
                 <TextLoader className="m-0">{c('Info').t`Checking signatures`}</TextLoader>
+            </Alert>
+        );
+    }
+
+    if (corruptedLink) {
+        return (
+            <Alert type="warning" className={className}>
+                <span>{c('Info')
+                    .t`Unfortunately, it appears that the file or some of its data cannot be decrypted.`}</span>
             </Alert>
         );
     }
