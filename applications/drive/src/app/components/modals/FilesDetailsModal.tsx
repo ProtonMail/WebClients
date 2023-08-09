@@ -50,7 +50,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
             <ModalTwoContent>
                 <Row>
                     <Label style={{ cursor: 'default' }}>{labelCount}</Label>
-                    <Field className="pt-2">
+                    <Field className="pt-2" data-testid="number-of-items">
                         <b>{count}</b>
                     </Field>
                 </Row>
