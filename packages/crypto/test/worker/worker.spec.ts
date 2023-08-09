@@ -27,7 +27,13 @@ import {
     testMessageResult,
     testPrivateKeyLegacy,
 } from './decryptMessageLegacy.data';
-import { ecc25519Key, eddsaElGamalSubkey, keyWithThirdPartyCertifications, rsa512BitsKey } from './keys.data';
+import {
+    ecc25519Key,
+    eddsaElGamalSubkey,
+    keyWithP256AndCurve25519Subkeys,
+    keyWithThirdPartyCertifications,
+    rsa512BitsKey,
+} from './keys.data';
 import {
     messageWithEmptySignature,
     key as mimeKey,
@@ -912,17 +918,86 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
             passphrase: null,
         });
 
-        const { proxyParameter, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
+        const { proxyParameters, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
             forwarderKey: bobKey,
             userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
             passphrase: 'passphrase',
         });
-        expect(proxyParameter).to.have.length(32);
+        expect(proxyParameters).to.have.length(1);
+        expect(proxyParameters[0]).to.have.length(32);
         const charlieKey = await CryptoWorker.importPrivateKey({
             armoredKey: forwardeeKey,
             passphrase: 'passphrase',
         });
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+    });
+
+    it('generateE2EEForwardingMaterial - supports proxying multiple subkeys', async () => {
+        const bobKey = await CryptoWorker.importPrivateKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
+BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
+zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
+AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
+mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
+nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
+GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
+mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
+ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
+YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
+I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
+Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
+7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
+AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
+=p5Q+
+-----END PGP PRIVATE KEY BLOCK-----`,
+            passphrase: null,
+        });
+
+        const { proxyParameters, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
+            forwarderKey: bobKey,
+            userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
+            passphrase: 'passphrase',
+        });
+        expect(proxyParameters).to.have.length(1);
+        expect(proxyParameters[0]).to.have.length(32);
+        const charlieKey = await CryptoWorker.importPrivateKey({
+            armoredKey: forwardeeKey,
+            passphrase: 'passphrase',
+        });
+        expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+    });
+
+    it('generateE2EEForwardingMaterial - throws on unsuitable forwarder key (NIST P256)', async () => {
+        const bobKey = await CryptoWorker.importPrivateKey({
+            armoredKey: keyWithP256AndCurve25519Subkeys,
+            passphrase: null,
+        });
+
+        await expect(
+            CryptoWorker.generateE2EEForwardingMaterial({
+                forwarderKey: bobKey,
+                userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
+                passphrase: 'passphrase',
+            })
+        ).to.be.rejectedWith(/unsuitable for forwarding/);
+    });
+
+    it('doesKeySupportE2EEForwarding - returns true on newly generated key', async () => {
+        // this test is a sanity check of our defaults
+        const bobKey = await CryptoWorker.generateKey({ userIDs: { email: 'bob@test.com' } });
+
+        expect(await CryptoWorker.doesKeySupportE2EEForwarding({ forwarderKey: bobKey })).to.be.true;
+    });
+
+    it('doesKeySupportE2EEForwarding - returns false for P256 key', async () => {
+        const bobKey = await CryptoWorker.importPrivateKey({
+            armoredKey: keyWithP256AndCurve25519Subkeys,
+            passphrase: null,
+        });
+
+        expect(await CryptoWorker.doesKeySupportE2EEForwarding({ forwarderKey: bobKey })).to.be.false;
     });
 
     describe('Key management API', () => {
