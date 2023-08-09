@@ -10,7 +10,7 @@ import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/u
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import { UserDropdown } from '../..';
+import { UserDropdown, useActiveBreakpoint } from '../..';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
@@ -57,6 +57,7 @@ const Sidebar = ({
     const [subscription] = useSubscription();
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
+    const { isNarrow } = useActiveBreakpoint();
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -111,9 +112,11 @@ const Sidebar = ({
                     </div>
                 </div>
 
-                <div className="no-tablet no-desktop px-3">
-                    <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
-                </div>
+                {isNarrow && (
+                    <div className="px-3">
+                        <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
+                    </div>
+                )}
 
                 {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />

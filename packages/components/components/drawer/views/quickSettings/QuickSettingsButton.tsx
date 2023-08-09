@@ -5,13 +5,14 @@ interface Props {
     onClick: () => void;
 }
 
-const QuickSettingsButton = ({ onClick, children }: Props, ref: Ref<HTMLButtonElement>) => {
+const QuickSettingsButton = ({ onClick, children, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     return (
         <button
             onClick={onClick}
             type="button"
             className="color-weak text-no-decoration text-underline-on-hover flex flex-nowrap flex-justify-center text-sm mx-auto"
             ref={ref}
+            {...rest}
         >
             {children}
         </button>

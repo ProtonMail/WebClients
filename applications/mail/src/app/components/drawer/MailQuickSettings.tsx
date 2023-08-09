@@ -147,6 +147,7 @@ const MailQuickSettings = () => {
                   icon: keyTransparencyNotification ? 'exclamation-circle-filled' : undefined,
                   text: c('loc_nightly: Key transparency details').t`Key verification`,
                   callback: handleShowKeyTransparencyModal,
+                  testID: 'key-verification',
               }
             : undefined;
 
@@ -171,6 +172,7 @@ const MailQuickSettings = () => {
                             }}
                             disabled={loadingViewLayout}
                             loading={loadingViewLayout}
+                            data-testid="mail-quick-settings:mailbox-layout-select"
                         >
                             {viewLayoutOptions.map((option) => {
                                 return (
@@ -206,6 +208,7 @@ const MailQuickSettings = () => {
                             }}
                             disabled={loadingDensity}
                             loading={loadingDensity}
+                            data-testid="mail-quick-settings:mailbox-density-select"
                         >
                             {densityOptions.map((option) => {
                                 return (
@@ -241,6 +244,7 @@ const MailQuickSettings = () => {
                             }}
                             disabled={loadingComposerSize}
                             loading={loadingComposerSize}
+                            data-testid="mail-quick-settings:composer-size-select"
                         >
                             {composerSizeOptions.map((option) => {
                                 return (
@@ -269,9 +273,15 @@ const MailQuickSettings = () => {
                         <Info
                             title={c('Info').t`Open shortcut cheat sheet`}
                             onClick={() => setMailShortcutsModalOpen(true)}
+                            data-testid="mail-quick-settings:keyboard-shortcuts-info"
                         />
                     }
-                    action={<ShortcutsToggle id="toggle-shortcuts" />}
+                    action={
+                        <ShortcutsToggle
+                            id="toggle-shortcuts"
+                            data-testid="mail-quick-settings:keyboard-shortcuts-toggle"
+                        />
+                    }
                 />
             </QuickSettingsSection>
 
@@ -279,7 +289,10 @@ const MailQuickSettings = () => {
 
             <QuickSettingsButtonSection>
                 {hasFreeOnboardingChecklist && (
-                    <QuickSettingsButton onClick={() => setOnboardingChecklistProps(true)}>
+                    <QuickSettingsButton
+                        onClick={() => setOnboardingChecklistProps(true)}
+                        data-testid="mail-quick-settings:started-checklist-button"
+                    >
                         {isChecklistFinished
                             ? c('Get started checklist instructions').t`Open checklist`
                             : c('Get started checklist instructions').t`Open checklist and get free storage`}
@@ -287,7 +300,10 @@ const MailQuickSettings = () => {
                 )}
 
                 {isFirefox() && (
-                    <QuickSettingsButton onClick={() => setDefaultHandlerModalOpen(true)}>
+                    <QuickSettingsButton
+                        onClick={() => setDefaultHandlerModalOpen(true)}
+                        data-testid="mail-quick-settings:default-mail-app-button"
+                    >
                         {c('Action').t`Set ${MAIL_APP_NAME} as default email application`}
                     </QuickSettingsButton>
                 )}
@@ -298,7 +314,10 @@ const MailQuickSettings = () => {
                             title={c('Info')
                                 .t`Clears browser data related to message content search including downloaded messages`}
                         >
-                            <QuickSettingsButton onClick={() => setClearBrowserDataModalOpen(true)}>
+                            <QuickSettingsButton
+                                onClick={() => setClearBrowserDataModalOpen(true)}
+                                data-testid="mail-quick-settings:clear-cache-button"
+                            >
                                 {c('Action').t`Clear browser data`}
                             </QuickSettingsButton>
                         </Tooltip>
