@@ -101,6 +101,7 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Replace}
                         onChange={() => setStrategy(TransferConflictStrategy.Replace)}
                         name="strategy"
+                        data-testid="replace-exiting"
                         className="inline-flex flex-nowrap"
                     >
                         <div>
@@ -134,6 +135,7 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Rename}
                         onChange={() => setStrategy(TransferConflictStrategy.Rename)}
                         name="strategy"
+                        data-testid="keep-both"
                         className="inline-flex flex-nowrap"
                     >
                         <div>
@@ -163,6 +165,7 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Skip}
                         onChange={() => setStrategy(TransferConflictStrategy.Skip)}
                         name="strategy"
+                        data-testid="skip-upload"
                         className="inline-flex flex-nowrap"
                     >
                         <div>
@@ -178,7 +181,7 @@ export default function ConflictModal({
                 </Row>
                 <hr />
                 <Row>
-                    <Checkbox onChange={() => setApplyAll((value) => !value)}>
+                    <Checkbox data-testid="apply-to-all" onChange={() => setApplyAll((value) => !value)}>
                         {isFolder
                             ? c('Label').t`Apply to all duplicated folders`
                             : c('Label').t`Apply to all duplicated files`}
