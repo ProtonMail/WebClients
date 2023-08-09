@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/components/hooks';
-import { APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     Audience,
@@ -98,6 +98,38 @@ interface Props {
     filter?: Audience[];
 }
 
+export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
+    const price = plan.Pricing[cycle];
+    if (price === undefined) {
+        return null;
+    }
+
+    const plansThatMustUseAddonPricing = {
+        [PLANS.VPN_PRO]: ADDON_NAMES.MEMBER_VPN_PRO,
+        [PLANS.VPN_BUSINESS]: ADDON_NAMES.MEMBER_VPN_BUSINESS,
+    };
+    type PlanWithAddon = keyof typeof plansThatMustUseAddonPricing;
+
+    // If the current plan is one of those that must use addon pricing,
+    // then we find the matching addon object and return its price
+    for (const planWithAddon of Object.keys(plansThatMustUseAddonPricing) as PlanWithAddon[]) {
+        if (plan.Name !== planWithAddon) {
+            continue;
+        }
+
+        const addonName = plansThatMustUseAddonPricing[planWithAddon];
+        const memberAddon = plansMap[addonName];
+        const memberPrice = memberAddon?.Pricing[cycle];
+        if (memberPrice === undefined) {
+            continue;
+        }
+
+        return memberPrice;
+    }
+
+    return price;
+};
+
 const PlanSelection = ({
     mode,
     hasFreePlan = true,
@@ -190,8 +222,8 @@ const PlanSelection = ({
             ? selectedProductPlans[audience]
             : plansList[0]?.planName;
 
-        const price = plan.Pricing[cycle];
-        if (price === undefined) {
+        const price = getPrice(plan, cycle, plansMap);
+        if (price === null) {
             return null;
         }
 
