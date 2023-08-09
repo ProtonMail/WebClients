@@ -3,7 +3,14 @@ import type { SelectedProductPlans } from '@proton/components/containers/payment
 import type { PaymentMethodStatus } from '@proton/components/payments/core';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import type { Currency, HumanVerificationMethodType, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import type {
+    Currency,
+    CycleMapping,
+    HumanVerificationMethodType,
+    Plan,
+    PlanIDs,
+    PlansMap,
+} from '@proton/shared/lib/interfaces';
 
 import type { InviteData, ReferralData, SessionData, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { SignupCacheResult } from '../signup/interfaces';
@@ -33,6 +40,7 @@ export interface SignupModelV2 {
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     subscriptionData: SubscriptionData;
+    subscriptionDataCycleMapping: CycleMapping<SubscriptionData>;
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;

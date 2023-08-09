@@ -39,6 +39,7 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
+    CYCLE,
     DEFAULT_CURRENCY,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
@@ -49,7 +50,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { Audience, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience, Cycle, CycleMapping, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
@@ -93,16 +94,27 @@ const getRecoveryKit = async () => {
     return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
 };
 
+const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
+    return {
+        skipUpsell: false,
+        currency: DEFAULT_CURRENCY,
+        cycle,
+        planIDs: {},
+        checkResult: getFreeCheckResult(),
+    };
+};
+
+const subscriptionDataCycleMapping: CycleMapping<SubscriptionData> = {
+    [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
+    [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
+    [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
+};
+
 export const defaultSignupModel: SignupModelV2 = {
     session: undefined,
     domains: [],
-    subscriptionData: {
-        skipUpsell: false,
-        currency: 'EUR',
-        cycle: 12,
-        planIDs: {},
-        checkResult: getFreeCheckResult(),
-    },
+    subscriptionData: subscriptionDataCycleMapping[CYCLE.YEARLY],
+    subscriptionDataCycleMapping,
     paymentMethodStatus: {
         Card: false,
         Paypal: false,
