@@ -1,10 +1,11 @@
 import { HTMLAttributes, ReactNode, forwardRef } from 'react';
 
+import Cell from './Cell';
 import TableCell from './TableCell';
 
 interface Props extends HTMLAttributes<HTMLTableRowElement> {
     labels?: ReactNode[];
-    cells?: ReactNode[];
+    cells?: (Cell | ReactNode)[];
     children?: ReactNode;
 }
 
@@ -13,8 +14,13 @@ const TableRow = forwardRef<HTMLTableRowElement, Props>(({ labels = [], cells = 
         <tr ref={ref} {...rest} role="row">
             {children ||
                 cells.map((cell, index) => (
-                    <TableCell key={index.toString()} label={labels[index]}>
-                        {cell}
+                    <TableCell
+                        key={index.toString()}
+                        label={labels[index]}
+                        colSpan={cell instanceof Cell ? cell.colSpan : undefined}
+                        rowSpan={cell instanceof Cell ? cell.rowSpan : undefined}
+                    >
+                        {cell instanceof Cell ? cell.content : cell}
                     </TableCell>
                 ))}
         </tr>
