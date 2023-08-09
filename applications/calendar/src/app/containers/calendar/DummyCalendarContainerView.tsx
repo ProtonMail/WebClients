@@ -8,7 +8,10 @@ import TimeGrid from '../../components/calendar/TimeGrid';
 import CalendarContainerView from './CalendarContainerView';
 import { TimeGridRef } from './interface';
 
-const DummyCalendarContainerView = () => {
+interface Props {
+    drawerView?: VIEWS;
+}
+const DummyCalendarContainerView = ({ drawerView }: Props) => {
     const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const now = new Date();
@@ -31,7 +34,7 @@ const DummyCalendarContainerView = () => {
 
     return (
         <CalendarContainerView
-            view={VIEWS.WEEK}
+            view={drawerView || VIEWS.WEEK}
             utcDate={now}
             utcDefaultDate={now}
             utcDateRange={dateRange}
