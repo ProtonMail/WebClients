@@ -1,16 +1,16 @@
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
-import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
-import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
+import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
-import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
+import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { Device } from '../_devices';
-import { DriveEvents } from '../_events/interface';
-import { EncryptedLink } from '../_links/interface';
-import { Photo } from '../_photos/interfaces';
+import type { Device } from '../_devices';
+import type { DriveEvents } from '../_events/interface';
+import type { EncryptedLink } from '../_links/interface';
+import type { Photo } from '../_photos/interface';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type { Share, ShareURL, ShareWithKey } from '../_shares/interface';
 
@@ -45,6 +45,15 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       ? {
                             bareUrl: link.FileProperties.ActiveRevision.ThumbnailURLInfo.BareURL,
                             token: link.FileProperties.ActiveRevision.ThumbnailURLInfo.Token,
+                        }
+                      : undefined,
+                  photo: link.FileProperties.ActiveRevision.Photo
+                      ? {
+                            linkId: link.FileProperties.ActiveRevision.Photo.LinkID,
+                            captureTime: link.FileProperties.ActiveRevision.Photo.CaptureTime,
+                            contentHash: link.FileProperties.ActiveRevision.Photo.ContentHash ?? undefined,
+                            mainPhotoLinkId: link.FileProperties.ActiveRevision.Photo.MainPhotoLinkID ?? undefined,
+                            hash: link.FileProperties.ActiveRevision.Photo.Hash ?? undefined,
                         }
                       : undefined,
               }
