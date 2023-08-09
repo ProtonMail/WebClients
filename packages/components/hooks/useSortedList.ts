@@ -21,6 +21,9 @@ export const useMultiSortedList = <T>(list: T[], initialConfig: SortConfig<T>[] 
 
         const comparator = (a: T, b: T) => {
             const defaultCompare = (a: T[keyof T], b: T[keyof T]) => {
+                if (typeof a === 'string' && typeof b === 'string') {
+                    return a.localeCompare(b);
+                }
                 if (a < b) {
                     return -1;
                 }
