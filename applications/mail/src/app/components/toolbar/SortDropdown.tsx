@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { Sort } from '../../models/tools';
@@ -41,18 +42,26 @@ const SortDropdown = ({
         OLD_TO_NEW: c('Sort option').t`Oldest first`,
     };
 
-    const getTextContent = () => {
+    const getIcon = () => {
         if (sort === SIZE && !desc) {
-            return SORT_OPTIONS.SMALL_TO_LARGE;
+            return <Icon className="toolbar-icon" name="size-arrow-up" title={SORT_OPTIONS.SMALL_TO_LARGE} />;
         }
         if (sort === SIZE && desc) {
-            return SORT_OPTIONS.LARGE_TO_SMALL;
+            return <Icon className="toolbar-icon" name="size-arrow-down" title={SORT_OPTIONS.LARGE_TO_SMALL} />;
         }
         if (sort === TIME && !desc) {
             // If we are on the scheduled label, we reverse the default sort to have the next to be sent on top (but still displayed as newest)
-            return !isScheduledLabel ? SORT_OPTIONS.OLD_TO_NEW : SORT_OPTIONS.NEW_TO_OLD;
+            return !isScheduledLabel ? (
+                <Icon className="toolbar-icon" name="list-arrow-up" title={SORT_OPTIONS.OLD_TO_NEW} />
+            ) : (
+                <Icon className="toolbar-icon" name="list-arrow-down" title={SORT_OPTIONS.NEW_TO_OLD} />
+            );
         }
-        return !isScheduledLabel ? SORT_OPTIONS.NEW_TO_OLD : SORT_OPTIONS.OLD_TO_NEW;
+        return !isScheduledLabel ? (
+            <Icon className="toolbar-icon" name="list-arrow-down" title={SORT_OPTIONS.NEW_TO_OLD} />
+        ) : (
+            <Icon className="toolbar-icon" name="list-arrow-up" title={SORT_OPTIONS.OLD_TO_NEW} />
+        );
     };
 
     return (
@@ -61,11 +70,11 @@ const SortDropdown = ({
             shape="ghost"
             size="small"
             hasCaret={hasCaret}
-            className={className}
+            originalPlacement="top-end"
+            className={clsx(className, 'toolbar-button toolbar-button--small toolbar-button--small-icon')}
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
-                    <span className="text-sm m-0 mr-2">{getTextContent()}</span>
-                    <Icon className="toolbar-icon" name="arrow-down-arrow-up" />
+                    {getIcon()}
                 </span>
             }
             title={conversationMode ? c('Title').t`Sort conversations` : c('Title').t`Sort messages`}
@@ -74,37 +83,41 @@ const SortDropdown = ({
                 <DropdownMenuButton
                     data-testid="toolbar:sort-new-to-old"
                     isSelected={!isScheduledLabel ? sort === TIME && desc : sort === TIME && !desc}
-                    className="text-left"
+                    className="text-left flex gap-2"
                     onClick={() => onSort({ sort: TIME, desc: true })}
                 >
-                    {SORT_OPTIONS.NEW_TO_OLD}
+                    <Icon className="toolbar-icon" name="list-arrow-down" />
+                    <span>{SORT_OPTIONS.NEW_TO_OLD}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-testid="toolbar:sort-old-to-new"
                     isSelected={!isScheduledLabel ? sort === TIME && !desc : sort === TIME && desc}
-                    className="text-left"
+                    className="text-left flex gap-2"
                     onClick={() => onSort({ sort: TIME, desc: false })}
                 >
-                    {SORT_OPTIONS.OLD_TO_NEW}
+                    <Icon className="toolbar-icon" name="list-arrow-up" />
+                    <span>{SORT_OPTIONS.OLD_TO_NEW}</span>
                 </DropdownMenuButton>
                 {!hideSizeSorting && (
                     <DropdownMenuButton
                         data-testid="toolbar:sort-desc"
                         isSelected={sort === SIZE && desc}
-                        className="text-left"
+                        className="text-left flex gap-2"
                         onClick={() => onSort({ sort: SIZE, desc: true })}
                     >
-                        {SORT_OPTIONS.LARGE_TO_SMALL}
+                        <Icon className="toolbar-icon" name="size-arrow-down" />
+                        <span>{SORT_OPTIONS.LARGE_TO_SMALL}</span>
                     </DropdownMenuButton>
                 )}
                 {!hideSizeSorting && (
                     <DropdownMenuButton
                         data-testid="toolbar:sort-asc"
                         isSelected={sort === SIZE && !desc}
-                        className="text-left"
+                        className="text-left flex gap-2"
                         onClick={() => onSort({ sort: SIZE, desc: false })}
                     >
-                        {SORT_OPTIONS.SMALL_TO_LARGE}
+                        <Icon className="toolbar-icon" name="size-arrow-up" />
+                        <span>{SORT_OPTIONS.SMALL_TO_LARGE}</span>
                     </DropdownMenuButton>
                 )}
             </DropdownMenu>

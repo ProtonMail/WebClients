@@ -48,6 +48,14 @@ jest.mock('@proton/components/components/calendarEventDateHeader/CalendarEventDa
 }));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 
+// Force narrow mode for "renders the widget and the necessary information" so that we can see the link
+// With the drawer we do not have a AppLink anymore, we will open Calendar in the drawer directly
+jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
+    return {
+        isNarrow: true,
+    };
+});
+
 const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);

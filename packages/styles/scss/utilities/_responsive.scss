@@ -1,8 +1,16 @@
 // For global structure adaptation in JS (page / skip links / header / main content / footer)
-@include body-before('desktop', true);
+@include body-before('large-desktop', true);
 
 .no-desktop {
 	display: none;
+}
+
+@include media('<=xlarge') {
+	@include body-before('medium-desktop');
+}
+
+@include media('<=large') {
+	@include body-before('small-desktop');
 }
 
 /**

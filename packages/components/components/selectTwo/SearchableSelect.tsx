@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { Dropdown, DropdownSizeUnit } from '../dropdown';
+import { DropdownSize } from '../dropdown/utils';
 import { SearchInput } from '../input';
 import Option, { Props as OptionProps } from '../option/Option';
+import { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
@@ -19,6 +21,8 @@ export interface Props<V> extends SelectProps<V> {
     searchPlaceholder?: string;
     noSearchResults?: ReactNode;
     unstyled?: boolean;
+    size?: DropdownSize;
+    originalPlacement?: PopperPlacement;
 }
 
 const SearchableSelect = <V extends any>({
@@ -30,11 +34,13 @@ const SearchableSelect = <V extends any>({
     loading,
     search,
     searchPlaceholder,
+    size = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport },
     noSearchResults = c('Select search results').t`No results found`,
     onClose,
     onOpen,
     onChange,
     renderSelected,
+    originalPlacement,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -150,8 +156,9 @@ const SearchableSelect = <V extends any>({
                 autoClose={autoclose}
                 offset={4}
                 noCaret
-                size={{ width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport }}
+                size={size}
                 disableDefaultArrowNavigation={!searchValue}
+                originalPlacement={originalPlacement}
                 className={clsx([
                     searchContainerRef?.current && 'dropdown--is-searchable',
                     multiple && 'select-dropdown--togglable',

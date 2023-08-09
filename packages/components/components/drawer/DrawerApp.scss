@@ -1,7 +1,15 @@
 @import '~@proton/styles/scss/lib';
 
+:root {
+	--drawer-width: #{rem(0)}; // unit needed for calc()
+}
+
+.drawer-is-open {
+	--drawer-width: #{rem(300)};
+}
+
 .drawer-app {
-	inline-size: rem(300);
+	inline-size: var(--drawer-width);
 
 	&-inner {
 		animation: 0.5s easing(ease-out-quart) anime-drawer-app-inner forwards;

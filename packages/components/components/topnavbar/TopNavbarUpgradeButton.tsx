@@ -2,13 +2,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, SettingsLink, useConfig, useSubscription, useUser } from '@proton/components';
+import { SettingsLink, useConfig, useSubscription, useUser } from '@proton/components';
 import { APPS, APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
+import PromotionButton from '../button/PromotionButton/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';
-import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 interface Props {
     app?: APP_NAMES;
@@ -34,17 +34,14 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     if (displayUpgradeButton) {
         return (
-            <TopNavbarListItem noShrink collapsedOnDesktop={false}>
-                <TopNavbarListItemButton
+            <TopNavbarListItem noCollapse>
+                <PromotionButton
                     as={SettingsLink}
-                    shape="outline"
-                    color="norm"
-                    text={c('specialoffer: Link').t`Upgrade`}
-                    icon={<Icon name="arrow-up-big-line" />}
+                    iconName="upgrade"
                     path={upgradeUrl}
                     title={c('specialoffer: Link').t`Go to subscription plans`}
                     data-testid="cta:upgrade-plan"
-                />
+                >{c('specialoffer: Link').t`Upgrade`}</PromotionButton>
             </TopNavbarListItem>
         );
     }

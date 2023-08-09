@@ -134,8 +134,8 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
     }, [handleTriggerToggleFromOutside]);
 
     return (
-        <div className="relative ui-standard color-norm" ref={wrapperRef}>
-            <Header className="pl-4">
+        <div className="relative ui-standard color-norm flex-item-noshrink" ref={wrapperRef}>
+            <Header className="header--drawer p-3">
                 <div className="drawer-app-header-actions flex flex-justify-space-between flex-align-items-center w100">
                     <span className="text-bold text-lg">{title}</span>
 

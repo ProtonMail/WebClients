@@ -1,7 +1,11 @@
 .user-dropdown {
 	&-button {
-		@include media('<=#{em(1500, 16)}') {
-			margin-inline-start: 0.5em;
+		@include media('<=small') {
+			flex-direction: row-reverse;
+			inline-size: 100%;
+			padding: var(--space-2);
+			border: 1px solid var(--border-weak);
+			border-radius: var(--border-radius-lg);
 		}
 
 		.user-initials {
@@ -25,18 +29,31 @@
 		}
 
 		&::after {
-			border-radius: var(--border-radius-md);
+			border-radius: var(--border-radius-lg);
+
+			@include media('>=small') {
+				border-radius: var(--border-radius-md);
+			}
+
+			@include media('>=large') {
+				inset: -$focus-ring-size;
+			}
 		}
 	}
 
 	&-text {
 		&#{&} {
 			// Specificity -_-v
-			max-inline-size: em(200);
-		}
+			max-inline-size: rem(200);
+			text-align: start;
 
-		@include media('<=large') {
-			display: none;
+			@include media('>medium') {
+				text-align: end;
+			}
+
+			@include media('>=small', '<=large') {
+				display: none;
+			}
 		}
 	}
 }
@@ -47,10 +64,11 @@
 		// Specificity -_-v
 		min-inline-size: rem(28);
 		min-block-size: rem(28);
+	}
+}
 
-		@include media('<=small') {
-			min-inline-size: rem(36);
-			min-block-size: rem(36);
-		}
+.userDropdown {
+	@include media('<small') {
+		--width: calc(100vw - 30px) !important;
 	}
 }

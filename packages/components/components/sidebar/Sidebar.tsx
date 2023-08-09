@@ -10,13 +10,13 @@ import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/u
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
+import { UserDropdown } from '../..';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
 import { getMeterColor } from '../progress';
 import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';
-import MobileAppsLinks from './MobileAppsLinks';
 import SidebarStorageMeter from './SidebarStorageMeter';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
@@ -30,6 +30,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     storageGift?: ReactNode;
     hasAppLinks?: boolean;
     appsDropdown: ReactNode;
+    contactsButton?: ReactNode;
 }
 
 const Sidebar = ({
@@ -43,6 +44,7 @@ const Sidebar = ({
     children,
     version,
     storageGift,
+    contactsButton,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -101,16 +103,29 @@ const Sidebar = ({
                 {...focusTrapProps}
             >
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
+                <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                     {logo}
                     <div className="no-mobile">{appsDropdown}</div>
                     <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-3">
                         <Hamburger expanded={expanded} onToggle={onToggleExpand} className="opacity-on-focus" />
                     </div>
                 </div>
+
+                <div className="no-tablet no-desktop px-3">
+                    <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
+                </div>
+
                 {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
-                <div className="flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4">{children}</div>
+                <div
+                    className={clsx(
+                        'flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4',
+                        !contactsButton && 'mt-2'
+                    )}
+                >
+                    {contactsButton}
+                    {children}
+                </div>
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                     <div className="app-infos px-3">
                         <SidebarStorageMeter
@@ -144,8 +159,6 @@ const Sidebar = ({
                         <div className="text-center py-2 px-3">{version}</div>
                     </div>
                 )}
-
-                {hasAppLinks ? <MobileAppsLinks app={app || APP_NAME} /> : null}
             </div>
             {expanded ? <div className="sidebar-backdrop" onClick={onToggleExpand}></div> : undefined}
         </>

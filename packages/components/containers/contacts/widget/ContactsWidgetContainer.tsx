@@ -23,6 +23,8 @@ import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholde
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
 import { CustomAction } from './types';
 
+import './ContactsWidget.scss';
+
 interface Props {
     onClose?: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;

@@ -1,24 +1,51 @@
-import { Ref, forwardRef } from 'react';
+import { ElementType, ForwardedRef, ReactElement, forwardRef } from 'react';
+import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
-import ButtonLike, { ButtonLikeProps, ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
+import ButtonLike, { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, IconName, IconSize } from '@proton/components/components';
+import { useActiveBreakpoint } from '@proton/components/hooks';
+import useUid from '@proton/components/hooks/useUid';
 import clsx from '@proton/utils/clsx';
 
 import './PromotionButton.scss';
 
-interface PromotionButtonProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
+type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
+
+interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     iconName?: IconName;
     icon?: boolean;
     iconGradient?: boolean;
     upsell?: boolean;
-    shape?: ButtonLikeShape;
+    shape?: ButtonButtonLikeProps['shape'];
+    className?: string;
+    loading?: boolean;
+    responsive?: boolean;
 }
 
-const ButtonBase = (
-    { children, iconName, icon, iconGradient = true, shape = 'outline', upsell, ...rest }: PromotionButtonProps,
-    ref: Ref<HTMLButtonElement>
+export type PromotionButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
+
+const defaultElement = ButtonLike;
+
+const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
+    {
+        children,
+        iconName,
+        icon,
+        iconGradient = true,
+        shape = 'outline',
+        upsell,
+        as,
+        className,
+        loading,
+        responsive = true,
+        ...rest
+    }: PromotionButtonProps<E>,
+    ref: ForwardedRef<Element>
 ) => {
     let iconSize: IconSize | undefined;
+    const { isDesktop } = useActiveBreakpoint();
+
     switch (true) {
         case icon && upsell:
             iconSize = 16;
@@ -28,9 +55,19 @@ const ButtonBase = (
             break;
     }
 
+    if (responsive && !isDesktop) {
+        shape = 'ghost';
+        icon = true;
+    }
+
+    const Element: ElementType = as || defaultElement;
+
+    const uid = useUid('linear-gradient');
+
     return (
         <ButtonLike
-            {...rest}
+            as={Element}
+            ref={ref}
             type="button"
             icon={icon}
             color="weak"
@@ -38,20 +75,21 @@ const ButtonBase = (
             className={clsx(
                 'button-promotion',
                 iconGradient && 'button-promotion--icon-gradient',
-                upsell && 'button-promotion--upgrade'
+                upsell && 'button-promotion--upgrade',
+                className
             )}
-            ref={ref}
-            as="button"
+            {...rest}
         >
             <span className="relative flex flex-nowrap flex-align-items-center gap-2">
-                {iconName && <Icon name={iconName} size={iconSize} />}
+                {iconName && <Icon name={iconName} size={iconSize} style={{ fill: `url(#${uid}) var(--text-norm)` }} />}
                 <span className={clsx(icon && 'sr-only')}>{children}</span>
+                {loading && <CircleLoader />}
             </span>
             {iconName && iconGradient ? (
-                <svg aria-hidden="true" focusable="false" className="w0 h0 absolute">
-                    <linearGradient id="gradient-horizontal">
-                        <stop offset="0%" stop-color="var(--color-stop-1)" />
-                        <stop offset="100%" stop-color="var(--color-stop-2)" />
+                <svg aria-hidden="true" focusable="false" className="sr-only">
+                    <linearGradient id={uid}>
+                        <stop offset="0%" stopColor="var(--color-stop-1)" />
+                        <stop offset="100%" stopColor="var(--color-stop-2)" />
                     </linearGradient>
                 </svg>
             ) : undefined}
@@ -59,4 +97,8 @@ const ButtonBase = (
     );
 };
 
-export const PromotionButton = forwardRef<HTMLButtonElement, PromotionButtonProps>(ButtonBase);
+const PromotionButton: <E extends ElementType = typeof defaultElement>(
+    props: PromotionButtonProps<E>
+) => ReactElement | null = forwardRef(PromotionButtonBase);
+
+export default PromotionButton;

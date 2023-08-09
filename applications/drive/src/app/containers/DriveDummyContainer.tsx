@@ -11,12 +11,12 @@ import {
     ModalsChildren,
     PrivateAppContainer,
     PrivateMainArea,
+    QuickSettingsAppButton,
     SidebarPrimaryButton,
     useActiveBreakpoint,
     useToggle,
     useUser,
 } from '@proton/components';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -28,6 +28,7 @@ import DriveSidebar from '../components/layout/sidebar/DriveSidebar';
 import { DriveItem } from '../components/sections/Drive/Drive';
 import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBrowser/contentCells';
 import headerItems from '../components/sections/FileBrowser/headerCells';
+import ToolbarRow from '../components/sections/ToolbarRow/ToolbarRow';
 
 const desktopCells: React.FC<{ item: DriveItem }>[] = [NameCell, ModifiedCell, SizeCell];
 const mobileCells = [NameCell];
@@ -94,38 +95,44 @@ const DriveDummyContainer = () => {
         permissions.calendar && <CalendarDrawerAppButton />,
     ].filter(isTruthy);
 
-    const canShowDrawer = drawerSidebarButtons.length > 0;
+    const drawerSettingsButton = <QuickSettingsAppButton />;
 
     return (
         <>
             <ModalsChildren />
-            <PrivateAppContainer
-                header={header}
-                sidebar={sidebar}
-                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
-                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
-            >
-                <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                    <div className="max-w100 px-2 py-3 border-bottom">
-                        <CollapsingBreadcrumbs
-                            breadcrumbs={[
-                                {
-                                    key: 'my-files',
-                                    text: c('Title').t`My files`,
-                                    noShrink: true,
-                                    highlighted: true,
-                                },
-                            ]}
+            <PrivateAppContainer header={header} sidebar={sidebar}>
+                <PrivateMainArea
+                    hasToolbar
+                    className="flex-no-min-children flex-column flex-nowrap "
+                    drawerSidebar={
+                        <DrawerSidebar buttons={drawerSidebarButtons} settingsButton={drawerSettingsButton} />
+                    }
+                >
+                    <div className="flex flex-column flex-nowrap w100">
+                        <ToolbarRow
+                            titleArea={
+                                <CollapsingBreadcrumbs
+                                    breadcrumbs={[
+                                        {
+                                            key: 'my-files',
+                                            text: c('Title').t`My files`,
+                                            noShrink: true,
+                                            highlighted: true,
+                                        },
+                                    ]}
+                                />
+                            }
+                            toolbar={<></>}
+                        />
+                        <ListView
+                            caption={dummyFolderTitle}
+                            Cells={Cells}
+                            headerItems={headerItems}
+                            items={items}
+                            loading={false}
+                            scrollAreaRef={scrollAreaRef}
                         />
                     </div>
-                    <ListView
-                        caption={dummyFolderTitle}
-                        Cells={Cells}
-                        headerItems={headerItems}
-                        items={items}
-                        loading={false}
-                        scrollAreaRef={scrollAreaRef}
-                    />
                 </PrivateMainArea>
             </PrivateAppContainer>
         </>

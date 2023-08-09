@@ -1,8 +1,7 @@
-import { fireEvent, getByText } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import useExperiment from '@proton/components/hooks/useExperiment';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import {
@@ -23,6 +22,7 @@ loudRejection();
 const getProps = () => ({
     labelID: 'labelID',
     elementID: undefined,
+    selectedIDs: [],
     location: getHistory().location,
     history: getHistory(),
     breakpoints: {} as Breakpoints,
@@ -40,9 +40,6 @@ const user = {
     UsedSpace: 10,
     MaxSpace: 100,
 };
-
-jest.mock('@proton/components/hooks/useExperiment');
-const mockUsedExperiments = useExperiment as jest.MockedFunction<typeof useExperiment>;
 
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
@@ -82,22 +79,6 @@ describe('MailHeader', () => {
     afterEach(clearAll);
 
     describe('Core features', () => {
-        beforeEach(() => {
-            mockUsedExperiments.mockReturnValue({ value: 'A', loading: false });
-        });
-
-        it('should open settings', async () => {
-            const { getByText: getByTextHeader } = await setup();
-
-            const settingsButton = getByTextHeader('Settings');
-            fireEvent.click(settingsButton);
-
-            const dropdown = await getDropdown();
-            const settingsLink = getByText(dropdown, 'settings', { exact: false });
-
-            assertAppLink(settingsLink, '/mail');
-        });
-
         it('should open user dropdown', async () => {
             const { getByText: getByTextHeader } = await setup();
 
@@ -107,26 +88,20 @@ describe('MailHeader', () => {
             const dropdown = await getDropdown();
             const { textContent } = dropdown;
 
-            expect(textContent).toContain('Proton introduction');
-            expect(textContent).toContain('Get help');
             expect(textContent).toContain('Proton shop');
             expect(textContent).toContain('Sign out');
         });
 
         it('should show upgrade button', async () => {
-            const { getByText } = await setup();
+            const { getByTestId } = await setup();
 
-            const upgradeLabel = getByText('Upgrade');
+            const upgradeLabel = getByTestId('cta:upgrade-plan');
 
             assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
         });
     });
 
     describe('Search features', () => {
-        beforeEach(() => {
-            mockUsedExperiments.mockReturnValue({ value: 'A', loading: false });
-        });
-
         it('should search with keyword', async () => {
             const searchTerm = 'test';
 

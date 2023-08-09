@@ -8,9 +8,10 @@ interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>,
     caption?: string;
     responsive?: 'cards' | 'stacked';
     hasActions?: boolean;
+    borderWeak?: boolean;
 }
 
-const Table = ({ children, responsive, className, hasActions, caption, ...props }: Props) => {
+const Table = ({ children, responsive, className, hasActions, caption, borderWeak, ...props }: Props) => {
     return (
         <table
             className={clsx([
@@ -18,6 +19,7 @@ const Table = ({ children, responsive, className, hasActions, caption, ...props 
                 responsive === 'cards' && 'simple-table--responsive simple-table--responsive-cards',
                 responsive === 'stacked' && 'simple-table--responsive simple-table--responsive-stacked',
                 hasActions && 'simple-table--has-actions',
+                borderWeak && 'simple-table--border-weak',
                 className,
             ])}
             {...props}

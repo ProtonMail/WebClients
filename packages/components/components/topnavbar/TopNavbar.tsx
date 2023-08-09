@@ -8,7 +8,7 @@ const TopNavbar = ({ children, className, ...rest }: Props) => {
     return (
         <div
             className={clsx([
-                'flex flex-justify-end topnav-container on-mobile-no-flex flex-item-centered-vert flex-item-fluid no-print',
+                'flex flex-justify-end topnav-container on-mobile-no-flex flex-item-centered-vert no-print',
                 className,
             ])}
             {...rest}
