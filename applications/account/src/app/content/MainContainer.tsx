@@ -102,7 +102,7 @@ const MainContainer = () => {
     const [subscription, loadingSubscription] = useSubscription();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const { isNarrow } = useActiveBreakpoint();
+    const { isNarrow, isDesktop } = useActiveBreakpoint();
 
     const { featuresFlags, getFeature } = useFeatures([
         FeatureCode.ReferralProgram,
@@ -183,14 +183,14 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
-            userDropdown={<UserDropdown />}
+            userDropdown={<UserDropdown app={app} />}
             // No onboarding in account
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            searchBox={<SettingsSearch routes={routes} path={prefixPath} app={app} />}
+            actionArea={isDesktop && <SettingsSearch routes={routes} path={prefixPath} app={app} />}
             app={app}
         />
     );

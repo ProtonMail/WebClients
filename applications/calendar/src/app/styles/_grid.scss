@@ -158,3 +158,9 @@
 		font-size: rem(10);
 	}
 }
+
+.calendar-time-grid {
+	@include media('print') {
+		flex-basis: auto;
+	}
+}

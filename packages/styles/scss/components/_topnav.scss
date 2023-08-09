@@ -9,17 +9,6 @@
 		inset-inline-start: calc(#{rem(17.5)} + #{rem(15)});
 		inset-block-start: calc(50% - #{rem(14)});
 	}
-
-	// used for KT notification
-	&--notification {
-		.notification-dot {
-			inline-size: 0.5rem;
-			block-size: 0.5rem;
-			position: absolute;
-			inset-inline-end: 0.2em;
-			inset-block-start: 0.2em;
-		}
-	}
 }
 
 .topnav-list > li:not(:last-child) {
@@ -76,17 +65,19 @@
 			padding-inline: rem(5);
 		}
 
-		.navigation-title {
-			// collapse for ALL without any exception
-			// equivalent of .sr-only, but impossible to extend in a breakpoint
-			border: 0;
-			clip: rect(0 0 0 0);
-			block-size: 1px;
-			margin: -1px;
-			overflow: hidden;
-			padding: 0;
-			position: absolute;
-			inline-size: 1px;
+		.topnav-listItem:not(.topnav-listItem--noCollapse) {
+			.navigation-title {
+				// collapse for ALL without any exception
+				// equivalent of .sr-only, but impossible to extend in a breakpoint
+				border: 0;
+				clip: rect(0 0 0 0);
+				block-size: 1px;
+				margin: -1px;
+				overflow: hidden;
+				padding: 0;
+				position: absolute;
+				inline-size: 1px;
+			}
 		}
 
 		.topnav-icon {
@@ -114,17 +105,19 @@
 		}
 	}
 
-	.navigation-title {
-		// collapse for ALL without any exception
-		// equivalent of .sr-only, but impossible to extend in a breakpoint
-		border: 0;
-		clip: rect(0 0 0 0);
-		block-size: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		inline-size: 1px;
+	.topnav-listItem:not(.topnav-listItem--noCollapse) {
+		.navigation-title {
+			// collapse for ALL without any exception
+			// equivalent of .sr-only, but impossible to extend in a breakpoint
+			border: 0;
+			clip: rect(0 0 0 0);
+			block-size: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			inline-size: 1px;
+		}
 	}
 
 	.topnav-icon {
@@ -171,17 +164,19 @@
 		}
 	}
 
-	.navigation-title {
-		// collapse for ALL without any exception
-		// equivalent of .sr-only, but impossible to extend in a breakpoint
-		border: 0;
-		clip: rect(0 0 0 0);
-		block-size: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		inline-size: 1px;
+	.topnav-listItem:not(.topnav-listItem--noCollapse) {
+		.navigation-title {
+			// collapse for ALL without any exception
+			// equivalent of .sr-only, but impossible to extend in a breakpoint
+			border: 0;
+			clip: rect(0 0 0 0);
+			block-size: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			inline-size: 1px;
+		}
 	}
 
 	.topnav-list--four-elements .topnav-link {

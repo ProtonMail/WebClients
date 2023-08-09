@@ -6,8 +6,10 @@ import { c } from 'ttag';
 import {
     Commander,
     CommanderItemInterface,
+    DrawerSidebar,
     ErrorBoundary,
     PrivateMainArea,
+    QuickSettingsAppButton,
     useCalendarUserSettings,
     useCalendars,
     useFolders,
@@ -24,7 +26,10 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
+
 import ConversationView from '../../components/conversation/ConversationView';
+import MailHeader from '../../components/header/MailHeader';
 import List from '../../components/list/List';
 import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
@@ -73,7 +78,6 @@ interface Props {
     breakpoints: Breakpoints;
     elementID?: string;
     messageID?: string;
-    toolbarBordered?: boolean;
 }
 
 const MailboxContainer = ({
@@ -83,7 +87,6 @@ const MailboxContainer = ({
     breakpoints,
     elementID,
     messageID,
-    toolbarBordered,
 }: Props) => {
     const location = useLocation();
     const history = useHistory();
@@ -93,7 +96,7 @@ const MailboxContainer = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
-    const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
+    const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet || breakpoints.isSmallDesktop;
     const columnModeSetting = isColumnMode(mailSettings);
     const columnMode = columnModeSetting && !forceRowMode;
     const columnLayout = columnModeSetting || forceRowMode;
@@ -103,8 +106,8 @@ const MailboxContainer = ({
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
     const composersCount = useAppSelector(selectComposersCount);
     const isComposerOpened = composersCount > 0;
-
     const onMailTo = useOnMailTo();
+    const { drawerSidebarButtons, drawerSpotlightSeenRef } = useMailDrawer();
 
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
@@ -202,7 +205,6 @@ const MailboxContainer = ({
     useCalendarsInfoCoreListener();
 
     const elementsLength = loading ? placeholderCount : elements.length;
-    const showToolbar = !breakpoints.isNarrow || !elementID;
     const showList = columnMode || !elementID;
     const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
     const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
@@ -319,6 +321,41 @@ const MailboxContainer = ({
         [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
     );
 
+    const toolbar = (toolbarInHeader?: boolean) => {
+        return (
+            <Toolbar
+                labelID={labelID}
+                elementID={elementID}
+                messageID={messageID}
+                selectedIDs={selectedIDs}
+                checkedIDs={checkedIDs}
+                elementIDs={elementIDs}
+                columnMode={columnMode}
+                conversationMode={conversationMode}
+                breakpoints={breakpoints}
+                onCheck={handleCheck}
+                page={page}
+                total={total}
+                isSearch={isSearch}
+                onPage={handlePage}
+                onBack={handleBack}
+                onElement={handleElement}
+                onMarkAs={handleMarkAs}
+                onMove={handleMove}
+                onDelete={handleDelete}
+                labelDropdownToggleRef={labelDropdownToggleRef}
+                moveDropdownToggleRef={moveDropdownToggleRef}
+                bordered
+                sort={sort}
+                onSort={handleSort}
+                onFilter={handleFilter}
+                filter={filter}
+                mailSettings={mailSettings}
+                toolbarInHeader={toolbarInHeader}
+            />
+        );
+    };
+
     const commanderList = useMemo<CommanderItemInterface[]>(
         () => [
             {
@@ -431,37 +468,26 @@ const MailboxContainer = ({
                 className="flex-item-fluid flex flex-column flex-nowrap outline-none"
                 data-testid="mailbox"
             >
-                {showToolbar && (
-                    <Toolbar
-                        labelID={labelID}
-                        elementID={elementID}
-                        messageID={messageID}
-                        selectedIDs={selectedIDs}
-                        checkedIDs={checkedIDs}
-                        elementIDs={elementIDs}
-                        columnMode={columnMode}
-                        conversationMode={conversationMode}
-                        breakpoints={breakpoints}
-                        onCheck={handleCheck}
-                        page={page}
-                        total={total}
-                        isSearch={isSearch}
-                        onPage={handlePage}
-                        onBack={handleBack}
-                        onElement={handleElement}
-                        onMarkAs={handleMarkAs}
-                        onMove={handleMove}
-                        onDelete={handleDelete}
-                        labelDropdownToggleRef={labelDropdownToggleRef}
-                        moveDropdownToggleRef={moveDropdownToggleRef}
-                        bordered={toolbarBordered}
-                    />
-                )}
+                <MailHeader
+                    breakpoints={breakpoints}
+                    elementID={elementID}
+                    selectedIDs={selectedIDs}
+                    labelID={labelID}
+                    toolbar={toolbar(true)}
+                />
+
                 <PrivateMainArea
                     className="flex"
-                    hasToolbar={showToolbar}
+                    hasToolbar
                     hasRowMode={!showContentPanel}
                     ref={mainAreaRef}
+                    drawerSidebar={
+                        <DrawerSidebar
+                            buttons={drawerSidebarButtons}
+                            settingsButton={<QuickSettingsAppButton />}
+                            spotlightSeenRef={drawerSpotlightSeenRef}
+                        />
+                    }
                 >
                     <List
                         ref={listRef}
@@ -493,11 +519,8 @@ const MailboxContainer = ({
                         onDelete={handleDelete}
                         onMove={handleMove}
                         onBack={handleBack}
-                        mailSettings={mailSettings}
                         userSettings={userSettings}
-                        sort={sort}
-                        onSort={handleSort}
-                        onFilter={handleFilter}
+                        toolbar={toolbar()}
                     />
                     <ErrorBoundary>
                         <section

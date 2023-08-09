@@ -34,9 +34,10 @@ interface Props {
     breakpoints: Breakpoints;
     labelID: string;
     location: Location;
+    columnMode: boolean;
 }
 
-const MailSearch = ({ breakpoints, labelID, location }: Props) => {
+const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const isESUserInterfaceAvailable = useProgressiveRollout(FeatureCode.ESUserInterface);
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
@@ -103,8 +104,10 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     return (
         <>
             <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
-                {breakpoints.isNarrow ? (
-                    <TopNavbarListItemSearchButton onClick={handleOpen} />
+                {breakpoints.isNarrow || breakpoints.isTablet ? (
+                    <div className="topnav-listItem flex flex-item-noshrink">
+                        <TopNavbarListItemSearchButton onClick={handleOpen} />
+                    </div>
                 ) : (
                     <MailSearchInput
                         loading={loading}
@@ -112,12 +115,13 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
                         value={searchInputValue}
                         onChange={setSearchInputValue}
                         onOpen={handleOpen}
+                        adaptWidth={columnMode}
                     />
                 )}
             </MailSearchSpotlight>
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
-                    isNarrow={breakpoints.isNarrow}
+                    isNarrow={breakpoints.isNarrow || breakpoints.isTablet}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esState={esState}

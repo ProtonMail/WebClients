@@ -1,6 +1,4 @@
 export { default as Hamburger } from './Hamburger';
-export { default as MobileAppsLinks } from './MobileAppsLinks';
-export { default as MobileNavServices } from './MobileNavServices';
 
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarList, SubSidebarList } from './SidebarList';
@@ -18,5 +16,6 @@ export { default as SidebarListItemLink } from './SidebarListItemLink';
 export { default as SidebarListItemButton } from './SidebarListItemButton';
 export { default as SidebarNav } from './SidebarNav';
 export { default as SidebarPrimaryButton } from './SidebarPrimaryButton';
+export { default as SidebarContactItem } from './SidebarContactItem';
 
 export { default as SettingsListItem } from './SettingsListItem';

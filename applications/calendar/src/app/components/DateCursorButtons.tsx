@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
-import { Icon, TodayIcon, ToolbarButton } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, ToolbarButton } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -28,38 +28,54 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
 
     return (
         <>
-            <ToolbarButton
-                data-testid="calendar-toolbar:today"
-                className="flex-item-noshrink"
-                title={todayTitle}
-                onClick={onToday}
-                icon={<TodayIcon todayDate={now.getDate()} />}
-            >
-                <span className="ml-2 my-auto no-mobile">{c('Action').t`Today`}</span>
-            </ToolbarButton>
-            <Vr />
-            <ToolbarButton
-                data-testid="calendar-toolbar:previous"
-                title={previous}
-                onClick={onPrev}
-                icon={<Icon name="chevron-left" className="m-auto toolbar-icon" />}
-            >
-                <span className="sr-only">{previous}</span>
-            </ToolbarButton>
-            <ToolbarButton
-                data-testid="calendar-toolbar:next"
-                title={next}
-                onClick={onNext}
-                icon={<Icon name="chevron-right" className="m-auto toolbar-icon" />}
-            >
-                <span className="sr-only">{next}</span>
-            </ToolbarButton>
-            <Vr />
             <span
-                className="pr-2 my-auto flex-item-noshrink on-tablet-flex-shrink text-ellipsis block"
+                className="on-mobile no-tablet no-desktop current-range mr-2 my-auto block text-bold text-ellipsis"
                 title={currentRange}
             >
                 {currentRange}
+            </span>
+            <span className="flex flex-nowrap ml-auto md:ml-0">
+                <span className="no-tablet no-desktop flex-item-noshrink">
+                    <ToolbarButton
+                        data-testid="calendar-toolbar:today"
+                        className="flex-item-noshrink flex-align-items-center mr-1"
+                        title={todayTitle}
+                        onClick={onToday}
+                    >
+                        <Icon name="calendar-today" />
+                    </ToolbarButton>
+                </span>
+                <Button
+                    shape="outline"
+                    data-testid="calendar-toolbar:today"
+                    className="flex-item-noshrink no-mobile mr-2"
+                    title={todayTitle}
+                    onClick={onToday}
+                >
+                    {c('Action').t`Today`}
+                </Button>
+                <ToolbarButton
+                    data-testid="calendar-toolbar:previous"
+                    title={previous}
+                    onClick={onPrev}
+                    icon={<Icon name="chevron-left" className="m-auto toolbar-icon" />}
+                >
+                    <span className="sr-only">{previous}</span>
+                </ToolbarButton>
+                <ToolbarButton
+                    data-testid="calendar-toolbar:next"
+                    title={next}
+                    onClick={onNext}
+                    icon={<Icon name="chevron-right" className="m-auto toolbar-icon" />}
+                >
+                    <span className="sr-only">{next}</span>
+                </ToolbarButton>
+                <span
+                    className="no-mobile current-range ml-2 my-auto block text-bold text-xl text-ellipsis"
+                    title={currentRange}
+                >
+                    {currentRange}
+                </span>
             </span>
         </>
     );

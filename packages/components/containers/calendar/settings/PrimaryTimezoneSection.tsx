@@ -1,31 +1,17 @@
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks';
-import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { TimeZoneSelector } from '../../../components';
-import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import PrimaryTimezoneSelector from './PrimaryTimezoneSelector';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
 }
 
-const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-    const [loadingPrimaryTimeZone, withLoadingPrimaryTimeZone] = useLoading();
-
-    const handleChange = async (data: Partial<CalendarUserSettings>) => {
-        await api(updateCalendarUserSettings(data));
-        await call();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
-
+const PrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
     const timeZoneSelectorId = 'primary-timezone';
 
     return (
@@ -36,13 +22,10 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-                <TimeZoneSelector
+                <PrimaryTimezoneSelector
                     id={timeZoneSelectorId}
+                    calendarUserSettings={calendarUserSettings}
                     data-testid="settings/primary-time-zone:dropdown"
-                    loading={loadingPrimaryTimeZone}
-                    timezone={PrimaryTimezone}
-                    onChange={(PrimaryTimezone) => withLoadingPrimaryTimeZone(handleChange({ PrimaryTimezone }))}
-                    telemetrySource="primary_timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>

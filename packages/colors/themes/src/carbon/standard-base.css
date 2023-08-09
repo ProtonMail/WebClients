@@ -54,9 +54,12 @@
     --optional-link-hover: var(--interaction-norm-major-2);
     --optional-link-active: var(--interaction-norm-major-3);
 
-    --optional-email-item-unread-background-color: #1e1c26;
+    --optional-background-elevated     : #1e1c26;
+	--optional-background-lowered      : var(--background-norm);
 
-    --optional-email-item-read-background-color: var(--background-norm);
+    --optional-email-item-unread-background-color: var(--optional-background-elevated);
+
+    --optional-email-item-read-background-color: var(--optional-background-lowered);
     --optional-email-item-read-text-color: var(--text-weak);
 
     --optional-mini-calendar-today-color: white;

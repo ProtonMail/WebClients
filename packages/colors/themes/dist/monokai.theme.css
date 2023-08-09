@@ -78,9 +78,15 @@
   --optional-link-active: var(--interaction-norm-major-3);
   --optional-navigation-current-item-text-color: var(--signal-success);
   --optional-navigation-item-count-background-color: #8838ff;
-  --optional-email-item-unread-background-color: #1a1926;
+  --optional-background-elevated: #1a1926;
+  --optional-background-lowered: var(--background-norm);
+  --optional-email-item-unread-background-color: var(
+    --optional-background-elevated
+  );
+  --optional-email-item-read-background-color: var(
+    --optional-background-lowered
+  );
   --optional-email-item-read-text-color: var(--text-weak);
-  --optional-email-item-read-background-color: var(--background-norm);
   --optional-logo-text-proton-color: white;
   --optional-logo-text-product-color: white;
   --optional-promotion-text-color: white;

@@ -27,7 +27,6 @@ import { PartDayEventView } from '../events/PartDayEvent';
 import RowEvents from './DayGrid/RowEvents';
 import DayButtons from './TimeGrid/DayButtons';
 import DayEvents from './TimeGrid/DayEvents';
-import DayLines from './TimeGrid/DayLines';
 import HourLines from './TimeGrid/HourLines';
 import HourTexts from './TimeGrid/HourTexts';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
@@ -125,8 +124,6 @@ const TimeGrid = ({
         lineHeight: 0,
     }));
 
-    const [scrollTop, setScrollTop] = useState<number>();
-
     const days = useMemo(() => {
         return eachDayOfInterval(start, end);
     }, [+start, +end]);
@@ -177,10 +174,6 @@ const TimeGrid = ({
 
     const nowTop = toUTCMinutes(now) / totalMinutes;
     const nowTopPercentage = toPercent(nowTop);
-
-    const handleScroll = useCallback(({ target }) => {
-        setScrollTop(target.scrollTop);
-    }, []);
 
     const scrollToTime = useCallback((date: Date) => {
         if (!scrollRef.current || !timeGridRef.current || !titleRef.current) {
@@ -316,145 +309,145 @@ const TimeGrid = ({
     );
 
     return (
-        <div
-            className={clsx(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
-            onScroll={handleScroll}
-            ref={scrollRef}
-            {...rest}
-        >
-            {children}
-            <div className="relative main-area-content">
+        <div className="flex flex-column flex-nowrap w100">
+            <div
+                ref={titleRef}
+                className={clsx(['calendar-row-heading flex-item-noshrink shadow-norm bg-norm', displayViewClass])}
+            >
                 <div
-                    ref={titleRef}
-                    className={clsx([
-                        'sticky-title sticky-title--no-padding on-mobile-remain-sticky',
-                        !scrollTop && 'sticky-title--on-top',
-                    ])}
+                    data-testid="calendar-day-week-view:week-header"
+                    className={clsx('flex', isDrawerApp ? 'border-bottom border-weak' : 'calendar-first-row-heading')}
                 >
-                    <div data-testid="calendar-day-week-view:week-header" className="flex calendar-first-row-heading">
-                        {canDisplaySecondaryTimeZone ? (
-                            <div className="calendar-aside text-center flex flex-column flex-justify-end">
-                                <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
-                                    {secondaryTimezone}
-                                </div>
-                            </div>
-                        ) : null}
-                        {!isDrawerApp && (
-                            <div className="calendar-aside flex flex-column flex-justify-end">
-                                <div className="text-center">{primaryTimezone}</div>
-                            </div>
-                        )}
+                    {canDisplaySecondaryTimeZone ? <div className="calendar-aside" /> : null}
+                    {!isDrawerApp && <div className="calendar-aside" />}
 
-                        {isDrawerApp ? (
-                            <div className="ml-4 mr-2 mb-2 flex flex-align-items-end flex-justify-space-between w100">
-                                <ButtonGroup size="small" color="weak" shape="outline">
-                                    <Tooltip title={previousDay}>
-                                        <Button icon onClick={handleClickPrevDay}>
-                                            <Icon name="chevron-left" alt={previousDay} />
-                                        </Button>
-                                    </Tooltip>
-                                    <Tooltip title={nextDay}>
-                                        <Button icon onClick={handleClickNextDay}>
-                                            <Icon name="chevron-right" alt={nextDay} />
-                                        </Button>
-                                    </Tooltip>
-                                </ButtonGroup>
-                                <Tooltip title={format(now, 'PP', { locale: dateLocale })}>
-                                    <Button onClick={onClickToday} size="small">{c('Action').t`Today`}</Button>
+                    {isDrawerApp ? (
+                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end flex-justify-space-between w100">
+                            <ButtonGroup size="small" color="weak" shape="outline">
+                                <Tooltip title={previousDay}>
+                                    <Button icon onClick={handleClickPrevDay}>
+                                        <Icon name="chevron-left" alt={previousDay} />
+                                    </Button>
                                 </Tooltip>
+                                <Tooltip title={nextDay}>
+                                    <Button icon onClick={handleClickNextDay}>
+                                        <Icon name="chevron-right" alt={nextDay} />
+                                    </Button>
+                                </Tooltip>
+                            </ButtonGroup>
+                            <Tooltip title={format(now, 'PP', { locale: dateLocale })}>
+                                <Button onClick={onClickToday} size="small">{c('Action').t`Today`}</Button>
+                            </Tooltip>
+                        </div>
+                    ) : (
+                        dayButtons
+                    )}
+                </div>
+
+                <div className="flex calendar-fullday-row">
+                    {canDisplaySecondaryTimeZone && !isDrawerApp ? (
+                        <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                            <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
+                                {secondaryTimezone}
                             </div>
+                        </div>
+                    ) : null}
+                    <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                        {isDrawerApp ? (
+                            <span
+                                className="h-custom flex flex-column flex-justify-center pt-1"
+                                style={{ '--h-custom': `${dayEventHeight / 16}rem` }}
+                            >
+                                {primaryTimezone}
+                            </span>
                         ) : (
-                            dayButtons
+                            <div className="calendar-primary-timezone-cell calendar-primary-timezone-cell--header text-center">
+                                {primaryTimezone}
+                            </div>
                         )}
                     </div>
-
-                    <div className="flex calendar-fullday-row">
-                        {canDisplaySecondaryTimeZone ? <div className="calendar-aside" /> : null}
-                        <div className="calendar-aside calendar-aside-weekNumber text-center flex flex-column flex-justify-end">
-                            {isDrawerApp && (
-                                <span
-                                    className="h-custom flex flex-column flex-justify-center pt-1"
-                                    style={{ '--h-custom': `${dayEventHeight / 16}rem` }}
-                                >
-                                    {primaryTimezone}
-                                </span>
-                            )}
-                        </div>
-                        <div className="flex-item-fluid relative">
-                            <DayLines days={daysRows[0]} />
-                            <div
-                                className="calendar-time-fullday h-custom"
-                                style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
-                                data-row="0"
-                                ref={dayGridRef}
-                            >
-                                <RowEvents
-                                    tzid={tzid}
-                                    eventsInRowStyles={eventsInRowStyles}
-                                    eventsInRowSummary={eventsInRowSummary}
-                                    eventsInRow={eventsInRow}
-                                    events={dayEvents}
-                                    formatTime={formatTime}
-                                    days={daysRows[0]}
-                                    now={now}
-                                    row={0}
-                                    targetMoreData={targetMoreData}
-                                    targetMoreRef={targetMoreRef}
-                                    targetEventRef={targetEventRef}
-                                    targetEventData={targetEventData}
-                                />
-                            </div>
+                    <div className="flex-item-fluid relative">
+                        <div
+                            className="calendar-time-fullday h-custom"
+                            style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
+                            data-row="0"
+                            ref={dayGridRef}
+                        >
+                            <RowEvents
+                                tzid={tzid}
+                                eventsInRowStyles={eventsInRowStyles}
+                                eventsInRowSummary={eventsInRowSummary}
+                                eventsInRow={eventsInRow}
+                                events={dayEvents}
+                                formatTime={formatTime}
+                                days={daysRows[0]}
+                                now={now}
+                                row={0}
+                                targetMoreData={targetMoreData}
+                                targetMoreRef={targetMoreRef}
+                                targetEventRef={targetEventRef}
+                                targetEventData={targetEventData}
+                            />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div
+                className={clsx(['flex-item-fluid scroll-if-needed h100 calendar-time-grid', displayViewClass])}
+                ref={scrollRef}
+                {...rest}
+            >
+                {children}
 
-                <div className="flex">
-                    {canDisplaySecondaryTimeZone ? (
-                        <HourTexts
-                            className="calendar-aside calendar-secondary-timezone-cell"
-                            hours={formattedSecondaryHours}
-                        />
-                    ) : null}
-                    <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
-                    <div className="flex flex-item-fluid relative calendar-grid-gridcells" ref={timeGridRef}>
-                        <HourLines hours={hours} />
-                        {days.map((day, dayIndex) => {
-                            const key = getKey(day);
-                            const isActiveDay = isSameDay(day, date);
-                            if (isNarrow && !isActiveDay) {
-                                return null;
-                            }
-                            return (
-                                <div
-                                    data-testid="calendar-week-day-view:weekday-column"
-                                    className="flex-item-fluid relative calendar-grid-gridcell h100"
-                                    key={key}
-                                >
-                                    <DayEvents
-                                        tzid={tzid}
-                                        events={timeEvents}
-                                        eventsInDay={eventsPerDay[key]}
-                                        dayIndex={isNarrow ? 0 : dayIndex}
-                                        totalMinutes={totalMinutes}
-                                        targetEventData={targetEventData}
-                                        targetEventRef={targetEventRef}
-                                        formatTime={formatTime}
-                                        now={now}
-                                        colHeight={rect?.height}
-                                        partDayEventViewStyleValues={partDayEventViewStyleValues}
-                                    />
-                                    {isSameDay(day, now) ? (
-                                        <div
-                                            className="calendar-grid-nowHourLine absolute top-custom"
-                                            ref={nowRef}
-                                            style={{ '--top-custom': nowTopPercentage }}
+                <div className={clsx('relative main-area-content', !isDrawerApp && 'border-right border-weak')}>
+                    <div className="flex">
+                        {canDisplaySecondaryTimeZone ? (
+                            <HourTexts
+                                className="calendar-aside calendar-secondary-timezone-cell"
+                                hours={formattedSecondaryHours}
+                            />
+                        ) : null}
+                        <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
+                        <div className="flex flex-item-fluid relative calendar-grid-gridcells" ref={timeGridRef}>
+                            <HourLines hours={hours} />
+                            {days.map((day, dayIndex) => {
+                                const key = getKey(day);
+                                const isActiveDay = isSameDay(day, date);
+                                if (isNarrow && !isActiveDay) {
+                                    return null;
+                                }
+                                return (
+                                    <div
+                                        data-testid="calendar-week-day-view:weekday-column"
+                                        className="flex-item-fluid relative calendar-grid-gridcell h100"
+                                        key={key}
+                                    >
+                                        <DayEvents
+                                            tzid={tzid}
+                                            events={timeEvents}
+                                            eventsInDay={eventsPerDay[key]}
+                                            dayIndex={isNarrow ? 0 : dayIndex}
+                                            totalMinutes={totalMinutes}
+                                            targetEventData={targetEventData}
+                                            targetEventRef={targetEventRef}
+                                            formatTime={formatTime}
+                                            now={now}
+                                            colHeight={rect?.height}
+                                            partDayEventViewStyleValues={partDayEventViewStyleValues}
                                         />
-                                    ) : null}
-                                </div>
-                            );
-                        })}
-                        {/* Renders the part day event view to get CSS values  */}
-                        <PartDayEventView className="isHidden" ref={partDayEventViewRef} />
+                                        {isSameDay(day, now) ? (
+                                            <div
+                                                className="calendar-grid-nowHourLine absolute top-custom"
+                                                ref={nowRef}
+                                                style={{ '--top-custom': nowTopPercentage }}
+                                            />
+                                        ) : null}
+                                    </div>
+                                );
+                            })}
+                            {/* Renders the part day event view to get CSS values  */}
+                            <PartDayEventView className="isHidden" ref={partDayEventViewRef} />
+                        </div>
                     </div>
                 </div>
             </div>

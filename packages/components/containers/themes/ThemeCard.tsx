@@ -12,33 +12,59 @@ interface Props {
     id: string;
     size?: ThemeSvgSize;
     colors: ThemeSvgColors;
-    selected: boolean;
-    onChange: () => void;
+    selected?: boolean;
+    onChange?: () => void;
     disabled?: boolean;
+    as?: React.ElementType;
+    className?: string;
+    borderRadius?: 'sm' | 'md';
 }
 
-const ThemeCard = ({ label, id, size, colors, selected, onChange, disabled }: Props) => {
+const ThemeCard = ({
+    label,
+    id,
+    size,
+    colors,
+    selected,
+    onChange,
+    disabled,
+    borderRadius = 'md',
+    as: Component = Button,
+    className,
+}: Props) => {
     return (
-        <Button
+        <Component
             name="themeCard"
             shape="outline"
             color={selected ? 'norm' : 'weak'}
             id={id}
-            fullWidth
             className={clsx(
-                'theme-card-button p-1 flex flex-nowrap flex-column gap-1 flex-align-items-center',
-                selected && 'is-active no-pointer-events text-bold'
+                'theme-card-button p-0 flex flex-nowrap flex-column gap-1 flex-align-items-center',
+                selected && 'is-active no-pointer-events text-bold',
+                Component === Button && 'w100',
+                borderRadius === 'sm' && 'rounded-sm',
+                borderRadius === 'md' && 'rounded',
+                `theme-card-button-${size}`,
+                className
             )}
-            aria-pressed={selected}
+            aria-pressed={Component === Button ? selected : undefined}
             onClick={onChange}
             disabled={disabled}
-            type="button"
+            type={Component === Button ? 'button' : undefined}
             aria-label={c('Action').t`Use ${label} theme`}
             title={c('Action').t`Use ${label} theme`}
         >
-            <ThemeSvg className={clsx('block theme-card-image on-rtl-mirror rounded-sm')} size={size} colors={colors} />
-            <span className={clsx(size === 'small' && 'sr-only', size === 'medium' && 'text-sm')}>{label}</span>
-        </Button>
+            <ThemeSvg className={clsx('block theme-card-image on-rtl-mirror')} size={size} colors={colors} />
+            <span
+                className={clsx(
+                    size === 'small' && 'sr-only',
+                    size === 'medium' && 'sr-only',
+                    size === 'medium-wide' && 'text-sm'
+                )}
+            >
+                {label}
+            </span>
+        </Component>
     );
 };
 

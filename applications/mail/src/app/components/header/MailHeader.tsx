@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { ReactNode, memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import {
@@ -6,81 +6,96 @@ import {
     Icon,
     PrivateHeader,
     RebrandingFeedbackModal,
-    TopNavbarListItemContactsDropdown,
     TopNavbarListItemFeedbackButton,
     UserDropdown,
     useFolders,
     useHasRebrandingFeedback,
     useLabels,
+    useMailSettings,
     useModalState,
 } from '@proton/components';
-import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
+import { useOnCompose } from '../../containers/ComposeProvider';
 import { getLabelName } from '../../helpers/labels';
-import { setParamsInUrl } from '../../helpers/mailboxUrl';
+import { isColumnMode } from '../../helpers/mailSettings';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
+import { layoutActions } from '../../logic/layout/layoutSlice';
+import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
+import { useAppDispatch, useAppSelector } from '../../logic/store';
 import { Breakpoints } from '../../models/utils';
-import MailOnboardingModal from '../onboarding/MailOnboardingModal';
-import MailHeaderSettingsButton from './MailHeaderSettingsButton';
 import MailSearch from './search/MailSearch';
 
 interface Props {
     labelID: string;
     elementID: string | undefined;
+    selectedIDs: string[];
     breakpoints: Breakpoints;
-    expanded?: boolean;
-    onToggleExpand: () => void;
+    toolbar?: ReactNode | undefined;
 }
 
-const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand }: Props) => {
+const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar }: Props) => {
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const [mailSettings] = useMailSettings();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
-
-    const displayContactsInHeader = useDisplayContactsWidget();
+    const dispatch = useAppDispatch();
+    const expanded = useAppSelector(selectLayoutIsExpanded);
+    const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleExpanded()), []);
 
     const onCompose = useOnCompose();
-    const onMailTo = useOnMailTo();
 
-    const [onboardingModalProps, setOnboardingModalOpen, renderOnboardingModal] = useModalState();
     const [feedbackModalProps, setFeedbackModalOpen] = useModalState();
 
-    const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
-        onCompose({
-            type: ComposeTypes.newMessage,
-            action: MESSAGE_ACTIONS.NEW,
-            referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
-        });
-    };
-
-    const backUrl = setParamsInUrl(location, { labelID });
-    const showBackButton = breakpoints.isNarrow && elementID;
+    const hideMenuButton = breakpoints.isNarrow && !!elementID;
+    const hideUpsellButton =
+        (breakpoints.isNarrow || breakpoints.isTablet) && (!!elementID || selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
+
+    const isColumn = isColumnMode(mailSettings);
+
+    /** Search is displayed everytime except when we are on message view with row mode */
+    const displaySearch = !(!isColumn && elementID);
 
     return (
         <>
             <PrivateHeader
-                userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModalOpen(true)} />}
-                backUrl={showBackButton && backUrl ? backUrl : undefined}
+                userDropdown={<UserDropdown app={APPS.PROTONMAIL} />}
+                hideMenuButton={hideMenuButton}
+                hideUpsellButton={hideUpsellButton}
                 title={labelName}
-                settingsButton={<MailHeaderSettingsButton />}
-                contactsButton={
-                    displayContactsInHeader && (
-                        <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
-                    )
-                }
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
                     ) : null
                 }
-                searchBox={<MailSearch breakpoints={breakpoints} labelID={labelID} location={location} />}
-                searchDropdown={<MailSearch breakpoints={breakpoints} labelID={labelID} location={location} />}
-                expanded={!!expanded}
+                actionArea={
+                    breakpoints.isNarrow || breakpoints.isTablet ? (
+                        <div className="flex flex-nowrap flex-justify-space-between">
+                            {toolbar}
+                            {!(elementID || selectedIDs.length !== 0) && (
+                                <MailSearch
+                                    breakpoints={breakpoints}
+                                    labelID={labelID}
+                                    location={location}
+                                    columnMode={isColumn}
+                                />
+                            )}
+                        </div>
+                    ) : displaySearch ? (
+                        <MailSearch
+                            breakpoints={breakpoints}
+                            labelID={labelID}
+                            location={location}
+                            columnMode={isColumn}
+                        />
+                    ) : (
+                        <>{toolbar}</>
+                    )
+                }
+                expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
                 floatingButton={
@@ -91,7 +106,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                     </FloatingButton>
                 }
             />
-            {renderOnboardingModal && <MailOnboardingModal showGenericSteps {...onboardingModalProps} />}
             <RebrandingFeedbackModal {...feedbackModalProps} />
         </>
     );

@@ -67,6 +67,14 @@
 	}
 }
 
+.on-hover-color-norm {
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--text-norm);
+	}
+}
+
 .fill-currentcolor {
 	fill: currentcolor;
 }

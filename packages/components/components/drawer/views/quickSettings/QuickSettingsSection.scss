@@ -1,0 +1,6 @@
+@import '~@proton/styles/scss/lib';
+
+.quickSettingsSection {
+	background-color: var(--background-elevated, var(--bg-norm));
+	min-block-size: rem(40);
+}

@@ -21,13 +21,11 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainArea,
+    QuickSettingsAppButton,
     RebrandingFeedbackModal,
-    TimeZoneSelector,
     Tooltip,
     TopBanners,
-    TopNavbarListItemContactsDropdown,
     TopNavbarListItemFeedbackButton,
-    TopNavbarListItemSettingsDropdown,
     UserDropdown,
     useContactGroups,
     useDrawer,
@@ -42,13 +40,11 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
     CONTACT_WIDGET_TABS,
     CustomAction,
     CustomActionRenderProps,
 } from '@proton/components/containers/contacts/widget/types';
-import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
@@ -56,6 +52,7 @@ import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -66,8 +63,8 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
+import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings';
 import getDateRangeText from '../../components/getDateRangeText';
-import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarSharingPopupModal from './CalendarSharingPopupModal';
@@ -146,14 +143,12 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-    const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
         useModalState();
 
     useOpenDrawerOnLoad();
-    const displayContactsInHeader = useDisplayContactsWidget();
-    const { showDrawerSidebar, appInView } = useDrawer();
+    const { appInView } = useDrawer();
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const defaultView = getDefaultView(calendarUserSettings);
@@ -433,6 +428,45 @@ const CalendarContainerView = ({
         },
     ];
 
+    const currentRange = useMemo(() => {
+        return getDateRangeText(view, range, localDate, localDateRange);
+    }, [view, range, localDate, localDateRange]);
+
+    const noonDate = getNoonDateForTimeZoneOffset({
+        date: utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate,
+        dateTzid: tzid,
+        targetTzid: calendarUserSettings.PrimaryTimezone,
+    });
+
+    const toolbar = (isDrawerApp: boolean) => {
+        return !isDrawerApp ? (
+            <CalendarToolbar
+                date={noonDate}
+                timezone={tzid}
+                setTzid={setTzid}
+                telemetrySource="temporary_timezone"
+                dateCursorButtons={
+                    <DateCursorButtons
+                        view={view}
+                        currentRange={currentRange}
+                        now={localNowDate}
+                        onToday={onClickToday}
+                        onNext={handleClickNext}
+                        onPrev={handleClickPrev}
+                    />
+                }
+                viewSelector={
+                    <ViewSelector
+                        data-testid="calendar-view:view-options"
+                        view={view}
+                        range={range}
+                        onChange={onChangeView}
+                    />
+                }
+            />
+        ) : undefined;
+    };
+
     const header = isDrawerApp ? (
         <DrawerAppHeader
             title={
@@ -459,22 +493,15 @@ const CalendarContainerView = ({
         />
     ) : (
         <>
-            {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
             {renderCalendarSharingPopupModal && (
                 <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onDisplayed} />
             )}
             <PrivateHeader
-                userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
-                settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
+                userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}
                 floatingButton={
                     <FloatingButton onClick={() => onCreateEvent?.()}>
                         <Icon size={24} name="plus" className="m-auto" />
                     </FloatingButton>
-                }
-                contactsButton={
-                    displayContactsInHeader && (
-                        <TopNavbarListItemContactsDropdown customActions={contactCustomActions} />
-                    )
                 }
                 feedbackButton={
                     hasRebrandingFeedback ? (
@@ -485,6 +512,8 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
+                actionArea={toolbar(isDrawerApp)}
+                hideUpsellButton={isNarrow}
             />
 
             <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
@@ -540,34 +569,29 @@ const CalendarContainerView = ({
         </div>
     ) : null;
 
-    const currentRange = useMemo(() => {
-        return getDateRangeText(view, range, localDate, localDateRange);
-    }, [view, range, localDate, localDateRange]);
-
-    const noonDate = getNoonDateForTimeZoneOffset({
-        date: utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate,
-        dateTzid: tzid,
-        targetTzid: calendarUserSettings.PrimaryTimezone,
-    });
-
     const drawerSidebarButtons = [
-        <ContactDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)} />,
+        <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
     ].filter(isTruthy);
 
-    const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
+    const drawerSettingsButton = (
+        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
+    );
 
     return (
         <PrivateAppContainer
             top={top}
-            header={header}
             bottom={bottom}
             sidebar={sidebar}
+            header={header}
             containerRef={containerRef}
-            mainNoBorder={isDrawerApp}
-            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
-            drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
-            drawerApp={isDrawerApp ? null : <DrawerApp contactCustomActions={contactCustomActions} />}
-            mainBordered={canShowDrawer && showDrawerSidebar}
+            drawerApp={
+                isDrawerApp ? null : (
+                    <DrawerApp
+                        contactCustomActions={contactCustomActions}
+                        customAppSettings={<CalendarQuickSettings />}
+                    />
+                )
+            }
         >
             <div className="only-print p-4">
                 {tzid} <br />
@@ -581,39 +605,13 @@ const CalendarContainerView = ({
                 <br />
                 {currentRange}
             </div>
-            {!isDrawerApp && (
-                <CalendarToolbar
-                    dateCursorButtons={
-                        <DateCursorButtons
-                            view={view}
-                            currentRange={currentRange}
-                            now={localNowDate}
-                            onToday={onClickToday}
-                            onNext={handleClickNext}
-                            onPrev={handleClickPrev}
-                        />
-                    }
-                    viewSelector={
-                        <ViewSelector
-                            data-testid="calendar-view:view-options"
-                            view={view}
-                            range={range}
-                            onChange={onChangeView}
-                        />
-                    }
-                    timezoneSelector={
-                        <TimeZoneSelector
-                            data-testid="calendar-view:time-zone-dropdown"
-                            className="no-mobile no-tablet"
-                            date={noonDate}
-                            timezone={tzid}
-                            onChange={setTzid}
-                            telemetrySource="temporary_timezone"
-                        />
-                    }
-                />
-            )}
-            <PrivateMainArea hasToolbar data-testid="calendar-view:events-area">
+
+            <PrivateMainArea
+                hasToolbar
+                data-testid="calendar-view:events-area"
+                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} settingsButton={drawerSettingsButton} />}
+                isDrawerApp={isDrawerApp}
+            >
                 {loader}
                 {children}
             </PrivateMainArea>

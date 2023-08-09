@@ -46,6 +46,7 @@ const useKTActivation = (): KeyTransparencyActivation => {
     useEffect(() => {
         getKTActivationPromise(featureFlag, appName).then((ktActivation) => setKTActivation(ktActivation));
     }, [featureFlag, appName]);
+
     return ktActivation;
 };
 
