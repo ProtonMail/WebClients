@@ -2,7 +2,7 @@ import { MouseEvent, Ref, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import { Button, ButtonLikeShape, ButtonProps } from '@proton/atoms';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { Icon } from '../icon';
@@ -13,9 +13,13 @@ interface Props extends ButtonProps {
     className?: string;
     onCopy?: () => void;
     tooltipText?: string;
+    shape?: ButtonLikeShape;
 }
 
-const Copy = ({ children, value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
+const Copy = (
+    { children, value, onCopy, tooltipText, shape = 'outline', ...rest }: Props,
+    ref: Ref<HTMLButtonElement>
+) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         textToClipboard(value, e.currentTarget);
@@ -24,7 +28,7 @@ const Copy = ({ children, value, onCopy, tooltipText, ...rest }: Props, ref: Ref
 
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
-            <Button icon color="weak" shape="outline" ref={ref} {...rest} onClick={handleClick}>
+            <Button icon color="weak" shape={shape} ref={ref} {...rest} onClick={handleClick}>
                 {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
             </Button>
         </Tooltip>

@@ -148,7 +148,7 @@ const PlanSelection = ({
         ].filter(isTruthy);
         /**
          * In case if the VPN B2B plans are not available, we should fallback to the usual set of plans.
-         * It can happens if backend doesn't return the VPN B2B plans.
+         * It can happen if backend doesn't return the VPN B2B plans.
          */
         if (vpnB2BPlans.length !== 0) {
             B2BPlans = vpnB2BPlans;
