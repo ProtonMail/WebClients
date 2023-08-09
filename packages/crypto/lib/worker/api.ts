@@ -13,6 +13,7 @@ import {
     decryptMessage,
     decryptMessageLegacy,
     decryptSessionKey,
+    doesKeySupportForwarding,
     encryptKey,
     encryptMessage,
     encryptSessionKey,
@@ -317,7 +318,7 @@ class KeyManagementApi {
     }) {
         const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
 
-        const { proxyParameter, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
+        const { proxyParameters, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
 
         const maybeEncryptedKey = passphrase
             ? await encryptKey({ privateKey: forwardeeKey, passphrase })
@@ -325,8 +326,20 @@ class KeyManagementApi {
 
         return {
             forwardeeKey: maybeEncryptedKey.armor(),
-            proxyParameter,
+            proxyParameters,
         };
+    }
+
+    /**
+     * Check whether a key can be used as input to `generateE2EEForwardingMaterial` to setup E2EE forwarding.
+     */
+    async doesKeySupportE2EEForwarding({ forwarderKey: keyReference }: { forwarderKey: PrivateKeyReference }) {
+        const key = this.keyStore.get(keyReference._idx);
+        if (!key.isPrivate()) {
+            return false;
+        }
+        const supportsForwarding = await doesKeySupportForwarding(key);
+        return supportsForwarding;
     }
 
     /**
