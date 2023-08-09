@@ -6,8 +6,8 @@ import { Button } from '@proton/atoms/Button';
 import { Price, Radio } from '@proton/components/components';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import { Currency, CycleMapping } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Guarantee from './Guarantee';
@@ -153,23 +153,23 @@ const CycleSelector = ({
     onChangeCycle,
     currency,
     onGetTheDeal,
-    pricing,
+    checkoutMapping,
 }: {
     onGetTheDeal: (cycle: CYCLE) => void;
     cycle: CYCLE;
     currency: Currency;
     cycles: CYCLE[];
     onChangeCycle: (cycle: CYCLE, upsellFrom?: CYCLE) => void;
-    pricing: ReturnType<typeof getPricingFromPlanIDs>;
+    checkoutMapping: CycleMapping<SubscriptionCheckoutData>;
 }) => {
     return (
         <>
             {cycles.map((cycleItem) => {
                 const upsellCycle = CYCLE.TWO_YEARS;
-                const totals = getTotalFromPricing(pricing, cycleItem);
-                const discount24months = getTotalFromPricing(pricing, upsellCycle);
-                const discountPercentage = `${discount24months.discountPercentage}%`;
+                const discount24months = checkoutMapping[upsellCycle].discountPercent;
+                const discountPercentage = `${discount24months}%`;
                 const offText = getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '');
+                const currentCheckout = checkoutMapping[cycleItem] as SubscriptionCheckoutData;
                 return (
                     <CycleItemView
                         cycle={cycleItem}
@@ -185,8 +185,8 @@ const CycleSelector = ({
                         key={cycleItem}
                         currency={currency}
                         monthlySuffix={c('Suffix').t`/month`}
-                        totalPerMonth={totals.totalPerMonth}
-                        discountPercentage={totals.discountPercentage}
+                        totalPerMonth={currentCheckout.withDiscountPerMonth}
+                        discountPercentage={currentCheckout.discountPercent}
                         upsell={
                             cycleItem !== upsellCycle && (
                                 <button
