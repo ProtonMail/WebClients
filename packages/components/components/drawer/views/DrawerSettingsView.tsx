@@ -27,7 +27,10 @@ const DrawerSettingsView = ({ customAppSettings }: Props) => {
     };
 
     const settingsButton = (
-        <Button onClick={() => goToSettings(path, APP_NAME, false)}>{c('Title').t`All settings`}</Button>
+        <Button
+            onClick={() => goToSettings(path, APP_NAME, false)}
+            data-testid="drawer-quick-settings:all-settings-button"
+        >{c('Title').t`All settings`}</Button>
     );
 
     const defaultSettings = (
