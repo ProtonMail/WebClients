@@ -615,8 +615,6 @@ export const COVID_PLUS_BONUS_STORAGE = 5 * GIGA;
 export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * GIGA;
 export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
 
-export const DEFAULT_CYCLE = 24;
-
 export const FREE_VPN_CONNECTIONS = 1;
 export const VPN_CONNECTIONS = 10;
 
@@ -627,6 +625,8 @@ export enum CYCLE {
     THIRTY = 30,
     FIFTEEN = 15,
 }
+
+export const DEFAULT_CYCLE = CYCLE.TWO_YEARS;
 
 export const BLACK_FRIDAY = {
     COUPON_CODE: 'BF2022',
