@@ -91,6 +91,10 @@ export function useLinksActions({
             getShareCreatorKeys(abortSignal, shareId),
         ]);
 
+        if (link.corruptedLink) {
+            throw new Error('Cannot move corrupted file');
+        }
+
         const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
             generateLookupHash(link.name, newParentHashKey),
