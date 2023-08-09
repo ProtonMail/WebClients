@@ -1,13 +1,13 @@
-import { MutableRefObject, ReactElement, cloneElement, useEffect, useRef } from 'react';
+import { MutableRefObject, ReactElement, ReactNode, cloneElement, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, APP_NAMES, DAY } from '@proton/shared/lib/constants';
-import drawerImg from '@proton/styles/assets/img/illustrations/spotlight-drawer.svg';
+import { DAY } from '@proton/shared/lib/constants';
+import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 
 import { FeatureCode } from '../../containers';
-import { useConfig, useDrawer, useSpotlightOnFeature, useWelcomeFlags } from '../../hooks';
+import { useDrawer, useSpotlightOnFeature, useWelcomeFlags } from '../../hooks';
 import useUser from '../../hooks/useUser';
 import { Spotlight, useSpotlightShow } from '../spotlight';
 
@@ -15,20 +15,23 @@ import './DrawerSidebar.scss';
 
 interface Props {
     buttons: ReactElement[];
+    settingsButton: ReactNode;
     spotlightSeenRef?: MutableRefObject<boolean>;
 }
 
-const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
+const DrawerSidebar = ({ buttons, settingsButton, spotlightSeenRef }: Props) => {
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
-    const { showDrawerSidebar, appInView, setDrawerSidebarMounted } = useDrawer();
-    const hasSidebar = buttons.length > 0;
+    const { appInView, setDrawerSidebarMounted } = useDrawer();
     const [welcomeFlags] = useWelcomeFlags();
 
-    const spotlightRef = useRef<HTMLElement>(null);
+    useEffect(() => {
+        setDrawerSidebarMounted(true);
+    }, []);
+
+    const spotlightRef = useRef<HTMLDivElement>(null);
 
     const { show: showSpotlight, onDisplayed: onDisplayedSpotlight } = useSpotlightOnFeature(
-        FeatureCode.SpotlightDrawer
+        FeatureCode.QuickSettingsSpotlight
     );
     const shouldShowSpotlight = useSpotlightShow(showSpotlight);
 
@@ -36,21 +39,12 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
     const userCreateTime = user.CreateTime || 0;
     const isAccountOlderThanThreeDays = Date.now() > userCreateTime * 1000 + 3 * DAY;
 
-    const needSpotlightApps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONDRIVE];
     const canShowSpotlight =
-        shouldShowSpotlight &&
-        isAccountOlderThanThreeDays &&
-        needSpotlightApps.includes(APP_NAME) &&
-        welcomeFlags.isDone &&
-        !spotlightSeenRef?.current;
+        shouldShowSpotlight && isAccountOlderThanThreeDays && welcomeFlags.isDone && !spotlightSeenRef?.current;
 
     useEffect(() => {
         setDrawerSidebarMounted(true);
     }, []);
-
-    if (!hasSidebar || !showDrawerSidebar) {
-        return null;
-    }
 
     // Adding keys to buttons
     const clonedButtons = buttons.map((button, index) =>
@@ -60,33 +54,35 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
     return (
         <nav
             aria-label={c('Landmarks').t`Side panel`}
-            className={clsx('drawer-sidebar no-print', appInView && 'drawer-sidebar--hide-on-tablet')}
+            className={clsx('drawer-sidebar no-mobile no-print', appInView && 'drawer-sidebar--hide-on-tablet')}
         >
-            <Spotlight
-                content={
-                    <div className="flex flex-nowrap my-2">
-                        <div className="flex-item-noshrink mr-4">
-                            <img src={drawerImg} className="w4e" alt="" />
-                        </div>
-                        <div>
-                            <div className="text-lg text-bold mb-1">{c('Side panel spotlight')
-                                .t`Try the new side panel`}</div>
-                            <p className="m-0">
-                                {c('Side panel spotlight')
-                                    .t`Manage your contacts and view your calendar without leaving your app.`}
-                            </p>
-                        </div>
-                    </div>
-                }
-                show={canShowSpotlight}
-                onDisplayed={onDisplayedSpotlight}
-                originalPlacement="left"
-                anchorRef={spotlightRef}
-            >
-                <span ref={spotlightRef} className="flex flex-column flex-align-items-center gap-7 mt-2">
-                    {clonedButtons}
-                </span>
-            </Spotlight>
+            <span className="flex flex-column flex-align-items-center flex-justify-space-between py-3 h100">
+                <div className="flex flex-column flex-align-items-center gap-5">{clonedButtons}</div>
+
+                <Spotlight
+                    originalPlacement="right"
+                    show={canShowSpotlight}
+                    onDisplayed={onDisplayedSpotlight}
+                    anchorRef={spotlightRef}
+                    style={{ maxWidth: '25rem' }}
+                    content={
+                        <>
+                            <div className="flex flex-nowrap my-2">
+                                <div className="flex-item-noshrink mr-4">
+                                    <img src={starImg} className="w4e" alt="" />
+                                </div>
+                                <div>
+                                    <p className="mt-0 mb-2 text-bold">{c('Spotlight').t`Quick settings`}</p>
+                                    <p className="m-0">{c('Spotlight')
+                                        .t`Easily access and customize your app experience.`}</p>
+                                </div>
+                            </div>
+                        </>
+                    }
+                >
+                    <div ref={spotlightRef}>{settingsButton}</div>
+                </Spotlight>
+            </span>
         </nav>
     );
 };

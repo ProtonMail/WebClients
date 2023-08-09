@@ -1,16 +1,25 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
+import {
+    AbbreviatedTimezone,
+    getAbbreviatedTimezoneName,
+    getTimeZoneOptions,
+    getTimezoneAndOffset,
+} from '@proton/shared/lib/date/timezone';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
+import { DropdownSizeUnit } from '../dropdown';
+import { Unit } from '../dropdown/utils';
 import { Option } from '../option';
 import { SearchableSelect } from '../selectTwo';
+import { Props as SearchableSelectProps } from '../selectTwo/SearchableSelect';
 import { Props as SelectProps } from '../selectTwo/SelectTwo';
+import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     timezone?: string;
@@ -21,6 +30,10 @@ interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     date?: Date;
     loading?: boolean;
     telemetrySource?: string;
+    abbreviatedTimezone?: AbbreviatedTimezone;
+    unstyledSelect?: boolean;
+    selectMaxHeight?: DropdownSizeUnit.Viewport | Unit;
+    tooltip?: boolean;
 }
 export const TimeZoneSelector = ({
     loading = false,
@@ -29,9 +42,14 @@ export const TimeZoneSelector = ({
     date,
     timezone,
     onChange,
+    abbreviatedTimezone,
+    unstyledSelect,
+    selectMaxHeight,
+    tooltip = false,
     ...rest
 }: Props) => {
     const api = useApi();
+    const [selectIsOpen, setSelectIsOpen] = useState(false);
 
     const timezoneOptions = useMemo(() => {
         const options = getTimeZoneOptions(date || new Date());
@@ -56,18 +74,40 @@ export const TimeZoneSelector = ({
         onChange(value);
     };
 
+    const searchableSelectProps: SearchableSelectProps<string> = {
+        disabled: loading || disabled,
+        title: c('Action').t`Select time zone`,
+        value: timezone,
+        onChange: handleChange,
+        onOpen: () => setSelectIsOpen(true),
+        onClose: () => setSelectIsOpen(false),
+        search: true,
+        searchPlaceholder: c('Timezone search placeholder').t`Search time zones`,
+        size: {
+            width: DropdownSizeUnit.Dynamic,
+            height: DropdownSizeUnit.Dynamic,
+            maxHeight: selectMaxHeight ? selectMaxHeight : undefined,
+        },
+        unstyled: unstyledSelect,
+        renderSelected: () =>
+            abbreviatedTimezone ? getAbbreviatedTimezoneName(abbreviatedTimezone, timezone) : undefined,
+        originalPlacement: 'bottom-start',
+        ...rest,
+        children: timezoneOptions,
+    };
+
     return (
-        <SearchableSelect
-            disabled={loading || disabled}
-            title={c('Action').t`Select time zone`}
-            value={timezone}
-            onChange={handleChange}
-            search
-            searchPlaceholder={c('Timezone search placeholder').t`Search time zones`}
-            {...rest}
-        >
-            {timezoneOptions}
-        </SearchableSelect>
+        <>
+            {tooltip ? (
+                <Tooltip title={getTimezoneAndOffset(timezone || '')} isOpen={selectIsOpen ? false : undefined}>
+                    <div>
+                        <SearchableSelect {...searchableSelectProps} />
+                    </div>
+                </Tooltip>
+            ) : (
+                <SearchableSelect {...searchableSelectProps} />
+            )}
+        </>
     );
 };
 

@@ -60,7 +60,7 @@ const DrawerAppFooter = ({ buttons, offsetNotifications }: Props) => {
 
     return (
         <div className="relative" ref={ref}>
-            <Footer className="p-4 flex-column gap-2">{clonedButtons}</Footer>
+            <Footer className="p-3 flex-column gap-2">{clonedButtons}</Footer>
         </div>
     );
 };

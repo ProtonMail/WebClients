@@ -48,7 +48,7 @@ const ItemContextMenu = ({
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
 
-    const [actions] = useLabelActions(labelID, false);
+    const [actions] = useLabelActions(labelID);
 
     const handleMove = (labelID: string) => {
         onMove(labelID);

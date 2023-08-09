@@ -1,26 +1,23 @@
-import { Ref, memo, useRef } from 'react';
+import { Ref, memo } from 'react';
 
-import { c } from 'ttag';
-
-import { Vr } from '@proton/atoms';
-import { Icon, ToolbarButton } from '@proton/components';
-import clsx from '@proton/utils/clsx';
+import { pick } from '@proton/shared/lib/helpers/object';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
-import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
 import { Breakpoints } from '../../models/utils';
-import LabelsAndFolders from './LabelsAndFolders';
-import MoreActions from './MoreActions';
-import MoreDropdown from './MoreDropdown';
-import MoveButtons from './MoveButtons';
-import NavigationControls from './NavigationControls';
-import PagingControls from './PagingControls';
-import ReadUnreadButtons from './ReadUnreadButtons';
+import { Props as ListSettingsProps } from '../list/ListSettings';
 import SelectAll from './SelectAll';
+import ToolbarColumnWide from './ToolbarColumnWide';
+import ToolbarHeaderMessageNarrow from './ToolbarHeaderMessageNarrow';
+import ToolbarHeaderMessageWide from './ToolbarHeaderMessageWide';
+import ToolbarHeaderNarrow from './ToolbarHeaderNarrow';
+import ToolbarNarrow from './ToolbarNarrow';
+import ToolbarRowWide from './ToolbarRowWide';
 
 const defaultSelectedIDs: string[] = [];
+const BASE_TOOLBAR_CLASSNAME =
+    'toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-item-fluid-auto';
 
-interface Props {
+export interface Props extends ListSettingsProps {
     loading?: boolean;
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
@@ -44,137 +41,50 @@ interface Props {
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
     bordered?: boolean;
+    toolbarInHeader?: boolean;
 }
 
-const BREAKPOINTS = {
-    extratiny: 0,
-    tiny: 330,
-    small: 500,
-    medium: 700,
-    large: 1100,
-};
+type Variant =
+    | 'columnWide'
+    | 'rowWide'
+    | 'headerMessageWide'
+    | 'headerMessageNarrow'
+    | 'headerNarrow'
+    | 'narrow'
+    | undefined;
 
-const Toolbar = ({
-    labelID = '',
-    messageID,
-    elementID,
-    onCheck,
-    columnMode,
-    conversationMode,
-    breakpoints,
-    selectedIDs = defaultSelectedIDs,
-    checkedIDs,
-    elementIDs,
-    loading = false,
-    onBack,
-    page,
-    total,
-    isSearch,
-    onPage,
-    onElement,
-    onMarkAs,
-    onMove,
-    onDelete,
-    labelDropdownToggleRef,
-    moveDropdownToggleRef,
-    bordered,
-}: Props) => {
-    const toolbarRef = useRef<HTMLDivElement>(null);
-
-    // Using local breakpoints to be more precise and to deal with sidebar being there or not
-    const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-
-    const isTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
-    const isNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
-    const isMedium = breakpoint === 'medium' || breakpoint === 'large';
-
+const Toolbar = (props: Props) => {
+    const { elementID, columnMode, breakpoints, selectedIDs = defaultSelectedIDs, toolbarInHeader } = props;
+    const viewPortIsNarrow = breakpoints.isNarrow || breakpoints.isTablet;
     const listInView = columnMode || !elementID;
 
+    const variant = Object.entries({
+        headerNarrow: () => toolbarInHeader && viewPortIsNarrow && listInView,
+        narrow: () => !toolbarInHeader && viewPortIsNarrow,
+        headerMessageNarrow: () =>
+            !listInView && !columnMode && toolbarInHeader && viewPortIsNarrow && selectedIDs.length !== 0,
+        headerMessageWide: () => !listInView && !columnMode && toolbarInHeader && !viewPortIsNarrow,
+        rowWide: () => listInView && !columnMode && !viewPortIsNarrow,
+        columnWide: () => listInView && columnMode && !viewPortIsNarrow,
+    }).find(([, value]) => value() === true)?.[0] as Variant;
+
+    const selectAllProps = pick(props, ['labelID', 'elementIDs', 'checkedIDs', 'onCheck', 'loading']);
+    const commonProps = {
+        ...props,
+        // Base css class
+        classname: BASE_TOOLBAR_CLASSNAME,
+        selectAll: <SelectAll {...selectAllProps} />,
+    };
+
     return (
-        <nav
-            ref={toolbarRef}
-            className={clsx(
-                'toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between',
-                bordered && 'toolbar--bordered'
-            )}
-            data-shortcut-target="mailbox-toolbar"
-            aria-label={c('Label').t`Toolbar`}
-        >
-            <div className="flex toolbar-inner">
-                {listInView ? (
-                    <SelectAll
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        checkedIDs={checkedIDs}
-                        onCheck={onCheck}
-                        loading={loading}
-                    />
-                ) : (
-                    <ToolbarButton
-                        icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
-                        onClick={onBack}
-                        data-testid="toolbar:back-button"
-                    />
-                )}
-                <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-                <MoveButtons
-                    labelID={labelID}
-                    isExtraTiny={breakpoint === 'extratiny'}
-                    isNarrow={isNarrow}
-                    selectedIDs={selectedIDs}
-                    onMove={onMove}
-                    onDelete={onDelete}
-                />
-                {!isTiny ? (
-                    <LabelsAndFolders
-                        labelID={labelID}
-                        selectedIDs={selectedIDs}
-                        breakpoints={breakpoints}
-                        labelDropdownToggleRef={labelDropdownToggleRef}
-                        moveDropdownToggleRef={moveDropdownToggleRef}
-                    />
-                ) : null}
-                <MoreActions selectedIDs={selectedIDs} />
-            </div>
-            <div className="flex toolbar-inner">
-                {listInView ? (
-                    <>
-                        <MoreDropdown
-                            labelID={labelID}
-                            elementIDs={elementIDs}
-                            selectedIDs={selectedIDs}
-                            isSearch={isSearch}
-                            isNarrow={isNarrow}
-                            isTiny={isTiny}
-                            isExtraTiny={breakpoint === 'extratiny'}
-                            onMove={onMove}
-                            onDelete={onDelete}
-                            breakpoints={breakpoints}
-                        />
-                        <PagingControls
-                            narrowMode={isNarrow}
-                            loading={loading}
-                            page={page}
-                            total={total}
-                            onPage={onPage}
-                        />
-                    </>
-                ) : (
-                    <>
-                        {isMedium && <Vr />}
-                        <NavigationControls
-                            loading={loading}
-                            conversationMode={conversationMode}
-                            elementID={elementID}
-                            messageID={messageID}
-                            elementIDs={elementIDs}
-                            onElement={onElement}
-                            labelID={labelID}
-                        />
-                    </>
-                )}
-            </div>
-        </nav>
+        <>
+            {'headerNarrow' === variant && <ToolbarHeaderNarrow {...commonProps} />}
+            {'narrow' === variant && <ToolbarNarrow {...commonProps} />}
+            {'headerMessageNarrow' === variant && <ToolbarHeaderMessageNarrow {...commonProps} />}
+            {'headerMessageWide' === variant && <ToolbarHeaderMessageWide {...commonProps} />}
+            {'rowWide' === variant && <ToolbarRowWide {...commonProps} />}
+            {'columnWide' === variant && <ToolbarColumnWide {...commonProps} />}
+        </>
     );
 };
 

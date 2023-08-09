@@ -1,16 +1,7 @@
-import {
-    FeatureCode,
-    LoaderPage,
-    StandardPrivateApp,
-    useApi,
-    useAppTitle,
-    useDrawer,
-    useDrawerParent,
-} from '@proton/components';
+import { FeatureCode, LoaderPage, StandardPrivateApp, useApi, useAppTitle, useDrawerParent } from '@proton/components';
 import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -53,7 +44,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
     useAppTitle('');
 
     useDrawerParent();
-    const { setShowDrawerSidebar } = useDrawer();
 
     return (
         <StandardPrivateApp
@@ -64,7 +54,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 loadAllowedTimeZones(silentApi).catch(noop);
                 getHolidaysDirectory().catch(noop);
             }}
-            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             preloadModels={PRELOAD_MODELS}
             preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly, FeatureCode.HolidaysCalendars]}
             eventModels={EVENT_MODELS}

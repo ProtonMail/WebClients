@@ -12,6 +12,7 @@ import contacts from './contacts/contactsSlice';
 import conversations from './conversations/conversationsSlice';
 import elements from './elements/elementsSlice';
 import incomingDefaults from './incomingDefaults/incomingDefaultsSlice';
+import layout from './layout/layoutSlice';
 import messages from './messages/messagesSlice';
 
 const thunkExtraArgs = {} as unknown as AppThunkExtra['extra'];
@@ -50,6 +51,7 @@ export const store = configureStore({
         contacts,
         incomingDefaults,
         composers,
+        layout,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

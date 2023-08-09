@@ -1408,6 +1408,11 @@ const InteractiveCalendarView = ({
         return () => containerRef.removeEventListener('click', handler);
     }, [containerRef]);
 
+    // When the user updates a setting from the drawer quick settings, we want to close the event popover
+    useEffect(() => {
+        closeAllPopovers();
+    }, [view, weekStartsOn, primaryTimezone]);
+
     const formatDate = useCallback(
         (utcDate) => {
             return format(utcDate, 'PP', { locale: dateLocale });
