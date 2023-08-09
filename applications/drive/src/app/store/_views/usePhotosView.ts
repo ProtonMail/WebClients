@@ -4,7 +4,7 @@ import { useLoading } from '@proton/hooks/index';
 
 import { DecryptedLink, useLink, useLinkActions, useLinks, useLinksListing } from '../_links';
 import { usePhotos as usePhotosProvider } from '../_photos';
-import { Photo } from '../_photos/interfaces';
+import type { Photo } from '../_photos/interface';
 import { usePhotos } from '../_photos/usePhotos';
 import { useDefaultShare } from '../_shares';
 
