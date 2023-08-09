@@ -3,7 +3,7 @@ import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from
 import { useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { Photo } from '../../../store/_photos/interfaces';
+import type { Photo } from '../../../store/_photos/interface';
 import { usePhotosView } from '../../../store/_views/usePhotosView';
 import { PhotosCard } from './grid';
 
@@ -119,7 +119,7 @@ export const PhotosGrid: FC<Props> = ({ data, getPhotoLink }) => {
                     </div>
                 );
             } else {
-                // void getPhotoLink(new AbortController().signal, item.linkId);
+                // void getPhotoLink(new AbortController().signal, item.linkId)?.then((data) => console.log(data));
                 gridItems.push(
                     <PhotosCard
                         key={item.linkId}

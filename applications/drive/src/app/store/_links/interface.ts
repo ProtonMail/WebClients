@@ -1,5 +1,7 @@
 import { VERIFICATION_STATUS } from '@proton/crypto';
 
+import type { Photo } from '../_photos/interface';
+
 /**
  * Link should not be used directly. It is general set of attributes
  * commont for both EncryptedLink and DecryptedLink.
@@ -54,6 +56,7 @@ interface Link {
             bareUrl: string;
             token: string;
         };
+        photo?: Photo;
     };
     signatureAddress?: string; // Addresss used for key signatures.
     nameSignatureAddress?: string; // Address used for name signature.
