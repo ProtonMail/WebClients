@@ -101,7 +101,7 @@ export enum FONT_SIZES {
 }
 export const DEFAULT_FONT_SIZE = 14;
 
-export const DEFAULT_FONT_COLOR = '#222222';
+export const DEFAULT_FONT_COLOR = '#000000';
 export const DEFAULT_BACKGROUND = '#FFFFFF';
 
 export const FONT_COLORNAMES = {
@@ -112,7 +112,7 @@ export const FONT_COLORNAMES = {
     '#909090': () => c('color').t`philippine gray`,
     '#6B6B6B': () => c('color').t`dim gray`,
     '#464646': () => c('color').t`outer space`,
-    '#222222': () => c('color').t`raisin black`,
+    '#000000': () => c('color').t`black`,
     /* magenta */
     '#F6CBCB': () => c('color').t`light red`,
     '#EC9798': () => c('color').t`ruddy pink`,
