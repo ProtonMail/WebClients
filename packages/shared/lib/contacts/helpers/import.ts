@@ -19,11 +19,13 @@ import {
     EncryptedContact,
     ImportContactsModel,
 } from '../../interfaces/contacts/Import';
-import { VCardContact } from '../../interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
-import { parseToVCard } from '../vcard';
+import { createContactPropertyUid } from '../properties';
+import { getSupportedContactName } from '../surgery';
+import { getContactHasName, parseToVCard } from '../vcard';
 
 export const getIsAcceptedExtension = (extension: string): extension is ACCEPTED_EXTENSIONS => {
     return Object.values(EXTENSION).includes(extension as EXTENSION);
@@ -35,6 +37,28 @@ export const getHasPreVcardsContacts = (
     return !!model.preVcardsContacts;
 };
 
+export const naiveExtractPropertyValue = (vcard: string, property: string) => {
+    const contentLineSeparator = vcard.includes('\r\n') ? '\r\n' : '\n';
+    const contentLineSeparatorLength = contentLineSeparator.length;
+    // Vcard properties typically have parameters and value, e.g.: FN;PID=1.1:J. Doe
+    const indexOfPropertyName = vcard.toLowerCase().indexOf(`${contentLineSeparator}${property.toLowerCase()}`);
+    const indexOfPropertyValue = vcard.indexOf(':', indexOfPropertyName);
+    if (indexOfPropertyName === -1 || indexOfPropertyValue === -1) {
+        return;
+    }
+    // take into account possible folding
+    let indexOfNextField = vcard.indexOf(contentLineSeparator, indexOfPropertyValue);
+    let value = vcard.substring(indexOfPropertyValue + 1, indexOfNextField);
+
+    while (vcard[indexOfNextField + contentLineSeparatorLength] === ' ') {
+        const oldIndex = indexOfNextField;
+        indexOfNextField = vcard.indexOf(contentLineSeparator, oldIndex + contentLineSeparatorLength);
+        value += vcard.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
+    }
+
+    return value;
+};
+
 /**
  * Try to get a string that identifies a contact. This will be used in case of errors
  */
@@ -42,7 +66,7 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
     // translator: When having an error importing a contact for which we can't find a name, we display an error message `Contact ${contactId}: error description` with contactId = 'unknown'
     const unknownString = c('Import contact. Contact identifier').t`unknown`;
     if (typeof vcardOrVCardContact !== 'string') {
-        const fn = vcardOrVCardContact.fn[0]?.value;
+        const fn = vcardOrVCardContact.fn?.[0]?.value;
         if (fn) {
             return fn;
         }
@@ -52,40 +76,48 @@ export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
         }
         return unknownString;
     }
-    // try to get the name of the contact from FN, which is a required field in a vcard
-    const contentLineSeparator = vcardOrVCardContact.includes('\r\n') ? '\r\n' : '\n';
-    const contentLineSeparatorLength = contentLineSeparator.length;
-    const indexOfFNValue = vcardOrVCardContact.indexOf(
-        ':',
-        vcardOrVCardContact.toLowerCase().indexOf(`${contentLineSeparator}fn`)
-    );
-    if (indexOfFNValue === -1) {
-        return unknownString;
-    }
-    let indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, indexOfFNValue);
-    let FNvalue = vcardOrVCardContact.substring(indexOfFNValue + 1, indexOfNextField);
-    while (
-        vcardOrVCardContact[indexOfNextField + contentLineSeparatorLength] === ' ' &&
-        FNvalue.length < MAX_CONTACT_ID_CHARS_DISPLAY
-    ) {
-        const oldIndex = indexOfNextField;
-        indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, oldIndex + contentLineSeparatorLength);
-        FNvalue += vcardOrVCardContact.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
+    const FNvalue = naiveExtractPropertyValue(vcardOrVCardContact, 'FN');
+
+    return FNvalue ? truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY) : unknownString;
+};
+
+export const getSupportedContactProperties = (contact: VCardContact) => {
+    if (!getContactHasName(contact)) {
+        const contactId = getContactId(contact);
+
+        const supportedContactName = getSupportedContactName(contact);
+
+        if (!supportedContactName) {
+            throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.MISSING_FN, contactId);
+        }
+
+        const supportedFnProperty: VCardProperty<string> = {
+            field: 'fn',
+            uid: createContactPropertyUid(),
+            value: supportedContactName,
+        };
+
+        contact.fn = [supportedFnProperty];
     }
 
-    return truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY);
+    return contact;
 };
 
 export const getSupportedContact = (vcard: string) => {
-    if (vcard.includes('VERSION:2.1')) {
-        const contactId = getContactId(vcard);
-        return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
-    }
     try {
-        return parseToVCard(vcard);
-    } catch (error: any) {
         const contactId = getContactId(vcard);
-        return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
+
+        if (naiveExtractPropertyValue(vcard, 'VERSION') === '2.1') {
+            throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
+        }
+
+        return getSupportedContactProperties(parseToVCard(vcard));
+    } catch (error: any) {
+        if (error instanceof ImportContactError) {
+            throw error;
+        }
+        const contactId = getContactId(vcard);
+        throw new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
     }
 };
 

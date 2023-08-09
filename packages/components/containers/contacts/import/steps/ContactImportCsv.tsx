@@ -74,11 +74,13 @@ const ImportCsvModalContent = ({ model, setModel, onClose }: Props) => {
         event.preventDefault();
         event.stopPropagation();
 
+        const { errors, rest: parsedVcardContacts } = toVCardContacts(model.preVcardsContacts || []);
+
         setModel({
             ...model,
             step: IMPORT_STEPS.IMPORTING,
-            parsedVcardContacts: toVCardContacts(model.preVcardsContacts || []),
-            errors: [],
+            parsedVcardContacts,
+            errors,
         });
     };
 
