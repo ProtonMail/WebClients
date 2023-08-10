@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Úvod ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Zpět"
       ],
-      "Beta Access": [
-        "Beta přístup"
-      ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Nová zpráva"
       ],
-      "Composer size": [
-        "Velikost okna pro psaní zpráv"
-      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Přizpůsobit import"
-      ],
-      "Default email application": [
-        "Výchozí e-mailová aplikace"
       ],
       "Delete": [
         "Smazat"
@@ -454,9 +442,6 @@
       "Go to previous page": [
         "Jít na předchozí stránku"
       ],
-      "Go to settings": [
-        "Přejít do nastavení"
-      ],
       "Go to SimpleLogin": [
         "Přejít na SimpleLogin"
       ],
@@ -486,9 +471,6 @@
       ],
       "hide-my-email aliases": [
         "aliasy Hide-my-email"
-      ],
-      "I have a question": [
-        "Mám dotaz"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obrázek nemohl být načten kvůli ochraně před sledovacími prvky."
@@ -547,9 +529,6 @@
       "Italic": [
         "Kurzíva"
       ],
-      "Keyboard shortcuts": [
-        "Klávesové zkratky"
-      ],
       "Label as": [
         "Označit jako"
       ],
@@ -576,12 +555,6 @@
       ],
       "Loading${ ellipsis }": [
         "Načítání${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Hustota mailové schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
       ],
       "Manage folders": [
         "Spravovat složky"
@@ -979,9 +952,6 @@
       "Show preview": [
         "Zobrazit náhled"
       ],
-      "Show side panel": [
-        "Zobrazit postranní panel"
-      ],
       "Sign in": [
         "Přihlásit se"
       ],
@@ -1017,9 +987,6 @@
       ],
       "Submit": [
         "Odeslat"
-      ],
-      "Theme": [
-        "Motiv"
       ],
       "This message contains embedded images.": [
         "Tato zpráva obsahuje vložené obrázky."
@@ -1122,9 +1089,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocí myši změňte velikost zobrazení. Pokud používáte klávesnici, můžete ke změně velikosti použít klávesy se šipkami doleva a doprava."
-      ],
-      "Use “${ label }” setting": [
-        "Použijte nastavení “${ label }”"
       ],
       "Verify": [
         "Ověřit"
@@ -1308,14 +1272,6 @@
       ],
       "Sender verification passed": [
         "Odesílatel úspěšně ověřen"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta přístup vám umožní používat beta verze aplikací ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME } před jejich zveřejněním. To znamená, že můžete jako první vyzkoušet nové produkty, získat nové aktualizace a používat nové funkce."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
       ]
     },
     "Billing cycle option": {
@@ -1819,9 +1775,6 @@
       ],
       "purple": [
         "purpurová"
-      ],
-      "raisin black": [
-        "rozinkově černá"
       ],
       "reef": [
         "útes"
@@ -3004,16 +2957,6 @@
     "Download attachments": {
       "Download all": [
         "Stáhnout vše"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Vypnuto"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Zapnuto"
       ]
     },
     "Email body for description (description part)": {
@@ -4265,9 +4208,6 @@
       "For your eyes only": [
         "Pouze pro vaše oči"
       ],
-      "Get free storage": [
-        "Získat bezplatné úložiště"
-      ],
       "Get mobile app": [
         "Získat mobilní aplikaci"
       ],
@@ -4387,12 +4327,6 @@
     "Header": {
       "Contacts": [
         "Kontakty"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakty, skupiny a nastavení"
-      ],
-      "Get help": [
-        "Získejte pomoc"
       ],
       "Search": [
         "Hledat"
@@ -5048,6 +4982,9 @@
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Jste si jistí, že chcete zahodit váš import?"
+      ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Jste si jisti, že chcete přesunout všechny zprávy odtud do Archivu?"
       ],
@@ -5686,9 +5623,6 @@
       ],
       "Saved at ${ dateString }": [
         "Uloženo v ${ dateString }"
-      ],
-      "Saved on ${ dateString }": [
-        "Uloženo ${ dateString }"
       ],
       "Saved yesterday": [
         "Uloženo včera"
@@ -6506,16 +6440,6 @@
         "Zkratky zpráv"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Vypnuto"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Zapnuto"
-      ]
-    },
     "Label": {
       " and ": [
         " a "
@@ -6631,6 +6555,9 @@
       "Colors": [
         "Barvy"
       ],
+      "Composer": [
+        "Editor"
+      ],
       "Conditions": [
         "Podmínky"
       ],
@@ -6654,6 +6581,9 @@
       ],
       "Delete recovery-related information.": [
         "Odstranit informace související s obnovením."
+      ],
+      "Density": [
+        "Hustota"
       ],
       "Don't ask again": [
         "Příště se neptat"
@@ -6687,9 +6617,6 @@
       ],
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
-      ],
-      "Enable Beta Access": [
-        "Zapnout přístup do beta verze"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -6895,15 +6822,6 @@
       "Search in": [
         "Hledat v"
       ],
-      "Select how your composer opens by default.": [
-        "Vyberte, jak se má otevírat psaní nové zprávy."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vyberte vzhled výpisu zpráv."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vyberte vzhled vaší schránky."
-      ],
       "Send auto-reply": [
         "Poslat automatickou odpověď"
       ],
@@ -7029,30 +6947,6 @@
         "Komu"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximalizované"
-      ],
-      "Normal": [
-        "Normální"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Pohodlné"
-      ],
-      "Compact": [
-        "Kompaktní"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sloupec"
-      ],
-      "Row": [
-        "Řádek"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Vytvořit složku"
@@ -7097,6 +6991,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Windows aplikace ${ DRIVE_APP_NAME }"
+      ],
       "All mail": [
         "Všechny zprávy"
       ],
@@ -7195,6 +7092,9 @@
       ],
       "Scheduled": [
         "Naplánováno"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Bezproblémová synchronizace souborů a složek mezi počítačem a ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Odeslané"
@@ -7557,11 +7457,6 @@
         "Navýšit nyní"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Přepnout nebo přidat účet"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -7754,11 +7649,6 @@
       ],
       "Merge with calendar": [
         "Sloučit s kalendářem"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } z ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7988,11 +7878,6 @@
         "Uloženo včetně šifrování s nulovým přístupem"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Upozornění: služba bude znovu načtena, jakmile kliknete na tlačítko Uložit."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } den",
@@ -8138,14 +8023,6 @@
       ],
       "Stored with zero-access encryption": [
         "Uloženo včetně šifrování s nulovým přístupem"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Spravujte své kontakty a prohlížejte si kalendář, aniž byste opustili aplikaci."
-      ],
-      "Try the new side panel": [
-        "Vyzkoušejte nový postranní panel"
       ]
     },
     "Signature verification warning": {
@@ -8915,11 +8792,6 @@
         "vCard položka"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Nastavení"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Včera"
@@ -9017,14 +8889,8 @@
       "Attachments": [
         "Přílohy"
       ],
-      "Back": [
-        "Zpět"
-      ],
       "BCC": [
         "Skrytá kopie"
-      ],
-      "Beta Access": [
-        "Beta přístup"
       ],
       "Billing cycle": [
         "Fakturační cyklus"
@@ -9052,9 +8918,6 @@
       ],
       "Clearing data": [
         "Mazání dat"
-      ],
-      "Composer mode": [
-        "Režim psaní"
       ],
       "Confirm recipient address?": [
         "Potvrdit adresu příjemce?"
@@ -9272,12 +9135,6 @@
       "Load remote content": [
         "Načíst vzdálený obsah"
       ],
-      "Mailbox density": [
-        "Hustota prvků schránky"
-      ],
-      "Mailbox layout": [
-        "Rozvržení mailové schránky"
-      ],
       "Mark as read": [
         "Označit jako přečtené"
       ],
@@ -9361,12 +9218,6 @@
       ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
-      ],
-      "Open help menu": [
-        "Otevřít nabídku nápovědy"
-      ],
-      "Open settings menu": [
-        "Otevřít menu nastavení"
       ],
       "Other information": [
         "Další informace"
@@ -9530,9 +9381,6 @@
       "Verification error": [
         "Chyba při ověření"
       ],
-      "View contacts": [
-        "Zobrazit kontakty"
-      ],
       "Warning": [
         "Varování"
       ],
@@ -9606,14 +9454,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
       ],
-      "Hide side panel": [
-        "Skrýt postranní panel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
-      ],
-      "Show side panel": [
-        "Zobrazit postranní panel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"

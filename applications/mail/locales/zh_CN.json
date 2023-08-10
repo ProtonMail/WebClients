@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "上一步"
       ],
-      "Beta Access": [
-        "测试版功能"
-      ],
       "Blind Carbon Copy": [
         "密送"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "写邮件"
       ],
-      "Composer size": [
-        "编辑窗大小"
-      ],
       "Confirm": [
         "确定"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "自定义导入"
-      ],
-      "Default email application": [
-        "设为默认邮件应用"
       ],
       "Delete": [
         "删除"
@@ -448,9 +436,6 @@
       "Go to previous page": [
         "上一页"
       ],
-      "Go to settings": [
-        "前往设置"
-      ],
       "Go to SimpleLogin": [
         "前往 SimpleLogin"
       ],
@@ -480,9 +465,6 @@
       ],
       "hide-my-email aliases": [
         "Hide My Email 邮箱别名"
-      ],
-      "I have a question": [
-        "我有疑问"
       ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
@@ -538,9 +520,6 @@
       "Italic": [
         "斜体"
       ],
-      "Keyboard shortcuts": [
-        "键盘快捷键"
-      ],
       "Label as": [
         "加标签"
       ],
@@ -567,12 +546,6 @@
       ],
       "Loading${ ellipsis }": [
         "正在加载${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
       ],
       "Manage folders": [
         "管理文件夹"
@@ -970,9 +943,6 @@
       "Show preview": [
         "显示预览"
       ],
-      "Show side panel": [
-        "显示侧边栏"
-      ],
       "Sign in": [
         "登录"
       ],
@@ -1008,9 +978,6 @@
       ],
       "Submit": [
         "提交"
-      ],
-      "Theme": [
-        "配色"
       ],
       "This message contains embedded images.": [
         "此邮件含有嵌入图像。"
@@ -1110,9 +1077,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用鼠标调整视图大小，若是键盘用户可使用左右箭头键来调整大小。"
-      ],
-      "Use “${ label }” setting": [
-        "使用 \"${ label }\" 设置"
       ],
       "Verify": [
         "验证"
@@ -1296,14 +1260,6 @@
       ],
       "Sender verification passed": [
         "发送方验证通过"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
     "Billing cycle option": {
@@ -1807,9 +1763,6 @@
       ],
       "purple": [
         "紫色"
-      ],
-      "raisin black": [
-        "葡萄干黑"
       ],
       "reef": [
         "珊瑚绿"
@@ -2971,16 +2924,6 @@
     "Download attachments": {
       "Download all": [
         "全部下载"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "开"
       ]
     },
     "Email body for description (description part)": {
@@ -4148,9 +4091,6 @@
       "For your eyes only": [
         "密不透风"
       ],
-      "Get free storage": [
-        "获得免费存储空间"
-      ],
       "Get mobile app": [
         "下载移动端应用"
       ],
@@ -4258,12 +4198,6 @@
     "Header": {
       "Contacts": [
         "通讯录"
-      ],
-      "Contacts, groups and settings": [
-        "联系人、群组和设置"
-      ],
-      "Get help": [
-        "获取帮助"
       ],
       "Search": [
         "搜索"
@@ -5354,9 +5288,6 @@
       "Saved at ${ dateString }": [
         "保存于 ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "保存于 ${ dateString }"
-      ],
       "Saved yesterday": [
         "昨日已保存"
       ],
@@ -6119,16 +6050,6 @@
         "邮件快捷键"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "开"
-      ]
-    },
     "Label": {
       " and ": [
         "、"
@@ -6244,6 +6165,9 @@
       "Colors": [
         "颜色"
       ],
+      "Composer": [
+        "编辑窗"
+      ],
       "Conditions": [
         "条件"
       ],
@@ -6267,6 +6191,9 @@
       ],
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
+      ],
+      "Density": [
+        "密度"
       ],
       "Don't ask again": [
         "不再询问"
@@ -6300,9 +6227,6 @@
       ],
       "Emails (last month)": [
         "邮件（上个月）"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
       ],
       "Encrypt emails": [
         "加密电子邮件"
@@ -6508,15 +6432,6 @@
       "Search in": [
         "搜索范围"
       ],
-      "Select how your composer opens by default.": [
-        "请选择编辑窗的默认外观"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "调整邮件列表的显示方式。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "请选择邮箱的默认外观"
-      ],
       "Send auto-reply": [
         "自动回复"
       ],
@@ -6640,30 +6555,6 @@
       ],
       "To": [
         "收件人"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "满屏"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "适中"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
       ]
     },
     "Label/folder modal": {
@@ -7146,11 +7037,6 @@
         "立即升级账户"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切换或添加账户"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -7343,11 +7229,6 @@
       ],
       "Merge with calendar": [
         "与日历合并"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } / ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7568,11 +7449,6 @@
         "全封闭加密存储"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击「应用」按钮后网页将重新加载。"
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } 天"
@@ -7697,14 +7573,6 @@
       ],
       "Stored with zero-access encryption": [
         "全封闭加密存储"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "无需切换应用即可管理联系人和日程。"
-      ],
-      "Try the new side panel": [
-        "体验新版侧边栏"
       ]
     },
     "Signature verification warning": {
@@ -8381,11 +8249,6 @@
         "vCard 字段"
       ]
     },
-    "Text": {
-      "Settings": [
-        "设置"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "昨天"
@@ -8456,14 +8319,8 @@
       "Attachments": [
         "附件"
       ],
-      "Back": [
-        "返回"
-      ],
       "BCC": [
         "密送"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Billing cycle": [
         "计费周期"
@@ -8491,9 +8348,6 @@
       ],
       "Clearing data": [
         "数据清除中"
-      ],
-      "Composer mode": [
-        "邮件格式"
       ],
       "Confirm recipient address?": [
         "确认收件人地址？"
@@ -8693,12 +8547,6 @@
       "Load remote content": [
         "加载外链内容"
       ],
-      "Mailbox density": [
-        "邮箱密度"
-      ],
-      "Mailbox layout": [
-        "邮箱布局"
-      ],
       "Mark as read": [
         "标为已读"
       ],
@@ -8782,12 +8630,6 @@
       ],
       "Open actions dropdown": [
         "展开操作菜单"
-      ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
-      "Open settings menu": [
-        "打开设置菜单"
       ],
       "Other information": [
         "其他信息"
@@ -8945,9 +8787,6 @@
       "Verification error": [
         "签名校验失败"
       ],
-      "View contacts": [
-        "查看联系人"
-      ],
       "Warning": [
         "警告"
       ],
@@ -9015,14 +8854,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
-      "Hide side panel": [
-        "隐藏侧边栏"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "Show side panel": [
-        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
