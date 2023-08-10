@@ -29,6 +29,7 @@ export const getAccountAppRoutes = ({
     organization,
     isProtonSentinelEligible,
     isProtonSentinelFeatureEnabled,
+    isProtonSentinelUpsellEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -40,6 +41,7 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isProtonSentinelEligible: boolean;
     isProtonSentinelFeatureEnabled: boolean;
+    isProtonSentinelUpsellEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -230,7 +232,9 @@ export const getAccountAppRoutes = ({
                     {
                         text: PROTON_SENTINEL_NAME,
                         id: 'sentinel',
-                        available: isProtonSentinelEligible && isProtonSentinelFeatureEnabled,
+                        available:
+                            isProtonSentinelFeatureEnabled &&
+                            (isProtonSentinelEligible || isProtonSentinelUpsellEnabled),
                     },
                     {
                         text: c('Title').t`Session management`,
