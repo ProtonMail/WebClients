@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 
 import Icon from '../icon/Icon';
 import { OrderableElement, OrderableHandle } from '../orderable';
-import { TableRow } from '../table';
+import { Cell, TableRow } from '../table';
 
 interface Props {
     index: number;
     className?: string;
-    cells?: ReactNode[];
+    cells?: (Cell | ReactNode)[];
     disableSort?: boolean;
 }
 
