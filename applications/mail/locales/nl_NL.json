@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Terug"
       ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
       "Blind Carbon Copy": [
         "BCC"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Opstellen"
       ],
-      "Composer size": [
-        "Opstelmodusgrootte"
-      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Importeren aanpassen"
-      ],
-      "Default email application": [
-        "Standaard e-mailapplicatie"
       ],
       "Delete": [
         "Verwijderen"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Ga naar de vorige pagina"
       ],
-      "Go to settings": [
-        "Ga naar instellingen"
-      ],
       "Go to SimpleLogin": [
         "Ga naar SimpleLogin"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "Hide-my-email-aliassen"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -541,9 +523,6 @@
       "Italic": [
         "Schuin"
       ],
-      "Keyboard shortcuts": [
-        "Toetsenbord snelkoppelingen"
-      ],
       "Label as": [
         "Labellen als"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox lay-out"
       ],
       "Manage folders": [
         "Mappen beheren"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Voorbeeld tonen"
       ],
-      "Show side panel": [
-        "Toon zijpaneel"
-      ],
       "Sign in": [
         "Inloggen"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Theme": [
-        "Thema"
       ],
       "This message contains embedded images.": [
         "Dit bericht bevat ingebedde afbeeldingen."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gebruik uw muis om de grootte van het beeld te wijzigen. Als u uw toetsenbord gebruikt, kunt u de linker en rechter pijltjestoetsen gebruiken om de grootte te wijzigen."
-      ],
-      "Use “${ label }” setting": [
-        "Gebruik “${ label }”-instelling"
       ],
       "Verify": [
         "Verifiëren"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "Verificatie afzender doorgegeven"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "paars"
-      ],
-      "raisin black": [
-        "rozijnzwart"
       ],
       "reef": [
         "rif"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Alles downloaden"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aan"
       ]
     },
     "Email body for description (description part)": {
@@ -4207,9 +4150,6 @@
       "For your eyes only": [
         "Alleen voor jouw ogen"
       ],
-      "Get free storage": [
-        "Verkrijg gratis opslag"
-      ],
       "Get mobile app": [
         "Download de mobiele app"
       ],
@@ -4329,12 +4269,6 @@
     "Header": {
       "Contacts": [
         "Contacten"
-      ],
-      "Contacts, groups and settings": [
-        "Contacten, groepen en instellingen"
-      ],
-      "Get help": [
-        "Krijg hulp"
       ],
       "Search": [
         "Zoeken"
@@ -4891,6 +4825,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Weet u zeker dat u alle berichten in deze locatie wilt verplaatsen naar het Archief?"
@@ -5505,11 +5442,11 @@
       "Saved at ${ dateString }": [
         "Opgeslagen op ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Opgeslagen op ${ dateString }"
-      ],
       "Saved yesterday": [
         "Gisteren bewaard"
+      ],
+      "Saved: ${ dateString }": [
+        "Opgeslagen: ${ dateString }"
       ],
       "Saving draft…": [
         "Concept opslaan…"
@@ -6294,16 +6231,6 @@
         "Berichtsneltoetsen"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
     "Label": {
       " and ": [
         " en "
@@ -6419,6 +6346,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Composer": [
+        "Opstelvenster"
+      ],
       "Conditions": [
         "Voorwaarden"
       ],
@@ -6442,6 +6372,9 @@
       ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
+      ],
+      "Density": [
+        "Dichtheid"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
@@ -6475,9 +6408,6 @@
       ],
       "Emails (last month)": [
         "E-mails (laatste maand)"
-      ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
@@ -6683,15 +6613,6 @@
       "Search in": [
         "Zoeken in"
       ],
-      "Select how your composer opens by default.": [
-        "Selecteer hoe uw opstelvenster standaard opent."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selecteer hoe uw lijst met berichten er standaard uitziet."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selecteer hoe uw mailbox er standaard uitziet."
-      ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
       ],
@@ -6817,30 +6738,6 @@
         "Naar"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Gemaximaliseerd"
-      ],
-      "Normal": [
-        "Normaal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Comfortabel"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Rij"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Map maken"
@@ -6885,6 +6782,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows-app"
+      ],
       "All mail": [
         "Alle e-mail"
       ],
@@ -6983,6 +6883,9 @@
       ],
       "Scheduled": [
         "Gepland"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchroniseer naadloos bestanden en mappen tussen uw computer en ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Verzonden"
@@ -7329,11 +7232,6 @@
         "Upgrade nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Account toevoegen of wisselen"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
@@ -7526,11 +7424,6 @@
       ],
       "Merge with calendar": [
         "Samenvoegen met agenda"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } van ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7754,11 +7647,6 @@
         "Opgeslagen met zero-access-versleuteling"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } d",
@@ -7890,14 +7778,6 @@
       ],
       "Stored with zero-access encryption": [
         "Opgeslagen met zero-access-versleuteling"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Beheer uw contacten en bekijk uw agenda zonder uw app te verlaten."
-      ],
-      "Try the new side panel": [
-        "Probeer het nieuwe zijpaneel uit"
       ]
     },
     "Signature verification warning": {
@@ -8607,11 +8487,6 @@
         "vCard-veld"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Instellingen"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Gisteren"
@@ -8691,14 +8566,8 @@
       "Attachments": [
         "Bijlagen"
       ],
-      "Back": [
-        "Terug"
-      ],
       "BCC": [
         "BCC"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -8726,9 +8595,6 @@
       ],
       "Clearing data": [
         "Data aan het wissen"
-      ],
-      "Composer mode": [
-        "Opstelmodus"
       ],
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
@@ -8934,12 +8800,6 @@
       "Load remote content": [
         "Externe inhoud laden"
       ],
-      "Mailbox density": [
-        "Mailbox dichtheid"
-      ],
-      "Mailbox layout": [
-        "Mailbox lay-out"
-      ],
       "Mark as read": [
         "Markeer als gelezen"
       ],
@@ -9023,12 +8883,6 @@
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
-      ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
-      "Open settings menu": [
-        "Open instellingenmenu"
       ],
       "Other information": [
         "Andere informatie"
@@ -9190,9 +9044,6 @@
       "Verification error": [
         "Verificatiefout"
       ],
-      "View contacts": [
-        "Contacten weergeven"
-      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -9264,14 +9115,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
-      "Hide side panel": [
-        "Verberg zijpaneel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Show side panel": [
-        "Toon zijpaneel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"

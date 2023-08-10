@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } εισαγωγή"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Πίσω"
       ],
-      "Beta Access": [
-        "Beta Πρόσβαση"
-      ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Σύνταξη"
       ],
-      "Composer size": [
-        "Μέγεθος συντάκτη"
-      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
-      ],
-      "Default email application": [
-        "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
       "Delete": [
         "Διαγραφή"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Μετάβαση στην προηγούμενη σελίδα"
       ],
-      "Go to settings": [
-        "Μετάβαση στις ρυθμίσεις"
-      ],
       "Go to SimpleLogin": [
         "Πηγαίνετε στο SimpleLogin"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email ψευδώνυμα"
-      ],
-      "I have a question": [
-        "Έχω μια ερώτηση"
       ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
@@ -541,9 +523,6 @@
       "Italic": [
         "Πλάγια γραφή"
       ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
-      ],
       "Label as": [
         "Απόδοση ετικετών"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
       ],
       "Manage folders": [
         "Διαχείριση φακέλων"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
-      "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου"
-      ],
       "Sign in": [
         "Είσοδος"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Υποβολή"
-      ],
-      "Theme": [
-        "Θέμα"
       ],
       "This message contains embedded images.": [
         "Αυτό το μήνυμα περιέχει ενσωματωμένες εικόνες."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Χρησιμοποιήστε το ποντίκι σας για να αλλάξετε το μέγεθος της προβολής. Εάν χρησιμοποιείτε το πληκτρολόγιό σας, μπορείτε να χρησιμοποιήσετε τα πλήκτρα αριστερού και δεξιού βέλους για να αλλάξετε το μέγεθος."
-      ],
-      "Use “${ label }” setting": [
-        "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ${ MAIL_APP_NAME }, του ${ CALENDAR_APP_NAME } και του ${ DRIVE_APP_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "μοβ"
-      ],
-      "raisin black": [
-        "μαύρη σταφίδα"
       ],
       "reef": [
         "ύφαλος"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Λήψη όλων"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Ενεργό"
       ]
     },
     "Email body for description (description part)": {
@@ -4207,9 +4150,6 @@
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
       ],
-      "Get free storage": [
-        "Αποκτήστε δωρεάν χώρο αποθήκευσης"
-      ],
       "Get mobile app": [
         "Λήψη εφαρμογής για κινητά"
       ],
@@ -4329,12 +4269,6 @@
     "Header": {
       "Contacts": [
         "Επαφές"
-      ],
-      "Contacts, groups and settings": [
-        "Επαφές, ομάδες και ρυθμίσεις"
-      ],
-      "Get help": [
-        "Λάβετε βοήθεια"
       ],
       "Search": [
         "Αναζήτηση"
@@ -4686,6 +4620,10 @@
         "${ count } μη διαβασμένο μήνυμα",
         "${ count } μη διαβασμένα μηνύματα"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } από ${ totalProgress }",
+        "${ currentProgress } από ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ενσωματωμένη εικόνα",
         "${ embeddedAttachmentsCount } ενσωματωμένες εικόνες"
@@ -4887,6 +4825,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Θέλετε σίγουρα να μετακινήσετε όλα τα μηνύματα αυτής της τοποθεσίας στα Αρχειοθετημένα;"
@@ -5299,6 +5240,9 @@
       "Merged": [
         "Συγχωνευμένα"
       ],
+      "Message download status:": [
+        "Κατάσταση λήψης μηνυμάτων:"
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Η λήξη μηνυμάτων λειτουργεί εκτός πλαισίου κατά την αποστολή μηνυμάτων σε άλλους χρήστες του ${ MAIL_APP_NAME }. Για να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου που λήγουν σε μη-χρήστες ${ BRAND_NAME }, παρακαλούμε να ακυρώσετε και να προσθέσετε προστασία με κωδικό πρόσβασης στο email σας."
       ],
@@ -5425,6 +5369,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
+      ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
@@ -5495,11 +5442,11 @@
       "Saved at ${ dateString }": [
         "Αποθηκεύτηκε στις ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Αποθηκεύτηκε την ${ dateString }"
-      ],
       "Saved yesterday": [
         "Αποθηκεύτηκε χθες"
+      ],
+      "Saved: ${ dateString }": [
+        "Αποθηκεύτηκε: ${ dateString }"
       ],
       "Saving draft…": [
         "Αποθήκευση προχείρου…"
@@ -6284,16 +6231,6 @@
         "Συντομεύσεις μηνυμάτων"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Ενεργό"
-      ]
-    },
     "Label": {
       " and ": [
         " και "
@@ -6409,6 +6346,9 @@
       "Colors": [
         "Χρώματα"
       ],
+      "Composer": [
+        "Συντάκτης"
+      ],
       "Conditions": [
         "Προϋποθέσεις"
       ],
@@ -6432,6 +6372,9 @@
       ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
+      ],
+      "Density": [
+        "Πυκνότητα"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -6465,9 +6408,6 @@
       ],
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
-      ],
-      "Enable Beta Access": [
-        "Ενεργοποίηση Πρόσβασης Beta"
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -6673,15 +6613,6 @@
       "Search in": [
         "Αναζήτηση εντός"
       ],
-      "Select how your composer opens by default.": [
-        "Επιλέξτε πώς να ανοίγει ο συντάκτης σας από προεπιλογή."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Επιλέξτε πώς μοιάζει η λίστα μηνυμάτων σας από προεπιλογή."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
-      ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
@@ -6807,30 +6738,6 @@
         "Προς"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Μεγιστοποιημένος"
-      ],
-      "Normal": [
-        "Κανονικός"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Άνετη"
-      ],
-      "Compact": [
-        "Συμπαγής"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Στήλη"
-      ],
-      "Row": [
-        "Σειρά"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Δημιουργία φακέλου"
@@ -6875,6 +6782,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } εφαρμογή Windows"
+      ],
       "All mail": [
         "Όλα τα μηνύματα"
       ],
@@ -6973,6 +6883,9 @@
       ],
       "Scheduled": [
         "Προγραμματισμένο"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Συγχρονίστε απρόσκοπτα αρχεία και φακέλους μεταξύ του υπολογιστή σας και του ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Απεσταλμένα"
@@ -7319,11 +7232,6 @@
         "Αναβάθμιση τώρα"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Εναλλαγή ή προσθήκη λογαριασμού"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
@@ -7516,11 +7424,6 @@
       ],
       "Merge with calendar": [
         "Συγχώνευση με ημερολόγιο"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } από ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7744,11 +7647,6 @@
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Σημείωση: η υπηρεσία θα φορτωθεί ξανά αφού κάνετε κλικ στο κουμπί Εφαρμογή."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } μ",
@@ -7880,14 +7778,6 @@
       ],
       "Stored with zero-access encryption": [
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Διαχειριστείτε τις επαφές σας και προβάλετε το ημερολόγιό σας χωρίς να βγείτε από την εφαρμογή σας."
-      ],
-      "Try the new side panel": [
-        "Δοκιμάστε το νέο πλαϊνό πλαίσιο"
       ]
     },
     "Signature verification warning": {
@@ -8597,11 +8487,6 @@
         "πεδίο vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Ρυθμίσεις"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Χθες"
@@ -8681,14 +8566,8 @@
       "Attachments": [
         "Συνημμένα"
       ],
-      "Back": [
-        "Πίσω"
-      ],
       "BCC": [
         "Κρυφή Κοιν."
-      ],
-      "Beta Access": [
-        "Beta Πρόσβαση"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -8716,9 +8595,6 @@
       ],
       "Clearing data": [
         "Εκκαθάριση δεδομένων"
-      ],
-      "Composer mode": [
-        "Λειτουργία συντάκτη"
       ],
       "Confirm recipient address?": [
         "Επιβεβαίωση διεύθυνσης παραλήπτη;"
@@ -8924,12 +8800,6 @@
       "Load remote content": [
         "Φόρτωση απομακρυσμένου περιεχομένου"
       ],
-      "Mailbox density": [
-        "Πυκνότητα θυρίδας"
-      ],
-      "Mailbox layout": [
-        "Διάταξη θυρίδας"
-      ],
       "Mark as read": [
         "Σήμανση ως διαβασμένο"
       ],
@@ -9013,12 +8883,6 @@
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
-      ],
-      "Open help menu": [
-        "Άνοιγμα μενού βοήθειας"
-      ],
-      "Open settings menu": [
-        "Άνοιγμα μενού ρυθμίσεων"
       ],
       "Other information": [
         "Άλλες πληροφορίες"
@@ -9180,9 +9044,6 @@
       "Verification error": [
         "Σφάλμα επαλήθευσης"
       ],
-      "View contacts": [
-        "Προβολή επαφών"
-      ],
       "Warning": [
         "Προειδοποίηση"
       ],
@@ -9254,14 +9115,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
-      "Hide side panel": [
-        "Απόκρυψη πλαϊνού πλαισίου"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
-      ],
-      "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
