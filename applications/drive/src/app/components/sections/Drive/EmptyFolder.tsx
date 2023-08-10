@@ -39,7 +39,12 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
 
     return (
         <>
-            <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
+            <div
+                role="presentation"
+                ref={anchorRef}
+                onClick={close}
+                className="flex w100 flex flex-item-fluid overflow-auto"
+            >
                 <EmptyViewContainer
                     imageProps={{
                         src: !isNarrow ? uploadSvg : uploadSvgMobile,
