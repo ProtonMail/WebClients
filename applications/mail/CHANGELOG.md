@@ -1,9 +1,26 @@
+## Release 5.0.28 — Aug 30, 2023
+
+### New features
+
+-   Trash and Spam are now excluded from All Mail by default. You can adjust this behavior in Settings
+
+### Improvements
+
+-   The settings button has moved from the top right to the sidebar on the right-hand side
+-   Improved the app layout and increased the space reserved for email display
+
+### Fixes
+
+-   Fixed an issue where the exact sending date would not be displayed in the tooltip when viewing an email
+-   Fixed an issue where the icon on expiring messages would only show on page reload
+-   Fixed an issue where a contact without family name could not be imported
+-   Improved error messaging for cases where a contact without a family name and without email is being imported
+
 ## Release 5.0.27 — Aug 16, 2023
 
 ### New features
 
 -   Add the option to subscribe and unsubscribe to new product dedicated newsletters
-
 
 ### Improvements
 
