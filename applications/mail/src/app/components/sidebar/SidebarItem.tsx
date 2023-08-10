@@ -28,9 +28,9 @@ import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import LocationAside from './LocationAside';
 
-const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 
-const NO_DROP: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
+const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
@@ -88,8 +88,8 @@ const SidebarItem = ({
         : labelID;
     const link = `/${humanID}`;
 
-    const active = labelID === currentLabelID;
-    const ariaCurrent = active ? 'page' : undefined;
+    const isActive = labelID === currentLabelID;
+    const ariaCurrent = isActive ? 'page' : undefined;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
@@ -111,10 +111,8 @@ const SidebarItem = ({
     };
 
     const canDrop = () => {
-        const isSameLabel = currentLabelID === labelID;
         const isNonDroppableFolder = NO_DROP.includes(labelID);
-
-        return !isSameLabel && !isNonDroppableFolder;
+        return !isActive && !isNonDroppableFolder;
     };
 
     const { dragOver, dragProps, handleDrop } = useItemsDroppable(canDrop, isFolder ? 'move' : 'link', (itemIDs) => {
@@ -158,7 +156,7 @@ const SidebarItem = ({
                         <LocationAside
                             unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
-                            active={active}
+                            active={isActive}
                             refreshing={refreshing}
                             onRefresh={handleRefresh}
                             shouldDisplayTotal={needsTotalDisplay}

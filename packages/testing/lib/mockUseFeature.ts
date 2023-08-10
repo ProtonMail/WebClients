@@ -14,19 +14,31 @@ type HookReturnType = ReturnType<typeof useFeatureModule.default>;
  *
  * More advanced mocks will be needed in case of components with multiple calls to useFeature
  */
-export const mockUseFeature = (value: DeepPartial<HookReturnType>) => {
+export const mockUseFeature = (value?: DeepPartial<ReturnType<typeof useFeatureModule.default>>) => {
     const mockedUseFeature = jest.spyOn(useFeatureModule, 'default');
 
     mockedUseFeature.mockImplementation(
-        (...params) =>
+        (code) =>
             ({
-                code: params[0],
-                ...value,
                 feature: {
-                    Code: params[0],
-                    Value: value,
-                    ...value.feature,
+                    Type: 'boolean',
+                    DefaultValue: false,
+                    Value: false,
+                    Minimum: 0,
+                    Maximum: 1,
+                    Global: false,
+                    Writable: false,
+                    ExpirationTime: -1,
+                    UpdateTime: -1,
+                    Options: [],
+                    ...value?.feature,
+                    Code: code,
                 },
+                loading: false,
+                get: jest.fn(),
+                update: jest.fn(),
+                ...value,
+                code,
             } as HookReturnType)
     );
 

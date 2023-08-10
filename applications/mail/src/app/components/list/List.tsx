@@ -28,6 +28,7 @@ import { Filter } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import OnboardingChecklistWrapper from '../checklist/OnboardingChecklistWrapper';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
+import AlmostAllMailBanner from './AlmostAllMailBanner';
 import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
 import MailUpsellBanner from './MailUpsellBanner';
@@ -145,12 +146,10 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
-        isSearch,
-        loading,
-        page,
-        total
-    );
+    const { isESLoading, showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } =
+        useEncryptedSearchList(isSearch, loading, page, total);
+
+    const canDisplayAlmostAllMailBanner = !isESLoading && isSearch;
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -209,6 +208,7 @@ const List = (
                     <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
                         <div className="flex-item-noshrink">
                             {showESSlowToolbar && <ESSlowToolbar />}
+                            {canDisplayAlmostAllMailBanner && <AlmostAllMailBanner />}
                             {canDisplayUpsellBanner && (
                                 <MailUpsellBanner
                                     needToShowUpsellBanner={needToShowUpsellBanner}
