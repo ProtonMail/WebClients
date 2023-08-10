@@ -161,6 +161,8 @@ const MailOnboardingModal = (props: Props) => {
                             onClick={() => handleGoogleSync(onNext)}
                             loading={loading}
                             disabled={loadingConfig}
+                            reduceHeight
+                            fullWidth
                         />
                     </div>
                 </OnboardingContent>
