@@ -42,6 +42,9 @@ const Layout = ({
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
+
+    const isCurrentStepSignup = currentSignupStep === SignupSteps.CreatingAccount && !hasDecoration;
+
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
@@ -84,16 +87,10 @@ const Layout = ({
             <div
                 className={clsx(
                     'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
-                    currentSignupStep === SignupSteps.CreatingAccount && !hasDecoration && 'h-full'
+                    isCurrentStepSignup && 'h-full'
                 )}
             >
-                <main
-                    className={clsx(
-                        currentSignupStep === SignupSteps.CreatingAccount &&
-                            !hasDecoration &&
-                            'flex flex-item-centered-vert'
-                    )}
-                >
+                <main className={clsx(isCurrentStepSignup && 'flex flex-item-centered-vert')}>
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
