@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -77,9 +74,6 @@
       ],
       "Back": [
         "上一步"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Cancel": [
         "取消"
@@ -137,6 +131,9 @@
       ],
       "Continue with Google": [
         "使用 Google 账号继续"
+      ],
+      "Copy address": [
+        "复制地址"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -240,9 +237,6 @@
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
       ],
-      "Go to settings": [
-        "前往设置"
-      ],
       "Got it": [
         "知道了"
       ],
@@ -260,9 +254,6 @@
       ],
       "Hide time zones": [
         "隐藏时区"
-      ],
-      "I have a question": [
-        "我有疑问"
       ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
@@ -450,6 +441,9 @@
       "Select all": [
         "全选"
       ],
+      "Select calendar view": [
+        "选择日历视图"
+      ],
       "Send": [
         "发送​​"
       ],
@@ -480,9 +474,6 @@
       "Show more": [
         "显示更多"
       ],
-      "Show side panel": [
-        "显示侧边栏"
-      ],
       "Show time zones": [
         "显示时区"
       ],
@@ -512,9 +503,6 @@
       ],
       "Submit": [
         "提交"
-      ],
-      "Theme": [
-        "配色"
       ],
       "Today": [
         "今天"
@@ -711,14 +699,6 @@
     "Attendee role": {
       "Optional": [
         "非必填"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
     "Billing cycle option": {
@@ -1944,6 +1924,29 @@
         "直到${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "星期五"
+      ],
+      "Monday": [
+        "星期一"
+      ],
+      "Saturday": [
+        "星期六"
+      ],
+      "Sunday": [
+        "星期日"
+      ],
+      "Thursday": [
+        "星期四"
+      ],
+      "Tuesday": [
+        "星期二"
+      ],
+      "Wednesday": [
+        "星期三"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -2049,16 +2052,6 @@
       ],
       "90 minutes": [
         "90 分钟"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "开"
       ]
     },
     "Edit event button tooltip": {
@@ -3000,12 +2993,6 @@
       "Contacts": [
         "通讯录"
       ],
-      "Contacts, groups and settings": [
-        "联系人、群组和设置"
-      ],
-      "Get help": [
-        "获取帮助"
-      ],
       "Name": [
         "名称"
       ]
@@ -3464,9 +3451,6 @@
       "Custom yearly": [
         "个人年计划"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "自由定制 ${ BRAND_NAME } 应用的外观。"
-      ],
       "Daily": [
         "每天"
       ],
@@ -3512,9 +3496,6 @@
       "Existent, added and removed participants will be notified.": [
         "现有、添加和移除的参与者将收到通知"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
-      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -3550,9 +3531,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
@@ -3814,6 +3792,9 @@
       ],
       "Week": [
         "周"
+      ],
+      "Week and month views only apply to desktop.": [
+        "只有桌面版能查看周视图和月视图。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
@@ -4120,6 +4101,9 @@
       "Date and time": [
         "日期和时间"
       ],
+      "Default view": [
+        "默认视图"
+      ],
       "Delete": [
         "删除"
       ],
@@ -4158,9 +4142,6 @@
       ],
       "Emails (last month)": [
         "邮件（上个月）"
-      ],
-      "Enable Beta Access": [
-        "启用测试版功能"
       ],
       "Encrypt emails": [
         "加密电子邮件"
@@ -4321,14 +4302,14 @@
       "Reveal password": [
         "显示密码"
       ],
+      "Show week numbers": [
+        "显示周数"
+      ],
       "Sign emails": [
         "签名电子邮件"
       ],
       "Street address": [
         "街道地址"
-      ],
-      "Synchronize with system": [
-        "跟随系统"
       ],
       "System information": [
         "系统信息"
@@ -4350,6 +4331,9 @@
       ],
       "Verification code": [
         "验证码"
+      ],
+      "Week start": [
+        "每周第一天"
       ],
       "What happened?": [
         "发生了什么？"
@@ -4713,11 +4697,6 @@
         "立即升级账户"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切换或添加账户"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -4944,6 +4923,9 @@
       "All events": [
         "所有日程"
       ],
+      "Automatic (${ defaultDay })": [
+        "自动 (${ defaultDay })"
+      ],
       "Create new group": [
         "创建群组"
       ],
@@ -5163,11 +5145,6 @@
         "${ BRAND_NAME } 官方邮件"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击「应用」按钮后网页将重新加载。"
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "重新加载事件"
@@ -5211,14 +5188,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "与 ${ BRAND_NAME } 用户分享"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "无需切换应用即可管理联系人和日程。"
-      ],
-      "Try the new side panel": [
-        "体验新版侧边栏"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5750,11 +5719,6 @@
         "vCard 字段"
       ]
     },
-    "Text": {
-      "Settings": [
-        "设置"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 小时"
@@ -5780,9 +5744,6 @@
     "Title": {
       "${ emailsCount } email addresses": [
         "${ emailsCount } 个邮箱地址"
-      ],
-      "(active)": [
-        "（当前）"
       ],
       "Account suspended": [
         "账号已被停用"
@@ -5813,12 +5774,6 @@
       ],
       "Addresses": [
         "地址"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Billing cycle": [
         "计费周期"
@@ -5982,12 +5937,6 @@
       "Open actions dropdown": [
         "展开操作菜单"
       ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
-      "Open settings menu": [
-        "打开设置菜单"
-      ],
       "Organizer cannot be notified": [
         "无法通知组织者"
       ],
@@ -6035,9 +5984,6 @@
       ],
       "Select a day in the month": [
         "选择一个月中的某一天"
-      ],
-      "Select a theme": [
-        "选择配色"
       ],
       "Select action to take on contact group": [
         "选择针对联系人群组的动作"
@@ -6122,9 +6068,6 @@
       ],
       "Update recurring event": [
         "更新周期性活动"
-      ],
-      "View contacts": [
-        "查看联系人"
       ],
       "Warning": [
         "警告"
@@ -6211,14 +6154,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
-      "Hide side panel": [
-        "隐藏侧边栏"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "Show side panel": [
-        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
@@ -6231,12 +6168,6 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "所选模式将在系统设置为“暗色模式”时生效。"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "所选模式将在系统设置为“亮色模式”时生效。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
