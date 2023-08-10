@@ -21,7 +21,7 @@ const EmptyShared = ({ shareId }: Props) => {
     };
 
     return (
-        <>
+        <div role="presentation" className="flex w100 flex flex-item-fluid overflow-auto">
             <EmptyViewContainer
                 imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}
                 data-testid="shared-links-empty-placeholder"
@@ -36,7 +36,7 @@ const EmptyShared = ({ shareId }: Props) => {
             </EmptyViewContainer>
             {fileSharingModal}
             {linkSharingModal}
-        </>
+        </div>
     );
 };
 
