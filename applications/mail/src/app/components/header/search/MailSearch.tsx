@@ -105,7 +105,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
         <>
             <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
                 {breakpoints.isNarrow || breakpoints.isTablet ? (
-                    <div className="topnav-listItem flex flex-item-noshrink">
+                    <div className="topnav-listItem flex flex-item-noshrink pl-1">
                         <TopNavbarListItemSearchButton onClick={handleOpen} />
                     </div>
                 ) : (
