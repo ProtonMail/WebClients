@@ -1,3 +1,10 @@
+## Release 5.0.14.0 — Aug 23, 2023
+
+### Improvements
+
+-   The settings button has moved from the top right to the sidebar on the right-hand side
+-   Improve the app layout and increased the space for calendar events 
+
 ## Release 5.0.13.0 — Aug 9, 2023
 
 ### Improvements
