@@ -19,6 +19,12 @@ export const updateHideRemoteImages = (HideRemoteImages: number) => ({
     data: { HideRemoteImages },
 });
 
+export const updateShowAlmostAllMail = (AlmostAllMail: number) => ({
+    url: 'mail/v4/settings/almost-all-mail',
+    method: 'put',
+    data: { AlmostAllMail },
+});
+
 export const updateHideEmbeddedImages = (HideEmbeddedImages: number) => ({
     url: 'mail/v4/settings/hide-embedded-images',
     method: 'put',

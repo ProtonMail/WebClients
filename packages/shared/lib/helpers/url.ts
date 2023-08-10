@@ -103,7 +103,7 @@ export const getSearchParams = (search: string): { [key: string]: string } => {
 export const changeSearchParams = (
     pathname: string,
     search: string,
-    newParams: { [key: string]: string | undefined }
+    newParams: { [key: string]: string | undefined } = {}
 ) => {
     const params = new URLSearchParams(getSearchFromHash(search));
 

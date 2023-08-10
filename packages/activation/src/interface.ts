@@ -99,6 +99,7 @@ export enum MailImportDestinationFolder {
     TRASH = 'Trash',
     SPAM = 'Spam',
     ALL_MAIL = 'All Mail',
+    ALMOST_ALL_MAIL = 'Almost All Mail',
     STARRED = 'Starred',
     ARCHIVE = 'Archive',
     SENT = 'Sent',
