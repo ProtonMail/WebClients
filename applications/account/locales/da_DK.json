@@ -38,9 +38,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -134,9 +131,6 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
-      "Attention required": [
-        "Opmærksomhed påkrævet"
-      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -206,6 +200,9 @@
       "Contact support": [
         "Kontakt support"
       ],
+      "Contact us": [
+        "Kontakt os"
+      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -230,8 +227,8 @@
       "Copy": [
         "Kopiér"
       ],
-      "Copy email to clipboard": [
-        "Kopiér e-mail til upklipsholder"
+      "Copy address": [
+        "Kopiér adresse"
       ],
       "Copy link": [
         "Kopiér link"
@@ -469,9 +466,6 @@
       ],
       "Hide plan features": [
         "Gem abonnementsfunktioner"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
       ],
       "Import": [
         "Importér"
@@ -1010,20 +1004,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Afslå"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } brugerdomæne",
-        "+ ${ domains } brugerdomæner"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-adresse",
-        "+ ${ ips } IP-adresser"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } bruger",
-        "+ ${ users } brugere"
       ]
     },
     "Address action": {
@@ -1629,9 +1609,6 @@
       ],
       "purple": [
         "lilla"
-      ],
-      "raisin black": [
-        "rosin sort"
       ],
       "reef": [
         "rev"
@@ -4235,9 +4212,6 @@
       "Folders": [
         "Mapper"
       ],
-      "Get help": [
-        "Få hjælp"
-      ],
       "Key type": [
         "Nøgletype"
       ],
@@ -4691,9 +4665,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } vil dit abonnement automatisk blive fornyet ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
@@ -5042,9 +5013,6 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
-      "Auto-renewal: ": [
-        "Auto-fornyelse: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar er aktivt hver måned i det valgte tidsrum."
       ],
@@ -5370,9 +5338,6 @@
       ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "For at vælge ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
@@ -8620,9 +8585,6 @@
       "Keep account": [
         "Behold konto"
       ],
-      "Switch or add account": [
-        "Skift eller tilføj konto"
-      ],
       "Switch plan": [
         "Skift abonnement"
       ],
@@ -11234,9 +11196,6 @@
       "Automatically sign outgoing messages?": [
         "Auto-signér udgående beskeder?"
       ],
-      "Back": [
-        "Tilbage"
-      ],
       "Backup and export": [
         "Backup og eksport"
       ],
@@ -11651,9 +11610,6 @@
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
       "Open pagination": [
         "Åbn sidenummerering"
       ],
@@ -11698,9 +11654,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Abonnementoversigt"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -11961,9 +11914,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
-      ],
-      "Your Plan": [
-        "Dit abonnement"
       ],
       "Your plan": [
         "Dit abonnement"
