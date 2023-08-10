@@ -69,6 +69,7 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
     }, [esEnabled]);
 
     return {
+        isESLoading,
         showESSlowToolbar,
         loadingElement,
         disableGoToLast,

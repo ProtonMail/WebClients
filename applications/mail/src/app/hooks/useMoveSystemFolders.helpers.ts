@@ -161,7 +161,8 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
 
 export const getDefaultSytemFolders = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
-    showScheduled: UseMoveSystemFoldersProps['showScheduled']
+    showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail']
 ): BaseSystemFolder[] => [
     {
         labelID: MAILBOX_LABEL_IDS.INBOX,
@@ -268,7 +269,7 @@ export const getDefaultSytemFolders = (
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
-        visible: true,
+        visible: !showAlmostAllMail,
         order: 11,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
@@ -292,14 +293,25 @@ export const getDefaultSytemFolders = (
         visible: false,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
+    {
+        labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+        icon: 'envelopes',
+        text: c('Link').t`All mail`,
+        shortcutText: '[G] [M]',
+        ID: 'almostallmail',
+        visible: !!showAlmostAllMail,
+        order: 13,
+        display: SYSTEM_FOLDER_SECTION.MORE,
+    },
 ];
 
 export const getSidebarNavItems = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
     sidebarNavItemsPayload: SystemFolderPayload[]
 ): SystemFolder[] => {
-    const systemFolders = getDefaultSytemFolders(showMoved, showScheduled);
+    const systemFolders = getDefaultSytemFolders(showMoved, showScheduled, showAlmostAllMail);
 
     /**
      * 1 - Fill the needed data from API

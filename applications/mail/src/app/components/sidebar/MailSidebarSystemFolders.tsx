@@ -3,13 +3,21 @@ import { DragEvent, DragEventHandler, useEffect, useRef, useState } from 'react'
 import { Location } from 'history';
 import { c } from 'ttag';
 
-import { SimpleSidebarListItemHeader } from '@proton/components';
+import {
+    FeatureCode,
+    SimpleSidebarListItemHeader,
+    useActiveBreakpoint,
+    useFeature,
+    useSpotlightOnFeature,
+    useWelcomeFlags,
+} from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
+import AlmostAllMailSpotlight from './AlmostAllMailSpotlight';
 import { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 
@@ -46,8 +54,12 @@ const MailSidebarSystemFolders = ({
     displayMoreItems,
     onToggleMoreItems,
 }: Props) => {
-    const { ShowMoved } = mailSettings || { ShowMoved: 0 };
-    const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({ showMoved: ShowMoved, showScheduled });
+    const { ShowMoved, AlmostAllMail } = mailSettings || { ShowMoved: 0, AlmostAllMail: 0 };
+    const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
+        showMoved: ShowMoved,
+        showScheduled,
+        showAlmostAllMail: AlmostAllMail,
+    });
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
 
     const lastDragTimeRef = useRef<number>();
@@ -56,6 +68,18 @@ const MailSidebarSystemFolders = ({
     const [draggedElementId, setDraggedElementId] = useState<MAILBOX_LABEL_IDS | undefined>();
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
+    const [{ isWelcomeFlow }] = useWelcomeFlags();
+    const { isNarrow } = useActiveBreakpoint();
+    const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
+
+    const {
+        show: showAlmostAllMailSpotlight,
+        onDisplayed: onAlmostAllMailSpotlightDisplayed,
+        onClose: onAlmostAllMailSpotlightClose,
+    } = useSpotlightOnFeature(
+        FeatureCode.AlmostAllMailSpotlight,
+        isAlmostAllMailEnabled && !isWelcomeFlow && !isNarrow
+    );
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
@@ -250,29 +274,44 @@ const MailSidebarSystemFolders = ({
             {displayMoreItems
                 ? sidebarElements
                       .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MORE)
-                      .map((element) => (
-                          <DnDElementWrapper
-                              isDnDAllowed
-                              onClick={(e) => e.stopPropagation()}
-                              key={element.ID}
-                              onDragStart={handleDragStart(element.labelID)}
-                              onDragEnd={handleResetDragState}
-                              onDragOver={handleDragOver(element.labelID)}
-                              onDrop={handleDrop(element.labelID, draggedElementId)}
-                              className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
-                          >
-                              <SidebarItem
-                                  {...getCommonProps(element.labelID)}
-                                  icon={element.icon}
-                                  id={element.ID}
-                                  isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
-                                  hideCountOnHover={false}
-                                  onFocus={setFocusedItem}
-                                  shortcutText={element.shortcutText}
-                                  text={element.text}
-                              />
-                          </DnDElementWrapper>
-                      ))
+                      .map((element) => {
+                          const child = (
+                              <DnDElementWrapper
+                                  isDnDAllowed
+                                  onClick={(e) => e.stopPropagation()}
+                                  key={element.ID}
+                                  onDragStart={handleDragStart(element.labelID)}
+                                  onDragEnd={handleResetDragState}
+                                  onDragOver={handleDragOver(element.labelID)}
+                                  onDrop={handleDrop(element.labelID, draggedElementId)}
+                                  className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
+                              >
+                                  <SidebarItem
+                                      {...getCommonProps(element.labelID)}
+                                      icon={element.icon}
+                                      id={element.ID}
+                                      isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
+                                      hideCountOnHover={false}
+                                      onFocus={setFocusedItem}
+                                      shortcutText={element.shortcutText}
+                                      text={element.text}
+                                  />
+                              </DnDElementWrapper>
+                          );
+
+                          return element.labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL ? (
+                              <AlmostAllMailSpotlight
+                                  key={`spotlight-${element.ID}`}
+                                  show={showAlmostAllMailSpotlight}
+                                  onDisplayed={onAlmostAllMailSpotlightDisplayed}
+                                  onClose={onAlmostAllMailSpotlightClose}
+                              >
+                                  <div>{child}</div>
+                              </AlmostAllMailSpotlight>
+                          ) : (
+                              child
+                          );
+                      })
                 : null}
         </>
     );

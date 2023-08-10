@@ -23,6 +23,7 @@ export const FOLDER_ICONS = {
     [MailImportDestinationFolder.DRAFTS]: 'file-lines',
     [MailImportDestinationFolder.STARRED]: 'star',
     [MailImportDestinationFolder.ALL_MAIL]: 'envelopes',
+    [MailImportDestinationFolder.ALMOST_ALL_MAIL]: 'envelopes',
 } as const;
 
 export interface FolderMapItem extends MailImportFolder {
