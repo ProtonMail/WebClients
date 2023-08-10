@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
-      ],
-      "Activate recovery": [
-        "Aktiver gendannelse"
       ],
       "Add credit / debit card": [
         "Tilføj kredit / betalingskort"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
-      ],
-      "Attention required": [
-        "Opmærksomhed påkrævet"
       ],
       "Authenticate": [
         "Godkend"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Kontakt support"
       ],
+      "Contact us": [
+        "Kontakt os"
+      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Kopiér"
       ],
-      "Copy email to clipboard": [
-        "Kopiér e-mail til upklipsholder"
+      "Copy address": [
+        "Kopiér adresse"
       ],
       "Create": [
         "Opret"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Got it": [
+        "Forstået"
+      ],
       "Hide": [
         "Skjul"
       ],
       "Hide plan features": [
         "Gem abonnementsfunktioner"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
       ],
       "Increase": [
         "Forøg"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Angiv ny adgangskode"
       ],
-      "Set recovery phrase": [
-        "Opsæt gendannelsessætning"
-      ],
       "Share via link": [
         "Del via link"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Lås op"
-      ],
-      "Unlock data": [
-        "Lås op for data"
-      ],
-      "Update recovery file": [
-        "Opdater gendannelsesfil"
-      ],
-      "Update recovery phrase": [
-        "Opdater gendannelsessætning"
       ],
       "Upgrade": [
         "Opgradér"
@@ -417,20 +399,6 @@
     "Action subscription": {
       "Manage": [
         "Administrer"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } brugerdomæne",
-        "+ ${ domains } brugerdomæner"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-adresse",
-        "+ ${ ips } IP-adresser"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } bruger",
-        "+ ${ users } brugere"
       ]
     },
     "Alter": {
@@ -1989,9 +1957,6 @@
       "Create your account": [
         "Opret din konto"
       ],
-      "Get help": [
-        "Få hjælp"
-      ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
       ]
@@ -2010,9 +1975,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } vil dit abonnement automatisk blive fornyet ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
@@ -2115,9 +2077,6 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
-      ],
-      "Auto-renewal: ": [
-        "Auto-fornyelse: "
       ],
       "Balance from your previous subscription": [
         "Saldo fra dit tidligere abonnement"
@@ -2257,8 +2216,8 @@
       "expires ${ expirationDate }": [
         "udløber ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "For at vælge ${ product }"
+      "for choosing ${ product }": [
+        "for at vælge ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
@@ -3444,9 +3403,6 @@
       ],
       "Keep account": [
         "Behold konto"
-      ],
-      "Switch or add account": [
-        "Skift eller tilføj konto"
       ],
       "Switch plan": [
         "Skift abonnement"
@@ -4740,9 +4696,6 @@
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
       ],
-      "Back": [
-        "Tilbage"
-      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -4787,9 +4740,6 @@
       ],
       "Customize your plan": [
         "Tilpas dit abonnement"
-      ],
-      "Dashboard": [
-        "Kontrolpanel"
       ],
       "Date": [
         "Dato"
@@ -4881,9 +4831,6 @@
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
       "Open pagination": [
         "Åbn sidenummerering"
       ],
@@ -4908,17 +4855,11 @@
       "Payment verification": [
         "Betalingsbekræftelse"
       ],
-      "Payments": [
-        "Betalinger"
-      ],
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Abonnementoversigt"
       ],
       "Plans": [
         "Abonnementer"
@@ -5024,9 +4965,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
-      ],
-      "Your Plan": [
-        "Dit abonnement"
       ],
       "Your plan": [
         "Dit abonnement"

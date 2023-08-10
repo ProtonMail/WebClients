@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducció a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Activa la recuperació"
       ],
       "Add credit / debit card": [
         "Afegir targeta de crèdit/dèbit"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
-      ],
-      "Attention required": [
-        "Es requereix la vostra atenció"
       ],
       "Authenticate": [
         "Autentica"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Contactar amb el suport"
       ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Copia"
       ],
-      "Copy email to clipboard": [
-        "Copiar correu electrònic al porta-retalls"
+      "Copy address": [
+        "Copiar l'adreça"
       ],
       "Create": [
         "Crear"
@@ -170,20 +164,26 @@
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Contacta amb nosaltres"
+      ],
+      "Get more": [
+        "Aconsegueix-ne més"
+      ],
       "Get the deal": [
         "Obteniu l’oferta"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "Got it": [
+        "D'acord"
+      ],
       "Hide": [
         "Amaga"
       ],
       "Hide plan features": [
         "Amaga les característiques del pla"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
       ],
       "Increase": [
         "Incrementa"
@@ -223,6 +223,9 @@
       ],
       "Pay": [
         "Pagar"
+      ],
+      "Pay ${ price }": [
+        "Paga ${ price }"
       ],
       "Pay ${ price } now": [
         "Paga ${ price } ara"
@@ -299,9 +302,6 @@
       "Set new password": [
         "Estableix una nova contrasenya"
       ],
-      "Set recovery phrase": [
-        "Estableix la frase de recuperació"
-      ],
       "Share via link": [
         "Comparteix amb un enllaç"
       ],
@@ -349,15 +349,6 @@
       ],
       "Unlock": [
         "Desbloquejar"
-      ],
-      "Unlock data": [
-        "Desbloqueja les dades"
-      ],
-      "Update recovery file": [
-        "Actualitza el fitxer de recuperació"
-      ],
-      "Update recovery phrase": [
-        "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
         "Millora"
@@ -423,13 +414,13 @@
       ]
     },
     "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } dominis personalitzats",
-        "+ ${ domains } domini personalitzat"
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
       ],
-      "+ ${ users } user": [
-        "+ ${ users } usuari",
-        "+ ${ users } usuaris"
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Alter": {
@@ -549,6 +540,17 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "mes"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -2048,9 +2050,6 @@
       "Create your account": [
         "Creeu el vostre compte"
       ],
-      "Get help": [
-        "Obteniu ajuda"
-      ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
       ]
@@ -2069,9 +2068,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } la vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
@@ -2163,6 +2159,9 @@
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
       ],
+      "Amount due": [
+        "Import a deure"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Qualsevol mètode ${ twoFa } del vostre compte es desactivarà."
       ],
@@ -2174,9 +2173,6 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
-      ],
-      "Auto-renewal: ": [
-        "Renovació automàtica: "
       ],
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
@@ -2316,8 +2312,8 @@
       "expires ${ expirationDate }": [
         "caduca el ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Per a triar ${ product }"
+      "for choosing ${ product }": [
+        "per escollir ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Per a Visa, MasterCard i Discover, els 3 dígits a la part posterior de la targeta. Per a American Express, els 4 dígits a la part frontal de la targeta."
@@ -2748,6 +2744,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "Welcome": [
+        "Us donem la benvinguda"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviarem un codi de restabliment a l'adreça de correu electrònic que heu proporcionat per a la recuperació del compte."
@@ -3325,6 +3324,9 @@
       "Add a gift code": [
         "Afegir un codi regal"
       ],
+      "Add gift code": [
+        "Afegir un codi regal"
+      ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
@@ -3426,8 +3428,29 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Inicia sessió"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registre"
+      ],
       "Create a new ${ appName } account": [
         "Crear un compte de ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Troba el nom d'usuari del compte ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat la vostra contrasenya del compte ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic, o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Inicieu sessió al vostre compte ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -3464,6 +3487,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Conserva el meu compte ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Millora"
       ]
     },
     "new_plans: action": {
@@ -3490,9 +3516,6 @@
       ],
       "Keep account": [
         "Conserva el compte"
-      ],
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
       ],
       "Switch plan": [
         "Canvia de pla"
@@ -3897,9 +3920,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Amb el pagament, accepteu els nostres ${ termsAndConditions }."
-      ],
       "terms and conditions": [
         "termes i condicions"
       ]
@@ -4119,11 +4139,17 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu personalitzats"
       ],
+      "Auto-connect": [
+        "Connexió automàtica"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } per usuari."
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
+      ],
+      "Browser extension": [
+        "Extensió del navegador"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
@@ -4131,9 +4157,18 @@
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
+      ],
+      "Private gateways": [
+        "Passarel·les privades"
+      ],
+      "Require 2FA": [
+        "Requereix 2FA"
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "El codi no és correcte."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
       ]
@@ -4605,6 +4640,14 @@
         "El vostre emmagatzematge actual:"
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "Facturació mensual"
+      ],
+      "Billed yearly": [
+        "Facturació anual"
+      ]
+    },
     "Subscription attribute": {
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexió VPN d'alta velocitat",
@@ -5006,9 +5049,6 @@
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
-      "Back": [
-        "Torna"
-      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -5045,6 +5085,9 @@
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
       ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ],
       "Credits": [
         "Crèdits"
       ],
@@ -5053,9 +5096,6 @@
       ],
       "Customize your plan": [
         "Personalitzar el vostre pla"
-      ],
-      "Dashboard": [
-        "Tauler de control"
       ],
       "Date": [
         "Data"
@@ -5147,9 +5187,6 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
       "Open pagination": [
         "Obrir paginació"
       ],
@@ -5174,17 +5211,11 @@
       "Payment verification": [
         "Verificació de pagament"
       ],
-      "Payments": [
-        "Pagaments"
-      ],
       "PayPal verification failed": [
         "Error amb la verificació de PayPal"
       ],
       "Phone": [
         "Telèfon"
-      ],
-      "Plan summary": [
-        "Resum del pla"
       ],
       "Plans": [
         "Plans"
@@ -5209,6 +5240,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Request sent": [
+        "S'ha enviat la sol·licitud."
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -5246,6 +5280,12 @@
       "Status": [
         "Estat"
       ],
+      "Subscription": [
+        "Subscripció"
+      ],
+      "Summary": [
+        "Resum"
+      ],
       "Switch to one-password mode": [
         "Canviar al mode d'una sola contrasenya"
       ],
@@ -5266,6 +5306,9 @@
       ],
       "Unsupported browser": [
         "Navegador no soportat"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Milloreu la vostra protecció de xarxa amb servidors dedicats"
       ],
       "Verification failed": [
         "Error en la verificació"
@@ -5290,9 +5333,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
-      ],
-      "Your Plan": [
-        "El vostre pla"
       ],
       "Your plan": [
         "El vostre pla"
@@ -5329,6 +5369,9 @@
       ],
       "Plan": [
         "Pla"
+      ],
+      "Servers": [
+        "Servidors"
       ],
       "Start date": [
         "Data d'inici"
@@ -5389,6 +5432,11 @@
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "Altre"
       ]
     },
     "VPN info": {

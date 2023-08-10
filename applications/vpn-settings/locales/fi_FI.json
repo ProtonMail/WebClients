@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME }in esittely"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
-      ],
-      "Activate recovery": [
-        "Aktivoi palautus"
       ],
       "Add credit / debit card": [
         "Lisää maksukortti"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
-      ],
-      "Attention required": [
-        "Huomiota vaaditaan"
       ],
       "Authenticate": [
         "Todenna"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Ota yhteyttä asiakaspalveluun"
       ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
       "Continue": [
         "Jatka"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Kopioi"
       ],
-      "Copy email to clipboard": [
-        "Kopioi sähköpostiosoite leikepöydälle"
+      "Copy address": [
+        "Kopioi osoite"
       ],
       "Create": [
         "Luo"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "Hide": [
         "Piilota"
       ],
       "Hide plan features": [
         "Piilota tilauksen ominaisuudet"
-      ],
-      "I have a question": [
-        "Minulla on kysyttävää"
       ],
       "Increase": [
         "Lisää"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Aseta uusi salasana"
       ],
-      "Set recovery phrase": [
-        "Aseta palautuslauseke"
-      ],
       "Share via link": [
         "Jaa linkkinä"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Avaa"
-      ],
-      "Unlock data": [
-        "Avaa tiedot"
-      ],
-      "Update recovery file": [
-        "Päivitä palautustiedosto"
-      ],
-      "Update recovery phrase": [
-        "Päivitä palautuslauseke"
       ],
       "Upgrade": [
         "Päivitä"
@@ -420,16 +402,6 @@
       ],
       "Reactivate": [
         "Uudelleenaktivoi"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } oma verkkotunnus",
-        "+ ${ domains } omaa verkkotunnusta"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } käyttäjä",
-        "+ ${ users } käyttäjää"
       ]
     },
     "Alter": {
@@ -2048,9 +2020,6 @@
       "Create your account": [
         "Luo oma tilisi"
       ],
-      "Get help": [
-        "Hanki apua"
-      ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
       ]
@@ -2069,9 +2038,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
@@ -2174,9 +2140,6 @@
       ],
       "Attention required": [
         "Huomiota vaaditaan"
-      ],
-      "Auto-renewal: ": [
-        "Automaattiuudistus: "
       ],
       "Balance from your previous subscription": [
         "Saldoa edellisestä tilauksestasi"
@@ -2316,8 +2279,8 @@
       "expires ${ expirationDate }": [
         "erääntyy ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Kun valitsit ${ product }"
+      "for choosing ${ product }": [
+        "kun valitsit ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa ja MasterCard: 3 numeroa kortin taustassa. American Express: 4 numeroa kortin edustassa."
@@ -3512,9 +3475,6 @@
       "Keep account": [
         "Säilytä tili"
       ],
-      "Switch or add account": [
-        "Vaihda tai lisää tili"
-      ],
       "Switch plan": [
         "Vaihda tilausta"
       ]
@@ -3918,9 +3878,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Maksamalla hyväksyt ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "käyttöehtomme"
       ]
@@ -5027,9 +4984,6 @@
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
-      "Back": [
-        "Takaisin"
-      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -5074,9 +5028,6 @@
       ],
       "Customize your plan": [
         "Mukauta tilaustasi"
-      ],
-      "Dashboard": [
-        "Hallintapaneeli"
       ],
       "Date": [
         "Päivämäärä"
@@ -5168,9 +5119,6 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
-      "Open help menu": [
-        "Avaa tukivalikko"
-      ],
       "Open pagination": [
         "Avaa sivunavigaatio"
       ],
@@ -5195,17 +5143,11 @@
       "Payment verification": [
         "Maksun vahvistus"
       ],
-      "Payments": [
-        "Maksut"
-      ],
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
       ],
       "Phone": [
         "Puhelin"
-      ],
-      "Plan summary": [
-        "Tilauksen yhteenveto"
       ],
       "Plans": [
         "Tilaukset"
@@ -5267,6 +5209,9 @@
       "Status": [
         "Tila"
       ],
+      "Subscription": [
+        "Tilaus"
+      ],
       "Switch to one-password mode": [
         "Vaihda yhden salasanan tilaan"
       ],
@@ -5311,9 +5256,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
-      ],
-      "Your Plan": [
-        "Nykyinen tilauksesi"
       ],
       "Your plan": [
         "Tilauksesi"

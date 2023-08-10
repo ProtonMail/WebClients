@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
-      ],
-      "Activate recovery": [
-        "回復を有効にする"
       ],
       "Add credit / debit card": [
         "クレジット/デビットカードを追加"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
-      ],
-      "Attention required": [
-        "注意が必要です"
       ],
       "Authenticate": [
         "認証"
@@ -71,6 +62,9 @@
       "Contact support": [
         "サポートへ連絡"
       ],
+      "Contact us": [
+        "お問い合わせ"
+      ],
       "Continue": [
         "続行"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "コピー"
       ],
-      "Copy email to clipboard": [
-        "メールをコピー"
+      "Copy address": [
+        "アドレスをコピー"
       ],
       "Create": [
         "作成"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "Got it": [
+        "はい"
+      ],
       "Hide": [
         "非表示"
       ],
       "Hide plan features": [
         "プランの機能を隠す"
-      ],
-      "I have a question": [
-        "サポートに質問"
       ],
       "Increase": [
         "増加"
@@ -299,9 +293,6 @@
       "Set new password": [
         "新しいパスワードを設定"
       ],
-      "Set recovery phrase": [
-        "回復フレーズを設定"
-      ],
       "Share via link": [
         "リンクを共有"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "ロック解除"
-      ],
-      "Unlock data": [
-        "データのロックを解除"
-      ],
-      "Update recovery file": [
-        "回復用ファイルを更新"
-      ],
-      "Update recovery phrase": [
-        "回復フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -420,14 +402,6 @@
       ],
       "Reactivate": [
         "再アクティブ化"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domains": [
-        "+ ${ domains } 独自ドメイン"
-      ],
-      "+ ${ users } users": [
-        "＋${ users }名のユーザー"
       ]
     },
     "Alter": {
@@ -2038,9 +2012,6 @@
       "Create your account": [
         "アカウントを作成"
       ],
-      "Get help": [
-        "ヘルプを参照"
-      ],
       "Select your pricing plan": [
         "料金プランを選択してください"
       ]
@@ -2059,9 +2030,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal }: あなたのサブスクリプションは、${ renewalTime } に自動的に更新されます。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
@@ -2161,9 +2129,6 @@
       ],
       "Attention required": [
         "注意が必要です"
-      ],
-      "Auto-renewal: ": [
-        "自動更新: "
       ],
       "Balance from your previous subscription": [
         "前回の定期購入時の残高"
@@ -2303,8 +2268,8 @@
       "expires ${ expirationDate }": [
         "期限 ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "${ product } を選択する場合"
+      "for choosing ${ product }": [
+        "${ product } を選択した場合"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、MasterCard、Discover の場合カードの裏に3桁の数字があります。American Express の場合はカードの表に4桁の数字があります。"
@@ -3467,9 +3432,6 @@
       "Keep account": [
         "アカウントを削除しない"
       ],
-      "Switch or add account": [
-        "アカウントを追加・切り替え"
-      ],
       "Switch plan": [
         "プランを変更"
       ]
@@ -3852,9 +3814,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "支払うことにより、${ termsAndConditions } に同意したものとみなされます"
-      ],
       "terms and conditions": [
         "利用規約"
       ]
@@ -4934,9 +4893,6 @@
       "Are you sure you want to close the preview?": [
         "プレビューを閉じてよろしいですか?"
       ],
-      "Back": [
-        "戻る"
-      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -4981,9 +4937,6 @@
       ],
       "Customize your plan": [
         "プランをカスタマイズ"
-      ],
-      "Dashboard": [
-        "ダッシュボード"
       ],
       "Date": [
         "日付"
@@ -5075,9 +5028,6 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
       "Open pagination": [
         "ページネーションを開く"
       ],
@@ -5102,17 +5052,11 @@
       "Payment verification": [
         "支払いの検証"
       ],
-      "Payments": [
-        "支払い"
-      ],
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
       ],
       "Phone": [
         "電話番号"
-      ],
-      "Plan summary": [
-        "プランの概要"
       ],
       "Plans": [
         "プラン"
@@ -5218,9 +5162,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mial Plusのトライアル期間が ${ textDate } に終了します。"
-      ],
-      "Your Plan": [
-        "あなたのプラン"
       ],
       "Your plan": [
         "現在のプラン"
