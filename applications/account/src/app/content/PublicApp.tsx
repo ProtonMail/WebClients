@@ -53,6 +53,7 @@ import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
+import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
@@ -441,7 +442,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.DISABLE_ACCOUNT}>
                     <UnAuthenticated>
-                        <RemoveEmailContainer type="account-email" />
+                        <DisableAccountContainer />
                     </UnAuthenticated>
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
