@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -66,9 +63,6 @@
       ],
       "Back": [
         "上一步"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Cancel": [
         "取消"
@@ -153,6 +147,9 @@
       ],
       "Continue with Google": [
         "使用 Google 账号继续"
+      ],
+      "Copy address": [
+        "复制地址"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -295,9 +292,6 @@
       "Go to parent": [
         "上级目录"
       ],
-      "Go to settings": [
-        "前往设置"
-      ],
       "Got it": [
         "知道了"
       ],
@@ -309,9 +303,6 @@
       ],
       "Hide labels": [
         "隐藏标签"
-      ],
-      "I have a question": [
-        "我有疑问"
       ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
@@ -399,9 +390,6 @@
       ],
       "Next month": [
         "下个月"
-      ],
-      "OK": [
-        "确定"
       ],
       "Open navigation": [
         "打开导航栏"
@@ -553,9 +541,6 @@
       "Show preview": [
         "显示预览"
       ],
-      "Show side panel": [
-        "显示侧边栏"
-      ],
       "Sign in": [
         "登录"
       ],
@@ -594,9 +579,6 @@
       ],
       "Submit report": [
         "提交报告"
-      ],
-      "Theme": [
-        "配色"
       ],
       "Toggle Calendar app": [
         "切换至 Calendar 应用"
@@ -737,14 +719,6 @@
       ],
       "Unsupported event": [
         "不支持的日程"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
     "Billing cycle option": {
@@ -1824,16 +1798,6 @@
         "我们从您选择的 CSV 文件中检测到了以下信息，请选择要导入的内容。"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "开"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -2695,9 +2659,6 @@
       ],
       "Contacts, groups and settings": [
         "联系人、群组和设置"
-      ],
-      "Get help": [
-        "获取帮助"
       ]
     },
     "Hint": {
@@ -3222,9 +3183,6 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "自由定制 ${ BRAND_NAME } 应用的外观。"
       ],
       "Delete locked drives": [
         "删除锁定的网盘"
@@ -4128,9 +4086,6 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
-      "Enable Beta Access": [
-        "启用测试版功能"
-      ],
       "Encrypt emails": [
         "加密电子邮件"
       ],
@@ -4325,9 +4280,6 @@
       ],
       "Street address": [
         "街道地址"
-      ],
-      "Synchronize with system": [
-        "跟随系统"
       ],
       "System information": [
         "系统信息"
@@ -4547,11 +4499,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "立即升级账户"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切换或添加账户"
       ]
     },
     "new_plans: feature": {
@@ -5014,22 +4961,9 @@
         "${ BRAND_NAME } 官方邮件"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "请注意：点击「应用」按钮后网页将重新加载。"
-      ]
-    },
     "Select files": {
       "Upload": [
         "上传"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "无需切换应用即可管理联系人和日程。"
-      ],
-      "Try the new side panel": [
-        "体验新版侧边栏"
       ]
     },
     "Signing preference for emails": {
@@ -5468,11 +5402,6 @@
         "vCard 字段"
       ]
     },
-    "Text": {
-      "Settings": [
-        "设置"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 小时"
@@ -5508,9 +5437,6 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } 个失败的上传"
       ],
-      "(active)": [
-        "（当前）"
-      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -5534,12 +5460,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Billing cycle": [
         "计费周期"
@@ -5769,12 +5689,6 @@
       "Open actions dropdown": [
         "展开操作菜单"
       ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
-      "Open settings menu": [
-        "打开设置菜单"
-      ],
       "Original size": [
         "原始尺寸"
       ],
@@ -5834,9 +5748,6 @@
       ],
       "Searching…": [
         "搜索中……"
-      ],
-      "Select a theme": [
-        "选择配色"
       ],
       "Select action to take on contact group": [
         "选择针对联系人群组的动作"
@@ -6013,14 +5924,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
-      "Hide side panel": [
-        "隐藏侧边栏"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "Show side panel": [
-        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
@@ -6033,12 +5938,6 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "所选模式将在系统设置为“暗色模式”时生效。"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "所选模式将在系统设置为“亮色模式”时生效。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"

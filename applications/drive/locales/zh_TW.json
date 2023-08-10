@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "回到首頁"
-      ],
-      "Beta Access": [
-        "測試版體驗"
       ],
       "Cancel": [
         "取消"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
+      ],
+      "Copy address": [
+        "複製郵件位址"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
@@ -316,9 +313,6 @@
       "Go to parent": [
         "前往上一層"
       ],
-      "Go to settings": [
-        "前往設定"
-      ],
       "Got it": [
         "了解"
       ],
@@ -333,9 +327,6 @@
       ],
       "Hide labels": [
         "隱藏標籤"
-      ],
-      "I have a question": [
-        "我要發問"
       ],
       "Image could not be loaded with tracker protection.": [
         "無法在啟用追蹤保護中載入影像。"
@@ -423,9 +414,6 @@
       ],
       "Next month": [
         "下個月"
-      ],
-      "OK": [
-        "好"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -589,9 +577,6 @@
       "Show preview": [
         "顯示預覽"
       ],
-      "Show side panel": [
-        "顯示側邊面板"
-      ],
       "Sign in": [
         "登入"
       ],
@@ -630,9 +615,6 @@
       ],
       "Submit report": [
         "提交通報"
-      ],
-      "Theme": [
-        "佈景主題"
       ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
@@ -773,14 +755,6 @@
       ],
       "Unsupported event": [
         "不支援的事件"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版嚐鮮讓您有專屬權限提前體驗 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的未來釋出版本。這就表示您可以取得新產品第一手消息、享有最即時更新，還可以搶先使用新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "若您遇上問題，您隨時可以停用 Beta 測試版。"
       ]
     },
     "Billing cycle option": {
@@ -1860,16 +1834,6 @@
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "開啟"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -2737,9 +2701,6 @@
       ],
       "Contacts, groups and settings": [
         "聯絡人、群組和設定"
-      ],
-      "Get help": [
-        "取得協助"
       ]
     },
     "Hint": {
@@ -3291,9 +3252,6 @@
       ],
       "Current version": [
         "目前版本"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
       "Decrypting files": [
         "正在解密檔案"
@@ -4323,9 +4281,6 @@
       "Emails (last month)": [
         "電子郵件（上個月）"
       ],
-      "Enable Beta Access": [
-        "啟用測試版體驗"
-      ],
       "Encrypt emails": [
         "加密電郵"
       ],
@@ -4541,9 +4496,6 @@
       ],
       "Street address": [
         "街道位址"
-      ],
-      "Synchronize with system": [
-        "與系統同步"
       ],
       "System information": [
         "系統資訊"
@@ -4772,11 +4724,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "立即升級"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切換或是加入帳號"
       ]
     },
     "new_plans: feature": {
@@ -5250,22 +5197,9 @@
         "來自 ${ BRAND_NAME } 的官方電子郵件"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "請注意：點擊「套用」按鈕後，服務將會重新載入。"
-      ]
-    },
     "Select files": {
       "Upload": [
         "上載"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
-      ],
-      "Try the new side panel": [
-        "嘗試新的側欄"
       ]
     },
     "Signing preference for emails": {
@@ -5704,11 +5638,6 @@
         "vCard 欄位"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }小時"
@@ -5747,9 +5676,6 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
-      "(active)": [
-        "(啟用)"
-      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -5773,12 +5699,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Beta Access": [
-        "測試版體驗"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -6014,12 +5934,6 @@
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
-      "Open help menu": [
-        "開啟說明選單"
-      ],
-      "Open settings menu": [
-        "開啟設定選單"
-      ],
       "Original size": [
         "原始大小"
       ],
@@ -6079,9 +5993,6 @@
       ],
       "Searching…": [
         "正在搜尋…"
-      ],
-      "Select a theme": [
-        "選擇佈景主題"
       ],
       "Select action to take on contact group": [
         "選擇針對聯絡人群組的動作"
@@ -6264,14 +6175,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
-      "Hide side panel": [
-        "隱藏側欄"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
-      ],
-      "Show side panel": [
-        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
@@ -6284,12 +6189,6 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "當您的系統設定為「深色模式」時，將會啟用選定的佈景主題"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "當您的系統設定為「淺色模式」時，將會啟用選定的佈景主題"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"

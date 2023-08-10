@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Tilbage til startside"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
       ],
       "Cancel": [
         "Annullér"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Fortsæt med Google"
+      ],
+      "Copy address": [
+        "Kopiér adresse"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Gå til overordnet"
       ],
-      "Go to settings": [
-        "Gå til indstillinger"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Skjul etiketter"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Næste måned"
-      ],
-      "OK": [
-        "Ok"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
-      "Show side panel": [
-        "Vis sidepanel"
-      ],
       "Sign in": [
         "Log ind"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Indsend rapport"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Toggle Calendar app": [
         "Skift Kalender-app"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Følgende felter er fundet i den CSV-fil, du uploadede. Afkryds dem, du vil importere."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Til"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Beskrivelse: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Kontakter, grupper og indstillinger"
-      ],
-      "Get help": [
-        "Få hjælp"
       ]
     },
     "Hint": {
@@ -3341,9 +3302,6 @@
       ],
       "Current version": [
         "Aktuel version"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
       "Decrypting files": [
         "Dekrypterer filer"
@@ -4382,9 +4340,6 @@
       "Emails (last month)": [
         "E-mails (seneste måned)"
       ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
-      ],
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
@@ -4600,9 +4555,6 @@
       ],
       "Street address": [
         "Adresse"
-      ],
-      "Synchronize with system": [
-        "Synkroniser med system"
       ],
       "System information": [
         "Systemoplysninger"
@@ -4836,11 +4788,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Opgradér nu"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Skift eller tilføj konto"
       ]
     },
     "new_plans: feature": {
@@ -5336,22 +5283,9 @@
         "Officiel e-mail fra ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Overfør"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Administrer dine kontakter og se din kalender uden at forlade appen."
-      ],
-      "Try the new side panel": [
-        "Prøv det nye sidepanel"
       ]
     },
     "Signing preference for emails": {
@@ -5802,11 +5736,6 @@
         "vCard-felt"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Indstillinger"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -5855,9 +5784,6 @@
         "${ numberOfFailedTransfer.total } fejlende overførsel",
         "${ numberOfFailedTransfer.total } fejlende overførsler"
       ],
-      "(active)": [
-        "(aktiv)"
-      ],
       "Account suspended": [
         "Konto suspenderet"
       ],
@@ -5882,12 +5808,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -6127,12 +6047,6 @@
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
-      ],
       "Original size": [
         "Original størrelse"
       ],
@@ -6192,9 +6106,6 @@
       ],
       "Searching…": [
         "Søger…"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
       ],
       "Select action to take on contact group": [
         "Vælg handling for kontaktgruppe"
@@ -6377,14 +6288,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
-      "Hide side panel": [
-        "Skjul sidepanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
-      ],
-      "Show side panel": [
-        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -6397,12 +6302,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Det valgte tema vil blive aktiveret når dit system er sat til \"mørk tilstand\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"

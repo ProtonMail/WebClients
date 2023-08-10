@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Voltar à página inicial"
-      ],
-      "Beta Access": [
-        "Acesso Beta"
       ],
       "Cancel": [
         "Cancelar"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Continuar com o Google"
+      ],
+      "Copy address": [
+        "Copiar endereço"
       ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Ir para a pasta principal"
       ],
-      "Go to settings": [
-        "Ir para as definições"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Ocultar etiquetas"
-      ],
-      "I have a question": [
-        "Tenho uma dúvida"
       ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção contra rastreadores."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Mês seguinte"
-      ],
-      "OK": [
-        "Aceitar"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Mostrar pré-visualização"
       ],
-      "Show side panel": [
-        "Mostrar o painel lateral"
-      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Enviar o relatório"
-      ],
-      "Theme": [
-        " Tema"
       ],
       "Toggle Calendar app": [
         "Alternar aplicação de calendário"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Evento não suportado"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "O Acesso Beta permite-lhe utilizar a versão beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME },e ${ DRIVE_APP_NAME } antes de serem lançados ao público. Isto significa que pode ser o primeiro a experimentar novos produtos, obter novas actualizações e utilizar novas funcionalidades."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Se encontrar problemas, pode sempre desativar o acesso Beta."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Desligado"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Ligado"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descrição: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Contatos, grupos e definições"
-      ],
-      "Get help": [
-        "Obter ajuda"
       ]
     },
     "Hint": {
@@ -3341,9 +3302,6 @@
       ],
       "Current version": [
         "Versão atual"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Desencriptação de ficheiros"
@@ -4379,9 +4337,6 @@
       "Emails (last month)": [
         "Emails (mês passado)"
       ],
-      "Enable Beta Access": [
-        "Ativar o acesso Beta"
-      ],
       "Encrypt emails": [
         "Encriptar os e-mails"
       ],
@@ -4597,9 +4552,6 @@
       ],
       "Street address": [
         "Endereço postal"
-      ],
-      "Synchronize with system": [
-        "Sincronizar com o sistema"
       ],
       "System information": [
         "Informação do sistema"
@@ -4833,11 +4785,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Actualizar agora"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Trocar ou adicionar conta"
       ]
     },
     "new_plans: feature": {
@@ -5333,22 +5280,9 @@
         "E-mail oficial de ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Nota: o serviço será recarregado após clicar em \"Aplicar\"."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Enviar"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Administre os seus contactos e veja o seu calendário sem sair da sua aplicação."
-      ],
-      "Try the new side panel": [
-        "Experimente o novo painel lateral"
       ]
     },
     "Signing preference for emails": {
@@ -5799,11 +5733,6 @@
         "Campo vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Definições"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -5852,9 +5781,6 @@
         "${ numberOfFailedTransfer.total } erro de carregamento",
         "${ numberOfFailedTransfer.total } erros de carregamento"
       ],
-      "(active)": [
-        "(ativo)"
-      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -5879,12 +5805,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Tem a certeza de que deseja fechar a pré-visualização?"
-      ],
-      "Back": [
-        "Recuar"
-      ],
-      "Beta Access": [
-        "Acesso Beta"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -6124,12 +6044,6 @@
       "Open actions dropdown": [
         "Abrir lista de acções"
       ],
-      "Open help menu": [
-        "Abrir menu de ajuda"
-      ],
-      "Open settings menu": [
-        "Abrir menu de definições"
-      ],
       "Original size": [
         "Tamanho original"
       ],
@@ -6189,9 +6103,6 @@
       ],
       "Searching…": [
         "A procurar…"
-      ],
-      "Select a theme": [
-        "Seleccionar um tema"
       ],
       "Select action to take on contact group": [
         "Selecionar a acção a tomar no grupo de contactos"
@@ -6374,14 +6285,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."
       ],
-      "Hide side panel": [
-        "Ocultar o painel lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
-      ],
-      "Show side panel": [
-        "Mostrar o painel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema serão apresentadas como pastas separadas em ${ MAIL_APP_NAME }"
@@ -6394,12 +6299,6 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo escuro\"."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
