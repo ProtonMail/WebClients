@@ -1,6 +1,9 @@
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
 
+// #{em(940, 16)} was `medium` but the value differs between default config and mail config.
+// The default value of 910 was loaded instead of 940. To check.
+
 .overlay {
 	--min-width: 0;
 	--max-width: 100vw;
@@ -36,7 +39,7 @@
 		}
 	}
 
-	@include media('<=medium') {
+	@include media('<=#{em(940, 16)}') {
 		inset: 0;
 		display: flex;
 		padding-block: 15%;
@@ -48,11 +51,11 @@
 		background-color: var(--backdrop-norm);
 	}
 
-	@include media('<=medium') {
+	@include media('<=#{em(940, 16)}') {
 		padding: 5%;
 	}
 
-	@include media('>medium') {
+	@include media('>#{em(940, 16)}') {
 		inset-block-start: calc(var(--top) * 1px - 1px);
 		/* stylelint-disable */
 		inset-inline-start: calc(var(--left) * 1px - 1px);
@@ -67,7 +70,7 @@
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */
 	&-backdrop {
-		@include media('<=medium') {
+		@include media('<=#{em(940, 16)}') {
 			position: absolute;
 			inset: 0;
 			z-index: 0;
@@ -81,7 +84,7 @@
 			background: none;
 		}
 
-		@include media('>medium') {
+		@include media('>#{em(940, 16)}') {
 			display: none;
 		}
 	}
@@ -103,7 +106,7 @@
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
-		@include media('<=medium') {
+		@include media('<=#{em(940, 16)}') {
 			position: relative;
 			z-index: 1;
 			inline-size: 100%;
@@ -111,7 +114,7 @@
 			transition: transform 0.1s ease-out;
 		}
 
-		@include media('>medium') {
+		@include media('>#{em(940, 16)}') {
 			inline-size: calc(var(--width) * 1px + 2em); // 2em for paddings
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);
