@@ -1,6 +1,6 @@
 import * as useMailSettingsModule from '@proton/components/hooks/useMailSettings';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailPageSize, MailSettings } from '@proton/shared/lib/interfaces';
 
 const defaultMailSettings: MailSettings = {
     AutoSaveContacts: 1,
@@ -43,6 +43,7 @@ const defaultMailSettings: MailSettings = {
         IsEnabled: false,
         Zone: 'Europe/Zurich',
     },
+    PageSize: MailPageSize.FIFTY,
     EnableFolderColor: 0,
     InheritParentFolderColor: 1,
     SpamAction: null,
