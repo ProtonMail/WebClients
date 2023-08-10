@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Úvod ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Aktivovat obnovení"
       ],
       "Add credit / debit card": [
         "Přidat kreditní / debetní kartu"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
-      ],
-      "Attention required": [
-        "Vyžadována pozornost"
       ],
       "Authenticate": [
         "Ověřit"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Kontaktovat podporu"
       ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
       "Continue": [
         "Pokračovat"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Kopírovat"
       ],
-      "Copy email to clipboard": [
-        "Zkopírovat e-mail do schránky"
+      "Copy address": [
+        "Kopírovat adresu"
       ],
       "Create": [
         "Vytvořit"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Got it": [
+        "Rozumím"
+      ],
       "Hide": [
         "Skrýt"
       ],
       "Hide plan features": [
         "Skrýt funkce tarifu"
-      ],
-      "I have a question": [
-        "Mám dotaz"
       ],
       "Increase": [
         "Zvýšit"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Nastavit nové heslo"
       ],
-      "Set recovery phrase": [
-        "Nastavit obnovovací frázi"
-      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Odemknout"
-      ],
-      "Unlock data": [
-        "Odemknout údaje"
-      ],
-      "Update recovery file": [
-        "Aktualizovat soubor pro obnovení"
-      ],
-      "Update recovery phrase": [
-        "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
         "Přejít na placený tarif"
@@ -420,26 +402,6 @@
       ],
       "Reactivate": [
         "Opětovně aktivovat"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } vlastní doména",
-        "+ ${ domains } vlastní domény",
-        "+ ${ domains } vlastních domén",
-        "+ ${ domains } vlastních domén"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP adresa",
-        "+ ${ ips } IP adresy",
-        "+ ${ ips } IP adres",
-        "+ ${ ips } IP adres"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } uživatel",
-        "+ ${ users } uživatelé",
-        "+ ${ users } uživatelů",
-        "+ ${ users } uživatelů"
       ]
     },
     "Alter": {
@@ -2074,9 +2036,6 @@
       "Create your account": [
         "Vytvořte si účet"
       ],
-      "Get help": [
-        "Získejte pomoc"
-      ],
       "Select your pricing plan": [
         "Vyberte si tarif"
       ]
@@ -2095,9 +2054,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } vaše předplatné bude automaticky obnoveno ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
@@ -2206,9 +2162,6 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
-      ],
-      "Auto-renewal: ": [
-        "Automatické obnovení: "
       ],
       "Balance from your previous subscription": [
         "Zůstatek z vašeho předchozího předplatného"
@@ -2348,8 +2301,8 @@
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Za výběr ${ product }"
+      "for choosing ${ product }": [
+        "za výběr ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
@@ -3547,9 +3500,6 @@
       "Keep account": [
         "Ponechat si svůj účet"
       ],
-      "Switch or add account": [
-        "Přepnout nebo přidat účet"
-      ],
       "Switch plan": [
         "Změnit tarif"
       ]
@@ -3989,9 +3939,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Zaplacením vyjadřujete souhlas s našimi ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "smluvní podmínky užívání"
       ]
@@ -5142,9 +5089,6 @@
       "Are you sure you want to close the preview?": [
         "Jste si jisti, že chcete náhled zavřít?"
       ],
-      "Back": [
-        "Zpět"
-      ],
       "Billing cycle": [
         "Fakturační cyklus"
       ],
@@ -5189,9 +5133,6 @@
       ],
       "Customize your plan": [
         "Přizpůsobte svůj tarif"
-      ],
-      "Dashboard": [
-        "Přehled"
       ],
       "Date": [
         "Datum"
@@ -5283,9 +5224,6 @@
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
-      "Open help menu": [
-        "Otevřít nabídku nápovědy"
-      ],
       "Open pagination": [
         "Otevřít stránkování"
       ],
@@ -5310,17 +5248,11 @@
       "Payment verification": [
         "Ověřování platby"
       ],
-      "Payments": [
-        "Platby"
-      ],
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Shrnutí tarifu"
       ],
       "Plans": [
         "Tarify"
@@ -5426,9 +5358,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
-      ],
-      "Your Plan": [
-        "Váš tarif"
       ],
       "Your plan": [
         "Váš tarif"

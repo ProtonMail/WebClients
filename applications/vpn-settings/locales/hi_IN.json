@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } के बारे में"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
-      ],
-      "Activate recovery": [
-        "पुनर्प्राप्ति सक्रिय करें"
       ],
       "Add credit / debit card": [
         "क्रेडिट / डेबिट कार्ड जोड़ें"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "स्क्रीनशॉट जोड़ें"
-      ],
-      "Attention required": [
-        "ध्यान दें"
       ],
       "Authenticate": [
         "सत्यापन करें"
@@ -68,6 +59,9 @@
       "Contact support": [
         "सपोर्ट टीम से संपर्क करें"
       ],
+      "Contact us": [
+        "हमें संपर्क करें"
+      ],
       "Continue": [
         "जारी रखें"
       ],
@@ -77,8 +71,8 @@
       "Copy": [
         "कॉपी करें"
       ],
-      "Copy email to clipboard": [
-        "ईमेल क्लिपबोर्ड पे कॉपी करें"
+      "Copy address": [
+        "पता कॉपी करें"
       ],
       "Create": [
         "बनाएँ"
@@ -173,11 +167,11 @@
       "Get verification code": [
         "सत्यापन कोड लें"
       ],
+      "Got it": [
+        "समझ गए"
+      ],
       "Hide": [
         "छिपाएं"
-      ],
-      "I have a question": [
-        "हमारा एक सवाल है"
       ],
       "Increase": [
         "बढ़ना"
@@ -290,9 +284,6 @@
       "Set new password": [
         "नया पासवर्ड सेट करें"
       ],
-      "Set recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश सेट करें"
-      ],
       "Share via link": [
         "लिंक से शेयर करें"
       ],
@@ -340,15 +331,6 @@
       ],
       "Unlock": [
         "अनलॉक"
-      ],
-      "Unlock data": [
-        "डेटा अनलॉक करें"
-      ],
-      "Update recovery file": [
-        "पुनर्प्राप्ति फ़ाइल अपडेट करें"
-      ],
-      "Update recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश अपडेट करें"
       ],
       "Upgrade": [
         "अपग्रेड करें"
@@ -403,16 +385,6 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } कस्टम डोमेन",
-        "+ ${ domains } कस्टम डोमेन"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } यूज़र",
-        "+ ${ users } यूज़र"
       ]
     },
     "Alter": {
@@ -1910,9 +1882,6 @@
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
-      "Get help": [
-        "मदद लें"
-      ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
       ]
@@ -2153,9 +2122,6 @@
       ],
       "expires ${ expirationDate }": [
         "एक्सपायर होगा ${ expirationDate }"
-      ],
-      "For choosing ${ product }": [
-        "${ product } चुनने के लिए"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa, MasterCard और Discover के लिए, आपके कार्ड के पीछे के 3 अंक। American Express के लिए, आपके कार्ड के पीछे के 4 अंक।"
@@ -3231,9 +3197,6 @@
       ],
       "Keep account": [
         "खाता रखें"
-      ],
-      "Switch or add account": [
-        "खाता बदलें अथवा जोड़ें"
       ],
       "Switch plan": [
         "प्लान बदले"
@@ -4482,9 +4445,6 @@
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
       ],
-      "Back": [
-        "पीछे जाएं"
-      ],
       "Billing cycle": [
         "बिलिंग चक्र"
       ],
@@ -4523,9 +4483,6 @@
       ],
       "Customize your plan": [
         "अपना प्लान अनुकूलित करे"
-      ],
-      "Dashboard": [
-        "डैशबोर्ड"
       ],
       "Date": [
         "दिनांक"
@@ -4611,9 +4568,6 @@
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
       ],
-      "Open help menu": [
-        "सहायता मेनू खोलें"
-      ],
       "Open pagination": [
         "खुला पाग"
       ],
@@ -4638,17 +4592,11 @@
       "Payment verification": [
         "भुगतान सत्यापन"
       ],
-      "Payments": [
-        "भुगतान"
-      ],
       "PayPal verification failed": [
         "पेपाल सत्यापन विफल रहा"
       ],
       "Phone": [
         "फोन"
-      ],
-      "Plan summary": [
-        "योजना सारांश"
       ],
       "Plans": [
         "प्लान"
@@ -4754,9 +4702,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "आपका Mail Plus ट्रायल ${ textDate } को खत्म होगा"
-      ],
-      "Your Plan": [
-        "आपका प्लान"
       ],
       "Your plan": [
         "आपका प्लान"

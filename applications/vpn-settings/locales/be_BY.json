@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Уводзіны ў ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Актываваць аднаўленне"
       ],
       "Add credit / debit card": [
         "Дадаць крэдытную/плацежную картку"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
-      ],
-      "Attention required": [
-        "Патрабуецца ўвага"
       ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Звязацца са службай падтрымкі"
       ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
       "Continue": [
         "Працягнуць"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Капіяваць"
       ],
-      "Copy email to clipboard": [
-        "Капіяваць ліст у буфер абмену"
+      "Copy address": [
+        "Капіяваць адрас"
       ],
       "Create": [
         "Стварыць"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Got it": [
+        "Зразумела"
+      ],
       "Hide": [
         "Схаваць"
       ],
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
-      ],
-      "I have a question": [
-        "У мяне ёсць пытанне"
       ],
       "Increase": [
         "Павялічыць"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Задаць новы пароль"
       ],
-      "Set recovery phrase": [
-        "Задаць фразу аднаўлення"
-      ],
       "Share via link": [
         "Абагуліць праз спасылку"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Разблакіраваць"
-      ],
-      "Unlock data": [
-        "Разблакіраваць даныя"
-      ],
-      "Update recovery file": [
-        "Абнавіць файл аднаўлення"
-      ],
-      "Update recovery phrase": [
-        "Абнавіць фразу аднаўлення"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -420,26 +402,6 @@
       ],
       "Reactivate": [
         "Актываваць паўторна"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } карыстальніцкі дамен",
-        "+ ${ domains } карыстальніцкія дамены",
-        "+ ${ domains } карыстальніцкіх даменаў",
-        "+ ${ domains } карыстальніцкія дамены"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-адрас",
-        "+ ${ ips } IP-адрасы",
-        "+ ${ ips } IP-адрасоў",
-        "+ ${ ips } IP-адрасоў"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } карыстальнік",
-        "+ ${ users } карыстальнікі",
-        "+ ${ users } карыстальнікаў",
-        "+ ${ users } карыстальнікі"
       ]
     },
     "Alter": {
@@ -2074,9 +2036,6 @@
       "Create your account": [
         "Стварэнне ўліковага запісу"
       ],
-      "Get help": [
-        "Атрымаць даведку"
-      ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
       ]
@@ -2095,9 +2054,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
@@ -2206,9 +2162,6 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
-      ],
-      "Auto-renewal: ": [
-        "Аўтаматычнае падаўжэнне: "
       ],
       "Balance from your previous subscription": [
         "Баланс з вашай папярэдняй падпіскі"
@@ -2348,8 +2301,8 @@
       "expires ${ expirationDate }": [
         "дзейнічае да ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Для выбару ${ product }"
+      "for choosing ${ product }": [
+        "для выбару ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard і Discover — 3 лічбы на адваротным баку карткі. Для American Express — 4 лічбы на пярэднім баку карткі."
@@ -3556,9 +3509,6 @@
       "Keep account": [
         "Пакінуць уліковы запіс"
       ],
-      "Switch or add account": [
-        "Змяніць або дадаць уліковы запіс"
-      ],
       "Switch plan": [
         "Змяніць тарыфны план"
       ]
@@ -3998,9 +3948,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Уносячы аплату, вы пагаджаецеся з нашымі ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "ўмовамі выкарыстання"
       ]
@@ -5151,9 +5098,6 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -5198,9 +5142,6 @@
       ],
       "Customize your plan": [
         "Наладжванне вашага тарыфнага плана"
-      ],
-      "Dashboard": [
-        "Панэль кіравання"
       ],
       "Date": [
         "Дата"
@@ -5292,9 +5233,6 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
-      "Open help menu": [
-        "Адкрыць меню дапамогі"
-      ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
       ],
@@ -5319,17 +5257,11 @@
       "Payment verification": [
         "Праверка плацяжу"
       ],
-      "Payments": [
-        "Плацяжы"
-      ],
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
       "Phone": [
         "Тэлефон"
-      ],
-      "Plan summary": [
-        "Зводка па тарыфным плане"
       ],
       "Plans": [
         "Тарыфныя планы"
@@ -5391,6 +5323,9 @@
       "Status": [
         "Статус"
       ],
+      "Subscription": [
+        "Падпіска"
+      ],
       "Switch to one-password mode": [
         "Пераключыцца ў рэжым з адным паролем"
       ],
@@ -5411,6 +5346,9 @@
       ],
       "Unsupported browser": [
         "Браўзер не падтрымліваецца"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Палепшыце сваю сеткавую абарону з вылучанымі серверамі"
       ],
       "Verification failed": [
         "Збой праверкі"
@@ -5435,9 +5373,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш тарыфны план"
       ],
       "Your plan": [
         "Ваш тарыфны план"

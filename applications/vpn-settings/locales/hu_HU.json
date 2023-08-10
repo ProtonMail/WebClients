@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } bevezető"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
-      ],
-      "Activate recovery": [
-        "Helyreállítás aktiválása"
       ],
       "Add credit / debit card": [
         "Bankkártya hozzáadása"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
-      ],
-      "Attention required": [
-        "Figyelem szükséges"
       ],
       "Authenticate": [
         "Azonosítás"
@@ -80,8 +71,8 @@
       "Copy": [
         "Másolás"
       ],
-      "Copy email to clipboard": [
-        "E-mail másolása a vágólapra"
+      "Copy address": [
+        "Cím másolása"
       ],
       "Create": [
         "Létrehozás"
@@ -176,11 +167,11 @@
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
+      "Got it": [
+        "Rendben!"
+      ],
       "Hide": [
         "Elrejtés"
-      ],
-      "I have a question": [
-        "Kérdésem van"
       ],
       "Increase": [
         "Növel"
@@ -296,9 +287,6 @@
       "Set new password": [
         "Új jelszó beállítása"
       ],
-      "Set recovery phrase": [
-        "Helyreállító jelmondat beállítása"
-      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -346,15 +334,6 @@
       ],
       "Unlock": [
         "Feloldás"
-      ],
-      "Unlock data": [
-        "Adatok feloldása"
-      ],
-      "Update recovery file": [
-        "Helyreállító fájl frissítése"
-      ],
-      "Update recovery phrase": [
-        "Helyreállító jelmondat frissítése"
       ],
       "Upgrade": [
         "Csomagváltás"
@@ -409,20 +388,6 @@
       ],
       "Zoom out": [
         "Távolítás"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } saját domain név",
-        "+ ${ domains } saját domain név"
-      ],
-      "+ ${ ips } IP address": [
-        "${ ips } IP cím",
-        "${ ips } IP cím"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } felhasználó",
-        "+ ${ users } felhasználó"
       ]
     },
     "Alter": {
@@ -1968,11 +1933,6 @@
         "Szolgáltatások"
       ]
     },
-    "Header": {
-      "Get help": [
-        "Súgó megnyitása"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2077,9 +2037,6 @@
       ],
       "Attention required": [
         "Figyelem szükséges"
-      ],
-      "Auto-renewal: ": [
-        "Automatikus megújítás: "
       ],
       "Balance from your previous subscription": [
         "Egyenlege az előző előfizetéséből"
@@ -3213,9 +3170,6 @@
       ],
       "Keep account": [
         "Maradjon a fiók"
-      ],
-      "Switch or add account": [
-        "Váltás vagy fiók hozzáadása"
       ],
       "Switch plan": [
         "Csomag váltása"
@@ -4413,9 +4367,6 @@
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
       ],
-      "Back": [
-        "Vissza"
-      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -4454,9 +4405,6 @@
       ],
       "Customize your plan": [
         "Csomag testreszabása"
-      ],
-      "Dashboard": [
-        "Vezérlőpult"
       ],
       "Date": [
         "Dátum"
@@ -4548,9 +4496,6 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
-      "Open help menu": [
-        "Súgó menü megnyitása"
-      ],
       "Open pagination": [
         "Lapozó megnyitása"
       ],
@@ -4575,17 +4520,11 @@
       "Payment verification": [
         "Fizetés ellenőrzése"
       ],
-      "Payments": [
-        "Befizetések"
-      ],
       "PayPal verification failed": [
         "A PayPal ellenőrzés sikertelen"
       ],
       "Phone": [
         "Telefonszám"
-      ],
-      "Plan summary": [
-        "Csomag összefoglaló"
       ],
       "Plans": [
         "Csomagok"
@@ -4688,9 +4627,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
-      ],
-      "Your Plan": [
-        "Az ön csomagja"
       ],
       "Your plan": [
         "Az ön csomagja"

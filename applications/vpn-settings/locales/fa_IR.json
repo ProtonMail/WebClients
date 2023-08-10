@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } مقدمه"
-      ],
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "فعال‌سازی بازیابی"
       ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / نقدی"
@@ -62,14 +56,17 @@
       "Contact support": [
         "تماس با پشتیبانی"
       ],
+      "Contact us": [
+        "تماس با ما"
+      ],
       "Continue": [
         "ادامه"
       ],
       "Copy": [
         "روگرفت"
       ],
-      "Copy email to clipboard": [
-        "روگرفت رایانامه به حافظه موقت"
+      "Copy address": [
+        "روگرفت نشانی"
       ],
       "Create": [
         "ایجاد"
@@ -155,11 +152,11 @@
       "Get verification code": [
         "دریافت کد تایید"
       ],
+      "Got it": [
+        "متوجه شدم"
+      ],
       "Hide": [
         "پنهان کردن"
-      ],
-      "I have a question": [
-        "من یک سوال دارم"
       ],
       "Increase": [
         "افزایش"
@@ -263,9 +260,6 @@
       "Send my username": [
         "نام کاربری من را ارسال کنید"
       ],
-      "Set recovery phrase": [
-        "تنظیم عبارت بازیابی"
-      ],
       "Share via link": [
         "هم‌رسانی با پیوند"
       ],
@@ -310,15 +304,6 @@
       ],
       "Unlock": [
         "بازکردن"
-      ],
-      "Unlock data": [
-        "بازگشایی داده"
-      ],
-      "Update recovery file": [
-        "به‌روزرسانی فایل بازیابی"
-      ],
-      "Update recovery phrase": [
-        "به‌ روزرسانی عبارت بازیابی"
       ],
       "Upgrade": [
         "ارتقا"
@@ -373,16 +358,6 @@
       ],
       "Zoom out": [
         "کوچک‌نمایی"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } دامنه سفارشی",
-        "+ ${ domains } دامنه سفارشی"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } کاربر",
-        "+ ${ users } کاربر"
       ]
     },
     "Alter": {
@@ -1661,11 +1636,6 @@
         "خدمات"
       ]
     },
-    "Header": {
-      "Get help": [
-        "کمک گرفتن"
-      ]
-    },
     "Human verification method": {
       "Email": [
         "رایانامه"
@@ -2720,9 +2690,6 @@
       "Keep account": [
         "نگه داشتن حساب"
       ],
-      "Switch or add account": [
-        "تغییر یا افزودن حساب"
-      ],
       "Switch plan": [
         "تغییر دادن طرح"
       ]
@@ -3600,9 +3567,6 @@
       "Apply gift code": [
         "اعمال کد هدیه"
       ],
-      "Back": [
-        "بازگشت"
-      ],
       "Billing cycle": [
         "دوره صورت‌حساب"
       ],
@@ -3638,9 +3602,6 @@
       ],
       "Customize your plan": [
         "طرح خود را شخصی‌سازی کنید"
-      ],
-      "Dashboard": [
-        "پیشخوان"
       ],
       "Date": [
         "تاریخ"
@@ -3726,9 +3687,6 @@
       "Open actions dropdown": [
         "بازگشایی منوی اقدامات"
       ],
-      "Open help menu": [
-        "بازگشایی منوی راهنمایی"
-      ],
       "Open pagination": [
         "بازگشایی صفحه‌بندی"
       ],
@@ -3750,17 +3708,11 @@
       "Payment verification": [
         "تایید پرداخت"
       ],
-      "Payments": [
-        "پرداخت‌ها"
-      ],
       "PayPal verification failed": [
         "تایید PayPal ناموفق بود"
       ],
       "Phone": [
         "تلفن"
-      ],
-      "Plan summary": [
-        "خلاصه طرح‌"
       ],
       "Plans": [
         "طرح ها"
