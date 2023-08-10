@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Введение в ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Вернуться на домашнюю страницу"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Cancel": [
         "Отменить"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Продолжить с Google"
+      ],
+      "Copy address": [
+        "Копировать адрес"
       ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
@@ -322,9 +319,6 @@
       "Go to parent": [
         "На уровень выше"
       ],
-      "Go to settings": [
-        "Открыть настройки"
-      ],
       "Got it": [
         "Понятно"
       ],
@@ -339,9 +333,6 @@
       ],
       "Hide labels": [
         "Скрыть ярлыки"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
       ],
       "Image could not be loaded with tracker protection.": [
         "Некоторые изображения не могут быть загружены при включённой защите от отслеживания."
@@ -429,9 +420,6 @@
       ],
       "Next month": [
         "Следующий месяц"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -595,9 +583,6 @@
       "Show preview": [
         "Показать предпросмотр"
       ],
-      "Show side panel": [
-        "Показать боковую панель"
-      ],
       "Sign in": [
         "Войти"
       ],
@@ -636,9 +621,6 @@
       ],
       "Submit report": [
         "Отправить отчет"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
@@ -779,14 +761,6 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
       ]
     },
     "Billing cycle option": {
@@ -1869,16 +1843,6 @@
         "В загруженном вами CSV-файле мы обнаружили следующие поля. Отметьте те, которые вы хотите импортировать."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Вкл"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Описание: ${ eventDescription }"
@@ -2782,9 +2746,6 @@
       ],
       "Contacts, groups and settings": [
         "Контакты, группы и настройки"
-      ],
-      "Get help": [
-        "Получить помощь"
       ]
     },
     "Hint": {
@@ -3448,9 +3409,6 @@
       "Current version": [
         "Текущая версия"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Настройте внешний вид ${ BRAND_NAME } приложений."
-      ],
       "Decrypting files": [
         "Расшифровка файлов"
       ],
@@ -3843,6 +3801,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Пожалуйста, предоставьте имя и email-адрес для создания группы"
       ],
       "Please select the folders you would like to import:": [
         "Выберите папки для импорта:"
@@ -4503,9 +4464,6 @@
       "Emails (last month)": [
         "Письма (последний месяц)"
       ],
-      "Enable Beta Access": [
-        "Включить доступ к бета-версии"
-      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -4721,9 +4679,6 @@
       ],
       "Street address": [
         "Адрес"
-      ],
-      "Synchronize with system": [
-        "Синхронизировать с системой"
       ],
       "System information": [
         "Сведения о системе"
@@ -4967,11 +4922,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Улучшить сейчас"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Изменить или добавить аккаунт"
       ]
     },
     "new_plans: feature": {
@@ -5511,22 +5461,9 @@
         "Официальное письмо от ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примечание. Сервис будет перезагружен, когда вы нажмете кнопку «Применить»."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Загрузить"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Управляйте контактами и просматривайте календарь не выходя из приложения."
-      ],
-      "Try the new side panel": [
-        "Попробуйте новую боковую панель"
       ]
     },
     "Signing preference for emails": {
@@ -5995,11 +5932,6 @@
         "Поле vCard-файла"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Настройки"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ч",
@@ -6068,9 +6000,6 @@
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок",
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
       ],
-      "(active)": [
-        "(активна)"
-      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -6097,12 +6026,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -6350,12 +6273,6 @@
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
-      "Open help menu": [
-        "Открыть меню справки"
-      ],
-      "Open settings menu": [
-        "Открыть меню настроек"
-      ],
       "Original size": [
         "Начальный размер"
       ],
@@ -6415,9 +6332,6 @@
       ],
       "Searching…": [
         "Поиск…"
-      ],
-      "Select a theme": [
-        "Выбор темы"
       ],
       "Select action to take on contact group": [
         "Выберите действие для группы контактов"
@@ -6600,14 +6514,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
-      "Hide side panel": [
-        "Скрыть боковую панель"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
-      ],
-      "Show side panel": [
-        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
@@ -6620,12 +6528,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Выбранная тема станет активной, когда в системе будет выбрана \"тёмная тема\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Выбранная тема станет доступной, когда на системе выбрано \"светлое оформление\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"

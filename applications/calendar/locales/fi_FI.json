@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME }in esittely"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Takaisin"
       ],
-      "Beta Access": [
-        "Beta-käyttö"
-      ],
       "Cancel": [
         "Peruuta"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Jatka Googlella"
+      ],
+      "Copy address": [
+        "Kopioi osoite"
       ],
       "Copy email address": [
         "Kopioi sähköpostiosoite"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
       ],
-      "Go to settings": [
-        "Siirry asetuksiin"
-      ],
       "Got it": [
         "Selvä"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Piilota aikavyöhykkeet"
-      ],
-      "I have a question": [
-        "Minulla on kysyttävää"
       ],
       "Image could not be loaded with tracker protection.": [
         "Kuvaa ei voitu ladata seurantasuojauksen vuoksi."
@@ -458,6 +449,9 @@
       "Select all": [
         "Valitse kaikki"
       ],
+      "Select calendar view": [
+        "Valitse kalenterinäkymä"
+      ],
       "Select time zone": [
         "Valitse aikavyöhyke"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Näytä lisää"
       ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
-      ],
       "Show time zones": [
         "Näytä aikavyöhykkeet"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Lähetä"
-      ],
-      "Theme": [
-        "Teema"
       ],
       "Today": [
         "Tänään"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "Valinnainen"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-käyttö mahdollistaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n beta-versioiden käytön ennen lopullisten versioiden julkaisua. Tällä pääset siis kokeilemaan uusia tuotteita, päivityksiä ja ominaisuuksia ensimmäisten joukossa."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jos havaitset ongelmia, voit aina poistaa beta-version käytöstä."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "päättyen ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Perjantai"
+      ],
+      "Monday": [
+        "Maanantai"
+      ],
+      "Saturday": [
+        "Lauantai"
+      ],
+      "Sunday": [
+        "Sunnuntai"
+      ],
+      "Thursday": [
+        "Torstai"
+      ],
+      "Tuesday": [
+        "Tiistai"
+      ],
+      "Wednesday": [
+        "Keskiviikko"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Tuntematon"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 minuuttia"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Ei käytössä"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Käytössä"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Yhteystiedot"
       ],
-      "Contacts, groups and settings": [
-        "Yhteystiedot, ryhmät ja asetukset"
-      ],
-      "Get help": [
-        "Hanki apua"
-      ],
       "Name": [
         "Nimi"
       ]
@@ -3488,6 +3475,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
+      "Are you sure you want to discard your import?": [
+        "Haluatko varmasti hylätä tuontisi?"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -3561,9 +3551,6 @@
       "Custom yearly": [
         "Oma vuosittainen"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
-      ],
       "Daily": [
         "Päivittäin"
       ],
@@ -3609,9 +3596,6 @@
       "Existent, added and removed participants will be notified.": [
         "Nykyisille, lisätyille ja poistetuille osallistujille ilmoitetaan."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
-      ],
       "Free up some space or add more storage space.": [
         "Vapauta tai hanki lisää tallennustilaa."
       ],
@@ -3648,9 +3632,6 @@
       ],
       "Import mailbox": [
         "Tuo postilaatikko"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Tuo viestit, kalenterit ja yhteystiedot muista palveluista ${ BRAND_NAME }iin."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
@@ -3916,6 +3897,9 @@
       ],
       "Week": [
         "Viikko"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Viikko- ja kuukaisinäkymät koskevat vain työpöytäkäyttöä."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
@@ -4228,6 +4212,9 @@
       "Date and time": [
         "Päiväys ja kellonaika"
       ],
+      "Default view": [
+        "Oletusnäkymä"
+      ],
       "Delete": [
         "Poista"
       ],
@@ -4266,9 +4253,6 @@
       ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
-      ],
-      "Enable Beta Access": [
-        "Ota Beta-versio käyttöön"
       ],
       "Encrypt emails": [
         "Salaa viestit"
@@ -4433,17 +4417,20 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Show week numbers": [
+        "Näytä viikkonumerot"
+      ],
       "Sign emails": [
         "Allekirjoita viestit"
       ],
       "Street address": [
         "Katuosoite"
       ],
-      "Synchronize with system": [
-        "Seuraa järjestelmää"
-      ],
       "System information": [
         "Järjestelmätiedot"
+      ],
+      "Time zone": [
+        "Aikavyöhyke"
       ],
       "To: ${ to }": [
         "Vastaanottaja: ${ to }"
@@ -4462,6 +4449,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Week start": [
+        "Viikon aloituspäivä"
       ],
       "What happened?": [
         "Mitä tapahtui?"
@@ -4845,11 +4835,6 @@
         "Päivitä nyt"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Vaihda tai lisää tili"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -5108,6 +5093,9 @@
       "All events": [
         "Kaikki tapahtumakerrat"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automaattinen (${ defaultDay })"
+      ],
       "Create new group": [
         "Luo uusi ryhmä"
       ],
@@ -5337,11 +5325,6 @@
         "Virallinen viesti ${ BRAND_NAME }ilta"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Huomioi: palvelu latautuu uudelleen kun painat Käytä."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Lataa tapahtuma uudelleen"
@@ -5394,14 +5377,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Hakanut ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hallitse yhteystietojasi ja tarkastele kalenteriasi poistumatta sovelluksesta."
-      ],
-      "Try the new side panel": [
-        "Kokeile uutta sivupaneelia"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5962,11 +5937,6 @@
         "vCard-kenttä"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Asetukset"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } t",
@@ -6005,9 +5975,6 @@
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
       ],
-      "(active)": [
-        "(käytössä)"
-      ],
       "Account suspended": [
         "Tili on jäädytetty"
       ],
@@ -6038,12 +6005,6 @@
       ],
       "Addresses": [
         "Osoitteet"
-      ],
-      "Back": [
-        "Takaisin"
-      ],
-      "Beta Access": [
-        "Beta-käyttö"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -6210,12 +6171,6 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
-      "Open help menu": [
-        "Avaa tukivalikko"
-      ],
-      "Open settings menu": [
-        "Avaa asetusvalikko"
-      ],
       "Organizer cannot be notified": [
         "Järjestäjälle ei voida ilmoittaa"
       ],
@@ -6263,9 +6218,6 @@
       ],
       "Select a day in the month": [
         "Valitse kuukauden päivä"
-      ],
-      "Select a theme": [
-        "Valitse teema"
       ],
       "Select action to take on contact group": [
         "Valitse yhteystietoryhmään kohdistettava toiminto"
@@ -6350,9 +6302,6 @@
       ],
       "Update recurring event": [
         "Päivitä toistuva tapahtuma"
-      ],
-      "View contacts": [
-        "Näytä yhteystiedot"
       ],
       "Warning": [
         "Varoitus"
@@ -6444,14 +6393,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
-      "Hide side panel": [
-        "Piilota sivupaneeli"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
-      ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
@@ -6464,12 +6407,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Tuonti alkaa viimeisimmistä viesteistä."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Valittu teema aktivoidaan järjestelmän ollessa \"tummassa tilassa\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"

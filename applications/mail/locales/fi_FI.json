@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME }in esittely"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Takaisin"
       ],
-      "Beta Access": [
-        "Beta-käyttö"
-      ],
       "Blind Carbon Copy": [
         "Piilokopio"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Kirjoita"
       ],
-      "Composer size": [
-        "Viestin kirjoituksen koko"
-      ],
       "Confirm": [
         "Vahvista"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Mukauta tuontia"
-      ],
-      "Default email application": [
-        "Sähköpostin oletussovellus"
       ],
       "Delete": [
         "Poista"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Siirry edelliselle sivulle"
       ],
-      "Go to settings": [
-        "Siirry asetuksiin"
-      ],
       "Go to SimpleLogin": [
         "Avaa SimpleLogin"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "Hide-my-email-aliaksilla"
-      ],
-      "I have a question": [
-        "Minulla on kysyttävää"
       ],
       "Image could not be loaded with tracker protection.": [
         "Kuvaa ei voitu ladata seurantasuojauksen vuoksi."
@@ -541,9 +523,6 @@
       "Italic": [
         "Kursivointi"
       ],
-      "Keyboard shortcuts": [
-        "Pikanäppäimet"
-      ],
       "Label as": [
         "Merkitse tunnisteella"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Ladataan${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Postilaatikon tiiviys"
-      ],
-      "Mailbox layout": [
-        "Postilaatikon asettelu"
       ],
       "Manage folders": [
         "Hallitse kansioita"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Näytä esikatselu"
       ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
-      ],
       "Sign in": [
         "Kirjaudu sisään"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Lähetä"
-      ],
-      "Theme": [
-        "Teema"
       ],
       "This message contains embedded images.": [
         "Viesti sisältää upotettuja kuvia."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Muuta näkymän kokoa hiirellä. Jos käytät näppäimistöä, voit muuttaa kokoa vasemmalla ja oikealla nuolipainikkeella."
-      ],
-      "Use “${ label }” setting": [
-        "Käytä \"${ label }\" -asetusta"
       ],
       "Verify": [
         "Vahvista"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "Lähettäjän vahvistus onnistui"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-käyttö mahdollistaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n beta-versioiden käytön ennen lopullisten versioiden julkaisua. Tällä pääset siis kokeilemaan uusia tuotteita, päivityksiä ja ominaisuuksia ensimmäisten joukossa."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jos havaitset ongelmia, voit aina poistaa beta-version käytöstä."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "violetti"
-      ],
-      "raisin black": [
-        "rusinan musta"
       ],
       "reef": [
         "riutta"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Lataa kaikki"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Ei käytössä"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Käytössä"
       ]
     },
     "Email body for description (description part)": {
@@ -4207,9 +4150,6 @@
       "For your eyes only": [
         "Vain silmillesi"
       ],
-      "Get free storage": [
-        "Hanki ilmaista tallennustilaa"
-      ],
       "Get mobile app": [
         "Hanki mobiilisovellus"
       ],
@@ -4329,12 +4269,6 @@
     "Header": {
       "Contacts": [
         "Yhteystiedot"
-      ],
-      "Contacts, groups and settings": [
-        "Yhteystiedot, ryhmät ja asetukset"
-      ],
-      "Get help": [
-        "Hanki apua"
       ],
       "Search": [
         "Haku"
@@ -4891,6 +4825,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Haluatko varmasti hylätä tuontisi?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Haluatko varmasti siirtää kaikki tämän sijainnin viestit arkistoon?"
@@ -5505,11 +5442,11 @@
       "Saved at ${ dateString }": [
         "Tallennettu ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Tallennettu ${ dateString }"
-      ],
       "Saved yesterday": [
         "Tallennettu eilen"
+      ],
+      "Saved: ${ dateString }": [
+        "Tallennettu: ${ dateString }"
       ],
       "Saving draft…": [
         "Tallennetaan luonnosta…"
@@ -6294,16 +6231,6 @@
         "Viestien pikanäppäimet"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ei käytössä"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Käytössä"
-      ]
-    },
     "Label": {
       " and ": [
         " ja "
@@ -6419,6 +6346,9 @@
       "Colors": [
         "Värit"
       ],
+      "Composer": [
+        "Kirjoitus"
+      ],
       "Conditions": [
         "Ehdot"
       ],
@@ -6442,6 +6372,9 @@
       ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
+      ],
+      "Density": [
+        "Tiiviys"
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
@@ -6475,9 +6408,6 @@
       ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
-      ],
-      "Enable Beta Access": [
-        "Ota Beta-versio käyttöön"
       ],
       "Encrypt emails": [
         "Salaa viestit"
@@ -6683,15 +6613,6 @@
       "Search in": [
         "Etsi kohteesta"
       ],
-      "Select how your composer opens by default.": [
-        "Valitse miten viestin kirjoitus oletusarvoisesti avautuu."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Valitse, miltä viestilistauksesi oletusarvoisesti näyttää."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Valitse postilaatikkosi oletusarvoinen näkymä."
-      ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
       ],
@@ -6817,30 +6738,6 @@
         "Vastaanottaja"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Suurennettu"
-      ],
-      "Normal": [
-        "Normaali"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Mukava"
-      ],
-      "Compact": [
-        "Tiivis"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Sarake"
-      ],
-      "Row": [
-        "Rivi"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Luo kansio"
@@ -6885,6 +6782,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows-sovellus"
+      ],
       "All mail": [
         "Kaikki viestit"
       ],
@@ -6983,6 +6883,9 @@
       ],
       "Scheduled": [
         "Ajoitetut"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synkronoi tiedostot ja kansiot saumattomasti tietokoneen ja ${ DRIVE_APP_NAME } välillä."
       ],
       "Sent": [
         "Lähetetyt"
@@ -7329,11 +7232,6 @@
         "Päivitä nyt"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Vaihda tai lisää tili"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -7526,11 +7424,6 @@
       ],
       "Merge with calendar": [
         "Yhdistä kalenteriin"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } / ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7754,11 +7647,6 @@
         "Tallennettu Zero Access -salauksella"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Huomioi: palvelu latautuu uudelleen kun painat Käytä."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } pv",
@@ -7890,14 +7778,6 @@
       ],
       "Stored with zero-access encryption": [
         "Tallennettu Zero Access -salauksella"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hallitse yhteystietojasi ja tarkastele kalenteriasi poistumatta sovelluksesta."
-      ],
-      "Try the new side panel": [
-        "Kokeile uutta sivupaneelia"
       ]
     },
     "Signature verification warning": {
@@ -8607,11 +8487,6 @@
         "vCard-kenttä"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Asetukset"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Eilen"
@@ -8691,14 +8566,8 @@
       "Attachments": [
         "Liitteet"
       ],
-      "Back": [
-        "Takaisin"
-      ],
       "BCC": [
         "Piilokopio"
-      ],
-      "Beta Access": [
-        "Beta-käyttö"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -8726,9 +8595,6 @@
       ],
       "Clearing data": [
         "Tyhjennetään tietoja"
-      ],
-      "Composer mode": [
-        "Viestin kirjoituksen tila"
       ],
       "Confirm recipient address?": [
         "Vahvistetaanko vastaanottajan osoite?"
@@ -8934,12 +8800,6 @@
       "Load remote content": [
         "Lataa ulkoinen sisältö"
       ],
-      "Mailbox density": [
-        "Postilaatikon tiiviys"
-      ],
-      "Mailbox layout": [
-        "Postilaatikon asettelu"
-      ],
       "Mark as read": [
         "Merkitse luetuksi"
       ],
@@ -9023,12 +8883,6 @@
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
-      ],
-      "Open help menu": [
-        "Avaa tukivalikko"
-      ],
-      "Open settings menu": [
-        "Avaa asetusvalikko"
       ],
       "Other information": [
         "Muut tiedot"
@@ -9190,9 +9044,6 @@
       "Verification error": [
         "Vahvistusvirhe"
       ],
-      "View contacts": [
-        "Näytä yhteystiedot"
-      ],
       "Warning": [
         "Varoitus"
       ],
@@ -9264,14 +9115,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
-      "Hide side panel": [
-        "Piilota sivupaneeli"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
-      ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"

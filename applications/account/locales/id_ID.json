@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
-      "Attention required": [
-        "Diperlukan perhatian"
-      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Hubungi layanan dukungan"
       ],
+      "Contact us": [
+        "Hubungi kami"
+      ],
       "Continue": [
         "Lanjut"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Salin"
       ],
-      "Copy email to clipboard": [
-        "Salin email ke papan klip"
+      "Copy address": [
+        "Salin alamat"
       ],
       "Copy link": [
         "Salin tautan"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Sembunyikan fitur paket"
-      ],
-      "I have a question": [
-        "Saya memiliki pertanyaan"
       ],
       "Import": [
         "Impor"
@@ -1027,14 +1021,17 @@
       ]
     },
     "Addon": {
-      "+ ${ domains } custom domains": [
-        "+ ${ domains } domain khusus"
+      "${ domains } custom domains": [
+        "${ domains } domain khusus"
       ],
-      "+ ${ ips } IP addresses": [
-        "+ ${ ips } alamat IP"
+      "${ price } per domain": [
+        "${ price } per domain"
       ],
-      "+ ${ users } users": [
-        "+ ${ users } pengguna"
+      "${ price } per IP address": [
+        "${ price } per alamat IP"
+      ],
+      "${ price } per user": [
+        "${ price } per pengguna"
       ]
     },
     "Address action": {
@@ -1658,9 +1655,6 @@
       ],
       "purple": [
         "ungu"
-      ],
-      "raisin black": [
-        "hitam kismis"
       ],
       "reef": [
         "karang"
@@ -3929,7 +3923,7 @@
         "Penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Langganan ditagih kepada admin utama paket Visionary atau paket keluarga."
+        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Untuk memudahkan transisi, kami memberi Anda uji coba ${ BRAND_NAME } Unlimited selama 30 hari*."
@@ -4520,9 +4514,6 @@
       "Folders": [
         "Folder"
       ],
-      "Get help": [
-        "Dapatkan bantuan"
-      ],
       "Key type": [
         "Tipe kunci"
       ],
@@ -4545,7 +4536,7 @@
         "Perlindungan"
       ],
       "Select your pricing plan": [
-        "Pilih paket Anda"
+        "Pilih struktur pembayaran paket Anda"
       ],
       "Status": [
         "Status"
@@ -4971,9 +4962,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } langganan Anda akan diperpanjang otomatis pada ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
@@ -5298,9 +5286,6 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
-      "Auto-renewal: ": [
-        "Perpanjangan otomatis: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Pesan balasan otomatis akan terkirim setiap bulannya pada rentang waktu yang ditentukan."
       ],
@@ -5353,19 +5338,19 @@
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
       "Billed every 12 months": [
-        "Ditagih setiap 12 bulan"
+        "Ditagihkan per 12 bulan"
       ],
       "Billed every 15 months": [
-        "Ditagih setiap 15 bulan"
+        "Ditagihkan per 15 bulan"
       ],
       "Billed every 24 months": [
-        "Ditagih setiap 24 bulan"
+        "Ditagihkan per 24 bulan"
       ],
       "Billed every 30 months": [
-        "Ditagih setiap 30 bulan"
+        "Ditagihkan per 30 bulan"
       ],
       "Billed every month": [
-        "Ditagih setiap bulan"
+        "Ditagihkan secara bulanan"
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -5624,9 +5609,6 @@
       ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Telah memilih ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
@@ -6435,6 +6417,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Wisaya ini akan mengaktifkan Autentikasi Dua Faktor (2FA) di akun ${ BRAND_NAME } Anda. Autentikasi dua faktor akan membuat akun ${ BRAND_NAME_TWO } Anda lebih aman, jadi kami menyarankan untuk mengaktifkannya."
       ],
+      "to ${ product } Business": [
+        "ke ${ product } Business"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda telah benar-benar paham akan segala resikonya atau apabila Anda telah mengekspor kunci duplikatnya."
       ],
@@ -6650,6 +6635,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Tampilan pekan dan bulan hanya berlaku di desktop."
+      ],
+      "Welcome": [
+        "Selamat datang"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat email yang telah Anda tentukan sebelumnya."
@@ -6883,7 +6871,7 @@
         "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Email organisasi Anda dilindungi dengan enkripsi ujung ke ujung menggunakan kunci organisasi. Sidik jari ini dapat digunakan untuk memverifikasi bahwa semua administrator di akun Anda memiliki kunci yang sama."
+        "Email organisasi Anda terlindungi dengan enkripsi end-to-end melalui kunci organisasi. Sidik jari ini dapat digunakan untuk memverifikasi apakah seluruh administrator pada akun Anda memiliki kunci yang sama."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
@@ -8564,6 +8552,9 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Masuk untuk mengakses akun ${ appName } Anda"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Coba ${ planName } secara cuma-cuma melalui tautan ini"
       ]
     },
     "Modal title": {
@@ -8846,9 +8837,6 @@
       "Keep account": [
         "Pertahankan akun"
       ],
-      "Switch or add account": [
-        "Pindah atau tambahkan akun"
-      ],
       "Switch plan": [
         "Ganti paket"
       ],
@@ -8939,7 +8927,7 @@
         "Pesan balasan otomatis"
       ],
       "Autofill credit cards (coming soon)": [
-        "Isi nomor kartu kredit secara otomatis (segera hadir)"
+        "Pengisian rincian kartu kredit secara otomatis (segera hadir)"
       ],
       "Available on all platforms": [
         "Tersedia di semua platform"
@@ -8999,7 +8987,7 @@
         "Server VPN yang terenkripsi"
       ],
       "End-to-end encryption": [
-        "Enkripsi ujung ke ujung"
+        "Enkripsi end-to-end"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Unduhan P2P/BitTorrent cepat"
@@ -9128,7 +9116,7 @@
         "Tanpa batasan jumlah label"
       ],
       "Unlimited logins and notes": [
-        "Tampa batasan jumlah login dan catatan"
+        "Tanpa batasan jumlah login dan catatan"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -9296,9 +9284,6 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami"
       ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Dengan membayar, Anda setuju dengan ${ termsAndConditions } kami"
-      ],
       "Payment details": [
         "Rincian pembayaran"
       ],
@@ -9388,6 +9373,9 @@
       ],
       "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
         "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
@@ -9546,6 +9534,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat email dan 3 domain khusus"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Tingkatkan kuota penyimpanan Anda ke ${ bundleStorage } per pengguna"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Tingkatkan total kuota penyimpanan Anda ke ${ bundleStorage }"
       ],
@@ -9559,6 +9550,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
       ],
       "A disabled address cannot be default": [
         "Alamat yang dinonaktifkan tidak dapat dijadikan alamat default"
@@ -9942,25 +9939,61 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Check out ${ appName } features": [
+        "Telusuri berbagai fitur ${ appName }"
+      ],
       "Continue": [
         "Lanjutkan"
+      ],
+      "Continue to ${ free }": [
+        "Lanjut ke ${ free }"
+      ],
+      "Continue with Bitcoin": [
+        "Lanjut dengan Bitcoin"
       ],
       "create a new account": [
         "buat akun baru"
       ],
+      "Create another account instead": [
+        "Buat akun lainnya"
+      ],
+      "Download again ${ size }": [
+        "Unduh kembali ${ size }"
+      ],
+      "Download to continue ${ size }": [
+        "Unduh untuk melanjutkan ${ size }"
+      ],
+      "Keep this plan and use ${ appName }": [
+        "Pertahankan paket ini dan gunakan ${ appName }"
+      ],
       "Or ${ createANewAccount }": [
         "Atau ${ createANewAccount }"
       ],
+      "Start using ${ appName }": [
+        "Mulai gunakan ${ appName }"
+      ],
+      "Start using ${ appName } now": [
+        "Mulai gunakan ${ appName } sekarang"
+      ],
+      "Upgrade for only ${ relativePrice } extra per month": [
+        "Tingkatkan dengan tambahan harga hanya ${ relativePrice } per bulannya"
+      ],
       "Upgrade my plan": [
         "Tingkatkan paket saya"
+      ],
+      "Use ${ free } instead": [
+        "Gunakan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
-        "Dienkripsi secara ujung ke ujung"
+        "Terenkripsi end-to-end"
       ],
       "Open source": [
-        "Sumber terbuka"
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Dilindungi oleh undang-undang privasi Swiss"
       ],
       "Swiss based": [
         "Berbasis di Swiss"
@@ -9970,8 +10003,14 @@
       "Checkout": [
         "Checkout"
       ],
+      "Continue with your ${ BRAND_NAME } account": [
+        "Lanjut dengan akun ${ BRAND_NAME } Anda"
+      ],
       "Limited time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Recommended": [
+        "Direkomendasikan"
       ],
       "Select your plan": [
         "Pilih paket Anda"
@@ -9984,20 +10023,74 @@
       "${ PASS_APP_NAME } benefits": [
         "Manfaat ${ PASS_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } tersedia sebagai ekstensi browser dalam Firefox Add-ons."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } tersedia sebagai ekstensi browser dalam Chrome Web Store."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
+        "${ PASS_APP_NAME } mengamankan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } menjaga keamanan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat. Untuk menambahkan berbagai fitur premium ${ PASS_APP_NAME_2 } ke paket langganan Anda saat ini, kami menyarankan Anda untuk meningkatkan paket Anda ke ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } menjaga keamanan kata sandi dan identitas Anda dengan enkripsi end-to-end yang ketat. Paket Anda saat ini telah meliputi akses ke seluruh fitur premium ${ PASS_APP_NAME_2 } — Anda tidak perlu membeli paket apapun lagi."
+      ],
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per bulan"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Namun, Anda dapat mengakes **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan paket Anda ke **${ upsellPlanTitle }** — hanya dengan biaya tambahan ${ relativePrice } per bulannya."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Dengan melanjutkan, Anda menyatakan diri setuju dengan ${ termsAndConditions } kami"
       ],
+      "Creating your account": [
+        "Membuat akun Anda"
+      ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Telusuri ${ PASS_APP_NAME }.${ br }pengelola kata sandi terenkripsi baru kami"
       ],
+      "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
+        "Unduh dan instal aplikasi dan ekstensi yang sesuai untuk mulai menggunakan ${ PASS_APP_NAME }"
+      ],
+      "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Unduh dan instal aplikasi ${ PASS_APP_NAME } dari Google Play untuk mulai menggunakan ${ PASS_APP_NAME2 } pada ponsel Anda."
+      ],
+      "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
+        "Unduh dan instal aplikasi ${ PASS_APP_NAME } dari App Store untuk mulai menggunakan ${ PASS_APP_NAME2 } pada ponsel Anda."
+      ],
+      "Encrypted password manager that also protects your identity": [
+        "Pengelola kata sandi terenkripsi yang juga melindungi identitas Anda"
+      ],
       "End-to-end encrypted notes": [
-        "Catatan terenkripsi secara ujung ke ujung"
+        "Catatan yang terenkripsi end-to-end"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Dengan menambahkan hanya **${ relativePrice } per bulannya**, Anda akan dapat mengakses seluruh fitur premium ${ BRAND_NAME }!"
       ],
       "Free forever": [
         "Gratis untuk selamanya"
+      ],
+      "Get ${ appName } for ${ browserName }": [
+        "Dapatkan ${ appName } untuk ${ browserName }"
+      ],
+      "Get ${ appName } for ${ browserName } soon": [
+        "Dapatkan ${ appName } untuk ${ browserName } segera"
+      ],
+      "Hide-my-email aliases protect your email from data breaches": [
+        "Alias hide-my-email melindungi alamat email Anda dari ancaman kebocoran data"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
+        "Apabila Anda terkunci dari akun ${ BRAND_NAME } Anda, **kit pemulihan** Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
+      ],
+      "Includes basic ${ appName } features:": [
+        "Meliputi berbagai fitur dasar ${ appName }:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instal ${ PASS_APP_NAME }"
@@ -10008,34 +10101,99 @@
       "Install app and extension": [
         "Instal aplikasi dan ekstensinya"
       ],
+      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
+        "Metode ini adalah satu-satunya cara bagi Anda untuk memulihkan akun Anda sepenuhnya, jadi pastikan Anda menyimpan **kit pemulihan** ini di tempat yang aman."
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Bergabunglah dengan lebih dari 100 juta orang yang telah memilih ${ BRAND_NAME } untuk melindungi aktivitas online mereka"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Meluncurkan ${ PASS_APP_NAME }"
       ],
       "One easy subscription.": [
         "Dalam satu langganan mudah."
       ],
+      "Open-source and audited": [
+        "Open-source dan teraudit"
+      ],
       "per month, billed annually": [
-        "per bulan, ditagih setiap tahun"
+        "per bulan, ditagihkan secara tahunan"
+      ],
+      "per month, billed every 15 months": [
+        "per bulan, ditagihkan per 15 bulan"
+      ],
+      "per month, billed every 30 months": [
+        "per bulan, ditagihkan per 30 bulan"
+      ],
+      "per month, billed every month": [
+        "per bulan, ditagihkan secara bulanan"
+      ],
+      "per month, billed every two years": [
+        "per bulan, ditagihkan per dua tahun"
       ],
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
       ],
+      "Protected by Swiss privacy laws": [
+        "Dilindungi oleh undang-undang privasi Swiss"
+      ],
+      "Save your recovery kit to continue": [
+        "Simpan kit pemulihan Anda untuk melanjutkan"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Memasukkan diri Anda ke ${ PASS_APP_NAME }"
+      ],
+      "Special launch offer: Get ${ title } for ${ price } forever!": [
+        "Penawaran rilis khusus: Dapatkan ${ title } dengan harga ${ price } untuk selamanya!"
+      ],
+      "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
+        "Penawaran yang Anda pilih tidak tersedia untuk pelanggan ${ currentPlanTitle }."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "untuk mulai menggunakan ${ PASS_APP_NAME } pada ponsel Anda"
+      ],
+      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
+        "Dapatkan berbagai fitur premium ${ PASS_APP_NAME } dengan meningkatkan paket langganan"
+      ],
+      "Updating your account": [
+        "Memperbarui akun Anda"
+      ],
+      "Verifying your payment": [
+        "Memverifikasi pembayaran Anda"
       ],
       "Welcome to ${ plan }": [
         "Selamat datang di ${ plan }"
       ],
       "Works on all devices": [
-        "Dapat digunakan di semua perangkat"
+        "Dapat digunakan pada seluruh perangkat"
+      ],
+      "You already have access to premium ${ appName } features — no need to purchase again.": [
+        "Anda telah memiliki akses ke seluruh fitur premium ${ appName } — Anda tidak perlu membeli paket apapun lagi."
       ],
       "You currently have": [
         "Anda saat ini memiliki"
+      ],
+      "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
+        "Organisasi Anda memiliki akses ke ${ free }. Apabila Anda ingin mengakses berbagai fitur premium ${ appName }, silakan minta administrator organisasi Anda untuk meningkatkan paket langganan."
+      ]
+    },
+    "pass_signup_2023: Onboarding": {
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Selamat datang di ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "Paket ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Seluruh layanan ${ BRAND_NAME } Plus.${ br }Dalam satu langganan mudah."
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Buat akun ${ BRAND_NAME } Anda"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Minta administrator organisasi Anda untuk meningkatkan paket langganan"
       ],
       "Secure your account": [
         "Amankan akun Anda"
@@ -11479,9 +11637,6 @@
       "Automatically sign outgoing messages?": [
         "Tanda tangani pesan keluar secara otomatis?"
       ],
-      "Back": [
-        "Kembali"
-      ],
       "Backup and export": [
         "Backup dan ekspor"
       ],
@@ -11893,9 +12048,6 @@
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
-      "Open help menu": [
-        "Buka menu bantuan"
-      ],
       "Open pagination": [
         "Buka paginasi"
       ],
@@ -11940,9 +12092,6 @@
       ],
       "Phone": [
         "Telepon"
-      ],
-      "Plan summary": [
-        "Ringkasan paket"
       ],
       "Preview": [
         "Pratinjau"
@@ -12201,9 +12350,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
-      ],
-      "Your Plan": [
-        "Paket Anda"
       ],
       "Your plan": [
         "Paket Anda"
@@ -12609,8 +12755,23 @@
       ]
     },
     "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, akan diperbarui pada ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Ditagihkan per 15 bulan"
+      ],
       "Billed every 2 years": [
-        "Ditagih setiap 2 tahun"
+        "Ditagihkan per 2 tahun"
+      ],
+      "Billed every 30 months": [
+        "Ditagihkan per 30 bulan"
+      ],
+      "Billed monthly": [
+        "Ditagihkan secara bulanan"
+      ],
+      "Billed yearly": [
+        "Ditagihkan secara tahunan"
       ]
     },
     "vpn_2step: discount": {
@@ -12638,6 +12799,12 @@
       ],
       "${ n } years": [
         "${ n } tahun"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Coba ${ upsellPlanName } tanpa risiko"
+      ],
+      "Your ${ selected } plan": [
+        "Paket ${ selected } pilihan Anda"
       ]
     },
     "Warning": {

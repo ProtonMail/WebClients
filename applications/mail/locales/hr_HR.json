@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
@@ -88,9 +85,6 @@
       ],
       "Back": [
         "Natrag"
-      ],
-      "Beta Access": [
-        "Beta pristup"
       ],
       "Bold": [
         "Podebljano"
@@ -354,9 +348,6 @@
       "Go to previous page": [
         "Idi na prethodnu stranicu"
       ],
-      "Go to settings": [
-        "Idi na postavke"
-      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -380,9 +371,6 @@
       ],
       "Hide messages": [
         "Sakrij poruke"
-      ],
-      "I have a question": [
-        "Imam pitanje"
       ],
       "Images will be loaded without a proxy": [
         "Slike će se učitavati bez proxy"
@@ -425,9 +413,6 @@
       "Italic": [
         "Kurziv"
       ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
-      ],
       "Label as": [
         "Označi kao"
       ],
@@ -454,12 +439,6 @@
       ],
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
       ],
       "Mark as read": [
         "Označi kao pročitano"
@@ -797,9 +776,6 @@
       "Submit": [
         "Pošalji"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This message contains embedded images.": [
         "Ova poruka sadrži ugrađene slike."
       ],
@@ -876,9 +852,6 @@
       ],
       "Use recovery code": [
         "Koristi kôd za oporavak"
-      ],
-      "Use “${ label }” setting": [
-        "Koristi “${ label }” postavku"
       ],
       "Verify": [
         "Potvrdi"
@@ -1006,14 +979,6 @@
       ],
       "Sender verification passed": [
         "Uspješna potvrda pošiljatelja"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta pristup vam omogućava upotrebu beta verzije ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
       ]
     },
     "Billing cycle option": {
@@ -2136,16 +2101,6 @@
         "Preuzmi sve"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Isklj"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Uklj"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Opis: ${ eventDescription }"
@@ -2784,12 +2739,6 @@
     "Header": {
       "Contacts": [
         "Kontakti"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakti, grupe i postavke"
-      ],
-      "Get help": [
-        "Pomoć"
       ],
       "Search": [
         "Pretraga"
@@ -3485,9 +3434,6 @@
       "Saved at ${ dateString }": [
         "Spremljeno u ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Spremljeno u ${ dateString }"
-      ],
       "Saving draft…": [
         "Spremanje skice…"
       ],
@@ -3941,16 +3887,6 @@
         "Prečaci poruke"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Isklj"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Uklj"
-      ]
-    },
     "Label": {
       " and ": [
         " i "
@@ -4024,6 +3960,9 @@
       "City": [
         "Grad"
       ],
+      "Composer": [
+        "Prozor za novu poruku"
+      ],
       "Conditions": [
         "Uvjeti"
       ],
@@ -4045,6 +3984,9 @@
       "Delete": [
         "Izbriši"
       ],
+      "Density": [
+        "Gustoća"
+      ],
       "Don't show this again": [
         "Ne prikazuj ponovno"
       ],
@@ -4062,9 +4004,6 @@
       ],
       "Emails": [
         "E-pošta"
-      ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
       ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
@@ -4225,15 +4164,6 @@
       "Reveal password": [
         "Prikaži lozinku"
       ],
-      "Select how your composer opens by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Odaberite kako će vaš popis poruka izgledati po zadanom."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
-      ],
       "Send auto-reply": [
         "Pošalji automatski odgovor"
       ],
@@ -4332,30 +4262,6 @@
       ],
       "To": [
         "Za"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maksimizirano"
-      ],
-      "Normal": [
-        "Normalno"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
       ]
     },
     "Label/folder modal": {
@@ -4978,11 +4884,6 @@
         "Spremljeno s šifriranjem nultog pristupa"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Napomena: usluga će se ponovo učitati nakon što kliknete dugme Primijeni."
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Poslan je odgovor"
@@ -5395,11 +5296,6 @@
         "vCard polje"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Postavke"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Jučer"
@@ -5438,12 +5334,6 @@
       "Attachments": [
         "Privitci"
       ],
-      "Back": [
-        "Natrag"
-      ],
-      "Beta Access": [
-        "Beta pristup"
-      ],
       "Billing cycle": [
         "Ciklus naplate"
       ],
@@ -5458,9 +5348,6 @@
       ],
       "Clearing data": [
         "Brisanje podataka"
-      ],
-      "Composer mode": [
-        "Način rada prozora za novu poruku"
       ],
       "Confirm recipient address?": [
         "Potvrdite adresu primatelja?"
@@ -5604,12 +5491,6 @@
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
       ],
-      "Mailbox density": [
-        "Gustoća poštanskog sandučića"
-      ],
-      "Mailbox layout": [
-        "Izgled poštanskog sandučića"
-      ],
       "Mark as read": [
         "Označi kao pročitano"
       ],
@@ -5666,12 +5547,6 @@
       ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
-      ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
-      "Open settings menu": [
-        "Otvori izbornik postavki"
       ],
       "Other information": [
         "Ostale informacije"
@@ -5794,9 +5669,6 @@
       ],
       "Verification error": [
         "Pogreška pri provjeri valjanosti"
-      ],
-      "View contacts": [
-        "Pregled kontakta"
       ],
       "Warning": [
         "Upozorenje"

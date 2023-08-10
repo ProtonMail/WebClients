@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Активувати відновлення"
       ],
       "Add credit / debit card": [
         "Додати кредитну / платіжну картку"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
-      ],
-      "Attention required": [
-        "Потребує уваги"
       ],
       "Authenticate": [
         "Автентифікація"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
+      "Contact us": [
+        "Зв'язатися з нами"
+      ],
       "Continue": [
         "Продовжити"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Копіювати"
       ],
-      "Copy email to clipboard": [
-        "Копіювати е-пошту в буфер обміну"
+      "Copy address": [
+        "Копіювати адресу"
       ],
       "Create": [
         "Створити"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "Got it": [
+        "Зрозуміло"
+      ],
       "Hide": [
         "Сховати"
       ],
       "Hide plan features": [
         "Приховати особливості плану"
-      ],
-      "I have a question": [
-        "У мене є питання"
       ],
       "Increase": [
         "Збільшити"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Встановити новий пароль"
       ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
-      ],
       "Share via link": [
         "Спільний доступ за посиланням"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Розблокувати"
-      ],
-      "Unlock data": [
-        "Розблокувати дані"
-      ],
-      "Update recovery file": [
-        "Оновити файл відновлення"
-      ],
-      "Update recovery phrase": [
-        "Оновити фразу відновлення"
       ],
       "Upgrade": [
         "Покращити"
@@ -420,26 +402,6 @@
       ],
       "Reactivate": [
         "Повторна активація"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } власний домен",
-        "+ ${ domains } власні домени",
-        "+ ${ domains } власних доменів",
-        "+ ${ domains } власних доменів"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-адреса",
-        "+ ${ ips } IP-адреси",
-        "+ ${ ips } IP-адрес",
-        "+ ${ ips } IP-адрес"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } користувач",
-        "+ ${ users } користувачі",
-        "+ ${ users } користувачів",
-        "+ ${ users } користувачів"
       ]
     },
     "Alter": {
@@ -2074,9 +2036,6 @@
       "Create your account": [
         "Створіть обліковий запис"
       ],
-      "Get help": [
-        "Отримати допомогу"
-      ],
       "Select your pricing plan": [
         "Виберіть свій тариф"
       ]
@@ -2095,9 +2054,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } передплату буде автоматично поновлено ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
@@ -2206,9 +2162,6 @@
       ],
       "Attention required": [
         "Потребує уваги"
-      ],
-      "Auto-renewal: ": [
-        "Автопоновлення: "
       ],
       "Balance from your previous subscription": [
         "Баланс після вашої попередньої передплати"
@@ -2348,8 +2301,8 @@
       "expires ${ expirationDate }": [
         "чинний до ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "За вибір ${ product }"
+      "for choosing ${ product }": [
+        "за вибір ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
@@ -2439,7 +2392,7 @@
         "З'єднання з інтернетом відновлено."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні застосунки VPN."
+        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
       "Learn more": [
         "Докладніше"
@@ -2662,6 +2615,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Цей помічник увімкне двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна перевірка забезпечує додатковий рівень захисту вашого облікового запису ${ BRAND_NAME_TWO }, тому рекомендуємо ввімкнути її."
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Для скасування підписки, будь ласка, зв'яжіться з нами."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
@@ -3556,9 +3512,6 @@
       "Keep account": [
         "Залишити обліковий запис"
       ],
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
-      ],
       "Switch plan": [
         "Змінити тарифний план"
       ]
@@ -3998,9 +3951,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Сплачуючи, ви погоджуєтеся з нашими ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "умови та положення"
       ]
@@ -5151,9 +5101,6 @@
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -5198,9 +5145,6 @@
       ],
       "Customize your plan": [
         "Налаштуйте свій тарифний план"
-      ],
-      "Dashboard": [
-        "Огляд"
       ],
       "Date": [
         "Дата"
@@ -5292,9 +5236,6 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
       "Open pagination": [
         "Показати нумерацію сторінок"
       ],
@@ -5319,17 +5260,11 @@
       "Payment verification": [
         "Перевірка платежу"
       ],
-      "Payments": [
-        "Платежі"
-      ],
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan summary": [
-        "Підсумок плану"
       ],
       "Plans": [
         "Тарифні плани"
@@ -5435,9 +5370,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш план"
       ],
       "Your plan": [
         "Ваш тарифний план"

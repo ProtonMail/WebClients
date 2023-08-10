@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } bevezető"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Vissza"
       ],
-      "Beta Access": [
-        "Béta hozzáférés"
-      ],
       "Blind Carbon Copy": [
         "Titkos másolat"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Levélírás"
       ],
-      "Composer size": [
-        "Szerkesztő mérete"
-      ],
       "Confirm": [
         "Jóváhagyás"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Importálás beállításai"
-      ],
-      "Default email application": [
-        "Alapértelmezett e-mail alkalmazás"
       ],
       "Delete": [
         "Törlés"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Az előző oldalra"
       ],
-      "Go to settings": [
-        "Beállítások megnyitása"
-      ],
       "Go to SimpleLogin": [
         "SimpleLogin megnyitása"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email álnevek"
-      ],
-      "I have a question": [
-        "Kérdésem van"
       ],
       "Image could not be loaded with tracker protection.": [
         "A képet nem lehetett betölteni a nyomkövető védelemmel."
@@ -541,9 +523,6 @@
       "Italic": [
         "Dőlt"
       ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Label as": [
         "Címkézés, mint"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Betöltés${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Megjelenítés tömörsége"
-      ],
-      "Mailbox layout": [
-        "Elrendezés"
       ],
       "Manage folders": [
         "Mappák kezelése"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Előnézet megmutatása"
       ],
-      "Show side panel": [
-        "Oldalsáv megjelenítése"
-      ],
       "Sign in": [
         "Bejelentkezés"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Küldés"
-      ],
-      "Theme": [
-        "Téma"
       ],
       "This message contains embedded images.": [
         "Ez az üzenet beágyazott képet tartalmaz."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Az egérrel átméretezheti a nézetet. Ha a billentyűzetet használja, a jobba és balra nyilakkal méretezheti át."
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
       ],
       "Verify": [
         "Ellenőrzés"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "A feladó ellenőrzése megtörtént"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "lila"
-      ],
-      "raisin black": [
-        "mazsola fekete"
       ],
       "reef": [
         "zátony"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Összes letöltése"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Be"
       ]
     },
     "Email body for description (description part)": {
@@ -4183,9 +4126,6 @@
       "For your eyes only": [
         "Csak Önnek látható"
       ],
-      "Get free storage": [
-        "Ingyenes tároló szerzése"
-      ],
       "Get mobile app": [
         "Mobil alkalmazás beszerzése"
       ],
@@ -4287,12 +4227,6 @@
     "Header": {
       "Contacts": [
         "Névjegyek"
-      ],
-      "Contacts, groups and settings": [
-        "Névjegyek, csoportok és beállítások"
-      ],
-      "Get help": [
-        "Súgó megnyitása"
       ],
       "Search": [
         "Keresés"
@@ -5456,9 +5390,6 @@
       "Saved at ${ dateString }": [
         "Mentve: ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Mentve: ${ dateString }"
-      ],
       "Saved yesterday": [
         "Tegnap mentve"
       ],
@@ -6245,16 +6176,6 @@
         "Üzenet gyorsbillentyűk"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Be"
-      ]
-    },
     "Label": {
       " and ": [
         " és "
@@ -6370,6 +6291,9 @@
       "Colors": [
         "Színek"
       ],
+      "Composer": [
+        "Szerkesztő"
+      ],
       "Conditions": [
         "Feltételek"
       ],
@@ -6393,6 +6317,9 @@
       ],
       "Delete recovery-related information.": [
         "Helyreállítási információk törlése."
+      ],
+      "Density": [
+        "Sűrűség"
       ],
       "Don't ask again": [
         "Ne kérdezze újra"
@@ -6426,9 +6353,6 @@
       ],
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
-      ],
-      "Enable Beta Access": [
-        "\"Béta hozzáférés\" engedélyezése"
       ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
@@ -6634,15 +6558,6 @@
       "Search in": [
         "Keresés:"
       ],
-      "Select how your composer opens by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan nyíljon meg a szerkesztő."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg a levelezése."
-      ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
       ],
@@ -6766,30 +6681,6 @@
       ],
       "To": [
         "Címzett"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
       ]
     },
     "Label/folder modal": {
@@ -7280,11 +7171,6 @@
         "Váltás nagyobb csomagra"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Váltás vagy fiók hozzáadása"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
@@ -7469,11 +7355,6 @@
       ],
       "Merge with calendar": [
         "Összefőzés naptárral"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } (összesen: ${ totalText })"
       ]
     },
     "Participant name": {
@@ -7697,11 +7578,6 @@
         "Zéró-hozzáférés titkosítással tárolva"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } n",
@@ -7833,14 +7709,6 @@
       ],
       "Stored with zero-access encryption": [
         "Zéró-hozzáférés titkosítással tárolva"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Kezelje névjegyeit és tekintse meg naptárát anélkül, hogy elhagyná az alkalmazást."
-      ],
-      "Try the new side panel": [
-        "Próbálja ki az új oldalsávot"
       ]
     },
     "Signature verification warning": {
@@ -8530,11 +8398,6 @@
         "vCard mező"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Beállítások"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Tegnap"
@@ -8614,14 +8477,8 @@
       "Attachments": [
         "Mellékletek"
       ],
-      "Back": [
-        "Vissza"
-      ],
       "BCC": [
         "Titkos másolat"
-      ],
-      "Beta Access": [
-        "Béta hozzáférés"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -8649,9 +8506,6 @@
       ],
       "Clearing data": [
         "Adatok törlése"
-      ],
-      "Composer mode": [
-        "Szerkesztő módja"
       ],
       "Confirm recipient address?": [
         "Elfogadja a címzett címét?"
@@ -8857,12 +8711,6 @@
       "Load remote content": [
         "Távoli tartalom betöltése"
       ],
-      "Mailbox density": [
-        "Megjelenítés tömörsége"
-      ],
-      "Mailbox layout": [
-        "Elrendezés"
-      ],
       "Mark as read": [
         "Megjelölés olvasottként"
       ],
@@ -8946,12 +8794,6 @@
       ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
-      ],
-      "Open help menu": [
-        "Súgó menü megnyitása"
-      ],
-      "Open settings menu": [
-        "Beállítások menü megnyitása"
       ],
       "Other information": [
         "Egyéb adatok"
@@ -9113,9 +8955,6 @@
       "Verification error": [
         "Ellenőrzési hiba"
       ],
-      "View contacts": [
-        "Névjegyek megtekintése"
-      ],
       "Warning": [
         "Figyelem"
       ],
@@ -9187,14 +9026,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
-      "Hide side panel": [
-        "Oldalsáv elrejtése"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
-      ],
-      "Show side panel": [
-        "Oldalsáv megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

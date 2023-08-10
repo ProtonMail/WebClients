@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Compunere"
       ],
-      "Composer size": [
-        "Dimensiune editor mesaje"
-      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Personalizare importare"
-      ],
-      "Default email application": [
-        "Aplicaţia de e-mail implicită"
       ],
       "Delete": [
         "Ștergere"
@@ -452,9 +440,6 @@
       "Go to previous page": [
         "Pagina anterioară"
       ],
-      "Go to settings": [
-        "Accesare setări"
-      ],
       "Go to SimpleLogin": [
         "Accesare SimpleLogin"
       ],
@@ -484,9 +469,6 @@
       ],
       "hide-my-email aliases": [
         "aliasuri hide-my-email"
-      ],
-      "I have a question": [
-        "Am o întrebare"
       ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
@@ -544,9 +526,6 @@
       "Italic": [
         "Înclinat"
       ],
-      "Keyboard shortcuts": [
-        "Combinații de taste listă mesaje"
-      ],
       "Label as": [
         "Etichetare ca"
       ],
@@ -573,12 +552,6 @@
       ],
       "Loading${ ellipsis }": [
         "Se încarcă${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
       ],
       "Manage folders": [
         "Gestionare foldere"
@@ -976,9 +949,6 @@
       "Show preview": [
         "Afișare previzualizare"
       ],
-      "Show side panel": [
-        "Afișare panou lateral"
-      ],
       "Sign in": [
         "Autentificare"
       ],
@@ -1014,9 +984,6 @@
       ],
       "Submit": [
         "Trimite"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "This message contains embedded images.": [
         "Acest mesaj conține imagini incluse."
@@ -1118,9 +1085,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilizați mouse-ul pentru a redimensiona vizualizarea. Dacă folosiți tastatura, puteți utiliza tastele săgeată stânga și dreapta pentru redimensionare."
-      ],
-      "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
       ],
       "Verify": [
         "Verifică"
@@ -1304,14 +1268,6 @@
       ],
       "Sender verification passed": [
         "Destinatar verificat cu succes"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
     "Billing cycle option": {
@@ -1815,9 +1771,6 @@
       ],
       "purple": [
         "violet"
-      ],
-      "raisin black": [
-        "stafide negre"
       ],
       "reef": [
         "recif"
@@ -2994,16 +2947,6 @@
     "Download attachments": {
       "Download all": [
         "Descărcare toate"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Dezactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
       ]
     },
     "Email body for description (description part)": {
@@ -4236,9 +4179,6 @@
       "For your eyes only": [
         "Doar pentru dumneavoastră"
       ],
-      "Get free storage": [
-        "Obțineți spațiu gratuit"
-      ],
       "Get mobile app": [
         "Luați aplicația mobilă"
       ],
@@ -4358,12 +4298,6 @@
     "Header": {
       "Contacts": [
         "Contacte"
-      ],
-      "Contacts, groups and settings": [
-        "Contacte, grupuri și setări"
-      ],
-      "Get help": [
-        "Obțineți ajutor"
       ],
       "Search": [
         "Căutare"
@@ -4969,6 +4903,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Sunteți sigur că doriți să mutați toate mesajele de aici în «Arhivă»?"
@@ -5596,11 +5533,11 @@
       "Saved at ${ dateString }": [
         "Salvat ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Salvat ${ dateString }"
-      ],
       "Saved yesterday": [
         "Salvat ieri."
+      ],
+      "Saved: ${ dateString }": [
+        "Salvat: ${ dateString }"
       ],
       "Saving draft…": [
         "Se salvează ciorna…"
@@ -6400,16 +6337,6 @@
         "Combinații de taste mesaje"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Dezactivate"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activate"
-      ]
-    },
     "Label": {
       " and ": [
         " și "
@@ -6525,6 +6452,9 @@
       "Colors": [
         "Culori"
       ],
+      "Composer": [
+        "Compunere mesaje"
+      ],
       "Conditions": [
         "Condiții"
       ],
@@ -6548,6 +6478,9 @@
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
+      ],
+      "Density": [
+        "Densitate"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -6581,9 +6514,6 @@
       ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
       ],
       "Encrypt emails": [
         "Criptare mesaje"
@@ -6789,15 +6719,6 @@
       "Search in": [
         "Căutare în"
       ],
-      "Select how your composer opens by default.": [
-        "Selectați modul în care se deschide implicit editorul de mesaje."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Selectați cum să arate lista de mesaje în mod implicit."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Selectați cum să arate căsuța poștală în mod implicit."
-      ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
@@ -6923,30 +6844,6 @@
         "Către"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximizat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Creare folder"
@@ -6991,6 +6888,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplicația Windows ${ DRIVE_APP_NAME }"
+      ],
       "All mail": [
         "Toate mesajele"
       ],
@@ -7089,6 +6989,9 @@
       ],
       "Scheduled": [
         "Programate"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincronizați fără întreruperi fișierele și folderele dintre calculatorul personal și ${ DRIVE_APP_NAME }"
       ],
       "Sent": [
         "Trimise"
@@ -7443,11 +7346,6 @@
         "Modificare"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -7640,11 +7538,6 @@
       ],
       "Merge with calendar": [
         "Îmbinare cu calendarul"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } din ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7871,11 +7764,6 @@
         "Stocat criptat cu acces exclusiv personal"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } zi",
@@ -8014,14 +7902,6 @@
       ],
       "Stored with zero-access encryption": [
         "Stocat criptat cu acces exclusiv personal"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestionați-vă contactele și accesați calendarul fără a părăsi aplicația."
-      ],
-      "Try the new side panel": [
-        "Încercați noul panou lateral"
       ]
     },
     "Signature verification warning": {
@@ -8761,11 +8641,6 @@
         "Câmp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Setări"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Ieri"
@@ -8854,14 +8729,8 @@
       "Attachments": [
         "Atașamente"
       ],
-      "Back": [
-        "Înapoi"
-      ],
       "BCC": [
         "Ca"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -8889,9 +8758,6 @@
       ],
       "Clearing data": [
         "Ştergere date"
-      ],
-      "Composer mode": [
-        "Mod editor mesaje"
       ],
       "Confirm recipient address?": [
         "Confirmați adresa destinatarului?"
@@ -9103,12 +8969,6 @@
       "Load remote content": [
         "Încărcare conținut extern"
       ],
-      "Mailbox density": [
-        "Densitate cutie poștală"
-      ],
-      "Mailbox layout": [
-        "Aspect cutie poștală"
-      ],
       "Mark as read": [
         "Marcare ca citit"
       ],
@@ -9192,12 +9052,6 @@
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
-      ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
-      "Open settings menu": [
-        "Deschidere meniu setări"
       ],
       "Other information": [
         "Alte informații"
@@ -9360,9 +9214,6 @@
       "Verification error": [
         "Eroare verificare"
       ],
-      "View contacts": [
-        "Afișare contacte"
-      ],
       "Warning": [
         "Avertizare"
       ],
@@ -9435,14 +9286,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
-      "Hide side panel": [
-        "Ascundere panou lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
-      ],
-      "Show side panel": [
-        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."

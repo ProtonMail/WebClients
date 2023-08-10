@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Kembali ke Beranda"
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Cancel": [
         "Batal"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
+      ],
+      "Copy address": [
+        "Salin alamat"
       ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
@@ -316,9 +313,6 @@
       "Go to parent": [
         "Tuju induk"
       ],
-      "Go to settings": [
-        "Ke pengaturan"
-      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -333,9 +327,6 @@
       ],
       "Hide labels": [
         "Sembunyikan label"
-      ],
-      "I have a question": [
-        "Saya memiliki pertanyaan"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -423,9 +414,6 @@
       ],
       "Next month": [
         "Bulan selanjutnya"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -589,9 +577,6 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
-      "Show side panel": [
-        "Tampilkan panel samping"
-      ],
       "Sign in": [
         "Masuk"
       ],
@@ -630,9 +615,6 @@
       ],
       "Submit report": [
         "Kirim laporan"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
@@ -773,14 +755,6 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
     "Billing cycle option": {
@@ -1860,16 +1834,6 @@
         "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Deskripsi: ${ eventDescription }"
@@ -2555,7 +2519,7 @@
         "Penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Langganan ditagih kepada admin utama paket Visionary atau paket keluarga."
+        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -2737,9 +2701,6 @@
       ],
       "Contacts, groups and settings": [
         "Kontak, grup dan pengaturan"
-      ],
-      "Get help": [
-        "Dapatkan bantuan"
       ]
     },
     "Hint": {
@@ -3288,9 +3249,6 @@
       ],
       "Current version": [
         "Versi saat ini"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
       "Decrypting files": [
         "Mendekripsi berkas"
@@ -4317,9 +4275,6 @@
       "Emails (last month)": [
         "Email (sebulan terakhir)"
       ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
-      ],
       "Encrypt emails": [
         "Enkripsi email"
       ],
@@ -4535,9 +4490,6 @@
       ],
       "Street address": [
         "Alamat jalan"
-      ],
-      "Synchronize with system": [
-        "Sinkronkan dengan sistem"
       ],
       "System information": [
         "Informasi sistem"
@@ -4766,11 +4718,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Tingkatkan sekarang"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Pindah atau tambahkan akun"
       ]
     },
     "new_plans: feature": {
@@ -5244,22 +5191,9 @@
         "Email resmi dari ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Unggah"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Kelola kontak dan lihat kalender Anda tanpa meninggalkan aplikasi."
-      ],
-      "Try the new side panel": [
-        "Coba panel samping kami yang baru"
       ]
     },
     "Signing preference for emails": {
@@ -5692,11 +5626,6 @@
         "Kolom vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Pengaturan"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } j"
@@ -5735,9 +5664,6 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } unggahan yang gagal"
       ],
-      "(active)": [
-        "(aktif)"
-      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -5761,12 +5687,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Apakah Anda yakin untuk menutup pratinjau?"
-      ],
-      "Back": [
-        "Kembali"
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -6002,12 +5922,6 @@
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
-      "Open help menu": [
-        "Buka menu bantuan"
-      ],
-      "Open settings menu": [
-        "Buka menu pengaturan"
-      ],
       "Original size": [
         "Ukuran asli"
       ],
@@ -6067,9 +5981,6 @@
       ],
       "Searching…": [
         "Mencari…"
-      ],
-      "Select a theme": [
-        "Pilih tema"
       ],
       "Select action to take on contact group": [
         "Pilih tindakan yang diambil di grup kontak"
@@ -6252,14 +6163,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
-      "Hide side panel": [
-        "Sembunyikan panel samping"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Show side panel": [
-        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
@@ -6272,12 +6177,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"

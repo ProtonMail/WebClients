@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "戻る"
       ],
-      "Beta Access": [
-        "ベータ版アクセス"
-      ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー (Blind Carbon Copy)"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "新規作成"
       ],
-      "Composer size": [
-        "作成サイズ"
-      ],
       "Confirm": [
         "確認"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "インポートをカスタマイズ"
-      ],
-      "Default email application": [
-        "既定のメールアプリ"
       ],
       "Delete": [
         "削除"
@@ -448,9 +436,6 @@
       "Go to previous page": [
         "前のページに移動"
       ],
-      "Go to settings": [
-        "設定を開く"
-      ],
       "Go to SimpleLogin": [
         "SimpleLogin へ移動"
       ],
@@ -480,9 +465,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email エイリアス"
-      ],
-      "I have a question": [
-        "サポートに質問"
       ],
       "Image could not be loaded with tracker protection.": [
         "トラッキング防止が画像の読み込みをブロックしました。"
@@ -538,9 +520,6 @@
       "Italic": [
         "イタリック体"
       ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
-      ],
       "Label as": [
         "ラベル付け"
       ],
@@ -567,12 +546,6 @@
       ],
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "受信トレイの密度"
-      ],
-      "Mailbox layout": [
-        "受信トレイのレイアウト"
       ],
       "Manage folders": [
         "フォルダーを管理"
@@ -970,9 +943,6 @@
       "Show preview": [
         "プレビューを表示"
       ],
-      "Show side panel": [
-        "サイドパネルを表示"
-      ],
       "Sign in": [
         "サインイン"
       ],
@@ -1008,9 +978,6 @@
       ],
       "Submit": [
         "送信"
-      ],
-      "Theme": [
-        "テーマ"
       ],
       "This message contains embedded images.": [
         "このメッセージには埋め込み画像が含まれています。"
@@ -1110,9 +1077,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
-      ],
-      "Use “${ label }” setting": [
-        "「${ label }」設定を使用する"
       ],
       "Verify": [
         "検証"
@@ -1296,14 +1260,6 @@
       ],
       "Sender verification passed": [
         "送信者検証に成功しました"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
     "Billing cycle option": {
@@ -1807,9 +1763,6 @@
       ],
       "purple": [
         "パープル"
-      ],
-      "raisin black": [
-        "黒"
       ],
       "reef": [
         "リーフ"
@@ -2974,16 +2927,6 @@
     "Download attachments": {
       "Download all": [
         "すべてダウンロード"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "無効"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "有効"
       ]
     },
     "Email body for description (description part)": {
@@ -4175,9 +4118,6 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強力な暗号化により、あなたと意図した宛先の受信者のみがメールを閲覧できます。"
       ],
-      "Get free storage": [
-        "無料のストレージを取得"
-      ],
       "Get mobile app": [
         "モバイルアプリを入手する"
       ],
@@ -4297,12 +4237,6 @@
     "Header": {
       "Contacts": [
         "連絡先"
-      ],
-      "Contacts, groups and settings": [
-        "連絡先、グループおよび設定"
-      ],
-      "Get help": [
-        "ヘルプを参照"
       ],
       "Search": [
         "検索"
@@ -5399,9 +5333,6 @@
       "Saved at ${ dateString }": [
         "${ dateString } に保存しました"
       ],
-      "Saved on ${ dateString }": [
-        "${ dateString } に保存しました"
-      ],
       "Saved yesterday": [
         "昨日保存したもの"
       ],
@@ -6170,16 +6101,6 @@
         "メッセージショートカット"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "無効"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "有効"
-      ]
-    },
     "Label": {
       " and ": [
         " および "
@@ -6295,6 +6216,9 @@
       "Colors": [
         "色"
       ],
+      "Composer": [
+        "メール作成"
+      ],
       "Conditions": [
         "条件"
       ],
@@ -6318,6 +6242,9 @@
       ],
       "Delete recovery-related information.": [
         "回復に関する情報を削除"
+      ],
+      "Density": [
+        "密度"
       ],
       "Don't ask again": [
         "今後表示しない"
@@ -6351,9 +6278,6 @@
       ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
-      ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -6559,15 +6483,6 @@
       "Search in": [
         "検索対象"
       ],
-      "Select how your composer opens by default.": [
-        "新規メッセージ作成時の既定のモードを選択してください。"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "デフォルトで使用されるメッセージのリストを選択してください。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "デフォルトで使用される受信トレイの見た目を選択してください。"
-      ],
       "Send auto-reply": [
         "自動返信を送信"
       ],
@@ -6693,30 +6608,6 @@
         "宛先"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "フォルダーの作成"
@@ -6761,6 +6652,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows アプリ"
+      ],
       "All mail": [
         "すべてのメール"
       ],
@@ -6859,6 +6753,9 @@
       ],
       "Scheduled": [
         "送信予約"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "コンピューターと ${ DRIVE_APP_NAME } 間でファイルとフォルダーをシームレスに同期します"
       ],
       "Sent": [
         "送信済み"
@@ -7197,11 +7094,6 @@
         "今すぐアップグレード"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "アカウントを追加・切り替え"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
@@ -7394,11 +7286,6 @@
       ],
       "Merge with calendar": [
         "カレンダーと結合"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } / ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7619,11 +7506,6 @@
         "暗号化されずに送受信されたメッセージ"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } 日"
@@ -7748,14 +7630,6 @@
       ],
       "Stored with zero-access encryption": [
         "暗号化されずに送受信されたメッセージ"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "アプリ内で、連絡先の管理やカレンダーの表示ができます。"
-      ],
-      "Try the new side panel": [
-        "新しいサイドパネルを試す"
       ]
     },
     "Signature verification warning": {
@@ -8432,11 +8306,6 @@
         "vCard フィールド"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "昨日"
@@ -8507,14 +8376,8 @@
       "Attachments": [
         "添付ファイル"
       ],
-      "Back": [
-        "戻る"
-      ],
       "BCC": [
         "Bcc"
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -8542,9 +8405,6 @@
       ],
       "Clearing data": [
         "データのクリア中"
-      ],
-      "Composer mode": [
-        "新規作成時のモード"
       ],
       "Confirm recipient address?": [
         "宛先のアドレスを確認しますか?"
@@ -8744,12 +8604,6 @@
       "Load remote content": [
         "外部コンテンツの読み込み"
       ],
-      "Mailbox density": [
-        "受信トレイの密度"
-      ],
-      "Mailbox layout": [
-        "受信トレイのレイアウト"
-      ],
       "Mark as read": [
         "既読にする"
       ],
@@ -8833,12 +8687,6 @@
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
-      ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
-      "Open settings menu": [
-        "設定メニューを開く"
       ],
       "Other information": [
         "その他の情報"
@@ -8999,9 +8847,6 @@
       "Verification error": [
         "検証エラーが発生しました"
       ],
-      "View contacts": [
-        "連絡先を表示"
-      ],
       "Warning": [
         "警告"
       ],
@@ -9072,14 +8917,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
-      "Hide side panel": [
-        "サイドパネルを隠す"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
-      ],
-      "Show side panel": [
-        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"

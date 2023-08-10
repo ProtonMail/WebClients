@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
-      ],
-      "Activate recovery": [
-        "Kurtarma özelliğini aç"
       ],
       "Add credit / debit card": [
         "Kredi ya da banka kartı ekle"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
-      ],
-      "Attention required": [
-        "İlgilenmeniz gerekiyor"
       ],
       "Authenticate": [
         "Kimliği doğrula"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Destek ekibimizle görüşün"
       ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Kopyala"
       ],
-      "Copy email to clipboard": [
-        "E-postayı panoya kopyala"
+      "Copy address": [
+        "Adresi kopyala"
       ],
       "Create": [
         "Ekle"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "Hide": [
         "Gizle"
       ],
       "Hide plan features": [
         "Tarife özelliklerini gizle"
-      ],
-      "I have a question": [
-        "Bir sorum var"
       ],
       "Increase": [
         "Artır"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Yeni parola ayarla"
       ],
-      "Set recovery phrase": [
-        "Kurtarma ifadesini ayarla"
-      ],
       "Share via link": [
         "Bağlantı ile paylaş"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Kilidi aç"
-      ],
-      "Unlock data": [
-        "Verilerin kilidini aç"
-      ],
-      "Update recovery file": [
-        "Kurtarma dosyasını güncelle"
-      ],
-      "Update recovery phrase": [
-        "Kurtarma ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -420,20 +402,6 @@
       ],
       "Reactivate": [
         "Yenile"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } özel etki alanı",
-        "+ ${ domains } özel etki alanı"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP adresi",
-        "+ ${ ips } IP adresi"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } kullanıcı",
-        "+ ${ users } kullanıcı"
       ]
     },
     "Alter": {
@@ -2052,9 +2020,6 @@
       "Create your account": [
         "Hesabınızı açın"
       ],
-      "Get help": [
-        "Yardım alın"
-      ],
       "Select your pricing plan": [
         "Ücretlendirme tarifenizi seçin"
       ]
@@ -2073,9 +2038,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } aboneliğinizi ${ renewalTime } zamanında yenileyecek."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
@@ -2178,9 +2140,6 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
-      ],
-      "Auto-renewal: ": [
-        "Otomatik yenileme: "
       ],
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
@@ -2320,7 +2279,7 @@
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
       ],
-      "For choosing ${ product }": [
+      "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -3516,9 +3475,6 @@
       "Keep account": [
         "Hesabı tut"
       ],
-      "Switch or add account": [
-        "Hesap değiştirin ya da ekleyin"
-      ],
       "Switch plan": [
         "Tarifeyi değiştir"
       ]
@@ -3882,7 +3838,7 @@
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size özel VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
@@ -3922,9 +3878,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Ödeme yaparak ${ termsAndConditions } metnini kabul etmiş olursunuz"
-      ],
       "terms and conditions": [
         "hüküm ve koşullar"
       ]
@@ -3980,7 +3933,7 @@
         "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler içinözel bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
@@ -5031,9 +4984,6 @@
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"
       ],
-      "Back": [
-        "Geri"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -5078,9 +5028,6 @@
       ],
       "Customize your plan": [
         "Tarifenizi özelleştirin"
-      ],
-      "Dashboard": [
-        "Pano"
       ],
       "Date": [
         "Tarih"
@@ -5172,9 +5119,6 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
       "Open pagination": [
         "Sayfalandırmayı aç"
       ],
@@ -5199,17 +5143,11 @@
       "Payment verification": [
         "Ödeme doğrulama"
       ],
-      "Payments": [
-        "Ödemeler"
-      ],
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Tarife özeti"
       ],
       "Plans": [
         "Tarifeler"
@@ -5271,6 +5209,9 @@
       "Status": [
         "Durum"
       ],
+      "Subscription": [
+        "Abonelik"
+      ],
       "Switch to one-password mode": [
         "Tek parola kipine geç"
       ],
@@ -5291,6 +5232,9 @@
       ],
       "Unsupported browser": [
         "Tarayıcı desteklenmiyor"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
       ],
       "Verification failed": [
         "Doğrulanamadı"
@@ -5315,9 +5259,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
-      ],
-      "Your Plan": [
-        "Tarifeniz"
       ],
       "Your plan": [
         "Tarifeniz"

@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducció a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Torna"
       ],
-      "Beta Access": [
-        "Accés beta"
-      ],
       "Blind Carbon Copy": [
         "Còpia carbó oculta"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Redactar"
       ],
-      "Composer size": [
-        "Mida de l'editor"
-      ],
       "Confirm": [
         "Confirma"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Personalitzar importació"
-      ],
-      "Default email application": [
-        "Aplicació de correu electrònic per defecte"
       ],
       "Delete": [
         "Elimina"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Ves a la pàgina anterior"
       ],
-      "Go to settings": [
-        "Ves a les preferències"
-      ],
       "Go to SimpleLogin": [
         "Ves a SimpleLogin"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "àlies de hide-my-email"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
       ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
@@ -541,9 +523,6 @@
       "Italic": [
         "Cursiva"
       ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
-      ],
       "Label as": [
         "Etiqueta com a"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Carregant${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
       ],
       "Manage folders": [
         "Gestiona les carpetes"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Mostra visualització prèvia"
       ],
-      "Show side panel": [
-        "Mostra el panell lateral"
-      ],
       "Sign in": [
         "Inicia la sessió"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Envia"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "This message contains embedded images.": [
         "Aquest missatge conté imatges incrustades."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
-      ],
-      "Use “${ label }” setting": [
-        "Utilitza la configuració \"${ label }\""
       ],
       "Verify": [
         "Verifica"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "S'ha aprovat la verificació del remitent"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accés beta us permet utilitzar la versió beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } abans que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "porpra"
-      ],
-      "raisin black": [
-        "negre pansa"
       ],
       "reef": [
         "corall"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Desa tot"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Desactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
       ]
     },
     "Email body for description (description part)": {
@@ -4207,9 +4150,6 @@
       "For your eyes only": [
         "Només per als vostres ulls"
       ],
-      "Get free storage": [
-        "Obtén emmagatzematge gratuït"
-      ],
       "Get mobile app": [
         "Obtén l'aplicació mòbil"
       ],
@@ -4329,12 +4269,6 @@
     "Header": {
       "Contacts": [
         "Contactes"
-      ],
-      "Contacts, groups and settings": [
-        "Contactes, grups i preferències"
-      ],
-      "Get help": [
-        "Obteniu ajuda"
       ],
       "Search": [
         "Cerca"
@@ -4686,6 +4620,10 @@
         "${ count } missatge no llegit",
         "${ count } missatges no llegits"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } de ${ totalProgress }",
+        "${ currentProgress } de ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imatge encastada",
         "${ embeddedAttachmentsCount } imatges encastades"
@@ -4887,6 +4825,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la vostra importació?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Segur que voleu moure tots els missatges d'aquesta ubicació a l'Arxiu?"
@@ -5299,6 +5240,9 @@
       "Merged": [
         "Combinats"
       ],
+      "Message download status:": [
+        "Estat de baixada dels missatges:"
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ${ MAIL_APP_NAME }. Per enviar correus electrònics que caduquin a usuaris que no siguin de ${ BRAND_NAME }, torneu enrere i afegiu la protecció de contrasenya al correu electrònic."
       ],
@@ -5425,6 +5369,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Proporcioneu un nom i una adreça de correu electrònic per crear un grup."
+      ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
@@ -5495,11 +5442,11 @@
       "Saved at ${ dateString }": [
         "Desat el ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Desat el ${ dateString }"
-      ],
       "Saved yesterday": [
         "S'ha desat ahir"
+      ],
+      "Saved: ${ dateString }": [
+        "Desat: ${ dateString }"
       ],
       "Saving draft…": [
         "Desant l'esborrany…"
@@ -6284,16 +6231,6 @@
         "Dreceres de missatge"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Desactivades"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Activades"
-      ]
-    },
     "Label": {
       " and ": [
         " i "
@@ -6409,6 +6346,9 @@
       "Colors": [
         "Colors"
       ],
+      "Composer": [
+        "Editor"
+      ],
       "Conditions": [
         "Condicions"
       ],
@@ -6432,6 +6372,9 @@
       ],
       "Delete recovery-related information.": [
         "Elimina la informació de recuperació."
+      ],
+      "Density": [
+        "Densitat"
       ],
       "Don't ask again": [
         "No tornis a preguntar"
@@ -6465,9 +6408,6 @@
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -6673,15 +6613,6 @@
       "Search in": [
         "Cerca en"
       ],
-      "Select how your composer opens by default.": [
-        "Seleccioneu com el vostre editor s'obre per defecte."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra llista de missatges."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra bústia de correu."
-      ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
@@ -6807,30 +6738,6 @@
         "Per a"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximitzat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Crear carpeta"
@@ -6875,6 +6782,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "aplicació ${ DRIVE_APP_NAME } per a Windows"
+      ],
       "All mail": [
         "Tot el correu"
       ],
@@ -6973,6 +6883,9 @@
       ],
       "Scheduled": [
         "Programats"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincronitzeu fàcilment fitxers i carpetes entre el vostre ordinador i ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Enviats"
@@ -7319,11 +7232,6 @@
         "Millora ara"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -7516,11 +7424,6 @@
       ],
       "Merge with calendar": [
         "Combinar amb el calendari"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } de ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7744,11 +7647,6 @@
         "Emmagatzemat amb xifratge d'accés zero"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } d",
@@ -7880,14 +7778,6 @@
       ],
       "Stored with zero-access encryption": [
         "Emmagatzemat amb xifratge d'accés zero"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestioneu els vostres contactes i vegeu el calendari sense sortir de l'aplicació."
-      ],
-      "Try the new side panel": [
-        "Proveu el nou panell lateral."
       ]
     },
     "Signature verification warning": {
@@ -8597,11 +8487,6 @@
         "Camp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Preferències"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Ahir"
@@ -8681,14 +8566,8 @@
       "Attachments": [
         "Adjunts"
       ],
-      "Back": [
-        "Torna"
-      ],
       "BCC": [
         "CCO"
-      ],
-      "Beta Access": [
-        "Accés Beta"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -8716,9 +8595,6 @@
       ],
       "Clearing data": [
         "Netejant dades"
-      ],
-      "Composer mode": [
-        "Mode d'editor"
       ],
       "Confirm recipient address?": [
         "Confirma adreça de destinatari?"
@@ -8924,12 +8800,6 @@
       "Load remote content": [
         "Carrega el contingut remot"
       ],
-      "Mailbox density": [
-        "Densitat de la bústia de correu"
-      ],
-      "Mailbox layout": [
-        "Disseny de la bústia de correu"
-      ],
       "Mark as read": [
         "Marca com a llegit"
       ],
@@ -9013,12 +8883,6 @@
       ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
-      ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
-      "Open settings menu": [
-        "Obrir el menú de preferències"
       ],
       "Other information": [
         "Altres dades"
@@ -9180,9 +9044,6 @@
       "Verification error": [
         "Error de verificació"
       ],
-      "View contacts": [
-        "Veure contactes"
-      ],
       "Warning": [
         "Advertència"
       ],
@@ -9254,14 +9115,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
-      "Hide side panel": [
-        "Amaga el panell lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
-      ],
-      "Show side panel": [
-        "Mostra el panell lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"

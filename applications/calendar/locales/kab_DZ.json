@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Tazwart n ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
@@ -55,9 +52,6 @@
       ],
       "Back": [
         "Ɣer deffir"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
       ],
       "Cancel": [
         "Sefsex"
@@ -109,6 +103,9 @@
       ],
       "Continue with Google": [
         "Kemmel s Google"
+      ],
+      "Copy address": [
+        "Nɣel tansa"
       ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
@@ -208,9 +205,6 @@
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
       ],
-      "Go to settings": [
-        "Ddu s iɣewwaren"
-      ],
       "Got it": [
         "Gziɣ"
       ],
@@ -225,9 +219,6 @@
       ],
       "Hide time zones": [
         "Ffer timnaḍin tikudanin"
-      ],
-      "I have a question": [
-        "Sɛiɣ asteqsi"
       ],
       "Import": [
         "Kter"
@@ -394,6 +385,9 @@
       "Select all": [
         "Fren akk"
       ],
+      "Select calendar view": [
+        "Fren askan n uwitay"
+      ],
       "Send": [
         "Azen"
       ],
@@ -447,9 +441,6 @@
       ],
       "Submit": [
         "Azen"
-      ],
-      "Theme": [
-        "Asentel"
       ],
       "Today": [
         "Assa"
@@ -595,14 +586,6 @@
     "Attendee role": {
       "Optional": [
         "Afrayan"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, akked ${ DRIVE_APP_NAME } send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
     "Billing cycle option": {
@@ -1676,6 +1659,29 @@
         "alamma d ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Sem"
+      ],
+      "Monday": [
+        "Arim"
+      ],
+      "Saturday": [
+        "Sed"
+      ],
+      "Sunday": [
+        "Acer"
+      ],
+      "Thursday": [
+        "Amhad"
+      ],
+      "Tuesday": [
+        "Aram"
+      ],
+      "Wednesday": [
+        "Ahad"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Arussin"
@@ -1763,16 +1769,6 @@
       ],
       "90 minutes": [
         "90 n tesdatin"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Yensa"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Yermed"
       ]
     },
     "Email body for description (description part)": {
@@ -2382,12 +2378,6 @@
     "Header": {
       "Contacts": [
         "Inermisen"
-      ],
-      "Contacts, groups and settings": [
-        "Inermisen, igrawen akked iɣewwaren"
-      ],
-      "Get help": [
-        "Awi tallalt"
       ],
       "Name": [
         "Isem"
@@ -3044,6 +3034,9 @@
       "Week": [
         "Imalas"
       ],
+      "Week and month views only apply to desktop.": [
+        "Tiskanin n yimalas d wayyuren teddunt kan ɣef tnarit."
+      ],
       "Which event would you like to delete?": [
         "Would you like to delete all the events in the series?"
       ],
@@ -3249,6 +3242,9 @@
       "Date and time": [
         "Azemz d wakud"
       ],
+      "Default view": [
+        "Asken amezwer"
+      ],
       "Delete": [
         "Kkes"
       ],
@@ -3272,9 +3268,6 @@
       ],
       "Emails": [
         "Imaylen"
-      ],
-      "Enable Beta Access": [
-        "Sermed anekcum Biṭa"
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
@@ -3420,6 +3413,9 @@
       "Reveal password": [
         "Sken awal uffir"
       ],
+      "Show week numbers": [
+        "Sken-d imḍanen n dduṛt"
+      ],
       "Sign emails": [
         "Eg azmul i yimaylen"
       ],
@@ -3428,6 +3424,9 @@
       ],
       "System information": [
         "Talɣut n unagraw"
+      ],
+      "Time zone": [
+        "Izḍi usrig"
       ],
       "To: ${ to }": [
         "I: ${ to }"
@@ -3443,6 +3442,9 @@
       ],
       "Verification code": [
         "Tangalt n usenqed"
+      ],
+      "Week start": [
+        "Tazwara n dduṛt"
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
@@ -3714,11 +3716,6 @@
         "Sali aswir tura"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Beddel neɣ rnu umiḍan"
-      ]
-    },
     "new_plans: feature": {
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
@@ -3889,6 +3886,9 @@
       ],
       "All events": [
         "Akk tidyanin"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Awurman (${ defaultDay })"
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
@@ -4090,11 +4090,6 @@
     "protonbadge": {
       "Official": [
         "Unṣib"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
       ]
     },
     "Select files": {
@@ -4318,11 +4313,6 @@
         "urti vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Iɣewwaren"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -4370,12 +4360,6 @@
       ],
       "Addresses": [
         "Tansiwin"
-      ],
-      "Back": [
-        "Ar deffir"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
       ],
       "Billing cycle": [
         "Twala n ufter"
@@ -4505,12 +4489,6 @@
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
-      "Open settings menu": [
-        "Ldi umuɣ n yiɣewwaren"
-      ],
       "Organizer cannot be notified": [
         "Amsuddes ulamek ad yettwalɣu"
       ],
@@ -4555,9 +4533,6 @@
       ],
       "Select a day in the month": [
         "Fren ass seg wayyur"
-      ],
-      "Select a theme": [
-        "Fren asentel"
       ],
       "Select action to take on contact group": [
         "Fren tigawt ara yettwagen ɣef ugraw n yinermisen"
@@ -4636,9 +4611,6 @@
       ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
-      ],
-      "View contacts": [
-        "Wali inermisen"
       ],
       "Warning": [
         "Alɣu"

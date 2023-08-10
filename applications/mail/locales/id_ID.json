@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Kembali"
       ],
-      "Beta Access": [
-        "Akses Beta"
-      ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Tulis"
       ],
-      "Composer size": [
-        "Ukuran komposer"
-      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Sesuaikan impor"
-      ],
-      "Default email application": [
-        "Aplikasi email default"
       ],
       "Delete": [
         "Hapus"
@@ -448,9 +436,6 @@
       "Go to previous page": [
         "Ke halaman sebelumnya"
       ],
-      "Go to settings": [
-        "Ke pengaturan"
-      ],
       "Go to SimpleLogin": [
         "Tuju SimpleLogin"
       ],
@@ -480,9 +465,6 @@
       ],
       "hide-my-email aliases": [
         "alias hide-my-email"
-      ],
-      "I have a question": [
-        "Saya memiliki pertanyaan"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -538,9 +520,6 @@
       "Italic": [
         "Miring"
       ],
-      "Keyboard shortcuts": [
-        "Pintasan keyboard"
-      ],
       "Label as": [
         "Labeli sebagai"
       ],
@@ -567,12 +546,6 @@
       ],
       "Loading${ ellipsis }": [
         "Memuat${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
       ],
       "Manage folders": [
         "Kelola folder"
@@ -970,9 +943,6 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
-      "Show side panel": [
-        "Tampilkan panel samping"
-      ],
       "Sign in": [
         "Masuk"
       ],
@@ -1008,9 +978,6 @@
       ],
       "Submit": [
         "Kirim"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "This message contains embedded images.": [
         "Pesan ini mengandung gambar yang tersemat."
@@ -1110,9 +1077,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
-      ],
-      "Use “${ label }” setting": [
-        "Gunakan pengaturan \"${ label }\""
       ],
       "Verify": [
         "Verifikasi"
@@ -1296,14 +1260,6 @@
       ],
       "Sender verification passed": [
         "Verifikasi pengirim berhasil"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
     "Billing cycle option": {
@@ -1808,9 +1764,6 @@
       "purple": [
         "ungu"
       ],
-      "raisin black": [
-        "hitam kismis"
-      ],
       "reef": [
         "karang"
       ],
@@ -1876,13 +1829,13 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Dienkripsi ujung ke ujung"
+        "Terenkripsi end-to-end"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Dienkripsi ujung ke ujung untuk penerima terverifikasi"
+        "Terenkripsi end-to-end kepada penerima terverifikasi"
       ],
       "End-to-end encrypted. ${ warningsText }": [
-        "Dienkripsi ujung ke ujung. ${ warningsText }"
+        "Terenkripsi end-to-end. ${ warningsText }"
       ],
       "PGP-encrypted": [
         "Terenkripsi PGP"
@@ -2970,16 +2923,6 @@
         "Unduh semua"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Deskripsi: ${ eventDescription }"
@@ -3833,7 +3776,7 @@
         "Penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Langganan ditagih kepada admin utama paket Visionary atau paket keluarga."
+        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -4172,9 +4115,6 @@
       "For your eyes only": [
         "Khusus untuk Anda"
       ],
-      "Get free storage": [
-        "Dapatkan penyimpanan gratis"
-      ],
       "Get mobile app": [
         "Dapatkan aplikasi mobile"
       ],
@@ -4294,12 +4234,6 @@
     "Header": {
       "Contacts": [
         "Kontak"
-      ],
-      "Contacts, groups and settings": [
-        "Kontak, grup dan pengaturan"
-      ],
-      "Get help": [
-        "Dapatkan bantuan"
       ],
       "Search": [
         "Pencarian"
@@ -5405,11 +5339,11 @@
       "Saved at ${ dateString }": [
         "Disimpan pada ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Disimpan pada ${ dateString }"
-      ],
       "Saved yesterday": [
         "Disimpan kemarin"
+      ],
+      "Saved: ${ dateString }": [
+        "Tersimpan: ${ dateString }"
       ],
       "Saving draft…": [
         "Menyimpan draf…"
@@ -5490,7 +5424,7 @@
         "Subjek"
       ],
       "Subject is end-to-end encrypted": [
-        "Subjek terenkripsi secara ujung ke ujung"
+        "Subjek terenkripsi secara end-to-end"
       ],
       "Subject:": [
         "Subjek:"
@@ -5758,6 +5692,9 @@
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Mohon maaf, namun sepertinya terjadi suatu kesalahan pada sistem kami. Dapatkah Anda mengonfirmasi bahwa Anda memang benar ingin menandai email ini sebagai email yang sah?"
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Kami telah memblokir para pengiklan dan organisasi berikut agar mereka tidak dapat melacak kapan Anda membuka email ini, perangkat apa yang Anda gunakan, dan di mana Anda berada."
       ],
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
@@ -6170,16 +6107,6 @@
         "Pintasan pesan"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
     "Label": {
       " and ": [
         " dan "
@@ -6295,6 +6222,9 @@
       "Colors": [
         "Warna"
       ],
+      "Composer": [
+        "Komposer"
+      ],
       "Conditions": [
         "Syarat"
       ],
@@ -6318,6 +6248,9 @@
       ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
+      ],
+      "Density": [
+        "Kerapatan"
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
@@ -6351,9 +6284,6 @@
       ],
       "Emails (last month)": [
         "Email (sebulan terakhir)"
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
       ],
       "Encrypt emails": [
         "Enkripsi email"
@@ -6559,15 +6489,6 @@
       "Search in": [
         "Cari di"
       ],
-      "Select how your composer opens by default.": [
-        "Tentukan bagaimana jendela komposer Anda akan terbuka."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Tentukan bagaimana daftar pesan Anda akan terlihat secara default."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Tentukan bagaimana kotak surat Anda akan terlihat secara default."
-      ],
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
       ],
@@ -6693,30 +6614,6 @@
         "Untuk"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Buat folder"
@@ -6761,6 +6658,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplikasi Windows ${ DRIVE_APP_NAME }"
+      ],
       "All mail": [
         "Semua surat"
       ],
@@ -6859,6 +6759,9 @@
       ],
       "Scheduled": [
         "Dijadwalkan"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sinkronkan berkas dan folder antara komputer Anda dan ${ DRIVE_APP_NAME } secara terpadu."
       ],
       "Sent": [
         "Terkirim"
@@ -7197,11 +7100,6 @@
         "Tingkatkan sekarang"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Pindah atau tambahkan akun"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
@@ -7396,11 +7294,6 @@
         "Gabungkan dengan kalender"
       ]
     },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "Halaman ${ page } dari ${ totalText }"
-      ]
-    },
     "Participant name": {
       "You": [
         "Anda"
@@ -7589,10 +7482,10 @@
         "Pesan ditandatangani dan dienkripsi ujung ke ujung"
       ],
       "End-to-end encrypted message": [
-        "Pesan dienkripsi ujung ke ujung"
+        "Pesan yang terenkripsi end-to-end"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Pesan terenkripsi ujung ke ujung dari pengirim terverifikasi"
+        "Pesan yang terenkripsi end-to-end dari pengirim terverifikasi"
       ],
       "PGP-encrypted and signed message": [
         "Pesan ditandatangani dan dienkripsi PGP"
@@ -7617,11 +7510,6 @@
       ],
       "Stored with zero-access encryption": [
         "Disimpan dengan enkripsi zero-access"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
       ]
     },
     "Remaining days before the message expire": {
@@ -7720,16 +7608,16 @@
         "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima pesan yang telah terverifikasi"
       ],
       "End-to-end encrypted": [
-        "Dienkripsi ujung ke ujung"
+        "Terenkripsi end-to-end"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Dienkripsi ujung ke ujung untuk penerima PGP"
+        "Terenkripsi end-to-end kepada penerima PGP"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "Dienkripsi ujung ke ujung untuk penerima PGP terverifikasi"
+        "Terenkripsi end-to-end untuk penerima PGP terverifikasi"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Dienkripsi ujung ke ujung untuk penerima terverifikasi"
+        "Terenkripsi end-to-end untuk penerima terverifikasi"
       ],
       "PGP-signed": [
         "Ditandatangani PGP"
@@ -7741,21 +7629,13 @@
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access kepada penerima yang terverifikasi"
       ],
       "Sent by you with end-to-end encryption": [
-        "Dikirim oleh Anda dengan enkripsi ujung ke ujung"
+        "Dikirim oleh Anda dengan enkripsi end-to-end"
       ],
       "Sent by you with end-to-end encryption to verified recipients": [
-        "Dikirim oleh Anda dengan enkripsi ujung ke ujung untuk penerima terverifikasi"
+        "Dikirim oleh Anda dengan enkripsi end-to-end kepada penerima terverifikasi"
       ],
       "Stored with zero-access encryption": [
         "Disimpan dengan enkripsi zero-access"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Kelola kontak dan lihat kalender Anda tanpa meninggalkan aplikasi."
-      ],
-      "Try the new side panel": [
-        "Coba panel samping kami yang baru"
       ]
     },
     "Signature verification warning": {
@@ -8426,11 +8306,6 @@
         "Kolom vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Pengaturan"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Kemarin"
@@ -8501,14 +8376,8 @@
       "Attachments": [
         "Lampiran"
       ],
-      "Back": [
-        "Kembali"
-      ],
       "BCC": [
         "BCC"
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -8536,9 +8405,6 @@
       ],
       "Clearing data": [
         "Membersihkan data"
-      ],
-      "Composer mode": [
-        "Mode komposer"
       ],
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
@@ -8738,12 +8604,6 @@
       "Load remote content": [
         "Muat remote content"
       ],
-      "Mailbox density": [
-        "Kepadatan kotak surat"
-      ],
-      "Mailbox layout": [
-        "Tata letak kotak surat"
-      ],
       "Mark as read": [
         "Tandai sebagai telah dibaca"
       ],
@@ -8828,12 +8688,6 @@
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
-      "Open help menu": [
-        "Buka menu bantuan"
-      ],
-      "Open settings menu": [
-        "Buka menu pengaturan"
-      ],
       "Other information": [
         "Informasi lainnya"
       ],
@@ -8851,6 +8705,9 @@
       ],
       "Previous message": [
         "Pesan sebelumnya"
+      ],
+      "Protect yourself from trackers": [
+        "Lindungi diri Anda dari pelacak"
       ],
       "Re-sign all contacts": [
         "Menandatangani ulang semua kontak"
@@ -8990,9 +8847,6 @@
       "Verification error": [
         "Kesalahan verifikasi"
       ],
-      "View contacts": [
-        "Lihat kontak"
-      ],
       "Warning": [
         "Peringatan"
       ],
@@ -9060,14 +8914,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
-      "Hide side panel": [
-        "Sembunyikan panel samping"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Show side panel": [
-        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
