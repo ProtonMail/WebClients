@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducción a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
@@ -58,7 +55,7 @@
         "Añadir número telefónico"
       ],
       "Add public holidays": [
-        "Añadir días festivos"
+        "Añadir calendario de días festivos"
       ],
       "Add to group": [
         "Añadir al grupo"
@@ -80,9 +77,6 @@
       ],
       "Back": [
         "Atrás"
-      ],
-      "Beta Access": [
-        "Acceso beta"
       ],
       "Cancel": [
         "Cancelar"
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Continuar con Google"
+      ],
+      "Copy address": [
+        "Copiar dirección"
       ],
       "Copy email address": [
         "Copiar la dirección de correo"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
-      "Go to settings": [
-        "Ir a la configuración"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Ocultar zonas horarias"
-      ],
-      "I have a question": [
-        "Tengo una pregunta."
       ],
       "Image could not be loaded with tracker protection.": [
         "No se ha podido cargar la imagen con la protección contra el rastreo."
@@ -458,6 +449,9 @@
       "Select all": [
         "Seleccionar todo"
       ],
+      "Select calendar view": [
+        "Seleccionar vista de calendario"
+      ],
       "Select time zone": [
         "Seleccionar la zona horaria"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Mostrar más"
       ],
-      "Show side panel": [
-        "Mostrar el panel lateral"
-      ],
       "Show time zones": [
         "Mostrar zonas horarias"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "Hoy"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "El acceso beta te permite utilizar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que sean lanzados al público. Esto significa que puedes probar nuevos productos , obtener nuevas actualizaciones y utilizar nuevas funciones."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "hasta el ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Viernes"
+      ],
+      "Monday": [
+        "Lunes"
+      ],
+      "Saturday": [
+        "Sábado"
+      ],
+      "Sunday": [
+        "Domingo"
+      ],
+      "Thursday": [
+        "Jueves"
+      ],
+      "Tuesday": [
+        "Martes"
+      ],
+      "Wednesday": [
+        "Miércoles"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconocido"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 minutos"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Desactivado"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activado"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Contactos"
       ],
-      "Contacts, groups and settings": [
-        "Contactos, grupos y configuración"
-      ],
-      "Get help": [
-        "Obtener ayuda"
-      ],
       "Name": [
         "Nombre"
       ]
@@ -3489,7 +3476,7 @@
         "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
       ],
       "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
+        "¿Estás seguro de que quieres descartar la importación?"
       ],
       "Attention required": [
         "Atención requerida"
@@ -3564,9 +3551,6 @@
       "Custom yearly": [
         "Personalización anual"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
-      ],
       "Daily": [
         "Diariamente"
       ],
@@ -3612,9 +3596,6 @@
       "Existent, added and removed participants will be notified.": [
         "Se notificarán a los participantes existentes, añadidos y eliminados."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
       ],
@@ -3651,9 +3632,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
@@ -3825,7 +3803,7 @@
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Tu suscripción terminará pronto: reactívala antes de ${ byDate } para mantener los beneficios de ${ planName }. ${ reactivateLink }"
+        "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "equipo de soporte"
@@ -3919,6 +3897,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Las vistas semanales y mensuales solo se aplican al escritorio."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -4231,6 +4212,9 @@
       "Date and time": [
         "Fecha y hora"
       ],
+      "Default view": [
+        "Vista por defecto"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -4269,9 +4253,6 @@
       ],
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
-      ],
-      "Enable Beta Access": [
-        "Habilitar acceso beta"
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
@@ -4436,17 +4417,20 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Show week numbers": [
+        "Mostrar los números de la semana"
+      ],
       "Sign emails": [
         "Firmar correos electrónicos"
       ],
       "Street address": [
         "Nombre de la calle"
       ],
-      "Synchronize with system": [
-        "Sincronizar con el sistema"
-      ],
       "System information": [
         "Información del sistema"
+      ],
+      "Time zone": [
+        "Zona horaria"
       ],
       "To: ${ to }": [
         "Para: ${ to }"
@@ -4465,6 +4449,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Week start": [
+        "Inicio de semana"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -4848,11 +4835,6 @@
         "Actualizar el plan ahora"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Cambiar o añadir cuenta"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
@@ -5111,6 +5093,9 @@
       "All events": [
         "Todos los eventos"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automático (${ defaultDay })"
+      ],
       "Create new group": [
         "Crear grupo"
       ],
@@ -5340,11 +5325,6 @@
         "Correo oficial de ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Nota: el servicio se recargará después de hacer clic en el botón Aplicar."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Recargar evento"
@@ -5399,14 +5379,6 @@
         "Compartido por ${ ownerName }"
       ]
     },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestiona tus contactos y visualiza tu calendario sin salir de la aplicación."
-      ],
-      "Try the new side panel": [
-        "Prueba el nuevo panel lateral"
-      ]
-    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Administrar calendario"
@@ -5417,7 +5389,7 @@
         "Error al verificar la firma"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Verifica los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
+        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación a este calendario. Esto puede deberse a cambios en las claves de cifrado de este contacto. Revisa la configuración PGP avanzada o solicita a ${ boldSenderEmail } una nueva invitación."
       ]
     },
     "Signing preference for emails": {
@@ -5965,11 +5937,6 @@
         "Campo vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Configuración"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -6008,9 +5975,6 @@
         "${ emailsCount } dirección de correo electrónico",
         "${ emailsCount } direcciones de correo electrónico"
       ],
-      "(active)": [
-        "(activo)"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -6041,12 +6005,6 @@
       ],
       "Addresses": [
         "Direcciones"
-      ],
-      "Back": [
-        "Atrás"
-      ],
-      "Beta Access": [
-        "Acceso beta"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -6213,12 +6171,6 @@
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"
       ],
-      "Open help menu": [
-        "Abrir el menú de ayuda"
-      ],
-      "Open settings menu": [
-        "Abrir menú de configuración"
-      ],
       "Organizer cannot be notified": [
         "No se puede notificar al organizador."
       ],
@@ -6266,9 +6218,6 @@
       ],
       "Select a day in the month": [
         "Selecciona un día del mes."
-      ],
-      "Select a theme": [
-        "Seleccionar un tema"
       ],
       "Select action to take on contact group": [
         "Selecciona la acción a realizar en el grupo de contactos."
@@ -6353,9 +6302,6 @@
       ],
       "Update recurring event": [
         "Actualizar evento recurrente"
-      ],
-      "View contacts": [
-        "Ver contactos"
       ],
       "Warning": [
         "Advertencia"
@@ -6447,14 +6393,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como Redes Sociales o Promociones. Puedes seleccionar a dónde importar estos correos."
       ],
-      "Hide side panel": [
-        "Ocultar panel lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que el formato PGP/Inline te obliga a enviar mensajes de texto plano."
-      ],
-      "Show side panel": [
-        "Mostrar panel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
@@ -6467,12 +6407,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "El tema seleccionado estará activo cuando tu sistema esté en \"modo oscuro\"."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."

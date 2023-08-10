@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Уводзіны ў ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Назад"
       ],
-      "Beta Access": [
-        "Бэта-доступ"
-      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Працягнуць з Google"
+      ],
+      "Copy address": [
+        "Капіяваць адрас"
       ],
       "Copy email address": [
         "Скапіяваць адрас электроннай пошты"
@@ -252,9 +249,6 @@
       "Go to panel ${ index }": [
         "Перайсці да панэлі ${ index }"
       ],
-      "Go to settings": [
-        "Перайсці ў налады"
-      ],
       "Got it": [
         "Зразумела"
       ],
@@ -272,9 +266,6 @@
       ],
       "Hide time zones": [
         "Схаваць часавыя паясы"
-      ],
-      "I have a question": [
-        "У мяне ёсць пытанне"
       ],
       "Image could not be loaded with tracker protection.": [
         "Немагчыма загрузіць відарыс з уключанай абаронай ад праграм сачэння."
@@ -462,6 +453,9 @@
       "Select all": [
         "Выбраць усе"
       ],
+      "Select calendar view": [
+        "Выбраць выгляд календара"
+      ],
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
@@ -495,9 +489,6 @@
       "Show more": [
         "Паказаць больш"
       ],
-      "Show side panel": [
-        "Паказаць бакавую панэль"
-      ],
       "Show time zones": [
         "Паказаць часавыя паясы"
       ],
@@ -527,9 +518,6 @@
       ],
       "Submit": [
         "Адправіць"
-      ],
-      "Theme": [
-        "Тэма"
       ],
       "Today": [
         "Сёння"
@@ -726,14 +714,6 @@
     "Attendee role": {
       "Optional": [
         "Неабавязкова"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бэта-доступ дазваляе вам карыстацца тэставай версіяй ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } да таго, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта значыць, што вы можаце першымі паспрабаваць новыя прадукты і функцыі."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Пры ўзнікненні праблем, вы заўсёды можаце адключыць бэта-доступ."
       ]
     },
     "Billing cycle option": {
@@ -1993,6 +1973,29 @@
         "да ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Пятніца"
+      ],
+      "Monday": [
+        "Панядзелак"
+      ],
+      "Saturday": [
+        "Субота"
+      ],
+      "Sunday": [
+        "Нядзеля"
+      ],
+      "Thursday": [
+        "Чацвер"
+      ],
+      "Tuesday": [
+        "Аўторак"
+      ],
+      "Wednesday": [
+        "Серада"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Невядома"
@@ -2106,16 +2109,6 @@
       ],
       "90 minutes": [
         "90 хвілін"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Выключана"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Уключана"
       ]
     },
     "Edit event button tooltip": {
@@ -2978,7 +2971,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
-        "Сканфігуруйце сямейны ўліковы запіс і запрасіце карыстальнікаў "
+        "Сканфігурыруйце сямейны ўліковы запіс і запрасіце карыстальнікаў "
       ],
       "Set up your family": [
         "Наладзьце сямейны ўліковы запіс"
@@ -3119,12 +3112,6 @@
     "Header": {
       "Contacts": [
         "Кантакты"
-      ],
-      "Contacts, groups and settings": [
-        "Кантакты, групы і налады"
-      ],
-      "Get help": [
-        "Атрымаць даведку"
       ],
       "Name": [
         "Назва"
@@ -3602,6 +3589,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
       ],
+      "Are you sure you want to discard your import?": [
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -3677,9 +3667,6 @@
       "Custom yearly": [
         "Штогод (карыстальніцкае)"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
-      ],
       "Daily": [
         "Штодзень"
       ],
@@ -3725,9 +3712,6 @@
       "Existent, added and removed participants will be notified.": [
         "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -3766,9 +3750,6 @@
       ],
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
@@ -4036,6 +4017,9 @@
       ],
       "Week": [
         "Тыдзень"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -4350,6 +4334,9 @@
       "Date and time": [
         "Дата і час"
       ],
+      "Default view": [
+        "Прадвызначаны выгляд"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -4388,9 +4375,6 @@
       ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
-      ],
-      "Enable Beta Access": [
-        "Уключыць бэта-доступ"
       ],
       "Encrypt emails": [
         "Шыфраваць лісты"
@@ -4557,17 +4541,20 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Show week numbers": [
+        "Паказваць нумары тыдняў"
+      ],
       "Sign emails": [
         "Падпісваць лісты"
       ],
       "Street address": [
         "Вуліца"
       ],
-      "Synchronize with system": [
-        "Сінхранізаваць з сістэмай"
-      ],
       "System information": [
         "Сістэмная інфармацыя"
+      ],
+      "Time zone": [
+        "Часавы пояс"
       ],
       "To: ${ to }": [
         "Каму: ${ to }"
@@ -4586,6 +4573,9 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "Week start": [
+        "Пачатак тыдня"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -4985,11 +4975,6 @@
         "Палепшыць зараз"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Змяніць або дадаць уліковы запіс"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
@@ -5290,6 +5275,9 @@
       "All events": [
         "Усе падзеі"
       ],
+      "Automatic (${ defaultDay })": [
+        "Аўтаматычна (${ defaultDay })"
+      ],
       "Create new group": [
         "Стварыць новую групу"
       ],
@@ -5533,11 +5521,6 @@
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Нататка: пасля націску кнопкі “Ужыць” сэрвіс перазагрузіцца."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Перазагрузіць падзею"
@@ -5592,14 +5575,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Абагулена ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Кіруйце кантактамі і праглядайце каляндар не выходзячы з праграмы."
-      ],
-      "Try the new side panel": [
-        "Паспрабуйце новую бакавую панэль"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -6178,11 +6153,6 @@
         "Поле vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Налады"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } гадз",
@@ -6235,9 +6205,6 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
-      "(active)": [
-        "(актыўная)"
-      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
       ],
@@ -6270,12 +6237,6 @@
       ],
       "Addresses": [
         "Адрасы"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Beta Access": [
-        "Бэта-доступ"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -6448,12 +6409,6 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
-      "Open help menu": [
-        "Адкрыць меню дапамогі"
-      ],
-      "Open settings menu": [
-        "Адкрыць меню налад"
-      ],
       "Organizer cannot be notified": [
         "Немагчыма апавясціць арганізатара"
       ],
@@ -6501,9 +6456,6 @@
       ],
       "Select a day in the month": [
         "Выберыце дзень месяца"
-      ],
-      "Select a theme": [
-        "Выберыце тэму"
       ],
       "Select action to take on contact group": [
         "Выберыце дзеянне для групы кантактаў"
@@ -6588,9 +6540,6 @@
       ],
       "Update recurring event": [
         "Абнавіць перыядычную падзею"
-      ],
-      "View contacts": [
-        "Прагледзець кантакты"
       ],
       "Warning": [
         "Папярэджанне"
@@ -6682,14 +6631,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
-      "Hide side panel": [
-        "Схаваць бакавую панэль"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
-      ],
-      "Show side panel": [
-        "Паказаць бакавую панэль"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
@@ -6702,12 +6645,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"цёмны рэжым\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў са скразным шыфраваннем на гэты адрас электроннай пошты"

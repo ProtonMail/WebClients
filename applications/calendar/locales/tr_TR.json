@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Geri"
       ],
-      "Beta Access": [
-        "Beta erişimi"
-      ],
       "Cancel": [
         "İptal"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Google ile ilerle"
+      ],
+      "Copy address": [
+        "Adresi kopyala"
       ],
       "Copy email address": [
         "E-posta adresini kopyala"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "${ index } panosuna git"
       ],
-      "Go to settings": [
-        "Ayarlara git"
-      ],
       "Got it": [
         "Anladım"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Saat dilimlerini gizle"
-      ],
-      "I have a question": [
-        "Bir sorum var"
       ],
       "Image could not be loaded with tracker protection.": [
         "Görsel izleyici koruması nedeniyle yüklenemedi."
@@ -458,6 +449,9 @@
       "Select all": [
         "Tümünü seç"
       ],
+      "Select calendar view": [
+        "Takvim görünümünü seçin"
+      ],
       "Select time zone": [
         "Saat dilimini seçin"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Daha fazla göster"
       ],
-      "Show side panel": [
-        "Yan panoyu görüntüle"
-      ],
       "Show time zones": [
         "Saat dilimlerini göster"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Gönder"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "Bugün"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "İsteğe bağlı"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini kapatabilirsiniz."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "${ dateString } tarihine kadar"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Cuma"
+      ],
+      "Monday": [
+        "Pazartesi"
+      ],
+      "Saturday": [
+        "Cumartesi"
+      ],
+      "Sunday": [
+        "Pazar"
+      ],
+      "Thursday": [
+        "Perşembe"
+      ],
+      "Tuesday": [
+        "Salı"
+      ],
+      "Wednesday": [
+        "Çarşamba"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Bilinmiyor"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 dakika"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Kapalı"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Açık"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Kişiler"
       ],
-      "Contacts, groups and settings": [
-        "Kişiler, gruplar ve ayarlar"
-      ],
-      "Get help": [
-        "Yardım alın"
-      ],
       "Name": [
         "Ad"
       ]
@@ -3488,6 +3475,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik ayrıntılarını göremez."
       ],
+      "Are you sure you want to discard your import?": [
+        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -3561,9 +3551,6 @@
       "Custom yearly": [
         "Yılda bir, özel"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
-      ],
       "Daily": [
         "Günlük"
       ],
@@ -3609,9 +3596,6 @@
       "Existent, added and removed participants will be notified.": [
         "Var olan, eklenen ve çıkarılan katılımcılara bildirilecek."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
-      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
@@ -3648,9 +3632,6 @@
       ],
       "Import mailbox": [
         "Posta kutusunu içe aktar"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3916,6 +3897,9 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Haftalık ve aylık görünümler yalnızca masaüstü için geçerlidir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -4228,6 +4212,9 @@
       "Date and time": [
         "Tarih ve saat"
       ],
+      "Default view": [
+        "Varsayılan görünüm"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -4266,9 +4253,6 @@
       ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
-      ],
-      "Enable Beta Access": [
-        "Beta erişimini aç"
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
@@ -4433,17 +4417,20 @@
       "Reveal password": [
         "Parolayı göster"
       ],
+      "Show week numbers": [
+        "Hafta numaraları görüntülensin"
+      ],
       "Sign emails": [
         "E-postaları imzala"
       ],
       "Street address": [
         "Sokak adresi"
       ],
-      "Synchronize with system": [
-        "Sistem ile aynı"
-      ],
       "System information": [
         "Sistem bilgileri"
+      ],
+      "Time zone": [
+        "Saat dilimi"
       ],
       "To: ${ to }": [
         "Kime: ${ to }"
@@ -4462,6 +4449,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Week start": [
+        "Hafta başlangıcı"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -4845,11 +4835,6 @@
         "Şimdi yükselt"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Hesap değiştirin ya da ekleyin"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
@@ -5108,6 +5093,9 @@
       "All events": [
         "Tüm etkinlikler"
       ],
+      "Automatic (${ defaultDay })": [
+        "Otomatik (${ defaultDay })"
+      ],
       "Create new group": [
         "Yeni grup ekle"
       ],
@@ -5337,11 +5325,6 @@
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenir."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Etkinliği yeniden yükle"
@@ -5394,14 +5377,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } tarafından paylaşılmış"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Uygulamadan ayrılmadan kişilerinizi yönetebilir ve takviminize bakabilirsiniz."
-      ],
-      "Try the new side panel": [
-        "Yeni yan panoyu deneyin"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5962,11 +5937,6 @@
         "vCard alanı"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Ayarlar"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } s",
@@ -6005,9 +5975,6 @@
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
       ],
-      "(active)": [
-        "(etkin)"
-      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -6038,12 +6005,6 @@
       ],
       "Addresses": [
         "Adresler"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Beta Access": [
-        "Beta erişimi"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -6210,12 +6171,6 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
-      "Open settings menu": [
-        "Ayarlar menüsünü aç"
-      ],
       "Organizer cannot be notified": [
         "Düzenleyiciye bildirim gönderilemedi"
       ],
@@ -6263,9 +6218,6 @@
       ],
       "Select a day in the month": [
         "Ayın bir gününü seçin"
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
       ],
       "Select action to take on contact group": [
         "Kişi grubunda yapılacak işlemi seçin"
@@ -6350,9 +6302,6 @@
       ],
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
-      ],
-      "View contacts": [
-        "Kişileri görüntüle"
       ],
       "Warning": [
         "Uyarı"
@@ -6444,14 +6393,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
-      "Hide side panel": [
-        "Yan panoyu gizle"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
-      ],
-      "Show side panel": [
-        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -6464,12 +6407,6 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Sisteminiz \"koyu temaya\" geçtiğinde seçilmiş tema kullanılacak"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"

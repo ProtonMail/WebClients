@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Назад"
       ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Продовжити з Google"
+      ],
+      "Copy address": [
+        "Копіювати адресу"
       ],
       "Copy email address": [
         "Копіювати адресу електронної пошти"
@@ -252,9 +249,6 @@
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
       ],
-      "Go to settings": [
-        "Перейти до налаштувань"
-      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -272,9 +266,6 @@
       ],
       "Hide time zones": [
         "Сховати часові пояси"
-      ],
-      "I have a question": [
-        "У мене є питання"
       ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
@@ -462,6 +453,9 @@
       "Select all": [
         "Вибрати все"
       ],
+      "Select calendar view": [
+        "Вибрати вигляд календаря"
+      ],
       "Select time zone": [
         "Вибрати часовий пояс"
       ],
@@ -495,9 +489,6 @@
       "Show more": [
         "Розгорнути"
       ],
-      "Show side panel": [
-        "Показати бічну панель"
-      ],
       "Show time zones": [
         "Показати часові пояси"
       ],
@@ -527,9 +518,6 @@
       ],
       "Submit": [
         "Відправити"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "Today": [
         "Сьогодні"
@@ -700,7 +688,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Застосунки ${ BRAND_NAME }"
+        "Програми ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -726,14 +714,6 @@
     "Attendee role": {
       "Optional": [
         "Необов'язково"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "У разі виникнення проблем, ви завжди можете вимкнути бета-доступ."
       ]
     },
     "Billing cycle option": {
@@ -1993,6 +1973,29 @@
         "до ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "П'ятниця"
+      ],
+      "Monday": [
+        "Понеділок"
+      ],
+      "Saturday": [
+        "Субота"
+      ],
+      "Sunday": [
+        "Неділя"
+      ],
+      "Thursday": [
+        "Четвер"
+      ],
+      "Tuesday": [
+        "Вівторок"
+      ],
+      "Wednesday": [
+        "Середа"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
@@ -2106,16 +2109,6 @@
       ],
       "90 minutes": [
         "90 хвилин"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Увімкнено"
       ]
     },
     "Edit event button tooltip": {
@@ -3120,12 +3113,6 @@
       "Contacts": [
         "Контакти"
       ],
-      "Contacts, groups and settings": [
-        "Контакти, групи та налаштування"
-      ],
-      "Get help": [
-        "Отримати допомогу"
-      ],
       "Name": [
         "Назва"
       ]
@@ -3305,7 +3292,7 @@
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email account requires an app password to export your data.": [
-        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
+        "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
@@ -3677,9 +3664,6 @@
       "Custom yearly": [
         "Власне щороку"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
-      ],
       "Daily": [
         "Щодня"
       ],
@@ -3725,9 +3709,6 @@
       "Existent, added and removed participants will be notified.": [
         "Наявні, додані та вилучені учасники отримають сповіщення."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -3766,9 +3747,6 @@
       ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -4036,6 +4014,9 @@
       ],
       "Week": [
         "Тиждень"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Подання тижня і місяця застосовуються лише на комп'ютері."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
@@ -4350,6 +4331,9 @@
       "Date and time": [
         "Дата й час"
       ],
+      "Default view": [
+        "Типовий вигляд"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -4388,9 +4372,6 @@
       ],
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
-      ],
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
       ],
       "Encrypt emails": [
         "Шифрувати листи"
@@ -4557,17 +4538,20 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Show week numbers": [
+        "Показати номери тижня"
+      ],
       "Sign emails": [
         "Підписувати листи"
       ],
       "Street address": [
         "Вулиця"
       ],
-      "Synchronize with system": [
-        "Синхронізувати з системою"
-      ],
       "System information": [
         "Інформація про систему"
+      ],
+      "Time zone": [
+        "Часовий пояс"
       ],
       "To: ${ to }": [
         "Кому: ${ to }"
@@ -4586,6 +4570,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "Week start": [
+        "Початок тижня"
       ],
       "What happened?": [
         "Що сталося?"
@@ -4985,11 +4972,6 @@
         "Покращити"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
@@ -5290,6 +5272,9 @@
       "All events": [
         "Усі події"
       ],
+      "Automatic (${ defaultDay })": [
+        "Автоматично (${ defaultDay })"
+      ],
       "Create new group": [
         "Створити нову групу"
       ],
@@ -5533,11 +5518,6 @@
         "Офіційний лист від ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Перезавантажити подію"
@@ -5592,14 +5572,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Спільне використання ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Керуйте контактами та переглядайте календар, не виходячи з застосунку."
-      ],
-      "Try the new side panel": [
-        "Спробуйте нову бічну панель"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -6178,11 +6150,6 @@
         "Поле vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } год",
@@ -6235,9 +6202,6 @@
         "${ emailsCount } адрес е-пошти",
         "${ emailsCount } адрес е-пошти"
       ],
-      "(active)": [
-        "(активно)"
-      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -6270,12 +6234,6 @@
       ],
       "Addresses": [
         "Адреси"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Billing cycle": [
         "Платіжний цикл"
@@ -6448,12 +6406,6 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
-      "Open settings menu": [
-        "Відкрити меню налаштувань"
-      ],
       "Organizer cannot be notified": [
         "Неможливо сповістити організатора"
       ],
@@ -6501,9 +6453,6 @@
       ],
       "Select a day in the month": [
         "Виберіть день місяця"
-      ],
-      "Select a theme": [
-        "Вибрати тему"
       ],
       "Select action to take on contact group": [
         "Виберіть дію для групи контактів"
@@ -6588,9 +6537,6 @@
       ],
       "Update recurring event": [
         "Оновити повторювану подію"
-      ],
-      "View contacts": [
-        "Переглянути контакти"
       ],
       "Warning": [
         "Попередження"
@@ -6682,14 +6628,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
-      "Hide side panel": [
-        "Сховати бічну панель"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
-      ],
-      "Show side panel": [
-        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
@@ -6702,12 +6642,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Вибрана тема буде активною, коли ваша система буде переведена в \"темний режим\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"

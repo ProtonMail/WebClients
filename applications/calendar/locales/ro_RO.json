@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Continuare cu Google"
+      ],
+      "Copy address": [
+        "Copiere adresă"
       ],
       "Copy email address": [
         "Copiere adresă e-mail"
@@ -250,9 +247,6 @@
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
-      "Go to settings": [
-        "Accesare setări"
-      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -270,9 +264,6 @@
       ],
       "Hide time zones": [
         "Ascundere fusuri orare"
-      ],
-      "I have a question": [
-        "Am o întrebare"
       ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
@@ -460,6 +451,9 @@
       "Select all": [
         "Selectare toate"
       ],
+      "Select calendar view": [
+        "Selectare tip afișare calendar"
+      ],
       "Select time zone": [
         "Selectare fus orar"
       ],
@@ -493,9 +487,6 @@
       "Show more": [
         "Afișare mai mult"
       ],
-      "Show side panel": [
-        "Afișare panou lateral"
-      ],
       "Show time zones": [
         "Afișare fusuri orare"
       ],
@@ -525,9 +516,6 @@
       ],
       "Submit": [
         "Trimite"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "Astăzi"
@@ -724,14 +712,6 @@
     "Attendee role": {
       "Optional": [
         "Opțional"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
     "Billing cycle option": {
@@ -1983,6 +1963,29 @@
         "până la ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Vineri"
+      ],
+      "Monday": [
+        "Luni"
+      ],
+      "Saturday": [
+        "Sâmbătă"
+      ],
+      "Sunday": [
+        "Duminică"
+      ],
+      "Thursday": [
+        "Joi"
+      ],
+      "Tuesday": [
+        "Marți"
+      ],
+      "Wednesday": [
+        "Miercuri"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Necunoscut"
@@ -2095,16 +2098,6 @@
       ],
       "90 minutes": [
         "90 de minute"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Dezactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
       ]
     },
     "Edit event button tooltip": {
@@ -3091,12 +3084,6 @@
       "Contacts": [
         "Contacte"
       ],
-      "Contacts, groups and settings": [
-        "Contacte, grupuri și setări"
-      ],
-      "Get help": [
-        "Obțineți ajutor"
-      ],
       "Name": [
         "Nume"
       ]
@@ -3545,6 +3532,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Oricine are această legătură poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
+      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -3619,9 +3609,6 @@
       "Custom yearly": [
         "Anual personalizat"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizați aspectul aplicației ${ BRAND_NAME }."
-      ],
       "Daily": [
         "Zilnic"
       ],
@@ -3667,9 +3654,6 @@
       "Existent, added and removed participants will be notified.": [
         "Participanții existenți, adăugați şi eliminați vor fi notificați."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
@@ -3707,9 +3691,6 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -3976,6 +3957,9 @@
       ],
       "Week": [
         "Săptămâna"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Afișarea săptămânii și lunii se aplică doar pentru desktop."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
@@ -4289,6 +4273,9 @@
       "Date and time": [
         "Data și ora"
       ],
+      "Default view": [
+        "Afișare implicită"
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -4327,9 +4314,6 @@
       ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
       ],
       "Encrypt emails": [
         "Criptare mesaje"
@@ -4495,17 +4479,20 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Show week numbers": [
+        "Afișare număr săptămână"
+      ],
       "Sign emails": [
         "Semnare mesaje"
       ],
       "Street address": [
         "Strada"
       ],
-      "Synchronize with system": [
-        "Sincronizare cu sistemul"
-      ],
       "System information": [
         "Informații sistem"
+      ],
+      "Time zone": [
+        "Fus orar"
       ],
       "To: ${ to }": [
         "Către: ${ to }"
@@ -4524,6 +4511,9 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Week start": [
+        "Început săptămână"
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
@@ -4915,11 +4905,6 @@
         "Modificare"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -5199,6 +5184,9 @@
       "All events": [
         "Toate evenimentele"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automat (${ defaultDay })"
+      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -5435,11 +5423,6 @@
         "Mesaj oficial de la ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Reîncărcare eveniment"
@@ -5493,14 +5476,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partajat de ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestionați-vă contactele și accesați calendarul fără a părăsi aplicația."
-      ],
-      "Try the new side panel": [
-        "Încercați noul panou lateral"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -6070,11 +6045,6 @@
         "Câmp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Setări"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -6120,9 +6090,6 @@
         "${ emailsCount } adrese de e-mail",
         "${ emailsCount } de adrese de e-mail"
       ],
-      "(active)": [
-        "(activă)"
-      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -6154,12 +6121,6 @@
       ],
       "Addresses": [
         "Adrese"
-      ],
-      "Back": [
-        "Înapoi"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -6329,12 +6290,6 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
-      "Open settings menu": [
-        "Deschidere meniu setări"
-      ],
       "Organizer cannot be notified": [
         "Organizatorul nu poate fi notificat"
       ],
@@ -6382,9 +6337,6 @@
       ],
       "Select a day in the month": [
         "Selectați o zi din lună"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
       ],
       "Select action to take on contact group": [
         "Selectați acțiunea pentru un grup de contacte"
@@ -6469,9 +6421,6 @@
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
-      ],
-      "View contacts": [
-        "Afișare contacte"
       ],
       "Warning": [
         "Avertizare"
@@ -6563,14 +6512,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
-      "Hide side panel": [
-        "Ascundere panou lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
-      ],
-      "Show side panel": [
-        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
@@ -6583,12 +6526,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Tema selectată va fi activă când sistemul va fi setat în „modul întunecat”."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
