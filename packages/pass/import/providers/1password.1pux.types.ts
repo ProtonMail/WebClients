@@ -74,7 +74,7 @@ export type ItemSection = {
 
 export type OnePassItemDetails = {
     notesPlain: Maybe<string>;
-    sections: ItemSection[];
+    sections?: Maybe<ItemSection>[];
 };
 
 export type OnePassPassword = OnePassItemDetails & { password: string };
