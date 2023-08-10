@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducció a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Torna"
       ],
-      "Beta Access": [
-        "Accés beta"
-      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Continua amb Google"
+      ],
+      "Copy address": [
+        "Copiar l'adreça"
       ],
       "Copy email address": [
         "Copia l'adreça de correu electrònic"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "Ves al panell ${ index }"
       ],
-      "Go to settings": [
-        "Ves a les preferències"
-      ],
       "Got it": [
         "D'acord"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Amaga el fus horari"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
       ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
@@ -458,6 +449,9 @@
       "Select all": [
         "Seleccionar-ho tot"
       ],
+      "Select calendar view": [
+        "Tria la vista de calendari"
+      ],
       "Select time zone": [
         "Selecciona el fus horari"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Mostrar més"
       ],
-      "Show side panel": [
-        "Mostra el panell lateral"
-      ],
       "Show time zones": [
         "Mostrar el fus horari"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Envia"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "Avui"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accés beta us permet utilitzar la versió beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } abans que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "fins el ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Divendres"
+      ],
+      "Monday": [
+        "Dilluns"
+      ],
+      "Saturday": [
+        "Dissabte"
+      ],
+      "Sunday": [
+        "Diumenge"
+      ],
+      "Thursday": [
+        "Dijous"
+      ],
+      "Tuesday": [
+        "Dimarts"
+      ],
+      "Wednesday": [
+        "Dimecres"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconegut"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 minuts"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Desactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Contactes"
       ],
-      "Contacts, groups and settings": [
-        "Contactes, grups i preferències"
-      ],
-      "Get help": [
-        "Obteniu ajuda"
-      ],
       "Name": [
         "Nom"
       ]
@@ -3488,6 +3475,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualsevol amb aquest enllaç pot veure al vostre calendari si esteu lliure o ocupat. No podran veure detalls dels esdeveniments com ara títol, localització o participants."
       ],
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la vostra importació?"
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -3561,9 +3551,6 @@
       "Custom yearly": [
         "Personalitzat anualment"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
-      ],
       "Daily": [
         "Diàriament"
       ],
@@ -3609,9 +3596,6 @@
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, els afegits i els suprimits seran notificats."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
@@ -3648,9 +3632,6 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -3762,6 +3743,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Proporcioneu un nom i una adreça de correu electrònic per crear un grup."
       ],
       "Please remove the duplicates and try again.": [
         "Suprimiu els duplicats i proveu de nou."
@@ -3913,6 +3897,9 @@
       ],
       "Week": [
         "Setmana"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
@@ -4225,6 +4212,9 @@
       "Date and time": [
         "Data i hora"
       ],
+      "Default view": [
+        "Vista per defecte"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -4263,9 +4253,6 @@
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -4430,17 +4417,20 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Show week numbers": [
+        "Mostra el número de setmana"
+      ],
       "Sign emails": [
         "Signar correu electrònics"
       ],
       "Street address": [
         "Adreça de carrer"
       ],
-      "Synchronize with system": [
-        "Sincronitza amb el sistema"
-      ],
       "System information": [
         "Informació del sistema"
+      ],
+      "Time zone": [
+        "Zona horària"
       ],
       "To: ${ to }": [
         "Per a: ${ to }"
@@ -4459,6 +4449,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Week start": [
+        "Inici de setmana"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -4842,11 +4835,6 @@
         "Millora ara"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -5105,6 +5093,9 @@
       "All events": [
         "Tots els esdeveniments"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automàtic (${ defaultDay })"
+      ],
       "Create new group": [
         "Crea un grup nou"
       ],
@@ -5334,11 +5325,6 @@
         "Missatge oficial de ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Recarrega l'esdeveniment"
@@ -5391,14 +5377,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestioneu els vostres contactes i vegeu el calendari sense sortir de l'aplicació."
-      ],
-      "Try the new side panel": [
-        "Proveu el nou panell lateral."
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5959,11 +5937,6 @@
         "Camp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Preferències"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -6002,9 +5975,6 @@
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
       ],
-      "(active)": [
-        "(actiu)"
-      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -6035,12 +6005,6 @@
       ],
       "Addresses": [
         "Adreces"
-      ],
-      "Back": [
-        "Torna"
-      ],
-      "Beta Access": [
-        "Accés Beta"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -6207,12 +6171,6 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
-      "Open settings menu": [
-        "Obrir el menú de preferències"
-      ],
       "Organizer cannot be notified": [
         "No es pot notificar a l'organitzador."
       ],
@@ -6260,9 +6218,6 @@
       ],
       "Select a day in the month": [
         "Seleccioneu un dia del mes."
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
       ],
       "Select action to take on contact group": [
         "Seleccionar acció a realitzar al grup de contactes"
@@ -6347,9 +6302,6 @@
       ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
-      ],
-      "View contacts": [
-        "Veure contactes"
       ],
       "Warning": [
         "Advertència"
@@ -6441,14 +6393,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
-      "Hide side panel": [
-        "Amaga el panell lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
-      ],
-      "Show side panel": [
-        "Mostra el panell lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -6461,12 +6407,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "El tema seleccionat s'activarà quan el sistema estigui en «mode fosc»"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

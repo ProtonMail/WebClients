@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Terug"
       ],
-      "Beta Access": [
-        "Bèta toegang"
-      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Ga verder met Google"
+      ],
+      "Copy address": [
+        "Adres kopiëren"
       ],
       "Copy email address": [
         "Kopieer e-mailadres"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "Ga naar paneel ${ index }"
       ],
-      "Go to settings": [
-        "Ga naar instellingen"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Tijdzones verbergen"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -458,6 +449,9 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Select calendar view": [
+        "Agendaweergave kiezen"
+      ],
       "Select time zone": [
         "Kies tijdzone"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Meer weergeven"
       ],
-      "Show side panel": [
-        "Toon zijpaneel"
-      ],
       "Show time zones": [
         "Tijdzones tonen"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Theme": [
-        "Thema"
       ],
       "Today": [
         "Vandaag"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "Optioneel"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "tot ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Vrijdag"
+      ],
+      "Monday": [
+        "Maandag"
+      ],
+      "Saturday": [
+        "Zaterdag"
+      ],
+      "Sunday": [
+        "Zondag"
+      ],
+      "Thursday": [
+        "Donderdag"
+      ],
+      "Tuesday": [
+        "Dinsdag"
+      ],
+      "Wednesday": [
+        "Woensdag"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Onbekend"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 minuten"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aan"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Contacten"
       ],
-      "Contacts, groups and settings": [
-        "Contacten, groepen en instellingen"
-      ],
-      "Get help": [
-        "Krijg hulp"
-      ],
       "Name": [
         "Naam"
       ]
@@ -3488,6 +3475,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -3561,9 +3551,6 @@
       "Custom yearly": [
         "Aangepast jaarlijks"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
-      ],
       "Daily": [
         "Dagelijks"
       ],
@@ -3609,9 +3596,6 @@
       "Existent, added and removed participants will be notified.": [
         "Bestaande, toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
-      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -3648,9 +3632,6 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -3916,6 +3897,9 @@
       ],
       "Week": [
         "Week"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Week en maand weergaven zijn alleen van toepassing op bureaublad."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
@@ -4228,6 +4212,9 @@
       "Date and time": [
         "Datum en tijd"
       ],
+      "Default view": [
+        "Standaardweergave"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -4266,9 +4253,6 @@
       ],
       "Emails (last month)": [
         "E-mails (laatste maand)"
-      ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
@@ -4433,17 +4417,20 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Show week numbers": [
+        "Weeknummers weergeven"
+      ],
       "Sign emails": [
         "E-mails ondertekenen"
       ],
       "Street address": [
         "Adres"
       ],
-      "Synchronize with system": [
-        "Synchroniseren met systeem"
-      ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "Time zone": [
+        "Tijdzone"
       ],
       "To: ${ to }": [
         "Aan: ${ to }"
@@ -4462,6 +4449,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Week start": [
+        "Eerste dag van de week"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -4845,11 +4835,6 @@
         "Upgrade nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Account toevoegen of wisselen"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
@@ -5108,6 +5093,9 @@
       "All events": [
         "Alle afspraken"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automatisch (${ defaultDay })"
+      ],
       "Create new group": [
         "Nieuwe groep maken"
       ],
@@ -5337,11 +5325,6 @@
         "Officiële e-mail van ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Afspraak herladen"
@@ -5394,14 +5377,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Gedeeld door ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Beheer uw contacten en bekijk uw agenda zonder uw app te verlaten."
-      ],
-      "Try the new side panel": [
-        "Probeer het nieuwe zijpaneel uit"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5962,11 +5937,6 @@
         "vCard-veld"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Instellingen"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } u",
@@ -6005,9 +5975,6 @@
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
-      "(active)": [
-        "(actief)"
-      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -6038,12 +6005,6 @@
       ],
       "Addresses": [
         "Adressen"
-      ],
-      "Back": [
-        "Terug"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -6210,12 +6171,6 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
-      "Open settings menu": [
-        "Open instellingenmenu"
-      ],
       "Organizer cannot be notified": [
         "Organisator kan niet worden geïnformeerd"
       ],
@@ -6263,9 +6218,6 @@
       ],
       "Select a day in the month": [
         "Selecteer een dag in de maand"
-      ],
-      "Select a theme": [
-        "Selecteer een thema"
       ],
       "Select action to take on contact group": [
         "Selecteer actie voor de contactgroep"
@@ -6350,9 +6302,6 @@
       ],
       "Update recurring event": [
         "Terugkerende afspraak updaten"
-      ],
-      "View contacts": [
-        "Contacten weergeven"
       ],
       "Warning": [
         "Waarschuwing"
@@ -6444,14 +6393,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
-      "Hide side panel": [
-        "Verberg zijpaneel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Show side panel": [
-        "Toon zijpaneel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -6464,12 +6407,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Het gekozen thema zal actief zijn zodra uw systeem op \"donkere modus\" is ingesteld."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"

@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Samouczek ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Wstecz"
       ],
-      "Beta Access": [
-        "Dostęp beta"
-      ],
       "Blind Carbon Copy": [
         "UDW"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Napisz"
       ],
-      "Composer size": [
-        "Rozmiar edytora"
-      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Dostosuj proces importowania"
-      ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
       ],
       "Delete": [
         "Usuń"
@@ -454,14 +442,14 @@
       "Go to previous page": [
         "Przejdź do poprzedniej strony"
       ],
-      "Go to settings": [
-        "Przejdź do ustawień"
-      ],
       "Go to SimpleLogin": [
         "Przejdź do SimpleLogin"
       ],
       "Got it": [
         "Ok"
+      ],
+      "Help": [
+        "Pomoc"
       ],
       "Hide": [
         "Ukryj"
@@ -486,9 +474,6 @@
       ],
       "hide-my-email aliases": [
         "aliasów hide-my-email"
-      ],
-      "I have a question": [
-        "Mam pytanie"
       ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
@@ -547,9 +532,6 @@
       "Italic": [
         "Kursywa"
       ],
-      "Keyboard shortcuts": [
-        "Skróty klawiszowe"
-      ],
       "Label as": [
         "Oznacz jako"
       ],
@@ -576,12 +558,6 @@
       ],
       "Loading${ ellipsis }": [
         "Ładowanie${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
       ],
       "Manage folders": [
         "Zarządzaj folderami"
@@ -928,6 +904,9 @@
       "Set": [
         "Ustaw"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową"
+      ],
       "Set as default": [
         "Ustaw jako domyślną"
       ],
@@ -939,6 +918,9 @@
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
+      ],
+      "Settings": [
+        "Ustawienia"
       ],
       "Share via link": [
         "Udostępnij przez link"
@@ -979,9 +961,6 @@
       "Show preview": [
         "Pokaż podgląd"
       ],
-      "Show side panel": [
-        "Pokaż panel boczny"
-      ],
       "Sign in": [
         "Zaloguj się"
       ],
@@ -1018,8 +997,8 @@
       "Submit": [
         "Wyślij"
       ],
-      "Theme": [
-        "Motyw"
+      "Switch or add account": [
+        "Przełącz lub dodaj konto"
       ],
       "This message contains embedded images.": [
         "Ta wiadomość zawiera osadzone obrazy."
@@ -1122,9 +1101,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Użyj myszy, aby zmienić rozmiar widoku. Jeśli używasz klawiatury, możesz użyć lewego i prawego klawisza strzałki."
-      ],
-      "Use “${ label }” setting": [
-        "Użyj ustawień “${ label }”"
       ],
       "Verify": [
         "Zweryfikuj"
@@ -1308,14 +1284,6 @@
       ],
       "Sender verification passed": [
         "Weryfikacja nadawcy powiodła się"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Dostęp beta umożliwia korzystanie z wersji beta aplikacji ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }, przed ich publicznym udostępnieniem. Oznacza to, że możesz jako pierwszy testować nowe usługi, aktualizacje i funkcje."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
       ]
     },
     "Billing cycle option": {
@@ -1691,6 +1659,9 @@
       "azureish white": [
         "lazurowa biel"
       ],
+      "black": [
+        "czarny"
+      ],
       "blanched almond": [
         "migdał blanszowany"
       ],
@@ -1819,9 +1790,6 @@
       ],
       "purple": [
         "fioletowy"
-      ],
-      "raisin black": [
-        "rodzynki czarne"
       ],
       "reef": [
         "rafa koralowa"
@@ -3006,16 +2974,6 @@
         "Pobierz wszystkie"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Wyłączony"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Włączony"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Opis: ${ eventDescription }"
@@ -3615,6 +3573,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
+      ],
+      "Missing FN property": [
+        "Brak nazwy FN"
       ],
       "vCard versions < 3.0 not supported": [
         "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
@@ -4265,9 +4226,6 @@
       "For your eyes only": [
         "Tylko dla Twoich oczu"
       ],
-      "Get free storage": [
-        "Uzyskaj darmową przestrzeń dyskową"
-      ],
       "Get mobile app": [
         "Pobierz aplikację mobilną"
       ],
@@ -4306,6 +4264,9 @@
       ],
       "Open checklist": [
         "Otwórz listę kontrolną"
+      ],
+      "Open checklist and get free storage": [
+        "Otwórz listę kontrolną i uzyskaj darmową przestrzeń dyskową"
       ],
       "Popular online services": [
         "Popularne usługi online"
@@ -4387,12 +4348,6 @@
     "Header": {
       "Contacts": [
         "Kontakty"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakty, grupy i ustawienia"
-      ],
-      "Get help": [
-        "Uzyskaj pomoc"
       ],
       "Search": [
         "Szukaj"
@@ -5582,6 +5537,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
+      "Open shortcut cheat sheet": [
+        "Otwórz listę skrótów"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nasz system oznaczył wiadomość jako próbę wyłudzenia informacji. Upewnij się, że jest ona wiarygodna."
       ],
@@ -5690,11 +5648,11 @@
       "Saved at ${ dateString }": [
         "Zapisano o ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Zapisano: ${ dateString }"
-      ],
       "Saved yesterday": [
         "Zapisano wczoraj"
+      ],
+      "Saved: ${ dateString }": [
+        "Zapisano: ${ dateString }"
       ],
       "Saving draft…": [
         "Zapisywanie szkicu…"
@@ -5971,6 +5929,9 @@
       ],
       "Trackers blocked:": [
         "Zablokowane elementy śledzące:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Wyłącz, aby wyszukiwać tylko według daty, nazwy, adresu e-mail lub tematu. Aby wyłączyć wyszukiwanie zawartości wiadomości i usunąć pobrane wiadomości, przejdź do ustawień."
@@ -6509,16 +6470,6 @@
         "Skróty wiadomości"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Wyłączone"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Włączone"
-      ]
-    },
     "Label": {
       " and ": [
         " oraz "
@@ -6598,6 +6549,9 @@
       "BCC": [
         "UDW"
       ],
+      "Beta Access": [
+        "Dostęp beta"
+      ],
       "Blind Carbon Copy": [
         "UDW"
       ],
@@ -6634,6 +6588,9 @@
       "Colors": [
         "Kolory"
       ],
+      "Composer": [
+        "Edytor"
+      ],
       "Conditions": [
         "Warunki"
       ],
@@ -6657,6 +6614,9 @@
       ],
       "Delete recovery-related information.": [
         "Usuń informacje o odzyskiwaniu."
+      ],
+      "Density": [
+        "Układ"
       ],
       "Don't ask again": [
         "Nie pytaj ponownie"
@@ -6690,9 +6650,6 @@
       ],
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
-      ],
-      "Enable Beta Access": [
-        "Włącz dostęp beta"
       ],
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
@@ -6780,6 +6737,9 @@
       ],
       "Last month only": [
         "Tylko ostatni miesiąc"
+      ],
+      "Layout": [
+        "Widok"
       ],
       "Location": [
         "Lokalizacja"
@@ -6898,15 +6858,6 @@
       "Search in": [
         "Przeszukaj"
       ],
-      "Select how your composer opens by default.": [
-        "Wybierz domyślny tryb edytora."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Wybierz domyślny układ skrzynki pocztowej."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Wybierz domyślny widok skrzynki pocztowej."
-      ],
       "Send auto-reply": [
         "Wyślij automatyczną odpowiedź"
       ],
@@ -6928,6 +6879,9 @@
       "Street address": [
         "Ulica"
       ],
+      "Sync with system": [
+        "Domyślny systemu"
+      ],
       "Synchronize with system": [
         "Domyślny systemu"
       ],
@@ -6945,6 +6899,9 @@
       ],
       "the email was sent ${ label }": [
         "wiadomość została wysłana ${ label }"
+      ],
+      "Theme": [
+        "Motyw"
       ],
       "Then": [
         "Następnie"
@@ -7032,30 +6989,6 @@
         "Do"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Zmaksymalizowany"
-      ],
-      "Normal": [
-        "Standardowy"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Wygodny"
-      ],
-      "Compact": [
-        "Kompaktowy"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolumna"
-      ],
-      "Row": [
-        "Wiersz"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Utwórz folder"
@@ -7100,6 +7033,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplikacja ${ DRIVE_APP_NAME } na Windowsa"
+      ],
       "All mail": [
         "Wszystkie wiadomości"
       ],
@@ -7198,6 +7134,9 @@
       ],
       "Scheduled": [
         "Zaplanowane"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchronizuj pliki oraz foldery między urządzeniem i ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Wysłane"
@@ -7560,11 +7499,6 @@
         "Ulepsz teraz"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Przełącz lub dodaj konto"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -7757,11 +7691,6 @@
       ],
       "Merge with calendar": [
         "Scal z kalendarzem"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } z ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7991,11 +7920,6 @@
         "Przechowywana z szyfrowaniem po stronie klienta"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Uwaga: Po kliknięciu przycisku Zastosuj, usługa zostanie odświeżona."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } dzień",
@@ -8141,14 +8065,6 @@
       ],
       "Stored with zero-access encryption": [
         "Przechowywana z szyfrowaniem po stronie klienta"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Zarządzaj kontaktami i przeglądaj kalendarz bez opuszczania aplikacji."
-      ],
-      "Try the new side panel": [
-        "Wypróbuj nowy panel boczny"
       ]
     },
     "Signature verification warning": {
@@ -8441,6 +8357,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Łatwy dostęp i personalizacja aplikacji."
+      ],
       "Email tracking protection": [
         "Ochrona przed śledzeniem wiadomości"
       ],
@@ -8449,6 +8368,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
+      ],
+      "Quick settings": [
+        "Szybkie ustawienia"
       ],
       "Schedule send": [
         "Zaplanuj wysyłanie"
@@ -8921,11 +8843,6 @@
         "Pole vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Ustawienia"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Wczoraj"
@@ -9011,6 +8928,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "All settings": [
+        "Wszystkie ustawienia"
+      ],
       "Archive": [
         "Archiwum"
       ],
@@ -9023,14 +8943,8 @@
       "Attachments": [
         "Załączniki"
       ],
-      "Back": [
-        "Wstecz"
-      ],
       "BCC": [
         "UDW"
-      ],
-      "Beta Access": [
-        "Dostęp beta"
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
@@ -9058,9 +8972,6 @@
       ],
       "Clearing data": [
         "Usuwanie danych"
-      ],
-      "Composer mode": [
-        "Tryb edytora"
       ],
       "Confirm recipient address?": [
         "Potwierdzasz adres odbiorcy?"
@@ -9278,12 +9189,6 @@
       "Load remote content": [
         "Załaduj zawartość zdalną"
       ],
-      "Mailbox density": [
-        "Układ skrzynki pocztowej"
-      ],
-      "Mailbox layout": [
-        "Widok skrzynki pocztowej"
-      ],
       "Mark as read": [
         "Oznacz jako przeczytane"
       ],
@@ -9367,12 +9272,6 @@
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
-      ],
-      "Open help menu": [
-        "Otwórz pomoc"
-      ],
-      "Open settings menu": [
-        "Otwórz ustawienia"
       ],
       "Other information": [
         "Inne informacje"
@@ -9536,9 +9435,6 @@
       "Verification error": [
         "Błąd weryfikacji"
       ],
-      "View contacts": [
-        "Pokaż kontakty"
-      ],
       "Warning": [
         "Ostrzeżenie"
       ],
@@ -9612,14 +9508,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
-      "Hide side panel": [
-        "Ukryj panel boczny"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
-      ],
-      "Show side panel": [
-        "Pokaż panel boczny"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"

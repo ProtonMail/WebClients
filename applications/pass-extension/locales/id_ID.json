@@ -281,6 +281,9 @@
       "Auto-lock could not be disabled": [
         "Pengunci otomatis tidak dapat dinonaktifkan"
       ],
+      "Cannot create alias (${ error }).": [
+        "Alias tidak dapat dibuat (${ error })."
+      ],
       "Could not open created vault": [
         "Brankas yang dibuat tidak dapat dibuka"
       ],
@@ -400,6 +403,9 @@
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
         "Pembuatan brankas \"${ payload.content.name }\" gagal"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Brankas \"${ vaultData.name }\" tidak dapat dibuat"
       ],
       "Vault name does not match": [
         "Nama brankas tidak sesuai"
@@ -553,6 +559,9 @@
       "Free Trial": [
         "Uji Coba Gratis"
       ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Kata sandi yang dihasilkan akan disimpan dalam kurun waktu satu hari."
+      ],
       "Generating alias...": [
         "Menghasilkan alias..."
       ],
@@ -572,7 +581,7 @@
         "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menyarankan membuat kata sandi yang kuat pada formulir pendaftaran."
       ],
       "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Jika diaktifkan, menu tarik-turun penyimpanan otomatis akan otomatis terbuka saat fokus pada kolom."
+        "Apabila diaktifkan, menu dropdown penyimpanan otomatis akan terbuka dengan sendirinya pada saat kursor terfokus pada kolom login."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Apabila diaktifkan, Anda dapat mengisi informasi kredensial Anda secara otomatis dengan mengklik ikon ${ PASS_APP_NAME }."
@@ -649,6 +658,9 @@
       "Open the Extensions menu": [
         "Buka menu Ekstensi"
       ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
       ],
@@ -663,6 +675,9 @@
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Silakan konfirmasi kode PIN Anda untuk menyelesaikan pendaftaran pengaturan penguncian otomatis Anda."
+      ],
+      "Please consider leaving a review.": [
+        "Mohon pertimbangkan untuk memberikan ulasan."
       ],
       "Please enter your current pin code to continue": [
         "Silakan masukan kode PIN saat ini untuk melanjutkan"
@@ -759,6 +774,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Anda telah mencapai batas jumlah brankas yang dapat Anda buat."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
@@ -1383,6 +1401,9 @@
       ],
       "Empty note": [
         "Catatan kosong"
+      ],
+      "Expiration Date is incomplete": [
+        "Tanggal Kedaluwarsa tidak lengkap"
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"

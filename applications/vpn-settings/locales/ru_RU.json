@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Введение в ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
-      ],
-      "Activate recovery": [
-        "Активировать восстановление"
       ],
       "Add credit / debit card": [
         "Добавить кредитную / дебетовую карту"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
-      ],
-      "Attention required": [
-        "Требуется внимание"
       ],
       "Authenticate": [
         "Аутентифицировать"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Связаться с поддержкой"
       ],
+      "Contact us": [
+        "Связаться с нами"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Копировать"
       ],
-      "Copy email to clipboard": [
-        "Скопировать адрес электронной почты в буфер обмена"
+      "Copy address": [
+        "Копировать адрес"
       ],
       "Create": [
         "Создать"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Got it": [
+        "Понятно"
+      ],
       "Hide": [
         "Скрыть"
       ],
       "Hide plan features": [
         "Скрыть возможности тарифа"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
       ],
       "Increase": [
         "Увеличить"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Задать новый пароль"
       ],
-      "Set recovery phrase": [
-        "Установить фразу для восстановления"
-      ],
       "Share via link": [
         "Поделиться по ссылке"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Разблокировать"
-      ],
-      "Unlock data": [
-        "Разблокировать данные"
-      ],
-      "Update recovery file": [
-        "Обновить файл восстановления"
-      ],
-      "Update recovery phrase": [
-        "Обновить фразу для восстановления"
       ],
       "Upgrade": [
         "Улучшить"
@@ -420,20 +402,6 @@
       ],
       "Reactivate": [
         "Возобновить"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } свой домен",
-        "+ ${ domains } своих домена",
-        "+ ${ domains } своих доменов",
-        "+ ${ domains } своих доменов"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } пользователь",
-        "+ ${ users } пользователя",
-        "+ ${ users } пользователей",
-        "+ ${ users } пользователя"
       ]
     },
     "Alter": {
@@ -2059,9 +2027,6 @@
       "Create your account": [
         "Создать аккаунт"
       ],
-      "Get help": [
-        "Получить помощь"
-      ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
       ]
@@ -2080,9 +2045,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } ваша подписка будет автоматически продлена ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
@@ -2188,9 +2150,6 @@
       ],
       "Attention required": [
         "Требуется внимание"
-      ],
-      "Auto-renewal: ": [
-        "Автопродление: "
       ],
       "Balance from your previous subscription": [
         "Баланс с прошлой подписки"
@@ -2329,9 +2288,6 @@
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
-      ],
-      "For choosing ${ product }": [
-        "За выбор ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard и Discover - 3 цифры на обратной стороне вашей карты. Для American Express - 4 цифры на лицевой стороне вашей карты."
@@ -3501,9 +3457,6 @@
       "Keep account": [
         "Сохранить аккаунт"
       ],
-      "Switch or add account": [
-        "Изменить или добавить аккаунт"
-      ],
       "Switch plan": [
         "Сменить тариф"
       ]
@@ -3934,9 +3887,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Оплачивая, вы соглашаетесь с нашими ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "условия"
       ]
@@ -5069,9 +5019,6 @@
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Billing cycle": [
         "Период оплаты"
       ],
@@ -5116,9 +5063,6 @@
       ],
       "Customize your plan": [
         "Настроить свой план"
-      ],
-      "Dashboard": [
-        "Панель управления"
       ],
       "Date": [
         "Дата"
@@ -5210,9 +5154,6 @@
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
-      "Open help menu": [
-        "Открыть меню справки"
-      ],
       "Open pagination": [
         "Открыть нумерацию страниц"
       ],
@@ -5237,17 +5178,11 @@
       "Payment verification": [
         "Проверка платежа"
       ],
-      "Payments": [
-        "Платежи"
-      ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan summary": [
-        "Сводка по тарифу"
       ],
       "Plans": [
         "Тарифы"
@@ -5353,9 +5288,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш план"
       ],
       "Your plan": [
         "Ваш тариф"

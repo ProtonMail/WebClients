@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } εισαγωγή"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Επιστροφή στην αρχική σελίδα"
-      ],
-      "Beta Access": [
-        "Beta Πρόσβαση"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Συνεχίστε με Google"
+      ],
+      "Copy address": [
+        "Αντιγραφή διεύθυνσης"
       ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Μετάβαση στον γονέα"
       ],
-      "Go to settings": [
-        "Μετάβαση στις ρυθμίσεις"
-      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Απόκρυψη ετικετών"
-      ],
-      "I have a question": [
-        "Έχω μια ερώτηση"
       ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Επόμενος μήνας"
-      ],
-      "OK": [
-        "ΟΚ"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
-      "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου"
-      ],
       "Sign in": [
         "Είσοδος"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Υποβολή αναφοράς"
-      ],
-      "Theme": [
-        "Θέμα"
       ],
       "Toggle Calendar app": [
         "Εναλλαγή εφαρμογής Ημερολόγιο"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Μη υποστηριζόμενη εκδήλωση"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ${ MAIL_APP_NAME }, του ${ CALENDAR_APP_NAME } και του ${ DRIVE_APP_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Έχουμε εντοπίσει τα ακόλουθα πεδία στο αρχείο CSV που μεταφορτώσατε. Επιλέξτε αυτά που θέλετε να εισάγετε."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Ανενεργό"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Ενεργό"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Περιγραφή: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Επαφές, ομάδες και ρυθμίσεις"
-      ],
-      "Get help": [
-        "Λάβετε βοήθεια"
       ]
     },
     "Hint": {
@@ -3224,6 +3185,9 @@
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
+      "Are you sure you want to discard your import?": [
+        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
       ],
@@ -3341,9 +3305,6 @@
       ],
       "Current version": [
         "Τρέχουσα έκδοση"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
       "Decrypting files": [
         "Αποκρυπτογράφηση αρχείων"
@@ -3729,6 +3690,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
@@ -4379,9 +4343,6 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
-      "Enable Beta Access": [
-        "Ενεργοποίηση Πρόσβασης Beta"
-      ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
@@ -4597,9 +4558,6 @@
       ],
       "Street address": [
         "Οδός"
-      ],
-      "Synchronize with system": [
-        "Συγχρονισμός με το σύστημα"
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
@@ -4833,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Αναβάθμιση τώρα"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Εναλλαγή ή προσθήκη λογαριασμού"
       ]
     },
     "new_plans: feature": {
@@ -5333,22 +5286,9 @@
         "Επίσημο email από ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Σημείωση: η υπηρεσία θα φορτωθεί ξανά αφού κάνετε κλικ στο κουμπί Εφαρμογή."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Ανέβασμα"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Διαχειριστείτε τις επαφές σας και προβάλετε το ημερολόγιό σας χωρίς να βγείτε από την εφαρμογή σας."
-      ],
-      "Try the new side panel": [
-        "Δοκιμάστε το νέο πλαϊνό πλαίσιο"
       ]
     },
     "Signing preference for emails": {
@@ -5799,11 +5739,6 @@
         "πεδίο vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Ρυθμίσεις"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ώ",
@@ -5852,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } αποτυχημένη μεταφόρτωση",
         "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορτώσεις"
       ],
-      "(active)": [
-        "(ενεργό)"
-      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -5879,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
-      ],
-      "Back": [
-        "Πίσω"
-      ],
-      "Beta Access": [
-        "Beta Πρόσβαση"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -6124,12 +6050,6 @@
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
       ],
-      "Open help menu": [
-        "Άνοιγμα μενού βοήθειας"
-      ],
-      "Open settings menu": [
-        "Άνοιγμα μενού ρυθμίσεων"
-      ],
       "Original size": [
         "Αρχικό μέγεθος"
       ],
@@ -6189,9 +6109,6 @@
       ],
       "Searching…": [
         "Γίνεται αναζήτηση…"
-      ],
-      "Select a theme": [
-        "Επιλέξτε ένα θέμα"
       ],
       "Select action to take on contact group": [
         "Επιλέξτε ενέργεια για την ομάδα επαφών"
@@ -6374,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
-      "Hide side panel": [
-        "Απόκρυψη πλαϊνού πλαισίου"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
-      ],
-      "Show side panel": [
-        "Εμφάνιση πλαϊνού πλαισίου"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
@@ -6394,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"σκοτεινή λειτουργία\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"

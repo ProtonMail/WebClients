@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
-      ],
-      "Activate recovery": [
-        "Aktivirajte oporavak"
       ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
@@ -68,8 +62,8 @@
       "Copy": [
         "Kopiraj"
       ],
-      "Copy email to clipboard": [
-        "Kopiraj adresu e-pošte u međuspremnik"
+      "Copy address": [
+        "Kopiraj adresu"
       ],
       "Create": [
         "Stvori"
@@ -128,11 +122,11 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Got it": [
+        "Shvaćam"
+      ],
       "Hide": [
         "Sakrij"
-      ],
-      "I have a question": [
-        "Imam pitanje"
       ],
       "Increase": [
         "Povećaj"
@@ -218,9 +212,6 @@
       "Send my username": [
         "Pošalji moje korisničko ime"
       ],
-      "Set recovery phrase": [
-        "Postavite frazu za oporavak"
-      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -259,15 +250,6 @@
       ],
       "Unlock": [
         "Otključaj"
-      ],
-      "Unlock data": [
-        "Otključajte podatke"
-      ],
-      "Update recovery file": [
-        "Ažurirajte datoteku za oporavak"
-      ],
-      "Update recovery phrase": [
-        "Ažurirajte frazu za oporavak"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -313,13 +295,6 @@
       ],
       "Zoom out": [
         "Smanji"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } prilagođena domena",
-        "+ ${ domains } prilagođene domene",
-        "+ ${ domains } prilagođena domena"
       ]
     },
     "Billing cycle option": {
@@ -1187,11 +1162,6 @@
       ],
       "Services": [
         "Usluge"
-      ]
-    },
-    "Header": {
-      "Get help": [
-        "Pomoć"
       ]
     },
     "Human verification method": {
@@ -2129,9 +2099,6 @@
       "Apply gift code": [
         "Primijeni darovni kôd"
       ],
-      "Back": [
-        "Natrag"
-      ],
       "Billing cycle": [
         "Ciklus naplate"
       ],
@@ -2164,9 +2131,6 @@
       ],
       "Customize your plan": [
         "Prilagodite vaš plan"
-      ],
-      "Dashboard": [
-        "Upravljačka ploča"
       ],
       "Date": [
         "Datum"
@@ -2237,9 +2201,6 @@
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
       "Open pagination": [
         "Otvori paginaciju"
       ],
@@ -2261,17 +2222,11 @@
       "Payment verification": [
         "Potvrda plaćanja"
       ],
-      "Payments": [
-        "Plaćanja"
-      ],
       "PayPal verification failed": [
         "Neuspjela PayPal potvrda"
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Sažetak plana"
       ],
       "Plans": [
         "Planovi"

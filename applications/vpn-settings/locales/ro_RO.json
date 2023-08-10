@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Activare recuperare"
       ],
       "Add credit / debit card": [
         "Adăugare card de credit/debit"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
-      ],
-      "Attention required": [
-        "Necesită atenție"
       ],
       "Authenticate": [
         "Autentificare"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Contactați asistența"
       ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Copiere"
       ],
-      "Copy email to clipboard": [
-        "Copiere mesaj în memorie"
+      "Copy address": [
+        "Copiere adresă"
       ],
       "Create": [
         "Creare"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Got it": [
+        "Am înțeles"
+      ],
       "Hide": [
         "Ascundere"
       ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
-      ],
-      "I have a question": [
-        "Am o întrebare"
       ],
       "Increase": [
         "Mărire"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Setare parolă nouă"
       ],
-      "Set recovery phrase": [
-        "Setare frază de recuperare"
-      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Deblocare"
-      ],
-      "Unlock data": [
-        "Deblocare date"
-      ],
-      "Update recovery file": [
-        "Actualizare fișier de recuperare"
-      ],
-      "Update recovery phrase": [
-        "Actualizare frază de recuperare"
       ],
       "Upgrade": [
         "Modificare"
@@ -420,23 +402,6 @@
       ],
       "Reactivate": [
         "Reactivare"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ un domeniu personal",
-        "+ ${ domains } domenii personale",
-        "+ ${ domains } de domenii personale"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } adresă IP",
-        "+ ${ ips } adrese IP",
-        "+ ${ ips } de adrese IP"
-      ],
-      "+ ${ users } user": [
-        "+ un utilizator",
-        "+ ${ users } utilizatori",
-        "+ ${ users } de utilizatori"
       ]
     },
     "Alter": {
@@ -2063,9 +2028,6 @@
       "Create your account": [
         "Creați-vă contul"
       ],
-      "Get help": [
-        "Obțineți ajutor"
-      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
       ]
@@ -2084,9 +2046,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } abonamentul se va reînnoi automat la ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
@@ -2192,9 +2151,6 @@
       ],
       "Attention required": [
         "Necesită atenție"
-      ],
-      "Auto-renewal: ": [
-        "Autoreînnoire: "
       ],
       "Balance from your previous subscription": [
         "Balanța de la abonamentul anterior"
@@ -2334,7 +2290,7 @@
       "expires ${ expirationDate }": [
         "expiră ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
+      "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -3536,9 +3492,6 @@
       "Keep account": [
         "Păstrare cont"
       ],
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
-      ],
       "Switch plan": [
         "Schimbare plan"
       ]
@@ -3960,9 +3913,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Plătind, sunteți de acord cu acești ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "termenii și condițiile"
       ]
@@ -5091,9 +5041,6 @@
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
       ],
-      "Back": [
-        "Înapoi"
-      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -5138,9 +5085,6 @@
       ],
       "Customize your plan": [
         "Personalizare plan"
-      ],
-      "Dashboard": [
-        "Panou general"
       ],
       "Date": [
         "Data"
@@ -5232,9 +5176,6 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
       "Open pagination": [
         "Deschidere paginare"
       ],
@@ -5259,17 +5200,11 @@
       "Payment verification": [
         "Verificare plată"
       ],
-      "Payments": [
-        "Plăți"
-      ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Sumar planuri"
       ],
       "Plans": [
         "Planuri"
@@ -5331,6 +5266,9 @@
       "Status": [
         "Stare"
       ],
+      "Subscription": [
+        "Abonament"
+      ],
       "Switch to one-password mode": [
         "Comutați în modul o singură parolă"
       ],
@@ -5351,6 +5289,9 @@
       ],
       "Unsupported browser": [
         "Navigator nesuportat"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Îmbunătățiți-vă protecția rețelei cu servere dedicate"
       ],
       "Verification failed": [
         "Verificarea a eșuat"
@@ -5375,9 +5316,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
-      ],
-      "Your Plan": [
-        "Abonament actual"
       ],
       "Your plan": [
         "Plan actual"

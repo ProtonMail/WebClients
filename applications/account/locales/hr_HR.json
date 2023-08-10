@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
@@ -146,8 +143,8 @@
       "Copy": [
         "Kopiraj"
       ],
-      "Copy email to clipboard": [
-        "Kopiraj adresu e-pošte u međuspremnik"
+      "Copy address": [
+        "Kopiraj adresu"
       ],
       "Copy link": [
         "Kopiraj poveznicu"
@@ -265,9 +262,6 @@
       ],
       "Hide labels": [
         "Sakrij oznake"
-      ],
-      "I have a question": [
-        "Imam pitanje"
       ],
       "Import": [
         "Uvoz"
@@ -630,13 +624,6 @@
     "Action for user session": {
       "Revoke": [
         "Opozovi"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } prilagođena domena",
-        "+ ${ domains } prilagođene domene",
-        "+ ${ domains } prilagođena domena"
       ]
     },
     "Address action": {
@@ -2330,9 +2317,6 @@
       ],
       "Folders": [
         "Mape"
-      ],
-      "Get help": [
-        "Pomoć"
       ],
       "Key type": [
         "Vrsta ključa"
@@ -5367,9 +5351,6 @@
       "Automatically sign outgoing messages?": [
         "Automatsko potpisivanje odlaznih poruka?"
       ],
-      "Back": [
-        "Natrag"
-      ],
       "Billing cycle": [
         "Ciklus naplate"
       ],
@@ -5583,9 +5564,6 @@
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
       "Open pagination": [
         "Otvori paginaciju"
       ],
@@ -5609,9 +5587,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Sažetak plana"
       ],
       "Previous": [
         "Prethodno"

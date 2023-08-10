@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
-      "Attention required": [
-        "Necesită atenție"
-      ],
       "Authenticate": [
         "Autentificare"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Contactați asistența"
       ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Copiere"
       ],
-      "Copy email to clipboard": [
-        "Copiere mesaj în memorie"
+      "Copy address": [
+        "Copiere adresă"
       ],
       "Copy link": [
         "Copiere legătură"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
-      ],
-      "I have a question": [
-        "Am o întrebare"
       ],
       "Import": [
         "Importare"
@@ -1024,23 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Refuzare"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ un domeniu personal",
-        "+ ${ domains } domenii personale",
-        "+ ${ domains } de domenii personale"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } adresă IP",
-        "+ ${ ips } adrese IP",
-        "+ ${ ips } de adrese IP"
-      ],
-      "+ ${ users } user": [
-        "+ un utilizator",
-        "+ ${ users } utilizatori",
-        "+ ${ users } de utilizatori"
       ]
     },
     "Address action": {
@@ -1668,9 +1645,6 @@
       ],
       "purple": [
         "violet"
-      ],
-      "raisin black": [
-        "stafide negre"
       ],
       "reef": [
         "recif"
@@ -4568,9 +4542,6 @@
       "Folders": [
         "Foldere"
       ],
-      "Get help": [
-        "Obțineți ajutor"
-      ],
       "Key type": [
         "Tip cheie"
       ],
@@ -5035,9 +5006,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } abonamentul se va reînnoi automat la ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
       ],
@@ -5398,6 +5366,9 @@
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Sigur doriți să ștergeți definitiv toate jurnalele?"
       ],
@@ -5406,9 +5377,6 @@
       ],
       "Attention required": [
         "Necesită atenție"
-      ],
-      "Auto-renewal: ": [
-        "Autoreînnoire: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
@@ -5736,9 +5704,6 @@
         "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
       "for choosing ${ product }": [
-        "pentru că ați ales ${ product }"
-      ],
-      "For choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -9052,9 +9017,6 @@
       "Keep account": [
         "Păstrare cont"
       ],
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
-      ],
       "Switch plan": [
         "Schimbare plan"
       ],
@@ -9537,9 +9499,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Creând contul ${ BRAND_NAME } sunteți de acord cu ${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Plătind, sunteți de acord cu acești ${ termsAndConditions }"
       ],
       "Payment details": [
         "Detalii plată"
@@ -11974,9 +11933,6 @@
       "Automatically sign outgoing messages?": [
         "Semnare automată mesaje trimise?"
       ],
-      "Back": [
-        "Înapoi"
-      ],
       "Backup and export": [
         "Copie de rezervă și export"
       ],
@@ -12394,9 +12350,6 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
       "Open pagination": [
         "Deschidere paginare"
       ],
@@ -12441,9 +12394,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Sumar planuri"
       ],
       "Preview": [
         "Examinare"
@@ -12706,9 +12656,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
-      ],
-      "Your Plan": [
-        "Abonament actual"
       ],
       "Your plan": [
         "Plan actual"

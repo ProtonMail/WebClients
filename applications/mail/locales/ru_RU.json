@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Введение в ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Назад"
       ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
       "Blind Carbon Copy": [
         "Скрытая копия"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Новое письмо"
       ],
-      "Composer size": [
-        "Размер редактора писем"
-      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Настроить импорт"
-      ],
-      "Default email application": [
-        "Приложение электронной почты по умолчанию"
       ],
       "Delete": [
         "Удалить"
@@ -454,9 +442,6 @@
       "Go to previous page": [
         "Перейти на предыдущую страницу"
       ],
-      "Go to settings": [
-        "Открыть настройки"
-      ],
       "Go to SimpleLogin": [
         "Перейти к SimpleLogin"
       ],
@@ -486,9 +471,6 @@
       ],
       "hide-my-email aliases": [
         "псевдонимы hide-my-email"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
       ],
       "Image could not be loaded with tracker protection.": [
         "Некоторые изображения не могут быть загружены при включённой защите от отслеживания."
@@ -547,9 +529,6 @@
       "Italic": [
         "Курсив"
       ],
-      "Keyboard shortcuts": [
-        "Сочетания клавиш"
-      ],
       "Label as": [
         "Отметить как"
       ],
@@ -576,12 +555,6 @@
       ],
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Плотность почтового ящика"
-      ],
-      "Mailbox layout": [
-        "Вид почтового ящика"
       ],
       "Manage folders": [
         "Управление папками"
@@ -979,9 +952,6 @@
       "Show preview": [
         "Показать предпросмотр"
       ],
-      "Show side panel": [
-        "Показать боковую панель"
-      ],
       "Sign in": [
         "Войти"
       ],
@@ -1017,9 +987,6 @@
       ],
       "Submit": [
         "Отправить"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "This message contains embedded images.": [
         "В этом сообщении есть встроенные изображения."
@@ -1122,9 +1089,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
-      ],
-      "Use “${ label }” setting": [
-        "Использовать настройку «${ label }»"
       ],
       "Verify": [
         "Подтвердить"
@@ -1308,14 +1272,6 @@
       ],
       "Sender verification passed": [
         "Проверка отправителя пройдена"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
       ]
     },
     "Billing cycle option": {
@@ -1819,9 +1775,6 @@
       ],
       "purple": [
         "фиолетовый"
-      ],
-      "raisin black": [
-        "лиловый черный"
       ],
       "reef": [
         "коралловый"
@@ -3004,16 +2957,6 @@
     "Download attachments": {
       "Download all": [
         "Скачать все"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Вкл"
       ]
     },
     "Email body for description (description part)": {
@@ -4247,9 +4190,6 @@
       "For your eyes only": [
         "Только для ваших глаз"
       ],
-      "Get free storage": [
-        "Получить бесплатное хранилище"
-      ],
       "Get mobile app": [
         "Получить мобильное приложение"
       ],
@@ -4360,12 +4300,6 @@
     "Header": {
       "Contacts": [
         "Контакты"
-      ],
-      "Contacts, groups and settings": [
-        "Контакты, группы и настройки"
-      ],
-      "Get help": [
-        "Получить помощь"
       ],
       "Search": [
         "Поиск"
@@ -5576,6 +5510,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Пожалуйста, предоставьте имя и email-адрес для создания группы"
+      ],
       "Please select the folders you would like to import:": [
         "Выберите папки для импорта:"
       ],
@@ -5646,9 +5583,6 @@
         "Щёлкните правой кнопкой для настройки"
       ],
       "Saved at ${ dateString }": [
-        "Сохранено ${ dateString }"
-      ],
-      "Saved on ${ dateString }": [
         "Сохранено ${ dateString }"
       ],
       "Saved yesterday": [
@@ -6464,16 +6398,6 @@
         "Сочетания клавиш для сообщений"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Вкл"
-      ]
-    },
     "Label": {
       " and ": [
         " и "
@@ -6589,6 +6513,9 @@
       "Colors": [
         "Цвета"
       ],
+      "Composer": [
+        "Редактор писем"
+      ],
       "Conditions": [
         "Условия"
       ],
@@ -6612,6 +6539,9 @@
       ],
       "Delete recovery-related information.": [
         "Удалите информацию, связанную с восстановлением."
+      ],
+      "Density": [
+        "Плотность"
       ],
       "Don't ask again": [
         "Больше не спрашивать"
@@ -6645,9 +6575,6 @@
       ],
       "Emails (last month)": [
         "Письма (последний месяц)"
-      ],
-      "Enable Beta Access": [
-        "Включить доступ к бета-версии"
       ],
       "Encrypt emails": [
         "Шифровать письма"
@@ -6853,15 +6780,6 @@
       "Search in": [
         "Искать в"
       ],
-      "Select how your composer opens by default.": [
-        "Выберите как будет открываться по умолчанию окно редактора писем."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Выберите как будет выглядеть список сообщений по умолчанию."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Выберите как будет выглядеть ваш почтовый ящик по умолчанию."
-      ],
       "Send auto-reply": [
         "Отправить автоответ"
       ],
@@ -6987,30 +6905,6 @@
         "Кому"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Развёрнутый"
-      ],
-      "Normal": [
-        "Обычный"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Удобный"
-      ],
-      "Compact": [
-        "Компактный"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Колонка"
-      ],
-      "Row": [
-        "Ряд"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Создать папку"
@@ -7055,6 +6949,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Приложение ${ DRIVE_APP_NAME } для Windows"
+      ],
       "All mail": [
         "Вся почта"
       ],
@@ -7153,6 +7050,9 @@
       ],
       "Scheduled": [
         "Запланированные"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Бесшовно синхронизируйте файлы и папки своего компьютера с ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Отправленные"
@@ -7515,11 +7415,6 @@
         "Улучшить сейчас"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Изменить или добавить аккаунт"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Автоудаление спама и удаленных сообщений"
@@ -7712,11 +7607,6 @@
       ],
       "Merge with calendar": [
         "Объединение с календарем"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } из ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7946,11 +7836,6 @@
         "Хранится под шифрованием с нулевым доступом"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примечание. Сервис будет перезагружен, когда вы нажмете кнопку «Применить»."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } дн.",
@@ -8096,14 +7981,6 @@
       ],
       "Stored with zero-access encryption": [
         "Хранится под шифрованием с нулевым доступом"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Управляйте контактами и просматривайте календарь не выходя из приложения."
-      ],
-      "Try the new side panel": [
-        "Попробуйте новую боковую панель"
       ]
     },
     "Signature verification warning": {
@@ -8873,11 +8750,6 @@
         "Поле vCard-файла"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Настройки"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Вчера"
@@ -8975,14 +8847,8 @@
       "Attachments": [
         "Вложения"
       ],
-      "Back": [
-        "Назад"
-      ],
       "BCC": [
         "Cкрытая копия"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Billing cycle": [
         "Период оплаты"
@@ -9010,9 +8876,6 @@
       ],
       "Clearing data": [
         "Очистка данных"
-      ],
-      "Composer mode": [
-        "Режим редактора"
       ],
       "Confirm recipient address?": [
         "Подтвердить адрес получателя?"
@@ -9230,12 +9093,6 @@
       "Load remote content": [
         "Загрузить внешнее содержимое"
       ],
-      "Mailbox density": [
-        "Плотность почтового ящика"
-      ],
-      "Mailbox layout": [
-        "Макет почтового ящика"
-      ],
       "Mark as read": [
         "Отметить как прочитанное"
       ],
@@ -9319,12 +9176,6 @@
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
-      ],
-      "Open help menu": [
-        "Открыть меню справки"
-      ],
-      "Open settings menu": [
-        "Открыть меню настроек"
       ],
       "Other information": [
         "Дополнительная информация"
@@ -9488,9 +9339,6 @@
       "Verification error": [
         "Ошибка подтверждения"
       ],
-      "View contacts": [
-        "Просмотр контактов"
-      ],
       "Warning": [
         "Предупреждение"
       ],
@@ -9564,14 +9412,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
-      "Hide side panel": [
-        "Скрыть боковую панель"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
-      ],
-      "Show side panel": [
-        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

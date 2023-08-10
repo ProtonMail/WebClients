@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
-      "Attention required": [
-        "Потребує уваги"
-      ],
       "Authenticate": [
         "Автентифікація"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
+      "Contact us": [
+        "Зв'язатися з нами"
+      ],
       "Continue": [
         "Продовжити"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Копіювати"
       ],
-      "Copy email to clipboard": [
-        "Копіювати е-пошту в буфер обміну"
+      "Copy address": [
+        "Копіювати адресу"
       ],
       "Copy link": [
         "Копіювати посилання"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Приховати особливості плану"
-      ],
-      "I have a question": [
-        "У мене є питання"
       ],
       "Import": [
         "Імпорт"
@@ -1026,26 +1020,6 @@
         "Відхилити"
       ]
     },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } власний домен",
-        "+ ${ domains } власні домени",
-        "+ ${ domains } власних доменів",
-        "+ ${ domains } власних доменів"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-адреса",
-        "+ ${ ips } IP-адреси",
-        "+ ${ ips } IP-адрес",
-        "+ ${ ips } IP-адрес"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } користувач",
-        "+ ${ users } користувачі",
-        "+ ${ users } користувачів",
-        "+ ${ users } користувачів"
-      ]
-    },
     "Address action": {
       "Delete": [
         "Видалити"
@@ -1141,7 +1115,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Застосунки ${ BRAND_NAME }"
+        "Програми ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1673,9 +1647,6 @@
       ],
       "purple": [
         "бузковий"
-      ],
-      "raisin black": [
-        "родзинковий чорний"
       ],
       "reef": [
         "рифовий"
@@ -4421,7 +4392,7 @@
         "Щоб небажана пошта не засмічувала \"Вхідні\""
       ],
       "To prevent junk mail from clogging up your inbox": [
-        "Щоб небажана пошта не засмічувала вашу теку \"Вхідні\"."
+        "Щоб небажана пошта не засмічувала вашу теку поштову скриньку."
       ],
       "To stop phishing or suspicious emails from entering your email system": [
         "Щоб шахрайські або підозрілі електронні листи не потрапляли до вашої поштової скриньки"
@@ -4591,9 +4562,6 @@
       ],
       "Folders": [
         "Теки"
-      ],
-      "Get help": [
-        "Отримати допомогу"
       ],
       "Key type": [
         "Тип ключа"
@@ -4871,7 +4839,7 @@
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email account requires an app password to export your data.": [
-        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
+        "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
@@ -5066,9 +5034,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } передплату буде автоматично поновлено ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
@@ -5460,9 +5425,6 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Auto-renewal: ": [
-        "Автопоновлення: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Автовідповідач активний щомісяця між заданим початковим та кінцевим часом."
       ],
@@ -5793,9 +5755,6 @@
       "for choosing ${ product }": [
         "за вибір ${ product }"
       ],
-      "For choosing ${ product }": [
-        "За вибір ${ product }"
-      ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
@@ -5947,7 +5906,7 @@
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
-        "Зробіть користування ${ BRAND_NAME } зручнішим, адаптувавши застосунок до своїх потреб."
+        "Зробіть користування ${ BRAND_NAME } зручнішим, адаптувавши програму до своїх потреб."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою Bitcoin-адреси."
@@ -6019,7 +5978,7 @@
         "Великий обсяг імпортування може тривати кілька днів."
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні застосунки VPN."
+        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
       "Learn more": [
         "Докладніше"
@@ -6641,6 +6600,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Для скасування підписки, будь ласка, зв'яжіться з нами."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
@@ -9137,9 +9099,6 @@
       "Keep account": [
         "Залишити обліковий запис"
       ],
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
-      ],
       "Switch plan": [
         "Змінити тарифний план"
       ],
@@ -9640,9 +9599,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Сплачуючи, ви погоджуєтеся з нашими ${ termsAndConditions }"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -10513,7 +10469,7 @@
         "на місяць, рахунок виставляється щомісяця"
       ],
       "per month, billed every two years": [
-        "на місяць, рахунок виставляється раз на два роки"
+        "на місяць, рахунок виставляється кожні два роки"
       ],
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
@@ -12108,9 +12064,6 @@
       "Automatically sign outgoing messages?": [
         "Автоматично підписувати вихідні повідомлення?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Backup and export": [
         "Резервне копіювання та експорт"
       ],
@@ -12531,9 +12484,6 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
       "Open pagination": [
         "Показати нумерацію сторінок"
       ],
@@ -12578,9 +12528,6 @@
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan summary": [
-        "Підсумок плану"
       ],
       "Preview": [
         "Попередній перегляд"
@@ -12845,9 +12792,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш план"
       ],
       "Your plan": [
         "Ваш тарифний план"

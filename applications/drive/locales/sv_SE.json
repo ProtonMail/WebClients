@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Tillbaka till startsida"
-      ],
-      "Beta Access": [
-        "Beta-åtkomst"
       ],
       "Cancel": [
         "Avbryt"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Fortsätt med Google"
+      ],
+      "Copy address": [
+        "Kopiera adress"
       ],
       "Copy email to clipboard": [
         "Kopiera e-post till urklipp"
@@ -318,14 +315,14 @@
       "Go to parent": [
         "Gå till överordnad"
       ],
-      "Go to settings": [
-        "Gå till inställningar"
-      ],
       "Got it": [
         "Förstått"
       ],
       "Grid layout": [
         "Rutnätslayout"
+      ],
+      "Help": [
+        "Hjälp"
       ],
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
@@ -335,9 +332,6 @@
       ],
       "Hide labels": [
         "Dölj etiketter"
-      ],
-      "I have a question": [
-        "Jag har en fråga"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
@@ -425,9 +419,6 @@
       ],
       "Next month": [
         "Nästa månad"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -567,6 +558,9 @@
       "Set recovery phrase": [
         "Ställ in återställningsfras"
       ],
+      "Settings": [
+        "Inställningar"
+      ],
       "Share file": [
         "Dela fil"
       ],
@@ -590,9 +584,6 @@
       ],
       "Show preview": [
         "Visa förhandsgranskning"
-      ],
-      "Show side panel": [
-        "Visa sidopanel"
       ],
       "Sign in": [
         "Logga in"
@@ -633,14 +624,17 @@
       "Submit report": [
         "Skicka rapport"
       ],
-      "Theme": [
-        "Tema"
+      "Switch or add account": [
+        "Byt eller lägg till konto"
       ],
       "Toggle Calendar app": [
         "Växla kalender-app"
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
+      ],
+      "Toggle settings": [
+        "Öppna/stäng inställningar"
       ],
       "Trust": [
         "Lita på"
@@ -775,14 +769,6 @@
       ],
       "Unsupported event": [
         "Händelse stöds inte"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-åtkomst låter dig använda betaversionen av ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, och ${ DRIVE_APP_NAME } innan de släpps till allmänheten. Detta innebär att du kan vara först med att prova nya produkter, få nya uppdateringar och använda nya funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Om du stöter på problem kan du alltid inaktivera beta-åtkomst."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1849,6 @@
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Av"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "På"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Beskrivning: ${ eventDescription }"
@@ -2268,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering misslyckades"
+      ],
+      "Missing FN property": [
+        "Saknar FN-egendom"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -2752,9 +2731,6 @@
       ],
       "Contacts, groups and settings": [
         "Kontakter, grupper och inställningar"
-      ],
-      "Get help": [
-        "Få hjälp"
       ]
     },
     "Hint": {
@@ -3344,9 +3320,6 @@
       ],
       "Current version": [
         "Nuvarande version"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
       "Decrypting files": [
         "Dekrypterar filer"
@@ -3987,6 +3960,9 @@
       "Trash": [
         "Papperskorg"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
       "Try searching by file name, date, or type.": [
         "Försök att söka efter filnamn, datum eller typ."
       ],
@@ -4273,6 +4249,9 @@
       "Bad": [
         "Dålig"
       ],
+      "Beta Access": [
+        "Beta-åtkomst"
+      ],
       "Browser": [
         "Webbläsare"
       ],
@@ -4384,9 +4363,6 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
-      ],
-      "Enable Beta Access": [
-        "Aktivera beta-åtkomst"
       ],
       "Encrypt emails": [
         "Kryptera e-post"
@@ -4604,7 +4580,7 @@
       "Street address": [
         "Gatuadress"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Synkronisera med system"
       ],
       "System information": [
@@ -4612,6 +4588,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Detta kommer att radera alla filer på din låsta Drive permanent."
@@ -4839,11 +4818,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Uppgradera nu"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Ändra eller lägg till konto"
       ]
     },
     "new_plans: feature": {
@@ -5339,22 +5313,9 @@
         "Officiell e-post från ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Obs: tjänsten kommer laddas om efter att du klickat på knappen “Tillämpa“."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Ladda upp"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hantera dina kontakter och visa din kalender utan att lämna din app."
-      ],
-      "Try the new side panel": [
-        "Prova den nya sidopanelen"
       ]
     },
     "Signing preference for emails": {
@@ -5598,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Kom enkelt åt och anpassa din appupplevelse."
+      ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
       ],
@@ -5609,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
+      ],
+      "Quick settings": [
+        "Snabbinställningar"
       ]
     },
     "Storage": {
@@ -5805,11 +5772,6 @@
         "vCard-fält"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Inställningar"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -5858,9 +5820,6 @@
         "${ numberOfFailedTransfer.total } misslyckad uppladdning",
         "${ numberOfFailedTransfer.total } misslyckade uppladdningar"
       ],
-      "(active)": [
-        "(aktiv)"
-      ],
       "Account suspended": [
         "Konto avstängt"
       ],
@@ -5883,14 +5842,11 @@
       "All": [
         "Alla"
       ],
+      "All settings": [
+        "Alla inställningar"
+      ],
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
-      ],
-      "Back": [
-        "Tillbaka"
-      ],
-      "Beta Access": [
-        "Beta-åtkomst"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -6130,12 +6086,6 @@
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
       ],
-      "Open help menu": [
-        "Öppna hjälpmeny"
-      ],
-      "Open settings menu": [
-        "Öppna inställningsmenyn"
-      ],
       "Original size": [
         "Originalstorlek"
       ],
@@ -6195,9 +6145,6 @@
       ],
       "Searching…": [
         "Söker…"
-      ],
-      "Select a theme": [
-        "Välj ett tema"
       ],
       "Select action to take on contact group": [
         "Välj åtgärd att utföra på kontaktgrupp"
@@ -6380,14 +6327,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
-      "Hide side panel": [
-        "Dölj sidopanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
-      ],
-      "Show side panel": [
-        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
@@ -6400,12 +6341,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Det valda temat kommer bli aktivt när ditt system är inställt på “mörkt läge“"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"

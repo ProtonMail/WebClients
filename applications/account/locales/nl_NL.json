@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
-      "Attention required": [
-        "Aandacht vereist"
-      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Neem contact op met ondersteuning"
       ],
+      "Contact us": [
+        "Contacteer ons"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Kopieer"
       ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
+      "Copy address": [
+        "Adres kopiëren"
       ],
       "Copy link": [
         "Link kopiëren"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Verberg abonnementsfuncties"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
       ],
       "Import": [
         "Importeren"
@@ -1024,20 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Afwijzen"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } eigen domein",
-        "+ ${ domains } eigen domeinen"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-adres",
-        "+ ${ ips } IP-adressen"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } gebruiker",
-        "+ ${ users } gebruikers"
       ]
     },
     "Address action": {
@@ -1663,9 +1643,6 @@
       ],
       "purple": [
         "paars"
-      ],
-      "raisin black": [
-        "rozijnzwart"
       ],
       "reef": [
         "rif"
@@ -4544,9 +4521,6 @@
       "Folders": [
         "Mappen"
       ],
-      "Get help": [
-        "Krijg hulp"
-      ],
       "Key type": [
         "Sleuteltype"
       ],
@@ -5003,9 +4977,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } uw abonnement wordt automatisch verlengd op ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
@@ -5345,6 +5316,9 @@
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Weet u zeker dat u alle logs permanent wilt verwijderen?"
       ],
@@ -5353,9 +5327,6 @@
       ],
       "Attention required": [
         "Aandacht vereist"
-      ],
-      "Auto-renewal: ": [
-        "Automatische verlenging: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatisch antwoord is elke maand tussen de geselecteerde begin- en eindtijd actief."
@@ -5682,9 +5653,6 @@
       ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Voor het kiezen van ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
@@ -8967,9 +8935,6 @@
       "Keep account": [
         "Account behouden"
       ],
-      "Switch or add account": [
-        "Account toevoegen of wisselen"
-      ],
       "Switch plan": [
         "Van abonnement wisselen"
       ],
@@ -9435,9 +9400,6 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }"
       ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Door te betalen gaat u akkoord met onze ${ termsAndConditions }"
-      ],
       "Payment details": [
         "Betalingsgegevens"
       ],
@@ -9706,6 +9668,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } aangemaakt"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } is uitgezet"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } is aangezet"
       ],
       "A disabled address cannot be default": [
         "Een uitgeschakeld adres kan niet primair zijn"
@@ -11828,9 +11796,6 @@
       "Automatically sign outgoing messages?": [
         "Automatisch uitgaande berichten ondertekenen?"
       ],
-      "Back": [
-        "Terug"
-      ],
       "Backup and export": [
         "Back-up en exporteren"
       ],
@@ -12245,9 +12210,6 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
       "Open pagination": [
         "Paginering openen"
       ],
@@ -12292,9 +12254,6 @@
       ],
       "Phone": [
         "Telefoon"
-      ],
-      "Plan summary": [
-        "Samenvatting abonnement"
       ],
       "Preview": [
         "Voorbeeld"
@@ -12555,9 +12514,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
-      ],
-      "Your Plan": [
-        "Uw abonnement"
       ],
       "Your plan": [
         "Uw abonnement"

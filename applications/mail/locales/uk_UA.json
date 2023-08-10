@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Назад"
       ],
-      "Beta Access": [
-        "Бета-доступ"
-      ],
       "Blind Carbon Copy": [
         "Прихована копія"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Написати"
       ],
-      "Composer size": [
-        "Розмір редактора"
-      ],
       "Confirm": [
         "Підтвердити"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Налаштувати імпорт"
-      ],
-      "Default email application": [
-        "Типовий застосунок електронної пошти"
       ],
       "Delete": [
         "Видалити"
@@ -454,9 +442,6 @@
       "Go to previous page": [
         "Перейти на попередню сторінку"
       ],
-      "Go to settings": [
-        "Перейти до налаштувань"
-      ],
       "Go to SimpleLogin": [
         "Перейти до SimpleLogin"
       ],
@@ -486,9 +471,6 @@
       ],
       "hide-my-email aliases": [
         "псевдонімів Hide-my-email"
-      ],
-      "I have a question": [
-        "У мене є питання"
       ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
@@ -547,9 +529,6 @@
       "Italic": [
         "Курсив"
       ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
       "Label as": [
         "Позначити міткою"
       ],
@@ -576,12 +555,6 @@
       ],
       "Loading${ ellipsis }": [
         "Завантаження${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
       ],
       "Manage folders": [
         "Керувати теками"
@@ -979,9 +952,6 @@
       "Show preview": [
         "Показати попередній перегляд"
       ],
-      "Show side panel": [
-        "Показати бічну панель"
-      ],
       "Sign in": [
         "Увійти"
       ],
@@ -1017,9 +987,6 @@
       ],
       "Submit": [
         "Відправити"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "This message contains embedded images.": [
         "Це повідомлення містить вбудовані зображення."
@@ -1122,9 +1089,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
-      ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування“${ label }”"
       ],
       "Verify": [
         "Перевірити"
@@ -1279,7 +1243,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Застосунки ${ BRAND_NAME }"
+        "Програми ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1308,14 +1272,6 @@
       ],
       "Sender verification passed": [
         "Перевірка відправника пройшла успішно"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "У разі виникнення проблем, ви завжди можете вимкнути бета-доступ."
       ]
     },
     "Billing cycle option": {
@@ -1819,9 +1775,6 @@
       ],
       "purple": [
         "бузковий"
-      ],
-      "raisin black": [
-        "родзинковий чорний"
       ],
       "reef": [
         "рифовий"
@@ -2956,7 +2909,7 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Увімкніть захист трекера електронної пошти, щоб рекламодавці та інші не відстежували ваше розташування та активність в Інтернеті."
+        "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
@@ -2971,7 +2924,7 @@
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "У цьому електронному листі не знайдено жодних відомих трекерів і URL-адрес для відстеження."
+        "У цьому електронному листі не знайдено відомих вистежувачів чи URL-адрес із вбудованими елементами стеження."
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати своє повідомлення?"
@@ -3004,16 +2957,6 @@
     "Download attachments": {
       "Download all": [
         "Завантажити все"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Увімкнено"
       ]
     },
     "Email body for description (description part)": {
@@ -4265,14 +4208,11 @@
       "For your eyes only": [
         "Тільки для ваших очей"
       ],
-      "Get free storage": [
-        "Отримати безплатне сховище"
-      ],
       "Get mobile app": [
-        "Отримати мобільний застосунок"
+        "Отримати програму для мобільного пристрою"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
-        "Отримайте мобільний застосунок ${ MAIL_APP_NAME }"
+        "Отримайте програму ${ MAIL_APP_NAME } для мобільного пристрою"
       ],
       "Get the ${ strongText } on Android or iOS": [
         "Отримайте ${ strongText } на Android або iOS"
@@ -4317,7 +4257,7 @@
         "Захист та спрощення електронної пошти"
       ],
       "Protection from trackers": [
-        "Захист від трекерів"
+        "Захист від стеження"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Швидко передавайте свої контакти або електронні листи від будь-якого постачальника послуг за допомогою нашого помічника для імпорту Easy Switch."
@@ -4332,7 +4272,7 @@
         "Налаштуйте ${ strongText } із Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
-        "Увійдіть у мобільний застосунок, щоб завершити цей крок"
+        "Виконайте вхід у програмі для мобільного пристрою, щоб завершити цей крок"
       ],
       "Update your logins": [
         "Оновіть свої логіни"
@@ -4387,12 +4327,6 @@
     "Header": {
       "Contacts": [
         "Контакти"
-      ],
-      "Contacts, groups and settings": [
-        "Контакти, групи та налаштування"
-      ],
-      "Get help": [
-        "Отримати допомогу"
       ],
       "Search": [
         "Пошук"
@@ -4584,7 +4518,7 @@
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email account requires an app password to export your data.": [
-        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
+        "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
@@ -4812,22 +4746,22 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } поштовий трекер заблоковано",
-        "${ numberOfImageTrackers } поштові трекери заблоковано",
-        "${ numberOfImageTrackers } поштових трекерів заблоковано",
-        "${ numberOfImageTrackers } поштових трекерів заблоковано"
+        "Заблоковано ${ numberOfImageTrackers } поштовий вистежувач",
+        "Заблоковано ${ numberOfImageTrackers } поштові вистежувачі",
+        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів",
+        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів"
       ],
       "${ numberOfImageTrackers } tracker blocked": [
-        "${ numberOfImageTrackers } трекер заблоковано",
-        "${ numberOfImageTrackers } трекери заблоковано",
-        "${ numberOfImageTrackers } трекерів заблоковано",
-        "${ numberOfImageTrackers } трекерів заблоковано"
+        "Заблоковано ${ numberOfImageTrackers } вистежувач",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачі",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачів",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачів"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } посилання очищено",
-        "${ numberOfUTMTrackers } посилання очищено",
-        "${ numberOfUTMTrackers } посилань очищено",
-        "${ numberOfUTMTrackers } посилань очищено"
+        "Очищено ${ numberOfUTMTrackers } посилання",
+        "Очищено ${ numberOfUTMTrackers } посилання",
+        "Очищено ${ numberOfUTMTrackers } посилань",
+        "Очищено ${ numberOfUTMTrackers } посилань"
       ],
       "${ numContact } contact": [
         "${ numContact } контакт",
@@ -5193,7 +5127,7 @@
         "Щодня"
       ],
       "Default email application": [
-        "Типовий застосунок електронної пошти"
+        "Типова програма електронної пошти"
       ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
@@ -5451,7 +5385,7 @@
         "Тип посилання"
       ],
       "Links cleaned:": [
-        "Посилань очищено:"
+        "Очищені посилання:"
       ],
       "Loading": [
         "Завантаження"
@@ -5559,7 +5493,7 @@
         "Результатів не знайдено"
       ],
       "No trackers found": [
-        "Трекерів не виявлено"
+        "Стеження не виявлено"
       ],
       "non-${ MAIL_APP_NAME }": [
         "користувачу поза ${ MAIL_APP_NAME }"
@@ -5687,9 +5621,6 @@
       "Saved at ${ dateString }": [
         "Збережено ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Збережено ${ dateString }"
-      ],
       "Saved yesterday": [
         "Збережено вчора"
       ],
@@ -5748,7 +5679,7 @@
         "Сеанс завершився"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Встановіть ${ MAIL_APP_NAME } типовим застосунком електронної пошти для цього браузера. ${ MAIL_APP_NAME } відкриється автоматично після натискання на поштове посилання."
+        "Встановіть ${ MAIL_APP_NAME } типовою програмою електронної пошти для цього браузера. ${ MAIL_APP_NAME } відкриватиметься автоматично після натискання на поштове посилання."
       ],
       "Set a recovery phrase": [
         "Встановити фразу відновлення"
@@ -5967,7 +5898,7 @@
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
       "Trackers blocked:": [
-        "Трекерів заблоковано:"
+        "Заблоковані вистежувачі:"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалення завантажених повідомлень, перейдіть до налаштувань."
@@ -6051,13 +5982,13 @@
         "Перепрошуємо. Це могла бути помилка з нашого боку. Підтвердьте, що ви хочете позначити цей лист надійним."
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "Ми заблокували наступним рекламодавцям та організаціям можливість бачити, коли ви відкриваєте цей лист, який пристрій ви використовуєте і де ви знаходитесь."
+        "Ми заборонили зазначеним рекламодавцям та організаціям можливість бачити, коли ви відкриваєте цей лист, який пристрій використовуєте і де знаходитесь."
       ],
       "We could not verify the sender's trusted keys.": [
         "Нам не вдалося перевірити довірені ключі відправника."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Ми видалили інформацію про відстеження з наступних посилань, щоб захистити вас від рекламодавців та інших осіб, які намагаються відстежувати вашу активність в Інтернеті."
+        "Ми вилучили інформацію про відстеження із зазначених посилань, щоб захистити вас від рекламодавців та інших осіб, які намагаються стежити за вами в інтернеті."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -6506,16 +6437,6 @@
         "Комбінації клавіш для повідомлення"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
     "Label": {
       " and ": [
         " і "
@@ -6631,6 +6552,9 @@
       "Colors": [
         "Кольори"
       ],
+      "Composer": [
+        "Редактор"
+      ],
       "Conditions": [
         "Умови"
       ],
@@ -6654,6 +6578,9 @@
       ],
       "Delete recovery-related information.": [
         "Видалити інформацію повʼязану з відновленням."
+      ],
+      "Density": [
+        "Щільність"
       ],
       "Don't ask again": [
         "Не питати знову"
@@ -6687,9 +6614,6 @@
       ],
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
-      ],
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
       ],
       "Encrypt emails": [
         "Шифрувати листи"
@@ -6895,15 +6819,6 @@
       "Search in": [
         "Шукати в"
       ],
-      "Select how your composer opens by default.": [
-        "Оберіть типовий вигляд редактора."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Оберіть типовий вигляд списку повідомлень."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Оберіть типовий вигляд поштової скриньки."
-      ],
       "Send auto-reply": [
         "Надіслати автовідповідь"
       ],
@@ -7029,30 +6944,6 @@
         "Кому"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортно"
-      ],
-      "Compact": [
-        "Компактно"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Створити теку"
@@ -7097,6 +6988,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Програма ${ DRIVE_APP_NAME } для Windows"
+      ],
       "All mail": [
         "Уся пошта"
       ],
@@ -7195,6 +7089,9 @@
       ],
       "Scheduled": [
         "Заплановані"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Безперебійна синхронізація файлів і тек між комп'ютером і ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Надіслані"
@@ -7557,11 +7454,6 @@
         "Покращити"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
@@ -7754,11 +7646,6 @@
       ],
       "Merge with calendar": [
         "Об'єднати з календарем"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } з ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7988,11 +7875,6 @@
         "Збережено з повним шифруванням"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } д",
@@ -8138,14 +8020,6 @@
       ],
       "Stored with zero-access encryption": [
         "Збережено з повним шифруванням"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Керуйте контактами та переглядайте календар, не виходячи з застосунку."
-      ],
-      "Try the new side panel": [
-        "Спробуйте нову бічну панель"
       ]
     },
     "Signature verification warning": {
@@ -8915,11 +8789,6 @@
         "Поле vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Вчора"
@@ -9017,14 +8886,8 @@
       "Attachments": [
         "Вкладення"
       ],
-      "Back": [
-        "Назад"
-      ],
       "BCC": [
         "Прихована копія"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Billing cycle": [
         "Платіжний цикл"
@@ -9052,9 +8915,6 @@
       ],
       "Clearing data": [
         "Стирання даних"
-      ],
-      "Composer mode": [
-        "Режим редактора"
       ],
       "Confirm recipient address?": [
         "Підтвердити адресу отримувача?"
@@ -9272,12 +9132,6 @@
       "Load remote content": [
         "Завантажити зовнішній вміст"
       ],
-      "Mailbox density": [
-        "Щільність поштової скриньки"
-      ],
-      "Mailbox layout": [
-        "Макет поштової скриньки"
-      ],
       "Mark as read": [
         "Позначити прочитаним"
       ],
@@ -9357,16 +9211,10 @@
         "Вкладення не знайдено"
       ],
       "No trackers found": [
-        "Трекерів не знайдено"
+        "Стеження не виявлено"
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
-      ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
-      "Open settings menu": [
-        "Відкрити меню налаштувань"
       ],
       "Other information": [
         "Інша інформація"
@@ -9387,7 +9235,7 @@
         "Попереднє повідомлення"
       ],
       "Protect yourself from trackers": [
-        "Захистіть себе від трекерів"
+        "Захистіться від стеження"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -9530,9 +9378,6 @@
       "Verification error": [
         "Помилка підтвердження"
       ],
-      "View contacts": [
-        "Переглянути контакти"
-      ],
       "Warning": [
         "Попередження"
       ],
@@ -9540,10 +9385,10 @@
         "Попередження: імовірно підроблений вебсайт"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Ми захистили вас від ${ trackersCount } трекера",
-        "Ми захистили вас від ${ trackersCount } трекерів",
-        "Ми захистили вас від ${ trackersCount } трекерів",
-        "Ми захистили вас від ${ trackersCount } трекерів"
+        "Ми захистили вас від ${ trackersCount } вистежувача",
+        "Ми захистили вас від ${ trackersCount } вистежувачів",
+        "Ми захистили вас від ${ trackersCount } вистежувачів",
+        "Ми захистили вас від ${ trackersCount } вистежувачів"
       ],
       "Welcome": [
         "Вітаємо"
@@ -9606,14 +9451,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
-      "Hide side panel": [
-        "Сховати бічну панель"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
-      ],
-      "Show side panel": [
-        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"

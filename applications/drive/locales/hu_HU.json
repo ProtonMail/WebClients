@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } bevezető"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Vissza a honlapra"
-      ],
-      "Beta Access": [
-        "Béta hozzáférés"
       ],
       "Cancel": [
         "Mégsem"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
+      ],
+      "Copy address": [
+        "Cím másolása"
       ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Ugrás a forráshoz"
       ],
-      "Go to settings": [
-        "Beállítások megnyitása"
-      ],
       "Got it": [
         "Rendben!"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Címkék elrejtése"
-      ],
-      "I have a question": [
-        "Kérdésem van"
       ],
       "Image could not be loaded with tracker protection.": [
         "A képet nem lehetett betölteni a nyomkövető védelemmel."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Következő hónap"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Előnézet megmutatása"
       ],
-      "Show side panel": [
-        "Oldalsáv megjelenítése"
-      ],
       "Sign in": [
         "Bejelentkezés"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Bejelentés elküldése"
-      ],
-      "Theme": [
-        "Téma"
       ],
       "Toggle Calendar app": [
         "Naptár alkalmazás váltása"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Nem támogatott esemény"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "A CSV fájl az alábbi mezőket tartalmazza. Válassza ki, hogy melyeket szeretné importálni."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Be"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Leírás: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Névjegyek, csoportok és beállítások"
-      ],
-      "Get help": [
-        "Súgó megnyitása"
       ]
     },
     "Hint": {
@@ -3338,9 +3299,6 @@
       ],
       "Current version": [
         "Jelenlegi változat"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
       ],
       "Decrypting files": [
         "Fájlok visszafejtése"
@@ -4376,9 +4334,6 @@
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
       ],
-      "Enable Beta Access": [
-        "\"Béta hozzáférés\" engedélyezése"
-      ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
@@ -4594,9 +4549,6 @@
       ],
       "Street address": [
         "Utca, házszám"
-      ],
-      "Synchronize with system": [
-        "Szinkronizálás a rendszerrel"
       ],
       "System information": [
         "Rendszer információk"
@@ -4824,11 +4776,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Váltás nagyobb csomagra"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Váltás vagy fiók hozzáadása"
       ]
     },
     "new_plans: feature": {
@@ -5324,22 +5271,9 @@
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Feltöltés"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Kezelje névjegyeit és tekintse meg naptárát anélkül, hogy elhagyná az alkalmazást."
-      ],
-      "Try the new side panel": [
-        "Próbálja ki az új oldalsávot"
       ]
     },
     "Signing preference for emails": {
@@ -5770,11 +5704,6 @@
         "vCard mező"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Beállítások"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ó",
@@ -5823,9 +5752,6 @@
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
       ],
-      "(active)": [
-        "(aktív)"
-      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -5850,12 +5776,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
-      ],
-      "Back": [
-        "Vissza"
-      ],
-      "Beta Access": [
-        "Béta hozzáférés"
       ],
       "Billing cycle": [
         "Számlázási ciklus"
@@ -6095,12 +6015,6 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
-      "Open help menu": [
-        "Súgó menü megnyitása"
-      ],
-      "Open settings menu": [
-        "Beállítások menü megnyitása"
-      ],
       "Original size": [
         "Eredeti méret"
       ],
@@ -6160,9 +6074,6 @@
       ],
       "Searching…": [
         "Keresés…"
-      ],
-      "Select a theme": [
-        "Téma kiválasztása"
       ],
       "Select action to take on contact group": [
         "Válassza ki a névjegy csoporton elvégzendő műveletet"
@@ -6345,14 +6256,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
-      "Hide side panel": [
-        "Oldalsáv elrejtése"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
-      ],
-      "Show side panel": [
-        "Oldalsáv megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"
@@ -6365,12 +6270,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"

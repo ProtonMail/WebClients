@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Tazwart n ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
@@ -95,9 +92,6 @@
       "Back": [
         "Ɣer deffir"
       ],
-      "Beta Access": [
-        "Anekcum Biṭa"
-      ],
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
       ],
@@ -170,9 +164,6 @@
       "Compose": [
         "Aru"
       ],
-      "Composer size": [
-        "Teɣzi n umsuddes"
-      ],
       "Confirm": [
         "Sentem"
       ],
@@ -232,9 +223,6 @@
       ],
       "Customize import": [
         "Sagen aktar"
-      ],
-      "Default email application": [
-        "Asnas amezwer n imayl"
       ],
       "Delete": [
         "Kkes"
@@ -397,9 +385,6 @@
       "Go to previous page": [
         "Ddu ɣer usebter yezrin"
       ],
-      "Go to settings": [
-        "Ddu s iɣewwaren"
-      ],
       "Got it": [
         "Gziɣ"
       ],
@@ -423,9 +408,6 @@
       ],
       "Hide messages": [
         "Ffer iznan"
-      ],
-      "I have a question": [
-        "Sɛiɣ asteqsi"
       ],
       "Images will be loaded without a proxy": [
         "Tugniwin ad d-tettwasuli s war apṛuksi"
@@ -476,9 +458,6 @@
       "Italic": [
         "Yekna"
       ],
-      "Keyboard shortcuts": [
-        "Inegzumen n unasiw"
-      ],
       "Label as": [
         "Tabzimt am"
       ],
@@ -505,12 +484,6 @@
       ],
       "Loading${ ellipsis }": [
         "Asali${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n imayl"
       ],
       "Manage folders": [
         "Sefrek ikaramen"
@@ -887,9 +860,6 @@
       "Submit": [
         "Azen"
       ],
-      "Theme": [
-        "Asentel"
-      ],
       "This message contains embedded images.": [
         "Izen-a yegber tugniwin yeddan."
       ],
@@ -971,9 +941,6 @@
       ],
       "Use recovery code": [
         "Seqdec tangalt n tririt"
-      ],
-      "Use “${ label }” setting": [
-        "Seqdec iɣewwaṛen n “${ label }”"
       ],
       "Verify": [
         "Senqed"
@@ -1121,14 +1088,6 @@
       ],
       "Sender verification passed": [
         "Asenqed n umesgal yella-d akken iwata"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, akked ${ DRIVE_APP_NAME } send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
     "Billing cycle option": {
@@ -2573,16 +2532,6 @@
         "Sider kullec"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Yensa"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Yermed"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Aglam: ${ eventDescription }"
@@ -3384,12 +3333,6 @@
     "Header": {
       "Contacts": [
         "Inermisen"
-      ],
-      "Contacts, groups and settings": [
-        "Inermisen, igrawen akked iɣewwaren"
-      ],
-      "Get help": [
-        "Awi tallalt"
       ],
       "Search": [
         "Anadi"
@@ -4256,9 +4199,6 @@
       "Saved at ${ dateString }": [
         "Yettwasekles deg ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Yettwasekles deg ${ dateString }"
-      ],
       "Saving draft…": [
         "Asekles n urewway…"
       ],
@@ -4806,16 +4746,6 @@
         "Inegzumen n yizen"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Yensa"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Yermed"
-      ]
-    },
     "Label": {
       " and ": [
         " akked "
@@ -4913,6 +4843,9 @@
       "Colors": [
         "Initen"
       ],
+      "Composer": [
+        "Amaẓrag"
+      ],
       "Conditions": [
         "Tiwtilin"
       ],
@@ -4934,6 +4867,9 @@
       "Delete": [
         "Kkes"
       ],
+      "Density": [
+        "Taneẓẓi"
+      ],
       "Don't ask again": [
         "Ur d-ssutur ara tikkelt niḍen"
       ],
@@ -4954,9 +4890,6 @@
       ],
       "Emails": [
         "Imaylen"
-      ],
-      "Enable Beta Access": [
-        "Sermed anekcum Biṭa"
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
@@ -5144,15 +5077,6 @@
       "Search in": [
         "Anadi deg"
       ],
-      "Select how your composer opens by default.": [
-        "Fren amek ara yettban umsuddes-inek•inem s lexṣas."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Fren amek ara tettban tebdart n yiznan-inek•inem s lexṣas."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Fren amek ara tettban tnaka n imayl inek•inem s lexṣas."
-      ],
       "Send auto-reply": [
         "Azen tiririt tawurmant"
       ],
@@ -5270,30 +5194,6 @@
       ],
       "To": [
         "Ɣer"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Adday"
-      ],
-      "Normal": [
-        "Amagnu"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Yerked"
-      ],
-      "Compact": [
-        "Ussid"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Tigejdit"
-      ],
-      "Row": [
-        "Izirig"
       ]
     },
     "Label/folder modal": {
@@ -5704,11 +5604,6 @@
         "Sali aswir tura"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Beddel neɣ rnu umiḍan"
-      ]
-    },
     "new_plans: feature": {
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
@@ -5799,11 +5694,6 @@
       ],
       "Merge with calendar": [
         "Smezdi akked uwitay"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } n ${ totalText }"
       ]
     },
     "Participant name": {
@@ -6005,11 +5895,6 @@
       ],
       "Stored with zero-access encryption": [
         "Yettwaḥrez s uwgelhen ilem n unekcum"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
       ]
     },
     "Reply to calendar invitation": {
@@ -6447,11 +6332,6 @@
         "urti vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Iɣewwaren"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Iḍelli"
@@ -6506,14 +6386,8 @@
       "Attachments": [
         "Ticeqqufin"
       ],
-      "Back": [
-        "Ar deffir"
-      ],
       "BCC": [
         "Anɣ. Uff. I"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
       ],
       "Billing cycle": [
         "Twala n ufter"
@@ -6532,9 +6406,6 @@
       ],
       "Clearing data": [
         "Asfaḍ n isefka"
-      ],
-      "Composer mode": [
-        "Askar n umsuddes"
       ],
       "Confirm recipient address?": [
         "Sentem tansa n uɣerwaḍ?"
@@ -6697,12 +6568,6 @@
       "Load remote content": [
         "Sali-d agbur anmeggag"
       ],
-      "Mailbox density": [
-        "Taččart n tnaka n urmas"
-      ],
-      "Mailbox layout": [
-        "Taneɣruft n tnaka n imayl"
-      ],
       "Mark as read": [
         "Creḍ-it yettwaɣra"
       ],
@@ -6768,12 +6633,6 @@
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
-      ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
-      "Open settings menu": [
-        "Ldi umuɣ n yiɣewwaren"
       ],
       "Other information": [
         "Talɣut nniḍen"
@@ -6910,9 +6769,6 @@
       ],
       "Verification error": [
         "Tuccḍa n usenqed"
-      ],
-      "View contacts": [
-        "Wali inermisen"
       ],
       "Warning": [
         "Alɣu"

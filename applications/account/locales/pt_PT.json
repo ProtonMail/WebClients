@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
-      "Attention required": [
-        "Requer atenção"
-      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Contactar o suporte"
       ],
+      "Contact us": [
+        "Contacte-nos"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Copiar"
       ],
-      "Copy email to clipboard": [
-        "Copiar mensagem para a área de transferência"
+      "Copy address": [
+        "Copiar endereço"
       ],
       "Copy link": [
         "Copiar ligação"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Ocultar as funcionalidades do plano"
-      ],
-      "I have a question": [
-        "Tenho uma dúvida"
       ],
       "Import": [
         "Importar"
@@ -1024,16 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Recusar"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } domínio personalizado",
-        "+ ${ domains } domínios personalizados"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } utilizador",
-        "+ ${ users } utilizadores"
       ]
     },
     "Address action": {
@@ -1644,9 +1628,6 @@
       ],
       "purple": [
         "roxo"
-      ],
-      "raisin black": [
-        "passas de uva preta"
       ],
       "reef": [
         "recife"
@@ -4525,9 +4506,6 @@
       "Folders": [
         "Pastas"
       ],
-      "Get help": [
-        "Obter ajuda"
-      ],
       "Key type": [
         "Tipo de chave"
       ],
@@ -4987,9 +4965,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } a sua subscrição será renovada automaticamente em ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
       ],
@@ -5338,9 +5313,6 @@
       "Attention required": [
         "Atenção Requerida"
       ],
-      "Auto-renewal: ": [
-        "Renovação automática: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "A resposta automática está ativa em cada mês entre a hora de início e fim selecionadas."
       ],
@@ -5666,9 +5638,6 @@
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Por escolher ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa, MasterCard e Discover, os 3 dígitos no verso do cartão. Para a American Express, os 4 dígitos na frente do cartão."
@@ -8939,9 +8908,6 @@
       "Keep account": [
         "Conservar a conta"
       ],
-      "Switch or add account": [
-        "Trocar ou adicionar conta"
-      ],
       "Switch plan": [
         "Alterar o plano"
       ],
@@ -9406,9 +9372,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ao criar uma conta ${ BRAND_NAME }, concorda com nossos ${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Ao pagar, concorda com os nossos ${ termsAndConditions }"
       ],
       "Payment details": [
         "Detalhes de pagamento"
@@ -11812,9 +11775,6 @@
       "Automatically sign outgoing messages?": [
         "Assinar automaticamente as mensagens de saída?"
       ],
-      "Back": [
-        "Recuar"
-      ],
       "Backup and export": [
         "Salvaguarda e exportação"
       ],
@@ -12229,9 +12189,6 @@
       "Open actions dropdown": [
         "Abrir lista de acções"
       ],
-      "Open help menu": [
-        "Abrir menu de ajuda"
-      ],
       "Open pagination": [
         "Abrir paginação"
       ],
@@ -12276,9 +12233,6 @@
       ],
       "Phone": [
         "Telefone"
-      ],
-      "Plan summary": [
-        "Resumo do plano"
       ],
       "Preview": [
         "Pré-visualização"
@@ -12539,9 +12493,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "O seu teste gratuito do Mail Plus finaliza em ${ textDate }"
-      ],
-      "Your Plan": [
-        "O seu plano"
       ],
       "Your plan": [
         "O seu plano"
