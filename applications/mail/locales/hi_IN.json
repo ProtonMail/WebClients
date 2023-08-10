@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } के बारे में"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
@@ -112,9 +109,6 @@
       "Back": [
         "पीछे जाएं"
       ],
-      "Beta Access": [
-        "बीटा एक्सेस"
-      ],
       "Blind Carbon Copy": [
         "गुप्त कार्बन कॉपी"
       ],
@@ -199,9 +193,6 @@
       "Compose": [
         "लिखें"
       ],
-      "Composer size": [
-        "कंपोजर आकार"
-      ],
       "Confirm": [
         "पक्का करें"
       ],
@@ -264,9 +255,6 @@
       ],
       "Customize import": [
         "आयात को अनुकूलित करें"
-      ],
-      "Default email application": [
-        "डिफ़ॉल्ट ईमेल आवेदन"
       ],
       "Delete": [
         "मिटाएं"
@@ -438,9 +426,6 @@
       "Go to previous page": [
         "पिछले पन्ने पे जाएं"
       ],
-      "Go to settings": [
-        "सेटिंग में जाएं"
-      ],
       "Go to SimpleLogin": [
         "सरल संप्रवेश पर जाएं"
       ],
@@ -470,9 +455,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email नकलीनाम"
-      ],
-      "I have a question": [
-        "हमारा एक सवाल है"
       ],
       "Images will be loaded without a proxy": [
         "छवियों को प्रॉक्सी के बिना लोड किया जाएगा"
@@ -523,9 +505,6 @@
       "Italic": [
         "तिरछे अक्षर"
       ],
-      "Keyboard shortcuts": [
-        "कीबोर्ड शॉर्टकट्स"
-      ],
       "Label as": [
         "के रूप में लेबल"
       ],
@@ -552,12 +531,6 @@
       ],
       "Loading${ ellipsis }": [
         "लोड हो रहा है ${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "मेलबॉक्स घनत्व"
-      ],
-      "Mailbox layout": [
-        "मेलबॉक्स लेआउट"
       ],
       "Manage folders": [
         "फोल्डर संभाले"
@@ -952,9 +925,6 @@
       "Show preview": [
         "प्रिव्यू दिखाएं"
       ],
-      "Show side panel": [
-        "साइड पैनल दिखाएं"
-      ],
       "Sign in": [
         "साइन इन करें"
       ],
@@ -990,9 +960,6 @@
       ],
       "Submit": [
         "जमा करें"
-      ],
-      "Theme": [
-        "थीम"
       ],
       "This message contains embedded images.": [
         "इस संदेश में एम्बेडेड चित्र हैं |"
@@ -1090,9 +1057,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "दृश्य का आकार बदलने के लिए अपने माउस का प्रयोग करें। यदि आप अपने कीबोर्ड का उपयोग कर रहे हैं, तो आप आकार बदलने के लिए बाएं और दाएं तीर वाली कुंजियों का उपयोग कर सकते हैं।"
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }” सेटिंग इस्तेमाल करें"
       ],
       "Verify": [
         "सत्यापित करें"
@@ -1273,14 +1237,6 @@
       ],
       "Sender verification passed": [
         "भेजनेवाले का सत्यापन सफल"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "बीटा एक्सेस आपको ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } का बीटा संस्करण जनता के बीच जाने से पहले इस्तेमाल करने देता है। इसका मतलब है की आप सबसे पहले नए प्रोडक्ट, नए अपडेट, और नए सुविधाओं का इस्तेमाल कर पाएगे।"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "यदि आप समस्याओं का सामना करते हैं, तो आप कभी भी बीटा एक्सेस को अक्षम कर सकते हैं।"
       ]
     },
     "Billing cycle option": {
@@ -1784,9 +1740,6 @@
       ],
       "purple": [
         "बैगनी"
-      ],
-      "raisin black": [
-        "दाखीय काला"
       ],
       "reef": [
         "सेब"
@@ -2932,16 +2885,6 @@
         "सब डाउनलोड करें"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "बंद"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "चालू"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "विवरण: ${ eventDescription }"
@@ -4046,12 +3989,6 @@
       "Contacts": [
         "संपर्क"
       ],
-      "Contacts, groups and settings": [
-        "संपर्क, समूह और सेटिंग"
-      ],
-      "Get help": [
-        "मदद लें"
-      ],
       "Search": [
         "खोजें"
       ]
@@ -5150,9 +5087,6 @@
       "Saved at ${ dateString }": [
         "${ dateString } पर सहेजा गया"
       ],
-      "Saved on ${ dateString }": [
-        "${ dateString } पर सहेजा गया"
-      ],
       "Saved yesterday": [
         "कल सहेजा गया"
       ],
@@ -5884,16 +5818,6 @@
         "संदेश शॉर्टकट"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "बंद"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "चालू"
-      ]
-    },
     "Label": {
       " and ": [
         " और "
@@ -6006,6 +5930,9 @@
       "Colors": [
         "रंग"
       ],
+      "Composer": [
+        "लिखें"
+      ],
       "Conditions": [
         "शर्ते"
       ],
@@ -6029,6 +5956,9 @@
       ],
       "Delete recovery-related information.": [
         "रिक्वरी से जुड़ी जानकारी मिटाएं।"
+      ],
+      "Density": [
+        "घनत्व"
       ],
       "Don't ask again": [
         "फिर से ना पूछें"
@@ -6062,9 +5992,6 @@
       ],
       "Emails (last month)": [
         "ईमेल (पिछले महीने)"
-      ],
-      "Enable Beta Access": [
-        "बीटा एक्सेस सक्षम करें"
       ],
       "Encrypt emails": [
         "ईमेल एन्क्रिप्ट करें"
@@ -6264,15 +6191,6 @@
       "Search in": [
         "की खोज में"
       ],
-      "Select how your composer opens by default.": [
-        "चुनें कि आपका कंपोजर डिफ़ॉल्ट रूप से कैसे खुलता है।"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "यह चुनें कि संदेशों की आपकी सूची डिफ़ॉल्ट रूप से कैसा दिखती है।"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "चुनें कि आपका मेलबॉक्स डिफ़ॉल्ट रूप से कैसा दिखता है।"
-      ],
       "Send auto-reply": [
         "ऑटो-रिप्लाई भेजें"
       ],
@@ -6390,30 +6308,6 @@
       ],
       "To": [
         "को"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "अधिकतम"
-      ],
-      "Normal": [
-        "साधारण"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "आरामदायक"
-      ],
-      "Compact": [
-        "कॉंपैक्ट"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "स्तंभ"
-      ],
-      "Row": [
-        "पंक्ति"
       ]
     },
     "Label/folder modal": {
@@ -6901,11 +6795,6 @@
         "अभी अपग्रेड करें"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "खाता बदलें अथवा जोड़ें"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
@@ -7052,11 +6941,6 @@
       ],
       "Merge with calendar": [
         "कैलेंडर के साथ मर्ज करें"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ totalText } में से ${ page }"
       ]
     },
     "Participant name": {
@@ -7277,11 +7161,6 @@
         "शून्य-पहुंच एन्क्रिप्शन के साथ संग्रहीत"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "नोट: लागू करें बटन पर क्लिक करने के बाद सेवा पुनः लोड हो जाएगी।"
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } दिन",
@@ -7408,14 +7287,6 @@
       ],
       "Stored with zero-access encryption": [
         "शून्य-पहुंच एन्क्रिप्शन के साथ संग्रहीत"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "बिना अपना ऐप छोड़े अपने संपर्क संभालें और अपना कैलेंडर देखें।"
-      ],
-      "Try the new side panel": [
-        "नया साइड पैनल आज़माएं"
       ]
     },
     "Signature verification warning": {
@@ -7997,11 +7868,6 @@
         "vCard फील्ड"
       ]
     },
-    "Text": {
-      "Settings": [
-        "सेटिंग"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "बीता हुआ कल"
@@ -8081,14 +7947,8 @@
       "Attachments": [
         "अटैचमेंट"
       ],
-      "Back": [
-        "पीछे जाएं"
-      ],
       "BCC": [
         "बीसीसी"
-      ],
-      "Beta Access": [
-        "बीटा एक्सेस"
       ],
       "Billing cycle": [
         "बिलिंग चक्र"
@@ -8113,9 +7973,6 @@
       ],
       "Clearing data": [
         "डेटा साफ़ करना"
-      ],
-      "Composer mode": [
-        "कंपोजर मोड"
       ],
       "Confirm recipient address?": [
         "प्राप्तकर्ता का पता पुष्ट करें?"
@@ -8318,12 +8175,6 @@
       "Load remote content": [
         "दूरस्थ सामग्री लोड करें"
       ],
-      "Mailbox density": [
-        "मेलबॉक्स घनत्व"
-      ],
-      "Mailbox layout": [
-        "मेलबॉक्स लेआउट"
-      ],
       "Mark as read": [
         "पढ़ा गया के रूप मे मार्क करें"
       ],
@@ -8398,12 +8249,6 @@
       ],
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
-      ],
-      "Open help menu": [
-        "सहायता मेनू खोलें"
-      ],
-      "Open settings menu": [
-        "सेटिंग्स मेनू खोलें"
       ],
       "Other information": [
         "अन्य जानकारी"
@@ -8559,9 +8404,6 @@
       "Verification error": [
         "सत्यापन त्रुटि"
       ],
-      "View contacts": [
-        "संपर्क देखें"
-      ],
       "Warning": [
         "चेतावनी"
       ],
@@ -8626,14 +8468,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
-      "Hide side panel": [
-        "साइड पैनल छुपाएं"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
-      ],
-      "Show side panel": [
-        "साइड पैनल दिखाएं"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"
