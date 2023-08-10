@@ -102,6 +102,7 @@ export enum FeatureCode {
     AutoDelete = 'AutoDelete',
     OrgSpamBlockList = 'OrgSpamBlockList',
     ProtonSentinel = 'ProtonSentinel',
+    ProtonSentinelUpsell = 'ProtonSentinelUpsell',
     OrgTwoFactor = 'OrgTwoFactor',
     UnreadFavicon = 'UnreadFavicon',
     PassSignup = 'PassSignup',
