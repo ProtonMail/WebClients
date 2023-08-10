@@ -1,27 +1,36 @@
 import { c } from 'ttag';
 
+import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, PROTON_SENTINEL_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Toggle } from '../../components';
-import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
+import { Toggle, useSettingsLink } from '../../components';
+import { useApi, useConfig, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
-const SentinelSection = () => {
-    const [settings] = useUserSettings();
+interface Props {
+    app: APP_NAMES;
+}
+
+const SentinelSection = ({ app }: Props) => {
+    const { APP_NAME } = useConfig();
+    const goToSettings = useSettingsLink();
+    const [userSettings] = useUserSettings();
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
-    const protonSentinel = settings.HighSecurity.Value;
-    const sentinelEligible =
-        !!settings.HighSecurity.Eligible || settings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+
+    const protonSentinel = userSettings.HighSecurity.Value;
+    const sentinelEligible = isProtonSentinelEligible(userSettings);
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
@@ -33,16 +42,28 @@ const SentinelSection = () => {
         }
         await call();
     };
+
+    const handleUpgrade = () => {
+        const upsellRef = getUpsellRefFromApp({
+            app: APP_NAME,
+            feature: SHARED_UPSELL_PATHS.SENTINEL,
+            component: UPSELL_COMPONENT.BUTTON,
+            fromApp: app,
+        });
+        goToSettings(`/upgrade?ref=${upsellRef}`, undefined, false);
+    };
+
     return (
         <SettingsSectionWide>
+            <SettingsParagraph large={true}>
+                <p className="mt-0">{c('Info')
+                    .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}</p>
+                <p>{c('Info')
+                    .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
+            </SettingsParagraph>
+
             {sentinelEligible ? (
                 <>
-                    <SettingsParagraph large={true}>
-                        <p className="mt-0">{c('Info')
-                            .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}</p>
-                        <p>{c('Info')
-                            .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
-                    </SettingsParagraph>
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label className="text-semibold" htmlFor="high-security-toggle">
@@ -64,7 +85,11 @@ const SentinelSection = () => {
                 </>
             ) : (
                 <SettingsParagraph>
-                    {c('Info').t`Upgrade to a paid account to enable ${PROTON_SENTINEL_NAME}.`}
+                    <PromotionButton
+                        iconName="brand-proton-mail-filled-plus"
+                        iconGradient={false}
+                        onClick={handleUpgrade}
+                    >{c('Action').t`Enable ${PROTON_SENTINEL_NAME}`}</PromotionButton>
                 </SettingsParagraph>
             )}
         </SettingsSectionWide>

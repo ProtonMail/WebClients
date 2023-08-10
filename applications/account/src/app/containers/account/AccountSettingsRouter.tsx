@@ -135,7 +135,7 @@ const AccountSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, security)}>
                 <PrivateMainSettingsArea config={security}>
-                    <SentinelSection />
+                    <SentinelSection app={app} />
                     <SessionsSection />
                     <LogsSection />
                     <PrivacySection />

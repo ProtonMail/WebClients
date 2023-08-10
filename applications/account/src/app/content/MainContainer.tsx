@@ -34,8 +34,8 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
+import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
@@ -114,6 +114,7 @@ const MainContainer = () => {
         FeatureCode.EasySwitch,
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
+        FeatureCode.ProtonSentinelUpsell,
         FeatureCode.OrgTwoFactor,
     ]);
 
@@ -123,6 +124,7 @@ const MainContainer = () => {
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
+    const isProtonSentinelUpsellEnabled = getFeature(FeatureCode.ProtonSentinelUpsell).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -145,10 +147,9 @@ const MainContainer = () => {
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
         isOrgSpamBlockListEnabled,
-        isProtonSentinelEligible:
-            !!userSettings.HighSecurity.Eligible ||
-            userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
+        isProtonSentinelEligible: isProtonSentinelEligible(userSettings),
         isProtonSentinelFeatureEnabled,
+        isProtonSentinelUpsellEnabled,
         isOrgTwoFactorEnabled,
     });
 

@@ -595,6 +595,7 @@ export enum SHARED_UPSELL_PATHS {
     STORAGE = 'storage',
     STORAGE_PERCENTAGE = 'storage-percentage',
     ORGANIZATION_CAPACITY = 'organization-capacity',
+    SENTINEL = 'sentinel',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {
