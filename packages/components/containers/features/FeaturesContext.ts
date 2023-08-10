@@ -113,6 +113,7 @@ export enum FeatureCode {
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
+    WebMailPageSizeSetting = 'WebMailPageSizeSetting',
 }
 
 export interface FeaturesContextValue {

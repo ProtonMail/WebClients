@@ -1,10 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { MailPageSize } from '@proton/shared/lib/interfaces';
+
 import { pageCount } from '../helpers/paging';
 
-export const usePaging = (inputPage: number, inputTotal: number | undefined, onPage: (page: number) => void) => {
+export const usePaging = (
+    inputPage: number,
+    inputPageSize: MailPageSize,
+    inputTotal: number | undefined,
+    onPage: (page: number) => void
+) => {
     const getPage = () => inputPage + 1;
-    const getTotal = () => (inputTotal === undefined ? 0 : pageCount(inputTotal));
+    const getTotal = () => (inputTotal === undefined ? 0 : pageCount(inputTotal, inputPageSize));
 
     const [page, setPage] = useState(getPage);
     const [total, setTotal] = useState(getTotal);
@@ -19,6 +26,7 @@ export const usePaging = (inputPage: number, inputTotal: number | undefined, onP
         () => onPage(inputPage === total - 1 ? total - 1 : inputPage + 1),
         [onPage, inputPage, total]
     );
+
     const handlePrevious = useCallback(() => onPage(inputPage === 0 ? 0 : inputPage - 1), [onPage, inputPage]);
     const handlePage = useCallback((newPage: number) => onPage(newPage - 1), [onPage]);
     const handleStart = useCallback(() => onPage(0), [onPage]);
@@ -31,6 +39,7 @@ export const usePaging = (inputPage: number, inputTotal: number | undefined, onP
         onStart: handleStart,
         onEnd: handleEnd,
         page,
+        pageSize: inputPageSize,
         total,
     };
 };

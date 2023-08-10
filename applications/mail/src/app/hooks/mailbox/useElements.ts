@@ -4,6 +4,7 @@ import { useSelector, useStore } from 'react-redux';
 import { useCache, useConversationCounts, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { MailPageSize } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
@@ -12,7 +13,13 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import { conversationByID } from '../../logic/conversations/conversationsSelectors';
-import { load as loadAction, removeExpired, reset, updatePage } from '../../logic/elements/elementsActions';
+import {
+    load as loadAction,
+    removeExpired,
+    reset,
+    updatePage,
+    updatePageSize,
+} from '../../logic/elements/elementsActions';
 import {
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
@@ -43,6 +50,7 @@ interface Options {
     conversationMode: boolean;
     labelID: string;
     page: number;
+    pageSize: MailPageSize;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
@@ -62,7 +70,16 @@ interface UseElements {
     (options: Options): ReturnValue;
 }
 
-export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter, onPage }) => {
+export const useElements: UseElements = ({
+    conversationMode,
+    labelID,
+    search,
+    page,
+    pageSize,
+    sort,
+    filter,
+    onPage,
+}) => {
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
 
@@ -121,12 +138,29 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
         if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
-            void dispatch(loadAction({ abortController: abortControllerRef.current, conversationMode, page, params }));
+            void dispatch(
+                loadAction({
+                    abortController: abortControllerRef.current,
+                    page,
+                    pageSize,
+                    params,
+                })
+            );
         }
+
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
     }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search]);
+
+    useEffect(() => {
+        dispatch(updatePageSize(pageSize));
+
+        /**
+         * Get back to first page on page size change
+         */
+        onPage(0);
+    }, [pageSize]);
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
@@ -135,7 +169,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
 
         if (!partialESSearch && (expectingEmpty || loadedEmpty)) {
-            const count = dynamicTotal ? pageCount(dynamicTotal) : 0;
+            const count = dynamicTotal ? pageCount(dynamicTotal, pageSize) : 0;
             if (count === 0) {
                 onPage(0);
             } else if (page !== count - 1) {
