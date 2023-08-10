@@ -4,7 +4,6 @@ import { fromUnixTime, isThisYear, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Loader } from '@proton/components/components';
-import { PrivateMainArea } from '@proton/components/containers';
 import { useLoading } from '@proton/hooks/index';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -17,6 +16,7 @@ import { PhotosEmptyView } from './PhotosEmptyView';
 import { PhotosGrid } from './PhotosGrid';
 import type { PhotoGridItem } from './PhotosGrid';
 import { PhotosToolbar } from './toolbar';
+import ToolbarRow from '../ToolbarRow/ToolbarRow';
 
 const dateToCategory = (timestamp: number): string => {
     const date = fromUnixTime(timestamp);
@@ -101,15 +101,12 @@ export const PhotosView: FC<void> = () => {
             linkId={linkId}
             className="flex flex-column flex-nowrap flex-item-fluid"
         >
-            <PhotosToolbar shareId={shareId} linkId={linkId} />
-            <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p-4 text-strong border-bottom section--header">{c('Title').t`Photos`}</div>
-                {isEmpty && !photosLoading ? (
-                    <PhotosEmptyView />
-                ) : (
-                    <PhotosGrid data={photos} getPhotoLink={getPhotoLink} />
-                )}
-            </PrivateMainArea>
+            <ToolbarRow
+                titleArea={<span className="text-strong pl-1">{c('Title').t`Photos`}</span>}
+                toolbar={<PhotosToolbar shareId={shareId} linkId={linkId} />}
+            />
+
+            {isEmpty && !photosLoading ? <PhotosEmptyView /> : <PhotosGrid data={photos} getPhotoLink={getPhotoLink} />}
         </UploadDragDrop>
     );
 };
