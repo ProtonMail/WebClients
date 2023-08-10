@@ -13,7 +13,6 @@ import { TableCell, TableRow } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import ReportsTableCell from '../ReportsTableCell';
-import { getActiveImporterProgress } from './ImporterRow.helpers';
 import ImporterRowActions from './ImporterRowActions';
 import ImporterRowStatus from './ImporterRowStatus';
 
@@ -27,19 +26,13 @@ const ImporterRow = ({ activeImporterId }: Props) => {
 
     const { product, importState, startDate, errorCode } = activeImporter;
     const { account } = importer;
-    const processedState = getActiveImporterProgress(activeImporter);
 
     return (
         <TableRow>
             <ReportsTableCell product={product} title={account} />
             <TableCell>
                 <div>
-                    <ImporterRowStatus
-                        processed={processedState.processed}
-                        total={processedState.total}
-                        state={importState}
-                        errorCode={errorCode}
-                    />
+                    <ImporterRowStatus state={importState} errorCode={errorCode} />
                 </div>
             </TableCell>
             <TableCell>
