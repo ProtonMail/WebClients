@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import LocationFieldDropdown from './LocationFieldDropdown';
@@ -12,13 +12,15 @@ interface Props {
     onChange: (nextValue: string) => void;
 }
 
-const { INBOX, ALL_MAIL, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
-const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, INBOX, DRAFTS, SENT, ALL_SENT, ALL_DRAFTS];
+const { INBOX, ALL_MAIL, ALMOST_ALL_MAIL, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, INBOX, DRAFTS, SENT, ALL_SENT, ALL_DRAFTS];
 
 const LocationField = ({ value, onChange }: Props) => {
-    const { all: options } = useLocationFieldOptions();
-    const firstOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));
-    const { findItemByValue } = useLocationFieldOptions();
+    const [mailSettings] = useMailSettings();
+    const { all: options, findItemByValue } = useLocationFieldOptions();
+
+    const mainOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));
+    const { AlmostAllMail = 0 } = mailSettings || {};
 
     const isCustomValue =
         value !== undefined && LOCATION_FIELD_MAIN_OPTIONS.every((optionValue) => optionValue !== value);
@@ -29,7 +31,7 @@ const LocationField = ({ value, onChange }: Props) => {
         <>
             <span className="block text-semibold mb-2">{c('Label').t`Search in`}</span>
             <div className="flex flex-wrap flex-align-items-start mb-2 gap-2">
-                {firstOptions.map((option) => (
+                {mainOptions.map((option) => (
                     <Button
                         key={option.value}
                         data-testid={`location-${option.value}`}
@@ -47,11 +49,13 @@ const LocationField = ({ value, onChange }: Props) => {
                         {option.text}
                     </Button>
                 ))}
+
                 <LocationFieldDropdown onChange={onChange} value={value} />
+
                 {showCustomValue ? (
                     <Button
                         className="flex flex-nowrap flex-align-items-center"
-                        onClick={() => onChange(ALL_MAIL)}
+                        onClick={() => onChange(AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL)}
                         color="norm"
                         shape="solid"
                         size="small"

@@ -10,6 +10,10 @@ import { FeatureCode } from '../containers/features/FeaturesContext';
 import useFeature from './useFeature';
 
 /**
+ * This hook is used to leverage from our FeatureFlag system in order to display only once the spotlight to the user.
+ * When/if the spotlight is getting displayed, `onDisplayed` callback should be called in order to turn the feature flag off.
+ * Obviously, an additionnal FF should used rather than the highlighted feature's one itself
+ *
  * @dev Pass releaseDates if you want to hide the spotlight for users created after the release date
  * @dev Pass expiration if you want to stop showing the spotlight after a certain date
  */
