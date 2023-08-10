@@ -13,7 +13,7 @@ export enum DropdownSizeUnit {
 
 export type Unit = `${number}${UnitSuffix}`;
 
-export interface DropdownSize {
+export interface  DropdownSize {
     width?: Exclude<DropdownSizeUnit, DropdownSizeUnit.Viewport> | Unit;
     height?: Exclude<DropdownSizeUnit, DropdownSizeUnit.Viewport | DropdownSizeUnit.Anchor> | Unit;
     maxWidth?: DropdownSizeUnit.Viewport | Unit;

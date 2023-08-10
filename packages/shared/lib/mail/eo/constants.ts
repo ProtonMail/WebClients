@@ -1,5 +1,5 @@
 import { IMAGE_PROXY_FLAGS, MIME_TYPES, SHOW_IMAGES } from '../../constants';
-import { Address, MailSettings, UserSettings } from '../../interfaces';
+import { Address, MailPageSize, MailSettings, UserSettings } from '../../interfaces';
 
 export const eoDefaultUserSettings = {
     Referral: undefined,
@@ -29,6 +29,7 @@ export const eoDefaultMailSettings: MailSettings = {
     HideRemoteImages: SHOW_IMAGES.HIDE,
     HideEmbeddedImages: SHOW_IMAGES.HIDE,
     ShowMoved: 0,
+    PageSize: MailPageSize.FIFTY,
     ViewMode: 0,
     ViewLayout: 0,
     SwipeLeft: 3,
