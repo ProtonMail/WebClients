@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Terug naar Startpagina"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
       ],
       "Cancel": [
         "Annuleren"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Ga verder met Google"
+      ],
+      "Copy address": [
+        "Adres kopiëren"
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Ga naar bovenliggende"
       ],
-      "Go to settings": [
-        "Ga naar instellingen"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Labels verbergen"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Volgende maand"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Voorbeeld tonen"
       ],
-      "Show side panel": [
-        "Toon zijpaneel"
-      ],
       "Sign in": [
         "Inloggen"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Rapport indienen"
-      ],
-      "Theme": [
-        "Thema"
       ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "We hebben de volgende velden gedetecteerd in het CSV-bestand dat u heeft geüpload. Controleer de velden die u wilt importeren."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Uit"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aan"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Omschrijving: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Contacten, groepen en instellingen"
-      ],
-      "Get help": [
-        "Krijg hulp"
       ]
     },
     "Hint": {
@@ -3224,6 +3185,9 @@
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Weet u zeker dat u uw import wilt verwijderen?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
       ],
@@ -3341,9 +3305,6 @@
       ],
       "Current version": [
         "Huidige versie"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
@@ -4382,9 +4343,6 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
-      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -4600,9 +4558,6 @@
       ],
       "Street address": [
         "Adres"
-      ],
-      "Synchronize with system": [
-        "Synchroniseren met systeem"
       ],
       "System information": [
         "Systeeminformatie"
@@ -4836,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Upgrade nu"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Account toevoegen of wisselen"
       ]
     },
     "new_plans: feature": {
@@ -5336,22 +5286,9 @@
         "Officiële e-mail van ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Uploaden"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Beheer uw contacten en bekijk uw agenda zonder uw app te verlaten."
-      ],
-      "Try the new side panel": [
-        "Probeer het nieuwe zijpaneel uit"
       ]
     },
     "Signing preference for emails": {
@@ -5802,11 +5739,6 @@
         "vCard-veld"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Instellingen"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } u",
@@ -5855,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } upload mislukt",
         "${ numberOfFailedTransfer.total } uploads mislukt"
       ],
-      "(active)": [
-        "(actief)"
-      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -5882,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
-      ],
-      "Back": [
-        "Terug"
-      ],
-      "Beta Access": [
-        "Bèta toegang"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -6127,12 +6050,6 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
-      "Open settings menu": [
-        "Open instellingenmenu"
-      ],
       "Original size": [
         "Originele grootte"
       ],
@@ -6192,9 +6109,6 @@
       ],
       "Searching…": [
         "Zoeken…"
-      ],
-      "Select a theme": [
-        "Selecteer een thema"
       ],
       "Select action to take on contact group": [
         "Selecteer actie voor de contactgroep"
@@ -6377,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
-      "Hide side panel": [
-        "Verberg zijpaneel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
-      ],
-      "Show side panel": [
-        "Toon zijpaneel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -6397,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Het gekozen thema zal actief zijn zodra uw systeem op \"donkere modus\" is ingesteld."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"

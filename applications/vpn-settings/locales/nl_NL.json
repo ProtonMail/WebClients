@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } inleiding"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
-      ],
-      "Activate recovery": [
-        "Herstel activeren"
       ],
       "Add credit / debit card": [
         "Krediet / debietkaart toevoegen"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
-      ],
-      "Attention required": [
-        "Aandacht vereist"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Neem contact op met ondersteuning"
       ],
+      "Contact us": [
+        "Contacteer ons"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Kopieer"
       ],
-      "Copy email to clipboard": [
-        "E-mailadres kopiëren naar klembord"
+      "Copy address": [
+        "Adres kopiëren"
       ],
       "Create": [
         "Aanmaken"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Got it": [
+        "Begrepen"
+      ],
       "Hide": [
         "Verbergen"
       ],
       "Hide plan features": [
         "Verberg abonnementsfuncties"
-      ],
-      "I have a question": [
-        "Ik heb een vraag"
       ],
       "Increase": [
         "Verhogen"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Nieuw wachtwoord instellen"
       ],
-      "Set recovery phrase": [
-        "Herstelzin instellen"
-      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Ontgrendel"
-      ],
-      "Unlock data": [
-        "Ontgrendel gegevens"
-      ],
-      "Update recovery file": [
-        "Herstelbestand bijwerken"
-      ],
-      "Update recovery phrase": [
-        "Herstelzin bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
@@ -420,20 +402,6 @@
       ],
       "Reactivate": [
         "Opnieuw activeren"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } eigen domein",
-        "+ ${ domains } eigen domeinen"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-adres",
-        "+ ${ ips } IP-adressen"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } gebruiker",
-        "+ ${ users } gebruikers"
       ]
     },
     "Alter": {
@@ -2052,9 +2020,6 @@
       "Create your account": [
         "Maak uw account aan"
       ],
-      "Get help": [
-        "Krijg hulp"
-      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
       ]
@@ -2073,9 +2038,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
@@ -2178,9 +2140,6 @@
       ],
       "Attention required": [
         "Aandacht vereist"
-      ],
-      "Auto-renewal: ": [
-        "Automatische verlenging: "
       ],
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
@@ -2320,8 +2279,8 @@
       "expires ${ expirationDate }": [
         "verloopt op ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Voor het kiezen van ${ product }"
+      "for choosing ${ product }": [
+        "voor het kiezen van ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
@@ -3516,9 +3475,6 @@
       "Keep account": [
         "Account behouden"
       ],
-      "Switch or add account": [
-        "Account toevoegen of wisselen"
-      ],
       "Switch plan": [
         "Van abonnement wisselen"
       ]
@@ -3922,9 +3878,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Door te betalen gaat u akkoord met onze ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "algemene voorwaarden"
       ]
@@ -5031,9 +4984,6 @@
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
       ],
-      "Back": [
-        "Terug"
-      ],
       "Billing cycle": [
         "Factuurperiode"
       ],
@@ -5078,9 +5028,6 @@
       ],
       "Customize your plan": [
         "Abonnement aanpassen"
-      ],
-      "Dashboard": [
-        "Dashboard"
       ],
       "Date": [
         "Datum"
@@ -5172,9 +5119,6 @@
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
       ],
-      "Open help menu": [
-        "Open helpmenu"
-      ],
       "Open pagination": [
         "Paginering openen"
       ],
@@ -5199,17 +5143,11 @@
       "Payment verification": [
         "Betalingsverificatie"
       ],
-      "Payments": [
-        "Betalingen"
-      ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
       "Phone": [
         "Telefoon"
-      ],
-      "Plan summary": [
-        "Samenvatting abonnement"
       ],
       "Plans": [
         "Abonnementen"
@@ -5271,6 +5209,9 @@
       "Status": [
         "Status"
       ],
+      "Subscription": [
+        "Abonnement"
+      ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"
       ],
@@ -5291,6 +5232,9 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Upgrade uw netwerkbescherming met toegewijde servers"
       ],
       "Verification failed": [
         "Verificatie mislukt"
@@ -5315,9 +5259,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uw Mail Plus proefversie eindigt op ${ textDate }"
-      ],
-      "Your Plan": [
-        "Uw abonnement"
       ],
       "Your plan": [
         "Uw abonnement"

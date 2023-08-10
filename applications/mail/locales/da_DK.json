@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Tilbage"
       ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Skriv"
       ],
-      "Composer size": [
-        "Skrivevinduestørrelse"
-      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Tilpas import"
-      ],
-      "Default email application": [
-        "Standardprogram til mails"
       ],
       "Delete": [
         "Slet"
@@ -450,9 +438,6 @@
       "Go to previous page": [
         "Gå til forrige side"
       ],
-      "Go to settings": [
-        "Gå til indstillinger"
-      ],
       "Go to SimpleLogin": [
         "Gå til SimpleLogin"
       ],
@@ -482,9 +467,6 @@
       ],
       "hide-my-email aliases": [
         "Hide-my-email-aliasser"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -541,9 +523,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
-      ],
       "Label as": [
         "Anvend etiketten"
       ],
@@ -570,12 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Indlæser${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Postkasse-tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse-layout"
       ],
       "Manage folders": [
         "Administrer mapper"
@@ -973,9 +946,6 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
-      "Show side panel": [
-        "Vis sidepanel"
-      ],
       "Sign in": [
         "Log ind"
       ],
@@ -1011,9 +981,6 @@
       ],
       "Submit": [
         "Indsend"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "This message contains embedded images.": [
         "Denne besked indeholder indlejrede billeder."
@@ -1114,9 +1081,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Brug din mus til at ændre på størrelsen af visningen. Hvis du bruger dit tastatur, kan du bruge venstre og højre piletast til at ændre størrelsen."
-      ],
-      "Use “${ label }” setting": [
-        "Brug “${ label }” indstilling"
       ],
       "Verify": [
         "Bekræft"
@@ -1300,14 +1264,6 @@
       ],
       "Sender verification passed": [
         "Afsenderbekræftelse bestået"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
     "Billing cycle option": {
@@ -1811,9 +1767,6 @@
       ],
       "purple": [
         "lilla"
-      ],
-      "raisin black": [
-        "rosin sort"
       ],
       "reef": [
         "rev"
@@ -2984,16 +2937,6 @@
     "Download attachments": {
       "Download all": [
         "Download alle"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Til"
       ]
     },
     "Email body for description (description part)": {
@@ -4186,9 +4129,6 @@
       "For your eyes only": [
         "Kun for dine øjne"
       ],
-      "Get free storage": [
-        "Få gratis lagerplads"
-      ],
       "Get mobile app": [
         "Hent mobilapp"
       ],
@@ -4296,12 +4236,6 @@
     "Header": {
       "Contacts": [
         "Kontakter"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakter, grupper og indstillinger"
-      ],
-      "Get help": [
-        "Få hjælp"
       ],
       "Search": [
         "Søg"
@@ -5472,9 +5406,6 @@
       "Saved at ${ dateString }": [
         "Gemt ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Gemt ${ dateString }"
-      ],
       "Saved yesterday": [
         "Gemt i går"
       ],
@@ -6261,16 +6192,6 @@
         "Beskedgenveje"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "Til"
-      ]
-    },
     "Label": {
       " and ": [
         " og "
@@ -6386,6 +6307,9 @@
       "Colors": [
         "Farver"
       ],
+      "Composer": [
+        "Skrivevindue"
+      ],
       "Conditions": [
         "Betingelser"
       ],
@@ -6409,6 +6333,9 @@
       ],
       "Delete recovery-related information.": [
         "Slet gendannelsesrelaterede oplysninger."
+      ],
+      "Density": [
+        "Tæthed"
       ],
       "Don't ask again": [
         "Spørg ikke igen"
@@ -6442,9 +6369,6 @@
       ],
       "Emails (last month)": [
         "E-mails (seneste måned)"
-      ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -6650,15 +6574,6 @@
       "Search in": [
         "Søg i"
       ],
-      "Select how your composer opens by default.": [
-        "Vælg hvordan dit skrivevindue åbner som standard."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Vælg hvordan din liste over beskeder ser ud som standard."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Vælg hvordan din postkasse ser ud som standard."
-      ],
       "Send auto-reply": [
         "Send auto-svar"
       ],
@@ -6784,30 +6699,6 @@
         "Til"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maksimeret"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolonne"
-      ],
-      "Row": [
-        "Række"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Opret mappe"
@@ -6852,6 +6743,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows app"
+      ],
       "All mail": [
         "Alle e-mails"
       ],
@@ -6950,6 +6844,9 @@
       ],
       "Scheduled": [
         "Planlagt"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synkroniser filer og mapper problemfrit mellem din computer og ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Sendt"
@@ -7296,11 +7193,6 @@
         "Opgradér nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Skift eller tilføj konto"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
@@ -7493,11 +7385,6 @@
       ],
       "Merge with calendar": [
         "Flet med kalender"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } af ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7721,11 +7608,6 @@
         "Lagret med nuladgangskryptering"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } d",
@@ -7857,14 +7739,6 @@
       ],
       "Stored with zero-access encryption": [
         "Lagret med nuladgangskryptering"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Administrer dine kontakter og se din kalender uden at forlade appen."
-      ],
-      "Try the new side panel": [
-        "Prøv det nye sidepanel"
       ]
     },
     "Signature verification warning": {
@@ -8574,11 +8448,6 @@
         "vCard-felt"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Indstillinger"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "I går"
@@ -8658,14 +8527,8 @@
       "Attachments": [
         "Vedhæftninger"
       ],
-      "Back": [
-        "Tilbage"
-      ],
       "BCC": [
         "Bcc"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -8693,9 +8556,6 @@
       ],
       "Clearing data": [
         "Rydder data"
-      ],
-      "Composer mode": [
-        "Skrivetilstand"
       ],
       "Confirm recipient address?": [
         "Bekræft modtageradresse?"
@@ -8901,12 +8761,6 @@
       "Load remote content": [
         "Indlæs eksternt indhold"
       ],
-      "Mailbox density": [
-        "Postkasse-tæthed"
-      ],
-      "Mailbox layout": [
-        "Postkasse-layout"
-      ],
       "Mark as read": [
         "Markér som læst"
       ],
@@ -8990,12 +8844,6 @@
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
-      ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
       ],
       "Other information": [
         "Anden information"
@@ -9157,9 +9005,6 @@
       "Verification error": [
         "Bekræftelsesfejl"
       ],
-      "View contacts": [
-        "Vis kontakter"
-      ],
       "Warning": [
         "Advarsel"
       ],
@@ -9231,14 +9076,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
-      "Hide side panel": [
-        "Skjul sidepanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
-      ],
-      "Show side panel": [
-        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"

@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME }in esittely"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Takaisin aloitussivulle"
-      ],
-      "Beta Access": [
-        "Beta-käyttö"
       ],
       "Cancel": [
         "Peruuta"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Jatka Googlella"
+      ],
+      "Copy address": [
+        "Kopioi osoite"
       ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Siirry yläkansioon"
       ],
-      "Go to settings": [
-        "Siirry asetuksiin"
-      ],
       "Got it": [
         "Selvä"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Piilota tunnisteet"
-      ],
-      "I have a question": [
-        "Minulla on kysyttävää"
       ],
       "Image could not be loaded with tracker protection.": [
         "Kuvaa ei voitu ladata seurantasuojauksen vuoksi."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Seuraava kuukausi"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Näytä esikatselu"
       ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
-      ],
       "Sign in": [
         "Kirjaudu sisään"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Lähetä ilmoitus"
-      ],
-      "Theme": [
-        "Teema"
       ],
       "Toggle Calendar app": [
         "Kalenteri-sovellus päälle/pois"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Tapahtumaa ei tueta"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-käyttö mahdollistaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n beta-versioiden käytön ennen lopullisten versioiden julkaisua. Tällä pääset siis kokeilemaan uusia tuotteita, päivityksiä ja ominaisuuksia ensimmäisten joukossa."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Jos havaitset ongelmia, voit aina poistaa beta-version käytöstä."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Ei käytössä"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Käytössä"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Kuvaus: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Yhteystiedot, ryhmät ja asetukset"
-      ],
-      "Get help": [
-        "Hanki apua"
       ]
     },
     "Hint": {
@@ -3224,6 +3185,9 @@
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Haluatko varmasti hylätä tuontisi?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Haluatko varmasti tyhjentää roskakorin ja poistaa kaikki kohteet pysyvästi?"
       ],
@@ -3341,9 +3305,6 @@
       ],
       "Current version": [
         "Nykyinen versio"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
       "Decrypting files": [
         "Puretaan tiedostojen salausta"
@@ -4382,9 +4343,6 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
-      "Enable Beta Access": [
-        "Ota Beta-versio käyttöön"
-      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -4600,9 +4558,6 @@
       ],
       "Street address": [
         "Katuosoite"
-      ],
-      "Synchronize with system": [
-        "Seuraa järjestelmää"
       ],
       "System information": [
         "Järjestelmätiedot"
@@ -4836,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Päivitä nyt"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Vaihda tai lisää tili"
       ]
     },
     "new_plans: feature": {
@@ -5336,22 +5286,9 @@
         "Virallinen viesti ${ BRAND_NAME }ilta"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Huomioi: palvelu latautuu uudelleen kun painat Käytä."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Lataa"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hallitse yhteystietojasi ja tarkastele kalenteriasi poistumatta sovelluksesta."
-      ],
-      "Try the new side panel": [
-        "Kokeile uutta sivupaneelia"
       ]
     },
     "Signing preference for emails": {
@@ -5802,11 +5739,6 @@
         "vCard-kenttä"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Asetukset"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } t",
@@ -5855,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } tallennus epäonnistui",
         "${ numberOfFailedTransfer.total } tallennusta epäonnistui"
       ],
-      "(active)": [
-        "(käytössä)"
-      ],
       "Account suspended": [
         "Tili on jäädytetty"
       ],
@@ -5882,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
-      ],
-      "Back": [
-        "Takaisin"
-      ],
-      "Beta Access": [
-        "Beta-käyttö"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -6127,12 +6050,6 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
-      "Open help menu": [
-        "Avaa tukivalikko"
-      ],
-      "Open settings menu": [
-        "Avaa asetusvalikko"
-      ],
       "Original size": [
         "Alkuperäinen koko"
       ],
@@ -6192,9 +6109,6 @@
       ],
       "Searching…": [
         "Etsitään…"
-      ],
-      "Select a theme": [
-        "Valitse teema"
       ],
       "Select action to take on contact group": [
         "Valitse yhteystietoryhmään kohdistettava toiminto"
@@ -6377,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
-      "Hide side panel": [
-        "Piilota sivupaneeli"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
-      ],
-      "Show side panel": [
-        "Näytä sivupaneeli"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
@@ -6397,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Tuonti alkaa viimeisimmistä viesteistä."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Valittu teema aktivoidaan järjestelmän ollessa \"tummassa tilassa\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"

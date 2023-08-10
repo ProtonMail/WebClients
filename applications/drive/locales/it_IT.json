@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introduzione a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Torna alla pagina iniziale"
-      ],
-      "Beta Access": [
-        "Accesso Beta"
       ],
       "Cancel": [
         "Annulla"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Continua con Google"
+      ],
+      "Copy address": [
+        "Copia indirizzo"
       ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
@@ -318,14 +315,14 @@
       "Go to parent": [
         "Vai al principale"
       ],
-      "Go to settings": [
-        "Vai alle impostazioni"
-      ],
       "Got it": [
         "Capito"
       ],
       "Grid layout": [
         "Layout griglia"
+      ],
+      "Help": [
+        "Aiuto"
       ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
@@ -335,9 +332,6 @@
       ],
       "Hide labels": [
         "Nascondi etichette"
-      ],
-      "I have a question": [
-        "Ho una domanda"
       ],
       "Image could not be loaded with tracker protection.": [
         "Non è possibile caricare l'immagine con la protezione da tracciamento attiva."
@@ -425,9 +419,6 @@
       ],
       "Next month": [
         "Mese successivo"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Apri navigazione"
@@ -567,6 +558,9 @@
       "Set recovery phrase": [
         "Imposta frase di recupero"
       ],
+      "Settings": [
+        "Impostazioni"
+      ],
       "Share file": [
         "Condividi file"
       ],
@@ -590,9 +584,6 @@
       ],
       "Show preview": [
         "Mostra anteprima"
-      ],
-      "Show side panel": [
-        "Mostra pannello laterale"
       ],
       "Sign in": [
         "Accedi"
@@ -633,14 +624,17 @@
       "Submit report": [
         "Invia segnalazione"
       ],
-      "Theme": [
-        "Tema"
+      "Switch or add account": [
+        "Cambia o aggiungi account"
       ],
       "Toggle Calendar app": [
         "Pulsante app Calendario"
       ],
       "Toggle Contact app": [
         "Pulsante app Contatti"
+      ],
+      "Toggle settings": [
+        "Cambia le impostazioni"
       ],
       "Trust": [
         "Attendibile"
@@ -775,14 +769,6 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'Accesso Beta ti consente di usare la versione beta di ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME } prima che siano rilasciati al pubblico. Questo significa che puoi essere il primo a provare nuovi prodotti, ottenere nuovi aggiornamenti e usare nuove funzionalità."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1849,6 @@
         "Abbiamo rilevato i seguenti campi nel file CSV che hai caricato. Seleziona quelli che vuoi importare."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Disattivo"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Attivo"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descrizione: ${ eventDescription }"
@@ -2268,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Crittografia non riuscita"
+      ],
+      "Missing FN property": [
+        "Proprietà FN mancante"
       ],
       "vCard versions < 3.0 not supported": [
         "versioni di vCard < 3.0 non supportate"
@@ -2752,9 +2731,6 @@
       ],
       "Contacts, groups and settings": [
         "Contatti, gruppi e impostazioni"
-      ],
-      "Get help": [
-        "Ottieni supporto"
       ]
     },
     "Hint": {
@@ -3225,7 +3201,7 @@
         "Vuoi davvero ignorare le modifiche?"
       ],
       "Are you sure you want to discard your import?": [
-        "Sei sicuro di voler eliminare la tua importazione?"
+        "Vuoi davvero ignorare la tua importazione?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
@@ -3344,9 +3320,6 @@
       ],
       "Current version": [
         "Versione attuale"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
       ],
       "Decrypting files": [
         "Decrittografia dei file"
@@ -3987,6 +3960,9 @@
       "Trash": [
         "Cestino"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
+      ],
       "Try searching by file name, date, or type.": [
         "Prova a cercare per nome file, data o tipo."
       ],
@@ -4273,6 +4249,9 @@
       "Bad": [
         "Non buona"
       ],
+      "Beta Access": [
+        "Accesso beta"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -4384,9 +4363,6 @@
       ],
       "Emails (last month)": [
         "Email (ultimo mese)"
-      ],
-      "Enable Beta Access": [
-        "Abilita Accesso Beta"
       ],
       "Encrypt emails": [
         "Email criptate"
@@ -4604,14 +4580,17 @@
       "Street address": [
         "Indirizzo"
       ],
-      "Synchronize with system": [
-        "Sincronizza con il sistema"
+      "Sync with system": [
+        "Primario"
       ],
       "System information": [
         "Informazioni sul sistema"
       ],
       "Text": [
         "Testo"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Questo eliminerà definitivamente tutti i file nello spazio bloccato."
@@ -4839,11 +4818,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Effettua l'upgrade ora"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Cambia o aggiungi un account"
       ]
     },
     "new_plans: feature": {
@@ -5339,22 +5313,9 @@
         "Email ufficiale da ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Nota: il servizio si ricaricherà dopo aver cliccato il pulsante Applica."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Carica"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestisci i tuoi contatti e visualizza il tuo calendario senza uscire dall'app."
-      ],
-      "Try the new side panel": [
-        "Prova il nuovo pannello laterale"
       ]
     },
     "Signing preference for emails": {
@@ -5598,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Accedi e personalizza facilmente la tua esperienza con l'app."
+      ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
       ],
@@ -5609,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
+      ],
+      "Quick settings": [
+        "Impostazioni rapide"
       ]
     },
     "Storage": {
@@ -5805,11 +5772,6 @@
         "campo vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Impostazioni"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } o",
@@ -5858,9 +5820,6 @@
         "${ numberOfFailedTransfer.total } caricamento fallito",
         "${ numberOfFailedTransfer.total } caricamenti falliti"
       ],
-      "(active)": [
-        "(attivo)"
-      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -5883,14 +5842,11 @@
       "All": [
         "Tutto"
       ],
+      "All settings": [
+        "Tutte le impostazioni"
+      ],
       "Are you sure you want to close the preview?": [
         "Sei sicuro di voler chiudere l'anteprima?"
-      ],
-      "Back": [
-        "Indietro"
-      ],
-      "Beta Access": [
-        "Accesso Beta"
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
@@ -6130,12 +6086,6 @@
       "Open actions dropdown": [
         "Apri menu a discesa delle azioni"
       ],
-      "Open help menu": [
-        "Apri menu di aiuto"
-      ],
-      "Open settings menu": [
-        "Apri menu impostazioni"
-      ],
       "Original size": [
         "Dimensione originale"
       ],
@@ -6195,9 +6145,6 @@
       ],
       "Searching…": [
         "Ricerca…"
-      ],
-      "Select a theme": [
-        "Seleziona un tema"
       ],
       "Select action to take on contact group": [
         "Seleziona l'azione da intraprendere nel gruppo di contatti"
@@ -6380,14 +6327,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
-      "Hide side panel": [
-        "Nascondi pannello laterale"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
-      ],
-      "Show side panel": [
-        "Mostra pannello laterale"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
@@ -6400,12 +6341,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità scura\"."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Il tema selezionato sarà attivo quando il tuo sistema è impostato su \"modalità chiara\"."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
