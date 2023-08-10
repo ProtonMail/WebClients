@@ -93,7 +93,7 @@ const UsersOnboardingChecklist = ({
                 <div
                     data-testid="onboarding-checklist"
                     className={clsx(
-                        'flex flex-column w100',
+                        'flex flex-column w100 flex-item-noshrink',
                         // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
                         isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'flex-justify-center h100',
