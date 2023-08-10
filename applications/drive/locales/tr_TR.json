@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Girişe dön"
-      ],
-      "Beta Access": [
-        "Beta erişimi"
       ],
       "Cancel": [
         "İptal"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Google ile ilerle"
+      ],
+      "Copy address": [
+        "Adresi kopyala"
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Üst klasöre git"
       ],
-      "Go to settings": [
-        "Ayarlara git"
-      ],
       "Got it": [
         "Anladım"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Etiketleri gizle"
-      ],
-      "I have a question": [
-        "Bir sorum var"
       ],
       "Image could not be loaded with tracker protection.": [
         "Görsel izleyici koruması nedeniyle yüklenemedi."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Sonraki ay"
-      ],
-      "OK": [
-        "Tamam"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Ön izlemeyi göster"
       ],
-      "Show side panel": [
-        "Yan panoyu görüntüle"
-      ],
       "Sign in": [
         "Oturum aç"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Şikayeti gönder"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini kapatabilirsiniz."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Yüklediğiniz CSV dosyasında aşağıdaki alanlar algılandı. İçe aktarmak istediklerinizi işaretleyin."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Kapalı"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Açık"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Açıklama: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Kişiler, gruplar ve ayarlar"
-      ],
-      "Get help": [
-        "Yardım alın"
       ]
     },
     "Hint": {
@@ -3224,6 +3185,9 @@
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to discard your import?": [
+        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm ögeleri kalıcı olarak silmek istediğinize emin misiniz?"
       ],
@@ -3341,9 +3305,6 @@
       ],
       "Current version": [
         "Güncel sürüm"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
       "Decrypting files": [
         "Dosyaların şifresi çözülüyor"
@@ -4382,9 +4343,6 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
-      "Enable Beta Access": [
-        "Beta erişimini aç"
-      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -4600,9 +4558,6 @@
       ],
       "Street address": [
         "Sokak adresi"
-      ],
-      "Synchronize with system": [
-        "Sistem ile aynı"
       ],
       "System information": [
         "Sistem bilgileri"
@@ -4836,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Şimdi yükselt"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Hesap değiştirin ya da ekleyin"
       ]
     },
     "new_plans: feature": {
@@ -5336,22 +5286,9 @@
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenir."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Yükle"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Uygulamadan ayrılmadan kişilerinizi yönetebilir ve takviminize bakabilirsiniz."
-      ],
-      "Try the new side panel": [
-        "Yeni yan panoyu deneyin"
       ]
     },
     "Signing preference for emails": {
@@ -5802,11 +5739,6 @@
         "vCard alanı"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Ayarlar"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } s",
@@ -5855,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } yükleme tamamlanamadı",
         "${ numberOfFailedTransfer.total } yükleme tamamlanamadı"
       ],
-      "(active)": [
-        "(etkin)"
-      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -5882,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"
-      ],
-      "Back": [
-        "Geri"
-      ],
-      "Beta Access": [
-        "Beta erişimi"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -6127,12 +6050,6 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
-      "Open settings menu": [
-        "Ayarlar menüsünü aç"
-      ],
       "Original size": [
         "Özgün boyut"
       ],
@@ -6192,9 +6109,6 @@
       ],
       "Searching…": [
         "Aranıyor…"
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
       ],
       "Select action to take on contact group": [
         "Kişi grubunda yapılacak işlemi seçin"
@@ -6377,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
-      "Hide side panel": [
-        "Yan panoyu gizle"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
-      ],
-      "Show side panel": [
-        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -6397,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Sisteminiz \"koyu temaya\" geçtiğinde seçilmiş tema kullanılacak"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"

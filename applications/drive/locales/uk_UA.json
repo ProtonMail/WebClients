@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Знайомство з ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Повернутися на головну сторінку"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Cancel": [
         "Скасувати"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Продовжити з Google"
+      ],
+      "Copy address": [
+        "Копіювати адресу"
       ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
@@ -322,9 +319,6 @@
       "Go to parent": [
         "Перейти до вищого рівня"
       ],
-      "Go to settings": [
-        "Перейти до налаштувань"
-      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -339,9 +333,6 @@
       ],
       "Hide labels": [
         "Сховати мітки"
-      ],
-      "I have a question": [
-        "У мене є питання"
       ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
@@ -429,9 +420,6 @@
       ],
       "Next month": [
         "Наступний місяць"
-      ],
-      "OK": [
-        "Застосувати"
       ],
       "Open navigation": [
         "Відкрити панель навігації"
@@ -595,9 +583,6 @@
       "Show preview": [
         "Показати попередній перегляд"
       ],
-      "Show side panel": [
-        "Показати бічну панель"
-      ],
       "Sign in": [
         "Увійти"
       ],
@@ -636,9 +621,6 @@
       ],
       "Submit report": [
         "Надіслати звіт"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "Toggle Calendar app": [
         "Відкрити календар"
@@ -758,7 +740,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Застосунки ${ BRAND_NAME }"
+        "Програми ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -779,14 +761,6 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "У разі виникнення проблем, ви завжди можете вимкнути бета-доступ."
       ]
     },
     "Billing cycle option": {
@@ -1869,16 +1843,6 @@
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Опис: ${ eventDescription }"
@@ -2782,9 +2746,6 @@
       ],
       "Contacts, groups and settings": [
         "Контакти, групи та налаштування"
-      ],
-      "Get help": [
-        "Отримати допомогу"
       ]
     },
     "Hint": {
@@ -2962,7 +2923,7 @@
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email account requires an app password to export your data.": [
-        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
+        "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
       ],
       "Your email account requires one to export your data.": [
         "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
@@ -3447,9 +3408,6 @@
       ],
       "Current version": [
         "Поточна версія"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Розшифрування файлів"
@@ -4506,9 +4464,6 @@
       "Emails (last month)": [
         "Е-пошта (останній місяць)"
       ],
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
-      ],
       "Encrypt emails": [
         "Шифрувати листи"
       ],
@@ -4725,9 +4680,6 @@
       "Street address": [
         "Вулиця"
       ],
-      "Synchronize with system": [
-        "Синхронізувати з системою"
-      ],
       "System information": [
         "Інформація про систему"
       ],
@@ -4833,7 +4785,7 @@
     },
     "Link": {
       "${ DRIVE_APP_NAME } Windows app": [
-        "Застосунок для Windows ${ DRIVE_APP_NAME }"
+        "Програма ${ DRIVE_APP_NAME } для Windows"
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
@@ -4970,11 +4922,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Покращити"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Перемкнути або додати обліковий запис"
       ]
     },
     "new_plans: feature": {
@@ -5514,22 +5461,9 @@
         "Офіційний лист від ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Вивантажити"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Керуйте контактами та переглядайте календар, не виходячи з застосунку."
-      ],
-      "Try the new side panel": [
-        "Спробуйте нову бічну панель"
       ]
     },
     "Signing preference for emails": {
@@ -5998,11 +5932,6 @@
         "Поле vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } год",
@@ -6071,9 +6000,6 @@
         "${ numberOfFailedTransfer.total } невдалих вивантажень",
         "${ numberOfFailedTransfer.total } невдалих вивантажень"
       ],
-      "(active)": [
-        "(активно)"
-      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -6100,12 +6026,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Beta Access": [
-        "Бета-доступ"
       ],
       "Billing cycle": [
         "Платіжний цикл"
@@ -6353,12 +6273,6 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
-      "Open help menu": [
-        "Відкрити меню довідки"
-      ],
-      "Open settings menu": [
-        "Відкрити меню налаштувань"
-      ],
       "Original size": [
         "Оригінальний розмір"
       ],
@@ -6418,9 +6332,6 @@
       ],
       "Searching…": [
         "Пошук…"
-      ],
-      "Select a theme": [
-        "Вибрати тему"
       ],
       "Select action to take on contact group": [
         "Виберіть дію для групи контактів"
@@ -6603,14 +6514,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
-      "Hide side panel": [
-        "Сховати бічну панель"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
-      ],
-      "Show side panel": [
-        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
@@ -6623,12 +6528,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Вибрана тема буде активною, коли ваша система буде переведена в \"темний режим\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"

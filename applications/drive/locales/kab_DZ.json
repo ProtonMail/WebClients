@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Tazwart n ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
@@ -52,9 +49,6 @@
       ],
       "Back": [
         "Ɣer deffir"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
       ],
       "Cancel": [
         "Sefsex"
@@ -142,6 +136,9 @@
       ],
       "Continue with Google": [
         "Kemmel s Google"
+      ],
+      "Copy address": [
+        "Nɣel tansa"
       ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
@@ -271,9 +268,6 @@
       "Go to parent": [
         "Uɣal ɣer umaraw"
       ],
-      "Go to settings": [
-        "Ddu s iɣewwaren"
-      ],
       "Got it": [
         "Gziɣ"
       ],
@@ -285,9 +279,6 @@
       ],
       "Hide labels": [
         "Ffer tibzimin"
-      ],
-      "I have a question": [
-        "Sɛiɣ asteqsi"
       ],
       "Import": [
         "Kter"
@@ -366,9 +357,6 @@
       ],
       "Next month": [
         "Ayyur d-itteddun"
-      ],
-      "OK": [
-        "Ih"
       ],
       "Open navigation": [
         "Ldi tunigin"
@@ -544,9 +532,6 @@
       "Submit report": [
         "Azen aneqis"
       ],
-      "Theme": [
-        "Asentel"
-      ],
       "Trust": [
         "Amen"
       ],
@@ -657,14 +642,6 @@
       ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, akked ${ DRIVE_APP_NAME } send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
     "Billing cycle option": {
@@ -1670,16 +1647,6 @@
         "Nufa-d urtiyen-agi deg ufaylu CSV i tsuliḍ. Fren wid i tebɣiḍ ad tketreḍ."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Yensa"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Yermed"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Aglam: ${ eventDescription }"
@@ -2222,9 +2189,6 @@
       ],
       "Contacts, groups and settings": [
         "Inermisen, igrawen akked iɣewwaren"
-      ],
-      "Get help": [
-        "Awi tallalt"
       ]
     },
     "Hint": {
@@ -3252,9 +3216,6 @@
       "Emails": [
         "Imaylen"
       ],
-      "Enable Beta Access": [
-        "Sermed anekcum Biṭa"
-      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
@@ -3585,11 +3546,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Sali aswir tura"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Beddel neɣ rnu umiḍan"
       ]
     },
     "new_plans: feature": {
@@ -3942,11 +3898,6 @@
         "Unṣib"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Tamawt: ameẓlu ad yales asali mi ara tessiteḍ ɣef tqeffalt Snes."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Ali"
@@ -4082,11 +4033,6 @@
         "urti vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Iɣewwaren"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } n usrag",
@@ -4137,12 +4083,6 @@
       ],
       "All": [
         "Akk"
-      ],
-      "Back": [
-        "Ar deffir"
-      ],
-      "Beta Access": [
-        "Anekcum Biṭa"
       ],
       "Billing cycle": [
         "Twala n ufter"
@@ -4324,12 +4264,6 @@
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
-      "Open settings menu": [
-        "Ldi umuɣ n yiɣewwaren"
-      ],
       "Other information": [
         "Talɣut nniḍen"
       ],
@@ -4374,9 +4308,6 @@
       ],
       "Searching…": [
         "Anadi…"
-      ],
-      "Select a theme": [
-        "Fren asentel"
       ],
       "Select action to take on contact group": [
         "Fren tigawt ara yettwagen ɣef ugraw n yinermisen"
