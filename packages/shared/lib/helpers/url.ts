@@ -196,12 +196,27 @@ export const getIsDohDomain = (origin: string) => {
     return DOH_DOMAINS.some((dohDomain) => origin.endsWith(dohDomain));
 };
 
+const doesHostnameLookLikeIP = (hostname: string) => {
+    // Quick helper function to tells us if hostname string seems to be IP address or DNS name.
+    // Relies on a fact, that no TLD ever will probably end with a digit. So if last char is
+    // a digit, it's probably an IP.
+    // IPv6 addresses can end with a letter, so there's additional colon check also.
+    // Probably no need ever to use slow & complicated IP regexes here, but feel free to change
+    // whenever we have such util functions available.
+    // Note: only works on hostnames (no port), not origins (can include port and protocol).
+    return /\d$/.test(hostname) || hostname.includes(':');
+};
+
 export const getApiSubdomainUrl = (pathname: string) => {
-    const url = new URL('/', window.location.origin);
-    if (url.hostname === 'localhost' || getIsDohDomain(url.origin)) {
+    const url = new URL('', window.location.origin);
+
+    const usePathPrefix =
+        url.hostname === 'localhost' || getIsDohDomain(url.origin) || doesHostnameLookLikeIP(url.hostname);
+    if (usePathPrefix) {
         url.pathname = `/api${pathname}`;
         return url;
     }
+
     url.hostname = getRelativeApiHostname(url.hostname);
     url.pathname = pathname;
     return url;
