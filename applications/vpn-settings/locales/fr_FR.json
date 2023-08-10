@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Présentation de ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Activer la récupération"
       ],
       "Add credit / debit card": [
         "Ajouter une carte de crédit/débit"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
-      ],
-      "Attention required": [
-        "Attention requise"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Contacter le support"
       ],
+      "Contact us": [
+        "Contactez-nous"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Copier"
       ],
-      "Copy email to clipboard": [
-        "Copier l’adresse e-mail dans le presse-papiers"
+      "Copy address": [
+        "Copier l'adresse"
       ],
       "Create": [
         "Créer"
@@ -170,11 +164,20 @@
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Contactez-nous"
+      ],
+      "Get more": [
+        "En obtenir plus"
+      ],
       "Get the deal": [
         "J'en profite"
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
+      ],
+      "Got it": [
+        "J'ai compris"
       ],
       "Hide": [
         "Masquer"
@@ -182,14 +185,14 @@
       "Hide plan features": [
         "Masquer les fonctionnalités de l'offre"
       ],
-      "I have a question": [
-        "J’ai une question"
-      ],
       "Increase": [
         "Augmenter"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Garder mon abonnement à ${ vpnPlanNameShort }."
+      ],
+      "Let's talk": [
+        "Parlons-nous"
       ],
       "Load more": [
         "Charger plus"
@@ -223,6 +226,9 @@
       ],
       "Pay": [
         "Payer"
+      ],
+      "Pay ${ price }": [
+        "Payer ${ price }"
       ],
       "Pay ${ price } now": [
         "Payer ${ price } maintenant"
@@ -299,9 +305,6 @@
       "Set new password": [
         "Définir un nouveau mot de passe"
       ],
-      "Set recovery phrase": [
-        "Créer une phrase de récupération"
-      ],
       "Share via link": [
         "Partager avec un lien"
       ],
@@ -349,15 +352,6 @@
       ],
       "Unlock": [
         "Déverrouiller"
-      ],
-      "Unlock data": [
-        "Déverrouiller les données"
-      ],
-      "Update recovery file": [
-        "Mettre à jour le fichier de récupération"
-      ],
-      "Update recovery phrase": [
-        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -423,17 +417,26 @@
       ]
     },
     "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } domaine personnalisé",
-        "+ ${ domains } domaines personnalisés"
+      "${ domains } custom domain": [
+        "${ domains } domaine personnalisé",
+        "${ domains } domaines personnalisés"
       ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } adresse IP",
-        "+ ${ ips } adresses IP"
+      "${ ips } server": [
+        "${ ips } serveur",
+        "${ ips } serveurs"
       ],
-      "+ ${ users } user": [
-        "+ ${ users } utilisateur",
-        "+ ${ users } utilisateurs"
+      "${ price } per domain": [
+        "${ price } par domaine"
+      ],
+      "${ price } per IP address": [
+        "${ price } par adresse IP"
+      ],
+      "${ price } per user": [
+        "${ price } par utilisateur"
+      ],
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
       ]
     },
     "Alter": {
@@ -553,6 +556,17 @@
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
         "Total pour ${ n } mois"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "mois"
+      ],
+      "Servers": [
+        "Serveurs"
+      ],
+      "Users": [
+        "Utilisateurs"
       ]
     },
     "Collapsible tooltip": {
@@ -2052,9 +2066,6 @@
       "Create your account": [
         "Créez votre compte"
       ],
-      "Get help": [
-        "Obtenir de l'aide"
-      ],
       "Select your pricing plan": [
         "Sélectionnez votre formule d'abonnement"
       ]
@@ -2073,9 +2084,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
@@ -2167,6 +2175,9 @@
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
+      "Amount due": [
+        "Montant à payer"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Toute méthode d'${ twoFa } sur votre compte sera désactivée."
       ],
@@ -2178,9 +2189,6 @@
       ],
       "Attention required": [
         "Attention requise"
-      ],
-      "Auto-renewal: ": [
-        "Renouvellement automatique : "
       ],
       "Balance from your previous subscription": [
         "Crédit de votre précédent abonnement"
@@ -2247,6 +2255,15 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
+      ],
+      "Dedicated IP addresses ": [
+        "Adresses IP dédiées"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Vous pouvez ajouter des serveurs dédiés avec ds adresses IP dédiées à des passerelles privées pour un contrôle plus précis des accès."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2320,7 +2337,7 @@
       "expires ${ expirationDate }": [
         "expire le ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
+      "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -2452,6 +2469,12 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
+      "Number of dedicated IP addresses in the organization": [
+        "Nombre d'adresses IP dédiées dans l'organisation"
+      ],
+      "Number of IP addresses": [
+        "Nombre d'adresses IP"
+      ],
       "Number of users": [
         "Nombre d’utilisateurs"
       ],
@@ -2469,6 +2492,9 @@
       ],
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
+      ],
+      "Organization size": [
+        "Taille de l’organisation"
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -2539,6 +2565,9 @@
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
       ],
+      "Saving your password": [
+        "Enregistrement de votre mot de passe"
+      ],
       "Scan QR code instead": [
         "Scanner plutôt le code QR"
       ],
@@ -2562,6 +2591,9 @@
       ],
       "Setting up your Drive": [
         "Configuration de votre Drive"
+      ],
+      "Setting up your organization": [
+        "Configuration de votre organisation"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse."
@@ -2633,8 +2665,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
       ],
+      "to ${ product } Business": [
+        "dans ${ product } Business"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Contactez-nous pour annuler votre abonnement."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
+      ],
+      "to continue to ${ product }": [
+        "pour continuer vers ${ product }."
       ],
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }."
@@ -2735,11 +2776,17 @@
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
       ],
+      "We generated a strong password for you": [
+        "Nous vous avons généré un mot de passe fort."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
       ],
       "We need to authenticate your payment with your bank.": [
         "Nous devons authentifier votre paiement auprès de votre banque."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Nous vous recommandons d'avoir au moins 2 serveurs pour assurer la redondance."
       ],
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
@@ -2750,8 +2797,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
+      "We'll get back to you shortly.": [
+        "Nous vous recontacterons prochainement."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
+      ],
+      "Welcome": [
+        "Bienvenue"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation à l'adresse e-mail que vous avez indiquée pour la récupération du compte."
@@ -2885,6 +2938,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3214,6 +3270,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
+      "Please share any feedback to help us improve.": [
+        "Faites-nous part de tout commentaire pouvant nous aider à nous améliorer."
+      ],
       "Postal code": [
         "Code postal"
       ],
@@ -3277,6 +3336,9 @@
       "What is the main reason you are deleting your account?": [
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
       ],
+      "Why would you like to cancel?": [
+        "Pourquoi souhaitez-vous annuler votre abonnement·?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
       ],
@@ -3327,6 +3389,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Ajouter un code cadeau"
+      ],
+      "Add gift code": [
         "Ajouter un code cadeau"
       ],
       "clearing your browser cache": [
@@ -3489,6 +3554,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Conserver mon compte ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: action": {
@@ -3515,9 +3583,6 @@
       ],
       "Keep account": [
         "Conserver le compte"
-      ],
-      "Switch or add account": [
-        "Basculez vers ou ajoutez un compte"
       ],
       "Switch plan": [
         "Changer d'abonnement"
@@ -3602,6 +3667,9 @@
       "1 user": [
         "1 utilisateur"
       ],
+      "24/7 support": [
+        "Support 24h/24 et 7j/7"
+      ],
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
@@ -3610,6 +3678,9 @@
       ],
       "Admin console": [
         "Console d'administration"
+      ],
+      "Advanced network security": [
+        "Réseau sécurisé avancé"
       ],
       "Advanced sharing security": [
         "Sécurité avancée pour le partage"
@@ -3632,6 +3703,9 @@
       "Centralized billing": [
         "Facturation centralisée"
       ],
+      "Centralized settings and billings": [
+        "Paramètres et facturation centralisés"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -3652,6 +3726,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Surveillance des fuites de données (prochainement)"
+      ],
+      "Dedicated servers and IP": [
+        "Serveurs et IP dédiés"
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
@@ -3754,6 +3831,10 @@
       "Send & receive invitations": [
         "Envoyer et recevoir des invitations"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays",
+        "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays"
+      ],
       "Share calendar via link": [
         "Partage de calendrier via un lien"
       ],
@@ -3765,6 +3846,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
+      ],
+      "Start protecting your organization": [
+        "Commencez à protéger votre organisation"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Commencez à vous protéger en ligne en 2 étapes simples"
@@ -3842,6 +3926,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Gestion des accès et de réseau sécurisé avancé grâce à des passerelles dédiées et sécurisées"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
       ],
@@ -3872,6 +3959,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Accédez à internet en toute sécurité depuis n'importe où grâce à une surveillance essentielle du réseau"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
       ],
@@ -3880,6 +3970,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Des solutions personnalisées pour les grandes organisations ayant des besoins spécifiques en matière de sécurité"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solution VPN dédiée qui offre un accès à internet sûr, illimité et haut débit."
@@ -3922,8 +4015,8 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "En effectuant le paiement, vous acceptez nos ${ termsAndConditions }."
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "En cliquant sur «·Payer·», vous acceptez nos ${ termsAndConditions }."
       ],
       "terms and conditions": [
         "conditions générales d'utilisation"
@@ -3995,6 +4088,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Vous pouvez ajouter des serveurs dédiés avec ds adresses IP dédiées à des passerelles privées pour un contrôle plus précis des accès."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
       ],
@@ -4027,6 +4123,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments. Le partage des coffres-forts avec vos amis et votre famille est en cours de développement."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Protégez les ressources de votre entreprise d'un accès public à internet et mettez-les uniquement à disposition par le biais de passerelles privées."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gérez votre abonnement, notamment sa personnalisation. Les moyens de paiement acceptés sont les cartes de crédit, PayPal, les cryptomonnaies et les virements bancaires."
@@ -4138,11 +4237,20 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Support 24h/24 et 7j/7"
+      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Plus de personnalisation avec 15 adresses e-mail et la prise en charge de 3 domaines de messagerie personnalisés"
+      ],
+      "AES 256-bit VPN encryption": [
+        "Chiffrement VPN AES 256 bits"
+      ],
+      "Auto-connect": [
+        "Connexion automatique"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Augmentez votre espace de stockage pour un total de ${ bundleStorage } par utilisateur."
@@ -4150,20 +4258,53 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmentez votre espace de stockage pour un total de ${ bundleStorage }."
       ],
+      "Browser extension": [
+        "Extension de navigateur"
+      ],
+      "Censorship circumvention": [
+        "Contournement de la censure"
+      ],
+      "Central control panel": [
+        "Panneau de contrôle central"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
       ],
       "Create up to ${ n } calendar": [
         "Créez jusqu'à ${ n } calendrier",
         "Créez jusqu'à ${ n } calendriers"
+      ],
+      "Dedicated Account manager": [
+        "Gestionnaire de compte dédié"
+      ],
+      "Dedicated server locations in ${ n }+ countries": [
+        "Emplacements de serveurs dédiés dans plus de ${ n } pays"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Emplacements de serveurs dédiés en Amérique du Nord et en Europe"
+      ],
+      "Multi-platform support": [
+        "Compatibilité avec de nombreuses plateformes"
+      ],
+      "Private gateways": [
+        "Passerelles privées"
+      ],
+      "Require 2FA": [
+        "Nécessite A2F"
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Le code n’est pas valide."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Les identifiants OpenVPN/IKEv2 ont été regénérés."
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Bienvenue dans ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Bienvenue dans ${ VPN_APP_NAME }."
       ]
@@ -4260,6 +4401,9 @@
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
+      "Please select the main reason": [
+        "Veuillez sélectionner la raison principale."
+      ],
       "Select": [
         "Sélectionner"
       ],
@@ -4270,6 +4414,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Ajoutez votre nom (ou celui de votre entreprise) et votre adresse à vos factures"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Sélectionnez le nombre d'adresses IP à inclure dans votre abonnement. Chaque adresse IP supplémentaire coûte ${ price }. Si vous avez besoin de plus de ${ maxIPs } adresses IP, ${ contactHref } notre équipe commerciale."
       ]
     },
     "plan customizer, users": {
@@ -4630,7 +4779,28 @@
         "Votre stockage actuel :"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Facturation tous les 15 mois"
+      ],
+      "Billed every 2 years": [
+        "Facturation tous les 2 ans"
+      ],
+      "Billed every 30 months": [
+        "Facturation tous les 30 mois"
+      ],
+      "Billed monthly": [
+        "Facturation mensuelle"
+      ],
+      "Billed yearly": [
+        "Facturation annuelle"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } serveur dédié",
+        "${ ipAddresses } serveurs dédiés"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexion VPN haut débit",
         "${ maxVpn } connexions VPN haut débit"
@@ -5031,9 +5201,6 @@
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
-      "Back": [
-        "Retour"
-      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -5070,6 +5237,9 @@
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"
       ],
+      "Contact us": [
+        "Contactez-nous"
+      ],
       "Credits": [
         "Crédits"
       ],
@@ -5078,9 +5248,6 @@
       ],
       "Customize your plan": [
         "Personnalisez votre abonnement"
-      ],
-      "Dashboard": [
-        "Tableau de bord"
       ],
       "Date": [
         "Date"
@@ -5172,9 +5339,6 @@
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
       ],
-      "Open help menu": [
-        "Ouvrir le menu d'aide"
-      ],
       "Open pagination": [
         "Ouvrir la pagination"
       ],
@@ -5199,17 +5363,11 @@
       "Payment verification": [
         "Vérification du paiement"
       ],
-      "Payments": [
-        "Paiements"
-      ],
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
       ],
       "Phone": [
         "Téléphone"
-      ],
-      "Plan summary": [
-        "Récapitulatif de l'abonnement"
       ],
       "Plans": [
         "Abonnements"
@@ -5234,6 +5392,9 @@
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Request sent": [
+        "La demande a été envoyée."
       ],
       "Reset password": [
         "Réinitialiser le mot de passe"
@@ -5271,6 +5432,12 @@
       "Status": [
         "État"
       ],
+      "Subscription": [
+        "Abonnement"
+      ],
+      "Summary": [
+        "Résumé"
+      ],
       "Switch to one-password mode": [
         "Passer au mode un seul mot de passe"
       ],
@@ -5291,6 +5458,9 @@
       ],
       "Unsupported browser": [
         "Le navigateur n'est pas pris en charge."
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Améliorez la protection de votre réseau avec des serveurs dédiés"
       ],
       "Verification failed": [
         "La vérification n'a pas abouti."
@@ -5315,9 +5485,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Votre essai gratuit Mail Plus se termine le ${ textDate }."
-      ],
-      "Your Plan": [
-        "Votre abonnement"
       ],
       "Your plan": [
         "Votre abonnement"
@@ -5354,6 +5521,9 @@
       ],
       "Plan": [
         "Abonnement"
+      ],
+      "Servers": [
+        "Serveurs"
       ],
       "Start date": [
         "Date de début"
@@ -5414,6 +5584,20 @@
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "J'ai trouvé un autre service que je préfère."
+      ],
+      "It’s missing a key feature": [
+        "Il manque une fonction importante."
+      ],
+      "It’s too expensive": [
+        "C'est trop cher"
+      ],
+      "Other": [
+        "Autre"
       ]
     },
     "VPN info": {
