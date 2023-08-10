@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCards, { Theme } from '../themes/ThemeCards';
@@ -13,6 +14,8 @@ interface Props extends Omit<OnboardingContentProps, 'decription' | 'onChange'> 
 }
 
 const OnboardingThemes = ({ maxContentHeight, themes, themeIdentifier, onChange, ...rest }: Props) => {
+    const mobile = isMobile();
+
     return (
         <OnboardingContent
             className="h-custom"
@@ -21,7 +24,12 @@ const OnboardingThemes = ({ maxContentHeight, themes, themeIdentifier, onChange,
             description={c('Onboarding Proton').t`You will be able to change your theme any time in your settings.`}
             {...rest}
         >
-            <ThemeCards list={themes} themeIdentifier={themeIdentifier} onChange={onChange} size="onboarding" />
+            <ThemeCards
+                list={themes}
+                themeIdentifier={themeIdentifier}
+                onChange={onChange}
+                size={mobile ? 'medium-wide' : 'large'}
+            />
         </OnboardingContent>
     );
 };

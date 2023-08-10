@@ -39,7 +39,7 @@ const MailOnboardingModal = (props: Props) => {
     });
 
     const mobile = isMobile();
-    const maxContentHeight = mobile ? '28rem' : '30rem';
+    const maxContentHeight = mobile ? '27rem' : '30rem';
 
     const handleGoogleSync = (onNext: () => void) => {
         triggerOAuthPopup({
@@ -168,7 +168,7 @@ const MailOnboardingModal = (props: Props) => {
                 </OnboardingContent>
                 <footer>
                     <Button size="large" fullWidth onClick={onNext}>
-                        {c('Onboarding modal').t`Next`}
+                        {c('Onboarding modal').t`Skip`}
                     </Button>
                 </footer>
             </OnboardingStep>
