@@ -46,7 +46,7 @@ html,
 
 .header {
 	padding-block: var(--space-1);
-	padding-inline: var(--space-2) var(--space-3);
+	padding-inline: var(--space-3) var(--space-2);
 	block-size: rem($header-height-small);
 	flex-shrink: 0;
 	background-color: var(--header-background-color);
@@ -54,7 +54,7 @@ html,
 
 	@include media('>small') {
 		padding-block: var(--space-3);
-		padding-inline: var(--space-3) rem(10);
+		padding-inline: var(--space-2) rem(10);
 		block-size: rem($header-height);
 	}
 
