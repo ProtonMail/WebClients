@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
@@ -55,9 +52,6 @@
       ],
       "Back": [
         "Natrag"
-      ],
-      "Beta Access": [
-        "Beta pristup"
       ],
       "Cancel": [
         "Poništi"
@@ -109,6 +103,9 @@
       ],
       "Continue with Google": [
         "Nastavi s Googleom"
+      ],
+      "Copy address": [
+        "Kopiraj adresu"
       ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
@@ -210,9 +207,6 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
-      "Go to settings": [
-        "Idi na postavke"
-      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -227,9 +221,6 @@
       ],
       "Hide time zones": [
         "Sakrij vremenske zone"
-      ],
-      "I have a question": [
-        "Imam pitanje"
       ],
       "Import": [
         "Uvoz"
@@ -432,9 +423,6 @@
       "Submit": [
         "Pošalji"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "Today": [
         "Danas"
       ],
@@ -565,14 +553,6 @@
       ],
       "Unsupported event": [
         "Događaj nije podržan"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta pristup vam omogućava upotrebu beta verzije ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
       ]
     },
     "Billing cycle option": {
@@ -1447,6 +1427,29 @@
         "do ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Petak"
+      ],
+      "Monday": [
+        "Ponedjeljak"
+      ],
+      "Saturday": [
+        "Subota"
+      ],
+      "Sunday": [
+        "Nedjelja"
+      ],
+      "Thursday": [
+        "Četvrtak"
+      ],
+      "Tuesday": [
+        "Utorak"
+      ],
+      "Wednesday": [
+        "Srijeda"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Nepoznato"
@@ -1507,16 +1510,6 @@
       ],
       "90 minutes": [
         "90 minuta"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Isklj"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Uklj"
       ]
     },
     "Email body for description (description part)": {
@@ -1993,12 +1986,6 @@
     "Header": {
       "Contacts": [
         "Kontakti"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakti, grupe i postavke"
-      ],
-      "Get help": [
-        "Pomoć"
       ],
       "Name": [
         "Naziv"
@@ -2712,9 +2699,6 @@
       "Emails": [
         "E-pošta"
       ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
-      ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
       ],
@@ -2855,6 +2839,9 @@
       ],
       "Verification code": [
         "Kôd za provjeru"
+      ],
+      "Week start": [
+        "Početak tjedna"
       ],
       "What happened?": [
         "Što se dogodilo?"
@@ -3266,6 +3253,9 @@
       "All events": [
         "Svi događaji"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automatski (${ defaultDay })"
+      ],
       "Create new group": [
         "Stvori novu grupu"
       ],
@@ -3450,11 +3440,6 @@
       ],
       "Work": [
         "Posao"
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Napomena: usluga će se ponovo učitati nakon što kliknete dugme Primijeni."
       ]
     },
     "Select files": {
@@ -3667,11 +3652,6 @@
         "vCard polje"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Postavke"
-      ]
-    },
     "Title": {
       "Account suspended": [
         "Račun je suspendiran"
@@ -3704,12 +3684,6 @@
       ],
       "Addresses": [
         "Adrese"
-      ],
-      "Back": [
-        "Natrag"
-      ],
-      "Beta Access": [
-        "Beta pristup"
       ],
       "Billing cycle": [
         "Ciklus naplate"
@@ -3832,12 +3806,6 @@
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
-      "Open help menu": [
-        "Otvori izbornik pomoći"
-      ],
-      "Open settings menu": [
-        "Otvori izbornik postavki"
-      ],
       "Organizer cannot be notified": [
         "Organizator ne može biti obaviješten"
       ],
@@ -3882,9 +3850,6 @@
       ],
       "Select a day in the month": [
         "Odaberite dan u mjesecu"
-      ],
-      "Select a theme": [
-        "Odaberi temu"
       ],
       "Select action to take on contact group": [
         "Odaberite radnju koju želite izvršiti nad grupom kontakata"
@@ -3960,9 +3925,6 @@
       ],
       "Update recurring event": [
         "Ažuriraj ponavljajući događaj"
-      ],
-      "View contacts": [
-        "Pregled kontakta"
       ],
       "Warning": [
         "Upozorenje"

@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Tilbage"
       ],
-      "Beta Access": [
-        "Beta-adgang"
-      ],
       "Cancel": [
         "Annullér"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Fortsæt med Google"
+      ],
+      "Copy address": [
+        "Kopiér adresse"
       ],
       "Copy email address": [
         "Kopiér e-mailadresse"
@@ -248,9 +245,6 @@
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
       ],
-      "Go to settings": [
-        "Gå til indstillinger"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -268,9 +262,6 @@
       ],
       "Hide time zones": [
         "Skjul tidszoner"
-      ],
-      "I have a question": [
-        "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -458,6 +449,9 @@
       "Select all": [
         "Vælg alle"
       ],
+      "Select calendar view": [
+        "Vælg kalendervisning"
+      ],
       "Select time zone": [
         "Vælg tidszone"
       ],
@@ -491,9 +485,6 @@
       "Show more": [
         "Vis mere"
       ],
-      "Show side panel": [
-        "Vis sidepanel"
-      ],
       "Show time zones": [
         "Vis tidszoner"
       ],
@@ -523,9 +514,6 @@
       ],
       "Submit": [
         "Indsend"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "I dag"
@@ -722,14 +710,6 @@
     "Attendee role": {
       "Optional": [
         "Valgfri"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
       ]
     },
     "Billing cycle option": {
@@ -1973,6 +1953,29 @@
         "indtil ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Fredag"
+      ],
+      "Monday": [
+        "Mandag"
+      ],
+      "Saturday": [
+        "Lørdag"
+      ],
+      "Sunday": [
+        "Søndag"
+      ],
+      "Thursday": [
+        "Torsdag"
+      ],
+      "Tuesday": [
+        "Tirsdag"
+      ],
+      "Wednesday": [
+        "Onsdag"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Ukendt"
@@ -2084,16 +2087,6 @@
       ],
       "90 minutes": [
         "90 minutter"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Fra"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Til"
       ]
     },
     "Edit event button tooltip": {
@@ -3062,12 +3055,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Contacts, groups and settings": [
-        "Kontakter, grupper og indstillinger"
-      ],
-      "Get help": [
-        "Få hjælp"
-      ],
       "Name": [
         "Navn"
       ]
@@ -3561,9 +3548,6 @@
       "Custom yearly": [
         "Brugerdefineret årlig"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Tilpas ${ BRAND_NAME }-applikationernes udseende."
-      ],
       "Daily": [
         "Daglig"
       ],
@@ -3609,9 +3593,6 @@
       "Existent, added and removed participants will be notified.": [
         "Eksisterende, tilføjede og fjernede deltagere vil blive underrettet."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
-      ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
       ],
@@ -3648,9 +3629,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -3916,6 +3894,9 @@
       ],
       "Week": [
         "Uge"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Uge- og månedsvisninger gælder kun på desktop."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -4228,6 +4209,9 @@
       "Date and time": [
         "Dato og tid"
       ],
+      "Default view": [
+        "Standardvisning"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -4266,9 +4250,6 @@
       ],
       "Emails (last month)": [
         "E-mails (seneste måned)"
-      ],
-      "Enable Beta Access": [
-        "Aktivér beta-adgang"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -4433,17 +4414,20 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Show week numbers": [
+        "Vis ugenumre"
+      ],
       "Sign emails": [
         "Signér e-mails"
       ],
       "Street address": [
         "Adresse"
       ],
-      "Synchronize with system": [
-        "Synkroniser med system"
-      ],
       "System information": [
         "Systemoplysninger"
+      ],
+      "Time zone": [
+        "Tidszone"
       ],
       "To: ${ to }": [
         "Til: ${ to }"
@@ -4462,6 +4446,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Week start": [
+        "Ugestart"
       ],
       "What happened?": [
         "Hvad skete der?"
@@ -4845,11 +4832,6 @@
         "Opgradér nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Skift eller tilføj konto"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
@@ -5108,6 +5090,9 @@
       "All events": [
         "Alle begivenheder"
       ],
+      "Automatic (${ defaultDay })": [
+        "Automatisk (${ defaultDay })"
+      ],
       "Create new group": [
         "Opret ny gruppe"
       ],
@@ -5337,11 +5322,6 @@
         "Officiel e-mail fra ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Genindlæs begivenhed"
@@ -5394,14 +5374,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delt af ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Administrer dine kontakter og se din kalender uden at forlade appen."
-      ],
-      "Try the new side panel": [
-        "Prøv det nye sidepanel"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5962,11 +5934,6 @@
         "vCard-felt"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Indstillinger"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -6005,9 +5972,6 @@
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
       ],
-      "(active)": [
-        "(aktiv)"
-      ],
       "Account suspended": [
         "Konto suspenderet"
       ],
@@ -6038,12 +6002,6 @@
       ],
       "Addresses": [
         "Adresser"
-      ],
-      "Back": [
-        "Tilbage"
-      ],
-      "Beta Access": [
-        "Beta-adgang"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -6210,12 +6168,6 @@
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
       ],
-      "Open help menu": [
-        "Åbn hjælpemenu"
-      ],
-      "Open settings menu": [
-        "Åbn indstillingsmenu"
-      ],
       "Organizer cannot be notified": [
         "Arrangør kan ikke underrettes"
       ],
@@ -6263,9 +6215,6 @@
       ],
       "Select a day in the month": [
         "Vælg en dag i måneden"
-      ],
-      "Select a theme": [
-        "Vælg et tema"
       ],
       "Select action to take on contact group": [
         "Vælg handling for kontaktgruppe"
@@ -6350,9 +6299,6 @@
       ],
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
-      ],
-      "View contacts": [
-        "Vis kontakter"
       ],
       "Warning": [
         "Advarsel"
@@ -6444,14 +6390,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
-      "Hide side panel": [
-        "Skjul sidepanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
-      ],
-      "Show side panel": [
-        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -6464,12 +6404,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Det valgte tema vil blive aktiveret når dit system er sat til \"mørk tilstand\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
