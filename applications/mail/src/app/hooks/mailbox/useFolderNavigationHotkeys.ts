@@ -8,11 +8,12 @@ import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
-const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL, ALMOST_ALL_MAIL } =
+    MAILBOX_LABEL_IDS;
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
-    const [{ Shortcuts = 0, ShowMoved = 0 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0, ShowMoved = 0, AlmostAllMail = 0 } = {}] = useMailSettings();
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
@@ -104,7 +105,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                       if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
-                          navigateTo(ALL_MAIL);
+                          navigateTo(AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL);
                       }
                   },
               ],

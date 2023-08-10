@@ -6,7 +6,16 @@ import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
+import {
+    DateInput,
+    Label,
+    Option,
+    PrimaryButton,
+    SelectTwo,
+    useAddresses,
+    useMailSettings,
+    useUser,
+} from '@proton/components';
 import { ESIndexingState, contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -39,10 +48,10 @@ interface SearchModel {
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
-const { ALL_MAIL } = MAILBOX_LABEL_IDS;
-const DEFAULT_MODEL: SearchModel = {
+const { ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
+
+const DEFAULT_MODEL_WITHOUT_LABEL_ID: Omit<SearchModel, 'labelID'> = {
     keyword: '',
-    labelID: ALL_MAIL,
     from: [],
     to: [],
     address: ALL_ADDRESSES,
@@ -65,8 +74,7 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
     const { filter } = getSearchParams(history.location.search);
 
     return {
-        ...DEFAULT_MODEL,
-        labelID: keyword ? selectedLabelID : ALL_MAIL,
+        ...(keyword && { labelID: selectedLabelID }),
         keyword: searchInputValue ? keyword || '' : '',
         address: address || ALL_ADDRESSES,
         wildcard,
@@ -76,6 +84,18 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
         end: end ? sub(fromUnixTime(end), { days: 1 }) : UNDEFINED,
         filter,
     };
+};
+
+// Get right keyword value depending on the current situation
+const getKeyword = ({ keyword, reset, isNarrow }: { keyword: string; reset?: boolean; isNarrow: boolean }) => {
+    if (reset) {
+        return UNDEFINED;
+    }
+    const value = isNarrow ? keyword : keywordToString(keyword);
+    if (value) {
+        return value;
+    }
+    return UNDEFINED;
 };
 
 interface Props {
@@ -102,25 +122,26 @@ const AdvancedSearch = ({
     const searchInputRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
     const [addresses] = useAddresses();
-    const [model, updateModel] = useState<SearchModel>(initializeModel(history, labelID, searchInputValue));
+
+    const [mailSettings] = useMailSettings();
+    const { AlmostAllMail } = mailSettings ?? { AlmostAllMail: 0 };
+
+    const DEFAULT_MODEL: SearchModel = {
+        ...DEFAULT_MODEL_WITHOUT_LABEL_ID,
+        labelID: AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL,
+    };
+
+    const [model, updateModel] = useState<SearchModel>({
+        ...DEFAULT_MODEL,
+        ...initializeModel(history, labelID, searchInputValue),
+    });
+
     const [user] = useUser();
     const { getESDBStatus } = useEncryptedSearchContext();
     const { isDBLimited, lastContentTime, esEnabled } = getESDBStatus();
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);
-
-    // Get right keyword value depending on the current situation
-    const getKeyword = (keyword: string, reset?: boolean) => {
-        if (reset) {
-            return UNDEFINED;
-        }
-        const value = isNarrow ? keyword : keywordToString(keyword);
-        if (value) {
-            return value;
-        }
-        return UNDEFINED;
-    };
 
     const handleSubmit = (event: FormEvent, reset?: boolean) => {
         event.preventDefault(); // necessary to not run a basic submission
@@ -130,7 +151,7 @@ const AdvancedSearch = ({
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
-                keyword: getKeyword(keyword, reset),
+                keyword: getKeyword({ keyword, reset, isNarrow }),
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,

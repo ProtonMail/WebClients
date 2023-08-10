@@ -15,19 +15,23 @@ interface ItemBase {
     value: string;
 }
 
-interface ItemDefaultFolder extends ItemBase {
+export interface ItemDefaultFolder extends ItemBase {
     icon: IconName;
     url: string;
 }
-interface ItemCustomFolder extends ItemBase {
+
+export interface ItemCustomFolder extends ItemBase {
     folderEntity: FolderWithSubFolders;
     className: string;
 }
 
-interface ItemLabel extends ItemBase {
+export interface ItemLabel extends ItemBase {
     color: string;
+    url: string;
 }
-type Item = ItemCustomFolder | ItemDefaultFolder | ItemLabel;
+
+export type Item = ItemCustomFolder | ItemDefaultFolder | ItemLabel;
+
 type ItemType = 'DEFAULT_FOLDERS' | 'CUSTOM_FOLDERS' | 'LABELS';
 interface ItemGroup<T = Item> {
     id: ItemType;
@@ -46,8 +50,20 @@ interface UseLocationFieldOptionsReturn {
     isLabel(item: Item): item is ItemLabel;
 }
 
-const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS, SCHEDULED } =
-    MAILBOX_LABEL_IDS;
+const {
+    INBOX,
+    TRASH,
+    SPAM,
+    STARRED,
+    ARCHIVE,
+    ALL_MAIL,
+    ALMOST_ALL_MAIL,
+    ALL_SENT,
+    SENT,
+    ALL_DRAFTS,
+    DRAFTS,
+    SCHEDULED,
+} = MAILBOX_LABEL_IDS;
 
 const STANDARD_FOLDERS = getStandardFolders();
 const getMarginByFolderLvl = (lvl: number) => {
@@ -87,8 +103,16 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
 
     const DRAFT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const SENT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
+    const { AlmostAllMail } = mailSettings || {};
     const defaultFolders: ItemDefaultFolder[] = [
-        { value: ALL_MAIL, text: getLabelIDsToI18N()[ALL_MAIL], url: '/all-mail', icon: 'envelopes' },
+        AlmostAllMail
+            ? {
+                  value: ALMOST_ALL_MAIL,
+                  text: getLabelIDsToI18N()[ALMOST_ALL_MAIL],
+                  url: '/almost-all-mail',
+                  icon: 'envelopes',
+              }
+            : { value: ALL_MAIL, text: getLabelIDsToI18N()[ALL_MAIL], url: '/all-mail', icon: 'envelopes' },
         { value: INBOX, text: getLabelIDsToI18N()[INBOX], url: STANDARD_FOLDERS[INBOX].to, icon: 'inbox' },
         {
             value: DRAFT_TYPE,
@@ -127,6 +151,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         (acc: ItemCustomFolder[], folder) => folderReducer(acc, folder),
         []
     );
+
     const labelOptions: ItemLabel[] = labels.map<ItemLabel>(({ ID: value, Name: text, Color: color }) => ({
         value,
         text,

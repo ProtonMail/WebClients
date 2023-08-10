@@ -3,8 +3,20 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { isCustomFolder, isCustomLabel } from '../helpers/labels';
 
-const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL, SCHEDULED } =
-    MAILBOX_LABEL_IDS;
+const {
+    TRASH,
+    SPAM,
+    DRAFTS,
+    ARCHIVE,
+    SENT,
+    INBOX,
+    ALL_DRAFTS,
+    ALL_SENT,
+    STARRED,
+    ALL_MAIL,
+    ALMOST_ALL_MAIL,
+    SCHEDULED,
+} = MAILBOX_LABEL_IDS;
 
 type Actions = 'inbox' | 'trash' | 'delete' | 'archive' | 'spam' | 'nospam';
 
@@ -32,6 +44,8 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
     } else if (labelID === TRASH) {
         primaryActions = ['inbox', 'archive', 'delete'];
     } else if (labelID === ALL_MAIL) {
+        primaryActions = ['trash', 'archive', 'spam'];
+    } else if (labelID === ALMOST_ALL_MAIL) {
         primaryActions = ['trash', 'archive', 'spam'];
     } else if (isCustomFolder(labelID, folders)) {
         primaryActions = ['trash', 'archive', 'spam'];

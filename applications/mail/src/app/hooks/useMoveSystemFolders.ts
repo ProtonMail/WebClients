@@ -11,6 +11,7 @@ import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.he
 export interface UseMoveSystemFoldersProps {
     showMoved: MailSettings['ShowMoved'];
     showScheduled: boolean;
+    showAlmostAllMail: MailSettings['AlmostAllMail'];
 }
 
 export enum SYSTEM_FOLDER_SECTION {
@@ -56,6 +57,7 @@ type UseSidebarElementsResponse = [
 const useMoveSystemFolders = ({
     showMoved = 0,
     showScheduled,
+    showAlmostAllMail = 0,
 }: UseMoveSystemFoldersProps): UseSidebarElementsResponse => {
     const api = useApi();
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());
@@ -116,10 +118,12 @@ const useMoveSystemFolders = ({
                     Name: label.Name,
                 }))
                 .filter((item) => !!item.ID);
-            const systemFolders = getSidebarNavItems(showMoved, showScheduled, formattedLabels);
+
+            const systemFolders = getSidebarNavItems(showMoved, showScheduled, showAlmostAllMail, formattedLabels);
+
             setSystemFolders(systemFolders);
         }
-    }, [systemFoldersFromApi, showMoved, showScheduled]);
+    }, [systemFoldersFromApi, showMoved, showScheduled, showAlmostAllMail]);
 
     return [visibleSystemFolders, moveItem, loading];
 };
