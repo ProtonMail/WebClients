@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Kembali"
       ],
-      "Beta Access": [
-        "Akses Beta"
-      ],
       "Cancel": [
         "Batal"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
+      ],
+      "Copy address": [
+        "Salin alamat"
       ],
       "Copy email address": [
         "Salin alamat email"
@@ -246,9 +243,6 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
-      "Go to settings": [
-        "Ke pengaturan"
-      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -266,9 +260,6 @@
       ],
       "Hide time zones": [
         "Sembunyikan zona waktu"
-      ],
-      "I have a question": [
-        "Saya memiliki pertanyaan"
       ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
@@ -456,6 +447,9 @@
       "Select all": [
         "Pilih semua"
       ],
+      "Select calendar view": [
+        "Pilih tampilan kalender"
+      ],
       "Select time zone": [
         "Pilih zona waktu"
       ],
@@ -489,9 +483,6 @@
       "Show more": [
         "Tampilkan lebih banyak"
       ],
-      "Show side panel": [
-        "Tampilkan panel samping"
-      ],
       "Show time zones": [
         "Tampilkan zona waktu"
       ],
@@ -521,9 +512,6 @@
       ],
       "Submit": [
         "Kirim"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Today": [
         "Hari ini"
@@ -720,14 +708,6 @@
     "Attendee role": {
       "Optional": [
         "Opsional"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Akses Beta memungkinkan Anda untuk menggunakan versi beta dari ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } sebelum produk-produk ini dirilis secara publik. Dengan Akses Beta, Anda berkesempatan menjadi orang pertama yang mencoba berbagai produk, pembaruan, dan fitur terbaru kami."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
     "Billing cycle option": {
@@ -1963,6 +1943,29 @@
         "sampai ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Jumat"
+      ],
+      "Monday": [
+        "Senin"
+      ],
+      "Saturday": [
+        "Sabtu"
+      ],
+      "Sunday": [
+        "Minggu"
+      ],
+      "Thursday": [
+        "Kamis"
+      ],
+      "Tuesday": [
+        "Selasa"
+      ],
+      "Wednesday": [
+        "Rabu"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Tidak diketahui"
@@ -2073,16 +2076,6 @@
       ],
       "90 minutes": [
         "90 menit"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Aktif"
       ]
     },
     "Edit event button tooltip": {
@@ -2853,7 +2846,7 @@
         "Penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Langganan ditagih kepada admin utama paket Visionary atau paket keluarga."
+        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -3032,12 +3025,6 @@
     "Header": {
       "Contacts": [
         "Kontak"
-      ],
-      "Contacts, groups and settings": [
-        "Kontak, grup dan pengaturan"
-      ],
-      "Get help": [
-        "Dapatkan bantuan"
       ],
       "Name": [
         "Nama"
@@ -3503,9 +3490,6 @@
       "Custom yearly": [
         "Sesuaikan tahunan"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
-      ],
       "Daily": [
         "Harian"
       ],
@@ -3551,9 +3535,6 @@
       "Existent, added and removed participants will be notified.": [
         "Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3589,9 +3570,6 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -3856,6 +3834,9 @@
       ],
       "Week": [
         "Pekan"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Tampilan pekan dan bulan hanya berlaku di desktop."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
@@ -4167,6 +4148,9 @@
       "Date and time": [
         "Tanggal dan waktu"
       ],
+      "Default view": [
+        "Tampilan default"
+      ],
       "Delete": [
         "Hapus"
       ],
@@ -4205,9 +4189,6 @@
       ],
       "Emails (last month)": [
         "Email (sebulan terakhir)"
-      ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
       ],
       "Encrypt emails": [
         "Enkripsi email"
@@ -4371,17 +4352,20 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Show week numbers": [
+        "Tampilkan nomor pekan"
+      ],
       "Sign emails": [
         "Tanda tangani email"
       ],
       "Street address": [
         "Alamat jalan"
       ],
-      "Synchronize with system": [
-        "Sinkronkan dengan sistem"
-      ],
       "System information": [
         "Informasi sistem"
+      ],
+      "Time zone": [
+        "Zona waktu"
       ],
       "To: ${ to }": [
         "Kepada: ${ to }"
@@ -4400,6 +4384,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Week start": [
+        "Awal pekan"
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -4775,11 +4762,6 @@
         "Tingkatkan sekarang"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Pindah atau tambahkan akun"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
@@ -5017,6 +4999,9 @@
       "All events": [
         "Seluruh acara"
       ],
+      "Automatic (${ defaultDay })": [
+        "Otomatis (${ defaultDay })"
+      ],
       "Create new group": [
         "Buat grup baru"
       ],
@@ -5239,11 +5224,6 @@
         "Email resmi dari ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Muat ulang acara"
@@ -5295,14 +5275,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Kelola kontak dan lihat kalender Anda tanpa meninggalkan aplikasi."
-      ],
-      "Try the new side panel": [
-        "Coba panel samping kami yang baru"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5845,11 +5817,6 @@
         "Kolom vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Pengaturan"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } j"
@@ -5881,9 +5848,6 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount } alamat email"
       ],
-      "(active)": [
-        "(aktif)"
-      ],
       "Account suspended": [
         "Akun ditangguhkan"
       ],
@@ -5913,12 +5877,6 @@
       ],
       "Addresses": [
         "Alamat"
-      ],
-      "Back": [
-        "Kembali"
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -6082,12 +6040,6 @@
       "Open actions dropdown": [
         "Buka menu tindakan"
       ],
-      "Open help menu": [
-        "Buka menu bantuan"
-      ],
-      "Open settings menu": [
-        "Buka menu pengaturan"
-      ],
       "Organizer cannot be notified": [
         "Panitia tidak bisa dihubungi"
       ],
@@ -6135,9 +6087,6 @@
       ],
       "Select a day in the month": [
         "Pilih hari dalam bulan"
-      ],
-      "Select a theme": [
-        "Pilih tema"
       ],
       "Select action to take on contact group": [
         "Pilih tindakan yang diambil di grup kontak"
@@ -6222,9 +6171,6 @@
       ],
       "Update recurring event": [
         "Perbarui acara berulang"
-      ],
-      "View contacts": [
-        "Lihat kontak"
       ],
       "Warning": [
         "Peringatan"
@@ -6316,14 +6262,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
-      "Hide side panel": [
-        "Sembunyikan panel samping"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
-      ],
-      "Show side panel": [
-        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
@@ -6336,12 +6276,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode gelap\""
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"

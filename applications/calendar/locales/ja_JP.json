@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "戻る"
       ],
-      "Beta Access": [
-        "ベータ版アクセス"
-      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Google で続行"
+      ],
+      "Copy address": [
+        "アドレスをコピー"
       ],
       "Copy email to clipboard": [
         "メールをコピー"
@@ -243,9 +240,6 @@
       "Go to panel ${ index }": [
         "パネル ${ index } に移動"
       ],
-      "Go to settings": [
-        "設定を開く"
-      ],
       "Got it": [
         "はい"
       ],
@@ -263,9 +257,6 @@
       ],
       "Hide time zones": [
         "タイムゾーンを非表示"
-      ],
-      "I have a question": [
-        "サポートに質問"
       ],
       "Image could not be loaded with tracker protection.": [
         "トラッキング防止が画像の読み込みをブロックしました。"
@@ -453,6 +444,9 @@
       "Select all": [
         "すべて選択"
       ],
+      "Select calendar view": [
+        "カレンダー表示を選択"
+      ],
       "Select time zone": [
         "タイムゾーンを選択"
       ],
@@ -486,9 +480,6 @@
       "Show more": [
         "さらに表示"
       ],
-      "Show side panel": [
-        "サイドパネルを表示"
-      ],
       "Show time zones": [
         "タイムゾーンを表示"
       ],
@@ -518,9 +509,6 @@
       ],
       "Submit": [
         "送信"
-      ],
-      "Theme": [
-        "テーマ"
       ],
       "Today": [
         "今日"
@@ -717,14 +705,6 @@
     "Attendee role": {
       "Optional": [
         "任意"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
     "Billing cycle option": {
@@ -1960,6 +1940,29 @@
         "${ dateString } まで"
       ]
     },
+    "Day": {
+      "Friday": [
+        "金曜日"
+      ],
+      "Monday": [
+        "月曜日"
+      ],
+      "Saturday": [
+        "土曜日"
+      ],
+      "Sunday": [
+        "日曜日"
+      ],
+      "Thursday": [
+        "木曜日"
+      ],
+      "Tuesday": [
+        "火曜日"
+      ],
+      "Wednesday": [
+        "水曜日"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "不明"
@@ -2070,16 +2073,6 @@
       ],
       "90 minutes": [
         "90分"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "無効"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "有効"
       ]
     },
     "Edit event button tooltip": {
@@ -3030,12 +3023,6 @@
       "Contacts": [
         "連絡先"
       ],
-      "Contacts, groups and settings": [
-        "連絡先、グループおよび設定"
-      ],
-      "Get help": [
-        "ヘルプを参照"
-      ],
       "Name": [
         "名前"
       ]
@@ -3500,9 +3487,6 @@
       "Custom yearly": [
         "毎年 (カスタム)"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "${ BRAND_NAME }アプリの外観をカスタマイズ"
-      ],
       "Daily": [
         "毎日"
       ],
@@ -3548,9 +3532,6 @@
       "Existent, added and removed participants will be notified.": [
         "既存の参加者、追加や削除を行った参加者にはメールが送られます。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -3586,9 +3567,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
@@ -3850,6 +3828,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "Week and month views only apply to desktop.": [
+        "週と月のビューはデスクトップにのみ適用されます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
@@ -4161,6 +4142,9 @@
       "Date and time": [
         "日付と時刻"
       ],
+      "Default view": [
+        "既定の表示形式"
+      ],
       "Delete": [
         "削除"
       ],
@@ -4199,9 +4183,6 @@
       ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
-      ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
       ],
       "Encrypt emails": [
         "メールを暗号化"
@@ -4365,17 +4346,20 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Show week numbers": [
+        "週番号を表示"
+      ],
       "Sign emails": [
         "メールに署名"
       ],
       "Street address": [
         "番地"
       ],
-      "Synchronize with system": [
-        "システムとの同期"
-      ],
       "System information": [
         "システム情報"
+      ],
+      "Time zone": [
+        "タイムゾーン"
       ],
       "To: ${ to }": [
         "宛先: ${ to }"
@@ -4394,6 +4378,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Week start": [
+        "週の開始曜日"
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
@@ -4766,11 +4753,6 @@
         "今すぐアップグレード"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "アカウントを追加・切り替え"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
@@ -5008,6 +4990,9 @@
       "All events": [
         "すべての予定"
       ],
+      "Automatic (${ defaultDay })": [
+        "自動 (${ defaultDay })"
+      ],
       "Create new group": [
         "新しいグループを作成"
       ],
@@ -5230,11 +5215,6 @@
         "${ BRAND_NAME } からの公式メール"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "予定を再読み込み"
@@ -5281,14 +5261,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } ユーザーに共有"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "アプリ内で、連絡先の管理やカレンダーの表示ができます。"
-      ],
-      "Try the new side panel": [
-        "新しいサイドパネルを試す"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5837,11 +5809,6 @@
         "vCard フィールド"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 時間"
@@ -5873,9 +5840,6 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount } 件のメールアドレス"
       ],
-      "(active)": [
-        "(アクティブ)"
-      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -5905,12 +5869,6 @@
       ],
       "Addresses": [
         "メールアドレス"
-      ],
-      "Back": [
-        "戻る"
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -6074,12 +6032,6 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
-      "Open settings menu": [
-        "設定メニューを開く"
-      ],
       "Organizer cannot be notified": [
         "主催者にはメールが送信されません"
       ],
@@ -6127,9 +6079,6 @@
       ],
       "Select a day in the month": [
         "日付を選択"
-      ],
-      "Select a theme": [
-        "テーマを選択"
       ],
       "Select action to take on contact group": [
         "この連絡先グループで行うアクションを選択"
@@ -6214,9 +6163,6 @@
       ],
       "Update recurring event": [
         "定期的な予定の更新"
-      ],
-      "View contacts": [
-        "連絡先を表示"
       ],
       "Warning": [
         "警告"
@@ -6308,14 +6254,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
-      "Hide side panel": [
-        "サイドパネルを隠す"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
-      ],
-      "Show side panel": [
-        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
@@ -6328,12 +6268,6 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "選択したテーマは、システムが「ダークモード」に設定されているときに有効になります。"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"

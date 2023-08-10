@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "Tillbaka"
       ],
-      "Beta Access": [
-        "Beta-åtkomst"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "Fortsätt med Google"
+      ],
+      "Copy address": [
+        "Kopiera adress"
       ],
       "Copy email address": [
         "Kopiera e-postadress"
@@ -248,11 +245,11 @@
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
       ],
-      "Go to settings": [
-        "Gå till inställningar"
-      ],
       "Got it": [
         "Förstått"
+      ],
+      "Help": [
+        "Hjälp"
       ],
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
@@ -268,9 +265,6 @@
       ],
       "Hide time zones": [
         "Dölj tidszoner"
-      ],
-      "I have a question": [
-        "Jag har en fråga"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
@@ -458,6 +452,9 @@
       "Select all": [
         "Markera alla"
       ],
+      "Select calendar view": [
+        "Välj kalendervy"
+      ],
       "Select time zone": [
         "Välj tidszon"
       ],
@@ -469,6 +466,9 @@
       ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
+      ],
+      "Settings": [
+        "Inställningar"
       ],
       "Share": [
         "Dela"
@@ -490,9 +490,6 @@
       ],
       "Show more": [
         "Visa mer"
-      ],
-      "Show side panel": [
-        "Visa sidopanel"
       ],
       "Show time zones": [
         "Visa tidszoner"
@@ -524,14 +521,17 @@
       "Submit": [
         "Skicka"
       ],
-      "Theme": [
-        "Tema"
+      "Switch or add account": [
+        "Byt eller lägg till konto"
       ],
       "Today": [
         "Idag"
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
+      ],
+      "Toggle settings": [
+        "Öppna/stäng inställningar"
       ],
       "Trust": [
         "Lita på"
@@ -722,14 +722,6 @@
     "Attendee role": {
       "Optional": [
         "Valfritt"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-åtkomst låter dig använda betaversionen av ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, och ${ DRIVE_APP_NAME } innan de släpps till allmänheten. Detta innebär att du kan vara först med att prova nya produkter, få nya uppdateringar och använda nya funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Om du stöter på problem kan du alltid inaktivera beta-åtkomst."
       ]
     },
     "Billing cycle option": {
@@ -973,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Anpassad"
+      ],
       "Day": [
         "Dag"
       ],
@@ -984,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Ändra tidsintervall"
+      ],
       "Change time range to": [
         "Ändra tidsintervall till"
       ]
@@ -1973,6 +1971,29 @@
         "tills ${ dateString }"
       ]
     },
+    "Day": {
+      "Friday": [
+        "Fredag"
+      ],
+      "Monday": [
+        "Måndag"
+      ],
+      "Saturday": [
+        "Lördag"
+      ],
+      "Sunday": [
+        "Söndag"
+      ],
+      "Thursday": [
+        "Torsdag"
+      ],
+      "Tuesday": [
+        "Tisdag"
+      ],
+      "Wednesday": [
+        "Onsdag"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Okänd"
@@ -2084,16 +2105,6 @@
       ],
       "90 minutes": [
         "90 minuter"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Av"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "På"
       ]
     },
     "Edit event button tooltip": {
@@ -2554,6 +2565,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering misslyckades"
+      ],
+      "Missing FN property": [
+        "Saknar FN-egendom"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -3062,12 +3076,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Contacts, groups and settings": [
-        "Kontakter, grupper och inställningar"
-      ],
-      "Get help": [
-        "Få hjälp"
-      ],
       "Name": [
         "Namn"
       ]
@@ -3564,9 +3572,6 @@
       "Custom yearly": [
         "Anpassad årligen"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
-      ],
       "Daily": [
         "Dagligen"
       ],
@@ -3612,9 +3617,6 @@
       "Existent, added and removed participants will be notified.": [
         "Befintliga, tillagda och borttagna deltagare kommer att meddelas."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från ett annat konto till din säkra ${ MAIL_APP_NAME } inkorg."
-      ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
       ],
@@ -3651,9 +3653,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
@@ -3905,6 +3904,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifikation, måste lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar förfalskade krypteringsnycklar."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
       "Update recurring event": [
         "Uppdatera återkommande händelse"
       ],
@@ -3919,6 +3921,9 @@
       ],
       "Week": [
         "Vecka"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Vecko- och månadsvyer tillämpas endast för stationära datorer."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
@@ -4192,6 +4197,9 @@
       "Bad": [
         "Dålig"
       ],
+      "Beta Access": [
+        "Beta-åtkomst"
+      ],
       "Browser": [
         "Webbläsare"
       ],
@@ -4231,6 +4239,9 @@
       "Date and time": [
         "Datum och tid"
       ],
+      "Default view": [
+        "Standardvy"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -4269,9 +4280,6 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
-      ],
-      "Enable Beta Access": [
-        "Aktivera beta-åtkomst"
       ],
       "Encrypt emails": [
         "Kryptera e-post"
@@ -4421,6 +4429,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Primary": [
+        "Primär"
+      ],
       "Public keys": [
         "Offentliga nycklar"
       ],
@@ -4436,17 +4447,32 @@
       "Reveal password": [
         "Visa lösenord"
       ],
+      "Secondary": [
+        "Sekundär"
+      ],
+      "Secondary time zone": [
+        "Sekundär tidszon"
+      ],
+      "Show week numbers": [
+        "Visa veckonummer"
+      ],
       "Sign emails": [
         "Signera e-post"
       ],
       "Street address": [
         "Gatuadress"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Synkronisera med system"
       ],
       "System information": [
         "Systeminformation"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Time zone": [
+        "Tidszon"
       ],
       "To: ${ to }": [
         "Till: ${ to }"
@@ -4465,6 +4491,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Week start": [
+        "Veckostart"
       ],
       "What happened?": [
         "Vad hände?"
@@ -4848,11 +4877,6 @@
         "Uppgradera nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Ändra eller lägg till konto"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -5111,6 +5135,12 @@
       "All events": [
         "Alla händelser"
       ],
+      "Auto": [
+        "Auto"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatiskt (${ defaultDay })"
+      ],
       "Create new group": [
         "Skapa ny grupp"
       ],
@@ -5340,11 +5370,6 @@
         "Officiell e-post från ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Obs: tjänsten kommer laddas om efter att du klickat på knappen “Tillämpa“."
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Ladda om händelse"
@@ -5397,14 +5422,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delad av ${ ownerName }"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hantera dina kontakter och visa din kalender utan att lämna din app."
-      ],
-      "Try the new side panel": [
-        "Prova den nya sidopanelen"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5664,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Lägg till ditt lands allmänna helgdagar till din kalender."
       ],
+      "Easily access and customize your app experience.": [
+        "Kom enkelt åt och anpassa din appupplevelse."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
@@ -5672,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "Allmänna helgdagar är här!"
+      ],
+      "Quick settings": [
+        "Snabbinställningar"
       ]
     },
     "Storage": {
@@ -5965,11 +5988,6 @@
         "vCard-fält"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Inställningar"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } timme",
@@ -6008,9 +6026,6 @@
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
       ],
-      "(active)": [
-        "(aktiv)"
-      ],
       "Account suspended": [
         "Konto avstängt"
       ],
@@ -6042,11 +6057,8 @@
       "Addresses": [
         "Adresser"
       ],
-      "Back": [
-        "Tillbaka"
-      ],
-      "Beta Access": [
-        "Beta-åtkomst"
+      "All settings": [
+        "Alla inställningar"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -6213,12 +6225,6 @@
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
       ],
-      "Open help menu": [
-        "Öppna hjälpmeny"
-      ],
-      "Open settings menu": [
-        "Öppna inställningsmenyn"
-      ],
       "Organizer cannot be notified": [
         "Organisatör kan inte bli aviserad"
       ],
@@ -6266,9 +6272,6 @@
       ],
       "Select a day in the month": [
         "Välj en dag i månaden"
-      ],
-      "Select a theme": [
-        "Välj ett tema"
       ],
       "Select action to take on contact group": [
         "Välj åtgärd att utföra på kontaktgrupp"
@@ -6353,9 +6356,6 @@
       ],
       "Update recurring event": [
         "Uppdatera återkommande händelse"
-      ],
-      "View contacts": [
-        "Visa kontakter"
       ],
       "Warning": [
         "Varning"
@@ -6447,14 +6447,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
-      "Hide side panel": [
-        "Dölj sidopanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
-      ],
-      "Show side panel": [
-        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
@@ -6467,12 +6461,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Det valda temat kommer bli aktivt när ditt system är inställt på “mörkt läge“"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
