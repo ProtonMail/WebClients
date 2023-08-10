@@ -1,0 +1,86 @@
+import { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
+
+import { Icon, TableCell } from '@proton/components/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
+
+const { ASC, DESC } = SORT_DIRECTION;
+
+interface SortingTableCellHeaderProps {
+    content: ReactNode;
+    onClick: () => void;
+    direction?: SORT_DIRECTION;
+}
+
+export const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
+    return (
+        <div className="flex-nowrap inline-flex-vcenter">
+            <span
+                tabIndex={0}
+                role="button"
+                className="link mr-2"
+                onClick={onClick}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        onClick();
+                    }
+                }}
+            >
+                {content}
+            </span>
+            {direction === ASC || direction === DESC ? (
+                <Icon name="chevron-down" className={`flex-item-noshrink ${direction === DESC ? '' : 'rotateX-180'}`} />
+            ) : null}
+        </div>
+    );
+};
+
+interface CellUnsortableProps extends Omit<ThHTMLAttributes<HTMLTableCellElement>, 'content'> {
+    content: ReactNode;
+    key?: undefined | null | never;
+    sorting?: undefined | null | false;
+}
+
+interface CellSortableProps<T> extends Omit<ThHTMLAttributes<HTMLTableCellElement>, 'content'> {
+    content: ReactNode;
+    key: keyof T;
+    sorting: true;
+}
+
+type CellProps<T = any> = CellUnsortableProps | CellSortableProps<T>;
+
+interface SortingTableHeaderProps<T> extends HTMLAttributes<HTMLTableSectionElement> {
+    cells: CellProps<T>[];
+    config: {
+        key: keyof T;
+        direction: SORT_DIRECTION;
+    };
+    onToggleSort: (key: keyof T) => void;
+}
+
+export const SortingTableHeader = <T extends unknown>({
+    cells = [],
+    config,
+    onToggleSort,
+    ...rest
+}: SortingTableHeaderProps<T>) => {
+    return (
+        <thead {...rest}>
+            <tr>
+                {cells.map(({ content, key, sorting, ...rest }) => (
+                    <TableCell key={typeof key === 'symbol' ? undefined : key} type="header" {...rest}>
+                        {sorting ? (
+                            <SortingTableCellHeader
+                                content={content}
+                                onClick={() => onToggleSort(key)}
+                                direction={config && config.key === key ? config.direction : undefined}
+                            />
+                        ) : (
+                            content
+                        )}
+                    </TableCell>
+                ))}
+            </tr>
+        </thead>
+    );
+};
