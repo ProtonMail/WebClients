@@ -3,15 +3,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike, CircleLoader, Href } from '@proton/atoms';
+import { ButtonLike, CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { disableUser } from '@proton/shared/lib/api/user';
 import { postVerifyUnvalidate } from '@proton/shared/lib/api/verify';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
@@ -23,7 +21,7 @@ enum ErrorType {
     API,
 }
 
-const RemoveEmailContainer = ({ type = 'recovery-email' }: { type?: 'recovery-email' | 'account-email' }) => {
+const RemoveEmailContainer = () => {
     const api = useApi();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
@@ -41,11 +39,8 @@ const RemoveEmailContainer = ({ type = 'recovery-email' }: { type?: 'recovery-em
                 setError({ type: ErrorType.API });
             }
         };
-        if (type === 'recovery-email') {
-            withLoading(api({ ...postVerifyUnvalidate({ JWT: jwt }), silence: true }).catch(errorHandler));
-        } else {
-            withLoading(api({ ...disableUser({ JWT: jwt }), silence: true }).catch(errorHandler));
-        }
+
+        void withLoading(api({ ...postVerifyUnvalidate({ JWT: jwt }), silence: true }).catch(errorHandler));
     }, []);
 
     return (
@@ -60,7 +55,7 @@ const RemoveEmailContainer = ({ type = 'recovery-email' }: { type?: 'recovery-em
                     if (error.type === ErrorType.Expired) {
                         return (
                             <div className="absolute-center">
-                                <ExpiredError type={type === 'recovery-email' ? 'email' : 'report'} />
+                                <ExpiredError type="email" />
                             </div>
                         );
                     }
@@ -87,48 +82,20 @@ const RemoveEmailContainer = ({ type = 'recovery-email' }: { type?: 'recovery-em
                     <PublicLayout
                         className="h100"
                         img={<img src={accountIllustration} alt="" />}
-                        header={
-                            type === 'recovery-email'
-                                ? c('Recovery Email').t`Email removed`
-                                : c('Email').t`Thanks for letting us know`
-                        }
+                        header={c('Recovery Email').t`Email removed`}
                         main={
                             <div className="text-center">
                                 <div className="mb-2">
-                                    {type === 'recovery-email'
-                                        ? c('Recovery Email').t`Your recovery email has been successfully removed.`
-                                        : c('Email')
-                                              .t`We've noted that this account doesn't belong to you. We'll investigate and act accordingly.`}
+                                    {c('Recovery Email').t`Your recovery email has been successfully removed.`}
                                 </div>
                             </div>
                         }
                         footer={
-                            type === 'recovery-email' ? (
-                                <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
-                                    {c('Action').t`Sign in`}
-                                </ButtonLike>
-                            ) : null
+                            <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
+                                {c('Action').t`Sign in`}
+                            </ButtonLike>
                         }
-                        below={
-                            type === 'recovery-email' ? (
-                                <PublicFooter />
-                            ) : (
-                                <PublicFooter center={false}>
-                                    <div className="color-weak">
-                                        {c('Info')
-                                            .t`${BRAND_NAME} is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.`}
-                                    </div>
-                                    <br />
-                                    <div className="mb-6 color-weak">
-                                        {c('Info')
-                                            .t`Over 100 million people and businesses have signed up for ${BRAND_NAME}.`}{' '}
-                                        <Href className="color-weak" href={getStaticURL('')}>
-                                            {c('Link').t`Learn more`}
-                                        </Href>
-                                    </div>
-                                </PublicFooter>
-                            )
-                        }
+                        below={<PublicFooter />}
                     />
                 );
             })()}
