@@ -59,7 +59,9 @@ const ToolbarHeaderNarrow = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div
+                    className={clsx('flex flex-align-items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}
+                >
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />

@@ -53,7 +53,7 @@ const PrivateHeader = ({
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
                     {userDropdown && !isNarrow ? (
-                        <TopNavbarListItem className="ml-4 relative">{userDropdown}</TopNavbarListItem>
+                        <TopNavbarListItem className="relative">{userDropdown}</TopNavbarListItem>
                     ) : null}
                 </TopNavbarList>
             </TopNavbar>

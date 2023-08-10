@@ -303,7 +303,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                                 data-testid="userdropdown:label:email"
                                                 onClick={handleCopyEmail}
                                             >
-                                                <span className="text-ellipsis block">{Email}</span>
+                                                <span className="text-ellipsis block color-weak on-hover-color-norm">
+                                                    {Email}
+                                                </span>
                                             </button>
                                         </Tooltip>
                                     </div>

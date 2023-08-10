@@ -72,10 +72,10 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                     ) : null
                 }
                 actionArea={
-                    breakpoints.isNarrow || breakpoints.isTablet ? (
+                    breakpoints.isNarrow || breakpoints.isTablet || (breakpoints.isSmallDesktop && elementID) ? (
                         <div className="flex flex-nowrap flex-justify-space-between">
                             {toolbar}
-                            {!(elementID || selectedIDs.length !== 0) && (
+                            {!elementID && (
                                 <MailSearch
                                     breakpoints={breakpoints}
                                     labelID={labelID}
