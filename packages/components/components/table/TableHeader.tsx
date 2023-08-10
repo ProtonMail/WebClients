@@ -1,9 +1,10 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
+import Cell from './Cell';
 import TableCell from './TableCell';
 
 interface Props extends HTMLAttributes<HTMLTableSectionElement> {
-    cells?: ReactNode[];
+    cells?: (Cell | ReactNode)[];
     children?: ReactNode;
 }
 
