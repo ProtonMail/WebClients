@@ -109,6 +109,8 @@ export enum FeatureCode {
     OnboardingChecklist = 'OnboardingChecklist',
     NewOnboardingChecklist = 'NewOnboardingChecklist',
     VpnB2bPlans = 'VpnB2bPlans',
+    AlmostAllMail = 'AlmostAllMail',
+    AlmostAllMailSpotlight = 'AlmostAllMailSpotlight',
 }
 
 export interface FeaturesContextValue {

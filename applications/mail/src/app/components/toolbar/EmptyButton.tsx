@@ -10,7 +10,8 @@ import { isCustomLabel, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { Breakpoints } from '../../models/utils';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, ALL_MAIL, ALMOST_ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } =
+    MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -26,7 +27,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
 
     const displayEmpty =
         !breakpoints.isNarrow &&
-        !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL);
+        !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL, ALMOST_ALL_MAIL);
 
     if (!displayEmpty) {
         return null;

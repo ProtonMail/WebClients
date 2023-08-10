@@ -46,12 +46,12 @@ describe('MailSidebarDriveSpotlight', () => {
         mockUseActiveBreakpoint({ isNarrow: false });
         mockUseFeature({ feature: { Value: true } });
         mockUseSpotlightOnFeature({ show: true });
-        mockUseUser(
+        mockUseUser([
             {
                 CreateTime: getUnixTime(subDays(new Date(), 2)),
             },
-            false
-        );
+            false,
+        ]);
     });
 
     afterEach(() => {
@@ -104,12 +104,12 @@ describe('MailSidebarDriveSpotlight', () => {
     });
 
     it('Should not render spotlight when user created account less than two days ago', () => {
-        mockUseUser(
+        mockUseUser([
             {
                 CreateTime: getUnixTime(subDays(new Date(), 1)),
             },
-            false
-        );
+            false,
+        ]);
 
         setup();
 

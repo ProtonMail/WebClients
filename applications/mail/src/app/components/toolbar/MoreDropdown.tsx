@@ -14,12 +14,36 @@ import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown
 import { DropdownRender } from '../message/header/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH, SPAM } =
-    MAILBOX_LABEL_IDS;
+const {
+    DRAFTS,
+    ALL_DRAFTS,
+    ALL_MAIL,
+    ALMOST_ALL_MAIL,
+    INBOX,
+    SENT,
+    ALL_SENT,
+    ARCHIVE,
+    STARRED,
+    SCHEDULED,
+    TRASH,
+    SPAM,
+} = MAILBOX_LABEL_IDS;
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
     return (
-        !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL, SCHEDULED) &&
+        !labelIncludes(
+            labelID,
+            INBOX,
+            DRAFTS,
+            ALL_DRAFTS,
+            STARRED,
+            SENT,
+            ALL_SENT,
+            ARCHIVE,
+            ALL_MAIL,
+            ALMOST_ALL_MAIL,
+            SCHEDULED
+        ) &&
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
         !isSearch
