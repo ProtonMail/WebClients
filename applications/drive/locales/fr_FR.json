@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Présentation de ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Revenir à la page d'accueil"
-      ],
-      "Beta Access": [
-        "Accès à la version bêta"
       ],
       "Cancel": [
         "Annuler"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Continuer avec Google"
+      ],
+      "Copy address": [
+        "Copier l'adresse"
       ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Revenir au dossier parent"
       ],
-      "Go to settings": [
-        "Accéder aux paramètres"
-      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Masquer les labels"
-      ],
-      "I have a question": [
-        "J’ai une question"
       ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Mois suivant"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Afficher un aperçu"
       ],
-      "Show side panel": [
-        "Afficher le panneau latéral"
-      ],
       "Sign in": [
         "Se connecter"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Envoyer le rapport"
-      ],
-      "Theme": [
-        "Thème"
       ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "L'événement n'est pas pris en charge."
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant leur lancement public. Vous serez donc parmi les premiers à essayer les nouveaux produits, à recevoir les nouvelles mises à jour et à utiliser les nouvelles fonctionnalités."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous voulez importer."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Désactivé"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activé"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Description : ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Contacts, groupes et paramètres"
-      ],
-      "Get help": [
-        "Obtenir de l'aide"
       ]
     },
     "Hint": {
@@ -3344,9 +3305,6 @@
       ],
       "Current version": [
         "Version actuelle"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Les fichiers sont en cours de déchiffrement."
@@ -4385,9 +4343,6 @@
       "Emails (last month)": [
         "Messages (mois dernier)"
       ],
-      "Enable Beta Access": [
-        "Activer l'accès à la version bêta"
-      ],
       "Encrypt emails": [
         "Chiffrer les messages"
       ],
@@ -4603,9 +4558,6 @@
       ],
       "Street address": [
         "Adresse postale"
-      ],
-      "Synchronize with system": [
-        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"
@@ -4839,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Changer d'abonnement"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Basculez vers ou ajoutez un compte"
       ]
     },
     "new_plans: feature": {
@@ -5339,22 +5286,9 @@
         "Message officiel de ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Remarque : le service sera rechargé après que vous aurez cliqué sur le bouton Appliquer."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Importer"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gérez vos contacts et consultez votre calendrier sans quitter votre application."
-      ],
-      "Try the new side panel": [
-        "Essayez le nouveau panneau latéral"
       ]
     },
     "Signing preference for emails": {
@@ -5805,11 +5739,6 @@
         "Champ vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Paramètres"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -5858,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } chargement n'a pas abouti.",
         "${ numberOfFailedTransfer.total } chargements n'ont pas abouti."
       ],
-      "(active)": [
-        "(actif)"
-      ],
       "Account suspended": [
         "Compte suspendu"
       ],
@@ -5885,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
-      ],
-      "Back": [
-        "Retour"
-      ],
-      "Beta Access": [
-        "Accès à la version bêta"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -6130,12 +6050,6 @@
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
       ],
-      "Open help menu": [
-        "Ouvrir le menu d'aide"
-      ],
-      "Open settings menu": [
-        "Ouvrir le menu des paramètres"
-      ],
       "Original size": [
         "Taille d'origine"
       ],
@@ -6195,9 +6109,6 @@
       ],
       "Searching…": [
         "Recherche…"
-      ],
-      "Select a theme": [
-        "Choisissez un thème"
       ],
       "Select action to take on contact group": [
         "Sélectionnez l'action que vous voulez effectuer sur le groupe de contacts."
@@ -6380,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
-      "Hide side panel": [
-        "Masquer le panneau latéral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
-      ],
-      "Show side panel": [
-        "Afficher le panneau latéral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
@@ -6400,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Le thème sélectionné sera activé quand votre système sera en « thème sombre »."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
