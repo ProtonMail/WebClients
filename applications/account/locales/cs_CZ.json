@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Úvod ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
-      "Attention required": [
-        "Vyžadována pozornost"
-      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Kontaktovat podporu"
       ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
       "Continue": [
         "Pokračovat"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Kopírovat"
       ],
-      "Copy email to clipboard": [
-        "Zkopírovat e-mail do schránky"
+      "Copy address": [
+        "Kopírovat adresu"
       ],
       "Copy link": [
         "Kopírovat odkaz"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Skrýt funkce tarifu"
-      ],
-      "I have a question": [
-        "Mám dotaz"
       ],
       "Import": [
         "Importovat"
@@ -1024,26 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Odmítnout"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } vlastní doména",
-        "+ ${ domains } vlastní domény",
-        "+ ${ domains } vlastních domén",
-        "+ ${ domains } vlastních domén"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP adresa",
-        "+ ${ ips } IP adresy",
-        "+ ${ ips } IP adres",
-        "+ ${ ips } IP adres"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } uživatel",
-        "+ ${ users } uživatelé",
-        "+ ${ users } uživatelů",
-        "+ ${ users } uživatelů"
       ]
     },
     "Address action": {
@@ -1673,9 +1647,6 @@
       ],
       "purple": [
         "purpurová"
-      ],
-      "raisin black": [
-        "rozinkově černá"
       ],
       "reef": [
         "útes"
@@ -4592,9 +4563,6 @@
       "Folders": [
         "Složky"
       ],
-      "Get help": [
-        "Získejte pomoc"
-      ],
       "Key type": [
         "Typ klíče"
       ],
@@ -5067,9 +5035,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } vaše předplatné bude automaticky obnoveno ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
       ],
@@ -5451,6 +5416,9 @@
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Jste si jistí, že chcete zahodit váš import?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Jste si jisti, že chcete trvale odstranit všechny záznamy?"
       ],
@@ -5459,9 +5427,6 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
-      ],
-      "Auto-renewal: ": [
-        "Automatické obnovení: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatická odpověď je aktivní každý měsíc ve vybraném časovém rozsahu."
@@ -5792,9 +5757,6 @@
       ],
       "for choosing ${ product }": [
         "za výběr ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Za výběr ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
@@ -9116,9 +9078,6 @@
       "Keep account": [
         "Ponechat si svůj účet"
       ],
-      "Switch or add account": [
-        "Přepnout nebo přidat účet"
-      ],
       "Switch plan": [
         "Změnit tarif"
       ],
@@ -9619,9 +9578,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Vytvořením ${ BRAND_NAME } účtu souhlasíte s našimi ${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Zaplacením vyjadřujete souhlas s našimi ${ termsAndConditions }"
       ],
       "Payment details": [
         "Platební údaje"
@@ -12087,9 +12043,6 @@
       "Automatically sign outgoing messages?": [
         "Automaticky podepisovat odchozí zprávy?"
       ],
-      "Back": [
-        "Zpět"
-      ],
       "Backup and export": [
         "Záloha a export"
       ],
@@ -12510,9 +12463,6 @@
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
-      "Open help menu": [
-        "Otevřít nabídku nápovědy"
-      ],
       "Open pagination": [
         "Otevřít stránkování"
       ],
@@ -12557,9 +12507,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Shrnutí tarifu"
       ],
       "Preview": [
         "Náhled"
@@ -12824,9 +12771,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
-      ],
-      "Your Plan": [
-        "Váš tarif"
       ],
       "Your plan": [
         "Váš tarif"

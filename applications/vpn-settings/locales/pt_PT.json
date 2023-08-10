@@ -5,14 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introdução do ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        "Ativar recuperação"
       ],
       "Add credit / debit card": [
         "Adicionar cartão de crédito/débito"
@@ -28,9 +22,6 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
-      ],
-      "Attention required": [
-        "Requer atenção"
       ],
       "Authenticate": [
         "Autenticar"
@@ -71,6 +62,9 @@
       "Contact support": [
         "Contactar o suporte"
       ],
+      "Contact us": [
+        "Contacte-nos"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -80,8 +74,8 @@
       "Copy": [
         "Copiar"
       ],
-      "Copy email to clipboard": [
-        "Copiar mensagem para a área de transferência"
+      "Copy address": [
+        "Copiar endereço"
       ],
       "Create": [
         "Criar"
@@ -176,14 +170,14 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "Hide": [
         "Ocultar"
       ],
       "Hide plan features": [
         "Ocultar as funcionalidades do plano"
-      ],
-      "I have a question": [
-        "Tenho uma dúvida"
       ],
       "Increase": [
         "Aumentar"
@@ -299,9 +293,6 @@
       "Set new password": [
         "Definir uma nova palavra-passe"
       ],
-      "Set recovery phrase": [
-        "Definir frase de recuperação"
-      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -349,15 +340,6 @@
       ],
       "Unlock": [
         "Desbloquear"
-      ],
-      "Unlock data": [
-        "Desbloquear dados"
-      ],
-      "Update recovery file": [
-        "Actualizar o ficheiro de recuperação"
-      ],
-      "Update recovery phrase": [
-        "Actualizar a frase de recuperação"
       ],
       "Upgrade": [
         "Actualizar"
@@ -420,16 +402,6 @@
       ],
       "Reactivate": [
         "Reativar"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } domínio personalizado",
-        "+ ${ domains } domínios personalizados"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } utilizador",
-        "+ ${ users } utilizadores"
       ]
     },
     "Alter": {
@@ -2048,9 +2020,6 @@
       "Create your account": [
         "Crie a sua conta"
       ],
-      "Get help": [
-        "Obter ajuda"
-      ],
       "Select your pricing plan": [
         "Selecione o seu plano"
       ]
@@ -2069,9 +2038,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
-      ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } a sua subscrição será renovada automaticamente em ${ renewalTime }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
@@ -2174,9 +2140,6 @@
       ],
       "Attention required": [
         "Atenção Requerida"
-      ],
-      "Auto-renewal: ": [
-        "Renovação automática: "
       ],
       "Balance from your previous subscription": [
         "Saldo da sua subscrição anterior"
@@ -2316,8 +2279,8 @@
       "expires ${ expirationDate }": [
         "expira em ${ expirationDate }"
       ],
-      "For choosing ${ product }": [
-        "Por escolher ${ product }"
+      "for choosing ${ product }": [
+        "por escolher ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa, MasterCard e Discover, os 3 dígitos no verso do cartão. Para a American Express, os 4 dígitos na frente do cartão."
@@ -3518,9 +3481,6 @@
       "Keep account": [
         "Conservar a conta"
       ],
-      "Switch or add account": [
-        "Trocar ou adicionar conta"
-      ],
       "Switch plan": [
         "Alterar o plano"
       ]
@@ -3924,9 +3884,6 @@
       ]
     },
     "new_plans: signup": {
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Ao pagar, concorda com os nossos ${ termsAndConditions }"
-      ],
       "terms and conditions": [
         "termos e condições"
       ]
@@ -5042,9 +4999,6 @@
       "Are you sure you want to close the preview?": [
         "Tem a certeza de que deseja fechar a pré-visualização?"
       ],
-      "Back": [
-        "Recuar"
-      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -5089,9 +5043,6 @@
       ],
       "Customize your plan": [
         "Personalize o seu plano"
-      ],
-      "Dashboard": [
-        "Painel"
       ],
       "Date": [
         "Data"
@@ -5183,9 +5134,6 @@
       "Open actions dropdown": [
         "Abrir lista de acções"
       ],
-      "Open help menu": [
-        "Abrir menu de ajuda"
-      ],
       "Open pagination": [
         "Abrir paginação"
       ],
@@ -5210,17 +5158,11 @@
       "Payment verification": [
         "Verificação do pagamento"
       ],
-      "Payments": [
-        "Pagamentos"
-      ],
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
       "Phone": [
         "Telefone"
-      ],
-      "Plan summary": [
-        "Resumo do plano"
       ],
       "Plans": [
         "Planos"
@@ -5326,9 +5268,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "O seu teste gratuito do Mail Plus finaliza em ${ textDate }"
-      ],
-      "Your Plan": [
-        "O seu plano"
       ],
       "Your plan": [
         "O seu plano"

@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } tanıtımı"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
-      "Attention required": [
-        "İlgilenmeniz gerekiyor"
-      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Destek ekibimizle görüşün"
       ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Kopyala"
       ],
-      "Copy email to clipboard": [
-        "E-postayı panoya kopyala"
+      "Copy address": [
+        "Adresi kopyala"
       ],
       "Copy link": [
         "Bağlantıyı kopyala"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Tarife özelliklerini gizle"
-      ],
-      "I have a question": [
-        "Bir sorum var"
       ],
       "Import": [
         "İçe aktar"
@@ -1024,20 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Reddet"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } özel etki alanı",
-        "+ ${ domains } özel etki alanı"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP adresi",
-        "+ ${ ips } IP adresi"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } kullanıcı",
-        "+ ${ users } kullanıcı"
       ]
     },
     "Address action": {
@@ -1663,9 +1643,6 @@
       ],
       "purple": [
         "mor"
-      ],
-      "raisin black": [
-        "siyah üzüm"
       ],
       "reef": [
         "resif"
@@ -4544,9 +4521,6 @@
       "Folders": [
         "Klasörler"
       ],
-      "Get help": [
-        "Yardım alın"
-      ],
       "Key type": [
         "Anahtar türü"
       ],
@@ -5003,9 +4977,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } aboneliğinizi ${ renewalTime } zamanında yenileyecek."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
@@ -5345,6 +5316,9 @@
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to discard your import?": [
+        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Tüm günlük kayıtlarınızı silmek istediğinize emin misiniz?"
       ],
@@ -5353,9 +5327,6 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
-      ],
-      "Auto-renewal: ": [
-        "Otomatik yenileme: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında açılır."
@@ -5681,9 +5652,6 @@
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
       "for choosing ${ product }": [
-        "${ product } seçtiğiniz için"
-      ],
-      "For choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -8967,9 +8935,6 @@
       "Keep account": [
         "Hesabı tut"
       ],
-      "Switch or add account": [
-        "Hesap değiştirin ya da ekleyin"
-      ],
       "Switch plan": [
         "Tarifeyi değiştir"
       ],
@@ -9403,7 +9368,7 @@
         "Otomatik yanıtlar ayarlayarak, kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size özel VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
@@ -9434,9 +9399,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Ödeme yaparak ${ termsAndConditions } metnini kabul etmiş olursunuz"
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
@@ -9517,7 +9479,7 @@
         "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler içinözel bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
@@ -9706,6 +9668,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } eklendi"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } özelliği kapatıldı"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } özelliği açıldı"
       ],
       "A disabled address cannot be default": [
         "Kullanımdan kaldırılmış bir adres varsayılan olamaz"
@@ -11828,9 +11796,6 @@
       "Automatically sign outgoing messages?": [
         "Giden iletiler otomatik olarak imzalansın mı?"
       ],
-      "Back": [
-        "Geri"
-      ],
       "Backup and export": [
         "Yedekleme ve dışa aktarma"
       ],
@@ -12245,9 +12210,6 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
-      "Open help menu": [
-        "Yardım menüsünü aç"
-      ],
       "Open pagination": [
         "Sayfalandırmayı aç"
       ],
@@ -12292,9 +12254,6 @@
       ],
       "Phone": [
         "Telefon"
-      ],
-      "Plan summary": [
-        "Tarife özeti"
       ],
       "Preview": [
         "Ön izleme"
@@ -12555,9 +12514,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
-      ],
-      "Your Plan": [
-        "Tarifeniz"
       ],
       "Your plan": [
         "Tarifeniz"

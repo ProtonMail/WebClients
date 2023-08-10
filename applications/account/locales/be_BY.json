@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Уводзіны ў ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
-      "Attention required": [
-        "Патрабуецца ўвага"
-      ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Звязацца са службай падтрымкі"
       ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
       "Continue": [
         "Працягнуць"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Капіяваць"
       ],
-      "Copy email to clipboard": [
-        "Капіяваць ліст у буфер абмену"
+      "Copy address": [
+        "Капіяваць адрас"
       ],
       "Copy link": [
         "Капіяваць спасылку"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
-      ],
-      "I have a question": [
-        "У мяне ёсць пытанне"
       ],
       "Import": [
         "Імпартаваць"
@@ -1024,26 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Адхіліць"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } карыстальніцкі дамен",
-        "+ ${ domains } карыстальніцкія дамены",
-        "+ ${ domains } карыстальніцкіх даменаў",
-        "+ ${ domains } карыстальніцкія дамены"
-      ],
-      "+ ${ ips } IP address": [
-        "+ ${ ips } IP-адрас",
-        "+ ${ ips } IP-адрасы",
-        "+ ${ ips } IP-адрасоў",
-        "+ ${ ips } IP-адрасоў"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } карыстальнік",
-        "+ ${ users } карыстальнікі",
-        "+ ${ users } карыстальнікаў",
-        "+ ${ users } карыстальнікі"
       ]
     },
     "Address action": {
@@ -1673,9 +1647,6 @@
       ],
       "purple": [
         "фіялетавы"
-      ],
-      "raisin black": [
-        "разынкава-чорны"
       ],
       "reef": [
         "рыфавы"
@@ -4592,9 +4563,6 @@
       "Folders": [
         "Папкі"
       ],
-      "Get help": [
-        "Атрымаць даведку"
-      ],
       "Key type": [
         "Тып ключа"
       ],
@@ -5067,9 +5035,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
       ],
@@ -5451,6 +5416,9 @@
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы сапраўды хочаце незваротна выдаліць усе вашы журналы?"
       ],
@@ -5459,9 +5427,6 @@
       ],
       "Attention required": [
         "Патрабуецца ўвага"
-      ],
-      "Auto-renewal: ": [
-        "Аўтаматычнае падаўжэнне: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Аўтаматычны адказ актыўны кожны месяц паміж выбранай пачатковай і канчатковай датамі."
@@ -5792,9 +5757,6 @@
       ],
       "for choosing ${ product }": [
         "для выбару ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Для выбару ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard і Discover — 3 лічбы на адваротным баку карткі. Для American Express — 4 лічбы на пярэднім баку карткі."
@@ -9137,9 +9099,6 @@
       "Keep account": [
         "Пакінуць уліковы запіс"
       ],
-      "Switch or add account": [
-        "Змяніць або дадаць уліковы запіс"
-      ],
       "Switch plan": [
         "Змяніць тарыфны план"
       ],
@@ -9640,9 +9599,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ствараючы ўліковы запіс ${ BRAND_NAME }, вы пагаджаецеся з нашымі ${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Уносячы аплату, вы пагаджаецеся з нашымі ${ termsAndConditions }"
       ],
       "Payment details": [
         "Рэквізіты плацяжу"
@@ -11061,7 +11017,7 @@
     },
     "Signup step": {
       "Account setup": [
-        "Налады ўліковага запісу"
+        "Наладка ўліковага запісу"
       ],
       "Payment": [
         "Плацеж"
@@ -12114,9 +12070,6 @@
       "Automatically sign outgoing messages?": [
         "Падпісваць выходныя паведамленні аўтаматычна?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Backup and export": [
         "Рэзервовае капіяванне і экспартаванне"
       ],
@@ -12537,9 +12490,6 @@
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
-      "Open help menu": [
-        "Адкрыць меню дапамогі"
-      ],
       "Open pagination": [
         "Паказваць нумарацыю старонак"
       ],
@@ -12584,9 +12534,6 @@
       ],
       "Phone": [
         "Тэлефон"
-      ],
-      "Plan summary": [
-        "Зводка па тарыфным плане"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -12851,9 +12798,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд Mail Plus завершыцца ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш тарыфны план"
       ],
       "Your plan": [
         "Ваш тарыфны план"

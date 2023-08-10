@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducció a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Torna a la pàgina d'inici"
-      ],
-      "Beta Access": [
-        "Accés beta"
       ],
       "Cancel": [
         "Cancel·la"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Continua amb Google"
+      ],
+      "Copy address": [
+        "Copiar l'adreça"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Ves al pare"
       ],
-      "Go to settings": [
-        "Ves a les preferències"
-      ],
       "Got it": [
         "D'acord"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Amaga les etiquetes"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
       ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Mes següent"
-      ],
-      "OK": [
-        "D'acord"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Mostra visualització prèvia"
       ],
-      "Show side panel": [
-        "Mostra el panell lateral"
-      ],
       "Sign in": [
         "Inicia la sessió"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Envia l'informe"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendari"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accés beta us permet utilitzar la versió beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } abans que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "Hem detectat els següents camps al fitxer CSV que heu carregat. Comproveu els que voleu importar."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Desactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descripció: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Contactes, grups i preferències"
-      ],
-      "Get help": [
-        "Obteniu ajuda"
       ]
     },
     "Hint": {
@@ -3224,6 +3185,9 @@
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la vostra importació?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Segur que voleu buidar la paperera i eliminar completament tots els elements?"
       ],
@@ -3341,9 +3305,6 @@
       ],
       "Current version": [
         "Versió actual"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "S'estan desxifrant els fitxers"
@@ -3729,6 +3690,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Proporcioneu un nom i una adreça de correu electrònic per crear un grup."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
@@ -4379,9 +4343,6 @@
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
       ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
-      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
@@ -4597,9 +4558,6 @@
       ],
       "Street address": [
         "Adreça de carrer"
-      ],
-      "Synchronize with system": [
-        "Sincronitza amb el sistema"
       ],
       "System information": [
         "Informació del sistema"
@@ -4833,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Millora ara"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
       ]
     },
     "new_plans: feature": {
@@ -5333,22 +5286,9 @@
         "Missatge oficial de ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Carrega"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestioneu els vostres contactes i vegeu el calendari sense sortir de l'aplicació."
-      ],
-      "Try the new side panel": [
-        "Proveu el nou panell lateral."
       ]
     },
     "Signing preference for emails": {
@@ -5799,11 +5739,6 @@
         "Camp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Preferències"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -5852,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } pujada fallida",
         "${ numberOfFailedTransfer.total } pujades fallides"
       ],
-      "(active)": [
-        "(actiu)"
-      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -5879,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
-      ],
-      "Back": [
-        "Torna"
-      ],
-      "Beta Access": [
-        "Accés Beta"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -6124,12 +6050,6 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
-      "Open settings menu": [
-        "Obrir el menú de preferències"
-      ],
       "Original size": [
         "Mida original"
       ],
@@ -6189,9 +6109,6 @@
       ],
       "Searching…": [
         "S'està cercant…"
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
       ],
       "Select action to take on contact group": [
         "Seleccionar acció a realitzar al grup de contactes"
@@ -6374,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
-      "Hide side panel": [
-        "Amaga el panell lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
-      ],
-      "Show side panel": [
-        "Mostra el panell lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -6394,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "El tema seleccionat s'activarà quan el sistema estigui en «mode fosc»"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

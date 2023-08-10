@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Vorstellung von ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Zurück zur Startseite"
-      ],
-      "Beta Access": [
-        "Beta-Zugang"
       ],
       "Cancel": [
         "Abbrechen"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Mit Google anmelden"
+      ],
+      "Copy address": [
+        "E-Mail-Adresse kopieren"
       ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
@@ -318,9 +315,6 @@
       "Go to parent": [
         "Zum übergeordneten"
       ],
-      "Go to settings": [
-        "Zu den Einstellungen"
-      ],
       "Got it": [
         "Verstanden"
       ],
@@ -335,9 +329,6 @@
       ],
       "Hide labels": [
         "Kategorien ausblenden"
-      ],
-      "I have a question": [
-        "Ich habe eine Frage"
       ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
@@ -425,9 +416,6 @@
       ],
       "Next month": [
         "Nächster Monat"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -591,9 +579,6 @@
       "Show preview": [
         "Vorschau anzeigen"
       ],
-      "Show side panel": [
-        "Seitenleiste anzeigen"
-      ],
       "Sign in": [
         "Anmelden"
       ],
@@ -632,9 +617,6 @@
       ],
       "Submit report": [
         "Bericht senden"
-      ],
-      "Theme": [
-        "Farbschema"
       ],
       "Toggle Calendar app": [
         "Kalender-App umschalten"
@@ -775,14 +757,6 @@
       ],
       "Unsupported event": [
         "Nicht unterstützter Termin"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Mit dem Beta-Zugang kannst du die Beta-Version von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } nutzen, bevor sie für die Öffentlichkeit freigegeben werden. Dies bedeutet, dass du als Erster neue Produkte ausprobieren, neue Aktualisierungen erhalten und neue Funktionen nutzen kannst."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
       ]
     },
     "Billing cycle option": {
@@ -1863,16 +1837,6 @@
         "In der hochgeladenen CSV-Datei wurden die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Aus"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Ein"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Beschreibung: ${ eventDescription }"
@@ -2752,9 +2716,6 @@
       ],
       "Contacts, groups and settings": [
         "Kontakte, Gruppen und Einstellungen"
-      ],
-      "Get help": [
-        "Hilfe erhalten"
       ]
     },
     "Hint": {
@@ -3344,9 +3305,6 @@
       ],
       "Current version": [
         "Aktuelle Version"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
       "Decrypting files": [
         "Dateien werden entschlüsselt"
@@ -4385,9 +4343,6 @@
       "Emails (last month)": [
         "E-Mails (letzter Monat)"
       ],
-      "Enable Beta Access": [
-        "Beta-Zugang aktivieren"
-      ],
       "Encrypt emails": [
         "E-Mails verschlüsseln"
       ],
@@ -4603,9 +4558,6 @@
       ],
       "Street address": [
         "Straße und Hausnummer"
-      ],
-      "Synchronize with system": [
-        "Mit System synchronisieren"
       ],
       "System information": [
         "Systeminformationen"
@@ -4839,11 +4791,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Jetzt upgraden"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Konto wechseln oder hinzufügen"
       ]
     },
     "new_plans: feature": {
@@ -5339,22 +5286,9 @@
         "Offizielle E-Mail von ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Hinweis: Der Dienst wird neu geladen, wenn du auf die Schaltfläche „Übernehmen“ klickst."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Hochladen"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Verwalte deine Kontakte und zeige deinen Kalender an, ohne die App zu verlassen."
-      ],
-      "Try the new side panel": [
-        "Teste die neue Seitenleiste"
       ]
     },
     "Signing preference for emails": {
@@ -5805,11 +5739,6 @@
         "vCard-Feld"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Einstellungen"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -5858,9 +5787,6 @@
         "${ numberOfFailedTransfer.total } fehlgeschlagener Upload",
         "${ numberOfFailedTransfer.total } fehlgeschlagene Uploads"
       ],
-      "(active)": [
-        "(aktiv)"
-      ],
       "Account suspended": [
         "Konto gesperrt"
       ],
@@ -5885,12 +5811,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
-      ],
-      "Back": [
-        "Zurück"
-      ],
-      "Beta Access": [
-        "Beta-Zugang"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -6130,12 +6050,6 @@
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
       ],
-      "Open help menu": [
-        "Hilfemenü öffnen"
-      ],
-      "Open settings menu": [
-        "Einstellungsmenü öffnen"
-      ],
       "Original size": [
         "Originalgröße"
       ],
@@ -6195,9 +6109,6 @@
       ],
       "Searching…": [
         "Suche läuft…"
-      ],
-      "Select a theme": [
-        "Farbschema auswählen"
       ],
       "Select action to take on contact group": [
         "Aktion für die Kontaktgruppe auswählen"
@@ -6380,14 +6291,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
-      "Hide side panel": [
-        "Seitenleiste ausblenden"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
-      ],
-      "Show side panel": [
-        "Seitenleiste anzeigen"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
@@ -6400,12 +6305,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Dunkler Modus\" eingestellt ist."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"

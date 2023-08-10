@@ -16,9 +16,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Tazwart n ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
@@ -154,6 +151,9 @@
       "Contact support": [
         "Nermes tallelt"
       ],
+      "Contact us": [
+        "Nermes-aɣ-d"
+      ],
       "Continue": [
         "Kemmel"
       ],
@@ -172,8 +172,8 @@
       "Copy": [
         "Nɣel"
       ],
-      "Copy email to clipboard": [
-        "Nɣel imayl ɣef afus"
+      "Copy address": [
+        "Nɣel tansa"
       ],
       "Copy link": [
         "Nɣel aseɣwen"
@@ -369,9 +369,6 @@
       ],
       "Hide labels": [
         "Ffer tibzimin"
-      ],
-      "I have a question": [
-        "Sɛiɣ asteqsi"
       ],
       "Import": [
         "Kter"
@@ -832,16 +829,6 @@
     "Action in trial plan": {
       "No, thanks": [
         "Uhu, tanemmirt"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } taɣult tudmawant",
-        "+ ${ domains } tiɣula tudmawanin"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } n useqdac",
-        "+ ${ users } n yiseqdacen"
       ]
     },
     "Address action": {
@@ -3043,9 +3030,6 @@
       ],
       "Folders": [
         "Ikaramen"
-      ],
-      "Get help": [
-        "Awi tallalt"
       ],
       "Key type": [
         "Anaw n tsarutt"
@@ -6048,9 +6032,6 @@
       "Keep account": [
         "Eǧǧ amiḍan"
       ],
-      "Switch or add account": [
-        "Beddel neɣ rnu umiḍan"
-      ],
       "Switch plan": [
         "Beddel aɣawas"
       ]
@@ -7367,9 +7348,6 @@
       "Automatically sign outgoing messages?": [
         "Ad tzemleḍ s wudem awurman iznan iteffɣen?"
       ],
-      "Back": [
-        "Ar deffir"
-      ],
       "Backup and export": [
         "Wgelhen syen sifeḍ"
       ],
@@ -7703,9 +7681,6 @@
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
-      "Open help menu": [
-        "Ldi umuɣ n tallelt"
-      ],
       "Open pagination": [
         "Ldi tissubtert"
       ],
@@ -7738,9 +7713,6 @@
       ],
       "Phone": [
         "Tiliɣri"
-      ],
-      "Plan summary": [
-        "Agzul n uɣawas"
       ],
       "Previous": [
         "Γer deffir"

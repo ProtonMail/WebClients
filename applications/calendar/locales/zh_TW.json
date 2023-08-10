@@ -21,9 +21,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -81,9 +78,6 @@
       "Back": [
         "返回"
       ],
-      "Beta Access": [
-        "測試版體驗"
-      ],
       "Cancel": [
         "取消"
       ],
@@ -140,6 +134,9 @@
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
+      ],
+      "Copy address": [
+        "複製郵件位址"
       ],
       "Copy email address": [
         "複製電子郵件地址"
@@ -246,9 +243,6 @@
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
       ],
-      "Go to settings": [
-        "前往設定"
-      ],
       "Got it": [
         "了解"
       ],
@@ -266,9 +260,6 @@
       ],
       "Hide time zones": [
         "隱藏時區"
-      ],
-      "I have a question": [
-        "我要發問"
       ],
       "Image could not be loaded with tracker protection.": [
         "無法在啟用追蹤保護中載入影像。"
@@ -456,6 +447,9 @@
       "Select all": [
         "全選"
       ],
+      "Select calendar view": [
+        "選擇行事曆檢視方式"
+      ],
       "Select time zone": [
         "選取時區"
       ],
@@ -489,9 +483,6 @@
       "Show more": [
         "顯示更多"
       ],
-      "Show side panel": [
-        "顯示側邊面板"
-      ],
       "Show time zones": [
         "顯示時區"
       ],
@@ -521,9 +512,6 @@
       ],
       "Submit": [
         "送出"
-      ],
-      "Theme": [
-        "佈景主題"
       ],
       "Today": [
         "今天"
@@ -720,14 +708,6 @@
     "Attendee role": {
       "Optional": [
         "自由列席"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版嚐鮮讓您有專屬權限提前體驗 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的未來釋出版本。這就表示您可以取得新產品第一手消息、享有最即時更新，還可以搶先使用新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "若您遇上問題，您隨時可以停用 Beta 測試版。"
       ]
     },
     "Billing cycle option": {
@@ -1963,6 +1943,29 @@
         "直到 ${ dateString } 為止"
       ]
     },
+    "Day": {
+      "Friday": [
+        "週五"
+      ],
+      "Monday": [
+        "週一"
+      ],
+      "Saturday": [
+        "週六"
+      ],
+      "Sunday": [
+        "週日"
+      ],
+      "Thursday": [
+        "週四"
+      ],
+      "Tuesday": [
+        "週二"
+      ],
+      "Wednesday": [
+        "週三"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
@@ -2073,16 +2076,6 @@
       ],
       "90 minutes": [
         "90 分鐘"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "開啟"
       ]
     },
     "Edit event button tooltip": {
@@ -3033,12 +3026,6 @@
       "Contacts": [
         "聯絡人"
       ],
-      "Contacts, groups and settings": [
-        "聯絡人、群組和設定"
-      ],
-      "Get help": [
-        "取得協助"
-      ],
       "Name": [
         "名稱"
       ]
@@ -3506,9 +3493,6 @@
       "Custom yearly": [
         "自訂每年"
       ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
-      ],
       "Daily": [
         "每日"
       ],
@@ -3554,9 +3538,6 @@
       "Existent, added and removed participants will be notified.": [
         "現有、已加入及已移除的參與者將獲通知。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
-      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3592,9 +3573,6 @@
       ],
       "Import mailbox": [
         "匯入郵箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3859,6 +3837,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "Week and month views only apply to desktop.": [
+        "週和月檢視僅適用於電腦版。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
@@ -4170,6 +4151,9 @@
       "Date and time": [
         "日期與時間"
       ],
+      "Default view": [
+        "預設檢視"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -4208,9 +4192,6 @@
       ],
       "Emails (last month)": [
         "電子郵件（上個月）"
-      ],
-      "Enable Beta Access": [
-        "啟用測試版體驗"
       ],
       "Encrypt emails": [
         "加密電郵"
@@ -4374,17 +4355,20 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Show week numbers": [
+        "顯示週數"
+      ],
       "Sign emails": [
         "簽署電郵"
       ],
       "Street address": [
         "街道位址"
       ],
-      "Synchronize with system": [
-        "與系統同步"
-      ],
       "System information": [
         "系統資訊"
+      ],
+      "Time zone": [
+        "時區"
       ],
       "To: ${ to }": [
         "收件者：${ to }"
@@ -4403,6 +4387,9 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Week start": [
+        "一週的起始日"
       ],
       "What happened?": [
         "發生了甚麼問題？"
@@ -4778,11 +4765,6 @@
         "立即升級"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切換或是加入帳號"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
@@ -5020,6 +5002,9 @@
       "All events": [
         "所有事件"
       ],
+      "Automatic (${ defaultDay })": [
+        "自動 (${ defaultDay })"
+      ],
       "Create new group": [
         "建立新群組"
       ],
@@ -5242,11 +5227,6 @@
         "來自 ${ BRAND_NAME } 的官方電子郵件"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "請注意：點擊「套用」按鈕後，服務將會重新載入。"
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "重新載入事件"
@@ -5298,14 +5278,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 分享"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
-      ],
-      "Try the new side panel": [
-        "嘗試新的側欄"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5854,11 +5826,6 @@
         "vCard 欄位"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }小時"
@@ -5890,9 +5857,6 @@
       "${ emailsCount } email addresses": [
         "${ emailsCount }電子郵件位址"
       ],
-      "(active)": [
-        "(啟用)"
-      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -5922,12 +5886,6 @@
       ],
       "Addresses": [
         "位址"
-      ],
-      "Back": [
-        "返回"
-      ],
-      "Beta Access": [
-        "測試版體驗"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -6091,12 +6049,6 @@
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
-      "Open help menu": [
-        "開啟說明選單"
-      ],
-      "Open settings menu": [
-        "開啟設定選單"
-      ],
       "Organizer cannot be notified": [
         "無法知會召集人"
       ],
@@ -6144,9 +6096,6 @@
       ],
       "Select a day in the month": [
         "請選擇月中的一日"
-      ],
-      "Select a theme": [
-        "選擇佈景主題"
       ],
       "Select action to take on contact group": [
         "選擇針對聯絡人群組的動作"
@@ -6231,9 +6180,6 @@
       ],
       "Update recurring event": [
         "更新週期性事件"
-      ],
-      "View contacts": [
-        "檢視聯絡人"
       ],
       "Warning": [
         "警告"
@@ -6325,14 +6271,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
-      "Hide side panel": [
-        "隱藏側欄"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
-      ],
-      "Show side panel": [
-        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
@@ -6345,12 +6285,6 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "當您的系統設定為「深色模式」時，將會啟用選定的佈景主題"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "當您的系統設定為「淺色模式」時，將會啟用選定的佈景主題"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
