@@ -32,9 +32,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -119,9 +116,6 @@
       "Attach screenshot(s)": [
         "添加截图"
       ],
-      "Attention required": [
-        "需要关注"
-      ],
       "Authenticate": [
         "认证"
       ],
@@ -185,6 +179,9 @@
       "Contact support": [
         "联系客服"
       ],
+      "Contact us": [
+        "联系我们"
+      ],
       "Continue": [
         "继续"
       ],
@@ -203,8 +200,8 @@
       "Copy": [
         "复制"
       ],
-      "Copy email to clipboard": [
-        "复制邮箱地址"
+      "Copy address": [
+        "复制地址"
       ],
       "Copy link": [
         "复制链接"
@@ -418,9 +415,6 @@
       ],
       "Hide labels": [
         "隐藏标签"
-      ],
-      "I have a question": [
-        "我有疑问"
       ],
       "Import": [
         "导入"
@@ -916,14 +910,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "拒绝"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domains": [
-        "+ ${ domains } 个自有域名"
-      ],
-      "+ ${ users } users": [
-        "+ ${ users } 位用户"
       ]
     },
     "Address action": {
@@ -1514,9 +1500,6 @@
       ],
       "purple": [
         "紫色"
-      ],
-      "raisin black": [
-        "葡萄干黑"
       ],
       "reef": [
         "珊瑚绿"
@@ -4054,9 +4037,6 @@
       "Folders": [
         "文件夹"
       ],
-      "Get help": [
-        "获取帮助"
-      ],
       "Key type": [
         "密钥类型"
       ],
@@ -5054,9 +5034,6 @@
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
       "for choosing ${ product }": [
-        "感谢您选择 ${ product }"
-      ],
-      "For choosing ${ product }": [
         "感谢您选择 ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -7980,9 +7957,6 @@
       "Keep account": [
         "保留账户"
       ],
-      "Switch or add account": [
-        "切换或添加账户"
-      ],
       "Switch plan": [
         "切换计划"
       ],
@@ -8324,9 +8298,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "创建 ${ BRAND_NAME } 账户即表示您接受我们的${ terms }。"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "支付即表示您同意我们的${ termsAndConditions }"
       ],
       "Payment details": [
         "支付方式"
@@ -10261,9 +10232,6 @@
       "Automatically sign outgoing messages?": [
         "自动对向外发送的邮件予以数字签名？"
       ],
-      "Back": [
-        "返回"
-      ],
       "Backup and export": [
         "备份和导出"
       ],
@@ -10657,9 +10625,6 @@
       "Open actions dropdown": [
         "展开操作菜单"
       ],
-      "Open help menu": [
-        "打开帮助菜单"
-      ],
       "Open pagination": [
         "选择页码"
       ],
@@ -10692,9 +10657,6 @@
       ],
       "Phone": [
         "电话"
-      ],
-      "Plan summary": [
-        "订单概览"
       ],
       "Preview": [
         "预览"
@@ -10929,9 +10891,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
-      ],
-      "Your Plan": [
-        "您的账户等级"
       ],
       "Your plan": [
         "您的账户等级"

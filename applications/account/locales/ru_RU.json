@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Введение в ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
-      "Attention required": [
-        "Требуется внимание"
-      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Связаться с поддержкой"
       ],
+      "Contact us": [
+        "Связаться с нами"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Копировать"
       ],
-      "Copy email to clipboard": [
-        "Скопировать адрес электронной почты в буфер обмена"
+      "Copy address": [
+        "Копировать адрес"
       ],
       "Copy link": [
         "Копировать ссылку"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Скрыть возможности тарифа"
-      ],
-      "I have a question": [
-        "У меня есть вопрос"
       ],
       "Import": [
         "Импортировать"
@@ -1026,26 +1020,15 @@
         "Отклонить"
       ]
     },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } свой домен",
-        "+ ${ domains } своих домена",
-        "+ ${ domains } своих доменов",
-        "+ ${ domains } своих доменов"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } пользователь",
-        "+ ${ users } пользователя",
-        "+ ${ users } пользователей",
-        "+ ${ users } пользователя"
-      ]
-    },
     "Address action": {
       "Delete": [
         "Удалить"
       ],
       "Disable": [
         "Отключить"
+      ],
+      "Disallow unsigned mail": [
+        "Запретить почту без подписи"
       ],
       "Enable": [
         "Включить"
@@ -1064,6 +1047,9 @@
       "Active": [
         "Активен"
       ],
+      "Allow unsigned mail": [
+        "Разрешать почту без подписи"
+      ],
       "Default": [
         "По умолчанию"
       ],
@@ -1075,6 +1061,9 @@
       ],
       "Missing keys": [
         "Отсутствуют ключи"
+      ],
+      "No E2EE mail": [
+        "Нет зашифрованной сквозным методом почты"
       ],
       "Orphan": [
         "Не привязан"
@@ -1652,9 +1641,6 @@
       ],
       "purple": [
         "фиолетовый"
-      ],
-      "raisin black": [
-        "лиловый черный"
       ],
       "reef": [
         "коралловый"
@@ -4503,9 +4489,6 @@
       "Folders": [
         "Папки"
       ],
-      "Get help": [
-        "Получить помощь"
-      ],
       "Key type": [
         "Тип ключа"
       ],
@@ -4978,9 +4961,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } ваша подписка будет автоматически продлена ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
@@ -5365,9 +5345,6 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Auto-renewal: ": [
-        "Автопродление: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Автоответчик активен каждый месяц между выбранной начальной и конечной датами."
       ],
@@ -5694,9 +5671,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
-      ],
-      "For choosing ${ product }": [
-        "За выбор ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard и Discover - 3 цифры на обратной стороне вашей карты. Для American Express - 4 цифры на лицевой стороне вашей карты."
@@ -8480,6 +8454,9 @@
       "Common sign up issues": [
         "Частые проблемы при регистрации"
       ],
+      "create a ticket": [
+        "создать тикет"
+      ],
       "Create account": [
         "Создать аккаунт"
       ],
@@ -8977,9 +8954,6 @@
       "Keep account": [
         "Сохранить аккаунт"
       ],
-      "Switch or add account": [
-        "Изменить или добавить аккаунт"
-      ],
       "Switch plan": [
         "Сменить тариф"
       ],
@@ -9472,9 +9446,6 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }"
       ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Оплачивая, вы соглашаетесь с нашими ${ termsAndConditions }"
-      ],
       "Payment details": [
         "Информация платежа"
       ],
@@ -9729,6 +9700,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "Фильтр ${ Filter.Name } создан"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } был отключен"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } был включен"
       ],
       "A disabled address cannot be default": [
         "Отключённый адрес не может быть адресом по умолчанию"
@@ -10587,6 +10564,9 @@
       ],
       "Email address not yet verified.": [
         "Адрес электронной почты еще не подтвержден."
+      ],
+      "Email removed": [
+        "Email удалён"
       ],
       "sign in": [
         "войти в систему"
@@ -11906,9 +11886,6 @@
       "Automatically sign outgoing messages?": [
         "Подписывать ли исходящие сообщения автоматически?"
       ],
-      "Back": [
-        "Назад"
-      ],
       "Backup and export": [
         "Резервное копирование и экспорт"
       ],
@@ -12329,9 +12306,6 @@
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
-      "Open help menu": [
-        "Открыть меню справки"
-      ],
       "Open pagination": [
         "Открыть нумерацию страниц"
       ],
@@ -12376,9 +12350,6 @@
       ],
       "Phone": [
         "Телефон"
-      ],
-      "Plan summary": [
-        "Сводка по тарифу"
       ],
       "Preview": [
         "Предварительный просмотр"
@@ -12643,9 +12614,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
-      ],
-      "Your Plan": [
-        "Ваш план"
       ],
       "Your plan": [
         "Ваш тариф"
