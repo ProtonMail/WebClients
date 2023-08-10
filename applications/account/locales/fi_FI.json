@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME }in esittely"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
-      "Attention required": [
-        "Huomiota vaaditaan"
-      ],
       "Authenticate": [
         "Todenna"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Ota yhteyttä asiakaspalveluun"
       ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
       "Continue": [
         "Jatka"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Kopioi"
       ],
-      "Copy email to clipboard": [
-        "Kopioi sähköpostiosoite leikepöydälle"
+      "Copy address": [
+        "Kopioi osoite"
       ],
       "Copy link": [
         "Kopioi linkki"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "Piilota tilauksen ominaisuudet"
-      ],
-      "I have a question": [
-        "Minulla on kysyttävää"
       ],
       "Import": [
         "Tuo"
@@ -1024,16 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Kieltäydy"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } oma verkkotunnus",
-        "+ ${ domains } omaa verkkotunnusta"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } käyttäjä",
-        "+ ${ users } käyttäjää"
       ]
     },
     "Address action": {
@@ -1659,9 +1643,6 @@
       ],
       "purple": [
         "violetti"
-      ],
-      "raisin black": [
-        "rusinan musta"
       ],
       "reef": [
         "riutta"
@@ -4540,9 +4521,6 @@
       "Folders": [
         "Kansiot"
       ],
-      "Get help": [
-        "Hanki apua"
-      ],
       "Key type": [
         "Avaimen tyyppi"
       ],
@@ -4999,9 +4977,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } tilauksesi uudistuu automaattisesti ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
       ],
@@ -5341,6 +5316,9 @@
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Haluatko varmasti hylätä tuontisi?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Haluatko varmasti poistaa kaikki lokitiedot pysyvästi?"
       ],
@@ -5349,9 +5327,6 @@
       ],
       "Attention required": [
         "Huomiota vaaditaan"
-      ],
-      "Auto-renewal: ": [
-        "Automaattiuudistus: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automaattivastaus on joka kuukausi käytössä aloitusajasta lopetusaikaan."
@@ -5678,9 +5653,6 @@
       ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Kun valitsit ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa ja MasterCard: 3 numeroa kortin taustassa. American Express: 4 numeroa kortin edustassa."
@@ -8671,13 +8643,13 @@
         "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
-        "Kirjaudu sisään ${ BRAND_NAME } -tilillesi päästäksesi käyttämään kaikkia salattuja ${ BRAND_NAME } -palveluja, kuten ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muita. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
+        "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
       ],
       "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Kirjaudu sisään | ${ BRAND_NAME } -tili - Pääset käyttämään ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ja paljon muuta"
+        "Kirjaudu sisään | ${ BRAND_NAME }-tili - Käytä mm. ${ MAIL_APP_NAME }ia ja ${ DRIVE_SHORT_APP_NAME }a"
       ],
       "Try ${ planName } for free with this link": [
-        "Kokeile ${ planName } ilmaiseksi tällä linkillä"
+        "Kokeile ${ planName } -tilausta ilmaiseksi tästä linkistä"
       ]
     },
     "Modal title": {
@@ -8962,9 +8934,6 @@
       ],
       "Keep account": [
         "Säilytä tili"
-      ],
-      "Switch or add account": [
-        "Vaihda tai lisää tili"
       ],
       "Switch plan": [
         "Vaihda tilausta"
@@ -9431,9 +9400,6 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Luodessasi ${ BRAND_NAME }-tilin, hyväksyt ${ terms }"
       ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Maksamalla hyväksyt ${ termsAndConditions }"
-      ],
       "Payment details": [
         "Maksutiedot"
       ],
@@ -9702,6 +9668,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } luotiin"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } on poistettu käytöstä"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } on otettu käyttöön"
       ],
       "A disabled address cannot be default": [
         "Käytöstä poistettu osoite ei voi olla oletusosoite"
@@ -10144,7 +10116,7 @@
         "Päästä päähän -salattu"
       ],
       "Open source": [
-        "Avoin lähdekoodi"
+        "Avointa lähdekoodia"
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
@@ -11824,9 +11796,6 @@
       "Automatically sign outgoing messages?": [
         "Allekirjoitetaanko lähtevät viestit automaattisesti?"
       ],
-      "Back": [
-        "Takaisin"
-      ],
       "Backup and export": [
         "Varmuuskopiointi ja vienti"
       ],
@@ -12241,9 +12210,6 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
-      "Open help menu": [
-        "Avaa tukivalikko"
-      ],
       "Open pagination": [
         "Avaa sivunavigaatio"
       ],
@@ -12288,9 +12254,6 @@
       ],
       "Phone": [
         "Puhelin"
-      ],
-      "Plan summary": [
-        "Tilauksen yhteenveto"
       ],
       "Preview": [
         "Esikatselu"
@@ -12551,9 +12514,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ilmainen Mail Plus -kokeilusi päättyy ${ textDate }"
-      ],
-      "Your Plan": [
-        "Nykyinen tilauksesi"
       ],
       "Your plan": [
         "Tilauksesi"

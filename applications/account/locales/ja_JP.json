@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
-      "Attention required": [
-        "注意が必要です"
-      ],
       "Authenticate": [
         "認証"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "サポートへ連絡"
       ],
+      "Contact us": [
+        "お問い合わせ"
+      ],
       "Continue": [
         "続行"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "コピー"
       ],
-      "Copy email to clipboard": [
-        "メールをコピー"
+      "Copy address": [
+        "アドレスをコピー"
       ],
       "Copy link": [
         "リンクをコピー"
@@ -475,9 +472,6 @@
       ],
       "Hide plan features": [
         "プランの機能を隠す"
-      ],
-      "I have a question": [
-        "サポートに質問"
       ],
       "Import": [
         "インポート"
@@ -1024,14 +1018,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "拒否"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domains": [
-        "+ ${ domains } 独自ドメイン"
-      ],
-      "+ ${ users } users": [
-        "＋${ users }名のユーザー"
       ]
     },
     "Address action": {
@@ -1655,9 +1641,6 @@
       ],
       "purple": [
         "パープル"
-      ],
-      "raisin black": [
-        "黒"
       ],
       "reef": [
         "リーフ"
@@ -4517,9 +4500,6 @@
       "Folders": [
         "フォルダー"
       ],
-      "Get help": [
-        "ヘルプを参照"
-      ],
       "Key type": [
         "鍵の種類"
       ],
@@ -4968,9 +4948,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal }: あなたのサブスクリプションは、${ renewalTime } に自動的に更新されます。"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
       ],
@@ -5298,9 +5275,6 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Auto-renewal: ": [
-        "自動更新: "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "自動返信は、毎月設定された日の開始時刻と終了時刻の間有効です。"
       ],
@@ -5624,9 +5598,6 @@
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
-      ],
-      "For choosing ${ product }": [
-        "${ product } を選択する場合"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa、MasterCard、Discover の場合カードの裏に3桁の数字があります。American Express の場合はカードの表に4桁の数字があります。"
@@ -8835,9 +8806,6 @@
       "Keep account": [
         "アカウントを削除しない"
       ],
-      "Switch or add account": [
-        "アカウントを追加・切り替え"
-      ],
       "Switch plan": [
         "プランを変更"
       ],
@@ -9281,9 +9249,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "支払うことにより、${ termsAndConditions } に同意したものとみなされます"
       ],
       "Payment details": [
         "支払いの詳細"
@@ -11621,9 +11586,6 @@
       "Automatically sign outgoing messages?": [
         "送信メッセージに自動で署名しますか?"
       ],
-      "Back": [
-        "戻る"
-      ],
       "Backup and export": [
         "バックアップとエクスポート"
       ],
@@ -12035,9 +11997,6 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
       "Open pagination": [
         "ページネーションを開く"
       ],
@@ -12082,9 +12041,6 @@
       ],
       "Phone": [
         "電話番号"
-      ],
-      "Plan summary": [
-        "プランの概要"
       ],
       "Preview": [
         "プレビュー"
@@ -12343,9 +12299,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mial Plusのトライアル期間が ${ textDate } に終了します。"
-      ],
-      "Your Plan": [
-        "あなたのプラン"
       ],
       "Your plan": [
         "現在のプラン"

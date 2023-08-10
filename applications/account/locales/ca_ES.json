@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Introducció a ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
-      "Attention required": [
-        "Es requereix la vostra atenció"
-      ],
       "Authenticate": [
         "Autentica"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "Contactar amb el suport"
       ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "Copia"
       ],
-      "Copy email to clipboard": [
-        "Copiar correu electrònic al porta-retalls"
+      "Copy address": [
+        "Copiar l'adreça"
       ],
       "Copy link": [
         "Copia l'enllaç"
@@ -440,6 +437,12 @@
       "Get a new encrypted email address": [
         "Obteniu una nova adreça de correu xifrada"
       ],
+      "Get in touch": [
+        "Contacta amb nosaltres"
+      ],
+      "Get more": [
+        "Aconsegueix-ne més"
+      ],
       "Get more addresses": [
         "Obteniu més adreces"
       ],
@@ -475,9 +478,6 @@
       ],
       "Hide plan features": [
         "Amaga les característiques del pla"
-      ],
-      "I have a question": [
-        "Tinc una pregunta"
       ],
       "Import": [
         "Importa"
@@ -595,6 +595,9 @@
       ],
       "Pay": [
         "Pagar"
+      ],
+      "Pay ${ price }": [
+        "Paga ${ price }"
       ],
       "Pay ${ price } now": [
         "Paga ${ price } ara"
@@ -1027,13 +1030,13 @@
       ]
     },
     "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } dominis personalitzats",
-        "+ ${ domains } domini personalitzat"
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
       ],
-      "+ ${ users } user": [
-        "+ ${ users } usuari",
-        "+ ${ users } usuaris"
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Address action": {
@@ -1043,8 +1046,17 @@
       "Disable": [
         "Desactiva"
       ],
+      "Disable E2EE mail": [
+        "Desactiva el correu E2EE"
+      ],
+      "Disallow unsigned mail": [
+        "No permetre correus sense signar"
+      ],
       "Enable": [
         "Habilitar"
+      ],
+      "Enable E2EE mail": [
+        "Activa el correu E2EE"
       ],
       "Generate missing keys": [
         "Genera les claus que falten"
@@ -1060,6 +1072,9 @@
       "Active": [
         "Actiu"
       ],
+      "Allow unsigned mail": [
+        "Permetre correus sense signar"
+      ],
       "Default": [
         "Per defecte"
       ],
@@ -1071,6 +1086,9 @@
       ],
       "Missing keys": [
         "Falten claus"
+      ],
+      "No E2EE mail": [
+        "Cap correu E2EE"
       ],
       "Orphan": [
         "Orfà"
@@ -1501,6 +1519,17 @@
         "Total per ${ n } mesos"
       ]
     },
+    "Checkout summary": {
+      "month": [
+        "mes"
+      ],
+      "Servers": [
+        "Servidors"
+      ],
+      "Users": [
+        "Usuaris"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replega"
@@ -1644,9 +1673,6 @@
       ],
       "purple": [
         "porpra"
-      ],
-      "raisin black": [
-        "negre pansa"
       ],
       "reef": [
         "corall"
@@ -4525,9 +4551,6 @@
       "Folders": [
         "Carpetes"
       ],
-      "Get help": [
-        "Obteniu ajuda"
-      ],
       "Key type": [
         "Tipus de clau"
       ],
@@ -4984,9 +5007,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal } la vostra subscripció es renovarà automàticament el ${ renewalTime }."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
       ],
@@ -5275,6 +5295,9 @@
       "Amount below minimum (${ amount }).": [
         "Import inferior al mínim (${ amount })."
       ],
+      "Amount due": [
+        "Import a deure"
+      ],
       "An error occurred while communicating with the extension": [
         "S'ha produït un error en comunicar amb l'extensió"
       ],
@@ -5326,6 +5349,9 @@
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Esteu segur que voleu descartar la vostra importació?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Estàs segur que vols eliminar tots els teus registres de forma permanent?"
       ],
@@ -5334,9 +5360,6 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
-      ],
-      "Auto-renewal: ": [
-        "Renovació automàtica: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
@@ -5663,9 +5686,6 @@
       ],
       "for choosing ${ product }": [
         "per escollir ${ product }"
-      ],
-      "For choosing ${ product }": [
-        "Per a triar ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Per a Visa, MasterCard i Discover, els 3 dígits a la part posterior de la targeta. Per a American Express, els 4 dígits a la part frontal de la targeta."
@@ -6710,6 +6730,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
+      ],
+      "Welcome": [
+        "Us donem la benvinguda"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviarem un codi de restabliment a l'adreça de correu electrònic que heu proporcionat per a la recuperació del compte."
@@ -8410,6 +8433,9 @@
       "Add a gift code": [
         "Afegir un codi regal"
       ],
+      "Add gift code": [
+        "Afegir un codi regal"
+      ],
       "Apps and extensions": [
         "Aplicacions i extensions"
       ],
@@ -8622,8 +8648,44 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Inicia sessió"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Registre"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Creeu un compte ${ BRAND_NAME } per a utilitzar tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més, amb només un inici de sessió. Obteniu un compte ${ BRAND_NAME } gratuït."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Creeu un compte ${ BRAND_NAME } | Recupereu la vostra privacitat."
+      ],
       "Create a new ${ appName } account": [
         "Crear un compte de ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Troba el nom d'usuari del compte ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat la vostra contrasenya del compte ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic, o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
+      ],
+      "Private and secure email, no credit card required": [
+        "Correu electrònic privat i segur, no es requereix targeta de crèdit"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Inicieu sessió al vostre compte ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Inicieu sessió al vostre compte ${ BRAND_NAME } per accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Inici de sessió | Compte ${ BRAND_NAME } - Accés ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, i més"
       ],
       "Try ${ planName } for free with this link": [
         "Proveu ${ planName } de forma gratuïta amb aquest enllaç."
@@ -8874,6 +8936,9 @@
       "Keep my ${ currentPlanName } account": [
         "Conserva el meu compte ${ currentPlanName }"
       ],
+      "Upgrade": [
+        "Millora"
+      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -8911,9 +8976,6 @@
       ],
       "Keep account": [
         "Conserva el compte"
-      ],
-      "Switch or add account": [
-        "Canvia o afegeix un compte"
       ],
       "Switch plan": [
         "Canvia de pla"
@@ -9380,9 +9442,6 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Quan creeu un compte de ${ BRAND_NAME }, accepteu els nostres ${ terms }."
       ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "Amb el pagament, accepteu els nostres ${ termsAndConditions }."
-      ],
       "Payment details": [
         "Detalls del pagament"
       ],
@@ -9634,11 +9693,17 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu personalitzats"
       ],
+      "Auto-connect": [
+        "Connexió automàtica"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } per usuari."
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
+      ],
+      "Browser extension": [
+        "Extensió del navegador"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
@@ -9646,17 +9711,32 @@
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
+      ],
+      "Private gateways": [
+        "Passarel·les privades"
+      ],
+      "Require 2FA": [
+        "Requereix 2FA"
       ]
     },
     "Notification": {
       "${ Filter.Name } created": [
         "S'ha creat ${ Filter.Name }"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha activat"
+      ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
+      ],
+      "Invalid code": [
+        "El codi no és correcte."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clau amb empremta digital ${ fp } s'ha eliminat"
@@ -11075,6 +11155,14 @@
         "Afegiu calendaris públics, externs o compartits."
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "Facturació mensual"
+      ],
+      "Billed yearly": [
+        "Facturació anual"
+      ]
+    },
     "Subscription attribute": {
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexió VPN d'alta velocitat",
@@ -11773,9 +11861,6 @@
       "Automatically sign outgoing messages?": [
         "Signar automàticament els missatges de sortida?"
       ],
-      "Back": [
-        "Torna"
-      ],
       "Backup and export": [
         "Còpia de seguretat i exportació"
       ],
@@ -11853,6 +11938,9 @@
       ],
       "Connect ${ name }": [
         "Connecta ${ name }"
+      ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
@@ -12190,9 +12278,6 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
-      "Open help menu": [
-        "Obrir el menú d'ajuda"
-      ],
       "Open pagination": [
         "Obrir paginació"
       ],
@@ -12238,9 +12323,6 @@
       "Phone": [
         "Telèfon"
       ],
-      "Plan summary": [
-        "Resum del pla"
-      ],
       "Preview": [
         "Vista prèvia"
       ],
@@ -12282,6 +12364,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Request sent": [
+        "S'ha enviat la sol·licitud."
       ],
       "Reset organization keys": [
         "Restablir les claus d'organització"
@@ -12414,6 +12499,9 @@
         "S'ha creat ${ successfullyCreatedUsers.length } compte d'usuari.",
         "S'han creat ${ successfullyCreatedUsers.length } comptes d'usuari."
       ],
+      "Summary": [
+        "Resum"
+      ],
       "Switch to one-password mode": [
         "Canviar al mode d'una sola contrasenya"
       ],
@@ -12500,9 +12588,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
-      ],
-      "Your Plan": [
-        "El vostre pla"
       ],
       "Your plan": [
         "El vostre pla"
@@ -12609,6 +12694,9 @@
       ],
       "Plan": [
         "Pla"
+      ],
+      "Servers": [
+        "Servidors"
       ],
       "Start date": [
         "Data d'inici"
@@ -12889,6 +12977,11 @@
       ],
       "Replay video": [
         "Reproduir el vídeo"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "Altre"
       ]
     },
     "VPN info": {

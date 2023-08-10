@@ -44,9 +44,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -140,9 +137,6 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
-      "Attention required": [
-        "需要您的處理"
-      ],
       "Authenticate": [
         "驗證"
       ],
@@ -212,6 +206,9 @@
       "Contact support": [
         "聯絡支援"
       ],
+      "Contact us": [
+        "聯絡我們"
+      ],
       "Continue": [
         "繼續"
       ],
@@ -236,8 +233,8 @@
       "Copy": [
         "複製"
       ],
-      "Copy email to clipboard": [
-        "複製電郵位址至剪貼簿"
+      "Copy address": [
+        "複製郵件位址"
       ],
       "Copy link": [
         "複製連結"
@@ -440,6 +437,12 @@
       "Get a new encrypted email address": [
         "獲取新的加密電郵位址"
       ],
+      "Get in touch": [
+        "保持聯絡"
+      ],
+      "Get more": [
+        "取得更多"
+      ],
       "Get more addresses": [
         "取得更多電子郵件位址"
       ],
@@ -475,9 +478,6 @@
       ],
       "Hide plan features": [
         "隱藏方案功能"
-      ],
-      "I have a question": [
-        "我要發問"
       ],
       "Import": [
         "匯入"
@@ -529,6 +529,9 @@
       ],
       "Leave": [
         "離開"
+      ],
+      "Let's talk": [
+        "讓我們來聊聊！"
       ],
       "Load more": [
         "載入更多"
@@ -1027,14 +1030,14 @@
       ]
     },
     "Addon": {
-      "+ ${ domains } custom domains": [
-        "+ ${ domains } 個自訂網域"
+      "${ domains } custom domains": [
+        "${ domains } 個自訂網域"
       ],
-      "+ ${ ips } IP addresses": [
-        "+ ${ ips } 個IP位址"
+      "${ ips } servers": [
+        "${ ips } 台伺服器"
       ],
-      "+ ${ users } users": [
-        "+ ${ users } 位使用者"
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Address action": {
@@ -1515,6 +1518,17 @@
         "總額可用 ${ n } 個月"
       ]
     },
+    "Checkout summary": {
+      "month": [
+        "月"
+      ],
+      "Servers": [
+        "伺服器"
+      ],
+      "Users": [
+        "使用者"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "收合"
@@ -1658,9 +1672,6 @@
       ],
       "purple": [
         "紫色"
-      ],
-      "raisin black": [
-        "葡萄乾黑"
       ],
       "reef": [
         "礁石"
@@ -4520,9 +4531,6 @@
       "Folders": [
         "資料夾"
       ],
-      "Get help": [
-        "取得協助"
-      ],
       "Key type": [
         "金鑰類型"
       ],
@@ -4971,9 +4979,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
-      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
-        "${ autoRenewal }您的訂閱將於${ renewalTime }自動更新"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
@@ -5304,9 +5309,6 @@
       "Attention required": [
         "需要您的處理"
       ],
-      "Auto-renewal: ": [
-        "自動續訂 "
-      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "每月在選取的開始及結束時間內啟用自動回覆。"
       ],
@@ -5629,9 +5631,6 @@
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
       "for choosing ${ product }": [
-        "選用 ${ product }"
-      ],
-      "For choosing ${ product }": [
         "選用 ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
@@ -6002,6 +6001,9 @@
       ],
       "Organization keys restored": [
         "組織金鑰已還原"
+      ],
+      "Organization size": [
+        "組織規模"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
@@ -6668,6 +6670,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "週和月檢視僅適用於電腦版。"
+      ],
+      "Welcome": [
+        "歡迎"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
@@ -7967,6 +7972,9 @@
       "Please select files to upload": [
         "請選取要上載的檔案"
       ],
+      "Please share any feedback to help us improve.": [
+        "請提供任何意見回饋以協助我們改進。"
+      ],
       "Port": [
         "連接埠"
       ],
@@ -8173,6 +8181,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "請您告訴我們，是什麼原因讓您決定刪除帳號？"
+      ],
+      "Why would you like to cancel?": [
+        "為什麼您想要取消呢？"
       ],
       "With attachment": [
         "連同附件"
@@ -8847,6 +8858,9 @@
       "Keep my ${ currentPlanName } account": [
         "保留我的 ${ currentPlanName } $ 帳號"
       ],
+      "Upgrade": [
+        "升級"
+      ],
       "Upgrade now": [
         "立即升級"
       ]
@@ -8884,9 +8898,6 @@
       ],
       "Keep account": [
         "保留帳號"
-      ],
-      "Switch or add account": [
-        "切換或是加入帳號"
       ],
       "Switch plan": [
         "切換方案"
@@ -8959,6 +8970,9 @@
       "1 user": [
         "1 位使用者"
       ],
+      "24/7 support": [
+        "24/7 全天支援"
+      ],
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
@@ -9012,6 +9026,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "資料外洩監測 (即將登場)"
+      ],
+      "Dedicated servers and IP": [
+        "獨立的伺服器及 IP"
       ],
       "DNS leak prevention": [
         "DNS 外洩預防"
@@ -9132,6 +9149,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
+      ],
+      "Start protecting your organization": [
+        "開始保護您的組織"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "2 個簡單步驟即可啟動您專屬的線上防護"
@@ -9291,6 +9311,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "透過必要的網路監控，您可以從任何地方安全地上網"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
       ],
@@ -9334,9 +9357,6 @@
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }"
-      ],
-      "By paying, you agree to our ${ termsAndConditions }": [
-        "付費即表示您同意我們的${ termsAndConditions }"
       ],
       "Payment details": [
         "付款細節"
@@ -9588,17 +9608,29 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
       ],
+      "Auto-connect": [
+        "自動連線"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
       ],
+      "Browser extension": [
+        "瀏覽器擴充套件"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
       ],
       "Create up to ${ n } calendars": [
         "建立多達 ${ n } 個行事曆"
+      ],
+      "Multi-platform support": [
+        "多平台支援"
+      ],
+      "Require 2FA": [
+        "要求兩階段認證"
       ]
     },
     "Notification": {
@@ -10341,6 +10373,9 @@
       "Please select a country": [
         "請選擇一個國家"
       ],
+      "Please select the main reason": [
+        "請選擇主要原因"
+      ],
       "Printer": [
         "印表機"
       ],
@@ -11016,6 +11051,14 @@
       ],
       "Add public, external, or shared calendars.": [
         "新增公用、外部或已分享行事曆。"
+      ]
+    },
+    "Subscription": {
+      "Billed monthly": [
+        "月繳"
+      ],
+      "Billed yearly": [
+        "年繳"
       ]
     },
     "Subscription attribute": {
@@ -11697,9 +11740,6 @@
       "Automatically sign outgoing messages?": [
         "自動簽署寄出的訊息？"
       ],
-      "Back": [
-        "返回"
-      ],
       "Backup and export": [
         "備份與匯出"
       ],
@@ -11777,6 +11817,9 @@
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
+      ],
+      "Contact us": [
+        "聯絡我們"
       ],
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
@@ -12111,9 +12154,6 @@
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
-      "Open help menu": [
-        "開啟說明選單"
-      ],
       "Open pagination": [
         "開啟分頁"
       ],
@@ -12159,9 +12199,6 @@
       "Phone": [
         "電話"
       ],
-      "Plan summary": [
-        "方案概覽"
-      ],
       "Preview": [
         "預覽"
       ],
@@ -12203,6 +12240,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Request sent": [
+        "已送出請求"
       ],
       "Reset organization keys": [
         "重設組織金鑰"
@@ -12333,6 +12373,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
+      "Summary": [
+        "總結"
+      ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
       ],
@@ -12419,9 +12462,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
-      ],
-      "Your Plan": [
-        "你的方案"
       ],
       "Your plan": [
         "您的方案"
@@ -12528,6 +12568,9 @@
       ],
       "Plan": [
         "方案"
+      ],
+      "Servers": [
+        "伺服器"
       ],
       "Start date": [
         "開始日期"
@@ -12805,6 +12848,20 @@
       ],
       "Replay video": [
         "重播影片"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "我找到了另一個我更喜歡的服務"
+      ],
+      "It’s missing a key feature": [
+        "缺少關鍵功能"
+      ],
+      "It’s too expensive": [
+        "價格太貴了"
+      ],
+      "Other": [
+        "其他"
       ]
     },
     "VPN info": {

@@ -32,9 +32,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } bevezető"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
@@ -118,9 +115,6 @@
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
-      ],
-      "Attention required": [
-        "Figyelem szükséges"
       ],
       "Authenticate": [
         "Azonosítás"
@@ -215,8 +209,8 @@
       "Copy": [
         "Másolás"
       ],
-      "Copy email to clipboard": [
-        "E-mail másolása a vágólapra"
+      "Copy address": [
+        "Cím másolása"
       ],
       "Copy link": [
         "Hivatkozás másolása"
@@ -448,9 +442,6 @@
       ],
       "Hide labels": [
         "Címkék elrejtése"
-      ],
-      "I have a question": [
-        "Kérdésem van"
       ],
       "Import": [
         "Importálás"
@@ -973,20 +964,6 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Elutasítás"
-      ]
-    },
-    "Addon": {
-      "+ ${ domains } custom domain": [
-        "+ ${ domains } saját domain név",
-        "+ ${ domains } saját domain név"
-      ],
-      "+ ${ ips } IP address": [
-        "${ ips } IP cím",
-        "${ ips } IP cím"
-      ],
-      "+ ${ users } user": [
-        "+ ${ users } felhasználó",
-        "+ ${ users } felhasználó"
       ]
     },
     "Address action": {
@@ -1578,9 +1555,6 @@
       ],
       "purple": [
         "lila"
-      ],
-      "raisin black": [
-        "mazsola fekete"
       ],
       "reef": [
         "zátony"
@@ -4086,9 +4060,6 @@
       "Folders": [
         "Mappák"
       ],
-      "Get help": [
-        "Súgó megnyitása"
-      ],
       "Key type": [
         "Kulcs típusa"
       ],
@@ -4822,9 +4793,6 @@
       ],
       "Attention required": [
         "Figyelem szükséges"
-      ],
-      "Auto-renewal: ": [
-        "Automatikus megújítás: "
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Az automatikus válasz minden hónapban aktív a kiválasztott kezdeti és befejezési időpont között."
@@ -8056,9 +8024,6 @@
       "Keep account": [
         "Maradjon a fiók"
       ],
-      "Switch or add account": [
-        "Váltás vagy fiók hozzáadása"
-      ],
       "Switch plan": [
         "Csomag váltása"
       ],
@@ -10279,9 +10244,6 @@
       "Automatically sign outgoing messages?": [
         "Automatikusan aláírja a kimenő üzeneteket?"
       ],
-      "Back": [
-        "Vissza"
-      ],
       "Backup and export": [
         "Mentés és exportálás"
       ],
@@ -10681,9 +10643,6 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
-      "Open help menu": [
-        "Súgó menü megnyitása"
-      ],
       "Open pagination": [
         "Lapozó megnyitása"
       ],
@@ -10722,9 +10681,6 @@
       ],
       "Phone": [
         "Telefonszám"
-      ],
-      "Plan summary": [
-        "Csomag összefoglaló"
       ],
       "Preview": [
         "Előnézet"
@@ -10970,9 +10926,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
-      ],
-      "Your Plan": [
-        "Az ön csomagja"
       ],
       "Your plan": [
         "Az ön csomagja"
