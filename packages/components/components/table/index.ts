@@ -1,3 +1,4 @@
+export { default as Cell } from './Cell';
 export { default as Table } from './Table';
 export { default as TableCell } from './TableCell';
 export { default as TableHeader } from './TableHeader';
@@ -8,3 +9,4 @@ export { default as TableRowSticky } from './TableRowSticky';
 export { default as TableRowBusy } from './TableRowBusy';
 export { default as TableHeaderCell } from './TableHeaderCell';
 export { default as TableCellBusy } from './TableCellBusy';
+export * from './SortingTableHeader';
