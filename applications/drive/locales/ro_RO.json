@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "Prezentare ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "Înapoi la pagina de start"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Cancel": [
         "Anulare"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Continuare cu Google"
+      ],
+      "Copy address": [
+        "Copiere adresă"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -320,9 +317,6 @@
       "Go to parent": [
         "Accesare părinte"
       ],
-      "Go to settings": [
-        "Accesare setări"
-      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -337,9 +331,6 @@
       ],
       "Hide labels": [
         "Ascundere etichete"
-      ],
-      "I have a question": [
-        "Am o întrebare"
       ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
@@ -427,9 +418,6 @@
       ],
       "Next month": [
         "Luna viitoare"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -593,9 +581,6 @@
       "Show preview": [
         "Afișare previzualizare"
       ],
-      "Show side panel": [
-        "Afișare panou lateral"
-      ],
       "Sign in": [
         "Autentificare"
       ],
@@ -634,9 +619,6 @@
       ],
       "Submit report": [
         "Trimitere raport"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
@@ -777,14 +759,6 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
     "Billing cycle option": {
@@ -1866,16 +1840,6 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Dezactivat"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descriere: ${ eventDescription }"
@@ -2767,9 +2731,6 @@
       ],
       "Contacts, groups and settings": [
         "Contacte, grupuri și setări"
-      ],
-      "Get help": [
-        "Obțineți ajutor"
       ]
     },
     "Hint": {
@@ -3276,6 +3237,9 @@
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Sigur doriți să anulați importarea?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
       ],
@@ -3394,9 +3358,6 @@
       ],
       "Current version": [
         "Versiune curentă"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
       "Decrypting files": [
         "Decriptare fișiere"
@@ -4444,9 +4405,6 @@
       "Emails (last month)": [
         "Mesaje (ultima lună)"
       ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
       "Encrypt emails": [
         "Criptare mesaje"
       ],
@@ -4662,9 +4620,6 @@
       ],
       "Street address": [
         "Strada"
-      ],
-      "Synchronize with system": [
-        "Sincronizare cu sistemul"
       ],
       "System information": [
         "Informații sistem"
@@ -4903,11 +4858,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "Modificare"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Schimbare sau adăugare cont"
       ]
     },
     "new_plans: feature": {
@@ -5425,22 +5375,9 @@
         "Mesaj oficial de la ${ BRAND_NAME }"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
-      ]
-    },
     "Select files": {
       "Upload": [
         "Încărcare"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Gestionați-vă contactele și accesați calendarul fără a părăsi aplicația."
-      ],
-      "Try the new side panel": [
-        "Încercați noul panou lateral"
       ]
     },
     "Signing preference for emails": {
@@ -5900,11 +5837,6 @@
         "Câmp vCard"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Setări"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } h",
@@ -5963,9 +5895,6 @@
         "Au eșuat ${ numberOfFailedTransfer.total } încărcări.",
         "Au eșuat ${ numberOfFailedTransfer.total } de încărcări."
       ],
-      "(active)": [
-        "(activă)"
-      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -5991,12 +5920,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
-      ],
-      "Back": [
-        "Înapoi"
-      ],
-      "Beta Access": [
-        "Acces la Beta"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -6240,12 +6163,6 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
-      "Open help menu": [
-        "Deschidere meniu ajutor"
-      ],
-      "Open settings menu": [
-        "Deschidere meniu setări"
-      ],
       "Original size": [
         "Dimensiune originală"
       ],
@@ -6305,9 +6222,6 @@
       ],
       "Searching…": [
         "Se caută…"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
       ],
       "Select action to take on contact group": [
         "Selectați acțiunea pentru un grup de contacte"
@@ -6490,14 +6404,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
-      "Hide side panel": [
-        "Ascundere panou lateral"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
-      ],
-      "Show side panel": [
-        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
@@ -6510,12 +6418,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Tema selectată va fi activă când sistemul va fi setat în „modul întunecat”."
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."

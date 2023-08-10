@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
@@ -69,9 +66,6 @@
       ],
       "Back to Homepage": [
         "ホームページに戻る"
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
       ],
       "Cancel": [
         "キャンセル"
@@ -159,6 +153,9 @@
       ],
       "Continue with Google": [
         "Google で続行"
+      ],
+      "Copy address": [
+        "アドレスをコピー"
       ],
       "Copy email to clipboard": [
         "メールをコピー"
@@ -316,9 +313,6 @@
       "Go to parent": [
         "親フォルダーを開く"
       ],
-      "Go to settings": [
-        "設定を開く"
-      ],
       "Got it": [
         "はい"
       ],
@@ -333,9 +327,6 @@
       ],
       "Hide labels": [
         "ラベルを隠す"
-      ],
-      "I have a question": [
-        "サポートに質問"
       ],
       "Image could not be loaded with tracker protection.": [
         "トラッキング防止が画像の読み込みをブロックしました。"
@@ -423,9 +414,6 @@
       ],
       "Next month": [
         "翌月"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -589,9 +577,6 @@
       "Show preview": [
         "プレビューを表示"
       ],
-      "Show side panel": [
-        "サイドパネルを表示"
-      ],
       "Sign in": [
         "サインイン"
       ],
@@ -630,9 +615,6 @@
       ],
       "Submit report": [
         "レポートを送信"
-      ],
-      "Theme": [
-        "テーマ"
       ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
@@ -773,14 +755,6 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
     "Billing cycle option": {
@@ -1860,16 +1834,6 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "無効"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "有効"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "説明: ${ eventDescription }"
@@ -2737,9 +2701,6 @@
       ],
       "Contacts, groups and settings": [
         "連絡先、グループおよび設定"
-      ],
-      "Get help": [
-        "ヘルプを参照"
       ]
     },
     "Hint": {
@@ -3288,9 +3249,6 @@
       ],
       "Current version": [
         "現在のバージョン"
-      ],
-      "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
       "Decrypting files": [
         "ファイルを復号中"
@@ -4311,9 +4269,6 @@
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
-      ],
       "Encrypt emails": [
         "メールを暗号化"
       ],
@@ -4529,9 +4484,6 @@
       ],
       "Street address": [
         "番地"
-      ],
-      "Synchronize with system": [
-        "システムとの同期"
       ],
       "System information": [
         "システム情報"
@@ -4760,11 +4712,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "今すぐアップグレード"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "アカウントを追加・切り替え"
       ]
     },
     "new_plans: feature": {
@@ -5238,22 +5185,9 @@
         "${ BRAND_NAME } からの公式メール"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "注意: 「適用」をクリックするとサービスが再読み込みされます。"
-      ]
-    },
     "Select files": {
       "Upload": [
         "アップロード"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "アプリ内で、連絡先の管理やカレンダーの表示ができます。"
-      ],
-      "Try the new side panel": [
-        "新しいサイドパネルを試す"
       ]
     },
     "Signing preference for emails": {
@@ -5692,11 +5626,6 @@
         "vCard フィールド"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 時間"
@@ -5735,9 +5664,6 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total }件のアップロードに失敗"
       ],
-      "(active)": [
-        "(アクティブ)"
-      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -5761,12 +5687,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "プレビューを閉じてよろしいですか?"
-      ],
-      "Back": [
-        "戻る"
-      ],
-      "Beta Access": [
-        "ベータ版アクセス"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -6002,12 +5922,6 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
-      "Open help menu": [
-        "ヘルプメニューを開く"
-      ],
-      "Open settings menu": [
-        "設定メニューを開く"
-      ],
       "Original size": [
         "元のサイズ"
       ],
@@ -6067,9 +5981,6 @@
       ],
       "Searching…": [
         "検索中…"
-      ],
-      "Select a theme": [
-        "テーマを選択"
       ],
       "Select action to take on contact group": [
         "この連絡先グループで行うアクションを選択"
@@ -6252,14 +6163,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
-      "Hide side panel": [
-        "サイドパネルを隠す"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
-      ],
-      "Show side panel": [
-        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
@@ -6272,12 +6177,6 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
-      ],
-      "The selected theme will be active when your system is set to \"dark mode\"": [
-        "選択したテーマは、システムが「ダークモード」に設定されているときに有効になります。"
-      ],
-      "The selected theme will be active when your system is set to \"light mode\"": [
-        "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"

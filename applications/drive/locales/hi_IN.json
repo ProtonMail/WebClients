@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } के बारे में"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
@@ -66,9 +63,6 @@
       ],
       "Back to Homepage": [
         "मुख्यपन्ने पे वापिस जाए"
-      ],
-      "Beta Access": [
-        "बीटा एक्सेस"
       ],
       "Cancel": [
         "रद्द करें"
@@ -156,6 +150,9 @@
       ],
       "Continue with Google": [
         "Google के साथ जारी रखें"
+      ],
+      "Copy address": [
+        "पता कॉपी करें"
       ],
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
@@ -309,9 +306,6 @@
       "Go to parent": [
         "मुख्य पे जाएं"
       ],
-      "Go to settings": [
-        "सेटिंग में जाएं"
-      ],
       "Got it": [
         "समझ गए"
       ],
@@ -323,9 +317,6 @@
       ],
       "Hide labels": [
         "लेबल छिपाएं"
-      ],
-      "I have a question": [
-        "हमारा एक सवाल है"
       ],
       "Import": [
         "आयात करें"
@@ -407,9 +398,6 @@
       ],
       "Next month": [
         "अगले महीने"
-      ],
-      "OK": [
-        "ठीक है"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -573,9 +561,6 @@
       "Show preview": [
         "प्रिव्यू दिखाएं"
       ],
-      "Show side panel": [
-        "साइड पैनल दिखाएं"
-      ],
       "Sign in": [
         "साइन इन करें"
       ],
@@ -614,9 +599,6 @@
       ],
       "Submit report": [
         "रिपोर्ट भेजे"
-      ],
-      "Theme": [
-        "थीम"
       ],
       "Toggle Calendar app": [
         "कैलेंडर ऐप बदलें"
@@ -757,14 +739,6 @@
       ],
       "Unsupported event": [
         "असमर्थित घटना"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "बीटा एक्सेस आपको ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } का बीटा संस्करण जनता के बीच जाने से पहले इस्तेमाल करने देता है। इसका मतलब है की आप सबसे पहले नए प्रोडक्ट, नए अपडेट, और नए सुविधाओं का इस्तेमाल कर पाएगे।"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "यदि आप समस्याओं का सामना करते हैं, तो आप कभी भी बीटा एक्सेस को अक्षम कर सकते हैं।"
       ]
     },
     "Billing cycle option": {
@@ -1842,16 +1816,6 @@
         "हमने आपके द्वारा अपलोड की गई CSV फ़ाइल में निम्न फ़ील्ड का पता लगाया है। उन लोगों की जाँच करें जिन्हें आप आयात करना चाहते हैं।"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "बंद"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "चालू"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "विवरण: ${ eventDescription }"
@@ -2633,9 +2597,6 @@
       ],
       "Contacts, groups and settings": [
         "संपर्क, समूह और सेटिंग"
-      ],
-      "Get help": [
-        "मदद लें"
       ]
     },
     "Hint": {
@@ -4197,9 +4158,6 @@
       "Emails (last month)": [
         "ईमेल (पिछले महीने)"
       ],
-      "Enable Beta Access": [
-        "बीटा एक्सेस सक्षम करें"
-      ],
       "Encrypt emails": [
         "ईमेल एन्क्रिप्ट करें"
       ],
@@ -4633,11 +4591,6 @@
     "new_plans: Action": {
       "Upgrade now": [
         "अभी अपग्रेड करें"
-      ]
-    },
-    "new_plans: action": {
-      "Switch or add account": [
-        "खाता बदलें अथवा जोड़ें"
       ]
     },
     "new_plans: feature": {
@@ -5116,22 +5069,9 @@
         "आधिकारिक ईमेल ${ BRAND_NAME } से"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "नोट: लागू करें बटन पर क्लिक करने के बाद सेवा पुनः लोड हो जाएगी।"
-      ]
-    },
     "Select files": {
       "Upload": [
         "अपलोड करें"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "बिना अपना ऐप छोड़े अपने संपर्क संभालें और अपना कैलेंडर देखें।"
-      ],
-      "Try the new side panel": [
-        "नया साइड पैनल आज़माएं"
       ]
     },
     "Signing preference for emails": {
@@ -5463,11 +5403,6 @@
         "vCard फील्ड"
       ]
     },
-    "Text": {
-      "Settings": [
-        "सेटिंग"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } घंटा",
@@ -5516,9 +5451,6 @@
         "${ numberOfFailedTransfer.total } असफल अपलोड",
         "${ numberOfFailedTransfer.total } असफल अपलोड"
       ],
-      "(active)": [
-        "(सक्रिय)"
-      ],
       "Account suspended": [
         "खाता निलंबित"
       ],
@@ -5543,12 +5475,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
-      ],
-      "Back": [
-        "पीछे जाएं"
-      ],
-      "Beta Access": [
-        "बीटा एक्सेस"
       ],
       "Billing cycle": [
         "बिलिंग चक्र"
@@ -5779,12 +5705,6 @@
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
       ],
-      "Open help menu": [
-        "सहायता मेनू खोलें"
-      ],
-      "Open settings menu": [
-        "सेटिंग्स मेनू खोलें"
-      ],
       "Original size": [
         "असली साइज़"
       ],
@@ -5844,9 +5764,6 @@
       ],
       "Searching…": [
         "खोज रहें..."
-      ],
-      "Select a theme": [
-        "एक थीम चुनें"
       ],
       "Select action to take on contact group": [
         "संपर्क समूह पर कार्रवाई करने के लिए कार्रवाई का चयन करें"
@@ -6023,14 +5940,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
-      "Hide side panel": [
-        "साइड पैनल छुपाएं"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
-      ],
-      "Show side panel": [
-        "साइड पैनल दिखाएं"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"
