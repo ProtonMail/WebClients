@@ -21,7 +21,6 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
     const isESLoading = isSearch && loading && dbExists && esEnabled && isSearching;
     const showESSlowToolbar = esTimerExpired && isESLoading;
     const searchLimitedMode = isSearch && !loading && dbExists && esEnabled && isCacheLimited;
-    const disableGoToLast = searchLimitedMode && isSearchPartial;
     const useLoadingElement =
         isSearch &&
         esEnabled &&
@@ -74,7 +73,6 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
         isESLoading,
         showESSlowToolbar,
         loadingElement,
-        disableGoToLast,
         useLoadingElement,
         ESCacheReady,
     };

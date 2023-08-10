@@ -1,16 +1,10 @@
-import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
+import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import {
-    PaginationRow,
-    useConversationCounts,
-    useItemsDraggable,
-    useMailSettings,
-    useMessageCounts,
-} from '@proton/components';
+import { useConversationCounts, useItemsDraggable, useMailSettings, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, MailPageSize, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -27,6 +21,7 @@ import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
 import ListBanners from './ListBanners';
+import ListPagination from './ListPagination';
 import { ResizeHandle } from './ResizeHandle';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
@@ -104,8 +99,10 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
+    const listContainerRef = useRef<HTMLDivElement>(null);
     const [mailSettings] = useMailSettings();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
+
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
@@ -117,7 +114,9 @@ const List = (
     const displayPlaceholders = loading && inputElements?.length === 0;
 
     const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
-    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
+
+    const pageSize = mailSettings?.PageSize ?? MailPageSize.FIFTY;
+    const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
     const [messageCounts] = useMessageCounts();
@@ -132,8 +131,12 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const { isESLoading, showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } =
-        useEncryptedSearchList(isSearch, loading, page, total);
+    const { isESLoading, showESSlowToolbar, loadingElement, useLoadingElement } = useEncryptedSearchList(
+        isSearch,
+        loading,
+        page,
+        total
+    );
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -189,7 +192,7 @@ const List = (
                     )}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
-                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
+                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100" ref={listContainerRef}>
                         <div className="flex-item-noshrink">
                             <ListBanners
                                 labelID={labelID}
@@ -251,13 +254,9 @@ const List = (
 
                                 {useLoadingElement && loadingElement}
 
-                                {!loading && total > 1 && (
+                                {total > 1 && (
                                     <div className="p-5 flex flex-column flex-align-items-center flex-item-noshrink">
-                                        <PaginationRow
-                                            {...pagingHandlers}
-                                            disabled={loading}
-                                            disableGoToLast={disableGoToLast}
-                                        />
+                                        <ListPagination {...pagingHandlers} disabled={loading} />
                                     </div>
                                 )}
                             </>

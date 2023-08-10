@@ -39,7 +39,7 @@
 	}
 }
 
-@each $align in (baseline, start, center, end, baseline, stretch) {
+@each $align in (baseline, start, center, end, baseline, stretch, inherit) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: if($align == start or $align == end, 'flex', '');
 
@@ -86,6 +86,10 @@
 
 .flex-item-noshrink {
 	flex-shrink: 0;
+}
+
+.flex-item-shrink {
+	flex-shrink: 1;
 }
 
 .flex-item-nogrow {

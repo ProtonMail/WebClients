@@ -29,6 +29,12 @@ export enum AutoDeleteSpamAndTrashDaysSetting {
     DISABLED = 0,
 }
 
+export enum MailPageSize {
+    FIFTY = 50,
+    ONE_HUNDRED = 100,
+    TWO_HUNDRED = 200,
+}
+
 export interface MailSettings {
     DisplayName: string;
     Signature: string;
@@ -45,6 +51,7 @@ export interface MailSettings {
     SwipeLeft: number;
     SwipeRight: number;
     AlsoArchive: number;
+    PageSize: MailPageSize;
     HideEmbeddedImages: SHOW_IMAGES;
     HideRemoteImages: SHOW_IMAGES;
     /** @deprecated use Shortcuts instead */
