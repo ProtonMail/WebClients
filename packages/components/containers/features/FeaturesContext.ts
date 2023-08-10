@@ -44,6 +44,7 @@ export enum FeatureCode {
     CalendarSharingSpotlight = 'CalendarSharingSpotlight',
     CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
     HolidaysCalendars = 'HolidaysCalendars',
+    AutoAddHolidaysCalendars = 'AutoAddHolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     CleanUTMTrackers = 'CleanUTMTrackers',

@@ -55,7 +55,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 getHolidaysDirectory().catch(noop);
             }}
             preloadModels={PRELOAD_MODELS}
-            preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly, FeatureCode.HolidaysCalendars]}
+            preloadFeatures={[FeatureCode.CalendarFetchMetadataOnly, FeatureCode.AutoAddHolidaysCalendars]}
             eventModels={EVENT_MODELS}
             loader={<LoaderPage />}
             hasPrivateMemberKeyGeneration
