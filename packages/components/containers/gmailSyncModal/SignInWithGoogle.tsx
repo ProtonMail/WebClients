@@ -10,9 +10,12 @@ interface Props {
     loading: boolean;
     disabled?: boolean;
     onClick: () => void;
+    reduceHeight?: boolean;
 }
 
-const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth }: Props) => {
+const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight }: Props) => {
+    const googleImageSize = reduceHeight ? 18 : 20;
+
     return (
         <Button
             color="norm"
@@ -26,7 +29,7 @@ const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth }: Props) => {
                 className="bg-norm rounded-sm flex flex-justify-center flex-align-items-center w-custom min-h-custom"
                 style={{ '--w-custom': '2.5rem', '--min-h-custom': '2.5rem' }}
             >
-                <img src={googleLogo} alt="" width={20} height={20} aria-hidden="true" />
+                <img src={googleLogo} alt="" width={googleImageSize} height={googleImageSize} aria-hidden="true" />
             </span>
             <span className="text-semibold flex-item-fluid text-left pl-4 pr-8">{c('Gmail forwarding')
                 .t`Sign in with Google`}</span>
