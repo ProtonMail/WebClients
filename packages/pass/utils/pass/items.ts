@@ -42,7 +42,7 @@ export const interpolateRecentItems =
                       { label: c('Label').t`Last month`, boundary: now - UNIX_MONTH },
                   ]
                 : [],
-            fallbackCluster: { label: c('Label').t`Not recently used`, boundary: 0 },
+            fallbackCluster: { label: c('Label').t`Older than last month`, boundary: 0 },
             shouldInterpolate: ({ lastUseTime, modifyTime }, { boundary }) =>
                 Math.max(lastUseTime ?? modifyTime, modifyTime) > boundary,
         });
