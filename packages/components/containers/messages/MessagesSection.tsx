@@ -9,12 +9,14 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SpamAction } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../components';
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useFeature, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
+import AlmostAllMailToggle from './AlmostAllMailToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
@@ -30,10 +32,13 @@ const MessagesSection = () => {
             ConfirmLink = 1,
             SpamAction = null,
             AutoDeleteSpamAndTrashDays = 0,
+            AlmostAllMail = 0,
         } = {},
     ] = useMailSettings();
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const { createNotification } = useNotifications();
+
+    const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
     const { call } = useEventManager();
     const api = useApi();
 
@@ -100,6 +105,21 @@ const MessagesSection = () => {
                 <SettingsLayoutRight className="pt-2">
                     <ShowMovedToggle id="showMovedToggle" />
                 </SettingsLayoutRight>
+            </SettingsLayout>
+            <SettingsLayout>
+                {isAlmostAllMailEnabled && (
+                    <>
+                        <SettingsLayoutLeft>
+                            <label htmlFor="almostAllMail" className="text-semibold">
+                                <span className="mr-2">{c('Label').t`Exclude Spam/Trash from All mail`}</span>
+                                <Info title={c('Info').t`Not yet available in our Android mobile app.`} />
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight className="pt-2">
+                            <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />
+                        </SettingsLayoutRight>
+                    </>
+                )}
             </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>

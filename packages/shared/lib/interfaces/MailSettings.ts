@@ -80,4 +80,5 @@ export interface MailSettings {
     AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting;
     UnreadFavicon: number;
     RecipientLimit: number;
+    AlmostAllMail: number;
 }
