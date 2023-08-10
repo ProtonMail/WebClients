@@ -170,7 +170,7 @@ module.exports = ({
                       // Remove the integrity and crossorigin attributes for these files because we don't
                       // want to validate them since we may override the server response on these assets
                       // for certain scenarios.
-                      if (/\.(css|png|svg|ico|json)$/.test(src)) {
+                      if (/\.(css|png|svg|ico|json)(?:\?.+)?$/.test(src)) {
                           if (tag.attributes.integrity || tag.attributes.crossorigin) {
                               delete tag.attributes.integrity;
                               delete tag.attributes.crossorigin;
