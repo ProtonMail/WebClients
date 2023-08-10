@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "返回"
       ],
-      "Beta Access": [
-        "測試版體驗"
-      ],
       "Blind Carbon Copy": [
         "密件副本"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "撰寫郵件"
       ],
-      "Composer size": [
-        "撰寫工具大小"
-      ],
       "Confirm": [
         "確認"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "自訂匯入"
-      ],
-      "Default email application": [
-        "預設電郵程式"
       ],
       "Delete": [
         "刪除"
@@ -448,9 +436,6 @@
       "Go to previous page": [
         "前往上一頁"
       ],
-      "Go to settings": [
-        "前往設定"
-      ],
       "Go to SimpleLogin": [
         "前往 SimpleLogin"
       ],
@@ -480,9 +465,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email 別名"
-      ],
-      "I have a question": [
-        "我要發問"
       ],
       "Image could not be loaded with tracker protection.": [
         "無法在啟用追蹤保護中載入影像。"
@@ -538,9 +520,6 @@
       "Italic": [
         "斜體"
       ],
-      "Keyboard shortcuts": [
-        "鍵盤快捷鍵"
-      ],
       "Label as": [
         "加上標籤"
       ],
@@ -567,12 +546,6 @@
       ],
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "信箱密集度"
-      ],
-      "Mailbox layout": [
-        "信箱配置"
       ],
       "Manage folders": [
         "管理資料夾"
@@ -970,9 +943,6 @@
       "Show preview": [
         "顯示預覽"
       ],
-      "Show side panel": [
-        "顯示側邊面板"
-      ],
       "Sign in": [
         "登入"
       ],
@@ -1008,9 +978,6 @@
       ],
       "Submit": [
         "送出"
-      ],
-      "Theme": [
-        "佈景主題"
       ],
       "This message contains embedded images.": [
         "此郵件包含內嵌圖像。"
@@ -1110,9 +1077,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用您的滑鼠調整檢視大小。若您使用鍵盤，您也可以使用左右方向鍵來調整。"
-      ],
-      "Use “${ label }” setting": [
-        "使用「${ label }」設定"
       ],
       "Verify": [
         "驗證"
@@ -1296,14 +1260,6 @@
       ],
       "Sender verification passed": [
         "寄件者驗證合格"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "測試版嚐鮮讓您有專屬權限提前體驗 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的未來釋出版本。這就表示您可以取得新產品第一手消息、享有最即時更新，還可以搶先使用新功能。"
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "若您遇上問題，您隨時可以停用 Beta 測試版。"
       ]
     },
     "Billing cycle option": {
@@ -1807,9 +1763,6 @@
       ],
       "purple": [
         "紫色"
-      ],
-      "raisin black": [
-        "葡萄乾黑"
       ],
       "reef": [
         "礁石"
@@ -2974,16 +2927,6 @@
     "Download attachments": {
       "Download all": [
         "下載全部"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "開啟"
       ]
     },
     "Email body for description (description part)": {
@@ -4178,9 +4121,6 @@
       "For your eyes only": [
         "只為了您的眼睛"
       ],
-      "Get free storage": [
-        "取得免費的儲存空間"
-      ],
       "Get mobile app": [
         "取得行動裝置應用程式"
       ],
@@ -4300,12 +4240,6 @@
     "Header": {
       "Contacts": [
         "聯絡人"
-      ],
-      "Contacts, groups and settings": [
-        "聯絡人、群組和設定"
-      ],
-      "Get help": [
-        "取得協助"
       ],
       "Search": [
         "搜尋"
@@ -5417,11 +5351,11 @@
       "Saved at ${ dateString }": [
         "已於 ${ dateString } 儲存"
       ],
-      "Saved on ${ dateString }": [
-        "已在 ${ dateString } 儲存"
-      ],
       "Saved yesterday": [
         "昨天已儲存"
+      ],
+      "Saved: ${ dateString }": [
+        "儲存:${ dateString }"
       ],
       "Saving draft…": [
         "正在儲存草稿…"
@@ -6191,16 +6125,6 @@
         "訊息快捷鍵"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "關閉"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "開啟"
-      ]
-    },
     "Label": {
       " and ": [
         " 且 "
@@ -6316,6 +6240,9 @@
       "Colors": [
         "色彩"
       ],
+      "Composer": [
+        "撰寫器"
+      ],
       "Conditions": [
         "條件"
       ],
@@ -6339,6 +6266,9 @@
       ],
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
+      ],
+      "Density": [
+        "密度"
       ],
       "Don't ask again": [
         "不要再次詢問"
@@ -6372,9 +6302,6 @@
       ],
       "Emails (last month)": [
         "電子郵件（上個月）"
-      ],
-      "Enable Beta Access": [
-        "啟用測試版體驗"
       ],
       "Encrypt emails": [
         "加密電郵"
@@ -6580,15 +6507,6 @@
       "Search in": [
         "搜尋於"
       ],
-      "Select how your composer opens by default.": [
-        "選取預設情況下的編輯器開啟時的外觀。"
-      ],
-      "Select how your list of messages looks like by default.": [
-        "選取預設情況下您郵件清單的外觀。"
-      ],
-      "Select how your mailbox looks like by default.": [
-        "選取預設情況下的收件匣外觀。"
-      ],
       "Send auto-reply": [
         "發送自動回覆"
       ],
@@ -6714,30 +6632,6 @@
         "收件者"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "一般"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "舒適"
-      ],
-      "Compact": [
-        "精簡"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "行"
-      ],
-      "Row": [
-        "列"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "建立資料夾"
@@ -6782,6 +6676,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows 應用程式"
+      ],
       "All mail": [
         "所有郵件"
       ],
@@ -6880,6 +6777,9 @@
       ],
       "Scheduled": [
         "已排程"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "完美無縫地同步檔案和資料夾，可真正實現在您的電腦與 ${ DRIVE_APP_NAME }。"
       ],
       "Sent": [
         "寄件備份"
@@ -7218,11 +7118,6 @@
         "立即升級"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "切換或是加入帳號"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
@@ -7415,11 +7310,6 @@
       ],
       "Merge with calendar": [
         "與行事曆合併"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "第 ${ page } 頁，共 ${ totalText } 頁"
       ]
     },
     "Participant name": {
@@ -7640,11 +7530,6 @@
         "以零存取加密儲存"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "請注意：點擊「套用」按鈕後，服務將會重新載入。"
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays }天"
@@ -7769,14 +7654,6 @@
       ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
-      ],
-      "Try the new side panel": [
-        "嘗試新的側欄"
       ]
     },
     "Signature verification warning": {
@@ -8453,11 +8330,6 @@
         "vCard 欄位"
       ]
     },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "昨天"
@@ -8528,14 +8400,8 @@
       "Attachments": [
         "附件"
       ],
-      "Back": [
-        "返回"
-      ],
       "BCC": [
         "密件副本"
-      ],
-      "Beta Access": [
-        "測試版體驗"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -8563,9 +8429,6 @@
       ],
       "Clearing data": [
         "清除資料中"
-      ],
-      "Composer mode": [
-        "撰寫模式"
       ],
       "Confirm recipient address?": [
         "確認收件人電郵位址？"
@@ -8765,12 +8628,6 @@
       "Load remote content": [
         "載入遠端內容"
       ],
-      "Mailbox density": [
-        "信箱密集度"
-      ],
-      "Mailbox layout": [
-        "收件匣佈局"
-      ],
       "Mark as read": [
         "標記為已讀"
       ],
@@ -8854,12 +8711,6 @@
       ],
       "Open actions dropdown": [
         "展開操作下拉選單"
-      ],
-      "Open help menu": [
-        "開啟說明選單"
-      ],
-      "Open settings menu": [
-        "開啟設定選單"
       ],
       "Other information": [
         "其它資訊"
@@ -9020,9 +8871,6 @@
       "Verification error": [
         "驗證錯誤"
       ],
-      "View contacts": [
-        "檢視聯絡人"
-      ],
       "Warning": [
         "警告"
       ],
@@ -9093,14 +8941,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
-      "Hide side panel": [
-        "隱藏側欄"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
-      ],
-      "Show side panel": [
-        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"

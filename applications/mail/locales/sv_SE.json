@@ -13,9 +13,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -115,9 +112,6 @@
       "Back": [
         "Tillbaka"
       ],
-      "Beta Access": [
-        "Beta-åtkomst"
-      ],
       "Blind Carbon Copy": [
         "Hemlig kopia"
       ],
@@ -208,9 +202,6 @@
       "Compose": [
         "Skriv"
       ],
-      "Composer size": [
-        "Storlek på redigeringsfönster"
-      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -273,9 +264,6 @@
       ],
       "Customize import": [
         "Anpassa import"
-      ],
-      "Default email application": [
-        "Standardapplikation för e-post"
       ],
       "Delete": [
         "Ta bort"
@@ -450,14 +438,14 @@
       "Go to previous page": [
         "Gå till föregående sida"
       ],
-      "Go to settings": [
-        "Gå till inställningar"
-      ],
       "Go to SimpleLogin": [
         "Gå till SimpleLogin"
       ],
       "Got it": [
         "Förstått"
+      ],
+      "Help": [
+        "Hjälp"
       ],
       "Hide": [
         "Dölj"
@@ -482,9 +470,6 @@
       ],
       "hide-my-email aliases": [
         "hide-my-email-alias"
-      ],
-      "I have a question": [
-        "Jag har en fråga"
       ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
@@ -541,9 +526,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "Keyboard shortcuts": [
-        "Tangentbordsgenvägar"
-      ],
       "Label as": [
         "Märk som"
       ],
@@ -570,12 +552,6 @@
       ],
       "Loading${ ellipsis }": [
         "Laddar${ ellipsis }"
-      ],
-      "Mailbox density": [
-        "Brevlådans täthet"
-      ],
-      "Mailbox layout": [
-        "Brevlådans layout"
       ],
       "Manage folders": [
         "Hantera mappar"
@@ -922,6 +898,9 @@
       "Set": [
         "Ställ in"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Ställ in ${ MAIL_APP_NAME } som standardapplikation för e-post"
+      ],
       "Set as default": [
         "Ställ in som standard"
       ],
@@ -933,6 +912,9 @@
       ],
       "Set recovery phrase": [
         "Ställ in återställningsfras"
+      ],
+      "Settings": [
+        "Inställningar"
       ],
       "Share via link": [
         "Dela via länk"
@@ -973,9 +955,6 @@
       "Show preview": [
         "Visa förhandsgranskning"
       ],
-      "Show side panel": [
-        "Visa sidopanel"
-      ],
       "Sign in": [
         "Logga in"
       ],
@@ -1012,8 +991,8 @@
       "Submit": [
         "Skicka"
       ],
-      "Theme": [
-        "Tema"
+      "Switch or add account": [
+        "Byt eller lägg till konto"
       ],
       "This message contains embedded images.": [
         "Detta meddelande innehåller inbäddade bilder."
@@ -1029,6 +1008,9 @@
       ],
       "Toggle Contact app": [
         "Växla kontakt-app"
+      ],
+      "Toggle settings": [
+        "Öppna/stäng inställningar"
       ],
       "Tomorrow": [
         "Imorgon"
@@ -1114,9 +1096,6 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Använd musen för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda vänster- och högerpiltangenterna för att ändra storlek."
-      ],
-      "Use “${ label }” setting": [
-        "Använd “${ label }”-inställning"
       ],
       "Verify": [
         "Verifiera"
@@ -1300,14 +1279,6 @@
       ],
       "Sender verification passed": [
         "Avsändarverifiering godkänd"
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Beta-åtkomst låter dig använda betaversionen av ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, och ${ DRIVE_APP_NAME } innan de släpps till allmänheten. Detta innebär att du kan vara först med att prova nya produkter, få nya uppdateringar och använda nya funktioner."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Om du stöter på problem kan du alltid inaktivera beta-åtkomst."
       ]
     },
     "Billing cycle option": {
@@ -1683,6 +1654,9 @@
       "azureish white": [
         "azurblått vitt"
       ],
+      "black": [
+        "svart"
+      ],
       "blanched almond": [
         "blancherad mandel"
       ],
@@ -1811,9 +1785,6 @@
       ],
       "purple": [
         "lila"
-      ],
-      "raisin black": [
-        "russinsvart"
       ],
       "reef": [
         "rev"
@@ -2986,16 +2957,6 @@
         "Ladda ner alla"
       ]
     },
-    "Early Access Disabled": {
-      "Off": [
-        "Av"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "På"
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Beskrivning: ${ eventDescription }"
@@ -3567,6 +3528,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering misslyckades"
+      ],
+      "Missing FN property": [
+        "Saknar FN-egendom"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -4207,9 +4171,6 @@
       "For your eyes only": [
         "Bara för dina ögon"
       ],
-      "Get free storage": [
-        "Skaffa gratis lagringsutrymme"
-      ],
       "Get mobile app": [
         "Skaffa mobilapp"
       ],
@@ -4248,6 +4209,9 @@
       ],
       "Open checklist": [
         "Öppna checklista"
+      ],
+      "Open checklist and get free storage": [
+        "Öppna checklistan och få gratis lagringsutrymme"
       ],
       "Popular online services": [
         "Populära onlinetjänster"
@@ -4329,12 +4293,6 @@
     "Header": {
       "Contacts": [
         "Kontakter"
-      ],
-      "Contacts, groups and settings": [
-        "Kontakter, grupper och inställningar"
-      ],
-      "Get help": [
-        "Få hjälp"
       ],
       "Search": [
         "Sök"
@@ -5402,6 +5360,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
+      "Open shortcut cheat sheet": [
+        "Öppna bladet för genvägar"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vårt system flaggade detta meddelande som ett nätfiskeförsök. Kontrollera att det är betrott."
       ],
@@ -5508,11 +5469,11 @@
       "Saved at ${ dateString }": [
         "Sparad den ${ dateString }"
       ],
-      "Saved on ${ dateString }": [
-        "Sparad den ${ dateString }"
-      ],
       "Saved yesterday": [
         "Sparades igår"
+      ],
+      "Saved: ${ dateString }": [
+        "Sparad: ${ dateString }"
       ],
       "Saving draft…": [
         "Sparar utkast…"
@@ -5783,6 +5744,9 @@
       ],
       "Trackers blocked:": [
         "Spårare blockerade:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Stäng av för att endast söka efter datum, namn, e-postadress eller ämnesrad. För att inaktivera sökning i meddelandeinnehåll och ta bort nedladdade meddelanden, gå till inställningar."
@@ -6297,16 +6261,6 @@
         "Meddelandegenvägar"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Av"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "På"
-      ]
-    },
     "Label": {
       " and ": [
         " och "
@@ -6386,6 +6340,9 @@
       "BCC": [
         "Hemlig kopia"
       ],
+      "Beta Access": [
+        "Beta-åtkomst"
+      ],
       "Blind Carbon Copy": [
         "Hemlig kopia"
       ],
@@ -6422,6 +6379,9 @@
       "Colors": [
         "Färger"
       ],
+      "Composer": [
+        "Redigeringsfönster"
+      ],
       "Conditions": [
         "Villkor"
       ],
@@ -6445,6 +6405,9 @@
       ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
+      ],
+      "Density": [
+        "Densitet"
       ],
       "Don't ask again": [
         "Fråga inte igen"
@@ -6478,9 +6441,6 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
-      ],
-      "Enable Beta Access": [
-        "Aktivera beta-åtkomst"
       ],
       "Encrypt emails": [
         "Kryptera e-post"
@@ -6568,6 +6528,9 @@
       ],
       "Last month only": [
         "Endast den senaste månaden"
+      ],
+      "Layout": [
+        "Layout"
       ],
       "Location": [
         "Plats"
@@ -6686,15 +6649,6 @@
       "Search in": [
         "Sök i"
       ],
-      "Select how your composer opens by default.": [
-        "Välj hur redigeringsfönstret öppnas som standard."
-      ],
-      "Select how your list of messages looks like by default.": [
-        "Välj hur din lista med meddelanden ser ut som standard."
-      ],
-      "Select how your mailbox looks like by default.": [
-        "Välj hur din brevlåda ska se ut som standard."
-      ],
       "Send auto-reply": [
         "Skicka autosvar"
       ],
@@ -6716,6 +6670,9 @@
       "Street address": [
         "Gatuadress"
       ],
+      "Sync with system": [
+        "Synkronisera med system"
+      ],
       "Synchronize with system": [
         "Synkronisera med system"
       ],
@@ -6733,6 +6690,9 @@
       ],
       "the email was sent ${ label }": [
         "e-postmeddelandet skickades ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Sedan"
@@ -6820,30 +6780,6 @@
         "Till"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Maximerad"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Komfortabel"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Kolumn"
-      ],
-      "Row": [
-        "Rad"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Skapa mapp"
@@ -6888,6 +6824,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows-app"
+      ],
       "All mail": [
         "All e-post"
       ],
@@ -6986,6 +6925,9 @@
       ],
       "Scheduled": [
         "Schemalagd"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synkronisera filer och mappar sömlöst mellan din dator och ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Skickat"
@@ -7332,11 +7274,6 @@
         "Uppgradera nu"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        "Ändra eller lägg till konto"
-      ]
-    },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -7529,11 +7466,6 @@
       ],
       "Merge with calendar": [
         "Slå samman med kalender"
-      ]
-    },
-    "Pagination": {
-      "${ page } of ${ totalText }": [
-        "${ page } av ${ totalText }"
       ]
     },
     "Participant name": {
@@ -7757,11 +7689,6 @@
         "Lagras med nollåtkomst-kryptering"
       ]
     },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Obs: tjänsten kommer laddas om efter att du klickat på knappen “Tillämpa“."
-      ]
-    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } dag",
@@ -7893,14 +7820,6 @@
       ],
       "Stored with zero-access encryption": [
         "Lagras med nollåtkomst-kryptering"
-      ]
-    },
-    "Side panel spotlight": {
-      "Manage your contacts and view your calendar without leaving your app.": [
-        "Hantera dina kontakter och visa din kalender utan att lämna din app."
-      ],
-      "Try the new side panel": [
-        "Prova den nya sidopanelen"
       ]
     },
     "Signature verification warning": {
@@ -8178,6 +8097,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Kom enkelt åt och anpassa din appupplevelse."
+      ],
       "Email tracking protection": [
         "E-postspårningsskydd"
       ],
@@ -8186,6 +8108,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
+      ],
+      "Quick settings": [
+        "Snabbinställningar"
       ],
       "Schedule send": [
         "Schemalägg sändning"
@@ -8610,11 +8535,6 @@
         "vCard-fält"
       ]
     },
-    "Text": {
-      "Settings": [
-        "Inställningar"
-      ]
-    },
     "Time": {
       "Yesterday": [
         "Igår"
@@ -8682,6 +8602,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "All settings": [
+        "Alla inställningar"
+      ],
       "Archive": [
         "Arkiv"
       ],
@@ -8694,14 +8617,8 @@
       "Attachments": [
         "Bilagor"
       ],
-      "Back": [
-        "Tillbaka"
-      ],
       "BCC": [
         "Hemlig kopia"
-      ],
-      "Beta Access": [
-        "Beta-åtkomst"
       ],
       "Billing cycle": [
         "Faktureringscykel"
@@ -8729,9 +8646,6 @@
       ],
       "Clearing data": [
         "Rensar data"
-      ],
-      "Composer mode": [
-        "Skrivläge"
       ],
       "Confirm recipient address?": [
         "Bekräfta mottagarens adress?"
@@ -8937,12 +8851,6 @@
       "Load remote content": [
         "Ladda fjärrinnehåll"
       ],
-      "Mailbox density": [
-        "Brevlådans täthet"
-      ],
-      "Mailbox layout": [
-        "Brevlådans layout"
-      ],
       "Mark as read": [
         "Markera som läst"
       ],
@@ -9026,12 +8934,6 @@
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
-      ],
-      "Open help menu": [
-        "Öppna hjälpmeny"
-      ],
-      "Open settings menu": [
-        "Öppna inställningsmenyn"
       ],
       "Other information": [
         "Övrig information"
@@ -9193,9 +9095,6 @@
       "Verification error": [
         "Verifieringsfel"
       ],
-      "View contacts": [
-        "Visa kontakter"
-      ],
       "Warning": [
         "Varning"
       ],
@@ -9267,14 +9166,8 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
-      "Hide side panel": [
-        "Dölj sidopanel"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
-      ],
-      "Show side panel": [
-        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
