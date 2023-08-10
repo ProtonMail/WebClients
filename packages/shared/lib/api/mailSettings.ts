@@ -1,10 +1,16 @@
-import { AutoDeleteSpamAndTrashDaysSetting, SpamAction } from '../interfaces';
+import { AutoDeleteSpamAndTrashDaysSetting, MailPageSize, SpamAction } from '../interfaces';
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
 import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
 
 export const getMailSettings = () => ({
     url: 'mail/v4/settings',
     method: 'get',
+});
+
+export const updatePageSize = (PageSize: MailPageSize) => ({
+    url: 'mail/v4/settings/pagesize',
+    method: 'put',
+    data: { PageSize },
 });
 
 export const updateShowMoved = (ShowMoved: number) => ({

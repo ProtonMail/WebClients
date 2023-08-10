@@ -1,28 +1,5 @@
 import { SpamAction } from '../interfaces';
-
-interface QueryConversationProps {
-    Location: any;
-    To: any;
-    Starred: any;
-    Page: number;
-    PageSize: number;
-    Limit: Number;
-    LabelID: string;
-    Sort?: string;
-    Desc: number;
-    Begin: string;
-    End: string;
-    BeginID: string;
-    EndID: string;
-    Keyword: string;
-    From: string;
-    Subject: string;
-    Attachments: number;
-    Unread: number;
-    AddressID: string;
-    ID: string;
-    AutoWildcard: number;
-}
+import { MailboxItemsQueryParams } from './mailbox';
 
 export const queryConversations = ({
     Location,
@@ -46,7 +23,9 @@ export const queryConversations = ({
     AddressID,
     ID,
     AutoWildcard,
-}: QueryConversationProps) => ({
+    Anchor,
+    AnchorID,
+}: MailboxItemsQueryParams) => ({
     method: 'get',
     url: 'mail/v4/conversations',
     params: {
@@ -71,6 +50,8 @@ export const queryConversations = ({
         AddressID,
         ID,
         AutoWildcard,
+        Anchor,
+        AnchorID,
     },
 });
 
