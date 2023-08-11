@@ -7,6 +7,7 @@ import {
     User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+import { PLANS_MAP } from '@proton/testing/index';
 
 import { UpsellCta } from '../helpers';
 
@@ -190,6 +191,8 @@ export const plans = [
         Cycle: 1,
         Amount: 2999,
     },
+    PLANS_MAP[PLANS.VPN_PRO],
+    PLANS_MAP[PLANS.VPN_BUSINESS],
 ] as unknown as Plan[];
 
 export const mailPlusUpsell = {
@@ -502,6 +505,24 @@ export const passPlusUpsell = {
         value: 299,
         currency: 'EUR',
     },
+};
+
+export const vpnBusinessUpsell = {
+    plan: PLANS.VPN_BUSINESS,
+    planKey: PLANS.VPN_BUSINESS,
+    title: 'VPN Business',
+    description: 'Advanced network security and access management with dedicated secure Gateways',
+    otherCtas: [],
+    price: {
+        value: 5397,
+        currency: 'EUR',
+    },
+};
+
+export const vpnEnterpriseUpsell = {
+    planKey: 'VPN_ENTERPRISE',
+    title: 'VPN Enterprise',
+    description: 'Tailor-made solutions for larger organizations with specific security needs',
 };
 
 export const subscription = {

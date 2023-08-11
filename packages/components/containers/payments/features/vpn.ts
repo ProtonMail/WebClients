@@ -332,13 +332,14 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDedicatedServersVPNFeature = (n?: number): PlanCardFeatureDefinition => {
+export const getDedicatedServersVPNFeature = (serversCount?: VPNServersCountData): PlanCardFeatureDefinition => {
     let text: string;
 
-    if (n === undefined) {
+    if (serversCount === undefined) {
         text = c('new_plans: Upsell attribute').t`Dedicated server locations in North America and Europe`;
     } else {
-        text = c('new_plans: Upsell attribute').t`Dedicated server locations in ${n}+ countries`;
+        const numberOfCountries = serversCount.paid.countries;
+        text = c('new_plans: Upsell attribute').t`Dedicated server locations in ${numberOfCountries}+ countries`;
     }
 
     return {
