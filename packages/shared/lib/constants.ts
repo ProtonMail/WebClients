@@ -936,6 +936,9 @@ export enum SERVER_FEATURES {
     P2P = 4,
     XOR = 8,
     IPV6 = 16,
+    RESTRICTED = 32,
+    PARTNER = 64,
+    DOUBLE_RESTRICTION = 128,
 }
 
 export enum CLIENT_TYPES {

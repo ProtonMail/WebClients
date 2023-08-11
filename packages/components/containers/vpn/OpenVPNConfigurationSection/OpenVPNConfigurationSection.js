@@ -11,8 +11,16 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import groupWith from '@proton/utils/groupWith';
 
 import { Block, Icon, Info, Radio, RadioGroup, SettingsLink, Tooltip } from '../../../components';
-import { correctAbbr, getCountryByAbbr } from '../../../helpers/countries';
-import { useApiWithoutResult, usePlans, useSortedList, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { correctAbbr, getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import {
+    useApiWithoutResult,
+    usePlans,
+    useSortedList,
+    useUser,
+    useUserSettings,
+    useUserVPN,
+    useVPNLogicals,
+} from '../../../hooks';
 import { SettingsParagraph } from '../../account';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';
@@ -40,6 +48,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const { loading, result = {}, fetch: fetchLogicals } = useVPNLogicals();
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
+    const [userSettings] = useUserSettings();
     const userVPN = vpnResult?.VPN || {};
     const isBasicVPN = userVPN?.PlanName === PLANS.VPNBASIC;
     const maxTier = userVPN?.MaxTier || 0;
@@ -72,7 +81,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
         () =>
             (result.LogicalServers || []).map((server) => ({
                 ...server,
-                Country: getCountryByAbbr(correctAbbr(server.ExitCountry)),
+                Country: getLocalizedCountryByAbbr(
+                    correctAbbr(server.ExitCountry),
+                    userSettings.Locale || navigator.languages
+                ),
             })),
         [result.LogicalServers]
     );
