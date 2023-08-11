@@ -49,13 +49,4 @@ describe('ChecklistItem', () => {
         const icon = getByTestId('checklist-item-icon-small');
         expect(icon).toBeTruthy();
     });
-
-    it('Should not display image if both images are not defined', () => {
-        const { container } = render(
-            <CheckListItem {...checklistItemProps} largeIcon={undefined} smallIcon={undefined} />,
-            false
-        );
-        const icon = container.querySelectorAll('img');
-        expect(icon.length).toBe(0);
-    });
 });

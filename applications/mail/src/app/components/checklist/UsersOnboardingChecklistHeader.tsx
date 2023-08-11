@@ -12,7 +12,7 @@ interface Props {
     smallVariant?: boolean;
 }
 
-const OnboardingChecklistHeader = ({ smallVariant }: Props) => {
+const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
     const { isUserPaid, isChecklistFinished, changeChecklistDisplay, userWasRewarded } = useGetStartedChecklist();
 
     const SubTitle = () => {
@@ -35,7 +35,11 @@ const OnboardingChecklistHeader = ({ smallVariant }: Props) => {
 
     return smallVariant ? (
         <div className="flex flex-justify-space-between flex-align-items-center text-sm px-2 mb-2">
-            <p className="m-0">{c('Get started checklist instructions').t`Continue setting up your email`}</p>
+            <p className="m-0">
+                {isChecklistFinished
+                    ? c('Get started checklist instructions').t`Congratulation, you finished!`
+                    : c('Get started checklist instructions').t`Continue setting up your email`}
+            </p>
             <Button
                 icon
                 shape="ghost"
@@ -54,4 +58,4 @@ const OnboardingChecklistHeader = ({ smallVariant }: Props) => {
     );
 };
 
-export default OnboardingChecklistHeader;
+export default UsersOnboardingChecklistHeader;

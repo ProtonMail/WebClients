@@ -30,9 +30,6 @@ import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
 
-// TODO delete when cleaning the old checklist
-jest.mock('@proton/components/hooks/useFeature', () => () => ({ feature: { Value: true } }));
-
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
     useGetStartedChecklist: jest.fn(),

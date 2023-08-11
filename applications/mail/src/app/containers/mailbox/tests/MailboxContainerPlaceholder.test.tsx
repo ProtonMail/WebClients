@@ -9,9 +9,6 @@ import {
 import { render } from '../../../helpers/test/helper';
 import MailboxContainerPlaceholder from '../MailboxContainerPlaceholder';
 
-// TODO delete when cleaning the old checklist
-jest.mock('@proton/components/hooks/useFeature', () => () => ({ feature: { Value: true } }));
-
 jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
     useGetStartedChecklist: jest.fn(),
