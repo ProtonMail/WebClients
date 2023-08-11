@@ -7,6 +7,7 @@
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import browser from '@proton/pass/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -66,7 +67,9 @@ const handleFrameVisibilityChange = () => {
 const loadCustomElements = async () =>
     new Promise<void>((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = chrome.runtime.getURL('elements.js');
+
+        script.src = browser.runtime.getURL('elements.js');
+        script.setAttribute('public-path', browser.runtime.getURL('/'));
 
         script.addEventListener('load', () => {
             script.remove();
