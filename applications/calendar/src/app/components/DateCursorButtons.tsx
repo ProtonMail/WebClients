@@ -29,7 +29,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
     return (
         <>
             <span
-                className="on-mobile no-tablet no-desktop current-range mr-2 my-auto block text-bold text-ellipsis"
+                className="on-mobile no-tablet no-desktop current-range my-auto block text-bold text-ellipsis"
                 title={currentRange}
             >
                 {currentRange}
@@ -38,7 +38,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 <span className="no-tablet no-desktop flex-item-noshrink">
                     <ToolbarButton
                         data-testid="calendar-toolbar:today"
-                        className="flex-item-noshrink flex-align-items-center mr-1"
+                        className="flex-item-noshrink flex-align-items-centers"
                         title={todayTitle}
                         onClick={onToday}
                     >
