@@ -6,8 +6,8 @@ import clsx from '@proton/utils/clsx';
 import './CheckListItem.scss';
 
 interface Props {
-    largeIcon?: string; // TODO delete when cleaning the old checklist
-    smallIcon?: string; // TODO delete when cleaning the old checklist
+    largeIcon: string;
+    smallIcon: string;
     text: string | string[];
     onClick?: () => void;
     smallVariant: boolean;
@@ -53,18 +53,16 @@ const CheckListItem = ({
             }}
             data-testid={dataTestId}
         >
-            {largeIcon && smallIcon && (
-                <img
-                    className={clsx('w-custom h-custom flex-item-noshrink', done && 'opacity-50')}
-                    src={smallVariant ? smallIcon : largeIcon}
-                    style={{
-                        '--w-custom': smallVariant ? '1.75rem' : '5.5rem',
-                        '--h-custom': smallVariant ? '1.5rem' : '3rem',
-                    }}
-                    alt=""
-                    data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
-                />
-            )}
+            <img
+                className={clsx('w-custom h-custom flex-item-noshrink', done && 'opacity-50')}
+                src={smallVariant ? smallIcon : largeIcon}
+                style={{
+                    '--w-custom': smallVariant ? '1.75rem' : '5.5rem',
+                    '--h-custom': smallVariant ? '1.5rem' : '3rem',
+                }}
+                alt=""
+                data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
+            />
             <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
             <div
                 className={clsx(
