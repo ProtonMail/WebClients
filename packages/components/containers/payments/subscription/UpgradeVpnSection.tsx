@@ -2,7 +2,7 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 
 import { Loader } from '../../../components';
-import { useLoad, usePlans, useSubscription, useUser } from '../../../hooks';
+import { useLoad, usePlans, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { getCurrency, resolveUpsellsToDisplay } from './helpers';
@@ -19,10 +19,11 @@ const UpgradeVpnSection = ({ app }: Props) => {
     const [plans = [], loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const [serversCount, serversCountLoading] = useVPNServersCount();
 
     useLoad();
 
-    const loading = loadingSubscription || loadingPlans;
+    const loading = loadingSubscription || loadingPlans || serversCountLoading;
 
     if (loading) {
         return <Loader />;
@@ -34,6 +35,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
         currency,
         subscription,
         plans,
+        serversCount,
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
