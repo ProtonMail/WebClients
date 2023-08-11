@@ -1408,11 +1408,6 @@ const InteractiveCalendarView = ({
         return () => containerRef.removeEventListener('click', handler);
     }, [containerRef]);
 
-    // When there is an update on one of these dependencies, we want to close the event popover (e.g. User make a quick settings update)
-    useEffect(() => {
-        closeAllPopovers();
-    }, [view, weekStartsOn, primaryTimezone]);
-
     const formatDate = useCallback(
         (utcDate) => {
             return format(utcDate, 'PP', { locale: dateLocale });
