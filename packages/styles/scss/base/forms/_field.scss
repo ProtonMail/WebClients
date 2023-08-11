@@ -19,8 +19,6 @@ $field-container: rem(260) !default;
 }
 
 .field {
-	@extend .interactive;
-
 	block-size: rem($default-height-fields);
 	min-block-size: rem($default-height-fields); // To ensure minimum size when overriding block-size to 'auto'
 
@@ -254,26 +252,26 @@ textarea.field,
  * Specific for input fields
  * TO_CHECK if removable
  */
- .right-icon,
- .right-text,
- .left-icon {
-	 inset-block-start: 0;
-	 block-size: #{rem($default-height-fields)} !important; // height of field, need to override `.icon16p`
-	 align-content: center;
- }
+.right-icon,
+.right-text,
+.left-icon {
+	inset-block-start: 0;
+	block-size: #{rem($default-height-fields)} !important; // height of field, need to override `.icon16p`
+	align-content: center;
+}
 
- .right-icon {
-	 inset-inline-end: 0.5em;
- }
+.right-icon {
+	inset-inline-end: 0.5em;
+}
 
- .right-text {
-	 inset-inline-end: 1em;
+.right-text {
+	inset-inline-end: 1em;
 
-	 &-inner {
-		 padding-block-end: rem(2);
-	 }
- }
+	&-inner {
+		padding-block-end: rem(2);
+	}
+}
 
- .left-icon {
-	 inset-inline-start: 0.5em;
- }
+.left-icon {
+	inset-inline-start: 0.5em;
+}
