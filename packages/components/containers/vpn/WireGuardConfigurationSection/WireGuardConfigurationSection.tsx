@@ -27,8 +27,17 @@ import {
 } from '../../../components';
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
-import { getCountryByAbbr } from '../../../helpers/countries';
-import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import {
+    useApi,
+    useApiResult,
+    useModals,
+    useNotifications,
+    useUser,
+    useUserSettings,
+    useUserVPN,
+    useVPNLogicals,
+} from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { Certificate } from '../Certificate';
 import { Logical } from '../Logical';
@@ -180,13 +189,20 @@ const getCertificateModel = (
 
 const paginationSize = 50;
 
-const formatServerName = (bestServerName: string) => {
+const formatServerName = (bestServerName: string, locale: string | readonly string[]) => {
     const countryCode = bestServerName.split(/#/g)[0];
     const flag = getFlagSvg(countryCode);
 
     return (
         <>
-            {flag && <img width={20} className="mx-2 border" src={flag} alt={getCountryByAbbr(countryCode)} />}
+            {flag && (
+                <img
+                    width={20}
+                    className="mx-2 border"
+                    src={flag}
+                    alt={getLocalizedCountryByAbbr(countryCode, locale)}
+                />
+            )}
             <strong className="align-middle">{bestServerName}</strong>
         </>
     );
@@ -223,6 +239,7 @@ const WireGuardConfigurationSection = () => {
     const [currentCertificate, setCurrentCertificate] = useState<string | undefined>();
     const [certificates, setCertificates] = useState<Certificate[]>([]);
     const [{ hasPaidVpn }] = useUser();
+    const [userSettings] = useUserSettings();
     const { result, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const userVPN = result?.VPN;
     const nameInputRef = useRef<HTMLInputElement>(null);
@@ -257,7 +274,9 @@ const WireGuardConfigurationSection = () => {
         .sort((a, b) => a.Score - b.Score);
     const bestLogical = bestLogicals[0];
     const bestServerName = bestLogical?.Name;
-    const formattedBestServerName = bestServerName ? formatServerName(bestServerName) : '';
+    const formattedBestServerName = bestServerName
+        ? formatServerName(bestServerName, userSettings.Locale || navigator.languages)
+        : '';
 
     const getCertificates = (): Certificate[] => {
         certificatesResult.forEach((certificateDto) => {
