@@ -1,4 +1,4 @@
-import { type VFC, memo, useEffect, useRef } from 'react';
+import { type VFC, memo, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -15,6 +15,7 @@ import { isEmptyString } from '@proton/pass/utils/string';
 
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
+import { getItemTypeOptions } from '../../views/Sidebar/ItemsFilter';
 
 import './Searchbar.scss';
 
@@ -26,11 +27,26 @@ const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value
     const inputRef = useRef<HTMLInputElement>(null);
     const { inTrash } = useNavigationContext();
     const { shareId } = useItemsFilteringContext();
+    const { type } = useItemsFilteringContext();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const placeholder = vault
-        ? c('Placeholder').t`Search in ${vault.content.name}`
-        : c('Placeholder').t`Search in all vaults`;
+
+    const placeholder = useMemo(() => {
+        const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
+        const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
+
+        switch (type) {
+            case '*':
+                return vault
+                    ? c('Placeholder').t`Search in ${vault.content.name}`
+                    : c('Placeholder').t`Search in all vaults`;
+            default: {
+                return vault
+                    ? c('Placeholder').t`Search ${pluralItemType} in ${vault.content.name}`
+                    : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
+            }
+        }
+    }, [vault, type]);
 
     const handleClear = () => {
         handleValue('');
