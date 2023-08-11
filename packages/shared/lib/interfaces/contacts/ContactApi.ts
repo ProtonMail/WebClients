@@ -13,3 +13,8 @@ export interface AddContactsApiResponses {
     Code: number;
     Responses: AddContactsApiResponse[];
 }
+
+export interface UpdateContactApiResponse {
+    Code: number;
+    Contact?: ContactMetadata;
+}
