@@ -109,6 +109,7 @@ export const getPaymentMethodOptions = ({
         paymentMethodsStatus?.Bitcoin &&
             !isRegularSignup &&
             !isHumanVerification &&
+            !isInvoice &&
             coupon !== BLACK_FRIDAY.COUPON_CODE &&
             amount >= MIN_BITCOIN_AMOUNT && {
                 icon: 'brand-bitcoin' as const,

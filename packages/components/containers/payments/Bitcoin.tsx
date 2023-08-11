@@ -4,22 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '@proton/components/payments/core';
-import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    CreateBitcoinTokenData,
-    createBitcoinPayment,
-    createToken,
-    getTokenStatus,
-} from '@proton/shared/lib/api/payments';
+import { getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
-import { PaymentMethodFlows } from '../paymentMethods/interface';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
+import { BitcoinTokenModel } from './useBitcoin';
 
 function pause() {
     return wait(10000);
@@ -29,9 +23,10 @@ const useCheckStatus = (
     api: Api,
     token: string | null,
     onTokenValidated: (token: string) => void,
-    enabled: boolean
+    enabled: boolean = true
 ) => {
     const [paymentValidated, setPaymentValidated] = useState(false);
+    const awaitingPayment = token !== null && !paymentValidated;
 
     useEffect(() => {
         let active = enabled;
@@ -74,6 +69,7 @@ const useCheckStatus = (
 
     return {
         paymentValidated,
+        awaitingPayment,
     };
 };
 
@@ -82,90 +78,49 @@ export interface ValidatedBitcoinToken extends TokenPaymentMethod {
     cryptoAddress: string;
 }
 
-interface Props {
+export interface Props {
     api: Api;
     amount: number;
     currency: Currency;
-    type: PaymentMethodFlows;
     onTokenValidated?: (data: ValidatedBitcoinToken) => void;
-    awaitingPayment: boolean;
-    enableValidation?: boolean;
+    onAwaitingPayment?: (awaitingPayment: boolean) => void;
+    processingToken?: boolean;
+    model: BitcoinTokenModel;
+    loading: boolean;
+    error: boolean;
+    request: () => Promise<void>;
 }
 
 const Bitcoin = ({
     api,
     amount,
     currency,
-    type,
     onTokenValidated,
-    awaitingPayment,
-    enableValidation = false,
+    onAwaitingPayment,
+    processingToken,
+    model,
+    loading,
+    error,
+    request,
 }: Props) => {
     const silentApi = getSilentApi(api);
-    const [loading, withLoading] = useLoading();
-    const [error, setError] = useState(false);
-    const [model, setModel] = useState({ amountBitcoin: 0, address: '', token: null });
 
-    const { paymentValidated } = useCheckStatus(
-        silentApi,
-        model.token,
-        (token) =>
-            onTokenValidated?.({
-                Payment: {
-                    Type: PAYMENT_METHOD_TYPES.TOKEN,
-                    Details: {
-                        Token: token,
-                    },
+    const { paymentValidated, awaitingPayment } = useCheckStatus(silentApi, model.token, (token) =>
+        onTokenValidated?.({
+            Payment: {
+                Type: PAYMENT_METHOD_TYPES.TOKEN,
+                Details: {
+                    Token: token,
                 },
-                cryptoAmount: model.amountBitcoin,
-                cryptoAddress: model.address,
-            }),
-        enableValidation
+            },
+            cryptoAmount: model.amountBitcoin,
+            cryptoAddress: model.address,
+        })
     );
 
-    const request = async () => {
-        const fetchWithoutToken = async () => {
-            const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
-            setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
-        };
-
-        const fetchAsToken = async () => {
-            try {
-                const data: CreateBitcoinTokenData = {
-                    Amount: amount,
-                    Currency: currency,
-                    Payment: {
-                        Type: 'cryptocurrency',
-                        Details: {
-                            Coin: 'bitcoin',
-                        },
-                    },
-                };
-                const { Token, Data } = await silentApi<any>(createToken(data));
-                setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
-            } catch (error) {
-                await fetchWithoutToken();
-            }
-        };
-
-        setError(false);
-        try {
-            if (type === 'signup-pass') {
-                await fetchAsToken();
-            } else {
-                await fetchWithoutToken();
-            }
-        } catch (error) {
-            setError(true);
-            throw error;
-        }
-    };
-
     useEffect(() => {
-        if (amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT) {
-            withLoading(request());
-        }
-    }, [amount, currency]);
+        onAwaitingPayment?.(awaitingPayment && !loading);
+    }, [awaitingPayment, loading]);
 
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
@@ -200,18 +155,22 @@ const Bitcoin = ({
         return (
             <>
                 <Alert className="mb-4" type="error">{c('Error').t`Error connecting to the Bitcoin API.`}</Alert>
-                <Button onClick={() => withLoading(request())}>{c('Action').t`Try again`}</Button>
+                <Button onClick={request} data-testid="bitcoin-try-again">{c('Action').t`Try again`}</Button>
             </>
         );
     }
 
-    const qrCodeStatus: BitcoinQRCodeProps['status'] = awaitingPayment
+    const qrCodeStatus: BitcoinQRCodeProps['status'] = processingToken
         ? 'pending'
         : paymentValidated
         ? 'confirmed'
         : 'initial';
 
-    const btcAmountBold = <span className="text-bold">{model.amountBitcoin} BTC</span>;
+    const btcAmountBold = (
+        <span className="text-bold" key="btc-info-amount">
+            {model.amountBitcoin} BTC
+        </span>
+    );
 
     return (
         <Bordered className="p-6 rounded" data-testid="bitcoin-payment-data">
@@ -229,12 +188,6 @@ const Bitcoin = ({
                 </div>
             </div>
             <BitcoinDetails amount={model.amountBitcoin} address={model.address} />
-            <div className="pt-4 px-4">
-                {type === 'invoice' && (
-                    <div className="mb-4">{c('Info')
-                        .t`Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.`}</div>
-                )}
-            </div>
         </Bordered>
     );
 };
