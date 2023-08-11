@@ -33,7 +33,7 @@ const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRan
             return `${fromString} – ${toString} ${rest}`;
         }
 
-        const fromString = format(from, 'MMM', formatOptions);
+        const fromString = format(from, 'MMM yyyy', formatOptions);
         const toString = format(to, 'MMM yyyy', formatOptions);
         return `${fromString} – ${toString}`;
     }
