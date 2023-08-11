@@ -1,6 +1,5 @@
 import { fireEvent } from '@testing-library/react';
 
-import { useFeature } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import {
@@ -10,11 +9,7 @@ import {
 import { minimalCache, render } from 'proton-mail/helpers/test/helper';
 
 import MailSidebar from '../sidebar/MailSidebar';
-import OnboardingChecklistWrapper from './OnboardingChecklistWrapper';
-
-// TODO delete when cleaning the old checklist
-jest.mock('@proton/components/hooks/useFeature');
-const mockFeature = useFeature as jest.MockedFunction<any>;
+import UsersOnboardingChecklist from './UsersOnboardingChecklist';
 
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
@@ -41,14 +36,13 @@ describe('OnboardingChecklistWrapper', () => {
     it('Should reduce the checklist when pressing the "Maybe later" button', async () => {
         const mockedChangeDisplay = jest.fn();
 
-        mockFeature.mockReturnValue({ feature: { Value: true } });
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
             changeChecklistDisplay: mockedChangeDisplay,
         } as Partial<ContextState>);
 
-        const { getByText } = await render(<OnboardingChecklistWrapper />, false);
+        const { getByText } = await render(<UsersOnboardingChecklist />, false);
         const { container } = await render(<MailSidebar {...props} />, false);
 
         const nav = container.querySelector('nav');
@@ -60,43 +54,26 @@ describe('OnboardingChecklistWrapper', () => {
     });
 
     it('Should hide maybe later when dismiss button', async () => {
-        mockFeature.mockReturnValue({ feature: { Value: true } });
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
         } as Partial<ContextState>);
 
-        const { queryByText } = await render(<OnboardingChecklistWrapper hideDismissButton />, false);
+        const { queryByText } = await render(<UsersOnboardingChecklist hideDismissButton />, false);
         const laterButton = queryByText('Maybe later');
         expect(laterButton).toBeNull();
     });
 
     it('Should display the small text when smallVariant is enabled', async () => {
-        mockFeature.mockReturnValue({ feature: { Value: true } });
         mockedReturn.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
         } as Partial<ContextState>);
 
-        const { getByText } = await render(<OnboardingChecklistWrapper smallVariant />, false);
+        const { getByText } = await render(<UsersOnboardingChecklist smallVariant />, false);
         getByText('Discover privacy features');
         getByText('Auto-forward Gmail');
         getByText('Update your logins');
         getByText('Get the App');
-    });
-
-    // TODO delete when cleaning the old checklist
-    it('Should display the old modal if the feature is not enabled', async () => {
-        mockFeature.mockReturnValue({ feature: { Value: false } });
-        mockedReturn.mockReturnValue({
-            displayState: CHECKLIST_DISPLAY_TYPE.FULL,
-            items: new Set(),
-        } as Partial<ContextState>);
-
-        const { getByText } = await render(<OnboardingChecklistWrapper />, false);
-        getByText('Get mobile app');
-        getByText('Send a message');
-        getByText('Set recovery method');
-        getByText('Import contacts or emails');
     });
 });

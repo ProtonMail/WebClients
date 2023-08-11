@@ -1,15 +1,10 @@
-import { useFeature } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
 
 import useChecklist from '../hooks/useChecklist';
 import { useGetStartedChecklist } from './GetStartedChecklistProvider';
-
-// TODO delete when cleaning the old checklist
-jest.mock('@proton/components/hooks/useFeature');
-const mockFeature = useFeature as jest.MockedFunction<any>;
 
 jest.mock('@proton/hooks/useLoading');
 const mockLoading = useLoading as jest.MockedFunction<any>;
@@ -90,7 +85,6 @@ describe('GetStartedChecklistProvider', () => {
         ];
 
         mockLoading.mockReturnValue([false, jest.fn()]);
-        mockFeature.mockReturnValue({ feature: { Value: true } });
 
         const { freeChecklist, paidChecklist } = checklistBuilder({
             checklistId: 'get-started',
@@ -128,7 +122,6 @@ describe('GetStartedChecklistProvider', () => {
         ];
 
         mockLoading.mockReturnValue([false, jest.fn()]);
-        mockFeature.mockReturnValue({ feature: { Value: true } });
 
         const { freeChecklist, paidChecklist } = checklistBuilder({
             checklistId: 'paying-user',
@@ -164,7 +157,6 @@ describe('GetStartedChecklistProvider', () => {
         ];
 
         mockLoading.mockReturnValue([false, jest.fn()]);
-        mockFeature.mockReturnValue({ feature: { Value: true } });
 
         const { freeChecklist, paidChecklist } = checklistBuilder({
             checklistId: 'get-started',
