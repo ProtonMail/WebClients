@@ -10,7 +10,7 @@ const TopNavbarList = ({ children }: Props) => {
     return (
         <ul
             className={clsx([
-                'topnav-list unstyled my-0 ml-4 flex flex-nowrap flex-align-items-center hidden-empty',
+                'topnav-list unstyled my-0 ml-4 gap-4 flex flex-nowrap flex-align-items-center hidden-empty',
                 navIconsLength >= 4 && 'topnav-list--four-elements',
             ])}
         >

@@ -24,7 +24,7 @@ const BREAKPOINTS = {
     extratiny: 0,
     tiny: 100,
     small: 400,
-    medium: 700,
+    medium: 740,
     large: 1100,
 };
 
@@ -121,7 +121,7 @@ const ToolbarRowWide = ({
                         mailSettings={mailSettings}
                         isSearch={isSearch}
                         labelID={labelID}
-                        filterAsDropdown={localIsTiny}
+                        filterAsDropdown={localIsNarrow}
                     />
 
                     <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
