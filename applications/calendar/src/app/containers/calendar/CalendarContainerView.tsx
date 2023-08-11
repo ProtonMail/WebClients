@@ -501,7 +501,7 @@ const CalendarContainerView = ({
             viewSelector={
                 !isSearching && (
                     <ViewSelector
-                        data-testid="calendar-view:view-options"
+                        data-testid="calendar-view:view-options-dropdown"
                         view={view}
                         range={range}
                         onChange={onChangeView}
