@@ -43,10 +43,8 @@ const DevicesToolbar = ({ items }: Props) => {
         );
     };
     return (
-        <Toolbar className="py-1 px-2 toolbar--heavy">
-            <div className="gap-2 flex">
-                {renderSelectionActions()}
-            </div>
+        <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
+            <div className="gap-2 flex">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap">
                 {isWindowsGA ? <DesktopDownloadDropdown className="flex-align-self-center mr-2" /> : null}
                 <LayoutButton />
