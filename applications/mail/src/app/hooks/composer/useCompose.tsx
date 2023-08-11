@@ -20,6 +20,9 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
+import { loadMessage } from 'proton-mail/helpers/message/messageRead';
+import { initialize, load } from 'proton-mail/logic/messages/read/messagesReadActions';
+
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
@@ -63,7 +66,7 @@ export const getComposeArgs = (composeArgs: ComposeArgs) => ({
 });
 
 export interface OnCompose {
-    (args: ComposeArgs): void;
+    (args: ComposeArgs): Promise<void>;
 }
 
 interface UseComposeProps {
@@ -168,8 +171,16 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
 
             const existingMessage = getMessage(localID);
 
+            // If message is in sending state we stop here
             if (existingMessage?.draftFlags?.sending && !fromUndo) {
                 return;
+            }
+
+            // If message is not in store yet we fetch it
+            if (!existingMessage) {
+                dispatch(initialize({ localID }));
+                const message = await loadMessage({ localID, data: { ID: localID } } as MessageState, api);
+                dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID }));
             }
 
             dispatch(openDraft({ ID: localID, fromUndo }));
