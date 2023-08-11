@@ -1,10 +1,9 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
-import { addDays, fromUnixTime } from 'date-fns';
+import { fromUnixTime } from 'date-fns';
 
-import { FeatureCode } from '@proton/components/containers';
-import { useApi, useEventManager, useFeature } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks';
+import { useApi, useEventManager } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import {
     hidePaidUserChecklist,
     seenCompletedChecklist,
@@ -30,14 +29,6 @@ const completedChecklist = [
     ChecklistKey.MobileApp,
 ];
 
-// TODO delete when cleaning the old checklist
-const oldCompletedChecklist = [
-    ChecklistKey.Import,
-    ChecklistKey.SendMessage,
-    ChecklistKey.MobileApp,
-    ChecklistKey.RecoveryMethod,
-];
-
 export interface ContextState {
     expiresAt: Date;
     loading: boolean;
@@ -57,8 +48,6 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
-    // TODO delete when cleaning the old checklist
-    const { feature, loading: loadingFeature } = useFeature<boolean>(FeatureCode.NewOnboardingChecklist);
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
@@ -73,13 +62,10 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         boolean
     ];
 
-    const isLoading = loadingFeature || loadingFreeChecklist || loadingPaidChecklist;
+    const isLoading = loadingFreeChecklist || loadingPaidChecklist;
     const isUserPaid = paidUserChecklist.Code === 1000;
     const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
-    const isChecklistFinished =
-        feature && feature.Value
-            ? completedChecklist.every((item) => items.includes(item))
-            : oldCompletedChecklist.every((item) => items.includes(item)); // TODO delete when cleaning the old checklist
+    const isChecklistFinished = completedChecklist.every((item) => items.includes(item));
 
     useEffect(() => {
         if (submitting) {
@@ -105,7 +91,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         setDisplayState(newState);
         withSubmitting(async () => {
             // Reduce the checklist and mark first checklist item as done
-            if (newState === REDUCED && feature?.Value) {
+            if (newState === REDUCED) {
                 const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
                     setDoneItems([...doneItems, ChecklistKey.ProtectInbox]);
@@ -128,16 +114,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         });
     };
 
-    const getExpiredAt = (): Date => {
-        // TODO delete when cleaning the old checklist
-        if (!feature?.Value) {
-            return isUserPaid
-                ? addDays(fromUnixTime(paidUserChecklist.CreatedAt), 18)
-                : addDays(fromUnixTime(freeUserChecklist.CreatedAt), 18);
-        }
-
-        return isUserPaid ? fromUnixTime(paidUserChecklist.ExpiresAt) : fromUnixTime(freeUserChecklist.ExpiresAt);
-    };
+    const getExpiredAt = (): Date =>
+        isUserPaid ? fromUnixTime(paidUserChecklist.ExpiresAt) : fromUnixTime(freeUserChecklist.ExpiresAt);
 
     const context: ContextState = {
         isUserPaid,

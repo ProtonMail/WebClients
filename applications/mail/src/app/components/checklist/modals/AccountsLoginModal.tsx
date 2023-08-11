@@ -87,6 +87,35 @@ const AccountsLoginModal = (props: ModalStateProps) => {
                             </div>
                         );
                     })}
+                    {checkedItems.length > 0 && (
+                        <>
+                            <h2 className="text-semibold text-rg mb-2 mt-8">{c('Get started checklist instructions')
+                                .t`Changed accounts`}</h2>
+                            <div>
+                                <div className="mb-6 flex flex-column gap-2">
+                                    {checkedItems.map((item) => {
+                                        const mappedItem = links
+                                            .flatMap((group) => group.services)
+                                            .find((service) => service.key === item);
+
+                                        if (!mappedItem) {
+                                            return null;
+                                        }
+
+                                        return (
+                                            <ServiceItem
+                                                service={mappedItem}
+                                                key={mappedItem.key}
+                                                onServiceDone={handleDoneClick}
+                                                isServiceDone={false}
+                                                serviceMarkedAsDone
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </div>
             </ModalTwoContent>
         </ModalTwo>

@@ -1,7 +1,7 @@
 import { Cancellable } from '@proton/components/hooks/useHandler';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import OnboardingChecklistWrapper from '../../components/checklist/OnboardingChecklistWrapper';
+import UsersOnboardingChecklist from '../../components/checklist/UsersOnboardingChecklist';
 import PlaceholderView from '../../components/view/PlaceholderView';
 import { useGetStartedChecklist } from '../onboardingChecklist/provider/GetStartedChecklistProvider';
 
@@ -21,7 +21,7 @@ const MailboxContainerPlaceholder = ({ showPlaceholder, welcomeFlag, labelID, ch
     }
 
     if (showPlaceholder && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
-        return <OnboardingChecklistWrapper />;
+        return <UsersOnboardingChecklist />;
     }
 
     if (showPlaceholder) {
