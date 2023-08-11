@@ -322,16 +322,25 @@ export const buildContentDB = async <ESItemContent>(
     if (!sortedIDs) {
         throw new Error('IDB caching cannot read sorted IDs');
     }
-    // If we are recovering, e.g. after a password reset, we don't
-    // want to re-index content items that are already present in IDB
+
+    /**
+     * If we are recovering, e.g. after a password reset, we don't
+     * want to re-index content items that are already present in IDB
+     *
+     * TODO: improve decryption error correction to handle cases like:
+     *  - user refreshes browser during correction (remaining undecrypted item won't be processed)
+     */
     if (!isInitialIndexing) {
         const esDB = await openESDB(userID);
         if (!esDB) {
             throw new Error('ESDB not available during content indexing');
         }
-        sortedIDs = (
-            await Promise.all(sortedIDs.map(async (ID) => ((await esDB.count('content', ID)) === 1 ? ID : undefined)))
-        ).filter(isTruthy);
+
+        const maybeSortedIDsWithoutContent = await Promise.all(
+            sortedIDs.map(async (ID) => ((await esDB.count('content', ID)) === 1 ? undefined : ID))
+        );
+
+        sortedIDs = maybeSortedIDsWithoutContent.filter(isTruthy);
         esDB.close();
     }
 
@@ -355,6 +364,7 @@ export const buildContentDB = async <ESItemContent>(
                     .filter(isTruthy);
             })
         );
+
         if (infoMap.size !== IDs.length) {
             throw new Error('Metadata not available to index content');
         }
