@@ -59,7 +59,9 @@
                 "assets/*.png",
                 "assets/*.svg",
                 "assets/*.woff",
-                "assets/*.woff2"
+                "assets/*.woff2",
+                "styles/styles.control.css",
+                "styles/styles.root.css"
             ],
             "matches": ["https://*/*", "http://*/*"]
         }
