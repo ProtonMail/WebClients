@@ -99,6 +99,10 @@ END:VCARD`;
                 saveRequestSpy(args.data);
                 return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
             }
+            if (args.url === 'contacts/v4/contacts/ContactID') {
+                saveRequestSpy(args.data);
+                return { Code: API_CODES.SINGLE_SUCCESS };
+            }
         });
 
         const { getByDisplayValue, getByTestId, getByText } = render(
@@ -140,7 +144,7 @@ END:VCARD`;
         });
 
         const sentData = saveRequestSpy.mock.calls[0][0];
-        const cards = sentData.Contacts[0].Cards;
+        const cards = sentData.Cards;
 
         const signedCardContent = cards.find(
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
@@ -176,6 +180,10 @@ END:VCARD`.replaceAll('\n', '\r\n');
                 saveRequestSpy(args.data);
                 return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
             }
+            if (args.url === 'contacts/v4/contacts/ContactID') {
+                saveRequestSpy(args.data);
+                return { Code: API_CODES.SINGLE_SUCCESS };
+            }
         });
 
         const { getByTestId, getByText } = render(<ContactEditModal open={true} {...props} />);
@@ -192,7 +200,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
 
         const sentData = saveRequestSpy.mock.calls[0][0];
-        const cards = sentData.Contacts[0].Cards;
+        const cards = sentData.Cards;
 
         const signedCardContent = cards.find(
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
