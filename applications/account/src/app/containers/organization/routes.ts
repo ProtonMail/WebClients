@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -29,6 +29,7 @@ export const getOrganizationAppRoutes = ({
     const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = hasFamily(subscription);
@@ -48,7 +49,7 @@ export const getOrganizationAppRoutes = ({
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
-                text: c('Title').t`Users and addresses`,
+                text: hasVpnB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
                 available: hasOrganizationKey || hasOrganization,
@@ -93,6 +94,17 @@ export const getOrganizationAppRoutes = ({
                         text: c('Title').t`Password and keys`,
                         id: 'password-keys',
                         available: hasOrganizationKey,
+                    },
+                ],
+            },
+            gateways: <SectionConfig>{
+                text: c('Title').t`Gateways`,
+                to: '/gateways',
+                icon: 'servers',
+                available: hasVpnB2BPlan,
+                subsections: [
+                    {
+                        id: 'servers',
                     },
                 ],
             },
