@@ -135,9 +135,10 @@ const HolidaysCalendarModalWithDirectory = ({
     const { createNotification } = useNotifications();
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
-    const { inputCalendar, suggestedCalendar } = useMemo(() => {
+    const { directoryCalendarFromInput, suggestedCalendar } = useMemo(() => {
         // Directory calendar that we want to edit (when we get an input calendar)
-        const inputCalendar = directory.find(({ CalendarID }) => CalendarID === inputHolidaysCalendar?.ID);
+        const directoryCalendarFromInput = directory.find(({ CalendarID }) => CalendarID === inputHolidaysCalendar?.ID);
+
         // Default holidays calendar found based on the user time zone and language
         const suggestedCalendar = getSuggestedHolidaysCalendar(
             directory,
@@ -146,7 +147,7 @@ const HolidaysCalendarModalWithDirectory = ({
             getBrowserLanguageTags()
         );
 
-        return { inputCalendar, suggestedCalendar };
+        return { directoryCalendarFromInput, suggestedCalendar };
     }, [inputHolidaysCalendar, directory, PrimaryTimezone, languageCode]);
 
     // Check if the user has already joined the default holidays directory calendar.
@@ -163,12 +164,14 @@ const HolidaysCalendarModalWithDirectory = ({
      *  - user doesn't have a suggested calendar
      *  - user has already added the suggested calendar
      */
-    const canPreselect = !inputCalendar && !!suggestedCalendar && !hasAlreadyJoinedSuggestedCalendar;
+    const canPreselect = !directoryCalendarFromInput && !!suggestedCalendar && !hasAlreadyJoinedSuggestedCalendar;
 
     const isEdit = !!inputHolidaysCalendar;
 
     // Currently selected option in the modal
-    const [selectedCalendar, setSelectedCalendar] = useState<HolidaysDirectoryCalendar | undefined>(inputCalendar);
+    const [selectedCalendar, setSelectedCalendar] = useState<HolidaysDirectoryCalendar | undefined>(
+        directoryCalendarFromInput
+    );
 
     // Calendar that is either the selected one or the default one if preselect possible
     // Because in some case, we do have a default calendar (suggested one) to use, but we want to act CountrySelect as if we don't (focus on suggested option)
@@ -222,9 +225,9 @@ const HolidaysCalendarModalWithDirectory = ({
                  * 3 - The user is joining a holidays calendar
                  *      => We just want to join a holidays calendar
                  */
-                if (inputHolidaysCalendar && inputCalendar) {
-                    // 1 - Classic update
-                    if (computedCalendar === inputCalendar) {
+                if (inputHolidaysCalendar) {
+                    // 1 - Classic update: staying in the same holidays calendar
+                    if (computedCalendar.CalendarID === directoryCalendarFromInput?.CalendarID) {
                         const calendarPayload: CalendarCreateData = {
                             Name: inputHolidaysCalendar.Name,
                             Description: inputHolidaysCalendar.Description,
@@ -250,10 +253,11 @@ const HolidaysCalendarModalWithDirectory = ({
                             api
                         );
                         await call();
-                        await calendarCall([inputCalendar.CalendarID]);
+                        await calendarCall([directoryCalendarFromInput.CalendarID]);
                         onEditCalendar?.();
                     } else {
                         // 2 - Leave old holidays calendar and join a new one
+                        // 2bis - If input holidays calendar doesn't exist anymore, we remove it and join new one
                         await api(removeMember(inputHolidaysCalendar.ID, inputHolidaysCalendar.Members[0].ID));
 
                         await setupHolidaysCalendarHelper({
