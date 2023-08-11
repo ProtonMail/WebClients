@@ -1,9 +1,5 @@
 ## Release 5.0.28 — Aug 30, 2023
 
-### New features
-
--   Trash and Spam are now excluded from All Mail by default. You can adjust this behavior in Settings
-
 ### Improvements
 
 -   The settings button has moved from the top right to the sidebar on the right-hand side
