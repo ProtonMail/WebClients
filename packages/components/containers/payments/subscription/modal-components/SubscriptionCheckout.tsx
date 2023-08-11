@@ -109,7 +109,7 @@ const AddonTooltip = ({
     } else if (addon.name.startsWith(MEMBER_ADDON_PREFIX)) {
         text = c('Addon').jt`${price} per user`;
     } else if (addon.name.startsWith('1ip')) {
-        text = c('Addon').jt`${price} per IP address`;
+        text = c('Addon').jt`${price} per dedicated server`;
     } else {
         return null;
     }
