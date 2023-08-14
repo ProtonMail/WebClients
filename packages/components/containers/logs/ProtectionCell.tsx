@@ -6,7 +6,6 @@ import { Icon, Tooltip } from '../../components';
 type Props = {
     protection?: ProtectionType | null;
     protectionDesc?: string | null;
-    isProtonSentinelAuthLogUpsellEnabled: boolean;
 };
 
 const ProtectionTooltip = () => {
@@ -17,7 +16,7 @@ const ProtectionTooltip = () => {
     );
 };
 
-const ProtectionCell = ({ protection, protectionDesc, isProtonSentinelAuthLogUpsellEnabled }: Props) => {
+const ProtectionCell = ({ protection, protectionDesc }: Props) => {
     const protectionTooltip = protection ? <ProtectionTooltip /> : null;
     if (protection === ProtectionType.OK) {
         return protectionTooltip;
@@ -25,10 +24,7 @@ const ProtectionCell = ({ protection, protectionDesc, isProtonSentinelAuthLogUps
     return (
         <>
             <span className="flex-item-noshrink mr-2">{protectionTooltip}</span>
-            {isProtonSentinelAuthLogUpsellEnabled && protectionDesc && (
-                <span className="flex-item-fluid">{protectionDesc}</span>
-            )}
-            {!isProtonSentinelAuthLogUpsellEnabled && <span className="flex-item-fluid">{protectionDesc || '-'}</span>}
+            <span className="flex-item-fluid">{protectionDesc || '-'}</span>
         </>
     );
 };
