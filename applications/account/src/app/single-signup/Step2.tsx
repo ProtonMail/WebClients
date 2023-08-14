@@ -35,7 +35,10 @@ const Step2 = ({
     }, []);
 
     useEffect(() => {
-        metrics.core_vpn_single_signup_pageLoad_total.increment({ step: 'account_setup' });
+        metrics.core_vpn_single_signup_pageLoad_2_total.increment({
+            step: 'account_setup',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
+        });
     }, []);
 
     return (
