@@ -18,8 +18,6 @@ import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
-import './Login.view.scss';
-
 export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
     const { metadata, content, extraFields } = item;
@@ -44,7 +42,8 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
                     icon="key"
                     label={c('Label').t`Password`}
                     value={password}
-                    valueClassName="pass-password-view text-monospace"
+                    ellipsis={false}
+                    valueClassName="text-monospace"
                 >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>
