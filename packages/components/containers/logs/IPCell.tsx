@@ -11,7 +11,8 @@ interface Props {
 
 const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Props) => {
     const advancedLogsUpsell = c('Description').t`Enable advanced logs to access these features`;
-    const protonSentinelUpsell = c('Description').t`Enable ${PROTON_SENTINEL_NAME} to access these features`;
+    const advancedLogsAndProtonSentinelUpsell = c('Description')
+        .t`Enable advanced logs and ${PROTON_SENTINEL_NAME} to access these features`;
 
     if (isAuthLogAdvanced) {
         return <code>{ip || '-'}</code>;
@@ -20,7 +21,9 @@ const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Pr
     if (firstRow) {
         return (
             <span className="flex-item-fluid text-bold color-weak">
-                {isProtonSentinelEnabled ? protonSentinelUpsell : advancedLogsUpsell}
+                {!isProtonSentinelEnabled && !isAuthLogAdvanced
+                    ? advancedLogsAndProtonSentinelUpsell
+                    : advancedLogsUpsell}
             </span>
         );
     }
