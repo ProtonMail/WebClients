@@ -25,7 +25,7 @@ describe('Mark component', () => {
 
     it('should highlight print result properly', () => {
         expect(container.innerHTML).toBe(
-            `<mark class="is-light">E</mark>h, toi, l'ours mal l<mark class="is-light">é</mark>ch<mark class="is-light">é</mark>`
+            `<mark class="is-light">E</mark><span>h, toi, l'ours mal l</span><mark class="is-light">é</mark><span>ch</span><mark class="is-light">é</mark>`
         );
     });
 
@@ -46,5 +46,13 @@ describe('Mark component', () => {
             </Mark>
         );
         expect(container.innerHTML).toBe('<input>');
+    });
+
+    it('should preserve spacing between highlighted matches', () => {
+        const text = 'Créer un nouveau dossier';
+        const { container } = render(<Mark value="n">{text}</Mark>);
+        expect(container.innerHTML).toBe(
+            `<span>Créer u</span><mark class="is-light">n</mark><span> </span><mark class="is-light">n</mark><span>ouveau dossier</span>`
+        );
     });
 });
