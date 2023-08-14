@@ -244,6 +244,7 @@ const MainContainer = () => {
                                         <UsernameSection app={APPS.PROTONVPN_SETTINGS} />
                                         <PasswordsSection />
                                     </>
+                                    <LanguageSection locales={locales} />
                                     <TwoFactorSection />
                                     <OpenVPNCredentialsSection />
                                     <AccountRecoverySection />
