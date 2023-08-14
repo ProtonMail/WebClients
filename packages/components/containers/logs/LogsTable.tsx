@@ -185,7 +185,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 isAuthLogAdvanced &&
                                     isProtonSentinelEnabled && {
                                         label: 'ISP',
-                                        content: <span className="flex-item-fluid">{InternetProvider}</span>,
+                                        content: <span className="flex-item-fluid">{InternetProvider || '-'}</span>,
                                     },
                                 isProtonSentinelEnabled && {
                                     label: c('Header').t`Device`,
@@ -193,13 +193,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 },
                                 isProtonSentinelEnabled && {
                                     label: c('Header').t`Protection`,
-                                    content: (
-                                        <ProtectionCell
-                                            protection={Protection}
-                                            protectionDesc={ProtectionDesc}
-                                            isProtonSentinelAuthLogUpsellEnabled={isProtonSentinelAuthLogUpsellEnabled}
-                                        />
-                                    ),
+                                    content: <ProtectionCell protection={Protection} protectionDesc={ProtectionDesc} />,
                                 },
                             ].filter(isTruthy);
 
@@ -269,13 +263,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                             },
                             protonSentinel === ENABLED && {
                                 label: c('Header').t`Protection`,
-                                content: (
-                                    <ProtectionCell
-                                        protection={Protection}
-                                        protectionDesc={ProtectionDesc}
-                                        isProtonSentinelAuthLogUpsellEnabled={isProtonSentinelAuthLogUpsellEnabled}
-                                    />
-                                ),
+                                content: <ProtectionCell protection={Protection} protectionDesc={ProtectionDesc} />,
                             },
                             protonSentinel === ENABLED && {
                                 label: c('Header').t`Device`,
