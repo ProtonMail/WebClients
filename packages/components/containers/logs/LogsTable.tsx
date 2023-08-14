@@ -53,7 +53,8 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
         return '';
     };
 
-    if (isProtonSentinelAuthLogUpsellEnabled) {
+    // TODO(kta): remove isProtonSentinelEnabled condition once we finish showing the features to journalists
+    if (isProtonSentinelAuthLogUpsellEnabled && isProtonSentinelEnabled) {
         const headerCells = [
             {
                 className: 'text-left',
