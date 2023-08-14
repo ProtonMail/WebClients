@@ -35,7 +35,7 @@ export enum OnePassVaultType {
     USER_CREATED = 'U',
 }
 
-export enum OnePassFieldValueKey {
+export enum OnePassFieldKey {
     CONCEALED = 'concealed',
     CREDIT_CARD_NUMBER = 'creditCardNumber',
     MONTH_YEAR = 'monthYear',
@@ -44,14 +44,9 @@ export enum OnePassFieldValueKey {
     URL = 'url',
 }
 
-export type OnePassFieldValue = Record<
-    Exclude<OnePassFieldValueKey, OnePassFieldValueKey.MONTH_YEAR>,
-    Maybe<string>
-> & {
-    [OnePassFieldValueKey.MONTH_YEAR]: Maybe<number>;
-};
+export type OnePassFields = { [K in OnePassFieldKey]?: K extends OnePassFieldKey.MONTH_YEAR ? number : string };
 
-export enum OnePassFieldIdCreditCard {
+export enum OnePassCreditCardFieldId {
     CARDHOLDER = 'cardholder',
     CVV = 'cvv',
     EXPIRY = 'expiry',
@@ -60,10 +55,15 @@ export enum OnePassFieldIdCreditCard {
     VALID_FROM = 'validFrom',
 }
 
+export type OnePassCreditCardFields = { [K in OnePassCreditCardFieldId]?: OnePassField };
+
+export const OnePassFieldValueKeys = Object.values(OnePassFieldKey);
+export const OnePassCreditCardFieldIds = Object.values(OnePassCreditCardFieldId);
+
 export type OnePassField = {
     title: string;
-    id: string | OnePassFieldIdCreditCard;
-    value: OnePassFieldValue;
+    id: string;
+    value: OnePassFields;
 };
 
 export type ItemSection = {
@@ -74,7 +74,7 @@ export type ItemSection = {
 
 export type OnePassItemDetails = {
     notesPlain: Maybe<string>;
-    sections: ItemSection[];
+    sections: Maybe<ItemSection[]>;
 };
 
 export type OnePassPassword = OnePassItemDetails & { password: string };
@@ -102,34 +102,17 @@ export type OnePassBaseItem = {
         title: string;
         subtitle: string;
         url: string;
-        urls: Maybe<
-            {
-                label: string;
-                url: string;
-            }[]
-        >;
+        urls: Maybe<{ label: string; url: string }[]>;
         tags: string[];
     };
 };
 
 export type OnePassItem = OnePassBaseItem &
     (
-        | {
-              categoryUuid: OnePassCategory.LOGIN;
-              details: OnePassLogin;
-          }
-        | {
-              categoryUuid: OnePassCategory.NOTE;
-              details: OnePassNote;
-          }
-        | {
-              categoryUuid: OnePassCategory.PASSWORD;
-              details: OnePassPassword;
-          }
-        | {
-              categoryUuid: OnePassCategory.CREDIT_CARD;
-              details: OnePassCreditCard;
-          }
+        | { categoryUuid: OnePassCategory.LOGIN; details: OnePassLogin }
+        | { categoryUuid: OnePassCategory.NOTE; details: OnePassNote }
+        | { categoryUuid: OnePassCategory.PASSWORD; details: OnePassPassword }
+        | { categoryUuid: OnePassCategory.CREDIT_CARD; details: OnePassCreditCard }
     );
 
 export type OnePass1PuxData = {
@@ -151,4 +134,12 @@ export type OnePass1PuxData = {
             items: OnePassItem[];
         }[];
     }[];
+};
+
+export const OnePasswordTypeMap: Record<string, string> = {
+    '001': 'Login',
+    '002': 'Credit Card',
+    '003': 'Note',
+    '004': 'Identification',
+    '005': 'Password',
 };
