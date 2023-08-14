@@ -132,6 +132,7 @@ export const useComposerContent = (args: EditorArgs) => {
         pendingAutoSave,
         pause: pauseAutoSave,
         restart: restartAutoSave,
+        hasNetworkError,
     } = useAutoSave({ onMessageAlreadySent });
 
     useEffect(() => {
@@ -573,6 +574,7 @@ export const useComposerContent = (args: EditorArgs) => {
         handleNoSubjects,
         handleNoAttachments: isQuickReply ? args.onNoAttachments : handleNoAttachments,
         isQuickReply,
+        hasNetworkError,
     });
 
     const handleSendQuickReply = async () => {
