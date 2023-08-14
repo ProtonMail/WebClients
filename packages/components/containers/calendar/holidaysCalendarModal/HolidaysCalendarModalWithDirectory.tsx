@@ -135,20 +135,31 @@ const HolidaysCalendarModalWithDirectory = ({
     const { createNotification } = useNotifications();
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
+    const visibleDirectory = useMemo(() => {
+        const inputHolidaysCalendarID = inputHolidaysCalendar?.ID;
+
+        return directory.filter((calendar) => {
+            // a directory calendar is displayed if it's not hidden, or we're editing it
+            return !calendar.Hidden || calendar.CalendarID === inputHolidaysCalendarID;
+        });
+    }, [directory]);
+
     const { directoryCalendarFromInput, suggestedCalendar } = useMemo(() => {
         // Directory calendar that we want to edit (when we get an input calendar)
-        const directoryCalendarFromInput = directory.find(({ CalendarID }) => CalendarID === inputHolidaysCalendar?.ID);
+        const directoryCalendarFromInput = visibleDirectory.find(
+            ({ CalendarID }) => CalendarID === inputHolidaysCalendar?.ID
+        );
 
         // Default holidays calendar found based on the user time zone and language
         const suggestedCalendar = getSuggestedHolidaysCalendar(
-            directory,
+            visibleDirectory,
             PrimaryTimezone,
             languageCode,
             getBrowserLanguageTags()
         );
 
         return { directoryCalendarFromInput, suggestedCalendar };
-    }, [inputHolidaysCalendar, directory, PrimaryTimezone, languageCode]);
+    }, [inputHolidaysCalendar, visibleDirectory, PrimaryTimezone, languageCode]);
 
     // Check if the user has already joined the default holidays directory calendar.
     // If so, we don't want to pre-select that default calendar
@@ -196,15 +207,16 @@ const HolidaysCalendarModalWithDirectory = ({
     // - suggested calendar matches computed one
     const canShowHint = canPreselect && suggestedCalendar === computedCalendar;
 
-    // We want to display one option per country, so we need to filter them
-    const filteredCalendars: HolidaysDirectoryCalendar[] = useMemo(() => {
-        return uniqueBy(directory, ({ CountryCode }) => CountryCode).sort((a, b) => a.Country.localeCompare(b.Country));
-    }, [directory]);
+    const countries: Pick<HolidaysDirectoryCalendar, 'Country' | 'CountryCode'>[] = useMemo(() => {
+        return uniqueBy(visibleDirectory, ({ CountryCode }) => CountryCode)
+            .map(({ Country, CountryCode }) => ({ Country, CountryCode }))
+            .sort((a, b) => a.Country.localeCompare(b.Country));
+    }, [visibleDirectory]);
 
     // We might have several calendars for a specific country, with different languages
-    const languageOptions: HolidaysDirectoryCalendar[] = useMemo(() => {
-        return getHolidaysCalendarsFromCountryCode(directory, computedCalendar?.CountryCode || '');
-    }, [computedCalendar]);
+    const filteredLanguageOptions: HolidaysDirectoryCalendar[] = useMemo(() => {
+        return getHolidaysCalendarsFromCountryCode(visibleDirectory, computedCalendar?.CountryCode || '');
+    }, [computedCalendar, visibleDirectory]);
 
     const handleSubmit = async () => {
         try {
@@ -308,7 +320,7 @@ const HolidaysCalendarModalWithDirectory = ({
 
     const handleSelectCountry = useCallback(
         (countryCode: string) => {
-            const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(directory, countryCode, [
+            const newSelected = findHolidaysCalendarByCountryCodeAndLanguageTag(visibleDirectory, countryCode, [
                 languageCode,
                 ...getBrowserLanguageTags(),
             ]);
@@ -317,11 +329,11 @@ const HolidaysCalendarModalWithDirectory = ({
                 setSelectedCalendar(newSelected);
             }
         },
-        [directory, setSelectedCalendar]
+        [visibleDirectory, setSelectedCalendar]
     );
 
     const handleSelectLanguage = ({ value }: { value: any }) => {
-        const calendarsFromCountry = languageOptions.find((calendar) => calendar.Language === value);
+        const calendarsFromCountry = filteredLanguageOptions.find((calendar) => calendar.Language === value);
         setSelectedCalendar(calendarsFromCountry);
     };
 
@@ -342,13 +354,13 @@ const HolidaysCalendarModalWithDirectory = ({
     const hintText = c('Info').t`Based on your time zone`;
     const isComplete = type === CALENDAR_MODAL_TYPE.COMPLETE;
 
-    const calendarOptions = useMemo(
+    const countryOptions = useMemo(
         () =>
-            filteredCalendars.map((calendar) => ({
+            countries.map((calendar) => ({
                 countryName: calendar.Country,
                 countryCode: calendar.CountryCode,
             })),
-        [filteredCalendars]
+        [countries]
     );
 
     return (
@@ -357,7 +369,7 @@ const HolidaysCalendarModalWithDirectory = ({
             <ModalContent className="holidays-calendar-modal-content">
                 {isComplete && (
                     <CountrySelect
-                        options={calendarOptions}
+                        options={countryOptions}
                         preSelectedOption={
                             canPreselect
                                 ? {
@@ -380,7 +392,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         hint={canShowHint ? hintText : undefined}
                     />
                 )}
-                {computedCalendar && languageOptions.length > 1 && isComplete && (
+                {computedCalendar && filteredLanguageOptions.length > 1 && isComplete && (
                     <InputField
                         id="languageSelect"
                         as={Select}
@@ -390,7 +402,7 @@ const HolidaysCalendarModalWithDirectory = ({
                         aria-describedby="label-languageSelect"
                         data-testid="holidays-calendar-modal:language-select"
                     >
-                        {languageOptions.map((option) => (
+                        {filteredLanguageOptions.map((option) => (
                             <Option key={option.Language} value={option.Language} title={option.Language} />
                         ))}
                     </InputField>
