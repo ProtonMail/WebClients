@@ -31,7 +31,7 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
 
     useEffect(() => {
         if (relatedAlias) {
-            form.setValues((values) =>
+            void form.setValues((values) =>
                 merge(values, {
                     withAlias: false,
                     aliasPrefix: '',
