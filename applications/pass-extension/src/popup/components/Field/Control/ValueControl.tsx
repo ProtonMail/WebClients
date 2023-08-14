@@ -20,6 +20,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     children?: E extends ComponentType<infer U> ? (U extends { children?: infer C } ? C : never) : ReactNode;
     clickToCopy?: boolean;
     error?: boolean;
+    ellipsis?: boolean;
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
@@ -53,6 +54,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     as,
     children,
     clickToCopy = false,
+    ellipsis = true,
     error = false,
     extra,
     hidden = false,
@@ -110,7 +112,11 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 <div className="color-weak text-sm">{label}</div>
 
                 <ValueContainer
-                    className={clsx('pass-value-control--value m-0 p-0 text-ellipsis cursor-pointer', valueClassName)}
+                    className={clsx(
+                        'pass-value-control--value m-0 p-0 cursor-pointer',
+                        ellipsis && 'text-ellipsis',
+                        valueClassName
+                    )}
                     children={displayValue}
                 />
 
