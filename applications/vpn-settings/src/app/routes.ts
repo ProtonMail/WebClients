@@ -84,6 +84,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             text: c('Title').t`General`,
             to: '/general',
             icon: 'cog-wheel',
+            available: !canHaveOrganization,
             subsections: [
                 {
                     text: c('Title').t`Language`,
@@ -101,8 +102,11 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             icon: 'user-circle',
             subsections: [
                 {
-                    text: '',
                     id: 'account',
+                },
+                {
+                    id: 'language',
+                    available: canHaveOrganization,
                 },
                 {
                     text: c('Title').t`Two-factor authentication`,
@@ -211,4 +215,3 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
         },
     };
 };
-
