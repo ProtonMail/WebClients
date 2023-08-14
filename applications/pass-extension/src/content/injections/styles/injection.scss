@@ -6,7 +6,6 @@ protonpass-root {
 
 	position: absolute !important;
 	inline-size: 100% !important;
-	display: block !important;
 	border: 0 !important;
 	z-index: unset !important;
 	inset: unset !important;
@@ -29,7 +28,6 @@ protonpass-control {
 	order: 0 !important;
 	block-size: 0 !important;
 	inline-size: 0 !important;
-	display: block !important;
 	/* stylelint-disable-next-line */
 	float: left !important;
 	animation: none !important;
