@@ -2,11 +2,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
+import type { FormikTouched } from 'formik';
 import { type FormikContextType } from 'formik';
 
 import type { ItemDraft } from '@proton/pass/store';
 import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { omit } from '@proton/shared/lib/helpers/object';
 import debounce from '@proton/utils/debounce';
 
 const SAVE_DRAFT_TIMEOUT = 500;
@@ -47,7 +49,7 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
             (formData: V) =>
                 dispatch(
                     itemDraftSave({
-                        ...options,
+                        ...omit(options, ['onHydrated', 'sanitizeHydration', 'sanitizeSave']),
                         formData: options.sanitizeSave?.(formData) ?? formData,
                     })
                 ),
@@ -71,12 +73,16 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
         void (async () => {
             if (draft) {
                 const formValues = options.sanitizeHydration?.(draft.formData) ?? draft.formData;
-                await Promise.all(
-                    Object.entries(formValues).map(async ([field, value]) => {
-                        form.setFieldTouched(field, true);
-                        await form.setFieldValue(field, value, true);
-                    })
+
+                await form.setTouched(
+                    Object.keys(formValues).reduce<FormikTouched<any>>((touched, field) => {
+                        touched[field] = true;
+                        return touched;
+                    }, {}),
+                    false
                 );
+
+                await form.setValues(formValues, true);
 
                 form.setErrors(await form.validateForm(draft.formData));
                 options.onHydrated?.(formValues);

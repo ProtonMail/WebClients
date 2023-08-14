@@ -137,14 +137,14 @@ export const useImportForm = ({
     });
 
     const reset = () => {
-        form.setValues(getInitialFormValues());
+        void form.setValues(getInitialFormValues());
         setBusy(false);
     };
 
     const onAddFiles = (files: File[]) => {
         try {
             const file = createFileValidator(SUPPORTED_IMPORT_FILE_TYPES)(files);
-            form.setValues((values) => ({ ...values, file }));
+            void form.setValues((values) => ({ ...values, file }));
         } catch (e: any) {
             form.setErrors({ file: e.message });
         }
