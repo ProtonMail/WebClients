@@ -29,6 +29,20 @@ describe('match url', () => {
                     isPrivate: false,
                 })
             ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://pproton.ch']))('proton.ch', {
+                    protocolFilter: ['https:'],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://p.pproton.ch']))('proton.ch', {
+                    protocolFilter: ['https:'],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
         });
 
         test('should return `SUB_MATCH` if non top-level domain match', () => {
