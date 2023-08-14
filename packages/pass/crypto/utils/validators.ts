@@ -7,7 +7,7 @@ export const MAX_ITEM_CONTENT_B64_LENGTH = 53248;
 
 export const validateItemContentSize = (base64Content: string): string => {
     if (base64Content.length > MAX_ITEM_CONTENT_B64_LENGTH) {
-        throw new PassCryptoItemError(c('Error').t`Item content cannot exceed 40kb`);
+        throw new PassCryptoItemError(c('Error').t`Item content cannot exceed 40KB`);
     }
 
     return base64Content;
