@@ -56,6 +56,10 @@ module.exports = {
         orchestrator: noBrowserTrap('./src/content/orchestrator.ts'),
         popup: nonAccessibleWebResource('./src/popup/index.tsx'),
         settings: './src/pages/settings/index.tsx',
+        /* custom element styles */
+        'styles.root': './src/content/injections/custom-elements/ProtonPassRoot.scss',
+        'styles.control': './src/content/injections/custom-elements/ProtonPassControl.scss',
+        /* FF auth fallback */
         ...(BUILD_TARGET === 'firefox' ? { authFallback: noBrowserTrap('./src/content/firefox/index.ts') } : {}),
     },
     module: {
