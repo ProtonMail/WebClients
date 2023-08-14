@@ -8,6 +8,7 @@ import { type FormikContextType } from 'formik';
 import type { ItemDraft } from '@proton/pass/store';
 import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { omit } from '@proton/shared/lib/helpers/object';
 import debounce from '@proton/utils/debounce';
 
 const SAVE_DRAFT_TIMEOUT = 500;
@@ -48,7 +49,7 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
             (formData: V) =>
                 dispatch(
                     itemDraftSave({
-                        ...options,
+                        ...omit(options, ['onHydrated', 'sanitizeHydration', 'sanitizeSave']),
                         formData: options.sanitizeSave?.(formData) ?? formData,
                     })
                 ),
