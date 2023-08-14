@@ -247,7 +247,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                                     </Tooltip>
                                 </>
                             }
-                            data-testid="file-size"
+                            dataTestId="file-size"
                         >
                             <span title={bytesSize(link.size)}>{humanSize(link.size)}</span>
                         </DetailsRow>
