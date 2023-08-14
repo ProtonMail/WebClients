@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
+import type { FormikTouched } from 'formik';
 import { type FormikContextType } from 'formik';
 
 import type { ItemDraft } from '@proton/pass/store';
@@ -71,12 +72,16 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
         void (async () => {
             if (draft) {
                 const formValues = options.sanitizeHydration?.(draft.formData) ?? draft.formData;
-                await Promise.all(
-                    Object.entries(formValues).map(async ([field, value]) => {
-                        form.setFieldTouched(field, true);
-                        await form.setFieldValue(field, value, true);
-                    })
+
+                await form.setTouched(
+                    Object.keys(formValues).reduce<FormikTouched<any>>((touched, field) => {
+                        touched[field] = true;
+                        return touched;
+                    }, {}),
+                    false
                 );
+
+                await form.setValues(formValues, true);
 
                 form.setErrors(await form.validateForm(draft.formData));
                 options.onHydrated?.(formValues);
