@@ -28,6 +28,7 @@ export interface UseCloseHandlerParameters {
     onClose: () => void;
     onDiscard: () => void;
     onMessageAlreadySent: () => void;
+    hasNetworkError: boolean;
 }
 
 export const useCloseHandler = ({
@@ -42,6 +43,7 @@ export const useCloseHandler = ({
     onClose,
     onDiscard,
     onMessageAlreadySent,
+    hasNetworkError,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const isMounted = useIsMounted();
@@ -136,7 +138,7 @@ export const useCloseHandler = ({
         }
 
         // Message requires to be saved in background
-        if (pendingAutoSave.isPending || uploadInProgress) {
+        if (pendingAutoSave.isPending || uploadInProgress || hasNetworkError) {
             try {
                 await handleManualSave();
             } catch {
