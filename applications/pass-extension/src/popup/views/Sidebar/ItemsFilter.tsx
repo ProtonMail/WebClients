@@ -17,7 +17,7 @@ interface ItemsFilterProps {
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
-const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
+export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
@@ -46,7 +46,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
 
     const options = useMemo(
         () =>
-            Object.entries(getOptionsWithoutCount()).map(([type, { label, icon }]) => ({
+            Object.entries(getItemTypeOptions()).map(([type, { label, icon }]) => ({
                 type: type as ItemTypeFilter,
                 label,
                 icon,
