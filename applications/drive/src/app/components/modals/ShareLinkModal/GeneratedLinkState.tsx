@@ -188,12 +188,13 @@ function GeneratedLinkState({
                         ) : (
                             <>
                                 <div className="flex-no-min-children flex-nowrap mb-4 on-mobile-flex-column mb-2 md:mb-0">
-                                    <Label htmlFor="passwordModeToggle" data-testid="sharing-modal-passwordModeToggle">
+                                    <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
                                         <Toggle
                                             id="passwordModeToggle"
+                                            data-testid="sharing-modal-passwordModeToggle"
                                             className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={passwordToggledOn}
@@ -232,15 +233,13 @@ function GeneratedLinkState({
                                     </div>
                                 </div>
                                 <div className="flex-no-min-children flex-nowrap on-mobile-flex-column mb-2 md:mb-4">
-                                    <Label
-                                        htmlFor="expirationTimeModeToggle"
-                                        data-testid="sharing-modal-expirationTimeModeToggle"
-                                    >
+                                    <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
                                         <Toggle
                                             id="expirationTimeModeToggle"
+                                            data-testid="sharing-modal-expirationTimeModeToggle"
                                             className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={expirationToggledOn}
