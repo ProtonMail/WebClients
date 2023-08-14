@@ -33,7 +33,7 @@ export const getItemPriorityForUrl =
              * subdomain: allow resolving deeper subdomains for this
              * specific subdomain. */
             const subdomainMatch = !options?.isPrivate
-                ? parsedUrl.subdomain && parsedUrl.subdomain.endsWith(match)
+                ? parsedUrl.subdomain && parsedUrl.subdomain.endsWith(match) && match.includes(parsedUrl.domain)
                 : parsedUrl.subdomain === match;
 
             /* no match -> skip */
