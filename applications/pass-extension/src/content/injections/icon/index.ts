@@ -212,9 +212,8 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
 
     const control = createElement<ProtonPassControl>({ type: 'protonpass-control' });
 
-    /* overridden by `injection.scss` in order to properly handle
-     * content-script re-injection flickering glitch */
     control.style.display = 'none';
+    control.addEventListener('ready', () => control.style.removeProperty('display'));
 
     const icon = createElement<HTMLButtonElement>({
         type: 'button',
