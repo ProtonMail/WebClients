@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useEventManager, useHandler, useNotifications } from '@proton/components';
 import { Cancellable } from '@proton/components/hooks/useHandler';
+import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 
 import SendingMessageNotification, {
     SendingMessageNotificationManager,
@@ -93,7 +94,7 @@ export const useSendHandler = ({
                 !!getMessage(inputMessage.localID)?.data?.ID &&
                 !pendingAutoSave.isPending &&
                 !verificationResults.hasChanged &&
-                !hasNetworkError;
+                !hasNetworkError; // If the last save failed because of no internet connection, we want to force saving before sending
 
             // Don't abort before pendingAutoSave is checked
             autoSave.cancel?.();
@@ -214,9 +215,12 @@ export const useSendHandler = ({
             setIsSending?.(true);
             dispatch(startSending(localID));
 
+            // If the user has no internet connection, do not close the composer on send, or we will lose last updates made on the draft
+            const isOnline = getOnlineStatus();
+
             // Closing the composer instantly, all the send process will be in background
             // In quick reply however, we want to keep the editor opened while saving
-            if (!isQuickReply) {
+            if (!isQuickReply && isOnline) {
                 onClose();
             }
 
