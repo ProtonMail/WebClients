@@ -436,7 +436,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                 setModelDiff({ cache: newCache, step: Steps.SetupOrg });
                             } else {
                                 setModelDiff({ cache: newCache, step: Steps.Custom });
-                                await done(model.cache);
+                                await done(newCache);
                             }
                         }}
                         measure={measure}
