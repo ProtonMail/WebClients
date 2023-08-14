@@ -536,6 +536,7 @@ export const useComposerContent = (args: EditorArgs) => {
         promiseUpload,
         uploadInProgress,
         onMessageAlreadySent,
+        hasNetworkError,
     });
 
     const {
