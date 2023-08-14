@@ -14,6 +14,7 @@ const frCalendar = {
     Language: 'Français',
     Timezones: ['Europe/Paris'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -27,6 +28,7 @@ const chEnCalendar = {
     Language: 'English',
     Timezones: ['Europe/Zurich'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -40,6 +42,7 @@ const chDeCalendar = {
     Language: 'Deutsch',
     Timezones: ['Europe/Zurich'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -53,6 +56,7 @@ const beFrCalendar = {
     Language: 'Français',
     Timezones: ['Europe/Brussels'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -66,6 +70,7 @@ const beNlCalendar = {
     Language: 'Dutch',
     Timezones: ['Europe/Brussels'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -79,6 +84,7 @@ const nlCalendar = {
     Language: 'Dutch',
     Timezones: ['Europe/Brussels'],
     Passphrase: 'dummyPassphrase',
+    Hidden: false,
     SessionKey: {
         Key: 'dummyKey',
         Algorithm: 'dummyAlgorithm',
@@ -104,6 +110,7 @@ const auCalendar = {
         'Australia/Perth',
         'Australia/Sydney',
     ],
+    Hidden: false,
     Passphrase: 'dummyPassphrase',
     SessionKey: {
         Key: 'dummyKey',
