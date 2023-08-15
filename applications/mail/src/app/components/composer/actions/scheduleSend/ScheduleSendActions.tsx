@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import { forwardRef, useMemo } from 'react';
 
 import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
@@ -18,7 +18,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
-import { SCHEDULED_SEND_BUFFER } from '../../../../constants';
+import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
 
@@ -97,7 +97,7 @@ const ScheduleSendActions = ({
             },
         ];
 
-        const minScheduleTime = addSeconds(now, SCHEDULED_SEND_BUFFER);
+        const minScheduleTime = addSeconds(now, FUTURE_MESSAGES_BUFFER);
         const isScheduledAfterLimit = minScheduleTime && scheduledAt && scheduledAt > minScheduleTime;
 
         if (isScheduledAfterLimit) {

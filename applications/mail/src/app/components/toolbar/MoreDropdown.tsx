@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import useSnooze from 'proton-mail/hooks/actions/useSnooze';
 
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
@@ -11,6 +13,10 @@ import { useLabelActions } from '../../hooks/useLabelActions';
 import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
+import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
+import SnoozeToolbarDropdownStepWrapper, {
+    SnoozeToolbarDropdownStepWrapperProps,
+} from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import { DropdownRender } from '../message/header/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
@@ -68,8 +74,8 @@ const MoreDropdown = ({
     elementIDs,
     selectedIDs,
     isSearch,
-    isTiny,
     isExtraTiny,
+    isTiny,
     onMove,
     onDelete,
     breakpoints,
@@ -79,8 +85,12 @@ const MoreDropdown = ({
         actions = [...firstActions, ...actions];
     }
 
+    const { isSnoozeEnabled, canSnooze, canUnsnooze } = useSnooze();
+
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const { moveAll, modal: moveAllModal } = useMoveAll();
+
+    const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const inMore = {
         move: actions.length > 0 && selectedIDs.length > 0,
@@ -205,6 +215,20 @@ const MoreDropdown = ({
           ]
         : undefined;
 
+    if (isSnoozeEnabled && selectedIDs.length && (canSnooze || canUnsnooze)) {
+        additionalDropdowns?.push({
+            contentProps: SnoozeToolbarDropdownStepWrapperProps,
+            render: ({ onClose, onLock }) => (
+                <SnoozeToolbarDropdownStepWrapper
+                    onClose={onClose}
+                    onLock={onLock}
+                    selectedIDs={selectedIDs}
+                    displayUpsellModal={() => handleUpsellModalDisplay(true)}
+                />
+            ),
+        });
+    }
+
     return (
         <>
             <ToolbarDropdown
@@ -215,14 +239,14 @@ const MoreDropdown = ({
                 additionalDropdowns={additionalDropdowns}
             >
                 {{
-                    render: ({ onOpenAdditionnal }) => (
+                    render: ({ onOpenAdditional }) => (
                         <DropdownMenu>
                             {inMore.move ? moveButtons : null}
                             {inMore.additionalDropdowns ? (
                                 <>
                                     <DropdownMenuButton
                                         className={clsx('text-left', inMore.move && 'border-top')}
-                                        onClick={() => onOpenAdditionnal(0)}
+                                        onClick={() => onOpenAdditional(0)}
                                         data-testid="toolbar:more-dropdown--moveto"
                                     >
                                         <Icon name="folder-arrow-in" className="mr-2" />
@@ -230,12 +254,22 @@ const MoreDropdown = ({
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="text-left"
-                                        onClick={() => onOpenAdditionnal(1)}
+                                        onClick={() => onOpenAdditional(1)}
                                         data-testid="toolbar:more-dropdown--labelas"
                                     >
                                         <Icon name="tag" className="mr-2" />
                                         {c('Title').t`Label as`}
                                     </DropdownMenuButton>
+                                    {isSnoozeEnabled && (
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => onOpenAdditional(2)}
+                                            data-testid="toolbar:more-dropdown--snooze"
+                                        >
+                                            <Icon name="bell" className="mr-2" />
+                                            {c('Title').t`Snooze message`}
+                                        </DropdownMenuButton>
+                                    )}
                                 </>
                             ) : null}
                             {inMore.moveAllToTrash ? (
@@ -284,6 +318,7 @@ const MoreDropdown = ({
             </ToolbarDropdown>
             {deleteAllModal}
             {moveAllModal}
+            {renderUpsellModal && <SnoozeUpsellModal {...upsellModalProps} />}
         </>
     );
 };

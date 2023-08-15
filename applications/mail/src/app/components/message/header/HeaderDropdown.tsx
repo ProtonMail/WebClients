@@ -15,7 +15,7 @@ import { DropdownButtonProps } from '@proton/components/components/dropdown/Drop
 export interface DropdownRenderProps {
     onClose: () => void;
     onLock: (lock: boolean) => void;
-    onOpenAdditionnal: (index: number) => void;
+    onOpenAdditional: (index: number) => void;
 }
 
 export interface DropdownRender {
@@ -34,7 +34,7 @@ interface Props extends Omit<DropdownButtonProps<typeof Button>, 'title' | 'cont
     loading?: boolean;
     /**
      * Used on mobile to open an additional dropdown from the dropdown
-     * The handler onOpenAdditionnal is passed to use them
+     * The handler onOpenAdditional is passed to use them
      */
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: MutableRefObject<() => void>;
@@ -97,7 +97,7 @@ const HeaderDropdown = ({
                 onClose={close}
                 contentProps={children.contentProps}
             >
-                {children.render({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
+                {children.render({ onClose: close, onLock: setLock, onOpenAdditional: setAdditionalOpen })}
             </Dropdown>
             {additionalDropdowns?.map((additionalDropdown, index) => {
                 return (
@@ -118,7 +118,7 @@ const HeaderDropdown = ({
                         {additionalDropdown.render({
                             onClose: handleAdditionalClose,
                             onLock: setLock,
-                            onOpenAdditionnal: setAdditionalOpen,
+                            onOpenAdditional: setAdditionalOpen,
                         })}
                     </Dropdown>
                 );

@@ -2,15 +2,18 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { Tooltip } from '@proton/components';
 
+import { getSnoozeTimeFromElement, isElementReminded } from 'proton-mail/logic/snoozehelpers';
+
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
 import { Element } from '../../models/element';
+import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
 const REFRESH_DATE_INTERVAL = 60 * 1000;
 
 type FormaterType = 'simple' | 'full' | 'distance';
 
-const FORMATERS = {
+const FORMATTERS = {
     simple: formatSimpleDate,
     full: formatFullDate,
     distance: formatDistanceToNow,
@@ -22,19 +25,20 @@ interface Props {
     className?: string;
     mode?: FormaterType;
     useTooltip?: boolean;
+    isInListView?: boolean;
 }
 
-const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false }: Props) => {
-    const formater = FORMATERS[mode];
+const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false, isInListView }: Props) => {
+    const formatter = FORMATTERS[mode];
 
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);
-        return date.getTime() === 0 ? '' : formater(date);
+        return date.getTime() === 0 ? '' : formatter(date);
     });
 
     const fullDate = useMemo(() => {
         const date = getDate(element, labelID);
-        return date.getTime() === 0 ? '' : FORMATERS.full(date);
+        return date.getTime() === 0 ? '' : FORMATTERS.full(date);
     }, [element, labelID]);
 
     useEffect(() => {
@@ -44,7 +48,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
             return;
         }
 
-        const update = () => setFormattedDate(formater(date));
+        const update = () => setFormattedDate(formatter(date));
 
         update();
 
@@ -53,6 +57,21 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
             return () => clearInterval(intervalID);
         }
     }, [element, mode, labelID]);
+
+    // Handles the snooze cases. A message can be snoozed or reminded and the ItemDateSnoozedMessage handle both cases.
+    const snoozeTime = getSnoozeTimeFromElement(element);
+    const isReminded = isElementReminded(element);
+    if (isInListView && (snoozeTime || isReminded)) {
+        return (
+            <ItemDateSnoozedMessage
+                element={element}
+                labelID={labelID}
+                className={className}
+                snoozeTime={snoozeTime}
+                useTooltip={useTooltip}
+            />
+        );
+    }
 
     const itemDate = (
         <>

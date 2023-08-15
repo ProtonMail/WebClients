@@ -30,6 +30,7 @@ interface Props {
     totalMessagesMap: UnreadCounts;
     displayMoreItems: boolean;
     showScheduled: boolean;
+    showSnoozed: boolean;
     onToggleMoreItems: (display: boolean) => void;
 }
 
@@ -50,6 +51,7 @@ const MailSidebarSystemFolders = ({
     mailSettings,
     setFocusedItem,
     showScheduled,
+    showSnoozed,
     totalMessagesMap,
     displayMoreItems,
     onToggleMoreItems,
@@ -58,6 +60,7 @@ const MailSidebarSystemFolders = ({
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
         showMoved: ShowMoved,
         showScheduled,
+        showSnoozed,
         showAlmostAllMail: AlmostAllMail,
     });
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);

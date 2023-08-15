@@ -1,13 +1,13 @@
 import { add, fromUnixTime, isToday, set } from 'date-fns';
 
-import { SCHEDULED_SEND_BUFFER } from '../../../../constants';
+import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 
 /**
  * If now is between midnight and 8am (minus buffer)
  */
 export const isScheduledDuringNight = () => {
     const now = new Date();
-    const BUFFER_IN_MINUTES = SCHEDULED_SEND_BUFFER / 60;
+    const BUFFER_IN_MINUTES = FUTURE_MESSAGES_BUFFER / 60;
     const dayStart = set(now, {
         hours: 0,
         minutes: 0,

@@ -313,6 +313,11 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	}
 }
 
+// Used to keep the buttons visible when a dropdown is open regardless of hover state
+.item-hover-action-buttons--dropdown-open {
+	display: inline-flex;
+}
+
 /* Comfortable view */
 
 .is-comfortable {

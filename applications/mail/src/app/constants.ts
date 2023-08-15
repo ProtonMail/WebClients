@@ -29,8 +29,9 @@ export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 730; // 2 years
 /**
  * We can't schedule a message before this 120sec buffer
+ * This can be applied to snoozed message and schedule send
  */
-export const SCHEDULED_SEND_BUFFER = 120;
+export const FUTURE_MESSAGES_BUFFER = 120;
 
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -53,6 +54,7 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.STARRED]: 'starred',
     [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
     [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
+    [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -74,6 +76,7 @@ export const getLabelIDsToI18N = () => ({
     [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
     [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
     [MAILBOX_LABEL_IDS.SCHEDULED]: c('Link').t`Scheduled`,
+    [MAILBOX_LABEL_IDS.SNOOZED]: c('Link').t`Snoozed`,
 });
 
 // List of location where messages are marked automatically as read after moving by the API
@@ -87,6 +90,7 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.OUTBOX,
     MAILBOX_LABEL_IDS.SCHEDULED,
+    MAILBOX_LABEL_IDS.SNOOZED,
 ];
 
 export enum ENCRYPTED_STATUS {

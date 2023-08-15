@@ -26,6 +26,7 @@ export type ESBaseMessage = Pick<
     | 'LabelIDs'
     | 'AttachmentInfo'
     | 'AttachmentsMetadata'
+    | 'SnoozeTime'
 >;
 
 export interface ESMessageContent {

@@ -1,18 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import {
-    addDays,
-    addSeconds,
-    endOfDay,
-    endOfToday,
-    format,
-    getHours,
-    getMinutes,
-    getUnixTime,
-    isToday,
-    isTomorrow,
-    startOfToday,
-} from 'date-fns';
+import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
@@ -20,24 +8,13 @@ import { DateInputTwo, InputFieldTwo, TimeInput, generateUID, useUserSettings } 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { SCHEDULED_MAX_DATE_DAYS, SCHEDULED_SEND_BUFFER } from '../../../constants';
+import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
+import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { updateScheduled } from '../../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 import ComposerInnerModal from './ComposerInnerModal';
-
-const formatDateInput = (value: Date, locale: Locale) => {
-    if (isToday(value)) {
-        return c('Date label').t`Today`;
-    }
-
-    if (isTomorrow(value)) {
-        return c('Date label').t`Tomorrow`;
-    }
-
-    return format(value, 'PP', { locale });
-};
 
 interface Props {
     message: MessageState;
@@ -49,6 +26,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     const dispatch = useAppDispatch();
     const [userSettings] = useUserSettings();
 
+    const [uid] = useState(generateUID('schedule-send-modal'));
+
     const defaultDate =
         message && message.draftFlags?.scheduledAt
             ? new Date(message.draftFlags?.scheduledAt * 1000)
@@ -58,38 +37,34 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
         defaultDate.setHours(8, 0, 0, 0);
     }
 
-    const [date, setDate] = useState(defaultDate);
-    const [time, setTime] = useState(defaultDate);
+    // translator : The variable is the number of days, written in digits
+    const maxDateErrorMessage = c('Error').ngettext(
+        msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} day.`,
+        `Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
+        SCHEDULED_MAX_DATE_DAYS
+    );
 
-    const [errorTime, setErrorTime] = useState<string>();
+    const {
+        date,
+        time,
+        disabled,
+        handleChangeDate,
+        handleChangeTime,
+        formatDateInput,
+        scheduleDateTime,
+        minDate,
+        maxDate,
+        errorDate,
+        errorTime,
+    } = useFutureTimeDate({
+        defaultDate,
+        maxDaysAllowed: SCHEDULED_MAX_DATE_DAYS,
+        maxDateErrorMessage,
+    });
 
-    const [uid] = useState(generateUID('schedule-send-modal'));
-
-    const scheduleDateTime = useMemo(() => {
-        const tmpDate = date;
-
-        const hours = getHours(time);
-        const minutes = getMinutes(time);
-
-        tmpDate.setHours(hours, minutes, 0, 0);
-
-        // Save scheduled date in the cache so that the user can have the date fields completed
-        // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
-        dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(tmpDate) }));
-
-        return tmpDate;
-    }, [date, time]);
-
-    const handleChangeDate = (selectedDate?: Date) => {
-        if (!selectedDate) {
-            return;
-        }
-        setDate(selectedDate);
-    };
-
-    const handleChangeTime = (selectedTime: Date) => {
-        setTime(selectedTime);
-    };
+    useEffect(() => {
+        dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(scheduleDateTime) }));
+    }, [scheduleDateTime]);
 
     const handleSubmit = () => {
         onSubmit(getUnixTime(scheduleDateTime));
@@ -99,60 +74,6 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     const handleCancel = () => {
         onClose();
     };
-
-    const minDate = startOfToday();
-    const maxDate = endOfDay(addDays(minDate, SCHEDULED_MAX_DATE_DAYS));
-
-    const errorDate = useMemo(() => {
-        if (date < minDate) {
-            return c('Error').t`Choose a date in the future.`;
-        }
-        if (date > maxDate) {
-            // translator : The variable is the number of days, written in digits
-            return c('Error').ngettext(
-                msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} day.`,
-                `Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
-                SCHEDULED_MAX_DATE_DAYS
-            );
-        }
-        return undefined;
-    }, [date]);
-
-    // Refresh error time each second so that the user cannot send a message in the past
-    // If we don't refresh it, a user can create a schedule message, select a date in the future.
-    // If he waits too much, the sending will still be possible, but the date will become from the past
-    // Leading to a not user-friendly error
-    useEffect(() => {
-        const updateErrorTime = () => {
-            /* If the user chose a time (Hour + minutes) before the hour of the actual day, the time input returns the date for the next day
-             * Ex : This is Jan, 1 2021 at 9:00AM. The user wants to send the scheduled today at 8:00PM, but in the time input he lets 'AM'
-             * => The Time input is returning the date Jan, 2 2021 at 8:00AM
-             * From our side we are using hour + minutes from the returned date of the time input to build the date when we want to send the scheduled
-             * To check if the user is making an error, we need to compare the Time input value with the current date
-             */
-            const timeInputDate = startOfToday();
-            timeInputDate.setHours(time.getHours(), time.getMinutes());
-
-            // It should be impossible to schedule a message within the next 120s
-            const limit = addSeconds(new Date(), SCHEDULED_SEND_BUFFER);
-
-            // If the scheduled date is in the past or within the next 120s, we need to disable the schedule button
-            const isDateToEarly = isToday(date) && timeInputDate <= limit;
-            const error = isDateToEarly ? c('Error').t`Choose a date in the future.` : undefined;
-
-            setErrorTime(error);
-        };
-
-        const handle = setInterval(updateErrorTime, 1000);
-        return () => {
-            clearInterval(handle);
-        };
-    }, [date, time]);
-
-    const disabled = useMemo(() => {
-        const min = addSeconds(Date.now(), SCHEDULED_SEND_BUFFER);
-        return !date || !time || scheduleDateTime < min || scheduleDateTime > endOfDay(maxDate);
-    }, [date, time, scheduleDateTime, minDate, maxDate]);
 
     return (
         <ComposerInnerModal

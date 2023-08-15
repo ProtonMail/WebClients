@@ -152,6 +152,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
     const showScheduled = (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
+    const showSnoozed = (totalMessagesMap[MAILBOX_LABEL_IDS.SNOOZED] || 0) > 0;
     const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
         if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
             return false;
@@ -170,6 +171,9 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.SCHEDULED) {
             return showScheduled;
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.SNOOZED) {
+            return showSnoozed;
         }
         return true;
     });
@@ -206,6 +210,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         labels,
         visibleSystemFolders,
         showScheduled,
+        showSnoozed,
         displayFolders,
         displayLabels,
         displayMoreItems,
@@ -272,6 +277,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                         totalMessagesMap={totalMessagesMap}
                         displayMoreItems={displayMoreItems}
                         showScheduled={showScheduled}
+                        showSnoozed={showSnoozed}
                         onToggleMoreItems={toggleDisplayMoreItems}
                     />
                     <SimpleSidebarListItemHeader

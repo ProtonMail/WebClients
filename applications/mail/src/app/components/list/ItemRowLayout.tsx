@@ -14,6 +14,8 @@ import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/atta
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
+import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import NumMessages from '../conversation/NumMessages';
@@ -58,6 +60,9 @@ const ItemRowLayout = ({
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
     const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
+
+    const snoozedElement = useAppSelector(selectSnoozeElement);
+    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
@@ -180,12 +185,17 @@ const ItemRowLayout = ({
                         hasStar={false}
                         size={isCompactView ? 'small' : 'medium'}
                     />
-                    <span className="item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
+                    <span
+                        className={clsx(
+                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center',
+                            snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
+                        )}
+                    >
                         <ItemDate
                             element={element}
                             labelID={labelID}
                             className={unread ? 'text-bold' : undefined}
-                            useTooltip
+                            isInListView
                         />
                     </span>
                 </span>

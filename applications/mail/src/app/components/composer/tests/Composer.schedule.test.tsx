@@ -1,7 +1,11 @@
-import React from 'react';
-
-import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
+import {
+    act,
+    fireEvent,
+    getByTestId as getByTestIdDefault,
+    getByText as getByTextDefault,
+    screen,
+    waitFor,
+} from '@testing-library/react';
 import { format, getUnixTime } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
@@ -10,6 +14,8 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+
+import { getMinScheduleTime } from 'proton-mail/helpers/schedule';
 
 import { addApiMock, setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
@@ -311,8 +317,11 @@ describe('Composer scheduled messages', () => {
         fireEvent.change(dateInput, { target: { value: todayDate } });
         fireEvent.keyDown(dateInput, { key: 'Enter' });
 
+        // When choosing today with a time before the current time, the time should be set to the next available time
+        const nextAvailableTime = getMinScheduleTime(new Date()) ?? new Date();
+        const nextAvailableTimeFormatted = format(nextAvailableTime, 'p', { locale: enUS });
         expect(dateInput.value).toEqual('Today');
-        expect(timeInput.value).toEqual('8:00 AM');
+        expect(timeInput.value).toEqual(nextAvailableTimeFormatted);
 
         const laterDate = format(addDays(new Date(Date.now()), 5), 'PP', { locale: enUS });
 
@@ -321,7 +330,7 @@ describe('Composer scheduled messages', () => {
         fireEvent.keyDown(dateInput, { key: 'Enter' });
 
         expect(dateInput.value).toEqual(laterDate);
-        expect(timeInput.value).toEqual('8:00 AM');
+        expect(timeInput.value).toEqual(nextAvailableTimeFormatted);
 
         dateSpy.mockRestore();
     });
