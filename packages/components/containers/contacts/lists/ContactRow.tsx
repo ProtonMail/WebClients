@@ -14,6 +14,7 @@ import { Copy } from '../../../components/button';
 import { useNotifications } from '../../../hooks';
 import { ItemCheckbox } from '../../items';
 import ContactGroupLabels from '../group/ContactGroupLabels';
+import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';
 
 interface Props {
     checked: boolean;
@@ -108,25 +109,14 @@ const ContactRow = ({
             <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-start">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
                 <div className="flex-item-fluid ml-2 conversation-titlesender">
-                    <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">
-                        <div className={clsx('flex flex-item-fluid w0', !!LabelIDs.length && 'pr-4')}>
-                            <span
-                                role="heading"
-                                aria-level={2}
-                                className="text-bold inline-block max-w100 text-ellipsis"
-                                id={ID}
-                            >
-                                {Name}
-                            </span>
-                        </div>
-                    </div>
-                    <div className="item-secondline max-w100 text-ellipsis text-sm" title={emails.join(', ')}>
+                    <ContactRowItemFirstLine ID={ID} Name={Name} className={!!LabelIDs.length ? 'pr-4' : ''} />
+                    <ContactRowItemSecondLine title={emails.join(', ')}>
                         {emails.length ? (
                             addPlus(emails as any)
                         ) : (
                             <span className="placeholder">{c('Info').t`No email address`}</span>
                         )}
-                    </div>
+                    </ContactRowItemSecondLine>
                     {hasPaidMail && contactGroups && (
                         <ContactGroupLabels
                             contactGroups={contactGroups}
