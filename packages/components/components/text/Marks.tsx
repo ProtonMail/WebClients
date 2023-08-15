@@ -77,7 +77,7 @@ const Marks = ({ children: text, chunks }: Props) => {
                         </mark>
                     );
                 }
-                return insert;
+                return <span>{insert}</span>;
             })}
         </>
     );
