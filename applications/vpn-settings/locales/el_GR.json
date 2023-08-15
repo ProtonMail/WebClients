@@ -179,6 +179,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "Help": [
+        "Βοήθεια"
+      ],
       "Hide": [
         "Απόκρυψη"
       ],
@@ -305,6 +308,9 @@
       "Set new password": [
         "Ορίστε νέο κωδικό"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
       ],
@@ -337,6 +343,9 @@
       ],
       "Support": [
         "Υποστήριξη"
+      ],
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
       ],
       "Top up": [
         "Προσθήκη ποσού"
@@ -425,11 +434,11 @@
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
       ],
+      "${ price } per dedicated server": [
+        "${ price } ανά αποκλειστικό διακομιστή"
+      ],
       "${ price } per domain": [
         "${ price } ανά τομέα"
-      ],
-      "${ price } per IP address": [
-        "${ price } ανά διεύθυνση IP"
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
@@ -2190,6 +2199,9 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
+      "Awaiting transaction": [
+        "Εν αναμονή συναλλαγής"
+      ],
       "Balance from your previous subscription": [
         "Υπόλοιπο από την προηγούμενη συνδρομή σας"
       ],
@@ -2219,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Οι συναλλαγές σε Bitcoin χρειάζονται ένα διάστημα για να επιβεβαιωθούν (μέχρι 24 ώρες). Με την επιβεβαίωση, θα πιστώσουμε μονάδες στον λογαριασμό σας. Μετά την επιβεβαίωση της συναλλαγής, μπορείτε να αποπληρώσετε το τιμολόγιό σας με τις πιστωτικές μονάδες."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
@@ -2255,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
-      ],
-      "Dedicated IP addresses ": [
-        "Αποκλειστικές διευθύνσεις IP "
       ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
@@ -2469,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Αριθμός αποκλειστικών διευθύνσεων IP στον οργανισμό"
-      ],
-      "Number of IP addresses": [
-        "Αριθμός διευθύνσεων IP"
+      "Number of dedicated servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
       "Number of users": [
         "Αριθμός χρηστών"
@@ -4277,8 +4280,8 @@
       "Dedicated Account manager": [
         "Αποκλειστικός διαχειριστής Λογαριασμού"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Αποκλειστικές τοποθεσίες διακομιστών σε ${ n }+ χώρες"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
       ],
       "Dedicated server locations in North America and Europe": [
         "Αποκλειστικές τοποθεσίες διακομιστών στη Βόρεια Αμερική και την Ευρώπη"
@@ -4879,12 +4882,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Διαχείριση της συνδρομής σας στο ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Η διαχείριση της συνδρομής γίνεται με το ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Η εγγραφή του χρήστη ID-${ userId } έχει γίνει μέσω αγοράς εντός εφαρμογής. Για να διαχειριστεί τη συνδρομή, ο χρήστης πρέπει να μεταβεί στην ενότητα Συνδρομή του λογαριασμού του ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Συνδρομές"
       ],
@@ -5138,9 +5135,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Δωρεάν"
-      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } πελάτες"
       ],

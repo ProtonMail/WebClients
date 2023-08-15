@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Als Anhang weiterleiten"
       ],
-      "Generate recovery phrase": [
-        "Wiederherstellungsphrase erstellen"
-      ],
       "Get SimpleLogin extension": [
         "Erweiterung SimpleLogin abrufen"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Verstanden"
+      ],
+      "Help": [
+        "Hilfe"
       ],
       "Hide": [
         "Ausblenden"
@@ -895,6 +895,9 @@
       "Set": [
         "Festlegen"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen"
+      ],
       "Set as default": [
         "Als Standard festlegen"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
+      ],
+      "Settings": [
+        "Einstellungen"
       ],
       "Share via link": [
         "Als Link teilen"
@@ -981,6 +987,9 @@
       ],
       "Submit": [
         "Senden"
+      ],
+      "Switch or add account": [
+        "Konto wechseln oder hinzufügen"
       ],
       "This message contains embedded images.": [
         "Diese Nachricht enthält eingebettete Grafiken."
@@ -1638,6 +1647,9 @@
       ],
       "azureish white": [
         "Azurblaues Weiß"
+      ],
+      "black": [
+        "schwarz"
       ],
       "blanched almond": [
         "blanchierte Mandel"
@@ -3511,6 +3523,9 @@
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
       ],
+      "Missing FN property": [
+        "FN-Eigenschaft fehlt"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard-Versionen < 3.0 werden nicht unterstützt"
       ]
@@ -4123,6 +4138,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Ändere deine ${ strongText } zu deiner ${ BRAND_NAME }-E-Mail-Adresse"
       ],
+      "Changed accounts": [
+        "Konten geändert"
+      ],
       "Checklist complete": [
         "Checkliste vollständig"
       ],
@@ -4131,6 +4149,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Herzlichen Glückwunsch, du hast alle Schritte abgeschlossen!"
+      ],
+      "Congratulation, you finished!": [
+        "Glückwunsch, du hast es geschafft!"
       ],
       "Continue setting up your email": [
         "Fahre mit dem Einrichten deiner E-Mail-Adresse fort"
@@ -4150,9 +4171,6 @@
       "For your eyes only": [
         "Nur für dich"
       ],
-      "Get mobile app": [
-        "Mobile App holen"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hol dir die Mobile-App von ${ MAIL_APP_NAME }"
       ],
@@ -4162,23 +4180,11 @@
       "Get the App": [
         "App herunterladen"
       ],
-      "Import contacts or emails": [
-        "Kontakte oder E-Mails importieren"
-      ],
-      "Import data": [
-        "Daten importieren"
-      ],
-      "Import your contacts or messages": [
-        "Importiere deine Kontakte oder Nachrichten"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Nutze weiterhin ${ MAIL_APP_NAME }, um weitere Möglichkeiten zu entdecken, wie ${ BRAND_NAME } deine Privatsphäre schützt und das E-Mailen vereinfacht."
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Mache ${ BRAND_NAME } zu deinem bevorzugten Posteingang."
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -4188,6 +4194,9 @@
       ],
       "Open checklist": [
         "Checkliste öffnen"
+      ],
+      "Open checklist and get free storage": [
+        "Checkliste öffnen und kostenlosen Speicherplatz erhalten"
       ],
       "Popular online services": [
         "Beliebte Online-Dienste"
@@ -4201,20 +4210,14 @@
       "Protection from trackers": [
         "Schutz vor Trackern"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Übertrage deine Kontakte oder E-Mails im Handumdrehen von jedem beliebigen Anbieter mit unserem Easy Switch Import-Assistenten."
-      ],
-      "Send a message": [
-        "Nachricht senden"
-      ],
-      "Set recovery method": [
-        "Wiederherstellungsmethode festlegen"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Richte die ${ strongText } von Gmail ein"
       ],
       "Sign in to the mobile app to complete this step": [
         "Melde dich bei der mobilen App an, um diesen Schritt abzuschließen."
+      ],
+      "Storage unlocked": [
+        "Speicherplatz freigeschaltet"
       ],
       "Update your logins": [
         "Aktualisiere deine Zugangsdaten"
@@ -4761,9 +4764,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Eine Anfrage zum Abbestellen von dieser Mailingliste wird an den Absender des Newsletters gesendet und automatisch bearbeitet."
       ],
@@ -4981,6 +4981,9 @@
       "Do you want to re-sign the contact details?": [
         "Möchtest du die Kontaktdaten neu signieren?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Du findest nicht, wonach du suchst? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Vergiss nicht, dem Empfänger das Passwort mitzuteilen"
       ],
@@ -5165,6 +5168,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Spam/Papierkorb in die Suche einbeziehen."
+      ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
       ],
@@ -5336,6 +5342,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
+      "Open shortcut cheat sheet": [
+        "Spickzettel für Tastaturkürzel öffnen"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
       ],
@@ -5359,9 +5368,6 @@
       ],
       "Please fill out this field.": [
         "Bitte fülle dieses Feld aus."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Bitte bewahre sie sicher auf. Du benötigst sie, um auf dein Konto zuzugreifen und deine Daten zu entschlüsseln, falls du dein Passwort zurücksetzen musst."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -5414,12 +5420,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Wiederherstellungsphrase wurde in die Zwischenablage kopiert"
-      ],
-      "Recovery phrase downloaded": [
-        "Wiederherstellungsphrase wurde heruntergeladen"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
@@ -5504,9 +5504,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Lege ${ MAIL_APP_NAME } als deine Standard-E-Mail-Anwendung für diesen Browser fest. ${ MAIL_APP_NAME } wird automatisch geöffnet, wenn du auf einen E-Mail-Link klickst."
-      ],
-      "Set a recovery phrase": [
-        "Wiederherstellungsphrase festlegen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -5717,6 +5714,9 @@
       ],
       "Trackers blocked:": [
         "Tracker blockiert:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Schalte diese Option aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreff zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren und heruntergeladene Nachrichten zu löschen, gehe zu den Einstellungen."
@@ -5987,12 +5987,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your recovery phrase": [
-        "Deine Wiederherstellungsphrase"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Deine Wiederherstellungsphrase besteht aus einer Reihe von 12 Wörtern in einer bestimmten Reihenfolge."
       ]
     },
     "info": {
@@ -6310,6 +6304,9 @@
       "BCC": [
         "BCC"
       ],
+      "Beta Access": [
+        "Beta-Zugang"
+      ],
       "Blind Carbon Copy": [
         "Blindkopie"
       ],
@@ -6496,6 +6493,9 @@
       "Last month only": [
         "Nur den letzten Monat"
       ],
+      "Layout": [
+        "Anordnung"
+      ],
       "Location": [
         "Ort"
       ],
@@ -6598,9 +6598,6 @@
       "Recipient": [
         "Empfänger"
       ],
-      "Recovery phrase": [
-        "Wiederherstellungsphrase"
-      ],
       "Region": [
         "Region"
       ],
@@ -6634,6 +6631,9 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Sync with system": [
+        "Mit dem System synchronisieren"
+      ],
       "Synchronize with system": [
         "Mit System synchronisieren"
       ],
@@ -6651,6 +6651,9 @@
       ],
       "the email was sent ${ label }": [
         "Die E-Mail wurde gesendet ${ label }"
+      ],
+      "Theme": [
+        "Farbschema"
       ],
       "Then": [
         "Dann"
@@ -6847,9 +6850,6 @@
       ],
       "More": [
         "Mehr"
-      ],
-      "More about recovery": [
-        "Mehr über die Wiederherstellung erfahren"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "In ${ CALENDAR_APP_NAME } öffnen"
@@ -8055,6 +8055,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Einstellung ändern"
+      ],
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
       ],
@@ -8064,11 +8067,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
       ],
+      "Quick settings": [
+        "Schnelleinstellungen"
+      ],
       "Schedule send": [
         "Senden planen"
       ],
       "Search just got smarter and faster": [
         "Die Suche ist intelligenter und schneller"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Spam- und Papierkorb-E-Mails werden jetzt automatisch von \"Alle Nachrichten\" ausgeschlossen. ${ settingsLink }"
       ],
       "Try it today.": [
         "Probiere sie noch heute aus."
@@ -8553,6 +8562,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "All settings": [
+        "Alle Einstellungen"
       ],
       "Archive": [
         "Archiv"

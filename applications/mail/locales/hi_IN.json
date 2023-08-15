@@ -393,9 +393,6 @@
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
       ],
-      "Generate recovery phrase": [
-        "रिकवरी वाक्य बनाएं"
-      ],
       "Get SimpleLogin extension": [
         "सरल सम्प्रवेश प्रनुप्रयोग लें"
       ],
@@ -3943,15 +3940,6 @@
     "Get started checklist instructions": {
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } का मोबाइल ऐप लें"
-      ],
-      "Import contacts or emails": [
-        "संपर्क या ईमेल आयात करें"
-      ],
-      "Import your contacts or messages": [
-        "अपने संपर्क या संदेश आयात करें"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "हमारे आसान स्विच Import assistant का उपयोग करके किसी भी प्रदाता से अपने संपर्क या ईमेल तुरंत स्थानांतरित करें।"
       ]
     },
     "Gmail forwarding": {
@@ -4459,9 +4447,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "पुनर्प्राप्ति वाक्यांश आपके खाते तक पहुंच को सुरक्षित रखने के सबसे सुरक्षित तरीकों में से एक है। यदि आप कभी भी अपना पासवर्ड भूल जाते हैं तो आप इसका उपयोग अपने खाते तक पहुंचने और अपने एन्क्रिप्टेड डेटा को पुनर्प्राप्त करने के लिए कर सकते हैं।"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "इस मेलिंग सूची से सदस्यता समाप्त करने का अनुरोध समाचार पत्र के प्रेषक को भेजा जाएगा और स्वचालित रूप से संसाधित किया जाएगा।"
@@ -5008,9 +4993,6 @@
       "Please fill out this field.": [
         "कृपया इस क्षेत्र को भरें।"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "कृपया इसे सुरक्षित रखें। पासवर्ड रीसेट होने की स्थिति में आपको अपने खाते तक पहुंचने और अपने डेटा को डिक्रिप्ट करने के लिए इसकी आवश्यकता होगी।"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "कृपया ध्यान दें कि इस समूह को सौंपे गए पतों को हटाया नहीं जाएगा।"
       ],
@@ -5059,12 +5041,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "पुनर्प्राप्ति जानकारी इस उपकरण पर तब तक बनी रहेगी जब तक कि आप इसे हटाना नहीं चुनते."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "पुनर्प्राप्ति वाक्यांश क्लिपबोर्ड पर कॉपी किया गया"
-      ],
-      "Recovery phrase downloaded": [
-        "पुनर्प्राप्ति वाक्यांश डाउनलोड किया गया"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
@@ -5143,9 +5119,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "अपने ब्राउज़र के लिए ${ MAIL_APP_NAME } को डिफॉल्ट ईमेल ऐप की तरह सेट करें। ${ MAIL_APP_NAME } अपनेआप खुल जाएगा जैसे ही आप किसी ईमेल लिंक को क्लिक करते है।"
-      ],
-      "Set a recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश सेट करें"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP सेट अप करने से आप एक गैर-${ BRAND_NAME } उपयोगकर्ता के साथ एंड-टू-एंड एन्क्रिप्टेड ईमेल भेज सकते हैं जो PGP संगत सेवा का उपयोग करता है।"
@@ -5587,12 +5560,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
-      ],
-      "Your recovery phrase": [
-        "आपका पुनर्प्राप्ति वाक्यांश"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "आपका पुनर्प्राप्ति वाक्यांश एक विशिष्ट क्रम में 12 शब्दों की एक श्रृंखला है।"
       ]
     },
     "info": {
@@ -6176,9 +6143,6 @@
       "Recipient": [
         "प्राप्तकर्ता"
       ],
-      "Recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश"
-      ],
       "Region": [
         "क्षेत्र"
       ],
@@ -6416,9 +6380,6 @@
       ],
       "More": [
         "और"
-      ],
-      "More about recovery": [
-        "रिकवरी के बारे में और"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } में खोलें"

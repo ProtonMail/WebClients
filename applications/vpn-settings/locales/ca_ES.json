@@ -179,6 +179,9 @@
       "Got it": [
         "D'acord"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -302,6 +305,9 @@
       "Set new password": [
         "Estableix una nova contrasenya"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Share via link": [
         "Comparteix amb un enllaç"
       ],
@@ -334,6 +340,9 @@
       ],
       "Support": [
         "Assistència"
+      ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
       ],
       "Top up": [
         "Recarrega"
@@ -417,6 +426,9 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidors"
+      ],
+      "${ price } per user": [
+        "${ price } per usuari"
       ],
       "${ users } user": [
         "${ users } usuari",
@@ -1519,7 +1531,7 @@
         "Número no vàlid"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "Procés de pagament cancel·lat"
@@ -1582,7 +1594,7 @@
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -2204,9 +2216,6 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Les transaccions en Bitcoins poden trigar una estona en ser confirmades (fins a 24 hores). Un cop confirmada, afegirem els crèdits al seu compte. Després de la confirmació podrà efectuar el pagament del rebut amb els crèdits."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -2239,6 +2248,9 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
@@ -2462,6 +2474,9 @@
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
       ],
+      "Organization size": [
+        "Mida de l'organització"
+      ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
@@ -2531,6 +2546,9 @@
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
       ],
+      "Saving your password": [
+        "S'està desant la vostra contrasenya."
+      ],
       "Scan QR code instead": [
         "Escanejar codi QR"
       ],
@@ -2554,6 +2572,9 @@
       ],
       "Setting up your Drive": [
         "S'està configurant el Drive"
+      ],
+      "Setting up your organization": [
+        "S'està configurant la vostra organització."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
@@ -4641,6 +4662,15 @@
       ]
     },
     "Subscription": {
+      "Billed every 15 months": [
+        "Facturació cada 15 mesos"
+      ],
+      "Billed every 2 years": [
+        "Facturació cada 2 anys"
+      ],
+      "Billed every 30 months": [
+        "Facturació cada 30 mesos"
+      ],
       "Billed monthly": [
         "Facturació mensual"
       ],
@@ -4726,12 +4756,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestioneu la vostra subscripció en ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "La subscripció és gestionada per ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La subscripció de l'usuari ID-${ userId } s'ha fet mitjançant una compra en l'aplicació. Per gestionar-la, l'usuari ha de navegar a la secció Subscripció del seu compte ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subscripcions"
@@ -5435,6 +5459,9 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "It’s too expensive": [
+        "Es massa car."
+      ],
       "Other": [
         "Altre"
       ]

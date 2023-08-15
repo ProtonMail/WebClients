@@ -411,9 +411,6 @@
       "${ price } per domain": [
         "${ price } per domain"
       ],
-      "${ price } per IP address": [
-        "${ price } per alamat IP"
-      ],
       "${ price } per user": [
         "${ price } per pengguna"
       ]
@@ -2173,9 +2170,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan beralih ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -4621,12 +4615,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Kelola langganan Anda pada ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Langganan dikelola oleh ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Paket langganan milik pengguna dengan user ID-${ userId } dibeli melalui pembelian dalam aplikasi. Untuk mengelola paket langganan ini, pengguna yang bersangkutan harus membuka kolom Langganan pada akun ${ subscriptionManager } mereka."
       ],
       "Subscriptions": [
         "Langganan"

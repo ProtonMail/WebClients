@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
       ],
+      "Get in touch": [
+        "Bizimle görüşün"
+      ],
+      "Get more": [
+        "Daha fazlasını edinin"
+      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Anladım"
+      ],
+      "Help": [
+        "Yardım"
       ],
       "Hide": [
         "Gizle"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "${ vpnPlanNameShort } aboneliğimi koru"
+      ],
+      "Let's talk": [
+        "Hadi konuşalım!"
       ],
       "Load more": [
         "Diğerlerini yükle"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Öde"
+      ],
+      "Pay ${ price }": [
+        "${ price } öde"
       ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Yeni parola ayarla"
       ],
+      "Settings": [
+        "Ayarlar"
+      ],
       "Share via link": [
         "Bağlantı ile paylaş"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Destek"
+      ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
       ],
       "Top up": [
         "Doldur"
@@ -402,6 +423,26 @@
       ],
       "Reactivate": [
         "Yenile"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } özel etki alanı",
+        "${ domains } özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
+      "${ price } per domain": [
+        "her etki alanı için ${ price }"
+      ],
+      "${ price } per user": [
+        "her kullanıcı için ${ price }"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Alter": {
@@ -2129,6 +2170,9 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Hesabınızda kullanılan tüm ${ twoFa } yöntemleri kapatılacak."
       ],
@@ -2171,9 +2215,6 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -2206,6 +2247,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
@@ -2429,6 +2476,9 @@
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
+      "Organization size": [
+        "Kuruluş boyutu"
+      ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
@@ -2497,6 +2547,9 @@
       ],
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
+      ],
+      "Saving your password": [
+        "Parolanız kaydediliyor"
       ],
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
@@ -2592,8 +2645,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
       ],
+      "to ${ product } Business": [
+        "${ product } Business"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Aboneliğinizi iptal etmek için lütfen bizimle görüşün."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
+      ],
+      "to continue to ${ product }": [
+        "${ product } ile ilerlemek için"
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına ilerlemek için"
@@ -2694,11 +2756,17 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
+      "We generated a strong password for you": [
+        "Sizin için güçlü bir parola oluşturduk"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
       ],
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Yedeklilik sağlamak için en az 2 sunucunuz olması önerilir."
       ],
       "We recommend using your recovery phrase instead.": [
         "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
@@ -2709,8 +2777,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll get back to you shortly.": [
+        "Size en kısa sürede geri dönüş yapacağız."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "Welcome": [
+        "Hoş geldiniz"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
@@ -2844,6 +2918,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Aboneliğiniz ${ renewalTime } zamanında otomatik olarak yenilenecek."
       ]
     },
     "Info for cash payment method": {
@@ -3173,6 +3250,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "İfade belirli bir sıradaki 12 benzersiz sözcükten oluşur"
       ],
+      "Please share any feedback to help us improve.": [
+        "Hizmetlerimizi geliştirebilmemiz için bizi bilgilendirin."
+      ],
       "Postal code": [
         "Posta kodu"
       ],
@@ -3236,6 +3316,9 @@
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"
       ],
+      "Why would you like to cancel?": [
+        "Neden iptal etmek istiyorsunuz?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
@@ -3287,6 +3370,9 @@
     "Link": {
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
+      ],
+      "Add gift code": [
+        "Hediye kodu ekle"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -3448,6 +3534,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "new_plans: action": {
@@ -3710,6 +3799,10 @@
       "Send & receive invitations": [
         "Davetleri alma ve gönderme"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular",
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular"
+      ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
       ],
@@ -3798,6 +3891,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
       ],
@@ -3828,6 +3924,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Temel ağ izlemesi ile internete her yerden güvenle erişin"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
       ],
@@ -3836,6 +3935,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size özel VPN çözümü."
@@ -4112,11 +4214,17 @@
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Kod geçersiz"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "${ product } hizmetine hoş geldiniz"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } hoş geldiniz"
       ]
@@ -4212,6 +4320,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Please select the main reason": [
+        "Lütfen temel nedeni seçin"
       ],
       "Select": [
         "Seçin"
@@ -4583,7 +4694,28 @@
         "Geçerli depolama alanınız:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "15 ayda bir faturalanır"
+      ],
+      "Billed every 2 years": [
+        "2 yılda bir faturalanır"
+      ],
+      "Billed every 30 months": [
+        "30 ayda bir faturalanır"
+      ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
+      "Billed yearly": [
+        "Yılda bir faturalanır"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } size ayrılmış sunucu",
+        "${ ipAddresses } size ayrılmış sunucu"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } yüksek hızlı VPN bağlantısı",
         "${ maxVpn } yüksek hızlı VPN bağlantısı"
@@ -4661,12 +4793,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Aboneliğinizi ${ subscriptionManager } üzerinden yönetin"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Abonelik ${ subscriptionManager } tarafından yönetiliyor"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "ID-${ userId } kullanıcısının aboneliği uygulama içi satın alma ile yapılmış. Aboneliği yönetmek için kullanıcının ${ subscriptionManager } hesabında Abonelik bölümüne gitmesi gereklidir."
       ],
       "Subscriptions": [
         "Abonelikler"
@@ -5020,6 +5146,9 @@
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
       ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
       "Credits": [
         "Kredi"
       ],
@@ -5173,6 +5302,9 @@
       "Request new code": [
         "Yeni kod iste"
       ],
+      "Request sent": [
+        "İstek gönderildi"
+      ],
       "Reset password": [
         "Parolayı sıfırla"
       ],
@@ -5211,6 +5343,9 @@
       ],
       "Subscription": [
         "Abonelik"
+      ],
+      "Summary": [
+        "Özet"
       ],
       "Switch to one-password mode": [
         "Tek parola kipine geç"
@@ -5355,6 +5490,20 @@
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Daha çok sevdiğim başka bir hizmet buldum"
+      ],
+      "It’s missing a key feature": [
+        "Temel bir özellik eksik"
+      ],
+      "It’s too expensive": [
+        "Çok pahalı"
+      ],
+      "Other": [
+        "Diğer"
       ]
     },
     "VPN info": {

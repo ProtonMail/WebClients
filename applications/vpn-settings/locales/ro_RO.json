@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "Obțineți ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Contactați-ne"
+      ],
+      "Get more": [
+        "Obțineți mai mult"
+      ],
       "Get the deal": [
         "Obțineți oferta"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Am înțeles"
+      ],
+      "Help": [
+        "Ajutor"
       ],
       "Hide": [
         "Ascundere"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Păstrez abonamentul ${ vpnPlanNameShort }"
+      ],
+      "Let's talk": [
+        "Să discutăm"
       ],
       "Load more": [
         "Încărcare mai multe"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Plătire"
+      ],
+      "Pay ${ price }": [
+        "Plată ${ price }"
       ],
       "Pay ${ price } now": [
         "Plătire ${ price } acum"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Setare parolă nouă"
       ],
+      "Settings": [
+        "Setări"
+      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Asistenţă"
+      ],
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
       ],
       "Top up": [
         "Alimentare"
@@ -402,6 +423,29 @@
       ],
       "Reactivate": [
         "Reactivare"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domeniu personal",
+        "${ domains } domenii personale",
+        "${ domains } de domenii personale"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere",
+        "${ ips } de servere"
+      ],
+      "${ price } per domain": [
+        "${ price } per domeniu"
+      ],
+      "${ price } per user": [
+        "${ price } per utilizator"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "Alter": {
@@ -2140,6 +2184,9 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
+      "Amount due": [
+        "Suma datorată"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Orice metodă de ${ twoFa } din cont va fi dezactivată."
       ],
@@ -2182,9 +2229,6 @@
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
@@ -2217,6 +2261,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2440,6 +2490,9 @@
       "Or select a particular server:": [
         "Sau selectați un server anume:"
       ],
+      "Organization size": [
+        "Mărime organizație"
+      ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
@@ -2508,6 +2561,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
+      ],
+      "Saving your password": [
+        "Se salvează parola"
       ],
       "Scan QR code instead": [
         "Scanați în schimb codul QR"
@@ -2604,8 +2660,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
       ],
+      "to ${ product } Business": [
+        "la ${ product } Business"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Pentru a anula abonamentul, contactați-ne."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
+      ],
+      "to continue to ${ product }": [
+        "pentru a continua cu ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
@@ -2706,11 +2771,17 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
+      "We generated a strong password for you": [
+        "Vi s-a generat o parolă puternică"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
       ],
       "We need to authenticate your payment with your bank.": [
         "Trebuie să autentificăm plata cu banca dvs."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Vă recomandăm să aveți cel puțin două servere pentru a beneficia de redundanță."
       ],
       "We recommend using your recovery phrase instead.": [
         "Vă recomandăm să folosiți în schimb fraza de recuperare."
@@ -2721,8 +2792,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll get back to you shortly.": [
+        "Vom reveni în curând."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "Welcome": [
+        "Bun venit"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Veți primi un cod de resetare la adresa de e-mail pe care ați furnizat-o pentru recuperarea contului."
@@ -2860,6 +2937,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3190,6 +3270,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
       ],
+      "Please share any feedback to help us improve.": [
+        "Vă rugăm să ne spuneți orice pentru a ne ajuta la îmbunătățirea serviciilor."
+      ],
       "Postal code": [
         "Cod poștal"
       ],
@@ -3253,6 +3336,9 @@
       "What is the main reason you are deleting your account?": [
         "Care este principalul motiv pentru care vă ștergeți contul?"
       ],
+      "Why would you like to cancel?": [
+        "De ce doriți să anulați?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
       ],
@@ -3303,6 +3389,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Adăugare cod cadou"
+      ],
+      "Add gift code": [
         "Adăugare cod cadou"
       ],
       "clearing your browser cache": [
@@ -3465,6 +3554,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade": [
+        "Modificare"
       ]
     },
     "new_plans: action": {
@@ -3744,6 +3836,11 @@
       "Send & receive invitations": [
         "Trimiteți și primiți invitații"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servere în peste ${ vpnServersCountData.paid.countries } țară",
+        "Servere în peste ${ vpnServersCountData.paid.countries } țări",
+        "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
+      ],
       "Share calendar via link": [
         "Partajare calendar prin legături"
       ],
@@ -3832,6 +3929,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
       ],
@@ -3862,6 +3962,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Accesați în siguranță internetul de oriunde cu monitorizarea esențială a rețelei"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Stocare sigură în cloud care permite stocarea, sincronizarea și partajarea ușoară și sigură a fișierelor."
       ],
@@ -3870,6 +3973,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -4149,11 +4255,17 @@
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Cod nevalid"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credențiale OpenVPN/IKE2 regenerate"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Bun venit la ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Bun venit la ${ VPN_APP_NAME }"
       ]
@@ -4249,6 +4361,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Please select the main reason": [
+        "Selectați motivul principal"
       ],
       "Select": [
         "Selectare"
@@ -4627,7 +4742,29 @@
         "Spațiu actual:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Facturat la 15 luni"
+      ],
+      "Billed every 2 years": [
+        "Facturat la doi ani"
+      ],
+      "Billed every 30 months": [
+        "Facturat la 30 de luni"
+      ],
+      "Billed monthly": [
+        "Facturat lunar"
+      ],
+      "Billed yearly": [
+        "Facturat anual"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } server dedicat",
+        "${ ipAddresses } servere dedicate",
+        "${ ipAddresses } de servere dedicate"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "o conexiune VPN de mare viteză",
         "${ maxVpn } conexiuni VPN de mare viteză",
@@ -4718,12 +4855,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestionați-vă abonamentul pe ${ subscriptionManager }."
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Abonamentul este gestionat de ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Abonarea utilizatorului cu ID-ul ${ userId } a fost efectuată prin achiziția din aplicație. Pentru gestionarea abonamentului utilizatorul trebuie să navigheze la secțiunea Abonamente din contul ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Abonamente"
@@ -5077,6 +5208,9 @@
       "Confirm phone number": [
         "Confirmați numărul de telefon"
       ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -5230,6 +5364,9 @@
       "Request new code": [
         "Solicitare cod nou"
       ],
+      "Request sent": [
+        "Solicitare trimisă"
+      ],
       "Reset password": [
         "Resetare parolă"
       ],
@@ -5268,6 +5405,9 @@
       ],
       "Subscription": [
         "Abonament"
+      ],
+      "Summary": [
+        "Sumar"
       ],
       "Switch to one-password mode": [
         "Comutați în modul o singură parolă"
@@ -5414,6 +5554,20 @@
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Am găsit un alt serviciu care îmi place mai mult"
+      ],
+      "It’s missing a key feature": [
+        "Lipsește o funcție importantă"
+      ],
+      "It’s too expensive": [
+        "Este prea scump"
+      ],
+      "Other": [
+        "Alt motiv"
       ]
     },
     "VPN info": {

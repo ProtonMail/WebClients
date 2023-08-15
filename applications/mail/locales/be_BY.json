@@ -409,9 +409,6 @@
       "Forward as attachment": [
         "Пераслаць як далучэнне"
       ],
-      "Generate recovery phrase": [
-        "Згенерыраваць фразу аднаўлення"
-      ],
       "Get SimpleLogin extension": [
         "Атрымаць пашырэнне SimpleLogin"
       ],
@@ -447,6 +444,9 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Help": [
+        "Даведка"
       ],
       "Hide": [
         "Схаваць"
@@ -901,6 +901,9 @@
       "Set": [
         "Задаць"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай праграмы электроннай пошты"
+      ],
       "Set as default": [
         "Зрабіць прадвызначаным"
       ],
@@ -912,6 +915,9 @@
       ],
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
+      ],
+      "Settings": [
+        "Налады"
       ],
       "Share via link": [
         "Абагуліць праз спасылку"
@@ -988,6 +994,9 @@
       "Submit": [
         "Адправіць"
       ],
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
+      ],
       "This message contains embedded images.": [
         "Гэта паведамленне змяшчае ўбудаваныя відарысы."
       ],
@@ -1002,6 +1011,9 @@
       ],
       "Toggle Contact app": [
         "Пераключыць на праграму Кантакты"
+      ],
+      "Toggle settings": [
+        "Пераключэнне наладаў"
       ],
       "Tomorrow": [
         "Заўтра"
@@ -1646,6 +1658,9 @@
       ],
       "azureish white": [
         "блакітна-белы"
+      ],
+      "black": [
+        "чорны"
       ],
       "blanched almond": [
         "белы міндаль"
@@ -3531,7 +3546,7 @@
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Дазволены толькі файлы ў фармаце ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Падчас запампоўвання вашага файла адбылася памылка. Файл не выбраны."
+        "Падчас запампоўвання вашага файла адбылася памылка. Ніводны файл не выбраны."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
@@ -3558,6 +3573,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "Missing FN property": [
+        "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
         "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
@@ -4181,6 +4199,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Зменены ўліковы запіс"
+      ],
       "Checklist complete": [
         "Кантрольны спіс завершаны"
       ],
@@ -4189,6 +4210,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Віншуем, вы выканалі ўсе крокі!"
+      ],
+      "Congratulation, you finished!": [
+        "Віншуем з завяршэннем!"
       ],
       "Continue setting up your email": [
         "Працягнуць наладжванне электроннай пошты"
@@ -4208,9 +4232,6 @@
       "For your eyes only": [
         "Толькі для вашых вачэй"
       ],
-      "Get mobile app": [
-        "Атрымаць мабільную праграму"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Атрымаць мабільную праграму ${ MAIL_APP_NAME }"
       ],
@@ -4220,23 +4241,11 @@
       "Get the App": [
         "Атрымаць праграму"
       ],
-      "Import contacts or emails": [
-        "Імпартуйце кантакты або лісты"
-      ],
-      "Import data": [
-        "Імпартаваць даныя"
-      ],
-      "Import your contacts or messages": [
-        "Імпартуйце вашы кантакты або паведамленні"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
       ],
       "Learn more": [
         "Даведацца больш"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Зрабіце ${ BRAND_NAME } сваёй уваходнай паштовай скрыняй"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -4246,6 +4255,9 @@
       ],
       "Open checklist": [
         "Адкрыць кантроль спіс"
+      ],
+      "Open checklist and get free storage": [
+        "Адкрыйце кантрольны спіс і атрымайце бясплатнае сховішча"
       ],
       "Popular online services": [
         "Папулярныя сеткавыя сэрвісы"
@@ -4259,20 +4271,14 @@
       "Protection from trackers": [
         "Абарона ад праграм сачэння"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Хутка перанясіце вашы кантакты або лісты ад любога пастаўшчыка паслуг выкарыстоўваючы памочнік па імпартаванні Easy Switch."
-      ],
-      "Send a message": [
-        "Адправіць паведамленне"
-      ],
-      "Set recovery method": [
-        "Задаць метад аднаўлення"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Наладзьце ${ strongText } з Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Увайдзіце ў мабільную праграму, каб завяршыць гэты крок"
+      ],
+      "Storage unlocked": [
+        "Сховішча разблакіравана"
       ],
       "Update your logins": [
         "Абнавіце вашы запісы ўваходу"
@@ -4913,9 +4919,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Фраза аднаўлення - гэта адзін з самых бяспечных спосабаў абараніць доступ да вашага ўліковага запісу. Вы можаце выкарыстоўваць яе для атрымання доступу да вашага ўліковага запісу і аднавіць вашы зашыфраваныя даныя ў выпадку страты пароля."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запыт на адмову ад падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
       ],
@@ -5147,6 +5150,9 @@
       "Do you want to re-sign the contact details?": [
         "Вы сапраўды хочаце паўторна падпісаць кантактныя звесткі?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Не знайшлі тое, што шукалі? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
       ],
@@ -5345,6 +5351,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Уключыць у пошук папкі Спам і Сметніца."
+      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
       ],
@@ -5516,6 +5525,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
+      "Open shortcut cheat sheet": [
+        "Адкрыць памятку спалучэння клавіш"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Праверце яго надзейнасць"
       ],
@@ -5539,9 +5551,6 @@
       ],
       "Please fill out this field.": [
         "Запоўніце гэта поле."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Захоўвайце яго ў бяспечным месцы. Ён вам спатрэбіцца для доступу да вашага ўліковага запісу і расшыфроўкі вашых даных у выпадку скідання пароля."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
@@ -5596,12 +5605,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Фраза аднаўлення скапіявана ў буфер абмену"
-      ],
-      "Recovery phrase downloaded": [
-        "Фраза аднаўлення спампавана"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
@@ -5686,9 +5689,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Задаць ${ MAIL_APP_NAME } у якасці стандартнай праграмы электроннай пошты для браўзера. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
-      ],
-      "Set a recovery phrase": [
-        "Задаць фразу аднаўлення"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Наладжванне PGP дазваляе вам адпраўляць зашыфраваныя лісты карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, але выкарыстоўваюць сумяшчальныя з PGP сэрвісы."
@@ -5905,6 +5905,9 @@
       ],
       "Trackers blocked:": [
         "Праграм сачэння заблакіравана:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты або радку тэмы. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
@@ -6193,12 +6196,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза аднаўлення"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ваша фраза аднаўлення - гэта паслядоўнасць з 12 слоў у вызначаным парадку."
       ]
     },
     "info": {
@@ -6522,6 +6519,9 @@
       "BCC": [
         "Схаваная копія"
       ],
+      "Beta Access": [
+        "Бэта-доступ"
+      ],
       "Blind Carbon Copy": [
         "Схаваная копія"
       ],
@@ -6708,6 +6708,9 @@
       "Last month only": [
         "Толькі за апошні месяц"
       ],
+      "Layout": [
+        "Макет"
+      ],
       "Location": [
         "Размяшчэнне"
       ],
@@ -6810,9 +6813,6 @@
       "Recipient": [
         "Атрымальнік"
       ],
-      "Recovery phrase": [
-        "Фраза аднаўлення"
-      ],
       "Region": [
         "Вобласць"
       ],
@@ -6846,6 +6846,9 @@
       "Street address": [
         "Вуліца"
       ],
+      "Sync with system": [
+        "Сінхранізаваць з сістэмай"
+      ],
       "Synchronize with system": [
         "Сінхранізаваць з сістэмай"
       ],
@@ -6863,6 +6866,9 @@
       ],
       "the email was sent ${ label }": [
         "ліст быў адпраўлены ${ label }"
+      ],
+      "Theme": [
+        "Тэма"
       ],
       "Then": [
         "Потым"
@@ -7059,9 +7065,6 @@
       ],
       "More": [
         "Больш"
-      ],
-      "More about recovery": [
-        "Больш пра аднаўленне"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Адкрыць у ${ CALENDAR_APP_NAME }"
@@ -8315,6 +8318,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Змяніць налады"
+      ],
+      "Easily access and customize your app experience.": [
+        "Лёгкі доступ і наладжванне праграмы пад вашы перавагі."
+      ],
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
       ],
@@ -8324,11 +8333,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Хуткія налады"
+      ],
       "Schedule send": [
         "Запланаваць адпраўку"
       ],
       "Search just got smarter and faster": [
         "Пошук стаў больш разумным і хуткім"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Лісты з папак Спам і Сметніца цяпер аўтаматычна выключаны з Уся пошта. ${ settingsLink }"
       ],
       "Try it today.": [
         "Паспрабуйце сёння."
@@ -8879,6 +8894,9 @@
       ],
       "Addresses": [
         "Адрасы"
+      ],
+      "All settings": [
+        "Усе налады"
       ],
       "Archive": [
         "Архіў"

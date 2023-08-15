@@ -409,9 +409,6 @@
       "Forward as attachment": [
         "Přeposlat jako přílohu"
       ],
-      "Generate recovery phrase": [
-        "Vygenerovat obnovovací frázi"
-      ],
       "Get SimpleLogin extension": [
         "Získat rozšíření SimpleLogin"
       ],
@@ -447,6 +444,9 @@
       ],
       "Got it": [
         "Rozumím"
+      ],
+      "Help": [
+        "Pomoc"
       ],
       "Hide": [
         "Skrýt"
@@ -901,6 +901,9 @@
       "Set": [
         "Nastavit"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Nastavení ${ MAIL_APP_NAME } jako výchozí e-mailové aplikace"
+      ],
       "Set as default": [
         "Nastavit jako výchozí"
       ],
@@ -912,6 +915,9 @@
       ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
+      ],
+      "Settings": [
+        "Nastavení"
       ],
       "Share via link": [
         "Sdílet přes odkaz"
@@ -988,6 +994,9 @@
       "Submit": [
         "Odeslat"
       ],
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ],
       "This message contains embedded images.": [
         "Tato zpráva obsahuje vložené obrázky."
       ],
@@ -1002,6 +1011,9 @@
       ],
       "Toggle Contact app": [
         "Zobrazení aplikace kontaktů"
+      ],
+      "Toggle settings": [
+        "Otevřít/zavřít nastavení"
       ],
       "Tomorrow": [
         "Zítra"
@@ -1646,6 +1658,9 @@
       ],
       "azureish white": [
         "azurově bílá"
+      ],
+      "black": [
+        "černá"
       ],
       "blanched almond": [
         "blanšírované mandle"
@@ -3559,6 +3574,9 @@
       "Encryption failed": [
         "Šifrování selhalo"
       ],
+      "Missing FN property": [
+        "Chybějící vlastnost FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard verze < 3.0 není podporována"
       ]
@@ -4181,6 +4199,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Změňte adresu ${ strongText } na adresu ${ BRAND_NAME }."
       ],
+      "Changed accounts": [
+        "Změněné účty"
+      ],
       "Checklist complete": [
         "Kontrolní seznam je kompletní"
       ],
@@ -4189,6 +4210,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Gratulujeme, dokončili jste všechny kroky!"
+      ],
+      "Congratulation, you finished!": [
+        "Gratulujeme, dokončili jste!"
       ],
       "Continue setting up your email": [
         "Pokračujte v nastavení e-mailu"
@@ -4208,9 +4232,6 @@
       "For your eyes only": [
         "Pouze pro vaše oči"
       ],
-      "Get mobile app": [
-        "Získat mobilní aplikaci"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
       ],
@@ -4220,23 +4241,11 @@
       "Get the App": [
         "Získat aplikaci"
       ],
-      "Import contacts or emails": [
-        "Import kontaktů nebo emailů"
-      ],
-      "Import data": [
-        "Importovat data"
-      ],
-      "Import your contacts or messages": [
-        "Import kontaktů nebo zpráv"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Používejte ${ MAIL_APP_NAME } i nadále a objevte další způsoby, jak ${ BRAND_NAME } chrání vaše soukromí a zjednodušuje odesílání e-mailů."
       ],
       "Learn more": [
         "Více informací"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Udělejte si z ${ BRAND_NAME } svou schránku pro doručenou poštu"
       ],
       "Maybe later": [
         "Možná později"
@@ -4246,6 +4255,9 @@
       ],
       "Open checklist": [
         "Otevřít kontrolní seznam"
+      ],
+      "Open checklist and get free storage": [
+        "Otevřete kontrolní seznam a získejte úložiště zdarma"
       ],
       "Popular online services": [
         "Oblíbené online služby"
@@ -4259,20 +4271,14 @@
       "Protection from trackers": [
         "Ochrana před sledováním"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Rychle přeneste kontakty nebo e-maily od jakéhokoli poskytovatele pomocí našeho Easy Switch asistenta pro snadný import."
-      ],
-      "Send a message": [
-        "Odeslat zprávu"
-      ],
-      "Set recovery method": [
-        "Nastavit metodu obnovení"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Nastavit ${ strongText } z Gmailu"
       ],
       "Sign in to the mobile app to complete this step": [
         "Přihlaste se do mobilní aplikace a dokončete tento krok"
+      ],
+      "Storage unlocked": [
+        "Úložiště odemčeno"
       ],
       "Update your logins": [
         "Aktualizace přihlašovacích údajů"
@@ -4913,9 +4919,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Žádost o odhlášení z tohoto seznamu bude odeslána odesílateli a automaticky zpracována."
       ],
@@ -5147,6 +5150,9 @@
       "Do you want to re-sign the contact details?": [
         "Chcete znovu podepsat detaily kontaktu?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Nenašli jste to, co hledáte? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
       ],
@@ -5345,6 +5351,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Zahrnutí spamu/koše do výsledků vyhledávání."
+      ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
       ],
@@ -5516,6 +5525,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Otevření nápovědy pro klávesové zkratky"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Zkontrolujte, že se jedná o legitimní zprávu."
       ],
@@ -5539,9 +5551,6 @@
       ],
       "Please fill out this field.": [
         "Prosíme vyplňte toto pole."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -5597,12 +5606,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
-      "Recovery phrase copied to clipboard": [
-        "Obnovovací fráze byla zkopírovaná do schránky"
-      ],
-      "Recovery phrase downloaded": [
-        "Obnovovací fráze byla stažena"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
@@ -5626,6 +5629,9 @@
       ],
       "Saved yesterday": [
         "Uloženo včera"
+      ],
+      "Saved: ${ dateString }": [
+        "Uloženo: ${ dateString }"
       ],
       "Saving draft…": [
         "Ukládám koncept…"
@@ -5683,9 +5689,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavit ${ MAIL_APP_NAME } jako výchozí emailovou aplikaci pro tento prohlížeč. ${ MAIL_APP_NAME } bude automaticky spuštěn po kliknutí na emailový odkaz."
-      ],
-      "Set a recovery phrase": [
-        "Nastavit obnovovací frázi"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
@@ -5903,6 +5906,9 @@
       "Trackers blocked:": [
         "Zablokováno sledovacích prvků:"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Vypněte pro vyhledávání pouze podle data, jména, e-mailové adresy nebo předmětu. Chcete-li zakázat vyhledávání v obsahu zpráv a smazat stažené zprávy, přejděte do nastavení."
       ],
@@ -6051,7 +6057,7 @@
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Vyhledávací dotaz můžete buď aktualizovat, nebo vyčistit"
+        "Váš požadavek vyhledávání můžete buď aktualizovat a nebo smazat"
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -6190,12 +6196,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "Your recovery phrase": [
-        "Vaše obnovovací fráze"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Obnovovací fráze je série 12 slov v určitém pořadí."
       ]
     },
     "info": {
@@ -6519,6 +6519,9 @@
       "BCC": [
         "Skrytá kopie"
       ],
+      "Beta Access": [
+        "Beta přístup"
+      ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
       ],
@@ -6705,6 +6708,9 @@
       "Last month only": [
         "Pouze minulý měsíc"
       ],
+      "Layout": [
+        "Rozložení"
+      ],
       "Location": [
         "Poloha"
       ],
@@ -6807,9 +6813,6 @@
       "Recipient": [
         "Příjemce"
       ],
-      "Recovery phrase": [
-        "Obnovovací fráze"
-      ],
       "Region": [
         "Kraj"
       ],
@@ -6843,6 +6846,9 @@
       "Street address": [
         "Ulice a č. p."
       ],
+      "Sync with system": [
+        "Synchronizovat se systémem"
+      ],
       "Synchronize with system": [
         "Synchronizovat se systémem"
       ],
@@ -6860,6 +6866,9 @@
       ],
       "the email was sent ${ label }": [
         "e-mail byl odeslán ${ label }"
+      ],
+      "Theme": [
+        "Motiv"
       ],
       "Then": [
         "Potom"
@@ -7056,9 +7065,6 @@
       ],
       "More": [
         "Více"
-      ],
-      "More about recovery": [
-        "Více o obnově"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Otevřít v ${ CALENDAR_APP_NAME }"
@@ -8312,6 +8318,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Změna nastavení"
+      ],
+      "Easily access and customize your app experience.": [
+        "Snadný přístup k přizpůsobení aplikace vašim potřebám."
+      ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
       ],
@@ -8321,11 +8333,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Rychlá nastavení"
+      ],
       "Schedule send": [
         "Naplánovat odeslání"
       ],
       "Search just got smarter and faster": [
         "Vyhledávání se právě stalo chytřejším a rychlejším"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Spamové e-maily a e-maily v koši jsou nyní automaticky vyloučeny ze seznamu Všechny e-maily. ${ settingsLink }"
       ],
       "Try it today.": [
         "Vyzkoušejte to ještě dnes."
@@ -8876,6 +8894,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "All settings": [
+        "Všechna nastavení"
       ],
       "Archive": [
         "Archiv"

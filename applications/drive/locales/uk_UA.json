@@ -239,7 +239,7 @@
         "Усе одно завантажити"
       ],
       "Download apps": [
-        "Завантажити застосунки"
+        "Завантажити програми"
       ],
       "Download Drive for Windows": [
         "Завантажити Drive для Windows"
@@ -324,6 +324,9 @@
       ],
       "Grid layout": [
         "Подання сітки"
+      ],
+      "Help": [
+        "Довідка"
       ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
@@ -559,6 +562,9 @@
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
+      "Settings": [
+        "Налаштування"
+      ],
       "Share file": [
         "Спільний доступ до файлу"
       ],
@@ -622,11 +628,17 @@
       "Submit report": [
         "Надіслати звіт"
       ],
+      "Switch or add account": [
+        "Змінити або додати обліковий запис"
+      ],
       "Toggle Calendar app": [
         "Відкрити календар"
       ],
       "Toggle Contact app": [
         "Відкрити контакти"
+      ],
+      "Toggle settings": [
+        "Перемикання налаштувань"
       ],
       "Trust": [
         "Довіряти"
@@ -2253,6 +2265,9 @@
       "Encryption failed": [
         "Не вдалося зашифрувати"
       ],
+      "Missing FN property": [
+        "Відсутня властивість FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard версії < 3.0 не підтримуються"
       ]
@@ -3289,6 +3304,9 @@
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Ви впевнені, що хочете відмовитися від імпорту?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
       ],
@@ -3947,7 +3965,7 @@
         "Синхронізація тек з комп’ютера"
       ],
       "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "З легкістю синхронізуйте теки за допомогою нашого застосунку для настільних комп'ютерів, щоб ваші файли завжди були актуальними та доступними з будь-якого місця."
+        "Легко синхронізуйте теки за допомогою нашої комп'ютерної програми, щоб ваші файли завжди були актуальними та доступними звідусіль."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -4059,6 +4077,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
       "Try searching by file name, date, or type.": [
         "Спробуйте пошук за назвою, датою або типом файлу."
@@ -4349,6 +4370,9 @@
       ],
       "Bad": [
         "Погано"
+      ],
+      "Beta Access": [
+        "Бета доступ"
       ],
       "Browser": [
         "Браузер"
@@ -4680,11 +4704,17 @@
       "Street address": [
         "Вулиця"
       ],
+      "Sync with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
       ],
       "Text": [
         "Текст"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."
@@ -5267,7 +5297,7 @@
         "Налаштуйте свою організацію"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+        "Використовуйте вибір програм у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Onboarding Title": {
@@ -5719,6 +5749,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Легко отримуйте доступ до програми й налаштовуйте роботу."
+      ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
@@ -5730,6 +5763,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
+      ],
+      "Quick settings": [
+        "Швидкі налаштування"
       ]
     },
     "Storage": {
@@ -6023,6 +6059,9 @@
       ],
       "All": [
         "Усі"
+      ],
+      "All settings": [
+        "Усі налаштування"
       ],
       "Are you sure you want to close the preview?": [
         "Ви впевнені, що хочете закрити попередній перегляд?"

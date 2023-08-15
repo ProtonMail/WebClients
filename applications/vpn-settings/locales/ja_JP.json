@@ -2160,9 +2160,6 @@
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "ビットコイン取引は確認に時間がかかります (最大で24時間)。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
       ],
@@ -3371,6 +3368,26 @@
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: サインイン"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: アカウント作成"
+      ],
+      "Create a new ${ appName } account": [
+        "新しい ${ appName } アカウントを作成する"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } アカウントのユーザー名を探す"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } アカウントのパスワードをリセット"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "${ appName } アカウントにアクセスするには、サインインしてください"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "米ドル"
@@ -4241,6 +4258,11 @@
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } による共有"
+      ]
+    },
     "Signup label": {
       "Confirm email address": [
         "メールアドレスの確認"
@@ -4570,12 +4592,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "${ subscriptionManager } でサブスクリプションを管理します"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "サブスクリプションは ${ subscriptionManager } によって管理されます"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "ユーザー ID-${ userId } のサブスクリプションは、アプリ内購入を通じて行われました。 サブスクリプションを管理するには、ユーザーは ${ subscriptionManager } アカウントのサブスクリプション セクションに移動する必要があります。"
       ],
       "Subscriptions": [
         "サブスクリプション"
@@ -5118,6 +5134,9 @@
       "Status": [
         "状態"
       ],
+      "Subscription": [
+        "サブスクリプション"
+      ],
       "Switch to one-password mode": [
         "標準のパスワードモードに切り替える"
       ],
@@ -5138,6 +5157,9 @@
       ],
       "Unsupported browser": [
         "未対応のブラウザー"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "専用サーバーでネットワークの保護を強化する"
       ],
       "Verification failed": [
         "検証に失敗しました"

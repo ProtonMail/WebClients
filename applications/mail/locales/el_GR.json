@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
       ],
-      "Generate recovery phrase": [
-        "Παραγωγή φράσης ανάκτησης"
-      ],
       "Get SimpleLogin extension": [
         "Αποκτήστε την επέκταση SimpleLogin"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Help": [
+        "Βοήθεια"
       ],
       "Hide": [
         "Απόκρυψη"
@@ -895,6 +895,9 @@
       "Set": [
         "Ορισμός"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Ορίστε ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή email"
+      ],
       "Set as default": [
         "Ορισμός ως προεπιλογή"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
+      ],
+      "Settings": [
+        "Ρυθμίσεις"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -982,6 +988,9 @@
       "Submit": [
         "Υποβολή"
       ],
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
+      ],
       "This message contains embedded images.": [
         "Αυτό το μήνυμα περιέχει ενσωματωμένες εικόνες."
       ],
@@ -996,6 +1005,9 @@
       ],
       "Toggle Contact app": [
         "Εναλλαγή στο πρόγραμμα Επαφών"
+      ],
+      "Toggle settings": [
+        "Εναλλαγή ρυθμίσεων"
       ],
       "Tomorrow": [
         "Αύριο"
@@ -1638,6 +1650,9 @@
       ],
       "azureish white": [
         "λευκό γαλαζωπό"
+      ],
+      "black": [
+        "μαύρο"
       ],
       "blanched almond": [
         "αμυγδαλόψυχα"
@@ -3511,6 +3526,9 @@
       "Encryption failed": [
         "Η κρυπτογράφηση απέτυχε"
       ],
+      "Missing FN property": [
+        "Λείπει η ιδιότητα FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "οι εκδόσεις vCard < 3.0 δεν υποστηρίζονται"
       ]
@@ -4123,6 +4141,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Αλλάξτε το ${ strongText } στη ${ BRAND_NAME } διεύθυνση σας"
       ],
+      "Changed accounts": [
+        "Αλλάξατε λογαριασμούς"
+      ],
       "Checklist complete": [
         "Η λίστα ελέγχου ολοκληρώθηκε"
       ],
@@ -4131,6 +4152,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Συγχαρητήρια, ολοκληρώσατε όλα τα βήματα!"
+      ],
+      "Congratulation, you finished!": [
+        "Συγχαρητήρια, τελειώσατε!"
       ],
       "Continue setting up your email": [
         "Συνεχίστε τη ρύθμιση του ηλεκτρονικού ταχυδρομείου σας"
@@ -4150,9 +4174,6 @@
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
       ],
-      "Get mobile app": [
-        "Λήψη εφαρμογής για κινητά"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Αποκτήστε την εφαρμογή ${ MAIL_APP_NAME } για κινητά"
       ],
@@ -4162,23 +4183,11 @@
       "Get the App": [
         "Λάβετε την εφαρμογή"
       ],
-      "Import contacts or emails": [
-        "Εισαγωγή επαφών ή μηνυμάτων"
-      ],
-      "Import data": [
-        "Εισαγωγή δεδομένων"
-      ],
-      "Import your contacts or messages": [
-        "Εισάγετε τις επαφές ή τα μηνύματά σας"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Συνεχίστε να χρησιμοποιείτε το ${ MAIL_APP_NAME } για να ανακαλύψετε περισσότερους τρόπους με τους οποίους το ${ BRAND_NAME } προστατεύει το απόρρητό σας και απλοποιεί την αποστολή email."
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Κάντε το ${ BRAND_NAME } τα προεπιλεγμένα εισερχόμενά σας"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -4188,6 +4197,9 @@
       ],
       "Open checklist": [
         "Άνοιγμα λίστας ελέγχου"
+      ],
+      "Open checklist and get free storage": [
+        "Ανοίξτε τη λίστα ελέγχου και αποκτήστε δωρεάν χώρο αποθήκευσης"
       ],
       "Popular online services": [
         "Δημοφιλείς ηλεκτρονικές υπηρεσίες"
@@ -4201,20 +4213,14 @@
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Μεταφέρετε γρήγορα τις επαφές ή τα μηνύματα ηλεκτρονικού ταχυδρομείου σας από οποιονδήποτε πάροχο χρησιμοποιώντας τον βοηθό εισαγωγής μας Easy Switch."
-      ],
-      "Send a message": [
-        "Αποστολή μηνύματος"
-      ],
-      "Set recovery method": [
-        "Ορισμός μεθόδου ανάκτησης"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Ρύθμιση ${ strongText } από το Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Συνδεθείτε στην εφαρμογή για κινητά για να ολοκληρώσετε αυτό το βήμα"
+      ],
+      "Storage unlocked": [
+        "Χώρος αποθήκευσης ξεκλειδώθηκε"
       ],
       "Update your logins": [
         "Ενημερώστε τα στοιχεία σύνδεσής σας"
@@ -4761,9 +4767,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Μια φράση ανάκτησης είναι ένας από τους ασφαλέστερους τρόπους για να προστατεύσετε την πρόσβαση στον λογαριασμό σας. Μπορείτε να τη χρησιμοποιήσετε για να αποκτήσετε πρόσβαση στον λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας εάν ξεχάσετε ποτέ τον κωδικό πρόσβασής σας."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
       ],
@@ -4981,6 +4984,9 @@
       "Do you want to re-sign the contact details?": [
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Δε βρίσκετε αυτό που ψάχνετε; ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
       ],
@@ -5165,6 +5171,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Συμπεριλάβετε τα Ανεπιθύμητα/Κάδο απορριμμάτων στα αποτελέσματα αναζήτησης."
+      ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
       ],
@@ -5336,6 +5345,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Άνοιγμα λίστας συντομεύσεων"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
       ],
@@ -5359,9 +5371,6 @@
       ],
       "Please fill out this field.": [
         "Παρακαλώ συμπληρώστε αυτό το πεδίο."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Παρακαλούμε κρατήστε το ασφαλές. Θα το χρειαστείτε για πρόσβαση στον λογαριασμό σας και αποκρυπτογράφηση των δεδομένων σας, σε περίπτωση επαναφοράς κωδικού πρόσβασης."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
@@ -5414,12 +5423,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
-      ],
-      "Recovery phrase downloaded": [
-        "Η φράση ανάκτησης κατέβηκε"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -5504,9 +5507,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ορισμός του ${ MAIL_APP_NAME } ως προεπιλεγμένης εφαρμογής αλληλογραφίας αυτού του περιηγητή. Το κλικ σε σύνδεσμο αλληλογραφίας θα ανοίγει αυτόματα το ${ MAIL_APP_NAME }."
-      ],
-      "Set a recovery phrase": [
-        "Ορισμός φράσης ανάκτησης"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
@@ -5717,6 +5717,9 @@
       ],
       "Trackers blocked:": [
         "Αποκλεισμένοι ιχνηλάτες:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Απενεργοποιήστε την επιλογή για αναζήτηση μόνο κατά ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή θέμα. Για να απενεργοποιήσετε το περιεχόμενο μηνυμάτων αναζήτησης και να διαγράψετε τα ληφθέντα μηνύματα, μεταβείτε στις ρυθμίσεις."
@@ -5987,12 +5990,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your recovery phrase": [
-        "Η φράση ανάκτησής σας"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Η φράση ανάκτησης είναι 12 λέξεις με συγκεκριμένη σειρά."
       ]
     },
     "info": {
@@ -6310,6 +6307,9 @@
       "BCC": [
         "Κρυφή Κοιν."
       ],
+      "Beta Access": [
+        "Πρόσβαση Beta"
+      ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
       ],
@@ -6496,6 +6496,9 @@
       "Last month only": [
         "Τελευταίο μήνα μόνο"
       ],
+      "Layout": [
+        "Διάταξη"
+      ],
       "Location": [
         "Τοποθεσία"
       ],
@@ -6598,9 +6601,6 @@
       "Recipient": [
         "Παραλήπτης"
       ],
-      "Recovery phrase": [
-        "Φράση ανάκτησης"
-      ],
       "Region": [
         "Περιοχή"
       ],
@@ -6634,6 +6634,9 @@
       "Street address": [
         "Οδός"
       ],
+      "Sync with system": [
+        "Συγχρονισμός με το σύστημα"
+      ],
       "Synchronize with system": [
         "Συγχρονισμός με το σύστημα"
       ],
@@ -6651,6 +6654,9 @@
       ],
       "the email was sent ${ label }": [
         "το email στάλθηκε ${ label }"
+      ],
+      "Theme": [
+        "Θέμα"
       ],
       "Then": [
         "Τότε"
@@ -6847,9 +6853,6 @@
       ],
       "More": [
         "Περισσότερα"
-      ],
-      "More about recovery": [
-        "Περισσότερα περί ανάκτησης"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
@@ -8055,6 +8058,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Αλλαγή ρύθμισης"
+      ],
+      "Easily access and customize your app experience.": [
+        "Αποκτήστε εύκολα πρόσβαση και προσαρμόστε την εμπειρία της εφαρμογής σας."
+      ],
       "Email tracking protection": [
         "Προστασία ιχνηλασίας μηνυμάτων"
       ],
@@ -8064,11 +8073,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Γρήγορες ρυθμίσεις"
+      ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"
       ],
       "Search just got smarter and faster": [
         "Η αναζήτηση μόλις έγινε εξυπνότερη και ταχύτερη"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου στα Ανεπιθύμητα και στον Κάδου απορριμμάτων εξαιρούνται πλέον αυτόματα από την ενότητα Όλα τα Μηνύματα. ${ settingsLink }"
       ],
       "Try it today.": [
         "Δοκιμάστε το σήμερα."
@@ -8553,6 +8568,9 @@
       ],
       "Addresses": [
         "Διευθύνσεις"
+      ],
+      "All settings": [
+        "Όλες οι ρυθμίσεις"
       ],
       "Archive": [
         "Αρχειοθετημένα"

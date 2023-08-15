@@ -2840,12 +2840,6 @@
       "Thank you for verifying your email address.": [
         "メールアドレスをご確認いただき、ありがとうございます。"
       ],
-      "Thanks for letting us know": [
-        "お知らせいただきありがとうございます。"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "このアカウントはあなたのものではありません。私たちは調査し、それに従って行動します。"
-      ],
       "You can safely close this tab.": [
         "このタブは安全に閉じても問題ありません。"
       ]
@@ -3465,6 +3459,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "暗号化に失敗しました"
+      ],
+      "Missing FN property": [
+        "FN プロパティが見つかりません"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard バージョン 3.0 未満はサポートされていません"
@@ -5344,9 +5341,6 @@
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "ビットコイン取引は確認に時間がかかります (最大で24時間)。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者が確認できないようにします。"
       ],
@@ -6528,9 +6522,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "有料アカウントにアップグレードして ${ PROTON_SENTINEL_NAME } を有効にします。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
@@ -8526,6 +8517,26 @@
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: サインイン"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: アカウント作成"
+      ],
+      "Create a new ${ appName } account": [
+        "新しい ${ appName } アカウントを作成する"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } アカウントのユーザー名を探す"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } アカウントのパスワードをリセット"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "${ appName } アカウントにアクセスするには、サインインしてください"
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "祝日を追加"
@@ -9733,6 +9744,9 @@
       "Ask each time": [
         "毎回確認"
       ],
+      "Auto": [
+        "自動"
+      ],
       "Automatic (${ defaultDay })": [
         "自動 (${ defaultDay })"
       ],
@@ -10575,6 +10589,11 @@
         "ラベルを追加"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } による共有"
+      ]
+    },
     "Signature verification error when joining calendar": {
       "Signature verification error": [
         "署名の検証でエラーが発生しました"
@@ -10972,12 +10991,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "${ subscriptionManager } でサブスクリプションを管理します"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "サブスクリプションは ${ subscriptionManager } によって管理されます"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "ユーザー ID-${ userId } のサブスクリプションは、アプリ内購入を通じて行われました。 サブスクリプションを管理するには、ユーザーは ${ subscriptionManager } アカウントのサブスクリプション セクションに移動する必要があります。"
       ],
       "Subscriptions": [
         "サブスクリプション"

@@ -407,9 +407,6 @@
       "Forward as attachment": [
         "Redirecționare ca atașament"
       ],
-      "Generate recovery phrase": [
-        "Generare frază de recuperare"
-      ],
       "Get SimpleLogin extension": [
         "Obținere extensie SimpleLogin"
       ],
@@ -445,6 +442,9 @@
       ],
       "Got it": [
         "Am înțeles"
+      ],
+      "Help": [
+        "Ajutor"
       ],
       "Hide": [
         "Ascundere"
@@ -898,6 +898,9 @@
       "Set": [
         "Setare"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail"
+      ],
       "Set as default": [
         "Setare ca implicit"
       ],
@@ -909,6 +912,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Settings": [
+        "Setări"
       ],
       "Share via link": [
         "Partajare prin legătură"
@@ -985,6 +991,9 @@
       "Submit": [
         "Trimite"
       ],
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ],
       "This message contains embedded images.": [
         "Acest mesaj conține imagini incluse."
       ],
@@ -999,6 +1008,9 @@
       ],
       "Toggle Contact app": [
         "Comutare la aplicație Contacte"
+      ],
+      "Toggle settings": [
+        "Comutare setări"
       ],
       "Tomorrow": [
         "Mâine"
@@ -1642,6 +1654,9 @@
       ],
       "azureish white": [
         "alb azuric"
+      ],
+      "black": [
+        "neagră"
       ],
       "blanched almond": [
         "migdale decolorate"
@@ -3535,6 +3550,9 @@
       "Encryption failed": [
         "Criptare eșuată"
       ],
+      "Missing FN property": [
+        "Lipsește proprietatea FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "Versiunile vCard < 3.0 nu sunt suportate."
       ]
@@ -4152,6 +4170,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Conturi modificate"
+      ],
       "Checklist complete": [
         "Listă completată"
       ],
@@ -4160,6 +4181,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Felicitări, ați completat toți pașii!"
+      ],
+      "Congratulation, you finished!": [
+        "Felicitări, ați terminat!"
       ],
       "Continue setting up your email": [
         "Continuați să vă setați contul de e-mail"
@@ -4179,9 +4203,6 @@
       "For your eyes only": [
         "Doar pentru dumneavoastră"
       ],
-      "Get mobile app": [
-        "Luați aplicația mobilă"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
       ],
@@ -4191,23 +4212,11 @@
       "Get the App": [
         "Luați aplicația"
       ],
-      "Import contacts or emails": [
-        "Importați contacte sau e-mailuri"
-      ],
-      "Import data": [
-        "Importare date"
-      ],
-      "Import your contacts or messages": [
-        "Importați contactele sau mesajele personale"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Utilizați în continuare ${ MAIL_APP_NAME } pentru a descoperi mai multe moduri în care ${ BRAND_NAME } vă protejează confidențialitatea și vă simplifică mesageria."
       ],
       "Learn more": [
         "Detalii"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Faceți din ${ BRAND_NAME } mesageria de zi cu zi"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -4217,6 +4226,9 @@
       ],
       "Open checklist": [
         "Deschidere listă de sarcini"
+      ],
+      "Open checklist and get free storage": [
+        "Deschideți lista de sarcini și obțineți spațiu gratuit"
       ],
       "Popular online services": [
         "Servicii populare online"
@@ -4230,20 +4242,14 @@
       "Protection from trackers": [
         "Protecție împotriva monitorizării"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transferați-vă rapid contactele sau e-mailurile de la orice furnizor cu ajutorul asistentului de importare Easy Switch."
-      ],
-      "Send a message": [
-        "Trimitere mesaj"
-      ],
-      "Set recovery method": [
-        "Setare metodă de recuperare"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Setați ${ strongText } de la Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Conectați-vă la aplicația mobilă pentru a finaliza acest pas"
+      ],
+      "Storage unlocked": [
+        "Spațiu deblocat"
       ],
       "Update your logins": [
         "Actualizați-vă autentificarea"
@@ -4837,9 +4843,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "O cerere de dezabonare de la această listă de corespondență va fi trimisă expeditorului buletinului de știri și procesată automat."
       ],
@@ -5064,6 +5067,9 @@
       "Do you want to re-sign the contact details?": [
         "Doriți să reînregistrați datele contactului?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Nu găsiți ceea ce căutați? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
       ],
@@ -5255,6 +5261,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Includeți în căutare și mesajele nedorite și din gunoi."
+      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5426,6 +5435,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
+      "Open shortcut cheat sheet": [
+        "Deschidere listă combinații de taste"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
@@ -5449,9 +5461,6 @@
       ],
       "Please fill out this field.": [
         "Trebuie să completați acest câmp."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -5505,12 +5514,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Fraza de recuperare a fost copiată în memorie."
-      ],
-      "Recovery phrase downloaded": [
-        "Fraza de recuperare descărcată"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -5595,9 +5598,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură de e-mail."
-      ],
-      "Set a recovery phrase": [
-        "Setați o frază de recuperare"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
@@ -5811,6 +5811,9 @@
       ],
       "Trackers blocked:": [
         "Urmăritori blocați:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Dezactivați opțiunea pentru a căuta numai după dată, nume, adresă de e-mail sau subiect. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
@@ -6090,12 +6093,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your recovery phrase": [
-        "Fraza de recuperare"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Fraza de recuperare este o serie de 12 cuvinte într-o anumită ordine."
       ]
     },
     "info": {
@@ -6416,6 +6413,9 @@
       "BCC": [
         "Ca"
       ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
       ],
@@ -6602,6 +6602,9 @@
       "Last month only": [
         "Doar luna trecută"
       ],
+      "Layout": [
+        "Aspect"
+      ],
       "Location": [
         "Loc"
       ],
@@ -6704,9 +6707,6 @@
       "Recipient": [
         "Destinatar"
       ],
-      "Recovery phrase": [
-        "Fraza de recuperare"
-      ],
       "Region": [
         "Județ"
       ],
@@ -6740,6 +6740,9 @@
       "Street address": [
         "Strada"
       ],
+      "Sync with system": [
+        "Sincronizare cu cea din sistem"
+      ],
       "Synchronize with system": [
         "Sincronizare cu sistemul"
       ],
@@ -6757,6 +6760,9 @@
       ],
       "the email was sent ${ label }": [
         "mesajul a fost trimis ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Atunci"
@@ -6953,9 +6959,6 @@
       ],
       "More": [
         "Mai multe"
-      ],
-      "More about recovery": [
-        "Mai multe despre recuperare"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Deschidere în ${ CALENDAR_APP_NAME }"
@@ -8185,6 +8188,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Modificare setări"
+      ],
+      "Easily access and customize your app experience.": [
+        "Accesați și personalizați ușor experiența cu aplicația."
+      ],
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
@@ -8194,11 +8203,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Setări rapide"
+      ],
       "Schedule send": [
         "Trimitere programată"
       ],
       "Search just got smarter and faster": [
         "Căutarea a devenit mai rapidă și mai inteligentă"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Mesajele nedorite și din gunoi sunt excluse acum automat din opțiunea „Toate mesajele”. ${ settingsLink }"
       ],
       "Try it today.": [
         "Încercați acum."
@@ -8716,6 +8731,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "All settings": [
+        "Toate setările"
       ],
       "Archive": [
         "Arhivă"
