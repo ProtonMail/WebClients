@@ -8,7 +8,7 @@ export interface Filter {
 }
 
 export interface Sort {
-    sort: 'Time' | 'Size';
+    sort: 'Time' | 'Size' | 'SnoozeTime';
     desc: boolean;
 }
 

@@ -88,6 +88,8 @@ export interface MessageMetadata {
     Flags: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     AttachmentsMetadata?: AttachmentsMetadata[];
+    SnoozeTime: number;
+    DisplaySnoozedReminder?: number;
 }
 
 export interface Message extends MessageMetadata {

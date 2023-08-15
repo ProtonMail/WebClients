@@ -561,6 +561,7 @@ export enum MAIL_UPSELL_PATHS {
     UNLIMITED_ADDRESSES = 'unlimited-addresses',
     FORWARD_EMAILS = 'forward-emails',
     SMTP_SUBMISSION = 'smtp-submission',
+    SNOOZE_MESSAGE = 'snooze-message',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
@@ -963,6 +964,7 @@ export enum MAILBOX_LABEL_IDS {
     OUTBOX = '9',
     SCHEDULED = '12',
     ALMOST_ALL_MAIL = '15',
+    SNOOZED = '16',
 }
 
 export const LINKED_LABEL_IDS: {
