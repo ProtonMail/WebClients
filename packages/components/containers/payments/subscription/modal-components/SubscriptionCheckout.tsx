@@ -29,6 +29,7 @@ import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
+import { CheckoutModifiers } from '../useCheckoutModifiers';
 import CheckoutRow from './CheckoutRow';
 
 const PlanDescription = ({ list }: { list: Included[] }) => {
@@ -117,7 +118,7 @@ const AddonTooltip = ({
     return <Info title={text} className="ml-2" />;
 };
 
-interface Props {
+interface BaseProps {
     submit?: ReactNode;
     loading?: boolean;
     plansMap: PlansMap;
@@ -133,10 +134,9 @@ interface Props {
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
-    isScheduledSubscription?: boolean;
-    isProration?: boolean;
-    isCustomBilling?: boolean;
 }
+
+type Props = BaseProps & CheckoutModifiers;
 
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
