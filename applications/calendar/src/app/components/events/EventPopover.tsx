@@ -278,6 +278,7 @@ const EventPopover = ({
                 </ButtonLike>
             ) : (
                 <AppLink
+                    data-testid="event-popover:open-in-new-tab"
                     to={linkTo || '/'}
                     selfOpening
                     className="mr-2 button button-small button-ghost-weak button-for-icon"
