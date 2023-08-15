@@ -340,7 +340,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
                     ) : null}
 
-                    {APP_NAME !== APPS.PROTONACCOUNT ? (
+                    {APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                         <div className="px-4 pb-2">
                             <Button
                                 shape="outline"
