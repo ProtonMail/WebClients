@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Ek dosya olarak ilet"
       ],
-      "Generate recovery phrase": [
-        "Kurtarma ifadesi oluştur"
-      ],
       "Get SimpleLogin extension": [
         "SimpleLogin eklentisini edinin"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Anladım"
+      ],
+      "Help": [
+        "Yardım"
       ],
       "Hide": [
         "Gizle"
@@ -895,6 +895,9 @@
       "Set": [
         "Ayarla"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulaması olsun"
+      ],
       "Set as default": [
         "Varsayılan olarak ayarla"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
+      ],
+      "Settings": [
+        "Ayarlar"
       ],
       "Share via link": [
         "Bağlantı ile paylaş"
@@ -982,6 +988,9 @@
       "Submit": [
         "Gönder"
       ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
       "This message contains embedded images.": [
         "Bu iletide gömülü görseller var."
       ],
@@ -996,6 +1005,9 @@
       ],
       "Toggle Contact app": [
         "Kişiler uygulamasına geç"
+      ],
+      "Toggle settings": [
+        "Ayarları aç / kapat"
       ],
       "Tomorrow": [
         "Yarın"
@@ -1638,6 +1650,9 @@
       ],
       "azureish white": [
         "masmavi beyaz"
+      ],
+      "black": [
+        "siyah"
       ],
       "blanched almond": [
         "beyazlatılmış badem"
@@ -3511,6 +3526,9 @@
       "Encryption failed": [
         "Şifrelenemedi"
       ],
+      "Missing FN property": [
+        "FN özelliği eksik"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0 öncesi sürümler desteklenmiyor"
       ]
@@ -4123,6 +4141,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "${ strongText }ni ${ BRAND_NAME } adresiniz ile değiştirin"
       ],
+      "Changed accounts": [
+        "Hesaplar değiştirildi"
+      ],
       "Checklist complete": [
         "Kontrol listesi tamamlandı"
       ],
@@ -4131,6 +4152,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Tebrikler, tüm adımları tamamladınız!"
+      ],
+      "Congratulation, you finished!": [
+        "Tebrikler, işlemleri tamamladınız!"
       ],
       "Continue setting up your email": [
         "E-postanızı kurmayı sürdürün"
@@ -4150,9 +4174,6 @@
       "For your eyes only": [
         "Yalnızca sizin gözleriniz için"
       ],
-      "Get mobile app": [
-        "Mobil uygulamayı edinin"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } mobil uygulamasını edinin"
       ],
@@ -4162,23 +4183,11 @@
       "Get the App": [
         "Uygulamayı edinin"
       ],
-      "Import contacts or emails": [
-        "Kişileri veya e-postaları içe aktarın"
-      ],
-      "Import data": [
-        "Verileri içe aktar"
-      ],
-      "Import your contacts or messages": [
-        "Kişilerinizi veya iletilerinizi içe aktarın"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "${ BRAND_NAME } uygulamasının gizliliğinizi koruduğu ve e-posta göndermeyi basitleştirdiği diğer yolları keşfetmek için ${ MAIL_APP_NAME } uygulamasını kullanmayı sürdürün."
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "${ BRAND_NAME } adresinizi gelen kutunuz yapın"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -4188,6 +4197,9 @@
       ],
       "Open checklist": [
         "Kontrol listesini aç"
+      ],
+      "Open checklist and get free storage": [
+        "Kontrol listesini tamamlayıp ücretsiz depolama alanı kazanın"
       ],
       "Popular online services": [
         "Yaygın kullanılan çevrim içi hizmetler"
@@ -4201,20 +4213,14 @@
       "Protection from trackers": [
         "İzleyicilere karşı koruma"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Easy Switch içe aktarma yardımcısı ile herhangi bir hizmet sağlayıcı üzerinde bulunan kişi ve e-postalarınızı kolayca aktarın."
-      ],
-      "Send a message": [
-        "Bir ileti gönderin"
-      ],
-      "Set recovery method": [
-        "Kurtarma yöntemini ayarla"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Gmail için ${ strongText } özelliğini ayarlayın"
       ],
       "Sign in to the mobile app to complete this step": [
         "Bu adımı tamamlamak için mobil uygulamada oturum açın"
+      ],
+      "Storage unlocked": [
+        "Depolama alanı kazandınız"
       ],
       "Update your logins": [
         "Oturum açma bilgilerinizi güncelleyin"
@@ -4761,9 +4767,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Bültenin göndericisine, bu e-posta listesinden ayrılma isteği gönderilecek ve bu işlem otomatik olarak işlenecek."
       ],
@@ -4981,6 +4984,9 @@
       "Do you want to re-sign the contact details?": [
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
@@ -5165,6 +5171,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
+      "Include Spam/Trash in your search results.": [
+        "İstenmeyen ve Çöp klasörlerini de arayın"
+      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -5336,6 +5345,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "Open shortcut cheat sheet": [
+        "Kısayol rehberini aç"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
@@ -5359,9 +5371,6 @@
       ],
       "Please fill out this field.": [
         "Lütfen bu alanı doldurun."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Lütfen güvenli bir yerde saklayın. Parolanızı sıfırlamanız durumunda hesabınıza erişmek ve verilerinizin şifresini çözmek için bu ifadeye gerek duyacaksınız."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -5414,12 +5423,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Kurtarma ifadesi panoya kopyalandı"
-      ],
-      "Recovery phrase downloaded": [
-        "Kurtarma ifadesi indirildi"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -5504,9 +5507,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Bu tarayıcı için varsayılan e-posta uygulamasını ${ MAIL_APP_NAME } yapabilirsiniz. Bir e-posta bağlantısına tıkladığınızda otomatik olarak ${ MAIL_APP_NAME } açılır."
-      ],
-      "Set a recovery phrase": [
-        "Bir kurtarma ifadesi ayarla"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
@@ -5717,6 +5717,9 @@
       ],
       "Trackers blocked:": [
         "Engellenen izleyiciler:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre arama yapmak için bu seçeneği kapatın. İleti içeriği arama özelliğini kapatmak ve indirilen iletileri silmek için ayarlara gidin."
@@ -5987,12 +5990,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your recovery phrase": [
-        "Kurtarma ifadeniz"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Kurtarma ifadeniz, belirli bir sırada 12 sözcükten oluşan bir dizidir."
       ]
     },
     "info": {
@@ -6310,6 +6307,9 @@
       "BCC": [
         "Gizli kopya"
       ],
+      "Beta Access": [
+        "Beta erişimi"
+      ],
       "Blind Carbon Copy": [
         "Gizli kopya"
       ],
@@ -6496,6 +6496,9 @@
       "Last month only": [
         "Yalnızca son ay"
       ],
+      "Layout": [
+        "Görünüm"
+      ],
       "Location": [
         "Konum"
       ],
@@ -6598,9 +6601,6 @@
       "Recipient": [
         "Alıcı"
       ],
-      "Recovery phrase": [
-        "Kurtarma ifadesi"
-      ],
       "Region": [
         "Bölge"
       ],
@@ -6634,6 +6634,9 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Sync with system": [
+        "Sistem ayarı kullanılsın"
+      ],
       "Synchronize with system": [
         "Sistem ile aynı"
       ],
@@ -6651,6 +6654,9 @@
       ],
       "the email was sent ${ label }": [
         "gönderilen e-postada ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Önce"
@@ -6847,9 +6853,6 @@
       ],
       "More": [
         "Diğer"
-      ],
-      "More about recovery": [
-        "Kurtarma hakkında ayrıntılı bilgi"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasında aç"
@@ -8055,6 +8058,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Ayarı değiştir"
+      ],
+      "Easily access and customize your app experience.": [
+        "Uygulama deneyiminizi kolaylaştırın ve özelleştirin."
+      ],
       "Email tracking protection": [
         "E-posta izleme koruması"
       ],
@@ -8064,11 +8073,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
+      "Quick settings": [
+        "Hızlı ayarlar"
+      ],
       "Schedule send": [
         "Gönderimi zamanla"
       ],
       "Search just got smarter and faster": [
         "Arama artık daha akıllı ve daha hızlı"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "İstenmeyen ve Çöp klasörlerindeki e-postalar Tüm e-postalar klasörüne katılmıyor. ${ settingsLink }"
       ],
       "Try it today.": [
         "Bugün deneyin."
@@ -8553,6 +8568,9 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "All settings": [
+        "Tüm ayarlar"
       ],
       "Archive": [
         "Arşivle"

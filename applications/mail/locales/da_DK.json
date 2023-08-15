@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
-      "Generate recovery phrase": [
-        "Opret gendannelsessætning"
-      ],
       "Get SimpleLogin extension": [
         "Hent SimpleLogin-udvidelse"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Forstået"
+      ],
+      "Help": [
+        "Hjælp"
       ],
       "Hide": [
         "Skjul"
@@ -895,6 +895,9 @@
       "Set": [
         "Indstil"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Indstil ${ MAIL_APP_NAME } som standard e-mail-program"
+      ],
       "Set as default": [
         "Angiv som standard"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
+      ],
+      "Settings": [
+        "Indstillinger"
       ],
       "Share via link": [
         "Del via link"
@@ -982,6 +988,9 @@
       "Submit": [
         "Indsend"
       ],
+      "Switch or add account": [
+        "Skift eller tilføj konto"
+      ],
       "This message contains embedded images.": [
         "Denne besked indeholder indlejrede billeder."
       ],
@@ -996,6 +1005,9 @@
       ],
       "Toggle Contact app": [
         "Skift Kontakt-app"
+      ],
+      "Toggle settings": [
+        "Åbn/luk indstillinger"
       ],
       "Tomorrow": [
         "I morgen"
@@ -1638,6 +1650,9 @@
       ],
       "azureish white": [
         "azurblålig hvid"
+      ],
+      "black": [
+        "sort"
       ],
       "blanched almond": [
         "blancherede mandler"
@@ -3511,6 +3526,9 @@
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
+      "Missing FN property": [
+        "Mangler FN-egenskab"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 understøttes ikke"
       ]
@@ -4099,6 +4117,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } i Play Store"
       ],
+      "auto-forwarding": [
+        "automatisk videresendelse"
+      ],
       "Block email communications from scammers permanently.": [
         "Blokér e-mailkommunikation fra svindlere permanent."
       ],
@@ -4108,6 +4129,9 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravo for at gøre din e-mail endnu mere sikker, praktisk og relevant! Vi har øget din gratis lagerplads til i alt 1 GB."
       ],
+      "Changed accounts": [
+        "Skiftede konti"
+      ],
       "Checklist complete": [
         "Tjeklisten er færdig"
       ],
@@ -4116,6 +4140,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Tillykke, du har gennemført alle trinnene!"
+      ],
+      "Congratulation, you finished!": [
+        "Tillykke, du er færdig!"
       ],
       "Continue setting up your email": [
         "Fortsæt konfigurationen af din e-mail"
@@ -4129,29 +4156,14 @@
       "For your eyes only": [
         "Kun for dine øjne"
       ],
-      "Get mobile app": [
-        "Hent mobilapp"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hent mobilappen til ${ MAIL_APP_NAME }"
-      ],
-      "Import contacts or emails": [
-        "Importer kontakter eller e-mails"
-      ],
-      "Import data": [
-        "Importér data"
-      ],
-      "Import your contacts or messages": [
-        "Importer dine kontakter eller beskeder"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Bliv ved med at bruge ${ MAIL_APP_NAME } for at opdage flere måder, hvorpå ${ BRAND_NAME } beskytter dit privatliv og forenkler e-mailing."
       ],
       "Learn more": [
         "Få mere at vide"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Lav ${ BRAND_NAME } til foretrukne indbakke"
       ],
       "Maybe later": [
         "Måske senere"
@@ -4161,6 +4173,9 @@
       ],
       "Open checklist": [
         "Åbn tjekliste"
+      ],
+      "Open checklist and get free storage": [
+        "Åbn tjekliste, og få gratis lagerplads"
       ],
       "Popular online services": [
         "Populære online-tjenester"
@@ -4174,17 +4189,14 @@
       "Protection from trackers": [
         "Beskyttelse fra trackere"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Overfør hurtigt dine kontakter eller e-mails fra en hvilken som helst udbyder ved hjælp af vores Easy Switch-importassistent."
-      ],
-      "Send a message": [
-        "Send en besked"
-      ],
-      "Set recovery method": [
-        "Indstil gendannelsesmetode"
+      "Set up ${ strongText } from Gmail": [
+        "Indstil ${ strongText } fra Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Log ind i mobilappen for at fuldføre dette trin"
+      ],
+      "Storage unlocked": [
+        "Lager låst op"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Scan denne QR-kode med din mobil eller besøg iOS- eller Android-butikken"
@@ -4728,9 +4740,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En anmodning om at afmelde fra denne mailingliste vil blive sendt til afsenderen af nyhedsbrevet og automatisk behandlet."
       ],
@@ -4792,6 +4801,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Er du sikker på, at du vil kassere din import?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
@@ -4944,6 +4956,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Vil du gensignere kontaktdetaljerne?"
+      ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Finder du ikke, hvad du leder efter? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
@@ -5129,6 +5144,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Inkludér spam/papirkurv i dine søgeresultater."
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -5300,6 +5318,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
+      "Open shortcut cheat sheet": [
+        "Åbn snydeark med genveje"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
       ],
@@ -5323,9 +5344,6 @@
       ],
       "Please fill out this field.": [
         "Udfyld venligst dette felt."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -5379,12 +5397,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
-      "Recovery phrase copied to clipboard": [
-        "Gendannelsessætning kopieret til udklipsholderen"
-      ],
-      "Recovery phrase downloaded": [
-        "Gendannelsesfrase downloadet"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
@@ -5408,6 +5420,9 @@
       ],
       "Saved yesterday": [
         "Gemt i går"
+      ],
+      "Saved: ${ dateString }": [
+        "Gemt: ${ dateString }"
       ],
       "Saving draft…": [
         "Gemmer kladde…"
@@ -5465,9 +5480,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angiv ${ MAIL_APP_NAME } som standardprogram til mails for denne browser. ${ MAIL_APP_NAME } vil åbne automatisk, når du klikker på et maillink."
-      ],
-      "Set a recovery phrase": [
-        "Indstil en gendannelsessætning"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
@@ -5678,6 +5690,9 @@
       ],
       "Trackers blocked:": [
         "Trackere blokeret:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Slå fra for kun at søge efter dato, navn, e-mailadresse eller emnelinje. For at deaktivere søgning i beskedindhold og slette downloadede beskeder, skal du gå til indstillinger."
@@ -5948,12 +5963,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your recovery phrase": [
-        "Din gendannelsessætning"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Din gendannelsessætning er en serie af 12 ord i en bestemt rækkefølge."
       ]
     },
     "info": {
@@ -6271,6 +6280,9 @@
       "BCC": [
         "BCC"
       ],
+      "Beta Access": [
+        "Beta-adgang"
+      ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
       ],
@@ -6457,6 +6469,9 @@
       "Last month only": [
         "Kun seneste måned"
       ],
+      "Layout": [
+        "Layout"
+      ],
       "Location": [
         "Placering"
       ],
@@ -6559,9 +6574,6 @@
       "Recipient": [
         "Adressat"
       ],
-      "Recovery phrase": [
-        "Gendannelsessætning"
-      ],
       "Region": [
         "Område"
       ],
@@ -6595,6 +6607,9 @@
       "Street address": [
         "Adresse"
       ],
+      "Sync with system": [
+        "Synkronisér med system"
+      ],
       "Synchronize with system": [
         "Synkroniser med system"
       ],
@@ -6612,6 +6627,9 @@
       ],
       "the email was sent ${ label }": [
         "e-mailen blev sendt ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Så"
@@ -6808,9 +6826,6 @@
       ],
       "More": [
         "Flere"
-      ],
-      "More about recovery": [
-        "Mere om gendannelse"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Åbn i ${ CALENDAR_APP_NAME }"
@@ -8016,6 +8031,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Ændr indstilling"
+      ],
+      "Easily access and customize your app experience.": [
+        "Få nem adgang til og tilpas din app-oplevelse."
+      ],
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
@@ -8025,11 +8046,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Hurtig indstillinger"
+      ],
       "Schedule send": [
         "Planlæg afsendelse"
       ],
       "Search just got smarter and faster": [
         "Søgning er lige blevet smartere og hurtigere"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "E-mails fra spam og papirkurven udelukkes nu automatisk fra Alle e-mails. ${ settingsLink }"
       ],
       "Try it today.": [
         "Prøv det i dag."
@@ -8514,6 +8541,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "All settings": [
+        "Alle indstillinger"
       ],
       "Archive": [
         "Arkivér"

@@ -409,9 +409,6 @@
       "Forward as attachment": [
         "Przekaż jako załącznik"
       ],
-      "Generate recovery phrase": [
-        "Generuj hasło odzyskiwania"
-      ],
       "Get SimpleLogin extension": [
         "Pobierz rozszerzenie SimpleLogin"
       ],
@@ -638,7 +635,7 @@
         "Przenieś wszystko do Archiwum"
       ],
       "Move all to trash": [
-        "Przenieś wszystkie do Kosza"
+        "Przenieś wszystko do Kosza"
       ],
       "move emails to": [
         "przenieś wiadomości do"
@@ -4199,6 +4196,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Zmień ${ strongText } na adres ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Zmienione konta"
+      ],
       "Checklist complete": [
         "Lista kontrolna została zakończona"
       ],
@@ -4207,6 +4207,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Gratulacje zakończenia wszystkich kroków!"
+      ],
+      "Congratulation, you finished!": [
+        "Gratulacje zakończenia!"
       ],
       "Continue setting up your email": [
         "Kontynuuj konfigurowanie poczty"
@@ -4226,9 +4229,6 @@
       "For your eyes only": [
         "Tylko dla Twoich oczu"
       ],
-      "Get mobile app": [
-        "Pobierz aplikację mobilną"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Pobierz aplikację mobilną ${ MAIL_APP_NAME }"
       ],
@@ -4238,23 +4238,11 @@
       "Get the App": [
         "Pobierz aplikację"
       ],
-      "Import contacts or emails": [
-        "Importuj kontakty lub wiadomości"
-      ],
-      "Import data": [
-        "Importuj dane"
-      ],
-      "Import your contacts or messages": [
-        "Importuj kontakty lub wiadomości"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Korzystaj z ${ MAIL_APP_NAME }, aby poznać więcej funkcji ${ BRAND_NAME }, które chronią Twoją prywatność i upraszczają komunikację."
       ],
       "Learn more": [
         "Dowiedz się więcej"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Spraw, aby ${ BRAND_NAME } stał się Twoją skrzynką odbiorczą"
       ],
       "Maybe later": [
         "Może później"
@@ -4280,20 +4268,14 @@
       "Protection from trackers": [
         "Ochrona przed elementami śledzącymi"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Prześlij szybko kontakty lub wiadomości od innego dostawcy za pomocą asystenta importu Easy Switch."
-      ],
-      "Send a message": [
-        "Wyślij wiadomość"
-      ],
-      "Set recovery method": [
-        "Ustaw metodę odzyskiwania"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Ustaw ${ strongText } z Gmaila"
       ],
       "Sign in to the mobile app to complete this step": [
         "Zaloguj się w aplikacji mobilnej, aby ukończyć krok"
+      ],
+      "Storage unlocked": [
+        "Przestrzeń dyskowa została odblokowana"
       ],
       "Update your logins": [
         "Zaktualizuj dane logowania"
@@ -4934,9 +4916,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Hasło odzyskiwania jest jednym z najbezpieczniejszych sposobów ochrony dostępu do konta. Jeśli zapomnisz hasła, możesz go użyć, aby uzyskać dostęp do konta i odzyskać zaszyfrowane dane."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Prośba o anulowanie subskrypcji tej listy mailingowej zostanie wysłana do nadawcy wiadomości i będzie automatycznie przetworzona."
       ],
@@ -5168,6 +5147,9 @@
       "Do you want to re-sign the contact details?": [
         "Czy chcesz ponownie podpisać szczegóły kontaktu?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Nie widzisz tego, czego szukasz? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
@@ -5365,6 +5347,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Dołącz foldery Spam i Kosz do wyników wyszukiwania."
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -5564,9 +5549,6 @@
       "Please fill out this field.": [
         "Wypełnij pole."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tej grupy NIE zostaną usunięte."
       ],
@@ -5620,12 +5602,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Hasło odzyskiwania zostało skopiowane do schowka"
-      ],
-      "Recovery phrase downloaded": [
-        "Hasło odzyskiwania zostało pobrane"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
@@ -5710,9 +5686,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ${ MAIL_APP_NAME } będzie automatycznie otwierać linki wiadomości."
-      ],
-      "Set a recovery phrase": [
-        "Ustaw hasło odzyskiwania"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfiguracja PGP pozwala na wysyłanie wiadomości zaszyfrowanych end-to-end do użytkowników spoza ${ BRAND_NAME }, używających kompatybilnej usługi PGP."
@@ -6220,12 +6193,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your recovery phrase": [
-        "Twoje hasło odzyskiwania"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności."
       ]
     },
     "info": {
@@ -6843,9 +6810,6 @@
       "Recipient": [
         "Odbiorca"
       ],
-      "Recovery phrase": [
-        "Hasło odzyskiwania"
-      ],
       "Region": [
         "Województwo"
       ],
@@ -7098,9 +7062,6 @@
       ],
       "More": [
         "Więcej"
-      ],
-      "More about recovery": [
-        "Więcej na temat odzyskiwania"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Otwórz w ${ CALENDAR_APP_NAME }"
@@ -8357,6 +8318,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Zmień ustawienia"
+      ],
       "Easily access and customize your app experience.": [
         "Łatwy dostęp i personalizacja aplikacji."
       ],
@@ -8377,6 +8341,9 @@
       ],
       "Search just got smarter and faster": [
         "Wyszukiwanie stało się inteligentniejsze i szybsze"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Wiadomości z folderów Spam i Kosz są automatycznie wykluczone z Wszystkie wiadomości. ${ settingsLink }"
       ],
       "Try it today.": [
         "Wypróbuj to."
