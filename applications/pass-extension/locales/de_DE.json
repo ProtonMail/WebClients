@@ -1085,9 +1085,6 @@
       "No history": [
         "Kein Verlauf"
       ],
-      "Not recently used": [
-        "Nicht kürzlich benutzt"
-      ],
       "Note": [
         "Notiz"
       ],
@@ -1096,6 +1093,9 @@
       ],
       "Old-New": [
         "Alt-Neu"
+      ],
+      "Older than last month": [
+        "Älter als letzten Monat"
       ],
       "Oldest to newest": [
         "Älteste nach neueste"
@@ -1313,6 +1313,9 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Gib \"${ vaultName }\" erneut ein, um die Löschung zu bestätigen."
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "In allen Tresoren nach ${ pluralItemType } suchen"
       ],
       "Search in ${ vault.content.name }": [
         "In ${ vault.content.name } suchen"

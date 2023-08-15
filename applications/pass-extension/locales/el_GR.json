@@ -1085,9 +1085,6 @@
       "No history": [
         "Χωρίς ιστορικό"
       ],
-      "Not recently used": [
-        "Όχι πρόσφατα σε χρήση"
-      ],
       "Note": [
         "Σημείωση"
       ],
@@ -1096,6 +1093,9 @@
       ],
       "Old-New": [
         "Παλιό-Νέο"
+      ],
+      "Older than last month": [
+        "Παλαιότερο από τον προηγούμενο μήνα"
       ],
       "Oldest to newest": [
         "Από το παλαιότερο στο νεότερο"
@@ -1313,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Επαναπληκτρολογήστε \"${ vaultName }\" για να επιβεβαιώσετε τη διαγραφή"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Αναζήτηση ${ pluralItemType } στη ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Αναζήτηση ${ pluralItemType } σε όλες τις κρύπτες"
       ],
       "Search in ${ vault.content.name }": [
         "Αναζήτηση σε ${ vault.content.name }"
