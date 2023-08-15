@@ -26,6 +26,7 @@ import {
 } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
 
@@ -117,7 +118,10 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                         };
                     } catch (e) {
                         const { code, status } = getApiError(e);
-                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                        if (
+                            status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY &&
+                            code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST
+                        ) {
                             return {
                                 importType: product,
                                 error: c('Error').t`No emails found to import - the account does not have an inbox`,
@@ -140,7 +144,10 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                         };
                     } catch (e) {
                         const { code, status } = getApiError(e);
-                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                        if (
+                            status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY &&
+                            code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST
+                        ) {
                             return {
                                 importType: product,
                                 error: c('Error').t`No calendars found to import`,
@@ -153,13 +160,12 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
 
                 if (product === ImportType.CONTACTS) {
                     try {
-                        const { Contacts } = await thunkAPI.extra.api<{ Contacts: any }>({
+                        await thunkAPI.extra.api<{ Contacts: any }>({
                             ...getContactsImportData(ImporterID),
                             silence: true,
                         });
                         return {
                             importType: product,
-                            Contacts,
                         };
                     } catch (e) {
                         const { code, status } = getApiError(e);
@@ -170,11 +176,18 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                             return {
                                 importType: product,
                             };
-                        } else if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
-                            return {
-                                importType: product,
-                                error: c('Error').t`No contacts found to import`,
-                            };
+                        } else if (status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                            if (code === IMPORT_ERROR.TOO_LARGE) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`You have reached the contacts limit for your account`,
+                                };
+                            } else if (code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`No contacts found to import`,
+                                };
+                            }
                         } else {
                             throw e;
                         }
@@ -215,8 +228,6 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
             calendars: { error: calendarData?.error, calendars: calendarResponse, initialFields: calendarResponse },
             contacts: {
                 error: contactData?.error,
-                numContact: contactData?.Contacts?.NumContacts ?? NaN,
-                numGroups: contactData?.Contacts?.NumGroups ?? NaN,
             },
         };
     }
