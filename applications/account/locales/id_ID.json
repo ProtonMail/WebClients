@@ -1027,9 +1027,6 @@
       "${ price } per domain": [
         "${ price } per domain"
       ],
-      "${ price } per IP address": [
-        "${ price } per alamat IP"
-      ],
       "${ price } per user": [
         "${ price } per pengguna"
       ]
@@ -2853,12 +2850,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Terima kasih telah memverifikasi email Anda."
-      ],
-      "Thanks for letting us know": [
-        "Terima kasih telah memberi tahu kami"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Kami menemukan bahwa akun ini bukan milik Anda. Kami akan menelusuri dan menindaklanjuti hal ini sesuai dengan ketentuan yang berlaku."
       ],
       "You can safely close this tab.": [
         "Anda kini dapat menutup tab ini."
@@ -5355,9 +5346,6 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Mencegah pengirim pesan untuk dapat mengetahui apakah Anda telah membaca pesan yang bersangkutan atau belum."
       ],
@@ -6530,9 +6518,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Tingkatkan ke akun berbayar untuk mengaktifkan ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
@@ -11029,12 +11014,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Kelola langganan Anda pada ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Langganan dikelola oleh ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Paket langganan milik pengguna dengan user ID-${ userId } dibeli melalui pembelian dalam aplikasi. Untuk mengelola paket langganan ini, pengguna yang bersangkutan harus membuka kolom Langganan pada akun ${ subscriptionManager } mereka."
       ],
       "Subscriptions": [
         "Langganan"

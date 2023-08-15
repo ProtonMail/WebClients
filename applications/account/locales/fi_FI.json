@@ -437,6 +437,12 @@
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
       ],
+      "Get in touch": [
+        "Ota yhteyttä"
+      ],
+      "Get more": [
+        "Hanki lisää"
+      ],
       "Get more addresses": [
         "Hanki lisää osoitteita"
       ],
@@ -460,6 +466,9 @@
       ],
       "Got it": [
         "Selvä"
+      ],
+      "Help": [
+        "Tuki"
       ],
       "Hide": [
         "Piilota"
@@ -523,6 +532,9 @@
       ],
       "Leave": [
         "Poistu"
+      ],
+      "Let's talk": [
+        "Keskustellaan"
       ],
       "Load more": [
         "Lataa lisää"
@@ -589,6 +601,9 @@
       ],
       "Pay": [
         "Maksa"
+      ],
+      "Pay ${ price }": [
+        "Maksa ${ price }"
       ],
       "Pay ${ price } now": [
         "Maksa ${ price } nyt"
@@ -788,6 +803,9 @@
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
+      "Settings": [
+        "Asetukset"
+      ],
       "Share": [
         "Jaa"
       ],
@@ -865,6 +883,9 @@
       ],
       "Switch account": [
         "Vaihda tiliä"
+      ],
+      "Switch or add account": [
+        "Vaihda tai lisää tili"
       ],
       "Top up": [
         "Lisää krediittejä"
@@ -1018,6 +1039,26 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Kieltäydy"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } oma verkkotunnus",
+        "${ domains } omaa verkkotunnusta"
+      ],
+      "${ ips } server": [
+        "${ ips } palvelin",
+        "${ ips } palvelinta"
+      ],
+      "${ price } per domain": [
+        "${ price }/verkkotunnus"
+      ],
+      "${ price } per user": [
+        "${ price } per käyttäjä"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "Address action": {
@@ -1514,6 +1555,9 @@
       ],
       "azureish white": [
         "taivaansininen valkoinen"
+      ],
+      "black": [
+        "musta"
       ],
       "blanched almond": [
         "valkaistu manteli"
@@ -2847,12 +2891,6 @@
       "Thank you for verifying your email address.": [
         "Kiitos sähköpostiosoitteesi vahvistuksesta."
       ],
-      "Thanks for letting us know": [
-        "Kiitos tiedosta"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Olemme huomanneet, että tämä tili ei kuulu sinulle. Tutkimme asiaa ja toimimme sen mukaisesti."
-      ],
       "You can safely close this tab.": [
         "Voit sulkea tämän välilehden turvallisesti."
       ]
@@ -3478,6 +3516,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Salaus epäonnistui"
+      ],
+      "Missing FN property": [
+        "Puuttuva FN-ominaisuus"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0:aa edeltäviä versioita ei tueta"
@@ -5265,6 +5306,9 @@
       "Amount below minimum (${ amount }).": [
         "Summa on vähimmäismäärää pienempi (${ amount })."
       ],
+      "Amount due": [
+        "Verloitettava summa"
+      ],
       "An error occurred while communicating with the extension": [
         "Virhe viestittäessä laajennuksen kanssa"
       ],
@@ -5397,9 +5441,6 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-tapahtumien vahvistus saattaa kestää jonkin aikaa (jopa 24 tuntia). Vahvistuksen jälkeen lisäämme tilillesi krediittejä, joita voit käyttää laskun maksuun."
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Estää lähettäjiä näkemästä, jos ja koska avasit viestin."
       ],
@@ -5499,6 +5540,9 @@
       ],
       "Data locked": [
         "Tiedot on lukittu"
+      ],
+      "Dedicated servers": [
+        "Kohdistetut palvelimet"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
@@ -6025,6 +6069,9 @@
       "Organization keys restored": [
         "Organisaation avaimet palautettiin"
       ],
+      "Organization size": [
+        "Organisaation koko"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
       ],
@@ -6216,6 +6263,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Tallenna salasanasi turvalliseen paikkaan. Paina kuvaketta vahvistaaksesi, että olet kirjoittanut salasanasi oikein."
+      ],
+      "Saving your password": [
+        "Salasanasi tallennus"
       ],
       "Scan QR code instead": [
         "Skannaa sen sijaan QR-koodi"
@@ -6482,6 +6532,9 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Välttääksesi tietojen menetyksen, poista se vain, jos tiedät mitä teet tai olet vienyt kopion."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Tilauksen peruuttamiseksi ota meihin yhteyttä."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
       ],
@@ -6593,9 +6646,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä maksulliseen tiliin."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Lisää tilillesi jakamista helpottava lyhyempi @pm.me-osoite päivittämällä tilauksesi. Se on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
       ],
@@ -6662,6 +6712,9 @@
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
       ],
+      "We generated a strong password for you": [
+        "Loimme sinulle vahvan salasanan"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
       ],
@@ -6683,6 +6736,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
       ],
+      "We'll get back to you shortly.": [
+        "Palaamme asiaan pian."
+      ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
       ],
@@ -6697,6 +6753,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Viikko- ja kuukaisinäkymät koskevat vain työpöytäkäyttöä."
+      ],
+      "Welcome": [
+        "Tervetuloa"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi sähköpostiosoitteeseen."
@@ -6958,6 +7017,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Tilauksesi uusiutuu automaattisesti ${ renewalTime }"
       ]
     },
     "info": {
@@ -8213,6 +8275,9 @@
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
       ],
+      "Why would you like to cancel?": [
+        "Miksi haluat peruuttaa?"
+      ],
       "With attachment": [
         "Liitteillä"
       ],
@@ -8395,6 +8460,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Lisää lahjakoodi"
+      ],
+      "Add gift code": [
         "Lisää lahjakoodi"
       ],
       "Apps and extensions": [
@@ -8897,6 +8965,9 @@
       "Keep my ${ currentPlanName } account": [
         "Säilytä ${ currentPlanName }-tilini"
       ],
+      "Upgrade": [
+        "Päivitä"
+      ],
       "Upgrade now": [
         "Päivitä nyt"
       ]
@@ -9322,6 +9393,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 30-kuukauden tilausjaksolla. Muut tilausvaihtoehdot ovat nähtävissä kassalla."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Kehittynyt verkkoturvallisuus ja pääsynhallinta dedikoitujen turvallisten yhdyskäytävien avulla"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
       ],
@@ -9366,6 +9440,9 @@
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Asettamalla automaattivastauksen, voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on erityisiä turvallisuustarpeita"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Erityinen VPN-ratkaisu, joka tarjoaa turvallisen, rajattoman ja nopean pääsyn Internetiin."
@@ -9681,6 +9758,9 @@
       "An external address cannot be default": [
         "Ulkoinen osoite ei voi olla oletusosoite"
       ],
+      "Invalid code": [
+        "Virheellinen koodi"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Avain sormenjäljellä ${ fp } on poistettu."
       ],
@@ -9895,6 +9975,9 @@
       ],
       "Ask each time": [
         "Kysy aina"
+      ],
+      "Auto": [
+        "Autom."
       ],
       "Automatic (${ defaultDay })": [
         "Automaattinen (${ defaultDay })"
@@ -10412,6 +10495,9 @@
       ],
       "Please select a country": [
         "Valitse maa"
+      ],
+      "Please select the main reason": [
+        "Valitse pääasiallinen syy"
       ],
       "Printer": [
         "Tulostin"
@@ -11098,7 +11184,28 @@
         "Lisää julkisia, ulkoisia tai jaettuja kalentereita."
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Laskutetaan 15 kuukauden välein"
+      ],
+      "Billed every 2 years": [
+        "Laskutetaan 2 vuoden välein"
+      ],
+      "Billed every 30 months": [
+        "Laskutetaan 30 kuukauden välein"
+      ],
+      "Billed monthly": [
+        "Laskutetaan kuukausittain"
+      ],
+      "Billed yearly": [
+        "Laskutetaan vuosittain"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikoitu palvelin",
+        "${ ipAddresses } dedikoitua palvelinta"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } nopea VPN-yhteys",
         "${ maxVpn } nopeaa VPN-yhteyttä"
@@ -11176,12 +11283,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hallinnoi tilaustasi: ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Tilausta hallitsee ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Käyttäjä ID:n ${ userId } tilaus on tehty sovelluksen sisäisenä ostona. Tilauksen hallitsemiseksi, käyttäjän on siirryttävä heidän ${ subscriptionManager }-tilinsä Tilaukset-osioon."
       ],
       "Subscriptions": [
         "Tilaukset"
@@ -11874,6 +11975,9 @@
       "Connect ${ name }": [
         "Yhdistä ${ name }"
       ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
       "Continue with partial import?": [
         "Jatketaanko osittaista tuontia?"
       ],
@@ -12297,6 +12401,9 @@
       "Request new code": [
         "Pyydä uusi koodi"
       ],
+      "Request sent": [
+        "Pyyntö lähetetty"
+      ],
       "Reset organization keys": [
         "Tyhjennä organisaation avaimet"
       ],
@@ -12427,6 +12534,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } käyttäjätili luotiin",
         "${ successfullyCreatedUsers.length } käyttäjätiliä luotiin"
+      ],
+      "Summary": [
+        "Yhteenveto"
       ],
       "Switch to one-password mode": [
         "Vaihda yhden salasanan tilaan"
@@ -12900,6 +13010,20 @@
       ],
       "Replay video": [
         "Toista video uudelleen"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Löysin toisen palvelun, josta pidän enemmän"
+      ],
+      "It’s missing a key feature": [
+        "Siitä puuttuu keskeinen ominaisuus"
+      ],
+      "It’s too expensive": [
+        "Se on liian kallis"
+      ],
+      "Other": [
+        "Muu"
       ]
     },
     "VPN info": {
