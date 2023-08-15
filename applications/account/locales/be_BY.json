@@ -336,7 +336,7 @@
         "Спампаваць"
       ],
       "Download all configurations": [
-        "Спампуйце ўсе канфігурацыі"
+        "Спампаваць усе канфігурацыі"
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
@@ -437,6 +437,12 @@
       "Get a new encrypted email address": [
         "Атрымаць новы зашыфраваны адрас электроннай пошты"
       ],
+      "Get in touch": [
+        "Звязацца з намі"
+      ],
+      "Get more": [
+        "Атрымаць больш"
+      ],
       "Get more addresses": [
         "Атрымаць больш адрасоў"
       ],
@@ -460,6 +466,9 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Help": [
+        "Даведка"
       ],
       "Hide": [
         "Схаваць"
@@ -523,6 +532,9 @@
       ],
       "Leave": [
         "Выйсці"
+      ],
+      "Let's talk": [
+        "Давайце паразмаўляем"
       ],
       "Load more": [
         "Загрузіць больш"
@@ -589,6 +601,9 @@
       ],
       "Pay": [
         "Аплаціць"
+      ],
+      "Pay ${ price }": [
+        "Заплаціць ${ price }"
       ],
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
@@ -788,6 +803,9 @@
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
       ],
+      "Settings": [
+        "Налады"
+      ],
       "Share": [
         "Абагуліць"
       ],
@@ -865,6 +883,9 @@
       ],
       "Switch account": [
         "Змяніць уліковы запіс"
+      ],
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
       ],
       "Top up": [
         "Папоўніць"
@@ -1018,6 +1039,32 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Адхіліць"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ price } per domain": [
+        "${ price } за дамен"
+      ],
+      "${ price } per user": [
+        "${ price } за карыстальніка"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
       ]
     },
     "Address action": {
@@ -1518,6 +1565,9 @@
       ],
       "azureish white": [
         "блакітна-белы"
+      ],
+      "black": [
+        "чорны"
       ],
       "blanched almond": [
         "белы міндаль"
@@ -2861,12 +2911,6 @@
       "Thank you for verifying your email address.": [
         "Дзякуй, што праверылі свой адрас электроннай пошты"
       ],
-      "Thanks for letting us know": [
-        "Дзякуй, што паведамілі нам пра гэта"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Мы заўважылі, што гэты ўліковы запіс не належыць вам. Мы правядзём расследаванне і прымем адпаведныя меры."
-      ],
       "You can safely close this tab.": [
         "Вы можаце бяспечна закрыць гэту ўкладку."
       ]
@@ -3477,7 +3521,7 @@
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Дазволены толькі файлы ў фармаце ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Падчас запампоўвання вашага файла адбылася памылка. Файл не выбраны."
+        "Падчас запампоўвання вашага файла адбылася памылка. Ніводны файл не выбраны."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
@@ -3504,6 +3548,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "Missing FN property": [
+        "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
         "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
@@ -5365,6 +5412,9 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
+      "Amount due": [
+        "Да аплаты"
+      ],
       "An error occurred while communicating with the extension": [
         "Падчас сувязі з пашырэннем адбылася памылка"
       ],
@@ -5497,9 +5547,6 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Трансакцыі Bitcoin могуць заняць некаторы час для пацвярджэння (да 24 гадзін). Адразу пасля пацвярджэння, мы дададзім крэдыты на ваш уліковы запіс. Пасля пацвярджэння трансакцыі, вы зможаце аплаціць гэтымі крэдытамі свой рахунак."
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Не дазваляе адпраўнікам бачыць ці адкрывалі вы паведамленне."
       ],
@@ -5601,6 +5648,12 @@
       ],
       "Data locked": [
         "Даныя заблакіраваны"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
@@ -6133,6 +6186,9 @@
       "Organization keys restored": [
         "Ключы арганізацыі адноўлены"
       ],
+      "Organization size": [
+        "Памер арганізацыі"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
       ],
@@ -6330,6 +6386,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Захавайце ваш пароль у надзейным месцы. Націсніце на значок, каб праверыць правільнасць уводу пароля."
+      ],
+      "Saving your password": [
+        "Захаванне вашага пароля"
       ],
       "Scan QR code instead": [
         "Сканіраваць QR-код"
@@ -6601,14 +6660,23 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
+      "to ${ product } Business": [
+        "у ${ product } Business"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Звяжыцеся з намі, каб скасаваць сваю падпіску"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для пацвярджэння ўвядзіце імя карыстальніка, якое вы хочаце выдаліць."
+      ],
+      "to continue to ${ product }": [
+        "для працягу ў ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "для працягу ў ${ toAppName }"
@@ -6715,9 +6783,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
       ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Перайдзіце на платны ўліковы запіс, каб уключыць ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
       ],
@@ -6784,11 +6849,17 @@
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
+      "We generated a strong password for you": [
+        "Мы згенерыравалі для вас надзейны пароль"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
       ],
       "We need to authenticate your payment with your bank.": [
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рэкамендуем апавяшчаць удзельнікаў арганізацыі і прасіць іх наладзіць 2ФА для сваіх уліковых запісаў перад прымусовым ужываннем гэтай тэхналогіі."
@@ -6805,6 +6876,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
+      ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
       ],
@@ -6819,6 +6893,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
+      ],
+      "Welcome": [
+        "Вітаем"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
@@ -7092,6 +7169,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
       ]
     },
     "info": {
@@ -8148,6 +8228,9 @@
       "Please select files to upload": [
         "Выберыце файлы для запампоўвання"
       ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
       "Port": [
         "Порт"
       ],
@@ -8355,6 +8438,9 @@
       "What is the main reason you are deleting your account?": [
         "Якая асноўная прычына выдалення вашага ўліковага запісу?"
       ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
+      ],
       "With attachment": [
         "З далучэннем"
       ],
@@ -8537,6 +8623,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Дадаць падарункавы код"
+      ],
+      "Add gift code": [
         "Дадаць падарункавы код"
       ],
       "Apps and extensions": [
@@ -9061,6 +9150,9 @@
       "Keep my ${ currentPlanName } account": [
         "Пакінуць мой уліковы запіс ${ currentPlanName }"
       ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ]
@@ -9127,9 +9219,9 @@
       ],
       "${ n } email address": [
         "${ n } адрас электроннай пошты",
-        "${ n } адрасы электроннай пошты/псеўданімы",
-        "${ n } адрасоў электроннай пошты/псеўданімы",
-        "${ n } адрасы электроннай пошты/псеўданімы"
+        "${ n } адрасы электроннай пошты/псеўданімаў",
+        "${ n } адрасоў электроннай пошты/псеўданімаў",
+        "${ n } адрасы электроннай пошты/псеўданімаў"
       ],
       "${ n } email address per user": [
         "${ n } адрас электроннай пошты на карыстальніка",
@@ -9383,6 +9475,12 @@
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краіне",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
+      ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
       ],
@@ -9520,6 +9618,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* З падпіскай на два з паловай гады. Іншыя параметры падпіскі даступны пры афармленні заказу."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Палепшаная бяспека сеткі і кіраванне доступам з вылучанымі шлюзамі"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
@@ -9553,6 +9654,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Бяспечны доступ у інтэрнэт, дзе б вы не знаходзіліся, дзякуючы маніторынгу сеткі"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
       ],
@@ -9564,6 +9668,9 @@
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Задайце аўтаматычныя адказы, каб апавясціць свае кантакты, што вас няма на працы або вы не можаце адказаць."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спецыялізаванае рашэнне VPN, якое дае магчымасць атрымаць бяспечны доступ у інтэрнэт, без абмежаванняў і на высокай хуткасці."
@@ -9885,6 +9992,9 @@
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
+      "Invalid code": [
+        "Памылковы код"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ з адбіткам ${ fp } быў выдалены."
       ],
@@ -10006,6 +10116,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Вітаем у ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Вітаем у ${ VPN_APP_NAME }"
       ]
@@ -10109,6 +10222,9 @@
       ],
       "Ask each time": [
         "Пытацца кожны раз"
+      ],
+      "Auto": [
+        "Аўтаматычна"
       ],
       "Automatic (${ defaultDay })": [
         "Аўтаматычна (${ defaultDay })"
@@ -10632,6 +10748,9 @@
       ],
       "Please select a country": [
         "Выберыце краіну"
+      ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
       ],
       "Printer": [
         "Прынтар"
@@ -11334,7 +11453,30 @@
         "Дадавайце публічныя, знешнія або абагуленыя календары."
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Аплачваецца кожныя 15 месяцаў"
+      ],
+      "Billed every 2 years": [
+        "Аплачваецца кожныя 2 гады"
+      ],
+      "Billed every 30 months": [
+        "Аплачваецца кожныя 30 месяцаў"
+      ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
+      "Billed yearly": [
+        "Аплачваецца штогод"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } вылучаны сервер",
+        "${ ipAddresses } вылучаныя серверы",
+        "${ ipAddresses } вылучаных сервераў",
+        "${ ipAddresses } вылучаных сервераў"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } высакахуткаснае падключэнне па VPN",
         "${ maxVpn } высакахуткасныя падключэнні па VPN",
@@ -11438,12 +11580,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Кіруйце вашай падпіскай у ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Падпіска кіруецца ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Падпіска карыстальніка з ідэнтыфікатарам ${ userId } была здзейснена праз куплю ў праграме. Для таго, каб кіраваць ёй неабходна перайсці ў раздзел з падпіскамі яго ўліковага запісу ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Падпіскі"
@@ -11942,7 +12078,7 @@
         "(актыўная)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Назваць згенерыраваную канфігурацыю"
+        "1. Назавіце згенерыраваную канфігурацыю"
       ],
       "1. Select platform": [
         "1. Выберыце платформу"
@@ -12147,6 +12283,9 @@
       ],
       "Connect ${ name }": [
         "Падключыць ${ name }"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
       ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
@@ -12577,6 +12716,9 @@
       "Request new code": [
         "Запытаць новы код"
       ],
+      "Request sent": [
+        "Запыт адпраўлены"
+      ],
       "Reset organization keys": [
         "Скінуць ключы арганізацыі"
       ],
@@ -12711,6 +12853,9 @@
         "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка",
         "Паспяхова створана ${ successfullyCreatedUsers.length } уліковых запісаў карыстальніка",
         "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка"
+      ],
+      "Summary": [
+        "Зводка"
       ],
       "Switch to one-password mode": [
         "Пераключыцца ў рэжым з адным паролем"
@@ -13190,6 +13335,20 @@
       ],
       "Replay video": [
         "Прайграць відэа"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     },
     "VPN info": {

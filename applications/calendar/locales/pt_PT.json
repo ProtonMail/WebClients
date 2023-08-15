@@ -248,6 +248,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
+      "Settings": [
+        "Definições"
+      ],
       "Share": [
         "Partilhar"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Submeter"
       ],
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
+      ],
       "Today": [
         "Hoje"
       ],
       "Toggle Contact app": [
         "Alternar aplicação de contactos"
+      ],
+      "Toggle settings": [
+        "Alternar as configurações"
       ],
       "Trust": [
         "Confiar"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Personalizada"
+      ],
       "Day": [
         "Dia"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Alterar o intervalo de tempo"
+      ],
       "Change time range to": [
         "Alterar o intervalo de tempo para"
       ]
@@ -2548,6 +2566,9 @@
       "Encryption failed": [
         "Erro ao encriptar"
       ],
+      "Missing FN property": [
+        "A propriedade FN está ausente."
+      ],
       "vCard versions < 3.0 not supported": [
         "Versões do vCard < 3.0 não são suportadas"
       ]
@@ -3475,6 +3496,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualquer um com esta ligação pode ver no seu calendário se está livre ou não. Não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
+      "Are you sure you want to discard your import?": [
+        "Tem certeza de que deseja descartar a importação?"
+      ],
       "Attention required": [
         "Atenção Requerida"
       ],
@@ -3741,6 +3765,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indique um nome e um endereço de e-mail para criar um grupo."
+      ],
       "Please remove the duplicates and try again.": [
         "Remova os duplicados e tente novamente."
       ],
@@ -3876,6 +3903,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Experimente novas funcionalidades, actualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
       ],
       "Update recurring event": [
         "Actualizar o evento recorrente"
@@ -4167,6 +4197,9 @@
       "Bad": [
         "Mau"
       ],
+      "Beta Access": [
+        "Acesso Beta"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -4396,6 +4429,9 @@
       "Postal code": [
         "Código postal"
       ],
+      "Primary": [
+        "Principal"
+      ],
       "Public keys": [
         "Chaves públicas"
       ],
@@ -4411,6 +4447,12 @@
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
+      "Secondary": [
+        "Secundária"
+      ],
+      "Secondary time zone": [
+        "Fuso horário secundário"
+      ],
       "Show week numbers": [
         "Mostrar números de semana"
       ],
@@ -4420,8 +4462,14 @@
       "Street address": [
         "Endereço postal"
       ],
+      "Sync with system": [
+        "Sincronizar com o sistema"
+      ],
       "System information": [
         "Informação do sistema"
+      ],
+      "Theme": [
+        " Tema"
       ],
       "Time zone": [
         "Fuso horário"
@@ -5087,6 +5135,9 @@
       "All events": [
         "Todos os eventos"
       ],
+      "Auto": [
+        "Automático"
+      ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
       ],
@@ -5630,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Adicione o seus feriados públicos do seu país ao seu calendário."
       ],
+      "Easily access and customize your app experience.": [
+        "Aceda e personalize facilmente a sua experiência com a aplicação."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obtenha até ${ credits } em créditos."
       ],
@@ -5638,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "Os feriados públicos estão aqui!"
+      ],
+      "Quick settings": [
+        "Definições rápidas"
       ]
     },
     "Storage": {
@@ -5999,6 +6056,9 @@
       ],
       "Addresses": [
         "Endereços"
+      ],
+      "All settings": [
+        "Todas as definições"
       ],
       "Billing cycle": [
         "Ciclo de faturação"

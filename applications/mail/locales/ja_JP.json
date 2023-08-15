@@ -403,9 +403,6 @@
       "Forward as attachment": [
         "添付ファイルとして送信"
       ],
-      "Generate recovery phrase": [
-        "回復フレーズを生成"
-      ],
       "Get SimpleLogin extension": [
         "SimpleLogin 拡張機能を入手"
       ],
@@ -3487,6 +3484,9 @@
       "Encryption failed": [
         "暗号化に失敗しました"
       ],
+      "Missing FN property": [
+        "FN プロパティが見つかりません"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard バージョン 3.0 未満はサポートされていません"
       ]
@@ -4118,9 +4118,6 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強力な暗号化により、あなたと意図した宛先の受信者のみがメールを閲覧できます。"
       ],
-      "Get mobile app": [
-        "モバイルアプリを入手する"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
       ],
@@ -4130,23 +4127,11 @@
       "Get the App": [
         "アプリを入手する"
       ],
-      "Import contacts or emails": [
-        "連絡先とメールをインポート"
-      ],
-      "Import data": [
-        "データのインポート"
-      ],
-      "Import your contacts or messages": [
-        "連絡先またはメッセージをインポート"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "${ MAIL_APP_NAME } を引き続き使用して、${ BRAND_NAME } がプライバシーを保護しメールの送受信をより簡単にする方法をさらに見つけてください。"
       ],
       "Learn more": [
         "より詳しく"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "${ BRAND_NAME } を頼りになる受信箱にしましょう"
       ],
       "Maybe later": [
         "後で行う"
@@ -4168,15 +4153,6 @@
       ],
       "Protection from trackers": [
         "トラッカーからの保護"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Easy Switch インポートアシスタントを使用すると簡単に連絡先やメールを転送することができます。"
-      ],
-      "Send a message": [
-        "メッセージを送信する"
-      ],
-      "Set recovery method": [
-        "回復手段を設定"
       ],
       "Set up ${ strongText } from Gmail": [
         "Gmail から ${ strongText } を設定する"
@@ -4678,9 +4654,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "回復用フレーズはアカウントへのアクセスを保護するための手段のうちの 1 つです。回復用フレーズを使用すると、パスワードを忘れた場合でもアカウントにアクセスしたり暗号化されたデータを復元したりすることができます。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
@@ -5255,9 +5228,6 @@
       "Please fill out this field.": [
         "このフィールドに入力してください。"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
       ],
@@ -5305,12 +5275,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
-      ],
-      "Recovery phrase copied to clipboard": [
-        "回復フレーズはクリップボードへコピーされました"
-      ],
-      "Recovery phrase downloaded": [
-        "回復用フレーズをダウンロードしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
@@ -5392,9 +5356,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
-      ],
-      "Set a recovery phrase": [
-        "回復フレーズを設定"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
@@ -5860,12 +5821,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your recovery phrase": [
-        "回復フレーズ"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "回復用フレーズは 12 語の単語を順番に並べて構成されたものです。"
       ]
     },
     "info": {
@@ -6468,9 +6423,6 @@
       "Recipient": [
         "宛先"
       ],
-      "Recovery phrase": [
-        "回復フレーズ"
-      ],
       "Region": [
         "都道府県"
       ],
@@ -6717,9 +6669,6 @@
       ],
       "More": [
         "さらに"
-      ],
-      "More about recovery": [
-        "回復について"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } で開く"

@@ -248,6 +248,9 @@
       "Got it": [
         "D'acord"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Share": [
         "Compartir"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Envia"
       ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ],
       "Today": [
         "Avui"
       ],
       "Toggle Contact app": [
         "Canvia a l'aplicació Contactes"
+      ],
+      "Toggle settings": [
+        "Commuta les preferències"
       ],
       "Trust": [
         "De confiança"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Personalitzat"
+      ],
       "Day": [
         "Dia"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Canvieu l'interval de temps"
+      ],
       "Change time range to": [
         "Canvieu a la vista de"
       ]
@@ -2354,7 +2372,7 @@
         "La contrasenya és obligatòria"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Please create an address first.": [
         "Creeu una adreça primer."
@@ -2455,7 +2473,7 @@
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -4173,6 +4191,9 @@
       "Bad": [
         "Dolenta"
       ],
+      "Beta Access": [
+        "Accés beta"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -4402,6 +4423,9 @@
       "Postal code": [
         "Codi postal"
       ],
+      "Primary": [
+        "Principal"
+      ],
       "Public keys": [
         "Claus públiques"
       ],
@@ -4417,6 +4441,12 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Secondary": [
+        "Secondari"
+      ],
+      "Secondary time zone": [
+        "Fus horari secundari"
+      ],
       "Show week numbers": [
         "Mostra el número de setmana"
       ],
@@ -4426,8 +4456,14 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Sync with system": [
+        "Sincronitza amb el sistema"
+      ],
       "System information": [
         "Informació del sistema"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Time zone": [
         "Zona horària"
@@ -5093,6 +5129,9 @@
       "All events": [
         "Tots els esdeveniments"
       ],
+      "Auto": [
+        "Automàtic"
+      ],
       "Automatic (${ defaultDay })": [
         "Automàtic (${ defaultDay })"
       ],
@@ -5644,6 +5683,9 @@
       ],
       "Public holidays are here!": [
         "Els dies festius són aquí!"
+      ],
+      "Quick settings": [
+        "Preferències ràpides"
       ]
     },
     "Storage": {
@@ -6005,6 +6047,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "All settings": [
+        "Totes les preferències"
       ],
       "Billing cycle": [
         "Cicle de facturació"

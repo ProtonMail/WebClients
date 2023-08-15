@@ -248,6 +248,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Help": [
+        "Hulp"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Settings": [
+        "Instellingen"
+      ],
       "Share": [
         "Delen"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Versturen"
       ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
+      ],
       "Today": [
         "Vandaag"
       ],
       "Toggle Contact app": [
         "Contact app kiezen"
+      ],
+      "Toggle settings": [
+        "Instellingen openen/sluiten"
       ],
       "Trust": [
         "Vertrouwen"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Aangepast"
+      ],
       "Day": [
         "Dag"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Wijzig tijdsbereik"
+      ],
       "Change time range to": [
         "Wijzig tijdsbereik naar"
       ]
@@ -2422,7 +2440,7 @@
         "Starttijd dient voor de begintijd te liggen"
       ],
       "status page": [
-        "status pagina"
+        "statuspagina"
       ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
@@ -2547,6 +2565,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "Missing FN property": [
+        "Missende FN-eigenschap"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versies < 3.0 niet ondersteund"
@@ -3745,7 +3766,7 @@
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Voorzie een naam en een email adres voor het aanmaken van een groep"
+        "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
       ],
       "Please remove the duplicates and try again.": [
         "Verwijder de duplicaten en probeer het opnieuw."
@@ -3882,6 +3903,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
       "Update recurring event": [
         "Terugkerende afspraak updaten"
@@ -4173,6 +4197,9 @@
       "Bad": [
         "Slecht"
       ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -4402,6 +4429,9 @@
       "Postal code": [
         "Postcode"
       ],
+      "Primary": [
+        "Primair"
+      ],
       "Public keys": [
         "Openbare sleutels"
       ],
@@ -4417,6 +4447,12 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Secondary": [
+        "Secundair"
+      ],
+      "Secondary time zone": [
+        "Secundaire tijdzone"
+      ],
       "Show week numbers": [
         "Weeknummers weergeven"
       ],
@@ -4426,8 +4462,14 @@
       "Street address": [
         "Adres"
       ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "Theme": [
+        "Thema"
       ],
       "Time zone": [
         "Tijdzone"
@@ -5093,6 +5135,9 @@
       "All events": [
         "Alle afspraken"
       ],
+      "Auto": [
+        "Automatisch"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatisch (${ defaultDay })"
       ],
@@ -5636,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
       ],
+      "Easily access and customize your app experience.": [
+        "Gemakkelijk toegang tot en aanpassing van uw applicatie-ervaring."
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -5644,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "Wettelijke feestdagen zijn hier!"
+      ],
+      "Quick settings": [
+        "Snelle instellingen"
       ]
     },
     "Storage": {
@@ -6005,6 +6056,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "All settings": [
+        "Alle instellingen"
       ],
       "Billing cycle": [
         "Factuurperiode"

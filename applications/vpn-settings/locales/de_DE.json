@@ -179,6 +179,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "Help": [
+        "Hilfe"
+      ],
       "Hide": [
         "Ausblenden"
       ],
@@ -305,6 +308,9 @@
       "Set new password": [
         "Neues Passwort festlegen"
       ],
+      "Settings": [
+        "Einstellungen"
+      ],
       "Share via link": [
         "Als Link teilen"
       ],
@@ -337,6 +343,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Switch or add account": [
+        "Konto wechseln oder hinzufügen"
       ],
       "Top up": [
         "Aufladen"
@@ -425,11 +434,11 @@
         "${ ips } Server",
         "${ ips } Server"
       ],
+      "${ price } per dedicated server": [
+        "${ price } pro dediziertem Server"
+      ],
       "${ price } per domain": [
         "${ price } pro Domain"
-      ],
-      "${ price } per IP address": [
-        "${ price } pro IP-Adresse"
       ],
       "${ price } per user": [
         "${ price } pro Benutzer"
@@ -2190,6 +2199,9 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Awaiting transaction": [
+        "Warte auf Transaktion"
+      ],
       "Balance from your previous subscription": [
         "Guthaben von deinem vorherigen Abonnement"
       ],
@@ -2219,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Die Bestätigung von Bitcoin-Transaktionen kann einige Zeit in Anspruch nehmen (bis zu 24 Stunden). Sobald die Bestätigung eingegangen ist, werden wir das Guthaben deinem Konto gutschreiben. Nach der Transaktionsbestätigung kannst du deine Rechnung mit dem Guthaben begleichen."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
@@ -2255,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
-      ],
-      "Dedicated IP addresses ": [
-        "Dedizierte IP-Adressen "
       ],
       "Dedicated servers": [
         "Dezidierte Server"
@@ -2469,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Anzahl der dedizierten IP-Adressen in der Organisation"
-      ],
-      "Number of IP addresses": [
-        "Anzahl der IP-Adressen"
+      "Number of dedicated servers in the organization": [
+        "Anzahl der dedizierten Server in der Organisation"
       ],
       "Number of users": [
         "Anzahl der Benutzer"
@@ -4086,7 +4089,7 @@
         "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxMustermann@${ domain } für Einkaufskonten."
+        "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -4277,8 +4280,8 @@
       "Dedicated Account manager": [
         "Dedizierter Kundenbetreuer"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Dedizierte Serverstandorte in mehr als ${ n } Ländern"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
       ],
       "Dedicated server locations in North America and Europe": [
         "Dedizierte Serverstandorte in Nordamerika und Europa"
@@ -4879,12 +4882,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Verwalte dein Abonnement mittels ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Abonnement wird verwaltet von ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Das Abonnement von Benutzer-ID ${ userId } wurde durch einen In-App-Kauf erworben. Um das Abonnement anzupassen, muss der Benutzer zum Abonnementbereich seines ${ subscriptionManager }-Kontos gehen."
-      ],
       "Subscriptions": [
         "Abonnements"
       ],
@@ -5139,7 +5136,7 @@
     },
     "Title": {
       "${ appName } Free": [
-        "${ appName } Gratis"
+        "${ appName } Free"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } Geräte"

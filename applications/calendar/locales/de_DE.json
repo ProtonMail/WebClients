@@ -248,6 +248,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "Help": [
+        "Hilfe"
+      ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
       ],
+      "Settings": [
+        "Einstellungen"
+      ],
       "Share": [
         "Teilen"
       ],
@@ -514,6 +520,9 @@
       ],
       "Submit": [
         "Senden"
+      ],
+      "Switch or add account": [
+        "Konto wechseln oder hinzufügen"
       ],
       "Today": [
         "Heute"
@@ -953,6 +962,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
       "Day": [
         "Tag"
       ],
@@ -964,6 +976,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Zeitspanne ändern"
+      ],
       "Change time range to": [
         "Zeitspanne ändern zu"
       ]
@@ -2548,6 +2563,9 @@
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
       ],
+      "Missing FN property": [
+        "FN-Eigenschaft fehlt"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard-Versionen < 3.0 werden nicht unterstützt"
       ]
@@ -3883,6 +3901,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
+      ],
       "Update recurring event": [
         "Wiederkehrenden Termin aktualisieren"
       ],
@@ -4173,6 +4194,9 @@
       "Bad": [
         "Schlecht"
       ],
+      "Beta Access": [
+        "Beta-Zugang"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -4402,6 +4426,9 @@
       "Postal code": [
         "Postleitzahl"
       ],
+      "Primary": [
+        "Primäre"
+      ],
       "Public keys": [
         "Öffentliche Schlüssel"
       ],
@@ -4417,6 +4444,12 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Secondary": [
+        "Sekundäre"
+      ],
+      "Secondary time zone": [
+        "Sekundäre Zeitzone"
+      ],
       "Show week numbers": [
         "Kalenderwochen anzeigen"
       ],
@@ -4426,8 +4459,14 @@
       "Street address": [
         "Straße und Hausnummer"
       ],
+      "Sync with system": [
+        "Mit dem System synchronisieren"
+      ],
       "System information": [
         "Systeminformationen"
+      ],
+      "Theme": [
+        "Farbschema"
       ],
       "Time zone": [
         "Zeitzone"
@@ -5093,6 +5132,9 @@
       "All events": [
         "Alle Termine"
       ],
+      "Auto": [
+        "Automatisch"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatisch (${ defaultDay })"
       ],
@@ -5644,6 +5686,9 @@
       ],
       "Public holidays are here!": [
         "Die Feiertage sind da!"
+      ],
+      "Quick settings": [
+        "Schnelleinstellungen"
       ]
     },
     "Storage": {
@@ -6005,6 +6050,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "All settings": [
+        "Alle Einstellungen"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"

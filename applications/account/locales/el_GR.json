@@ -383,6 +383,9 @@
       "Emoji": [
         "Εικονίδια"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Ενεργοποίηση ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -466,6 +469,9 @@
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Help": [
+        "Βοήθεια"
       ],
       "Hide": [
         "Απόκρυψη"
@@ -800,6 +806,9 @@
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Share": [
         "Κοινοποίηση"
       ],
@@ -877,6 +886,9 @@
       ],
       "Switch account": [
         "Εναλλαγή λογαριασμού"
+      ],
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
       ],
       "Top up": [
         "Προσθήκη ποσού"
@@ -1041,11 +1053,11 @@
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
       ],
+      "${ price } per dedicated server": [
+        "${ price } ανά αποκλειστικό διακομιστή"
+      ],
       "${ price } per domain": [
         "${ price } ανά τομέα"
-      ],
-      "${ price } per IP address": [
-        "${ price } ανά διεύθυνση IP"
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
@@ -1560,6 +1572,9 @@
       ],
       "azureish white": [
         "λευκό γαλαζωπό"
+      ],
+      "black": [
+        "μαύρο"
       ],
       "blanched almond": [
         "αμυγδαλόψυχα"
@@ -2750,6 +2765,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Συγχαρητήρια! Κερδίσατε το μέγιστο των ${ rewardsLimit } δωρεάν μηνών ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ενεργοποιήστε τα αρχεία καταγραφής για προχωρημένους και το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
+      "Enable advanced logs to access these features": [
+        "Ενεργοποίηση αρχείων καταγραφής για προχωρημένους για πρόσβαση σε αυτές τις δυνατότητες"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
@@ -2800,6 +2824,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Έχουμε εντοπίσει τα ακόλουθα πεδία στο αρχείο CSV που μεταφορτώσατε. Επιλέξτε αυτά που θέλετε να εισάγετε."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Πίσω στη ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "Δεν δημιουργήσατε λογαριασμό;"
+      ],
+      "I didn't create this account": [
+        "Δε δημιούργησα αυτόν τον λογαριασμό"
+      ],
+      "sign in": [
+        "σύνδεση"
+      ],
+      "Thanks for letting us know": [
+        "Σας ευχαριστούμε που μας ενημερώσατε"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Αυτό συνήθως δεν είναι τίποτα ανησυχητικό. Απλώς κάντε κλικ παρακάτω για να επιβεβαιώσετε ότι αυτός ο λογαριασμός ${ BRAND_NAME } δεν είναι δικός σας και θα τον απενεργοποιήσουμε."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Σημειώσαμε ότι αυτός ο λογαριασμός δεν ανήκει σε εσάς. Θα διερευνήσουμε και θα ενεργήσουμε αναλόγως."
+      ],
+      "You can safely close this tab.": [
+        "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
       ]
     },
     "Domain label": {
@@ -2892,12 +2942,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Ευχαριστούμε που επαληθεύσατε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
-      ],
-      "Thanks for letting us know": [
-        "Σας ευχαριστούμε που μας ενημερώσατε"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Σημειώσαμε ότι αυτός ο λογαριασμός δεν ανήκει σε εσάς. Θα διερευνήσουμε και θα ενεργήσουμε αναλόγως."
       ],
       "You can safely close this tab.": [
         "Μπορείτε να κλείσετε με ασφάλεια αυτήν την καρτέλα."
@@ -3525,6 +3569,9 @@
       "Encryption failed": [
         "Η κρυπτογράφηση απέτυχε"
       ],
+      "Missing FN property": [
+        "Λείπει η ιδιότητα FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "οι εκδόσεις vCard < 3.0 δεν υποστηρίζονται"
       ]
@@ -3688,6 +3735,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Παρουσιάστηκε πρόβλημα κατά την απενεργοποίηση του λογαριασμού σας."
       ]
     },
     "Error message, recovery": {
@@ -4573,6 +4625,9 @@
       "Label": [
         "Ετικέτα"
       ],
+      "Location": [
+        "Τοποθεσία"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -5395,6 +5450,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Διαθέσιμο σε macOS, Windows και Linux."
       ],
+      "Awaiting transaction": [
+        "Εν αναμονή συναλλαγής"
+      ],
       "Background color": [
         "Χρώμα φόντου"
       ],
@@ -5445,9 +5503,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Οι συναλλαγές σε Bitcoin χρειάζονται ένα διάστημα για να επιβεβαιωθούν (μέχρι 24 ώρες). Με την επιβεβαίωση, θα πιστώσουμε μονάδες στον λογαριασμό σας. Μετά την επιβεβαίωση της συναλλαγής, μπορείτε να αποπληρώσετε το τιμολόγιό σας με τις πιστωτικές μονάδες."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Αποκλείει στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
@@ -5548,9 +5603,6 @@
       ],
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
-      ],
-      "Dedicated IP addresses ": [
-        "Αποκλειστικές διευθύνσεις IP "
       ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
@@ -6047,14 +6099,14 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Δεν είναι ακόμα διαθέσιμο στην εφαρμογή μας για κινητά Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Αριθμός αποκλειστικών διευθύνσεων IP στον οργανισμό"
-      ],
-      "Number of IP addresses": [
-        "Αριθμός διευθύνσεων IP"
+      "Number of dedicated servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
       "Number of users": [
         "Αριθμός χρηστών"
@@ -6674,9 +6726,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Κάντε αναβάθμιση σε λογαριασμό επί πληρωμή για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\"."
@@ -7847,6 +7896,9 @@
       ],
       "Event notifications": [
         "Ειδοποιήσεις συμβάντος"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "Εξαίρεση Ανεπιθύμητης αλληλογραφίας/Κάδου απορριμμάτων από Όλα τα Μηνύματα"
       ],
       "Expiration (${ patternExpiration })": [
         "Λήξη (${ patternExpiration })"
@@ -9831,8 +9883,8 @@
       "Dedicated Account manager": [
         "Αποκλειστικός διαχειριστής Λογαριασμού"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Αποκλειστικές τοποθεσίες διακομιστών σε ${ n }+ χώρες"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
       ],
       "Dedicated server locations in North America and Europe": [
         "Αποκλειστικές τοποθεσίες διακομιστών στη Βόρεια Αμερική και την Ευρώπη"
@@ -10083,6 +10135,9 @@
       ],
       "Ask each time": [
         "Ερώτηση κάθε φορά"
+      ],
+      "Auto": [
+        "Αυτόματο"
       ],
       "Automatic (${ defaultDay })": [
         "Αυτόματο (${ defaultDay })"
@@ -11394,12 +11449,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Διαχείριση της συνδρομής σας στο ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Η διαχείριση της συνδρομής γίνεται με το ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Η εγγραφή του χρήστη ID-${ userId } έχει γίνει μέσω αγοράς εντός εφαρμογής. Για να διαχειριστεί τη συνδρομή, ο χρήστης πρέπει να μεταβεί στην ενότητα Συνδρομή του λογαριασμού του ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Συνδρομές"
       ],
@@ -11875,9 +11924,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Δωρεάν"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Συντομεύσεις Πληκτρολογίου ${ MAIL_APP_NAME }"
       ],
@@ -12888,6 +12934,12 @@
       "Account is disconnected": [
         "Ο λογαριασμός είναι αποσυνδεδεμένος"
       ],
+      "An approximate location of the IP address": [
+        "Μια κατά προσέγγιση τοποθεσία της διεύθυνσης IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Οποιαδήποτε προστασία εφαρμόζεται σε ύποπτη δραστηριότητα"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
@@ -12899,6 +12951,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Αυτή η ενεργοποίηση δίνει ημερομηνία αυτόματης εξάλειψης στα μηνύματα που βρίσκονται ήδη στα Διαγραμμένα/Ενοχλητικά βάσει της ημερομηνίας μετακίνησής τους εκεί."
+      ],
+      "Device information such as operating system": [
+        "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"
       ],
       "Each imported email will have this label": [
         "Κάθε εισαγόμενο μήνυμα ηλεκτρονικού ταχυδρομείου θα έχει αυτήν την ετικέτα"
@@ -12956,6 +13011,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Ο πάροχος υπηρεσιών διαδικτύου της διεύθυνσης IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"

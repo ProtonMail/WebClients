@@ -321,6 +321,9 @@
       "Grid layout": [
         "Disposition en grille"
       ],
+      "Help": [
+        "Aide"
+      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
@@ -555,6 +558,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Settings": [
+        "Paramètres"
+      ],
       "Share file": [
         "Partager un fichier"
       ],
@@ -618,11 +624,17 @@
       "Submit report": [
         "Envoyer le rapport"
       ],
+      "Switch or add account": [
+        "Basculer vers ou ajouter un compte"
+      ],
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
       ],
       "Toggle Contact app": [
         "Basculer vers l'application Contacts"
+      ],
+      "Toggle settings": [
+        "Afficher ou masquer les paramètres"
       ],
       "Trust": [
         "Faire confiance"
@@ -2232,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
+      ],
+      "Missing FN property": [
+        "Les propriétés FN sont manquantes."
       ],
       "vCard versions < 3.0 not supported": [
         "Versions de vCard < 3.0 non prises en charge"
@@ -3945,6 +3960,9 @@
       "Trash": [
         "Corbeille"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Testez les nouveaux produits, mises à jour, et fonctionnalités de ${ BRAND_NAME } avant leur sortie publique. Ceci rechargera l'application."
+      ],
       "Try searching by file name, date, or type.": [
         "Essayez une recherche par nom, date ou type de fichier."
       ],
@@ -4230,6 +4248,9 @@
       ],
       "Bad": [
         "Mauvaise"
+      ],
+      "Beta Access": [
+        "Accès à la version bêta"
       ],
       "Browser": [
         "Navigateur"
@@ -4559,11 +4580,17 @@
       "Street address": [
         "Adresse postale"
       ],
+      "Sync with system": [
+        "Synchroniser avec le système"
+      ],
       "System information": [
         "Informations système"
       ],
       "Text": [
         "Texte"
+      ],
+      "Theme": [
+        "Thème"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
@@ -5532,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Accédez facilement à votre application et personnalisez-la."
+      ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
       ],
@@ -5543,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Vous pouvez maintenant facilement rechercher des fichiers Drive tout en gardant vos données en sécurité."
+      ],
+      "Quick settings": [
+        "Paramètres rapides"
       ]
     },
     "Storage": {
@@ -5808,6 +5841,9 @@
       ],
       "All": [
         "Tous"
+      ],
+      "All settings": [
+        "Tous les paramètres"
       ],
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"

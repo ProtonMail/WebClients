@@ -1085,9 +1085,6 @@
       "No history": [
         "Ingen historik"
       ],
-      "Not recently used": [
-        "Inte använd nyligen"
-      ],
       "Note": [
         "Anteckning"
       ],
@@ -1096,6 +1093,9 @@
       ],
       "Old-New": [
         "Gammalt-nytt"
+      ],
+      "Older than last month": [
+        "Äldre än förra månaden"
       ],
       "Oldest to newest": [
         "Äldsta till nyaste"
@@ -1313,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Skriv ”${ vaultName }” igen för att bekräfta borttagning"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Sök ${ pluralItemType } i ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Sök ${ pluralItemType } i alla valv"
       ],
       "Search in ${ vault.content.name }": [
         "Sök i ${ vault.content.name }"

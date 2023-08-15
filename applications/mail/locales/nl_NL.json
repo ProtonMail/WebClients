@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Doorsturen als bijlage"
       ],
-      "Generate recovery phrase": [
-        "Genereer herstelzin"
-      ],
       "Get SimpleLogin extension": [
         "Verkrijg SimpleLogin extensies"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Begrepen"
+      ],
+      "Help": [
+        "Hulp"
       ],
       "Hide": [
         "Verbergen"
@@ -895,6 +895,9 @@
       "Set": [
         "Instellen"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Stel ${ MAIL_APP_NAME } in als standaard e-mail applicatie"
+      ],
       "Set as default": [
         "Als standaard instellen"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
+      ],
+      "Settings": [
+        "Instellingen"
       ],
       "Share via link": [
         "Deel via link"
@@ -982,6 +988,9 @@
       "Submit": [
         "Versturen"
       ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
+      ],
       "This message contains embedded images.": [
         "Dit bericht bevat ingebedde afbeeldingen."
       ],
@@ -996,6 +1005,9 @@
       ],
       "Toggle Contact app": [
         "Contact app kiezen"
+      ],
+      "Toggle settings": [
+        "Instellingen openen/sluiten"
       ],
       "Tomorrow": [
         "Morgen"
@@ -1638,6 +1650,9 @@
       ],
       "azureish white": [
         "azuurwit"
+      ],
+      "black": [
+        "zwart"
       ],
       "blanched almond": [
         "geblancheerde amandel"
@@ -2889,7 +2904,7 @@
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen je locatie en online activiteit kunnen volgen."
+        "Schakel e-mail tracker beveiliging in om te voorkomen dat adverteerders en anderen uw locatie en online activiteit kunnen volgen."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
@@ -3335,7 +3350,7 @@
         "Sorry, ${ BRAND_NAME } kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
       ],
       "status page": [
-        "status pagina"
+        "statuspagina"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
@@ -3510,6 +3525,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "Missing FN property": [
+        "Missende FN-eigenschap"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versies < 3.0 niet ondersteund"
@@ -4118,10 +4136,13 @@
         "Blokkeer ongewenste afzenders"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
-        "Hulde voor het meer veiliger, handiger en relevanter maken van je e-mail! We hebben je gratis opslag verhoogd naar 1 GB."
+        "Hulde voor het meer veiliger, handiger en relevanter maken van uw e-mails! We hebben uw opslag gratis verhoogd naar 1 GB."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Wijzig ${ strongText } in uw adres ${ BRAND_NAME }"
+      ],
+      "Changed accounts": [
+        "Van account gewisseld"
       ],
       "Checklist complete": [
         "Controlelijst voltooid"
@@ -4130,7 +4151,10 @@
         "Sluiten"
       ],
       "Congratulation, you completed all the steps!": [
-        "Gefeliciteerd, je hebt alle stappen voltooid!"
+        "Gefeliciteerd, u hebt alle stappen voltooid!"
+      ],
+      "Congratulation, you finished!": [
+        "Gefeliciteerd, u bent klaar!"
       ],
       "Continue setting up your email": [
         "Ga door met het instellen van uw e-mail"
@@ -4142,16 +4166,13 @@
         "Ontdek privacyfuncties"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
-        "Verdubbel je gratis opslag naar 1 GB wanneer je het volgende hebt voltooid:"
+        "Verdubbel uw gratis opslag naar 1 GB wanneer u het volgende hebt voltooid:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken."
       ],
       "For your eyes only": [
-        "Alleen voor jouw ogen"
-      ],
-      "Get mobile app": [
-        "Download de mobiele app"
+        "Alleen voor uw ogen"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
@@ -4162,32 +4183,23 @@
       "Get the App": [
         "Download de app"
       ],
-      "Import contacts or emails": [
-        "Contacten of e-mails importeren"
-      ],
-      "Import data": [
-        "Importeer gegevens"
-      ],
-      "Import your contacts or messages": [
-        "Importeer uw contacten of berichten"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } je privacy beschermd en e-mail vereenvoudigd."
+        "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } u privacy beschermd en e-mail vereenvoudigd."
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Maak ${ BRAND_NAME } je go-to inbox"
       ],
       "Maybe later": [
         "Misschien later"
       ],
       "Nice! You've updated all services in this category.": [
-        "Mooi! Je hebt alle diensten in deze categorie bijgewerkt."
+        "Mooi! U hebt alle diensten in deze categorie bijgewerkt."
       ],
       "Open checklist": [
         "Checklist openen"
+      ],
+      "Open checklist and get free storage": [
+        "Open de checklist en krijg gratis opslagruimte"
       ],
       "Popular online services": [
         "Populaire online diensten"
@@ -4196,19 +4208,10 @@
         "privacy-functies"
       ],
       "Protect and simplify your email": [
-        "Bescherm en vereenvoudig je e-mail"
+        "Bescherm en vereenvoudig uw e-mails"
       ],
       "Protection from trackers": [
         "Bescherming van trackers"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Breng snel uw contacten of e-mails over van eender welke provider met onze Easy Switch importassistent."
-      ],
-      "Send a message": [
-        "Verstuur een bericht"
-      ],
-      "Set recovery method": [
-        "Herstelmethode instellen"
       ],
       "Set up ${ strongText } from Gmail": [
         "Stel ${ strongText } in vanuit Gmail"
@@ -4216,17 +4219,20 @@
       "Sign in to the mobile app to complete this step": [
         "Log in op de mobiele app om deze stap te voltooien"
       ],
+      "Storage unlocked": [
+        "Opslag ontgrendeld"
+      ],
       "Update your logins": [
         "Werk uw aanmeldingen bij"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Met gebruik van je mobiele apparaat scan je deze QR-code of bezoek je de iOS of Android winkel."
+        "Met gebruik van uw mobiele apparaat scant u deze QR-code of bezoekt u de iOS of Android Store."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "We stoppen adverteerders en gegevens verzamelaars om een profiel van je te maken."
+        "We stoppen adverteerders en gegevens verzamelaars om een profiel van u te maken."
       ],
       "You've unlocked 1 GB": [
-        "Je hebt nu de beschikking over 1 GB"
+        "U hebt 1 GB ontgrendeld"
       ]
     },
     "Gmail forwarding": {
@@ -4646,8 +4652,8 @@
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
-        "${ numberOfImageTrackers } email tracker geblokkeerd",
-        "${ numberOfImageTrackers } email trackers geblokkeerd"
+        "${ numberOfImageTrackers } e-mail tracker geblokkeerd",
+        "${ numberOfImageTrackers } e-mail trackers geblokkeerd"
       ],
       "${ numberOfImageTrackers } tracker blocked": [
         "${ numberOfImageTrackers } tracker geblokkeerd",
@@ -4760,9 +4766,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Een verzoek om u uit te schrijven voor deze mailinglijst wordt verzonden naar de afzender van de nieuwsbrief en wordt automatisch verwerkt."
@@ -4981,6 +4984,9 @@
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Vindt u niet wat u zoekt? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
@@ -5165,6 +5171,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Neem Spam/Ongewenst op in uw zoekresultaten."
+      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -5336,6 +5345,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "Open shortcut cheat sheet": [
+        "Open de shortcut voor cheat sheet"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
@@ -5360,9 +5372,6 @@
       "Please fill out this field.": [
         "Gelieve dit veld in te vullen."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
       ],
@@ -5370,7 +5379,7 @@
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Voorzie een naam en een email adres voor het aanmaken van een groep"
+        "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
@@ -5414,12 +5423,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Herstelzin gekopieerd naar klembord"
-      ],
-      "Recovery phrase downloaded": [
-        "Herstelzin gedownload"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
@@ -5504,9 +5507,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
-      ],
-      "Set a recovery phrase": [
-        "Stel een herstelzin in"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
@@ -5718,6 +5718,9 @@
       "Trackers blocked:": [
         "Trackers geblokkeerd:"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Uitschakelen om enkel te zoeken op datum, naam, e-mailadres of onderwerp. Om zoeken in berichten inhoud en het verwijderen van gedownloade berichten uit te schakelen, ga je naar instellingen."
       ],
@@ -5800,13 +5803,13 @@
         "Onze excuses. Dit zou een vergissing van onze kant kunnen zijn. Kunt u bevestigen dat u deze e-mail als een legitiem e-mailadres wilt markeren?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "We hebben de volgende adverteerders en organisaties geblokkeerd zodat ze niet kunnen zien dat je deze email hebt geopend, welk apparaat je gebruikt, en waar je bent."
+        "We hebben de volgende adverteerders en organisaties geblokkeerd zodat ze niet kunnen zien dat u deze e-mail hebt geopend, welk apparaat u gebruikt, en waar u bent."
       ],
       "We could not verify the sender's trusted keys.": [
         "We kunnen de vertrouwde sleutels van de afzender niet controleren."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "We hebben traceer informatie verwijderd van de volgende links om je te helpen beschermen van adverteerders en anderen die proberen om je online activiteit te volgen."
+        "We hebben traceer informatie verwijderd van de volgende links om u te helpen beschermen van adverteerders en anderen die proberen om uw online activiteit te volgen."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -5987,12 +5990,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your recovery phrase": [
-        "Uw herstelzin"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Uw herstelzin is een reeks van 12 woorden in een specifieke volgorde."
       ]
     },
     "info": {
@@ -6310,6 +6307,9 @@
       "BCC": [
         "Bcc"
       ],
+      "Beta Access": [
+        "Bèta toegang"
+      ],
       "Blind Carbon Copy": [
         "BCC"
       ],
@@ -6496,6 +6496,9 @@
       "Last month only": [
         "Alleen vorige maand"
       ],
+      "Layout": [
+        "Lay-out"
+      ],
       "Location": [
         "Locatie"
       ],
@@ -6598,9 +6601,6 @@
       "Recipient": [
         "Ontvanger"
       ],
-      "Recovery phrase": [
-        "Herstelzin"
-      ],
       "Region": [
         "Regio/Provincie"
       ],
@@ -6634,6 +6634,9 @@
       "Street address": [
         "Adres"
       ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
       "Synchronize with system": [
         "Synchroniseren met systeem"
       ],
@@ -6651,6 +6654,9 @@
       ],
       "the email was sent ${ label }": [
         "de e-mail was verzonden ${ label }"
+      ],
+      "Theme": [
+        "Thema"
       ],
       "Then": [
         "Dan"
@@ -6847,9 +6853,6 @@
       ],
       "More": [
         "Meer"
-      ],
-      "More about recovery": [
-        "Meer weten over herstel"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Open in ${ CALENDAR_APP_NAME }"
@@ -7358,7 +7361,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Heb je een account bij één van deze diensten? Klik om het e-mailadres te wijzigen naar je ${ MAIL_APP_NAME } adres."
+        "Heeft u een account bij één van deze diensten? Klik om het e-mailadres te wijzigen naar uw ${ MAIL_APP_NAME }-adres."
       ]
     },
     "Online Accounts Name": {
@@ -8055,6 +8058,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Wijzig instelling"
+      ],
+      "Easily access and customize your app experience.": [
+        "Gemakkelijk toegang tot en aanpassing van uw applicatie-ervaring."
+      ],
       "Email tracking protection": [
         "Bescherming tegen e-mailtracking"
       ],
@@ -8064,11 +8073,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Snelle instellingen"
+      ],
       "Schedule send": [
         "Gepland versturen"
       ],
       "Search just got smarter and faster": [
         "Zoeken werd zonet slimmer en sneller"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Spam en Ongewenste e-mail worden nu automatisch uitgesloten van All Mail. ${ settingsLink }"
       ],
       "Try it today.": [
         "Probeer het nu."
@@ -8554,6 +8569,9 @@
       "Addresses": [
         "Adressen"
       ],
+      "All settings": [
+        "Alle instellingen"
+      ],
       "Archive": [
         "Archief"
       ],
@@ -8903,7 +8921,7 @@
         "Vorig bericht"
       ],
       "Protect yourself from trackers": [
-        "Bescherm jezelf van trackers"
+        "Bescherm uzelf van trackers"
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -9051,8 +9069,8 @@
         "Waarschuwing: vermoedelijk valse website"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "We beschermden je van ${ trackersCount } tracker",
-        "We beschermden je van ${ trackersCount } trackers"
+        "We beschermden u van ${ trackersCount } tracker",
+        "We beschermden u van ${ trackersCount } trackers"
       ],
       "Welcome": [
         "Welkom"

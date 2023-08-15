@@ -248,6 +248,9 @@
       "Got it": [
         "J'ai compris"
       ],
+      "Help": [
+        "Aide"
+      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Settings": [
+        "Paramètres"
+      ],
       "Share": [
         "Partager"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Envoyer"
       ],
+      "Switch or add account": [
+        "Basculer vers ou ajouter un compte"
+      ],
       "Today": [
         "Aujourd'hui"
       ],
       "Toggle Contact app": [
         "Basculer vers l'application Contacts"
+      ],
+      "Toggle settings": [
+        "Afficher ou masquer les paramètres"
       ],
       "Trust": [
         "Faire confiance"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Personnalisé"
+      ],
       "Day": [
         "Jour"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Modifier la plage horaire"
+      ],
       "Change time range to": [
         "Changer la plage horaire pour"
       ]
@@ -2548,6 +2566,9 @@
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
       ],
+      "Missing FN property": [
+        "Les propriétés FN sont manquantes."
+      ],
       "vCard versions < 3.0 not supported": [
         "Versions de vCard < 3.0 non prises en charge"
       ]
@@ -3883,6 +3904,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Testez les nouveaux produits, mises à jour, et fonctionnalités de ${ BRAND_NAME } avant leur sortie publique. Ceci rechargera l'application."
+      ],
       "Update recurring event": [
         "Mettre à jour l'événement récurrent"
       ],
@@ -4173,6 +4197,9 @@
       "Bad": [
         "Mauvaise"
       ],
+      "Beta Access": [
+        "Accès à la version bêta"
+      ],
       "Browser": [
         "Navigateur"
       ],
@@ -4402,6 +4429,9 @@
       "Postal code": [
         "Code postal"
       ],
+      "Primary": [
+        "Principale"
+      ],
       "Public keys": [
         "Clés publiques"
       ],
@@ -4417,6 +4447,12 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
+      "Secondary": [
+        "Secondaire"
+      ],
+      "Secondary time zone": [
+        "Fuseau horaire secondaire"
+      ],
       "Show week numbers": [
         "Afficher les numéros de semaine"
       ],
@@ -4426,8 +4462,14 @@
       "Street address": [
         "Adresse postale"
       ],
+      "Sync with system": [
+        "Synchroniser avec le système"
+      ],
       "System information": [
         "Informations système"
+      ],
+      "Theme": [
+        "Thème"
       ],
       "Time zone": [
         "Fuseau horaire"
@@ -5093,6 +5135,9 @@
       "All events": [
         "Tous les événements"
       ],
+      "Auto": [
+        "Automatique"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatique (${ defaultDay })"
       ],
@@ -5636,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Ajoutez les jours fériés de votre pays à votre calendrier."
       ],
+      "Easily access and customize your app experience.": [
+        "Accédez facilement à votre application et personnalisez-la."
+      ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
       ],
@@ -5644,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "Les jours fériés sont arrivés !"
+      ],
+      "Quick settings": [
+        "Paramètres rapides"
       ]
     },
     "Storage": {
@@ -6005,6 +6056,9 @@
       ],
       "Addresses": [
         "Adresses"
+      ],
+      "All settings": [
+        "Tous les paramètres"
       ],
       "Billing cycle": [
         "Cycle de facturation"
