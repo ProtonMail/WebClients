@@ -248,6 +248,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
       ],
+      "Settings": [
+        "Ajustes"
+      ],
       "Share": [
         "Compartir"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Enviar"
       ],
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
+      ],
       "Today": [
         "Hoy"
       ],
       "Toggle Contact app": [
         "Cambiar a la aplicación Contactos"
+      ],
+      "Toggle settings": [
+        "Alternar los ajustes"
       ],
       "Trust": [
         "Confiar"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Personalizada"
+      ],
       "Day": [
         "Día"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Cambiar el intervalo de tiempo"
+      ],
       "Change time range to": [
         "Cambiar intervalo de tiempo por"
       ]
@@ -2548,6 +2566,9 @@
       "Encryption failed": [
         "Error con el cifrado"
       ],
+      "Missing FN property": [
+        "Falta la propiedad FN."
+      ],
       "vCard versions < 3.0 not supported": [
         "Versiones de vCard anteriores a 3.0 no soportadas"
       ]
@@ -3883,6 +3904,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
+      ],
       "Update recurring event": [
         "Actualizar evento recurrente"
       ],
@@ -3902,7 +3926,7 @@
         "Las vistas semanales y mensuales solo se aplican al escritorio."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Which event would you like to delete?": [
         "¿Cuál evento quieres eliminar?"
@@ -4173,6 +4197,9 @@
       "Bad": [
         "Malo"
       ],
+      "Beta Access": [
+        "Acceso beta"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -4402,6 +4429,9 @@
       "Postal code": [
         "Código postal"
       ],
+      "Primary": [
+        "Principal"
+      ],
       "Public keys": [
         "Claves públicas"
       ],
@@ -4417,6 +4447,12 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Secondary": [
+        "Secundaria"
+      ],
+      "Secondary time zone": [
+        "Zona horaria secundaria"
+      ],
       "Show week numbers": [
         "Mostrar los números de la semana"
       ],
@@ -4426,8 +4462,14 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Sync with system": [
+        "Sincronizar con el sistema"
+      ],
       "System information": [
         "Información del sistema"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Time zone": [
         "Zona horaria"
@@ -5093,6 +5135,9 @@
       "All events": [
         "Todos los eventos"
       ],
+      "Auto": [
+        "Automático"
+      ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
       ],
@@ -5636,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Añade los días festivos de tu país a tu calendario."
       ],
+      "Easily access and customize your app experience.": [
+        "Accede y personaliza fácilmente tu experiencia en la aplicación."
+      ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
       ],
@@ -5644,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "¡Los días festivos están aquí!"
+      ],
+      "Quick settings": [
+        "Ajustes rápidos"
       ]
     },
     "Storage": {
@@ -6005,6 +6056,9 @@
       ],
       "Addresses": [
         "Direcciones"
+      ],
+      "All settings": [
+        "Todos los ajustes"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
