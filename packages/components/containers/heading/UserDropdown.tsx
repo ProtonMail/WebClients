@@ -244,7 +244,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </span>
                         ) : null}
 
-                        {organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                        {organizationName ? (
                             <span
                                 className="text-ellipsis color-weak block"
                                 title={organizationName}
@@ -292,12 +292,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                                 type="button"
                                                 className={clsx([
                                                     'user-select relative interactive-pseudo-protrude interactive--no-background',
-                                                    !nameToDisplay &&
-                                                        (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) &&
-                                                        'text-bold',
-                                                    (nameToDisplay ||
-                                                        (organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS)) &&
-                                                        'color-weak',
+                                                    !nameToDisplay && !organizationName && 'text-bold',
+                                                    (nameToDisplay || organizationName) && 'color-weak',
                                                 ])}
                                                 title={Email}
                                                 data-testid="userdropdown:label:email"
