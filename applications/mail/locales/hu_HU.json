@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Továbbítás mellékletként"
       ],
-      "Generate recovery phrase": [
-        "Helyreállító jelmondat létrehozása"
-      ],
       "Get SimpleLogin extension": [
         "A SimpleLogin bővítmény letöltése"
       ],
@@ -3080,7 +3077,7 @@
         "Elérte a naptárak maximális számát"
       ],
       "Cannot export this contact": [
-        "Ez a névjegy nem exportálható"
+        "A névjegy exportálása nem sikerült"
       ],
       "Choose a date in the future.": [
         "Egy jövőbeli időpontot válasszon ki."
@@ -4126,20 +4123,8 @@
       "For your eyes only": [
         "Csak Önnek látható"
       ],
-      "Get mobile app": [
-        "Mobil alkalmazás beszerzése"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
-      ],
-      "Import contacts or emails": [
-        "Importálja névjegyeit vagy üzeneteit"
-      ],
-      "Import data": [
-        "Adat importálása"
-      ],
-      "Import your contacts or messages": [
-        "Importálja a névjegyeit vagy az üzeneteit"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } az adatvédelmet és hogyan egyszerűsíti az e-mailezést."
@@ -4164,15 +4149,6 @@
       ],
       "Protection from trackers": [
         "Védelem a nyomkövetőkkel szemben"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
-      ],
-      "Send a message": [
-        "Üzenet küldése"
-      ],
-      "Set recovery method": [
-        "Helyreállítási módszer beállítása"
       ],
       "Sign in to the mobile app to complete this step": [
         "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
@@ -4612,8 +4588,8 @@
         "${ numberOfImageTrackers } követő blokkolva"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } link kitisztítva",
-        "${ numberOfUTMTrackers } link kitisztítva"
+        "${ numberOfUTMTrackers } hivatkozás megtisztítva",
+        "${ numberOfUTMTrackers } hivatkozás megtisztítva"
       ],
       "${ numContact } contact": [
         "${ numContact } névjegy",
@@ -4714,9 +4690,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "A helyreállító jelmondat az egyik legbiztosabb módja annak, hogy megőrizze fiókja elérését. Ha elfelejtené a jelszavát, a helyreállító jelmondattal újra hozzáférhet a fiókjához és helyreállíthatja titkosított adatai elérhetőségét."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "A hírlevél küldőjéhez elküldésre kerül egy leiratkozási kérelem, amelyet automatikusan feldolgoznak."
@@ -5156,7 +5129,7 @@
         "Hivatkozás típusa"
       ],
       "Links cleaned:": [
-        "Hivatkozások kitisztítva:"
+        "Hivatkozások megtisztítva:"
       ],
       "Loading": [
         "Betöltés"
@@ -5255,7 +5228,7 @@
         "Nincs kiválasztva címke"
       ],
       "No links cleaned": [
-        "Nincs hivatkozás kitisztítva"
+        "Nincs megtisztítandó hivatkozás"
       ],
       "No more results found": [
         "Nincs több találat"
@@ -5308,9 +5281,6 @@
       "Please fill out this field.": [
         "Kérjük, töltse ki ezt a mezőt."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
       ],
@@ -5362,12 +5332,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információ megmarad ezen az eszközön, kivéve ha törli."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "A helyreállító jelmondat a vágólapra másolva"
-      ],
-      "Recovery phrase downloaded": [
-        "Helyreállító jelmondat letöltve"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -5449,9 +5413,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Állítsa be, hogy a ${ MAIL_APP_NAME } legyen az alapértelmezett e-mail alkalmazás ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy e-mail hivatkozást megnyit."
-      ],
-      "Set a recovery phrase": [
-        "Helyreállító jelmondat beállítása"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -5932,12 +5893,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your recovery phrase": [
-        "Az ön helyreállító jelmondata"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "A helyreállító jelmondat egy 12 szóból álló sorozat, megadott sorrendben."
       ]
     },
     "info": {
@@ -6283,7 +6238,7 @@
         "Település"
       ],
       "Cleaned": [
-        "Kitisztítva"
+        "Megtisztítva"
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
@@ -6543,9 +6498,6 @@
       "Recipient": [
         "Címzett"
       ],
-      "Recovery phrase": [
-        "Helyreállító jelmondat"
-      ],
       "Region": [
         "Régió"
       ],
@@ -6789,9 +6741,6 @@
       ],
       "More": [
         "Továbbiak"
-      ],
-      "More about recovery": [
-        "Több információ a helyreállításról"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Megnyitás ebben: ${ CALENDAR_APP_NAME }"

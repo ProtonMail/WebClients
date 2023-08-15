@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Reenvia com a adjunt"
       ],
-      "Generate recovery phrase": [
-        "Genera una frase de recuperació"
-      ],
       "Get SimpleLogin extension": [
         "Obtén l'extensió de SimpleLogin"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "D'acord"
+      ],
+      "Help": [
+        "Ajuda"
       ],
       "Hide": [
         "Amaga"
@@ -907,6 +907,9 @@
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Share via link": [
         "Comparteix amb un enllaç"
       ],
@@ -982,6 +985,9 @@
       "Submit": [
         "Envia"
       ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ],
       "This message contains embedded images.": [
         "Aquest missatge conté imatges incrustades."
       ],
@@ -996,6 +1002,9 @@
       ],
       "Toggle Contact app": [
         "Canvia a l'aplicació Contactes"
+      ],
+      "Toggle settings": [
+        "Commuta les preferències"
       ],
       "Tomorrow": [
         "Demà"
@@ -1638,6 +1647,9 @@
       ],
       "azureish white": [
         "blanc blavós"
+      ],
+      "black": [
+        "negre"
       ],
       "blanched almond": [
         "ametlla blanca"
@@ -3255,7 +3267,7 @@
         "La contrasenya és obligatòria"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -3378,7 +3390,7 @@
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -4150,9 +4162,6 @@
       "For your eyes only": [
         "Només per als vostres ulls"
       ],
-      "Get mobile app": [
-        "Obtén l'aplicació mòbil"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obteniu l'aplicació mòbil de ${ MAIL_APP_NAME }"
       ],
@@ -4162,23 +4171,11 @@
       "Get the App": [
         "Descarregueu l'aplicació"
       ],
-      "Import contacts or emails": [
-        "Importeu contactes o correus electrònics"
-      ],
-      "Import data": [
-        "Importa les dades"
-      ],
-      "Import your contacts or messages": [
-        "Importeu els vostres contactes o missatges"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Seguiu utilitzant ${ MAIL_APP_NAME } per a descobrir més formes amb què ${ BRAND_NAME } protegeix la vostra privacitat i simplifica l'enviament de correus electrònics."
       ],
       "Learn more": [
         "Saber-ne més"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Feu de ${ BRAND_NAME } la vostra safata d'entrada preferida"
       ],
       "Maybe later": [
         "Potser després"
@@ -4200,15 +4197,6 @@
       ],
       "Protection from trackers": [
         "Protecció contra els rastrejadors"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transferiu ràpidament els vostres contactes o correus electrònics de qualsevol proveïdor utilitzant el nostre assistent d'importació Easy Switch."
-      ],
-      "Send a message": [
-        "Envia un missatge"
-      ],
-      "Set recovery method": [
-        "Estableix un mètode de recuperació"
       ],
       "Set up ${ strongText } from Gmail": [
         "Configura ${ strongText } des de Gmail"
@@ -4760,9 +4748,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Una frase de recuperació és una de les formes més segures de protegir el vostre compte. La podeu utilitzar per accedir al vostre compte i recuperar les vostres dades xifrades si mai oblideu la contrasenya."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Una sol·licitud per cancel·lar la subscripció serà enviada al remitent de la llista de correu i es processarà automàticament."
@@ -5360,9 +5345,6 @@
       "Please fill out this field.": [
         "Empleneu aquest camp."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Manteniu-lo protegit. El necessitareu per accedir al vostre compte i desxifrar les vostres dades en cas d'un restabliment de contrasenya."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
       ],
@@ -5414,12 +5396,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Frase de recuperació copiada al porta-retalls"
-      ],
-      "Recovery phrase downloaded": [
-        "S'ha descarregat la frase de recuperació"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -5504,9 +5480,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte en aquest navegador. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
-      ],
-      "Set a recovery phrase": [
-        "Establir una frase de recuperació"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
@@ -5659,7 +5632,7 @@
         "Aquest missatge es mourà als Esborranys perquè pugueu editar-lo. Necessitareu tornar a programar quan s'enviarà."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Aquest missatge s'enviarà al matí a les ${ formattedTime }"
+        "Aquest missatge s'enviarà al matí a les ${ formattedTime }."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Aquest missatge s'enviarà ${ dateString } a les ${ formattedTime }"
@@ -5764,7 +5737,7 @@
         "Milloreu el vostre pla per donar suport a una internet que prioritzi la privacitat."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Milloreu el vostre pla per donar suport a la nostra missió de privacitat per a tothom."
+        "Milloreu el vostre pla per donar suport a la nostra missió de privacitat per tothom."
       ],
       "Upgrade to support privacy and get more features.": [
         "Milloreu el vostre pla per donar suport a la privacitat i obtenir més funcionalitats."
@@ -5987,12 +5960,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your recovery phrase": [
-        "La vostra frase de recuperació"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "La vostra frase de recuperació és una sèrie de 12 paraules en un ordre específic."
       ]
     },
     "info": {
@@ -6310,6 +6277,9 @@
       "BCC": [
         "CCO"
       ],
+      "Beta Access": [
+        "Accés beta"
+      ],
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
       ],
@@ -6496,6 +6466,9 @@
       "Last month only": [
         "Només el darrer mes"
       ],
+      "Layout": [
+        "Disposició"
+      ],
       "Location": [
         "Ubicació"
       ],
@@ -6598,9 +6571,6 @@
       "Recipient": [
         "Destinatari"
       ],
-      "Recovery phrase": [
-        "Frase de recuperació"
-      ],
       "Region": [
         "Regió"
       ],
@@ -6634,6 +6604,9 @@
       "Street address": [
         "Adreça de carrer"
       ],
+      "Sync with system": [
+        "Sincronitza amb el sistema"
+      ],
       "Synchronize with system": [
         "Sincronitza amb el sistema"
       ],
@@ -6651,6 +6624,9 @@
       ],
       "the email was sent ${ label }": [
         "el correu ha estat enviat ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Aleshores"
@@ -6847,9 +6823,6 @@
       ],
       "More": [
         "Més"
-      ],
-      "More about recovery": [
-        "Més sobre la recuperació"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Obri en ${ CALENDAR_APP_NAME }"
@@ -8055,6 +8028,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Canvia la preferència"
+      ],
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
       ],
@@ -8063,6 +8039,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
+      ],
+      "Quick settings": [
+        "Preferències ràpides"
       ],
       "Schedule send": [
         "Programa l'enviament"
@@ -8553,6 +8532,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "All settings": [
+        "Totes les preferències"
       ],
       "Archive": [
         "Arxiu"

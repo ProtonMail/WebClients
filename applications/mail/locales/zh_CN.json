@@ -403,9 +403,6 @@
       "Forward as attachment": [
         "作为附件转发"
       ],
-      "Generate recovery phrase": [
-        "生成恢复密语"
-      ],
       "Get SimpleLogin extension": [
         "获取 SimpleLogin 扩展程序"
       ],
@@ -4091,29 +4088,14 @@
       "For your eyes only": [
         "密不透风"
       ],
-      "Get mobile app": [
-        "下载移动端应用"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
-      ],
-      "Import contacts or emails": [
-        "导入您的通讯录或信息"
-      ],
-      "Import data": [
-        "导入数据"
-      ],
-      "Import your contacts or messages": [
-        "导入您的通讯录或信息"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
       ],
       "Learn more": [
         "了解详情"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "将 ${ BRAND_NAME } 设置为您的首选收件箱"
       ],
       "Maybe later": [
         "以后再说"
@@ -4132,15 +4114,6 @@
       ],
       "Protection from trackers": [
         "抵御追踪脚本"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
-      ],
-      "Send a message": [
-        "发送邮件"
-      ],
-      "Set recovery method": [
-        "设置恢复方式"
       ],
       "Set up ${ strongText } from Gmail": [
         "设置${ strongText } Gmail 邮件"
@@ -4636,9 +4609,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
-      ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "恢复密语为您对账户的控制权提供了可靠保障。假如您不慎忘记密码，可以通过它找回账户并解锁所有加密的数据。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
@@ -5210,9 +5180,6 @@
       "Please fill out this field.": [
         "请填写此项。"
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "请妥善保存，将来如需重置密码，只有通过它才能恢复账户并解密数据。"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
       ],
@@ -5260,12 +5227,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
-      ],
-      "Recovery phrase copied to clipboard": [
-        "恢复短语已复制到剪贴板"
-      ],
-      "Recovery phrase downloaded": [
-        "恢复密语已下载"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -5347,9 +5308,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "将 ${ MAIL_APP_NAME } 设为此浏览器的默认邮件应用后，点击 mailto: 邮箱链接可自动跳转至 ${ MAIL_APP_NAME }。"
-      ],
-      "Set a recovery phrase": [
-        "设置恢复密语"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
@@ -5809,12 +5767,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
-      ],
-      "Your recovery phrase": [
-        "您的恢复密语"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "恢复密语是按特定顺序排列的 12 个英文单词。"
       ]
     },
     "info": {
@@ -6417,9 +6369,6 @@
       "Recipient": [
         "收件人"
       ],
-      "Recovery phrase": [
-        "恢复密语"
-      ],
       "Region": [
         "区域"
       ],
@@ -6663,9 +6612,6 @@
       ],
       "More": [
         "展开"
-      ],
-      "More about recovery": [
-        "详细了解账户恢复"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "前往 ${ CALENDAR_APP_NAME } 查看"

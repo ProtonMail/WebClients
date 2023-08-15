@@ -409,9 +409,6 @@
       "Forward as attachment": [
         "Переслать как вложение"
       ],
-      "Generate recovery phrase": [
-        "Создать фразу для восстановления"
-      ],
       "Get SimpleLogin extension": [
         "Получить расширение SimpleLogin"
       ],
@@ -4190,32 +4187,17 @@
       "For your eyes only": [
         "Только для ваших глаз"
       ],
-      "Get mobile app": [
-        "Получить мобильное приложение"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
       ],
       "Get the App": [
         "Скачать приложение"
       ],
-      "Import contacts or emails": [
-        "Импортируйте контакты или электронные письма"
-      ],
-      "Import data": [
-        "Импортировать данные"
-      ],
-      "Import your contacts or messages": [
-        "Импортируйте свои контакты или сообщения"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Продолжайте использовать ${ MAIL_APP_NAME }, чтобы открывать новые способы, с помощью которых ${ BRAND_NAME } защищает вашу конфиденциальность и упрощает работу с электронной почтой."
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Сделайте ${ BRAND_NAME } своим основным почтовым ящиком."
       ],
       "Maybe later": [
         "Может быть позже"
@@ -4238,17 +4220,11 @@
       "Protection from trackers": [
         "Защита от трекеров"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Быстро перенесите контакты или электронную почту от любого провайдера с помощью нашего помощника по импорту Easy Switch."
-      ],
-      "Send a message": [
-        "Отправить сообщение"
-      ],
-      "Set recovery method": [
-        "Установить метод восстановления"
-      ],
       "Sign in to the mobile app to complete this step": [
         "Войдите в мобильное приложение, чтобы выполнить это действие"
+      ],
+      "Update your logins": [
+        "Обновите ваше имя пользователя"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Используя ваше мобильное устройство, отсканируйте этот QR-код или посетите магазин приложений iOS или Android."
@@ -4880,9 +4856,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Фраза для восстановления - это один из самых надёжных способов защиты доступа к вашему аккаунту. С её помощью можно получить доступ к аккаунту и восстановить зашифрованные данные, если вы вдруг забудете пароль."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запрос на отказ от подписки на этот список рассылки будет послан отправителю рассылки и обработан автоматически."
       ],
@@ -5501,9 +5474,6 @@
       "Please fill out this field.": [
         "Заполните это поле."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -5557,12 +5527,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Фраза для восстановления скопирована в буфер обмена"
-      ],
-      "Recovery phrase downloaded": [
-        "Фраза для восстановления скачана"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -5644,9 +5608,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию для этого браузера. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
-      ],
-      "Set a recovery phrase": [
-        "Установите фразу для восстановления"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
@@ -6148,12 +6109,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза для восстановления"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ваша фраза для восстановления – это набор из 12 слов в определенном порядке."
       ]
     },
     "info": {
@@ -6765,9 +6720,6 @@
       "Recipient": [
         "Получатель"
       ],
-      "Recovery phrase": [
-        "Фраза для восстановления"
-      ],
       "Region": [
         "Регион"
       ],
@@ -7014,9 +6966,6 @@
       ],
       "More": [
         "Еще"
-      ],
-      "More about recovery": [
-        "Подробнее о восстановлении"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Открыть в ${ CALENDAR_APP_NAME }"
