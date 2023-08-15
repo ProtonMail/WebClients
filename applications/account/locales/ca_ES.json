@@ -467,6 +467,9 @@
       "Got it": [
         "D'acord"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -797,6 +800,9 @@
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Share": [
         "Compartir"
       ],
@@ -874,6 +880,9 @@
       ],
       "Switch account": [
         "Canvia de compte"
+      ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
       ],
       "Top up": [
         "Recarrega"
@@ -1033,6 +1042,9 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidors"
+      ],
+      "${ price } per user": [
+        "${ price } per usuari"
       ],
       "${ users } user": [
         "${ users } usuari",
@@ -1544,6 +1556,9 @@
       ],
       "azureish white": [
         "blanc blavós"
+      ],
+      "black": [
+        "negre"
       ],
       "blanched almond": [
         "ametlla blanca"
@@ -2786,6 +2801,17 @@
         "Hem detectat els següents camps al fitxer CSV que heu carregat. Comproveu els que voleu importar."
       ]
     },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Tornar a ${ signIn }."
+      ],
+      "sign in": [
+        "iniciar la sessió"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Ens hem adonat que aquest compte no us pertany. Ho investigarem i actuarem en conseqüència."
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificat"
@@ -2876,12 +2902,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Gràcies per verificar la vostra adreça de correu electrònic."
-      ],
-      "Thanks for letting us know": [
-        "Gràcies per fer-nos-ho saber"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Ens hem adonat que aquest compte no us pertany. Ho investigarem i actuarem en conseqüència."
       ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
@@ -3209,7 +3229,7 @@
         "La contrasenya és obligatòria"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Payment process canceled": [
         "Procés de pagament cancel·lat"
@@ -3373,7 +3393,7 @@
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -5430,9 +5450,6 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Les transaccions en Bitcoins poden trigar una estona en ser confirmades (fins a 24 hores). Un cop confirmada, afegirem els crèdits al seu compte. Després de la confirmació podrà efectuar el pagament del rebut amb els crèdits."
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Bloqueja que els remitents puguin veure si heu obert un missatge i quan ho heu fet."
       ],
@@ -5532,6 +5549,9 @@
       ],
       "Data locked": [
         "Dades bloquejades"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -6058,6 +6078,9 @@
       "Organization keys restored": [
         "S'han restaurat les claus de l'organització"
       ],
+      "Organization size": [
+        "Mida de l'organització"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
@@ -6250,6 +6273,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Deseu les vostres contrasenyes en un lloc segur. Feu clic a la icona per confirmar que heu escrit la contrasenya correctament."
       ],
+      "Saving your password": [
+        "S'està desant la vostra contrasenya."
+      ],
       "Scan QR code instead": [
         "Escanejar codi QR"
       ],
@@ -6291,6 +6317,9 @@
       ],
       "Setting up your Drive": [
         "S'està configurant el Drive"
+      ],
+      "Setting up your organization": [
+        "S'està configurant la vostra organització."
       ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
@@ -6625,9 +6654,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Milloreu a un compte de pagament per habilitar ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
@@ -9953,6 +9979,9 @@
       "Ask each time": [
         "Pregunta cada vegada"
       ],
+      "Auto": [
+        "Automàtic"
+      ],
       "Automatic (${ defaultDay })": [
         "Automàtic (${ defaultDay })"
       ],
@@ -11156,6 +11185,15 @@
       ]
     },
     "Subscription": {
+      "Billed every 15 months": [
+        "Facturació cada 15 mesos"
+      ],
+      "Billed every 2 years": [
+        "Facturació cada 2 anys"
+      ],
+      "Billed every 30 months": [
+        "Facturació cada 30 mesos"
+      ],
       "Billed monthly": [
         "Facturació mensual"
       ],
@@ -11241,12 +11279,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestioneu la vostra subscripció en ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "La subscripció és gestionada per ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La subscripció de l'usuari ID-${ userId } s'ha fet mitjançant una compra en l'aplicació. Per gestionar-la, l'usuari ha de navegar a la secció Subscripció del seu compte ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subscripcions"
@@ -12980,6 +13012,9 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "It’s too expensive": [
+        "Es massa car."
+      ],
       "Other": [
         "Altre"
       ]
