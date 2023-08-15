@@ -3,8 +3,16 @@ import { c } from 'ttag';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
-import { APP_NAMES, PROTON_SENTINEL_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    APP_NAMES,
+    PLANS,
+    PLAN_NAMES,
+    PROTON_SENTINEL_NAME,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -55,11 +63,19 @@ const SentinelSection = ({ app }: Props) => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph large={true}>
+            <SettingsParagraph large={true} learnMoreUrl={getKnowledgeBaseUrl('/proton-sentinel')}>
                 <p className="mt-0">{c('Info')
                     .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}</p>
-                <p>{c('Info')
+                <p className="mb-0">{c('Info')
                     .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
+                {!sentinelEligible && (
+                    <p className="mb-0">
+                        {/* translator: full sentence: "Upgrade to Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
+                        {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.BUNDLE]}, ${PLAN_NAMES[PLANS.FAMILY]}, or ${
+                            PLAN_NAMES[PLANS.BUNDLE_PRO]
+                        } plan to get access to ${PROTON_SENTINEL_NAME}.`}
+                    </p>
+                )}
             </SettingsParagraph>
 
             {sentinelEligible ? (
@@ -85,11 +101,10 @@ const SentinelSection = ({ app }: Props) => {
                 </>
             ) : (
                 <SettingsParagraph>
-                    <PromotionButton
-                        iconName="brand-proton-mail-filled-plus"
-                        iconGradient={false}
-                        onClick={handleUpgrade}
-                    >{c('Action').t`Enable ${PROTON_SENTINEL_NAME}`}</PromotionButton>
+                    <PromotionButton iconName="upgrade" iconGradient={true} onClick={handleUpgrade}>
+                        {/* translator: full sentence: "Upgrade to enable Proton Sentinel." */}
+                        {c('Action').t`Upgrade to enable ${PROTON_SENTINEL_NAME}`}
+                    </PromotionButton>
                 </SettingsParagraph>
             )}
         </SettingsSectionWide>
