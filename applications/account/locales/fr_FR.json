@@ -383,6 +383,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Activer ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -466,6 +469,9 @@
       ],
       "Got it": [
         "J'ai compris"
+      ],
+      "Help": [
+        "Aide"
       ],
       "Hide": [
         "Masquer"
@@ -800,6 +806,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Settings": [
+        "Paramètres"
+      ],
       "Share": [
         "Partager"
       ],
@@ -877,6 +886,9 @@
       ],
       "Switch account": [
         "Changer de compte"
+      ],
+      "Switch or add account": [
+        "Basculer vers ou ajouter un compte"
       ],
       "Top up": [
         "Recharger"
@@ -1041,11 +1053,11 @@
         "${ ips } serveur",
         "${ ips } serveurs"
       ],
+      "${ price } per dedicated server": [
+        "${ price } par serveur dédié"
+      ],
       "${ price } per domain": [
         "${ price } par domaine"
-      ],
-      "${ price } per IP address": [
-        "${ price } par adresse IP"
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
@@ -1063,7 +1075,7 @@
         "Désactiver"
       ],
       "Disable E2EE mail": [
-        "Chiffrement mail E2E OFF"
+        "Désactiver e-mail E2EE"
       ],
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
@@ -1072,7 +1084,7 @@
         "Activer"
       ],
       "Enable E2EE mail": [
-        "Chiffrement mail E2E ON"
+        "Activer e-mail E2EE"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -1104,7 +1116,7 @@
         "Clés manquantes"
       ],
       "No E2EE mail": [
-        "Pas de chiffrement mail (E2EE)"
+        "Pas d'e-mail E2EE"
       ],
       "Orphan": [
         "Orpheline"
@@ -1560,6 +1572,9 @@
       ],
       "azureish white": [
         "blanc azur"
+      ],
+      "black": [
+        "noir"
       ],
       "blanched almond": [
         "blanc amande"
@@ -2750,6 +2765,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Bravo ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activez ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités."
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Activez les journaux avancés et ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités"
+      ],
+      "Enable advanced logs to access these features": [
+        "Activez les journaux avancés pour accéder à ces fonctionnalités"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
@@ -2800,6 +2824,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous voulez importer."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Revenir à ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "Vous n'avez pas créé ce compte·?"
+      ],
+      "I didn't create this account": [
+        "Je n'ai pas créé ce compte."
+      ],
+      "sign in": [
+        "se connecter"
+      ],
+      "Thanks for letting us know": [
+        "Merci de nous avoir informés."
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Il n'y a généralement pas de raison de s'inquiéter. Il vous suffit de confirmer que ce compte ${ BRAND_NAME } ne vous appartient pas et nous le désactiverons."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons examiner la situation et prendre les mesures nécessaires."
+      ],
+      "You can safely close this tab.": [
+        "Vous pouvez fermer cet onglet en toute sécurité."
       ]
     },
     "Domain label": {
@@ -2892,12 +2942,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Merci de vérifier votre adresse e-mail."
-      ],
-      "Thanks for letting us know": [
-        "Merci de nous avoir informés."
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons examiner la situation et prendre les mesures nécessaires."
       ],
       "You can safely close this tab.": [
         "Vous pouvez fermer cet onglet en toute sécurité."
@@ -3525,6 +3569,9 @@
       "Encryption failed": [
         "Le chiffrement n'a pas abouti."
       ],
+      "Missing FN property": [
+        "Les propriétés FN sont manquantes."
+      ],
       "vCard versions < 3.0 not supported": [
         "Versions de vCard < 3.0 non prises en charge"
       ]
@@ -3688,6 +3735,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Une erreur s'est produite lors de la désactivation de votre compte."
       ]
     },
     "Error message, recovery": {
@@ -4573,6 +4625,9 @@
       "Label": [
         "Label"
       ],
+      "Location": [
+        "Emplacement"
+      ],
       "Name": [
         "Nom"
       ],
@@ -5395,6 +5450,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible sur macOS, Windows et Linux."
       ],
+      "Awaiting transaction": [
+        "Transaction en attente"
+      ],
       "Background color": [
         "Couleur d'arrière-plan"
       ],
@@ -5445,9 +5503,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Empêche les expéditeurs de voir si et quand vous avez ouvert un message."
@@ -5548,9 +5603,6 @@
       ],
       "Data locked": [
         "Les données sont verrouillées."
-      ],
-      "Dedicated IP addresses ": [
-        "Adresses IP dédiées"
       ],
       "Dedicated servers": [
         "Serveurs dédiés"
@@ -6047,14 +6099,14 @@
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
+      "Not yet available in our Android mobile app.": [
+        "Pas encore disponible sur notre application mobile Android"
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Nombre d'adresses IP dédiées dans l'organisation"
-      ],
-      "Number of IP addresses": [
-        "Nombre d'adresses IP"
+      "Number of dedicated servers in the organization": [
+        "Nombre de serveurs dédiés dans l'organisation"
       ],
       "Number of users": [
         "Nombre d’utilisateurs"
@@ -6674,9 +6726,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Passez à un compte payant pour activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager (« pm » pour « ${ MAIL_APP_NAME } me » ou « Private Message me »)."
@@ -7847,6 +7896,9 @@
       ],
       "Event notifications": [
         "Notifications de l’événement"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "Exclure les e-mails indésirables/spam et dans la corbeille du dossier Tous les messages"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiration (${ patternExpiration })"
@@ -9831,8 +9883,8 @@
       "Dedicated Account manager": [
         "Gestionnaire de compte dédié"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Emplacements de serveurs dédiés dans plus de ${ n } pays"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Emplacements de serveurs dédiés dans plus de ${ numberOfCountries } pays"
       ],
       "Dedicated server locations in North America and Europe": [
         "Emplacements de serveurs dédiés en Amérique du Nord et en Europe"
@@ -10083,6 +10135,9 @@
       ],
       "Ask each time": [
         "Demander à chaque fois"
+      ],
+      "Auto": [
+        "Automatique"
       ],
       "Automatic (${ defaultDay })": [
         "Automatique (${ defaultDay })"
@@ -11393,12 +11448,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gérez votre abonnement sur ${ subscriptionManager }."
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "L'abonnement est géré par ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "L'abonnement de l'utilisateur ID-${ userId } a été effectué par le biais d'un achat dans l'application. Pour gérer l'abonnement, l'utilisateur doit se rendre dans la section Abonnement de son compte ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Abonnements"
@@ -12888,6 +12937,12 @@
       "Account is disconnected": [
         "Compte déconnecté"
       ],
+      "An approximate location of the IP address": [
+        "Un emplacement approximatif de l'adresse IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Toute protection s'appliquant à une activité suspicieuse"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
@@ -12899,6 +12954,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Supprimez les messages dans vos dossiers Corbeille et Indésirables/spam après 30 jours. Activer la suppression automatique détermine une date de suppression pour les messages qui sont déjà dans ces deux dossiers, en fonction de la date à laquelle ils y ont été placés."
+      ],
+      "Device information such as operating system": [
+        "Informations de l'appareil comme le système d'exploitation"
       ],
       "Each imported email will have this label": [
         "Chaque message importé aura ce label."
@@ -12956,6 +13014,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Le Fournisseur d'Accès à Internet de l'adresse IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."

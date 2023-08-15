@@ -455,6 +455,9 @@
       "Got it": [
         "Forstået"
       ],
+      "Help": [
+        "Hjælp"
+      ],
       "Hide": [
         "Skjul"
       ],
@@ -782,6 +785,9 @@
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
       ],
+      "Settings": [
+        "Indstillinger"
+      ],
       "Share": [
         "Del"
       ],
@@ -859,6 +865,9 @@
       ],
       "Switch account": [
         "Skift konto"
+      ],
+      "Switch or add account": [
+        "Skift eller tilføj konto"
       ],
       "Top up": [
         "Genopfyld"
@@ -1480,6 +1489,9 @@
       ],
       "azureish white": [
         "azurblålig hvid"
+      ],
+      "black": [
+        "sort"
       ],
       "blanched almond": [
         "blancherede mandler"
@@ -3400,6 +3412,9 @@
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
+      "Missing FN property": [
+        "Mangler FN-egenskab"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 understøttes ikke"
       ]
@@ -4139,8 +4154,14 @@
       ]
     },
     "Get started checklist instructions": {
+      "auto-forwarding": [
+        "automatisk videresendelse"
+      ],
       "privacy features": [
         "privatlivsfunktioner"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Indstil ${ strongText } fra Gmail"
       ]
     },
     "Gmail forwarding": {
@@ -5004,6 +5025,9 @@
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Er du sikker på, at du vil kassere din import?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Er du sikker på, at du vil slette alle dine logger permanent?"
       ],
@@ -5081,9 +5105,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-transaktioner kan tage noget tid at bekræfte (op til 24 timer). Efter bekræftelsen vil vi tilføje kreditter til din konto. Efter transaktionsbekræftelsen kan du betale din faktura med kreditterne."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blokerer afsendere fra at se, om og hvornår du har åbnet en besked."
@@ -6277,9 +6298,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Opgradér til en betalt konto for at aktivere ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgradér for at tilføje en kortere @pm.me-adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
@@ -9386,6 +9404,9 @@
       ],
       "Ask each time": [
         "Spørg hver gang"
+      ],
+      "Auto": [
+        "Auto"
       ],
       "Automatic (${ defaultDay })": [
         "Automatisk (${ defaultDay })"
