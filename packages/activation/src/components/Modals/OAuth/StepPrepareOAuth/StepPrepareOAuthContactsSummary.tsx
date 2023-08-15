@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { MAX_CONTACTS_PER_USER } from '@proton/shared/lib/contacts/constants';
 
 interface Props {
     isSelected: boolean;
@@ -16,23 +17,14 @@ const StepPrepareContactsSummary = ({ isSelected }: Props) => {
         return null;
     }
 
-    const { numContact, numGroups } = contacts;
-    // Don't display anything if the number received are not numbers
-    if (Number.isNaN(numContact) || Number.isNaN(numGroups)) {
-        return null;
-    }
-
-    const contactsFragment = c('Info').ngettext(msgid`${numContact} contact`, `${numContact} contacts`, numContact);
-
-    const contactsGroupsFragment = c('Info').ngettext(
-        msgid`${numGroups} contact group`,
-        `${numGroups} contact groups`,
-        numGroups
-    );
-
     return (
-        <div className="color-weak" data-testid="StepPrepareContactsSummary:summary">{c('Info')
-            .t`Import ${contactsFragment} and ${contactsGroupsFragment}`}</div>
+        <span className="color-weak" data-testid="StepPrepareContactsSummary:summary">
+            {c('Info').ngettext(
+                msgid`All your contacts will be imported, up to a limit of ${MAX_CONTACTS_PER_USER}`,
+                `All your contacts will be imported, up to a limit of ${MAX_CONTACTS_PER_USER}`,
+                MAX_CONTACTS_PER_USER
+            )}
+        </span>
     );
 };
 

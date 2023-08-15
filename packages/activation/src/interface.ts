@@ -123,6 +123,7 @@ export enum IMPORT_ERROR {
     TEMP_PROVIDER_ERROR = 2902,
     RATE_LIMIT_EXCEEDED = 429,
     ACCOUNT_DOES_NOT_EXIST = 2011,
+    TOO_LARGE = 2024,
 }
 
 //TODO complete this once backend is more stable
