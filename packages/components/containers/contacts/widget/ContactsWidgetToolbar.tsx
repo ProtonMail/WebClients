@@ -76,7 +76,7 @@ const ContactsWidgetToolbar = ({
     return (
         <div className="flex flex-items-align-center">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="ml-2 mr-4 flex">
+                <span className="mr-4 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
                         checked={allChecked}
