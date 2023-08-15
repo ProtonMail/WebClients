@@ -43,6 +43,11 @@ export const DrawerContext = createContext<{
     iframeURLMap: IframeSrcMap;
     setIframeURLMap: Dispatch<SetStateAction<IframeSrcMap>>;
     /**
+     * Is the drawer sidebar hidden (from a setting perspective)
+     */
+    showDrawerSidebar?: boolean;
+    setShowDrawerSidebar: Dispatch<SetStateAction<boolean | undefined>>;
+    /**
      * Is the drawer sidebar already mounted, so that we can perform actions on it
      */
     drawerSidebarMounted: boolean;
@@ -68,6 +73,8 @@ export default function useDrawer() {
         setIframeSrcMap,
         iframeURLMap,
         setIframeURLMap,
+        showDrawerSidebar,
+        setShowDrawerSidebar,
         parentApp,
         drawerSidebarMounted,
         setDrawerSidebarMounted,
@@ -95,6 +102,8 @@ export default function useDrawer() {
         toggleDrawerApp,
         parentApp,
         isDrawerApp,
+        showDrawerSidebar,
+        setShowDrawerSidebar,
         drawerSidebarMounted,
         setDrawerSidebarMounted,
     };
@@ -115,6 +124,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
     const [parentApp, setParentApp] = useState<APP_NAMES>();
     // Is the sidebar mounted, we need this to get the drawer width
     const [drawerSidebarMounted, setDrawerSidebarMounted] = useState(false);
+    // Is the DrawerSidebar displayed or not (we can hide the drawer with a setting)
+    const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(undefined);
 
     const [requestsAbortControllers, setRequestsAbortControllers] = useState<
         { id: string; abortController: AbortController }[]
@@ -348,6 +359,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                 setIframeSrcMap,
                 iframeURLMap,
                 setIframeURLMap,
+                showDrawerSidebar,
+                setShowDrawerSidebar,
                 parentApp,
                 setParentApp,
                 drawerSidebarMounted,

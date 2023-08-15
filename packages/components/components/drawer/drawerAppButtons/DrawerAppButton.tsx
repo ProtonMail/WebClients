@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import { Tooltip } from '@proton/components/components';
+import { PopperPlacement, Tooltip } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 export interface Props extends ComponentPropsWithRef<'button'> {
     tooltipText: string;
+    tooltipPlacement?: PopperPlacement;
     buttonContent: ReactNode;
     onClick: () => void;
     /** If specified, renders an sr-only element for screenreaders */
@@ -16,7 +17,15 @@ export interface Props extends ComponentPropsWithRef<'button'> {
     notificationDotColor?: ThemeColor;
 }
 
-const DrawerAppButton = ({ tooltipText, buttonContent, onClick, alt, notificationDotColor, ...rest }: Props) => {
+const DrawerAppButton = ({
+    tooltipText,
+    buttonContent,
+    onClick,
+    alt,
+    notificationDotColor,
+    tooltipPlacement = 'left',
+    ...rest
+}: Props) => {
     const button = (
         <button
             className={clsx(
@@ -40,7 +49,7 @@ const DrawerAppButton = ({ tooltipText, buttonContent, onClick, alt, notificatio
     );
 
     return (
-        <Tooltip title={tooltipText} originalPlacement="left">
+        <Tooltip title={tooltipText} originalPlacement={tooltipPlacement}>
             {button}
         </Tooltip>
     );

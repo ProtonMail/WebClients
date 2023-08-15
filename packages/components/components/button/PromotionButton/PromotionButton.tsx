@@ -80,9 +80,21 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
             )}
             {...rest}
         >
-            <span className="relative flex flex-nowrap flex-align-items-center gap-2">
-                {iconName && <Icon name={iconName} size={iconSize} style={{ fill: `url(#${uid}) var(--text-norm)` }} />}
-                <span className={clsx(icon && 'sr-only')}>{children}</span>
+            <span
+                className={clsx(
+                    'relative flex flex-nowrap flex-align-items-center gap-2',
+                    responsive && isDesktop ? 'w100' : undefined
+                )}
+            >
+                {iconName && (
+                    <Icon
+                        name={iconName}
+                        className="flex-item-noshrink"
+                        size={iconSize}
+                        style={{ fill: `url(#${uid}) var(--text-norm)` }}
+                    />
+                )}
+                <span className={clsx(icon ? 'sr-only' : 'block flex-item-noshrink')}>{children}</span>
                 {loading && <CircleLoader />}
             </span>
             {iconName && iconGradient ? (
