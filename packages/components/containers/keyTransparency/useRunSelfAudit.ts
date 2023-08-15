@@ -10,11 +10,20 @@ import {
     storeAuditResult,
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { MINUTE } from '@proton/shared/lib/constants';
+import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { AddressesModel } from '@proton/shared/lib/models';
 
-import { useApi, useConfig, useGetAddressKeys, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
+import {
+    useApi,
+    useConfig,
+    useEventManager,
+    useGetAddressKeys,
+    useGetAddresses,
+    useGetUserKeys,
+    useUser,
+} from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useReportSelfAuditErrors from './useReportSelfAuditErrors';
 import useSaveSKLToLS from './useSaveSKLToLS';
@@ -35,6 +44,26 @@ const useRunSelfAudit = () => {
     const reportSelfAuditErrors = useReportSelfAuditErrors();
     const getAddressKeys = useGetAddressKeys();
     const selfAuditBaseInterval = getSelfAuditInterval();
+    const { subscribe } = useEventManager();
+
+    /*
+     * Wait for the event loop to return an event with no address change
+     * At this point self audit can be sure to have the latest version of addresses.
+     */
+    const waitForAddressUpdates = async () => {
+        await new Promise<() => void>((resolve) => {
+            const unsubscribe = subscribe((data) => {
+                if (!data[AddressesModel.key]) {
+                    resolve(unsubscribe);
+                }
+            });
+            setTimeout(() => {
+                resolve(unsubscribe);
+            }, 5 * INTERVAL_EVENT_TIMER);
+        }).then((unsubscribe) => {
+            unsubscribe();
+        });
+    };
 
     const ignoreError = (error: any): boolean => {
         return error instanceof StaleEpochError;
@@ -58,6 +87,9 @@ const useRunSelfAudit = () => {
         if (lastSelfAudit && lastSelfAudit.nextAuditTime > now) {
             return { selfAuditResult: lastSelfAudit, nextSelfAuditInterval: lastSelfAudit.nextAuditTime - now };
         }
+
+        const epoch = await getLatestEpoch(true);
+        await waitForAddressUpdates();
         const addresses = await getAddresses();
         try {
             const selfAuditResult = await selfAudit(
@@ -67,7 +99,7 @@ const useRunSelfAudit = () => {
                 userKeys,
                 ktLSAPI,
                 saveSKLToLS,
-                getLatestEpoch,
+                epoch,
                 uploadMissingSKL,
                 getAddressKeys
             );
