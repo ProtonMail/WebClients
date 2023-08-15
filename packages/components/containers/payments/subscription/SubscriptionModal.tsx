@@ -125,13 +125,13 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 
 const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
 
-export const useProration = (
+export const useCheckoutModifiers = (
     model: Model,
     subscription: SubscriptionModel,
     plansMap: PlansMap,
     checkResult?: SubscriptionCheckResponse
 ) => {
-    const showProration = useMemo(() => {
+    const isProration = useMemo(() => {
         const checkout = getCheckout({
             planIDs: getPlanIDs(subscription),
             plansMap,
@@ -147,11 +147,19 @@ export const useProration = (
             return true;
         }
 
-        return checkResult.Proration !== 0;
+        return (
+            checkResult.Proration !== 0 && (checkResult.UnusedCredit === 0 || checkResult.UnusedCredit === undefined)
+        );
     }, [subscription, model, checkResult]);
 
+    const isCustomBilling = checkResult?.UnusedCredit !== 0;
+
+    const isScheduledSubscription = !isProration && !isCustomBilling;
+
     return {
-        showProration,
+        isProration,
+        isScheduledSubscription,
+        isCustomBilling,
     };
 };
 
@@ -249,7 +257,7 @@ const SubscriptionModal = ({
         application,
     };
 
-    const { showProration } = useProration(model, subscription, plansMap, checkResult);
+    const checkoutModifiers = useCheckoutModifiers(model, subscription, plansMap, checkResult);
 
     const amountDue = checkResult?.AmountDue || 0;
     const couponCode = checkResult?.Coupon?.Code;
@@ -700,6 +708,7 @@ const SubscriptionModal = ({
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
                                     onChangeCurrency={handleChangeCurrency}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>
@@ -812,8 +821,8 @@ const SubscriptionModal = ({
                                         </>
                                     }
                                     onChangeCurrency={handleChangeCurrency}
-                                    showProration={showProration}
                                     nextSubscriptionStart={subscription.PeriodEnd}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>
@@ -947,11 +956,11 @@ const SubscriptionModal = ({
                                         </>
                                     }
                                     onChangeCurrency={handleChangeCurrency}
-                                    showProration={showProration}
                                     nextSubscriptionStart={subscription.PeriodEnd}
                                     showDiscount={false}
                                     enableDetailedAddons={true}
                                     showPlanDescription={false}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>

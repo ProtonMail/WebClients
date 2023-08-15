@@ -129,11 +129,13 @@ interface Props {
     onChangeCurrency: (currency: Currency) => void;
     planIDs: PlanIDs;
     isOptimistic?: boolean;
-    showProration?: boolean;
     nextSubscriptionStart?: number;
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
+    isScheduledSubscription?: boolean;
+    isProration?: boolean;
+    isCustomBilling?: boolean;
 }
 
 const SubscriptionCheckout = ({
@@ -148,11 +150,12 @@ const SubscriptionCheckout = ({
     planIDs,
     checkResult,
     loading,
-    showProration = true,
     nextSubscriptionStart,
     showDiscount = true,
     enableDetailedAddons = false,
     showPlanDescription = true,
+    isScheduledSubscription,
+    isProration,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -184,8 +187,6 @@ const SubscriptionCheckout = ({
     const giftValue = Math.abs(checkResult.Gift || 0);
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
-
-    const displayStartDate = !showProration;
 
     return (
         <Checkout
@@ -261,7 +262,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {showProration && proration !== 0 && (
+            {isProration && proration !== 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
@@ -285,7 +286,7 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
-            {displayStartDate && nextSubscriptionStart && (
+            {isScheduledSubscription && nextSubscriptionStart && (
                 <StartDateCheckoutRow nextSubscriptionStart={nextSubscriptionStart} />
             )}
             {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
