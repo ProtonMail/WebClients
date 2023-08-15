@@ -1085,9 +1085,6 @@
       "No history": [
         "Nessuna cronologia"
       ],
-      "Not recently used": [
-        "Non usato di recente"
-      ],
       "Note": [
         "Nota"
       ],
@@ -1096,6 +1093,9 @@
       ],
       "Old-New": [
         "Dal più vecchio al più recente"
+      ],
+      "Older than last month": [
+        "Più vecchio del mese scorso"
       ],
       "Oldest to newest": [
         "Dal meno recente al più recente"
@@ -1250,7 +1250,7 @@
         "Trattini"
       ],
       "Memorable Password": [
-        "Password memorabile"
+        "Password facile da ricordare"
       ],
       "Numbers": [
         "Numeri"
@@ -1313,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Inserisci nuovamente \"${ vaultName }\" per confermare l'eliminazione"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Cerca ${ pluralItemType } in ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Cerca ${ pluralItemType } in tutte le casseforti"
       ],
       "Search in ${ vault.content.name }": [
         "Cerca in ${ vault.content.name }"
