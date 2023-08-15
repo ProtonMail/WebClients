@@ -319,6 +319,9 @@
       "Grid layout": [
         "網格版面配置"
       ],
+      "Help": [
+        "幫助"
+      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -553,6 +556,9 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Share file": [
         "分享檔案"
       ],
@@ -616,11 +622,17 @@
       "Submit report": [
         "提交通報"
       ],
+      "Switch or add account": [
+        "切換或是添加帳號"
+      ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
       ],
       "Toggle Contact app": [
         "切換聯絡人應用程式"
+      ],
+      "Toggle settings": [
+        "切換設定"
       ],
       "Trust": [
         "信任"
@@ -2222,6 +2234,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "Missing FN property": [
+        "缺少 FN 屬性"
       ],
       "vCard versions < 3.0 not supported": [
         "不支援 vCard 版本 < 3.0"
@@ -3886,6 +3901,9 @@
       "Trash": [
         "垃圾桶"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
+      ],
       "Try searching by file name, date, or type.": [
         "試著搜尋檔案名稱、日期與類型。"
       ],
@@ -4169,6 +4187,9 @@
       ],
       "Bad": [
         "壞壞"
+      ],
+      "Beta Access": [
+        "測試版體驗"
       ],
       "Browser": [
         "瀏覽器"
@@ -4497,11 +4518,17 @@
       "Street address": [
         "街道位址"
       ],
+      "Sync with system": [
+        "與系統同步"
+      ],
       "System information": [
         "系統資訊"
       ],
       "Text": [
         "文字"
+      ],
+      "Theme": [
+        "主題"
       ],
       "This will permanently delete all files in your locked drive.": [
         "此舉將會永久刪除所有位於鎖定之雲端硬碟內的檔案。"
@@ -5437,6 +5464,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "提早存取和自訂您的應用程式體驗。"
+      ],
       "Encrypted search is here": [
         "經加密搜尋功能現已推出"
       ],
@@ -5448,6 +5478,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "現在您可輕易搜尋 Drive 檔案，同時保持您的資料安全。"
+      ],
+      "Quick settings": [
+        "快速設定"
       ]
     },
     "Storage": {
@@ -5696,6 +5729,9 @@
       ],
       "All": [
         "全部"
+      ],
+      "All settings": [
+        "所有設定"
       ],
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
