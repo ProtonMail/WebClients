@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Neem contact op"
+      ],
+      "Get more": [
+        "Verkrijg meer"
+      ],
       "Get the deal": [
         "Pak deze deal"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Begrepen"
+      ],
+      "Help": [
+        "Hulp"
       ],
       "Hide": [
         "Verbergen"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Behoud mijn ${ vpnPlanNameShort }-abonnement"
+      ],
+      "Let's talk": [
+        "Laten we praten!"
       ],
       "Load more": [
         "Laad meer"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Betalen"
+      ],
+      "Pay ${ price }": [
+        "Betaal ${ price }"
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Nieuw wachtwoord instellen"
       ],
+      "Settings": [
+        "Instellingen"
+      ],
       "Share via link": [
         "Deel via link"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Ondersteuning"
+      ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
       ],
       "Top up": [
         "Saldo verhogen"
@@ -402,6 +423,29 @@
       ],
       "Reactivate": [
         "Opnieuw activeren"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigen domein",
+        "${ domains } eigen domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per toegewijde server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domein"
+      ],
+      "${ price } per user": [
+        "${ price } per gebruiker"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Alter": {
@@ -521,6 +565,17 @@
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
         "Totaal voor ${ n } maanden"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "maand"
+      ],
+      "Servers": [
+        "Servers"
+      ],
+      "Users": [
+        "Gebruikers"
       ]
     },
     "Collapsible tooltip": {
@@ -1528,7 +1583,7 @@
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "status page": [
-        "status pagina"
+        "statuspagina"
       ],
       "Tab closed": [
         "Tab gesloten"
@@ -2129,6 +2184,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Alle ${ twoFa }methodes op uw account worden uitgeschakeld."
       ],
@@ -2140,6 +2198,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Awaiting transaction": [
+        "Transactie wordt afgewacht"
       ],
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
@@ -2170,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -2206,6 +2264,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -2316,7 +2380,7 @@
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Wanneer je opzegt, zal je ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
+        "Wanneer u opzegt, zal u ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -2411,6 +2475,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
+      "Number of dedicated servers in the organization": [
+        "Aantal toegewijde servers in uw organisatie"
+      ],
       "Number of users": [
         "Aantal gebruikers"
       ],
@@ -2428,6 +2495,9 @@
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
+      ],
+      "Organization size": [
+        "Grootte van de organisatie"
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
@@ -2498,6 +2568,9 @@
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
       ],
+      "Saving your password": [
+        "Uw wachtwoord wordt bewaard"
+      ],
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
       ],
@@ -2521,6 +2594,9 @@
       ],
       "Setting up your Drive": [
         "Uw Drive aan het instellen"
+      ],
+      "Setting up your organization": [
+        "Uw organisatie wordt aangemaakt"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
@@ -2592,8 +2668,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
+      "to ${ product } Business": [
+        "naar ${ product } Business"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Om uw abonnement op te zeggen, neem contact met ons op."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
+      ],
+      "to continue to ${ product }": [
+        "om door te gaan naar ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
@@ -2694,23 +2779,35 @@
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
+      "We generated a strong password for you": [
+        "We genereerden een sterk wachtwoord voor u"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
       ],
       "We need to authenticate your payment with your bank.": [
         "We moeten uw betaling authenticeren met uw bank."
       ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "We bevelen aan om minstens 2 servers te bezitten om redundantie te bieden."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
       ],
       "We use 3-D Secure to protect your payments": [
-        "We gebruiken 3-D Secure om je betalingen te beschermen"
+        "We gebruiken 3-D Secure om uw betalingen te beschermen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
+      "We'll get back to you shortly.": [
+        "We nemen zo snel mogelijk contact met u op."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
+      "Welcome": [
+        "Welkom"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -2844,6 +2941,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -2976,10 +3076,10 @@
         "Browserversie"
       ],
       "BTC address": [
-        "BTC adres"
+        "BTC-adres"
       ],
       "BTC amount": [
-        "BTC bedrag"
+        "BTC-bedrag"
       ],
       "Card details": [
         "Kaart details"
@@ -3173,6 +3273,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
       ],
+      "Please share any feedback to help us improve.": [
+        "Deel uw feedback en help ons te verbeteren."
+      ],
       "Postal code": [
         "Postcode"
       ],
@@ -3236,6 +3339,9 @@
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
+      "Why would you like to cancel?": [
+        "Waarom wil u annuleren?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
@@ -3287,6 +3393,9 @@
     "Link": {
       "Add a gift code": [
         "Voeg een geschenkcode toe"
+      ],
+      "Add gift code": [
+        "Voeg geschenkcode toe"
       ],
       "clearing your browser cache": [
         "browsercache legen"
@@ -3399,19 +3508,19 @@
         "Maak een nieuwe ${ appName }-account aan"
       ],
       "Find ${ BRAND_NAME } Account username": [
-        "Vind ${ BRAND_NAME } Account gebruikersnaam"
+        "Vind ${ BRAND_NAME }-account gebruikersnaam"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } wachtwoord vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } Account gebruikersnaam vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+        "${ BRAND_NAME }-account gebruikersnaam vergeten? Reset het door uw recovery code, e-mail of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Reset uw ${ BRAND_NAME } Account wachtwoord"
+        "Reset uw ${ BRAND_NAME }-account wachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
-        "Log in om toegang te krijgen tot uw ${ appName } account"
+        "Log in om toegang te krijgen tot uw ${ appName }-account"
       ]
     },
     "Monetary unit": {
@@ -3448,6 +3557,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Behoud mijn ${ currentPlanName }-account"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "new_plans: action": {
@@ -3558,6 +3670,9 @@
       "1 user": [
         "1 gebruiker"
       ],
+      "24/7 support": [
+        "24/7 ondersteuning"
+      ],
       "99.95% SLA": [
         "99,95% SLA"
       ],
@@ -3566,6 +3681,9 @@
       ],
       "Admin console": [
         "Beheerdersconsole"
+      ],
+      "Advanced network security": [
+        "Geavanceerde netwerkbeveiliging"
       ],
       "Advanced sharing security": [
         "Geavanceerde beveiliging voor delen"
@@ -3588,6 +3706,9 @@
       "Centralized billing": [
         "Gecentraliseerde facturatie"
       ],
+      "Centralized settings and billings": [
+        "Gecentraliseerde instellingen en facturen"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
@@ -3608,6 +3729,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitoring van datalekken (binnenkort beschikbaar)"
+      ],
+      "Dedicated servers and IP": [
+        "Toegewijde servers en IP"
       ],
       "DNS leak prevention": [
         "DNS-lekbescherming"
@@ -3710,6 +3834,10 @@
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servers in ${ vpnServersCountData.paid.countries }+ land",
+        "Servers in ${ vpnServersCountData.paid.countries }+ landen"
+      ],
       "Share calendar via link": [
         "Agenda delen via koppeling"
       ],
@@ -3721,6 +3849,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
+      ],
+      "Start protecting your organization": [
+        "Begin met het beschermen van uw organisatie"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Begin jezelf online te beschermen in 2 eenvoudige stappen"
@@ -3798,6 +3929,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
@@ -3828,6 +3962,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
@@ -3836,6 +3973,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Op maat gemaakte oplossingen voor grotere organisaties met specifieke beveiligingsbehoeften."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "De speciale VPN-oplossing voor veilige, onbeperkte en snelle toegang tot internet."
@@ -3878,6 +4018,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Door op \"Betaal\" te klikken, u akkoord met onze ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "algemene voorwaarden"
       ]
@@ -3948,6 +4091,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -3980,6 +4126,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Net als een map is een kluis een handige manier om uw items te ordenen. Het delen van kluizen met vrienden en familie is in de maak."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Vergrendel uw bedrijfsbronnen van het openbare internet en maak ze alleen toegankelijk via uw private gateways"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Beheer uw abonnement en pas het zo nodig aan uw wensen aan. De geaccepteerde betaalmethodes zijn creditcard, PayPal, cryptovaluta en bankoverschrijving."
@@ -4091,11 +4240,20 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 ondersteuning"
+      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
+      ],
+      "AES 256-bit VPN encryption": [
+        "256-bit AES-versleuteling VPN"
+      ],
+      "Auto-connect": [
+        "Automatisch verbinden"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
@@ -4103,20 +4261,53 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
       ],
+      "Browser extension": [
+        "Browserextensie"
+      ],
+      "Censorship circumvention": [
+        "Omzeiling censuur"
+      ],
+      "Central control panel": [
+        "Centraal bedieningspaneel"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
       "Create up to ${ n } calendar": [
-        "Maak tot ${ n } kalender",
-        "Maak tot ${ n } kalenders"
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
+      "Dedicated Account manager": [
+        "Toegewezen account manager"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Toegewijde server locaties in ${ numberOfCountries }+ landen"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Toegewijde server locaties in Noord-Amerika en Europa"
+      ],
+      "Multi-platform support": [
+        "Multi-platformondersteuning"
+      ],
+      "Private gateways": [
+        "Private gateways"
+      ],
+      "Require 2FA": [
+        "2FA vereist"
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Ongeldige code"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Welkom bij ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Welkom bij ${ VPN_APP_NAME }"
       ]
@@ -4213,6 +4404,9 @@
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
+      "Please select the main reason": [
+        "Selecteer de hoofdreden"
+      ],
       "Select": [
         "Selecteer"
       ],
@@ -4223,6 +4417,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Selecteer het aantal IPs om in uw plan te zetten. Elke extra IP kost ${ price }. Indien u meer nodig heefts dan ${ maxIPs } IPs, contacteer ${ contactHref } ons Verkoopsteam."
       ]
     },
     "plan customizer, users": {
@@ -4583,7 +4782,28 @@
         "Uw huidige opslag:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Wordt om de 15 maanden gefactureerd"
+      ],
+      "Billed every 2 years": [
+        "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed every 30 months": [
+        "Wordt om de 30 maanden gefactureerd"
+      ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
+      "Billed yearly": [
+        "Jaarlijks gefactureerd"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } toegewijde server",
+        "${ ipAddresses } toegewijde servers"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } supersnelle VPN-verbinding",
         "${ maxVpn } supersnelle VPN-verbindingen"
@@ -4661,12 +4881,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Beheer uw abonnement op ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Abonnement wordt beheerd door ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Abonneren van gebruiker ID-${ userId } is gedaan via een in-app aankoop. Om het abonnement te beheren, moet de gebruiker naar de Abonnement-sectie van diens ${ subscriptionManager }-account."
       ],
       "Subscriptions": [
         "Abonnementen"
@@ -5020,6 +5234,9 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "Contact us": [
+        "Contacteer ons"
+      ],
       "Credits": [
         "Tegoed"
       ],
@@ -5173,6 +5390,9 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
+      "Request sent": [
+        "Verzoek verzonden"
+      ],
       "Reset password": [
         "Wachtwoord resetten"
       ],
@@ -5211,6 +5431,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Summary": [
+        "Overzicht"
       ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"
@@ -5296,6 +5519,9 @@
       "Plan": [
         "Abonnement"
       ],
+      "Servers": [
+        "Servers"
+      ],
       "Start date": [
         "Begindatum"
       ],
@@ -5355,6 +5581,20 @@
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Ik heb een andere service gevonden die mijn voorkeur heeft"
+      ],
+      "It’s missing a key feature": [
+        "Er ontbreekt een sleutel kenmerk"
+      ],
+      "It’s too expensive": [
+        "Het is te duur"
+      ],
+      "Other": [
+        "Overige"
       ]
     },
     "VPN info": {

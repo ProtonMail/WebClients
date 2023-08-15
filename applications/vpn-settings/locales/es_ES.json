@@ -179,6 +179,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -305,6 +308,9 @@
       "Set new password": [
         "Establecer una nueva contraseña"
       ],
+      "Settings": [
+        "Ajustes"
+      ],
       "Share via link": [
         "Compartir con un enlace"
       ],
@@ -337,6 +343,9 @@
       ],
       "Support": [
         "Soporte"
+      ],
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
       ],
       "Top up": [
         "Recargar"
@@ -425,11 +434,11 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
       "${ price } per domain": [
         "${ price } por dominio"
-      ],
-      "${ price } per IP address": [
-        "${ price } por dirección IP"
       ],
       "${ price } per user": [
         "${ price } por usuario"
@@ -1920,7 +1929,7 @@
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Tu llave de autenticación de dos factores está lista."
+        "Tu llave de autenticación de doble factor está lista."
       ]
     },
     "fido2: Label": {
@@ -2155,7 +2164,7 @@
         "añadir un método de recuperación"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de dos factores cada vez que inicies sesión."
+        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de doble factor cada vez que inicies sesión."
       ],
       "Additional options": [
         "Opciones adicionales"
@@ -2182,13 +2191,16 @@
         "Se desactivará cualquier método ${ twoFa } de tu cuenta."
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Estás seguro de que quieres deshabilitar la autenticación de dos factores?"
+        "¿Estás seguro de que quieres deshabilitar la autenticación de doble factor?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Awaiting transaction": [
+        "Esperando la transacción"
       ],
       "Balance from your previous subscription": [
         "Saldo de tu suscripción anterior"
@@ -2219,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Se puede tardar a confirmar las transacciones con Bitcoin (hasta 24 horas). Una vez confirmada, añadiremos los créditos a tu cuenta. Después de la confirmación de la transacción, podrás pagar tu factura con los créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
@@ -2255,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
-      ],
-      "Dedicated IP addresses ": [
-        "Direcciones IP dedicadas "
       ],
       "Dedicated servers": [
         "Servidores dedicados"
@@ -2383,10 +2389,10 @@
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
+        "Si nunca has utilizado la autenticación de doble factor anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
+        "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -2401,7 +2407,7 @@
         "Si quieres combinar esta cuenta con otra, NO borres esta."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
+        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de doble factor."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
@@ -2452,7 +2458,7 @@
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+        "Introduce manualmente esta información en tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -2469,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es tu dispositivo? Utiliza una ventana de navegación privada para iniciar sesión y ciérrala cuando hayas terminado. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Número de direcciones IP dedicadas en la organización"
-      ],
-      "Number of IP addresses": [
-        "Número de direcciones IP"
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados en la organización"
       ],
       "Number of users": [
         "Número de usuarios"
@@ -2548,7 +2551,7 @@
         "Protegido por la legislación suiza sobre privacidad"
       ],
       "read our two-factor authentication guide first": [
-        "lee primero nuestra guía de autenticación de dos factores"
+        "lee primero nuestra guía de autenticación de doble factor"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
@@ -2572,7 +2575,7 @@
         "Escanear código QR en su lugar"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escanea este código con tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+        "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
       ],
       "Securing your account": [
         "Protegiendo tu cuenta"
@@ -2660,10 +2663,10 @@
         "Esto reemplazará tu contraseña temporal. La utilizarás para acceder a tu cuenta de ${ BRAND_NAME } en el futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Esto cerrará cualquier sesión activa y deshabilitará la autenticación de dos factores."
+        "Esto cerrará cualquier sesión activa y deshabilitará la autenticación de doble factor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este asistente habilitará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
+        "Este asistente habilitará la autenticación de doble factor (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
       ],
       "to ${ product } Business": [
         "a ${ product }·Business"
@@ -2708,13 +2711,13 @@
         "Conexiones VPN totales"
       ],
       "two-factor authentication (2FA)": [
-        "autenticación de dos factores (2FA)"
+        "autenticación de doble factor (2FA)"
       ],
       "Two-factor authentication disabled": [
-        "Autenticación de dos factores deshabilitada"
+        "Autenticación de doble factor deshabilitada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticación de dos factores habilitada"
+        "Autenticación de doble factor habilitada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "El modo de doble contraseña requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
@@ -2816,7 +2819,7 @@
         "Se está actualizando tu plan actual a un plan que ofrece más por el mismo precio. Mientras el sistema se actualiza, no podrás cambiarlo. Se te enviará un correo electrónico en cuanto esté listo."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
@@ -4176,7 +4179,7 @@
         "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté comprometida."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
+        "Cambia las contraseñas de los usuarios y restablece la autenticación de doble factor en sus cuentas."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Asigna el tráfico de internet a la red Tor con un solo clic."
@@ -4277,8 +4280,8 @@
       "Dedicated Account manager": [
         "Gestor de cuenta dedicada"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Ubicaciones de servidores dedicados en más de ${ n } países"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
@@ -4879,12 +4882,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestiona tu suscripción en ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "${ subscriptionManager } gestiona tu suscripción."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La suscripción del usuario ID-${ userId } fue realizada con una compra dentro de la app. Para gestionar la suscripción del usuario, navega a la sección Suscripción en tu cuenta de ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Suscripciones"
       ],
@@ -5265,7 +5262,7 @@
         "¡Dispositivo conectado!"
       ],
       "Disable two-factor authentication": [
-        "Desactivar la autenticación de dos factores"
+        "Desactivar la autenticación de doble factor"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"
@@ -5412,7 +5409,7 @@
         "Establecer una nueva contraseña"
       ],
       "Set up two-factor authentication": [
-        "Configurar autenticación de dos factores"
+        "Configurar autenticación de doble factor"
       ],
       "Set your password": [
         "Establece tu contraseña"
@@ -5517,7 +5514,7 @@
         "Duración"
       ],
       "End date": [
-        "Fecha final"
+        "Fecha de fin"
       ],
       "Plan": [
         "Plan"
