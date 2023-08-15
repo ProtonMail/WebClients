@@ -179,6 +179,9 @@
       "Got it": [
         "J'ai compris"
       ],
+      "Help": [
+        "Aide"
+      ],
       "Hide": [
         "Masquer"
       ],
@@ -305,6 +308,9 @@
       "Set new password": [
         "Définir un nouveau mot de passe"
       ],
+      "Settings": [
+        "Paramètres"
+      ],
       "Share via link": [
         "Partager avec un lien"
       ],
@@ -337,6 +343,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Switch or add account": [
+        "Basculer vers ou ajouter un compte"
       ],
       "Top up": [
         "Recharger"
@@ -425,11 +434,11 @@
         "${ ips } serveur",
         "${ ips } serveurs"
       ],
+      "${ price } per dedicated server": [
+        "${ price } par serveur dédié"
+      ],
       "${ price } per domain": [
         "${ price } par domaine"
-      ],
-      "${ price } per IP address": [
-        "${ price } par adresse IP"
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
@@ -2190,6 +2199,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Awaiting transaction": [
+        "Transaction en attente"
+      ],
       "Balance from your previous subscription": [
         "Crédit de votre précédent abonnement"
       ],
@@ -2219,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
@@ -2255,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
-      ],
-      "Dedicated IP addresses ": [
-        "Adresses IP dédiées"
       ],
       "Dedicated servers": [
         "Serveurs dédiés"
@@ -2469,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Nombre d'adresses IP dédiées dans l'organisation"
-      ],
-      "Number of IP addresses": [
-        "Nombre d'adresses IP"
+      "Number of dedicated servers in the organization": [
+        "Nombre de serveurs dédiés dans l'organisation"
       ],
       "Number of users": [
         "Nombre d’utilisateurs"
@@ -4277,8 +4280,8 @@
       "Dedicated Account manager": [
         "Gestionnaire de compte dédié"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Emplacements de serveurs dédiés dans plus de ${ n } pays"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Emplacements de serveurs dédiés dans plus de ${ numberOfCountries } pays"
       ],
       "Dedicated server locations in North America and Europe": [
         "Emplacements de serveurs dédiés en Amérique du Nord et en Europe"
@@ -4878,12 +4881,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gérez votre abonnement sur ${ subscriptionManager }."
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "L'abonnement est géré par ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "L'abonnement de l'utilisateur ID-${ userId } a été effectué par le biais d'un achat dans l'application. Pour gérer l'abonnement, l'utilisateur doit se rendre dans la section Abonnement de son compte ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Abonnements"

@@ -434,11 +434,11 @@
         "${ ips } server",
         "${ ips } server"
       ],
+      "${ price } per dedicated server": [
+        "${ price } per server dedicato"
+      ],
       "${ price } per domain": [
         "${ price } per dominio"
-      ],
-      "${ price } per IP address": [
-        "${ price } per indirizzo IP"
       ],
       "${ price } per user": [
         "${ price } per utente"
@@ -2199,6 +2199,9 @@
       "Attention required": [
         "Attenzione"
       ],
+      "Awaiting transaction": [
+        "Transazione in attesa"
+      ],
       "Balance from your previous subscription": [
         "Saldo del tuo abbonamento precedente"
       ],
@@ -2228,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Le transazioni in Bitcoin potrebbero richiedere un po' di tempo per essere confermate (fino a 24 ore). Una volta confermate, aggiungeremo il credito al tuo account. Dopo la conferma della transazione, potrai pagare la tua fattura con il credito."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -2264,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
-      ],
-      "Dedicated IP addresses ": [
-        "Indirizzi IP dedicati "
       ],
       "Dedicated servers": [
         "Server dedicati"
@@ -2478,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Non è il tuo dispositivo? Usa una finestra di navigazione in incognito per accedere e chiudila quando hai finito. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Numero di indirizzi IP dedicati nell'organizzazione"
-      ],
-      "Number of IP addresses": [
-        "Numero di indirizzi IP"
+      "Number of dedicated servers in the organization": [
+        "Numero di server dedicati nell'organizzazione"
       ],
       "Number of users": [
         "Numero di utenti"
@@ -4289,8 +4283,8 @@
       "Dedicated Account manager": [
         "Account manager dedicato"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Posizioni server dedicate in oltre ${ n } paesi"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Posizioni server dedicate in ${ numberOfCountries }+ paesi"
       ],
       "Dedicated server locations in North America and Europe": [
         "Posizioni server dedicate in Nord America ed Europa"
@@ -4890,12 +4884,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestisci il tuo abbonamento su ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "L'abbonamento è gestito da ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "L'abbonamento dell'ID utente ${ userId } è stato effettuato attraverso un acquisto in-app. Per gestire l'abbonamento l'utente deve navigare nella sezione abbonamenti del loro account ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Abbonamenti"
