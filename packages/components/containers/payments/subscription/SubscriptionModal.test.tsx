@@ -24,12 +24,12 @@ import {
     withNotifications,
 } from '@proton/testing/index';
 
-import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
+import SubscriptionModal, { Model, Props, useCheckoutModifiers } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/metrics');
 
-describe('useProration', () => {
+describe('useCheckoutModifiers', () => {
     let model: Model;
     let subscriptionModel: SubscriptionModel;
     let checkResult: SubscriptionCheckResponse;
@@ -177,38 +177,75 @@ describe('useProration', () => {
         };
     });
 
-    it('should return showProration === true when checkResult is undefined', () => {
-        const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap));
-        expect(result.current.showProration).toEqual(true);
+    it('should return isProration === true when checkResult is undefined', () => {
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
+        expect(result.current.isProration).toEqual(true);
     });
 
-    it('should return showProration === true when user buys different plan', () => {
+    it('should return isProration === true when user buys different plan', () => {
         model.planIDs = {
             [PLANS.MAIL_PRO]: 1,
         };
 
         subscriptionModel.Plans[0].Name = PLANS.MAIL;
 
-        const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap, checkResult));
-        expect(result.current.showProration).toEqual(true);
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(true);
     });
 
-    it('should return showProration === true if user buys the same plan but proration is undefined', () => {
+    it('should return isProration === true if user buys the same plan but proration is undefined', () => {
         checkResult.Proration = undefined;
-        const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap, checkResult));
-        expect(result.current.showProration).toEqual(true);
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(true);
     });
 
-    it('should return showProration === true if Proration exists and proration !== 0', () => {
+    it('should return isProration === true if Proration exists and proration !== 0', () => {
         checkResult.Proration = -450;
-        const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap, checkResult));
-        expect(result.current.showProration).toEqual(true);
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(true);
     });
 
-    it('should return showProration === false if Proration exists and proration === 0', () => {
+    it('should return isProration === false if Proration exists and proration === 0', () => {
         checkResult.Proration = 0;
-        const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap, checkResult));
-        expect(result.current.showProration).toEqual(false);
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(false);
+    });
+
+    describe('custom billings', () => {
+        it('should return isScheduledSubscription === false if UnusedCredit !== 0', () => {
+            checkResult.Proration = 0;
+            checkResult.UnusedCredit = -20;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isScheduledSubscription).toEqual(false);
+        });
+
+        it('should return isProration === false if UnusedCredit !== 0', () => {
+            checkResult.Proration = 0;
+            checkResult.UnusedCredit = -20;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isProration).toEqual(false);
+        });
+
+        it('should return isCustomBilling === true if UnusedCredit !== 0', () => {
+            checkResult.Proration = 0;
+            checkResult.UnusedCredit = -20;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isCustomBilling).toEqual(true);
+        });
+
+        it('should return isCustomBilling === false if UnusedCredit === 0', () => {
+            checkResult.Proration = 150;
+            checkResult.UnusedCredit = 0;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isCustomBilling).toEqual(false);
+        });
+
+        it('should return isCustomBilling === false if UnusedCredit === 0 if Proration is 0 too', () => {
+            checkResult.Proration = 0;
+            checkResult.UnusedCredit = 0;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isCustomBilling).toEqual(false);
+        });
     });
 });
 
