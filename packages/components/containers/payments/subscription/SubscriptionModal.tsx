@@ -794,6 +794,15 @@ const SubscriptionModal = ({
                                         onCard={setCard}
                                         cardErrors={cardErrors}
                                         creditCardTopRef={creditCardTopRef}
+                                        onBitcoinTokenValidated={async (data) => {
+                                            setBitcoinValidated(true);
+                                            await handleSubscribe({
+                                                ...data,
+                                                Amount: amountDue,
+                                                Currency: checkResult?.Currency as Currency,
+                                            });
+                                        }}
+                                        onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
@@ -815,7 +824,7 @@ const SubscriptionModal = ({
                                             onClose={onClose}
                                             paypal={paypal}
                                             step={model.step}
-                                            loading={loading}
+                                            loading={loading || bitcoinLoading}
                                             method={method}
                                             checkResult={checkResult}
                                             className="w100"
