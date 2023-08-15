@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Välitä liitteenä"
       ],
-      "Generate recovery phrase": [
-        "Luo palautuslauseke"
-      ],
       "Get SimpleLogin extension": [
         "Hanki SimpleLogin-laajennus"
       ],
@@ -443,6 +440,9 @@
       ],
       "Got it": [
         "Selvä"
+      ],
+      "Help": [
+        "Tuki"
       ],
       "Hide": [
         "Piilota"
@@ -895,6 +895,9 @@
       "Set": [
         "Aseta"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi"
+      ],
       "Set as default": [
         "Aseta oletukseksi"
       ],
@@ -906,6 +909,9 @@
       ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
+      ],
+      "Settings": [
+        "Asetukset"
       ],
       "Share via link": [
         "Jaa linkkinä"
@@ -981,6 +987,9 @@
       ],
       "Submit": [
         "Lähetä"
+      ],
+      "Switch or add account": [
+        "Vaihda tai lisää tili"
       ],
       "This message contains embedded images.": [
         "Viesti sisältää upotettuja kuvia."
@@ -1638,6 +1647,9 @@
       ],
       "azureish white": [
         "taivaansininen valkoinen"
+      ],
+      "black": [
+        "musta"
       ],
       "blanched almond": [
         "valkaistu manteli"
@@ -3511,6 +3523,9 @@
       "Encryption failed": [
         "Salaus epäonnistui"
       ],
+      "Missing FN property": [
+        "Puuttuva FN-ominaisuus"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0:aa edeltäviä versioita ei tueta"
       ]
@@ -4123,6 +4138,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Muuta ${ strongText } ${ BRAND_NAME } -osoitteeksi"
       ],
+      "Changed accounts": [
+        "Vaihda tiliä"
+      ],
       "Checklist complete": [
         "Tarkistuslista on valmis"
       ],
@@ -4131,6 +4149,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Onnittelut, olet suorittanut kaikki vaiheet!"
+      ],
+      "Congratulation, you finished!": [
+        "Onnittelut, olet valmis!"
       ],
       "Continue setting up your email": [
         "Jatka sähköpostisi määrittämistä"
@@ -4150,9 +4171,6 @@
       "For your eyes only": [
         "Vain silmillesi"
       ],
-      "Get mobile app": [
-        "Hanki mobiilisovellus"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
       ],
@@ -4162,23 +4180,11 @@
       "Get the App": [
         "Hanki sovellus"
       ],
-      "Import contacts or emails": [
-        "Tuo yhteystietoja tai viestejä"
-      ],
-      "Import data": [
-        "Tuo tietoja"
-      ],
-      "Import your contacts or messages": [
-        "Tuo yhteystietosi tai viestisi"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Jatka ${ MAIL_APP_NAME } käyttöä löytääksesi lisää tapoja, joilla ${ BRAND_NAME } suojaa yksityisyyttäsi ja yksinkertaistaa sähköpostien lähettämistä."
       ],
       "Learn more": [
         "Lisätietoja"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Tee ${ BRAND_NAME } mene-postilaatikoksesi"
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
@@ -4188,6 +4194,9 @@
       ],
       "Open checklist": [
         "Avaa tarkistuslista"
+      ],
+      "Open checklist and get free storage": [
+        "Avaa muistilista ja saat ilmaista tallennustilaa"
       ],
       "Popular online services": [
         "Suosittuja verkkopalveluita"
@@ -4201,20 +4210,14 @@
       "Protection from trackers": [
         "Suojaus jäljittäjiltä"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Siirrä yhteystietosi tai sähköpostisi nopeasti muista palveluista Easy Switch Import Assistant -työkalullamme."
-      ],
-      "Send a message": [
-        "Lähetä viesti"
-      ],
-      "Set recovery method": [
-        "Määritä palautustapa"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Määritä ${ strongText } Gmailista"
       ],
       "Sign in to the mobile app to complete this step": [
         "Suorita tämä vaihe kirjautumalla mobiilisovellukseen"
+      ],
+      "Storage unlocked": [
+        "Tallennustila avattu"
       ],
       "Update your logins": [
         "Päivitä kirjautumistietosi"
@@ -4761,9 +4764,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Palautuslauseke on yksi turvallisimpia tapoja suojata tilisi. Sen avulla pääset tililesi ja voit palauttaa salatut tietosi, jos joskus unohdat salasanasi."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Postituslistatilauksen perumispyyntö lähetetään uutiskirjeen lähettäjälle ja käsitellään automaattisesti."
       ],
@@ -4981,6 +4981,9 @@
       "Do you want to re-sign the contact details?": [
         "Haluatko allekirjoittaa yhteystiedon uudelleen?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Etkö löydä etsimääsi? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Älä unohda ilmoittaa salasanaa vastaanottajalle"
       ],
@@ -5165,6 +5168,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ importedEmailAddress } tilille ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Sisällytä roskaposti ja roskakori hakutuloksiisi."
+      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -5336,6 +5342,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
+      "Open shortcut cheat sheet": [
+        "Avaa pikanäppäinlista"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Järjestelmämme on merkinnyt viestin tietojenkalasteluyritykseksi. Tarkista sen aitous."
       ],
@@ -5359,9 +5368,6 @@
       ],
       "Please fill out this field.": [
         "Täytä tämä kenttä."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Pidä se turvassa, koska tarvitset sitä päästäksesi tilillesi ja purkaaksesi tietojesi salauksen, jos joudut joskus nollaamaan salasanasi."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Huomioi, että ryhmään lisättyjä osoitteita EI poisteta."
@@ -5414,12 +5420,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Palautuslauseke kopioitiin leikepöydälle"
-      ],
-      "Recovery phrase downloaded": [
-        "Palautuslauseke ladattiin"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -5504,9 +5504,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Aseta ${ MAIL_APP_NAME } sähköpostin oletussovellukseksi tässä selaimessa, niin ${ MAIL_APP_NAME } avautuu sähköpostilinkeistä automaattisesti."
-      ],
-      "Set a recovery phrase": [
-        "Aseta palautuslauseke"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
@@ -5717,6 +5714,9 @@
       ],
       "Trackers blocked:": [
         "Seurantoja estetty:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Kytke pois päältä, jos haluat etsiä vain päivämäärän, nimen, sähköpostiosoitteen tai aiheen perusteella. Jos haluat poistaa viestin sisällön haun käytöstä ja poistaa sitä varten ladatut viestit, siirry asetuksiin."
@@ -5987,12 +5987,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your recovery phrase": [
-        "Palautuslausekkeesi"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Palautuslausekkeesi on tietyssä järjestyksessä olevien 12 sanan sarja."
       ]
     },
     "info": {
@@ -6310,6 +6304,9 @@
       "BCC": [
         "Piilokopio"
       ],
+      "Beta Access": [
+        "Beta-käyttö"
+      ],
       "Blind Carbon Copy": [
         "Piilokopio"
       ],
@@ -6496,6 +6493,9 @@
       "Last month only": [
         "Vain viime kuu"
       ],
+      "Layout": [
+        "Asettelu"
+      ],
       "Location": [
         "Sijainti"
       ],
@@ -6598,9 +6598,6 @@
       "Recipient": [
         "Vastaanottaja"
       ],
-      "Recovery phrase": [
-        "Palautuslauseke"
-      ],
       "Region": [
         "Alue"
       ],
@@ -6634,6 +6631,9 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Sync with system": [
+        "Seuraa järjestelmää"
+      ],
       "Synchronize with system": [
         "Seuraa järjestelmää"
       ],
@@ -6651,6 +6651,9 @@
       ],
       "the email was sent ${ label }": [
         "viesti lähetettiin ${ label }"
+      ],
+      "Theme": [
+        "Teema"
       ],
       "Then": [
         "Niin"
@@ -6847,9 +6850,6 @@
       ],
       "More": [
         "Lisää"
-      ],
-      "More about recovery": [
-        "Lisätietoja palautuksesta"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Avaa ${ CALENDAR_APP_NAME }issa"
@@ -8055,6 +8055,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Muuta asetusta"
+      ],
+      "Easily access and customize your app experience.": [
+        "Pääset helposti käyttämään ja mukauttamaan sovelluskokemustasi."
+      ],
       "Email tracking protection": [
         "Sähköpostin seurantasuojaus"
       ],
@@ -8064,11 +8070,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
       ],
+      "Quick settings": [
+        "Pika-asetukset"
+      ],
       "Schedule send": [
         "Ajoita lähetys"
       ],
       "Search just got smarter and faster": [
         "Haku on nyt älykkäämpi ja nopeampi"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Roskaposti ja roskakorin sisältö jätetään nyt automaattisesti pois Kaikki viestit -näkymässä. ${ settingsLink }"
       ],
       "Try it today.": [
         "Kokeile sitä tänään."
@@ -8554,8 +8566,11 @@
       "Addresses": [
         "Osoitteet"
       ],
+      "All settings": [
+        "Kaikki asetukset"
+      ],
       "Archive": [
-        "Siirrä arkistoon"
+        "Arkisto"
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
@@ -9020,7 +9035,7 @@
         "Vastaanottaja"
       ],
       "Trash": [
-        "Siirrä roskakoriin"
+        "Roskakori"
       ],
       "Trust new key?": [
         "Luotetaanko uuteen avaimeen?",
