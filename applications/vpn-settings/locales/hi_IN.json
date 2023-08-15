@@ -2018,9 +2018,6 @@
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin लेनदेन की पुष्टि होने में कुछ समय लग सकता है (24 घंटे तक)। एक बार पुष्टि हो जाने के बाद, हम आपके खाते में क्रेडिट जोड़ देंगे। लेनदेन की पुष्टि के बाद, आप अपने चालान का भुगतान क्रेडिट के साथ कर सकते हैं।"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "एक नि: शुल्क योजना में अपग्रेड करने से, आप स्थायी रूप से इन लाभों को खो देंगे, भले ही आप भविष्य में फिर से अपग्रेड करें।"
       ],
@@ -4195,12 +4192,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "${ subscriptionManager } पे अपनी सदस्यता संभालें"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "${ subscriptionManager } सदस्यता संभालता है"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "यूज़र आईडी-${ userId } के लिए सदस्यता ऐप के अंदर से खरीदी गई है। सदस्यता संभालने के लिए यूज़र को अपने ${ subscriptionManager } खाते के सदस्यता हिस्से में जाना होगा।"
       ],
       "Subscriptions": [
         "सदस्यताएं"
