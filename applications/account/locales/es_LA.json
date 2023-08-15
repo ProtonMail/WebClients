@@ -383,6 +383,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Habilitar ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
@@ -1050,11 +1053,11 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
       "${ price } per domain": [
         "${ price } por dominio"
-      ],
-      "${ price } per IP address": [
-        "${ price } por dirección IP"
       ],
       "${ price } per user": [
         "${ price } por usuario"
@@ -2762,6 +2765,12 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicitaciones! Ha ganado el máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Habilite ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
+      ],
+      "Enable advanced logs to access these features": [
+        "Habilite los registros avanzados para acceder a estas funciones"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
@@ -2812,6 +2821,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que desea importar."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Volver a ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "¿No ha creado una cuenta?"
+      ],
+      "I didn't create this account": [
+        "No he creado esta cuenta"
+      ],
+      "sign in": [
+        "iniciar sesión"
+      ],
+      "Thanks for letting us know": [
+        "Gracias por avisarnos"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Esto usualmente no es para preocuparse. Solo pulse abajo para confirmar que esta cuenta de ${ BRAND_NAME } no es suya y la deshabilitaremos."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Hemos notado que esta cuenta no le pertenece. Investigaremos y actuaremos en consecuencia."
+      ],
+      "You can safely close this tab.": [
+        "Ya puede cerrar esta ventana."
       ]
     },
     "Domain label": {
@@ -2904,12 +2939,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Gracias por verificar su dirección de correo."
-      ],
-      "Thanks for letting us know": [
-        "Gracias por avisarnos"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Hemos notado que esta cuenta no le pertenece. Investigaremos y actuaremos en consecuencia."
       ],
       "You can safely close this tab.": [
         "Ya puede cerrar esta ventana."
@@ -3703,6 +3732,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Hubo un problema al deshabilitar su cuenta."
       ]
     },
     "Error message, recovery": {
@@ -4588,6 +4622,9 @@
       "Label": [
         "Etiqueta"
       ],
+      "Location": [
+        "Ubicación"
+      ],
       "Name": [
         "Nombre"
       ],
@@ -5410,6 +5447,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
       ],
+      "Awaiting transaction": [
+        "Esperando la transacción"
+      ],
       "Background color": [
         "Color de fondo"
       ],
@@ -5460,9 +5500,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Las transacciones de Bitcoin pueden tomar un tiempo en confirmarse (hasta 24 horas). Una vez confirmada, añadiremos los créditos a su cuenta. Después de la confirmación de la transacción, puede pagar su factura con los créditos."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Impide que los remitentes vean si abrió un mensaje y cuándo lo hizo."
@@ -5563,9 +5600,6 @@
       ],
       "Data locked": [
         "Datos bloqueados"
-      ],
-      "Dedicated IP addresses ": [
-        "Direcciones IP dedicadas "
       ],
       "Dedicated servers": [
         "Servidores dedicados"
@@ -6062,14 +6096,14 @@
       "Not a valid URL": [
         "No es una URL válida"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Aún no disponible en nuestra app móvil de Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es su dispositivo? Use una ventana de navegación privada para iniciar sesión y ciérrela cuando haya terminado. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Número de direcciones IP dedicadas en la organización"
-      ],
-      "Number of IP addresses": [
-        "Número de direcciones IP"
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados en la organización"
       ],
       "Number of users": [
         "Número de usuarios"
@@ -6689,9 +6723,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Actualice a una cuenta de pago para habilitar ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Actualice para añadir una dirección corta @pm.me a su cuenta que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “Private Message me”."
@@ -7862,6 +7893,9 @@
       ],
       "Event notifications": [
         "Notificaciones de eventos"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "Excluir Spam/Papelera de Todos los mensajes"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiración (${ patternExpiration })"
@@ -9846,8 +9880,8 @@
       "Dedicated Account manager": [
         "Gestor de cuenta dedicada"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Ubicaciones de servidores dedicados en más de ${ n } países"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
@@ -11415,12 +11449,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestione su suscripción en ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "La suscripción es gestionada por ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La suscripción del usuario ID-${ userId } fue realizada mediante compra dentro de la app. Para gestionar la suscripción del usuario, navegue a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Suscripciones"
       ],
@@ -12909,6 +12937,12 @@
       "Account is disconnected": [
         "La cuenta está desconectada"
       ],
+      "An approximate location of the IP address": [
+        "Una ubicación aproximada de la dirección IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Cualquier protección aplicada a actividad sospechosa"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
       ],
@@ -12920,6 +12954,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina la papelera y el spam luego de 30 días. Al activar esta opción, los mensajes que ya están en la papelera y spam tienen una fecha de eliminación según la fecha en que se movieron allí."
+      ],
+      "Device information such as operating system": [
+        "Información del dispositivo como el sistema operativo"
       ],
       "Each imported email will have this label": [
         "Cada correo importado tendrá esta etiqueta"
@@ -12977,6 +13014,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "El Proveedor de Servicios de Internet de la dirección IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

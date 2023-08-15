@@ -590,6 +590,9 @@
       "Pay": [
         "Оплатить"
       ],
+      "Pay ${ price }": [
+        "Оплатить ${ price }"
+      ],
       "Pay ${ price } now": [
         "Оплатите ${ price } сейчас"
       ],
@@ -2843,12 +2846,6 @@
       "Thank you for verifying your email address.": [
         "Спасибо за подтверждение адреса электронной почты."
       ],
-      "Thanks for letting us know": [
-        "Спасибо, что уведомили нас."
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Мы заметили, что этот аккаунт не принадлежит вам. Мы проведем расследование и примем соответствующие меры."
-      ],
       "You can safely close this tab.": [
         "Вы можете безопасно закрыть эту вкладку."
       ]
@@ -4408,6 +4405,12 @@
       "(1-2 emails per month)": [
         "(1-2 письма в месяц)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 электронных письма в год)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 электронных писем в год)"
+      ],
       "(during your first month)": [
         "(в течение первого месяца)"
       ]
@@ -4421,6 +4424,9 @@
       ],
       "privacy features": [
         "функции конфиденциальности"
+      ],
+      "Update your logins": [
+        "Обновите ваше имя пользователя"
       ]
     },
     "Gmail forwarding": {
@@ -5285,6 +5291,9 @@
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
+      "Amount due": [
+        "Сумма к оплате"
+      ],
       "An error occurred while communicating with the extension": [
         "Произошла ошибка во время связи с расширением"
       ],
@@ -5413,9 +5422,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
@@ -6047,6 +6053,9 @@
       "Organization keys restored": [
         "Ключи организации восстановлены"
       ],
+      "Organization size": [
+        "Размер организации"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
       ],
@@ -6622,9 +6631,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Перейдите на платный аккаунт, чтобы включить ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
@@ -8661,6 +8667,30 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Войти"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зарегистрироваться"
+      ],
+      "Create a new ${ appName } account": [
+        "Создать новый аккаунт ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Найти имя пользователя аккаунта ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забыли пароль от аккаунта ${ BRAND_NAME }? Восстановите его здесь с помощью кода восстановления, электронной почты или СМС и верните доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Сбросить пароль от аккаунта ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Войти, чтобы получить доступ к аккаунту ${ appName }"
+      ],
       "Try ${ planName } for free with this link": [
         "Попробуйте ${ planName } бесплатно, перейдя по этой ссылке"
       ]
@@ -11258,12 +11288,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Настройте подписку в ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Подпиской управляет ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Подписка пользователя с ID-${ userId } была приобретена в приложении. Чтобы настроить подписку, пользователю нужно войти в раздел Подписки своего аккаунта ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Подписки"
       ],
@@ -11748,9 +11772,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } бесплатно"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Быстрые клавиши"
       ],
@@ -11963,6 +11984,9 @@
       ],
       "Connect ${ name }": [
         "Подключить ${ name }"
+      ],
+      "Contact us": [
+        "Свяжитесь с нами"
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"

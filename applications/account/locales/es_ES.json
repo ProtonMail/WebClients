@@ -383,6 +383,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Habilitar ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
@@ -466,6 +469,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "Help": [
+        "Ayuda"
       ],
       "Hide": [
         "Ocultar"
@@ -800,6 +806,9 @@
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
       ],
+      "Settings": [
+        "Ajustes"
+      ],
       "Share": [
         "Compartir"
       ],
@@ -877,6 +886,9 @@
       ],
       "Switch account": [
         "Cambiar de cuenta"
+      ],
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
       ],
       "Top up": [
         "Recargar"
@@ -1041,11 +1053,11 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
       "${ price } per domain": [
         "${ price } por dominio"
-      ],
-      "${ price } per IP address": [
-        "${ price } por dirección IP"
       ],
       "${ price } per user": [
         "${ price } por usuario"
@@ -1560,6 +1572,9 @@
       ],
       "azureish white": [
         "blanco azulado"
+      ],
+      "black": [
+        "negro"
       ],
       "blanched almond": [
         "almendra blanqueada"
@@ -2750,6 +2765,12 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicidades! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Habilita ${ PROTON_SENTINEL_NAME } para acceder a estas funciones."
+      ],
+      "Enable advanced logs to access these features": [
+        "Habilita los registros avanzados para acceder a estas funciones."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
@@ -2800,6 +2821,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Volver a ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "¿No has creado una cuenta?"
+      ],
+      "I didn't create this account": [
+        "No he creado esta cuenta."
+      ],
+      "sign in": [
+        "iniciar sesión"
+      ],
+      "Thanks for letting us know": [
+        "Gracias por avisarnos"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Esto usualmente no es para preocuparse. Solo pulsa abajo para confirmar que esta cuenta de ${ BRAND_NAME } no es tuya y la deshabilitaremos."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Hemos notado que esta cuenta no te pertenece. Investigaremos y actuaremos en consecuencia."
+      ],
+      "You can safely close this tab.": [
+        "Ya puedes cerrar esta ventana."
       ]
     },
     "Domain label": {
@@ -2892,12 +2939,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Gracias por verificar tu dirección de correo."
-      ],
-      "Thanks for letting us know": [
-        "Gracias por avisarnos"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Hemos notado que esta cuenta no le pertenece. Investigaremos y actuaremos en consecuencia."
       ],
       "You can safely close this tab.": [
         "Ya puedes cerrar esta ventana."
@@ -3525,6 +3566,9 @@
       "Encryption failed": [
         "Error con el cifrado"
       ],
+      "Missing FN property": [
+        "Falta la propiedad FN."
+      ],
       "vCard versions < 3.0 not supported": [
         "Versiones de vCard anteriores a 3.0 no soportadas"
       ]
@@ -3688,6 +3732,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Se ha producido un problema al deshabilitar tu cuenta."
       ]
     },
     "Error message, recovery": {
@@ -4236,7 +4285,7 @@
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Tu llave de autenticación de dos factores está lista."
+        "Tu llave de autenticación de doble factor está lista."
       ]
     },
     "fido2: Label": {
@@ -4572,6 +4621,9 @@
       ],
       "Label": [
         "Etiqueta"
+      ],
+      "Location": [
+        "Ubicación"
       ],
       "Name": [
         "Nombre"
@@ -5240,7 +5292,7 @@
         "Añadir un número de teléfono de recuperación"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de dos factores cada vez que inicies sesión."
+        "Añade una capa adicional de seguridad a tu cuenta con una autenticación de doble factor cada vez que inicies sesión."
       ],
       "Add image URL": [
         "Añadir URL de la imagen"
@@ -5360,7 +5412,7 @@
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Estás seguro de que quieres deshabilitar la autenticación de dos factores?"
+        "¿Estás seguro de que quieres deshabilitar la autenticación de doble factor?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -5394,6 +5446,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
+      ],
+      "Awaiting transaction": [
+        "Esperando la transacción"
       ],
       "Background color": [
         "Color de fondo"
@@ -5445,9 +5500,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Se puede tardar a confirmar las transacciones con Bitcoin (hasta 24 horas). Una vez confirmada, añadiremos los créditos a tu cuenta. Después de la confirmación de la transacción, podrás pagar tu factura con los créditos."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Bloquea a los remitentes para que no vean si has abierto un mensaje y cuándo lo has hecho."
@@ -5548,9 +5600,6 @@
       ],
       "Data locked": [
         "Datos bloqueados"
-      ],
-      "Dedicated IP addresses ": [
-        "Direcciones IP dedicadas "
       ],
       "Dedicated servers": [
         "Servidores dedicados"
@@ -5788,7 +5837,7 @@
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
+        "Si nunca has utilizado la autenticación de doble factor anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si se ha producido un error con las verificaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
@@ -5800,7 +5849,7 @@
         "Si pierdes tu contraseña y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountAndRecovery } configurado. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
+        "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -5849,7 +5898,7 @@
         "Importa tus correos, calendarios y contactos desde otro proveedor a ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
+        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de doble factor."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: algunos registradores no aceptan valores CNAME con un punto al final (mientras que otros lo requieren). Si tu registrador no acepta tus registros CNAME, elimina el punto al final de cada valor CNAME e inténtalo de nuevo."
@@ -5979,7 +6028,7 @@
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+        "Introduce manualmente esta información en tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -6047,14 +6096,14 @@
       "Not a valid URL": [
         "No es una URL válida."
       ],
+      "Not yet available in our Android mobile app.": [
+        "Aún no disponible en nuestra aplicación móvil de Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es tu dispositivo? Utiliza una ventana de navegación privada para iniciar sesión y ciérrala cuando hayas terminado. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Número de direcciones IP dedicadas en la organización"
-      ],
-      "Number of IP addresses": [
-        "Número de direcciones IP"
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados en la organización"
       ],
       "Number of users": [
         "Número de usuarios"
@@ -6225,7 +6274,7 @@
         "En espera"
       ],
       "read our two-factor authentication guide first": [
-        "lee primero nuestra guía de autenticación de dos factores"
+        "lee primero nuestra guía de autenticación de doble factor"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
@@ -6291,7 +6340,7 @@
         "Escanear código QR en su lugar"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escanea este código con tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+        "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
       ],
       "Securing your account": [
         "Protegiendo tu cuenta"
@@ -6442,7 +6491,7 @@
         "No se han creado las siguientes direcciones."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Los siguientes miembros recibirán un correo electrónico solicitándoles que habiliten la autenticación de dos factores tan pronto como sea posible."
+        "Los siguientes miembros recibirán un correo electrónico solicitándoles que habiliten la autenticación de doble factor tan pronto como sea posible."
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
@@ -6547,10 +6596,10 @@
         "Esto reemplazará tu contraseña temporal. La utilizarás para acceder a tu cuenta de ${ BRAND_NAME } en el futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Esto cerrará cualquier sesión activa y deshabilitará la autenticación de dos factores."
+        "Esto cerrará cualquier sesión activa y deshabilitará la autenticación de doble factor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este asistente habilitará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
+        "Este asistente habilitará la autenticación de doble factor (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos habilitarla."
       ],
       "to ${ product } Business": [
         "a ${ product }·Business"
@@ -6625,13 +6674,13 @@
         "Conexiones VPN totales"
       ],
       "two-factor authentication (2FA)": [
-        "autenticación de dos factores (2FA)"
+        "autenticación de doble factor (2FA)"
       ],
       "Two-factor authentication disabled": [
-        "Autenticación de dos factores deshabilitada"
+        "Autenticación de doble factor deshabilitada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticación de dos factores habilitada"
+        "Autenticación de doble factor habilitada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "El modo de doble contraseña requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
@@ -6674,9 +6723,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
-      ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Actualiza a una cuenta de pago para habilitar ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Actualiza tu cuenta para añadir una dirección corta @pm.me que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “Private Message me”."
@@ -6811,7 +6857,7 @@
         "Cuando se suscriban a un plan, obtendrás créditos para utilizar en tu suscripción."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando tu suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar el método de pago anterior."
@@ -7825,7 +7871,7 @@
         "Correos electrónicos (último mes)"
       ],
       "End date": [
-        "Fecha final"
+        "Fecha de fin"
       ],
       "End day of month": [
         "Último día del mes"
@@ -7847,6 +7893,9 @@
       ],
       "Event notifications": [
         "Notificaciones de eventos"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "Excluir Spam/Papelera de Todos los mensajes"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiración (${ patternExpiration })"
@@ -8614,8 +8663,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } para el miembro de tu organización que utiliza la autenticación de dos factores.",
-        "${ twoFAMembers.length }/${ members.length } para los miembros de tu organización que utilizan la autenticación de dos factores."
+        "${ twoFAMembers.length }/${ members.length } para el miembro de tu organización que utiliza la autenticación de doble factor.",
+        "${ twoFAMembers.length }/${ members.length } para los miembros de tu organización que utilizan la autenticación de doble factor."
       ],
       "Almost there": [
         "¡Ya casi está!"
@@ -9722,7 +9771,7 @@
         "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté comprometida."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
+        "Cambia las contraseñas de los usuarios y restablece la autenticación de doble factor en sus cuentas."
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Asigna el tráfico de internet a la red Tor con un solo clic."
@@ -9831,8 +9880,8 @@
       "Dedicated Account manager": [
         "Gestor de cuenta dedicada"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Ubicaciones de servidores dedicados en más de ${ n } países"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
@@ -9852,10 +9901,10 @@
         "${ Filter.Name } creado"
       ],
       "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+        "${ PROTON_SENTINEL_NAME } se ha desactivado"
       ],
       "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } ha sido activado."
+        "${ PROTON_SENTINEL_NAME } se ha activado"
       ],
       "A disabled address cannot be default": [
         "Una dirección deshabilitada no puede ser la dirección por defecto."
@@ -9876,13 +9925,13 @@
         "Se ha enviado un recordatorio"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "La autenticación de dos factores ha sido requerida para los administradores."
+        "La autenticación de doble factor ha sido requerida para los administradores."
       ],
       "Two-factor authentication has been enforced for all members": [
-        "La autenticación de dos factores ha sido requerida para todos los miembros."
+        "La autenticación de doble factor ha sido requerida para todos los miembros."
       ],
       "Two-factor authentication is not required anymore": [
-        "La autenticación de dos factores ya no es requerida."
+        "La autenticación de doble factor ya no es requerida."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -10083,6 +10132,9 @@
       ],
       "Ask each time": [
         "Preguntar cada vez"
+      ],
+      "Auto": [
+        "Automático"
       ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
@@ -11394,12 +11446,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestiona tu suscripción en ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "${ subscriptionManager } gestiona tu suscripción."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La suscripción del usuario ID-${ userId } fue realizada con una compra dentro de la app. Para gestionar la suscripción del usuario, navega a la sección Suscripción en tu cuenta de ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Suscripciones"
       ],
@@ -12204,7 +12250,7 @@
         "Deshabilitar ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Desactivar la autenticación de dos factores"
+        "Desactivar la autenticación de doble factor"
       ],
       "Display name and signature": [
         "Nombre para mostrar y firma"
@@ -12590,7 +12636,7 @@
         "Configurar el reenvío"
       ],
       "Set up two-factor authentication": [
-        "Configurar autenticación de dos factores"
+        "Configurar autenticación de doble factor"
       ],
       "Set your password": [
         "Establece tu contraseña"
@@ -12842,7 +12888,7 @@
         "Duración"
       ],
       "End date": [
-        "Fecha final"
+        "Fecha de fin"
       ],
       "Plan": [
         "Plan"
@@ -12888,6 +12934,12 @@
       "Account is disconnected": [
         "La cuenta está desconectada"
       ],
+      "An approximate location of the IP address": [
+        "Una ubicación aproximada de la dirección IP"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Cualquier protección aplicada a una actividad sospechosa"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
@@ -12899,6 +12951,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina la papelera y el spam luego de 30 días. Al activar esta opción, los mensajes que ya están en las carpetas Papelera o Spam tienen una fecha de eliminación según la fecha en que se han movido allí."
+      ],
+      "Device information such as operating system": [
+        "Información del dispositivo como el sistema operativo"
       ],
       "Each imported email will have this label": [
         "Cada correo electrónico importado tendrá esta etiqueta."
@@ -12956,6 +13011,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "El Proveedor de Servicios de Internet de la dirección IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
