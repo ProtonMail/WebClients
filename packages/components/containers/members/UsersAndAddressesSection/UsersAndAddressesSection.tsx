@@ -40,6 +40,7 @@ import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { AddressModal } from '../../addresses';
 import RestoreAdministratorPrivileges from '../../organization/RestoreAdministratorPrivileges';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
+import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal, { validateMemberLogin } from '../LoginMemberModal';
 import MemberActions from '../MemberActions';
@@ -84,6 +85,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
     const [subUserEditModalProps, setSubUserEditModalOpen, renderSubUserEditModal] = useModalState(cleanOption);
     const [loginMemberModalProps, setLoginMemberModalOpen, renderLoginMemberModal] = useModalState(cleanOption);
+    const [changeMemberPasswordModalProps, setChangeMemberPasswordModalOpen, renderChangeMemberPasswordModal] =
+        useModalState(cleanOption);
     const [subUserDeleteModalProps, setSubUserDeleteModalOpen, renderSubUserDeleteModal] = useModalState(cleanOption);
     const [userRemoveModalProps, setUserRemoveModalOpen, renderUserRemoveModal] = useModalState(cleanOption);
     const [inviteOrCreateUserModalProps, setInviteOrCreateUserModalOpen, renderInviteOrCreateUserModal] =
@@ -180,6 +183,15 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         }
         setTmpMember(member);
         setLoginMemberModalOpen(true);
+    };
+
+    const handleChangeMemberPassword = (member: Member) => {
+        const error = validateMemberLogin(organization, organizationKey);
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
+        setTmpMember(member);
+        setChangeMemberPasswordModalOpen(true);
     };
 
     const handleGetMoreLicense = () => {
@@ -283,6 +295,9 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 )}
                 {renderLoginMemberModal && tmpMember && (
                     <LoginMemberModal app={app} member={tmpMember} {...loginMemberModalProps} />
+                )}
+                {renderChangeMemberPasswordModal && tmpMember && (
+                    <ChangeMemberPasswordModal member={tmpMember} {...changeMemberPasswordModalProps} />
                 )}
                 {renderInviteOrCreateUserModal && (
                     <InviteUserCreateSubUserModal
@@ -442,6 +457,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             onDelete={handleDeleteUser}
                                             onRevoke={handleRevokeUserSessions}
                                             onLogin={handleLoginUser}
+                                            onChangePassword={handleChangeMemberPassword}
                                             member={member}
                                             addresses={memberAddresses}
                                             organization={organization}
