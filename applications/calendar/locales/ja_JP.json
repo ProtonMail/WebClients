@@ -138,6 +138,9 @@
       "Copy address": [
         "アドレスをコピー"
       ],
+      "Copy email address": [
+        "メールアドレスをコピー"
+      ],
       "Copy email to clipboard": [
         "メールをコピー"
       ],
@@ -946,6 +949,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "手動"
+      ],
       "Day": [
         "日"
       ],
@@ -957,6 +963,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "時間の変更"
+      ],
       "Change time range to": [
         "表示期間の変更"
       ]
@@ -2521,6 +2530,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "暗号化に失敗しました"
+      ],
+      "Missing FN property": [
+        "FN プロパティが見つかりません"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard バージョン 3.0 未満はサポートされていません"
@@ -4331,6 +4343,9 @@
       "Postal code": [
         "郵便番号"
       ],
+      "Primary": [
+        "プライマリー"
+      ],
       "Public keys": [
         "公開鍵"
       ],
@@ -4345,6 +4360,12 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Secondary": [
+        "２番目の"
+      ],
+      "Secondary time zone": [
+        "第二のタイムゾーン"
       ],
       "Show week numbers": [
         "週番号を表示"
@@ -4544,6 +4565,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "キャンセル"
+      ],
       "Manage calendars": [
         "カレンダーを管理"
       ],
@@ -4990,6 +5014,9 @@
       "All events": [
         "すべての予定"
       ],
+      "Auto": [
+        "自動"
+      ],
       "Automatic (${ defaultDay })": [
         "自動 (${ defaultDay })"
       ],
@@ -5261,6 +5288,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } ユーザーに共有"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } による共有"
       ]
     },
     "Sidebar calendar edit tooltip": {

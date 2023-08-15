@@ -248,6 +248,9 @@
       "Got it": [
         "Selvä"
       ],
+      "Help": [
+        "Tuki"
+      ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
+      "Settings": [
+        "Asetukset"
+      ],
       "Share": [
         "Jaa"
       ],
@@ -514,6 +520,9 @@
       ],
       "Submit": [
         "Lähetä"
+      ],
+      "Switch or add account": [
+        "Vaihda tai lisää tili"
       ],
       "Today": [
         "Tänään"
@@ -953,6 +962,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Mukautettu"
+      ],
       "Day": [
         "Päivä"
       ],
@@ -964,6 +976,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Muuta ajanjaksoa"
+      ],
       "Change time range to": [
         "Vaihda ajanjaksoksi"
       ]
@@ -2548,6 +2563,9 @@
       "Encryption failed": [
         "Salaus epäonnistui"
       ],
+      "Missing FN property": [
+        "Puuttuva FN-ominaisuus"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0:aa edeltäviä versioita ei tueta"
       ]
@@ -3883,6 +3901,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
+      ],
       "Update recurring event": [
         "Päivitä toistuva tapahtuma"
       ],
@@ -4173,6 +4194,9 @@
       "Bad": [
         "Huono"
       ],
+      "Beta Access": [
+        "Beta-käyttö"
+      ],
       "Browser": [
         "Selain"
       ],
@@ -4402,6 +4426,9 @@
       "Postal code": [
         "Postinumero"
       ],
+      "Primary": [
+        "Ensisijainen"
+      ],
       "Public keys": [
         "Julkiset avaimet"
       ],
@@ -4417,6 +4444,12 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Secondary": [
+        "Toissijainen"
+      ],
+      "Secondary time zone": [
+        "Toissijainen aikavyöhyke"
+      ],
       "Show week numbers": [
         "Näytä viikkonumerot"
       ],
@@ -4426,8 +4459,14 @@
       "Street address": [
         "Katuosoite"
       ],
+      "Sync with system": [
+        "Seuraa järjestelmää"
+      ],
       "System information": [
         "Järjestelmätiedot"
+      ],
+      "Theme": [
+        "Teema"
       ],
       "Time zone": [
         "Aikavyöhyke"
@@ -5093,6 +5132,9 @@
       "All events": [
         "Kaikki tapahtumakerrat"
       ],
+      "Auto": [
+        "Autom."
+      ],
       "Automatic (${ defaultDay })": [
         "Automaattinen (${ defaultDay })"
       ],
@@ -5636,6 +5678,9 @@
       "Add your country's public holidays to your calendar.": [
         "Lisää oman maasi yleiset vapaapäivät kalenteriisi."
       ],
+      "Easily access and customize your app experience.": [
+        "Pääset helposti käyttämään ja mukauttamaan sovelluskokemustasi."
+      ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
       ],
@@ -5644,6 +5689,9 @@
       ],
       "Public holidays are here!": [
         "Yleiset vapaapäivät ovat täällä!"
+      ],
+      "Quick settings": [
+        "Pika-asetukset"
       ]
     },
     "Storage": {
@@ -6005,6 +6053,9 @@
       ],
       "Addresses": [
         "Osoitteet"
+      ],
+      "All settings": [
+        "Kaikki asetukset"
       ],
       "Billing cycle": [
         "Laskutusjakso"

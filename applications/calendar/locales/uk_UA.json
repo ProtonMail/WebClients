@@ -252,6 +252,9 @@
       "Got it": [
         "Зрозуміло"
       ],
+      "Help": [
+        "Довідка"
+      ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
@@ -468,6 +471,9 @@
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
+      "Settings": [
+        "Налаштування"
+      ],
       "Share": [
         "Поділитися"
       ],
@@ -519,11 +525,17 @@
       "Submit": [
         "Відправити"
       ],
+      "Switch or add account": [
+        "Змінити або додати обліковий запис"
+      ],
       "Today": [
         "Сьогодні"
       ],
       "Toggle Contact app": [
         "Відкрити контакти"
+      ],
+      "Toggle settings": [
+        "Перемикання налаштувань"
       ],
       "Trust": [
         "Довіряти"
@@ -961,6 +973,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Власний"
+      ],
       "Day": [
         "День"
       ],
@@ -972,6 +987,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Діапазон зміни часу"
+      ],
       "Change time range to": [
         "Змінити проміжок часу на"
       ]
@@ -2594,6 +2612,9 @@
       "Encryption failed": [
         "Не вдалося зашифрувати"
       ],
+      "Missing FN property": [
+        "Відсутня властивість FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard версії < 3.0 не підтримуються"
       ]
@@ -3589,6 +3610,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
       ],
+      "Are you sure you want to discard your import?": [
+        "Ви впевнені, що хочете відмовитися від імпорту?"
+      ],
       "Attention required": [
         "Потребує уваги"
       ],
@@ -4000,6 +4024,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
       "Update recurring event": [
         "Оновити повторювану подію"
       ],
@@ -4292,6 +4319,9 @@
       "Bad": [
         "Погано"
       ],
+      "Beta Access": [
+        "Бета доступ"
+      ],
       "Browser": [
         "Браузер"
       ],
@@ -4523,6 +4553,9 @@
       "Postal code": [
         "Поштовий індекс"
       ],
+      "Primary": [
+        "Основний"
+      ],
       "Public keys": [
         "Відкриті ключі"
       ],
@@ -4538,6 +4571,12 @@
       "Reveal password": [
         "Показати пароль"
       ],
+      "Secondary": [
+        "Другий"
+      ],
+      "Secondary time zone": [
+        "Другий часовий пояс"
+      ],
       "Show week numbers": [
         "Показати номери тижня"
       ],
@@ -4547,8 +4586,14 @@
       "Street address": [
         "Вулиця"
       ],
+      "Sync with system": [
+        "Синхронізувати з системою"
+      ],
       "System information": [
         "Інформація про систему"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Time zone": [
         "Часовий пояс"
@@ -5262,7 +5307,7 @@
         "Налаштуйте свою організацію"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+        "Використовуйте вибір програм у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Option": {
@@ -5271,6 +5316,9 @@
       ],
       "All events": [
         "Усі події"
+      ],
+      "Auto": [
+        "Авто"
       ],
       "Automatic (${ defaultDay })": [
         "Автоматично (${ defaultDay })"
@@ -5843,6 +5891,9 @@
       "Add your country's public holidays to your calendar.": [
         "Додайте державні свята вашої країни до свого календаря."
       ],
+      "Easily access and customize your app experience.": [
+        "Легко отримуйте доступ до програми й налаштовуйте роботу."
+      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
@@ -5851,6 +5902,9 @@
       ],
       "Public holidays are here!": [
         "Державні свята вже тут!"
+      ],
+      "Quick settings": [
+        "Швидкі налаштування"
       ]
     },
     "Storage": {
@@ -6234,6 +6288,9 @@
       ],
       "Addresses": [
         "Адреси"
+      ],
+      "All settings": [
+        "Усі налаштування"
       ],
       "Billing cycle": [
         "Платіжний цикл"
