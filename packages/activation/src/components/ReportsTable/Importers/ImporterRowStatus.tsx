@@ -1,27 +1,20 @@
 import { c } from 'ttag';
 
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { Badge, Icon, Progress, Tooltip } from '@proton/components';
+import { Badge, Icon, Tooltip } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
-    processed: number;
-    total: number;
     state: ApiImporterState | undefined;
     errorCode: ApiImporterError | undefined;
 }
 
-const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
-    const percentage = total === 0 ? 0 : (processed * 100) / total;
-    const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
-
+const ImporterRowStatus = ({ state, errorCode }: Props) => {
     switch (state) {
         case ApiImporterState.PAUSED:
             return (
                 <>
-                    <Badge type="warning">
-                        {total === 0 ? c('Import status').t`Paused` : c('Import status').t`${percentageValue}% paused`}
-                    </Badge>
+                    <Badge type="warning">{c('Import status').t`Paused`}</Badge>
 
                     {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip
@@ -58,22 +51,10 @@ const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
                 </>
             );
         /*
-         * Default case is "in progress", if we have a total for the percentage
-         * we can show a progress bar, otherwise just show "in progress"
+         * Default case is "in progress"
          */
         default:
-            return total !== 0 ? (
-                <span className="inline-flex flex-align-items-center w100">
-                    <Progress
-                        aria-labelledby="progressLabel"
-                        value={percentageValue}
-                        className="flex-item-fluid progress-bar--success"
-                    />
-                    <span id="progressLabel" className="ml-2">{`${percentageValue}%`}</span>
-                </span>
-            ) : (
-                <Badge type="primary">{c('Import status').t`In progress`}</Badge>
-            );
+            return <Badge type="primary">{c('Import status').t`In progress`}</Badge>;
     }
 };
 

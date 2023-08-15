@@ -5,8 +5,6 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Separator } from './createImporter.action';
 
 export type ImporterContact = {
-    numContact: number;
-    numGroups: number;
     error?: string;
 };
 

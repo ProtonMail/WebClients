@@ -255,10 +255,7 @@ export const prepareState: OauthDraftState = {
                     },
                 ],
             },
-            contacts: {
-                numContact: 100,
-                numGroups: 1,
-            },
+            contacts: {},
         },
     },
 };

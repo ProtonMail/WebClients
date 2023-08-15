@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import {
-    MAX_IMPORT_CONTACTS,
+    MAX_CONTACTS_PER_USER,
     MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_FILE_SIZE,
     MAX_IMPORT_FILE_SIZE_STRING,
@@ -104,7 +104,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                 if (!preVcardsContacts.length) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.NO_CONTACTS, fileAttached.name);
                 }
-                if (preVcardsContacts.length > MAX_IMPORT_CONTACTS) {
+                if (preVcardsContacts.length > MAX_CONTACTS_PER_USER) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
                 setModel({
@@ -116,7 +116,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                 });
             } else if (extension === VCF) {
                 const vcards = extractVcards(await readVcf(fileAttached));
-                if (vcards.length > MAX_IMPORT_CONTACTS) {
+                if (vcards.length > MAX_CONTACTS_PER_USER) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_CONTACTS, fileAttached.name);
                 }
                 const { errors, rest: parsedVcardContacts } = splitErrors(getSupportedContacts(vcards));
@@ -154,7 +154,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
             {c('Description').ngettext(
                 msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
                 `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,
-                MAX_IMPORT_CONTACTS
+                MAX_CONTACTS_PER_USER
             )}
             <div>
                 <Href href={getKnowledgeBaseUrl('/adding-contacts')}>{c('Link').t`Learn more`}</Href>
