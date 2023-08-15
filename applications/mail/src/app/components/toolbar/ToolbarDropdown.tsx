@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 export interface DropdownRenderProps {
     onClose: () => void;
     onLock: (lock: boolean) => void;
-    onOpenAdditionnal: (index: number) => void;
+    onOpenAdditional: (index: number) => void;
 }
 
 export interface DropdownRender {
@@ -35,7 +35,7 @@ interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'>
     dropdownSize?: DropdownProps['size'];
     /**
      * Used on mobile to open an additional dropdown from the dropdown
-     * The handler onOpenAdditionnal is passed to use them
+     * The handler onOpenAdditional is passed to use them
      */
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: Ref<() => void>;
@@ -104,7 +104,7 @@ const ToolbarDropdown = ({
                 className={clsx(['toolbar-dropdown', dropDownClassName])}
                 contentProps={children.contentProps}
             >
-                {children.render({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
+                {children.render({ onClose: close, onLock: setLock, onOpenAdditional: setAdditionalOpen })}
             </Dropdown>
             {additionalDropdowns?.map((additionalDropdown, index) => {
                 return (
@@ -124,7 +124,7 @@ const ToolbarDropdown = ({
                         {additionalDropdown.render({
                             onClose: handleAdditionalClose,
                             onLock: setLock,
-                            onOpenAdditionnal: setAdditionalOpen,
+                            onOpenAdditional: setAdditionalOpen,
                         })}
                     </Dropdown>
                 );

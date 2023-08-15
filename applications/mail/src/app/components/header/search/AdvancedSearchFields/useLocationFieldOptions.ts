@@ -129,7 +129,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                       value: SCHEDULED,
                       text: getLabelIDsToI18N()[SCHEDULED],
                       url: STANDARD_FOLDERS[SCHEDULED].to,
-                      icon: 'clock' as const,
+                      icon: 'clock-paper-plane' as const,
                   },
               ]
             : []),

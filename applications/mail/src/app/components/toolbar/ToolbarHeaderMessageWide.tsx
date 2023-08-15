@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,6 +7,9 @@ import { Icon, ToolbarButton } from '@proton/components/components';
 import { useElementBreakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
+import { getToolbarResponsiveSizes } from 'proton-mail/helpers/toolbar/getToolbarResponsiveSizes';
+
+import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoveButtons from './MoveButtons';
 import NavigationControls from './NavigationControls';
@@ -49,8 +52,7 @@ const ToolbarHeaderMessageWide = ({
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-    const localIsNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
-    const localIsTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
+    const { localIsTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
 
     return (
         <div>
@@ -85,6 +87,8 @@ const ToolbarHeaderMessageWide = ({
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
                     />
+
+                    <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
 
                     {!localIsTiny ? (
                         <>

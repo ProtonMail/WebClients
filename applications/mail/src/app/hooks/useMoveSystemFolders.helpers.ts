@@ -160,9 +160,10 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
     return systemFolders;
 };
 
-export const getDefaultSytemFolders = (
+export const getDefaultSystemFolders = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail']
 ): BaseSystemFolder[] => [
     {
@@ -197,11 +198,20 @@ export const getDefaultSytemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SCHEDULED,
-        icon: 'clock',
+        icon: 'clock-paper-plane',
         text: c('Link').t`Scheduled`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED],
         visible: !!showScheduled,
         order: 4,
+        display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        labelID: MAILBOX_LABEL_IDS.SNOOZED,
+        icon: 'clock',
+        text: c('Link').t`Snoozed`,
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SNOOZED],
+        visible: !!showSnoozed,
+        order: 5,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -211,7 +221,7 @@ export const getDefaultSytemFolders = (
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !!(showMoved & SHOW_MOVED.SENT),
-        order: 5,
+        order: 6,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -299,11 +309,12 @@ export const getDefaultSytemFolders = (
 export const getSidebarNavItems = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
     apiSystemFolders: SystemFolderPayload[]
 ): { orderedSystemFolders: SystemFolder[]; unexpectedFolderIDs: MAILBOX_LABEL_IDS[] } => {
     /** Harcoded system folders, used to complete missing infos in API fetched ones */
-    const defaultSystemFolders = getDefaultSytemFolders(showMoved, showScheduled, showAlmostAllMail);
+    const defaultSystemFolders = getDefaultSystemFolders(showMoved, showScheduled, showSnoozed, showAlmostAllMail);
 
     /**
      * 1 - Fill the needed data from API

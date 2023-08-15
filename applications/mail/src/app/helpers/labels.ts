@@ -15,8 +15,21 @@ import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { getLabelIDs } from './elements';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, OUTBOX, STARRED, ALL_MAIL } =
-    MAILBOX_LABEL_IDS;
+const {
+    INBOX,
+    TRASH,
+    SPAM,
+    ARCHIVE,
+    SENT,
+    DRAFTS,
+    ALL_SENT,
+    ALL_DRAFTS,
+    SCHEDULED,
+    OUTBOX,
+    STARRED,
+    ALL_MAIL,
+    SNOOZED,
+} = MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
 
 export type LabelChanges = { [labelID: string]: boolean };
@@ -116,7 +129,7 @@ export const getStandardFolders = (): FolderMap => ({
         to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
     },
     [SCHEDULED]: {
-        icon: 'clock',
+        icon: 'clock-paper-plane',
         name: c('Mailbox').t`Scheduled`,
         to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
     },
@@ -306,7 +319,7 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
 
 // For some locations, we want to display the total number of messages instead of the number of unreads (e.g. Scheduled folder)
 export const shouldDisplayTotal = (labelID: string) => {
-    const needsDisplayTotalLabels = [SCHEDULED];
+    const needsDisplayTotalLabels = [SCHEDULED, SNOOZED];
 
     return needsDisplayTotalLabels.includes(labelID as MAILBOX_LABEL_IDS);
 };
