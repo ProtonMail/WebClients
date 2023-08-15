@@ -15,9 +15,10 @@ interface Props {
     onClose?: () => void;
     method?: PaymentMethodType;
     loading?: boolean;
+    showDownloads?: boolean;
 }
 
-const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
+const SubscriptionThanks = ({ method, onClose, loading, showDownloads = true }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
@@ -39,29 +40,33 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     <p className="text-center mb-4 text-bold text-xl" data-testid="successfull-update">{c('Info')
                         .t`Account successfully updated`}</p>
                 )}
-                <p className="text-center mb-8" data-testid="more-info">{c('Info')
-                    .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
-                <div className="mt-4 mb-8 text-center">
-                    <Href
-                        href={
-                            isVPN
-                                ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
-                                : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
-                        }
-                        className="mr-8"
-                    >
-                        <img width="150" src={playStoreSvg} alt="Play Store" />
-                    </Href>
-                    <Href
-                        href={
-                            isVPN
-                                ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
-                                : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'
-                        }
-                    >
-                        <img width="150" src={appStoreSvg} alt="App Store" />
-                    </Href>
-                </div>
+                {showDownloads && (
+                    <>
+                        <p className="text-center mb-8" data-testid="more-info">{c('Info')
+                            .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
+                        <div className="mt-4 mb-8 text-center">
+                            <Href
+                                href={
+                                    isVPN
+                                        ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
+                                        : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
+                                }
+                                className="mr-8"
+                            >
+                                <img width="150" src={playStoreSvg} alt="Play Store" />
+                            </Href>
+                            <Href
+                                href={
+                                    isVPN
+                                        ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
+                                        : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'
+                                }
+                            >
+                                <img width="150" src={appStoreSvg} alt="App Store" />
+                            </Href>
+                        </div>
+                    </>
+                )}
                 <div className="text-center pb-7">
                     <PrimaryButton fullWidth onClick={onClose} data-testid="modal:close">{c('Action')
                         .t`Close`}</PrimaryButton>
