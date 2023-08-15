@@ -123,7 +123,7 @@
         "Спампаваць"
       ],
       "Download all configurations": [
-        "Спампуйце ўсе канфігурацыі"
+        "Спампаваць усе канфігурацыі"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "Атрымаць ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Звязацца з намі"
+      ],
+      "Get more": [
+        "Атрымаць больш"
+      ],
       "Get the deal": [
         "Скарыстацца прапановай"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Зразумела"
+      ],
+      "Help": [
+        "Даведка"
       ],
       "Hide": [
         "Схаваць"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Пакінуць падпіску ${ vpnPlanNameShort }"
+      ],
+      "Let's talk": [
+        "Давайце паразмаўляем"
       ],
       "Load more": [
         "Загрузіць больш"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Аплаціць"
+      ],
+      "Pay ${ price }": [
+        "Заплаціць ${ price }"
       ],
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Задаць новы пароль"
       ],
+      "Settings": [
+        "Налады"
+      ],
       "Share via link": [
         "Абагуліць праз спасылку"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Падтрымка"
+      ],
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
       ],
       "Top up": [
         "Папоўніць"
@@ -402,6 +423,32 @@
       ],
       "Reactivate": [
         "Актываваць паўторна"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ price } per domain": [
+        "${ price } за дамен"
+      ],
+      "${ price } per user": [
+        "${ price } за карыстальніка"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
       ]
     },
     "Alter": {
@@ -2151,6 +2198,9 @@
       "Amount below minimum (${ amount }).": [
         "Сума ніжэй за мінімум (${ amount })."
       ],
+      "Amount due": [
+        "Да аплаты"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Любы метад ${ twoFa } на вашым уліковым запісе будзе адключаны."
       ],
@@ -2193,9 +2243,6 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Трансакцыі Bitcoin могуць заняць некаторы час для пацвярджэння (да 24 гадзін). Адразу пасля пацвярджэння, мы дададзім крэдыты на ваш уліковы запіс. Пасля пацвярджэння трансакцыі, вы зможаце аплаціць гэтымі крэдытамі свой рахунак."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -2228,6 +2275,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -2451,6 +2504,9 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
+      "Organization size": [
+        "Памер арганізацыі"
+      ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
@@ -2519,6 +2575,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
+      ],
+      "Saving your password": [
+        "Захаванне вашага пароля"
       ],
       "Scan QR code instead": [
         "Сканіраваць QR-код"
@@ -2616,8 +2675,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
+      "to ${ product } Business": [
+        "у ${ product } Business"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Звяжыцеся з намі, каб скасаваць сваю падпіску"
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
+      ],
+      "to continue to ${ product }": [
+        "для працягу ў ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "для працягу ў ${ toAppName }"
@@ -2718,11 +2786,17 @@
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
+      "We generated a strong password for you": [
+        "Мы згенерыравалі для вас надзейны пароль"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
       ],
       "We need to authenticate your payment with your bank.": [
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
       ],
       "We recommend using your recovery phrase instead.": [
         "Замест гэтага мы рэкамендуем выкарыстоўваць фразу аднаўлення."
@@ -2733,8 +2807,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "We'll get back to you shortly.": [
+        "Мы звяжамся з вамі ў самы бліжэйшы час."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
+      ],
+      "Welcome": [
+        "Вітаем"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
@@ -2876,6 +2956,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3207,6 +3290,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складаецца з 12 унікальных слоў у вызначаным парадку"
       ],
+      "Please share any feedback to help us improve.": [
+        "Падзяліцеся з намі якім-небудзь водгукам, каб дапамагчы палепшыць наш сэрвіс."
+      ],
       "Postal code": [
         "Паштовы індэкс"
       ],
@@ -3270,6 +3356,9 @@
       "What is the main reason you are deleting your account?": [
         "Якая асноўная прычына выдалення вашага ўліковага запісу?"
       ],
+      "Why would you like to cancel?": [
+        "Чаму вы вырашылі скасаваць?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
       ],
@@ -3320,6 +3409,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Дадаць падарункавы код"
+      ],
+      "Add gift code": [
         "Дадаць падарункавы код"
       ],
       "clearing your browser cache": [
@@ -3482,6 +3574,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "new_plans: action": {
@@ -3534,9 +3629,9 @@
       ],
       "${ n } email address": [
         "${ n } адрас электроннай пошты",
-        "${ n } адрасы электроннай пошты/псеўданімы",
-        "${ n } адрасоў электроннай пошты/псеўданімы",
-        "${ n } адрасы электроннай пошты/псеўданімы"
+        "${ n } адрасы электроннай пошты/псеўданімаў",
+        "${ n } адрасоў электроннай пошты/псеўданімаў",
+        "${ n } адрасы электроннай пошты/псеўданімаў"
       ],
       "${ n } email address per user": [
         "${ n } адрас электроннай пошты на карыстальніка",
@@ -3778,6 +3873,12 @@
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краіне",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
+      ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
       ],
@@ -3866,6 +3967,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Палепшаная бяспека сеткі і кіраванне доступам з вылучанымі шлюзамі"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
@@ -3896,6 +4000,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Бяспечны доступ у інтэрнэт, дзе б вы не знаходзіліся, дзякуючы маніторынгу сеткі"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Бяспечнае воблачнае сховішча, якое дазваляе вам лёгка і бяспечна захоўваць, сінхранізаваць і абагуляць файлы."
       ],
@@ -3904,6 +4011,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спецыялізаванае рашэнне VPN, якое дае магчымасць атрымаць бяспечны доступ у інтэрнэт, без абмежаванняў і на высокай хуткасці."
@@ -4186,11 +4296,17 @@
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Памылковы код"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Вітаем у ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Вітаем у ${ VPN_APP_NAME }"
       ]
@@ -4286,6 +4402,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
+      ],
+      "Please select the main reason": [
+        "Выберыце асноўную прычыну"
       ],
       "Select": [
         "Выбраць"
@@ -4671,7 +4790,30 @@
         "Ваша бягучае сховішча:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Аплачваецца кожныя 15 месяцаў"
+      ],
+      "Billed every 2 years": [
+        "Аплачваецца кожныя 2 гады"
+      ],
+      "Billed every 30 months": [
+        "Аплачваецца кожныя 30 месяцаў"
+      ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
+      "Billed yearly": [
+        "Аплачваецца штогод"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } вылучаны сервер",
+        "${ ipAddresses } вылучаныя серверы",
+        "${ ipAddresses } вылучаных сервераў",
+        "${ ipAddresses } вылучаных сервераў"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } высакахуткаснае падключэнне па VPN",
         "${ maxVpn } высакахуткасныя падключэнні па VPN",
@@ -4775,12 +4917,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Кіруйце вашай падпіскай у ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Падпіска кіруецца ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Падпіска карыстальніка з ідэнтыфікатарам ${ userId } была здзейснена праз куплю ў праграме. Для таго, каб кіраваць ёй неабходна перайсці ў раздзел з падпіскамі яго ўліковага запісу ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Падпіскі"
@@ -5045,7 +5181,7 @@
         "(актыўная)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Назваць згенерыраваную канфігурацыю"
+        "1. Назавіце згенерыраваную канфігурацыю"
       ],
       "1. Select platform": [
         "1. Выберыце платформу"
@@ -5133,6 +5269,9 @@
       ],
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
+      ],
+      "Contact us": [
+        "Звязацца з намі"
       ],
       "Credits": [
         "Крэдыты"
@@ -5287,6 +5426,9 @@
       "Request new code": [
         "Запытаць новы код"
       ],
+      "Request sent": [
+        "Запыт адпраўлены"
+      ],
       "Reset password": [
         "Скінуць пароль"
       ],
@@ -5325,6 +5467,9 @@
       ],
       "Subscription": [
         "Падпіска"
+      ],
+      "Summary": [
+        "Зводка"
       ],
       "Switch to one-password mode": [
         "Пераключыцца ў рэжым з адным паролем"
@@ -5473,6 +5618,20 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я знайшоў больш прывабны сэрвіс"
+      ],
+      "It’s missing a key feature": [
+        "Адсутнічаюць ключавыя функцыі"
+      ],
+      "It’s too expensive": [
+        "Занадта дорага"
+      ],
+      "Other": [
+        "Іншае"
       ]
     },
     "VPN info": {

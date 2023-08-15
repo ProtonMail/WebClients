@@ -383,6 +383,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Aktivera ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -1050,11 +1053,11 @@
         "${ ips } server",
         "${ ips } servrar"
       ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerad server"
+      ],
       "${ price } per domain": [
         "${ price } per domän"
-      ],
-      "${ price } per IP address": [
-        "${ price } per IP-adress"
       ],
       "${ price } per user": [
         "${ price } per användare"
@@ -2762,6 +2765,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktivera ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktivera avancerade loggar och ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
+      ],
+      "Enable advanced logs to access these features": [
+        "Aktivera avancerade loggar för att komma åt dessa funktioner"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
@@ -2812,6 +2824,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Tillbaka till ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "Skapade du inget konto?"
+      ],
+      "I didn't create this account": [
+        "Jag skapade inte detta konto"
+      ],
+      "sign in": [
+        "logga in"
+      ],
+      "Thanks for letting us know": [
+        "Tack för att du berättar för oss"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Detta är vanligtvis inget att oroa sig för. Klicka bara nedan för att bekräfta att detta ${ BRAND_NAME }-konto inte är ditt, så inaktiverar vi det."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Vi har noterat att detta konto inte tillhör dig. Vi kommer att undersöka och agera därefter."
+      ],
+      "You can safely close this tab.": [
+        "Du kan stänga denna flik säkert."
       ]
     },
     "Domain label": {
@@ -2904,12 +2942,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Tack för att du verifierade din e-postadress."
-      ],
-      "Thanks for letting us know": [
-        "Tack för att du berättar för oss"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Vi har noterat att detta konto inte tillhör dig. Vi kommer att undersöka och agera därefter."
       ],
       "You can safely close this tab.": [
         "Du kan stänga denna flik säkert."
@@ -3461,7 +3493,7 @@
         "Du har redan lagt till denna helgdagskalender"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du har förlorat åtkomst till din organisationsnyckel. Utan återställning kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare, eller få tillgång till icke-privata användarkonto."
+        "Du har förlorat åtkomst till dina organisationsnycklar. Utan återställning kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
       ],
       "You have no invoices.": [
         "Du har inga fakturor."
@@ -3703,6 +3735,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Det var ett problem att inaktivera ditt konto."
       ]
     },
     "Error message, recovery": {
@@ -4140,7 +4177,7 @@
         "Ta bort organisation?"
       ],
       "Edit user storage": [
-        "Redigera användarutrymme"
+        "Redigera användares lagringsutrymme"
       ],
       "Family name": [
         "Familjenamn"
@@ -4587,6 +4624,9 @@
       ],
       "Label": [
         "Etikett"
+      ],
+      "Location": [
+        "Plats"
       ],
       "Name": [
         "Namn"
@@ -5089,7 +5129,7 @@
         "${ firstRemainingCalendarName } kommer att ställas in som standardkalender."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter de två lösenorden för inloggning och postlådan. För att byta till ett enda lösenord, ange det lösenord du vill använda och klicka på Spara."
+        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggnings- och brevlådans lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på “Spara“."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } stöder DKIM-signering för anpassade domäner. För att använda DKIM-autentisering, lägg till följande CNAME-post i dina DNS-inställningar för denna domän. Detta kan vanligtvis göras i kontrollpanelen hos din domännamnsregistrator."
@@ -5410,6 +5450,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Tillgänglig på macOS, Windows och Linux."
       ],
+      "Awaiting transaction": [
+        "Väntar på transaktion"
+      ],
       "Background color": [
         "Bakgrundsfärg"
       ],
@@ -5461,9 +5504,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-transaktioner kan ta lite tid att bekräfta (upp till 24 timmar). När de har bekräftats kommer vi att lägga till krediter till ditt konto. Efter transaktionsbekräftelsen kan du betala din faktura med krediterna."
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Blockerar avsändare från att se om och när du öppnade ett meddelande."
       ],
@@ -5495,7 +5535,7 @@
         "Fortsätt med ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
-        "Om du fortsätter ansluts ditt ${ BRAND_NAME } till ${ name }."
+        "Om du fortsätter kommer ditt ${ BRAND_NAME }-konto anslutas till ${ name }."
       ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
@@ -5563,9 +5603,6 @@
       ],
       "Data locked": [
         "Data låst"
-      ],
-      "Dedicated IP addresses ": [
-        "Dedikerade IP-adresser "
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
@@ -5731,7 +5768,7 @@
         "För Visa, MasterCard och Discover, de 3 siffrorna på baksidan av ditt kort. För American Express, de 4 siffrorna på framsidan av ditt kort."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från ett annat konto till din säkra ${ MAIL_APP_NAME } inkorg."
+        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
       ],
       "Free forever": [
         "Gratis för alltid"
@@ -5994,7 +6031,7 @@
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -6062,14 +6099,14 @@
       "Not a valid URL": [
         "Ogiltig URL"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Ännu inte tillgängligt i vår mobilapp för Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Inte din enhet? Använd ett privat surffönster för att logga in och stäng det när du är klar. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Antal dedikerade IP-adresser i organisationen"
-      ],
-      "Number of IP addresses": [
-        "Antal IP-adresser"
+      "Number of dedicated servers in the organization": [
+        "Antal dedikerade servrar i organisationen"
       ],
       "Number of users": [
         "Antal användare"
@@ -6690,9 +6727,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ett betalt konto för att aktivera ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
@@ -7045,7 +7079,7 @@
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Organisationslösenordet kan delas med andra användare som du vill ge administratörsbehörighet. Det fungerar också som återställningskod för att få tillgång till din organisation om du förlorar åtkomst till ditt konto. Vänligen spara detta lösenordet på ett säkert sätt."
+        "Ditt organisationslösenord kan delas med andra användare som du vill ge administrativa privilegier. Det är också en nödåterställningskod för att få åtkomst till din organisation om du förlorar åtkomsten till ditt konto. Spara detta lösenord och förvara det säkert."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Din organisations e-post skyddas med end-to-end-kryptering genom organisationsnyckeln. Detta fingeravtryck kan användas för att verifiera att alla administratörer på ditt konto har samma nyckel."
@@ -7863,8 +7897,11 @@
       "Event notifications": [
         "Händelseaviseringar"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Exkludera skräppost/papperskorg från “All e-post“"
+      ],
       "Expiration (${ patternExpiration })": [
-        "Förfallodatum (${ patternExpiration })"
+        "Löper ut (${ patternExpiration })"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -9698,7 +9735,7 @@
         "En VPN-anslutning tillåter en enhet att ansluta till ${ BRAND_NAME } VPN vid varje given tidpunkt. Till exempel, för att ansluta en telefon och en bärbar dator till ${ BRAND_NAME_TWO } VPN samtidigt, behöver du två VPN-anslutningar."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Alternativ att se icke-privata användares inkorgar som användaren själv skulle se dem, inklusive fullständiga detaljer om meddelanden och kontakter"
+        "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, allokera lagringsutrymme, konfigurera domäner och utföra andra uppgifter"
@@ -9719,7 +9756,7 @@
         "Telefonsupport från ${ BRAND_NAME }s kundtjänst är tillgänglig under europeisk arbetstid för kunder med mer än 6 användare"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "Förhindrar att ${ BRAND_NAME } eller tredjepart får tillgång till meddelanden. De enda som kan läsa meddelandena är avsändaren och den avsedda mottagaren."
+        "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Skydda alla enheter som är anslutna till ditt WiFi-nätverk. Det är också användbart om du har enheter som inte stöder VPN-inställningar direkt."
@@ -9791,7 +9828,7 @@
         "När du är ansluten till vår VPN så går dina DNS-förfrågningar via vår krypterade VPN-tunnel, vilket förstärker din integritet och säkerhet"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "När du skickar till andra som använder ${ MAIL_APP_NAME } så sker kryptering automatiskt. För att skicka till dem som inte använder ${ MAIL_APP_NAME_TWO } så krävs det att ett lösenord ställs in innan meddelandet skickas."
+        "När du skickar till andra ${ MAIL_APP_NAME }-användare sker kryptering automatiskt. För att skicka till icke ${ MAIL_APP_NAME_TWO }-användare måste du ställa in ett lösenord innan du skickar."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
@@ -9846,8 +9883,8 @@
       "Dedicated Account manager": [
         "Dedikerad kontohanterare"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Dedikerade serverplatser i ${ n }+ länder"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedikerade serverplatser i ${ numberOfCountries }+ länder"
       ],
       "Dedicated server locations in North America and Europe": [
         "Dedikerade serverplatser i Nordamerika och Europa"
@@ -11115,7 +11152,7 @@
     },
     "specialoffer: Label": {
       "Lifetime deal": [
-        "Livstids erbjudande"
+        "Livstidserbjudande"
       ],
       "Limited time only": [
         "Endast under begränsad tid"
@@ -11411,12 +11448,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hantera din prenumeration på ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Prenumeration hanteras av ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Prenumeration på användar-ID-${ userId } har gjorts via ett köp i appen. För att hantera prenumerationen måste användaren navigera till sektionen ”Prenumeration” i sitt ${ subscriptionManager }-konto."
       ],
       "Subscriptions": [
         "Prenumeration"
@@ -12906,6 +12937,12 @@
       "Account is disconnected": [
         "Kontot är frånkopplat"
       ],
+      "An approximate location of the IP address": [
+        "En ungefärlig plats för IP-adressen"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Alla skydd som tillämpas på misstänkt aktivitet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
@@ -12917,6 +12954,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ta bort kastade och skräppostmeddelanden efter 30 dagar. Om du aktiverar automatisk borttagning får meddelanden som redan är i kastade/skräppost ett datum för borttagning baserat på datumet de flyttades dit."
+      ],
+      "Device information such as operating system": [
+        "Enhetsinformation såsom operativsystem"
       ],
       "Each imported email will have this label": [
         "Varje importerat e-postmeddelande kommer ha denna etikett"
@@ -12974,6 +13014,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Internetleverantören för IP-adressen"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"

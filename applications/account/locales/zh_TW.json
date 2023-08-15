@@ -467,6 +467,9 @@
       "Got it": [
         "了解"
       ],
+      "Help": [
+        "幫助"
+      ],
       "Hide": [
         "隱藏"
       ],
@@ -598,6 +601,9 @@
       ],
       "Pay": [
         "付款"
+      ],
+      "Pay ${ price }": [
+        "支付 ${ price }"
       ],
       "Pay ${ price } now": [
         "繳款金額 ${ price }"
@@ -797,6 +803,9 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Share": [
         "分享"
       ],
@@ -874,6 +883,9 @@
       ],
       "Switch account": [
         "切換帳號"
+      ],
+      "Switch or add account": [
+        "切換或是添加帳號"
       ],
       "Top up": [
         "充值"
@@ -1035,6 +1047,12 @@
       ],
       "${ ips } servers": [
         "${ ips } 台伺服器"
+      ],
+      "${ price } per domain": [
+        "每網域${ price }"
+      ],
+      "${ price } per user": [
+        "每使用者${ price }"
       ],
       "${ users } users": [
         "${ users } 個使用者"
@@ -1543,6 +1561,9 @@
       ],
       "azureish white": [
         "天藍白"
+      ],
+      "black": [
+        "黑色"
       ],
       "blanched almond": [
         "杏仁黃"
@@ -2871,12 +2892,6 @@
       "Thank you for verifying your email address.": [
         "謝謝您驗證您的電子郵件地址。"
       ],
-      "Thanks for letting us know": [
-        "感謝您讓我們知道"
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "我們注意到此帳號並不屬於您。我們將會進行調查並採取相應措施。"
-      ],
       "You can safely close this tab.": [
         "您可以安全地關閉此分頁。"
       ]
@@ -3496,6 +3511,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "Missing FN property": [
+        "缺少 FN 屬性"
       ],
       "vCard versions < 3.0 not supported": [
         "不支援 vCard 版本 < 3.0"
@@ -5246,6 +5264,9 @@
       "Amount below minimum (${ amount }).": [
         "金額不得低於 (${ amount })。"
       ],
+      "Amount due": [
+        "應付金額"
+      ],
       "An error occurred while communicating with the extension": [
         "與延伸功能通訊時發生錯誤"
       ],
@@ -5378,9 +5399,6 @@
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "比特幣交易可能需時確認 (可能長達 24 小時)。一俟確認，儲值將撥入您的帳號。在交易確認後，您即可使用儲值餘額支付您的繳款單。"
-      ],
       "Blocks senders from seeing if and when you opened a message.": [
         "阻止寄件人得知你閱讀此封郵件。"
       ],
@@ -5479,6 +5497,12 @@
       ],
       "Data locked": [
         "資料已上鎖"
+      ],
+      "Dedicated servers": [
+        "專用伺服器"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "具有專用 IP 地址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制。"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
@@ -6194,6 +6218,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "請將密碼妥善保存到合適的地方。點擊圖示以確認密碼輸入正確。"
       ],
+      "Saving your password": [
+        "儲存您的密碼"
+      ],
       "Scan QR code instead": [
         "改為掃描 QR 代碼"
       ],
@@ -6452,14 +6479,23 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
       ],
+      "to ${ product } Business": [
+        "至${ product }商業版"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "要取消您的訂閱，請聯絡我們。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "為完成付款，請傳送${ btcAmountBold }至以下地址"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
+      ],
+      "to continue to ${ product }": [
+        "繼續使用 ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "繼續使用 ${ toAppName }"
@@ -6566,9 +6602,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "升級付費版帳號以使用${ PROTON_SENTINEL_NAME }"
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 地址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
       ],
@@ -6635,11 +6668,17 @@
       "We couldn’t process your payment.": [
         "我們未能處理您的付款。"
       ],
+      "We generated a strong password for you": [
+        "我們為您產生了強密碼"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "我們需要與您的銀行認證您的付款方法。"
       ],
       "We need to authenticate your payment with your bank.": [
         "我們需要與您的銀行認證您的付款。"
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "我們建議至少兩台伺服器以提供備援。"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
@@ -6655,6 +6694,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
+      ],
+      "We'll get back to you shortly.": [
+        "我們會盡快回覆您。"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
@@ -6928,6 +6970,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "您的訂閱將於${ renewalTime }自動更新"
       ]
     },
     "info": {
@@ -8369,6 +8414,9 @@
       "Add a gift code": [
         "加入禮品代碼"
       ],
+      "Add gift code": [
+        "加入禮品代碼"
+      ],
       "Apps and extensions": [
         "應用程式與延伸套件"
       ],
@@ -9138,6 +9186,9 @@
       "Send & receive invitations": [
         "傳送並接收邀請"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
+        "於${ vpnServersCountData.paid.countries }+國家的伺服器"
+      ],
       "Share calendar via link": [
         "透過連結分享行事曆"
       ],
@@ -9278,6 +9329,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 長達 30 個月服務授權。其它訂購授權選項可在結帳時加購。"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "具有專用安全閘道器的進階網路安全與存取管理"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用的餘額、價差與優惠券將在下一步時套用"
       ],
@@ -9325,6 +9379,9 @@
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "為具有特定安全需求的大型組織量身訂作的解決方案"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "專屬的 VPN 解決方案，提供安全、不設限、高速的網際網路存取。"
@@ -9649,6 +9706,9 @@
       "An external address cannot be default": [
         "外部的電郵位址不能成為預設"
       ],
+      "Invalid code": [
+        "代碼無效"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "指紋為 ${ fp } 的金鑰已刪除。"
       ],
@@ -9755,6 +9815,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "歡迎使用 ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "歡迎使用 ${ VPN_APP_NAME }"
       ]
@@ -9858,6 +9921,9 @@
       ],
       "Ask each time": [
         "每一次都詢問我"
+      ],
+      "Auto": [
+        "自動"
       ],
       "Automatic (${ defaultDay })": [
         "自動 (${ defaultDay })"
@@ -11054,6 +11120,15 @@
       ]
     },
     "Subscription": {
+      "Billed every 15 months": [
+        "15 個月繳制"
+      ],
+      "Billed every 2 years": [
+        "雙年繳制"
+      ],
+      "Billed every 30 months": [
+        "30 個月繳制"
+      ],
       "Billed monthly": [
         "月繳"
       ],
@@ -11062,6 +11137,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated servers": [
+        "${ ipAddresses } 專用伺服器"
+      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } 個極飆速 VPN 連線"
       ],
@@ -11126,12 +11204,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "在 ${ subscriptionManager } 中管理您的訂閱"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "訂閱乃由 ${ subscriptionManager } 管理"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "使用者 ID ${ userId } 的訂閱乃應用程式內購買。若要管理，此訂閱的使用者請另行查看其 ${ subscriptionManager } 帳號中的訂閱版面。"
       ],
       "Subscriptions": [
         "訂閱"

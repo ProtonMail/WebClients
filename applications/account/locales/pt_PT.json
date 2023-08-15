@@ -383,6 +383,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Ativar ${ PROTON_SENTINEL_NAME }"
+      ],
       "enable desktop notifications": [
         "ativar as notificações"
       ],
@@ -461,6 +464,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -523,6 +529,9 @@
       ],
       "Leave": [
         "Deixar"
+      ],
+      "Let's talk": [
+        "Vamos conversar"
       ],
       "Load more": [
         "Carregar mais"
@@ -788,6 +797,9 @@
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
+      "Settings": [
+        "Definições"
+      ],
       "Share": [
         "Partilhar"
       ],
@@ -865,6 +877,9 @@
       ],
       "Switch account": [
         "Trocar de conta"
+      ],
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
       ],
       "Top up": [
         "Recarregar"
@@ -1485,6 +1500,17 @@
         "Total por ${ n } meses"
       ]
     },
+    "Checkout summary": {
+      "month": [
+        "mês"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Utilizadores"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fechar"
@@ -1499,6 +1525,9 @@
       ],
       "azureish white": [
         "branco azul-celeste"
+      ],
+      "black": [
+        "preto"
       ],
       "blanched almond": [
         "amêndoa branqueada"
@@ -2741,6 +2770,11 @@
         "Encontrámos os seguintes campos no ficheiro CSV que enviou. Marque aqueles que deseja importar."
       ]
     },
+    "Disable account": {
+      "sign in": [
+        "iniciar sessão"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Verificado"
@@ -2831,12 +2865,6 @@
       ],
       "Thank you for verifying your email address.": [
         "Obrigado por verificar o seu endereço de e-mail."
-      ],
-      "Thanks for letting us know": [
-        "Obrigado por nos informar."
-      ],
-      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Verificámos que esta conta não lhe pertence. Iremos investigar e actuar em conformidade."
       ],
       "You can safely close this tab.": [
         "Pode fechar este separador com segurança."
@@ -3463,6 +3491,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Erro ao encriptar"
+      ],
+      "Missing FN property": [
+        "A propriedade FN está ausente."
       ],
       "vCard versions < 3.0 not supported": [
         "Versões do vCard < 3.0 não são suportadas"
@@ -5253,6 +5284,9 @@
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
       ],
+      "Amount due": [
+        "Montante devido"
+      ],
       "An error occurred while communicating with the extension": [
         "Ocorreu um erro ao comunicar com a extensão."
       ],
@@ -5303,6 +5337,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Tem certeza de que deseja descartar a importação?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Tem a certeza de que deseja eliminar permanentemente todos os diários?"
@@ -5381,9 +5418,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "As transações em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transação, pode pagar a sua fatura com os créditos."
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Bloquiar os remetentes de verem se e quando abriu a mensagem"
@@ -6212,7 +6246,7 @@
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
       ],
       "Securing your account": [
-        "Proteger a sua conta"
+        "A proteger a sua conta"
       ],
       "Select a service provider to start": [
         "Selecione um provedor de serviços para iniciar"
@@ -6245,7 +6279,7 @@
         "Definir frase de recuperação"
       ],
       "Setting up your Drive": [
-        "Configurando o seu Drive"
+        "A configurar o seu Drive"
       ],
       "Settings update failed": [
         "Erro de atualização das definições"
@@ -6462,7 +6496,7 @@
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois factores."
+        "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois fatores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
@@ -6584,9 +6618,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
-      "Upgrade to a paid account to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para uma conta paga para ativar ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
@@ -6630,7 +6661,7 @@
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
       ],
       "Verifying your payment": [
-        "Verificação do seu pagamento"
+        "A verificar o seu pagamento"
       ],
       "Version ${ version }": [
         "Versão ${ version }"
@@ -6689,11 +6720,14 @@
       "Week and month views only apply to desktop.": [
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
+      "Welcome": [
+        "Boas-vindas"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de reposição para o endereço de e-mail que forneceu para a recuperação da conta."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Enviaremos um código de reposição para o endereço de correio e-mail que forneceu para a recuperação da conta."
+        "Enviaremos um código de reposição para o número de telefone que forneceu para a recuperação da conta."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Estamos a atualizar o seu plano atual para um plano melhorado que oferece mais pelo mesmo preço. Enquanto os nossos sistemas estiverem a ser atualizados, não será possível alterar o plano. Enviar-lhe-emos um e-mail assim que a atualização estiver concluída."
@@ -6908,10 +6942,10 @@
         "O seu e-mail só será utilizado para esta verificação única."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará do seu ${ oldPassword }."
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua ${ oldPassword }."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou do seu ${ oldPassword }."
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou da sua ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
@@ -7620,7 +7654,7 @@
         "Créditos utilizados"
       ],
       "Current display name": [
-        "Nome a mostrar actual"
+        "Nome a mostrar atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -7731,7 +7765,7 @@
         "Último dia da semana"
       ],
       "Enter password": [
-        "Inserir a palavra-passe"
+        "Introduza a palavra-passe"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduza a palavra-passe para a chave com impressão digital: ${ fingerprintCode }"
@@ -7995,7 +8029,7 @@
         "Adicione o seguinte registo TXT. Note que os registos DNS podem levar várias horas a actualizar."
       ],
       "Please select files to upload": [
-        "Selecione os ficheiros a enviar."
+        "Por favor, selecione os ficheiros a carregar"
       ],
       "Port": [
         "Porta"
@@ -8869,6 +8903,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Manter a minha conta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -9759,6 +9796,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Boas-vindas ao ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Boas-vindas ao ${ VPN_APP_NAME }"
       ]
@@ -9862,6 +9902,9 @@
       ],
       "Ask each time": [
         "Sempre perguntar"
+      ],
+      "Auto": [
+        "Automático"
       ],
       "Automatic (${ defaultDay })": [
         "Automático (${ defaultDay })"
@@ -11156,12 +11199,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gira a sua subscrição em ${ subscriptionManager }."
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "A subscrição é gerida por ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "A subscrição do utilizador com ID-${ userId } foi efetuada através de uma compra na aplicação. Para gerir a subscrição, o utilizador tem de navegar para a secção Subscrição da sua conta ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Subscrições"
       ],
@@ -11668,7 +11705,7 @@
         "4. Selecione o servidor para ligar"
       ],
       "Accessibility": [
-        "Enviar um lembrete"
+        "Acessibilidade"
       ],
       "Account and password": [
         "Conta e palavra-passe"
@@ -11731,7 +11768,7 @@
         "Adicionar à lista de endereços bloqueados"
       ],
       "Add to spam list": [
-        "Adicionar à lista de spam"
+        "Adicionar à lista de endereços spam"
       ],
       "Add user": [
         "Adicionar utilizador"
@@ -11842,7 +11879,7 @@
         "Confirmar a alteração da conta"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirme a perda dos bônus ${ BRAND_NAME }"
+        "Confirme a perda dos bónus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
@@ -11851,7 +11888,10 @@
         "Parabéns por escolher a privacidade!"
       ],
       "Connect ${ name }": [
-        "Ligar ${ name }"
+        "Conectar ${ name }"
+      ],
+      "Contact us": [
+        "Contacte-nos"
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
@@ -11963,7 +12003,7 @@
         "Desativar ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Desativar autenticação em dois passos"
+        "Desativar a autenticação de dois fatores"
       ],
       "Display name and signature": [
         "Nome a mostrar e assinatura"
@@ -12011,7 +12051,7 @@
         "Privacidade dos e-mails"
       ],
       "Email subscriptions": [
-        "Boletins informativos"
+        "Subscrições de e-mail"
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
@@ -12121,7 +12161,7 @@
         "Aplicação Import-Export"
       ],
       "Increase your privacy with more addresses": [
-        "Reforçe a proteção da sua privacidade com mais endereços"
+        "Aumente a sua privacidade com mais endereços"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -12217,7 +12257,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Erro de pagamento"
+        "Falha no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -12226,7 +12266,7 @@
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Erro na verificação PayPal"
+        "Falha na verificação PayPal"
       ],
       "Personalise your e-mail footer": [
         "Personalize o rodapé do seu e-mail"
@@ -12262,7 +12302,7 @@
         "Ficheiro de recuperação"
       ],
       "Refer a friend": [
-        "Referencie um amigo"
+        "Indique um amigo"
       ],
       "Remove calendar": [
         "Remover um calendário"
@@ -12304,7 +12344,7 @@
         "Segurança e privacidade"
       ],
       "Security logs": [
-        "Diários de segurança"
+        "Registos de segurança"
       ],
       "Select a plan": [
         "Selecione um plano"
@@ -12407,6 +12447,9 @@
         "A conta de utilizador ${ successfullyCreatedUsers.length } foi criada.",
         "As contas de utilizador ${ successfullyCreatedUsers.length } foram criadas."
       ],
+      "Summary": [
+        "Resumo"
+      ],
       "Switch to one-password mode": [
         "Mudar para modo de palavra-passe única"
       ],
@@ -12423,16 +12466,16 @@
         "Fuso horário"
       ],
       "Track your referrals": [
-        "Monitorize a suas referência"
+        "Acompanhe as suas referências"
       ],
       "Two-factor authentication": [
-        "Autenticação em dois passos"
+        "Autenticação em dois fatores"
       ],
       "Two-factor authentication enforcement": [
-        "Execução de autenticação de dois factores"
+        "Execução de autenticação de dois fatores"
       ],
       "Two-factor authentication reminders": [
-        "Lembretes de autenticação de dois factores"
+        "Lembretes de autenticação de dois fatores"
       ],
       "Type": [
         "Tipo"
@@ -12444,7 +12487,7 @@
         "Navegador não suportado"
       ],
       "Upgrade plan": [
-        "Acualizar o plano"
+        "Atualizar o plano"
       ],
       "Users and addresses": [
         "Utilizadores e endereços"
@@ -12453,7 +12496,7 @@
         "Verificação"
       ],
       "Verification failed": [
-        "Erro de verificação"
+        "Falha na verificação"
       ],
       "Verify email address": [
         "Verifique o seu endereço de e-mail"
@@ -12507,7 +12550,7 @@
         "As suas subscrições"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Foi convidade a testar o ${ MAIL_APP_NAME }."
+        "Foi convidado a experimentar ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12599,6 +12642,9 @@
       ],
       "Plan": [
         "Plano"
+      ],
+      "Servers": [
+        "Servidores"
       ],
       "Start date": [
         "Data inicial"
@@ -12879,6 +12925,11 @@
       ],
       "Replay video": [
         "Reproduzir o vídeo novamente"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "Outro"
       ]
     },
     "VPN info": {

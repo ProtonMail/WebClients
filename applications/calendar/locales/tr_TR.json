@@ -248,6 +248,9 @@
       "Got it": [
         "Anladım"
       ],
+      "Help": [
+        "Yardım"
+      ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
       ],
@@ -464,6 +467,9 @@
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
+      "Settings": [
+        "Ayarlar"
+      ],
       "Share": [
         "Paylaş"
       ],
@@ -515,11 +521,17 @@
       "Submit": [
         "Gönder"
       ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
       "Today": [
         "Bugün"
       ],
       "Toggle Contact app": [
         "Kişiler uygulamasına geç"
+      ],
+      "Toggle settings": [
+        "Ayarları aç / kapat"
       ],
       "Trust": [
         "Güven"
@@ -953,6 +965,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Özel"
+      ],
       "Day": [
         "Gün"
       ],
@@ -964,6 +979,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Zaman aralığını değiştir"
+      ],
       "Change time range to": [
         "Zaman aralığını şuna değiştir"
       ]
@@ -2548,6 +2566,9 @@
       "Encryption failed": [
         "Şifrelenemedi"
       ],
+      "Missing FN property": [
+        "FN özelliği eksik"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0 öncesi sürümler desteklenmiyor"
       ]
@@ -3883,6 +3904,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
+      ],
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
       ],
@@ -4173,6 +4197,9 @@
       "Bad": [
         "Kötü"
       ],
+      "Beta Access": [
+        "Beta erişimi"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -4402,6 +4429,9 @@
       "Postal code": [
         "Posta kodu"
       ],
+      "Primary": [
+        "Birincil"
+      ],
       "Public keys": [
         "Herkese açık anahtarlar"
       ],
@@ -4417,6 +4447,12 @@
       "Reveal password": [
         "Parolayı göster"
       ],
+      "Secondary": [
+        "İkincil"
+      ],
+      "Secondary time zone": [
+        "İkincil saat dilimi"
+      ],
       "Show week numbers": [
         "Hafta numaraları görüntülensin"
       ],
@@ -4426,8 +4462,14 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Sync with system": [
+        "Sistem ayarı kullanılsın"
+      ],
       "System information": [
         "Sistem bilgileri"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Time zone": [
         "Saat dilimi"
@@ -5093,6 +5135,9 @@
       "All events": [
         "Tüm etkinlikler"
       ],
+      "Auto": [
+        "Otomatik"
+      ],
       "Automatic (${ defaultDay })": [
         "Otomatik (${ defaultDay })"
       ],
@@ -5636,6 +5681,9 @@
       "Add your country's public holidays to your calendar.": [
         "Ülkenizin resmi tatillerini takviminize ekleyin."
       ],
+      "Easily access and customize your app experience.": [
+        "Uygulama deneyiminizi kolaylaştırın ve özelleştirin."
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
@@ -5644,6 +5692,9 @@
       ],
       "Public holidays are here!": [
         "Resmi tatiller burada!"
+      ],
+      "Quick settings": [
+        "Hızlı ayarlar"
       ]
     },
     "Storage": {
@@ -6005,6 +6056,9 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "All settings": [
+        "Tüm ayarlar"
       ],
       "Billing cycle": [
         "Fatura dönemi"

@@ -403,9 +403,6 @@
       "Forward as attachment": [
         "以附件形式轉寄"
       ],
-      "Generate recovery phrase": [
-        "生成還原短語"
-      ],
       "Get SimpleLogin extension": [
         "取得 SimpleLogin 延伸功能"
       ],
@@ -441,6 +438,9 @@
       ],
       "Got it": [
         "了解"
+      ],
+      "Help": [
+        "幫助"
       ],
       "Hide": [
         "隱藏"
@@ -892,6 +892,9 @@
       "Set": [
         "設定"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式"
+      ],
       "Set as default": [
         "設為預設"
       ],
@@ -903,6 +906,9 @@
       ],
       "Set recovery phrase": [
         "設定還原短語"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share via link": [
         "透過連結分享"
@@ -979,6 +985,9 @@
       "Submit": [
         "送出"
       ],
+      "Switch or add account": [
+        "切換或是添加帳號"
+      ],
       "This message contains embedded images.": [
         "此郵件包含內嵌圖像。"
       ],
@@ -993,6 +1002,9 @@
       ],
       "Toggle Contact app": [
         "切換聯絡人應用程式"
+      ],
+      "Toggle settings": [
+        "切換設定"
       ],
       "Tomorrow": [
         "明天"
@@ -1634,6 +1646,9 @@
       ],
       "azureish white": [
         "天藍白"
+      ],
+      "black": [
+        "黑色"
       ],
       "blanched almond": [
         "杏仁黃"
@@ -3487,6 +3502,9 @@
       "Encryption failed": [
         "加密失敗"
       ],
+      "Missing FN property": [
+        "缺少 FN 屬性"
+      ],
       "vCard versions < 3.0 not supported": [
         "不支援 vCard 版本 < 3.0"
       ]
@@ -4094,6 +4112,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "變更${ strongText }至${ BRAND_NAME }地址"
       ],
+      "Changed accounts": [
+        "變更帳號"
+      ],
       "Checklist complete": [
         "清單完成"
       ],
@@ -4102,6 +4123,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "恭喜，您已完成全部的步驟"
+      ],
+      "Congratulation, you finished!": [
+        "恭喜，你完成了！"
       ],
       "Continue setting up your email": [
         "繼續設定您的電子郵件"
@@ -4121,9 +4145,6 @@
       "For your eyes only": [
         "只為了您的眼睛"
       ],
-      "Get mobile app": [
-        "取得行動裝置應用程式"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
       ],
@@ -4133,23 +4154,11 @@
       "Get the App": [
         "取得應用程式"
       ],
-      "Import contacts or emails": [
-        "匯入聯絡人或郵件"
-      ],
-      "Import data": [
-        "匯入資料"
-      ],
-      "Import your contacts or messages": [
-        "匯入您的通訊錄或郵件"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "保持使用${ MAIL_APP_NAME }以了解更多方法${ BRAND_NAME }保護隱私及簡化信件。"
       ],
       "Learn more": [
         "了解更多"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "使${ BRAND_NAME }進到您的收件匣"
       ],
       "Maybe later": [
         "稍後再說"
@@ -4159,6 +4168,9 @@
       ],
       "Open checklist": [
         "開啟確認清單"
+      ],
+      "Open checklist and get free storage": [
+        "開啟檢查清單並取得免費的儲存空間"
       ],
       "Popular online services": [
         "熱門線上節點"
@@ -4172,20 +4184,14 @@
       "Protection from trackers": [
         "保護免於追蹤"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電郵。"
-      ],
-      "Send a message": [
-        "傳送訊息"
-      ],
-      "Set recovery method": [
-        "設定復原方法"
-      ],
       "Set up ${ strongText } from Gmail": [
         "設定${ strongText }至Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "登入行動APP以完成此步驟"
+      ],
+      "Storage unlocked": [
+        "儲存鎖定"
       ],
       "Update your logins": [
         "更新您的登入"
@@ -4685,9 +4691,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "取消訂閱此郵遞論壇的請求將會被傳送到電子報的傳送者並自動處理。"
       ],
@@ -4898,6 +4901,9 @@
       "Do you want to re-sign the contact details?": [
         "您要重新簽署此聯絡人詳細資料嗎？"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "找不到你要的嗎?${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
@@ -5075,6 +5081,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
+      "Include Spam/Trash in your search results.": [
+        "搜尋結果包含垃圾郵件/垃圾桶"
+      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -5246,6 +5255,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
+      "Open shortcut cheat sheet": [
+        "開啟快捷鍵備忘單"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
@@ -5269,9 +5281,6 @@
       ],
       "Please fill out this field.": [
         "請填寫以下欄位。"
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址將不會被刪除。"
@@ -5323,12 +5332,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
-      ],
-      "Recovery phrase copied to clipboard": [
-        "復原短語已複製到剪貼簿"
-      ],
-      "Recovery phrase downloaded": [
-        "已下載還原短語"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -5413,9 +5416,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "將 ${ MAIL_APP_NAME } 設為您的瀏覽器預設郵件應用程式。當您點擊電郵地址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
-      ],
-      "Set a recovery phrase": [
-        "設定還原短語"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
@@ -5623,6 +5623,9 @@
       ],
       "Trackers blocked:": [
         "追蹤器已封鎖:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "關閉搜尋日期、名稱、電子郵件位址及主旨。於設定中停用搜尋訊息並刪除下載的訊息。"
@@ -5884,12 +5887,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
-      ],
-      "Your recovery phrase": [
-        "您的復原短語"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "您的復原短語是按特定順序排列的一系列 12 個單字。"
       ]
     },
     "info": {
@@ -6204,6 +6201,9 @@
       "BCC": [
         "密件副本"
       ],
+      "Beta Access": [
+        "測試版體驗"
+      ],
       "Blind Carbon Copy": [
         "密件副本"
       ],
@@ -6390,6 +6390,9 @@
       "Last month only": [
         "僅過去 1 個月"
       ],
+      "Layout": [
+        "版面配置"
+      ],
       "Location": [
         "位置"
       ],
@@ -6492,9 +6495,6 @@
       "Recipient": [
         "收件者"
       ],
-      "Recovery phrase": [
-        "復原短語"
-      ],
       "Region": [
         "地區"
       ],
@@ -6528,6 +6528,9 @@
       "Street address": [
         "街道位址"
       ],
+      "Sync with system": [
+        "與系統同步"
+      ],
       "Synchronize with system": [
         "與系統同步"
       ],
@@ -6545,6 +6548,9 @@
       ],
       "the email was sent ${ label }": [
         "電郵${ label }送出"
+      ],
+      "Theme": [
+        "主題"
       ],
       "Then": [
         "則"
@@ -6741,9 +6747,6 @@
       ],
       "More": [
         "更多"
-      ],
-      "More about recovery": [
-        "更多有關於復原部份"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "於 ${ CALENDAR_APP_NAME } 開啟"
@@ -7925,6 +7928,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "更改設定"
+      ],
+      "Easily access and customize your app experience.": [
+        "提早存取和自訂您的應用程式體驗。"
+      ],
       "Email tracking protection": [
         "電郵追蹤防護"
       ],
@@ -7933,6 +7942,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
+      ],
+      "Quick settings": [
+        "快速設定"
       ],
       "Schedule send": [
         "排程傳送"
@@ -8387,6 +8399,9 @@
       ],
       "Addresses": [
         "位址"
+      ],
+      "All settings": [
+        "所有設定"
       ],
       "Archive": [
         "封存"

@@ -295,7 +295,7 @@
         "${ DRIVE_APP_NAME } alın"
       ],
       "Get link": [
-        "Bağlantı oluştur"
+        "Bağlantıyı al"
       ],
       "Get started": [
         "Başlayalım"
@@ -320,6 +320,9 @@
       ],
       "Grid layout": [
         "Izgara düzeni"
+      ],
+      "Help": [
+        "Yardım"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -555,6 +558,9 @@
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
+      "Settings": [
+        "Ayarlar"
+      ],
       "Share file": [
         "Dosya paylaş"
       ],
@@ -618,11 +624,17 @@
       "Submit report": [
         "Şikayeti gönder"
       ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
       ],
       "Toggle Contact app": [
         "Kişiler uygulamasına geç"
+      ],
+      "Toggle settings": [
+        "Ayarları aç / kapat"
       ],
       "Trust": [
         "Güven"
@@ -2232,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Şifrelenemedi"
+      ],
+      "Missing FN property": [
+        "FN özelliği eksik"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard 3.0 öncesi sürümler desteklenmiyor"
@@ -3945,6 +3960,9 @@
       "Trash": [
         "Çöp kutusu"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
+      ],
       "Try searching by file name, date, or type.": [
         "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
       ],
@@ -4230,6 +4248,9 @@
       ],
       "Bad": [
         "Kötü"
+      ],
+      "Beta Access": [
+        "Beta erişimi"
       ],
       "Browser": [
         "Tarayıcı"
@@ -4559,11 +4580,17 @@
       "Street address": [
         "Sokak adresi"
       ],
+      "Sync with system": [
+        "Sistem ayarı kullanılsın"
+      ],
       "System information": [
         "Sistem bilgileri"
       ],
       "Text": [
         "Metin"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Bu işlem, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."
@@ -5532,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Uygulama deneyiminizi kolaylaştırın ve özelleştirin."
+      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -5543,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
+      ],
+      "Quick settings": [
+        "Hızlı ayarlar"
       ]
     },
     "Storage": {
@@ -5808,6 +5841,9 @@
       ],
       "All": [
         "Tümü"
+      ],
+      "All settings": [
+        "Tüm ayarlar"
       ],
       "Are you sure you want to close the preview?": [
         "Ön izlemeyi kapatmak istediğinize emin misiniz?"

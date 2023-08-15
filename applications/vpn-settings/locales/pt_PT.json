@@ -173,6 +173,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Help": [
+        "Ajuda"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -184,6 +187,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Manter a minha subscrição ${ vpnPlanNameShort }"
+      ],
+      "Let's talk": [
+        "Vamos conversar"
       ],
       "Load more": [
         "Carregar mais"
@@ -293,6 +299,9 @@
       "Set new password": [
         "Definir uma nova palavra-passe"
       ],
+      "Settings": [
+        "Definições"
+      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -325,6 +334,9 @@
       ],
       "Support": [
         "Apoio ao cliente"
+      ],
+      "Switch or add account": [
+        "Trocar ou adicionar conta"
       ],
       "Top up": [
         "Recarregar"
@@ -521,6 +533,17 @@
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "mês"
+      ],
+      "Servers": [
+        "Servidores"
+      ],
+      "Users": [
+        "Utilizadores"
       ]
     },
     "Collapsible tooltip": {
@@ -2129,6 +2152,9 @@
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
       ],
+      "Amount due": [
+        "Montante devido"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Qualquer método ${ twoFa } na sua conta será desativado."
       ],
@@ -2170,9 +2196,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "As transações em Bitcoin podem levar algum tempo a ser confirmadas (até 24 horas). Uma vez confirmadas, adicionaremos créditos à sua conta. Após a confirmação da transação, pode pagar a sua fatura com os créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
@@ -2508,7 +2531,7 @@
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
       ],
       "Securing your account": [
-        "Proteger a sua conta"
+        "A proteger a sua conta"
       ],
       "Server is currently down": [
         "O servidor está em baixo"
@@ -2523,7 +2546,7 @@
         "A sessão expirou."
       ],
       "Setting up your Drive": [
-        "Configurando o seu Drive"
+        "A configurar o seu Drive"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar o seu endereço."
@@ -2590,7 +2613,7 @@
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois factores."
+        "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois fatores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
@@ -2680,7 +2703,7 @@
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
       ],
       "Verifying your payment": [
-        "Verificação do seu pagamento"
+        "A verificar o seu pagamento"
       ],
       "Version ${ version }": [
         "Versão ${ version }"
@@ -2718,11 +2741,14 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "Welcome": [
+        "Boas-vindas"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de reposição para o endereço de e-mail que forneceu para a recuperação da conta."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Enviaremos um código de reposição para o endereço de correio e-mail que forneceu para a recuperação da conta."
+        "Enviaremos um código de reposição para o número de telefone que forneceu para a recuperação da conta."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Estamos a atualizar o seu plano atual para um plano melhorado que oferece mais pelo mesmo preço. Enquanto os nossos sistemas estiverem a ser atualizados, não será possível alterar o plano. Enviar-lhe-emos um e-mail assim que a atualização estiver concluída."
@@ -2834,10 +2860,10 @@
         "O seu e-mail só será utilizado para esta verificação única."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará do seu ${ oldPassword }."
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua ${ oldPassword }."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
-        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou do seu ${ oldPassword }."
+        "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou da sua ${ oldPassword }."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
@@ -3045,7 +3071,7 @@
         "Créditos utilizados"
       ],
       "Current display name": [
-        "Nome a mostrar actual"
+        "Nome a mostrar atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -3454,6 +3480,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Manter a minha conta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
       ]
     },
     "new_plans: action": {
@@ -4123,6 +4152,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Boas-vindas ao ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Boas-vindas ao ${ VPN_APP_NAME }"
       ]
@@ -4677,12 +4709,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gira a sua subscrição em ${ subscriptionManager }."
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "A subscrição é gerida por ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "A subscrição do utilizador com ID-${ userId } foi efetuada através de uma compra na aplicação. Para gerir a subscrição, o utilizador tem de navegar para a secção Subscrição da sua conta ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Subscrições"
       ],
@@ -5030,10 +5056,13 @@
         "Confirmar a alteração da conta"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirme a perda dos bônus ${ BRAND_NAME }"
+        "Confirme a perda dos bónus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
+      ],
+      "Contact us": [
+        "Contacte-nos"
       ],
       "Credits": [
         "Créditos"
@@ -5060,7 +5089,7 @@
         "Dispositivo ligado!"
       ],
       "Disable two-factor authentication": [
-        "Desativar autenticação em dois passos"
+        "Desativar a autenticação de dois fatores"
       ],
       "Downgrade account": [
         "Mudar para uma conta com menos funcionalidades"
@@ -5081,7 +5110,7 @@
         "E-mail"
       ],
       "Email subscriptions": [
-        "Boletins informativos"
+        "Subscrições de e-mail"
       ],
       "Enter your password": [
         "Introduza a sua palavra-passe"
@@ -5150,7 +5179,7 @@
         "Pagar fatura"
       ],
       "Payment failed": [
-        "Erro de pagamento"
+        "Falha no pagamento"
       ],
       "Payment methods": [
         "Métodos de pagamento"
@@ -5159,7 +5188,7 @@
         "Verificação do pagamento"
       ],
       "PayPal verification failed": [
-        "Erro na verificação PayPal"
+        "Falha na verificação PayPal"
       ],
       "Phone": [
         "Telefone"
@@ -5224,6 +5253,9 @@
       "Status": [
         "Estado"
       ],
+      "Summary": [
+        "Resumo"
+      ],
       "Switch to one-password mode": [
         "Mudar para modo de palavra-passe única"
       ],
@@ -5234,7 +5266,7 @@
         "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
-        "Autenticação em dois passos"
+        "Autenticação em dois fatores"
       ],
       "Type": [
         "Tipo"
@@ -5246,7 +5278,7 @@
         "Navegador não suportado"
       ],
       "Verification failed": [
-        "Erro de verificação"
+        "Falha na verificação"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -5304,6 +5336,9 @@
       ],
       "Plan": [
         "Plano"
+      ],
+      "Servers": [
+        "Servidores"
       ],
       "Start date": [
         "Data inicial"
@@ -5364,6 +5399,11 @@
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
         "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "Outro"
       ]
     },
     "VPN info": {

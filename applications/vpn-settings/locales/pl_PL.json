@@ -438,11 +438,11 @@
         "${ ips } serwerów",
         "${ ips } serwerów"
       ],
+      "${ price } per dedicated server": [
+        "${ price } za dedykowany serwer"
+      ],
       "${ price } per domain": [
         "${ price } za domenę"
-      ],
-      "${ price } per IP address": [
-        "${ price } za adres IP"
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
@@ -2227,6 +2227,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Awaiting transaction": [
+        "Transakcja oczekująca"
+      ],
       "Balance from your previous subscription": [
         "Środki z poprzedniej subskrypcji"
       ],
@@ -2256,9 +2259,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Potwierdzenie transakcji Bitcoin może zająć trochę czasu (do 24 godzin). Po pomyślnej weryfikacji dodamy środki do Twojego konta i będziesz mógł ich użyć do opłacenia faktury."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -2292,9 +2292,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
-      ],
-      "Dedicated IP addresses ": [
-        "Dedykowane adresy IP "
       ],
       "Dedicated servers": [
         "Dedykowane serwery"
@@ -2506,11 +2503,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Liczba dedykowanych adresów IP organizacji"
-      ],
-      "Number of IP addresses": [
-        "Liczba adresów IP"
+      "Number of dedicated servers in the organization": [
+        "Liczba dedykowanych serwerów organizacji"
       ],
       "Number of users": [
         "Liczba użytkowników"
@@ -4368,8 +4362,8 @@
       "Dedicated Account manager": [
         "Dedykowany opiekun konta"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Dedykowane serwery w ponad ${ n } krajach"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedykowane serwery w ponad ${ numberOfCountries } krajach"
       ],
       "Dedicated server locations in North America and Europe": [
         "Dedykowane serwery w Ameryce Północnej i Europie"
@@ -5014,12 +5008,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Zarządzaj subskrypcją w ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Subskrypcja jest zarządzana przez ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Subskrypcja użytkownika z identyfikatorem ${ userId } została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja na koncie ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subskrypcje"

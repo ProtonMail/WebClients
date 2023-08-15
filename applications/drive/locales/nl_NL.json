@@ -321,6 +321,9 @@
       "Grid layout": [
         "Roosterweergave"
       ],
+      "Help": [
+        "Hulp"
+      ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
@@ -555,6 +558,9 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Settings": [
+        "Instellingen"
+      ],
       "Share file": [
         "Deel Bestand"
       ],
@@ -618,11 +624,17 @@
       "Submit report": [
         "Rapport indienen"
       ],
+      "Switch or add account": [
+        "Account toevoegen of wisselen"
+      ],
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
       "Toggle Contact app": [
         "Contact app kiezen"
+      ],
+      "Toggle settings": [
+        "Instellingen openen/sluiten"
       ],
       "Trust": [
         "Vertrouwen"
@@ -2106,7 +2118,7 @@
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "status page": [
-        "status pagina"
+        "statuspagina"
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
@@ -2232,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
+      ],
+      "Missing FN property": [
+        "Missende FN-eigenschap"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versies < 3.0 niet ondersteund"
@@ -3692,7 +3707,7 @@
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Voorzie een naam en een email adres voor het aanmaken van een groep"
+        "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
@@ -3944,6 +3959,9 @@
       ],
       "Trash": [
         "Prullenbak"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
       "Try searching by file name, date, or type.": [
         "Zoek ook op bestandsnaam, datum of type."
@@ -4230,6 +4248,9 @@
       ],
       "Bad": [
         "Slecht"
+      ],
+      "Beta Access": [
+        "Bèta toegang"
       ],
       "Browser": [
         "Browser"
@@ -4559,11 +4580,17 @@
       "Street address": [
         "Adres"
       ],
+      "Sync with system": [
+        "Synchroniseren met systeem"
+      ],
       "System information": [
         "Systeeminformatie"
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Thema"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
@@ -5532,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Gemakkelijk toegang tot en aanpassing van uw applicatie-ervaring."
+      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -5543,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ],
+      "Quick settings": [
+        "Snelle instellingen"
       ]
     },
     "Storage": {
@@ -5808,6 +5841,9 @@
       ],
       "All": [
         "Alle"
+      ],
+      "All settings": [
+        "Alle instellingen"
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"

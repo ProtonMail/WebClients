@@ -218,6 +218,9 @@
       "Pay": [
         "Оплатить"
       ],
+      "Pay ${ price }": [
+        "Оплатить ${ price }"
+      ],
       "Pay ${ price } now": [
         "Оплатите ${ price } сейчас"
       ],
@@ -1989,6 +1992,12 @@
       "(1-2 emails per month)": [
         "(1-2 письма в месяц)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 электронных письма в год)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 электронных писем в год)"
+      ],
       "(during your first month)": [
         "(в течение первого месяца)"
       ]
@@ -2139,6 +2148,9 @@
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
+      "Amount due": [
+        "Сумма к оплате"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Все ${ twoFa } методы на Вашем аккаунте будут отключены."
       ],
@@ -2180,9 +2192,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -2435,6 +2444,9 @@
       ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
+      ],
+      "Organization size": [
+        "Размер организации"
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
@@ -3394,6 +3406,32 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна новая версия ${ appName } . ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Войти"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зарегистрироваться"
+      ],
+      "Create a new ${ appName } account": [
+        "Создать новый аккаунт ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Найти имя пользователя аккаунта ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забыли пароль от аккаунта ${ BRAND_NAME }? Восстановите его здесь с помощью кода восстановления, электронной почты или СМС и верните доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Сбросить пароль от аккаунта ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Войти, чтобы получить доступ к аккаунту ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -4697,12 +4735,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Настройте подписку в ${ subscriptionManager }"
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Подпиской управляет ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Подписка пользователя с ID-${ userId } была приобретена в приложении. Чтобы настроить подписку, пользователю нужно войти в раздел Подписки своего аккаунта ${ subscriptionManager }."
-      ],
       "Subscriptions": [
         "Подписки"
       ],
@@ -4956,9 +4988,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } бесплатно"
-      ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
       ],
@@ -5054,6 +5083,9 @@
       ],
       "Confirm phone number": [
         "Подтвердите номер телефона"
+      ],
+      "Contact us": [
+        "Свяжитесь с нами"
       ],
       "Credits": [
         "Кредиты"
@@ -5244,6 +5276,9 @@
       "Status": [
         "Состояние"
       ],
+      "Subscription": [
+        "Подписка"
+      ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
       ],
@@ -5264,6 +5299,9 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Улучшить защиту вашей сети с помощью выделенных серверов"
       ],
       "Verification failed": [
         "Проверка не удалась"
