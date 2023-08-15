@@ -434,11 +434,11 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
       "${ price } per domain": [
         "${ price } por dominio"
-      ],
-      "${ price } per IP address": [
-        "${ price } por dirección IP"
       ],
       "${ price } per user": [
         "${ price } por usuario"
@@ -2199,6 +2199,9 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Awaiting transaction": [
+        "Esperando la transacción"
+      ],
       "Balance from your previous subscription": [
         "Balance de su suscripción anterior"
       ],
@@ -2228,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Las transacciones de Bitcoin pueden tomar un tiempo en confirmarse (hasta 24 horas). Una vez confirmada, añadiremos los créditos a su cuenta. Después de la confirmación de la transacción, puede pagar su factura con los créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo su plan en el futuro."
@@ -2264,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
-      ],
-      "Dedicated IP addresses ": [
-        "Direcciones IP dedicadas "
       ],
       "Dedicated servers": [
         "Servidores dedicados"
@@ -2478,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es su dispositivo? Use una ventana de navegación privada para iniciar sesión y ciérrela cuando haya terminado. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Número de direcciones IP dedicadas en la organización"
-      ],
-      "Number of IP addresses": [
-        "Número de direcciones IP"
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados en la organización"
       ],
       "Number of users": [
         "Número de usuarios"
@@ -4286,8 +4280,8 @@
       "Dedicated Account manager": [
         "Gestor de cuenta dedicada"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Ubicaciones de servidores dedicados en más de ${ n } países"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
       ],
       "Dedicated server locations in North America and Europe": [
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
@@ -4890,12 +4884,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestione su suscripción en ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "La suscripción es gestionada por ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "La suscripción del usuario ID-${ userId } fue realizada mediante compra dentro de la app. Para gestionar la suscripción del usuario, navegue a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Suscripciones"

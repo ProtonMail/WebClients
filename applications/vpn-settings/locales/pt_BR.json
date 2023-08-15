@@ -434,11 +434,11 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ price } per dedicated server": [
+        "${ price } por servidor dedicado"
+      ],
       "${ price } per domain": [
         "${ price } por domínio"
-      ],
-      "${ price } per IP address": [
-        "${ price } por endereço de IP"
       ],
       "${ price } per user": [
         "${ price } por usuário"
@@ -2199,6 +2199,9 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Awaiting transaction": [
+        "Esperando transação"
+      ],
       "Balance from your previous subscription": [
         "Saldo da sua assinatura anterior"
       ],
@@ -2228,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -2264,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
-      ],
-      "Dedicated IP addresses ": [
-        "Endereços de IP dedicados "
       ],
       "Dedicated servers": [
         "Servidores dedicados"
@@ -2478,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Não é o seu dispositivo? Use uma janela de navegação privada para fazer login e fechá-la quando terminar. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Número de endereços IP dedicados na organização"
-      ],
-      "Number of IP addresses": [
-        "Número de endereços IP"
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados na organização"
       ],
       "Number of users": [
         "Numero de usuários"
@@ -4292,8 +4286,8 @@
       "Dedicated Account manager": [
         "Gerente de contas dedicado"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Localizações de servidores dedicados em ${ n }+ países"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Localizações de servidores dedicados em ${ numberOfCountries }+ países"
       ],
       "Dedicated server locations in North America and Europe": [
         "Localizações de servidores dedicados na América do Norte e Europa"
@@ -4906,12 +4900,6 @@
       "Manage your subscription on ${ subscriptionManager }": [
         "Gerencie sua assinatura em ${ subscriptionManager }."
       ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "A assinatura é gerenciada por ${ subscriptionManager }."
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Assinatura de ID de usuário-${ userId } foi feito via uma compra no aplicativo. Para gerenciar a assinatura, o usuário precisa navegar até a seção Assinatura da sua ${ subscriptionManager } conta."
-      ],
       "Subscriptions": [
         "Assinaturas"
       ],
@@ -5031,7 +5019,7 @@
         "Preferência salva"
       ],
       "Verification successful": [
-        "Verificado"
+        "Verificado com sucesso"
       ],
       "You have successfully cancelled your subscription.": [
         "Você cancelou sua assinatura com sucesso."
