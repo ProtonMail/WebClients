@@ -246,6 +246,9 @@
       "Got it": [
         "了解"
       ],
+      "Help": [
+        "幫助"
+      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -462,6 +465,9 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Share": [
         "分享"
       ],
@@ -513,11 +519,17 @@
       "Submit": [
         "送出"
       ],
+      "Switch or add account": [
+        "切換或是添加帳號"
+      ],
       "Today": [
         "今天"
       ],
       "Toggle Contact app": [
         "切換聯絡人應用程式"
+      ],
+      "Toggle settings": [
+        "切換設定"
       ],
       "Trust": [
         "信任"
@@ -949,6 +961,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "自訂"
+      ],
       "Day": [
         "天"
       ],
@@ -960,6 +975,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "變更時區"
+      ],
       "Change time range to": [
         "將時間範圍更改為"
       ]
@@ -2525,6 +2543,9 @@
       "Encryption failed": [
         "加密失敗"
       ],
+      "Missing FN property": [
+        "缺少 FN 屬性"
+      ],
       "vCard versions < 3.0 not supported": [
         "不支援 vCard 版本 < 3.0"
       ]
@@ -3823,6 +3844,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
+      ],
       "Update recurring event": [
         "更新週期性事件"
       ],
@@ -4112,6 +4136,9 @@
       "Bad": [
         "壞壞"
       ],
+      "Beta Access": [
+        "測試版體驗"
+      ],
       "Browser": [
         "瀏覽器"
       ],
@@ -4340,6 +4367,9 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "Primary": [
+        "主要"
+      ],
       "Public keys": [
         "公開金鑰"
       ],
@@ -4355,6 +4385,12 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Secondary": [
+        "次要"
+      ],
+      "Secondary time zone": [
+        "次要時區"
+      ],
       "Show week numbers": [
         "顯示週數"
       ],
@@ -4364,8 +4400,14 @@
       "Street address": [
         "街道位址"
       ],
+      "Sync with system": [
+        "與系統同步"
+      ],
       "System information": [
         "系統資訊"
+      ],
+      "Theme": [
+        "主題"
       ],
       "Time zone": [
         "時區"
@@ -5002,6 +5044,9 @@
       "All events": [
         "所有事件"
       ],
+      "Auto": [
+        "自動"
+      ],
       "Automatic (${ defaultDay })": [
         "自動 (${ defaultDay })"
       ],
@@ -5531,6 +5576,9 @@
       "Add your country's public holidays to your calendar.": [
         "新增您所在國家的公眾假期至您的行事曆中。"
       ],
+      "Easily access and customize your app experience.": [
+        "提早存取和自訂您的應用程式體驗。"
+      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
@@ -5539,6 +5587,9 @@
       ],
       "Public holidays are here!": [
         "公眾假期登場！"
+      ],
+      "Quick settings": [
+        "快速設定"
       ]
     },
     "Storage": {
@@ -5886,6 +5937,9 @@
       ],
       "Addresses": [
         "位址"
+      ],
+      "All settings": [
+        "所有設定"
       ],
       "Billing cycle": [
         "繳款單週期"

@@ -250,6 +250,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Help": [
+        "Ajutor"
+      ],
       "Hide advanced PGP settings": [
         "Ascundere setări PGP avansate"
       ],
@@ -466,6 +469,9 @@
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
+      "Settings": [
+        "Setări"
+      ],
       "Share": [
         "Partajare"
       ],
@@ -517,11 +523,17 @@
       "Submit": [
         "Trimite"
       ],
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ],
       "Today": [
         "Astăzi"
       ],
       "Toggle Contact app": [
         "Comutare la aplicație Contacte"
+      ],
+      "Toggle settings": [
+        "Comutare setări"
       ],
       "Trust": [
         "Aprobare"
@@ -957,6 +969,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Personal"
+      ],
       "Day": [
         "zi"
       ],
@@ -968,6 +983,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Schimbare interval timp"
+      ],
       "Change time range to": [
         "Schimbare interval timp la"
       ]
@@ -2571,6 +2589,9 @@
       "Encryption failed": [
         "Criptare eșuată"
       ],
+      "Missing FN property": [
+        "Lipsește proprietatea FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "Versiunile vCard < 3.0 nu sunt suportate."
       ]
@@ -3943,6 +3964,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
+      ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
       ],
@@ -4234,6 +4258,9 @@
       "Bad": [
         "Rea"
       ],
+      "Beta Access": [
+        "Acces la Beta"
+      ],
       "Browser": [
         "Navigator"
       ],
@@ -4464,6 +4491,9 @@
       "Postal code": [
         "Cod poștal"
       ],
+      "Primary": [
+        "Primar"
+      ],
       "Public keys": [
         "Chei publice"
       ],
@@ -4479,6 +4509,12 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Secondary": [
+        "Secundar"
+      ],
+      "Secondary time zone": [
+        "Fus orar secundar"
+      ],
       "Show week numbers": [
         "Afișare număr săptămână"
       ],
@@ -4488,8 +4524,14 @@
       "Street address": [
         "Strada"
       ],
+      "Sync with system": [
+        "Sincronizare cu cea din sistem"
+      ],
       "System information": [
         "Informații sistem"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Time zone": [
         "Fus orar"
@@ -5184,6 +5226,9 @@
       "All events": [
         "Toate evenimentele"
       ],
+      "Auto": [
+        "Automat"
+      ],
       "Automatic (${ defaultDay })": [
         "Automat (${ defaultDay })"
       ],
@@ -5741,6 +5786,9 @@
       "Add your country's public holidays to your calendar.": [
         "Adăugați sărbătorile publice ale propriei țări în calendarul personal."
       ],
+      "Easily access and customize your app experience.": [
+        "Accesați și personalizați ușor experiența cu aplicația."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
@@ -5749,6 +5797,9 @@
       ],
       "Public holidays are here!": [
         "Sărbătorile publice sunt aici!"
+      ],
+      "Quick settings": [
+        "Setări rapide"
       ]
     },
     "Storage": {
@@ -6121,6 +6172,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "All settings": [
+        "Toate setările"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
