@@ -8,6 +8,7 @@ import {
     QuickSettingsSectionHeadline,
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
+import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
 import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
 import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
 import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';
@@ -49,6 +50,8 @@ const CalendarQuickSettings = () => {
 
     return (
         <QuickSettingsMain>
+            <DrawerAllSettingsView />
+
             <QuickSettingsSection>
                 <QuickSettingsSectionRow
                     label={c('Label').t`Default view`}

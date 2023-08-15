@@ -24,7 +24,7 @@ interface Props
 const BREAKPOINTS = {
     extratiny: 0,
     tiny: 100,
-    small: 400,
+    small: 440,
     medium: 700,
     large: 1100,
 };
@@ -50,6 +50,7 @@ const ToolbarHeaderMessageWide = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const localIsNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const localIsTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
 
     return (
         <div>
@@ -59,7 +60,7 @@ const ToolbarHeaderMessageWide = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div className="flex flex-align-items-center toolbar-inner flex-nowrap gap-2">
                     <ToolbarButton
                         icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
                         onClick={onBack}
@@ -85,17 +86,20 @@ const ToolbarHeaderMessageWide = ({
                         moveDropdownToggleRef={moveDropdownToggleRef}
                     />
 
-                    <Vr />
-
-                    <NavigationControls
-                        loading={loading}
-                        conversationMode={conversationMode}
-                        elementID={elementID}
-                        messageID={messageID}
-                        elementIDs={elementIDs}
-                        onElement={onElement}
-                        labelID={labelID}
-                    />
+                    {!localIsTiny ? (
+                        <>
+                            <Vr />
+                            <NavigationControls
+                                loading={loading}
+                                conversationMode={conversationMode}
+                                elementID={elementID}
+                                messageID={messageID}
+                                elementIDs={elementIDs}
+                                onElement={onElement}
+                                labelID={labelID}
+                            />
+                        </>
+                    ) : null}
                 </div>
             </nav>
         </div>

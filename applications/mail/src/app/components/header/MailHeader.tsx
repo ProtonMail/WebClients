@@ -33,9 +33,10 @@ interface Props {
     selectedIDs: string[];
     breakpoints: Breakpoints;
     toolbar?: ReactNode | undefined;
+    settingsButton?: ReactNode;
 }
 
-const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar }: Props) => {
+const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar, settingsButton }: Props) => {
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -98,6 +99,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
+                settingsButton={settingsButton}
                 floatingButton={
                     <FloatingButton
                         onClick={() => onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW })}

@@ -40,6 +40,7 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
     CONTACT_WIDGET_TABS,
     CustomAction,
@@ -148,7 +149,7 @@ const CalendarContainerView = ({
         useModalState();
 
     useOpenDrawerOnLoad();
-    const { appInView } = useDrawer();
+    const { appInView, showDrawerSidebar } = useDrawer();
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const defaultView = getDefaultView(calendarUserSettings);
@@ -467,6 +468,10 @@ const CalendarContainerView = ({
         ) : undefined;
     };
 
+    const drawerSettingsButton = (
+        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
+    );
+
     const header = isDrawerApp ? (
         <DrawerAppHeader
             title={
@@ -514,6 +519,7 @@ const CalendarContainerView = ({
                 isNarrow={isNarrow}
                 actionArea={toolbar(isDrawerApp)}
                 hideUpsellButton={isNarrow}
+                settingsButton={drawerSettingsButton}
             />
 
             <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
@@ -573,9 +579,7 @@ const CalendarContainerView = ({
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
     ].filter(isTruthy);
 
-    const drawerSettingsButton = (
-        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
-    );
+    const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
 
     return (
         <PrivateAppContainer
@@ -609,8 +613,10 @@ const CalendarContainerView = ({
             <PrivateMainArea
                 hasToolbar
                 data-testid="calendar-view:events-area"
-                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} settingsButton={drawerSettingsButton} />}
+                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 isDrawerApp={isDrawerApp}
+                mainBordered={canShowDrawer && !!showDrawerSidebar}
             >
                 {loader}
                 {children}

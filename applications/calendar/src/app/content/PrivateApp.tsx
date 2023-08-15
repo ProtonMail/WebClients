@@ -1,7 +1,16 @@
-import { FeatureCode, LoaderPage, StandardPrivateApp, useApi, useAppTitle, useDrawerParent } from '@proton/components';
+import {
+    FeatureCode,
+    LoaderPage,
+    StandardPrivateApp,
+    useApi,
+    useAppTitle,
+    useDrawer,
+    useDrawerParent,
+} from '@proton/components';
 import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -40,6 +49,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
+    const { setShowDrawerSidebar } = useDrawer();
 
     useAppTitle('');
 
@@ -62,6 +72,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             hasReadableMemberKeyActivation
             hasMemberKeyMigration
             app={getAppContainer}
+            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
         />
     );
 };
