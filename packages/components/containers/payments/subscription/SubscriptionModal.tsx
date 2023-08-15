@@ -199,6 +199,9 @@ const SubscriptionModal = ({
         coupon,
         planIDs,
     });
+
+    const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
+
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
@@ -871,9 +874,12 @@ const SubscriptionModal = ({
                         </div>
                     </div>
                 )}
-                {model.step === SUBSCRIPTION_STEPS.UPGRADE && <SubscriptionThanks loading={true} method={method} />}
+                {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
+                    <SubscriptionThanks showDownloads={!isVpnB2bPlan} loading={true} method={method} />
+                )}
                 {model.step === SUBSCRIPTION_STEPS.THANKS && (
                     <SubscriptionThanks
+                        showDownloads={!isVpnB2bPlan}
                         method={method}
                         onClose={() => {
                             onSuccess?.();
