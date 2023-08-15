@@ -379,8 +379,6 @@ const Step1 = ({
         });
     }, [loading]);
 
-    const showLifetimeDeal = !isB2bPlan;
-
     const hasBeenCountedRef = useRef<HasBeenCountedState>({
         plan: false,
         email: false,
@@ -419,6 +417,12 @@ const Step1 = ({
         }));
     };
 
+    const getCouponForCurrentCycle = (cycle?: Cycle) => {
+        return couponCode ?? model.subscriptionDataCycleMapping[cycle ?? options.cycle]?.checkResult.Coupon?.Code;
+    };
+
+    const showLifetimeDeal = !isB2bPlan && !getCouponForCurrentCycle();
+
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
         setCheckingSubscription(true);
 
@@ -451,7 +455,7 @@ const Step1 = ({
 
             setOptimisticDiff(newOptimistic);
 
-            const coupon = couponCode ?? model.subscriptionDataCycleMapping[newCycle]?.checkResult.Coupon?.Code;
+            const coupon = getCouponForCurrentCycle(newCycle);
             const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, coupon);
 
             if (!validateFlow()) {
