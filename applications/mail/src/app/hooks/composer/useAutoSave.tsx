@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { useHandler } from '@proton/components';
 import { Cancellable } from '@proton/components/hooks/useHandler';
@@ -13,6 +13,8 @@ interface AutoSaveArgs {
 }
 
 export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
+    const [hasNetworkError, setHasNetworkError] = useState(false);
+
     const pendingAutoSave = usePromise<void>();
     const pendingSave = usePromise<void>();
     const pauseDebouncer = useRef<boolean>(false);
@@ -37,9 +39,11 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
             lastCall.current = undefined;
             pendingSave.renew();
             await saveDraft(message as MessageStateWithData);
+            setHasNetworkError(false);
         } catch (error: any) {
             if (isNetworkError(error) || isDecryptionError(error)) {
                 console.error(error);
+                setHasNetworkError(true);
             } else {
                 throw error;
             }
@@ -117,5 +121,6 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
         pendingAutoSave,
         pause,
         restart,
+        hasNetworkError,
     };
 };
