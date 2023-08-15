@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
       ],
-      "Generate recovery phrase": [
-        "Generera återställningsfras"
-      ],
       "Get SimpleLogin extension": [
         "Skaffa SimpleLogin-utökningen"
       ],
@@ -1569,13 +1566,13 @@
         "(Frivilligt deltagande)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "Lägga till förekomster till ett evenemang stöds inte för tillfället"
+        "Lägga till förekomster till en händelse stöds inte för tillfället"
       ],
       "Event refreshing is not supported for the moment": [
-        "Uppdatering av evenemang stöds inte för tillfället"
+        "Uppdatering av händelse stöds inte för tillfället"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Uppdatering av evenemang stöds inte för tillfället"
+        "Omläggning av schema för händelse stöds inte för tillfället"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Det här svaret kan inte läggas till i ${ CALENDAR_APP_NAME } eftersom vi för tillfället bara stöder svar på alla händelser i en serie"
@@ -4144,6 +4141,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Ändra ${ strongText } till din ${ BRAND_NAME }-adress"
       ],
+      "Changed accounts": [
+        "Ändrade konton"
+      ],
       "Checklist complete": [
         "Checklista klar"
       ],
@@ -4152,6 +4152,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Grattis, du har slutfört alla steg!"
+      ],
+      "Congratulation, you finished!": [
+        "Grattis, du är klar!"
       ],
       "Continue setting up your email": [
         "Fortsätt ställa in din e-post"
@@ -4171,9 +4174,6 @@
       "For your eyes only": [
         "Bara för dina ögon"
       ],
-      "Get mobile app": [
-        "Skaffa mobilapp"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaffa mobilappen för ${ MAIL_APP_NAME }"
       ],
@@ -4183,23 +4183,11 @@
       "Get the App": [
         "Skaffa appen"
       ],
-      "Import contacts or emails": [
-        "Importera kontakter eller e-post"
-      ],
-      "Import data": [
-        "Importera data"
-      ],
-      "Import your contacts or messages": [
-        "Importera dina kontakter eller meddelanden"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Fortsätt använda ${ MAIL_APP_NAME } för att upptäcka fler sätt ${ BRAND_NAME } skyddar din integritet och förenklar sättet att skicka e-post."
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Gör ${ BRAND_NAME } till din inkorg"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -4225,20 +4213,14 @@
       "Protection from trackers": [
         "Skydd från spårare"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Överför dina kontakter eller e-post snabbt från vilken leverantör som helst med vår Easy Switch Import Assistant"
-      ],
-      "Send a message": [
-        "Skicka ett meddelande"
-      ],
-      "Set recovery method": [
-        "Ställ in återställningsmetod"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Ställ in ${ strongText } från Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Logga in på mobilappen för att slutföra detta steg"
+      ],
+      "Storage unlocked": [
+        "Lagringsutrymme Upplåst"
       ],
       "Update your logins": [
         "Uppdatera dina inloggningar"
@@ -4785,9 +4767,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "En återställningsfras är ett av de säkraste sätten att skydda åtkomsten till ditt konto. Du kan använda den för att komma åt ditt konto och återställa dina krypterade data om du någonsin glömmer ditt lösenord."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En begäran om att avsluta prenumeration från denna e-postlista kommer att skickas till avsändaren av nyhetsbrevet och behandlas automatiskt."
       ],
@@ -5005,6 +4984,9 @@
       "Do you want to re-sign the contact details?": [
         "Vill du signera dessa kontaktuppgifter igen?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Hittar du inte vad du letar efter? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Glöm inte att dela lösenordet med mottagaren"
       ],
@@ -5188,6 +5170,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Inkludera skräppost/papperskorg i dina sökresultat."
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -5387,9 +5372,6 @@
       "Please fill out this field.": [
         "Fyll i detta fält."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Förvara det säkert. Du behöver det för att komma åt ditt konto och dekryptera dina data i händelse av lösenordsåterställning."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Observera att adresser som tilldelats denna grupp INTE kommer att tas bort."
       ],
@@ -5441,12 +5423,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Återställningsfras kopierad till urklipp"
-      ],
-      "Recovery phrase downloaded": [
-        "Återställningsfras nerladdad"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
@@ -5531,9 +5507,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post för denna webbläsare. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
-      ],
-      "Set a recovery phrase": [
-        "Ställ in en återställningsfras"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
@@ -6017,12 +5990,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
-      ],
-      "Your recovery phrase": [
-        "Din återställningsfras"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Din återställningsfras är en serie på 12 ord i en specifik ordning."
       ]
     },
     "info": {
@@ -6634,9 +6601,6 @@
       "Recipient": [
         "Mottagare"
       ],
-      "Recovery phrase": [
-        "Återställningsfras"
-      ],
       "Region": [
         "Region"
       ],
@@ -6889,9 +6853,6 @@
       ],
       "More": [
         "Mer"
-      ],
-      "More about recovery": [
-        "Mer om återställning"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -7958,7 +7919,7 @@
     },
     "specialoffer: Label": {
       "Lifetime deal": [
-        "Livstids erbjudande"
+        "Livstidserbjudande"
       ],
       "Limited time only": [
         "Endast under begränsad tid"
@@ -8097,6 +8058,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Ändra inställningar"
+      ],
       "Easily access and customize your app experience.": [
         "Kom enkelt åt och anpassa din appupplevelse."
       ],
@@ -8117,6 +8081,9 @@
       ],
       "Search just got smarter and faster": [
         "Sökning blev bara smartare och snabbare"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "E-post i skräppost och papperskorg är nu automatiskt exkluderad från “All e-post“. ${ settingsLink }"
       ],
       "Try it today.": [
         "Prova det idag."

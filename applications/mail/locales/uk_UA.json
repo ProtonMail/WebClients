@@ -409,9 +409,6 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
-      "Generate recovery phrase": [
-        "Згенерувати фразу відновлення"
-      ],
       "Get SimpleLogin extension": [
         "Отримати розширення SimpleLogin"
       ],
@@ -447,6 +444,9 @@
       ],
       "Got it": [
         "Зрозуміло"
+      ],
+      "Help": [
+        "Довідка"
       ],
       "Hide": [
         "Сховати"
@@ -901,6 +901,9 @@
       "Set": [
         "Встановити"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Встановити ${ MAIL_APP_NAME } як типову поштову програму"
+      ],
       "Set as default": [
         "Встановити типовим"
       ],
@@ -912,6 +915,9 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
+      ],
+      "Settings": [
+        "Налаштування"
       ],
       "Share via link": [
         "Спільний доступ за посиланням"
@@ -988,6 +994,9 @@
       "Submit": [
         "Відправити"
       ],
+      "Switch or add account": [
+        "Змінити або додати обліковий запис"
+      ],
       "This message contains embedded images.": [
         "Це повідомлення містить вбудовані зображення."
       ],
@@ -1002,6 +1011,9 @@
       ],
       "Toggle Contact app": [
         "Відкрити контакти"
+      ],
+      "Toggle settings": [
+        "Перемикання налаштувань"
       ],
       "Tomorrow": [
         "Завтра"
@@ -1646,6 +1658,9 @@
       ],
       "azureish white": [
         "лазуровий білий"
+      ],
+      "black": [
+        "чорний"
       ],
       "blanched almond": [
         "білений мигдаль"
@@ -3559,6 +3574,9 @@
       "Encryption failed": [
         "Не вдалося зашифрувати"
       ],
+      "Missing FN property": [
+        "Відсутня властивість FN"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard версії < 3.0 не підтримуються"
       ]
@@ -4152,7 +4170,7 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "Застосунок ${ MAIL_APP_NAME }"
+        "Програма ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } в App Store"
@@ -4208,9 +4226,6 @@
       "For your eyes only": [
         "Тільки для ваших очей"
       ],
-      "Get mobile app": [
-        "Отримати програму для мобільного пристрою"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Отримайте програму ${ MAIL_APP_NAME } для мобільного пристрою"
       ],
@@ -4218,25 +4233,13 @@
         "Отримайте ${ strongText } на Android або iOS"
       ],
       "Get the App": [
-        "Отримати застосунок"
-      ],
-      "Import contacts or emails": [
-        "Імпорт контактів чи е-пошти"
-      ],
-      "Import data": [
-        "Імпортувати дані"
-      ],
-      "Import your contacts or messages": [
-        "Імпортуйте свої контакти чи повідомлення"
+        "Отримати програму"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Продовжуйте використовувати ${ MAIL_APP_NAME }, щоб дізнатися більше про те, як ${ BRAND_NAME } захищає вашу конфіденційність та спрощує надсилання листів."
       ],
       "Learn more": [
         "Докладніше"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Зробити ${ BRAND_NAME } своєю вхідною поштою"
       ],
       "Maybe later": [
         "Можливо пізніше"
@@ -4246,6 +4249,9 @@
       ],
       "Open checklist": [
         "Відкрити контрольний список"
+      ],
+      "Open checklist and get free storage": [
+        "Відкрийте контрольний список та отримайте безплатне сховище"
       ],
       "Popular online services": [
         "Популярні онлайн-сервіси"
@@ -4258,15 +4264,6 @@
       ],
       "Protection from trackers": [
         "Захист від стеження"
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Швидко передавайте свої контакти або електронні листи від будь-якого постачальника послуг за допомогою нашого помічника для імпорту Easy Switch."
-      ],
-      "Send a message": [
-        "Надіслати повідомлення"
-      ],
-      "Set recovery method": [
-        "Додати спосіб відновлення"
       ],
       "Set up ${ strongText } from Gmail": [
         "Налаштуйте ${ strongText } із Gmail"
@@ -4913,9 +4910,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запит про відмову від розсилки буде надіслано відправнику цього листа й автоматично оброблено."
       ],
@@ -4981,6 +4975,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Ви впевнені, що хочете відмовитися від імпорту?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Ви впевнені, що хочете перемістити всі повідомлення в цьому місці в Архів?"
@@ -5513,6 +5510,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
       ],
+      "Open shortcut cheat sheet": [
+        "Відкрити командну панель комбінацією клавіш"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
@@ -5536,9 +5536,6 @@
       ],
       "Please fill out this field.": [
         "Будь ласка, заповніть це поле."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -5594,12 +5591,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
       ],
-      "Recovery phrase copied to clipboard": [
-        "Фразу відновлення скопійовано до буфера обміну"
-      ],
-      "Recovery phrase downloaded": [
-        "Фразу відновлення завантажено"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
@@ -5623,6 +5614,9 @@
       ],
       "Saved yesterday": [
         "Збережено вчора"
+      ],
+      "Saved: ${ dateString }": [
+        "Збережено ${ dateString }"
       ],
       "Saving draft…": [
         "Збереження чернетки…"
@@ -5680,9 +5674,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Встановіть ${ MAIL_APP_NAME } типовою програмою електронної пошти для цього браузера. ${ MAIL_APP_NAME } відкриватиметься автоматично після натискання на поштове посилання."
-      ],
-      "Set a recovery phrase": [
-        "Встановити фразу відновлення"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
@@ -5899,6 +5890,9 @@
       ],
       "Trackers blocked:": [
         "Заблоковані вистежувачі:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалення завантажених повідомлень, перейдіть до налаштувань."
@@ -6187,12 +6181,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "Your recovery phrase": [
-        "Ваша фраза відновлення"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Фраза відновлення — це послідовність з 12 слів у певному порядку."
       ]
     },
     "info": {
@@ -6516,6 +6504,9 @@
       "BCC": [
         "Прихована копія"
       ],
+      "Beta Access": [
+        "Бета доступ"
+      ],
       "Blind Carbon Copy": [
         "Прихована копія"
       ],
@@ -6702,6 +6693,9 @@
       "Last month only": [
         "Лише останній місяць"
       ],
+      "Layout": [
+        "Макет"
+      ],
       "Location": [
         "Розташування"
       ],
@@ -6804,9 +6798,6 @@
       "Recipient": [
         "Отримувач"
       ],
-      "Recovery phrase": [
-        "Фраза відновлення"
-      ],
       "Region": [
         "Область"
       ],
@@ -6840,6 +6831,9 @@
       "Street address": [
         "Вулиця"
       ],
+      "Sync with system": [
+        "Синхронізувати з системою"
+      ],
       "Synchronize with system": [
         "Синхронізувати з системою"
       ],
@@ -6857,6 +6851,9 @@
       ],
       "the email was sent ${ label }": [
         "лист було надіслано ${ label }"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Then": [
         "Потім"
@@ -7053,9 +7050,6 @@
       ],
       "More": [
         "Більше"
-      ],
-      "More about recovery": [
-        "Докладніше про відновлення"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Відкрити в ${ CALENDAR_APP_NAME }"
@@ -7575,7 +7569,7 @@
         "Налаштуйте свою організацію"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+        "Використовуйте вибір програм у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -8309,6 +8303,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Легко отримуйте доступ до програми й налаштовуйте роботу."
+      ],
       "Email tracking protection": [
         "Захист від стеження електронної пошти"
       ],
@@ -8317,6 +8314,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
+      ],
+      "Quick settings": [
+        "Швидкі налаштування"
       ],
       "Schedule send": [
         "Запланувати надсилання"
@@ -8873,6 +8873,9 @@
       ],
       "Addresses": [
         "Адреси"
+      ],
+      "All settings": [
+        "Усі налаштування"
       ],
       "Archive": [
         "Архів"

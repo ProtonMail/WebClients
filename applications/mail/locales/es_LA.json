@@ -405,9 +405,6 @@
       "Forward as attachment": [
         "Reenviar como adjunto"
       ],
-      "Generate recovery phrase": [
-        "Generar frase de recuperación"
-      ],
       "Get SimpleLogin extension": [
         "Obtener extensión de SimpleLogin"
       ],
@@ -4144,6 +4141,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Cambie ${ strongText } a su dirección de ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Cuentas cambiadas"
+      ],
       "Checklist complete": [
         "Lista de verificación completada"
       ],
@@ -4152,6 +4152,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "¡Felicitaciones, ha completado todos los pasos!"
+      ],
+      "Congratulation, you finished!": [
+        "¡Felicidades! Ha terminado."
       ],
       "Continue setting up your email": [
         "Continúe configurando su correo"
@@ -4171,9 +4174,6 @@
       "For your eyes only": [
         "Solo para usted"
       ],
-      "Get mobile app": [
-        "Descargar app para móviles"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtenga la aplicación móvil de ${ MAIL_APP_NAME }"
       ],
@@ -4183,23 +4183,11 @@
       "Get the App": [
         "Descargue la app"
       ],
-      "Import contacts or emails": [
-        "Importar contactos o correos"
-      ],
-      "Import data": [
-        "Importar datos"
-      ],
-      "Import your contacts or messages": [
-        "Importe sus contactos y mensajes"
-      ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Siga usando ${ MAIL_APP_NAME } y descubra más maneras en que ${ BRAND_NAME } protege su privacidad y simplifica su correo electrónico."
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Make ${ BRAND_NAME } your go-to inbox": [
-        "Convierta a ${ BRAND_NAME } en su bandeja de entrada"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -4225,20 +4213,14 @@
       "Protection from trackers": [
         "Protección contra rastreadores"
       ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transfiera rápidamente sus contactos o correos de cualquier proveedor usando nuestro asistente de importación Easy Switch."
-      ],
-      "Send a message": [
-        "Enviar un mensaje"
-      ],
-      "Set recovery method": [
-        "Establecer un método de recuperación"
-      ],
       "Set up ${ strongText } from Gmail": [
         "Configure el ${ strongText } desde Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicie sesión en la app móvil para completar este paso"
+      ],
+      "Storage unlocked": [
+        "Almacenamiento desbloqueado"
       ],
       "Update your logins": [
         "Actualice sus inicios de sesión"
@@ -4785,9 +4767,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
-      "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Una frase de recuperación es una de las formas más seguras de proteger el acceso a su cuenta. Puede usarla para acceder a su cuenta y recuperar sus datos cifrados si alguna vez olvida su contraseña."
-      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Se enviará una solicitud para darse de baja de esta lista de correo y se procesará automáticamente."
       ],
@@ -5005,6 +4984,9 @@
       "Do you want to re-sign the contact details?": [
         "¿Desea volver a firmar los datos del contacto?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "¿No encuentra lo que busca? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
       ],
@@ -5188,6 +5170,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Incluir Spam/Papelera en los resultados de búsqueda."
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -5387,9 +5372,6 @@
       "Please fill out this field.": [
         "Complete este campo."
       ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Manténgala segura. La necesitará para acceder a su cuenta y descifrar sus datos en caso de un restablecimiento de contraseña."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
       ],
@@ -5441,12 +5423,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
-      ],
-      "Recovery phrase copied to clipboard": [
-        "Frase recuperación copiada al portapapeles"
-      ],
-      "Recovery phrase downloaded": [
-        "Frase de recuperación descargada"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
@@ -5531,9 +5507,6 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Defina a ${ MAIL_APP_NAME } como su aplicación de correo por defecto para este navegador. ${ MAIL_APP_NAME } abrirá automáticamente los enlaces de correo."
-      ],
-      "Set a recovery phrase": [
-        "Defina una frase de recuperación"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
@@ -6017,12 +5990,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Su número de teléfono sólo se usará para esta verificación única."
-      ],
-      "Your recovery phrase": [
-        "Su frase de recuperación"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Su frase de recuperación es una serie de 12 palabras en un orden específico."
       ]
     },
     "info": {
@@ -6634,9 +6601,6 @@
       "Recipient": [
         "Destinatario"
       ],
-      "Recovery phrase": [
-        "Frase de recuperación"
-      ],
       "Region": [
         "Estado"
       ],
@@ -6889,9 +6853,6 @@
       ],
       "More": [
         "Más"
-      ],
-      "More about recovery": [
-        "Más acerca de la recuperación"
       ],
       "Open in ${ CALENDAR_APP_NAME }": [
         "Abrir en ${ CALENDAR_APP_NAME }"
@@ -8100,6 +8061,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Cambiar ajuste"
+      ],
       "Easily access and customize your app experience.": [
         "Acceda y personalice fácilmente su experiencia en la app."
       ],
@@ -8120,6 +8084,9 @@
       ],
       "Search just got smarter and faster": [
         "La búsqueda ahora es más inteligente y rápida."
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Los correos de Spam y Papelera ahora se excluyen automáticamente de Todos los mensajes. ${ settingsLink }"
       ],
       "Try it today.": [
         "Pruebe hoy mismo."

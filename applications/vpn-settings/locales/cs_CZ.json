@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "Získejte ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Kontaktujte nás"
+      ],
+      "Get more": [
+        "Získat více"
+      ],
       "Get the deal": [
         "Využít nabídku"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Rozumím"
+      ],
+      "Help": [
+        "Pomoc"
       ],
       "Hide": [
         "Skrýt"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Zachovat mé předplatné ${ vpnPlanNameShort }"
+      ],
+      "Let's talk": [
+        "Promluvme si"
       ],
       "Load more": [
         "Načíst více"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Zaplatit"
+      ],
+      "Pay ${ price }": [
+        "Zaplatit ${ price }"
       ],
       "Pay ${ price } now": [
         "Nyní zaplatit ${ price }"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Nastavit nové heslo"
       ],
+      "Settings": [
+        "Nastavení"
+      ],
       "Share via link": [
         "Sdílet přes odkaz"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Podpora"
+      ],
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
       ],
       "Top up": [
         "Dobít"
@@ -402,6 +423,35 @@
       ],
       "Reactivate": [
         "Opětovně aktivovat"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastní doména",
+        "${ domains } vlastní domény",
+        "${ domains } vlastních domén",
+        "${ domains } vlastních domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverů",
+        "${ ips } serverů"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } za dedikovaný server"
+      ],
+      "${ price } per domain": [
+        "${ price } za doménu"
+      ],
+      "${ price } per user": [
+        "${ price } za uživatele"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ]
     },
     "Alter": {
@@ -525,6 +575,17 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "měsíc"
+      ],
+      "Servers": [
+        "Servery"
+      ],
+      "Users": [
+        "Uživatelé"
       ]
     },
     "Collapsible tooltip": {
@@ -2151,6 +2212,9 @@
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
       ],
+      "Amount due": [
+        "Částka k zaplacení"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Jakákoliv metoda ${ twoFa } bude na vašem účtu deaktivována."
       ],
@@ -2162,6 +2226,9 @@
       ],
       "Attention required": [
         "Vyžadována pozornost"
+      ],
+      "Awaiting transaction": [
+        "Čekání na transakci"
       ],
       "Balance from your previous subscription": [
         "Zůstatek z vašeho předchozího předplatného"
@@ -2192,9 +2259,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Potvrzení Bitcoin transakcí může nějakou dobu trvat (až 24 hodin). Jakmile bude transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené transakci můžete fakturu uhradit kredity."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -2228,6 +2292,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "K privátním branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2433,6 +2503,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
+      "Number of dedicated servers in the organization": [
+        "Počet dedikovaných serverů v organizaci"
+      ],
       "Number of users": [
         "Počet uživatelů"
       ],
@@ -2450,6 +2523,9 @@
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
+      ],
+      "Organization size": [
+        "Velikost organizace"
       ],
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
@@ -2520,6 +2596,9 @@
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
       ],
+      "Saving your password": [
+        "Uložení vašeho hesla"
+      ],
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
       ],
@@ -2543,6 +2622,9 @@
       ],
       "Setting up your Drive": [
         "Nastavení vašeho Drive"
+      ],
+      "Setting up your organization": [
+        "Nastavení vaší organizace"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
@@ -2616,8 +2698,14 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Chcete-li zrušit předplatné, kontaktujte nás."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
+      ],
+      "to continue to ${ product }": [
+        "pro pokračování na ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
@@ -2718,11 +2806,17 @@
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
+      "We generated a strong password for you": [
+        "Vygenerovali jsme vám silné heslo"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit váš způsob platby u vaší banky."
       ],
       "We need to authenticate your payment with your bank.": [
         "Potřebujeme ověřit vaši platbu u vaší banky."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Doporučujeme mít alespoň dva servery, aby byla zajištěna redundance."
       ],
       "We recommend using your recovery phrase instead.": [
         "Místo toho doporučujeme použít frázi pro obnovení."
@@ -2733,8 +2827,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pro dokončení transakce Vás přesměrujeme na váš PayPal účet v nové záložce prohlížeče. Pokud používáte blokování vyskakovacích oken, pro pokračování je prosím vypněte."
       ],
+      "We'll get back to you shortly.": [
+        "Brzy se vám ozveme."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
+      ],
+      "Welcome": [
+        "Vítejte"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -2876,6 +2976,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Vaše předplatné bude automaticky obnoveno ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3207,6 +3310,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fráze se skládá z 12 jedinečných slov v určitém pořadí"
       ],
+      "Please share any feedback to help us improve.": [
+        "Podělte se s námi o jakoukoli zpětnou vazbu, která nám pomůže se zlepšit."
+      ],
       "Postal code": [
         "PSČ"
       ],
@@ -3270,6 +3376,9 @@
       "What is the main reason you are deleting your account?": [
         "Jaký je hlavní důvod, proč mažete svůj účet?"
       ],
+      "Why would you like to cancel?": [
+        "Proč chcete zušit?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
       ],
@@ -3320,6 +3429,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Přidat dárkový kód"
+      ],
+      "Add gift code": [
         "Přidat dárkový kód"
       ],
       "clearing your browser cache": [
@@ -3432,6 +3544,15 @@
       "Create a new ${ appName } account": [
         "Vytvořit nový účet ${ appName }"
       ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Najít uživatelské jméno účtu ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Zapomněli jste heslo ke svému ${ BRAND_NAME } účtu? Resetujte ho zde pomocí kódu pro obnovení, e-mailu nebo SMS a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším aplikacím."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Zapomněli jste uživatelské jméno svého ${ BRAND_NAME } účtu? Najděte ho pomocí obnovovacího e-mailu nebo telefonního čísla a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším."
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo ke svém účtu ${ BRAND_NAME }."
       ],
@@ -3473,6 +3594,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ]
     },
     "new_plans: action": {
@@ -3613,6 +3737,9 @@
       "1 user": [
         "1 uživatel"
       ],
+      "24/7 support": [
+        "Podpora 24/7"
+      ],
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
       ],
@@ -3621,6 +3748,9 @@
       ],
       "Admin console": [
         "Konzole správce"
+      ],
+      "Advanced network security": [
+        "Pokročilé zabezpečení sítě"
       ],
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
@@ -3643,6 +3773,9 @@
       "Centralized billing": [
         "Centrální placení"
       ],
+      "Centralized settings and billings": [
+        "Centralizované nastavení a vyúčtování"
+      ],
       "Contact groups": [
         "Skupiny kontaktů"
       ],
@@ -3663,6 +3796,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitorování narušení bezpečnosti dat (již brzy)"
+      ],
+      "Dedicated servers and IP": [
+        "Dedikované servery a IP"
       ],
       "DNS leak prevention": [
         "Prevence úniků DNS"
@@ -3769,6 +3905,12 @@
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemi",
+        "Servery ve ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
+      ],
       "Share calendar via link": [
         "Sdílení kalendáře pomocí odkazu"
       ],
@@ -3780,6 +3922,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
+      ],
+      "Start protecting your organization": [
+        "Začněte chránit svou organizaci"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Začněte se chránit online ve 2 jednoduchých krocích"
@@ -3857,6 +4002,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
@@ -3887,6 +4035,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Bezpečný přístup k internetu odkudkoli, včetně důležitého monitorování sítě"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
       ],
@@ -3895,6 +4046,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Dedikované VPN řešení, které nabízí bezpečný, neomezený, vysokorychlostní přístup k internetu."
@@ -3939,6 +4093,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na \"Zaplatit\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "smluvní podmínky užívání"
       ]
@@ -4011,6 +4168,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "K privátním branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují jemně vyladěné řízení přístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -4043,6 +4203,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Stejně jako složka je i trezor praktickým způsobem organizace položek. Sdílení trezorů s přáteli a rodinou se připravuje."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Uzamkněte firemní zdroje před veřejným internetem a zpřístupněte je pouze přes soukromé brány."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Spravujte své předplatné a parametry služby. Podporované platební možnosti jsou platební karta, PayPal, kryptoměna a nebo bankovní převod."
@@ -4154,17 +4317,35 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Podpora 24/7"
+      ],
       "Access advanced VPN features": [
         "Odemkněte pokročilé VPN funkce"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Získejte 15 e-mailových adres a podporu pro 3 vlastní e-mailové domény"
       ],
+      "AES 256-bit VPN encryption": [
+        "AES 256bitové VPN šifrování"
+      ],
+      "Auto-connect": [
+        "Automatické připojení"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Navyšte úložný prostor na ${ bundleStorage } pro každého uživatele"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zvyšte úložný prostor na ${ bundleStorage } celkem"
+      ],
+      "Browser extension": [
+        "Rozšíření prohlížeče"
+      ],
+      "Censorship circumvention": [
+        "Obcházení cenzury"
+      ],
+      "Central control panel": [
+        "Centrální ovládací panel"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
@@ -4174,14 +4355,38 @@
         "Vytvořte až ${ n } kalendáře",
         "Vytvořte až ${ n } kalendářů",
         "Vytvořte až ${ n } kalendářů"
+      ],
+      "Dedicated Account manager": [
+        "Dedikovaný manažer účtu"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Umístění dedikovaných serverů v ${ numberOfCountries }+ zemích"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Umístění dedikovaných serverů v Severní Americe a Evropě"
+      ],
+      "Multi-platform support": [
+        "Podpora několika platforem"
+      ],
+      "Private gateways": [
+        "Soukromé brány"
+      ],
+      "Require 2FA": [
+        "Vyžadováno 2FA"
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Neplatný kód"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Vítejte v ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Vítejte v ${ VPN_APP_NAME }"
       ]
@@ -4278,6 +4483,9 @@
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
+      "Please select the main reason": [
+        "Vyberte prosím hlavní důvod"
+      ],
       "Select": [
         "Vybrat"
       ],
@@ -4288,6 +4496,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Přidejte své jméno (nebo název společnosti) a adresu do faktur"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Vyberte počet IP adres, které chcete zahrnout do plánu. Každá další IP stojí ${ price }. Pokud potřebujete více než ${ maxIPs } IP, prosím ${ contactHref } náš obchodní tým."
       ]
     },
     "plan customizer, users": {
@@ -4662,7 +4875,30 @@
         "Vaše současné úložiště:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Účtováno každých 15 měsíců"
+      ],
+      "Billed every 2 years": [
+        "Účtováno každé 2 roky"
+      ],
+      "Billed every 30 months": [
+        "Účtováno každých 30 měsíců"
+      ],
+      "Billed monthly": [
+        "Účtováno měsíčně"
+      ],
+      "Billed yearly": [
+        "Účtováno ročně"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikovaný server",
+        "${ ipAddresses } dedikované servery",
+        "${ ipAddresses } dedikovaných serverů",
+        "${ ipAddresses } dedikovaných serverů"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } vysokorychlostní připojení VPN",
         "${ maxVpn } vysokorychlostní připojení VPN",
@@ -4766,12 +5002,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Spravujte své předplatné v ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Předplatné je spravováno ve ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Předplatné uživatelského ID-${ userId } bylo provedeno prostřednictvím nákupu v aplikaci. Pro správu předplatného musí uživatel přejít do sekce Předplatné svého účtu ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Předplatné"
@@ -5125,6 +5355,9 @@
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
       ],
+      "Contact us": [
+        "Kontaktujte nás"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -5278,6 +5511,9 @@
       "Request new code": [
         "Poslat nový kód"
       ],
+      "Request sent": [
+        "Požadavek odeslán"
+      ],
       "Reset password": [
         "Resetovat heslo"
       ],
@@ -5314,6 +5550,12 @@
       "Status": [
         "Stav"
       ],
+      "Subscription": [
+        "Předplatné"
+      ],
+      "Summary": [
+        "Shrnutí"
+      ],
       "Switch to one-password mode": [
         "Přepnout do režimu s jedním heslem"
       ],
@@ -5334,6 +5576,9 @@
       ],
       "Unsupported browser": [
         "Nepodporovaný prohlížeč"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
       ],
       "Verification failed": [
         "Ověření selhalo"
@@ -5394,6 +5639,9 @@
       ],
       "Plan": [
         "Tarif"
+      ],
+      "Servers": [
+        "Servery"
       ],
       "Start date": [
         "Datum zahájení"
@@ -5458,6 +5706,20 @@
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Našel jsem jinou službu, která se mi líbí více"
+      ],
+      "It’s missing a key feature": [
+        "Chybí mi důležitá funkce"
+      ],
+      "It’s too expensive": [
+        "Cena je příliš vysoká"
+      ],
+      "Other": [
+        "Ostatní"
       ]
     },
     "VPN info": {

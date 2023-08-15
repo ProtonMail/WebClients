@@ -434,11 +434,11 @@
         "${ ips } server",
         "${ ips } servrar"
       ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerad server"
+      ],
       "${ price } per domain": [
         "${ price } per domän"
-      ],
-      "${ price } per IP address": [
-        "${ price } per IP-adress"
       ],
       "${ price } per user": [
         "${ price } per användare"
@@ -2110,7 +2110,7 @@
         "${ fileName }: lågupplöst förhandsgranskning"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter de två lösenorden för inloggning och postlådan. För att byta till ett enda lösenord, ange det lösenord du vill använda och klicka på Spara."
+        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggnings- och brevlådans lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på “Spara“."
       ],
       "${ number } city": [
         "${ number } ort",
@@ -2199,6 +2199,9 @@
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
+      "Awaiting transaction": [
+        "Väntar på transaktion"
+      ],
       "Balance from your previous subscription": [
         "Saldo från din tidigare prenumeration"
       ],
@@ -2228,9 +2231,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
-      ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-transaktioner kan ta lite tid att bekräfta (upp till 24 timmar). När de har bekräftats kommer vi att lägga till krediter till ditt konto. Efter transaktionsbekräftelsen kan du betala din faktura med krediterna."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Genom att nedgradera till ett gratiskonto kommer du permanent att förlora dessa fördelar, även om du uppgraderar igen i framtiden."
@@ -2264,9 +2264,6 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
-      ],
-      "Dedicated IP addresses ": [
-        "Dedikerade IP-adresser "
       ],
       "Dedicated servers": [
         "Dedikerade servrar"
@@ -2461,7 +2458,7 @@
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -2478,11 +2475,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Inte din enhet? Använd ett privat surffönster för att logga in och stäng det när du är klar. ${ learnMore }"
       ],
-      "Number of dedicated IP addresses in the organization": [
-        "Antal dedikerade IP-adresser i organisationen"
-      ],
-      "Number of IP addresses": [
-        "Antal IP-adresser"
+      "Number of dedicated servers in the organization": [
+        "Antal dedikerade servrar i organisationen"
       ],
       "Number of users": [
         "Antal användare"
@@ -3181,7 +3175,7 @@
         "Ange koden som visas på din TV"
       ],
       "Expiration (${ patternExpiration })": [
-        "Förfallodatum (${ patternExpiration })"
+        "Löper ut (${ patternExpiration })"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -4146,7 +4140,7 @@
         "En VPN-anslutning tillåter en enhet att ansluta till ${ BRAND_NAME } VPN vid varje given tidpunkt. Till exempel, för att ansluta en telefon och en bärbar dator till ${ BRAND_NAME_TWO } VPN samtidigt, behöver du två VPN-anslutningar."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Alternativ att se icke-privata användares inkorgar som användaren själv skulle se dem, inklusive fullständiga detaljer om meddelanden och kontakter"
+        "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, allokera lagringsutrymme, konfigurera domäner och utföra andra uppgifter"
@@ -4167,7 +4161,7 @@
         "Telefonsupport från ${ BRAND_NAME }s kundtjänst är tillgänglig under europeisk arbetstid för kunder med mer än 6 användare"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "Förhindrar att ${ BRAND_NAME } eller tredjepart får tillgång till meddelanden. De enda som kan läsa meddelandena är avsändaren och den avsedda mottagaren."
+        "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Skydda alla enheter som är anslutna till ditt WiFi-nätverk. Det är också användbart om du har enheter som inte stöder VPN-inställningar direkt."
@@ -4239,7 +4233,7 @@
         "När du är ansluten till vår VPN så går dina DNS-förfrågningar via vår krypterade VPN-tunnel, vilket förstärker din integritet och säkerhet"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
-        "När du skickar till andra som använder ${ MAIL_APP_NAME } så sker kryptering automatiskt. För att skicka till dem som inte använder ${ MAIL_APP_NAME_TWO } så krävs det att ett lösenord ställs in innan meddelandet skickas."
+        "När du skickar till andra ${ MAIL_APP_NAME }-användare sker kryptering automatiskt. För att skicka till icke ${ MAIL_APP_NAME_TWO }-användare måste du ställa in ett lösenord innan du skickar."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
@@ -4286,8 +4280,8 @@
       "Dedicated Account manager": [
         "Dedikerad kontohanterare"
       ],
-      "Dedicated server locations in ${ n }+ countries": [
-        "Dedikerade serverplatser i ${ n }+ länder"
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedikerade serverplatser i ${ numberOfCountries }+ länder"
       ],
       "Dedicated server locations in North America and Europe": [
         "Dedikerade serverplatser i Nordamerika och Europa"
@@ -4626,7 +4620,7 @@
     },
     "specialoffer: Label": {
       "Lifetime deal": [
-        "Livstids erbjudande"
+        "Livstidserbjudande"
       ],
       "Limited time only": [
         "Endast under begränsad tid"
@@ -4887,12 +4881,6 @@
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Hantera din prenumeration på ${ subscriptionManager }"
-      ],
-      "Subscription is managed by ${ subscriptionManager }": [
-        "Prenumeration hanteras av ${ subscriptionManager }"
-      ],
-      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
-        "Prenumeration på användar-ID-${ userId } har gjorts via ett köp i appen. För att hantera prenumerationen måste användaren navigera till sektionen ”Prenumeration” i sitt ${ subscriptionManager }-konto."
       ],
       "Subscriptions": [
         "Prenumeration"
