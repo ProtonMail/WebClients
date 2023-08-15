@@ -40,6 +40,7 @@ export interface UseSendHandlerParameters {
     handleNoAttachments?: (keyword: string) => void;
     setIsSending?: Dispatch<SetStateAction<boolean>>;
     isQuickReply?: boolean;
+    hasNetworkError: boolean;
 }
 
 export const useSendHandler = ({
@@ -59,6 +60,7 @@ export const useSendHandler = ({
     handleNoAttachments,
     setIsSending,
     isQuickReply,
+    hasNetworkError,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
@@ -90,7 +92,8 @@ export const useSendHandler = ({
             alreadySaved =
                 !!getMessage(inputMessage.localID)?.data?.ID &&
                 !pendingAutoSave.isPending &&
-                !verificationResults.hasChanged;
+                !verificationResults.hasChanged &&
+                !hasNetworkError;
 
             // Don't abort before pendingAutoSave is checked
             autoSave.cancel?.();
