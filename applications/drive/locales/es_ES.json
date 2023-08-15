@@ -321,6 +321,9 @@
       "Grid layout": [
         "Disposición en cuadrícula"
       ],
+      "Help": [
+        "Ayuda"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
       ],
@@ -555,6 +558,9 @@
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
       ],
+      "Settings": [
+        "Ajustes"
+      ],
       "Share file": [
         "Compartir archivo"
       ],
@@ -618,11 +624,17 @@
       "Submit report": [
         "Enviar informe"
       ],
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
+      ],
       "Toggle Calendar app": [
         "Cambiar a la aplicación Calendar"
       ],
       "Toggle Contact app": [
         "Cambiar a la aplicación Contactos"
+      ],
+      "Toggle settings": [
+        "Alternar los ajustes"
       ],
       "Trust": [
         "Confiar"
@@ -2232,6 +2244,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
+      ],
+      "Missing FN property": [
+        "Falta la propiedad FN."
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones de vCard anteriores a 3.0 no soportadas"
@@ -3945,6 +3960,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
+      ],
       "Try searching by file name, date, or type.": [
         "Prueba a buscar por nombre de archivo, fecha o tipo."
       ],
@@ -4009,7 +4027,7 @@
         "¿Qué te gustaría hacer?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+        "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado a la versión del ${ formattedRevisionDate }. Todas las otras versiones se guardarán."
@@ -4230,6 +4248,9 @@
       ],
       "Bad": [
         "Malo"
+      ],
+      "Beta Access": [
+        "Acceso beta"
       ],
       "Browser": [
         "Navegador"
@@ -4559,11 +4580,17 @@
       "Street address": [
         "Nombre de la calle"
       ],
+      "Sync with system": [
+        "Sincronizar con el sistema"
+      ],
       "System information": [
         "Información del sistema"
       ],
       "Text": [
         "Texto"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Esto elimina permanentemente todos los archivos en tu unidad bloqueada."
@@ -5532,6 +5559,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Accede y personaliza fácilmente tu experiencia en la aplicación."
+      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí."
       ],
@@ -5543,6 +5573,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puedes buscar fácilmente archivos en tu unidad de almacenamiento mientras mantienes tus datos seguros."
+      ],
+      "Quick settings": [
+        "Ajustes rápidos"
       ]
     },
     "Storage": {
@@ -5808,6 +5841,9 @@
       ],
       "All": [
         "Todo"
+      ],
+      "All settings": [
+        "Todos los ajustes"
       ],
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
