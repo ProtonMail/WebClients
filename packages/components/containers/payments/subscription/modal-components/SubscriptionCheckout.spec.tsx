@@ -44,6 +44,8 @@ describe('SubscriptionCheckout', () => {
                 planIDs={{}}
                 onChangeCurrency={() => {}}
                 isProration={true}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
@@ -51,7 +53,7 @@ describe('SubscriptionCheckout', () => {
         expect(container).toHaveTextContent('-CHF 4.51');
     });
 
-    it('should display Proration if it is available and isProration is undefined', () => {
+    it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
         let { container } = render(
@@ -64,6 +66,9 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
+                isProration={true}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
@@ -85,6 +90,8 @@ describe('SubscriptionCheckout', () => {
                 planIDs={{}}
                 onChangeCurrency={() => {}}
                 isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
@@ -105,8 +112,10 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                isProration={false}
                 nextSubscriptionStart={1668868986}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={true}
             ></SubscriptionCheckout>
         );
 
@@ -139,8 +148,10 @@ describe('SubscriptionCheckout', () => {
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
                 onChangeCurrency={() => {}}
-                isProration={true}
                 nextSubscriptionStart={1668868986}
+                isProration={true}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
@@ -181,6 +192,9 @@ describe('SubscriptionCheckout', () => {
                 planIDs={{}}
                 onChangeCurrency={() => {}}
                 nextSubscriptionStart={1668868986}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
@@ -221,6 +235,9 @@ describe('SubscriptionCheckout', () => {
                 planIDs={{}}
                 onChangeCurrency={() => {}}
                 nextSubscriptionStart={1668868986}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
             ></SubscriptionCheckout>
         );
 
