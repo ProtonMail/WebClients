@@ -4,6 +4,7 @@ import { SimpleMap } from '../interfaces';
 import { Message } from '../interfaces/mail/Message';
 import { PackageDirect } from '../interfaces/mail/crypto';
 import { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
+import { getAppropriateSort } from './helpers/snoozeSort';
 
 type BaseMessage = Pick<
     Message,
@@ -65,7 +66,7 @@ export const queryMessageMetadata = ({
         PageSize,
         Limit,
         LabelID,
-        Sort,
+        Sort: getAppropriateSort(LabelID, Sort),
         Desc,
         Begin,
         End,

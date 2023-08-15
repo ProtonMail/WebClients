@@ -11,6 +11,7 @@ import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.he
 export interface UseMoveSystemFoldersProps {
     showMoved: MailSettings['ShowMoved'];
     showScheduled: boolean;
+    showSnoozed: boolean;
     showAlmostAllMail: MailSettings['AlmostAllMail'];
 }
 
@@ -57,6 +58,7 @@ type UseSidebarElementsResponse = [
 const useMoveSystemFolders = ({
     showMoved,
     showScheduled,
+    showSnoozed,
     showAlmostAllMail,
 }: UseMoveSystemFoldersProps): UseSidebarElementsResponse => {
     const api = useApi();
@@ -125,6 +127,7 @@ const useMoveSystemFolders = ({
             const { orderedSystemFolders, unexpectedFolderIDs } = getSidebarNavItems(
                 showMoved,
                 showScheduled,
+                showSnoozed,
                 showAlmostAllMail,
                 formattedLabels
             );
@@ -132,7 +135,7 @@ const useMoveSystemFolders = ({
             setSystemFolders(orderedSystemFolders);
             setUnexpectedSystemFolderIDs(unexpectedFolderIDs);
         }
-    }, [systemFoldersFromApi, showMoved, showScheduled, showAlmostAllMail]);
+    }, [systemFoldersFromApi, showMoved, showSnoozed, showScheduled, showAlmostAllMail]);
 
     return [visibleSystemFolders, moveItem, loading];
 };

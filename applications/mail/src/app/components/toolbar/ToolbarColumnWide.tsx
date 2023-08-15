@@ -1,12 +1,15 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useElementBreakpoints, useFolders, useLabels } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
+import { getToolbarResponsiveSizes } from 'proton-mail/helpers/toolbar/getToolbarResponsiveSizes';
+
 import { getLabelName } from '../../helpers/labels';
 import ListSettings from '../list/ListSettings';
+import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
@@ -54,9 +57,7 @@ const ToolbarColumnWide = ({
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-    const localIsTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
-    const localIsExtraTiny = breakpoint === 'extratiny';
-    const localIsNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -97,6 +98,8 @@ const ToolbarColumnWide = ({
                             moveDropdownToggleRef={moveDropdownToggleRef}
                         />
                     ) : null}
+
+                    {!localIsExtraTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
 
                     <MoreDropdown
                         labelID={labelID}

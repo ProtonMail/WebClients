@@ -1,7 +1,7 @@
 import { useFolders, useLabels } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { isCustomFolder, isCustomLabel } from '../helpers/labels';
+import { isCustomFolder, isCustomLabel } from 'proton-mail/helpers/labels';
 
 const {
     TRASH,
@@ -16,6 +16,7 @@ const {
     ALL_MAIL,
     ALMOST_ALL_MAIL,
     SCHEDULED,
+    SNOOZED,
 } = MAILBOX_LABEL_IDS;
 
 type Actions = 'inbox' | 'trash' | 'delete' | 'archive' | 'spam' | 'nospam';
@@ -27,27 +28,35 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
     let primaryActions: Actions[] = [];
     let secondaryActions: Actions[] = [];
 
-    if (labelID === INBOX) {
-        primaryActions = ['trash', 'archive', 'spam'];
-    } else if (labelID === DRAFTS || labelID === ALL_DRAFTS) {
-        primaryActions = ['trash', 'archive', 'delete'];
-    } else if (labelID === SENT || labelID === ALL_SENT) {
-        primaryActions = ['trash', 'archive', 'delete'];
-    } else if (labelID === SCHEDULED) {
-        primaryActions = ['trash', 'archive'];
-    } else if (labelID === STARRED) {
-        primaryActions = ['trash', 'archive', 'spam'];
-    } else if (labelID === ARCHIVE) {
-        primaryActions = ['trash', 'inbox', 'spam'];
-    } else if (labelID === SPAM) {
-        primaryActions = ['trash', 'nospam', 'delete'];
-    } else if (labelID === TRASH) {
-        primaryActions = ['inbox', 'archive', 'delete'];
-    } else if (labelID === ALL_MAIL) {
-        primaryActions = ['trash', 'archive', 'spam'];
-    } else if (labelID === ALMOST_ALL_MAIL) {
-        primaryActions = ['trash', 'archive', 'spam'];
-    } else if (isCustomFolder(labelID, folders)) {
+    switch (labelID) {
+        case INBOX:
+        case STARRED:
+        case ALL_MAIL:
+        case ALMOST_ALL_MAIL:
+            primaryActions = ['trash', 'archive', 'spam'];
+            break;
+        case DRAFTS:
+        case ALL_DRAFTS:
+        case SENT:
+        case ALL_SENT:
+            primaryActions = ['trash', 'archive', 'delete'];
+            break;
+        case SCHEDULED:
+        case SNOOZED:
+            primaryActions = ['trash', 'archive'];
+            break;
+        case ARCHIVE:
+            primaryActions = ['trash', 'inbox', 'spam'];
+            break;
+        case SPAM:
+            primaryActions = ['trash', 'nospam', 'delete'];
+            break;
+        case TRASH:
+            primaryActions = ['inbox', 'archive', 'delete'];
+            break;
+    }
+
+    if (isCustomFolder(labelID, folders)) {
         primaryActions = ['trash', 'archive', 'spam'];
     } else if (isCustomLabel(labelID, labels)) {
         primaryActions = ['trash', 'archive', 'spam'];

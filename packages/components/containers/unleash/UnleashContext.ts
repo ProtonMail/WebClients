@@ -6,6 +6,7 @@ enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
+    SnoozeFeature = 'SnoozeFeature',
 }
 enum CommonFeatureFlag {
     DisableElectronMail = 'DisableElectronMail',

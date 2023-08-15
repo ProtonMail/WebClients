@@ -11,6 +11,8 @@ import { getSender, hasAttachments as messageHasAttachments } from '@proton/shar
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
+import { getSnoozeDate } from 'proton-mail/logic/snoozehelpers';
+
 import { ELEMENT_TYPES } from '../constants';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
@@ -26,7 +28,7 @@ import {
 } from './conversation';
 import { isConversationMode } from './mailSettings';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
@@ -108,6 +110,7 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {
         Time: (element: Element, labelID: string) => getDate(element, labelID).getTime(),
         Size: getSize,
+        SnoozeTime: (element: Element) => getSnoozeDate(element).getTime(),
     }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {
         let valueA = getValue(a, labelID);
@@ -187,6 +190,7 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
         [SPAM]: true,
         [ARCHIVE]: true,
         [SCHEDULED]: true,
+        [SNOOZED]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
     return Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';

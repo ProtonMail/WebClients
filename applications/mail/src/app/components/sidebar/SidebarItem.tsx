@@ -29,9 +29,9 @@ import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import LocationAside from './LocationAside';
 
-const { ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
-const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
+const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED, SNOOZED];
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
