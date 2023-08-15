@@ -11,6 +11,7 @@ import {
     QuickSettingsSection,
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
+import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
@@ -156,6 +157,8 @@ const MailQuickSettings = () => {
 
     return (
         <QuickSettingsMain>
+            <DrawerAllSettingsView />
+
             <QuickSettingsSection>
                 <QuickSettingsSectionRow
                     // translator: As in Mailbox layout

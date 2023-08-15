@@ -8,13 +8,27 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     hasToolbar?: boolean;
     hasRowMode?: boolean;
     drawerSidebar?: ReactNode;
+    drawerVisibilityButton?: ReactNode;
     isDrawerApp?: boolean;
+    mainBordered?: boolean;
 }
 
 const PrivateMainAreaBase = (
-    { className, hasToolbar = false, children, hasRowMode = false, drawerSidebar, isDrawerApp, ...rest }: Props,
+    {
+        className,
+        hasToolbar = false,
+        children,
+        hasRowMode = false,
+        drawerSidebar,
+        drawerVisibilityButton,
+        isDrawerApp,
+        mainBordered = true,
+        ...rest
+    }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
+    const hasDrawerSidebar = !!drawerSidebar && !isDrawerApp;
+
     return (
         <main
             className={clsx([
@@ -27,15 +41,17 @@ const PrivateMainAreaBase = (
             ref={ref}
             {...rest}
         >
-            <div className={clsx('flex flex-nowrap w100', drawerSidebar ? 'h100' : undefined)}>
+            <div className={clsx('flex flex-nowrap w100', drawerSidebar ? 'h100 relative overflow-hidden' : undefined)}>
                 <div
                     className={clsx(
                         'flex flex-nowrap w100 h100',
-                        drawerSidebar && !isDrawerApp ? 'main-area-border main-area-rounded' : 'scroll-if-needed'
+                        hasDrawerSidebar ? 'main-area-border' : 'scroll-if-needed',
+                        hasDrawerSidebar && mainBordered && 'main-area-rounded'
                     )}
                 >
                     {children}
                 </div>
+                {drawerVisibilityButton}
                 {drawerSidebar}
             </div>
         </main>

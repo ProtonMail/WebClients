@@ -94,7 +94,6 @@ export enum FeatureCode {
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
     QuickReply = 'QuickReply',
-    QuickSettingsSpotlight = 'QuickSettingsSpotlight',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
     KeyTransparencyAccount = 'KeyTransparencyWebAccount',
     KeyTransparencyMail = 'KeyTransparencyWebMail',
