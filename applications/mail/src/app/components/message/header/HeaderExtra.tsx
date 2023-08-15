@@ -1,4 +1,4 @@
-import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
+import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -16,6 +16,7 @@ import ExtraImages from '../extras/ExtraImages';
 import ExtraPinKey from '../extras/ExtraPinKey';
 import ExtraReadReceipt from '../extras/ExtraReadReceipt';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
+import ExtraSnoozedMessage from '../extras/ExtraSnoozedMessage';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
@@ -43,6 +44,7 @@ const HeaderExtra = ({
 
     const { canScheduleSend } = useScheduleSendFeature();
     const isScheduledMessage = isScheduled(message.data);
+    const isSnoozeMessage = isSnoozed(message.data);
     const showCalendarWidget = messageLoaded && received;
 
     if (!getMessageHasData(message)) {
@@ -75,6 +77,7 @@ const HeaderExtra = ({
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
+            {isSnoozeMessage ? <ExtraSnoozedMessage message={message} /> : null}
             <ExtraExpiration message={message} />
 
             <span className="inline-flex flex-row w-full md:w-auto hidden-empty">
