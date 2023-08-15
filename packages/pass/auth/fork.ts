@@ -10,6 +10,7 @@ import type { User as tsUser } from '@proton/shared/lib/interfaces';
 import { browserSessionStorage } from '../extension/storage';
 import type { StorageData } from '../extension/storage/types';
 import type { Api } from '../types';
+import type { ExtensionSession } from './session';
 
 /* FIXME: update to `APPS.PROTONPASSBROWSEREXTENSION` */
 export const requestFork = async (host: string, type?: FORK_TYPE) => {
@@ -26,43 +27,32 @@ export const requestFork = async (host: string, type?: FORK_TYPE) => {
     return `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`;
 };
 
-export const consumeFork = async ({
-    api,
-    apiUrl,
-    selector,
-    keyPassword,
-    persistent,
-    trusted,
-}: {
+type ConsumeForkOptions = {
     api: Api;
     apiUrl?: string;
     state: string;
     selector: string;
     keyPassword: string;
-    persistent: boolean;
-    trusted: boolean;
-}) => {
+};
+
+export const consumeFork = async ({
+    api,
+    apiUrl,
+    selector,
+    keyPassword,
+}: ConsumeForkOptions): Promise<ExtensionSession> => {
     const pullForkParams = pullForkSession(selector);
     pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
 
-    const { UID, RefreshToken, LocalID } = await api<PullForkResponse>(pullForkParams);
+    const { UID, RefreshToken } = await api<PullForkResponse>(pullForkParams);
+    const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
+    const { User } = await api<{ User: tsUser }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
-    const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>({
-        ...withUIDHeaders(UID, refreshTokens({ RefreshToken })),
-    });
-
-    const { User } = await api<{ User: tsUser }>(withAuthHeaders(UID, newAccessToken, getUser()));
-
-    const result = {
-        User,
-        UID,
-        LocalID,
+    return {
+        AccessToken: refresh.AccessToken,
         keyPassword,
-        persistent,
-        trusted,
-        AccessToken: newAccessToken,
-        RefreshToken: newRefreshToken,
+        RefreshToken: refresh.RefreshToken,
+        UID,
+        UserID: User.ID,
     };
-
-    return result;
 };
