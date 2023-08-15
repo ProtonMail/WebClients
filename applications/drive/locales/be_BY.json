@@ -325,6 +325,9 @@
       "Grid layout": [
         "Макет сеткі"
       ],
+      "Help": [
+        "Даведка"
+      ],
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
       ],
@@ -559,6 +562,9 @@
       "Set recovery phrase": [
         "Задаць фразу аднаўлення"
       ],
+      "Settings": [
+        "Налады"
+      ],
       "Share file": [
         "Абагуліць файл"
       ],
@@ -622,11 +628,17 @@
       "Submit report": [
         "Адправіць скаргу"
       ],
+      "Switch or add account": [
+        "Змяніць або дадаць уліковы запіс"
+      ],
       "Toggle Calendar app": [
         "Пераключыць на праграму Каляндар"
       ],
       "Toggle Contact app": [
         "Пераключыць на праграму Кантакты"
+      ],
+      "Toggle settings": [
+        "Пераключэнне наладаў"
       ],
       "Trust": [
         "Давяраць"
@@ -2225,7 +2237,7 @@
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Дазволены толькі файлы ў фармаце ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Падчас запампоўвання вашага файла адбылася памылка. Файл не выбраны."
+        "Падчас запампоўвання вашага файла адбылася памылка. Ніводны файл не выбраны."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
@@ -2252,6 +2264,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "Missing FN property": [
+        "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
         "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
@@ -3851,7 +3866,7 @@
         "Асноўны"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Прыватны пошук уключаны. Зараз вы можаце закрыць гэта акно і шукаць у файлах і папках."
+        "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
       ],
       "Queued": [
         "У чарзе"
@@ -4062,6 +4077,9 @@
       ],
       "Trash": [
         "Сметніца"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
       "Try searching by file name, date, or type.": [
         "Паспрабуйце пошук па назве файла, даце або тыпу."
@@ -4352,6 +4370,9 @@
       ],
       "Bad": [
         "Дрэнна"
+      ],
+      "Beta Access": [
+        "Бэта-доступ"
       ],
       "Browser": [
         "Браўзер"
@@ -4683,11 +4704,17 @@
       "Street address": [
         "Вуліца"
       ],
+      "Sync with system": [
+        "Сінхранізаваць з сістэмай"
+      ],
       "System information": [
         "Сістэмная інфармацыя"
       ],
       "Text": [
         "Тэкст"
+      ],
+      "Theme": [
+        "Тэма"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Гэта незваротна выдаліць усе файлы на вашым заблакіраваным дыску."
@@ -5722,6 +5749,9 @@
       ]
     },
     "Spotlight": {
+      "Easily access and customize your app experience.": [
+        "Лёгкі доступ і наладжванне праграмы пад вашы перавагі."
+      ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
       ],
@@ -5733,6 +5763,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
+      ],
+      "Quick settings": [
+        "Хуткія налады"
       ]
     },
     "Storage": {
@@ -6026,6 +6059,9 @@
       ],
       "All": [
         "Усе"
+      ],
+      "All settings": [
+        "Усе налады"
       ],
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"

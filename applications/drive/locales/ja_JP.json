@@ -2223,6 +2223,9 @@
       "Encryption failed": [
         "暗号化に失敗しました"
       ],
+      "Missing FN property": [
+        "FN プロパティが見つかりません"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard バージョン 3.0 未満はサポートされていません"
       ]
@@ -3325,6 +3328,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
+      "Enter the device name to confirm removal.": [
+        "削除確認のため、デバイス名を入力してください。"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -3822,6 +3828,9 @@
       ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "共有リンクは削除され、今後誰に対しても機能しなくなります。"
+      ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "この操作により、同期デバイス ${ deviceName } が ${ DRIVE_APP_NAME } から削除され、マイコンピューターに追加したフォルダーの同期が停止します。"
       ],
       "This will replace the existing file with the folder": [
         "既存のファイルをフォルダーで置き換えます"
