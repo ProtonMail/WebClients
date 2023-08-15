@@ -292,8 +292,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                                 type="button"
                                                 className={clsx([
                                                     'user-select relative interactive-pseudo-protrude interactive--no-background',
-                                                    !nameToDisplay && !organizationName && 'text-bold',
-                                                    (nameToDisplay || organizationName) && 'color-weak',
+                                                    nameToDisplay || organizationName ? 'color-weak' : 'text-bold',
                                                 ])}
                                                 title={Email}
                                                 data-testid="userdropdown:label:email"
