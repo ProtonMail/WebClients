@@ -2,16 +2,18 @@ import { c } from 'ttag';
 
 import { UserManagementMode } from '@proton/components/containers/members/types';
 import { useLoading } from '@proton/hooks';
-import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { APPS, MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { CachedOrganizationKey, Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useConfig } from '../..';
 import { DropdownActions } from '../../components';
 
 interface Props {
     member: Member;
     onLogin: (member: Member) => void;
+    onChangePassword: (member: Member) => void;
     onEdit: (member: Member) => void;
     onDelete: (member: Member) => void;
     onRevoke: (member: Member) => Promise<void>;
@@ -21,7 +23,18 @@ interface Props {
     mode: UserManagementMode;
 }
 
-const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses = [], organization, mode }: Props) => {
+const MemberActions = ({
+    member,
+    onEdit,
+    onDelete,
+    onLogin,
+    onChangePassword,
+    onRevoke,
+    addresses = [],
+    organization,
+    mode,
+}: Props) => {
+    const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
     const hasSetupOrganization = hasOrganizationSetup(organization);
@@ -32,7 +45,17 @@ const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses 
         !member.Self &&
         member.Type === MEMBER_TYPE.MANAGED &&
         mode === UserManagementMode.DEFAULT;
+
     const canLogin =
+        APP_NAME !== APPS.PROTONVPN_SETTINGS &&
+        hasSetupOrganizationWithKeys &&
+        !member.Self &&
+        member.Private === MEMBER_PRIVATE.READABLE &&
+        member.Keys.length > 0 &&
+        addresses.length > 0;
+
+    const canChangePassword =
+        APP_NAME === APPS.PROTONVPN_SETTINGS &&
         hasSetupOrganizationWithKeys &&
         !member.Self &&
         member.Private === MEMBER_PRIVATE.READABLE &&
@@ -59,6 +82,13 @@ const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses 
             onClick: () => {
                 // Add Addresses to member, missing when updated through event loop
                 onLogin({ ...member, Addresses: addresses });
+            },
+        },
+        canChangePassword && {
+            text: c('Member action').t`Change password`,
+            onClick: () => {
+                // Add Addresses to member, missing when updated through event loop
+                onChangePassword({ ...member, Addresses: addresses });
             },
         },
         canRevokeSessions && {
