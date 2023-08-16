@@ -71,6 +71,7 @@ const extractExtraFields = (item: OnePassLegacyItem) => {
                                 };
                             }
                             return {
+                                // translator: label for a field that is hidden. Singular only.
                                 fieldName: t || c('Label').t`Hidden`,
                                 type: 'hidden',
                                 data: { content: v ?? '' },
