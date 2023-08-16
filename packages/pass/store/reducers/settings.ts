@@ -7,13 +7,12 @@ import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
-    sessionUnlockSuccess,
     settingEditSuccess,
     syncLock,
 } from '../actions';
 
 export type SettingsState = {
-    sessionLockToken?: string;
+    sessionLockRegistered: boolean;
     sessionLockTTL?: number;
     autofill: AutoFillSettings;
     autosave: AutoSaveSettings;
@@ -26,9 +25,10 @@ export type SettingsState = {
 /* proxied settings will also be copied on local
  * storage in order to access them before the booting
  * sequence  (ie: if the user has been logged out) */
-export type ProxiedSettings = Omit<SettingsState, 'sessionLockToken' | 'sessionLockTTL'>;
+export type ProxiedSettings = Omit<SettingsState, 'sessionLockRegistered' | 'sessionLockTTL'>;
 
 const INITIAL_STATE: SettingsState = {
+    sessionLockRegistered: false,
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true },
     autosuggest: { password: true, email: true },
@@ -39,25 +39,24 @@ const INITIAL_STATE: SettingsState = {
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     if (sessionLockEnableSuccess.match(action)) {
         return partialMerge(state, {
-            sessionLockToken: action.payload.storageToken,
+            sessionLockRegistered: true,
             sessionLockTTL: action.payload.ttl,
         });
     }
 
-    if (sessionUnlockSuccess.match(action)) {
-        return partialMerge(state, { sessionLockToken: action.payload.storageToken });
-    }
-
     if (sessionLockDisableSuccess.match(action)) {
-        return partialMerge(state, { sessionLockToken: undefined, sessionLockTTL: undefined });
+        return partialMerge(state, { sessionLockRegistered: false, sessionLockTTL: undefined });
     }
 
     if (syncLock.match(action)) {
-        return partialMerge(state, { sessionLockTTL: action.payload.ttl ?? undefined });
+        return partialMerge(state, {
+            sessionLockTTL: action.payload.ttl,
+            sessionLockRegistered: Boolean(action.payload.status),
+        });
     }
 
     if (settingEditSuccess.match(action)) {
-        return partialMerge(state, action.payload);
+        return partialMerge<SettingsState>(state, action.payload);
     }
 
     if (itemCreationSuccess.match(action)) {
