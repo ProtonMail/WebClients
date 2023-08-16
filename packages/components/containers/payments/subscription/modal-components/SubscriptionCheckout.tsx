@@ -216,6 +216,7 @@ const SubscriptionCheckout = ({
                 suffix={<span className="color-weak text-sm">{c('Suffix').t`/month`}</span>}
                 suffixNextLine={enableDetailedAddons}
                 loading={loading}
+                data-testid="price"
             />
             {enableDetailedAddons
                 ? addons.map((addon) => {
@@ -256,6 +257,7 @@ const SubscriptionCheckout = ({
                         amount={withDiscountPerCycle}
                         currency={currency}
                         loading={loading}
+                        data-testid="price"
                     />
                 </>
             )}
