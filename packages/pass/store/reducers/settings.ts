@@ -3,6 +3,7 @@ import type { Reducer } from 'redux';
 import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings } from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object';
 
+import { SessionLockStatus } from '../../types';
 import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
@@ -29,6 +30,7 @@ export type ProxiedSettings = Omit<SettingsState, 'sessionLockRegistered' | 'ses
 
 const INITIAL_STATE: SettingsState = {
     sessionLockRegistered: false,
+    sessionLockTTL: undefined,
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true },
     autosuggest: { password: true, email: true },
@@ -51,7 +53,7 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     if (syncLock.match(action)) {
         return partialMerge(state, {
             sessionLockTTL: action.payload.ttl,
-            sessionLockRegistered: Boolean(action.payload.status),
+            sessionLockRegistered: action.payload.status !== SessionLockStatus.NONE,
         });
     }
 

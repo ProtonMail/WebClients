@@ -16,7 +16,7 @@ import {
 import {
     emptyTrashIntent,
     restoreTrashIntent,
-    selectCanLockSession,
+    selectHasRegisteredLock,
     selectPassPlan,
     selectPlanDisplayName,
     vaultDeleteIntent,
@@ -56,7 +56,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const openSettings = useOpenSettingsTab();
 
     const dispatch = useDispatch();
-    const canLock = useSelector(selectCanLockSession);
+    const canLock = useSelector(selectHasRegisteredLock);
     const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShare>>(null);
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
     const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
