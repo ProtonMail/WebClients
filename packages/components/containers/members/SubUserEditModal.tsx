@@ -3,15 +3,25 @@ import { FormEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { vpnB2bAdminTooltipTitle } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
-import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    GIGA,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    MEMBER_SUBSCRIBER,
+    NAME_PLACEHOLDER,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Member } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import {
     Alert,
     ConfirmModal,
+    Icon,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -19,17 +29,20 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
     Toggle,
+    Tooltip,
     useFormErrors,
 } from '../../components';
 import { useApi, useEventManager, useModals, useNotifications, useOrganization } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import { UserManagementMode } from './types';
 
 interface Props extends ModalProps<'form'> {
     member: Member;
+    mode: UserManagementMode;
 }
 
-const SubUserEditModal = ({ member, ...rest }: Props) => {
+const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
     const [organization] = useOrganization();
     const storageSizeUnit = GIGA;
     const { call } = useEventManager();
@@ -57,6 +70,9 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
     const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
     const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
+    const isVpnB2B = mode === UserManagementMode.VPN_B2B;
+    const isDefault = mode === UserManagementMode.DEFAULT;
 
     const updatePartialModel = (partial: Partial<typeof model>) => {
         updateModel({ ...model, ...partial });
@@ -148,19 +164,20 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                     error={validator([requiredValidator(model.name)])}
                     onValue={(value: string) => updatePartialModel({ name: value })}
                     label={c('Label').t`Name`}
-                    placeholder="Thomas A. Anderson"
+                    placeholder={NAME_PLACEHOLDER}
                 />
+                {isDefault && (
+                    <MemberStorageSelector
+                        className="mb-5"
+                        value={model.storage}
+                        sizeUnit={storageSizeUnit}
+                        totalStorage={getTotalStorage(member, organization)}
+                        range={getStorageRange(member, organization)}
+                        onChange={(storage) => updatePartialModel({ storage })}
+                    />
+                )}
 
-                <MemberStorageSelector
-                    className="mb-5"
-                    value={model.storage}
-                    sizeUnit={storageSizeUnit}
-                    totalStorage={getTotalStorage(member, organization)}
-                    range={getStorageRange(member, organization)}
-                    onChange={(storage) => updatePartialModel({ storage })}
-                />
-
-                {hasVPN ? (
+                {hasVPN && isDefault ? (
                     <div className="flex flex-align-center mb-5">
                         <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
@@ -173,7 +190,7 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                     </div>
                 ) : null}
 
-                {canMakePrivate && (
+                {canMakePrivate && isDefault && (
                     <div className="flex flex-align-center mb-6">
                         <label className="text-semibold mr-4" htmlFor="private-toggle">
                             {c('Label for new member').t`Private`}
@@ -186,10 +203,15 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                     </div>
                 )}
                 {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex flex-align-center mb-6">
-                        <label className="text-semibold mr-4" htmlFor="admin-toggle">
+                    <div className="flex flex-align-items-center mb-6">
+                        <label className={clsx(['text-semibold', isVpnB2B ? 'mr-1' : 'mr-4'])} htmlFor="admin-toggle">
                             {c('Label for new member').t`Admin`}
                         </label>
+                        {isVpnB2B && (
+                            <Tooltip title={vpnB2bAdminTooltipTitle}>
+                                <Icon name="info-circle" className="mr-2 color-primary" />
+                            </Tooltip>
+                        )}
                         <Toggle
                             id="admin-toggle"
                             checked={model.admin}
@@ -197,15 +219,17 @@ const SubUserEditModal = ({ member, ...rest }: Props) => {
                         />
                     </div>
                 )}
-                <div>
-                    <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
+                {isDefault && (
                     <div>
-                        <Addresses organization={organization} memberID={member.ID} />
+                        <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
+                        <div>
+                            <Addresses organization={organization} memberID={member.ID} />
+                        </div>
                     </div>
-                </div>
+                )}
             </ModalContent>
             <ModalFooter>
-                <Button onClick={handleClose} disabled={submitting}>
+                <Button className={clsx([isVpnB2B && 'visibility-hidden'])} onClick={handleClose} disabled={submitting}>
                     {c('Action').t`Cancel`}
                 </Button>
                 <Button loading={submitting} type="submit" color="norm">

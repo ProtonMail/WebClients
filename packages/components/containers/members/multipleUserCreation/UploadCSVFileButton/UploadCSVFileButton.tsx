@@ -7,26 +7,39 @@ import { useModals, useNotifications } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { FileInput, InlineLinkButton } from '../../../../components';
-import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
+import { UserManagementMode } from '../../types';
+import { downloadSampleCSV, downloadVPNB2BSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';
 import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
 import { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
+
+const downloadSampleCSVFns: Record<UserManagementMode, Function> = {
+    [UserManagementMode.DEFAULT]: downloadSampleCSV,
+    [UserManagementMode.VPN_B2B]: downloadVPNB2BSampleCSV,
+};
 
 export interface Props {
     onUpload: (data: UserTemplate[]) => void;
     className?: string;
     children?: ReactNode;
     color?: ButtonProps['color'];
+    mode?: UserManagementMode;
 }
 
-const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').t`Upload CSV file`, color }: Props) => {
+const ImportCSVFileButton = ({
+    onUpload,
+    className,
+    children = c('Select file').t`Upload CSV file`,
+    color,
+    mode = UserManagementMode.DEFAULT,
+}: Props) => {
     const [importing, setImporting] = useState(false);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
 
     const csvTemplateButton = (
-        <InlineLinkButton key="csvTemplateButton" onClick={downloadSampleCSV}>{
+        <InlineLinkButton key="csvTemplateButton" onClick={() => downloadSampleCSVFns[mode]()}>{
             // translator: full sentence is "Please check your file, or try using our CSV template."
             c('CSV download button').t`CSV template`
         }</InlineLinkButton>
@@ -37,7 +50,7 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
 
     const handleFiles = async (files: File[]) => {
         try {
-            const { users, errors } = await parseMultiUserCsv(files);
+            const { users, errors } = await parseMultiUserCsv(files, mode);
 
             if (errors.length) {
                 const requiredEmailErrors = errors.filter(
