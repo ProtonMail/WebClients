@@ -8,6 +8,10 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import { selectComposer } from 'proton-mail/logic/composers/composerSelectors';
+import { composerActions } from 'proton-mail/logic/composers/composersSlice';
+import { messageByID } from 'proton-mail/logic/messages/messagesSelectors';
+
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -28,7 +32,7 @@ import {
     updateIsSavingFlag,
 } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { useAppDispatch, useAppStore } from '../../logic/store';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -55,11 +59,12 @@ export interface EditorComposer {
     addressesFocusRef?: MutableRefObject<() => void>;
     toggleMinimized?: () => void;
     toggleMaximized?: () => void;
-    composerID: string;
+    composerID: ComposerID;
 }
 
 export interface EditorQuickReply {
     type: EditorTypes.quickReply;
+    messageID: string;
     editorRef: MutableRefObject<EditorActions | undefined>;
     referenceMessage?: MessageState;
     replyUpdated?: boolean;
@@ -69,12 +74,10 @@ export interface EditorQuickReply {
 }
 
 export type EditorArgs = (EditorComposer | EditorQuickReply) & {
-    messageID: string;
     onClose: () => void;
     composerFrameRef: RefObject<HTMLDivElement>;
     isFocused?: boolean;
     editorReady: boolean;
-    composerID?: ComposerID;
 };
 
 export const useComposerContent = (args: EditorArgs) => {
@@ -85,9 +88,21 @@ export const useComposerContent = (args: EditorArgs) => {
     const getMessage = useGetMessage();
     const onCompose = useOnCompose();
     const dispatch = useAppDispatch();
+    const store = useAppStore();
     const skipNextInputRef = useRef(false);
 
-    const { messageID, onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
+    const { onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
+
+    const messageID = useMemo(() => {
+        switch (editorType) {
+            case EditorTypes.composer:
+                const composer = selectComposer(store.getState(), args.composerID);
+                return composer.messageID;
+            case EditorTypes.quickReply:
+                return args.messageID;
+        }
+    }, []);
+
     const isComposer = editorType === EditorTypes.composer;
     const isQuickReply = editorType === EditorTypes.quickReply;
 
@@ -165,14 +180,25 @@ export const useComposerContent = (args: EditorArgs) => {
 
     // Manage existing draft initialization
     useEffect(() => {
-        if (
-            !pendingSave.isPending &&
-            (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
-            syncedMessage.messageDocument?.initialized === undefined &&
-            modelMessage.messageDocument?.initialized === undefined
-        ) {
-            void initialize(syncedMessage.localID);
-        }
+        const initDraft = async () => {
+            if (
+                !pendingSave.isPending &&
+                (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
+                syncedMessage.messageDocument?.initialized === undefined &&
+                modelMessage.messageDocument?.initialized === undefined
+            ) {
+                await initialize(syncedMessage.localID);
+                const initializedMessage = messageByID(store.getState(), { ID: syncedMessage.localID });
+
+                if (editorType === EditorTypes.composer) {
+                    const composerID = args.composerID;
+                    if (initializedMessage?.data && composerID) {
+                        dispatch(composerActions.setInitialized({ ID: composerID, message: initializedMessage }));
+                    }
+                }
+            }
+        };
+        void initDraft();
     }, [
         pendingSave.isPending,
         syncedMessage.localID,
@@ -658,7 +684,12 @@ export const useComposerContent = (args: EditorArgs) => {
         }
     };
 
-    useReduxRefac({ composerID: args.composerID, handleChange, handleChangeContent, modelMessage });
+    useReduxRefac({
+        composerID: editorType === EditorTypes.composer ? args.composerID : undefined,
+        handleChange,
+        handleChangeContent,
+        modelMessage,
+    });
 
     return {
         modelMessage,
