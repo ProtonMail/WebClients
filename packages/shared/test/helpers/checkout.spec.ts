@@ -1,5 +1,6 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getUsersAndAddons } from '@proton/shared/lib/helpers/checkout';
+import { PLANS_MAP } from '@proton/testing/lib/payments';
 
 import { Plan } from '../../lib/interfaces';
 
@@ -64,47 +65,13 @@ const bundleProDomain: Partial<Plan> = {
     },
 };
 
-const vpnProPlan: Partial<Plan> = {
-    Name: PLANS.VPN_PRO,
-    Title: 'VPN',
-    MaxMembers: 1,
-    Pricing: {
-        [CYCLE.MONTHLY]: 749,
-        [CYCLE.YEARLY]: 7499,
-        [CYCLE.TWO_YEARS]: 7499 * 2,
-    },
-};
+const vpnProPlan = PLANS_MAP[PLANS.VPN_PRO] as Plan;
 
-const vpnProMember: Partial<Plan> = {
-    Name: ADDON_NAMES.MEMBER_VPN_PRO,
-    MaxMembers: 1,
-    Pricing: {
-        [CYCLE.MONTHLY]: 749,
-        [CYCLE.YEARLY]: 7499,
-        [CYCLE.TWO_YEARS]: 7499 * 2,
-    },
-};
+const vpnProMember = PLANS_MAP[ADDON_NAMES.MEMBER_VPN_PRO] as Plan;
 
-const vpnBusinessPlan: Partial<Plan> = {
-    Name: PLANS.VPN_BUSINESS,
-    Title: 'VPN Business',
-    MaxMembers: 1,
-    Pricing: {
-        [CYCLE.MONTHLY]: 949,
-        [CYCLE.YEARLY]: 9499,
-        [CYCLE.TWO_YEARS]: 9499 * 2,
-    },
-};
+const vpnBusinessPlan = PLANS_MAP[PLANS.VPN_BUSINESS] as Plan;
 
-const vpnBusinessMember: Partial<Plan> = {
-    Name: ADDON_NAMES.MEMBER_VPN_BUSINESS,
-    MaxMembers: 1,
-    Pricing: {
-        [CYCLE.MONTHLY]: 949,
-        [CYCLE.YEARLY]: 9499,
-        [CYCLE.TWO_YEARS]: 9499 * 2,
-    },
-};
+const vpnBusinessMember = PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS] as Plan;
 
 describe('should get checkout result', () => {
     it('should calculate vpn plus', () => {
@@ -281,15 +248,15 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            planTitle: 'VPN',
+            planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
-            usersTitle: '3 users',
-            users: 3,
+            usersTitle: '4 users',
+            users: 4,
             addons: [],
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
-            discountPercent: 17,
+            discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
             addonsPerMonth: 0,
         });
@@ -375,6 +342,252 @@ describe('should get checkout result', () => {
             discountPercent: 100,
             membersPerMonth: 1999,
             addonsPerMonth: 0,
+        });
+    });
+});
+
+describe('getUsersAndAddons()', () => {
+    it('should return plan name and number of users', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN]: 1,
+                },
+                {
+                    [PLANS.VPN]: getPlan(vpnPlan),
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN,
+            planTitle: 'VPN',
+            users: 1,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 999,
+                [CYCLE.YEARLY]: 7188,
+                [CYCLE.FIFTEEN]: 14985,
+                [CYCLE.TWO_YEARS]: 11976,
+                [CYCLE.THIRTY]: 29970,
+            },
+            addons: [],
+        });
+    });
+
+    it('should return plan name and number of users - family plan', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.FAMILY]: 1,
+                },
+                {
+                    [PLANS.FAMILY]: PLANS_MAP[PLANS.FAMILY],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.FAMILY,
+            planTitle: 'Proton Family',
+            users: 6,
+            // even though there are 6 users, we don't divide the price by 6 for family plan. That's intentional.
+            usersPricing: {
+                [CYCLE.MONTHLY]: 2999,
+                [CYCLE.YEARLY]: 28788,
+                [CYCLE.TWO_YEARS]: 47976,
+            },
+            addons: [],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Essentials', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_PRO]: 1,
+                },
+                {
+                    [PLANS.VPN_PRO]: PLANS_MAP[PLANS.VPN_PRO],
+                    [ADDON_NAMES.MEMBER_VPN_PRO]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_PRO],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_PRO,
+            planTitle: 'VPN Essentials',
+            // VPN Essentials has 2 users by default
+            users: 2,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 899,
+                [CYCLE.YEARLY]: 8388,
+                [CYCLE.TWO_YEARS]: 14376,
+            },
+            addons: [],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Essentials with addons', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_PRO]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_PRO]: 4,
+                },
+                {
+                    [PLANS.VPN_PRO]: PLANS_MAP[PLANS.VPN_PRO],
+                    [ADDON_NAMES.MEMBER_VPN_PRO]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_PRO],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_PRO,
+            planTitle: 'VPN Essentials',
+            // VPN Essentials has 2 users by default + 4 addons selected by user
+            users: 6,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 899,
+                [CYCLE.YEARLY]: 8388,
+                [CYCLE.TWO_YEARS]: 14376,
+            },
+            addons: [],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Business', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_BUSINESS]: 1,
+                },
+                {
+                    [PLANS.VPN_BUSINESS]: PLANS_MAP[PLANS.VPN_BUSINESS],
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS],
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.IP_VPN_BUSINESS],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_BUSINESS,
+            planTitle: 'VPN Business',
+            // VPN Business has 2 users by default
+            users: 2,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.YEARLY]: 11988,
+                [CYCLE.TWO_YEARS]: 21576,
+            },
+            addons: [
+                // Yes, there must be addon even though the user didn't specify them. Because for price calculation
+                // purposes we must take into account the fact that VPN Business has 2 members + 1 server by default
+                {
+                    name: ADDON_NAMES.IP_VPN_BUSINESS,
+                    title: '1 server',
+                    quantity: 1,
+                    pricing: { 1: 4999, 12: 47988, 24: 86376 },
+                },
+            ],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Business with users', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 4,
+                },
+                {
+                    [PLANS.VPN_BUSINESS]: PLANS_MAP[PLANS.VPN_BUSINESS],
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS],
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.IP_VPN_BUSINESS],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_BUSINESS,
+            planTitle: 'VPN Business',
+            // VPN Business has 2 users by default + 4 addons selected by user
+            users: 6,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.YEARLY]: 11988,
+                [CYCLE.TWO_YEARS]: 21576,
+            },
+            addons: [
+                // Yes, there must be addon even though the user didn't specify them. Because for price calculation
+                // purposes we must take into account the fact that VPN Business has 2 members + 1 server by default
+                {
+                    name: ADDON_NAMES.IP_VPN_BUSINESS,
+                    title: '1 server',
+                    quantity: 1,
+                    pricing: { 1: 4999, 12: 47988, 24: 86376 },
+                },
+            ],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Business with IPs', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_BUSINESS]: 1,
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+                },
+                {
+                    [PLANS.VPN_BUSINESS]: PLANS_MAP[PLANS.VPN_BUSINESS],
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS],
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.IP_VPN_BUSINESS],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_BUSINESS,
+            planTitle: 'VPN Business',
+            // VPN Business has 2 users by default
+            users: 2,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.YEARLY]: 11988,
+                [CYCLE.TWO_YEARS]: 21576,
+            },
+            addons: [
+                {
+                    // Yes, there must be 5 addons instead of 4 that were specified by user.
+                    // See the comments in the other tests.
+                    name: ADDON_NAMES.IP_VPN_BUSINESS,
+                    quantity: 5,
+                    pricing: { 1: 4999, 12: 47988, 24: 86376 },
+                    title: '5 servers',
+                },
+            ],
+        });
+    });
+
+    it('should return plan name and number of users - VPN Business with users and IPs', () => {
+        expect(
+            getUsersAndAddons(
+                {
+                    [PLANS.VPN_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 4,
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+                },
+                {
+                    [PLANS.VPN_BUSINESS]: PLANS_MAP[PLANS.VPN_BUSINESS],
+                    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS],
+                    [ADDON_NAMES.IP_VPN_BUSINESS]: PLANS_MAP[ADDON_NAMES.IP_VPN_BUSINESS],
+                }
+            )
+        ).toEqual({
+            planName: PLANS.VPN_BUSINESS,
+            planTitle: 'VPN Business',
+            // VPN Business has 2 users by default + 4 addons selected by user
+            users: 6,
+            usersPricing: {
+                [CYCLE.MONTHLY]: 1199,
+                [CYCLE.YEARLY]: 11988,
+                [CYCLE.TWO_YEARS]: 21576,
+            },
+            addons: [
+                {
+                    // Yes, there must be 5 addons instead of 4 that were specified by user.
+                    // See the comments in the other tests.
+                    name: ADDON_NAMES.IP_VPN_BUSINESS,
+                    quantity: 5,
+                    pricing: { 1: 4999, 12: 47988, 24: 86376 },
+                    title: '5 servers',
+                },
+            ],
         });
     });
 });

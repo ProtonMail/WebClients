@@ -13,10 +13,9 @@ import {
     MAX_MEMBER_VPN_B2B_ADDON,
     MAX_SPACE_ADDON,
     MAX_VPN_ADDON,
-    isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
+import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import {
     Currency,
     Cycle,
@@ -410,7 +409,7 @@ const ProtonPlanCustomizer = ({
                     </Price>
                 );
 
-                const canDowngrade = addonMaxKey !== 'MaxIPs' || isFreeSubscription(currentSubscription);
+                const canDowngrade = addonMaxKey !== 'MaxIPs' || !hasVpnBusiness(currentSubscription);
                 const displayMin = canDowngrade ? min / divider : getVPNDedicatedIPs(currentSubscription);
 
                 const input = (

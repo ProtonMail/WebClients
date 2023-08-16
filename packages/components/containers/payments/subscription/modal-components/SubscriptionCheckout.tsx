@@ -156,6 +156,7 @@ const SubscriptionCheckout = ({
     showPlanDescription = true,
     isScheduledSubscription,
     isProration,
+    isCustomBilling,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -167,6 +168,7 @@ const SubscriptionCheckout = ({
         addons,
         membersPerMonth,
         withDiscountPerMonth,
+        addonsPerMonth,
     } = getCheckout({
         planIDs,
         plansMap,
@@ -187,6 +189,16 @@ const SubscriptionCheckout = ({
     const giftValue = Math.abs(checkResult.Gift || 0);
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
+
+    const membersAmount = (() => {
+        if (enableDetailedAddons) {
+            return membersPerMonth;
+        }
+        if (isCustomBilling) {
+            return membersPerMonth + addonsPerMonth;
+        }
+        return withDiscountPerMonth;
+    })();
 
     return (
         <Checkout
@@ -212,7 +224,7 @@ const SubscriptionCheckout = ({
                         )}
                     </>
                 }
-                amount={enableDetailedAddons ? membersPerMonth : withDiscountPerMonth}
+                amount={membersAmount}
                 currency={currency}
                 suffix={<span className="color-weak text-sm">{c('Suffix').t`/month`}</span>}
                 suffixNextLine={enableDetailedAddons}
