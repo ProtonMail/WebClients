@@ -7,17 +7,15 @@ import type { State } from '../types';
 import { selectState } from './utils';
 
 export const selectProxiedSettings = createSelector(selectState, ({ settings }: State) =>
-    omit(settings, ['sessionLockTTL', 'sessionLockToken'])
+    omit(settings, ['sessionLockTTL', 'sessionLockRegistered'])
 );
 
 export const selectCanLoadDomainImages = ({ settings }: State) => settings.loadDomainImages;
 
-export const selectSessionLockToken = ({ settings }: State) => settings.sessionLockToken;
-
-export const selectCanLockSession = (state: State) => Boolean(selectSessionLockToken(state));
+export const selectCanLockSession = (state: State) => state.settings.sessionLockRegistered;
 
 export const selectSessionLockSettings = createSelector(selectState, ({ settings }: State) => ({
-    sessionLockToken: settings.sessionLockToken,
+    sessionLockRegistered: settings.sessionLockRegistered,
     sessionLockTTL: settings.sessionLockTTL,
 }));
 
