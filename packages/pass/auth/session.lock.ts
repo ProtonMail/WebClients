@@ -2,7 +2,7 @@ import { api } from '../api';
 import { SessionLockStatus } from '../types';
 
 export type SessionLockCheckResult = {
-    status?: SessionLockStatus;
+    status: SessionLockStatus;
     ttl?: number;
 };
 
@@ -10,7 +10,7 @@ export const checkSessionLock = async (): Promise<SessionLockCheckResult> => {
     try {
         const { LockInfo } = await api({ url: 'pass/v1/user/session/lock/check', method: 'get' });
         return {
-            status: LockInfo?.Exists ? SessionLockStatus.REGISTERED : undefined,
+            status: LockInfo?.Exists ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE,
             ttl: LockInfo?.UnlockedSecs ?? undefined,
         };
     } catch (e: any) {

@@ -12,11 +12,10 @@ export const selectProxiedSettings = createSelector(selectState, ({ settings }: 
 
 export const selectCanLoadDomainImages = ({ settings }: State) => settings.loadDomainImages;
 
-export const selectCanLockSession = (state: State) => state.settings.sessionLockRegistered;
-
 export const selectSessionLockSettings = createSelector(selectState, ({ settings }: State) => ({
     sessionLockRegistered: settings.sessionLockRegistered,
     sessionLockTTL: settings.sessionLockTTL,
 }));
 
+export const selectHasRegisteredLock = (state: State) => state.settings.sessionLockRegistered;
 export const selectSessionLockTTL = ({ settings }: State): Maybe<number> => settings.sessionLockTTL;
