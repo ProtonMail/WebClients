@@ -25,9 +25,7 @@ import { EditorTypes, useComposerContent } from '../../hooks/composer/useCompose
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import { selectComposer } from '../../logic/composers/composerSelectors';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { useAppSelector } from '../../logic/store';
 import { Event } from '../../models/event';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
@@ -73,7 +71,6 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    const { messageID } = useAppSelector((store) => selectComposer(store, composerID));
     const [mailSettings] = useMailSettings();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -147,7 +144,6 @@ const Composer = (
         handleRemoveUpload,
     } = useComposerContent({
         type: EditorTypes.composer,
-        messageID,
         composerID,
         onClose,
         addressesFocusRef,
