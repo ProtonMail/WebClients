@@ -69,14 +69,6 @@ const MemberActions = ({
                 onEdit(member);
             },
         },
-        canDelete &&
-            ({
-                text: canRevokeSessions ? c('Member action').t`Delete` : c('Member action').t`Remove`,
-                actionType: 'delete',
-                onClick: () => {
-                    onDelete(member);
-                },
-            } as const),
         canLogin && {
             text: c('Member action').t`Sign in`,
             onClick: () => {
@@ -97,6 +89,14 @@ const MemberActions = ({
                 void withLoading(onRevoke(member));
             },
         },
+        canDelete &&
+            ({
+                text: canRevokeSessions ? c('Member action').t`Delete` : c('Member action').t`Remove`,
+                actionType: 'delete',
+                onClick: () => {
+                    onDelete(member);
+                },
+            } as const),
     ].filter(isTruthy);
 
     return <DropdownActions loading={loading} list={list} size="small" />;
