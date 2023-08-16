@@ -1,7 +1,7 @@
 import { fork, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { unlockSession } from '@proton/pass/auth/session-lock';
+import { unlockSession } from '@proton/pass/auth/session.lock';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import {

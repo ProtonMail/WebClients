@@ -1,6 +1,6 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
-import { deleteSessionLock } from '@proton/pass/auth/session-lock';
+import { deleteSessionLock } from '@proton/pass/auth/session.lock';
 
 import { sessionLockDisableFailure, sessionLockDisableIntent, sessionLockDisableSuccess } from '../actions';
 import type { WithSenderAction } from '../actions/with-receiver';
@@ -13,7 +13,7 @@ function* disableSessionLockWorker(
     try {
         yield deleteSessionLock(payload.pin);
         yield put(sessionLockDisableSuccess(meta.sender?.endpoint));
-        onSessionLockChange?.(false);
+        onSessionLockChange?.();
     } catch (e) {
         yield put(sessionLockDisableFailure(e, meta.sender?.endpoint));
     }

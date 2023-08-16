@@ -5,7 +5,7 @@ import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/crypto';
 import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
-import { EncryptionTag, type Maybe } from '@proton/pass/types';
+import { EncryptionTag } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { objectDelete } from '@proton/pass/utils/object';
@@ -16,7 +16,6 @@ import { signout, stateLock } from '../actions';
 import { isCacheTriggeringAction } from '../actions/with-cache-block';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '../reducers';
-import { selectSessionLockToken } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
 
 function* cacheWorker(action: AnyAction, { onCacheRequest, getAuth }: WorkerRootSagaOptions) {
@@ -24,7 +23,7 @@ function* cacheWorker(action: AnyAction, { onCacheRequest, getAuth }: WorkerRoot
 
     if (getAuth().hasSession() && onCacheRequest()) {
         try {
-            const sessionLockToken: Maybe<string> = yield select(selectSessionLockToken);
+            const sessionLockToken = getAuth().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
             const key: CryptoKey = yield getCacheEncryptionKey(cacheSalt, sessionLockToken);
 
