@@ -1,9 +1,9 @@
-## Release 5.0.28 — Aug 30, 2023
+## Release 5.0.28 — Sep 6, 2023
 
 ### Improvements
 
--   The settings button has moved from the top right to the sidebar on the right-hand side
 -   Improved the app layout and increased the space reserved for email display
+-   Increased the space for quick settings
 
 ### Fixes
 
@@ -11,6 +11,8 @@
 -   Fixed an issue where the icon on expiring messages would only show on page reload
 -   Fixed an issue where a contact without family name could not be imported
 -   Improved error messaging for cases where a contact without a family name and without email is being imported
+-   Fixed sending the latest state of the draft after being offline
+-   Fixed autocomplete issue in the Command palette
 
 ## Release 5.0.27 — Aug 16, 2023
 
