@@ -765,11 +765,10 @@ const SubscriptionModal = ({
                                 showUsersTooltip={false}
                                 className="mb-8"
                             />
-                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                            <div className="mx-auto max-w37e subscriptionCheckout-options">
                                 {!disableCycleSelector && (
                                     <>
-                                        <h2 className="text-2xl text-bold mb-4">{c('Label')
-                                            .t`Subscription options`}</h2>
+                                        <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
                                         <div className="mb-8">
                                             <SubscriptionCycleSelector
                                                 mode="buttons"
