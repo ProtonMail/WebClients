@@ -8,7 +8,6 @@ import { merge } from '@proton/pass/utils/object';
 
 import { boot, bootFailure, bootSuccess, stateSync } from '../actions';
 import type { UserState } from '../reducers';
-import { selectSessionLockToken } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
 import getCachedState, { type ExtensionCache } from './workers/cache';
 import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
@@ -16,7 +15,7 @@ import { getUserData } from './workers/user';
 
 function* bootWorker(options: WorkerRootSagaOptions) {
     try {
-        const sessionLockToken: Maybe<string> = yield select(selectSessionLockToken);
+        const sessionLockToken = options.getAuth().getLockToken();
         const cache: Maybe<ExtensionCache> = yield getCachedState(sessionLockToken);
         const currentState: State = yield select();
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
