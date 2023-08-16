@@ -1,3 +1,5 @@
+import { MutableRefObject, useCallback } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
@@ -16,12 +18,12 @@ import {
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { forceSend } from '@proton/shared/lib/api/messages';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { pick } from '@proton/shared/lib/helpers/object';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
-import { loadMessage } from 'proton-mail/helpers/message/messageRead';
-import { initialize, load } from 'proton-mail/logic/messages/read/messagesReadActions';
+import { composerActions } from 'proton-mail/logic/composers/composersSlice';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -31,6 +33,7 @@ import { MessageState, PartialMessageState } from '../../logic/messages/messages
 import { store, useAppDispatch } from '../../logic/store';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
+import { EditorTypes } from './useComposerContent';
 
 export enum ComposeTypes {
     existingDraft,
@@ -71,12 +74,17 @@ export interface OnCompose {
 
 interface UseComposeProps {
     openedComposerIDs: string[];
-    openComposer: (messageID: string, returnFocusTo?: HTMLElement) => void;
     focusComposer: (messageID: string) => void;
     maxActiveComposer: number;
+    returnFocusToElementRef: MutableRefObject<HTMLElement | null>;
 }
 
-export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, maxActiveComposer }: UseComposeProps) => {
+export const useCompose = ({
+    openedComposerIDs,
+    focusComposer,
+    maxActiveComposer,
+    returnFocusToElementRef,
+}: UseComposeProps) => {
     // Avoid useUser for performance issues
     const getUser = useGetUser();
     const [addresses = []] = useAddresses();
@@ -88,6 +96,50 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
     const { call } = useEventManager();
     const getLocalID = useGetLocalID();
     const getMessage = useGetMessage();
+
+    const openComposer = useCallback(
+        ({
+            messageID,
+            type,
+            returnFocusTo,
+        }: {
+            messageID: string;
+            type: ComposeTypes;
+            returnFocusTo?: HTMLElement;
+        }) => {
+            const message = getMessage(messageID);
+
+            if (type === ComposeTypes.existingDraft) {
+                dispatch(
+                    composerActions.addComposer({
+                        type: EditorTypes.composer,
+                        messageID,
+                        senderEmailAddress: undefined,
+                        status: 'loading',
+                    })
+                );
+            } else {
+                if (!message?.data?.Sender.Address) {
+                    throw new Error('No address');
+                }
+
+                dispatch(
+                    composerActions.addComposer({
+                        type: EditorTypes.composer,
+                        messageID,
+                        senderEmailAddress: message.data.Sender.Address,
+                        recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
+                        status: 'idle',
+                    })
+                );
+            }
+
+            if (returnFocusTo) {
+                returnFocusToElementRef.current = returnFocusTo;
+            }
+        },
+        []
+    );
 
     const [storageCapacityModalProps, setStorageCapacityModalOpen] = useModalState();
     const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
@@ -176,16 +228,9 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
                 return;
             }
 
-            // If message is not in store yet we fetch it
-            if (!existingMessage) {
-                dispatch(initialize({ localID }));
-                const message = await loadMessage({ localID, data: { ID: localID } } as MessageState, api);
-                dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID }));
-            }
-
             dispatch(openDraft({ ID: localID, fromUndo }));
 
-            openComposer(localID, returnFocusTo);
+            openComposer({ messageID: localID, returnFocusTo, type: compose.type });
 
             composer = Object.values(store.getState().composers.composers).find(
                 ({ messageID }) => messageID === localID
@@ -215,7 +260,7 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
 
             const newMessageID = await createDraft(action, referenceMessage);
 
-            openComposer(newMessageID, returnFocusTo);
+            openComposer({ messageID: newMessageID, returnFocusTo, type: compose.type });
             const composer = Object.values(store.getState().composers.composers).find(
                 ({ messageID }) => messageID === newMessageID
             );
@@ -226,7 +271,7 @@ export const useCompose = ({ openedComposerIDs, openComposer, focusComposer, max
 
         if (compose.type === ComposeTypes.fromMessage) {
             const { modelMessage, returnFocusTo } = compose;
-            openComposer(modelMessage.localID, returnFocusTo);
+            openComposer({ messageID: modelMessage.localID, returnFocusTo, type: compose.type });
             const composer = Object.values(store.getState().composers.composers).find(
                 ({ messageID }) => messageID === modelMessage.localID
             );
