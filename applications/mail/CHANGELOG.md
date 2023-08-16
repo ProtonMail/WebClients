@@ -12,6 +12,7 @@
 -   Fixed an issue where a contact without family name could not be imported
 -   Improved error messaging for cases where a contact without a family name and without email is being imported
 -   Fixed sending the latest state of the draft after being offline
+-   Fixed autocomplete issue in the Command palette
 
 ## Release 5.0.27 — Aug 16, 2023
 
