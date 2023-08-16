@@ -2,6 +2,8 @@ import { authentication } from '@proton/pass/auth/authentication';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import type { Maybe } from '../../types';
+
 const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
 export const CACHE_SALT_LENGTH = 32;
 
@@ -18,7 +20,7 @@ const HKDF_PARAMS: Omit<HkdfParams, 'salt'> = {
  * @param salt - randomly generated salt of `SALT_LENGTH` size, ideally regenerated at each snapshot
  * @returns key to use with `encryptData` and `decryptData`
  */
-export const getCacheEncryptionKey = async (salt: Uint8Array, sessionLockToken?: string): Promise<CryptoKey> => {
+export const getCacheEncryptionKey = async (salt: Uint8Array, sessionLockToken: Maybe<string>): Promise<CryptoKey> => {
     // sanity check to avoid problems when using the key
     if (ENCRYPTION_ALGORITHM !== KEY_ALGORITHM.name) {
         throw new Error('Key algorithm does not match encryption algorithm');
