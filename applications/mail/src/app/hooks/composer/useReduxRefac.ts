@@ -33,13 +33,14 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
         if (composer.senderEmailAddress !== modelMessage.data?.Sender.Address) {
             const prevAddress = getAddressFromEmail(addresses, modelMessage.data?.Sender.Address);
             const newAddress = getAddressFromEmail(addresses, composer.senderEmailAddress);
+
+            if (!newAddress || !composer.senderEmailAddress) {
+                return;
+            }
+
             const Sender = newAddress
                 ? { Name: newAddress.DisplayName, Address: composer.senderEmailAddress }
                 : undefined;
-
-            if (!newAddress) {
-                return;
-            }
 
             handleChange({ data: { AddressID: newAddress.ID, Sender } });
 

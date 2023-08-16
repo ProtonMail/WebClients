@@ -84,6 +84,7 @@ export const prepareMessage = (messageProp: PartialMessageState) => {
             recipients: message.data
                 ? pick(message.data, ['ToList', 'CCList', 'BCCList'])
                 : { BCCList: [], CCList: [], ToList: [] },
+            status: 'idle',
         })
     );
 

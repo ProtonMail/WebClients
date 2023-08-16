@@ -230,7 +230,7 @@ const MailboxContainer = ({
                 const [element] = getElementsFromIDs([elementID || '']);
 
                 if (isMessage(element) && isDraft(element) && !preventComposer) {
-                    await onCompose({
+                    void onCompose({
                         type: ComposeTypes.existingDraft,
                         existingDraft: { localID: element.ID as string, data: element as Message },
                         fromUndo: false,

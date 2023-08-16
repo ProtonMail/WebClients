@@ -3,13 +3,10 @@ import { ReactNode, memo, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useBeforeUnload, useDrawerWidth } from '@proton/components';
-import { pick } from '@proton/shared/lib/helpers/object';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
-import { EditorTypes } from '../hooks/composer/useComposerContent';
-import { useGetMessage } from '../hooks/message/useMessage';
 import { useClickMailContent } from '../hooks/useClickMailContent';
 import { selectOpenedComposersIds } from '../logic/composers/composerSelectors';
 import { composerActions } from '../logic/composers/composersSlice';
@@ -24,37 +21,13 @@ interface Props {
     children: ReactNode;
 }
 
-const useOpenComposer = () => {
-    const dispatch = useAppDispatch();
-    const getMessage = useGetMessage();
-
-    return (messageID: string) => {
-        const message = getMessage(messageID);
-
-        if (!message?.data?.Sender.Address) {
-            throw new Error('No address');
-        }
-
-        dispatch(
-            composerActions.addComposer({
-                type: EditorTypes.composer,
-                messageID,
-                senderEmailAddress: message.data.Sender.Address,
-                recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
-            })
-        );
-    };
-};
-
 const ComposerContainer = ({ breakpoints, children }: Props) => {
     const dispatch = useAppDispatch();
     const composerIDs = useAppSelector(selectOpenedComposersIds);
     const [focusedComposerID, setFocusedComposerID] = useState<string>();
     const drawerOffset = useDrawerWidth();
-    const returnFocusToElement = useRef<HTMLElement | null>(null);
+    const returnFocusToElementRef = useRef<HTMLElement | null>(null);
     const isComposerOpened = composerIDs.length > 0;
-
-    const openComposerFunc = useOpenComposer();
 
     useClickMailContent(() => setFocusedComposerID(undefined));
 
@@ -69,20 +42,12 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         }
     };
 
-    const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
-        openComposerFunc(messageID);
-
-        if (returnFocusTo) {
-            returnFocusToElement.current = returnFocusTo;
-        }
-    };
-
     const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal } =
         useCompose({
-            openedComposerIDs: composerIDs,
-            openComposer,
             focusComposer: setFocusedComposerID,
             maxActiveComposer,
+            openedComposerIDs: composerIDs,
+            returnFocusToElementRef,
         });
 
     const handleFocus = (composerID: string) => () => {
@@ -91,9 +56,9 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     // After closing all composers, focus goes back to previously focused element
     useEffect(() => {
-        if (composerIDs.length === 0 && returnFocusToElement.current) {
-            returnFocusToElement.current.focus();
-            returnFocusToElement.current = null;
+        if (composerIDs.length === 0 && returnFocusToElementRef.current) {
+            returnFocusToElementRef.current.focus();
+            returnFocusToElementRef.current = null;
         }
     }, [composerIDs]);
 
