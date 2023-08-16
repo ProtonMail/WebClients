@@ -131,7 +131,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
         { id: string; abortController: AbortController }[]
     >([]);
 
-    const { setDrawerLocalStorageKey } = useDrawerLocalStorage(iframeSrcMap, appInView);
+    const { setDrawerLocalStorageKey } = useDrawerLocalStorage(iframeSrcMap, drawerSidebarMounted, appInView);
 
     const removeAbortController = (id: string) => {
         setRequestsAbortControllers((requestsAbortControllers) =>
@@ -286,7 +286,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                     const user = await getUser();
 
                     const { url, app } = event.data.payload;
-                    setDrawerLocalStorageKey({ app, url, userID: user.ID });
+                    setDrawerLocalStorageKey({ app, url }, user.ID);
                     setIframeURLMap((iframeURLMap) => ({
                         ...iframeURLMap,
                         [app]: url,

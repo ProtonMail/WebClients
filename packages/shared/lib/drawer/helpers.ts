@@ -1,4 +1,5 @@
 import { isURLProtonInternal } from '@proton/components/helpers/url';
+import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
 
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
@@ -7,7 +8,6 @@ import window from '../window';
 import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS, DRAWER_NATIVE_APPS } from './interfaces';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
-
 export const drawerAuthorizedApps = [
     APPS_CONFIGURATION[PROTONMAIL].subdomain,
     APPS_CONFIGURATION[PROTONCALENDAR].subdomain,
@@ -18,6 +18,8 @@ export const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, A
 
 export const drawerNativeApps: DRAWER_APPS[] = [DRAWER_NATIVE_APPS.CONTACTS, DRAWER_NATIVE_APPS.QUICK_SETTINGS];
 export const drawerIframeApps: DRAWER_APPS[] = [APPS.PROTONCALENDAR];
+
+export const getLocalStorageUserDrawerKey = (userID: string) => `${LOCALSTORAGE_DRAWER_KEY}-${userID}`;
 
 export const getIsNativeDrawerApp = (app: string): app is DRAWER_APPS => {
     const tsDrawerNativeApps: string[] = [...drawerNativeApps];
