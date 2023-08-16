@@ -70,14 +70,15 @@ const Marks = ({ children: text, chunks }: Props) => {
         <>
             {highlightedChunks.map(({ start, end, highlight }) => {
                 const insert = text.substring(start, end);
-                if (highlight) {
-                    return (
-                        <mark key={`${start}-${end}`} className="is-light">
-                            {insert}
-                        </mark>
-                    );
-                }
-                return <span>{insert}</span>;
+                const key = `${start}-${end}`;
+
+                return highlight ? (
+                    <mark key={key} className="is-light">
+                        {insert}
+                    </mark>
+                ) : (
+                    <span key={key}>{insert}</span>
+                );
             })}
         </>
     );
