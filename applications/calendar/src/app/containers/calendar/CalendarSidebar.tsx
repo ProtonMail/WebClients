@@ -35,7 +35,7 @@ import HolidaysCalendarModal from '@proton/components/containers/calendar/holida
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
-import { useLoading } from '@proton/hooks';
+import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
@@ -80,7 +80,7 @@ const CalendarSidebar = ({
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { toggleDrawerApp } = useDrawer();
 
-    const [loadingVisibility, withLoadingVisibility] = useLoading();
+    const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
     const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
@@ -279,7 +279,7 @@ const CalendarSidebar = ({
                     calendars={myCalendars}
                     allCalendars={calendars}
                     onChangeVisibility={(calendarID, value) =>
-                        withLoadingVisibility(handleChangeVisibility(calendarID, value))
+                        withLoadingVisibility(calendarID, handleChangeVisibility(calendarID, value))
                     }
                     addresses={addresses}
                     loadingVisibility={loadingVisibility}
@@ -304,7 +304,7 @@ const CalendarSidebar = ({
                     calendars={otherCalendars}
                     allCalendars={calendars}
                     onChangeVisibility={(calendarID, value) =>
-                        withLoadingVisibility(handleChangeVisibility(calendarID, value))
+                        withLoadingVisibility(calendarID, handleChangeVisibility(calendarID, value))
                     }
                     addresses={addresses}
                     loadingVisibility={loadingVisibility}
