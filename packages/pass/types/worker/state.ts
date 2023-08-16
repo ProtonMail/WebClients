@@ -24,16 +24,16 @@ export type WorkerState = {
     UID: Maybe<string>;
 };
 
-export type ExtensionSessionData = Partial<ExtensionSession>;
+export type ExtensionSessionData = ExtensionSession;
 
 export type ExtensionLocalData = {
-    state?: string;
-    snapshot?: string;
-    salt?: string;
-    ps?: string;
-    onboarding?: string;
-    telemetry?: string;
-    settings?: string;
+    state: string;
+    snapshot: string;
+    salt: string;
+    ps: string;
+    onboarding: string;
+    telemetry: string;
+    settings: string;
 };
 
 export type PopupInitialState = {
