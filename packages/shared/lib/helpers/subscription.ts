@@ -216,6 +216,7 @@ export const hasMailBlackFridayDiscount = (subscription: Subscription | undefine
 
 export const allCycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS, CYCLE.FIFTEEN, CYCLE.THIRTY];
 export const customCycles = [CYCLE.FIFTEEN, CYCLE.THIRTY];
+export const regularCycles = allCycles.filter((cycle) => !customCycles.includes(cycle));
 
 export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
@@ -317,22 +318,38 @@ function getIpPrice(cycle: CYCLE): number {
     return 0;
 }
 
-function getPricePerMember(plan: Plan, cycle: CYCLE): number {
+export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
     const totalPrice = plan.Pricing[cycle] || 0;
-
-    if (plan.Name === PLANS.VPN_PRO) {
-        // Because VPN Pro has 2 members by default.
-        return totalPrice / 2;
-    }
 
     if (plan.Name === PLANS.VPN_BUSINESS) {
         // For VPN business, we exclude IP price from calculation. And we also divide by 2,
         // because it has 2 members by default too.
         const IP_PRICE = getIpPrice(cycle);
-        return (totalPrice - IP_PRICE) / 2;
+        return (totalPrice - IP_PRICE) / (plan.MaxMembers || 1);
     }
 
-    return totalPrice;
+    // Family plan has 6 members by default. We keep the price as is intentionally for price displaying purposes.
+    if (plan.Name === PLANS.FAMILY) {
+        return totalPrice;
+    }
+
+    // Some plans have 0 MaxMembers. That's because they don't have access to mail.
+    // In reality, they still get 1 member.
+    return totalPrice / (plan.MaxMembers || 1);
+}
+
+export function getPricingPerMember(plan: Plan): Pricing {
+    return allCycles.reduce((acc, cycle) => {
+        acc[cycle] = getPricePerMember(plan, cycle);
+
+        // If the plan doesn't have custom cycles, we need to remove it from the resulting Pricing object
+        const isNonDefinedCycle = acc[cycle] === undefined || acc[cycle] === null || acc[cycle] === 0;
+        if (customCycles.includes(cycle) && isNonDefinedCycle) {
+            delete acc[cycle];
+        }
+
+        return acc;
+    }, {} as Pricing);
 }
 
 export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
