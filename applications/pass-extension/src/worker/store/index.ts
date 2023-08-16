@@ -8,7 +8,13 @@ import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
-import { type RequiredNonNull, ShareEventType, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import {
+    type RequiredNonNull,
+    SessionLockStatus,
+    ShareEventType,
+    WorkerMessageType,
+    WorkerStatus,
+} from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -64,15 +70,20 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
 
     onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
-    onSessionLocked: withContext((ctx) => ctx.service.auth.lock()),
+    onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
 
-    onSessionUnlocked: withContext(async ({ init, service: { auth } }, storageToken) => {
-        auth.persistLock(storageToken);
-        auth.unlock();
+    onSessionUnlocked: withContext(async ({ init, service: { auth } }, sessionLockToken) => {
+        await auth.unlock(sessionLockToken);
         await init({ force: true });
     }),
 
-    onSessionLockChange: withContext(({ service: { auth } }, storageToken) => auth.persistLock(storageToken)),
+    onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
+        auth.authStore.setLockToken(sessionLockToken);
+        auth.authStore.setLockTTL(sessionLockTTL);
+        auth.authStore.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
+
+        await auth.persist();
+    }),
 
     /* Update the extension's badge count on every
      * item state change */

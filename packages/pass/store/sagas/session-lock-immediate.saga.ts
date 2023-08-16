@@ -10,9 +10,9 @@ import type { WorkerRootSagaOptions } from '../types';
  * a sessionLockToken saved) then this saga should have
  * no effect */
 function* lockSessionImmediateWorker({ onSessionLocked, getAuth }: WorkerRootSagaOptions) {
-    const storageToken = getAuth().getLockToken();
+    const sessionLockToken = getAuth().getLockToken();
 
-    if (storageToken !== undefined) {
+    if (sessionLockToken !== undefined) {
         yield put(stateCache());
         /* fork for non-blocking action -> immediate UI effect */
         yield fork(function* () {
@@ -24,7 +24,7 @@ function* lockSessionImmediateWorker({ onSessionLocked, getAuth }: WorkerRootSag
             }
         });
 
-        onSessionLocked?.(storageToken);
+        yield onSessionLocked?.();
     }
 }
 
