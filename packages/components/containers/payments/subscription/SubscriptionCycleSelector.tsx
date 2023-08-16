@@ -90,7 +90,7 @@ const CycleItemView = ({
                         className="color-weak flex flex-item-fluid-auto"
                         data-testid={`price-per-user-per-month-${cycle}`}
                     >
-                        <Price currency={currency} suffix={monthlySuffix}>
+                        <Price currency={currency} suffix={monthlySuffix} data-testid="price-value-per-user-per-month">
                             {totalPerMonth}
                         </Price>
                     </span>
