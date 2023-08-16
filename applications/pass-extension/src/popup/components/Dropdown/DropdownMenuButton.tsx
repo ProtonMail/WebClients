@@ -63,6 +63,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 size === 'small' && 'text-sm py-2 px-4',
                 className
             )}
+            // translator : "Selected" is singular only
             title={isSelected ? c('Label').t`Selected` : undefined}
             {...rest}
         >
