@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { UserManagementMode } from '@proton/components/containers/members/types';
 import { useLoading } from '@proton/hooks';
 import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -17,15 +18,20 @@ interface Props {
     addresses: PartialMemberAddress[] | undefined;
     organization: Organization;
     organizationKey: CachedOrganizationKey | undefined;
+    mode: UserManagementMode;
 }
 
-const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses = [], organization }: Props) => {
+const MemberActions = ({ member, onEdit, onDelete, onLogin, onRevoke, addresses = [], organization, mode }: Props) => {
     const [loading, withLoading] = useLoading();
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const canDelete = !member.Self;
     const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
-    const canRevokeSessions = hasSetupOrganizationWithKeys && !member.Self && member.Type === MEMBER_TYPE.MANAGED;
+    const canRevokeSessions =
+        hasSetupOrganizationWithKeys &&
+        !member.Self &&
+        member.Type === MEMBER_TYPE.MANAGED &&
+        mode === UserManagementMode.DEFAULT;
     const canLogin =
         hasSetupOrganizationWithKeys &&
         !member.Self &&

@@ -2,13 +2,22 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getHasVpnB2BPlan, hasVPN } from '@proton/shared/lib/helpers/subscription';
-import { Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
-export const getRoutes = (user: UserModel, subscription?: Subscription) => {
+export const getRoutes = (user: UserModel, subscription?: Subscription, organization?: Organization) => {
     // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
     const hasVpnPlan = hasVPN(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+
+    const isAdmin = user.isAdmin && !user.isSubUser;
+    const canHaveOrganization = !!organization && isAdmin;
+
+    const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
+    const hasOrganization = hasOrganizationSetup(organization);
+
+    const multiUserTitle = c('Title').t`Multi-user support`;
 
     return {
         dashboard: <SectionConfig>{
@@ -133,6 +142,34 @@ export const getRoutes = (user: UserModel, subscription?: Subscription) => {
                 {
                     text: c('Title').t`WireGuard configuration`,
                     id: 'wireguard-configuration',
+                },
+            ],
+        },
+        users: <SectionConfig>{
+            text: c('Title').t`Users`,
+            to: '/users-addresses',
+            icon: 'users',
+            available: canHaveOrganization && (hasOrganizationKey || hasOrganization),
+            subsections: [
+                {
+                    id: 'members',
+                },
+                {
+                    text: c('Title').t`Create multiple user accounts`,
+                    id: 'multi-user-creation',
+                    available: organization && !!organization.RequiresKey,
+                },
+            ],
+        },
+        setup: <SectionConfig>{
+            text: multiUserTitle,
+            to: '/multi-user-support',
+            icon: 'users',
+            available: canHaveOrganization && !hasOrganizationKey,
+            subsections: [
+                {
+                    text: multiUserTitle,
+                    id: 'name',
                 },
             ],
         },

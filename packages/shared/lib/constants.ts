@@ -32,6 +32,7 @@ export const MAX_IPS_ADDON = 10;
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
+export const NAME_PLACEHOLDER = 'Thomas A. Anderson';
 
 export const BRAND_NAME = 'Proton';
 export const MAIL_SHORT_APP_NAME = 'Mail';

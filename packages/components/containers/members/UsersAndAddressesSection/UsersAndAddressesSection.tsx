@@ -2,13 +2,13 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { APP_NAMES, DOMAIN_STATE, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { normalize } from '@proton/shared/lib/helpers/string';
-import { hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
+import { getHasVpnB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -34,10 +34,12 @@ import {
     useOrganization,
     useOrganizationKey,
     useSubscription,
+    useUser,
 } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { AddressModal } from '../../addresses';
 import RestoreAdministratorPrivileges from '../../organization/RestoreAdministratorPrivileges';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal, { validateMemberLogin } from '../LoginMemberModal';
 import MemberActions from '../MemberActions';
@@ -49,7 +51,8 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
-import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader.tsx';
+import { UserManagementMode } from '../types';
+import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
@@ -59,6 +62,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [domains, loadingDomains] = useDomains();
     const [members, loadingMembers] = useMembers();
     const [subscription] = useSubscription();
+    const [user] = useUser();
+    const [openSubscriptionModal] = useSubscriptionModal();
     const [memberAddressesMap] = useMemberAddresses(members, true);
     const [keywords, setKeywords] = useState('');
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
@@ -177,6 +182,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setLoginMemberModalOpen(true);
     };
 
+    const handleGetMoreLicense = () => {
+        openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+            disablePlanSelection: true,
+        });
+    };
+
     const userFound = membersSelected.length;
 
     const tableLabel = [
@@ -191,19 +203,48 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     ];
 
     const disableInviteUserButton = loadingOrganization || loadingDomains || hasReachedLimit;
-    const disableAddUserButton = loadingOrganization || loadingDomains || loadingOrganizationKey;
+    const disableAddUserButton =
+        loadingOrganization ||
+        loadingDomains ||
+        loadingOrganizationKey ||
+        organization.UsedMembers === organization.MaxMembers;
     const loadingAddAddresses = loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers;
 
-    const settingsTitle = hasFamily(subscription)
-        ? c('familyOffer_2023:Info for members section')
-              .t`Add, remove, and make changes to user accounts in your family group.`
-        : c('familyOffer_2023:Info for members section')
-              .t`Add, remove, and make changes to user accounts in your organization.`;
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+    const mode = hasVpnB2BPlan ? UserManagementMode.VPN_B2B : UserManagementMode.DEFAULT;
+
+    const settingsTitle = (() => {
+        if (hasFamily(subscription)) {
+            return c('familyOffer_2023:Info for members section')
+                .t`Add, remove, and make changes to user accounts in your family group.`;
+        }
+
+        if (hasVpnB2BPlan) {
+            return c('Info').ngettext(
+                msgid`You are currently using ${organization.UsedMembers} of your ${organization.MaxMembers} available user license.`,
+                `You are currently using ${organization.UsedMembers} of your ${organization.MaxMembers} available user licenses.`,
+                organization.MaxMembers
+            );
+        }
+
+        return c('familyOffer_2023:Info for members section')
+            .t`Add, remove, and make changes to user accounts in your organization.`;
+    })();
+
+    const canOpenSubuserModal =
+        renderSubUserCreateModal && organizationKey && (verifiedDomains?.length > 0 || hasVpnB2BPlan);
 
     return (
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
-            <SettingsParagraph>{settingsTitle}</SettingsParagraph>
+            <SettingsParagraph large className="flex flex-align-items-baseline mb-6">
+                {settingsTitle}
+                {hasVpnB2BPlan && user.canPay && (
+                    <Button className="ml-2" shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
+                        {c('Action').t`Get more licenses`}
+                    </Button>
+                )}
+            </SettingsParagraph>
             <Block className="flex flex-align-items-start">
                 {renderAddAddressModal && members && (
                     <AddressModal members={members} organizationKey={organizationKey} {...addAddressModalProps} />
@@ -212,22 +253,25 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     <SubUserDeleteModal
                         member={tmpMember}
                         onDelete={handleDeleteUserConfirm}
+                        mode={mode}
                         {...subUserDeleteModalProps}
                     />
                 )}
                 {renderUserRemoveModal && tmpMember && (
                     <UserRemoveModal member={tmpMember} organization={organization} {...userRemoveModalProps} />
                 )}
-                {renderSubUserCreateModal && organizationKey && verifiedDomains?.length > 0 && (
+                {canOpenSubuserModal && (
                     <SubUserCreateModal
                         organization={organization}
                         organizationKey={organizationKey}
                         domains={verifiedDomains}
+                        mode={mode}
+                        app={app}
                         {...subUserCreateModalProps}
                     />
                 )}
                 {renderSubUserEditModal && tmpMember && (
-                    <SubUserEditModal member={tmpMember} {...subUserEditModalProps} />
+                    <SubUserEditModal member={tmpMember} mode={mode} {...subUserEditModalProps} />
                 )}
                 {renderUserInviteOrEditModal && (
                     <UserInviteOrEditModal
@@ -246,11 +290,11 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         organizationKey={organizationKey}
                         verifiedDomains={verifiedDomains}
                         onInviteUser={handleInviteUser}
+                        app={app}
                         {...inviteOrCreateUserModalProps}
                     />
                 )}
-
-                <div className="flex flex-align-items-center mb-2 lg:mb-0 gap-4">
+                <div className="flex flex-align-items-center mb-6 lg:mb-0 gap-4">
                     {hasSetupOrganization && (
                         <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                             {c('Action').t`Invite user`}
@@ -278,9 +322,11 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             />
                         ))}
 
-                    <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
-                        {c('Action').t`Add address`}
-                    </Button>
+                    {hasVpnB2BPlan ? null : (
+                        <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
+                            {c('Action').t`Add address`}
+                        </Button>
+                    )}
                 </div>
                 <div className="ml-0 lg:ml-auto w24e on-tablet-w100">
                     <SearchInput
@@ -298,13 +344,36 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
                 <thead>
                     <tr>
-                        <UsersAndAddressesSectionHeader />
+                        <UsersAndAddressesSectionHeader mode={mode} />
                     </tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={5}>
+                <TableBody loading={loadingMembers} colSpan={hasVpnB2BPlan ? 4 : 5}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
+                        const roleCell = (
+                            <TableCell
+                                className="text-cut"
+                                data-testid="users-and-addresses-table:memberRole"
+                                style={{ verticalAlign: 'baseline' }}
+                            >
+                                <div
+                                    className={clsx(
+                                        'flex flex-column flex-nowrap flex-item-align-baseline',
+                                        !hasVpnB2BPlan && 'lg:py-4'
+                                    )}
+                                >
+                                    <MemberRole member={member} />
+                                    {isInvitationPending && (
+                                        <span>
+                                            <Badge type="origin" className="rounded-sm color-weak">{c(
+                                                'familyOffer_2023:Family plan'
+                                            ).t`Pending`}</Badge>
+                                        </span>
+                                    )}
+                                </div>
+                            </TableCell>
+                        );
 
                         return (
                             <TableRow
@@ -312,8 +381,16 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 labels={tableLabel}
                                 className={clsx('align-top', isInvitationPending && 'color-weak')}
                             >
-                                <TableCell>
-                                    <div className="lg:py-4" title={member.Name}>
+                                <TableCell style={{ verticalAlign: 'baseline' }}>
+                                    <div
+                                        className={clsx('flex flex-align-items-center', !hasVpnB2BPlan && 'lg:py-4')}
+                                        title={member.Name}
+                                    >
+                                        {hasVpnB2BPlan && (
+                                            <Avatar className="mr-3 flex-item-noshrink text-rg" color="weak">
+                                                {getInitials(member.Name)}
+                                            </Avatar>
+                                        )}
                                         <div>
                                             <span
                                                 className="block text-ellipsis flex-item-fluid"
@@ -324,36 +401,25 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                     ? member?.Addresses?.[0]?.Email || member.Name
                                                     : member.Name}
                                             </span>
-                                            <span
-                                                data-testid="users-and-addresses-table:memberIsPrivate"
-                                                className="mr-1"
-                                            >
-                                                {Boolean(member.Private) && !hasFamily(subscription) && (
+                                            {!hasVpnB2BPlan && Boolean(member.Private) && !hasFamily(subscription) && (
+                                                <span
+                                                    data-testid="users-and-addresses-table:memberIsPrivate"
+                                                    className="mr-1"
+                                                >
                                                     <Badge type="origin" className="rounded-sm">{c('Private Member')
                                                         .t`private`}</Badge>
-                                                )}
-                                            </span>
-                                            {member['2faStatus'] > 0 && (
-                                                <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
-                                                    .t`2FA`}</Badge>
+                                                </span>
                                             )}
                                         </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell className="text-cut" data-testid="users-and-addresses-table:memberRole">
-                                    <div className="lg:py-4 flex flex-column flex-nowrap">
-                                        <MemberRole member={member} />
-                                        {isInvitationPending && (
-                                            <span>
-                                                <Badge type="origin" className="rounded-sm color-weak">{c(
-                                                    'familyOffer_2023:Family plan'
-                                                ).t`Pending`}</Badge>
-                                            </span>
+                                        {member['2faStatus'] > 0 && (
+                                            <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
+                                                .t`2FA`}</Badge>
                                         )}
                                     </div>
                                 </TableCell>
-                                <TableCell>
-                                    <div className="lg:py-4">
+                                {!hasVpnB2BPlan && roleCell}
+                                <TableCell style={{ verticalAlign: 'baseline' }}>
+                                    <div className={clsx(!hasVpnB2BPlan && 'lg:py-4')}>
                                         {member.State && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
@@ -361,13 +427,16 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         )}
                                     </div>
                                 </TableCell>
-                                <TableCell>
-                                    <div className="lg:py-4">
-                                        <MemberFeatures member={member} organization={organization} />
-                                    </div>
-                                </TableCell>
-                                <TableCell>
-                                    <div className="lg:py-4">
+                                {hasVpnB2BPlan && roleCell}
+                                {!hasVpnB2BPlan && (
+                                    <TableCell>
+                                        <div className="lg:py-4">
+                                            <MemberFeatures member={member} organization={organization} />
+                                        </div>
+                                    </TableCell>
+                                )}
+                                <TableCell style={{ verticalAlign: 'baseline' }}>
+                                    <div className={clsx(!hasVpnB2BPlan && 'lg:py-4')}>
                                         <MemberActions
                                             onEdit={handleEditUser}
                                             onDelete={handleDeleteUser}
@@ -377,6 +446,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             addresses={memberAddresses}
                                             organization={organization}
                                             organizationKey={organizationKey}
+                                            mode={mode}
                                         />
                                     </div>
                                 </TableCell>

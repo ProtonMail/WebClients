@@ -5,7 +5,12 @@ import { Member, Organization } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 
-const MemberFeatures = ({ member, organization }: { member: Member; organization: Organization }) => {
+interface Props {
+    member: Member;
+    organization: Organization;
+}
+
+const MemberFeatures = ({ member, organization }: Props) => {
     const { UsedSpace, MaxSpace, MaxVPN } = member;
 
     return (
