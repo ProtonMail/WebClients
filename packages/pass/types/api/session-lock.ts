@@ -1,4 +1,4 @@
 export enum SessionLockStatus {
-    LOCKED,
-    REGISTERED,
+    LOCKED = 'LOCKED',
+    REGISTERED = 'REGISTERED',
 }

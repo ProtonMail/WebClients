@@ -2,13 +2,21 @@
 import { captureException as sentryCaptureException } from '@sentry/browser';
 import { c } from 'ttag';
 
+import type { AuthStore, ExtensionSession } from '@proton/pass/auth';
 import {
+    SESSION_KEYS,
     checkSessionLock,
     consumeFork,
+    createAuthStore,
     exposeAuthStore,
+    getInMemorySession,
     getPersistedSession,
+    getPersistedSessionKey,
     persistSession,
     resumeSession,
+    setInMemorySession,
+    updateInMemorySession,
+    updatePersistedSession,
 } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
@@ -16,7 +24,6 @@ import {
     extendLock,
     notification,
     selectSessionLockTTL,
-    selectSessionLockToken,
     selectUser,
     sessionUnlockFailure,
     sessionUnlockIntent,
@@ -26,15 +33,15 @@ import {
     stateLock,
     syncLock,
 } from '@proton/pass/store';
-import type { AccountForkMessage, Api, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
+import type { AccountForkMessage, Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time';
 import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
+import { getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 
@@ -43,20 +50,14 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
-type LoginOptions = {
-    UID: string;
-    AccessToken: string;
-    RefreshToken: string;
-    keyPassword: string;
-};
 export interface AuthService {
-    authStore: AuthenticationStore;
-    setLockStatus: (status: MaybeNull<SessionLockStatus>) => void;
+    authStore: AuthStore;
+    persistLock: (storageToken: Maybe<string>) => void;
     resumeSession: () => Promise<boolean>;
     consumeFork: (
         data: AccountForkMessage['payload']
     ) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
-    login: (options: LoginOptions) => Promise<boolean>;
+    login: (session: ExtensionSession) => Promise<boolean>;
     logout: () => Promise<boolean>;
     init: () => Promise<boolean>;
     lock: () => void;
@@ -70,27 +71,16 @@ type CreateAuthServiceOptions = {
     onLocked?: () => void;
 };
 
-type AuthContext = {
-    pendingInit: MaybeNull<Promise<boolean>>;
-    lockStatus: MaybeNull<SessionLockStatus>;
-    extendTime: number;
-};
-
 export const createAuthService = ({
     api,
     onAuthorized,
     onUnauthorized,
     onLocked,
 }: CreateAuthServiceOptions): AuthService => {
-    const authCtx: AuthContext = {
-        pendingInit: null,
-        lockStatus: null,
-        extendTime: getEpoch(),
-    };
+    const authStore = exposeAuthStore(createAuthStore(createStore()));
 
     const authService: AuthService = {
-        authStore: exposeAuthStore(createAuthenticationStore(createStore())),
-        setLockStatus: (status) => (authCtx.lockStatus = status),
+        authStore,
 
         lock: withContext((ctx) => {
             logger.info(`[Worker::Auth] Locking context`);
@@ -99,7 +89,10 @@ export const createAuthService = ({
             /* set the lock status before dispatching
              * the `stateLock` so the UI can pick up
              * the locked state before wiping the store */
-            authService.setLockStatus(SessionLockStatus.LOCKED);
+            authStore.setLockStatus(SessionLockStatus.LOCKED);
+            authStore.setLockToken(undefined);
+            authStore.setLockLastExtendTime(undefined);
+
             ctx.setStatus(WorkerStatus.LOCKED);
 
             if (shouldLockState) {
@@ -112,39 +105,32 @@ export const createAuthService = ({
 
         unlock: () => {
             logger.info(`[Worker::Auth] Unlocking context`);
-            authService.setLockStatus(SessionLockStatus.REGISTERED);
+            authStore.setLockStatus(SessionLockStatus.REGISTERED);
+            authStore.setLockLastExtendTime(getEpoch());
         },
 
-        init: async () => {
-            logger.info(`[Worker::Auth] Initialization start`);
+        persistLock: async (sessionLockToken) => {
+            authStore.setLockToken(sessionLockToken);
 
-            if (authCtx.pendingInit !== null) {
-                logger.info(`[Worker::Auth] Ongoing auth initialization..`);
-                return authCtx.pendingInit;
+            try {
+                const sessionKey = await getPersistedSessionKey(api);
+                const blobData = { keyPassword: authService.authStore.getPassword(), sessionLockToken };
+                const blob = await getEncryptedBlob(sessionKey, JSON.stringify(blobData));
+                await updatePersistedSession({ blob });
+            } catch (e) {
+                console.warn(e);
+                logger.info(`[Worker::Auth] Failed persisting session lock`);
             }
 
-            authCtx.pendingInit = Promise.resolve(
-                (async () => {
-                    const { UID, AccessToken, RefreshToken, keyPassword } = await browserSessionStorage.getItems([
-                        'UID',
-                        'AccessToken',
-                        'RefreshToken',
-                        'keyPassword',
-                    ]);
-
-                    if (UID && keyPassword && AccessToken && RefreshToken) {
-                        return authService.login({ UID, keyPassword, AccessToken, RefreshToken });
-                    }
-
-                    return authService.resumeSession();
-                })()
-            );
-
-            const result = await authCtx.pendingInit;
-            authCtx.pendingInit = null;
-
-            return result;
+            return updateInMemorySession({ sessionLockToken });
         },
+
+        init: asyncLock(async () => {
+            logger.info(`[Worker::Auth] Initialization start`);
+
+            const inMemorySession = await getInMemorySession();
+            return inMemorySession ? authService.login(inMemorySession) : authService.resumeSession();
+        }),
         /* Consumes a session fork request and sends response.
          * Reset api in case it was in an invalid session state.
          * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
@@ -164,18 +150,14 @@ export const createAuthService = ({
             try {
                 ctx.setStatus(WorkerStatus.AUTHORIZING);
 
-                const { keyPassword } = data;
-                const result = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
-
-                const { AccessToken, RefreshToken } = result;
-
-                const loggedIn = await authService.login({ UID: result.UID, AccessToken, RefreshToken, keyPassword });
+                const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
+                const loggedIn = await authService.login(session);
 
                 /* if the session is locked we might not be considered
                  * fully logged in but we can still persist the session */
                 if (loggedIn || workerLocked(ctx.status)) {
                     logger.info('[Worker::Auth] Persisting session...');
-                    void persistSession(api, result);
+                    void persistSession(api, session);
                 }
 
                 /* if we get a locked session error on user/access we should not
@@ -233,22 +215,24 @@ export const createAuthService = ({
             }
         }),
 
-        login: withContext(async (ctx, options) => {
-            const { UID, keyPassword, AccessToken, RefreshToken } = options;
-            await browserSessionStorage.setItems({ UID, keyPassword, AccessToken, RefreshToken });
+        login: withContext(async (ctx, session) => {
+            await setInMemorySession(session);
+
+            const { UID, keyPassword, AccessToken, RefreshToken, sessionLockToken } = session;
 
             api.configure({ UID, AccessToken, RefreshToken });
             api.unsubscribe();
 
-            authService.authStore.setUID(UID);
-            authService.authStore.setPassword(keyPassword);
+            authStore.setUID(UID);
+            authStore.setPassword(keyPassword);
+            authStore.setLockToken(sessionLockToken);
 
             try {
-                const cachedLockStatus = authCtx.lockStatus;
-                const lock = cachedLockStatus !== null ? { status: cachedLockStatus } : await checkSessionLock();
+                const cachedLockStatus = authStore.getLockStatus();
+                const lock = cachedLockStatus !== undefined ? { status: cachedLockStatus } : await checkSessionLock();
 
                 store.dispatch(syncLock(lock));
-                authService.setLockStatus(lock.status);
+                authStore.setLockStatus(lock.status);
 
                 if (lock.status === SessionLockStatus.LOCKED) {
                     logger.info(`[Worker::Auth] Detected locked session`);
@@ -256,7 +240,7 @@ export const createAuthService = ({
                     return false;
                 }
 
-                if (lock.status === SessionLockStatus.REGISTERED && !selectSessionLockToken(store.getState())) {
+                if (lock.status === SessionLockStatus.REGISTERED && !session.sessionLockToken) {
                     logger.info(`[Worker::Auth] Detected a registered session lock`);
                     authService.lock();
                     return false;
@@ -320,12 +304,14 @@ export const createAuthService = ({
             ctx.setStatus(WorkerStatus.UNAUTHORIZED);
 
             store.dispatch(stateDestroy());
-            void browserSessionStorage.removeItems(['AccessToken', 'RefreshToken', 'UID', 'keyPassword']);
+            void browserSessionStorage.removeItems(SESSION_KEYS);
             void browserLocalStorage.clear();
 
-            authService.setLockStatus(null);
-            authService.authStore.setUID(undefined);
-            authService.authStore.setPassword(undefined);
+            authStore.setUID(undefined);
+            authStore.setPassword(undefined);
+            authStore.setLockStatus(undefined);
+            authStore.setLockToken(undefined);
+            authStore.setLockLastExtendTime(undefined);
 
             api.unsubscribe();
             api.configure();
@@ -343,15 +329,13 @@ export const createAuthService = ({
 
             if (persistedSession) {
                 try {
-                    /**
-                     * Resuming session will most likely happen on browser
+                    /* Resuming session will most likely happen on browser
                      * start-up before the API has a chance to be configured
                      * through the auth service -> make sure to configure it
                      * with the persisted session authentication parameters
                      * in order for the underlying API calls to succeed and
                      * handle potential token refreshing (ie: persisted access token
-                     * expired)
-                     */
+                     * expired) */
                     api.configure({
                         UID: persistedSession.UID,
                         AccessToken: persistedSession.AccessToken,
@@ -395,16 +379,16 @@ export const createAuthService = ({
         });
 
     /* only extend the session lock if a lock is registered and we've
-     * reached at least 80% of the lock TTL since the last extension */
+     * reached at least 50% of the lock TTL since the last extension */
     const handleActivityProbe = withContext<MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE>>(({ status }) => {
-        const shouldExtend = workerReady(status) && authCtx.lockStatus === SessionLockStatus.REGISTERED;
+        const shouldExtend = workerReady(status) && authStore.getLockStatus() === SessionLockStatus.REGISTERED;
         const ttl = selectSessionLockTTL(store.getState());
 
         if (shouldExtend && ttl !== undefined) {
             const now = getEpoch();
-            const diff = now - authCtx.extendTime;
-            if (diff > ttl * 0.8) {
-                authCtx.extendTime = now;
+            const diff = now - (authStore.getLockLastExtendTime() ?? 0);
+            if (diff > ttl * 0.5) {
+                authStore.setLockLastExtendTime(now);
                 store.dispatch(extendLock());
             }
         }
