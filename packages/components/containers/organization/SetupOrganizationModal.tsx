@@ -18,6 +18,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -43,6 +44,7 @@ import {
     useMembers,
     useNotifications,
     useOrganization,
+    useSubscription,
     useUser,
 } from '../../hooks';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
@@ -70,6 +72,8 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
     const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
+    const [subscription] = useSubscription();
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
@@ -89,6 +93,22 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
     const storageValue =
         model.storage === -1 ? clamp(minStorage * GIGA, storageRange.min, storageRange.max) : model.storage;
+
+    const finalizeOrganizationCreation = async () => {
+        await call();
+        createNotification({ text: c('Success').t`Organization activated` });
+        onClose?.();
+        goToSettings('/users-addresses');
+    };
+
+    const setStepStorage = async () => {
+        if (!hasVpnB2BPlan) {
+            setStep(STEPS.STORAGE);
+        } else {
+            // If user setting up organization for VPN B2B plan then the storage step must be skipped.
+            await finalizeOrganizationCreation();
+        }
+    };
 
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
@@ -125,7 +145,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     if (organization.RequiresKey) {
                         setStep(STEPS.KEYS);
                     } else {
-                        setStep(STEPS.STORAGE);
+                        await setStepStorage();
                     }
                 },
             };
@@ -222,7 +242,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                         );
                     }
 
-                    setStep(STEPS.STORAGE);
+                    await setStepStorage();
                 },
             };
         }
@@ -253,10 +273,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     }
                     await api(updateQuota(selfMemberID, storageValue));
 
-                    await call();
-                    createNotification({ text: c('Success').t`Organization activated` });
-                    onClose?.();
-                    goToSettings('/users-addresses');
+                    await finalizeOrganizationCreation();
                 },
             };
         }
