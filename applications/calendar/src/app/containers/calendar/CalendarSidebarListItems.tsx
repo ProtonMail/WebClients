@@ -4,26 +4,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    Checkbox,
-    DropdownMenuLink,
     FeatureCode,
-    Icon,
     Prompt,
-    SettingsLink,
-    SidebarListItem,
-    SidebarListItemContent,
-    SidebarListItemLabel,
-    SimpleDropdown,
-    Tooltip,
     useApi,
     useFeature,
     useModalState,
     useNotifications,
     useSettingsLink,
-    useUser,
 } from '@proton/components';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
@@ -32,27 +20,16 @@ import ShareLinkModal from '@proton/components/containers/calendar/shareURL/Shar
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { useLoading } from '@proton/hooks';
+import { LoadingByKey } from '@proton/hooks/useLoading';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
-import {
-    getIsCalendarDisabled,
-    getIsCalendarWritable,
-    getIsHolidaysCalendar,
-    getIsOwnedCalendar,
-    getIsPersonalCalendar,
-    getIsSubscribedCalendar,
-} from '@proton/shared/lib/calendar/calendar';
+import { getIsHolidaysCalendar, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_SETTINGS_SECTION_ID,
-    COLORS,
     MAX_CALENDAR_MEMBERS,
     MAX_LINKS_PER_CALENDAR,
 } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
-import {
-    getCalendarHasSubscriptionParameters,
-    getCalendarIsNotSyncedInfo,
-} from '@proton/shared/lib/calendar/subscribe/helpers';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Address, Nullable } from '@proton/shared/lib/interfaces';
@@ -68,9 +45,9 @@ import {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import CalendarSidebarListItem from './CalendarSidebarListItem';
 import CalendarSidebarShareCalendarModal from './CalendarSidebarShareCalendarModal';
 
 type ModalsMap = {
@@ -95,7 +72,7 @@ type ModalsMap = {
 export interface CalendarSidebarListItemsProps {
     calendars: VisualCalendar[] | SubscribedCalendar[];
     allCalendars: VisualCalendar[];
-    loadingVisibility?: boolean;
+    loadingVisibility?: LoadingByKey;
     loadingSubscriptionParameters?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
     addresses: Address[];
@@ -104,12 +81,11 @@ export interface CalendarSidebarListItemsProps {
 const CalendarSidebarListItems = ({
     calendars,
     allCalendars,
-    loadingVisibility = false,
+    loadingVisibility = {},
     loadingSubscriptionParameters = false,
     onChangeVisibility = noop,
     addresses,
 }: CalendarSidebarListItemsProps) => {
-    const [user] = useUser();
     const api = useApi();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
@@ -171,134 +147,6 @@ const CalendarSidebarListItems = ({
         return null;
     }
 
-    const result = calendars.map((calendar) => {
-        const { ID, Name, Display, Color } = calendar;
-        const isPersonalCalendar = getIsPersonalCalendar(calendar);
-        const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
-        const isCalendarDisabled = getIsCalendarDisabled(calendar);
-        const isOwnedCalendar = getIsOwnedCalendar(calendar);
-        const isCalendarWritable = getIsCalendarWritable(calendar);
-
-        const left = (
-            <Checkbox
-                className="flex-item-noshrink"
-                color={COLORS.WHITE}
-                backgroundColor={Display ? Color : 'transparent'}
-                borderColor={Color}
-                checked={!!Display}
-                disabled={loadingVisibility}
-                id={`calendar-${ID}`}
-                name={`calendar-${Name}`}
-                onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
-            />
-        );
-
-        const isNotSyncedInfo = getCalendarHasSubscriptionParameters(calendar)
-            ? getCalendarIsNotSyncedInfo(calendar)
-            : undefined;
-
-        return (
-            <SidebarListItem key={ID}>
-                <SidebarListItemLabel
-                    htmlFor={`calendar-${ID}`}
-                    className="calendar-sidebar-list-item opacity-on-hover-container py-1 pr-2"
-                >
-                    <SidebarListItemContent
-                        data-testid="calendar-sidebar:user-calendars"
-                        left={left}
-                        className={clsx(['flex w100 gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
-                    >
-                        <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
-                            <div className="flex flex-nowrap mr-2">
-                                <div className="text-ellipsis" title={Name}>
-                                    {Name}
-                                </div>
-                                {!isCalendarDisabled && isNotSyncedInfo && (
-                                    <div className="flex-item-noshrink max-w100 text-ellipsis">
-                                        &nbsp;
-                                        <Tooltip title={isNotSyncedInfo.text}>
-                                            <span>({isNotSyncedInfo.label})</span>
-                                        </Tooltip>
-                                    </div>
-                                )}
-                                {isCalendarDisabled && (
-                                    <div className="flex-item-noshrink">
-                                        &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
-                                    </div>
-                                )}
-                            </div>
-
-                            <Tooltip title={c('Sidebar calendar edit tooltip').t`Manage calendar`}>
-                                <SimpleDropdown
-                                    as={Button}
-                                    icon
-                                    hasCaret={false}
-                                    shape="ghost"
-                                    size="small"
-                                    className="calendar-sidebar-list-item-action opacity-on-hover flex-item-noshrink no-mobile"
-                                    loading={isSubscribedCalendar && loadingSubscriptionParameters}
-                                    content={<Icon name="three-dots-horizontal" />}
-                                >
-                                    <DropdownMenu>
-                                        <DropdownMenuButton
-                                            className="text-left"
-                                            onClick={() => handleOpenEditModal(calendar)}
-                                        >
-                                            {c('Action').t`Edit`}
-                                        </DropdownMenuButton>
-                                        {isPersonalCalendar &&
-                                            isOwnedCalendar &&
-                                            user.hasPaidMail &&
-                                            (isCalendarSharingEnabled ? (
-                                                <DropdownMenuButton
-                                                    className="text-left"
-                                                    onClick={() => {
-                                                        setShareModalCalendar(calendar);
-                                                        setIsShareModalOpen(true);
-                                                    }}
-                                                >
-                                                    {c('Action').t`Share`}
-                                                </DropdownMenuButton>
-                                            ) : (
-                                                <DropdownMenuLink
-                                                    as={SettingsLink}
-                                                    path={getCalendarSubpagePath(calendar.ID, {
-                                                        sectionId: CALENDAR_SETTINGS_SECTION_ID.SHARE,
-                                                    })}
-                                                >
-                                                    {c('Action').t`Share`}
-                                                </DropdownMenuLink>
-                                            ))}
-                                        {isCalendarWritable && !isCalendarDisabled && (
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={() => {
-                                                    if (user.hasNonDelinquentScope) {
-                                                        setImportModalCalendar(calendar);
-                                                        setIsImportModalOpen(true);
-                                                    }
-                                                }}
-                                            >
-                                                {c('Action').t`Import events`}
-                                            </DropdownMenuButton>
-                                        )}
-                                        <hr className="my-2" />
-                                        <DropdownMenuLink
-                                            as={SettingsLink}
-                                            app={APPS.PROTONCALENDAR}
-                                            path={getCalendarSubpagePath(calendar.ID)}
-                                        >
-                                            {c('Calendar sidebar dropdown item').t`More options`}
-                                        </DropdownMenuLink>
-                                    </DropdownMenu>
-                                </SimpleDropdown>
-                            </Tooltip>
-                        </div>
-                    </SidebarListItemContent>
-                </SidebarListItemLabel>
-            </SidebarListItem>
-        );
-    });
     const notifyLinkCopied = () => {
         createNotification({ type: 'info', text: c('Info').t`Link copied to clipboard` });
     };
@@ -389,6 +237,30 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
 
     return (
         <>
+            {calendars.map((calendar) => {
+                return (
+                    <CalendarSidebarListItem
+                        key={calendar.ID}
+                        calendar={calendar}
+                        onChangeVisibility={onChangeVisibility}
+                        loadingVisibility={loadingVisibility[calendar.ID]}
+                        loadingSubscriptionParameters={loadingSubscriptionParameters}
+                        isCalendarSharingEnabled={isCalendarSharingEnabled}
+                        onOpenEditCalendarModal={(calendar) => {
+                            handleOpenEditModal(calendar);
+                        }}
+                        onOpenImportCalendarModal={(calendar) => {
+                            setImportModalCalendar(calendar);
+                            setIsImportModalOpen(true);
+                        }}
+                        onOpenShareCalendarModal={(calendar) => {
+                            setShareModalCalendar(calendar);
+                            setIsShareModalOpen(true);
+                        }}
+                    />
+                );
+            })}
+
             {limitModal.props && (
                 <Prompt
                     open={limitModal.isOpen}
@@ -521,7 +393,6 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     calendars={allCalendars}
                 />
             )}
-            {result}
         </>
     );
 };
