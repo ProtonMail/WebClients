@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 import { useGetUser } from '@proton/components/hooks';
-import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
+import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, appInView?: DRAWER_APPS) => {
+const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolean, appInView?: DRAWER_APPS) => {
     const getUser = useGetUser();
 
     /**
@@ -15,26 +15,31 @@ const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, appInView?: DRAWER_AP
      */
     const hasSetAppInView = useRef(false);
 
-    const setDrawerLocalStorageKey = (item: DrawerLocalStorageValue) => {
-        setItem(LOCALSTORAGE_DRAWER_KEY, JSON.stringify(item));
+    const setDrawerLocalStorageKey = (item: DrawerLocalStorageValue, userID: string) => {
+        setItem(getLocalStorageUserDrawerKey(userID), JSON.stringify(item));
     };
 
     const handleSetLocalStorage = async () => {
-        if (appInView) {
-            const url = iframeSrcMap[appInView];
-            const user = await getUser();
-            hasSetAppInView.current = true;
-            const item = { app: appInView, url, userID: user.ID } as DrawerLocalStorageValue;
-            setDrawerLocalStorageKey(item);
-        } else if (hasSetAppInView.current) {
-            // When closing the drawer, clean up the value from the drawer local storage item
-            removeItem(LOCALSTORAGE_DRAWER_KEY);
+        // Only perform these actions when drawer can be shown
+        // Otherwise it can trigger /users request when not authenticated
+        if (drawerIsReady) {
+            const { ID } = await getUser();
+
+            if (appInView) {
+                const url = iframeSrcMap[appInView];
+                hasSetAppInView.current = true;
+                const item = { app: appInView, url } as DrawerLocalStorageValue;
+                setDrawerLocalStorageKey(item, ID);
+            } else if (hasSetAppInView.current) {
+                // When closing the drawer, clean up the value from the drawer local storage item
+                removeItem(getLocalStorageUserDrawerKey(ID));
+            }
         }
     };
 
     useEffect(() => {
         void handleSetLocalStorage();
-    }, [appInView]);
+    }, [appInView, drawerIsReady]);
 
     return { setDrawerLocalStorageKey };
 };
