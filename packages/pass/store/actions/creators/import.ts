@@ -37,6 +37,7 @@ export const importItemsSuccess = createAction(
                 type: 'info',
                 receiver,
                 text: c('Info').ngettext(
+                    // translator: ${payload.total} is a number
                     msgid`Imported ${payload.total} item`,
                     `Imported ${payload.total} items`,
                     payload.total
