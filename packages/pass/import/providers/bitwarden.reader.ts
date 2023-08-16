@@ -51,6 +51,7 @@ const extractExtraFields = (item: BitwardenLoginItem) => {
                     };
                 case BitwardenCustomFieldType.HIDDEN:
                     return {
+                        // translator: label for a field that is hidden. Singular only.
                         fieldName: name || c('Label').t`Hidden`,
                         type: 'hidden',
                         data: { content: value ?? '' },
