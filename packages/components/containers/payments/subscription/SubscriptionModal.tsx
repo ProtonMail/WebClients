@@ -670,7 +670,10 @@ const SubscriptionModal = ({
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div className="subscriptionCheckout-container sticky-top">
+                            <div
+                                className="subscriptionCheckout-container sticky-top"
+                                data-testid="subscription-checkout"
+                            >
                                 <SubscriptionCheckout
                                     submit={
                                         <Button
@@ -760,7 +763,10 @@ const SubscriptionModal = ({
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div className="subscriptionCheckout-container sticky-top">
+                            <div
+                                className="subscriptionCheckout-container sticky-top"
+                                data-testid="subscription-checkout"
+                            >
                                 <SubscriptionCheckout
                                     submit={
                                         <SubscriptionSubmitButton
@@ -891,7 +897,10 @@ const SubscriptionModal = ({
                             </div>
                         </div>
                         <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div className="subscriptionCheckout-container sticky-top">
+                            <div
+                                className="subscriptionCheckout-container sticky-top"
+                                data-testid="subscription-checkout"
+                            >
                                 <SubscriptionCheckout
                                     submit={
                                         <SubscriptionSubmitButton

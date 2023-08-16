@@ -345,6 +345,7 @@ const SubscriptionPanel = ({
                 shape="outline"
                 size="small"
                 className="px-2"
+                data-testid="get-more-btn"
                 onClick={() =>
                     openSubscriptionModal({
                         step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
