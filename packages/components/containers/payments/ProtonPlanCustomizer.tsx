@@ -223,7 +223,7 @@ const AccountSizeCustomiser = ({
                     htmlFor={addon.Name}
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
-                    {c('Info').t`Number of users`}
+                    {c('Info').t`Users`}
                     {showTooltip && (
                         <Info
                             buttonClass="ml-2"
