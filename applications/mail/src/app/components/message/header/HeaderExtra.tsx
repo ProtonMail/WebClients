@@ -1,6 +1,5 @@
 import { useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { isFrozenExpiration, isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
+import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -12,8 +11,6 @@ import ExtraDarkStyle from '../extras/ExtraDarkStyle';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraEvents from '../extras/ExtraEvents';
-import ExtraExpirationSelfDestruction from '../extras/ExtraExpirationSelfDestruction';
-import ExtraExpirationSentExpirationAutoDelete from '../extras/ExtraExpirationSentExpirationAutoDelete';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraPinKey from '../extras/ExtraPinKey';
 import ExtraReadReceipt from '../extras/ExtraReadReceipt';
@@ -21,6 +18,7 @@ import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
+import ExtraExpiration from '../extras/expiration/ExtraExpiration';
 
 interface Props {
     message: MessageState;
@@ -45,13 +43,6 @@ const HeaderExtra = ({
     const { canScheduleSend } = useScheduleSendFeature();
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
-
-    // TODO: Remove when API has fixed expiresIn and freeze flag issue
-    const isFrozen = isFrozenExpiration(message.data) || !!message.draftFlags?.expiresIn;
-    const hasExpiration = !!(message.data?.ExpirationTime || message.draftFlags?.expiresIn);
-    const hasSpamOrTrash =
-        message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.TRASH) ||
-        message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SPAM);
 
     if (!getMessageHasData(message)) {
         return null;
@@ -83,13 +74,7 @@ const HeaderExtra = ({
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
-            {hasExpiration && isFrozen ? <ExtraExpirationSentExpirationAutoDelete message={message} /> : null}
-            {hasExpiration && !isFrozen && !hasSpamOrTrash ? (
-                <ExtraExpirationSelfDestruction message={message} />
-            ) : null}
-            {hasExpiration && !isFrozen && hasSpamOrTrash ? (
-                <ExtraExpirationSentExpirationAutoDelete message={message} autoDelete />
-            ) : null}
+            <ExtraExpiration message={message} />
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraReadReceipt message={message.data} />
