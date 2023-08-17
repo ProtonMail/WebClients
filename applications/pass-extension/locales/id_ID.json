@@ -47,6 +47,9 @@
       "Close": [
         "Tutup"
       ],
+      "Close advanced options": [
+        "Tutup opsi tingkat lanjut"
+      ],
       "Close navigation": [
         "Tutup navigasi"
       ],
@@ -98,6 +101,9 @@
       "Delete all": [
         "Hapus semua"
       ],
+      "Delete password": [
+        "Hapus kata sandi"
+      ],
       "Delete permanently": [
         "Hapus secara permanen"
       ],
@@ -140,6 +146,9 @@
       "Generated password": [
         "Kata sandi dibuat"
       ],
+      "Get mobile apps": [
+        "Dapatkan aplikasi ponsel"
+      ],
       "Help us improve": [
         "Bantu kami untuk berkembang"
       ],
@@ -161,6 +170,12 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Lock extension": [
+        "Kunci ekstensi"
+      ],
+      "Manually sync your data": [
+        "Sinrkonisasi data Anda secara manual"
+      ],
       "More options": [
         "Opsi lainnya"
       ],
@@ -181,6 +196,9 @@
       ],
       "Pass for Android": [
         "Pass untuk Android"
+      ],
+      "Pass for iOS": [
+        "Pass untuk iOS"
       ],
       "Proceed": [
         "Lanjut"
@@ -272,6 +290,12 @@
       ]
     },
     "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Opsi alias tidak dapat diuraikan"
+      ],
       "Authentication error": [
         "Kesalahan autentikasi"
       ],
@@ -305,6 +329,9 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Gagal menghapus brankas \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv rows": [
+        "Terdeteksi ${ errors.length } baris CSV yang rusak"
+      ],
       "Editing item failed": [
         "Item gagal disunting"
       ],
@@ -322,6 +349,9 @@
       ],
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Pengimporan gagal untuk brankas \"${ vaultData.name }\": ${ description }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -349,6 +379,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Mohon berikan ${ PASS_APP_NAME } izin ekstensi yang diperlukan untuk dapat melanjutkan"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Silakan sematkan ekstensi atau pilih \"Lanjutkan tanpa menyemat\"."
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -380,11 +413,17 @@
       "The file you are trying to import is empty": [
         "Berkas yang ingin Anda impor kosong"
       ],
+      "Too many failed attempts. Please sign in again.": [
+        "Terlalu banyak percobaan gagal. Mohon masuk lagi."
+      ],
       "Trashing item failed": [
         "Item gagal dibuang"
       ],
       "Unable to boot": [
         "Tidak dapat melangsungkan proses booting"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Tidak dapat membuat kode OTP untuk item ini"
       ],
       "Unable to sync": [
         "Tidak dapat menyinkronkan"
@@ -451,6 +490,9 @@
       ]
     },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Tingkatkan ke paket berbayar untuk membuat beberapa brankas."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
@@ -607,6 +649,9 @@
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Sepertinya Anda sudah masuk ke ${ PASS_APP_NAME }. Jika Anda mencoba masuk dengan akun lain, mohon keluar dari ekstensi terlebih dahulu."
+      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
       ],
@@ -690,6 +735,9 @@
       ],
       "Save login": [
         "Simpan login"
+      ],
+      "Select the destination vault for each imported vault.": [
+        "Pilih brankas tujuan untuk setiap brankas yang diimpor."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -1029,6 +1077,9 @@
       "Old-New": [
         "Lama–Baru"
       ],
+      "Older than last month": [
+        "Lebih dari satu bulan"
+      ],
       "Oldest to newest": [
         "Terlama ke terbaru"
       ],
@@ -1207,6 +1258,9 @@
       "Add 2FA secret": [
         "Tambahkan secret 2FA"
       ],
+      "Add hidden text": [
+        "Tambahkan teks tersembunyi"
+      ],
       "Add note": [
         "Tambahkan catatan"
       ],
@@ -1231,6 +1285,9 @@
       "MM/YYYY": [
         "BB/TTTT"
       ],
+      "Move items to another vault (optional)": [
+        "Pindahkan item ke brankas lain (opsional)"
+      ],
       "Pick a vault": [
         "Pilih brankas"
       ],
@@ -1239,6 +1296,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Ketik ulang \"${ vaultName }\" untuk mengonfirmasi penghapusan"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Cari ${ pluralItemType } di ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Cari ${ pluralItemType } di seluruh brankas"
       ],
       "Search in ${ vault.content.name }": [
         "Cari di ${ vault.content.name }"
@@ -1251,6 +1314,9 @@
       ],
       "Select a suffix": [
         "Pilih akhiran"
+      ],
+      "Unknown origin": [
+        "Asal tidak diketahui"
       ],
       "Untitled": [
         "Tanpa judul"
@@ -1286,6 +1352,12 @@
       ],
       "Enjoy your free trial": [
         "Nikmati masa uji coba gratis Anda"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Menikmati ${ PASS_APP_NAME }?"
+      ],
+      "Enter your Pin": [
+        "Masukkan PIN Anda"
       ],
       "Get the mobile apps": [
         "Dapatkan aplikasi ponsel"
@@ -1468,6 +1540,9 @@
       "Vault name is required": [
         "Nama brankas dibutuhkan"
       ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Anda tidak dapat membuat lebih banyak brankas lebih dari batas langganan Anda."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Anda memiliki perubahan yang belum disimpan. Apakah Anda yakin untuk membatalkan perubahan ini?"
       ],
@@ -1482,6 +1557,9 @@
       ],
       "Your session was locked due to inactivity": [
         "Sesi Anda dikunci karena tidak ada rekam jejak aktivitas"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Langganan Anda tidak memperbolehkan Anda untuk membuat beberapa brankas. Semua item akan diimpor ke brankas utama Anda. Untuk mengimpor beberapa brankas, tingkatkan langganan Anda."
       ]
     }
   }

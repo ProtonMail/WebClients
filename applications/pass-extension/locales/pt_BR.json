@@ -1311,6 +1311,12 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Digite novamente \"${ vaultName }\" para confirmar a exclusão"
       ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Procurar ${ pluralItemType } em ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Procurar ${ pluralItemType } em todos os cofres"
+      ],
       "Search in ${ vault.content.name }": [
         "Procurar em ${ vault.content.name }"
       ],
