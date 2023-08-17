@@ -49,8 +49,6 @@ import { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
 import validateOrganizationCapacity, { OrganizationCapacityError } from './validateOrganizationCapacity';
 
-import './CreateUserAccountsModal.scss';
-
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
 enum STEPS {
@@ -340,7 +338,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }:
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-align-items-center flex-justify-end create-user-accounts-additional-content mt-4 px-3">
+                    <div className="flex flex-align-items-center flex-justify-end mt-4 px-3">
                         <Input
                             className="max-w270p"
                             placeholder={c('Placeholder').t`Search`}
@@ -351,7 +349,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }:
                     </div>
                 ),
                 content: filteredOptions.length ? (
-                    <Table className="table-auto simple-table--is-hoverable create-user-accounts-table">
+                    <Table className="table-auto simple-table--is-hoverable">
                         <TableHeader
                             cells={[
                                 <Checkbox
