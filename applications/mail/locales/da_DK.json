@@ -4636,14 +4636,6 @@
         "${ numberOfUTMTrackers } link renset",
         "${ numberOfUTMTrackers } links renset"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgruppe",
-        "${ numGroups } kontaktgrupper"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } besked i samtale",
         "${ NumMessages } beskeder i samtale"
@@ -5125,9 +5117,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importer fra"

@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "Δεν έχετε παράσχει ένα αρχείο."
       ],
+      "You have reached the contacts limit for your account": [
+        "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων. Δεν ήταν δυνατή η εισαγωγή ορισμένων ημερολογίων."
       ],
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } σύνδεσμος καθαρίστηκε",
         "${ numberOfUTMTrackers } σύνδεσμοι καθαρίστηκαν"
       ],
-      "${ numContact } contact": [
-        "${ numContact } επαφή",
-        "${ numContact } επαφές"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } ομάδα επαφών",
-        "${ numGroups } ομάδες επαφών"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } μήνυμα στη συνομιλία",
         "${ NumMessages } μηνύματα στη συνομιλία"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Έχει εντοπιστεί ένα άγνωστο δημόσιο κλειδί για αυτόν τον παραλήπτη."
@@ -5152,9 +5151,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Εισαγωγή από"

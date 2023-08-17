@@ -3172,18 +3172,6 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktů",
-        "${ numContact } kontaktů"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } skupina kontaktů",
-        "${ numGroups } skupiny kontaktů",
-        "${ numGroups } skupin kontaktů",
-        "${ numGroups } skupin kontaktů"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pozastaven",
         "${ pausedCount } pozastaveny",
@@ -3618,9 +3606,6 @@
         "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importovat z"
@@ -5750,7 +5735,7 @@
     },
     "Spotlight": {
       "Easily access and customize your app experience.": [
-        "Snadný přístup k přizpůsobení aplikace vašim potřebám."
+        "Snadný přístup k aplikacím a jejich přizpůsobení."
       ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"

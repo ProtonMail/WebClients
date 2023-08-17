@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
       ],
+      "You have reached the contacts limit for your account": [
+        "U heeft de limiet van contacten bereikt voor dit account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
@@ -4136,7 +4139,7 @@
         "Blokkeer ongewenste afzenders"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
-        "Hulde voor het meer veiliger, handiger en relevanter maken van uw e-mails! We hebben uw opslag gratis verhoogd naar 1 GB."
+        "Hulde voor het veiliger, handiger en relevanter maken van uw e-mails! We hebben uw opslag gratis verhoogd naar 1 GB."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Wijzig ${ strongText } in uw adres ${ BRAND_NAME }"
@@ -4166,7 +4169,7 @@
         "Ontdek privacyfuncties"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
-        "Verdubbel uw gratis opslag naar 1 GB wanneer u het volgende hebt voltooid:"
+        "Verdubbel uw gratis opslag naar 1 GB wanneer u het volgende voltooid:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken."
@@ -4184,7 +4187,7 @@
         "Download de app"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } u privacy beschermd en e-mail vereenvoudigd."
+        "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } uw privacy beschermt en e-mail vereenvoudigt."
       ],
       "Learn more": [
         "Meer informatie"
@@ -4193,7 +4196,7 @@
         "Misschien later"
       ],
       "Nice! You've updated all services in this category.": [
-        "Mooi! U hebt alle diensten in deze categorie bijgewerkt."
+        "Mooi! U heeft alle diensten in deze categorie bijgewerkt."
       ],
       "Open checklist": [
         "Checklist openen"
@@ -4208,7 +4211,7 @@
         "privacy-functies"
       ],
       "Protect and simplify your email": [
-        "Bescherm en vereenvoudig uw e-mails"
+        "Bescherm en vereenvoudig uw e-mail"
       ],
       "Protection from trackers": [
         "Bescherming van trackers"
@@ -4232,7 +4235,7 @@
         "We stoppen adverteerders en gegevens verzamelaars om een profiel van u te maken."
       ],
       "You've unlocked 1 GB": [
-        "U hebt 1 GB ontgrendeld"
+        "U heeft 1 GB ontgrendeld"
       ]
     },
     "Gmail forwarding": {
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } link opgeruimd",
         "${ numberOfUTMTrackers } links opgeruimd"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contactpersoon",
-        "${ numContact } contactpersonen"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } contactgroep",
-        "${ numGroups } contactgroepen"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } bericht in het gesprek",
         "${ NumMessages } berichten in het gesprek"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Er is een onbekende openbare sleutel gevonden voor deze ontvanger."
@@ -5152,9 +5151,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importeren van"
@@ -5803,13 +5799,13 @@
         "Onze excuses. Dit zou een vergissing van onze kant kunnen zijn. Kunt u bevestigen dat u deze e-mail als een legitiem e-mailadres wilt markeren?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "We hebben de volgende adverteerders en organisaties geblokkeerd zodat ze niet kunnen zien dat u deze e-mail hebt geopend, welk apparaat u gebruikt, en waar u bent."
+        "We hebben de volgende adverteerders en organisaties geblokkeerd zodat ze niet kunnen zien dat u deze e-mail hebt geopend, welk apparaat u gebruikt en waar u bent."
       ],
       "We could not verify the sender's trusted keys.": [
         "We kunnen de vertrouwde sleutels van de afzender niet controleren."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "We hebben traceer informatie verwijderd van de volgende links om u te helpen beschermen van adverteerders en anderen die proberen om uw online activiteit te volgen."
+        "We hebben traceerinformatie verwijderd van de volgende links om u te helpen beschermen van adverteerders en anderen die proberen om uw online activiteit te volgen."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."

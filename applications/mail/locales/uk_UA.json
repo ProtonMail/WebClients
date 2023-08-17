@@ -4199,6 +4199,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Змініть ${ strongText } на адресу ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Змінено обліковий запис"
+      ],
       "Checklist complete": [
         "Контрольний список завершено"
       ],
@@ -4207,6 +4210,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Вітаємо, ви виконали всі кроки!"
+      ],
+      "Congratulation, you finished!": [
+        "Вітаємо, ви закінчили!"
       ],
       "Continue setting up your email": [
         "Продовжити налаштування електронної пошти"
@@ -4270,6 +4276,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Виконайте вхід у програмі для мобільного пристрою, щоб завершити цей крок"
+      ],
+      "Storage unlocked": [
+        "Сховище розблоковано"
       ],
       "Update your logins": [
         "Оновіть свої логіни"
@@ -4760,18 +4769,6 @@
         "Очищено ${ numberOfUTMTrackers } посилань",
         "Очищено ${ numberOfUTMTrackers } посилань"
       ],
-      "${ numContact } contact": [
-        "${ numContact } контакт",
-        "${ numContact } контакти",
-        "${ numContact } контактів",
-        "${ numContact } контактів"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група контактів",
-        "${ numGroups } групи контактів",
-        "${ numGroups } груп контактів",
-        "${ numGroups } груп контактів"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } повідомлення у розмові",
         "${ NumMessages } повідомлення у розмові",
@@ -5141,6 +5138,9 @@
       "Do you want to re-sign the contact details?": [
         "Ви хочете повторно підписати контактні дані?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Не знайшли те, що шукали? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
@@ -5321,9 +5321,6 @@
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Імпортувати з"
       ],
@@ -5338,6 +5335,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Включити Спам/Смітник до результатів пошуку."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -8303,6 +8303,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Змінити налаштування"
+      ],
       "Easily access and customize your app experience.": [
         "Легко отримуйте доступ до програми й налаштовуйте роботу."
       ],
@@ -8323,6 +8326,9 @@
       ],
       "Search just got smarter and faster": [
         "Пошук став розумнішим і швидшим"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Листи зі «Спаму» та «Смітника» тепер автоматично вилучаються з «Уся пошта». ${ settingsLink }"
       ],
       "Try it today.": [
         "Спробуйте сьогодні."

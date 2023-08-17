@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "Du angav inte en fil."
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nått kontaktgränsen för ditt konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nått det maximala antalet kalendrar. Några kalendrar kunde inte importeras."
       ],
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } länk rensad",
         "${ numberOfUTMTrackers } länkar rensade"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgrupp",
-        "${ numGroups } kontaktgrupper"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } meddelande i konversationen",
         "${ NumMessages } meddelanden i konversationen"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "En okänd offentlig nyckel har upptäckts för denna mottagare."
@@ -5152,9 +5151,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importera ${ contactsFragment } och ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importera från"

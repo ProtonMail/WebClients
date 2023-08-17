@@ -3321,9 +3321,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% yettuḥbes i kra n wakud"
-      ],
       "Active": [
         "Urmid"
       ],
@@ -3421,10 +3418,6 @@
       "${ number } server": [
         "Aqeddac ${ number }",
         "Iqeddacen ${ number }"
-      ],
-      "${ numContact } contact": [
-        "${ numContact } n unermis",
-        "${ numContact } inermisen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
@@ -3887,9 +3880,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
         "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Kter si"

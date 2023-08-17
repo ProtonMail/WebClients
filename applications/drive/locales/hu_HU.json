@@ -321,6 +321,9 @@
       "Grid layout": [
         "Rács elrendezés"
       ],
+      "Help": [
+        "Súgó"
+      ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
       ],
@@ -554,6 +557,9 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Settings": [
+        "Beállítások"
       ],
       "Share file": [
         "Fájl megosztása"
@@ -3081,14 +3087,6 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
-      "${ numContact } contact": [
-        "${ numContact } névjegy",
-        "${ numContact } névjegy"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } névjegy csoport",
-        "${ numGroups } névjegy csoport"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
         "${ pausedCount } felfüggesztve"
@@ -3184,6 +3182,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
@@ -3485,9 +3486,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importálás innen"
@@ -4222,6 +4220,9 @@
       "Bad": [
         "Rossz"
       ],
+      "Beta Access": [
+        "Béta hozzáférés"
+      ],
       "Browser": [
         "Böngésző"
       ],
@@ -4555,6 +4556,9 @@
       ],
       "Text": [
         "Szöveg"
+      ],
+      "Theme": [
+        "Téma"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Ez véglegesen törli a zárolt tárhelyen található összes fájlját."
@@ -5528,6 +5532,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
+      ],
+      "Quick settings": [
+        "Gyors beállítások"
       ]
     },
     "Storage": {
