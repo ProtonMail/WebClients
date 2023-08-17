@@ -665,6 +665,7 @@ const SubscriptionModal = ({
                                     planIDs={model.planIDs}
                                     organization={organization}
                                     onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
+                                    currentSubscription={subscription}
                                     className="pb-7 mb-8"
                                 />
                             </div>
@@ -838,6 +839,7 @@ const SubscriptionModal = ({
                                 }, 300)}
                                 forceHideDescriptions
                                 showUsersTooltip={false}
+                                currentSubscription={subscription}
                                 className="mb-8"
                             />
                             <div className="mx-auto max-w37e subscriptionCheckout-options">
