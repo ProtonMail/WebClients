@@ -3,6 +3,7 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
     MailSettingsModel,
+    MembersModel,
     OrganizationModel,
     PaymentMethodsModel,
     SubscriptionModel,
@@ -22,6 +23,7 @@ const EVENT_MODELS = [
     SubscriptionModel,
     PaymentMethodsModel,
     OrganizationModel,
+    MembersModel,
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel];
