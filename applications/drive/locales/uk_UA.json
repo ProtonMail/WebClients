@@ -3172,18 +3172,6 @@
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
       ],
-      "${ numContact } contact": [
-        "${ numContact } контакт",
-        "${ numContact } контакти",
-        "${ numContact } контактів",
-        "${ numContact } контактів"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група контактів",
-        "${ numGroups } групи контактів",
-        "${ numGroups } груп контактів",
-        "${ numGroups } груп контактів"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } призупинено",
         "${ pausedCount } призупинено",
@@ -3618,9 +3606,6 @@
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Імпортувати з"

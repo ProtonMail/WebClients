@@ -2195,6 +2195,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
+      "You have reached the contacts limit for your account": [
+        "U heeft de limiet van contacten bereikt voor dit account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
@@ -3096,14 +3099,6 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contactpersoon",
-        "${ numContact } contactpersonen"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } contactgroep",
-        "${ numGroups } contactgroepen"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } onderbroken",
         "${ pausedCount } onderbroken"
@@ -3178,6 +3173,10 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Probeer ook te zoeken in de Prullenbak."
@@ -3506,9 +3505,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importeren van"
