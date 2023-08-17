@@ -1,3 +1,4 @@
+export { default as GatewaysSection } from './gateways/GatewaysSection';
 export { default as OpenVPNConfigurationSection } from './OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as ProtonVPNClientsSection } from './ProtonVPNClientsSection/ProtonVPNClientsSection';
 export { default as OpenVPNCredentialsSection } from './OpenVPNCredentialsSection';

@@ -16,6 +16,7 @@ import {
     EmailSubscriptionSection,
     ErrorBoundary,
     FreeUserLiveChatModal,
+    GatewaysSection,
     GiftCodeSection,
     InvoicesSection,
     LanguageSection,
@@ -55,6 +56,11 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import {
+    OrganizationTwoFAEnforcementSection,
+    OrganizationTwoFAHeader,
+    OrganizationTwoFARemindersSection,
+} from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
@@ -238,6 +244,7 @@ const MainContainer = () => {
                                         <UsernameSection app={APPS.PROTONVPN_SETTINGS} />
                                         <PasswordsSection />
                                     </>
+                                    <LanguageSection locales={locales} />
                                     <TwoFactorSection />
                                     <OpenVPNCredentialsSection />
                                     <AccountRecoverySection />
@@ -273,6 +280,24 @@ const MainContainer = () => {
                                             <UsersAndAddressesSection app={app} />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.gateways) && (
+                                <Route path={routes.gateways.to}>
+                                    <PrivateMainSettingsArea config={routes.gateways}>
+                                        <SubscriptionModalProvider app={app}>
+                                            <GatewaysSection organization={organization} />
+                                        </SubscriptionModalProvider>
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.security) && (
+                                <Route path={routes.security.to}>
+                                    <PrivateMainSettingsArea config={routes.security}>
+                                        <OrganizationTwoFAHeader organization={organization} />
+                                        <OrganizationTwoFARemindersSection organization={organization} />
+                                        <OrganizationTwoFAEnforcementSection organization={organization} />
+                                    </PrivateMainSettingsArea>
                                 </Route>
                             )}
                             <Redirect

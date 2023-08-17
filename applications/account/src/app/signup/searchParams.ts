@@ -4,13 +4,16 @@ import {
     APP_NAMES,
     CYCLE,
     DEFAULT_CYCLE,
+    MAX_DOMAIN_PRO_ADDON,
+    MAX_IPS_ADDON,
+    MAX_MEMBER_ADDON,
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan } from '@proton/shared/lib/interfaces';
+import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
 import { addonLimit } from '../single-signup/planCustomizer/PlanCustomizer';
@@ -61,9 +64,11 @@ export const getSignupSearchParams = (
     const minimumCycle = getValidCycle(maybeMinimumCycle);
 
     const maybeUsers = Number(searchParams.get('users'));
-    const users = maybeUsers >= 1 && maybeUsers <= 5000 ? maybeUsers : undefined;
+    const users = maybeUsers >= 1 && maybeUsers <= MAX_MEMBER_ADDON ? maybeUsers : undefined;
     const maybeDomains = Number(searchParams.get('domains'));
-    const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
+    const domains = maybeDomains >= 1 && maybeDomains <= MAX_DOMAIN_PRO_ADDON ? maybeDomains : undefined;
+    const maybeIps = Number(searchParams.get('ips'));
+    const ips = maybeIps >= 1 && maybeIps <= MAX_IPS_ADDON ? maybeIps : undefined;
 
     const { product } = getProductParams(pathname, searchParams);
 
@@ -90,6 +95,7 @@ export const getSignupSearchParams = (
         product,
         users,
         domains,
+        ips,
         referrer,
         invite,
         type,
@@ -142,6 +148,16 @@ export const getPlanIDsFromParams = (plans: Plan[], signupParameters: SignupPara
         const amount = signupParameters.domains - plan.MaxDomains;
         if (domainsAddon && amount > 0) {
             planIDs[domainsAddon.Name] = amount;
+        }
+    }
+
+    if (signupParameters.ips !== undefined) {
+        const ipsAddon = plans.find(
+            ({ Name }) => Name.startsWith('1ip') && supportedAddons[Name as keyof typeof supportedAddons]
+        );
+        const amount = signupParameters.ips - (getPlanMaxIPs(plan) + (ipsAddon?.Quantity || 0));
+        if (ipsAddon && amount > 0) {
+            planIDs[ipsAddon.Name] = amount;
         }
     }
 

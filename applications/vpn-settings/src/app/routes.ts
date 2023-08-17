@@ -3,13 +3,15 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasVpnB2BPlan, hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, getIsVpnB2BPlan, hasVPN, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 export const getRoutes = (user: UserModel, subscription?: Subscription, organization?: Organization) => {
     // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
     const hasVpnPlan = hasVPN(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+    const hasVpnBusinessPlan = hasVpnBusiness(subscription);
+    const vpnB2BOrgMember = organization && getIsVpnB2BPlan(organization.PlanName);
 
     const isAdmin = user.isAdmin && !user.isSubUser;
     const canHaveOrganization = !!organization && isAdmin;
@@ -82,6 +84,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             text: c('Title').t`General`,
             to: '/general',
             icon: 'cog-wheel',
+            available: !canHaveOrganization,
             subsections: [
                 {
                     text: c('Title').t`Language`,
@@ -99,8 +102,11 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             icon: 'user-circle',
             subsections: [
                 {
-                    text: '',
                     id: 'account',
+                },
+                {
+                    id: 'language',
+                    available: canHaveOrganization,
                 },
                 {
                     text: c('Title').t`Two-factor authentication`,
@@ -161,6 +167,17 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 },
             ],
         },
+        gateways: <SectionConfig>{
+            text: c('Title').t`Gateways`,
+            to: '/gateways',
+            icon: 'servers',
+            available: hasVpnB2BPlan || vpnB2BOrgMember,
+            subsections: [
+                {
+                    id: 'servers',
+                },
+            ],
+        },
         setup: <SectionConfig>{
             text: multiUserTitle,
             to: '/multi-user-support',
@@ -170,6 +187,29 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: multiUserTitle,
                     id: 'name',
+                },
+            ],
+        },
+        security: <SectionConfig>{
+            text: c('Title').t`Authentication security`,
+            to: '/authentication-security',
+            icon: 'shield',
+            available:
+                canHaveOrganization &&
+                hasVpnBusinessPlan &&
+                (hasOrganizationKey || hasOrganization) &&
+                organization.MaxMembers > 1,
+            subsections: [
+                {
+                    id: 'two-factor-authentication-users',
+                },
+                {
+                    text: c('Title').t`Two-factor authentication reminders`,
+                    id: 'two-factor-authentication-reminders',
+                },
+                {
+                    text: c('Title').t`Two-factor authentication enforcement`,
+                    id: 'two-factor-authentication-enforcement',
                 },
             ],
         },
