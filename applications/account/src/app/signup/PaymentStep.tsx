@@ -165,6 +165,7 @@ const PaymentStep = ({
                         plansMap={plansMap}
                         planIDs={subscriptionData.planIDs}
                         onChangePlanIDs={onChangePlanIDs}
+                        className="pb-7 mb-8"
                     />
                     <div className="text-sm">
                         {hasGuarantee && (
