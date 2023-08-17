@@ -1,6 +1,11 @@
 import type { Reducer } from 'redux';
 
-import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings } from '@proton/pass/types/worker/settings';
+import type {
+    AutoFillSettings,
+    AutoSaveSettings,
+    AutoSuggestSettings,
+    DisallowedAutoDomainsSettings,
+} from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object';
 
 import { SessionLockStatus } from '../../types';
@@ -19,6 +24,7 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     loadDomainImages: boolean;
+    disallowedDomains: DisallowedAutoDomainsSettings;
     /* explicitly created, not including import */
     createdItemsCount: number;
 };
@@ -36,6 +42,12 @@ const INITIAL_STATE: SettingsState = {
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
+    disallowedDomains: {
+        noAutoFill: ['accounts.google.com', 'account.proton.me'],
+        noAutoSave: [],
+        noAutoSuggestion: ['google.com'],
+        noAuto2FA: ['gitlab.protontech.ch'],
+    },
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {

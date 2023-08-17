@@ -1,6 +1,8 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
+import { DisallowedAutoCriteria } from '@proton/pass/types/worker/settings';
+import { isDisallowedUrl } from '@proton/pass/utils/url/is-disallowed-url';
 
 import { isSubmissionPromptable } from '../../../shared/form';
 import { withContext } from '../../context/context';
@@ -9,7 +11,9 @@ import { NotificationAction } from '../../types';
 export const createAutosaveService = () => {
     const promptAutoSave: (submission: FormEntryPrompt) => boolean = withContext(
         ({ getSettings, service: { iframe } }, submission) => {
-            const shouldPrompt = getSettings().autosave.prompt;
+            const shouldPrompt =
+                getSettings().autosave.prompt &&
+                !isDisallowedUrl(location.hostname, DisallowedAutoCriteria.AUTOSAVE, getSettings().disallowedDomains);
 
             if (shouldPrompt) {
                 iframe.attachNotification();
