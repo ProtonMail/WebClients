@@ -11,7 +11,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { type ImportFormContext, SUPPORTED_IMPORT_FILE_TYPES } from '../../hooks/useImportForm';
-import { PasswordField } from '../fields';
+import { PasswordField } from '../fields/PasswordField';
 import { ImportProviderItem } from './ImportProviderItem';
 
 import './ImportForm.scss';
