@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import {
@@ -17,6 +17,7 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -44,15 +45,8 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
 
     useOpenDrawerOnLoad();
-    const { appInView } = useDrawer();
+    const { appInView, showDrawerSidebar } = useDrawer();
     const location = useLocation();
-
-    const drawerSpotlightSeenRef = useRef(false);
-    const markSpotlightAsSeen = () => {
-        if (drawerSpotlightSeenRef) {
-            drawerSpotlightSeenRef.current = true;
-        }
-    };
 
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner
@@ -64,28 +58,26 @@ const DriveWindow = ({ children }: Props) => {
 
     const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
 
+    const drawerSettingsButton = (
+        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
+    );
+
     const logo = <MainLogo to="/" />;
-    const header = <DriveHeaderPrivate isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
+    const header = (
+        <DriveHeaderPrivate
+            isHeaderExpanded={expanded}
+            toggleHeaderExpanded={toggleExpanded}
+            settingsButton={drawerSettingsButton}
+        />
+    );
 
     const permissions = getDriveDrawerPermissions({ user });
     const drawerSidebarButtons = [
         permissions.contacts && (
-            <ContactDrawerAppButton
-                onClick={markSpotlightAsSeen}
-                aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)}
-            />
+            <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />
         ),
-        permissions.calendar && (
-            <CalendarDrawerAppButton
-                onClick={markSpotlightAsSeen}
-                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
-            />
-        ),
+        permissions.calendar && <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
     ].filter(isTruthy);
-
-    const drawerSettingsButton = (
-        <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
-    );
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
 
@@ -98,6 +90,8 @@ const DriveWindow = ({ children }: Props) => {
         />
     );
 
+    const canShowDrawer = drawerSidebarButtons.length > 0;
+
     return (
         <PrivateAppContainer
             top={top}
@@ -106,13 +100,9 @@ const DriveWindow = ({ children }: Props) => {
             drawerApp={<DrawerApp customAppSettings={<DriveQuickSettings />} />}
         >
             <PrivateMainArea
-                drawerSidebar={
-                    <DrawerSidebar
-                        buttons={drawerSidebarButtons}
-                        spotlightSeenRef={drawerSpotlightSeenRef}
-                        settingsButton={drawerSettingsButton}
-                    />
-                }
+                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+                mainBordered={canShowDrawer && !!showDrawerSidebar}
             >
                 <div className="flex flex-column flex-nowrap w100">
                     <AppErrorBoundary>{children}</AppErrorBoundary>
