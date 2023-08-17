@@ -194,6 +194,9 @@ const getMailPlusUpsell = ({
                       action: () =>
                           openSubscriptionModal({
                               step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                              metrics: {
+                                  source: 'upsells',
+                              },
                           }),
                   },
               ]
@@ -204,6 +207,9 @@ const getMailPlusUpsell = ({
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         ...rest,
     });
@@ -220,6 +226,9 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUps
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         ...rest,
     });
@@ -236,6 +245,9 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
                 plan: PLANS.PASS_PLUS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         ...rest,
     });
@@ -274,6 +286,9 @@ const getBundleUpsell = ({
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         ...rest,
     });
@@ -315,6 +330,9 @@ const getFamilyUpsell = ({
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
     });
 };
@@ -342,6 +360,9 @@ const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPla
                 plan: PLANS.BUNDLE_PRO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         ...rest,
     });
@@ -361,6 +382,9 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
                 plan: PLANS.VPN_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
                 disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
             }),
         defaultCtaOverrides: {
             shape: 'solid',

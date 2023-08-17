@@ -113,6 +113,9 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         onSuccess: handleSuccess,
                         onClose: handleClose,
                         fullscreen,
+                        metrics: {
+                            source: 'lite-vpn-bf',
+                        },
                     });
                 }}
             />
