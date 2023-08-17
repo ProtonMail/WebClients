@@ -1094,6 +1094,9 @@
       "Old-New": [
         "Antiguo-Reciente"
       ],
+      "Older than last month": [
+        "Anteriores al último mes"
+      ],
       "Oldest to newest": [
         "De más antiguos a más recientes"
       ],
@@ -1310,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Reescribe \"${ vaultName }\" para confirmar la eliminación."
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Buscar ${ pluralItemType } en ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Buscar ${ pluralItemType } en todas las bóvedas"
       ],
       "Search in ${ vault.content.name }": [
         "Buscar en ${ vault.content.name }"

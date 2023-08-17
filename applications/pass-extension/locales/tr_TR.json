@@ -1094,6 +1094,9 @@
       "Old-New": [
         "Eskiden yeniye"
       ],
+      "Older than last month": [
+        "Bir aydan eski"
+      ],
       "Oldest to newest": [
         "Eskiden yeniye"
       ],
@@ -1310,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "${ vault.content.name } içinde ${ pluralItemType } ara"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Tüm kasalarda ${ pluralItemType } ara"
       ],
       "Search in ${ vault.content.name }": [
         "${ vault.content.name } içinde ara"
