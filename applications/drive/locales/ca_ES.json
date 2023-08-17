@@ -3093,14 +3093,6 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacte",
-        "${ numContact } contactes"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grup de contactes",
-        "${ numGroups } grups de contactes"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pausa",
         "${ pausedCount } en pausa"
@@ -3503,9 +3495,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
         "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar des de"

@@ -634,7 +634,7 @@
         "Alternar aplicação de contactos"
       ],
       "Toggle settings": [
-        "Alternar as configurações"
+        "Alternar definições"
       ],
       "Trust": [
         "Confiar"
@@ -3096,14 +3096,6 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -3506,9 +3498,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar de"
@@ -3961,7 +3950,7 @@
         "Lixo"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Experimente novas funcionalidades, actualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
+        "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
       ],
       "Try searching by file name, date, or type.": [
         "Tente pesquisar por nome de ficheiro, data ou tipo."
