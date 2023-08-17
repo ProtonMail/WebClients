@@ -1,4 +1,5 @@
-import { LoaderPage, StandardPrivateApp } from '@proton/components';
+import { LoaderPage, StandardPrivateApp, useDrawer } from '@proton/components';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -35,6 +36,7 @@ const PRELOAD_MODELS = [UserModel, AddressesModel];
 
 const PrivateAppInner = ({ onLogout, locales }: Props) => {
     const { loadUserSettings } = useUserSettings();
+    const { setShowDrawerSidebar } = useDrawer();
 
     return (
         <StandardPrivateApp
@@ -46,6 +48,7 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
             onInit={loadUserSettings}
             noModals
             app={getAppContainer}
+            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
         />
     );
 };
