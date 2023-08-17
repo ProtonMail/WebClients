@@ -1,6 +1,6 @@
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
-import { selectCanLockSession, selectPassPlan } from '@proton/pass/store';
+import { selectHasRegisteredLock, selectPassPlan } from '@proton/pass/store';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import {
     type Maybe,
@@ -77,7 +77,7 @@ const ONBOARDING_RULES: OnboardingRule[] = [
              * message was not previously acknowledged AND user has
              * installed at least one day ago */
             const now = getEpoch();
-            const hasLock = selectCanLockSession(store.getState());
+            const hasLock = selectHasRegisteredLock(store.getState());
             const shouldPrompt = !previous && now - installedOn > UNIX_DAY;
 
             return !hasLock && shouldPrompt;

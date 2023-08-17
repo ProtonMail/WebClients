@@ -1,3 +1,5 @@
+import type { MaybeNull } from '../../types';
+
 type UnwrapPromise<T> = T extends any[] ? { [K in keyof T]: UnwrapPromise<T[K]> } : T extends Promise<infer U> ? U : T;
 
 /**
@@ -20,4 +22,15 @@ export const awaiter = <T>(): Awaiter<T> => {
     if (resolver) promise.resolve = resolver;
 
     return promise;
+};
+
+export const asyncLock = <P extends any[], R extends Promise<any>, F extends (...args: P) => R>(fn: F): F => {
+    const ctx: { pending: MaybeNull<Promise<R>> } = { pending: null };
+
+    return (async (...args: P) => {
+        if (ctx.pending !== null) return ctx.pending;
+        ctx.pending = fn(...args);
+
+        return ctx.pending.finally(() => (ctx.pending = null));
+    }) as F;
 };

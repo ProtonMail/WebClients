@@ -8,7 +8,7 @@ import { Checkbox } from '@proton/components/components';
 import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store';
 import { settingEditIntent } from '@proton/pass/store/actions';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
-import type { ProxiedSettings, SettingsState } from '@proton/pass/store/reducers/settings';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -28,7 +28,7 @@ type SettingsSection = {
 };
 
 const getSettings = (
-    settings: SettingsState,
+    settings: ProxiedSettings,
     onSettingsUpdate: (setting: RecursivePartial<ProxiedSettings>) => void
 ): SettingsSection[] => [
     {

@@ -2,7 +2,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import devToolsEnhancer from 'remote-redux-devtools';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import { updateInMemorySession } from '@proton/pass/auth';
+import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
@@ -48,9 +49,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
     getEventInterval: () =>
-        // WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
-        // FIXME: this is a temporary fix to avoid service worker being killed
-        ACTIVE_POLLING_TIMEOUT,
+        WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
 
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
@@ -72,16 +71,19 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
 
     onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
-    onSessionLocked: withContext((ctx) => ctx.service.auth.lock()),
+    onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
 
-    onSessionUnlocked: withContext(async (ctx) => {
-        ctx.service.auth.unlock();
-        await ctx.init({ force: true });
+    onSessionUnlocked: withContext(async ({ init, service: { auth } }, sessionLockToken) => {
+        await auth.unlock(sessionLockToken);
+        await init({ force: true });
     }),
 
-    onSessionLockChange: withContext(({ service: { auth } }, registered) =>
-        auth.setLockStatus(registered ? SessionLockStatus.REGISTERED : null)
-    ),
+    onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
+        auth.authStore.setLockToken(sessionLockToken);
+        auth.authStore.setLockTTL(sessionLockTTL);
+        auth.authStore.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
+        await updateInMemorySession({ sessionLockToken });
+    }),
 
     /* Update the extension's badge count on every
      * item state change */

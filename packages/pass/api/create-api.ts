@@ -75,11 +75,9 @@ const createApi = ({ config, auth, onSessionRefresh }: ApiCreateOptions): Api =>
             .then((response) => {
                 const serverTime = getDateHeader(response.headers);
                 if (!serverTime) {
-                    /**
-                     * The HTTP Date header is mandatory, so this should never occur.
-                     * We need the server time for proper time sync:
-                     * falling back to the local time can result in e.g. unverifiable signatures
-                     */
+                    /* The HTTP Date header is mandatory, so this should never
+                     * occur. We need the server time for proper time sync: falling
+                     * back to the local time can result in e.g. unverifiable signatures  */
                     throw new Error('Could not fetch server time');
                 }
 
