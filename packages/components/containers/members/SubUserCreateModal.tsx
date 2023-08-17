@@ -127,12 +127,8 @@ const SubUserCreateModal = ({
         return { Local, Domain };
     };
 
-    const checkAddress = async () => {
-        await api(checkMemberAddressAvailability(getNormalizedAddress()));
-    };
-
     const save = async () => {
-        await checkAddress();
+        await api(checkMemberAddressAvailability(getNormalizedAddress()));
 
         const userKeys = await getUserKeys();
 
