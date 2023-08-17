@@ -274,16 +274,6 @@ export const getDefaultSytemFolders = (
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
-        labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-        icon: 'envelopes',
-        text: c('Link').t`All mail`,
-        shortcutText: '[G] [M]',
-        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-        visible: false,
-        order: 13,
-        display: SYSTEM_FOLDER_SECTION.MORE,
-    },
-    {
         /** Added for mapping with API, we dont display outbox */
         labelID: MAILBOX_LABEL_IDS.OUTBOX,
         icon: 'arrow-right',
@@ -298,7 +288,7 @@ export const getDefaultSytemFolders = (
         icon: 'envelopes',
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
-        ID: 'almostallmail',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
         visible: !!showAlmostAllMail,
         order: 13,
         display: SYSTEM_FOLDER_SECTION.MORE,
