@@ -4985,9 +4985,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% întrerupt"
-      ],
       "Active": [
         "Activă"
       ],
@@ -5130,16 +5127,6 @@
         "Un fișier încărcat nu este o cheie privată validă. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
-      ],
-      "${ numContact } contact": [
-        "Un contact",
-        "${ numContact } contacte",
-        "${ numContact } de contacte"
-      ],
-      "${ numGroups } contact group": [
-        "Un grup de contacte",
-        "${ numGroups } grupuri de contacte",
-        "${ numGroups } de grupuri de contacte"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja de atacatori și amenințările de securitate."
@@ -5877,9 +5864,6 @@
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importare din"

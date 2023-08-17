@@ -3493,18 +3493,6 @@
         "Знойдзены ${ groupCounts } груп",
         "Знойдзены ${ groupCounts } групы"
       ],
-      "${ numContact } contact": [
-        "${ numContact } кантакт",
-        "${ numContact } кантакты",
-        "${ numContact } кантактаў",
-        "${ numContact } кантакты"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група кантактаў",
-        "${ numGroups } групы кантактаў",
-        "${ numGroups } груп кантактаў",
-        "${ numGroups } групы кантактаў"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
         "Знойдзены ${ providerFoldersNumLocalized } папкі",
@@ -3759,9 +3747,6 @@
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпартаванне ${ contactsFragment } і ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Імпартаваць з"

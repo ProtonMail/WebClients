@@ -4348,14 +4348,6 @@
         "${ messagesNotAuthorizedToMove } संदेश को स्थानांतरित नहीं किया जा सका।",
         "${ messagesNotAuthorizedToMove } संदेशों को स्थानांतरित नहीं किया जा सका।"
       ],
-      "${ numContact } contact": [
-        "${ numContact } संपर्क",
-        "${ numContact } संपर्क"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } संपर्क समूह",
-        "${ numGroups } संपर्क समूह"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } संदेश बातचीत में",
         "${ NumMessages } संदेश बातचीत में"
@@ -4797,9 +4789,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } और ${ contactsGroupsFragment } आयात करें"
       ],
       "Import from": [
         "यहां से आयात करें"

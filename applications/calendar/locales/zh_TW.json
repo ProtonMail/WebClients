@@ -3361,12 +3361,6 @@
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } 位聯絡人"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 個聯絡人群組"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
@@ -3582,9 +3576,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "匯入自"

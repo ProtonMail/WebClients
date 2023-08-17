@@ -441,6 +441,9 @@
       "Got it": [
         "Rendben!"
       ],
+      "Help": [
+        "Súgó"
+      ],
       "Hide": [
         "Elrejtés"
       ],
@@ -903,6 +906,9 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Settings": [
+        "Beállítások"
       ],
       "Share via link": [
         "Megosztás hivatkozással"
@@ -1635,6 +1641,9 @@
       ],
       "azureish white": [
         "azúrkék fehér"
+      ],
+      "black": [
+        "fekete"
       ],
       "blanched almond": [
         "blansírozott mandula"
@@ -4591,14 +4600,6 @@
         "${ numberOfUTMTrackers } hivatkozás megtisztítva",
         "${ numberOfUTMTrackers } hivatkozás megtisztítva"
       ],
-      "${ numContact } contact": [
-        "${ numContact } névjegy",
-        "${ numContact } névjegy"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } névjegy csoport",
-        "${ numGroups } névjegy csoport"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } üzenet a beszélgetésben",
         "${ NumMessages } üzenet a beszélgetésben"
@@ -4752,6 +4753,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Biztosan áthelyezi az összes üzenetet ebben az Archívumba?"
@@ -5067,9 +5071,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importálás innen"
@@ -6210,6 +6211,9 @@
       "BCC": [
         "Titkos másolat"
       ],
+      "Beta Access": [
+        "Béta hozzáférés"
+      ],
       "Blind Carbon Copy": [
         "Titkos másolat"
       ],
@@ -6396,6 +6400,9 @@
       "Last month only": [
         "Csak az utolsó hónap"
       ],
+      "Layout": [
+        "Elrendezés"
+      ],
       "Location": [
         "Hely"
       ],
@@ -6548,6 +6555,9 @@
       ],
       "the email was sent ${ label }": [
         "az e-mail ${ label }"
+      ],
+      "Theme": [
+        "Téma"
       ],
       "Then": [
         "Akkor"
@@ -7935,6 +7945,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Beállítások módosítása"
+      ],
       "Email tracking protection": [
         "E-mail követési védelem"
       ],
@@ -7943,6 +7956,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Hívjon meg barátokat a ${ BRAND_NAME }ba"
+      ],
+      "Quick settings": [
+        "Gyors beállítások"
       ],
       "Schedule send": [
         "Küldés ütemezése"

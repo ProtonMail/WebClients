@@ -2514,6 +2514,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Du kan inte skicka vCard-filer med fler än 10 kontakter"
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nått kontaktgränsen för ditt konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nått det maximala antalet kalendrar. Några kalendrar kunde inte importeras."
       ],
@@ -3405,14 +3408,6 @@
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgrupp",
-        "${ numGroups } kontaktgrupper"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapp hittades",
         "${ providerFoldersNumLocalized } mappar hittades"
@@ -3480,6 +3475,10 @@
       "All (${ totalFoldersCount } label)": [
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "En inbjudan kommer att skickas till tillagda deltagare."
@@ -3641,9 +3640,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importera ${ contactsFragment } och ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importera från"

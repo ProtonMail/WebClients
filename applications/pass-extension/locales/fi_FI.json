@@ -1094,6 +1094,9 @@
       "Old-New": [
         "Vanhimmasta uusimpaan"
       ],
+      "Older than last month": [
+        "Yli kuukausi sitten"
+      ],
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
@@ -1310,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Vahvista poisto kirjoittamalla \"${ vaultName }\""
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Etsi ${ pluralItemType } holvista ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Etsi ${ pluralItemType } kaikista holveista"
       ],
       "Search in ${ vault.content.name }": [
         "Etsi holvista ${ vault.content.name }"

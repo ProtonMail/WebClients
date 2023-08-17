@@ -531,7 +531,7 @@
         "Alternar aplicação de contactos"
       ],
       "Toggle settings": [
-        "Alternar as configurações"
+        "Alternar definições"
       ],
       "Trust": [
         "Confiar"
@@ -3405,14 +3405,6 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
         "${ providerFoldersNumLocalized } pastas encontradas"
@@ -3642,9 +3634,6 @@
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importar de"
       ],
@@ -3745,10 +3734,10 @@
         "Não é um URL válido"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
-        "As ocorrências previamente actualizadas pelo organizador serão mantidas, mas algumas das suas respostas serão perdidas."
+        "As ocorrências previamente atualizadas pelo organizador serão mantidas, mas algumas das suas respostas serão perdidas."
       ],
       "Occurrences previously updated by the organizer will be kept.": [
-        "As ocorrências previamente actualizadas pelo organizador serão mantidas."
+        "As ocorrências previamente atualizadas pelo organizador serão mantidas."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que \"desconfie\" dessas chaves."
@@ -3788,7 +3777,7 @@
         "Aguarde enquanto pesquisamos contactos que contenham dados encriptados com a chave inativa."
       ],
       "Previous modifications on this series will be lost.": [
-        "Modificações anteriores na série serão perdidas."
+        "As modificações anteriores desta série serão perdidas."
       ],
       "Primary": [
         "Principal"
@@ -3821,7 +3810,7 @@
         "A configuração do PGP permite o envio de e-mails encriptados de ponta a ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
-        "Algumas das suas respostas a ocorrências previamente actualizadas pelo organizador serão perdidas."
+        "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "A subscrição termina: Reative até ${ byDate } para manter os seus benefícios ${ planName }. ${ reactivateLink }"
@@ -3848,19 +3837,19 @@
         "Não foi possível notificar o organizador de que alterou a sua resposta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "O organizador actualizou alguns dos eventos desta série. Alterar o calendário ainda não é suportado para este tipo de eventos recorrentes."
+        "O organizador atualizou alguns dos eventos desta série. Alterar o calendário ainda não é suportado para este tipo de eventos recorrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
         "O organizador deste evento será notificado de que recusou o convite. Deseja eliminar este evento?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "O organizador deste evento não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar este evento mesmo assim?"
+        "O organizador deste evento não será notificado de que recusou o convite por não ser possível enviar e-mails a partir do endereço convidado. Ainda assim, gostaria de eliminar este evento?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
         "O organizador desta série de eventos será notificado de que recusou o convite. Deseja eliminar todos os eventos da série?"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "O organizador desta série de eventos não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar todos os eventos na série mesmo assim?"
+        "O organizador desta série de eventos não será notificado de que recusou o convite por não ser possível enviar e-mails do endereço convidado. Ainda assim, deseja eliminar todos os eventos desta série?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -3869,16 +3858,16 @@
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário tem de ativar primeiro o endereço."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Este evento foi actualizado pelo organizador. Deseja alterar a sua resposta só para esta ocorrência da série?"
+        "Este evento foi atualizado pelo organizador. Deseja alterar a sua resposta só para esta ocorrência da série?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Este evento foi actualizado pelo organizador. Deseja eliminar este evento?"
+        "Este evento foi atualizado pelo organizador. Deseja eliminar este evento?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Este evento foi actualizado. O organizador será notificado de que recusou o convite. Deseja eliminar este evento?"
+        "Este evento foi atualizado. O organizador será notificado de que recusou o convite. Deseja eliminar este evento?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Este evento foi actualizado. O organizador não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar este evento mesmo assim?"
+        "Este evento foi atualizado. O organizador não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar este evento mesmo assim?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
@@ -3905,10 +3894,10 @@
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Experimente novas funcionalidades, actualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
+        "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
       ],
       "Update recurring event": [
-        "Actualizar o evento recorrente"
+        "Atualizar o evento recorrente"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
@@ -3932,16 +3921,16 @@
         "Qual o evento que deseja eliminar?"
       ],
       "Which event would you like to update?": [
-        "Qual o evento que deseja actualizar?"
+        "Qual o evento que deseja atualizar?"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "Deseja alterar a sua resposta para todos os eventos na série?"
+        "Gostaria de alterar a sua resposta para todos os eventos desta série?"
       ],
       "Would you like to continue anyway?": [
         "Deseja continuar mesmo assim?"
       ],
       "Would you like to delete all the events in this series?": [
-        "Deseja eliminar todos os eventos na série?"
+        "Gostaria de eliminar todos os eventos desta série?"
       ],
       "Would you like to delete the event anyway?": [
         "Deseja eliminar o evento mesmo assim?"
@@ -3956,10 +3945,10 @@
         "Gostaria de receber um novo código de verificação?"
       ],
       "Would you like to update all events in this series?": [
-        "Deseja actualizar todos os eventos na série?"
+        "Gostaria de atualizar todos os eventos desta série?"
       ],
       "Would you like to update this event?": [
-        "Deseja actualizar este evento?"
+        "Deseja atualizar este evento?"
       ],
       "Yearly": [
         "Anualmente"
@@ -4001,22 +3990,22 @@
         "Perderá todas as alterações por guardar."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Actualizará todos os eventos desta série. Os participantes adicionados e removidos serão notificados."
+        "Atualizará todos os eventos desta série. Os participantes adicionados e removidos serão notificados."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Actualizará todos os eventos desta série. Os participantes receberão um convite."
+        "Atualizará todos os eventos desta série. Os participantes receberão um convite."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Actualizará todos os eventos desta série. Os participantes existentes e adicionados serão notificados."
+        "Atualizará todos os eventos desta série. Os participantes existentes e adicionados serão notificados."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Actualizará todos os eventos desta série. Os participantes existentes e removidos serão notificados."
+        "Atualizará todos os eventos desta série. Os participantes existentes e removidos serão notificados."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Actualizará todos os eventos desta série. Os participantes existentes, adicionados e removidos serão notificados."
+        "Atualizará todos os eventos desta série. Os participantes existentes, adicionados e removidos serão notificados."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Actualizará todos os eventos desta série. Os participantes removidos serão notificados."
+        "Atualizará todos os eventos desta série. Os participantes removidos serão notificados."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
@@ -6313,7 +6302,7 @@
         "Selecione a forma de enviar esta notificação"
       ],
       "Select when this event will stop happening": [
-        "Selecione quando é que este evento pára de acontecer"
+        "Selecione quando é que este evento para de acontecer"
       ],
       "Select when you want this notification to be sent": [
         "Selecione quando é que a notificação deve ser enviada"
@@ -6352,10 +6341,10 @@
         "Desbloquear grupos de contactos"
       ],
       "Update event": [
-        "Actualizar o evento"
+        "Atualizar o evento"
       ],
       "Update recurring event": [
-        "Actualizar o evento recorrente"
+        "Atualizar o evento recorrente"
       ],
       "Warning": [
         "Aviso"
@@ -6364,10 +6353,10 @@
         "Aviso: suspeita de sítio web falso"
       ],
       "We've locked some calendars to protect your data": [
-        "Bloqueámos alguns calendários para proteger seus dados."
+        "Bloqueámos alguns calendários para proteger os seus dados."
       ],
       "We've locked your calendars to protect your data": [
-        "Bloqueámos o seus calendários para proteger seus dados"
+        "Bloqueámos os seus calendários para proteger os seus dados"
       ],
       "What would you like to import?": [
         "O que gostaria de importar?"

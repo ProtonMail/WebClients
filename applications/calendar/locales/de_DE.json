@@ -530,6 +530,9 @@
       "Toggle Contact app": [
         "Kontakt-App umschalten"
       ],
+      "Toggle settings": [
+        "Einstellungen umschalten"
+      ],
       "Trust": [
         "Vertrauen"
       ],
@@ -3402,14 +3405,6 @@
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
       ],
-      "${ numContact } contact": [
-        "${ numContact } Kontakt",
-        "${ numContact } Kontakte"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } Kontaktgruppe",
-        "${ numGroups } Kontaktgruppen"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } Ordner gefunden",
         "${ providerFoldersNumLocalized } Ordner gefunden"
@@ -3638,9 +3633,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -5677,6 +5669,9 @@
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
         "Füge die Feiertage deines Landes zu deinem Kalender hinzu."
+      ],
+      "Easily access and customize your app experience.": [
+        "Einfacher Zugriff und individuelle Anpassung der App-Erfahrung."
       ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."

@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } inschakelen"
-      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -3498,6 +3498,9 @@
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
+      "You have reached the contacts limit for your account": [
+        "U heeft de limiet van contacten bereikt voor dit account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
@@ -5014,9 +5017,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% gepauzeerd"
-      ],
       "Active": [
         "Actief"
       ],
@@ -5152,14 +5152,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
         "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contactpersoon",
-        "${ numContact } contactpersonen"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } contactgroep",
-        "${ numGroups } contactgroepen"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
@@ -5341,6 +5333,10 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Toegewezen"
@@ -5884,9 +5880,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importeren van"
@@ -6726,6 +6719,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade naar ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, of ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
@@ -12939,6 +12935,9 @@
       ],
       "An approximate location of the IP address": [
         "Een geschatte locatie van het IP-adres"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Enige verdediging toegepast tot verdachte activiteit"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"

@@ -1043,6 +1043,12 @@
         "${ ips } servidor",
         "${ ips } servidors"
       ],
+      "${ price } per dedicated server": [
+        "${ price } per servidor dedicat"
+      ],
+      "${ price } per domain": [
+        "${ price } per domini"
+      ],
       "${ price } per user": [
         "${ price } per usuari"
       ],
@@ -2808,8 +2814,14 @@
       "sign in": [
         "iniciar la sessió"
       ],
+      "Thanks for letting us know": [
+        "Gràcies per fer-nos-ho saber"
+      ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "Ens hem adonat que aquest compte no us pertany. Ho investigarem i actuarem en conseqüència."
+      ],
+      "You can safely close this tab.": [
+        "Podeu tancar aquesta pestanya amb seguretat."
       ]
     },
     "Domain label": {
@@ -3692,6 +3704,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "S'ha produït un error en desactivar el vostre compte."
       ]
     },
     "Error message, recovery": {
@@ -4577,6 +4594,9 @@
       "Label": [
         "Etiqueta"
       ],
+      "Location": [
+        "Ubicació"
+      ],
       "Name": [
         "Nom"
       ],
@@ -4963,9 +4983,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% pausat"
-      ],
       "Active": [
         "Actiu"
       ],
@@ -5101,14 +5118,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } fitxer carregat no és una clau privada vàlida. Verifiqueu-ho i torneu-ho a provar.",
         "${ numberOfNonPrivateKeys } fitxers carregats no són claus privades vàlides. Verifiqueu-ho i torneu-ho a provar."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contacte",
-        "${ numContact } contactes"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grup de contactes",
-        "${ numGroups } grups de contactes"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció del compte alimentat per sistemes d'IA sofisticats i equips d'especialistes que treballen les 24 hores del dia per protegir-vos d'actors maliciosos i amenaces de seguretat."
@@ -5827,9 +5836,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
         "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar des de"
@@ -9719,6 +9725,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu personalitzats"
       ],
+      "AES 256-bit VPN encryption": [
+        "Xifratge VPN AES 256-bit"
+      ],
       "Auto-connect": [
         "Connexió automàtica"
       ],
@@ -9875,6 +9884,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Us donem la benvinguda a ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Us donem la benvinguda a ${ VPN_APP_NAME }"
       ]
@@ -13012,6 +13024,9 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "He trobat un altre servei que m'agrada mes."
+      ],
       "It’s too expensive": [
         "Es massa car."
       ],

@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME } aktivieren"
-      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
@@ -1078,7 +1075,7 @@
         "E2EE-E-Mail deaktivieren"
       ],
       "Disallow unsigned mail": [
-        "Unsig. E-Mails blockieren"
+        "Unsignierte E-Mails blockieren"
       ],
       "Enable": [
         "Aktivieren"
@@ -2766,13 +2763,13 @@
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen"
+        "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
       ],
       "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktivierte \"Erweiterte Protokolle\" und ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
+        "Aktiviere \"Erweiterte Protokolle\" und ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
       ],
       "Enable advanced logs to access these features": [
-        "Aktivierte \"Erweiterte Protokolle\", um auf diese Funktionen zuzugreifen."
+        "Aktiviere \"Erweiterte Protokolle\", um auf diese Funktionen zuzugreifen."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
@@ -5014,9 +5011,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "Import nach ${ percentageValue }% angehalten"
-      ],
       "Active": [
         "Aktiv"
       ],
@@ -5152,14 +5146,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut.",
         "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } Kontakt",
-        "${ numContact } Kontakte"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } Kontaktgruppe",
-        "${ numGroups } Kontaktgruppen"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten betrieben wird, die rund um die Uhr arbeiten, um dich vor böswilligen Akteuren und Sicherheitsbedrohungen zu schützen."
@@ -5884,9 +5870,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -8774,7 +8757,7 @@
         "${ appName }: Registrierung"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
-        "Erstelle ein ${ BRAND_NAME }-Konto, um alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr mit einer zentralen Anmeldung zu nutzen . Hol dir ein kostenloses ${ BRAND_NAME }-Konto"
+        "Erstelle ein ${ BRAND_NAME }-Konto, um alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr mit einer zentralen Anmeldung zu nutzen . Hol dir ein kostenloses ${ BRAND_NAME }-Konto."
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Erstelle ein ${ BRAND_NAME }-Konto | Hol dir deine Privatsphäre zurück"
@@ -10450,7 +10433,7 @@
         "Hol dir ${ appName } für ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
-        "Hol dir ${ appName } bald für ${ browserName }"
+        "Hol dir bald ${ appName } für ${ browserName }"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"

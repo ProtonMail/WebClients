@@ -4706,18 +4706,6 @@
         "${ numberOfUTMTrackers } ссылок очищены",
         "${ numberOfUTMTrackers } ссылки очищены"
       ],
-      "${ numContact } contact": [
-        "${ numContact } контакт",
-        "${ numContact } контакта",
-        "${ numContact } контактов",
-        "${ numContact } контактов"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } группа контактов",
-        "${ numGroups } группы контактов",
-        "${ numGroups } групп контактов",
-        "${ numGroups } групп контактов"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } сообщение в цепочке писем",
         "${ NumMessages } сообщения в цепочке писем",
@@ -5263,9 +5251,6 @@
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Импортировать из"
