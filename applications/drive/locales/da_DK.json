@@ -3096,14 +3096,6 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgruppe",
-        "${ numGroups } kontaktgrupper"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } sat på pause",
         "${ pausedCount } sat på pause"
@@ -3506,9 +3498,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importer fra"

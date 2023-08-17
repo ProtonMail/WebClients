@@ -633,6 +633,9 @@
       "Toggle Contact app": [
         "Kytke Yhteystiedot-sovellus"
       ],
+      "Toggle settings": [
+        "Kytke asetuksia"
+      ],
       "Trust": [
         "Luota"
       ],
@@ -2192,6 +2195,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Voit lähettää kerrallaan enintään 10 yhteystiedon vCard-tiedostot"
       ],
+      "You have reached the contacts limit for your account": [
+        "Tilisi yhteystietojen enimmäismäärä on savutettu"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Olet saavuttanut kalentereiden enimmäismäärän. Joitakin kalentereita ei voitu tuoda."
       ],
@@ -3093,14 +3099,6 @@
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
       ],
-      "${ numContact } contact": [
-        "${ numContact } yhteystieto",
-        "${ numContact } yhteystietoa"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } yhteystietoryhmä",
-        "${ numGroups } yhteystietoryhmää"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pysäytettiin",
         "${ pausedCount } pysäytettiin"
@@ -3175,6 +3173,10 @@
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
       "Also try looking in Trash.": [
         "Etsi myös roskakorista."
@@ -3503,9 +3505,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Tuo ${ contactsFragment } ja ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Tuo lähteestä"

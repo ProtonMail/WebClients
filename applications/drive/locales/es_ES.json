@@ -2195,6 +2195,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "No puedes enviar archivos vCards de más de 10 contactos."
       ],
+      "You have reached the contacts limit for your account": [
+        "Has alcanzado el límite de contactos para tu cuenta."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Has alcanzado el número máximo de calendarios. No se han podido importar algunos calendarios."
       ],
@@ -3096,14 +3099,6 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -3178,6 +3173,10 @@
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Prueba también a mirar en la papelera."
@@ -3506,9 +3505,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar desde"
