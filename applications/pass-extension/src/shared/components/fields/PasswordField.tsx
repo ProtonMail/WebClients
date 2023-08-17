@@ -14,7 +14,7 @@ import type { InputFieldOwnProps } from '@proton/components/components/v2/field/
 
 type PasswordFieldProps = FieldProps & InputFieldOwnProps;
 
-const PasswordField: FC<PasswordFieldProps> = ({ field, form, ...rest }) => {
+export const PasswordField: FC<PasswordFieldProps> = ({ field, form, ...rest }) => {
     const { name } = field;
     const { touched, errors } = form;
     const error = touched[name] && errors[name];
@@ -25,5 +25,3 @@ const PasswordField: FC<PasswordFieldProps> = ({ field, form, ...rest }) => {
         </div>
     );
 };
-
-export default PasswordField;
