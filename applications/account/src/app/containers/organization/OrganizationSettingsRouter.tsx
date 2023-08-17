@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import {
     CatchAllSection,
     DomainsSection,
+    GatewaysSection,
     MultiUserCreationSection,
     OrganizationPasswordSection,
     OrganizationSection,
@@ -12,6 +13,7 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
+    SubscriptionModalProvider,
     UsersAndAddressesSection,
     useOrganization,
 } from '@proton/components';
@@ -39,11 +41,20 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { setup, domains, orgKeys, users, filter, security },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security },
     } = organizationAppRoutes;
 
     return (
         <Switch>
+            {getIsSectionAvailable(gateways) && (
+                <Route path={getSectionPath(path, gateways)}>
+                    <PrivateMainSettingsArea config={gateways}>
+                        <SubscriptionModalProvider app={app}>
+                            <GatewaysSection organization={organization} />
+                        </SubscriptionModalProvider>
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             {getIsSectionAvailable(setup) && (
                 <Route path={getSectionPath(path, setup)}>
                     <PrivateMainSettingsArea config={setup}>
