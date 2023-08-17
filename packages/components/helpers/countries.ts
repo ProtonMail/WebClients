@@ -248,7 +248,44 @@ const countriesByAbbr = COUNTRIES.reduce<{ [key: string]: string }>(
     {}
 );
 
-export const getCountryByAbbr = (abbr: string) => countriesByAbbr[abbr];
+const getCountryByAbbr = (abbr: string) => countriesByAbbr[abbr];
+
+export const getLocalizedCountryByAbbr = (
+    abbr: string,
+    languageOrLanguages: string | readonly string[]
+): string | undefined => {
+    const [language, languages] =
+        languageOrLanguages instanceof Array
+            ? [languageOrLanguages[0], languageOrLanguages]
+            : [languageOrLanguages, [languageOrLanguages]];
+
+    if (!language || /^en([_-].*)?$/.test(language)) {
+        return getCountryByAbbr(abbr);
+    }
+
+    const normalizedLanguages = languages.map((l) => l.replace(/_/g, '-'));
+
+    try {
+        const shortName = new Intl.DisplayNames(normalizedLanguages, { type: 'region', style: 'short' }).of(abbr);
+
+        switch (language.split(/[_-]/)[0]) {
+            case 'jp':
+            case 'zh':
+                return shortName || getCountryByAbbr(abbr);
+        }
+
+        const longName = new Intl.DisplayNames(normalizedLanguages, { type: 'region' }).of(abbr);
+
+        if (shortName && longName && shortName.length < 6 && longName.length < 14) {
+            return longName || getCountryByAbbr(abbr);
+        }
+
+        return shortName || getCountryByAbbr(abbr);
+    } catch (e) {
+        return getCountryByAbbr(abbr);
+    }
+};
+
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
 
 interface CountryItem {
