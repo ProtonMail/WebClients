@@ -2514,6 +2514,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Você não pode enviar arquivos vCards de mais de 10 contatos"
       ],
+      "You have reached the contacts limit for your account": [
+        "Você atingiu o limite de contatos da sua conta"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
       ],
@@ -3405,14 +3408,6 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contato",
-        "${ numContact } contatos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contatos",
-        "${ numGroups } grupos de contatos"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
         "${ providerFoldersNumLocalized } pastas encontradas"
@@ -3480,6 +3475,10 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Um convite será enviado aos participantes adicionados."
@@ -3641,9 +3640,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar de"

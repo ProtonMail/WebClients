@@ -2514,6 +2514,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από 10 επαφές"
       ],
+      "You have reached the contacts limit for your account": [
+        "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό ημερολογίων. Δεν ήταν δυνατή η εισαγωγή ορισμένων ημερολογίων."
       ],
@@ -3405,14 +3408,6 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
-      "${ numContact } contact": [
-        "${ numContact } επαφή",
-        "${ numContact } επαφές"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } ομάδα επαφών",
-        "${ numGroups } ομάδες επαφών"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
         "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
@@ -3480,6 +3475,10 @@
       "All (${ totalFoldersCount } label)": [
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Μια πρόσκληση θα σταλεί στους πρόσθετους συμμετέχοντες."
@@ -3641,9 +3640,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Εισαγωγή από"
