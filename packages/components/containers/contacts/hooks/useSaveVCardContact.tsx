@@ -13,7 +13,7 @@ import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { useApi, useNotifications, useUserKeys } from '../../../hooks';
 
-const { OVERWRITE_CONTACT, THROW_ERROR_IF_CONFLICT } = OVERWRITE;
+const { THROW_ERROR_IF_CONFLICT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
 const { SINGLE_SUCCESS } = API_CODES;
 
@@ -35,7 +35,7 @@ const handleContactRequest = async (
         } = await api<AddContactsApiResponses>(
             addContacts({
                 Contacts,
-                Overwrite: contactID ? OVERWRITE_CONTACT : THROW_ERROR_IF_CONFLICT,
+                Overwrite: THROW_ERROR_IF_CONFLICT,
                 Labels: labels,
             })
         );
