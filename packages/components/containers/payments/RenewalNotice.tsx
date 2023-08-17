@@ -24,9 +24,9 @@ const RenewalNotice = ({ renewCycle, className }: Props) => {
     return (
         <div className={clsx('flex flex-nowrap color-weak', className)}>
             <span className="flex-item-noshrink">
-                <Icon name="info-circle" size={20} />
+                <Icon name="info-circle" size={16} />
             </span>
-            <span className="flex-item-fluid ml-2">{c('Info')
+            <span className="flex-item-fluid ml-2 mt-0.5 text-sm">{c('Info')
                 .jt`Your subscription will renew automatically on ${renewalTime}.`}</span>
         </div>
     );

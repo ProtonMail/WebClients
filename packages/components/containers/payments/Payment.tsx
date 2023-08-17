@@ -56,6 +56,7 @@ export interface Props {
     onBitcoinTokenValidated?: (data: ValidatedBitcoinToken) => Promise<void>;
     onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
     isAuthenticated?: boolean;
+    hideFirstLabel?: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -95,6 +96,7 @@ export const PaymentsNoApi = ({
     api,
     onPaypalCreditClick,
     onAwaitingBitcoinPayment,
+    hideFirstLabel,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -156,7 +158,7 @@ export const PaymentsNoApi = ({
         <>
             <div className={clsx(['payment-container center', noMaxWidth === false && 'max-w37e on-mobile-max-w100 '])}>
                 <div>
-                    {!isSignupPass && (
+                    {!isSignupPass && !hideFirstLabel && (
                         <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
                             {c('Label').t`Payment method`}
                         </h2>
