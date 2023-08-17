@@ -94,6 +94,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                           type: 'login',
                           metadata: {
                               name,
+                              // translator: full sentence is: Autosaved on account.proton.me
                               note: c('Info').t`Autosaved on ${submissionURL}`,
                               itemUuid: uniqueId(),
                           },

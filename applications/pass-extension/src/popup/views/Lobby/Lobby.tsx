@@ -72,6 +72,7 @@ const LobbyContent: VFC = () => {
                                 case WorkerStatus.AUTHORIZED:
                                 case WorkerStatus.AUTHORIZING:
                                 case WorkerStatus.RESUMING:
+                                    // translator: status message displayed when loading
                                     return c('Info').t`Signing you in`;
                                 case WorkerStatus.BOOTING:
                                     return c('Info').t`Decrypting your data`;

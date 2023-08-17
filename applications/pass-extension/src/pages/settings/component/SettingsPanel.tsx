@@ -86,7 +86,7 @@ const getSettings = (
         label: c('Label').t`Display`,
         settings: [
             {
-                label: c('Label').t`Show website thumbnails`,
+                label: c('Label').t`Show website favicons`,
                 description: c('Info')
                     .t`If disabled, ${PASS_APP_NAME} will not display the item favicon via ${BRAND_NAME} anonymised image proxy.`,
                 checked: settings.loadDomainImages,
