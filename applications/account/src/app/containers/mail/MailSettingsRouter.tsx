@@ -5,6 +5,7 @@ import {
     AddressKeysSection,
     AddressVerificationSection,
     AddressesSection,
+    AliasPromotionSection,
     AutoReplySection,
     CatchAllSection,
     DomainsSection,
@@ -67,6 +68,7 @@ const MailSettingsRouter = ({
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea config={identity}>
                     <IdentitySection />
+                    <AliasPromotionSection />
                     <AddressesSection isOnlySelf />
                 </PrivateMainSettingsArea>
             </Route>

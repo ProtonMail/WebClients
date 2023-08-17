@@ -86,6 +86,9 @@ export const getMailAppRoutes = ({
                         id: 'name-signature',
                     },
                     {
+                        id: 'alias-promotion',
+                    },
+                    {
                         text: c('Title').t`My addresses`,
                         id: 'addresses',
                     },
