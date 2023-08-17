@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Ativar ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Atualizar agora"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
@@ -2768,6 +2768,9 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
       ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Ative registros avançados e ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
+      ],
       "Enable advanced logs to access these features": [
         "Ative os registros avançados para acessar esses recursos"
       ],
@@ -3494,6 +3497,9 @@
       ],
       "You have no invoices.": [
         "Você não tem faturas."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Você atingiu o limite de contatos da sua conta"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
@@ -5014,9 +5020,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% pausado"
-      ],
       "Active": [
         "Ativo"
       ],
@@ -5152,14 +5155,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } arquivo enviado não é uma chave privada válida. Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contato",
-        "${ numContact } contatos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contatos",
-        "${ numGroups } grupos de contatos"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
@@ -5341,6 +5336,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Alocado"
@@ -5884,9 +5883,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar de"
@@ -6732,6 +6728,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Atualize para um plano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para ter acesso a ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."

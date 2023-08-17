@@ -1094,6 +1094,9 @@
       "Old-New": [
         "Du plus ancien au plus récent"
       ],
+      "Older than last month": [
+        "Antérieur au mois dernier"
+      ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
       ],
@@ -1310,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Saisissez à nouveau « ${ vaultName } » pour confirmer la suppression."
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Rechercher ${ pluralItemType } dans ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Rechercher ${ pluralItemType } dans tous les coffres-forts"
       ],
       "Search in ${ vault.content.name }": [
         "Recherchez dans ${ vault.content.name }"

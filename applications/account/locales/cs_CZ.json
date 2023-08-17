@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Povolit ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "povolit upozornění"
       ],
@@ -5073,9 +5070,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% pozastaveno"
-      ],
       "Active": [
         "Aktivní"
       ],
@@ -5225,18 +5219,6 @@
         "${ numberOfNonPrivateKeys } nahrané soubory nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktů",
-        "${ numContact } kontaktů"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } skupina kontaktů",
-        "${ numGroups } skupiny kontaktů",
-        "${ numGroups } skupin kontaktů",
-        "${ numGroups } skupin kontaktů"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
@@ -5994,9 +5976,6 @@
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importovat z"
       ],
@@ -6728,6 +6707,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
+      ],
+      "to ${ product } Business": [
+        "do ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."

@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
       ],
+      "You have reached the contacts limit for your account": [
+        "Has alcanzado el límite de contactos para tu cuenta."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Has alcanzado el número máximo de calendarios. No se han podido importar algunos calendarios."
       ],
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } enlace limpio",
         "${ numberOfUTMTrackers } enlaces limpios"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } mensaje en la conversación",
         "${ NumMessages } mensajes en la conversación"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos tus contactos serán importados hasta un límite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Se ha detectado una clave pública desconocida para este destinatario."
@@ -5152,9 +5151,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar desde"

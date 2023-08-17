@@ -4954,9 +4954,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "%${ percentageValue } duraklatıldı"
-      ],
       "Active": [
         "Etkin"
       ],
@@ -5092,14 +5089,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin.",
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } kişi",
-        "${ numContact } kişi"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kişi grubu",
-        "${ numGroups } kişi grubu"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
@@ -5821,9 +5810,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
       ],
       "Import from": [
         "Şuradan içe aktar"

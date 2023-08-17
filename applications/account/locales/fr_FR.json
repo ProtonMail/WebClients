@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Activer ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Changer d'abonnement"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
@@ -3498,6 +3498,9 @@
       "You have no invoices.": [
         "Vous n'avez aucune facture."
       ],
+      "You have reached the contacts limit for your account": [
+        "Vous avez atteint la limite de contacts pour vote compte."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
       ],
@@ -5014,9 +5017,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue } % a été mis en pause."
-      ],
       "Active": [
         "Active"
       ],
@@ -5152,14 +5152,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer.",
         "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et à réessayer."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contact",
-        "${ numContact } contacts"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } groupe de contacts",
-        "${ numGroups } groupes de contacts"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
@@ -5341,6 +5333,10 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Alloué"
@@ -5884,9 +5880,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
         "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importer depuis"
@@ -6726,6 +6719,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Passez à ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager (« pm » pour « ${ MAIL_APP_NAME } me » ou « Private Message me »)."

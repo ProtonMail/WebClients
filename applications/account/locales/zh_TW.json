@@ -2801,6 +2801,23 @@
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
       ]
     },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "回到 ${ signIn }。"
+      ],
+      "sign in": [
+        "登入"
+      ],
+      "Thanks for letting us know": [
+        "感謝您讓我們知道"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "我們注意到此帳號並不屬於您。我們將會進行調查並採取相應措施。"
+      ],
+      "You can safely close this tab.": [
+        "現在您可以安全地關閉此分頁。"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "已驗證"
@@ -4555,6 +4572,9 @@
       "Label": [
         "標籤"
       ],
+      "Location": [
+        "位置"
+      ],
       "Name": [
         "名稱"
       ],
@@ -4934,9 +4954,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% 已暫停"
-      ],
       "Active": [
         "使用中"
       ],
@@ -5065,12 +5082,6 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
-      ],
-      "${ numContact } contacts": [
-        "${ numContact } 位聯絡人"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 個聯絡人群組"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
@@ -5777,9 +5788,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "匯入自"
       ],
@@ -6262,6 +6270,9 @@
       ],
       "Setting up your Drive": [
         "設定您的雲端硬碟"
+      ],
+      "Setting up your organization": [
+        "設定您的組織"
       ],
       "Settings update failed": [
         "更新設定失敗"
@@ -9030,6 +9041,9 @@
       "Admin console": [
         "管理員主控台"
       ],
+      "Advanced network security": [
+        "進階網路安全"
+      ],
       "Advanced sharing security": [
         "進階的共享安全性"
       ],
@@ -9659,11 +9673,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 全天支援"
+      ],
       "Access advanced VPN features": [
         "存取進階 VPN 功能"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256-bit VPN 加密"
       ],
       "Auto-connect": [
         "自動連線"

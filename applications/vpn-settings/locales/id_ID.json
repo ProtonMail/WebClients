@@ -164,6 +164,12 @@
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Hubungi kami"
+      ],
+      "Get more": [
+        "Dapatkan lebih banyak"
+      ],
       "Get the deal": [
         "Dapatkan penawaran"
       ],
@@ -172,6 +178,9 @@
       ],
       "Got it": [
         "Dimengerti"
+      ],
+      "Help": [
+        "Bantuan"
       ],
       "Hide": [
         "Sembunyikan"
@@ -184,6 +193,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Pertahankan langganan ${ vpnPlanNameShort } saya"
+      ],
+      "Let's talk": [
+        "Mari berbincang"
       ],
       "Load more": [
         "Muat lebih banyak"
@@ -217,6 +229,9 @@
       ],
       "Pay": [
         "Bayar"
+      ],
+      "Pay ${ price }": [
+        "Bayar ${ price }"
       ],
       "Pay ${ price } now": [
         "Bayar ${ price } sekarang"
@@ -293,6 +308,9 @@
       "Set new password": [
         "Tetapkan kata sandi baru"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
       "Share via link": [
         "Bagikan melalui tautan"
       ],
@@ -325,6 +343,9 @@
       ],
       "Support": [
         "Dukung"
+      ],
+      "Switch or add account": [
+        "Ubah atau tambahkan akun"
       ],
       "Top up": [
         "Isi ulang"
@@ -408,11 +429,17 @@
       "${ domains } custom domains": [
         "${ domains } domain khusus"
       ],
+      "${ ips } servers": [
+        "${ ips } server"
+      ],
       "${ price } per domain": [
         "${ price } per domain"
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ users } users": [
+        "${ users } pengguna"
       ]
     },
     "Alter": {
@@ -2129,6 +2156,9 @@
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
+      "Amount due": [
+        "Jumlah tagihan"
+      ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Metode ${ twoFa } apa pun dalam akun Anda akan dinonaktifkan."
       ],
@@ -2203,6 +2233,12 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
+      ],
+      "Dedicated servers": [
+        "Server terdedikasi"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2426,6 +2462,9 @@
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
       ],
+      "Organization size": [
+        "Ukuran organisasi"
+      ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
@@ -2494,6 +2533,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
+      ],
+      "Saving your password": [
+        "Menyimpan kata sandi Anda"
       ],
       "Scan QR code instead": [
         "Pindai kode QR"
@@ -2591,14 +2633,23 @@
       "to ${ product } Business": [
         "ke ${ product } Business"
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Untuk membatalkan langganan Anda, silakan menghubungi kami."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
+      ],
+      "to continue to ${ product }": [
+        "untuk melanjutkan ke ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Untuk menerima pembaruan dengan pengembangan terkini pada produk ${ BRAND_NAME }, Anda dapat berlangganan ke surel dan ${ blogLink } kami dari waktu ke waktu."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -2690,11 +2741,17 @@
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
+      "We generated a strong password for you": [
+        "Kami telah membuat sebuah kata sandi yang kuat untuk Anda"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
       ],
       "We need to authenticate your payment with your bank.": [
         "Kami perlu untuk mengautentikasi pembayaran Anda dengan bank Anda."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Kami menyarankan memiliki setidaknya 2 server sebagai cadangan."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -2704,6 +2761,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
+      ],
+      "We'll get back to you shortly.": [
+        "Kami akan segera kembali untuk Anda."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -2839,6 +2899,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Langganan Anda akan diperbarui secara otomatis di ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3167,6 +3230,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Frasa tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
       ],
+      "Please share any feedback to help us improve.": [
+        "Silakan bagikan masukan untuk membantu kami meningkatkan."
+      ],
       "Postal code": [
         "Kode pos"
       ],
@@ -3230,6 +3296,9 @@
       "What is the main reason you are deleting your account?": [
         "Apa alasan utama Anda menghapus akun?"
       ],
+      "Why would you like to cancel?": [
+        "Mengapa Anda ingin membatalkan?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
@@ -3280,6 +3349,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Tambahkan kode hadiah"
+      ],
+      "Add gift code": [
         "Tambahkan kode hadiah"
       ],
       "clearing your browser cache": [
@@ -3442,6 +3514,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "new_plans: action": {
@@ -3687,6 +3762,9 @@
       "Send & receive invitations": [
         "Kirim & terima undangan"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
+        "Server dalam ${ vpnServersCountData.paid.countries }+ negara"
+      ],
       "Share calendar via link": [
         "Bagikan kalender via tautan"
       ],
@@ -3775,6 +3853,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Keamanan jaringan tingkat lanjut dan pengelolaan akses dengan Gateway terdedikasi yang aman"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
@@ -3805,6 +3886,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Akses internet secara aman dari mana pun dengan pemantauan jaringan yang esensial"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk mengarsipkan, menyinkronkan, dan membagikan berkas dengan mudah dan aman."
       ],
@@ -3813,6 +3897,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Solusi VPN yang memberikan Anda akses internet yang aman, tanpa batas, dan berkecepatan tinggi."
@@ -4086,11 +4173,17 @@
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Selamat datang di ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Selamat datang di ${ VPN_APP_NAME }"
       ]
@@ -4186,6 +4279,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+      ],
+      "Please select the main reason": [
+        "Silakan pilih alasan utama"
       ],
       "Select": [
         "Pilih"
@@ -4550,7 +4646,27 @@
         "Penyimpanan Anda saat ini:"
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Ditagih setiap 15 bulan"
+      ],
+      "Billed every 2 years": [
+        "Ditagih setiap 2 tahun"
+      ],
+      "Billed every 30 months": [
+        "Ditagih setiap 30 bulan"
+      ],
+      "Billed monthly": [
+        "Ditagih bulanan"
+      ],
+      "Billed yearly": [
+        "Ditagih setiap tahun"
+      ]
+    },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated servers": [
+        "${ ipAddresses } server terdedikasi"
+      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
       ],
@@ -4801,11 +4917,17 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Buat detail login aman di semua perangkat Anda. Termasuk alias tidak terbatas, 20 brankas, 2FA terintegrasi, pengisian kartu kredit otomatis dan lainnya."
+      ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Termasuk riwayat versi, pembagian berkas terenkripsi, dan lainnya."
       ]
     },
     "summer2023:Footer": {
@@ -4962,6 +5084,9 @@
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
       ],
+      "Contact us": [
+        "Hubungi kami"
+      ],
       "Credits": [
         "Saldo"
       ],
@@ -5115,6 +5240,9 @@
       "Request new code": [
         "Minta kode baru"
       ],
+      "Request sent": [
+        "Permintaan terkirim"
+      ],
       "Reset password": [
         "Atur ulang kata sandi"
       ],
@@ -5151,6 +5279,12 @@
       "Status": [
         "Status"
       ],
+      "Subscription": [
+        "Langganan"
+      ],
+      "Summary": [
+        "Ikhtisar"
+      ],
       "Switch to one-password mode": [
         "Beralih ke mode satu kata sandi"
       ],
@@ -5171,6 +5305,9 @@
       ],
       "Unsupported browser": [
         "Browser tidak didukung"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Tingkatkan perlindungan jaringan Anda ndengan server terdedikasi"
       ],
       "Verification failed": [
         "Verifikasi gagal"
@@ -5291,6 +5428,20 @@
         "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Saya menemukan layanan lain yang saya lebih suka"
+      ],
+      "It’s missing a key feature": [
+        "Fitur utama yang belum ada"
+      ],
+      "It’s too expensive": [
+        "Terlalu mahal"
+      ],
+      "Other": [
+        "Lainnya"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
@@ -5337,6 +5488,9 @@
       "2-year": [
         "2 tahun"
       ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Dapatkan diskon ${ discount } dengan langganan ${ billingCycle }"
+      ],
       "monthly": [
         "bulanan"
       ]
@@ -5361,6 +5515,11 @@
       ],
       "Your ${ selected } plan": [
         "Paket ${ selected } pilihan Anda"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent cepat, Tor melalui VPN, dan lainnya."
       ]
     },
     "Warning": {

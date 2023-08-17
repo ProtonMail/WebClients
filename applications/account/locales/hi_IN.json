@@ -4517,9 +4517,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% रोका गया"
-      ],
       "Active": [
         "सक्रिय"
       ],
@@ -4646,14 +4643,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } अपलोड की गई फाइल मान्य निजी चाबी नहीं है। कृपया सत्यापित करें और वापिस कोशिश करें।",
         "${ numberOfNonPrivateKeys } अपलोड की गई फाइलें मान्य निजी चाबीयां नहीं है। कृपया सत्यापित करें और वापिस कोशिश करें।"
-      ],
-      "${ numContact } contact": [
-        "${ numContact } संपर्क",
-        "${ numContact } संपर्क"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } संपर्क समूह",
-        "${ numGroups } संपर्क समूह"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } फोल्डर मिला",
@@ -5324,9 +5313,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } और ${ contactsGroupsFragment } आयात करें"
       ],
       "Import from": [
         "यहां से आयात करें"

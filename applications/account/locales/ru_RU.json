@@ -4901,9 +4901,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "Приостановлено на ${ percentageValue }%"
-      ],
       "Active": [
         "Активно"
       ],
@@ -5047,18 +5044,6 @@
         "${ numberOfNonPrivateKeys } загруженных файла не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } контакт",
-        "${ numContact } контакта",
-        "${ numContact } контактов",
-        "${ numContact } контактов"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } группа контактов",
-        "${ numGroups } группы контактов",
-        "${ numGroups } групп контактов",
-        "${ numGroups } групп контактов"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } - это продвинутая программа для защиты аккаунта, которая защищает вас от злоумышленников и угроз безопасности при помощи мощных ИИ и круглосуточно работающих специалистов."
@@ -5800,9 +5785,6 @@
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
         "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Импортировать из"
