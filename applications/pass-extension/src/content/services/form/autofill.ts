@@ -5,9 +5,11 @@ import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { DisallowedAutoCriteria } from '@proton/pass/types/worker/settings';
 import { first } from '@proton/pass/utils/array';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import { isDisallowedUrl } from '@proton/pass/utils/url/is-disallowed-url';
 
 import { withContext } from '../../context/context';
 import { type FormHandle, NotificationAction } from '../../types';
@@ -102,14 +104,17 @@ export const createAutofillService = () => {
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
      * the current tab's url & check for any tracked form submissions in order
      * to pick the correct login item from which to derive the OTP code */
-    const reconciliate = withContext<() => Promise<boolean>>(async ({ service }) => {
+    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getSettings }) => {
         void getAutofillCandidates();
 
         const otpFieldDetected = service.formManager
             .getTrackedForms()
             .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
-        if (otpFieldDetected) {
+        if (
+            otpFieldDetected &&
+            !isDisallowedUrl(location.hostname, DisallowedAutoCriteria.AUTOSAVE, getSettings().disallowedDomains)
+        ) {
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     service.iframe.attachNotification();
