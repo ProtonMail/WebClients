@@ -69,7 +69,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
 
     return (
         <ModalTwo open onClose={onClose} onReset={onReset} size={'medium'} className="mt-10">
-            <ModalTwoHeader title={c('Title').t`Import to vaults`} />
+            <ModalTwoHeader title={c('Title').t`Import to vault(s)`} />
             <ModalTwoContent>
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
