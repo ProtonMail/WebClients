@@ -14,11 +14,6 @@ import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
 import { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
 
-const downloadSampleCSVFns: Record<UserManagementMode, Function> = {
-    [UserManagementMode.DEFAULT]: downloadSampleCSV,
-    [UserManagementMode.VPN_B2B]: downloadVPNB2BSampleCSV,
-};
-
 export interface Props {
     onUpload: (data: UserTemplate[]) => void;
     className?: string;
@@ -39,10 +34,21 @@ const ImportCSVFileButton = ({
     const { createModal } = useModals();
 
     const csvTemplateButton = (
-        <InlineLinkButton key="csvTemplateButton" onClick={() => downloadSampleCSVFns[mode]()}>{
-            // translator: full sentence is "Please check your file, or try using our CSV template."
-            c('CSV download button').t`CSV template`
-        }</InlineLinkButton>
+        <InlineLinkButton
+            key="csvTemplateButton"
+            onClick={() => {
+                if (mode === UserManagementMode.VPN_B2B) {
+                    return downloadVPNB2BSampleCSV();
+                }
+
+                return downloadSampleCSV();
+            }}
+        >
+            {
+                // translator: full sentence is "Please check your file, or try using our CSV template."
+                c('CSV download button').t`CSV template`
+            }
+        </InlineLinkButton>
     );
     const pleaseCheckYourFileText =
         // translator: full sentence is "Please check your file, or try using our CSV template."
