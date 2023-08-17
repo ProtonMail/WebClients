@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Abilita ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
@@ -444,7 +441,7 @@
         "Mettiti in contatto"
       ],
       "Get more": [
-        "Prendi di più"
+        "Ottieni di più"
       ],
       "Get more addresses": [
         "Ottieni più indirizzi"
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Effettua l'aggiornamento per abilitare ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
@@ -3498,6 +3498,9 @@
       "You have no invoices.": [
         "Non hai nessuna fattura."
       ],
+      "You have reached the contacts limit for your account": [
+        "Hai raggiunto il limite di contatti per il tuo account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Hai raggiunto il numero massimo di calendari. Alcuni calendari non possono essere importati."
       ],
@@ -5014,9 +5017,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% in pausa"
-      ],
       "Active": [
         "Attivo"
       ],
@@ -5152,14 +5152,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } file caricato non è una chiave privata valida. Si prega di verificare e riprovare.",
         "${ numberOfNonPrivateKeys } file caricati non sono chiavi private valide. Si prega di verificare e riprovare."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contatto",
-        "${ numContact } contatti"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } gruppo di contatti",
-        "${ numGroups } gruppi di contatti"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } è un programma di protezione avanzato per gli account, basato su una sofisticata intelligenza artificiale e specialisti pronti a proteggerti dai malintenzionati in rete e da tutte le minacce di sicurezza."
@@ -5341,6 +5333,10 @@
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Allocato"
@@ -5884,9 +5880,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendari"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importa da"
@@ -6605,7 +6598,7 @@
         "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di attivarla."
       ],
       "to ${ product } Business": [
-        "a ${ product } Business"
+        "su ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitare la perdita di dati, eliminali solo se sai cosa stai facendo o se ne hai esportato una copia."
@@ -6726,6 +6719,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Effettua l'aggiornamento al piano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Esegui l'upgrade per aggiungere al tuo account un indirizzo @pm.me più breve che sia più facile da condividere. Significa \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
@@ -8156,7 +8152,7 @@
         "Seleziona i file da caricare"
       ],
       "Please share any feedback to help us improve.": [
-        "Si prega di condividere qualsiasi feedback per aiutarci a migliorare."
+        "Condividi un feedback per aiutarci a migliorare."
       ],
       "Port": [
         "Porta"
@@ -8366,7 +8362,7 @@
         "Qual è il motivo principale per cui stai cancellando il tuo account?"
       ],
       "Why would you like to cancel?": [
-        "Perché vorresti cancellarti?"
+        "Perché vorresti annullare?"
       ],
       "With attachment": [
         "Con allegato"
@@ -9056,7 +9052,7 @@
         "Mantieni il mio account ${ currentPlanName }"
       ],
       "Upgrade": [
-        "Aggiorna"
+        "Effettua l'upgrade"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"

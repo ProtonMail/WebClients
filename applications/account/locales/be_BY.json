@@ -5016,9 +5016,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "Прыпынена на ${ percentageValue }%"
-      ],
       "Active": [
         "Актыўна"
       ],
@@ -5168,18 +5165,6 @@
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } кантакт",
-        "${ numContact } кантакты",
-        "${ numContact } кантактаў",
-        "${ numContact } кантакты"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група кантактаў",
-        "${ numGroups } групы кантактаў",
-        "${ numGroups } груп кантактаў",
-        "${ numGroups } групы кантактаў"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
@@ -5933,9 +5918,6 @@
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпартаванне ${ contactsFragment } і ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Імпартаваць з"
@@ -9619,7 +9601,7 @@
         "* З падпіскай на два з паловай гады. Іншыя параметры падпіскі даступны пры афармленні заказу."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Палепшаная бяспека сеткі і кіраванне доступам з вылучанымі шлюзамі"
+        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
