@@ -35,7 +35,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     };
 
     useEffect(() => {
-        dispatch(layoutActions.setExpanded(false));
+        dispatch(layoutActions.setSidebarExpanded(false));
     }, [location.pathname, location.hash]);
 
     const top = <TopBanners />;
