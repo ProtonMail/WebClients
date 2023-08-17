@@ -246,6 +246,9 @@
       "Got it": [
         "Dimengerti"
       ],
+      "Help": [
+        "Bantuan"
+      ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
       ],
@@ -462,6 +465,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
       "Share": [
         "Bagikan"
       ],
@@ -513,11 +519,17 @@
       "Submit": [
         "Kirim"
       ],
+      "Switch or add account": [
+        "Ubah atau tambahkan akun"
+      ],
       "Today": [
         "Hari ini"
       ],
       "Toggle Contact app": [
         "Tampilkan/sembunyikan aplikasi Contact"
+      ],
+      "Toggle settings": [
+        "Saklar pengaturan"
       ],
       "Trust": [
         "Percayai"
@@ -949,6 +961,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Kustom"
+      ],
       "Day": [
         "Hari"
       ],
@@ -960,6 +975,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Ubah jangka waktu"
+      ],
       "Change time range to": [
         "Ubah rentang waktu menjadi"
       ]
@@ -2525,6 +2543,9 @@
       "Encryption failed": [
         "Enkripsi gagal"
       ],
+      "Missing FN property": [
+        "Properti FN tidak ada"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard versi < 3.0 tidak didukung"
       ]
@@ -3340,12 +3361,6 @@
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } kontak"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } grup kontak"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -3417,6 +3432,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
+      ],
+      "Are you sure you want to discard your import?": [
+        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -3558,9 +3576,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Impor dari"
@@ -3819,6 +3834,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
       ],
       "Update recurring event": [
         "Perbarui acara berulang"
@@ -4109,6 +4127,9 @@
       "Bad": [
         "Buruk"
       ],
+      "Beta Access": [
+        "Akses Beta"
+      ],
       "Browser": [
         "Peramban"
       ],
@@ -4337,6 +4358,9 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Primary": [
+        "Utama"
+      ],
       "Public keys": [
         "Kunci publik"
       ],
@@ -4352,6 +4376,12 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Secondary": [
+        "Sekunder"
+      ],
+      "Secondary time zone": [
+        "Zona waktu sekunder"
+      ],
       "Show week numbers": [
         "Tampilkan nomor pekan"
       ],
@@ -4361,8 +4391,14 @@
       "Street address": [
         "Alamat jalan"
       ],
+      "Sync with system": [
+        "Sinkronisasikan dengan sistem"
+      ],
       "System information": [
         "Informasi sistem"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Time zone": [
         "Zona waktu"
@@ -4999,6 +5035,9 @@
       "All events": [
         "Seluruh acara"
       ],
+      "Auto": [
+        "Otomatis"
+      ],
       "Automatic (${ defaultDay })": [
         "Otomatis (${ defaultDay })"
       ],
@@ -5528,6 +5567,9 @@
       "Add your country's public holidays to your calendar.": [
         "Tambahkan liburan umum negara Anda ke kalender Anda."
       ],
+      "Easily access and customize your app experience.": [
+        "Akses dan ubah pengalaman aplikasi Anda secara mudah."
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
@@ -5536,6 +5578,9 @@
       ],
       "Public holidays are here!": [
         "Liburan umum telah hadir!"
+      ],
+      "Quick settings": [
+        "Pengaturan cepat"
       ]
     },
     "Storage": {
@@ -5737,11 +5782,17 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Buat detail login aman di semua perangkat Anda. Termasuk alias tidak terbatas, 20 brankas, 2FA terintegrasi, pengisian kartu kredit otomatis dan lainnya."
+      ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Termasuk riwayat versi, pembagian berkas terenkripsi, dan lainnya."
       ]
     },
     "summer2023:Footer": {
@@ -5877,6 +5928,9 @@
       ],
       "Addresses": [
         "Alamat"
+      ],
+      "All settings": [
+        "Semua pengaturan"
       ],
       "Billing cycle": [
         "Siklus tagihan"

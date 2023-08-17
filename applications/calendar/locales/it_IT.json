@@ -2514,6 +2514,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Non puoi inviare file vCard di più di 10 contatti"
       ],
+      "You have reached the contacts limit for your account": [
+        "Hai raggiunto il limite di contatti per il tuo account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Hai raggiunto il numero massimo di calendari. Alcuni calendari non possono essere importati."
       ],
@@ -3405,14 +3408,6 @@
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contatto",
-        "${ numContact } contatti"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } gruppo di contatti",
-        "${ numGroups } gruppi di contatti"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
         "${ providerFoldersNumLocalized } cartelle trovate"
@@ -3480,6 +3475,10 @@
       "All (${ totalFoldersCount } label)": [
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Un invito verrà inviato ai partecipanti aggiunti."
@@ -3641,9 +3640,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendari"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importa da"
@@ -4463,7 +4459,7 @@
         "Indirizzo"
       ],
       "Sync with system": [
-        "Primario"
+        "Sincronizza con il sistema"
       ],
       "System information": [
         "Informazioni sul sistema"

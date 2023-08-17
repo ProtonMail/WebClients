@@ -3271,14 +3271,6 @@
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
       ],
-      "${ numContact } contact": [
-        "${ numContact } संपर्क",
-        "${ numContact } संपर्क"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } संपर्क समूह",
-        "${ numGroups } संपर्क समूह"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } फोल्डर मिला",
         "${ providerFoldersNumLocalized } फोल्डर मिले"
@@ -3489,9 +3481,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } और ${ contactsGroupsFragment } आयात करें"
       ],
       "Import from": [
         "यहां से आयात करें"

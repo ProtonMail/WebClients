@@ -534,6 +534,9 @@
       "Toggle Contact app": [
         "Przełącz aplikację kontaktów"
       ],
+      "Toggle settings": [
+        "Otwórz ustawienia"
+      ],
       "Trust": [
         "Zaufaj"
       ],
@@ -2555,6 +2558,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "W pliku vCard możesz wysłać maksymalnie 10 kontaktów"
       ],
+      "You have reached the contacts limit for your account": [
+        "Osiągnięto limit kontaktów na koncie"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
@@ -3490,18 +3496,6 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktów",
-        "${ numContact } kontaktów"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupa kontaktów",
-        "${ numGroups } grupy kontaktów",
-        "${ numGroups } grup kontaktów",
-        "${ numGroups } grupy kontaktów"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
         "${ providerFoldersNumLocalized } znalezione foldery",
@@ -3756,9 +3750,6 @@
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarze",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importuj z"
