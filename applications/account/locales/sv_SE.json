@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Aktivera ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
@@ -3498,6 +3498,9 @@
       "You have no invoices.": [
         "Du har inga fakturor."
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nått kontaktgränsen för ditt konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nått det maximala antalet kalendrar. Några kalendrar kunde inte importeras."
       ],
@@ -5014,9 +5017,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% pausad"
-      ],
       "Active": [
         "Aktiv"
       ],
@@ -5152,14 +5152,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen.",
         "${ numberOfNonPrivateKeys } uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgrupp",
-        "${ numGroups } kontaktgrupper"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
@@ -5341,6 +5333,10 @@
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
+        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Tilldelad"
@@ -5884,9 +5880,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importera ${ contactsFragment } och ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importera från"
@@ -6727,6 +6720,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Uppgradera till ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
@@ -7247,7 +7243,7 @@
         "Krypteringsnycklarna för din adress genereras. Detta kan ta flera minuter och tillfälligt frysa din webbläsare."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Du kan skapa en ny krypteringsnyckel om du tror att din tidigare nyckel har äventyrats."
+        "Du kan generera en ny krypteringsnyckel om du tror att din tidigare nyckel har äventyrats."
       ]
     },
     "Key state badge": {
