@@ -67,7 +67,8 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
-                available: hasOrganizationKey,
+                // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
+                available: hasOrganizationKey && user.hasPaidMail,
                 subsections: [
                     { id: 'domains' },
                     {
