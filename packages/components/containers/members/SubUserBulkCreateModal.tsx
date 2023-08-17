@@ -42,13 +42,14 @@ const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
             <ModalContent className="pb-1">
                 <ol className="flex flex-column gap-2 pl-5 mb-6">
                     <li>
-                        <InlineLinkButton onClick={downloadVPNB2BSampleCSV} color="norm" className="py-0">{c('Action')
-                            .t`Download our CSV template`}</InlineLinkButton>
+                        <InlineLinkButton onClick={downloadVPNB2BSampleCSV} color="norm" className="py-0">
+                            {c('Action').t`Download our CSV template`}
+                        </InlineLinkButton>
                     </li>
                     <li>{c('Info').t`Fill in user details`}</li>
                     <li>{c('Info').t`Upload your completed CSV file to create accounts`}</li>
                 </ol>
-                <SubUserCreateHint />
+                <SubUserCreateHint className="mt-2" />
             </ModalContent>
             <ModalFooter>
                 <Button onClick={onBack}>{c('Action').t`Back`}</Button>
