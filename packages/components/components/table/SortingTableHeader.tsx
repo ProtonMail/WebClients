@@ -58,6 +58,9 @@ interface SortingTableHeaderProps<T> extends HTMLAttributes<HTMLTableSectionElem
     onToggleSort: (key: keyof T) => void;
 }
 
+const getCellKey = (key: symbol | string | number | null | undefined, index: number) =>
+    typeof key === 'string' || typeof key === 'number' ? `key-${key}` : `index-${index}`;
+
 export const SortingTableHeader = <T extends unknown>({
     cells = [],
     config,
@@ -67,8 +70,8 @@ export const SortingTableHeader = <T extends unknown>({
     return (
         <thead {...rest}>
             <tr>
-                {cells.map(({ content, key, sorting, ...rest }) => (
-                    <TableCell key={typeof key === 'symbol' ? undefined : key} type="header" {...rest}>
+                {cells.map(({ content, key, sorting, ...rest }, index) => (
+                    <TableCell key={getCellKey(key, index)} type="header" {...rest}>
                         {sorting ? (
                             <SortingTableCellHeader
                                 content={content}

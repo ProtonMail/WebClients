@@ -25,7 +25,7 @@ import { APP_NAMES, CLIENT_TYPES, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
+import { getIsVpnB2BPlan, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -128,7 +128,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
-    const isB2bPlan = [PLANS.VPN_PRO, PLANS.VPN_BUSINESS].includes(selectedPlan?.Name as PLANS);
+    const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
     const isDarkBg = isB2bPlan;
 
     useEffect(() => {

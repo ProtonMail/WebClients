@@ -2,9 +2,11 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 
+import { vpnEnterpriseContactUrl } from './vpnEnterpriseContactUrl';
+
 const VpnEnterpriseAction = ({ ...props }) => {
     return (
-        <ButtonLike as="a" color="norm" href="https://protonvpn.com/business/contact" fullWidth {...props}>
+        <ButtonLike as="a" color="norm" href={vpnEnterpriseContactUrl} fullWidth {...props}>
             {c('Action').t`Get in touch`}
         </ButtonLike>
     );
