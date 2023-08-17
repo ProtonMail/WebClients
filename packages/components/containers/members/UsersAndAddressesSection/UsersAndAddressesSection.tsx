@@ -198,6 +198,9 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
             disablePlanSelection: true,
+            metrics: {
+                source: 'vpn-um-get-more',
+            },
         });
     };
 
