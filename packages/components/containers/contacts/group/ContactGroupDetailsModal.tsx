@@ -103,7 +103,13 @@ const ContactGroupDetailsModal = ({
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalHeader
                 title={
-                    <div className="flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap flex-align-items-center gap-2">
+                        <span
+                            style={{ backgroundColor: group?.Color ?? '', '--w-custom': '34px' }}
+                            className="rounded w-custom text-center flex-item-noshrink"
+                        >
+                            <Icon color="white" name="users" />
+                        </span>
                         <span className="text-ellipsis" title={group?.Name}>
                             {group?.Name}
                         </span>
@@ -152,21 +158,13 @@ const ContactGroupDetailsModal = ({
                 ]}
             />
             <ModalContent>
-                <div className="flex flex-no-min-children flex-item-fluid">
-                    <h4 className="mb-4 flex flex-align-items-center flex-item-fluid">
-                        <div
-                            className="contact-group-details-chip rounded-50 mr-2 flex-item-noshrink"
-                            style={{ backgroundColor: group?.Color }}
-                        />
-                        <span>
-                            {c('Title').ngettext(
-                                msgid`${emailsCount} email address`,
-                                `${emailsCount} email addresses`,
-                                emailsCount
-                            )}
-                        </span>
-                    </h4>
-                </div>
+                <h4 className="mb-4 color-weak text-lg">
+                    {c('Title').ngettext(
+                        msgid`${emailsCount} email address`,
+                        `${emailsCount} email addresses`,
+                        emailsCount
+                    )}
+                </h4>
                 {emails.map((email) => {
                     const recipient: Recipient = { Name: email.Name, Address: email.Email };
                     return (
