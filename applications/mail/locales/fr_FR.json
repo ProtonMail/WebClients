@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
       ],
+      "You have reached the contacts limit for your account": [
+        "Vous avez atteint la limite de contacts pour vote compte."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
       ],
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } lien nettoyé",
         "${ numberOfUTMTrackers } liens nettoyés"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contact",
-        "${ numContact } contacts"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } groupe de contacts",
-        "${ numGroups } groupes de contacts"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } message dans la conversation",
         "${ NumMessages } messages dans la conversation"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Une clé publique inconnue a été détectée pour ce destinataire."
@@ -5153,9 +5152,6 @@
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
         "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importer depuis"
       ],
@@ -5250,7 +5246,7 @@
         "Fusionné"
       ],
       "Message download status:": [
-        "Téléchargement des messages·:"
+        "État du téléchargement des messages:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Les messages avec une date d'expiration fonctionnent pour l'envoi de messages à des personnes qui utilisent ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
@@ -5379,7 +5375,7 @@
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Indiquez un nom et une addresse e-mail pour créer un groupe."
+        "Indiquez un nom et une adresse e-mail pour créer un groupe."
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"

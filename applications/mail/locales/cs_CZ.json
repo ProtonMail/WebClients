@@ -4212,7 +4212,7 @@
         "Gratulujeme, dokončili jste všechny kroky!"
       ],
       "Congratulation, you finished!": [
-        "Gratulujeme, dokončili jste!"
+        "Gratulujeme k dokončení!"
       ],
       "Continue setting up your email": [
         "Pokračujte v nastavení e-mailu"
@@ -4769,18 +4769,6 @@
         "${ numberOfUTMTrackers } vyčištěných odkazů",
         "${ numberOfUTMTrackers } vyčištěných odkazů"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktů",
-        "${ numContact } kontaktů"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } skupina kontaktů",
-        "${ numGroups } skupiny kontaktů",
-        "${ numGroups } skupin kontaktů",
-        "${ numGroups } skupin kontaktů"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } zpráva v konverzaci",
         "${ NumMessages } zprávy v konverzaci",
@@ -5332,9 +5320,6 @@
         "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importovat z"
@@ -8322,7 +8307,7 @@
         "Změna nastavení"
       ],
       "Easily access and customize your app experience.": [
-        "Snadný přístup k přizpůsobení aplikace vašim potřebám."
+        "Snadný přístup k aplikacím a jejich přizpůsobení."
       ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
@@ -8343,7 +8328,7 @@
         "Vyhledávání se právě stalo chytřejším a rychlejším"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Spamové e-maily a e-maily v koši jsou nyní automaticky vyloučeny ze seznamu Všechny e-maily. ${ settingsLink }"
+        "Zprávy ve složkách Spam a Koš jsou nyní automaticky vyloučeny z Všechna pošta. ${ settingsLink }"
       ],
       "Try it today.": [
         "Vyzkoušejte to ještě dnes."

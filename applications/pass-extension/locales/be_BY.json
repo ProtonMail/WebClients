@@ -1128,6 +1128,9 @@
       "Old-New": [
         "Ад самых старых"
       ],
+      "Older than last month": [
+        "Старэйшыя за апошні месяц"
+      ],
       "Oldest to newest": [
         "Ад самых старых да самых новых"
       ],
@@ -1345,6 +1348,12 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Увядзіце паўторна \"${ vaultName }\", каб пацвердзіць выдаленне"
       ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Пошук ${ pluralItemType } у ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Пошук ${ pluralItemType } ва ўсіх сховішчах"
+      ],
       "Search in ${ vault.content.name }": [
         "Шукаць у ${ vault.content.name }"
       ],
@@ -1502,7 +1511,7 @@
         "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ],
       "An error occured while exporting your data": [
-        "Адбылася памылка падчас экспартавання вашых даных"
+        "Падчас экспартавання вашых даных адбылася памылка"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"

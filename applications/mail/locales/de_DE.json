@@ -1006,6 +1006,9 @@
       "Toggle Contact app": [
         "Kontakt-App umschalten"
       ],
+      "Toggle settings": [
+        "Einstellungen umschalten"
+      ],
       "Tomorrow": [
         "Morgen"
       ],
@@ -4660,14 +4663,6 @@
         "${ numberOfUTMTrackers } Link bereinigt",
         "${ numberOfUTMTrackers } Links bereinigt"
       ],
-      "${ numContact } contact": [
-        "${ numContact } Kontakt",
-        "${ numContact } Kontakte"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } Kontaktgruppe",
-        "${ numGroups } Kontaktgruppen"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } Nachricht in der Unterhaltung",
         "${ NumMessages } Nachrichten in der Unterhaltung"
@@ -5149,9 +5144,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -8058,6 +8050,9 @@
       "Change setting": [
         "Einstellung ändern"
       ],
+      "Easily access and customize your app experience.": [
+        "Einfacher Zugriff und individuelle Anpassung der App-Erfahrung."
+      ],
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
       ],
@@ -8077,7 +8072,7 @@
         "Die Suche ist intelligenter und schneller"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Spam- und Papierkorb-E-Mails werden jetzt automatisch von \"Alle Nachrichten\" ausgeschlossen. ${ settingsLink }"
+        "E-Mails im Spam und Papierkorb werden nun automatisch aus \"Alle E-Mails\" ausgeschlossen. ${ settingsLink }"
       ],
       "Try it today.": [
         "Probiere sie noch heute aus."

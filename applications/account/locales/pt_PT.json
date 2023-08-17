@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Ativar ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "ativar as notificações"
       ],
@@ -738,7 +735,7 @@
         "Guardar ficheiro ICS"
       ],
       "Save selected": [
-        "Guardar a escolha"
+        "Guardar selecionado"
       ],
       "Search": [
         "Pesquisar"
@@ -948,7 +945,7 @@
         "Usar código de recuperação"
       ],
       "Use your current email instead": [
-        "Utilizar o seu e-mail actual"
+        "Utilizar o seu e-mail atual"
       ],
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
@@ -4932,9 +4929,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% pausada"
-      ],
       "Active": [
         "Ativa"
       ],
@@ -5070,14 +5064,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } ficheiro enviado não é uma chave privada válida.Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } ficheiros enviados não são chaves privadas válidas. Verifique e tente novamente."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
@@ -5793,9 +5779,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importar de"

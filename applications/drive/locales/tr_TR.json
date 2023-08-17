@@ -3096,14 +3096,6 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kişi",
-        "${ numContact } kişi"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kişi grubu",
-        "${ numGroups } kişi grubu"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } duraklatıldı",
         "${ pausedCount } duraklatıldı"
@@ -3506,9 +3498,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
       ],
       "Import from": [
         "Şuradan içe aktar"

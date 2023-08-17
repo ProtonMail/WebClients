@@ -4610,12 +4610,6 @@
       "${ numberOfUTMTrackers } links cleaned": [
         "${ numberOfUTMTrackers } 個連結已清理"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } 位聯絡人"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 個聯絡人群組"
-      ],
       "${ NumMessages } messages in conversation": [
         "${ NumMessages } 封郵件在交談對話中"
       ],
@@ -5062,9 +5056,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "匯入自"
@@ -7951,6 +7942,9 @@
       ],
       "Search just got smarter and faster": [
         "搜尋更聰明及快速"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "垃圾郵件與垃圾桶中的電子郵件會自動從所有郵件中排除。${ settingsLink }"
       ],
       "Try it today.": [
         "今日嘗試"

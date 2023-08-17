@@ -4492,7 +4492,7 @@
         "デバイス"
       ],
       "Event": [
-        "予定"
+        "イベント"
       ],
       "Folders": [
         "フォルダー"
@@ -4882,9 +4882,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% 一時停止"
-      ],
       "Active": [
         "アクティブ"
       ],
@@ -5013,12 +5010,6 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 件のアップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
-      ],
-      "${ numContact } contacts": [
-        "${ numContact } 件の連絡先"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 件の連絡先グループ"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
@@ -5712,9 +5703,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
       "Import from": [
         "インポート元"
@@ -9066,7 +9054,7 @@
         "厳格なノーログポリシー"
       ],
       "Team management": [
-        "チームマネジメント"
+        "チーム管理"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -9527,6 +9515,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } が無効になりました"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } が有効になりました"
       ],
       "A disabled address cannot be default": [
         "無効にされたアドレスは既定にすることができません"
@@ -12408,7 +12402,7 @@
     },
     "Title subscription": {
       "Actions": [
-        "行動"
+        "操作"
       ],
       "Duration": [
         "期間"

@@ -2195,6 +2195,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
+      "You have reached the contacts limit for your account": [
+        "Vous avez atteint la limite de contacts pour vote compte."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
       ],
@@ -3096,14 +3099,6 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contact",
-        "${ numContact } contacts"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } groupe de contacts",
-        "${ numGroups } groupes de contacts"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pause",
         "${ pausedCount } en pause"
@@ -3178,6 +3173,10 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Vérifiez aussi dans le dossier Corbeille."
@@ -3507,9 +3506,6 @@
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
         "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importer depuis"
       ],
@@ -3707,7 +3703,7 @@
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Indiquez un nom et une addresse e-mail pour créer un groupe."
+        "Indiquez un nom et une adresse e-mail pour créer un groupe."
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"

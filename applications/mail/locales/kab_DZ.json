@@ -3619,10 +3619,6 @@
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
       ],
-      "${ numContact } contact": [
-        "${ numContact } n unermis",
-        "${ numContact } inermisen"
-      ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } n temseḍriwt i yettwafen",
         "${ numOccurrences } n temseḍriwin i yettwafen"
@@ -3974,9 +3970,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
         "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Kter si"

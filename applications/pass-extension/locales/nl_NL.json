@@ -1094,6 +1094,9 @@
       "Old-New": [
         "Oud-Nieuw"
       ],
+      "Older than last month": [
+        "Ouder dan laatste maand"
+      ],
       "Oldest to newest": [
         "Van oud naar nieuw"
       ],
@@ -1310,6 +1313,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Typ nogmaals \"${ vaultName }\" om de verwijdering te bevestigen"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Zoek ${ pluralItemType } in ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Zoek ${ pluralItemType } in alle kluizen"
       ],
       "Search in ${ vault.content.name }": [
         "Zoeken in ${ vault.content.name }"

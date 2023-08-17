@@ -383,9 +383,6 @@
       "Emoji": [
         "Emoji"
       ],
-      "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Włącz ${ PROTON_SENTINEL_NAME }"
-      ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
@@ -934,6 +931,9 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Ulepsz plan, aby włączyć ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -3528,6 +3528,9 @@
       "You have no invoices.": [
         "Nie masz faktur."
       ],
+      "You have reached the contacts limit for your account": [
+        "Osiągnięto limit kontaktów na koncie"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
@@ -5076,9 +5079,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "Wstrzymano ${ percentageValue }%"
-      ],
       "Active": [
         "Aktywny"
       ],
@@ -5228,18 +5228,6 @@
         "${ numberOfNonPrivateKeys } przesłane pliki nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktów",
-        "${ numContact } kontaktów"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupa kontaktów",
-        "${ numGroups } grupy kontaktów",
-        "${ numGroups } grup kontaktów",
-        "${ numGroups } grupy kontaktów"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } to zaawansowany program ochrony konta wspierany przez systemy sztucznej inteligencji i specjalistów pracujących całą dobę, w celu łagodzenia ataków i zagrożeń bezpieczeństwa."
@@ -5996,9 +5984,6 @@
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarze",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importuj z"
@@ -6854,6 +6839,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Ulepsz plan do ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } lub ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, aby włączyć ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Ulepsz konto, aby dodać krótszy adres @pm.me, który jest łatwiejszy do udostępniania. To jest skrót od “${ MAIL_APP_NAME } me” lub “Private Message me”."
@@ -8046,7 +8034,7 @@
         "Powiadomienia wydarzenia"
       ],
       "Exclude Spam/Trash from All mail": [
-        "Wyklucz foldery Spam i Kosz z Wszystkie wiadomości"
+        "Wyklucz foldery Spam i Kosz z folderu Wszystkie wiadomości"
       ],
       "Expiration (${ patternExpiration })": [
         "Data wygaśnięcia (${ patternExpiration })"

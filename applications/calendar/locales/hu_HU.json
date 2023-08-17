@@ -245,6 +245,9 @@
       "Got it": [
         "Rendben!"
       ],
+      "Help": [
+        "Súgó"
+      ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
       ],
@@ -460,6 +463,9 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Settings": [
+        "Beállítások"
       ],
       "Share": [
         "Megosztás"
@@ -3381,14 +3387,6 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
-      "${ numContact } contact": [
-        "${ numContact } névjegy",
-        "${ numContact } névjegy"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } névjegy csoport",
-        "${ numGroups } névjegy csoport"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
         "${ providerFoldersNumLocalized } mappa található"
@@ -3471,6 +3469,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "A hivatkozás birtokában bárki láthatja, hogy a naptára szerint elfoglalt vagy szabad. Nem láthatják viszont az események adatait, mint például címét, helyét vagy résztvevőit."
+      ],
+      "Are you sure you want to discard your import?": [
+        "Biztos, hogy elveti az importálást?"
       ],
       "Attention required": [
         "Figyelem szükséges"
@@ -3611,9 +3612,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importálás innen"
@@ -4164,6 +4162,9 @@
       "Bad": [
         "Rossz"
       ],
+      "Beta Access": [
+        "Béta hozzáférés"
+      ],
       "Browser": [
         "Böngésző"
       ],
@@ -4419,6 +4420,9 @@
       ],
       "System information": [
         "Rendszer információk"
+      ],
+      "Theme": [
+        "Téma"
       ],
       "Time zone": [
         "Időzóna"
@@ -5632,6 +5636,9 @@
       ],
       "Public holidays are here!": [
         "Már elérhetők a munkaszüneti napok!"
+      ],
+      "Quick settings": [
+        "Gyors beállítások"
       ]
     },
     "Storage": {
