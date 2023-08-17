@@ -10,43 +10,48 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
-import type { Api } from '../types';
-import type { ExtensionPersistedSession } from './persisted-session';
+import type { Api, Maybe } from '../types';
+import { setInMemorySession } from './session.memory';
+import type { ExtensionPersistedSession } from './session.persisted';
 import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
     removePersistedSession,
-    setPersistedSessionWithBlob,
-} from './persisted-session';
+    setPersistedSession,
+} from './session.persisted';
 
-export type PersistSessionOptions = {
-    keyPassword: string;
+export type ExtensionSession = {
     AccessToken: string;
+    keyPassword: string;
     RefreshToken: string;
-    User: UserType;
+    sessionLockToken?: string;
     UID: string;
-    LocalID: number;
-    persistent: boolean;
-    trusted: boolean;
+    UserID: string;
 };
 
-export const persistSession = async (api: Api, options: PersistSessionOptions): Promise<void> => {
-    const { UID, AccessToken } = options;
+export const SESSION_KEYS: (keyof ExtensionSession)[] = [
+    'AccessToken',
+    'keyPassword',
+    'RefreshToken',
+    'sessionLockToken',
+    'UID',
+    'UserID',
+];
+
+export const persistSession = async (api: Api, session: ExtensionSession): Promise<void> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
     const base64StringKey = uint8ArrayToBase64String(rawKey);
 
-    await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, setLocalKey(base64StringKey)));
-    await setPersistedSessionWithBlob(key, options);
+    await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(base64StringKey)));
+    await Promise.all([setPersistedSession(key, session), setInMemorySession(session)]);
 };
 
-export type ResumedSessionResult = {
-    User: UserType;
-    UID: string;
-    AccessToken: string;
-    RefreshToken: string;
-    keyPassword: string;
-    persistent: boolean;
+export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
+    const { ClientKey } = await api<LocalKeyResponse>(getLocalKey());
+    const rawKey = base64StringToUint8Array(ClientKey);
+
+    return getKey(rawKey);
 };
 
 /**
@@ -66,43 +71,33 @@ export const resumeSession = async ({
 }: {
     session: ExtensionPersistedSession;
     api: Api;
-}): Promise<ResumedSessionResult | undefined> => {
+}): Promise<Maybe<ExtensionSession>> => {
     if (session.blob) {
         try {
-            const [{ ClientKey }, { User }] = await Promise.all([
-                api<LocalKeyResponse>(getLocalKey()),
+            const [sessionKey, { User }] = await Promise.all([
+                getPersistedSessionKey(api),
                 api<{ User: UserType }>(getUser()),
             ]);
 
-            const rawKey = base64StringToUint8Array(ClientKey);
-            const key = await getKey(rawKey);
-            const { keyPassword } = await getDecryptedPersistedSessionBlob(key, session.blob);
+            if (session.UserID !== User.ID) throw InactiveSessionError();
+            const ps = await getDecryptedPersistedSessionBlob(sessionKey, session.blob);
 
-            if (session.UserID !== User.ID) {
-                throw InactiveSessionError();
-            }
-
-            /**
-             * access|refresh token may have been internally
-             * refreshed during the API requests required for
-             * parsing the persisted session.
-             */
+            /* access|refresh token may have been internally refreshed
+             * during the API requests required for parsing the persisted
+             * session. In that case, the refresh handlers will take care
+             * of updating the persisted session tokens */
             const AccessToken = api.getAuth()?.AccessToken ?? session.AccessToken;
             const RefreshToken = api.getAuth()?.RefreshToken ?? session.RefreshToken;
 
             return {
-                UID: session.UID,
                 AccessToken,
+                keyPassword: ps.keyPassword,
                 RefreshToken,
-                User,
-                keyPassword,
-                persistent: session.persistent,
+                UID: session.UID,
+                UserID: User.ID,
             };
         } catch (e: any) {
-            if (getIs401Error(e) || e instanceof InvalidPersistentSessionError) {
-                await removePersistedSession();
-            }
-
+            if (getIs401Error(e) || e instanceof InvalidPersistentSessionError) await removePersistedSession();
             throw e;
         }
     }

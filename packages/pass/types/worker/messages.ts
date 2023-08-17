@@ -1,7 +1,7 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
-import type { ResumedSessionResult } from '@proton/pass/auth';
+import type { ExtensionSession } from '@proton/pass/auth';
 import type { ExportRequestPayload } from '@proton/pass/export/types';
 import type { AliasOptions } from '@proton/pass/store';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -96,7 +96,7 @@ export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTEN
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { action: AnyAction }>;
-export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ResumedSessionResult>;
+export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ExtensionSession>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
