@@ -28,7 +28,7 @@ const decrypt = async <T extends object>(options: {
     } catch (_) {}
 };
 
-const getCachedState = async (sessionLockToken?: string): Promise<Maybe<ExtensionCache>> => {
+const getCachedState = async (sessionLockToken: Maybe<string>): Promise<Maybe<ExtensionCache>> => {
     const encryptedDataString = await browserLocalStorage.getItem('state');
     const encryptedSnapshot = await browserLocalStorage.getItem('snapshot');
     const cacheSalt = await browserLocalStorage.getItem('salt');

@@ -1,8 +1,7 @@
 import createApi, { exposeApi } from '@proton/pass/api';
-import { getPersistedSession, setPersistedSession } from '@proton/pass/auth';
+import { getPersistedSession, updateInMemorySession, updatePersistedSession } from '@proton/pass/auth';
 import { generateKey } from '@proton/pass/crypto/utils';
 import { backgroundMessage } from '@proton/pass/extension/message';
-import { browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -13,6 +12,12 @@ import * as config from '../app/config';
 import { createDevReloader } from '../shared/extension';
 import WorkerMessageBroker from './channel';
 import { createWorkerContext } from './context';
+
+if (BUILD_TARGET === 'chrome') {
+    /* https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
+    const globalScope = self as any as ServiceWorkerGlobalScope;
+    globalScope.oninstall = () => globalScope.skipWaiting();
+}
 
 /* The `EXTENSION_KEY` is a random & unique identifier for the current
  * extension runtime. It is currently used for verifiying the origin of
@@ -52,11 +57,10 @@ const api = exposeApi(
     createApi({
         config,
         onSessionRefresh: async ({ AccessToken, RefreshToken }) => {
-            const persistedSession = await getPersistedSession();
-            if (persistedSession) {
+            if (await getPersistedSession()) {
                 await Promise.all([
-                    setPersistedSession({ ...persistedSession, AccessToken, RefreshToken }),
-                    browserSessionStorage.setItems({ AccessToken, RefreshToken }),
+                    updatePersistedSession({ AccessToken, RefreshToken }),
+                    updateInMemorySession({ AccessToken, RefreshToken }),
                 ]);
             }
         },

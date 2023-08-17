@@ -2,9 +2,8 @@ import { type VFC, useEffect } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import createApi from '@proton/pass/api/create-api';
-import { getPersistedSession, resumeSession, setPersistedSession } from '@proton/pass/auth';
+import { getPersistedSession, resumeSession, updateInMemorySession, updatePersistedSession } from '@proton/pass/auth';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -38,8 +37,8 @@ const tryResumeSession = async () => {
                 },
                 onSessionRefresh: async ({ AccessToken, RefreshToken }) =>
                     Promise.all([
-                        setPersistedSession({ ...persistedSession, AccessToken, RefreshToken }),
-                        browserSessionStorage.setItems({ AccessToken, RefreshToken }),
+                        updatePersistedSession({ AccessToken, RefreshToken }),
+                        updateInMemorySession({ AccessToken, RefreshToken }),
                     ]),
             });
 

@@ -1,6 +1,7 @@
 import type { GeneratePasswordOptions } from '@proton/pass/password';
 import type { ItemDraft } from '@proton/pass/store';
 
+import type { ExtensionSession } from '../../auth';
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
 
@@ -23,21 +24,16 @@ export type WorkerState = {
     UID: Maybe<string>;
 };
 
-export type ExtensionSessionData = {
-    UID?: string;
-    AccessToken?: string;
-    RefreshToken?: string;
-    keyPassword?: string;
-};
+export type ExtensionSessionData = ExtensionSession;
 
 export type ExtensionLocalData = {
-    state?: string;
-    snapshot?: string;
-    salt?: string;
-    ps?: string;
-    onboarding?: string;
-    telemetry?: string;
-    settings?: string;
+    state: string;
+    snapshot: string;
+    salt: string;
+    ps: string;
+    onboarding: string;
+    telemetry: string;
+    settings: string;
 };
 
 export type PopupInitialState = {
