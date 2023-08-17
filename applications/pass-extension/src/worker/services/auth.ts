@@ -11,12 +11,10 @@ import {
     exposeAuthStore,
     getInMemorySession,
     getPersistedSession,
-    getPersistedSessionKey,
     persistSession,
     resumeSession,
     setInMemorySession,
     updateInMemorySession,
-    updatePersistedSession,
 } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
@@ -39,7 +37,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time';
 import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 
@@ -60,7 +57,6 @@ export interface AuthService {
     lock: () => void;
     unlock: (sessionLockToken: Maybe<string>) => Promise<void>;
     syncLock: () => Promise<SessionLockCheckResult>;
-    persist: () => Promise<void>;
 }
 
 type CreateAuthServiceOptions = {
@@ -117,26 +113,10 @@ export const createAuthService = ({
          * them in memory & local persisted sessions */
         unlock: async (sessionLockToken) => {
             logger.info(`[Worker::Auth] Unlocking context`);
-
             authStore.setLockToken(sessionLockToken);
 
             await authService.syncLock();
-            await authService.persist();
-        },
-
-        /* Re-encrypts the persisted session blob with
-         * the latest auth store data */
-        persist: async () => {
-            try {
-                const keyPassword = authService.authStore.getPassword();
-                const sessionLockToken = authService.authStore.getLockToken();
-                const sessionKey = await getPersistedSessionKey(api);
-                const blob = await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword, sessionLockToken }));
-
-                await Promise.all([updatePersistedSession({ blob }), updateInMemorySession({ sessionLockToken })]);
-            } catch (e: unknown) {
-                logger.warn(`[Worker::Auth] Failed persisting session`, e);
-            }
+            await updateInMemorySession({ sessionLockToken });
         },
 
         init: asyncLock(async () => {
