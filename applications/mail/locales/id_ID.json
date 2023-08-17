@@ -439,6 +439,9 @@
       "Got it": [
         "Dimengerti"
       ],
+      "Help": [
+        "Bantuan"
+      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -889,6 +892,9 @@
       "Set": [
         "Atur"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi surel bawaan"
+      ],
       "Set as default": [
         "Atur sebagai default"
       ],
@@ -900,6 +906,9 @@
       ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
+      ],
+      "Settings": [
+        "Pengaturan"
       ],
       "Share via link": [
         "Bagikan melalui tautan"
@@ -976,6 +985,9 @@
       "Submit": [
         "Kirim"
       ],
+      "Switch or add account": [
+        "Ubah atau tambahkan akun"
+      ],
       "This message contains embedded images.": [
         "Pesan ini mengandung gambar yang tersemat."
       ],
@@ -990,6 +1002,9 @@
       ],
       "Toggle Contact app": [
         "Tampilkan/sembunyikan aplikasi Contact"
+      ],
+      "Toggle settings": [
+        "Saklar pengaturan"
       ],
       "Tomorrow": [
         "Besok"
@@ -1631,6 +1646,9 @@
       ],
       "azureish white": [
         "putih kebiruan"
+      ],
+      "black": [
+        "hitam"
       ],
       "blanched almond": [
         "almond panggang"
@@ -2875,6 +2893,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Nyalakan perlindungan pelacak surel untuk mencegah pengiklan dan lainnya dari melacak aktivitas lokasi dan daring Anda."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Dapatkan fitur penjadwalan pesan khusus dan berbagai kelebihan lainnya dengan meningkatkan akun Anda."
       ],
@@ -2886,6 +2907,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Kami tidak menemukan pelacak dan URL pelacak apa pun yang diketahui dalam surel ini."
       ],
       "When do you want your message to be sent?": [
         "Kapan Anda ingin pesan Anda dikirim?"
@@ -3477,6 +3501,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
+      ],
+      "Missing FN property": [
+        "Properti FN tidak ada"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard versi < 3.0 tidak didukung"
@@ -4085,6 +4112,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Ubah ${ strongText } ke alamat ${ BRAND_NAME } Anda"
       ],
+      "Changed accounts": [
+        "Berubah akun"
+      ],
       "Checklist complete": [
         "Daftar ceklis selesai"
       ],
@@ -4093,6 +4123,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Selamat, Anda menyelesaikan semua tahap!"
+      ],
+      "Congratulation, you finished!": [
+        "Selamat, Anda sudah selesai!"
       ],
       "Continue setting up your email": [
         "Lanjutkan pengaturan email Anda"
@@ -4136,6 +4169,9 @@
       "Open checklist": [
         "Buka daftar ceklis"
       ],
+      "Open checklist and get free storage": [
+        "Buka daftar centang dan dapatkan penyimpanan gratis"
+      ],
       "Popular online services": [
         "Layanan online populer"
       ],
@@ -4153,6 +4189,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Masuk ke aplikasi mobile untuk menuntaskan langkah ini"
+      ],
+      "Storage unlocked": [
+        "Penyimpanan dibuka"
       ],
       "Update your logins": [
         "Perbarui login Anda"
@@ -4571,12 +4610,6 @@
       "${ numberOfUTMTrackers } links cleaned": [
         "${ numberOfUTMTrackers } tautan dibersihkan"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } kontak"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } grup kontak"
-      ],
       "${ NumMessages } messages in conversation": [
         "${ NumMessages } pesan dalam percakapan"
       ],
@@ -4711,6 +4744,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan pada lokasi ini ke Arsip?"
@@ -4859,6 +4895,9 @@
       "Do you want to re-sign the contact details?": [
         "Anda ingin menandatangani ulang rincian kontak?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Tidak melihat apa yang Anda cari? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
       ],
@@ -4967,6 +5006,9 @@
       "For messages newer than ${ oldestDate }": [
         "Untuk pesan yang lebih baru daripada ${ oldestDate }"
       ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Untuk lebih banyak hasil pencarian, coba mencari untuk kata kunci ini dalam konten pesan surel Anda."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -5015,9 +5057,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Impor dari"
       ],
@@ -5032,6 +5071,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Termasuk Spam/Sampah dalam hasil pencarian Anda."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5203,6 +5245,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
+      ],
+      "Open shortcut cheat sheet": [
+        "Buka lembar contekan pintasan"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
@@ -5570,6 +5615,9 @@
       "Trackers blocked:": [
         "Pelacak yang diblokir:"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Nonaktifkan pilihan ini agar pencarian pesan hanya didasarkan pada tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan dan menghapus pesan yang telah diunduh, tuju menu pengaturan."
       ],
@@ -5657,6 +5705,9 @@
       "We could not verify the sender's trusted keys.": [
         "Kami tidak dapat memverifikasi kunci yang dipercaya pengirim."
       ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Kami menghilangkan informasi pelacakan dari tautan berikut untuk membantu melindungi Anda dari pengiklan dan lainnya yang mencoba melacak aktivitas daring Anda."
+      ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
       ],
@@ -5713,6 +5764,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Anda dapat memperbarui kueri pencarian Anda atau menghapusnya"
       ],
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
@@ -6138,6 +6192,9 @@
       "BCC": [
         "BCC"
       ],
+      "Beta Access": [
+        "Akses Beta"
+      ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
       ],
@@ -6324,6 +6381,9 @@
       "Last month only": [
         "Hanya sebulan terakhir"
       ],
+      "Layout": [
+        "Tata letak"
+      ],
       "Location": [
         "Lokasi"
       ],
@@ -6459,6 +6519,9 @@
       "Street address": [
         "Alamat jalan"
       ],
+      "Sync with system": [
+        "Sinkronisasikan dengan sistem"
+      ],
       "Synchronize with system": [
         "Sinkronkan dengan sistem"
       ],
@@ -6476,6 +6539,9 @@
       ],
       "the email was sent ${ label }": [
         "email terkirim ${ label }"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Then": [
         "Maka"
@@ -7853,6 +7919,12 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Ubah pengaturan"
+      ],
+      "Easily access and customize your app experience.": [
+        "Akses dan ubah pengalaman aplikasi Anda secara mudah."
+      ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
       ],
@@ -7862,11 +7934,17 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
       ],
+      "Quick settings": [
+        "Pengaturan cepat"
+      ],
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
       "Search just got smarter and faster": [
         "Pencarian kini hadir lebih cerdas dan lebih cepat"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "Surel Spam dan Sampah sekarang tidak disertakan dalam Semua Surat. ${ settingsLink }"
       ],
       "Try it today.": [
         "Coba hari ini."
@@ -8172,11 +8250,17 @@
       ]
     },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Buat detail login aman di semua perangkat Anda. Termasuk alias tidak terbatas, 20 brankas, 2FA terintegrasi, pengisian kartu kredit otomatis dan lainnya."
+      ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Termasuk riwayat versi, pembagian berkas terenkripsi, dan lainnya."
       ]
     },
     "summer2023:Footer": {
@@ -8309,6 +8393,9 @@
       ],
       "Addresses": [
         "Alamat"
+      ],
+      "All settings": [
+        "Semua pengaturan"
       ],
       "Archive": [
         "Arsip"
@@ -8798,6 +8885,9 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
+      ],
+      "We protected you from ${ trackersCount } trackers": [
+        "Kami melindungi Anda dari ${ trackersCount } pelacak"
       ],
       "Welcome": [
         "Selamat datang"

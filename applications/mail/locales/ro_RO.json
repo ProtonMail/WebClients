@@ -4716,16 +4716,6 @@
         "S-au curățat ${ numberOfUTMTrackers } legături.",
         "S-au curățat ${ numberOfUTMTrackers } de legături."
       ],
-      "${ numContact } contact": [
-        "Un contact",
-        "${ numContact } contacte",
-        "${ numContact } de contacte"
-      ],
-      "${ numGroups } contact group": [
-        "Un grup de contacte",
-        "${ numGroups } grupuri de contacte",
-        "${ numGroups } de grupuri de contacte"
-      ],
       "${ NumMessages } message in conversation": [
         "Un mesaj în conversație",
         "${ NumMessages } mesaje în conversație",
@@ -5242,9 +5232,6 @@
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importare din"

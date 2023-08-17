@@ -4532,12 +4532,6 @@
       "${ numberOfUTMTrackers } links cleaned": [
         "已净化 ${ numberOfUTMTrackers } 个链接"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } 位联系人"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 个联系人群组"
-      ],
       "${ NumMessages } messages in conversation": [
         "会话包含 ${ NumMessages } 封邮件"
       ],
@@ -4969,9 +4963,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "导入自"
