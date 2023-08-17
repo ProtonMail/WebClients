@@ -1012,6 +1012,9 @@
       "Toggle Contact app": [
         "Przełącz aplikację kontaktów"
       ],
+      "Toggle settings": [
+        "Otwórz ustawienia"
+      ],
       "Tomorrow": [
         "Jutro"
       ],
@@ -3488,6 +3491,9 @@
       "You did not provide a file.": [
         "Nie załączono pliku."
       ],
+      "You have reached the contacts limit for your account": [
+        "Osiągnięto limit kontaktów na koncie"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
@@ -4766,18 +4772,6 @@
         "Wyczyszczono ${ numberOfUTMTrackers } linków",
         "Wyczyszczono ${ numberOfUTMTrackers } linków"
       ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakty",
-        "${ numContact } kontaktów",
-        "${ numContact } kontaktów"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupa kontaktów",
-        "${ numGroups } grupy kontaktów",
-        "${ numGroups } grup kontaktów",
-        "${ numGroups } grupy kontaktów"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } wiadomość w wątku",
         "${ NumMessages } wiadomości w wątku",
@@ -5329,9 +5323,6 @@
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarze",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy",
         "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importuj z"
@@ -8343,7 +8334,7 @@
         "Wyszukiwanie stało się inteligentniejsze i szybsze"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Wiadomości z folderów Spam i Kosz są automatycznie wykluczone z Wszystkie wiadomości. ${ settingsLink }"
+        "Wiadomości z folderów Spam i Kosz są automatycznie wykluczone z folderu Wszystkie wiadomości. ${ settingsLink }"
       ],
       "Try it today.": [
         "Wypróbuj to."

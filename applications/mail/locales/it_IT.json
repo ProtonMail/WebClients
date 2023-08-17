@@ -3447,6 +3447,9 @@
       "You did not provide a file.": [
         "Non hai fornito un file."
       ],
+      "You have reached the contacts limit for your account": [
+        "Hai raggiunto il limite di contatti per il tuo account"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Hai raggiunto il numero massimo di calendari. Alcuni calendari non possono essere importati."
       ],
@@ -4220,7 +4223,7 @@
         "Accedi all'app mobile per completare questo passaggio"
       ],
       "Storage unlocked": [
-        "Immagazzinamento sbloccato"
+        "Archiviazione sbloccata"
       ],
       "Update your logins": [
         "Aggiorna i tuoi login"
@@ -4663,14 +4666,6 @@
         "${ numberOfUTMTrackers } link ripulito",
         "${ numberOfUTMTrackers } link ripuliti"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contatto",
-        "${ numContact } contatti"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } gruppo di contatti",
-        "${ numGroups } gruppi di contatti"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } messaggio nella conversazione",
         "${ NumMessages } messaggi nella conversazione"
@@ -4807,6 +4802,10 @@
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
+        "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Una chiave pubblica sconosciuta è stata rilevata per questo destinatario."
@@ -5153,9 +5152,6 @@
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
         "Importa ${ calendarCount } di ${ totalCalendarsCount } calendari"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importa da"
       ],
@@ -5172,7 +5168,7 @@
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Include Spam/Trash in your search results.": [
-        "Includere Spam/Cestino nei risultati di ricerca."
+        "Includi Spam/Cestino nei risultati di ricerca."
       ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella superiore"
@@ -6635,7 +6631,7 @@
         "Indirizzo"
       ],
       "Sync with system": [
-        "Primario"
+        "Sincronizza con il sistema"
       ],
       "Synchronize with system": [
         "Sincronizza con il sistema"
@@ -8083,7 +8079,7 @@
         "La ricerca è diventata più intelligente e veloce."
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Le e-mail di spam e Cestino ora sono automaticamente escluse da Tutti i messaggi. ${ settingsLink }"
+        "Le email di Spam e Cestino verranno automaticamente escluse da Tutti i messaggi. ${ settingsLink }"
       ],
       "Try it today.": [
         "Provala oggi."

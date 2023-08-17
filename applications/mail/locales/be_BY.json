@@ -4769,18 +4769,6 @@
         "${ numberOfUTMTrackers } спасылак ачышчаны",
         "${ numberOfUTMTrackers } спасылак ачышчаны"
       ],
-      "${ numContact } contact": [
-        "${ numContact } кантакт",
-        "${ numContact } кантакты",
-        "${ numContact } кантактаў",
-        "${ numContact } кантакты"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група кантактаў",
-        "${ numGroups } групы кантактаў",
-        "${ numGroups } груп кантактаў",
-        "${ numGroups } групы кантактаў"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } паведамленне ў размове",
         "${ NumMessages } паведамленні ў размове",
@@ -5333,9 +5321,6 @@
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпартаванне ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Імпартаваць з"
       ],
@@ -5526,7 +5511,7 @@
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
       "Open shortcut cheat sheet": [
-        "Адкрыць памятку спалучэння клавіш"
+        "Адкрыць спіс з камбінацыямі клавіш"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Праверце яго надзейнасць"

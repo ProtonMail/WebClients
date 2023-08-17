@@ -4574,12 +4574,6 @@
       "${ numberOfUTMTrackers } links cleaned": [
         "${ numberOfUTMTrackers } 件のリンクがクリアされました"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } 件の連絡先"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 件の連絡先グループ"
-      ],
       "${ NumMessages } messages in conversation": [
         "会話内に ${ NumMessages } 件のメッセージ"
       ],
@@ -5017,9 +5011,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
       "Import from": [
         "インポート元"
