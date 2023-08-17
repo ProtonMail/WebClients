@@ -3449,16 +3449,6 @@
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
       ],
-      "${ numContact } contact": [
-        "Un contact",
-        "${ numContact } contacte",
-        "${ numContact } de contacte"
-      ],
-      "${ numGroups } contact group": [
-        "Un grup de contacte",
-        "${ numGroups } grupuri de contacte",
-        "${ numGroups } de grupuri de contacte"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
         "S-au găsit ${ providerFoldersNumLocalized } foldere",
@@ -3700,9 +3690,6 @@
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importare din"

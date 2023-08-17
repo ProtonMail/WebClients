@@ -3349,12 +3349,6 @@
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
-      "${ numContact } contacts": [
-        "${ numContact } 件の連絡先"
-      ],
-      "${ numGroups } contact groups": [
-        "${ numGroups } 件の連絡先グループ"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
       ],
@@ -3567,9 +3561,6 @@
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
       "Import from": [
         "インポート元"
