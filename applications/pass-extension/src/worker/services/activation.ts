@@ -141,8 +141,6 @@ export const createActivationService = () => {
     };
 
     const checkPermissionsUpdate = async () => {
-        logger.info(`[Worker::Activation] extension permissions change detected`);
-
         state.permissionsGranted = await checkExtensionPermissions();
         if (!state.permissionsGranted) logger.info(`[Worker::Activation] missing permissions`);
 
