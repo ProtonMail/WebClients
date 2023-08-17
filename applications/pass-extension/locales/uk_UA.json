@@ -1128,6 +1128,9 @@
       "Old-New": [
         "Від найдавніших"
       ],
+      "Older than last month": [
+        "Старіше минулого місяця"
+      ],
       "Oldest to newest": [
         "Спочатку найдавніші"
       ],
@@ -1344,6 +1347,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Повторно введіть \"${ vaultName }\", щоб підтвердити видалення"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Пошук ${ pluralItemType } в ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Пошук ${ pluralItemType } у всіх сховищах"
       ],
       "Search in ${ vault.content.name }": [
         "Шукати в ${ vault.content.name }"
