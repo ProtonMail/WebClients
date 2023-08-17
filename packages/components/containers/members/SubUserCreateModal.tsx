@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { vpnB2bAdminTooltipTitle } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import {
     checkMemberAddressAvailability,
@@ -11,6 +12,7 @@ import {
     updateRole,
 } from '@proton/shared/lib/api/members';
 import {
+    APP_NAMES,
     DEFAULT_ENCRYPTION_CONFIG,
     ENCRYPTION_CONFIGS,
     GIGA,
@@ -26,9 +28,11 @@ import { Address, CachedOrganizationKey, Domain, Member, Organization } from '@p
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import clamp from '@proton/utils/clamp';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     DropdownSizeUnit,
+    Icon,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -39,20 +43,40 @@ import {
     PasswordInputTwo,
     SelectTwo,
     Toggle,
+    Tooltip,
     useFormErrors,
+    useModalState,
 } from '../../components';
 import { useApi, useEventManager, useGetAddresses, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import SubUserBulkCreateModal from './SubUserBulkCreateModal';
+import SubUserCreateHint from './SubUserCreateHint';
+import { UserManagementMode } from './types';
+
+enum Step {
+    SINGLE,
+    BULK,
+}
 
 interface Props extends ModalProps {
     organization: Organization;
     organizationKey: CachedOrganizationKey;
     domains: Domain[];
+    mode?: UserManagementMode;
+    app: APP_NAMES;
 }
 
-const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, ...rest }: Props) => {
+const SubUserCreateModal = ({
+    organization,
+    organizationKey,
+    domains,
+    mode = UserManagementMode.DEFAULT,
+    onClose,
+    app,
+    ...rest
+}: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -60,6 +84,8 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
     const getUserKeys = useGetUserKeys();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
+
+    const [step, setStep] = useState<Step>(Step.SINGLE);
 
     const hasVPN = !!organization.MaxVPN;
 
@@ -70,29 +96,43 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
         password: '',
         confirm: '',
         address: '',
-        domain: domains[0].DomainName,
+        domain: domains[0]?.DomainName ?? null,
         vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
 
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
+
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
+
+    const [bulkUserCreateModalProps, setBulkUserModalOpen] = useModalState();
 
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
     const handleChange = (key: keyof typeof model) => (value: (typeof model)[typeof key]) =>
         setModel({ ...model, [key]: value });
 
+    const getNormalizedAddress = () => {
+        let Local = model.address;
+        let Domain = model.domain;
+        if (!model.domain) {
+            const splitted = model.address.split('@');
+            Local = splitted[0];
+            Domain = splitted[1];
+        }
+
+        return { Local, Domain };
+    };
+
+    const checkAddress = async () => {
+        await api(checkMemberAddressAvailability(getNormalizedAddress()));
+    };
+
     const save = async () => {
-        await api(
-            checkMemberAddressAvailability({
-                Local: model.address,
-                Domain: model.domain,
-            })
-        );
+        await checkAddress();
 
         const userKeys = await getUserKeys();
 
@@ -100,19 +140,14 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
             api,
             credentials: { password: model.password },
             config: createMember({
-                Name: model.name,
+                Name: model.name || model.address,
                 Private: +model.private,
                 MaxSpace: +model.storage,
                 MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
             }),
         });
 
-        const { Address } = await api<{ Address: Address }>(
-            createMemberAddress(Member.ID, {
-                Local: model.address,
-                Domain: model.domain,
-            })
-        );
+        const { Address } = await api<{ Address: Address }>(createMemberAddress(Member.ID, getNormalizedAddress()));
 
         if (!model.private) {
             if (!organizationKey.privateKey) {
@@ -150,11 +185,66 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
         createNotification({ text: c('Success').t`User created` });
     };
 
+    const setBulkStep = () => {
+        setBulkUserModalOpen(true);
+        setStep(Step.BULK);
+    };
+    const setSingleStep = () => {
+        setBulkUserModalOpen(false);
+        setStep(Step.SINGLE);
+    };
+
     const handleClose = () => {
         if (!submitting) {
             onClose?.();
+            setSingleStep();
         }
     };
+
+    const isVpnB2B = mode === UserManagementMode.VPN_B2B;
+    const isDefault = mode === UserManagementMode.DEFAULT;
+
+    if (step === Step.BULK) {
+        return (
+            <SubUserBulkCreateModal
+                {...bulkUserCreateModalProps}
+                onBack={setSingleStep}
+                onClose={handleClose}
+                app={app}
+            />
+        );
+    }
+
+    const addressSuffix = (() => {
+        if (domainOptions.length === 0) {
+            // there is no domains for vpn-b2b mode
+            return null;
+        }
+
+        if (domainOptions.length === 1) {
+            return (
+                <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
+                    @{domainOptions[0].value}
+                </span>
+            );
+        }
+
+        return (
+            <SelectTwo
+                unstyled
+                originalPlacement="bottom-end"
+                size={{ width: DropdownSizeUnit.Static }}
+                value={model.domain}
+                onChange={({ value }) => handleChange('domain')(value)}
+            >
+                {domainOptions.map((option) => (
+                    <Option key={option.value} value={option.value} title={option.text}>
+                        @{option.text}
+                    </Option>
+                ))}
+            </SelectTwo>
+        );
+    })();
 
     return (
         <Modal
@@ -174,58 +264,37 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                 void withLoading(handleSubmit());
             }}
         >
-            <ModalHeader title={c('Title').t`Add user`} />
-            <ModalContent>
-                <p className="color-weak">{c('Info')
-                    .t`Create a new account and share the email address and password with the user.`}</p>
+            <ModalHeader title={c('Title').t`Add new user`} />
+            <ModalContent className="pb-2">
+                {mode !== UserManagementMode.VPN_B2B && (
+                    <p className="color-weak">
+                        {c('Info').t`Create a new account and share the email address and password with the user.`}
+                    </p>
+                )}
                 <InputFieldTwo
                     id="name"
                     autoFocus
                     value={model.name}
-                    error={validator([requiredValidator(model.name)])}
+                    hint={isVpnB2B ? c('Info').t`Optional` : undefined}
+                    error={validator([isDefault && requiredValidator(model.name)].filter(isTruthy))}
                     onValue={handleChange('name')}
                     label={c('Label').t`Name`}
-                    placeholder="Thomas A. Anderson"
                 />
-
                 <InputFieldTwo
                     id="address"
                     value={model.address}
                     error={validator([requiredValidator(model.address)])}
                     onValue={handleChange('address')}
-                    label={c('Label').t`Address`}
-                    placeholder={c('Placeholder').t`Address`}
-                    suffix={
-                        domainOptions.length === 1 ? (
-                            <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
-                                @{domainOptions[0].value}
-                            </span>
-                        ) : (
-                            <SelectTwo
-                                unstyled
-                                originalPlacement="bottom-end"
-                                size={{ width: DropdownSizeUnit.Static }}
-                                value={model.domain}
-                                onChange={({ value }) => handleChange('domain')(value)}
-                            >
-                                {domainOptions.map((option) => (
-                                    <Option key={option.value} value={option.value} title={option.text}>
-                                        @{option.text}
-                                    </Option>
-                                ))}
-                            </SelectTwo>
-                        )
-                    }
+                    label={isVpnB2B ? c('Label').t`Email` : c('Label').t`Address`}
+                    suffix={addressSuffix}
                 />
-
                 <InputFieldTwo
                     id="password"
                     as={PasswordInputTwo}
                     value={model.password}
                     error={validator([requiredValidator(model.password), passwordLengthValidator(model.password)])}
                     onValue={handleChange('password')}
-                    label={c('Label').t`Password`}
-                    placeholder={c('Placeholder').t`Password`}
+                    label={c('Label').t`Create password`}
                 />
 
                 <InputFieldTwo
@@ -238,70 +307,88 @@ const SubUserCreateModal = ({ organization, organizationKey, domains, onClose, .
                     ])}
                     onValue={handleChange('confirm')}
                     label={c('Label').t`Confirm password`}
-                    placeholder={c('Placeholder').t`Confirm password`}
                 />
 
-                {model.private ? null : (
-                    <div className="mb-6">
-                        <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
-                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </div>
+                {!isVpnB2B && (
+                    <>
+                        {model.private && (
+                            <div className="mb-6">
+                                <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
+                                <SelectEncryption
+                                    encryptionType={encryptionType}
+                                    setEncryptionType={setEncryptionType}
+                                />
+                            </div>
+                        )}
+
+                        <MemberStorageSelector
+                            className="mb-5"
+                            value={model.storage}
+                            sizeUnit={storageSizeUnit}
+                            range={storageRange}
+                            totalStorage={getTotalStorage({}, organization)}
+                            onChange={handleChange('storage')}
+                        />
+
+                        {hasVPN && (
+                            <div className="flex flex-align-center mb-5">
+                                <label className="text-semibold mr-4" htmlFor="vpn-toggle">
+                                    {c('Label for new member').t`VPN connections`}
+                                </label>
+                                <Toggle
+                                    id="vpn-toggle"
+                                    checked={model.vpn}
+                                    onChange={({ target }) => handleChange('vpn')(target.checked)}
+                                />
+                            </div>
+                        )}
+
+                        <div className="flex flex-align-center mb-6">
+                            <label className="text-semibold mr-4" htmlFor="private-toggle">
+                                {c('Label for new member').t`Private`}
+                            </label>
+                            <Toggle
+                                id="private-toggle"
+                                checked={model.private}
+                                onChange={({ target }) => handleChange('private')(target.checked)}
+                            />
+                        </div>
+                    </>
                 )}
 
-                <MemberStorageSelector
-                    className="mb-5"
-                    value={model.storage}
-                    sizeUnit={storageSizeUnit}
-                    range={storageRange}
-                    totalStorage={getTotalStorage({}, organization)}
-                    onChange={handleChange('storage')}
-                />
-
-                {hasVPN ? (
-                    <div className="flex flex-align-center mb-5">
-                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
-                            {c('Label for new member').t`VPN connections`}
-                        </label>
-                        <Toggle
-                            id="vpn-toggle"
-                            checked={model.vpn}
-                            onChange={({ target }) => handleChange('vpn')(target.checked)}
-                        />
-                    </div>
-                ) : null}
-
-                <div className="flex flex-align-center mb-6">
-                    <label className="text-semibold mr-4" htmlFor="private-toggle">
-                        {c('Label for new member').t`Private`}
-                    </label>
-                    <Toggle
-                        id="private-toggle"
-                        checked={model.private}
-                        onChange={({ target }) => handleChange('private')(target.checked)}
-                    />
-                </div>
-
-                <div className="flex flex-align-center mb-6">
-                    <label className="text-semibold mr-4" htmlFor="admin-toggle">
+                <div className="flex flex-align-items-center mb-6">
+                    <label className="text-semibold mr-1" htmlFor="admin-toggle">
                         {c('Label for new member').t`Admin`}
                     </label>
+                    {isVpnB2B && (
+                        <Tooltip title={vpnB2bAdminTooltipTitle}>
+                            <Icon name="info-circle" className="color-primary" />
+                        </Tooltip>
+                    )}
                     <Toggle
                         id="admin-toggle"
+                        className="ml-2"
                         checked={model.admin}
                         onChange={({ target }) => handleChange('admin')(target.checked)}
                     />
                 </div>
+                {isVpnB2B && <SubUserCreateHint className="mt-8 mb-2" />}
             </ModalContent>
             <ModalFooter>
-                <Button onClick={handleClose} disabled={submitting}>
-                    {c('Action').t`Cancel`}
-                </Button>
+                {isVpnB2B ? (
+                    <Button onClick={setBulkStep} disabled={submitting}>
+                        {c('Action').t`Add multiple users`}
+                    </Button>
+                ) : (
+                    <Button onClick={handleClose} disabled={submitting}>
+                        {c('Action').t`Cancel`}
+                    </Button>
+                )}
                 <Button loading={submitting} type="submit" color="norm">
-                    {c('Action').t`Save`}
+                    {c('Action').t`Create user`}
                 </Button>
             </ModalFooter>
         </Modal>
     );
 };
-
 export default SubUserCreateModal;

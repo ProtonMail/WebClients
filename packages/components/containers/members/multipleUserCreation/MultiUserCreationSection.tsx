@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
+import { UserManagementMode } from '@proton/components/containers/members/types';
 import useDomains from '@proton/components/hooks/useDomains';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -27,7 +28,12 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <>
             {renderCreateUserAccountsModal && usersToImport && (
-                <CreateUserAccountsModal usersToImport={usersToImport} app={app} {...createUserAccountsModal} />
+                <CreateUserAccountsModal
+                    usersToImport={usersToImport}
+                    app={app}
+                    {...createUserAccountsModal}
+                    mode={UserManagementMode.DEFAULT}
+                />
             )}
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`Add multiple users to your organization at once.`}</SettingsParagraph>

@@ -25,3 +25,9 @@ export interface ExportedCSVUser {
     VPNAccess: 1 | 0;
     PrivateSubUser: 1 | 0;
 }
+
+export interface ExportedVpnB2BCSVUser {
+    EmailAddress: string;
+    Password: string;
+    Name: string;
+}
