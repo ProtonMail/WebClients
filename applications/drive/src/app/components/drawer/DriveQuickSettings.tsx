@@ -4,6 +4,7 @@ import {
     QuickSettingsButtonSection,
     QuickSettingsMain,
 } from '@proton/components/components/drawer/views/quickSettings';
+import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
 
 import ClearSearchDataButton from '../layout/search/ClearSearchDataButton';
 
@@ -12,6 +13,8 @@ const DriveQuickSettings = () => {
 
     return (
         <QuickSettingsMain>
+            <DrawerAllSettingsView />
+
             <DefaultQuickSettings />
 
             <QuickSettingsButtonSection>
