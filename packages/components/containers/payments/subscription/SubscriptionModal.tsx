@@ -231,16 +231,22 @@ const SubscriptionModal = ({
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
 
+    const application = (() => {
+        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return APPS.PROTONVPN_SETTINGS;
+        }
+        if (APP_NAME === APPS.PROTONACCOUNTLITE) {
+            return APPS.PROTONACCOUNTLITE;
+        }
+
+        return APPS.PROTONACCOUNT;
+    })();
+
     const metricsProps = {
         ...outerMetricsProps,
         step: metricStepMap[model.step],
         fromPlan,
-        application:
-            APP_NAME === APPS.PROTONVPN_SETTINGS
-                ? APPS.PROTONVPN_SETTINGS
-                : APP_NAME === APPS.PROTONACCOUNTLITE
-                ? APPS.PROTONACCOUNTLITE
-                : APPS.PROTONACCOUNT,
+        application,
     };
 
     const { showProration } = useProration(model, subscription, plansMap, checkResult);
@@ -518,7 +524,7 @@ const SubscriptionModal = ({
         if (loadingCheck || currency === model.currency) {
             return;
         }
-        withLoadingCheck(check({ ...model, currency }));
+        void withLoadingCheck(check({ ...model, currency }));
     };
 
     const handleChangeCycle = (cycle: Cycle) => {
@@ -526,8 +532,8 @@ const SubscriptionModal = ({
             return;
         }
         const checkPromise = check({ ...model, cycle });
-        withLoadingCheck(checkPromise);
-        withBlockAccountSizeSelector(checkPromise);
+        void withLoadingCheck(checkPromise);
+        void withBlockAccountSizeSelector(checkPromise);
     };
 
     useEffect(() => {
@@ -568,7 +574,7 @@ const SubscriptionModal = ({
                 }));
             }
         };
-        withLoading(run());
+        void withLoading(run());
     };
 
     return (
@@ -602,7 +608,7 @@ const SubscriptionModal = ({
                     creditCardTopRef.current?.scrollIntoView();
                     return;
                 }
-                withLoading(handleCheckout());
+                void withLoading(handleCheckout());
             }}
             onClose={onClose}
             data-testid="plansModal"
