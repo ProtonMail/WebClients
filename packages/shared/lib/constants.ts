@@ -746,7 +746,7 @@ export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
 };
 export function isFreeSubscription(obj: any): obj is typeof FREE_SUBSCRIPTION {
-    return !!obj && obj.isFreeSubscription;
+    return !!obj && obj.isFreeSubscription && Object.keys(obj).length === 1;
 }
 
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`

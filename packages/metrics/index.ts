@@ -29,9 +29,11 @@ import { WebCoreVpnSingleSignupStep2Setup3Total } from './types/web_core_vpn_sin
 import { WebCoreVpnSingleSignupStep3Complete2Total } from './types/web_core_vpn_single_signup_step3_complete_2_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4OrgSetupTotal } from './types/web_core_vpn_single_signup_step4_orgSetup_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vpn_single_signup_step4_setup_2_total_v1.schema';
+import { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
+import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
-export { default as observeApiError } from './lib/observeApiError';
 export * from './lib/observeApiError';
+export { default as observeApiError } from './lib/observeApiError';
 
 class Metrics extends MetricsBase {
     public core_signup_pageLoad_total: Counter<WebCoreSignupPageLoadTotal>;
@@ -79,6 +81,10 @@ class Metrics extends MetricsBase {
     public core_vpn_single_signup_step4_setup_2_total: Counter<WebCoreVpnSingleSignupStep4Setup2Total>;
 
     public core_vpn_single_signup_step4_orgSetup_total: Counter<WebCoreVpnSingleSignupStep4OrgSetupTotal>;
+
+    public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
+
+    public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
@@ -182,6 +188,14 @@ class Metrics extends MetricsBase {
         );
         this.core_vpn_single_signup_step4_orgSetup_total = new Counter<WebCoreVpnSingleSignupStep4OrgSetupTotal>(
             { name: 'web_core_vpn_single_signup_step4_orgSetup_total', version: 1 },
+            this.requestService
+        );
+        this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
+            { name: 'web_payments_subscription_steps_total', version: 1 },
+            this.requestService
+        );
+        this.payments_subscription_total = new Counter<WebPaymentsSubscriptionTotal>(
+            { name: 'web_payments_subscription_total', version: 1 },
             this.requestService
         );
     }
