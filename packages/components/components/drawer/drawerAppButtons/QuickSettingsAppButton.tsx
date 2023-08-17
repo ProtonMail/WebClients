@@ -24,6 +24,7 @@ const QuickSettingsAppButton = ({ onClick }: Optional<Omit<Props, 'tooltipText' 
         <DrawerAppButton
             key="toggle-settings-drawer-app-button"
             tooltipText={c('Title').t`Settings`}
+            tooltipPlacement="bottom"
             data-testid="settings-drawer-app-button:settings-icon"
             buttonContent={<Icon name="cog-drawer" size={20} />}
             onClick={handleClick}

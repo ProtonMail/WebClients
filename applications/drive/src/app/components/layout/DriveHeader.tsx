@@ -22,6 +22,7 @@ interface Props {
     toggleHeaderExpanded: () => void;
     searchBox?: ReactNode;
     title?: string;
+    settingsButton?: ReactNode;
 }
 
 export const DriveHeader = ({
@@ -29,6 +30,7 @@ export const DriveHeader = ({
     toggleHeaderExpanded,
     title = c('Title').t`Drive`,
     searchBox,
+    settingsButton,
 }: Props) => {
     const { isNarrow, isTablet } = useActiveBreakpoint();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
@@ -50,6 +52,7 @@ export const DriveHeader = ({
                 onToggleExpand={toggleHeaderExpanded}
                 isNarrow={isNarrow}
                 actionArea={!(isNarrow || isTablet) && searchBox}
+                settingsButton={settingsButton}
             />
 
             <RebrandingFeedbackModal {...rebrandingFeedbackModal} />

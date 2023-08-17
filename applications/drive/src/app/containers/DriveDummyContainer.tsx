@@ -11,12 +11,12 @@ import {
     ModalsChildren,
     PrivateAppContainer,
     PrivateMainArea,
-    QuickSettingsAppButton,
     SidebarPrimaryButton,
     useActiveBreakpoint,
     useToggle,
     useUser,
 } from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -95,8 +95,7 @@ const DriveDummyContainer = () => {
         permissions.calendar && <CalendarDrawerAppButton />,
     ].filter(isTruthy);
 
-    const drawerSettingsButton = <QuickSettingsAppButton />;
-
+    const canShowDrawer = drawerSidebarButtons.length > 0;
     return (
         <>
             <ModalsChildren />
@@ -104,9 +103,8 @@ const DriveDummyContainer = () => {
                 <PrivateMainArea
                     hasToolbar
                     className="flex-no-min-children flex-column flex-nowrap "
-                    drawerSidebar={
-                        <DrawerSidebar buttons={drawerSidebarButtons} settingsButton={drawerSettingsButton} />
-                    }
+                    drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                    drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 >
                     <div className="flex flex-column flex-nowrap w100">
                         <ToolbarRow

@@ -17,6 +17,7 @@ import {
     useLabels,
     useModalState,
 } from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -107,7 +108,7 @@ const MailboxContainer = ({
     const composersCount = useAppSelector(selectComposersCount);
     const isComposerOpened = composersCount > 0;
     const onMailTo = useOnMailTo();
-    const { drawerSidebarButtons, drawerSpotlightSeenRef } = useMailDrawer();
+    const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
@@ -456,6 +457,8 @@ const MailboxContainer = ({
         []
     );
 
+    const canShowDrawer = drawerSidebarButtons.length > 0;
+
     return (
         <MailboxContainerContextProvider
             isResizing={isResizing}
@@ -474,6 +477,7 @@ const MailboxContainer = ({
                     selectedIDs={selectedIDs}
                     labelID={labelID}
                     toolbar={toolbar(true)}
+                    settingsButton={<QuickSettingsAppButton />}
                 />
 
                 <PrivateMainArea
@@ -481,13 +485,9 @@ const MailboxContainer = ({
                     hasToolbar
                     hasRowMode={!showContentPanel}
                     ref={mainAreaRef}
-                    drawerSidebar={
-                        <DrawerSidebar
-                            buttons={drawerSidebarButtons}
-                            settingsButton={<QuickSettingsAppButton />}
-                            spotlightSeenRef={drawerSpotlightSeenRef}
-                        />
-                    }
+                    drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                    drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+                    mainBordered={canShowDrawer && !!showDrawerSidebar}
                 >
                     <List
                         ref={listRef}
