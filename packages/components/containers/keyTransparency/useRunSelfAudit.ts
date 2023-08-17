@@ -12,6 +12,7 @@ import {
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { AddressesModel } from '@proton/shared/lib/models';
 
@@ -51,18 +52,15 @@ const useRunSelfAudit = () => {
      * At this point self audit can be sure to have the latest version of addresses.
      */
     const waitForAddressUpdates = async () => {
-        await new Promise<() => void>((resolve) => {
-            const unsubscribe = subscribe((data) => {
-                if (!data[AddressesModel.key]) {
-                    resolve(unsubscribe);
-                }
-            });
-            setTimeout(() => {
-                resolve(unsubscribe);
-            }, 5 * INTERVAL_EVENT_TIMER);
-        }).then((unsubscribe) => {
-            unsubscribe();
+        let resolve: () => void;
+        const eventPromise = new Promise<void>((_resolve) => (resolve = _resolve));
+        const unsubscribe = subscribe((data) => {
+            if (!data[AddressesModel.key]) {
+                resolve();
+            }
         });
+        await Promise.any([eventPromise, wait(5 * INTERVAL_EVENT_TIMER)]);
+        unsubscribe();
     };
 
     const ignoreError = (error: any): boolean => {
