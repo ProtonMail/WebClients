@@ -94,19 +94,25 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         );
 
         if (res.type === 'success' && context.getState().active) {
+            /* if the user has disabled every injection setting
+             * we can safely destroy the content-script context */
+            const { autofill, autosuggest, autosave } = res.settings;
+            const enable = autofill.inject || autosuggest.email || autosuggest.password || autosave.prompt;
+            if (!enable) return context.destroy({ reason: 'injection settings' });
+
             const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
+
             onWorkerStateChange(workerState);
             onSettingsChange(res.settings);
-
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */
             if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
 
             port.onMessage.addListener(onPortMessage);
-
             context.service.formManager.observe();
+
             const didDetect = await context.service.formManager.detect({ reason: 'InitialLoad', flush: true });
             if (!didDetect) await context.service.autosave.reconciliate();
         }
