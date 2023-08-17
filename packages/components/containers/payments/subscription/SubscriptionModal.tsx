@@ -13,9 +13,11 @@ import {
     WrappedCardPayment,
 } from '@proton/components/payments/core/interface';
 import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics';
+import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -51,6 +53,7 @@ import {
 } from '../../../components';
 import {
     useApi,
+    useConfig,
     useEventManager,
     useFeature,
     useGetCalendars,
@@ -82,6 +85,10 @@ import SubscriptionThanks from './modal-components/SubscriptionThanks';
 
 import './SubscriptionModal.scss';
 
+type Source = WebPaymentsSubscriptionStepsTotal['Labels']['source'];
+type FromPlan = WebPaymentsSubscriptionStepsTotal['Labels']['fromPlan'];
+type MetricsStep = WebPaymentsSubscriptionStepsTotal['Labels']['step'];
+
 export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     app: APP_NAMES;
     step?: SUBSCRIPTION_STEPS;
@@ -95,6 +102,10 @@ export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onE
     disableCycleSelector?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
+    fromPlan: FromPlan;
+    metrics: {
+        source: Source;
+    };
 }
 
 export interface Model {
@@ -104,6 +115,7 @@ export interface Model {
     cycle: Cycle;
     coupon?: string | null;
     gift?: string;
+    initialCheckComplete: boolean;
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
@@ -157,6 +169,8 @@ const SubscriptionModal = ({
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
+    metrics: outerMetricsProps,
+    fromPlan,
     ...rest
 }: Props) => {
     const TITLE = {
@@ -167,6 +181,16 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
         [SUBSCRIPTION_STEPS.THANKS]: '',
         [SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION]: c('new_plans: title').t`Review subscription and pay`,
+    };
+
+    const metricStepMap: Record<SUBSCRIPTION_STEPS, MetricsStep> = {
+        [SUBSCRIPTION_STEPS.NETWORK_ERROR]: 'network-error',
+        [SUBSCRIPTION_STEPS.PLAN_SELECTION]: 'plan-selection',
+        [SUBSCRIPTION_STEPS.CUSTOMIZATION]: 'customization',
+        [SUBSCRIPTION_STEPS.CHECKOUT]: 'checkout',
+        [SUBSCRIPTION_STEPS.UPGRADE]: 'upgrade',
+        [SUBSCRIPTION_STEPS.THANKS]: 'thanks',
+        [SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION]: 'checkout-with-customization',
     };
 
     const topRef = useRef<HTMLDivElement>(null);
@@ -183,6 +207,7 @@ const SubscriptionModal = ({
     const getCalendars = useGetCalendars();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const createPaymentToken = usePaymentToken();
+    const { APP_NAME } = useConfig();
 
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
@@ -198,12 +223,31 @@ const SubscriptionModal = ({
         currency,
         coupon,
         planIDs,
+        initialCheckComplete: false,
     });
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
     const [bitcoinValidated, setBitcoinValidated] = useState(false);
     const [awaitingBitcoinPayment, setAwaitingBitcoinPayment] = useState(false);
+
+    const application = (() => {
+        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return APPS.PROTONVPN_SETTINGS;
+        }
+        if (APP_NAME === APPS.PROTONACCOUNTLITE) {
+            return APPS.PROTONACCOUNTLITE;
+        }
+
+        return APPS.PROTONACCOUNT;
+    })();
+
+    const metricsProps = {
+        ...outerMetricsProps,
+        step: metricStepMap[model.step],
+        fromPlan,
+        application,
+    };
 
     const { showProration } = useProration(model, subscription, plansMap, checkResult);
 
@@ -336,6 +380,12 @@ const SubscriptionModal = ({
                 timeout: 60000 * 2, // 2 minutes
             });
             await call();
+
+            void metrics.payments_subscription_total.increment({
+                ...metricsProps,
+                status: 'success',
+            });
+
             if (disableThanksStep) {
                 onSuccess?.();
                 onClose?.();
@@ -350,6 +400,14 @@ const SubscriptionModal = ({
                 // translator: this message pops in a notification, in case user is waiting really too long, or does the checkout in another tab, which makes this ones not valid/expiring
                 createNotification({ text: c('Error').t`Checkout expired, please try again`, type: 'error' });
             }
+
+            observeApiError(error, (status) =>
+                metrics.payments_subscription_total.increment({
+                    ...metricsProps,
+                    status,
+                })
+            );
+
             setModel({ ...model, step: SUBSCRIPTION_STEPS.CHECKOUT });
             throw error;
         }
@@ -368,7 +426,10 @@ const SubscriptionModal = ({
     const bitcoinLoading = method === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinValidated && awaitingBitcoinPayment;
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
-        const copyNewModel = { ...newModel };
+        const copyNewModel = {
+            ...newModel,
+            initialCheckComplete: true,
+        };
 
         if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
             copyNewModel.step = SUBSCRIPTION_STEPS.CHECKOUT;
@@ -463,7 +524,7 @@ const SubscriptionModal = ({
         if (loadingCheck || currency === model.currency) {
             return;
         }
-        withLoadingCheck(check({ ...model, currency }));
+        void withLoadingCheck(check({ ...model, currency }));
     };
 
     const handleChangeCycle = (cycle: Cycle) => {
@@ -471,9 +532,17 @@ const SubscriptionModal = ({
             return;
         }
         const checkPromise = check({ ...model, cycle });
-        withLoadingCheck(checkPromise);
-        withBlockAccountSizeSelector(checkPromise);
+        void withLoadingCheck(checkPromise);
+        void withBlockAccountSizeSelector(checkPromise);
     };
+
+    useEffect(() => {
+        if (!model.initialCheckComplete) {
+            return;
+        }
+
+        void metrics.payments_subscription_steps_total.increment(metricsProps);
+    }, [model.step, model.initialCheckComplete]);
 
     useEffect(() => {
         // Trigger once to initialise the check values
@@ -505,7 +574,7 @@ const SubscriptionModal = ({
                 }));
             }
         };
-        withLoading(run());
+        void withLoading(run());
     };
 
     return (
@@ -539,7 +608,7 @@ const SubscriptionModal = ({
                     creditCardTopRef.current?.scrollIntoView();
                     return;
                 }
-                withLoading(handleCheckout());
+                void withLoading(handleCheckout());
             }}
             onClose={onClose}
             data-testid="plansModal"

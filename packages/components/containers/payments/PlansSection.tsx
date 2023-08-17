@@ -103,6 +103,9 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BPlan(planID as any))
                 ? Audience.B2B
                 : Audience.B2C,
+            metrics: {
+                source: 'plans',
+            },
         });
     };
 
@@ -159,6 +162,9 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                         defaultAudience: audience,
                         defaultSelectedProductPlans: selectedProductPlans,
+                        metrics: {
+                            source: 'plans',
+                        },
                     });
                 }}
             >
