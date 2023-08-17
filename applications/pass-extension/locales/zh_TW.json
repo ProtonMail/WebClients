@@ -1077,6 +1077,9 @@
       "Old-New": [
         "舊至新"
       ],
+      "Older than last month": [
+        "舊於上個月"
+      ],
       "Oldest to newest": [
         "從最舊到最新"
       ],
@@ -1293,6 +1296,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "重新輸入${ vaultName }以確認刪除"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "於${ vault.content.name }搜尋${ pluralItemType }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "於保管庫中${ pluralItemType }"
       ],
       "Search in ${ vault.content.name }": [
         "在搜尋${ vault.content.name }"
