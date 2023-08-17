@@ -4625,9 +4625,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% sat på pause"
-      ],
       "Active": [
         "Aktiv"
       ],
@@ -4760,14 +4757,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } uploadet fil er ikke en gyldig privat nøgle. Kontroller den og prøv igen.",
         "${ numberOfNonPrivateKeys } uploadede filer er ikke gyldige private nøgler. Kontroller dem og prøv igen."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } kontakt",
-        "${ numContact } kontakter"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } kontaktgruppe",
-        "${ numGroups } kontaktgrupper"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } er et avanceret kontobeskyttelsesprogram, der drives af sofistikerede AI-systemer og specialister, der arbejder døgnet rundt for at beskytte dig mod ondsindede aktører og sikkerhedstrusler."
@@ -5480,9 +5469,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importer fra"
@@ -8227,6 +8213,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Aktivér ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Aktiver avancerede logs"
       ],
@@ -9183,6 +9172,9 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
       ],
       "A disabled address cannot be default": [
         "En deaktiveret adresse kan ikke være standard"

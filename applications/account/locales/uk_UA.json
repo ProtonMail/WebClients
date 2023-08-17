@@ -5016,9 +5016,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% зупинено"
-      ],
       "Active": [
         "Активно"
       ],
@@ -5168,18 +5165,6 @@
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажених файлів не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } контакт",
-        "${ numContact } контакти",
-        "${ numContact } контактів",
-        "${ numContact } контактів"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } група контактів",
-        "${ numGroups } групи контактів",
-        "${ numGroups } груп контактів",
-        "${ numGroups } груп контактів"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } це вдосконалена програма захисту облікових записів, яка працює завдяки складним системам штучного інтелекту та фахівцям, які цілодобово захищають вас від зловмисників і загроз безпеці."
@@ -5933,9 +5918,6 @@
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
         "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Імпортувати з"
