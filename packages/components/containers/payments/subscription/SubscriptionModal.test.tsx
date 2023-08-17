@@ -27,6 +27,8 @@ import {
 import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
+jest.mock('@proton/metrics');
+
 describe('useProration', () => {
     let model: Model;
     let subscriptionModel: SubscriptionModel;
@@ -120,6 +122,7 @@ describe('useProration', () => {
             },
             currency: 'CHF',
             cycle: CYCLE.MONTHLY,
+            initialCheckComplete: false,
         };
 
         subscriptionModel = {
@@ -247,6 +250,10 @@ describe('SubscriptionModal', () => {
             },
             open: true,
             onClose: jest.fn(),
+            metrics: {
+                source: 'dashboard',
+            },
+            fromPlan: 'free',
         };
     });
 

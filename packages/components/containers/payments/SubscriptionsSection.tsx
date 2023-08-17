@@ -179,6 +179,9 @@ const SubscriptionsSection = () => {
             onClick: () =>
                 openSubscriptionModal({
                     step: SUBSCRIPTION_STEPS.CHECKOUT,
+                    metrics: {
+                        source: 'subscription-section',
+                    },
                 }),
         },
         !renewEnabled && {
