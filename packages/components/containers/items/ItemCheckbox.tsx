@@ -71,7 +71,9 @@ const ItemCheckbox = ({
             />
             <span
                 className="item-icon flex-item-noshrink relative rounded inline-flex"
-                style={{ backgroundColor: color ?? '' }}
+                style={{
+                    backgroundColor: color ?? '',
+                }}
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >

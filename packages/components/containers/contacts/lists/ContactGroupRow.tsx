@@ -1,8 +1,10 @@
 import { CSSProperties, ChangeEvent, MouseEvent, useState } from 'react';
 
+import tinycolor from 'tinycolor2';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import genAccentShades from '@proton/colors/gen-accent-shades';
 import { Icon } from '@proton/components/components/icon';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -42,6 +44,7 @@ const ContactGroupRow = ({
     const [hasFocus, setHasFocus] = useState(false);
 
     const addressCount = groupsEmailsMap[ID]?.length || 0;
+    const colors = genAccentShades(tinycolor(Color)).map((c) => c.toHexString());
 
     const handleFocus = () => {
         setHasFocus(true);
@@ -82,7 +85,14 @@ const ContactGroupRow = ({
             data-testid={`group-item:${group.Name}`}
         >
             <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-start">
-                <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} iconName="users" color={Color} />
+                <ItemCheckbox
+                    ID={ID}
+                    name={Name}
+                    checked={checked}
+                    onChange={onCheck}
+                    iconName="users"
+                    color={checked ? colors[2] : Color}
+                />
                 <div className="flex-item-fluid ml-2 conversation-titlesender">
                     <ContactRowItemFirstLine ID={ID} Name={Name} />
 
