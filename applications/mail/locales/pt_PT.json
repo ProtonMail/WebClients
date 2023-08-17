@@ -1007,7 +1007,7 @@
         "Alternar aplicação de contactos"
       ],
       "Toggle settings": [
-        "Alternar as configurações"
+        "Alternar definições"
       ],
       "Tomorrow": [
         "Amanhã"
@@ -4654,14 +4654,6 @@
         "${ numberOfUTMTrackers } ligação limpa",
         "${ numberOfUTMTrackers } ligações limpas"
       ],
-      "${ numContact } contact": [
-        "${ numContact } contacto",
-        "${ numContact } contactos"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } grupo de contactos",
-        "${ numGroups } grupos de contactos"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } mensagem na conversa",
         "${ NumMessages } mensagens na conversa"
@@ -5144,9 +5136,6 @@
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
       ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
-      ],
       "Import from": [
         "Importar de"
       ],
@@ -5440,7 +5429,7 @@
         "Guardado ontem"
       ],
       "Saved: ${ dateString }": [
-        "Gravação: ${ dateString }"
+        "Guardado: ${ dateString }"
       ],
       "Saving draft…": [
         "A guardar o rascunho…"
@@ -5710,7 +5699,7 @@
         "Rastreadores bloqueados:"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Experimente novas funcionalidades, actualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
+        "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desativar o conteúdo das mensagens de pesquisa e eliminar as mensagens descarregadas, vá às definições."
@@ -5860,7 +5849,7 @@
         "Pode actualizar a sua pesquisa ou ${ button }."
       ],
       "You can either update your search query or clear it": [
-        "Pode actualizar a sua consulta ou limpá-la."
+        "Pode atualizar a sua pesquisa ou limpá-la."
       ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
