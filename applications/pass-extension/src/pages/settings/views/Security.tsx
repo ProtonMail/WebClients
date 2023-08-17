@@ -19,13 +19,11 @@ export const Security: VFC = () => {
     const [lockCreationModalOpened, setLockCreationModalOpened] = useState(false);
     const { confirmPin } = useSessionLockConfirmContext();
 
-    const { sessionLockToken, sessionLockTTL } = useSelector(selectSessionLockSettings);
+    const { sessionLockRegistered, sessionLockTTL } = useSelector(selectSessionLockSettings);
     const sessionLockLoading = useSelector(selectRequestInFlight(settingsEdit('session-lock')));
 
-    const hasLock = sessionLockToken !== undefined;
-
     const handleSessionLockToggle = async () =>
-        hasLock
+        sessionLockRegistered
             ? confirmPin({
                   onSubmit: (pin) => dispatch(sessionLockDisableIntent({ pin })),
                   assistiveText: c('Info').t`Please confirm your PIN code in order to unregister your current lock.
@@ -41,7 +39,7 @@ export const Security: VFC = () => {
 
             <Checkbox
                 className="mb-4"
-                checked={hasLock}
+                checked={sessionLockRegistered}
                 onChange={handleSessionLockToggle}
                 loading={sessionLockLoading}
             >
@@ -53,7 +51,7 @@ export const Security: VFC = () => {
             </Checkbox>
 
             <SessionLockCreate opened={lockCreationModalOpened} onClose={() => setLockCreationModalOpened(false)} />
-            <SessionLockTTLUpdate ttl={sessionLockTTL} disabled={!hasLock || sessionLockLoading} />
+            <SessionLockTTLUpdate ttl={sessionLockTTL} disabled={!sessionLockRegistered || sessionLockLoading} />
         </Card>
     );
 };

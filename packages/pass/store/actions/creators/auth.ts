@@ -18,7 +18,6 @@ export const signoutSuccess = createAction('signout success', (payload: { soft: 
 );
 
 export const sessionLock = createAction('session lock', () => withCacheBlock({ payload: {} }));
-export const extendLock = createAction('extend lock', () => withCacheBlock({ payload: {} }));
 export const offlineLock = createAction('offline lock');
 export const syncLock = createAction('sync lock', (payload: SessionLockCheckResult) => withCacheBlock({ payload }));
 
@@ -49,7 +48,7 @@ export const sessionLockEnableFailure = createAction(
 
 export const sessionLockEnableSuccess = createAction(
     'enable session lock success',
-    (payload: { storageToken: string; ttl: number }, receiver?: ExtensionEndpoint) =>
+    (payload: { sessionLockToken: string; ttl: number }, receiver?: ExtensionEndpoint) =>
         pipe(
             withRequest({ id: settingsEdit('session-lock'), type: 'success' }),
             withNotification({
@@ -126,12 +125,14 @@ export const sessionUnlockFailure = createAction(
         )({ payload, error })
 );
 
-export const sessionUnlockSuccess = createAction('unlock session lock success', (payload: { storageToken: string }) =>
-    pipe(
-        withCacheBlock,
-        withRequest({
-            id: unlockSession,
-            type: 'success',
-        })
-    )({ payload })
+export const sessionUnlockSuccess = createAction(
+    'unlock session lock success',
+    (payload: { sessionLockToken: string }) =>
+        pipe(
+            withCacheBlock,
+            withRequest({
+                id: unlockSession,
+                type: 'success',
+            })
+        )({ payload })
 );
