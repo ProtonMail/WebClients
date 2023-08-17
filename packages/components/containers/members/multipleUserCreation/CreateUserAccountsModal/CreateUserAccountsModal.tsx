@@ -37,8 +37,10 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 import removeIndex from '@proton/utils/removeIndex';
 
+import { UserManagementMode } from '../../types';
 import validateAddUser from '../../validateAddUser';
 import InvalidAddressesError from '../errors/InvalidAddressesError';
 import UnavailableAddressesError from '../errors/UnavailableAddressesError';
@@ -89,9 +91,10 @@ const filterOptions = (searchValue: string, usersToImport: UserTemplate[]) => {
 interface Props extends ModalProps {
     usersToImport: UserTemplate[];
     app: APP_NAMES;
+    mode: UserManagementMode;
 }
 
-const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props) => {
+const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
     const [organization, loadingOrganization] = useOrganization();
@@ -124,6 +127,10 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
     const [orphanedAddresses, setOrphanedAddresses] = useState<string[]>([]);
     const [importing, withImporting] = useLoading();
+
+    const showStorageColumn = mode === UserManagementMode.DEFAULT;
+    const showPasswordColumn = mode === UserManagementMode.VPN_B2B;
+    const showRoleColumn = mode === UserManagementMode.VPN_B2B;
 
     /**
      * Prompt on browser instance closing if users are being imported
@@ -189,7 +196,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
     };
 
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
-        const error = validateAddUser(organization, organizationKey, verifiedDomains);
+        const error = validateAddUser(organization, organizationKey, verifiedDomains, mode);
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
@@ -245,6 +252,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
                     keyTransparencyVerify,
+                    mode,
                 });
 
                 localSuccessfullyCreatedUsers.push(user);
@@ -332,14 +340,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between flex-align-items-center gap-4 create-user-accounts-additional-content mt-4">
-                        <Checkbox
-                            id="selectAll"
-                            checked={isSelectAllChecked}
-                            onChange={handleSelectAllFilteredOptionsClick}
-                        >
-                            {c('Checkbox label').t`All`}
-                        </Checkbox>
+                    <div className="flex flex-align-items-center flex-justify-end create-user-accounts-additional-content mt-4 px-3">
                         <Input
                             className="max-w270p"
                             placeholder={c('Placeholder').t`Search`}
@@ -353,13 +354,28 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                     <Table className="table-auto simple-table--is-hoverable create-user-accounts-table">
                         <TableHeader
                             cells={[
-                                <div className="display-name-header">{c('TableHeader').t`Display name`}</div>,
-                                c('TableHeader').t`Email addresses`,
-                                <div className="text-right">{c('TableHeader').t`Total storage`}</div>,
-                            ]}
+                                <Checkbox
+                                    id="selectAll"
+                                    checked={isSelectAllChecked}
+                                    onChange={handleSelectAllFilteredOptionsClick}
+                                />,
+                                <div>
+                                    {mode === UserManagementMode.DEFAULT
+                                        ? c('TableHeader').t`Display name`
+                                        : c('TableHeader').t`Name`}
+                                </div>,
+                                mode === UserManagementMode.DEFAULT
+                                    ? c('TableHeader').t`Email addresses`
+                                    : c('TableHeader').t`Email address`,
+                                showStorageColumn && (
+                                    <div className="text-right">{c('TableHeader').t`Total storage`}</div>
+                                ),
+                                showPasswordColumn && <div>{c('TableHeader').t`Password`}</div>,
+                                showRoleColumn && <div>{c('TableHeader').t`Role`}</div>,
+                            ].filter(isTruthy)}
                         />
                         <TableBody colSpan={3}>
-                            {filteredOptions.map(({ id, totalStorage, displayName, emailAddresses }) => {
+                            {filteredOptions.map(({ id, totalStorage, displayName, emailAddresses, password }) => {
                                 const isItemSelected = selectedUserIds.indexOf(id) !== -1;
                                 const checkboxId = `user-${id}`;
                                 const humanReadableStorage = humanSize(totalStorage, 'GB');
@@ -367,11 +383,12 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                                 return (
                                     <tr key={id} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
-                                            <Checkbox id={checkboxId} checked={isItemSelected} readOnly>
-                                                <div title={displayName.text}>
-                                                    <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
-                                                </div>
-                                            </Checkbox>
+                                            <Checkbox id={checkboxId} checked={isItemSelected} readOnly />
+                                        </TableCell>
+                                        <TableCell key="displayName" className="align-top">
+                                            <div title={displayName.text}>
+                                                <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
+                                            </div>
                                         </TableCell>
                                         <TableCell key="emailAddresses" className="align-top">
                                             <ul className="unstyled m-0">
@@ -382,13 +399,25 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                                                 ))}
                                             </ul>
                                         </TableCell>
-                                        <TableCell
-                                            key="totalStorage"
-                                            className="text-right text-no-wrap align-top"
-                                            title={humanReadableStorage}
-                                        >
-                                            {humanReadableStorage}
-                                        </TableCell>
+                                        {showStorageColumn && (
+                                            <TableCell
+                                                key="totalStorage"
+                                                className="text-right text-no-wrap align-top"
+                                                title={humanReadableStorage}
+                                            >
+                                                {humanReadableStorage}
+                                            </TableCell>
+                                        )}
+                                        {showPasswordColumn && (
+                                            <TableCell key="password" className="align-top">
+                                                {password}
+                                            </TableCell>
+                                        )}
+                                        {showRoleColumn && (
+                                            <TableCell key="role" className="align-top">
+                                                {c('Info').t`Member`}
+                                            </TableCell>
+                                        )}
                                     </tr>
                                 );
                             })}
@@ -436,7 +465,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, ...rest }: Props
                         </span>
                         <p className="mt-4 color-weak mb-0">
                             {c('Info')
-                                .t`This could take up to 15 minutes. Please do not close this page or disconnect from the internet.`}
+                                .t`This could take some time. Please do not close this page or disconnect from the internet.`}
                         </p>
                     </>
                 ),

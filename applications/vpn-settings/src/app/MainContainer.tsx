@@ -22,6 +22,7 @@ import {
     MainLogo,
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
+    OrganizationSection,
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
@@ -43,10 +44,12 @@ import {
     UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
+    UsersAndAddressesSection,
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
     useModalState,
+    useOrganization,
     useSubscription,
     useToggle,
     useUser,
@@ -60,7 +63,7 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import { DEFAULT_APP, getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -74,6 +77,7 @@ const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 const MainContainer = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
+    const [organization] = useOrganization();
     const [tagsArray, setTagsArray] = useState<string[]>([]);
     const [userSettings] = useUserSettings();
     const history = useHistory();
@@ -82,7 +86,7 @@ const MainContainer = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const routes = getRoutes(user, subscription);
+    const routes = getRoutes(user, subscription, organization);
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -92,7 +96,7 @@ const MainContainer = () => {
             ignoreOnboarding: location.pathname !== '/downloads',
         };
     });
-    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
+    const app = getAppFromPathnameSafe(location.pathname) || APPS.PROTONVPN_SETTINGS;
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -248,6 +252,29 @@ const MainContainer = () => {
                                     <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
+                            {getIsSectionAvailable(routes.setup) ? (
+                                <Route path={routes.setup.to}>
+                                    <PrivateMainSettingsArea config={routes.setup}>
+                                        <OrganizationSection organization={organization} app={app} />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            ) : (
+                                getIsSectionAvailable(routes.users) && (
+                                    /* After the org is setup, and the setup route becomes unavailable, we redirect to the users route */
+                                    <Route path={routes.setup.to}>
+                                        <Redirect to={routes.users.to} />
+                                    </Route>
+                                )
+                            )}
+                            {getIsSectionAvailable(routes.users) && (
+                                <Route path={routes.users.to}>
+                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
+                                        <PrivateMainSettingsArea config={routes.users}>
+                                            <UsersAndAddressesSection app={app} />
+                                        </PrivateMainSettingsArea>
+                                    </SubscriptionModalProvider>
+                                </Route>
+                            )}
                             <Redirect
                                 to={getIsSectionAvailable(routes.dashboard) ? routes.dashboard.to : routes.downloads.to}
                             />

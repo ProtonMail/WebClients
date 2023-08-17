@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { UserManagementMode } from '@proton/components/containers/members/types';
+import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
 
 import {
@@ -20,6 +21,7 @@ interface Props extends ModalStateProps {
     verifiedDomains: Domain[];
     organizationKey?: CachedOrganizationKey;
     onInviteUser: () => void;
+    app: APP_NAMES;
 }
 
 interface ButtonProps {
@@ -75,13 +77,14 @@ const InviteUserCreateSubUserModal = ({
     verifiedDomains,
     organizationKey,
     onInviteUser,
+    app,
     ...modalState
 }: Props) => {
     const { createNotification } = useNotifications();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
 
     const handleAddUser = () => {
-        const error = validateAddUser(organization, organizationKey, verifiedDomains);
+        const error = validateAddUser(organization, organizationKey, verifiedDomains, UserManagementMode.DEFAULT);
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
@@ -117,6 +120,7 @@ const InviteUserCreateSubUserModal = ({
                     domains={verifiedDomains}
                     {...subUserCreateModalProps}
                     onClose={() => modalState.onClose()}
+                    app={app}
                 />
             )}
         </>
