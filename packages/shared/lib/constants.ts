@@ -26,8 +26,8 @@ export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
 export const MAX_SPACE_ADDON = 20;
 // VPN B2B limits
-export const MAX_MEMBER_VPN_B2B_ADDON = 500;
-export const MAX_IPS_ADDON = 10;
+export const MAX_MEMBER_VPN_B2B_ADDON = 5000;
+export const MAX_IPS_ADDON = 100;
 
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
