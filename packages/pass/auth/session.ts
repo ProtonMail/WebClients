@@ -93,7 +93,6 @@ export const resumeSession = async ({
                 AccessToken,
                 keyPassword: ps.keyPassword,
                 RefreshToken,
-                sessionLockToken: ps.sessionLockToken,
                 UID: session.UID,
                 UserID: User.ID,
             };

@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import devToolsEnhancer from 'remote-redux-devtools';
 
+import { updateInMemorySession } from '@proton/pass/auth';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
@@ -81,8 +82,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         auth.authStore.setLockToken(sessionLockToken);
         auth.authStore.setLockTTL(sessionLockTTL);
         auth.authStore.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
-
-        await auth.persist();
+        await updateInMemorySession({ sessionLockToken });
     }),
 
     /* Update the extension's badge count on every
