@@ -14,6 +14,7 @@ interface Props {
     organization?: Organization;
     forceHideDescriptions?: boolean;
     showUsersTooltip?: boolean;
+    className?: string;
 }
 
 const PlanCustomization = ({
@@ -62,7 +63,6 @@ const PlanCustomization = ({
                     organization={organization}
                     onChangePlanIDs={onChangePlanIDs}
                     forceHideDescriptions={forceHideDescriptions}
-                    className="pb-7 mb-8"
                     {...rest}
                 />
             )}

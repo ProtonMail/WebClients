@@ -596,6 +596,7 @@ const SubscriptionModal = ({
                                     planIDs={model.planIDs}
                                     organization={organization}
                                     onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
+                                    className="pb-7 mb-8"
                                 />
                             </div>
                         </div>
@@ -745,6 +746,7 @@ const SubscriptionModal = ({
                 {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                     <div className="subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                            <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
                             <PlanCustomization
                                 loading={blockAccountSizeSelector}
                                 currency={model.currency}
@@ -761,12 +763,12 @@ const SubscriptionModal = ({
                                 }, 300)}
                                 forceHideDescriptions
                                 showUsersTooltip={false}
+                                className="mb-8"
                             />
-                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                            <div className="mx-auto max-w37e subscriptionCheckout-options">
                                 {!disableCycleSelector && (
                                     <>
-                                        <h2 className="text-2xl text-bold mb-4">{c('Label')
-                                            .t`Subscription options`}</h2>
+                                        <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
                                         <div className="mb-8">
                                             <SubscriptionCycleSelector
                                                 mode="buttons"
@@ -781,6 +783,7 @@ const SubscriptionModal = ({
                                         </div>
                                     </>
                                 )}
+                                <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
                                 {/* avoid mounting/unmounting the component which re-triggers the hook */}
                                 <div className={amountDue ? undefined : 'hidden'}>
                                     <Payment
@@ -806,10 +809,10 @@ const SubscriptionModal = ({
                                             });
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                        hideFirstLabel={true}
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                    <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
                                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                                     {checkResult?.Credit && creditsRemaining ? (
                                         <div className="mb-4">{c('Info')
