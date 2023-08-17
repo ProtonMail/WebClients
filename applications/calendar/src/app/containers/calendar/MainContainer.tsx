@@ -111,6 +111,7 @@ const MainContainer = () => {
                 onDone={() => {
                     setCalendarsToUnlock([]);
                 }}
+                drawerView={drawerView}
             />
         );
     }
