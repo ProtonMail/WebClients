@@ -48,6 +48,7 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     },
     hidden: {
         icon: 'eye-slash',
+        // translator: label for a field that is hidden. Singular only.
         label: c('Label').t`Hidden`,
         placeholder: c('Placeholder').t`Add hidden text`,
     },

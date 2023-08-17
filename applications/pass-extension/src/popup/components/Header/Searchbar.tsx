@@ -41,6 +41,7 @@ const SearchbarRaw: VFC<{ disabled?: boolean; value: string; handleValue: (value
                     ? c('Placeholder').t`Search in ${vault.content.name}`
                     : c('Placeholder').t`Search in all vaults`;
             default: {
+                // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
                 return vault
                     ? c('Placeholder').t`Search ${pluralItemType} in ${vault.content.name}`
                     : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
