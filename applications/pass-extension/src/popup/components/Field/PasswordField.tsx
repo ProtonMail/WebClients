@@ -5,10 +5,12 @@ import clsx from '@proton/utils/clsx';
 import { PasswordGeneratorButton } from '../PasswordGenerator/PasswordGeneratorButton';
 import { TextField, type TextFieldProps } from './TextField';
 
+import './PasswordField.scss';
+
 type Props = { onPasswordGenerated: (password: string) => void } & TextFieldProps;
 
 export const PasswordField: VFC<Props> = (props) => {
-    const { field, form, onPasswordGenerated, className, ...rest } = props;
+    const { field, form, onPasswordGenerated, ...rest } = props;
 
     const handlePasswordGeneratorDone = useCallback(
         async (password: string) => {
@@ -30,7 +32,7 @@ export const PasswordField: VFC<Props> = (props) => {
             form={form}
             {...rest}
             actions={actions}
-            className={clsx('text-monospace', className)}
+            inputClassName={clsx('pass-password-field--input text-monospace', rest.inputClassName)}
         />
     );
 };

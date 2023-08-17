@@ -13,7 +13,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { PasswordField } from '../fields';
+import { PasswordField } from '../fields/PasswordField';
 import { createExportFile } from './createExportFile';
 
 type ExportFormValues = { passphrase: string; encrypted: boolean };
