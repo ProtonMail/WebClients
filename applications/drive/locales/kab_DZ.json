@@ -2476,10 +2476,6 @@
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
       ],
-      "${ numContact } contact": [
-        "${ numContact } n unermis",
-        "${ numContact } inermisen"
-      ],
       "${ pausedCount } paused": [
         "${ pausedCount } yettwaḥbes",
         "${ pausedCount } ttwaḥebsen"
@@ -2722,9 +2718,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
         "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Kter si"
