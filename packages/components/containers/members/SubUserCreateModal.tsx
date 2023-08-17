@@ -265,7 +265,7 @@ const SubUserCreateModal = ({
             }}
         >
             <ModalHeader title={c('Title').t`Add new user`} />
-            <ModalContent className="pb-2">
+            <ModalContent>
                 {mode !== UserManagementMode.VPN_B2B && (
                     <p className="color-weak">
                         {c('Info').t`Create a new account and share the email address and password with the user.`}
@@ -372,7 +372,7 @@ const SubUserCreateModal = ({
                         onChange={({ target }) => handleChange('admin')(target.checked)}
                     />
                 </div>
-                {isVpnB2B && <SubUserCreateHint className="mt-8 mb-2" />}
+                {isVpnB2B && <SubUserCreateHint className="mt-8" />}
             </ModalContent>
             <ModalFooter>
                 {isVpnB2B ? (
