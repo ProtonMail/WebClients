@@ -1,13 +1,19 @@
 import { CSSProperties, ChangeEvent, MouseEvent, useState } from 'react';
 
+import tinycolor from 'tinycolor2';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Checkbox, Icon, Tooltip } from '@proton/components/components';
+import genAccentShades from '@proton/colors/gen-accent-shades';
+import { Icon } from '@proton/components/components/icon';
+import { Tooltip } from '@proton/components/components/tooltip';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
+
+import ItemCheckbox from '../../items/ItemCheckbox';
+import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';
 
 interface Props {
     checked: boolean;
@@ -38,6 +44,7 @@ const ContactGroupRow = ({
     const [hasFocus, setHasFocus] = useState(false);
 
     const addressCount = groupsEmailsMap[ID]?.length || 0;
+    const colors = genAccentShades(tinycolor(Color)).map((c) => c.toHexString());
 
     const handleFocus = () => {
         setHasFocus(true);
@@ -54,6 +61,11 @@ const ContactGroupRow = ({
             groupsEmailsMap[ID]?.map((contact) => ({ Name: contact.Name, Address: contact.Email })) || [];
         onCompose?.([...recipients], []);
     };
+
+    const title =
+        addressCount === 0
+            ? c('Info').t`No email address`
+            : c('Info').ngettext(msgid`${addressCount} email address`, `${addressCount} email addresses`, addressCount);
 
     return (
         <div
@@ -72,26 +84,19 @@ const ContactGroupRow = ({
             data-shortcut-target="contact-container"
             data-testid={`group-item:${group.Name}`}
         >
-            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-center pl-2">
-                <Checkbox
-                    id={ID}
+            <div className="flex flex-nowrap w100 h100 my-auto flex-align-items-start">
+                <ItemCheckbox
+                    ID={ID}
                     name={Name}
                     checked={checked}
                     onChange={onCheck}
-                    onClick={(e) => e.stopPropagation()}
+                    iconName="users"
+                    color={checked ? colors[2] : Color}
                 />
-                <div className="flex flex-column flex-item-fluid flex-justify-space-between mt-6">
-                    <span className="w100 flex px-4">
-                        <span
-                            role="heading"
-                            aria-level={2}
-                            className="text-sm text-semibold inline-block px-3 py-0 rounded-full text-ellipsis"
-                            style={{ backgroundColor: Color, color: 'white' }}
-                        >
-                            {Name}
-                        </span>
-                    </span>
-                    <span className="pl-4 mt-0.5 flex-item-noshrink text-sm">
+                <div className="flex-item-fluid ml-2 conversation-titlesender">
+                    <ContactRowItemFirstLine ID={ID} Name={Name} />
+
+                    <ContactRowItemSecondLine title={title}>
                         {addressCount === 0
                             ? c('Info').t`No email address`
                             : c('Info').ngettext(
@@ -99,8 +104,9 @@ const ContactGroupRow = ({
                                   `${addressCount} email addresses`,
                                   addressCount
                               )}
-                    </span>
+                    </ContactRowItemSecondLine>
                 </div>
+
                 {onCompose && addressCount > 0 && (
                     <div className="item-hover-action-buttons">
                         <Tooltip title={c('Action').t`Compose`}>

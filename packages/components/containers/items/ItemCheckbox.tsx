@@ -3,7 +3,7 @@ import { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { Checkbox, Icon } from '../../components';
+import { Checkbox, Icon, IconName } from '../../components';
 import { useUserSettings } from '../../hooks';
 import { ContactImage } from '../contacts';
 
@@ -11,6 +11,8 @@ interface Props {
     ID?: string;
     name?: string;
     email?: string;
+    iconName?: IconName;
+    color?: string;
     compactClassName?: string;
     normalClassName?: string;
     bimiSelector?: string;
@@ -23,6 +25,8 @@ const ItemCheckbox = ({
     ID = '',
     name = '',
     email = '',
+    iconName,
+    color,
     compactClassName,
     normalClassName,
     checked,
@@ -67,20 +71,27 @@ const ItemCheckbox = ({
             />
             <span
                 className="item-icon flex-item-noshrink relative rounded inline-flex"
+                style={{
+                    backgroundColor: color ?? '',
+                }}
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >
                 <span className="m-auto item-abbr rounded no-scroll" aria-hidden="true">
-                    <ContactImage
-                        email={email}
-                        name={name}
-                        bimiSelector={bimiSelector}
-                        displaySenderImage={displaySenderImage}
-                        className="rounded relative"
-                    />
+                    {iconName ? (
+                        <Icon name={iconName} color="white" />
+                    ) : (
+                        <ContactImage
+                            email={email}
+                            name={name}
+                            bimiSelector={bimiSelector}
+                            displaySenderImage={displaySenderImage}
+                            className="rounded relative"
+                        />
+                    )}
                 </span>
                 <span className="item-icon-fakecheck m-auto">
-                    <Icon name="checkmark" className="item-icon-fakecheck-icon" />
+                    <Icon color="white" name="checkmark" className="item-icon-fakecheck-icon" />
                 </span>
             </span>
         </label>
