@@ -434,6 +434,9 @@
         "${ ips } palvelin",
         "${ ips } palvelinta"
       ],
+      "${ price } per dedicated server": [
+        "${ price }/kohdistettu palvelin"
+      ],
       "${ price } per domain": [
         "${ price }/verkkotunnus"
       ],
@@ -562,6 +565,17 @@
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
         "Summa ${ n } kuukaudelle"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "kuukausi"
+      ],
+      "Servers": [
+        "Palvelimet"
+      ],
+      "Users": [
+        "Käyttäjät"
       ]
     },
     "Collapsible tooltip": {
@@ -1551,10 +1565,10 @@
         "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
       ],
       "Please set a recovery email first": [
-        "Aseta ensin palautuksen sähköpostiosoite"
+        "Määritä palautusähköposti ensin"
       ],
       "Please set a recovery phone number first": [
-        "Aseta ensin palautuksen puhelinnumero"
+        "Määritä palautuspuhelin ensin"
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -2135,7 +2149,7 @@
         "Yksittäisellä puhelinnumerolla voidaan vahvistaa ainoastaan yksi ${ BRAND_NAME }-tili"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Käyttäjä on tili, joka on liitetty samaan käyttäjätunnukseen, postilaatikkoon ja henkilöön"
+        "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
@@ -2184,6 +2198,9 @@
       ],
       "Attention required": [
         "Huomiota vaaditaan"
+      ],
+      "Awaiting transaction": [
+        "Odotetaan tapahtumaa"
       ],
       "Balance from your previous subscription": [
         "Saldoa edellisestä tilauksestasi"
@@ -2251,6 +2268,9 @@
       "Dedicated servers": [
         "Kohdistetut palvelimet"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
       ],
@@ -2312,10 +2332,10 @@
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
+        "Syötä palautussähköpostisi osoite niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Syötä palautusnumerosi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
+        "Syötä palautuspuhelimesi numero niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
       "Expired": [
         "Erääntynyt"
@@ -2455,6 +2475,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Eikö laite ole sinun? Käytä selaimesi yksityistä selaustilaa ja sulje se kun lopetat. ${ learnMore }"
       ],
+      "Number of dedicated servers in the organization": [
+        "Organisaation kohdistettujen palvelinten määrä"
+      ],
       "Number of users": [
         "Käyttäjämäärä"
       ],
@@ -2572,6 +2595,9 @@
       "Setting up your Drive": [
         "Määritetään Driveasi"
       ],
+      "Setting up your organization": [
+        "Määritetään organisaatiotasi"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
       ],
@@ -2642,11 +2668,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tämä ohjattu toiminto ottaa käyttöön kaksivaiheisen todennuksen (2FA) ${ BRAND_NAME } -tililläsi. Kaksivaiheinen todennus tekee ${ BRAND_NAME_TWO } -tilisi turvallisemmaksi, joten suosittelemme sen ottamista käyttöön."
       ],
+      "to ${ product } Business": [
+        "palveluun ${ product } Business"
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Tilauksen peruuttamiseksi ota meihin yhteyttä."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
+      ],
+      "to continue to ${ product }": [
+        "jatkaaksesi palveluun ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "jatkaaksesi ${ toAppName } -palveluun"
@@ -2755,6 +2787,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Meidän on vahvistettava maksusi pankissasi."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Suosittelemme ainakin kahta palvelinta parempaa vikasietoisuutta varten."
       ],
       "We recommend using your recovery phrase instead.": [
         "Suosittelemme sen sijaan salauslausekkeesi käyttöä."
@@ -2908,7 +2943,7 @@
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
       ],
       "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Tilauksesi uusiutuu automaattisesti ${ renewalTime }"
+        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3238,6 +3273,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
       ],
+      "Please share any feedback to help us improve.": [
+        "Kerro mielipiteesi ja auta meitä parantamaan."
+      ],
       "Postal code": [
         "Postinumero"
       ],
@@ -3245,10 +3283,10 @@
         "Suhteutus"
       ],
       "Recovery email address": [
-        "Palautuksen sähköpostiosoite"
+        "Palautussähköposti"
       ],
       "Recovery phone number": [
-        "Palautuksen puhelinnumero"
+        "Palautuspuhelin"
       ],
       "Recovery phrase": [
         "Palautuslauseke"
@@ -3313,7 +3351,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Palautuksen puhelinnumero"
+        "Palautuspuhelin"
       ]
     },
     "Label for news": {
@@ -3473,10 +3511,10 @@
         "Löydä ${ BRAND_NAME } -tilin käyttäjätunnus"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se tästä palautuskoodilla, sähköpostitse tai tekstiviestitse, niin voit taas kirjautua mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } -palveluihin."
+        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se tästä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muiden palveluiden käyttämistä."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME } -tilisi käyttäjätunnuksen? Löydä se palautussähköpostin tai -puhelinnumeron avulla ja voit taas kirjautua mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } -palveluihin."
+        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Etsi se palautussähköpostin tai -puhelinnumeron avulla ja jatka ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muiden palveluiden käyttämistä."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nollaa ${ BRAND_NAME } -tilisi salasana"
@@ -3632,6 +3670,9 @@
       "1 user": [
         "1 käyttäjä"
       ],
+      "24/7 support": [
+        "24/7 tuki"
+      ],
       "99.95% SLA": [
         "99.95 % SLA"
       ],
@@ -3640,6 +3681,9 @@
       ],
       "Admin console": [
         "Hallintapaneeli"
+      ],
+      "Advanced network security": [
+        "Edistynyt verkon suojaus"
       ],
       "Advanced sharing security": [
         "Edistynyt jakojen suojaus"
@@ -3662,6 +3706,9 @@
       "Centralized billing": [
         "Keskitetty laskutus"
       ],
+      "Centralized settings and billings": [
+        "Kohdistetut asetukset ja laskutukset"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -3682,6 +3729,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Tietovuotojen seuranta (tulossa pian)"
+      ],
+      "Dedicated servers and IP": [
+        "Kohdistetut palvelimet ja IP-osoitteet"
       ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
@@ -3784,6 +3834,10 @@
       "Send & receive invitations": [
         "Lähetä ja vastaanota kutsuja"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
+        "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
+      ],
       "Share calendar via link": [
         "Jaa kalenteri linkin välityksellä"
       ],
@@ -3795,6 +3849,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
+      ],
+      "Start protecting your organization": [
+        "Aloita organisaatiosi suojaaminen"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Suojaa itsesi verkossa kahdella helpolla askeleella"
@@ -3905,6 +3962,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Käytä Internetiä mistä tahansa välttämättömällä verkon valvonnalla"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Turvallinen pilvitallennuspalvelu tiedostojen turvalliseen säilytykseen, synkronointiin ja helppoon jakamiseen."
       ],
@@ -3958,6 +4018,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Painaessasi \"Maksa\" hyväksyt ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "käyttöehtomme"
       ]
@@ -4028,6 +4091,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
       ],
@@ -4060,6 +4126,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Kansioiden tavoin, holvi on kätevä tapa kohteiden lajitteluun. Holvien jako kavereille ja perheenjäsenille on tulossa."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Sulje yritysresurssisi julkisesta Internetistä ja salli niiden käyttö vain omien yhdyskäytäviesi välityksellä."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
@@ -4171,11 +4240,20 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 tuki"
+      ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Yksilöi 15 sähköpostiosoiteella ja kolmella omalla sähköpostiverkkotunnuksella."
+      ],
+      "AES 256-bit VPN encryption": [
+        "VPN AES 256-bit -salauksella"
+      ],
+      "Auto-connect": [
+        "Automaattinen yhdistäminen"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Korota tallennustilasi ${ bundleStorage }/käyttäjä"
@@ -4183,12 +4261,39 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Korota tallennustilaksi yhteensä ${ bundleStorage }"
       ],
+      "Browser extension": [
+        "Selainlaajennus"
+      ],
+      "Censorship circumvention": [
+        "Sensuurin kierto"
+      ],
+      "Central control panel": [
+        "Keskitetty hallintapaneeli"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Laajenna toimialuettasi 10 omalla sähköpostiverkkotunnuksella."
       ],
       "Create up to ${ n } calendar": [
         "Luo enintään ${ n } kalenteri",
         "Luo enintään ${ n } kalenteria"
+      ],
+      "Dedicated Account manager": [
+        "Oma tilinhoitaja"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Kohdistetut palvelinsijainnit ${ numberOfCountries }+ maassa"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Kohdistetut palvelinsijainnit Pohjois-Amerikassa ja Euroopassa"
+      ],
+      "Multi-platform support": [
+        "Tuki useille alustoille"
+      ],
+      "Private gateways": [
+        "Yksityiset yhdyskäytävät"
+      ],
+      "Require 2FA": [
+        "Pakotettava kaksivaiheinen todennus"
       ]
     },
     "Notification": {
@@ -4200,6 +4305,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Tervetuloa palveluun ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Tervetuloa ${ VPN_APP_NAME }:ään"
       ]
@@ -4311,12 +4419,17 @@
         "Lisää laskuihin nimesi (tai yrityksen nimi) ja osoitteesi"
       ]
     },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Valitse tilauksesi IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }. Jos tarvitset enemmän kuin ${ maxIPs } osoitetta, ${ contactHref } myyntiimme."
+      ]
+    },
     "plan customizer, users": {
       "contact": [
-        "ota yhteyttä"
+        "ole yhteydessä"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Valitse tilaukseesi sisältyvä käyttäjämäärä. Jokainen lisätty käyttäjä maksaa ${ price }."
+        "Valitse tilauksesi käyttäjämäärä. Jokainen lisäkäyttäjä maksaa ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Jos tarvitset enemmän kuin ${ maxUsers } käyttäjätilin, ${ contact } myyntiimme.",
@@ -4345,10 +4458,10 @@
         "Vahvista nyt"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
-        "Vahvista tämä palautussähköpostiosoite nyt: ${ email.Value }"
+        "Vahvista tämä palautusosoite nyt: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Vahvistetaanko palautuksen sähköpostiosoite?"
+        "Vahvistetaanko palautussähköposti?"
       ],
       "Verify with email": [
         "Vahvista sähköpostitse"
@@ -4376,7 +4489,7 @@
         "Puhelinnumero on vahvistettu."
       ],
       "Phone number not yet verified.": [
-        "Puhelinnumeroa ei ole vahvistettu."
+        "Puhelinnumeroa ei ole vielä vahvistettu."
       ],
       "Verify by SMS": [
         "Vahvista tekstiviestillä"
@@ -4385,10 +4498,10 @@
         "Vahvista nyt"
       ],
       "Verify recovery phone?": [
-        "Vahvistetaanko palautuksen puhelinnumero?"
+        "Vahvistetaanko palautuspuhelin?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "Vahvista tämä palautuspuhelinnumero nyt: ${ phone.Value }"
+        "Vahvista tämä palautusnumero nyt: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
@@ -4855,10 +4968,10 @@
         "Lahjakoodi käytetty"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Mikäli syötit kelvollisen palautusosoitteen, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua sähköpostitse."
+        "Mikäli syötit kelvollisen palautussähköpostin osoitteen, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua sähköpostitse."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Mikäli syötit kelvollisen palautusnumeron, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua tekstiviestitse."
+        "Mikäli syötit kelvollisen palautuspuhelimen numeron, lähetetään käyttäjätunnuksesi sinulle hetken kuluttua tekstiviestitse."
       ],
       "Invoice customized": [
         "Laskua mukautettiin"
@@ -5405,6 +5518,9 @@
       ],
       "Plan": [
         "Tilaus"
+      ],
+      "Servers": [
+        "Palvelimet"
       ],
       "Start date": [
         "Aloituspäivä"
