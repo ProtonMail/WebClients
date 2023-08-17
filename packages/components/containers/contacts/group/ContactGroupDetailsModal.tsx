@@ -106,7 +106,7 @@ const ContactGroupDetailsModal = ({
                     <div className="flex flex-nowrap flex-align-items-center gap-2">
                         <span
                             style={{ backgroundColor: group?.Color ?? '', '--w-custom': '34px' }}
-                            className="rounded w-custom text-center"
+                            className="rounded w-custom text-center flex-item-noshrink"
                         >
                             <Icon color="white" name="users" />
                         </span>
