@@ -434,6 +434,9 @@
       "Got it": [
         "Rendben!"
       ],
+      "Help": [
+        "Súgó"
+      ],
       "Hide": [
         "Elrejtés"
       ],
@@ -754,6 +757,9 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Settings": [
+        "Beállítások"
       ],
       "Share": [
         "Megosztás"
@@ -1426,6 +1432,9 @@
       ],
       "azureish white": [
         "azúrkék fehér"
+      ],
+      "black": [
+        "fekete"
       ],
       "blanched almond": [
         "blansírozott mandula"
@@ -4421,9 +4430,6 @@
       ]
     },
     "Import status": {
-      "${ percentageValue }% paused": [
-        "${ percentageValue }% felfüggesztve"
-      ],
       "Canceled": [
         "Megszakítva"
       ],
@@ -4541,14 +4547,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra.",
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
-      ],
-      "${ numContact } contact": [
-        "${ numContact } névjegy",
-        "${ numContact } névjegy"
-      ],
-      "${ numGroups } contact group": [
-        "${ numGroups } névjegy csoport",
-        "${ numGroups } névjegy csoport"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
@@ -4784,6 +4782,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Biztos, hogy véglegesen törli a naplót?"
@@ -5195,9 +5196,6 @@
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
         "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
-      ],
-      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
       "Import from": [
         "Importálás innen"
