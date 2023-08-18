@@ -81,8 +81,6 @@ jest.mock('@proton/components/hooks/useCache');
 const mockUseCache = useCache as jest.MockedFunction<any>;
 mockUseCache.mockReturnValue({ get: jest.fn(), delete: jest.fn() });
 
-jest.mock('@proton/metrics');
-
 describe('YourPlanSection', () => {
     beforeEach(() => {
         mockUseSubscription.mockReturnValue([subscriptionB, false]);
