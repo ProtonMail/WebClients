@@ -8,8 +8,6 @@ import { applyHOCs, withConfig } from '@proton/testing/index';
 import AccountStep, { AccountStepProps } from './AccountStep';
 import { SignupType } from './interfaces';
 
-jest.mock('@proton/metrics');
-
 const AccountStepWrapper = (props: AccountStepProps) => {
     const AccountStepContext = applyHOCs(withConfig())(AccountStep);
 
