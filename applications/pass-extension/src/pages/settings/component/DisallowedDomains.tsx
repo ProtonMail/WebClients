@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
-import { Checkbox, Icon, InputFieldTwo } from '@proton/components/components';
+import { Checkbox, Icon, InputFieldTwo, Label } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { selectDisallowedDomains, settingEditIntent } from '@proton/pass/store';
 import type { DisallowCritera } from '@proton/pass/types/worker/settings';
@@ -28,7 +28,9 @@ export const DisallowedDomains: VFC = () => {
         if (!maybeUrl.valid) return createNotification({ text: c('Error').t`Invalid url`, type: 'error' });
 
         const { hostname } = new URL(maybeUrl.url);
-        if (disallowedDomains[hostname]) return;
+        if (disallowedDomains[hostname]) {
+            return createNotification({ text: c('Error').t`The url is in the list`, type: 'error' });
+        }
 
         dispatch(settingEditIntent({ disallowedDomains: merge(disallowedDomains, { [hostname]: 15 }) }));
         setUrl('');
@@ -56,40 +58,68 @@ export const DisallowedDomains: VFC = () => {
     return (
         <Card key="settings-section-disallowed" rounded className="mb-4 p-3">
             <strong className="color-norm block">{c('Label').t`Pause list`}</strong>
+            <hr className="border-weak my-2" />
+            <p className="color-norm block">{c('Description')
+                .t`This is a list of domains where auto functions (Autofill, Autofill 2FA, Autosuggestion or Autosave) are dissallowed`}</p>
             <hr className="my-2 border-weak" />
-            <div>URL |  Autofill | Autofill 2FA | Autosuggest | Autosave </div>
+            <div className="flex flex-align-items-center flex-justify-space-between px-6 text-semibold">
+                <div className="flex-item-fluid">URL</div>
+                <div className="flex flex-justify-space-between">
+                    <span className="pr-4">Autofill</span>
+                    <span className="pr-4">Autofill 2FA</span>
+                    <span className="pr-4">Autosuggest</span>
+                    <span className="pr-4">Autosave</span>
+                    <Icon name="pass-trash" size={18} />
+                </div>
+            </div>
+            <hr className="border-weak mt-2" />
             <ul className="unstyled">
                 {Object.entries(disallowedDomains).map(([url, mask], i) => (
-                    <li
-                        key={`${url}-${i}`}
-                        className="flex flex-align-items-center flex-justify-space-between button button-ghost-weak text-left"
-                    >
-                        <span>{url}</span>
-                        <div>
-                            {criterias.map((criteria) => (
-                                <Checkbox
-                                    key={criteria}
-                                    checked={hasCriteria(mask, criteria)}
-                                    onChange={() => toggleUrlMask(url, criteria)}
-                                />
-                            ))}
-                        </div>
-
-                        <button
-                            className="button button-pill button-for-icon button-solid-weak"
-                            onClick={() => deleteDisallowedUrl(url)}
+                    <>
+                        <li
+                            key={`${url}-${i}`}
+                            className="flex flex-align-items-center flex-justify-space-between button button-ghost-weak text-left"
                         >
-                            <Icon name="cross" size={12} />
-                        </button>
-                    </li>
+                            <div className="flex-item-fluid overflow-x-auto">{url}</div>
+                            <div className="w-1/2 flex flex-justify-space-between pr-8">
+                                {criterias.map((criteria) => (
+                                    <Checkbox
+                                        key={criteria}
+                                        checked={hasCriteria(mask, criteria)}
+                                        onChange={() => toggleUrlMask(url, criteria)}
+                                    />
+                                ))}
+                            </div>
+
+                            <button
+                                className="button button-pill button-for-icon button-solid-weak"
+                                onClick={() => deleteDisallowedUrl(url)}
+                            >
+                                <Icon name="cross" size={12} />
+                            </button>
+                        </li>
+                        <hr className="border-weak my-2" />
+                    </>
                 ))}
             </ul>
-
-            <InputFieldTwo
-                value={url}
-                onValue={setUrl}
-                onKeyUp={(e: KeyboardEvent) => e.key === 'Enter' && addDisallowedUrl(url)}
-            />
+            <div className="pt-6">
+                <Label>
+                    <strong>{c('Label').t`Insert new domain`}</strong>
+                </Label>
+                <hr className="border-weak my-2" />
+                <InputFieldTwo
+                    value={url}
+                    onValue={setUrl}
+                    onKeyUp={(e: KeyboardEvent) => e.key === 'Enter' && addDisallowedUrl(url)}
+                />
+                <button
+                    type="submit"
+                    onClick={() => addDisallowedUrl(url)}
+                    className="button button-pill button-outline-norm "
+                >
+                    {c('Action').t`Add a domain`}
+                </button>
+            </div>
         </Card>
     );
 };
