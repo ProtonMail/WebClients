@@ -2,11 +2,11 @@ import { GetItemInfo } from './esFunctions';
 import { CachedItem, ESEvent, EventsObject } from './interfaces';
 
 /**
- * Interface for all the helpers that are required to run the basic
+ * Interface for all the callbacks that are required to run the basic
  * functionalities of the ES library. All products must pass these
  * callbacks in order to use the library
  */
-interface RequiredESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
+interface RequiredESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> {
     /**
      * Retrieve a batch of items' metadata, the mechanism to keep track of where the fetching
      * has arrived is supposed to be built-in (but can optionally take a boolean indicating whether
@@ -97,11 +97,11 @@ interface RequiredESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
 }
 
 /**
- * Interface for all the helpers that are optional and give access to
+ * Interface for all the callbacks that are optional and give access to
  * functionalities which are not essential for the correct functioning of the ES library.
  * Each callback description details what happens if the callback is not specified
  */
-interface OptionalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
+interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> {
     /**
      * Resert the sorting to inverse chronological order, since ES does not support other orders
      * This callback is optional: if not provided, sorting is never reset
@@ -169,16 +169,16 @@ interface OptionalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
     fetchESItemContent?: (itemID: string, signal?: AbortSignal) => Promise<ESItemContent | undefined>;
 }
 
-export type ESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent = void> = RequiredESHelpers<
+export type ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent = void> = RequiredESCallbacks<
     ESItemMetadata,
     ESSearchParameters,
     ESItemContent
 > &
-    Partial<OptionalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>>;
+    Partial<OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>>;
 
-export type InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent = void> = RequiredESHelpers<
+export type InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent = void> = RequiredESCallbacks<
     ESItemMetadata,
     ESSearchParameters,
     ESItemContent
 > &
-    OptionalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
