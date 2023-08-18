@@ -4,11 +4,11 @@ import { Button } from '@proton/atoms';
 import { FeatureCode, Icon, Tooltip, useFeature, useNotifications, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { canSetExpiration } from '../../../helpers/expiration';
-import useExpiration from '../../../hooks/useExpiration';
-import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../logic/store';
+import { canSetExpiration } from '../../../../helpers/expiration';
+import useExpiration from '../../../../hooks/useExpiration';
+import { expireMessages } from '../../../../logic/messages/expire/messagesExpireActions';
+import { MessageState } from '../../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../../logic/store';
 
 interface Props {
     message: MessageState;
