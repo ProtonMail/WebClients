@@ -2,13 +2,12 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import { FieldType, FormType } from '@proton/pass/fathom';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
-import { DisallowedAutoCriteria } from '@proton/pass/types/worker/settings';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
+import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 import { isEmptyString } from '@proton/pass/utils/string';
-import { isDisallowedUrl } from '@proton/pass/utils/url/is-disallowed-url';
 import lastItem from '@proton/utils/lastItem';
 
 import { FORM_TRACKER_CONFIG } from '../../constants';
@@ -28,34 +27,15 @@ type FieldsForFormResults = WeakMap<
 >;
 
 const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
-    const isAllowedUrl = !isDisallowedUrl(
-        location.hostname,
-        DisallowedAutoCriteria.AUTOFILL,
-        settings.disallowedDomains
-    );
+    const match = settings.disallowedDomains?.[location.hostname];
+
     switch (action) {
         case DropdownAction.AUTOFILL:
-            return settings.autofill.inject && isAllowedUrl;
+            return settings.autofill.inject && !hasCriteria(match, 'Autofill');
         case DropdownAction.AUTOSUGGEST_ALIAS:
-            console.log(
-                'alias',
-                settings.autosuggest.email &&
-                    !isDisallowedUrl(
-                        location.hostname,
-                        DisallowedAutoCriteria.AUTOSUGGESTION,
-                        settings.disallowedDomains
-                    )
-            );
-            return (
-                settings.autosuggest.email &&
-                !isDisallowedUrl(location.hostname, DisallowedAutoCriteria.AUTOSUGGESTION, settings.disallowedDomains)
-            );
+            return settings.autosuggest.email && !hasCriteria(match, 'Autosuggest');
         case DropdownAction.AUTOSUGGEST_PASSWORD:
-            console.log('pass', settings.autofill.inject && isAllowedUrl);
-            // TODO check if is under autofill
-            return settings.autosuggest.password && isAllowedUrl;
-        default:
-            return true && isAllowedUrl;
+            return settings.autosuggest.password && !hasCriteria(match, 'Autosuggest');
     }
 };
 
