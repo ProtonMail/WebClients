@@ -4,7 +4,7 @@ import type {
     AutoFillSettings,
     AutoSaveSettings,
     AutoSuggestSettings,
-    DisallowedAutoDomainsSettings,
+    DisallowedDomains,
 } from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object';
 
@@ -24,7 +24,7 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     loadDomainImages: boolean;
-    disallowedDomains: DisallowedAutoDomainsSettings;
+    disallowedDomains: DisallowedDomains;
     /* explicitly created, not including import */
     createdItemsCount: number;
 };
@@ -42,12 +42,7 @@ const INITIAL_STATE: SettingsState = {
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
-    disallowedDomains: {
-        noAutoFill: ['accounts.google.com', 'account.proton.me'],
-        noAutoSave: [],
-        noAutoSuggestion: ['google.com'],
-        noAuto2FA: ['gitlab.protontech.ch'],
-    },
+    disallowedDomains: {},
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
@@ -70,7 +65,11 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     }
 
     if (settingEditSuccess.match(action)) {
-        return partialMerge<SettingsState>(state, action.payload);
+        const update = { ...state };
+
+        /* `disallowedDomains` update should act as a setter */
+        if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
+        return partialMerge<SettingsState>(update, action.payload);
     }
 
     if (itemCreationSuccess.match(action)) {
