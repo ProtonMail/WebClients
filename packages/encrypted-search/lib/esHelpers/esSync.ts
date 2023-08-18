@@ -17,7 +17,7 @@ import {
     ESTimepoint,
     EncryptedItemWithInfo,
     EncryptedSearchDB,
-    InternalESHelpers,
+    InternalESCallbacks,
 } from '../models';
 import { buildContentDB, encryptItem } from './esBuild';
 import { addToESCache, removeFromESCache } from './esCache';
@@ -35,10 +35,10 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     permanentResults: ESItem<ESItemMetadata, ESItemContent>[],
     indexKey: CryptoKey | undefined,
     esSearchParams: ESSearchParameters | undefined,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     recordProgressLocal?: () => void
 ) => {
-    const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esHelpers;
+    const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esCallbacks;
 
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     if (!!indexKey) {
@@ -164,7 +164,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
 
                 if (!!esSearchParams) {
                     const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
-                    if (applySearch(esSearchParams, itemToCache, hasApostrophe, esHelpers)) {
+                    if (applySearch(esSearchParams, itemToCache, hasApostrophe, esCallbacks)) {
                         updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
                     }
                 }
@@ -231,7 +231,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                                 esSearchParams,
                                 itemToCache,
                                 hasApostrophe,
-                                esHelpers
+                                esCallbacks
                             )
                         ) {
                             updatePermanentResults({
@@ -246,7 +246,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                             esSearchParams,
                             itemToCache,
                             hasApostrophe,
-                            esHelpers
+                            esCallbacks
                         )
                     ) {
                         updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
@@ -326,11 +326,11 @@ export const findRecoveryPoint = async (userID: string) => {
 export const correctDecryptionErrors = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
     userID: string,
     indexKey: CryptoKey,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     recordProgress: (progress: number, total: number) => void,
     abortIndexingRef: React.MutableRefObject<AbortController>
 ) => {
-    const { fetchESItemContent } = esHelpers;
+    const { fetchESItemContent } = esCallbacks;
     if (!fetchESItemContent) {
         return 0;
     }

@@ -28,7 +28,7 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 import { isFree } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
-import { convertEventType, getESFreeBlobKey, getESHelpers, parseSearchParams } from '../helpers/encryptedSearch';
+import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import {
     ESBaseMessage,
@@ -64,7 +64,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // Allow to track changes in page to set the elements list accordingly
     const pageRef = useRef<number>(0);
 
-    const esHelpers = getESHelpers({
+    const esCallbacks = getESCallbacks({
         getMessageKeys,
         getMessageCounts,
         api,
@@ -77,7 +77,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esLibraryFunctions = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
-        esHelpers,
+        esCallbacks,
         successMessage,
     });
 
