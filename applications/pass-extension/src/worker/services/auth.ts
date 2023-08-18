@@ -351,6 +351,7 @@ export const createAuthService = ({
         unlock: async (sessionLockToken) => {
             logger.info(`[Worker::Auth] Unlocking context`);
             authStore.setLockToken(sessionLockToken);
+            api.configure(api.getAuth()); /* reset API status */
 
             await authService.syncLock();
             await authService.persist();
