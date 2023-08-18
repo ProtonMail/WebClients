@@ -31,9 +31,7 @@ const ContactFieldFn = (
     const isFirstAndLastNameArray = Array.isArray(vCardContact.n?.value);
     const firstAndLastName = isFirstAndLastNameArray ? vCardContact.n?.value.join('').trim() : '';
 
-    const nameTooLongError =
-        !isContactNameValid(vCardProperty.value) ||
-        (!contactID && firstAndLastName && !isContactNameValid(firstAndLastName));
+    const nameTooLongError = !isContactNameValid(vCardProperty.value);
     // The fn field is required for existing contacts but can be left empty for new contacts
     const requiredError = contactID && isSubmitted && requiredValidator(vCardProperty.value);
     // Display an error border when the fn field and the n field is empty during contact creation

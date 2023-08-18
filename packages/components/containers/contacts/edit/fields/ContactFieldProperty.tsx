@@ -63,6 +63,7 @@ const ContactFieldProperty = (
     if (field === 'fn') {
         return (
             <ContactFieldFn
+                ref={ref}
                 contactID={contactID}
                 vCardProperty={vCardProperty}
                 vCardContact={vCardContact}
