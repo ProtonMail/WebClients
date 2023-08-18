@@ -5,11 +5,10 @@ import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { DisallowedAutoCriteria } from '@proton/pass/types/worker/settings';
 import { first } from '@proton/pass/utils/array';
+import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
-import { isDisallowedUrl } from '@proton/pass/utils/url/is-disallowed-url';
 
 import { withContext } from '../../context/context';
 import { type FormHandle, NotificationAction } from '../../types';
@@ -111,10 +110,10 @@ export const createAutofillService = () => {
             .getTrackedForms()
             .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
-        if (
-            otpFieldDetected &&
-            !isDisallowedUrl(location.hostname, DisallowedAutoCriteria.AUTOSAVE, getSettings().disallowedDomains)
-        ) {
+        const match = getSettings().disallowedDomains?.[location.hostname];
+        const disallowedHost = match && hasCriteria(match, 'Autofill2FA');
+
+        if (otpFieldDetected && !disallowedHost) {
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     service.iframe.attachNotification();
