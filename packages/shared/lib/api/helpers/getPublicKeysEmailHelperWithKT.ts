@@ -1,45 +1,40 @@
-import { CryptoProxy } from '@proton/crypto';
-
 import { KEY_FLAG, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { hasBit } from '../../helpers/bitset';
 import {
     Api,
+    ApiAddressKeySource,
     ApiKeysConfig,
     KT_VERIFICATION_STATUS,
+    ProcessedApiAddressKey,
     ProcessedApiKey,
     VerifyOutboundPublicKeys,
 } from '../../interfaces';
-import { ApiKeySource, KeyWithFlags, KeyWithFlagsAndSource, getAndVerifyApiKeys } from './getAndVerifyApiKeys';
+import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 
-const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } = API_CUSTOM_ERROR_CODES;
+const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } =
+    API_CUSTOM_ERROR_CODES;
 const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT];
 
 const supportsMail = (flags: number): Boolean => {
     return !hasBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 };
 
-const getMailCapableKeys = (keys: KeyWithFlags[]) => {
-    return keys.filter(({ flags }) => supportsMail(flags));
+const getMailCapableKeys = (keys: ProcessedApiAddressKey[]) => {
+    return keys.filter(({ Flags }) => supportsMail(Flags));
 };
 
-const getInternalKeys = (keys: KeyWithFlagsAndSource[]) => {
-    return keys.filter(({ source }) => source === ApiKeySource.PROTON);
+const getInternalKeys = (keys: ProcessedApiAddressKey[]) => {
+    return keys.filter(({ Source }) => Source === ApiAddressKeySource.PROTON);
 };
-const getExternalKeys = (keys: KeyWithFlagsAndSource[]) => {
-    return keys.filter(({ source }) => source !== ApiKeySource.PROTON);
+const getExternalKeys = (keys: ProcessedApiAddressKey[]) => {
+    return keys.filter(({ Source }) => Source !== ApiAddressKeySource.PROTON);
 };
 
-const importKeys = async (keys: KeyWithFlags[]): Promise<ProcessedApiKey[]> => {
-    return Promise.all(
-        keys.map(async ({ armoredKey, flags }): Promise<ProcessedApiKey> => {
-            return {
-                armoredKey,
-                flags,
-                publicKey: await CryptoProxy.importPublicKey({ armoredKey }),
-            };
-        })
-    );
+const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
+    return keys.map(({ PublicKey, Flags, PublicKeyRef }) => {
+        return { armoredKey: PublicKey, flags: Flags, publicKey: PublicKeyRef };
+    });
 };
 
 const getPublicKeysEmailHelperWithKT = async (
@@ -54,11 +49,11 @@ const getPublicKeysEmailHelperWithKT = async (
             await getAndVerifyApiKeys(api, Email, true, verifyOutboundPublicKeys, silence, noCache);
 
         // First we use verified internal address keys
-        const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.flags));
+        const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.Flags));
 
         if (mailCapableAddressKeys.length != 0) {
             return {
-                publicKeys: await importKeys(mailCapableAddressKeys),
+                publicKeys: castKeys(mailCapableAddressKeys),
                 ktVerificationResult: addressKTResult,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                 ...rest,
@@ -78,7 +73,7 @@ const getPublicKeysEmailHelperWithKT = async (
                     ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
                     : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
                 return {
-                    publicKeys: await importKeys(mailCapableUnverifiedInternalKeys),
+                    publicKeys: await castKeys(mailCapableUnverifiedInternalKeys),
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
@@ -95,7 +90,7 @@ const getPublicKeysEmailHelperWithKT = async (
                     : catchAllKTResult?.status;
                 const ktVerificationResult = catchAllKTResult ? { status: status!, keysChangedRecently } : undefined;
                 return {
-                    publicKeys: await importKeys(mailCapableCatchAllKeys),
+                    publicKeys: await castKeys(mailCapableCatchAllKeys),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
@@ -116,7 +111,7 @@ const getPublicKeysEmailHelperWithKT = async (
             if (mailCapableUnverifiedExternalKeys.length != 0) {
                 const firstUnverifiedKey = mailCapableUnverifiedExternalKeys[0];
                 return {
-                    publicKeys: await importKeys([firstUnverifiedKey]),
+                    publicKeys: await castKeys([firstUnverifiedKey]),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     ...rest,

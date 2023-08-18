@@ -2,6 +2,7 @@ import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
+import { ProcessedApiKey } from './EncryptionPreferences';
 import { DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import { User } from './User';
@@ -12,10 +13,10 @@ export enum IGNORE_KT {
     CATCHALL,
 }
 
-export interface ArmoredKeyWithFlags {
-    Flags: number;
-    PublicKey: string;
-    Primary?: 0 | 1;
+export interface ProcessedAddressKey extends ProcessedApiKey {
+    flags: number;
+    publicKey: PublicKeyReference;
+    primary: 1 | 0;
 }
 
 export interface KTLocalStorageAPI {
@@ -42,15 +43,32 @@ export interface PreAuthKTVerifier {
     preAuthKTCommit: (userID: string) => Promise<void>;
 }
 
+export enum ApiAddressKeySource {
+    PROTON = 0,
+    WKD = 1,
+    UNKNOWN,
+}
+
+export interface ApiAddressKey {
+    PublicKey: string;
+    Flags: number;
+    Source: number;
+}
+
+export interface ProcessedApiAddressKey extends Omit<ApiAddressKey, 'Source'> {
+    PublicKeyRef: PublicKeyReference;
+    Source: ApiAddressKeySource;
+}
+
 export type VerifyOutboundPublicKeys = (
     email: string,
     keysIntendedForEmail: boolean,
     address: {
-        keyList: ArmoredKeyWithFlags[];
+        keyList: ProcessedApiAddressKey[];
         signedKeyList: FetchedSignedKeyList | null;
     },
     catchAll?: {
-        keyList: ArmoredKeyWithFlags[];
+        keyList: ProcessedApiAddressKey[];
         signedKeyList: FetchedSignedKeyList | null;
     }
 ) => Promise<{
