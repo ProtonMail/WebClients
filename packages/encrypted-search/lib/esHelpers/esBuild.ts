@@ -44,7 +44,7 @@ import {
     EventsObject,
     GetItemInfo,
     GetUserKeys,
-    InternalESHelpers,
+    InternalESCallbacks,
 } from '../models';
 import { esSentryReport } from './esAPI';
 import { sizeOfESItem } from './esCache';
@@ -203,7 +203,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
     esSupported: boolean,
     indexKey: CryptoKey | undefined,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    queryItemsMetadata: InternalESHelpers<ESItemMetadata, unknown>['queryItemsMetadata'],
+    queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'],
     getItemInfo: GetItemInfo<ESItemMetadata>,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
@@ -271,7 +271,7 @@ export const buildContentDB = async <ESItemContent>(
     indexKey: CryptoKey,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
-    fetchESItemContent: Required<InternalESHelpers<unknown, unknown, ESItemContent>>['fetchESItemContent'],
+    fetchESItemContent: Required<InternalESCallbacks<unknown, unknown, ESItemContent>>['fetchESItemContent'],
     inputrecoveryPoint: ESTimepoint | undefined,
     isInitialIndexing: boolean = true,
     isBackgroundIndexing?: boolean
@@ -441,7 +441,7 @@ export const buildContentDB = async <ESItemContent>(
 export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
     userID: string,
     indexKey: CryptoKey,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     abortIndexingRef: React.MutableRefObject<AbortController>
 ) => {
     const isDBLimited = await readLimited(userID);
@@ -454,7 +454,7 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
         return;
     }
 
-    const { fetchESItemContent } = esHelpers;
+    const { fetchESItemContent } = esCallbacks;
     if (!fetchESItemContent) {
         return;
     }

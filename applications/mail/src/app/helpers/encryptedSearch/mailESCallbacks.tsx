@@ -2,8 +2,8 @@ import { History } from 'history';
 
 import {
     CachedItem,
+    ESCallbacks,
     ESEvent,
-    ESHelpers,
     ESItemInfo,
     ESTimepoint,
     ES_BACKGROUND_METADATA_BATCH,
@@ -61,14 +61,14 @@ export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
     timepoint: [item.Time, item.Order],
 });
 
-export const getESHelpers = ({
+export const getESCallbacks = ({
     getMessageKeys,
     getMessageCounts,
     api,
     user,
     history,
     numAddresses,
-}: Props): ESHelpers<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
+}: Props): ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
     const { ID: userID } = user;
 
     const getSearchInterval = (esSearchParameters: NormalizedSearchParams) => ({
