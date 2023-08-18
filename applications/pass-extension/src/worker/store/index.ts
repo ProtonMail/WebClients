@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import devToolsEnhancer from 'remote-redux-devtools';
 
-import { updateInMemorySession } from '@proton/pass/auth';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
@@ -44,7 +43,7 @@ const store = configureStore({
 });
 
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
-    getAuth: withContext((ctx) => ctx.service.auth.authStore),
+    getAuth: withContext((ctx) => ctx.service.auth.store),
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
@@ -79,10 +78,10 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     }),
 
     onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
-        auth.authStore.setLockToken(sessionLockToken);
-        auth.authStore.setLockTTL(sessionLockTTL);
-        auth.authStore.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
-        await updateInMemorySession({ sessionLockToken });
+        auth.store.setLockToken(sessionLockToken);
+        auth.store.setLockTTL(sessionLockTTL);
+        auth.store.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
+        await auth.persist();
     }),
 
     /* Update the extension's badge count on every

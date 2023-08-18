@@ -10,7 +10,7 @@ import { type ExtensionSession } from './session';
 export const PERSISTED_SESSION_KEY = 'ps';
 
 export type ExtensionPersistedSession = Omit<ExtensionSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
-export type ExtensionPersistedSessionBlob = Pick<ExtensionSession, 'keyPassword'>;
+export type ExtensionPersistedSessionBlob = Pick<ExtensionSession, 'keyPassword' | 'sessionLockToken'>;
 
 export const setPersistedSession = async (
     key: CryptoKey,
@@ -20,14 +20,23 @@ export const setPersistedSession = async (
         PERSISTED_SESSION_KEY,
         JSON.stringify({
             ...session,
-            blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword })),
+            blob: await getEncryptedBlob(
+                key,
+                JSON.stringify({
+                    keyPassword,
+                    sessionLockToken,
+                })
+            ),
         })
     );
 
 export const getPersistedSessionBlob = (blob: string): Maybe<ExtensionPersistedSessionBlob> => {
     try {
         const parsedValue = JSON.parse(blob);
-        return { keyPassword: parsedValue?.keyPassword ?? '' };
+        return {
+            keyPassword: parsedValue?.keyPassword ?? '',
+            sessionLockToken: parsedValue?.sessionLockToken,
+        };
     } catch (_) {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted session blob');
     }
