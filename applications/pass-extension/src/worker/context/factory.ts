@@ -39,7 +39,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             ctx.service.activation.boot();
             ctx.service.autofill.updateTabsBadgeCount();
             void ctx.service.telemetry?.start();
-            setSentryUID(auth.authStore.getUID());
+            setSentryUID(auth.store.getUID());
         }),
         onUnauthorized: withContext((ctx) => {
             ctx.service.formTracker.clear();
@@ -81,9 +81,9 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         },
 
         getState: () => ({
-            loggedIn: auth.authStore.hasSession() && workerReady(context.status),
+            loggedIn: auth.store.hasSession() && workerReady(context.status),
             status: context.status,
-            UID: auth.authStore.getUID(),
+            UID: auth.store.getUID(),
         }),
 
         setStatus(status: WorkerStatus) {
