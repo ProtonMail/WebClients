@@ -59,66 +59,74 @@ export const DisallowedDomains: VFC = () => {
         <Card key="settings-section-disallowed" rounded className="mb-4 p-3">
             <strong className="color-norm block">{c('Label').t`Pause list`}</strong>
             <hr className="border-weak my-2" />
-            <p className="color-norm block">{c('Description')
-                .t`This is a list of domains where auto functions (Autofill, Autofill 2FA, Autosuggestion or Autosave) are dissallowed`}</p>
+            <em className="block text-sm color-weak mb-2">{c('Description')
+                .t`List of domains where certain auto functions in Pass (Autofill, Autofill 2FA, Autosuggest, Autosave) should not be run.`}</em>
             <hr className="my-2 border-weak" />
-            <div className="flex flex-align-items-center flex-justify-space-between px-6 text-semibold">
-                <div className="flex-item-fluid">URL</div>
-                <div className="flex flex-justify-space-between">
-                    <span className="pr-4">Autofill</span>
-                    <span className="pr-4">Autofill 2FA</span>
-                    <span className="pr-4">Autosuggest</span>
-                    <span className="pr-4">Autosave</span>
-                    <Icon name="pass-trash" size={18} />
-                </div>
-            </div>
-            <hr className="border-weak mt-2" />
-            <ul className="unstyled">
-                {Object.entries(disallowedDomains).map(([url, mask], i) => (
-                    <>
-                        <li
-                            key={`${url}-${i}`}
-                            className="flex flex-align-items-center flex-justify-space-between button button-ghost-weak text-left"
-                        >
-                            <div className="flex-item-fluid overflow-x-auto">{url}</div>
-                            <div className="w-1/2 flex flex-justify-space-between pr-8">
-                                {criterias.map((criteria) => (
-                                    <Checkbox
-                                        key={criteria}
-                                        checked={hasCriteria(mask, criteria)}
-                                        onChange={() => toggleUrlMask(url, criteria)}
-                                    />
-                                ))}
-                            </div>
+            {Object.keys(disallowedDomains).length > 0 && (
+                <>
+                    <div className="flex flex-align-items-center flex-justify-space-between pr-6 pl-4 text-semibold">
+                        <div className="flex-item-fluid">{c('Label').t`Domains`}</div>
+                        <div className="flex flex-justify-space-between">
+                            <span className="pr-4">{c('Label').t`Autofill`}</span>
+                            <span className="pr-4">{c('Label').t`Autofill 2FA`}</span>
+                            <span className="pr-4">{c('Label').t`Autosuggest`}</span>
+                            <span className="pr-6">{c('Label').t`Autosave`}</span>
+                            <Icon name="pass-trash" size={18} />
+                        </div>
+                    </div>
+                    <hr className="border-weak m-2" />
+                    <ul className="unstyled mt-0">
+                        {Object.entries(disallowedDomains).map(([url, mask], i) => (
+                            <>
+                                <li
+                                    key={`${url}-${i}`}
+                                    className="flex flex-align-items-center flex-justify-space-between button button-ghost-weak text-left"
+                                >
+                                    <div className="flex-item-fluid text-ellipsis">{url}</div>
+                                    <div className="w-1/2 flex flex-justify-space-between pr-10">
+                                        {criterias.map((criteria) => (
+                                            <Checkbox
+                                                key={criteria}
+                                                checked={hasCriteria(mask, criteria)}
+                                                onChange={() => toggleUrlMask(url, criteria)}
+                                            />
+                                        ))}
+                                    </div>
 
-                            <button
-                                className="button button-pill button-for-icon button-solid-weak"
-                                onClick={() => deleteDisallowedUrl(url)}
-                            >
-                                <Icon name="cross" size={12} />
-                            </button>
-                        </li>
-                        <hr className="border-weak my-2" />
-                    </>
-                ))}
-            </ul>
+                                    <button
+                                        className="button button-pill button-for-icon button-solid-weak"
+                                        onClick={() => deleteDisallowedUrl(url)}
+                                    >
+                                        <Icon name="cross" size={12} />
+                                    </button>
+                                </li>
+                                <hr className="border-weak my-2" />
+                            </>
+                        ))}
+                    </ul>
+                </>
+            )}
             <div className="pt-6">
                 <Label>
                     <strong>{c('Label').t`Insert new domain`}</strong>
                 </Label>
                 <hr className="border-weak my-2" />
-                <InputFieldTwo
-                    value={url}
-                    onValue={setUrl}
-                    onKeyUp={(e: KeyboardEvent) => e.key === 'Enter' && addDisallowedUrl(url)}
-                />
-                <button
-                    type="submit"
-                    onClick={() => addDisallowedUrl(url)}
-                    className="button button-pill button-outline-norm "
-                >
-                    {c('Action').t`Add a domain`}
-                </button>
+                <div className="flex flex-justify-space-between">
+                    <div className="w-3/4">
+                        <InputFieldTwo
+                            value={url}
+                            onValue={setUrl}
+                            onKeyUp={(e: KeyboardEvent) => e.key === 'Enter' && addDisallowedUrl(url)}
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        onClick={() => addDisallowedUrl(url)}
+                        className="button button-pill button-outline-norm mb-10"
+                    >
+                        {c('Action').t`Add a domain`}
+                    </button>
+                </div>
             </div>
         </Card>
     );
