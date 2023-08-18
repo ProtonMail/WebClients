@@ -79,8 +79,6 @@ export const GatewayRow = ({
         ? ['bg-success', c('Info').t`active`]
         : ['bg-weak color-weak', c('Info').t`inactive`];
 
-    const getLogicalClassName = (logical: GatewayLogical) => (isDeleted(logical) ? 'opacity-50' : undefined);
-
     const getIpsCell = (servers: GatewayServer[]) =>
         servers[0]
             ? [
@@ -92,7 +90,7 @@ export const GatewayRow = ({
 
     return (
         <TableRow
-            className={getLogicalClassName(main)}
+            className={deleted ? 'opacity-50' : undefined}
             cells={[
                 gateway.Name,
                 <span className={clsx(['py-1 px-2 rounded text-uppercase', statusClasses])}>{statusText}</span>,
