@@ -19,6 +19,7 @@ import {
     MEMBER_ROLE,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -171,6 +172,10 @@ const SubUserCreateModal = ({
     const validate = () => {
         if (!model.private && !organizationKey) {
             return c('Error').t`The organization key must be activated first.`;
+        }
+
+        if (!validateEmailAddress(model.address)) {
+            return c('Error').t`Email address is invalid`;
         }
     };
 
