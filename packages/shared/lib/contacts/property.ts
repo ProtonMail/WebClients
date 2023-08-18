@@ -3,7 +3,7 @@ import { isValid, parseISO } from 'date-fns';
 import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ContactValue } from '../interfaces/contacts';
-import { CONTACT_NAME_MAX_LENGTH } from './constants';
+import { CONTACT_FIRST_LAST_NAME_MAX_LENGTH, CONTACT_NAME_MAX_LENGTH } from './constants';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -176,4 +176,8 @@ export const getDateFromVCardProperty = (
  */
 export const isContactNameValid = (contactName: string) => {
     return contactName.length <= CONTACT_NAME_MAX_LENGTH;
+};
+
+export const isFirstLastNameValid = (name: string) => {
+    return name.length <= CONTACT_FIRST_LAST_NAME_MAX_LENGTH;
 };
