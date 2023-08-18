@@ -92,13 +92,19 @@ const GatewayAddServersModal = ({
                 ) : (
                     <div />
                 )}
-                <Button color="norm" type="submit">
-                    {c('Feature').ngettext(
-                        msgid`Add (${numberOfAddedServers})`,
-                        `Add (${numberOfAddedServers})`,
-                        numberOfAddedServers
-                    )}
-                </Button>
+                {!needUpsell && numberOfAddedServers >= 1 ? (
+                    <Button color="norm" type="submit">
+                        {c('Feature').ngettext(
+                            msgid`Add (${numberOfAddedServers})`,
+                            `Add (${numberOfAddedServers})`,
+                            numberOfAddedServers
+                        )}
+                    </Button>
+                ) : (
+                    <Button color="norm" type="submit" disabled>
+                        {c('Feature').t`Add`}
+                    </Button>
+                )}
             </ModalTwoFooter>
         </ModalTwo>
     );
