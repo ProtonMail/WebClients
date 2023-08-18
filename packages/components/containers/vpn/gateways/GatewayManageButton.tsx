@@ -1,7 +1,13 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ButtonGroup, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    usePopperAnchor,
+} from '@proton/components/components';
 
 import { Gateway } from './Gateway';
 import { GatewayLogical } from './GatewayLogical';
@@ -34,20 +40,24 @@ export const GatewayManageButton = ({
 
         return c('Title').t`Delete the server (you will still be able to recover it for ${days} days)`;
     })();
-    const loading = (deletingLogicals.indexOf(logical.ID) !== -1);
+    const loading = deletingLogicals.indexOf(logical.ID) !== -1;
     const disabled = Boolean(deletedLogicals[logical.ID]);
 
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
     return (
-        <ButtonGroup style={{ minWidth: '38px' }}>
-            {c('Action').t`Manage`}
-            <SimpleDropdown
+        <>
+            <DropdownButton
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
                 icon
-                as={Button}
-                originalPlacement="bottom-end"
                 title={c('Title').t`Open actions dropdown`}
-                hasCaret={false}
-                content={<Icon name="three-dots-vertical" />}
+                size="small"
             >
+                <Icon name="three-dots-vertical" />
+            </DropdownButton>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="text-left"
@@ -94,8 +104,8 @@ export const GatewayManageButton = ({
                         </>
                     )}
                 </DropdownMenu>
-            </SimpleDropdown>
-        </ButtonGroup>
+            </Dropdown>
+        </>
     );
 };
 
