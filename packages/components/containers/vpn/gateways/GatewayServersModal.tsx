@@ -17,6 +17,7 @@ import {
     TableRow,
     useModalTwo,
 } from '@proton/components/components';
+import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 
 import { Gateway } from './Gateway';
@@ -343,17 +344,19 @@ const GatewayServersModal = ({
                             )}
                         </Button>
                     ) : (
-                        <Button
-                            shape="ghost"
-                            className="color-primary"
-                            onClick={() => {
-                                onUpsell();
-                                onReject();
-                            }}
-                        >
-                            <Icon name="plus-circle-filled" className="mr-2" />
-                            {c('Action').t`Get more servers`}
-                        </Button>
+                        ownedCount < MAX_IPS_ADDON && (
+                            <Button
+                                shape="ghost"
+                                className="color-primary"
+                                onClick={() => {
+                                    onUpsell();
+                                    onReject();
+                                }}
+                            >
+                                <Icon name="plus-circle-filled" className="mr-2" />
+                                {c('Action').t`Get more servers`}
+                            </Button>
+                        )
                     )}
                 </ModalTwoContent>
                 <ModalTwoFooter>
