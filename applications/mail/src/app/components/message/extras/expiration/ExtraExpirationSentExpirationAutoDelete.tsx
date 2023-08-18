@@ -1,8 +1,8 @@
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import useExpiration from '../../../hooks/useExpiration';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import useExpiration from '../../../../hooks/useExpiration';
+import { MessageState } from '../../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
