@@ -44,7 +44,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const dispatch = useAppDispatch();
     const expanded = useAppSelector(selectLayoutIsExpanded);
-    const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleExpanded()), []);
+    const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);
 
     const onCompose = useOnCompose();
 
