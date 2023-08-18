@@ -68,7 +68,7 @@ const getRecipients = (value = '') =>
         .map((Address) => ({ Address, Name: '' }));
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
-const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => () => {
+const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => {
     const { keyword, address, wildcard, from, to, begin, end } = extractSearchParameters(history.location);
 
     const { filter } = getSearchParams(history.location.search);
