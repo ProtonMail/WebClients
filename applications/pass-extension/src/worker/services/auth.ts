@@ -14,7 +14,6 @@ import {
     persistSession,
     resumeSession,
     setInMemorySession,
-    updateInMemorySession,
 } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
@@ -29,8 +28,9 @@ import {
     stateLock,
     syncLock,
 } from '@proton/pass/store';
-import type { AccountForkMessage, Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
+import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import type { ForkPayload } from '@proton/pass/types/api/fork';
 import { withPayload } from '@proton/pass/utils/fp';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
@@ -46,16 +46,18 @@ import { withContext } from '../context';
 import store from '../store';
 
 export interface AuthService {
-    authStore: AuthStore;
-    resumeSession: () => Promise<boolean>;
-    consumeFork: (
-        data: AccountForkMessage['payload']
-    ) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
+    store: AuthStore;
+    /* auth */
+    init: () => Promise<boolean>;
     login: (session: ExtensionSession) => Promise<boolean>;
     logout: () => Promise<boolean>;
-    init: () => Promise<boolean>;
+    /* session */
+    resume: () => Promise<boolean>;
+    consume: (data: ForkPayload) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
+    persist: () => Promise<void>;
+    /* lock */
     lock: () => void;
-    unlock: (sessionLockToken: Maybe<string>) => Promise<void>;
+    unlock: (sessionLockToken: string) => Promise<void>;
     syncLock: () => Promise<SessionLockCheckResult>;
 }
 
@@ -75,150 +77,25 @@ export const createAuthService = ({
     const authStore = exposeAuthStore(createAuthStore(createStore()));
 
     const authService: AuthService = {
-        authStore,
-
-        syncLock: async () => {
-            const lock = await checkSessionLock();
-
-            authStore.setLockStatus(lock.status);
-            authStore.setLockTTL(lock.ttl);
-            authStore.setLockLastExtendTime(getEpoch());
-
-            store.dispatch(syncLock(lock));
-            return lock;
-        },
-
-        /* set the lock status before dispatching
-         * the `stateLock` so the UI can pick up
-         * the locked state before wiping the store */
-        lock: withContext((ctx) => {
-            logger.info(`[Worker::Auth] Locking context`);
-            const shouldLockState = workerReady(ctx.status);
-
-            authStore.setLockStatus(SessionLockStatus.LOCKED);
-            authStore.setLockToken(undefined);
-            authStore.setLockLastExtendTime(undefined);
-
-            ctx.setStatus(WorkerStatus.LOCKED);
-
-            if (shouldLockState) {
-                logger.info(`[Worker::Auth] Locking state`);
-                store.dispatch(stateLock());
-            }
-
-            onLocked?.();
-        }),
-
-        /* Updates the `authStore` lock state values & persists
-         * them in memory & local persisted sessions */
-        unlock: async (sessionLockToken) => {
-            logger.info(`[Worker::Auth] Unlocking context`);
-            authStore.setLockToken(sessionLockToken);
-
-            await authService.syncLock();
-            await updateInMemorySession({ sessionLockToken });
-        },
+        store: authStore,
 
         init: asyncLock(async () => {
             logger.info(`[Worker::Auth] Initialization start`);
 
             const inMemorySession = await getInMemorySession();
-            return inMemorySession ? authService.login(inMemorySession) : authService.resumeSession();
-        }),
-
-        /* Consumes a session fork request and sends response.
-         * Reset api in case it was in an invalid session state.
-         * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
-        consumeFork: withContext(async (ctx, data) => {
-            if (ctx.getState().loggedIn) {
-                throw {
-                    payload: {
-                        title: c('Error').t`Authentication error`,
-                        message: c('Info')
-                            .t`It seems you are already logged in to ${PASS_APP_NAME}. If you're trying to login with a different account, please logout from the extension first.`,
-                    },
-                };
-            }
-
-            await authService.logout();
-
-            try {
-                ctx.setStatus(WorkerStatus.AUTHORIZING);
-
-                const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
-                const loggedIn = await authService.login(session);
-
-                /* if the session is locked we might not be considered
-                 * fully logged in but we can still persist the session */
-                if (loggedIn || workerLocked(ctx.status)) {
-                    logger.info('[Worker::Auth] Persisting session...');
-                    void persistSession(api, session);
-                }
-
-                /* if we get a locked session error on user/access we should not
-                 * show a login error : user will have to unlock. FIXME: when
-                 * removing the session-lock mechanism (and moving to biometrics)
-                 * make sure to catch 403 in this catch block. It is handled by
-                 * the session lock check in the AuthService::login call right now */
-                await api({ url: `pass/v1/user/access`, method: 'get' })
-                    .then(({ Access }) => store.dispatch(setUserPlan({ ...Access!.Plan, requestedAt: getEpoch() })))
-                    .catch((e) => {
-                        if (!api.getStatus().sessionLocked) throw e;
-                    });
-
-                return {
-                    payload: {
-                        title: c('Title').t`Welcome to ${PASS_APP_NAME}`,
-                        message: c('Info')
-                            .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end to end encrypted and is only accessible by you.`,
-                    },
-                };
-            } catch (error: any) {
-                void authService.logout();
-                const additionalMessage = error.message ?? '';
-
-                if (error instanceof Error) {
-                    /* API errors are excluded from core's sentry `beforeSend`
-                     * handler: wrap the error message to by-pass */
-                    const loginError = new Error(error.message);
-                    loginError.name = 'PassLoginError';
-                    loginError.cause = error.cause;
-                    loginError.stack = error.stack;
-
-                    sentryCaptureException(loginError, {
-                        extra: {
-                            forkSelector: data.selector,
-                            persistent: data.persistent,
-                            trusted: data.trusted,
-                        },
-                    });
-                }
-
-                store.dispatch(
-                    notification({
-                        type: 'error',
-                        text: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
-                    })
-                );
-
-                throw {
-                    payload: {
-                        title: error.title ?? c('Error').t`Something went wrong`,
-                        message: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
-                    },
-                };
-            }
+            return inMemorySession ? authService.login(inMemorySession) : authService.resume();
         }),
 
         login: withContext(async (ctx, session) => {
             await setInMemorySession(session);
 
-            const { UID, keyPassword, AccessToken, RefreshToken, sessionLockToken } = session;
+            const { UID, UserID, keyPassword, AccessToken, RefreshToken, sessionLockToken } = session;
 
             api.configure({ UID, AccessToken, RefreshToken });
             api.unsubscribe();
 
             authStore.setUID(UID);
+            authStore.setUserID(UserID);
             authStore.setPassword(keyPassword);
             authStore.setLockToken(sessionLockToken);
 
@@ -306,7 +183,7 @@ export const createAuthService = ({
             return true;
         }),
 
-        resumeSession: withContext(async (ctx) => {
+        resume: withContext(async (ctx) => {
             logger.info(`[Worker::Auth] Trying to resume session`);
             ctx.setStatus(WorkerStatus.RESUMING);
 
@@ -351,6 +228,144 @@ export const createAuthService = ({
             ctx.setStatus(WorkerStatus.UNAUTHORIZED);
             return false;
         }),
+
+        /* Consumes a session fork request and sends response.
+         * Reset api in case it was in an invalid session state.
+         * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
+        consume: withContext(async (ctx, data) => {
+            if (ctx.getState().loggedIn) {
+                throw {
+                    payload: {
+                        title: c('Error').t`Authentication error`,
+                        message: c('Info')
+                            .t`It seems you are already logged in to ${PASS_APP_NAME}. If you're trying to login with a different account, please logout from the extension first.`,
+                    },
+                };
+            }
+
+            await authService.logout();
+
+            try {
+                ctx.setStatus(WorkerStatus.AUTHORIZING);
+
+                const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
+                const loggedIn = await authService.login(session);
+
+                /* if the session is locked we might not be considered
+                 * fully logged in but we can still persist the session */
+                if (loggedIn || workerLocked(ctx.status)) void authService.persist();
+
+                /* if we get a locked session error on user/access we should not
+                 * show a login error : user will have to unlock. FIXME: when
+                 * removing the session-lock mechanism (and moving to biometrics)
+                 * make sure to catch 403 in this catch block. It is handled by
+                 * the session lock check in the AuthService::login call right now */
+                await api({ url: `pass/v1/user/access`, method: 'get' })
+                    .then(({ Access }) => store.dispatch(setUserPlan({ ...Access!.Plan, requestedAt: getEpoch() })))
+                    .catch((e) => {
+                        if (!api.getStatus().sessionLocked) throw e;
+                    });
+
+                return {
+                    payload: {
+                        title: c('Title').t`Welcome to ${PASS_APP_NAME}`,
+                        message: c('Info')
+                            .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end to end encrypted and is only accessible by you.`,
+                    },
+                };
+            } catch (error: any) {
+                void authService.logout();
+                const additionalMessage = error.message ?? '';
+
+                if (error instanceof Error) {
+                    /* API errors are excluded from core's sentry `beforeSend`
+                     * handler: wrap the error message to by-pass */
+                    const loginError = new Error(error.message);
+                    loginError.name = 'PassLoginError';
+                    loginError.cause = error.cause;
+                    loginError.stack = error.stack;
+
+                    sentryCaptureException(loginError, {
+                        extra: {
+                            forkSelector: data.selector,
+                            persistent: data.persistent,
+                            trusted: data.trusted,
+                        },
+                    });
+                }
+
+                store.dispatch(
+                    notification({
+                        type: 'error',
+                        text: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
+                    })
+                );
+
+                throw {
+                    payload: {
+                        title: error.title ?? c('Error').t`Something went wrong`,
+                        message: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
+                    },
+                };
+            }
+        }),
+
+        persist: async () => {
+            logger.info('[Worker::Auth] Persisting session...');
+
+            const session: ExtensionSession = {
+                AccessToken: api.getAuth()!.AccessToken,
+                RefreshToken: api.getAuth()!.RefreshToken,
+                keyPassword: authStore.getPassword(),
+                sessionLockToken: authStore.getLockToken(),
+                UID: authStore.getUID()!,
+                UserID: authStore.getUserID()!,
+            };
+
+            await persistSession(api, session);
+        },
+
+        /* set the lock status before dispatching
+         * the `stateLock` so the UI can pick up
+         * the locked state before wiping the store */
+        lock: withContext((ctx) => {
+            logger.info(`[Worker::Auth] Locking context`);
+            const shouldLockState = workerReady(ctx.status);
+
+            authStore.setLockStatus(SessionLockStatus.LOCKED);
+            authStore.setLockToken(undefined);
+            authStore.setLockLastExtendTime(undefined);
+
+            ctx.setStatus(WorkerStatus.LOCKED);
+
+            if (shouldLockState) {
+                logger.info(`[Worker::Auth] Locking state`);
+                store.dispatch(stateLock());
+            }
+
+            onLocked?.();
+        }),
+
+        /* Updates the `authStore` lock state values & persists
+         * them in memory & local persisted sessions */
+        unlock: async (sessionLockToken) => {
+            logger.info(`[Worker::Auth] Unlocking context`);
+            authStore.setLockToken(sessionLockToken);
+
+            await authService.syncLock();
+            await authService.persist();
+        },
+
+        syncLock: async () => {
+            const lock = await checkSessionLock();
+
+            authStore.setLockStatus(lock.status);
+            authStore.setLockTTL(lock.ttl);
+            authStore.setLockLastExtendTime(getEpoch());
+
+            store.dispatch(syncLock(lock));
+            return lock;
+        },
     };
 
     const handleUnlockRequest = (request: { pin: string }) =>
@@ -385,7 +400,7 @@ export const createAuthService = ({
 
     const resolveUserData = () => ({ user: selectUser(store.getState()) });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consume));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
