@@ -39,7 +39,6 @@ interface Props {
     showIPv6?: boolean;
     showLoad?: boolean;
     showCancelButton?: boolean;
-    isEditing?: boolean;
     singleServer?: boolean;
     isDeleted: (logical: GatewayLogical) => boolean;
     onSubmitDone: (deletedLogicalIds: readonly string[], addedQuantities: Record<string, number>) => Promise<void>;
@@ -61,7 +60,6 @@ const GatewayServersModal = ({
     showIPv6 = true,
     showLoad = true,
     showCancelButton = false,
-    isEditing = false,
     singleServer = false,
     isDeleted,
     onSubmitDone,
@@ -147,7 +145,6 @@ const GatewayServersModal = ({
             usedCount: usedCount - deletedServerCount + addedServerCount,
             users,
             language,
-            isEditing,
             singleServer,
             showCancelButton,
             onSubmitDone: addQuantities,
