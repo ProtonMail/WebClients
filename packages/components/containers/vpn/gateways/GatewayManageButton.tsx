@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     Dropdown,
@@ -38,7 +38,11 @@ export const GatewayManageButton = ({
     const deleteServerTitle = (() => {
         const days = 7;
 
-        return c('Title').t`Delete the server (you will still be able to recover it for ${days} days)`;
+        return c('Title').ngettext(
+            msgid`Delete the server (you will still be able to recover it for ${days} day)`,
+            `Delete the server (you will still be able to recover it for ${days} days)`,
+            days
+        );
     })();
     const loading = deletingLogicals.indexOf(logical.ID) !== -1;
     const disabled = Boolean(deletedLogicals[logical.ID]);
