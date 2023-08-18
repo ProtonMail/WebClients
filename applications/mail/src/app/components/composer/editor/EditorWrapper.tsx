@@ -1,7 +1,5 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
-import { c } from 'ttag';
-
 import { Editor, EditorActions, EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -279,7 +277,6 @@ const EditorWrapper = ({
         <Editor
             editorToolbarClassname="mb-4 mx-6"
             editorClassname="px-6"
-            placeholder={c('Placeholder').t`Write your message`}
             metadata={editorMetadata}
             disabled={disabled}
             onChange={onChangeContentCallback}
