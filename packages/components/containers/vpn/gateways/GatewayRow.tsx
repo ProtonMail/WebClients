@@ -76,8 +76,11 @@ export const GatewayRow = ({
     const hasPendingServers = provisioningCounter > 0;
     const main = provisionedLogicals[0] || allLogicals[0];
     const [statusClasses, statusText] = provisionedLogicals.length
-        ? ['bg-success', c('Info').t`active`]
-        : ['bg-weak color-weak', c('Info').t`inactive`];
+        ? ['bg-success', /** translator: status of the gateway: people can connect to it */ c('Info').t`active`]
+        : [
+              'bg-weak color-weak',
+              /** translator: status of the gateway: people cannot connect to it */ c('Info').t`inactive`,
+          ];
 
     const getIpsCell = (servers: GatewayServer[]) =>
         servers[0]

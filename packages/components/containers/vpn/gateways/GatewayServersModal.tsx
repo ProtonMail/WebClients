@@ -17,6 +17,7 @@ import {
     TableRow,
     useModalTwo,
 } from '@proton/components/components';
+import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 
 import { Gateway } from './Gateway';
@@ -223,8 +224,10 @@ const GatewayServersModal = ({
                                             key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
                                         }),
                                         getSuffix(logical.Name),
-                                        <span className="py-1 px-2 rounded text-uppercase bg-success">{c('Info')
-                                            .t`active`}</span>,
+                                        <span className="py-1 px-2 rounded text-uppercase bg-success">{
+                                            /** translator: status of the server: people can connect to it */
+                                            c('Server-Info').t`active`
+                                        }</span>,
                                         ...(showIP
                                             ? [
                                                   <>
@@ -254,9 +257,10 @@ const GatewayServersModal = ({
                                                 key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
                                             }),
                                             getSuffix(logical.Name),
-                                            <span className="py-1 px-2 rounded text-uppercase bg-weak color-weak">{c(
-                                                'Info'
-                                            ).t`inactive`}</span>,
+                                            <span className="py-1 px-2 rounded text-uppercase bg-weak color-weak">{
+                                                /** translator: status of the server: people cannot connect to it */
+                                                c('Server-Info').t`inactive`
+                                            }</span>,
                                             ...(showIP
                                                 ? [
                                                       <>
@@ -283,8 +287,10 @@ const GatewayServersModal = ({
                                             key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
                                         }),
                                         getSuffix(logical.Name),
-                                        <span className="py-1 px-2 rounded text-uppercase bg-info">{c('Info')
-                                            .t`pending`}</span>,
+                                        <span className="py-1 px-2 rounded text-uppercase bg-info">{
+                                            /** translator: status of the server: people cannot yet use it */
+                                            c('Server-Info').t`pending`
+                                        }</span>,
                                         ...(showIP ? ['-'] : []),
                                         ...(showLoad ? ['-'] : []),
                                         <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
@@ -305,9 +311,10 @@ const GatewayServersModal = ({
                                             '',
                                             new Cell(
                                                 (
-                                                    <span className="py-1 px-2 rounded text-uppercase bg-weak">{c(
-                                                        'Info'
-                                                    ).t`to be created`}</span>
+                                                    <span className="py-1 px-2 rounded text-uppercase bg-weak">{
+                                                        /** translator: status of the server: will be created when user click "Save" */
+                                                        c('Server-Info').t`to be created`
+                                                    }</span>
                                                 ),
                                                 1 + Number(showIP) + Number(showLoad)
                                             ),
@@ -327,14 +334,30 @@ const GatewayServersModal = ({
                             )}
                         </TableBody>
                     </Table>
-                    <Button shape="ghost" className="color-primary" onClick={addServers}>
-                        <Icon name="plus-circle-filled" className="mr-2" />
-                        {c('Info').ngettext(
-                            msgid`Add server (${availableAddedCount} available)`,
-                            `Add server (${availableAddedCount} available)`,
-                            availableAddedCount
-                        )}
-                    </Button>
+                    {availableAddedCount >= 1 ? (
+                        <Button shape="ghost" className="color-primary" onClick={addServers}>
+                            <Icon name="plus-circle-filled" className="mr-2" />
+                            {c('Info').ngettext(
+                                msgid`Add server (${availableAddedCount} available)`,
+                                `Add server (${availableAddedCount} available)`,
+                                availableAddedCount
+                            )}
+                        </Button>
+                    ) : (
+                        ownedCount < MAX_IPS_ADDON && (
+                            <Button
+                                shape="ghost"
+                                className="color-primary"
+                                onClick={() => {
+                                    onUpsell();
+                                    onReject();
+                                }}
+                            >
+                                <Icon name="plus-circle-filled" className="mr-2" />
+                                {c('Action').t`Get more servers`}
+                            </Button>
+                        )
+                    )}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     {showCancelButton ? (
