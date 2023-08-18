@@ -92,10 +92,21 @@ export const GatewayCountrySelection = ({
                         max={99}
                         disabled={loading}
                         onChange={(newQuantity) => {
-                            changeModel('quantities', {
+                            const quantities = {
                                 ...model.quantities,
                                 [country]: newQuantity,
-                            });
+                            };
+                            const mainCountry = Object.keys(quantities).reduce(
+                                (previous, country) =>
+                                    (quantities[country] || 0) > (quantities[previous] || 0) ? country : previous,
+                                'US'
+                            );
+
+                            if (mainCountry !== model.country) {
+                                changeModel('country', mainCountry);
+                            }
+
+                            changeModel('quantities', quantities);
                         }}
                         step={1}
                     />
