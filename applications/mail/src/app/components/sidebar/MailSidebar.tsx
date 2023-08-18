@@ -49,7 +49,7 @@ const MailSidebar = ({ labelID }: Props) => {
                 }
                 expanded={expanded}
                 onToggleExpand={() => {
-                    dispatch(layoutActions.toggleExpanded());
+                    dispatch(layoutActions.toggleSidebarExpand());
                 }}
                 primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
                 logo={logo}
@@ -58,7 +58,7 @@ const MailSidebar = ({ labelID }: Props) => {
                     displayContactsInHeader && (
                         <SidebarContactItem
                             onClick={() => {
-                                dispatch(layoutActions.setExpanded(false));
+                                dispatch(layoutActions.setSidebarExpanded(false));
                                 toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
                             }}
                         />

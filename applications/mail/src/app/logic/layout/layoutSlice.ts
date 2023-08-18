@@ -1,22 +1,25 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface LayoutState {
-    expanded: boolean;
+    sidebarExpanded: boolean;
 }
 
 const initialState: LayoutState = {
-    expanded: false,
+    /**
+     * Used on narrow devices when burger menu allows to toggle sidebar
+     */
+    sidebarExpanded: false,
 };
 
 const layoutSlice = createSlice({
     name: 'layout',
     initialState,
     reducers: {
-        setExpanded: (state, action: PayloadAction<boolean>) => {
-            state.expanded = action.payload;
+        setSidebarExpanded: (state, action: PayloadAction<boolean>) => {
+            state.sidebarExpanded = action.payload;
         },
-        toggleExpanded: (state) => {
-            state.expanded = !state.expanded;
+        toggleSidebarExpand: (state) => {
+            state.sidebarExpanded = !state.sidebarExpanded;
         },
     },
 });
