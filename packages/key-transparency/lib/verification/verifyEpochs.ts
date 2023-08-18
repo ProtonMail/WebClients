@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@proton/crypto';
 import { arrayToHexString, hexStringToArray } from '@proton/crypto/lib/utils';
 
 import { throwKTError } from '../helpers/utils';
@@ -13,7 +13,7 @@ export const verifyEpoch = async (epoch: Epoch) => {
 
     // 1. Validate the certificate
     const certChain = parseCertChain(Certificate);
-    await verifyCertChain(certChain, CertificateIssuer);
+    await verifyCertChain(certChain, CertificateIssuer, serverTime());
     const [epochCert, issuerCert] = certChain;
     await verifySCT(epochCert, issuerCert);
 
