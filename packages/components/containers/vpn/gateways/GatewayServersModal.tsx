@@ -333,14 +333,28 @@ const GatewayServersModal = ({
                             )}
                         </TableBody>
                     </Table>
-                    <Button shape="ghost" className="color-primary" onClick={addServers}>
-                        <Icon name="plus-circle-filled" className="mr-2" />
-                        {c('Info').ngettext(
-                            msgid`Add server (${availableAddedCount} available)`,
-                            `Add server (${availableAddedCount} available)`,
-                            availableAddedCount
-                        )}
-                    </Button>
+                    {availableAddedCount >= 1 ? (
+                        <Button shape="ghost" className="color-primary" onClick={addServers}>
+                            <Icon name="plus-circle-filled" className="mr-2" />
+                            {c('Info').ngettext(
+                                msgid`Add server (${availableAddedCount} available)`,
+                                `Add server (${availableAddedCount} available)`,
+                                availableAddedCount
+                            )}
+                        </Button>
+                    ) : (
+                        <Button
+                            shape="ghost"
+                            className="color-primary"
+                            onClick={() => {
+                                onUpsell();
+                                onReject();
+                            }}
+                        >
+                            <Icon name="plus-circle-filled" className="mr-2" />
+                            {c('Action').t`Get more servers`}
+                        </Button>
+                    )}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     {showCancelButton ? (
