@@ -6,6 +6,7 @@ export type AuthStore = ReturnType<typeof createAuthStore>;
 
 const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_UID_KEY = 'pass:uid';
+const PASS_USER_ID_KEY = 'pass:user_id';
 const PASS_LOCK_STATUS_KEY = 'pass:lock_status';
 const PASS_LOCK_TOKEN_KEY = 'pass:lock_token';
 const PASS_LOCK_TTL_KEY = 'pass:lock_ttl';
@@ -18,6 +19,8 @@ export const createAuthStore = (store: Store) => {
         /* UID: child session identifier */
         setUID: (UID: Maybe<string>): void => store.set(PASS_UID_KEY, UID),
         getUID: (): Maybe<string> => store.get(PASS_UID_KEY),
+        setUserID: (UserID: Maybe<string>): void => store.set(PASS_USER_ID_KEY, UserID),
+        getUserID: (): Maybe<string> => store.get(PASS_USER_ID_KEY),
         /* keyPassword */
         setPassword: encodedSetter(store)(PASS_MAILBOX_PWD_KEY),
         getPassword: encodedGetter(store)(PASS_MAILBOX_PWD_KEY, ''),

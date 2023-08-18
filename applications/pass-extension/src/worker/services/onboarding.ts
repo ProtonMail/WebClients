@@ -160,7 +160,7 @@ export const createOnboardingService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ACCOUNT_EXTENSION,
         withContext((ctx, _, { tab }) =>
-            ctx.service.auth.authStore.hasSession() && tab?.id ? navigateToOnboarding(tab.id) : false
+            ctx.service.auth.store.hasSession() && tab?.id ? navigateToOnboarding(tab.id) : false
         )
     );
 
