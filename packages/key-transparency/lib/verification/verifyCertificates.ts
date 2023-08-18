@@ -1,8 +1,7 @@
 import { fromBER } from 'asn1js';
-import { Certificate, GeneralName, verifySCTsForCertificate } from 'pkijs';
+import { Certificate, CertificateChainValidationEngine, GeneralName, verifySCTsForCertificate } from 'pkijs';
 import { getParametersValue } from 'pvutils';
 
-import { serverTime } from '@proton/crypto';
 import { hexStringToArray } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -126,64 +125,40 @@ const printCertificate = (cert: Certificate) => {
 };
 
 /**
- * Verify the first certificate in a chain with one of the hardcoded root certificates
- */
-export const verifyTopCert = async (topCert: Certificate, CertificateIssuer: KT_CERTIFICATE_ISSUER) => {
-    const rootCerts = rootCertificates.get(CertificateIssuer);
-    if (rootCerts) {
-        for (const rootCertName in rootCerts) {
-            const rootCert = parseCertificate(rootCerts[rootCertName]);
-
-            // For LE, the top certificate is one of the root certs
-            if (rootCert.serialNumber.isEqual(topCert.serialNumber)) {
-                return;
-            }
-
-            // For 0SSL, the top certificate is verified by one of the root certs
-            const verified = await topCert.verify(rootCert);
-            if (verified) {
-                return;
-            }
-        }
-    }
-
-    return throwKTError('Epoch certificate did not pass verification of top certificate', {
-        topCertString: printCertificate(topCert),
-        CertificateIssuer,
-    });
-};
-
-/**
- * Verify the expiration time of a certificate
- */
-const verifyCertExpiry = (cert: Certificate) => {
-    const now = +serverTime();
-    if (+cert.notAfter.value < now) {
-        return throwKTError('Certificate is expired', {
-            stringCert: printCertificate(cert),
-        });
-    }
-};
-
-/**
  * Verify a full certificate chain
  */
-export const verifyCertChain = async (certChain: Certificate[], CertificateIssuer: KT_CERTIFICATE_ISSUER) => {
-    let verificationCert = certChain[certChain.length - 1];
-    await verifyTopCert(verificationCert, CertificateIssuer);
-    verifyCertExpiry(verificationCert);
-
-    let verified = true;
-    for (let i = certChain.length - 2; i >= 0; i--) {
-        verified = verified && (await certChain[i].verify(verificationCert));
-        verificationCert = certChain[i];
-        verifyCertExpiry(verificationCert);
+export const verifyCertChain = async (
+    certChain: Certificate[],
+    CertificateIssuer: KT_CERTIFICATE_ISSUER,
+    now: Date
+): Promise<void> => {
+    const rootCerts = rootCertificates.get(CertificateIssuer)?.map((cert) => parseCertificate(cert));
+    if (!rootCerts?.length) {
+        return throwKTError('Unknown issuer', {
+            CertificateIssuer,
+        });
     }
-
-    if (!verified) {
+    const chainEngine = new CertificateChainValidationEngine({
+        certs: certChain.slice().reverse(), // the engine expects the root cert first and the leaf cert last
+        checkDate: now,
+        trustedCerts: rootCerts,
+    });
+    const verificationResult = await chainEngine.verify();
+    const throwError = () => {
         return throwKTError("Epoch certificate did not pass verification against issuer's certificate chain", {
             certChain: JSON.stringify(certChain.map((cert) => printCertificate(cert))),
+            resultMessage: verificationResult.resultMessage,
         });
+    };
+    if (!verificationResult.result || !verificationResult.certificatePath?.length) {
+        return throwError();
+    }
+    // Check that the path starts at the epoch cert and ends at the root cert
+    if (verificationResult.certificatePath[0] !== certChain[0]) {
+        return throwError();
+    }
+    if (!rootCerts.includes(verificationResult.certificatePath[verificationResult.certificatePath.length - 1])) {
+        return throwError();
     }
 };
 
