@@ -1,11 +1,11 @@
 import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import {
     Api,
-    ArmoredKeyWithFlags,
     FetchedSignedKeyList,
     GetLatestEpoch,
     KT_VERIFICATION_STATUS,
     KeyTransparencyVerificationResult,
+    ProcessedApiAddressKey,
     SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
@@ -15,7 +15,6 @@ import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, getEmailDomain, throwKTError } from '../helpers/utils';
-import { KeyWithFlags } from '../interfaces';
 import {
     verifyProofOfAbsenceForAllRevision,
     verifyProofOfAbsenceForRevision,
@@ -30,26 +29,14 @@ export const checkSKLEquality = (skl1: FetchedSignedKeyList, skl2: FetchedSigned
     skl1.Data === skl2.Data && skl1.Signature === skl2.Signature;
 
 /**
- * Import a list of armored keys
- */
-export const importKeys = async (keyList: ArmoredKeyWithFlags[]): Promise<KeyWithFlags[]> =>
-    Promise.all(
-        keyList.map(async ({ PublicKey: armoredKey, Flags, Primary }) => ({
-            PublicKey: await CryptoProxy.importPublicKey({ armoredKey }),
-            Flags,
-            Primary,
-        }))
-    );
-
-/**
  * Parse a key list into a list of key info
  */
-export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyListItem[]> =>
+export const parseKeyList = async (keyList: ProcessedApiAddressKey[]): Promise<SignedKeyListItem[]> =>
     Promise.all(
-        keyList.map(async ({ PublicKey, Flags, Primary }, index) => ({
-            Fingerprint: PublicKey.getFingerprint(),
-            SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: PublicKey }),
-            Primary: Primary ?? index === 0 ? 1 : 0,
+        keyList.map(async ({ PublicKeyRef, Flags }, index) => ({
+            Fingerprint: PublicKeyRef.getFingerprint(),
+            SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: PublicKeyRef }),
+            Primary: index === 0 ? 1 : 0,
             Flags: Flags,
         }))
     );
@@ -115,13 +102,13 @@ export const verifyKeyList = async (
 /**
  * Check that the given keys mirror what's inside the given SKL Data
  */
-export const checkKeysInSKL = async (email: string, importedKeysWithFlags: KeyWithFlags[], sklData: string) => {
+export const checkKeysInSKL = async (email: string, apiKeys: ProcessedApiAddressKey[], sklData: string) => {
     const parsedSKL = getParsedSignedKeyList(sklData);
     if (!parsedSKL) {
         return throwKTError('SignedKeyList data parsing failed', { sklData });
     }
 
-    const keyListInfo = await parseKeyList(importedKeysWithFlags);
+    const keyListInfo = await parseKeyList(apiKeys);
     return verifyKeyList(email, keyListInfo, parsedSKL);
 };
 
@@ -148,7 +135,7 @@ export const verifySKLSignature = async (
  * Verify that public keys associated to an email address are correctly stored in KT
  */
 const verifyPublicKeys = async (
-    armoredKeysWithFlags: ArmoredKeyWithFlags[],
+    apiKeys: ProcessedApiAddressKey[],
     email: string,
     signedKeyList: FetchedSignedKeyList | null,
     api: Api,
@@ -172,9 +159,8 @@ const verifyPublicKeys = async (
         // The following checks can only be executed if the SKL is non-obsolescent
         const verifySKL = async () => {
             if (signedKeyList?.Data) {
-                const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
                 // Verify key list matches the signed key list
-                await checkKeysInSKL(email, importedKeysWithFlags, signedKeyList.Data!);
+                await checkKeysInSKL(email, apiKeys, signedKeyList.Data!);
             }
         };
 
@@ -264,11 +250,11 @@ export const verifyPublicKeysAddressAndCatchall = async (
     email: string,
     keysIntendendedForEmail: boolean,
     address: {
-        keyList: ArmoredKeyWithFlags[];
+        keyList: ProcessedApiAddressKey[];
         signedKeyList: FetchedSignedKeyList | null;
     },
     catchAll?: {
-        keyList: ArmoredKeyWithFlags[];
+        keyList: ProcessedApiAddressKey[];
         signedKeyList: FetchedSignedKeyList | null;
     }
 ): Promise<{

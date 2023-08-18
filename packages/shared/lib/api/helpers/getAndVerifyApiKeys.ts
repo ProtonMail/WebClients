@@ -1,45 +1,47 @@
+import { CryptoProxy } from '@proton/crypto';
+
 import {
     Api,
+    ApiAddressKey,
+    ApiAddressKeySource,
     FetchedSignedKeyList,
     KeyTransparencyVerificationResult,
+    ProcessedApiAddressKey,
     VerifyOutboundPublicKeys,
 } from '../../interfaces';
 import { getAllPublicKeys } from '../keys';
 
-export enum ApiKeySource {
-    PROTON,
-    WKD,
-    UNKNOWN,
-}
-
-export interface KeyWithFlags {
-    armoredKey: string;
-    flags: number;
-}
-
-export interface KeyWithFlagsAndSource extends KeyWithFlags {
-    source: ApiKeySource;
-}
-
 export interface ApiKeysWithKTStatus {
-    addressKeys: KeyWithFlags[];
+    addressKeys: ProcessedApiAddressKey[];
     addressKTResult?: KeyTransparencyVerificationResult;
-    catchAllKeys?: KeyWithFlags[];
+    catchAllKeys?: ProcessedApiAddressKey[];
     catchAllKTResult?: KeyTransparencyVerificationResult;
-    unverifiedKeys?: KeyWithFlagsAndSource[];
+    unverifiedKeys?: ProcessedApiAddressKey[];
     Code?: number;
     Warnings?: string[];
 }
 
-const getApiKeySource = (source: number): ApiKeySource => {
+const getApiKeySource = (source: number): ApiAddressKeySource => {
     switch (source) {
         case 0:
-            return ApiKeySource.PROTON;
+            return ApiAddressKeySource.PROTON;
         case 1:
-            return ApiKeySource.WKD;
+            return ApiAddressKeySource.WKD;
         default:
-            return ApiKeySource.UNKNOWN;
+            return ApiAddressKeySource.UNKNOWN;
     }
+};
+
+const importKeys = (keys: ApiAddressKey[]): Promise<ProcessedApiAddressKey[]> => {
+    return Promise.all(
+        keys.map(async (key) => {
+            return {
+                ...key,
+                PublicKeyRef: await CryptoProxy.importPublicKey({ armoredKey: key.PublicKey }),
+                Source: getApiKeySource(key.Source),
+            };
+        })
+    );
 };
 
 export const getAndVerifyApiKeys = async (
@@ -56,35 +58,29 @@ export const getAndVerifyApiKeys = async (
     }
     const { Address, CatchAll, Unverified, ...rest } = await api<{
         Address: {
-            Keys: { PublicKey: string; Flags: number }[];
+            Keys: ApiAddressKey[];
             SignedKeyList: FetchedSignedKeyList | null;
         };
         CatchAll:
             | {
-                  Keys: { PublicKey: string; Flags: number }[];
+                  Keys: ApiAddressKey[];
                   SignedKeyList: FetchedSignedKeyList | null;
               }
             | undefined;
         Unverified: {
-            Keys: { PublicKey: string; Flags: number; Source: number }[];
+            Keys: ApiAddressKey[];
         };
         Warnings: string[];
     }>(config);
-    const addressKeys = Address.Keys.map(({ PublicKey, Flags }) => {
-        return { armoredKey: PublicKey, flags: Flags };
-    });
-    const unverifiedKeys = Unverified?.Keys.map(({ PublicKey, Flags, Source }) => {
-        return { armoredKey: PublicKey, flags: Flags, source: getApiKeySource(Source) };
-    });
-    const catchAllKeys = CatchAll?.Keys.map(({ PublicKey, Flags }) => {
-        return { armoredKey: PublicKey, flags: Flags };
-    });
+    const addressKeys = await importKeys(Address.Keys);
+    const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys) : undefined;
+    const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = verifyOutboundPublicKeys
         ? await verifyOutboundPublicKeys(
               Email,
               keysIntendedForEmail,
-              { keyList: Address.Keys, signedKeyList: Address.SignedKeyList },
-              CatchAll ? { keyList: CatchAll.Keys, signedKeyList: CatchAll.SignedKeyList } : undefined
+              { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
+              CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined
           )
         : {};
     return {
