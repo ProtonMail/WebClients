@@ -13,9 +13,20 @@ import {
     MAX_MEMBER_VPN_B2B_ADDON,
     MAX_SPACE_ADDON,
     MAX_VPN_ADDON,
+    isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, MaxKeys, Organization, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
+import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
+import {
+    Currency,
+    Cycle,
+    MaxKeys,
+    Organization,
+    Plan,
+    PlanIDs,
+    Subscription,
+    getPlanMaxIPs,
+} from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
@@ -53,6 +64,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     mode?: CustomiserMode;
     forceHideDescriptions?: boolean;
     showUsersTooltip?: boolean;
+    currentSubscription?: Subscription;
 }
 
 const ButtonNumberInput = ({
@@ -329,6 +341,7 @@ const ProtonPlanCustomizer = ({
     className,
     forceHideDescriptions,
     showUsersTooltip,
+    currentSubscription,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
@@ -396,12 +409,16 @@ const ProtonPlanCustomizer = ({
                         {addonPricePerCycle / cycle}
                     </Price>
                 );
+
+                const canDowngrade = addonMaxKey !== 'MaxIPs' || isFreeSubscription(currentSubscription);
+                const displayMin = canDowngrade ? min / divider : getVPNDedicatedIPs(currentSubscription);
+
                 const input = (
                     <ButtonNumberInput
                         key={`${addon.Name}-input`}
                         id={addon.Name}
                         value={value / divider}
-                        min={min / divider}
+                        min={displayMin}
                         max={maxTotal}
                         disabled={loading || !isSupported}
                         onChange={(newQuantity) => {

@@ -1,5 +1,5 @@
 import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { Currency, Cycle, Organization, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Organization, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import ProtonPlanCustomizer, { CustomiserMode } from '../ProtonPlanCustomizer';
 
@@ -15,6 +15,7 @@ interface Props {
     forceHideDescriptions?: boolean;
     showUsersTooltip?: boolean;
     className?: string;
+    currentSubscription?: Subscription;
 }
 
 const PlanCustomization = ({
