@@ -217,6 +217,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED
         ).Data;
 
+        console.log(encryptedAndSignedCardContent);
         expect(signedCardContent).toContain('FN;PREF=1:New name');
         expect(encryptedAndSignedCardContent).toContain('N:Mars;Bruno');
         expect(signedCardContent).toContain('ITEM1.EMAIL;PREF=1:new@email.com');

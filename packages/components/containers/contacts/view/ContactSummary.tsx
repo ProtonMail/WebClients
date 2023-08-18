@@ -71,7 +71,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                     >
                         {displayName}
                     </h2>
-                    <h3 className="color-weak" style={{ whiteSpace: 'break-spaces' }}>
+                    <h3 className="color-weak text-ellipsis" style={{ whiteSpace: 'break-spaces' }}>
                         {computedName}
                     </h3>
                 </div>
