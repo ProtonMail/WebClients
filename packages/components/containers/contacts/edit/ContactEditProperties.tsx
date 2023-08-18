@@ -155,7 +155,7 @@ const ContactEditProperties = (
 
     const handleAdd = () => {
         if (canAdd && onAdd) {
-            // Other fields don't have a field and can be pressed at all time
+            // Other fields (at the bottom of the form) don't have fields and can be added at anytime
             if (!field) {
                 onAdd();
                 return;
@@ -185,13 +185,11 @@ const ContactEditProperties = (
                     `[data-contact-property-id="${vcardPropertyField[firstEmptyRow]?.uid}"]`
                 );
                 const input = contactFieldToFocus?.getElementsByTagName('input')?.[0];
+                const textarea = contactFieldToFocus?.getElementsByTagName('textarea')?.[0];
                 if (input) {
                     input.focus();
-                } else {
-                    const textarea = contactFieldToFocus?.getElementsByTagName('textarea')?.[0];
-                    if (textarea) {
-                        textarea.focus();
-                    }
+                } else if (textarea) {
+                    textarea.focus();
                 }
             }
         }

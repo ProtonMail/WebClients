@@ -11,7 +11,7 @@ import {
     removeVCardProperty,
     updateVCardContact,
 } from '@proton/shared/lib/contacts/properties';
-import { isContactNameValid } from '@proton/shared/lib/contacts/property';
+import { isContactNameValid, isFirstLastNameValid } from '@proton/shared/lib/contacts/property';
 import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
@@ -78,7 +78,7 @@ const ContactEditModal = ({
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
 
     const displayNameProperty = getSortedProperties(vCardContact, 'fn')[0] as VCardProperty<string>;
-    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<string>;
+    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<string[]>;
     const photoProperty = getSortedProperties(vCardContact, 'photo')[0] as VCardProperty<string>;
 
     const getContactEmail = (email: string) => {
@@ -112,7 +112,7 @@ const ContactEditModal = ({
         const newModelContactEmails = { ...modelContactEmails };
 
         const emails = vCardContact.email || [];
-        const displayName = displayNameProperty.value as string;
+        const displayName = displayNameProperty.value;
         const [lastName, firstName] = vCardContact?.n?.value || [];
         const computedName = `${firstName} ${lastName}`;
 
@@ -168,32 +168,47 @@ const ContactEditModal = ({
     // The condition defining if the form is valid is different if we are editing an existing contact or creating a new one
     // In all cases we want to make sure that all emails are correct
     const isFormValid = () => {
-        const displayName = displayNameProperty?.value;
-        const errors = [];
+        const allEmailsAddress = vCardContact.email?.map((emailProperty) => emailProperty.value).filter(isTruthy) ?? [];
 
-        errors.push(
-            vCardContact.email
-                ?.map((emailProperty) => emailProperty.value)
-                .filter(isTruthy)
-                .every((email) => validateEmailAddress(email)) ?? true
-        );
-
-        if (contactID) {
-            const nameFilled = !!displayName && isContactNameValid(displayNameProperty.value);
-            errors.push(nameFilled);
-        } else {
-            const fullName = Array.isArray(nameProperty.value)
-                ? nameProperty.value.join(' ').trim()
-                : nameProperty.value;
-
-            errors.push(
-                displayName
-                    ? !!displayName && isContactNameValid(displayNameProperty.value)
-                    : !!(fullName.length > 0 && isContactNameValid(fullName))
-            );
+        // Check if all present address are valid email addresses
+        if (!allEmailsAddress.every((email) => validateEmailAddress(email))) {
+            return false;
         }
 
-        return errors.every(Boolean);
+        const displayName = displayNameProperty.value;
+
+        const isNameStoredInArray = Array.isArray(nameProperty.value);
+        // The casting is required if the N field is not an array (can happen from mobile)
+        const lastName = isNameStoredInArray ? nameProperty.value[0].trim() : (nameProperty.value as unknown as string);
+        const firstName = isNameStoredInArray ? nameProperty.value[1].trim() : '';
+        const fullName = `${firstName} ${lastName}`;
+
+        // Check if there is any name present in the contact
+        if (!lastName && !firstName && !displayName) {
+            return false;
+        }
+
+        // Check if the last name is valid
+        if (lastName && isNameStoredInArray ? !isFirstLastNameValid(lastName) : !isContactNameValid(lastName)) {
+            return false;
+        }
+
+        // Check if the first name is valid
+        if (firstName && !isFirstLastNameValid(firstName)) {
+            return false;
+        }
+
+        // Check if the display name is valid when editing a contact
+        if (contactID && displayName && !isContactNameValid(displayName)) {
+            return false;
+        }
+
+        // Check if the full name is valid when creating a contact
+        if (!contactID && fullName && !isContactNameValid(fullName)) {
+            return false;
+        }
+
+        return true;
     };
 
     const handleRemove = (propertyUID: string) => {
@@ -253,7 +268,6 @@ const ContactEditModal = ({
 
     const handleSubmit = async () => {
         setIsSubmitted(true);
-
         if (!isFormValid()) {
             firstNameFieldRef.current?.focus();
             return;

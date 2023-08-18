@@ -50,7 +50,7 @@ const MergeTableBody = ({
     }, [ref]);
 
     return (
-        <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table" ref={ref}>
+        <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table">
             {contacts.map((Contact, i) => (
                 <MergeTableBodyRow
                     ref={ref}
