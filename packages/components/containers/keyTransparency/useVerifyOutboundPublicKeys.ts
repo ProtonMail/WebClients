@@ -1,10 +1,10 @@
 import { ktSentryReportError, verifyPublicKeysAddressAndCatchall } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
-    ArmoredKeyWithFlags,
     FetchedSignedKeyList,
     KeyTransparencyActivation,
     KeyTransparencyVerificationResult,
+    ProcessedApiAddressKey,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 
@@ -23,11 +23,11 @@ const useVerifyOutboundPublicKeys = () => {
         email: string,
         keysIntendendedForEmail: boolean,
         address: {
-            keyList: ArmoredKeyWithFlags[];
+            keyList: ProcessedApiAddressKey[];
             signedKeyList: FetchedSignedKeyList | null;
         },
         catchAll?: {
-            keyList: ArmoredKeyWithFlags[];
+            keyList: ProcessedApiAddressKey[];
             signedKeyList: FetchedSignedKeyList | null;
         }
     ): Promise<{
