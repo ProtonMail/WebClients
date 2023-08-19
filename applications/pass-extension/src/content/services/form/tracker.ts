@@ -6,6 +6,7 @@ import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
+import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 import { isEmptyString } from '@proton/pass/utils/string';
 import lastItem from '@proton/utils/lastItem';
 
@@ -26,15 +27,15 @@ type FieldsForFormResults = WeakMap<
 >;
 
 const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
+    const match = settings.disallowedDomains?.[location.hostname];
+
     switch (action) {
         case DropdownAction.AUTOFILL:
-            return settings.autofill.inject;
+            return settings.autofill.inject && !hasCriteria(match, 'Autofill');
         case DropdownAction.AUTOSUGGEST_ALIAS:
-            return settings.autosuggest.email;
+            return settings.autosuggest.email && !hasCriteria(match, 'Autosuggest');
         case DropdownAction.AUTOSUGGEST_PASSWORD:
-            return settings.autosuggest.password;
-        default:
-            return true;
+            return settings.autosuggest.password && !hasCriteria(match, 'Autosuggest');
     }
 };
 

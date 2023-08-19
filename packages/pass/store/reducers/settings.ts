@@ -1,6 +1,11 @@
 import type { Reducer } from 'redux';
 
-import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings } from '@proton/pass/types/worker/settings';
+import type {
+    AutoFillSettings,
+    AutoSaveSettings,
+    AutoSuggestSettings,
+    DisallowedDomains,
+} from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object';
 
 import { SessionLockStatus } from '../../types';
@@ -19,6 +24,7 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     loadDomainImages: boolean;
+    disallowedDomains: DisallowedDomains;
     /* explicitly created, not including import */
     createdItemsCount: number;
 };
@@ -36,6 +42,7 @@ const INITIAL_STATE: SettingsState = {
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
+    disallowedDomains: {},
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
@@ -58,7 +65,11 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     }
 
     if (settingEditSuccess.match(action)) {
-        return partialMerge<SettingsState>(state, action.payload);
+        const update = { ...state };
+
+        /* `disallowedDomains` update should act as a setter */
+        if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
+        return partialMerge<SettingsState>(update, action.payload);
     }
 
     if (itemCreationSuccess.match(action)) {
