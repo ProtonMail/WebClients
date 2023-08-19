@@ -28,4 +28,5 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
     loadDomainImages: true,
+    disallowedDomains: {},
 };

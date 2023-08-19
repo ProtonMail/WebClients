@@ -13,6 +13,8 @@ import type { RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { DisallowedDomains } from './DisallowedDomains';
+
 type SettingDefinition = {
     label: string;
     description: string;
@@ -125,6 +127,8 @@ export const SettingsPanel: VFC = () => {
                     ))}
                 </Card>
             ))}
+
+            <DisallowedDomains />
         </>
     );
 };
