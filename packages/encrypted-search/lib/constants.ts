@@ -189,7 +189,7 @@ export const defaultESIndexingState = {
     currentProgressValue: 0,
 };
 
-export const defaultESHelpers = {
+export const defaultESCallbacks = {
     checkIsReverse: () => true,
     shouldOnlySortResults: () => false,
     resetSort: noop,
