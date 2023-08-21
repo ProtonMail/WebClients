@@ -713,6 +713,8 @@ export enum LINK_WARNING {
 }
 
 export const MEMBER_ADDON_PREFIX = '1member';
+export const DOMAIN_ADDON_PREFIX = '1domain';
+export const IP_ADDON_PREFIX = '1ip';
 
 export enum ADDON_NAMES {
     ADDRESS = '5address',
@@ -723,12 +725,12 @@ export enum ADDON_NAMES {
     MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
     MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
     MEMBER_BUNDLE_PRO = `${MEMBER_ADDON_PREFIX}-bundlepro2022`,
-    DOMAIN_BUNDLE_PRO = '1domain-bundlepro2022',
+    DOMAIN_BUNDLE_PRO = `${DOMAIN_ADDON_PREFIX}-bundlepro2022`,
     MEMBER_ENTERPRISE = `${MEMBER_ADDON_PREFIX}-enterprise2022`,
-    DOMAIN_ENTERPRISE = '1domain-enterprise2022',
+    DOMAIN_ENTERPRISE = `${DOMAIN_ADDON_PREFIX}-enterprise2022`,
     MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
     MEMBER_VPN_BUSINESS = `${MEMBER_ADDON_PREFIX}-vpnbiz2023`,
-    IP_VPN_BUSINESS = '1ip-vpnbiz2023',
+    IP_VPN_BUSINESS = `${IP_ADDON_PREFIX}-vpnbiz2023`,
 }
 
 export enum PLAN_TYPES {

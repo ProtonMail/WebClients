@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,12 +19,12 @@ import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { APPS, APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPlanIDs, hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -33,7 +33,6 @@ import {
     PlansMap,
     Renew,
     SubscriptionCheckResponse,
-    SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -82,6 +81,7 @@ import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
+import { useCheckoutModifiers } from './useCheckoutModifiers';
 
 import './SubscriptionModal.scss';
 
@@ -124,36 +124,6 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 };
 
 const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
-
-export const useProration = (
-    model: Model,
-    subscription: SubscriptionModel,
-    plansMap: PlansMap,
-    checkResult?: SubscriptionCheckResponse
-) => {
-    const showProration = useMemo(() => {
-        const checkout = getCheckout({
-            planIDs: getPlanIDs(subscription),
-            plansMap,
-            checkResult,
-        });
-        const activePlan = checkout.planName as string;
-
-        const selectedPlans = Object.keys(model.planIDs);
-
-        const userBuysTheSamePlan = selectedPlans.includes(activePlan);
-
-        if (!checkResult || !userBuysTheSamePlan || checkResult.Proration === undefined) {
-            return true;
-        }
-
-        return checkResult.Proration !== 0;
-    }, [subscription, model, checkResult]);
-
-    return {
-        showProration,
-    };
-};
 
 const SubscriptionModal = ({
     app,
@@ -249,7 +219,7 @@ const SubscriptionModal = ({
         application,
     };
 
-    const { showProration } = useProration(model, subscription, plansMap, checkResult);
+    const checkoutModifiers = useCheckoutModifiers(model, subscription, plansMap, checkResult);
 
     const amountDue = checkResult?.AmountDue || 0;
     const couponCode = checkResult?.Coupon?.Code;
@@ -700,6 +670,7 @@ const SubscriptionModal = ({
                                     cycle={model.cycle}
                                     planIDs={model.planIDs}
                                     onChangeCurrency={handleChangeCurrency}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>
@@ -812,8 +783,8 @@ const SubscriptionModal = ({
                                         </>
                                     }
                                     onChangeCurrency={handleChangeCurrency}
-                                    showProration={showProration}
                                     nextSubscriptionStart={subscription.PeriodEnd}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>
@@ -947,11 +918,11 @@ const SubscriptionModal = ({
                                         </>
                                     }
                                     onChangeCurrency={handleChangeCurrency}
-                                    showProration={showProration}
                                     nextSubscriptionStart={subscription.PeriodEnd}
                                     showDiscount={false}
                                     enableDetailedAddons={true}
                                     showPlanDescription={false}
+                                    {...checkoutModifiers}
                                 />
                             </div>
                         </div>
