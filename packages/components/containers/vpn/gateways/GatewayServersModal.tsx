@@ -221,7 +221,7 @@ const GatewayServersModal = ({
                                     cells={[
                                         getCountryFlagAndName(language, logical.ExitCountry, undefined, {
                                             className: 'mb-1',
-                                            key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
+                                            key: `country-logical-${logical.ID}-${logical.ExitCountry}`,
                                         }),
                                         getSuffix(logical.Name),
                                         <span className="py-1 px-2 rounded text-uppercase bg-success">{
@@ -231,10 +231,15 @@ const GatewayServersModal = ({
                                         ...(showIP
                                             ? [
                                                   <>
-                                                      {[logical.Servers[0].ExitIPv4, logical.Servers[0].ExitIPv6]
+                                                      {[
+                                                          showIPv4 && logical.Servers[0].ExitIPv4,
+                                                          showIPv6 && logical.Servers[0].ExitIPv6,
+                                                      ]
                                                           .filter(Boolean)
                                                           .map((ip) => (
-                                                              <div key={'ip-' + ip}>{ip}</div>
+                                                              <div key={'ip-' + ip} className="text-ellipsis" title={ip || undefined}>
+                                                                  {ip}
+                                                              </div>
                                                           ))}
                                                   </>,
                                               ]
