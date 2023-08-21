@@ -31,6 +31,7 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             aria-expanded={expanded}
             title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
             style={style}
+            data-testid="sidebar-expand-folder"
         >
             <Icon
                 name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'}
