@@ -97,6 +97,7 @@ export interface HolidaysDirectoryCalendar {
     CalendarID: string;
     Country: string;
     CountryCode: string;
+    Hidden: boolean;
     Language: string;
     LanguageCode: string;
     Passphrase: string;
