@@ -11,7 +11,7 @@ import {
     ESTimepoint,
     GetItemInfo,
     GetUserKeys,
-    InternalESHelpers,
+    InternalESCallbacks,
 } from '../models';
 import { getIndexKey } from './esBuild';
 import { cacheIDB, getOldestCachedTimepoint } from './esCache';
@@ -93,9 +93,9 @@ export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
     esSearchParams: ESSearchParameters,
     item: CachedItem<ESItemMetadata, ESItemContent>,
     hasApostrophe: boolean,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
 ) => {
-    const { applyFilters, searchKeywords, getKeywords } = esHelpers;
+    const { applyFilters, searchKeywords, getKeywords } = esCallbacks;
 
     const filters = applyFilters(esSearchParams, item.metadata);
     const keywords = getKeywords(esSearchParams);
@@ -131,14 +131,14 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
     userID: string,
     indexKey: CryptoKey,
     esSearchParams: ESSearchParameters,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     lastTimePoint: ESTimepoint | undefined,
     itemLimit: number,
     hasApostrophe: boolean,
     setIncrementalResults?: (newResults: ESItem<ESItemMetadata, ESItemContent>[]) => void,
     abortSearchingRef?: React.MutableRefObject<AbortController>
 ): Promise<{ resultsArray: ESItem<ESItemMetadata, ESItemContent>[]; newLastTimePoint: ESTimepoint | undefined }> => {
-    const { getItemInfo, checkIsReverse } = esHelpers;
+    const { getItemInfo, checkIsReverse } = esCallbacks;
 
     const resultsArray: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let newLastTimePoint = lastTimePoint;
@@ -193,7 +193,7 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
                     esSearchParams,
                     item,
                     hasApostrophe,
-                    esHelpers
+                    esCallbacks
                 )
             ) {
                 newLastTimePoint = getItemInfo(item.metadata).timepoint;
@@ -223,7 +223,7 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
     esSearchParams: ESSearchParameters,
     abortSearchingRef: React.MutableRefObject<AbortController>,
     hasApostrophe: boolean,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
 ) => {
     const searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let iteration = iterator.next();
@@ -234,7 +234,7 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
             break;
         }
 
-        if (applySearch(esSearchParams, iteration.value, hasApostrophe, esHelpers)) {
+        if (applySearch(esSearchParams, iteration.value, hasApostrophe, esCallbacks)) {
             searchResults.push({ ...iteration.value.metadata, ...iteration.value.content });
         }
 
@@ -292,10 +292,10 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     userID: string,
     setResultsList: (Elements: ESItem<ESItemMetadata, ESItemContent>[]) => void,
     abortSearchingRef: React.MutableRefObject<AbortController>,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
     minimumItems: number | undefined
 ) => {
-    const { checkIsReverse, getItemInfo, getSearchInterval, getKeywords } = esHelpers;
+    const { checkIsReverse, getItemInfo, getSearchInterval, getKeywords } = esCallbacks;
 
     let searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let isSearchPartial = false;
@@ -327,7 +327,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             ESItemMetadata,
             ESItemContent,
             ESSearchParameters
-        >(esCacheRef.current.esCache.values(), esSearchParams, abortSearchingRef, hasApostrophe, esHelpers);
+        >(esCacheRef.current.esCache.values(), esSearchParams, abortSearchingRef, hasApostrophe, esCallbacks);
         searchResults = cachedSearchResults;
         searchedItemsCount += iterationCount;
 
@@ -362,7 +362,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
                     ESItemMetadata,
                     ESItemContent,
                     ESSearchParameters
-                >(searchCacheValues, esSearchParams, abortSearchingRef, hasApostrophe, esHelpers);
+                >(searchCacheValues, esSearchParams, abortSearchingRef, hasApostrophe, esCallbacks);
                 searchedItemsCount += iterationCount;
 
                 // Increment search result and execute callback
@@ -436,7 +436,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             userID,
             indexKey,
             esSearchParams,
-            esHelpers,
+            esCallbacks,
             lastTimePoint,
             remainingItems,
             hasApostrophe,
