@@ -19,6 +19,7 @@ interface Base {
     isCurrentPlan?: boolean;
     recommended?: boolean;
     canSelect?: boolean;
+    actionLabel?: ReactNode;
 }
 
 interface ActionElement {
@@ -55,6 +56,7 @@ const PlanCard = ({
     price,
     info,
     action,
+    actionLabel,
     onSelect,
     features,
     currency,
@@ -64,6 +66,26 @@ const PlanCard = ({
     recommended,
     actionElement,
 }: Props) => {
+    const actionButton = (() => {
+        if (actionElement) {
+            return actionElement;
+        }
+        if (onSelect && action) {
+            return (
+                <PrimaryButton
+                    onClick={() => onSelect(planName)}
+                    disabled={disabled}
+                    className="w100"
+                    aria-describedby={`desc_${planName}`}
+                    data-testid={`select-${planName}`}
+                >
+                    {action}
+                </PrimaryButton>
+            );
+        }
+        return null;
+    })();
+
     return (
         <>
             <div
@@ -107,19 +129,8 @@ const PlanCard = ({
                     )}
                 </div>
 
-                {actionElement ? (
-                    actionElement
-                ) : onSelect && action ? (
-                    <PrimaryButton
-                        onClick={() => onSelect(planName)}
-                        disabled={disabled}
-                        className="w100"
-                        aria-describedby={`desc_${planName}`}
-                        data-testid={`select-${planName}`}
-                    >
-                        {action}
-                    </PrimaryButton>
-                ) : null}
+                {actionButton}
+                {actionLabel}
 
                 <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
             </div>
