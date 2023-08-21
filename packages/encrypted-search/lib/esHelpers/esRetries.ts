@@ -5,7 +5,7 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
-import { EncryptedItemWithInfo, InternalESHelpers, RetryObject } from '../models';
+import { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
 import { encryptItem } from './esBuild';
 import { isObjectEmpty } from './esUtils';
 
@@ -62,7 +62,7 @@ export const getRetries = async (userID: string) => {
 export const retryAPICalls = async <ESItemContent>(
     userID: string,
     indexKey: CryptoKey,
-    fetchESItemContent?: InternalESHelpers<unknown, unknown, ESItemContent>['fetchESItemContent']
+    fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent']
 ) => {
     const retryMap = await getRetries(userID);
     if (!retryMap.size || !fetchESItemContent) {
