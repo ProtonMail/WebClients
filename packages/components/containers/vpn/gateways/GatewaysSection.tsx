@@ -144,7 +144,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                     .jt`With a Business or Enterprise plan, you can purchase ${boldDedicatedServers} for your organization, and set up ${boldGateways} to control which users can access them.`
                             }{' '}
                             <Href
-                                href="https://protonvpn.com/support/"
+                                href="https://protonvpn.com/support/manage-vpn-servers-organization"
                                 title={c('Info').t`Lean more about gateways`}
                             >{c('Link').t`Learn more`}</Href>
                         </p>
