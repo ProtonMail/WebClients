@@ -19,7 +19,7 @@ const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
                         className="transfers-manager-list-item-controls-button on-rtl-mirror"
                         data-testid={testId ? testId : undefined}
                     >
-                        <Icon size={12} name={iconName} />
+                        <Icon size={12} name={iconName} alt={title} />
                     </Button>
                 </Tooltip>
             ))}
