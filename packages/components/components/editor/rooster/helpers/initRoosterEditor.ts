@@ -41,6 +41,8 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         Paste,
         HyperLink,
         Editor,
+        CutPasteListChain,
+        ExperimentalFeatures,
         createSnapshots,
         addSnapshot,
         canMoveCurrentSnapshot,
@@ -57,6 +59,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
             outdentWhenAltShiftLeft: !isMac(),
         }),
         new Paste(),
+        new CutPasteListChain(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
         new EditorCustomPastePlugin(options.onPasteImage),
@@ -97,6 +100,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         defaultFormat,
         initialContent: options.initialContent,
         undoSnapshotService,
+        experimentalFeatures: [ExperimentalFeatures.AutoFormatList],
     });
 
     const actions = getRoosterEditorActions(
