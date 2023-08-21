@@ -14,6 +14,9 @@ function* settingsEditWorker(
 ) {
     try {
         const settings: ProxiedSettings = yield select(selectProxiedSettings);
+        /* `disallowedDomains` update should act as a setter */
+        if ('disallowedDomains' in payload) settings.disallowedDomains = {};
+
         yield onSettingUpdate?.(partialMerge(settings, payload));
 
         yield put(settingEditSuccess(payload, meta.sender?.endpoint));
