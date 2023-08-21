@@ -17,8 +17,6 @@ import {
 import { SUBSCRIPTION_STEPS } from '../constants';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
-jest.mock('@proton/metrics');
-
 describe('resolveUpsellsToDisplay', () => {
     let mockedOpenSubscriptionModal: jest.Mock;
     let base: Parameters<typeof resolveUpsellsToDisplay>[0];
