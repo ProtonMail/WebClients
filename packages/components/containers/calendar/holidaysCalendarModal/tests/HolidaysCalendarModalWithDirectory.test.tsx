@@ -3,7 +3,6 @@ import { mocked } from 'jest-mock';
 
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
@@ -46,6 +45,7 @@ const frCalendar = {
     CalendarID: 'calendarID1',
     Country: 'France',
     CountryCode: 'fr',
+    Hidden: false,
     LanguageCode: 'fr',
     Language: 'Français',
     Timezones: ['Europe/Paris'],
@@ -59,6 +59,7 @@ const chEnCalendar = {
     CalendarID: 'calendarID2',
     Country: 'Switzerland',
     CountryCode: 'ch',
+    Hidden: false,
     LanguageCode: 'en',
     Language: 'English',
     Timezones: ['Europe/Zurich'],
@@ -72,6 +73,7 @@ const chDeCalendar = {
     CalendarID: 'calendarID3',
     Country: 'Switzerland',
     CountryCode: 'ch',
+    Hidden: false,
     LanguageCode: 'de',
     Language: 'Deutsch',
     Timezones: ['Europe/Zurich'],
@@ -85,6 +87,7 @@ const beFrCalendar = {
     CalendarID: 'calendarID4',
     Country: 'Belgium',
     CountryCode: 'be',
+    Hidden: false,
     LanguageCode: 'fr',
     Language: 'Français',
     Timezones: ['Europe/Brussels'],
@@ -98,6 +101,7 @@ const beNlCalendar = {
     CalendarID: 'calendarID5',
     Country: 'Belgium',
     CountryCode: 'be',
+    Hidden: false,
     LanguageCode: 'nl',
     Language: 'Dutch',
     Timezones: ['Europe/Brussels'],
@@ -111,6 +115,7 @@ const nlCalendar = {
     CalendarID: 'calendarID6',
     Country: 'Netherlands',
     CountryCode: 'nl',
+    Hidden: false,
     LanguageCode: 'nl',
     Language: 'Dutch',
     Timezones: ['Europe/Brussels'],
@@ -124,6 +129,7 @@ const esCalendar = {
     CalendarID: 'calendarID7',
     Country: 'Spain',
     CountryCode: 'es',
+    Hidden: false,
     LanguageCode: 'es',
     Language: 'Español',
     Timezones: ['Europe/Madrid'],
@@ -137,6 +143,7 @@ const esBaCalendar = {
     CalendarID: 'calendarID8',
     Country: 'Spain',
     CountryCode: 'es',
+    Hidden: false,
     LanguageCode: 'eu',
     Language: 'Euskera',
     Timezones: ['Europe/Madrid'],
@@ -150,6 +157,7 @@ const esCaCalendar = {
     CalendarID: 'calendarID9',
     Country: 'Spain',
     CountryCode: 'es',
+    Hidden: false,
     LanguageCode: 'ca',
     Language: 'Català',
     Timezones: ['Europe/Madrid'],
@@ -163,9 +171,24 @@ const esGlCalendar = {
     CalendarID: 'calendarID10',
     Country: 'Spain',
     CountryCode: 'es',
+    Hidden: false,
     LanguageCode: 'gl',
     Language: 'Galego',
     Timezones: ['Europe/Madrid'],
+    Passphrase: 'dummyPassphrase',
+    SessionKey: {
+        Key: 'dummyKey',
+        Algorithm: 'dummyAlgorithm',
+    },
+};
+const itItCalendar = {
+    CalendarID: 'calendarID11',
+    Country: 'Italy',
+    CountryCode: 'it',
+    Hidden: true,
+    LanguageCode: 'it',
+    Language: 'Italiano',
+    Timezones: ['Europe/Rome'],
     Passphrase: 'dummyPassphrase',
     SessionKey: {
         Key: 'dummyKey',
@@ -184,6 +207,7 @@ const directory: HolidaysDirectoryCalendar[] = [
     esBaCalendar,
     esCaCalendar,
     esGlCalendar,
+    itItCalendar,
 ];
 
 const holidaysCalendars: VisualCalendar[] = generateHolidaysCalendars(2, [
@@ -196,7 +220,10 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
 
     beforeEach(async () => {
         mockedUseNotifications.mockImplementation(() => mockNotifications);
-        setLocales({ localeCode, languageCode: 'en' });
+    });
+
+    afterEach(async () => {
+        setLocales({ localeCode: 'en_US', languageCode: 'en' });
     });
 
     const setup = ({
@@ -220,8 +247,30 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
     };
 
     describe('Add a holidays calendar', () => {
+        describe('List of calendars', () => {
+            it('should only offer non-hidden calendars', () => {
+                // @ts-ignore
+                useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Something else' }, false]);
+
+                setup({});
+
+                const countrySelect = screen.getByText('Please select a country');
+                fireEvent.click(countrySelect);
+
+                // expected countries
+                expect(screen.getByText('France')).toBeInTheDocument();
+                expect(screen.getByText('Switzerland')).toBeInTheDocument();
+                expect(screen.getByText('Belgium')).toBeInTheDocument();
+                expect(screen.getByText('Netherlands')).toBeInTheDocument();
+                expect(screen.getByText('Spain')).toBeInTheDocument();
+
+                // hidden countries
+                expect(screen.queryByText('Italy')).not.toBeInTheDocument();
+            });
+        });
+
         describe('Pre-selected fields', () => {
-            it('should pre-select the default holidays calendar based on time zone', async () => {
+            it('should pre-select the suggested holidays calendar based on time zone', async () => {
                 // Mock user's time zone to Paris
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Paris' }, false]);
@@ -239,7 +288,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByText('Based on your time zone');
 
                 const countrySelect = screen.getByTestId('country-select');
-                await fireEvent.click(countrySelect);
+                fireEvent.click(countrySelect);
 
                 // Hint is displayed within country select
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
@@ -264,7 +313,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByTestId('add-notification');
             });
 
-            it('should pre-select the default holidays calendar based on time zone and user language', async () => {
+            it('should pre-select the suggested holidays calendar based on time zone and user language', async () => {
                 // Mock user's time zone to Zurich
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Zurich' }, false]);
@@ -282,7 +331,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByText('Based on your time zone');
 
                 const countrySelect = screen.getByTestId('country-select');
-                await fireEvent.click(countrySelect);
+                fireEvent.click(countrySelect);
 
                 // Hint is displayed within country select
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
@@ -306,7 +355,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByTestId('add-notification');
             });
 
-            it('should pre-select the default holidays calendar based on time zone and first language', async () => {
+            it('should pre-select the suggested holidays calendar based on time zone and first language', async () => {
                 setLocales({ localeCode, languageCode: 'something' });
 
                 // Mock user's time zone to Spain
@@ -326,7 +375,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByText('Based on your time zone');
 
                 const countrySelect = screen.getByTestId('country-select');
-                await fireEvent.click(countrySelect);
+                fireEvent.click(countrySelect);
 
                 // Hint is displayed within country select
                 within(screen.getByTestId('select-list')).getByText('Based on your time zone');
@@ -350,7 +399,7 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 screen.getByTestId('add-notification');
             });
 
-            it('should not pre-select a default holidays calendar when no corresponding time zone is found', () => {
+            it('should not pre-select a suggested holidays calendar when no corresponding time zone is found', () => {
                 // Mock user's time zone to something which does not exist in holidays calendars list we get
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Something else' }, false]);
@@ -382,10 +431,25 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 // Add notification button is visible
                 screen.getByTestId('add-notification');
             });
+
+            it('should not pre-select a suggested holidays calendar that is not visible', () => {
+                // @ts-ignore
+                useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Rome' }, false]);
+                setLocales({ localeCode: 'it_IT', languageCode: 'it' });
+
+                setup({});
+
+                // Modal title and subtitle are displayed
+                screen.getByText('Add public holidays');
+                screen.getByText("Get a country's official public holidays calendar.");
+
+                // Italy is NOT pre-selected and NOT offered
+                screen.getByText('Please select a country');
+            });
         });
 
         describe('Already added holidays calendar', () => {
-            it('should not pre-select the default calendar if the user already added it', () => {
+            it('should not pre-select the suggested calendar if the user already added it', () => {
                 // Mock user's time zone to Paris
                 // @ts-ignore
                 useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Paris' }, false]);
@@ -461,8 +525,9 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 type: CALENDAR_MODAL_TYPE.COMPLETE,
             });
 
-            // "Fake" wait because modal is on a loading state by default
-            await wait(0);
+            await waitFor(() => {
+                expect(screen.getByText('Edit calendar'));
+            });
 
             // Modal title is displayed
             screen.getByText('Edit calendar');
@@ -500,11 +565,10 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
                 type: CALENDAR_MODAL_TYPE.COMPLETE,
             });
 
-            // "Fake" wait because modal is on a loading state by default
-            await wait(0);
+            await waitFor(() => {
+                expect(screen.getByText('Edit calendar'));
+            });
 
-            // Modal title is displayed
-            screen.getByText('Edit calendar');
             // No modal subtitle is displayed
             const subtitle = screen.queryByText("Get a country's official public holidays calendar.");
             expect(subtitle).toBeNull();
@@ -531,6 +595,37 @@ describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
             fireEvent.click(submitButton);
 
             screen.getByText('You already added this holidays calendar');
+        });
+
+        it('should allow to edit a hidden calendar', async () => {
+            // Mock user's time zone to Paris
+            // @ts-ignore
+            useCalendarUserSettings.mockReturnValue([{ PrimaryTimezone: 'Europe/Paris' }, false]);
+
+            const holidaysCalendars = generateHolidaysCalendars(1, [
+                {
+                    id: itItCalendar.CalendarID,
+                    name: 'Giorni festivi e ricorrenze in Italia',
+                    color: ACCENT_COLORS_MAP.cerise.color,
+                },
+            ]);
+
+            setup({
+                holidaysCalendars,
+                inputCalendar: holidaysCalendars[0],
+                type: CALENDAR_MODAL_TYPE.COMPLETE,
+            });
+
+            await waitFor(() => {
+                expect(screen.getByText('Edit calendar'));
+            });
+
+            // No modal subtitle is displayed
+            const subtitle = screen.queryByText("Get a country's official public holidays calendar.");
+            expect(subtitle).toBeNull();
+
+            // Edited country is selected
+            screen.getByText('Italy');
         });
     });
 });
