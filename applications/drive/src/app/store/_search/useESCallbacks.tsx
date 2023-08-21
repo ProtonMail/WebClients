@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { PrivateKeyReference } from '@proton/crypto';
 import {
     CachedItem,
+    ESCallbacks,
     ESEvent,
-    ESHelpers,
     ESTimepoint,
     EventsObject,
     normalizeKeyword,
@@ -34,14 +34,14 @@ interface Props {
 
 let linkMapGenerator: AsyncGenerator<ESLink[]>;
 
-export const useESHelpers = ({
+export const useESCallbacks = ({
     api,
     user,
     shareId,
     fetchShareMap,
     getSharePrivateKey,
     getLinkPrivateKey,
-}: Props): ESHelpers<ESLink, ESDriveSearchParams> => {
+}: Props): ESCallbacks<ESLink, ESDriveSearchParams> => {
     const history = useHistory();
 
     const userID = user.ID;

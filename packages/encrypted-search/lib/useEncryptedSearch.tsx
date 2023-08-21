@@ -20,7 +20,7 @@ import {
     STORING_OUTCOME,
     TIMESTAMP_TYPE,
     defaultESCache,
-    defaultESHelpers,
+    defaultESCallbacks,
     defaultESProgress,
     defaultESStatus,
 } from './constants';
@@ -63,9 +63,9 @@ import {
 } from './esIDB';
 import {
     ESCache,
+    ESCallbacks,
     ESDBStatus,
     ESEvent,
-    ESHelpers,
     ESItem,
     ESProgress,
     ESStatus,
@@ -79,12 +79,12 @@ import {
     EventsObject,
     HighlightMetadata,
     HighlightString,
-    InternalESHelpers,
+    InternalESCallbacks,
 } from './models';
 
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
-    esHelpers: ESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
     successMessage: string;
     notifyMetadataIndexed?: boolean;
 }
@@ -93,14 +93,14 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
  * Provide the core funcionalities of ES.
  * @param refreshMask A number representing the bit the BE sets to REFRESH_ALL on the specific
  * client
- * @param esHelpers All the callbacks that are product-specific and therefore need to be passed
+ * @param esCallbacks All the callbacks that are product-specific and therefore need to be passed
  * to the ES core functions to work
  * @param successMessage The text that is showing in a green notification upon completing indexing
  * @returns An empy instance of the ES IndexedDB
  */
 const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
     refreshMask,
-    esHelpers: inputESHelpers,
+    esCallbacks: inputESCallbacks,
     successMessage,
     notifyMetadataIndexed = false,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
@@ -109,11 +109,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const [user] = useUser();
     const { ID: userID } = user;
     const { createNotification } = useNotifications();
-    const esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> = {
-        ...defaultESHelpers,
-        ...inputESHelpers,
+    const esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> = {
+        ...defaultESCallbacks,
+        ...inputESCallbacks,
     };
-    const { getSearchParams } = esHelpers;
+    const { getSearchParams } = esCallbacks;
     const { isSearch } = getSearchParams();
 
     // Keep a state of search results to update in case of new events
@@ -279,7 +279,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             // case it was previously used. SIZE sorting is not supported by ES
             const { isSearch } = getSearchParams();
             if (isSearch) {
-                esHelpers.resetSort();
+                esCallbacks.resetSort();
             }
         }
     };
@@ -325,7 +325,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // In case a key is reactivated, try to fix any decryption error that might
         // have happened during indexing, but only if content indexing is done, otherwise
         // there might not be all content in IDB
-        if (contentIndexingDone && attemptReDecryption && !!esHelpers.fetchESItemContent) {
+        if (contentIndexingDone && attemptReDecryption && !!esCallbacks.fetchESItemContent) {
             recordProgress(0, 0);
 
             // In case we weren't already showing the refreshing UI, we do now
@@ -341,7 +341,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 const newItemsFound = await correctDecryptionErrors<ESItemMetadata, ESSearchParameters, ESItemContent>(
                     userID,
                     indexKey,
-                    esHelpers,
+                    esCallbacks,
                     recordProgress,
                     abortIndexingRef
                 );
@@ -378,7 +378,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             permanentResults,
             indexKey,
             esSearchParams,
-            esHelpers,
+            esCallbacks,
             recordProgressLocal
         );
 
@@ -411,11 +411,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             const contentProgress = await contentIndexingProgress.read(userID);
             if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
                 abortIndexingRef.current = new AbortController();
-                await retryContentIndexing(userID, indexKey, esHelpers, abortIndexingRef);
+                await retryContentIndexing(userID, indexKey, esCallbacks, abortIndexingRef);
             }
-            await refreshESCache<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esHelpers.getItemInfo);
+            await refreshESCache<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esCallbacks.getItemInfo);
 
-            await retryAPICalls<ESItemContent>(userID, indexKey, esHelpers.fetchESItemContent);
+            await retryAPICalls<ESItemContent>(userID, indexKey, esCallbacks.fetchESItemContent);
 
             // Check if DB became limited or not after the update
             isDBLimited = await readLimited(userID);
@@ -533,7 +533,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             represents the one immediately prior to metadata indexing. We should keep track of it to sync
             metadata, but we cannot store it to ESDB because the latter can't exist.
         */
-        let previousEventID = await esHelpers.getPreviousEventID();
+        let previousEventID = await esCallbacks.getPreviousEventID();
 
         let indexKey: CryptoKey | undefined;
         let esSupported = true;
@@ -572,7 +572,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                     getUserKeys,
                     previousEventID,
                     isRefreshed,
-                    await esHelpers.getTotalItems()
+                    await esCallbacks.getTotalItems()
                 ));
 
                 esSupported = !!indexKey && !!esDB;
@@ -605,7 +605,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortIndexingRef.current = new AbortController();
 
         const currentItems = (await readNumMetadata(userID)) || 0;
-        const totalItems = await esHelpers.getTotalItems();
+        const totalItems = await esCallbacks.getTotalItems();
         recordProgress(currentItems, totalItems);
         const recordProgressLocal = (progress: number) => {
             const newProgress = currentItems + progress;
@@ -619,8 +619,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 esSupported,
                 indexKey,
                 esCacheRef,
-                esHelpers.queryItemsMetadata,
-                esHelpers.getItemInfo,
+                esCallbacks.queryItemsMetadata,
+                esCallbacks.getItemInfo,
                 abortIndexingRef,
                 recordProgressLocal,
                 isBackgroundIndexing
@@ -646,7 +646,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         let shouldRefresh: boolean;
         let eventsToStore: EventsObject;
         try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB(previousEventID));
+            ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB(previousEventID));
         } catch (error: any) {
             return handleError();
         }
@@ -668,7 +668,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // out which ones, we instead just delete everything and notify users
         if (wasESDBCreated) {
             const finalIndexed = await readNumMetadata(userID);
-            const finalMailbox = await esHelpers.getTotalItems();
+            const finalMailbox = await esCallbacks.getTotalItems();
             if (typeof finalIndexed === 'undefined' || finalIndexed < finalMailbox) {
                 return handleError();
             }
@@ -724,8 +724,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         isRefreshed = false,
         isBackgroundIndexing = false,
     } = {}) => {
-        // If there is no fetch content helper, content search cannot be activated at all
-        const { fetchESItemContent } = esHelpers;
+        // If there is no fetch content callback, content search cannot be activated at all
+        const { fetchESItemContent } = esCallbacks;
         if (!fetchESItemContent) {
             console.error('Content search cannot be activated without the fetch content helper');
             return;
@@ -767,9 +767,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             // Save the event before starting building IndexedDB. The number of items
             // before indexing aims to show progress, as new items will be synced only
             // after indexing has completed
-            await writeAllEvents(userID, await esHelpers.getPreviousEventID());
+            await writeAllEvents(userID, await esCallbacks.getPreviousEventID());
 
-            totalItems = await esHelpers.getTotalItems();
+            totalItems = await esCallbacks.getTotalItems();
             const initialProgress: ESProgress = {
                 ...defaultESProgress,
                 totalItems,
@@ -856,7 +856,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         let shouldRefresh: boolean;
         let eventsToStore: EventsObject;
         try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB());
+            ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB());
         } catch (error: any) {
             return dbCorruptError();
         }
@@ -908,7 +908,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         // In case only sorting changed, for complete searches it doesn't make sense to perform a new search
         if (!wasSearchPartial && previousESSearchParams) {
-            const shouldSortOnly = esHelpers.shouldOnlySortResults(esSearchParams, previousESSearchParams);
+            const shouldSortOnly = esCallbacks.shouldOnlySortResults(esSearchParams, previousESSearchParams);
             if (shouldSortOnly) {
                 setResultsList(permanentResults);
                 return true;
@@ -944,7 +944,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 userID,
                 controlledSetResultsList,
                 abortSearchingRef,
-                esHelpers,
+                esCallbacks,
                 minimumItems
             ));
         } catch (error: any) {
@@ -1012,7 +1012,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
-        const hasApostrophe = (esHelpers.getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
+        const hasApostrophe = (esCallbacks.getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
         const { resultsArray, newLastTimePoint } = await uncachedSearch<
             ESItemMetadata,
             ESItemContent,
@@ -1021,7 +1021,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             userID,
             indexKey,
             esSearchParams,
-            esHelpers,
+            esCallbacks,
             lastTimePoint,
             extraItems,
             hasApostrophe,
@@ -1097,7 +1097,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
-        const keywords = esHelpers.getKeywords(esSearchParams);
+        const keywords = esCallbacks.getKeywords(esSearchParams);
 
         return typeof keywords !== 'undefined' && !!keywords.length;
     };
@@ -1117,7 +1117,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return content;
         }
 
-        const keywords = esHelpers.getKeywords(esSearchParams);
+        const keywords = esCallbacks.getKeywords(esSearchParams);
         if (!keywords) {
             return content;
         }
@@ -1147,7 +1147,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return noData;
         }
 
-        const keywords = esHelpers.getKeywords(esSearchParams);
+        const keywords = esCallbacks.getKeywords(esSearchParams);
         if (!keywords) {
             return noData;
         }
@@ -1166,7 +1166,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
-        return findItemIndex(ID, permanentResults, esHelpers.getItemInfo) !== -1;
+        return findItemIndex(ID, permanentResults, esCallbacks.getItemInfo) !== -1;
     };
 
     /**
@@ -1288,7 +1288,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         let shouldRefresh: boolean;
         let eventsToStore: EventsObject;
         try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB());
+            ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB());
         } catch (error: any) {
             return await dbCorruptError();
         }

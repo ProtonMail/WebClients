@@ -19,7 +19,7 @@ import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';
 import { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
-import { useESHelpers } from './useESHelpers';
+import { useESCallbacks } from './useESCallbacks';
 import useSearchEnabledFeature from './useSearchEnabledFeature';
 
 const SearchLibraryContext = createContext<EncryptedSearchFunctionsDrive | null>(null);
@@ -43,7 +43,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
 
     const defaultShareIdPromise = getDefaultShare().then(({ shareId }) => shareId);
 
-    const esHelpers = useESHelpers({
+    const esCallbacks = useESCallbacks({
         api,
         user,
         fetchShareMap,
@@ -54,7 +54,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
 
     const esFunctions = useEncryptedSearch<ESLink, ESDriveSearchParams>({
         refreshMask: 1,
-        esHelpers,
+        esCallbacks,
         successMessage: c('Notification').t`Encrypted search activated`,
         notifyMetadataIndexed: true,
     });
