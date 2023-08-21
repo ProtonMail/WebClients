@@ -247,7 +247,7 @@ describe('notification manager', () => {
                 text: (
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: 'Foo <a href="https://foo.bar" rel="noopener noreferrer" target="_blank">text</a>',
+                            __html: 'Foo <a href="https://foo.bar" rel="noopener noreferrer" target="_blank" class="color-inherit">text</a>',
                         }}
                     />
                 ),
