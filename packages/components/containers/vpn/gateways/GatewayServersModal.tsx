@@ -237,7 +237,7 @@ const GatewayServersModal = ({
                                                       ]
                                                           .filter(Boolean)
                                                           .map((ip) => (
-                                                              <div key={'ip-' + ip} className="text-ellipsis" title={ip}>
+                                                              <div key={'ip-' + ip} className="text-ellipsis" title={ip || undefined}>
                                                                   {ip}
                                                               </div>
                                                           ))}
