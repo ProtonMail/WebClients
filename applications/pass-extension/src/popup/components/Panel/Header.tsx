@@ -28,7 +28,7 @@ export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
         >
             {title !== undefined && (
                 <div>
-                    <h2 className="text-2xl text-bold text-ellipsis lh100 mb-0-5">{title}</h2>
+                    <h2 className="text-2xl text-bold text-ellipsis lh100 mb-0-5" title={title}>{title}</h2>
                     {subtitle !== undefined && (
                         <div className="flex flex-align-items-center color-weak">
                             {subtitleIcon && <Icon className="mr-1" name={subtitleIcon} size={12} />}
