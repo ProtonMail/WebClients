@@ -20,6 +20,7 @@ interface Base {
     recommended?: boolean;
     canSelect?: boolean;
     actionLabel?: ReactNode;
+    enableActionLabelSpacing?: boolean;
 }
 
 interface ActionElement {
@@ -57,6 +58,7 @@ const PlanCard = ({
     info,
     action,
     actionLabel,
+    enableActionLabelSpacing,
     onSelect,
     features,
     currency,
@@ -130,7 +132,9 @@ const PlanCard = ({
                 </div>
 
                 {actionButton}
-                {actionLabel}
+                {actionLabel || enableActionLabelSpacing ? (
+                    <div className="mb-1 plan-selection-spacing">{actionLabel}</div>
+                ) : null}
 
                 <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
             </div>

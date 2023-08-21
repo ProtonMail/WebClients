@@ -133,11 +133,6 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
 };
 
 const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
-    const isVpnBusiness = plan.Name === PLANS.VPN_BUSINESS;
-    if (!isVpnBusiness) {
-        return null;
-    }
-
     const serverPrice = <Price currency={currency}>{getIpPricePerMonth(cycle)}</Price>;
     // translator: example of full sentence: "VPN Business requires at least 1 dedicated server (CHF 39.99 /month)"
     const serverPriceStr = c('Info').jt`(${serverPrice} /month)`;
@@ -179,7 +174,6 @@ const PlanSelection = ({
     const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const [showVpnB2bPlans, featureLoading] = useVpnB2bPlansFeature();
-    // const actionSpacingRef = useRef<number | null>(null);
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
@@ -237,7 +231,8 @@ const PlanSelection = ({
         const planTitle = shortPlan.title;
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
-        const actionLabel = <ActionLabel plan={plan} currency={currency} cycle={cycle} />;
+        const actionLabel =
+            plan.Name === PLANS.VPN_BUSINESS ? <ActionLabel plan={plan} currency={currency} cycle={cycle} /> : null;
 
         const plansList = audience === Audience.B2C ? plansListB2C : [];
         const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
@@ -264,6 +259,7 @@ const PlanSelection = ({
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
                 action={action}
                 actionLabel={actionLabel}
+                enableActionLabelSpacing={isVpnB2bPlans && audience === Audience.B2B}
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
                 planTitle={
@@ -313,6 +309,7 @@ const PlanSelection = ({
             <PlanCard
                 isCurrentPlan={false}
                 actionElement={<VpnEnterpriseAction />}
+                enableActionLabelSpacing={isVpnB2bPlans && audience === Audience.B2B}
                 info={plan.description}
                 planName={plan.plan as any}
                 planTitle={plan.title}
