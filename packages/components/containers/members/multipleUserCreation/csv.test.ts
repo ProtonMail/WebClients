@@ -12,8 +12,6 @@ describe('multi user upload csv.ts', () => {
         return new File([blob], filename);
     };
 
-    const defaultCsvFields = `DisplayName,EmailAddresses,Password,TotalStorage,VPNAccess,PrivateSubUser`;
-
     describe('parseMultiUserCsv (default)', () => {
         const defaultUser: ExportedCSVUser = {
             DisplayName: 'Alice',
@@ -23,6 +21,9 @@ describe('multi user upload csv.ts', () => {
             VPNAccess: 1,
             PrivateSubUser: 0,
         };
+
+        const defaultCsvFields = `DisplayName,EmailAddresses,Password,TotalStorage,VPNAccess,PrivateSubUser`;
+
         const mode = UserManagementMode.DEFAULT;
         describe('errors', () => {
             it('throws error if no files are passed', async () => {
