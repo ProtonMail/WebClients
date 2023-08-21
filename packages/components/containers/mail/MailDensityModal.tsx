@@ -35,7 +35,7 @@ const MailDensityModal = (props: ModalProps) => {
             <ModalTwoContent>
                 <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
                     <span className="mb-4" id="densityMode_desc">
-                        {c('Label').t`Select how your list of messages looks like by default.`}
+                        {c('Label').t`Select what your list of messages looks like by default.`}
                     </span>
                     <DensityRadiosCards
                         density={Density}
