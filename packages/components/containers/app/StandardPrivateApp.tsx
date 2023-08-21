@@ -42,6 +42,7 @@ import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
 import ThemeInjector from '../themes/ThemeInjector';
+import { useFlagsReady } from '../unleash';
 import DelinquentContainer from './DelinquentContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -93,6 +94,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
     const getFeature = useLoadFeature();
+    const flagsReady = useFlagsReady();
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -201,7 +203,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
     const LoadedApp = appRef.current;
 
-    if (loading || !eventManagerRef.current || LoadedApp === null) {
+    if (loading || !eventManagerRef.current || LoadedApp === null || !flagsReady) {
         return (
             <>
                 <ModalsChildren />
