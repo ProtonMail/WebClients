@@ -16,7 +16,7 @@ import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { authMember } from '@proton/shared/lib/api/members';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import { disableTotp } from '@proton/shared/lib/api/settings';
-import { getUser, lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { getUser, lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import {
     confirmPasswordValidator,
@@ -32,7 +32,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { formatUser } from '@proton/shared/lib/models/userModel';
-import { Credentials, srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import { Credentials, srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
@@ -190,18 +190,12 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         );
 
         if (member['2faStatus']) {
-            await srpAuth({
+            await srpVerify({
                 api: memberApi,
                 credentials,
                 config: disableTotp(),
             });
         }
-
-        await srpAuth({
-            api: memberApi,
-            credentials,
-            config: unlockPasswordChanges(),
-        });
 
         await srpVerify({
             api: memberApi,
