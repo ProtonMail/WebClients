@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Info, useMembers, useModals } from '@proton/components';
+import { Alert, Info, useConfig, useMembers, useModals } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
 
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
+    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
 
@@ -32,7 +34,13 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
 
     return (
         <>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/two-factor-authentication-organization')}>
+            <SettingsParagraph
+                learnMoreUrl={
+                    APP_NAME === APPS.PROTONVPN_SETTINGS
+                        ? 'https://protonvpn.com/support/require-2fa-organization'
+                        : getKnowledgeBaseUrl('/two-factor-authentication-organization')
+                }
+            >
                 {c('Info').t`Send emails to encourage your members to protect their accounts with 2FA.`}
             </SettingsParagraph>
             <Row className="mt-1">
