@@ -21,8 +21,7 @@ const UnleashFlagProvider = ({ UID, config, children }: Props) => {
         url: `${window.location.origin}${config.API_URL}/feature/v2/frontend`,
         clientKey: '-', // set by the server
         appName: '-', // set by the server
-        // refreshInterval in seconds
-        refreshInterval: 600, // 10 mins
+        refreshInterval: 600, // refreshInterval in seconds, 10 mins
         customHeaders: {
             'Content-Type': 'application/json;charset=utf-8',
             accept: 'application/vnd.protonmail.v1+json',
