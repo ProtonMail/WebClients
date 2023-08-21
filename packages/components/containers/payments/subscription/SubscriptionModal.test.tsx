@@ -29,8 +29,6 @@ import { SUBSCRIPTION_STEPS } from './constants';
 jest.mock('@proton/components/components/portal/Portal');
 jest.mock('../../paymentMethods/useMethods');
 
-jest.mock('@proton/metrics');
-
 const ContextSubscriptionModal = applyHOCs(
     withConfig(),
     withNotifications(),
