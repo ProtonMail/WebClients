@@ -296,7 +296,7 @@ function getPlanMembers(plan: Plan, quantity: number): number {
     return membersNumberInPlan * quantity;
 }
 
-export const INCLUDED_IP_PRICING_PER_MONTH: Pricing = {
+export const INCLUDED_IP_PRICING: Pricing = {
     [CYCLE.MONTHLY]: 4999,
     [CYCLE.YEARLY]: 3999 * CYCLE.YEARLY,
     [CYCLE.TWO_YEARS]: 3599 * CYCLE.TWO_YEARS,
@@ -304,18 +304,22 @@ export const INCLUDED_IP_PRICING_PER_MONTH: Pricing = {
 
 function getIpPrice(cycle: CYCLE): number {
     if (cycle === CYCLE.MONTHLY) {
-        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.MONTHLY];
+        return INCLUDED_IP_PRICING[CYCLE.MONTHLY];
     }
 
     if (cycle === CYCLE.YEARLY) {
-        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.YEARLY];
+        return INCLUDED_IP_PRICING[CYCLE.YEARLY];
     }
 
     if (cycle === CYCLE.TWO_YEARS) {
-        return INCLUDED_IP_PRICING_PER_MONTH[CYCLE.TWO_YEARS];
+        return INCLUDED_IP_PRICING[CYCLE.TWO_YEARS];
     }
 
     return 0;
+}
+
+export function getIpPricePerMonth(cycle: CYCLE): number {
+    return getIpPrice(cycle) / cycle;
 }
 
 export function getPricePerMember(plan: Plan, cycle: CYCLE): number {

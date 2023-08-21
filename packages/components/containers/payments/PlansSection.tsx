@@ -58,7 +58,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const location = useLocation();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
-    const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+    const [audience, setAudience] = useState(searchParams.audience || Audience.B2B);
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(app, getPlanIDs(subscription));
     });
