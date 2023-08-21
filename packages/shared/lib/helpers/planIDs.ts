@@ -1,5 +1,5 @@
-import { ADDON_NAMES, MEMBER_ADDON_PREFIX, PLANS } from '../constants';
-import { Organization, Plan, PlanIDs } from '../interfaces';
+import { ADDON_NAMES, MEMBER_ADDON_PREFIX, PLANS, PLAN_TYPES } from '../constants';
+import { Organization, Plan, PlanIDs, PlansMap } from '../interfaces';
 
 const {
     MAIL,
@@ -47,6 +47,18 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
 export const getHasPlanType = (planIDs: PlanIDs, plans: Plan[], planType: PLANS) => {
     const plan = plans.find(({ Name }) => Name === planType);
     return plan?.Name ? (planIDs?.[plan.Name] || 0) >= 1 : false;
+};
+
+export const getPlanFromCheckout = (planIDs: PlanIDs, plansMap: PlansMap): Plan | null => {
+    const planNames = Object.keys(planIDs) as (keyof PlanIDs)[];
+    for (const planName of planNames) {
+        const plan = plansMap[planName];
+        if (plan?.Type === PLAN_TYPES.PLAN) {
+            return plan;
+        }
+    }
+
+    return null;
 };
 
 export const getSupportedAddons = (planIDs: PlanIDs) => {
