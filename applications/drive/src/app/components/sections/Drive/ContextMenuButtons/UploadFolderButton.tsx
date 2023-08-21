@@ -10,7 +10,7 @@ interface Props {
 const UploadFolderButton = ({ close, onClick }: Props) => {
     return (
         <ContextMenuButton
-            testId="toolbar-upload-folder"
+            testId="context-upload-folder"
             icon="folder-arrow-up"
             name={c('Action').t`Upload folder`}
             action={onClick}

@@ -88,6 +88,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Pro
                     onChange={handleChange}
                     onBlur={handleBlur}
                     error={validator([validateLinkNameField(folderName) || ''])}
+                    data-testid="input-new-folder-name"
                     required
                 />
             </ModalTwoContent>
