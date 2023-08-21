@@ -29,6 +29,7 @@ import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
+import { CheckoutModifiers } from '../useCheckoutModifiers';
 import CheckoutRow from './CheckoutRow';
 
 const PlanDescription = ({ list }: { list: Included[] }) => {
@@ -117,7 +118,7 @@ const AddonTooltip = ({
     return <Info title={text} className="ml-2" />;
 };
 
-interface Props {
+interface BaseProps {
     submit?: ReactNode;
     loading?: boolean;
     plansMap: PlansMap;
@@ -129,12 +130,13 @@ interface Props {
     onChangeCurrency: (currency: Currency) => void;
     planIDs: PlanIDs;
     isOptimistic?: boolean;
-    showProration?: boolean;
     nextSubscriptionStart?: number;
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
 }
+
+type Props = BaseProps & CheckoutModifiers;
 
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
@@ -148,11 +150,13 @@ const SubscriptionCheckout = ({
     planIDs,
     checkResult,
     loading,
-    showProration = true,
     nextSubscriptionStart,
     showDiscount = true,
     enableDetailedAddons = false,
     showPlanDescription = true,
+    isScheduledSubscription,
+    isProration,
+    isCustomBilling,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -164,6 +168,7 @@ const SubscriptionCheckout = ({
         addons,
         membersPerMonth,
         withDiscountPerMonth,
+        addonsPerMonth,
     } = getCheckout({
         planIDs,
         plansMap,
@@ -185,7 +190,15 @@ const SubscriptionCheckout = ({
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
 
-    const displayStartDate = !showProration;
+    const membersAmount = (() => {
+        if (enableDetailedAddons) {
+            return membersPerMonth;
+        }
+        if (isCustomBilling) {
+            return membersPerMonth + addonsPerMonth;
+        }
+        return withDiscountPerMonth;
+    })();
 
     return (
         <Checkout
@@ -211,7 +224,7 @@ const SubscriptionCheckout = ({
                         )}
                     </>
                 }
-                amount={enableDetailedAddons ? membersPerMonth : withDiscountPerMonth}
+                amount={membersAmount}
                 currency={currency}
                 suffix={<span className="color-weak text-sm">{c('Suffix').t`/month`}</span>}
                 suffixNextLine={enableDetailedAddons}
@@ -261,7 +274,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {showProration && proration !== 0 && (
+            {isProration && proration !== 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
@@ -285,7 +298,7 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
-            {displayStartDate && nextSubscriptionStart && (
+            {isScheduledSubscription && nextSubscriptionStart && (
                 <StartDateCheckoutRow nextSubscriptionStart={nextSubscriptionStart} />
             )}
             {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
