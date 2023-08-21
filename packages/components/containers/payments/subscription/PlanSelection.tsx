@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useConfig } from '@proton/components/hooks';
 import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getIpPricePerMonth } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -26,6 +27,7 @@ import {
     MailLogo,
     Option,
     PassLogo,
+    Price,
     SelectTwo,
     Tabs,
     VpnLogo,
@@ -130,6 +132,27 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
     return price;
 };
 
+const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
+    const isVpnBusiness = plan.Name === PLANS.VPN_BUSINESS;
+    if (!isVpnBusiness) {
+        return null;
+    }
+
+    const serverPrice = <Price currency={currency}>{getIpPricePerMonth(cycle)}</Price>;
+    // translator: example of full sentence: "VPN Business requires at least 1 dedicated server (CHF 39.99 /month)"
+    const serverPriceStr = c('Info').jt`(${serverPrice} /month)`;
+    const serverPricePerMonth = <span className="text-nowrap">{serverPriceStr}</span>;
+
+    return (
+        <div className="mt-6 flex flex-nowrap color-weak">
+            <div className="flex-item-noshrink mr-2">
+                <Icon name="info-circle" />
+            </div>
+            <div>{c('Info').jt`${plan.Title} requires at least 1 dedicated server ${serverPricePerMonth}`}</div>
+        </div>
+    );
+};
+
 const PlanSelection = ({
     mode,
     hasFreePlan = true,
@@ -156,6 +179,7 @@ const PlanSelection = ({
     const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const [showVpnB2bPlans, featureLoading] = useVpnB2bPlansFeature();
+    // const actionSpacingRef = useRef<number | null>(null);
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
@@ -168,23 +192,23 @@ const PlanSelection = ({
 
     const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]].filter(isTruthy);
 
+    const vpnB2BPlans = [
+        plansMap[PLANS.VPN_PRO],
+        plansMap[PLANS.VPN_BUSINESS],
+        getVPNEnterprisePlan(vpnServers),
+    ].filter(isTruthy);
+
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
+
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
+     *
+     * The check for length of plans is needed for the case if the VPN B2B plans are not available.
+     * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
-    if (isVpnSettingsApp && showVpnB2bPlans && !featureLoading) {
-        const vpnB2BPlans = [
-            plansMap[PLANS.VPN_PRO],
-            plansMap[PLANS.VPN_BUSINESS],
-            getVPNEnterprisePlan(vpnServers),
-        ].filter(isTruthy);
-        /**
-         * In case if the VPN B2B plans are not available, we should fallback to the usual set of plans.
-         * It can happen if backend doesn't return the VPN B2B plans.
-         */
-        if (vpnB2BPlans.length !== 0) {
-            B2BPlans = vpnB2BPlans;
-        }
+    const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0 && showVpnB2bPlans && !featureLoading;
+    if (isVpnB2bPlans) {
+        B2BPlans = vpnB2BPlans;
     } else {
         B2BPlans = [
             hasFreePlan ? FREE_PLAN : null,
@@ -212,7 +236,8 @@ const PlanSelection = ({
 
         const planTitle = shortPlan.title;
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
+        const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
+        const actionLabel = <ActionLabel plan={plan} currency={currency} cycle={cycle} />;
 
         const plansList = audience === Audience.B2C ? plansListB2C : [];
         const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
@@ -237,7 +262,8 @@ const PlanSelection = ({
         return (
             <PlanCard
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
-                action={actionLabel}
+                action={action}
+                actionLabel={actionLabel}
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
                 planTitle={

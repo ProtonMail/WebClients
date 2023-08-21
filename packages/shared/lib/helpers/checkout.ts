@@ -32,12 +32,7 @@ import {
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
 import { getPlanFromCheckout } from './planIDs';
-import {
-    INCLUDED_IP_PRICING_PER_MONTH,
-    customCycles,
-    getNormalCycleFromCustomCycle,
-    getPricingPerMember,
-} from './subscription';
+import { INCLUDED_IP_PRICING, customCycles, getNormalCycleFromCustomCycle, getPricingPerMember } from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -152,7 +147,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
             addonsMap[IP] = {
                 name: IP,
                 quantity: 1,
-                pricing: plansMap[IP]?.Pricing ?? INCLUDED_IP_PRICING_PER_MONTH,
+                pricing: plansMap[IP]?.Pricing ?? INCLUDED_IP_PRICING,
                 title: '',
             };
         }
