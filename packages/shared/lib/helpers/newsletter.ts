@@ -24,7 +24,7 @@ const isProductNewsEnabled = (
 };
 
 /**
- * If one of the product newsletter (Inbox/Drive/VPN) is enabled, then returns true
+ * If one of the product newsletter (Inbox/Drive/Pass/VPN) is enabled, then returns true
  */
 export const isGlobalFeatureNewsEnabled = (
     currentNews: NewsletterSubscriptionUpdateData | number,
@@ -33,6 +33,7 @@ export const isGlobalFeatureNewsEnabled = (
     return Boolean(
         isProductNewsEnabled(NEWSLETTER_SUBSCRIPTIONS_BITS.INBOX_NEWS, currentNews, updatedNews) ||
             isProductNewsEnabled(NEWSLETTER_SUBSCRIPTIONS_BITS.DRIVE_NEWS, currentNews, updatedNews) ||
+            isProductNewsEnabled(NEWSLETTER_SUBSCRIPTIONS_BITS.PASS_NEWS, currentNews, updatedNews) ||
             isProductNewsEnabled(NEWSLETTER_SUBSCRIPTIONS_BITS.VPN_NEWS, currentNews, updatedNews)
     );
 };

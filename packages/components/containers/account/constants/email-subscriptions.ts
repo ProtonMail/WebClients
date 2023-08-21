@@ -6,6 +6,7 @@ import {
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
     NEWSLETTER_SUBSCRIPTIONS_BITS,
+    PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -79,6 +80,12 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
         id: 'news_product_drive',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.DRIVE_NEWS,
         title: c(`Label for news`).t`${DRIVE_APP_NAME} product updates`,
+        frequency: c('Frequency of news').t`(4-6 emails per year)`,
+    },
+    {
+        id: 'news_product_pass',
+        flag: NEWSLETTER_SUBSCRIPTIONS_BITS.PASS_NEWS,
+        title: c(`Label for news`).t`${PASS_APP_NAME} product updates`,
         frequency: c('Frequency of news').t`(4-6 emails per year)`,
     },
     {
