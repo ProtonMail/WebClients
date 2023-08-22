@@ -84,6 +84,17 @@ const YourPlanSection = ({ app }: Props) => {
     const shouldRenderInLargeSection = totalPanelsToDisplay > 2;
     const SettingsSection = shouldRenderInLargeSection ? SettingsSectionExtraWide : SettingsSectionWide;
 
+    // Either display pending invitations if any, or upsell(s)
+    const invitationsOrUpsells = (() => {
+        if (shouldRenderPendingInvitation) {
+            return <PendingInvitationsPanel invites={invites} />;
+        }
+        if (shouldRenderUpsells) {
+            return <UpsellPanels upsells={upsells} subscription={subscription} />;
+        }
+        return null;
+    })();
+
     return (
         <SettingsSection>
             <div
@@ -110,12 +121,7 @@ const YourPlanSection = ({ app }: Props) => {
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
 
-                {/* Either display pending invitations if any, or upsell(s) */}
-                {shouldRenderPendingInvitation ? (
-                    <PendingInvitationsPanel invites={invites} />
-                ) : shouldRenderUpsells ? (
-                    <UpsellPanels upsells={upsells} subscription={subscription} />
-                ) : null}
+                {invitationsOrUpsells}
             </div>
         </SettingsSection>
     );
