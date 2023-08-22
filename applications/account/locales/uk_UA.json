@@ -98,6 +98,9 @@
       "Add label": [
         "Додати мітку"
       ],
+      "Add multiple users": [
+        "Додати кількох користувачів"
+      ],
       "Add notification": [
         "Додати сповіщення"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Створити теку"
       ],
+      "Create Gateway": [
+        "Створити шлюз"
+      ],
       "Create label": [
         "Створити мітку"
       ],
       "Create link": [
         "Створити посилання"
+      ],
+      "Create user": [
+        "Створити користувача"
       ],
       "Create users": [
         "Створити користувачів"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Видалити й підтвердити"
       ],
+      "Delete Gateway": [
+        "Видалити шлюз"
+      ],
       "Delete link": [
         "Видалити посилання"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Видалити запис"
+      ],
+      "Delete user": [
+        "Видалити користувача"
       ],
       "Delete without exporting": [
         "Видалити без експортування"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "Завантажити ICS"
       ],
+      "Download our CSV template": [
+        "Завантажте наш CSV-шаблон"
+      ],
       "Download recovery file": [
         "Завантажити файл відновлення"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
+      "Edit Gateway": [
+        "Змінити шлюз"
+      ],
       "Edit label": [
         "Редагувати мітку"
+      ],
+      "Edit name": [
+        "Змінити назву"
       ],
       "Edit password": [
         "Редагувати пароль"
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Edit servers": [
+        "Змінити сервери"
       ],
       "Edit sieve": [
         "Редагувати Sieve"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Керувати передплатою"
+      ],
+      "Edit users": [
+        "Змінити користувачів"
       ],
       "Emoji": [
         "Емоджі"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Отримати більше міток"
+      ],
+      "Get more licenses": [
+        "Отримати більше ліцензій"
+      ],
+      "Get more servers": [
+        "Отримати більше серверів"
       ],
       "Get the deal": [
         "Скористатися пропозицією"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Вилучити це сповіщення"
+      ],
+      "Rename": [
+        "Перейменувати"
       ],
       "Report a problem": [
         "Повідомити про проблему"
@@ -932,6 +971,12 @@
       "Upgrade now": [
         "Покращити"
       ],
+      "Upgrade to Business": [
+        "Покращте до Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Покращте, щоб увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
@@ -998,6 +1043,9 @@
       "Yes, undo": [
         "Так, скасувати"
       ],
+      "Your server will be provisioned in the next days": [
+        "Ваш сервер буде надано найближчими днями"
+      ],
       "Zoom in": [
         "Збільшити"
       ],
@@ -1053,6 +1101,9 @@
         "${ ips } сервери",
         "${ ips } серверів",
         "${ ips } серверів"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } за виділений сервер"
       ],
       "${ price } per domain": [
         "${ price } за домен"
@@ -1133,6 +1184,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Отримайте 10 псевдонімів безплатно!"
+      ],
+      "Get unlimited aliases!": [
+        "Отримайте необмежену кількість псевдонімів!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Спробуйте ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "За допомогою ${ PASS_APP_NAME } ви можете створювати унікальні псевдоніми, щоб приховати свою особистість і пересилати листи на вашу основну поштову скриньку."
       ]
     },
     "Alter": {
@@ -1532,11 +1597,6 @@
         "Тиждень"
       ]
     },
-    "Checkbox label": {
-      "All": [
-        "Усі"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } користувач",
@@ -1549,6 +1609,17 @@
         "Всього за ${ n } місяці",
         "Всього за ${ n } місяців",
         "Всього за ${ n } місяці"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "місяць"
+      ],
+      "Servers": [
+        "Сервери"
+      ],
+      "Users": [
+        "Користувачі"
       ]
     },
     "Collapsible tooltip": {
@@ -2766,6 +2837,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Увімкніть розширені журнали та ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
+      ],
+      "Enable advanced logs to access these features": [
+        "Увімкніть розширені журнали, щоб отримати доступ до цих функцій"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -2818,6 +2898,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Повернутися до ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "Не створили обліковий запис?"
+      ],
+      "I didn't create this account": [
+        "Я не створював цей обліковий запис"
+      ],
+      "sign in": [
+        "увійти"
+      ],
+      "Thanks for letting us know": [
+        "Дякуємо, що повідомили нам про це"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Зазвичай це не викликає занепокоєння. Просто натисніть нижче, щоб підтвердити, що цей обліковий запис ${ BRAND_NAME } не належить вам, і ми його вимкнемо."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Ми помітили, що цей обліковий запис не належить вам. Ми проведемо розслідування та приймемо відповідні заходи."
+      ],
+      "You can safely close this tab.": [
+        "Ви можете спокійно закрити цю вкладку."
       ]
     },
     "Domain label": {
@@ -3139,6 +3245,15 @@
       ],
       "IMAP server is required": [
         "Сервер IMAP обов'язковий"
+      ],
+      "Impossible to create the gateway": [
+        "Неможливо створити шлюз"
+      ],
+      "Impossible to edit the gateway": [
+        "Неможливо відредагувати шлюз"
+      ],
+      "Impossible to rename the gateway": [
+        "Неможливо перейменувати шлюз"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -3476,6 +3591,9 @@
       "You have no invoices.": [
         "У вас немає рахунків."
       ],
+      "You have reached the contacts limit for your account": [
+        "Ви досягли максимальної кількості контактів для Вашого облікового запису"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
@@ -3715,6 +3833,11 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
+      ]
+    },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Виникла проблема з вимкненням вашого облікового запису."
       ]
     },
     "Error message, recovery": {
@@ -4196,6 +4319,15 @@
       "Access to all countries": [
         "Доступ до всіх країн"
       ],
+      "Add": [
+        "Додати"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Додати (${ numberOfAddedServers })",
+        "Додати (${ numberOfAddedServers })",
+        "Додати (${ numberOfAddedServers })",
+        "Додати (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "З'єднання для ${ plusVpnConnections } пристрою",
         "З'єднання для ${ plusVpnConnections } пристроїв",
@@ -4598,6 +4730,9 @@
       "Checkout": [
         "Оплата"
       ],
+      "Country": [
+        "Країна"
+      ],
       "Create your account": [
         "Створіть обліковий запис"
       ],
@@ -4610,11 +4745,20 @@
       "Folders": [
         "Теки"
       ],
+      "IP address": [
+        "IP-адреса"
+      ],
       "Key type": [
         "Тип ключа"
       ],
       "Label": [
         "Мітка"
+      ],
+      "Location": [
+        "Розташування"
+      ],
+      "Members": [
+        "Учасників"
       ],
       "Name": [
         "Назва"
@@ -4633,6 +4777,15 @@
       ],
       "Select your pricing plan": [
         "Виберіть свій тариф"
+      ],
+      "Server": [
+        "Сервер"
+      ],
+      "Server load": [
+        "Навантаження сервера"
+      ],
+      "Servers": [
+        "Сервери"
       ],
       "Status": [
         "Стан"
@@ -5181,6 +5334,12 @@
         "${ providerFoldersNumLocalized } міток знайдено в Gmail",
         "${ providerFoldersNumLocalized } міток знайдено в Gmail"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } сервер все ще налаштовується. Зазвичай це займає близько ${ provisioningDuration }.",
+        "${ provisioningCounter } сервери все ще налаштовуються. Зазвичай це займає близько ${ provisioningDuration }.",
+        "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це займає близько ${ provisioningDuration }.",
+        "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це займає близько ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
@@ -5307,6 +5466,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активуйте принаймні один метод відновлення даних, щоб не втратити доступ до вмісту свого облікового запису ${ BRAND_NAME }, якщо ви забудете пароль."
       ],
+      "active": [
+        "активний"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від «${ MAIL_APP_NAME } me» або «Private Message me.»"
       ],
@@ -5330,6 +5492,24 @@
       ],
       "Add multiple users to your organization at once.": [
         "Додавайте багатьох користувачів до своєї організації за один раз."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Додати сервер (${ availableAddedCount } доступний)",
+        "Додати сервер (${ availableAddedCount } доступних)",
+        "Додати сервер (${ availableAddedCount } доступних)",
+        "Додати сервер (${ availableAddedCount } доступних)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Додавання ${ addedServerCount } сервера шлюзу",
+        "Додавання ${ addedServerCount } серверів шлюзу",
+        "Додавання ${ addedServerCount } серверів шлюзу",
+        "Додавання ${ addedServerCount } серверів шлюзу"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Додавання сервера шлюзу: ${ serverNumber } / ${ total }",
+        "Додавання серверів шлюзу: ${ serverNumber } / ${ total }",
+        "Додавання серверів шлюзу: ${ serverNumber } / ${ total }",
+        "Додавання серверів шлюзу: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Додаткові опції"
@@ -5460,6 +5640,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
       ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Попросіть адміністратора вашої організації налаштувати шлюзи."
+      ],
       "Attention required": [
         "Потребує уваги"
       ],
@@ -5480,6 +5663,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Доступно на macOS, Windows та Linux."
+      ],
+      "Awaiting transaction": [
+        "Очікує на транзакцію"
       ],
       "Background color": [
         "Колір тла"
@@ -5598,6 +5784,15 @@
       "Create in": [
         "Створити у"
       ],
+      "Create your first Gateway": [
+        "Створіть свій перший шлюз"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Створення сервера шлюзу: ${ serverNumber } / ${ total }",
+        "Створення серверів шлюзу: ${ serverNumber } / ${ total }",
+        "Створення серверів шлюзу: ${ serverNumber } / ${ total }",
+        "Створення серверів шлюзу: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Створення облікового запису"
       ],
@@ -5634,6 +5829,9 @@
       "Data locked": [
         "Дані заблоковано"
       ],
+      "dedicated servers": [
+        "виділені сервери"
+      ],
       "Dedicated servers": [
         "Виділені сервери"
       ],
@@ -5645,6 +5843,12 @@
       ],
       "Delete link?": [
         "Видалити посилання?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Видалення ${ deletedServerCount } сервера шлюзу",
+        "Видалення ${ deletedServerCount } серверів шлюзу",
+        "Видалення ${ deletedServerCount } серверів шлюзу",
+        "Видалення ${ deletedServerCount } серверів шлюзу"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -5736,6 +5940,9 @@
       "Encryption setting updated": [
         "Налаштування шифрування оновлено"
       ],
+      "Enhance your network security": [
+        "Посильте безпеку вашої мережі"
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручну"
       ],
@@ -5790,6 +5997,9 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
+      "Fill in user details": [
+        "Заповніть дані користувача"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
@@ -5813,6 +6023,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "звільнити простір, видаливши давніші повідомлення чи інші дані"
+      ],
+      "Gateways": [
+        "Шлюзи"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерування нової фрази відновлення деактивує попередню."
@@ -5949,6 +6162,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою Bitcoin-адреси."
       ],
+      "inactive": [
+        "неактивний"
+      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -6014,6 +6230,9 @@
       ],
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
+      ],
+      "Lean more about gateways": [
+        "Дізнайтеся більше про шлюзи"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
@@ -6087,6 +6306,18 @@
       "Multi-user support not enabled.": [
         "Підтримка декількох користувачів не увімкнена."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Повинно бути від 3 до 20 символів."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Має містити лише літери, цифри та тире (-)."
+      ],
+      "Must not contain spaces.": [
+        "Не повинно містити пробілів."
+      ],
+      "Must start with a letter.": [
+        "Має починатися з літери."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
@@ -6114,6 +6345,12 @@
       "No folder selected": [
         "Жодної теки не вибрано"
       ],
+      "No gateways": [
+        "Без шлюзів"
+      ],
+      "No Gateways yet": [
+        "Шлюзів ще немає"
+      ],
       "No imports or forwarding history.": [
         "Немає історії імпортування чи пересилання."
       ],
@@ -6132,11 +6369,17 @@
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Наразі недоступний у нашому мобільному застосунку для Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Користуєтеся чужим пристроєм? Використовуйте вікно приватного перегляду, щоб увійти та завершити сеанс, коли все готово. ${ learnMore }"
       ],
-      "Number of users": [
-        "Кількість користувачів"
+      "Number of dedicated servers in the organization": [
+        "Кількість виділених серверів у організації"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Кількість виділених серверів, які ви намагаєтеся призначити (${ addedCount }), перевищує кількість доступних у вашому плані (${ remainingCount }), оскільки ви володієте ${ ownedCount } і вже використовуєте ${ usedCount }."
       ],
       "of": [
         "з"
@@ -6159,6 +6402,9 @@
       "Open source": [
         "Відкритий програмний код"
       ],
+      "Optional": [
+        "Необов'язково"
+      ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
       ],
@@ -6170,6 +6416,9 @@
       ],
       "Organization size": [
         "Розмір організації"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Об'єднайте виділені сервери у шлюзи та визначте, які користувачі матимуть до них доступ."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
@@ -6348,6 +6597,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудьте повідомити дані для входу користувача."
+      ],
       "Remove one of your calendars to join this one": [
         "Вилучіть один з ваших календарів, щоб приєднатися до цього"
       ],
@@ -6414,6 +6666,9 @@
       "Setting up your Drive": [
         "Налаштування Drive"
       ],
+      "Setting up your organization": [
+        "Створення вашої організації"
+      ],
       "Settings update failed": [
         "Не вдалося оновити налаштування"
       ],
@@ -6440,6 +6695,9 @@
       ],
       "Some keys successfully reactivated": [
         "Деякі ключі успішно повторно активовано"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Деякі з ваших доступних серверів можна використовувати лише в певних країнах через нещодавнє видалення"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "У SPF вказують, кому дозволено надсилати пошту на домен. Тому ми наполегливо радимо включити ${ MAIL_APP_NAME } у свій SPF запис. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити у панелі керування вашого реєстратора доменних імен."
@@ -6570,8 +6828,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Це може тривати до 15 хвилин. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Це може зайняти деякий час. Будь ласка, не закривайте цю сторінку і не від'єднуйтесь від Інтернету."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
@@ -6765,6 +7023,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Покращте план до ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
       ],
@@ -6773,6 +7034,9 @@
       ],
       "Upload picture": [
         "Вивантажити зображення"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "Завантажте заповнений файл CSV для створення облікових записів"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Завантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу."
@@ -6791,6 +7055,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Використовуйте обрану адресу електронної пошти іменем користувача SMTP у зовнішній службі, а згенерований токен — паролем SMTP."
+      ],
+      "Users": [
+        "Користувачі"
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -6819,6 +7086,9 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
+      "Want servers in other countries?": [
+        "Потрібні сервери в інших країнах?"
+      ],
       "Warning:": [
         "Попередження:"
       ],
@@ -6842,6 +7112,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Ми рекомендуємо мати 2 сервери, щоб мати резерв."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Ми рекомендуємо мати кілька серверів у різних місцях для забезпечення надійності."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Перш ніж впроваджувати двоетапну перевірку, ми радимо повідомити про це учасників організації та попросити їх налаштувати її заздалегідь."
@@ -6903,8 +7176,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Під час продовження вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
       ],
+      "Whole organization": [
+        "Вся організація"
+      ],
       "Why?": [
         "Навіщо?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "З тарифним планом Business або Enterprise ви можете придбати ${ boldDedicatedServers } для своєї організації та налаштувати ${ boldGateways }, щоб контролювати, які користувачі можуть отримати до них доступ."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Із зашифрованою адресою ${ BRAND_NAME } ви можете користуватися всіма службами ${ BRAND_NAME_TWO }"
@@ -6933,6 +7212,18 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Наразі ви використовуєте ${ ipCount } з ${ ipAddresses } доступного виділеного сервера.",
+        "Наразі ви використовуєте ${ ipCount } з ${ ipAddresses } доступних виділених серверів.",
+        "Наразі ви використовуєте ${ ipCount } з ${ ipAddresses } доступних виділених серверів.",
+        "Наразі ви використовуєте ${ ipCount } з ${ ipAddresses } доступних виділених серверів."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступної користувацької ліцензії",
+        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій.",
+        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій.",
+        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ви увійшли в обліковий запис ${ memberAddress }."
       ],
@@ -6947,6 +7238,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, щоб бачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час отримання доступу, а також невдалі спроби."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Ви можете відразу розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до номера IP-адреси у вашому тарифному плані, або звернутися до нас за індивідуальними рішеннями."
       ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
@@ -7007,6 +7301,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Вам доступний ${ availableCount } виділений сервер.",
+        "Вам доступно ${ availableCount } виділені сервери.",
+        "Вам доступно ${ availableCount } виділених серверів.",
+        "Вам доступно ${ availableCount } виділених серверів."
       ],
       "You have no calendars to export.": [
         "У вас немає календарів для експорту."
@@ -7955,6 +8255,9 @@
       "Event notifications": [
         "Сповіщення про події"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Виключити Спам/Смітник з «Уся пошта»"
+      ],
       "Expiration (${ patternExpiration })": [
         "Термін дії (${ patternExpiration })"
       ],
@@ -7984,6 +8287,9 @@
       ],
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
+      ],
+      "Gateway name": [
+        "Назва шлюзу"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -8171,6 +8477,9 @@
       "Organization password": [
         "Пароль організації"
       ],
+      "Organization size": [
+        "Розмір організації"
+      ],
       "Other amount": [
         "Інша сума"
       ],
@@ -8266,6 +8575,9 @@
       ],
       "Select your country": [
         "Виберіть вашу країну"
+      ],
+      "Select your plan": [
+        "Оберіть тарифний план"
       ],
       "Send auto-reply": [
         "Надіслати автовідповідь"
@@ -8628,6 +8940,9 @@
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
       ],
+      "Contact us": [
+        "Зв'язатися з нами"
+      ],
       "create a ticket": [
         "створити запит"
       ],
@@ -8805,6 +9120,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Змінити пароль"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -8844,6 +9162,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Зареєструватися"
       ],
+      "${ BRAND_NAME } Account": [
+        "Обліковий запис ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Створіть ${ BRAND_NAME }, щоб користуватися всіма зашифрованими сервісами ${ BRAND_NAME }, такими як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та іншими, за допомогою одного входу. Отримайте безплатний обліковий запис ${ BRAND_NAME }."
       ],
@@ -8873,9 +9194,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увійдіть у свій обліковий запис ${ BRAND_NAME }, щоб отримати доступ до всіх зашифрованих сервісів ${ BRAND_NAME }, таких як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } тощо. Не маєте облікового запису? Створіть його БЕЗПЛАТНО."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Увійти | Обліковий запис ${ BRAND_NAME } - Доступ до ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та багато іншого"
       ],
       "Try ${ planName } for free with this link": [
         "Спробуйте ${ planName } безплатно за цим посиланням"
@@ -9289,6 +9607,9 @@
       "1 user": [
         "1 користувач"
       ],
+      "24/7 support": [
+        "Підтримка 24/7"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
       ],
@@ -9297,6 +9618,9 @@
       ],
       "Admin console": [
         "Консоль адміністратора"
+      ],
+      "Advanced network security": [
+        "Розширений захист мережі"
       ],
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
@@ -9322,6 +9646,9 @@
       "Centralized billing": [
         "Централізоване управління платежами"
       ],
+      "Centralized settings and billings": [
+        "Централізовані налаштування та виставлення рахунків"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -9342,6 +9669,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Відстеження витоків даних (скоро з'явиться)"
+      ],
+      "Dedicated servers and IP": [
+        "Виділені сервери та IP-адреси"
       ],
       "DNS leak prevention": [
         "Захист від витоку DNS"
@@ -9474,6 +9804,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
+      ],
+      "Start protecting your organization": [
+        "Start protecting your organization"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Захистіть себе в мережі у 2 простих кроки"
@@ -9686,6 +10019,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Натискаючи \"Оплатити\", ви погоджуєтеся з нашими ${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Створюючи обліковий запис ${ BRAND_NAME }, ви погоджуєтеся на наші ${ terms }"
       ],
@@ -9785,6 +10121,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в Інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
       ],
@@ -9817,6 +10156,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Як і теки, сховище – це зручний спосіб впорядковувати ваші дані. Ми працюємо над тим, щоб невдовзі ви могли ділитися сховищами з друзями та родиною."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Заблокуйте ресурси компанії для публічного доступу та зробіть їх доступними лише через ваші приватні шлюзи"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Керуйте своєю передплатою, включно з налаштуванням тарифного плану. Підтримувані способи оплати – кредитні картки, PayPal, криптовалюта і банківські перекази."
@@ -9936,17 +10278,35 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Підтримка 24/7"
+      ],
       "Access advanced VPN features": [
         "Користуйтеся розширеними можливостями VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
       ],
+      "AES 256-bit VPN encryption": [
+        "256-бітне VPN-шифрування AES"
+      ],
+      "Auto-connect": [
+        "Автоматичне з’єднання"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Збільште обсяг сховища до ${ bundleStorage } на користувача"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
+      ],
+      "Browser extension": [
+        "Розширення для браузера"
+      ],
+      "Censorship circumvention": [
+        "Обхід цензури"
+      ],
+      "Central control panel": [
+        "Центральна панель керування"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
@@ -9956,6 +10316,24 @@
         "Створіть до ${ n } календарів",
         "Створіть до ${ n } календарів",
         "Створіть до ${ n } календарів"
+      ],
+      "Dedicated Account manager": [
+        "Виділений менеджер по роботі з клієнтами"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Розташування виділених серверів у ${ numberOfCountries }+ країнах"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Розташування виділених серверів у Північній Америці та Європі"
+      ],
+      "Multi-platform support": [
+        "Багатоплатформова підтримка"
+      ],
+      "Private gateways": [
+        "Приватні шлюзи"
+      ],
+      "Require 2FA": [
+        "Потрібна 2FA"
       ]
     },
     "Notification": {
@@ -9976,6 +10354,9 @@
       ],
       "Invalid code": [
         "Недійсний код"
+      ],
+      "IP Address copied to clipboard": [
+        "IP-адресу скопійовано до буфера обміну"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ з відбитком ${ fp } було видалено."
@@ -10283,8 +10664,14 @@
       "Secure Core configs": [
         "Конфігурації Secure Core"
       ],
+      "Select who can access...": [
+        "Виберіть, хто може отримати доступ..."
+      ],
       "Standard server configs": [
         "Конфігурації сервера"
+      ],
+      "The whole organization": [
+        "Вся організація"
       ]
     },
     "Option delay send seconds": {
@@ -10686,9 +11073,6 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "Confirm password": [
-        "Підтвердити пароль"
-      ],
       "domain.com": [
         "domain.com"
       ],
@@ -10768,6 +11152,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Додайте своє ім'я (або назву компанії) та адресу до своїх рахунків"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка,${ contactHref } з нашим відділом продажів."
       ]
     },
     "plan customizer, users": {
@@ -10967,6 +11356,17 @@
         "Читання листів від не приватних користувачів"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Адміністратор"
+      ],
+      "Primary admin": [
+        "Головний адміністратор"
+      ],
+      "User": [
+        "Користувач"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Вивантажити файл CSV"
@@ -10989,6 +11389,14 @@
       ],
       "No results found": [
         "Результатів не знайдено"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "активний"
+      ],
+      "inactive": [
+        "неактивний"
       ]
     },
     "Settings description": {
@@ -11968,6 +12376,12 @@
       "Edit": [
         "Змінити"
       ],
+      "Email": [
+        "Пошта"
+      ],
+      "Email address": [
+        "Адреса пошти"
+      ],
       "Email address or domain": [
         "Адреса е-пошти або домен"
       ],
@@ -11985,6 +12399,12 @@
       ],
       "Name": [
         "Ім'я"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Role": [
+        "Роль"
       ],
       "Status": [
         "Стан"
@@ -12131,8 +12551,14 @@
       "Add invoice details": [
         "Додати подробиці рахунку"
       ],
+      "Add new user": [
+        "Додати нового користувача"
+      ],
       "Add PayPal payment method": [
         "Додати спосіб оплати PayPal"
+      ],
+      "Add servers": [
+        "Додати сервери"
       ],
       "Add Sieve filter": [
         "Додати фільтр Sieve"
@@ -12146,8 +12572,11 @@
       "Add to spam list": [
         "Додати до списку спаму"
       ],
-      "Add user": [
-        "Додати користувача"
+      "Add user accounts": [
+        "Додати облікові записи користувачів"
+      ],
+      "Add users": [
+        "Додати користувачів"
       ],
       "Address verification": [
         "Перевірка адреси"
@@ -12281,6 +12710,15 @@
         "Створити ${ selectedUserIds.length } користувачів",
         "Створити ${ selectedUserIds.length } користувача"
       ],
+      "Create a new Gateway": [
+        "Створіть новий шлюз"
+      ],
+      "Create a new gateway": [
+        "Створіть новий шлюз"
+      ],
+      "Create Gateway": [
+        "Створити шлюз"
+      ],
       "Create multiple user accounts": [
         "Створити кілька облікових записів користувачів"
       ],
@@ -12311,11 +12749,17 @@
       "Custom filters": [
         "Власні фільтри"
       ],
+      "Custom selection of users": [
+        "Власний вибір користувачів"
+      ],
       "Customize and confirm": [
         "Налаштувати та підтвердити"
       ],
       "Customize calendar import": [
         "Налаштуйте імпорт календаря"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Налаштуйте кількість IP-адрес у вашому тарифному плані"
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
@@ -12374,6 +12818,9 @@
       "Delete user": [
         "Видалити користувача"
       ],
+      "Delete user?": [
+        "Видалити користувача?"
+      ],
       "Delete version history?": [
         "Видалити історію версій?"
       ],
@@ -12410,11 +12857,26 @@
       "Edit filter": [
         "Змінити фільтр"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Змінити шлюз ${ currentName }"
+      ],
+      "Edit servers": [
+        "Змінити сервери"
+      ],
       "Edit Sieve filter": [
         "Редагувати фільтр Sieve"
       ],
+      "Edit the list of servers of the gateway": [
+        "Редагувати список серверів шлюзу"
+      ],
       "Edit user": [
         "Редагувати користувача"
+      ],
+      "Edit users": [
+        "Змінити користувачів"
+      ],
+      "Edit who can access the gateway": [
+        "Змінити, хто може отримати доступ до шлюзу"
       ],
       "Email": [
         "Е-пошта"
@@ -12439,6 +12901,9 @@
       ],
       "Error": [
         "Помилка"
+      ],
+      "Every member of the organization can access": [
+        "Кожен член організації може отримати доступ до"
       ],
       "Export": [
         "Експорт"
@@ -12472,6 +12937,9 @@
       ],
       "Folders and labels": [
         "Теки й мітки"
+      ],
+      "Gateways": [
+        "Шлюзи"
       ],
       "General": [
         "Загальні"
@@ -12692,6 +13160,9 @@
       "Remove user?": [
         "Вилучити користувача?"
       ],
+      "Rename the gateway": [
+        "Перейменувати шлюз"
+      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -12778,6 +13249,9 @@
       ],
       "Settings": [
         "Налаштування"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Налаштуйте виділені сервери, перейшовши на Business план"
       ],
       "Short domain (@pm.me)": [
         "Короткий домен (@pm.me)"
@@ -12877,6 +13351,12 @@
       ],
       "Upgrade plan": [
         "Оновити тарифний план"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Завантажте файл CSV, щоб створити кілька облікових записів"
+      ],
+      "Users": [
+        "Користувачі"
       ],
       "Users and addresses": [
         "Користувачі та адреси"
@@ -13009,6 +13489,9 @@
       "Addresses": [
         "Адреси"
       ],
+      "Email": [
+        "Пошта"
+      ],
       "Features": [
         "Функції"
       ],
@@ -13031,6 +13514,9 @@
       ],
       "Plan": [
         "Тарифний план"
+      ],
+      "Servers": [
+        "Сервери"
       ],
       "Start date": [
         "Дата початку"
@@ -13070,6 +13556,15 @@
       "Account is disconnected": [
         "Обліковий запис від'єднано"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Адміністратори можуть вносити зміни до вашої підписки, керувати обліковими записами та паролями користувачів, а також надавати права адміністратора іншим користувачам."
+      ],
+      "An approximate location of the IP address": [
+        "Приблизне розташування IP-адреси"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Будь-який захист, застосований до підозрілої активності"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
       ],
@@ -13081,6 +13576,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Видаляти повідомлення зі спаму через 30 днів. Якщо ввімкнути автоматичне видалення, повідомлення, які вже знаходяться в смітнику/спамі, будуть видалені за датою їх переміщення туди."
+      ],
+      "Device information such as operating system": [
+        "Інформація про пристрій, наприклад, операційна система"
       ],
       "Each imported email will have this label": [
         "Кожен імпортований лист матиме цю мітку"
@@ -13138,6 +13636,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Інтернет-провайдер IP-адреси"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
