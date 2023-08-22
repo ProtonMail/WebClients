@@ -66,14 +66,16 @@ const YourPlanSection = ({ app }: Props) => {
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
+
+    const isVpnB2b = getHasVpnB2BPlan(subscription);
     /**
      * for VPN B2B, we display the upsells in {@link UpgradeVpnSection}
      */
-    const shouldRenderUpsells = !getHasVpnB2BPlan(subscription);
+    const shouldRenderUpsells = !isVpnB2b;
+    // VPN B2B plans must not have a usage panel
+    const shouldRenderUsagePanel = organization.UsedMembers > 1 && !isVpnB2b;
 
     const shouldRenderPendingInvitation = Boolean(invites.length);
-    const shouldRenderUsagePanel = organization.UsedMembers > 1;
-
     const totalPanelsToDisplay = 1 + (+shouldRenderPendingInvitation || upsells.length) + +shouldRenderUsagePanel;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
