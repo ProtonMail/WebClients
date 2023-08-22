@@ -138,6 +138,9 @@
       "Copy address": [
         "Cím másolása"
       ],
+      "Copy email address": [
+        "Email cím másolása"
+      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -956,6 +959,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Egyéni"
+      ],
       "Day": [
         "Nap"
       ],
@@ -967,6 +973,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Időtartomány megváltoztatása"
+      ],
       "Change time range to": [
         "Időintervallum átállítása:"
       ]
@@ -2162,7 +2171,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+        "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
       "${ list } doesn't have a valid email address": [
         "${ list } nem tartalmaz egy érvényes e-mail címet",
@@ -2425,7 +2434,7 @@
         "A kezdés idejének meg kell előznie a befejezés idejét"
       ],
       "status page": [
-        "állapot lap"
+        "állapotjelző oldalunkat"
       ],
       "The address might be misspelled": [
         "Lehetséges, hogy a cím el van írva"
@@ -2550,6 +2559,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "Missing FN property": [
+        "FN tulajdon hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -4394,6 +4406,9 @@
       "Postal code": [
         "Irányítószám"
       ],
+      "Primary": [
+        "Elsődleges"
+      ],
       "Public keys": [
         "Nyilvános kulcsok"
       ],
@@ -4408,6 +4423,12 @@
       ],
       "Reveal password": [
         "Jelszó felfedése"
+      ],
+      "Secondary": [
+        "Másodlagos"
+      ],
+      "Secondary time zone": [
+        "Másodlagos időzóna"
       ],
       "Show week numbers": [
         "Hetek sorszámának megjelenítése"
@@ -4615,6 +4636,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "Mégse"
+      ],
       "Manage calendars": [
         "Naptárak kezelése"
       ],
@@ -5084,6 +5108,9 @@
       ],
       "All events": [
         "Minden esemény"
+      ],
+      "Auto": [
+        "Automatikus"
       ],
       "Automatic (${ defaultDay })": [
         "Automatikus (${ defaultDay })"
@@ -5636,9 +5663,6 @@
       ],
       "Public holidays are here!": [
         "Már elérhetők a munkaszüneti napok!"
-      ],
-      "Quick settings": [
-        "Gyors beállítások"
       ]
     },
     "Storage": {
@@ -5842,7 +5866,7 @@
     },
     "summer2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+        "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
     "summer2023:Footer": {
