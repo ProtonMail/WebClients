@@ -73,7 +73,7 @@ const getPublicKeysEmailHelperWithKT = async (
                     ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
                     : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
                 return {
-                    publicKeys: await castKeys(mailCapableUnverifiedInternalKeys),
+                    publicKeys: castKeys(mailCapableUnverifiedInternalKeys),
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
@@ -90,7 +90,7 @@ const getPublicKeysEmailHelperWithKT = async (
                     : catchAllKTResult?.status;
                 const ktVerificationResult = catchAllKTResult ? { status: status!, keysChangedRecently } : undefined;
                 return {
-                    publicKeys: await castKeys(mailCapableCatchAllKeys),
+                    publicKeys: castKeys(mailCapableCatchAllKeys),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ...rest,
@@ -111,7 +111,7 @@ const getPublicKeysEmailHelperWithKT = async (
             if (mailCapableUnverifiedExternalKeys.length != 0) {
                 const firstUnverifiedKey = mailCapableUnverifiedExternalKeys[0];
                 return {
-                    publicKeys: await castKeys([firstUnverifiedKey]),
+                    publicKeys: castKeys([firstUnverifiedKey]),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     ...rest,
