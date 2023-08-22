@@ -113,7 +113,7 @@ const Sidebar = ({
                 </div>
 
                 {isNarrow && (
-                    <div className="px-3">
+                    <div className="px-3 no-desktop no-tablet">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>
                 )}
