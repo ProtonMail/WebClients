@@ -32,8 +32,8 @@ jest.mock('./useLinksState', () => {
     const useLinksState = () => {
         return {
             lockLinks: () => {},
-            unlockLinks: () => {},
             lockTrash: () => {},
+            unlockLinks: () => {},
         };
     };
 
@@ -71,6 +71,7 @@ const mockQueryTrashLinks = jest.fn();
 const mockQueryRestoreLinks = jest.fn();
 const mockQueryDeleteTrashedLinks = jest.fn();
 const mockGetShare = jest.fn();
+const mockGetDefaultShare = jest.fn();
 
 jest.mock('./useLinks', () => {
     const useLink = () => {
@@ -90,16 +91,26 @@ jest.mock('../_api/useDebouncedRequest', () => {
 });
 
 jest.mock('../_shares/useShare', () => {
-    const useLink = () => {
+    const useShare = () => {
         return {
             getShare: mockGetShare,
         };
     };
-    return useLink;
+    return useShare;
+});
+
+jest.mock('../_shares/useDefaultShare', () => {
+    const useDefaultShare = () => {
+        return {
+            getDefaultShare: mockGetDefaultShare,
+        };
+    };
+    return useDefaultShare;
 });
 
 const SHARE_ID_0 = 'shareId00';
 const SHARE_ID_1 = 'shareId01';
+const VOLUME_ID = 'volumeId00';
 
 // TODO: Test suite incomplete
 // covers operations allowing using links from multiple shares
@@ -123,6 +134,7 @@ describe('useLinksActions', () => {
         mockQueryRestoreLinks.mockImplementation((shareId, linkIds) => linkIds);
         mockQueryDeleteTrashedLinks.mockImplementation((shareId, linkIds) => linkIds);
         mockGetShare.mockImplementation((ac, shareId) => ({ shareId }));
+        mockGetDefaultShare.mockImplementation(() => ({ volumeId: VOLUME_ID }));
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>{children}</VolumesStateProvider>

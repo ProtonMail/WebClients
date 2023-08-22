@@ -61,8 +61,12 @@ export function useLinksStateProvider() {
         setState((state) => setLock(state, shareId, linkIds, false));
     }, []);
 
-    const lockTrash = useCallback((shareId: string) => {
-        setState((state) => setLock(state, shareId, 'trash', true));
+    const lockTrash = useCallback(() => {
+        setState((state) =>
+            Object.keys(state).reduce((acc, shareId) => {
+                return setLock(acc, shareId, 'trash', true);
+            }, state)
+        );
     }, []);
 
     const setCachedThumbnail = useCallback((shareId: string, linkId: string, url: string) => {
