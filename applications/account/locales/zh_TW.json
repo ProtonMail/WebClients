@@ -98,6 +98,9 @@
       "Add label": [
         "加入標籤"
       ],
+      "Add multiple users": [
+        "添加多位使用者"
+      ],
       "Add notification": [
         "加入通知"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "建立資料夾"
       ],
+      "Create Gateway": [
+        "建立閘道器"
+      ],
       "Create label": [
         "建立標籤"
       ],
       "Create link": [
         "建立連結"
+      ],
+      "Create user": [
+        "建立使用者"
       ],
       "Create users": [
         "建立使用者"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "同意刪除"
       ],
+      "Delete Gateway": [
+        "刪除閘道器"
+      ],
       "Delete link": [
         "刪除連結"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "刪除記錄"
+      ],
+      "Delete user": [
+        "刪除使用者"
       ],
       "Delete without exporting": [
         "刪除且略過匯出金鑰"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "下載 ICS"
       ],
+      "Download our CSV template": [
+        "下載我們的CSV模板"
+      ],
       "Download recovery file": [
         "下載帳號救援檔案"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "編輯電郵位址"
       ],
+      "Edit Gateway": [
+        "編輯閘道器"
+      ],
       "Edit label": [
         "編輯標籤"
+      ],
+      "Edit name": [
+        "編輯名稱"
       ],
       "Edit password": [
         "編輯密碼"
       ],
       "Edit phone number": [
         "編輯手機號碼"
+      ],
+      "Edit servers": [
+        "編輯伺服器"
       ],
       "Edit sieve": [
         "編輯 Sieve"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "更換授權約期"
+      ],
+      "Edit users": [
+        "編輯用戶"
       ],
       "Emoji": [
         "表情符號"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "取得更多標籤"
+      ],
+      "Get more licenses": [
+        "取得授權"
+      ],
+      "Get more servers": [
+        "取得更多伺服器"
       ],
       "Get the deal": [
         "取得優惠"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "移除此通知"
+      ],
+      "Rename": [
+        "重新命名"
       ],
       "Report a problem": [
         "回報問題"
@@ -932,6 +971,12 @@
       "Upgrade now": [
         "立即升級"
       ],
+      "Upgrade to Business": [
+        "升級企業版"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "升級以啟用${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "升級您的方案"
       ],
@@ -998,6 +1043,9 @@
       "Yes, undo": [
         "確定，請復原"
       ],
+      "Your server will be provisioned in the next days": [
+        "您的伺服器將在接下來的幾天內設定完成"
+      ],
       "Zoom in": [
         "放大"
       ],
@@ -1047,6 +1095,9 @@
       ],
       "${ ips } servers": [
         "${ ips } 台伺服器"
+      ],
+      "${ price } per dedicated server": [
+        "每專用伺服器${ price }"
       ],
       "${ price } per domain": [
         "每網域${ price }"
@@ -1124,6 +1175,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "若您現在離開，有一些事件或會無法匯入"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "取得10個別名!"
+      ],
+      "Get unlimited aliases!": [
+        "取得無限別名!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "嘗試${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "透過 ${ PASS_APP_NAME } 可以讓你使用專屬的帳號別名收信，隱藏個人身份識別。"
       ]
     },
     "Alter": {
@@ -1521,11 +1586,6 @@
       ],
       "Week": [
         "週"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "全部"
       ]
     },
     "Checkout row": {
@@ -2750,6 +2810,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "啟用${ PROTON_SENTINEL_NAME }以存取此功能"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "啟用進階記錄檔${ PROTON_SENTINEL_NAME }以存取此功能"
+      ],
+      "Enable advanced logs to access these features": [
+        "啟用進階記錄檔以存取功能"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
@@ -2805,11 +2874,20 @@
       "Back to ${ signIn }.": [
         "回到 ${ signIn }。"
       ],
+      "Didn't create an account?": [
+        "未註冊帳號?"
+      ],
+      "I didn't create this account": [
+        "我沒有註冊帳號"
+      ],
       "sign in": [
         "登入"
       ],
       "Thanks for letting us know": [
         "感謝您讓我們知道"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "這通常不需要擔心。只需按下確認此${ BRAND_NAME }帳號不是您的，我們將停用它。"
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "我們注意到此帳號並不屬於您。我們將會進行調查並採取相應措施。"
@@ -3131,6 +3209,15 @@
       ],
       "IMAP server is required": [
         "IMAP 伺服器為必填"
+      ],
+      "Impossible to create the gateway": [
+        "無法建立閘道器"
+      ],
+      "Impossible to edit the gateway": [
+        "無法設定閘道器"
+      ],
+      "Impossible to rename the gateway": [
+        "無法重新命名閘道器"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -3697,6 +3784,11 @@
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "停用你的帳號時出現問題"
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "聯絡人 ${ BRAND_NAME }"
@@ -4170,6 +4262,9 @@
       "Access to all countries": [
         "所有國家任選"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "添加(${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } devices": [
         "多達 ${ plusVpnConnections } 台裝置的連線"
       ],
@@ -4554,6 +4649,9 @@
       "Checkout": [
         "結帳"
       ],
+      "Country": [
+        "國家"
+      ],
       "Create your account": [
         "創建您的帳號"
       ],
@@ -4566,6 +4664,9 @@
       "Folders": [
         "資料夾"
       ],
+      "IP address": [
+        "IP 地址"
+      ],
       "Key type": [
         "金鑰類型"
       ],
@@ -4574,6 +4675,9 @@
       ],
       "Location": [
         "位置"
+      ],
+      "Members": [
+        "成員"
       ],
       "Name": [
         "名稱"
@@ -4592,6 +4696,15 @@
       ],
       "Select your pricing plan": [
         "選擇您的定價方案"
+      ],
+      "Server": [
+        "伺服器"
+      ],
+      "Server load": [
+        "伺服器負載"
+      ],
+      "Servers": [
+        "伺服器"
       ],
       "Status": [
         "狀態"
@@ -5092,6 +5205,9 @@
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
+      "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter }伺服器正在設定。通常需要接近${ provisioningDuration }。"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
@@ -5194,6 +5310,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
+      "active": [
+        "啟用"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "加入一個 @pm.me 的電郵位址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
       ],
@@ -5217,6 +5336,15 @@
       ],
       "Add multiple users to your organization at once.": [
         "一次新增多個使用者到您的組織中。"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "添加伺服器(${ availableAddedCount }可用)"
+      ],
+      "Adding ${ addedServerCount } gateway servers": [
+        "添加${ addedServerCount }閘道器伺服器"
+      ],
+      "Adding gateway servers: ${ serverNumber } / ${ total }": [
+        "添加閘道器伺服器:${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "額外設定"
@@ -5338,6 +5466,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "您確定要移除這位使用者的管理權限？"
       ],
+      "Ask your organisation admin to setup Gateways.": [
+        "請聯絡貴組織的的管理員以設定閘道。"
+      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -5358,6 +5489,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "適用於 macOS、Windows 和 Linux 。"
+      ],
+      "Awaiting transaction": [
+        "等待交易"
       ],
       "Background color": [
         "背景顏色"
@@ -5473,6 +5607,12 @@
       "Create in": [
         "建立在"
       ],
+      "Create your first Gateway": [
+        "創建您的第一個閘道器"
+      ],
+      "Creating gateway servers: ${ serverNumber } / ${ total }": [
+        "創建閘道器伺服器: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "建立您的帳號"
       ],
@@ -5509,6 +5649,9 @@
       "Data locked": [
         "資料已上鎖"
       ],
+      "dedicated servers": [
+        "專用伺服器"
+      ],
       "Dedicated servers": [
         "專用伺服器"
       ],
@@ -5520,6 +5663,9 @@
       ],
       "Delete link?": [
         "刪除連結？"
+      ],
+      "Deleting ${ deletedServerCount } gateway servers": [
+        "刪除${ deletedServerCount }閘道器伺服器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -5608,6 +5754,9 @@
       "Encryption setting updated": [
         "加密設定已更新"
       ],
+      "Enhance your network security": [
+        "強化您的網路安全"
+      ],
       "Enter key manually instead": [
         "改為手動輸入金鑰"
       ],
@@ -5662,6 +5811,9 @@
       "Failed to fetch logs.": [
         "擷取紀錄檔失敗。"
       ],
+      "Fill in user details": [
+        "填入使用者詳細資料"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
@@ -5685,6 +5837,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "刪除較舊的郵件或其它資料，以釋出空間"
+      ],
+      "Gateways": [
+        "閘道器"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
@@ -5818,6 +5973,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
       ],
+      "inactive": [
+        "未使用"
+      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -5880,6 +6038,9 @@
       ],
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
+      ],
+      "Lean more about gateways": [
+        "取得更多關於閘道的資訊"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "瞭解如何以第三方 VPN 應用程式登入 ${ VPN_APP_NAME }。"
@@ -5953,6 +6114,18 @@
       "Multi-user support not enabled.": [
         "多使用者支援尚未啟用。"
       ],
+      "Must be between 3 and 20 characters long.": [
+        "必須在 3 到 20 個字元長度之間。"
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "只能包含字母、數字與破折號 (-)。"
+      ],
+      "Must not contain spaces.": [
+        "不得包含空白"
+      ],
+      "Must start with a letter.": [
+        "必須以字母開頭。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
@@ -5980,6 +6153,12 @@
       "No folder selected": [
         "未選取任何資料夾"
       ],
+      "No gateways": [
+        "無閘道器"
+      ],
+      "No Gateways yet": [
+        "尚未有閘道器"
+      ],
       "No imports or forwarding history.": [
         "未有匯入或轉寄歷程記錄。"
       ],
@@ -5998,11 +6177,17 @@
       "Not a valid URL": [
         "非有效的圖像網址"
       ],
+      "Not yet available in our Android mobile app.": [
+        "尚未有可用的Android移動裝置的應用程式。"
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
       ],
-      "Number of users": [
-        "使用者總數"
+      "Number of dedicated servers in the organization": [
+        "團隊專用的伺服器數量"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "您嘗試分配的專用伺服器數量（${ addedCount }）超過了您的方案中仍可使用的數量（${ remainingCount }），因為您擁有 ${ ownedCount } 臺伺服器，且您已經使用了 ${ usedCount } 臺。"
       ],
       "of": [
         "/"
@@ -6025,6 +6210,9 @@
       "Open source": [
         "開放原始碼"
       ],
+      "Optional": [
+        "選項"
+      ],
       "Or select a particular server:": [
         "或挑選特定的伺服器："
       ],
@@ -6036,6 +6224,9 @@
       ],
       "Organization size": [
         "組織規模"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "將您的專用伺服器整理為閘道，然後決定哪些成員可以存取它們。"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
@@ -6205,6 +6396,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
+      "Remember to share the user's sign in details with them.": [
+        "請記得與使用者分享其登入詳細資料。"
+      ],
       "Remove one of your calendars to join this one": [
         "移除其中一個行事曆以加入目前這個"
       ],
@@ -6300,6 +6494,9 @@
       ],
       "Some keys successfully reactivated": [
         "部份金鑰都已成功重新啟用"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF 是用來指定使用者，已獲授權足以網域身分進行傳送電子郵件。因此，我們強烈建議將 ${ MAIL_APP_NAME } 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊商的控制台完成。"
@@ -6418,8 +6615,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "取決於您的裝置，這可能需要幾秒鐘或幾分鐘"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "這可能耗時最多 15 分鐘。請勿關閉此頁面，或斷開網路連線。"
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "可能需要等候一段時間，請勿關閉此頁面或中斷網路連線。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "此一 12字短語是你過去被要求設定的。"
@@ -6613,6 +6810,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "升級至${ PLAN_NAMES[PLANS.BUNDLE] }，${ PLAN_NAMES[PLANS.FAMILY] }，或${ PLAN_NAMES[PLANS.BUNDLE_PRO] }以存取${ PROTON_SENTINEL_NAME }。"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 地址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
       ],
@@ -6621,6 +6821,9 @@
       ],
       "Upload picture": [
         "上載圖像"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "上傳完成的CSV檔以創建"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "上載的檔案不是有效的私鑰。請驗證並再試一次。"
@@ -6639,6 +6842,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "將選取的電子郵件位址用作外部服務的 SMTP 使用者名稱、產生的通證用作 SMTP 密碼。"
+      ],
+      "Users": [
+        "使用者"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -6667,6 +6873,9 @@
       "Visa Secure logo": [
         "Visa Secure 標誌"
       ],
+      "Want servers in other countries?": [
+        "想要於不同國家的伺服器?"
+      ],
       "Warning:": [
         "警告："
       ],
@@ -6690,6 +6899,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "我們建議至少兩台伺服器以提供備援。"
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "我們建議在不同的地點擁有多台伺服器以提供備援。"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知組織成員為帳號設定雙重驗證"
@@ -6751,8 +6963,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
       ],
+      "Whole organization": [
+        "整個組織"
+      ],
       "Why?": [
         "為什麼？"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "使用商業或企業方案，您可以為您的組織購買${ boldDedicatedServers }，並設定${ boldGateways }來控制哪些使用者可以存取它們。"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "透過已加密的 ${ BRAND_NAME } 位置，您可以使用全部的 ${ BRAND_NAME_TWO } 服務"
@@ -6781,6 +6999,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
+        "您目前正在使用 ${ ipAddresses } 個可用伺服器中的 ${ ipCount } 個。"
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
+        "您目前使用${ organization.MaxMembers }的可用序號${ organization.UsedMembers }。"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
       ],
@@ -6795,6 +7019,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可啟用認證登入以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址和時間，以及失敗的登入嘗試。"
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "您可以立刻解鎖上方的設定，只要在您的方案中新增 ${ specificCountryCount } 個 IP 地址，或聯絡我們以取得量身打造的解決方案。"
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
@@ -6840,6 +7067,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
+      ],
+      "You have ${ availableCount } dedicated servers available.": [
+        "您有${ availableCount }台可用的獨立伺服器。"
       ],
       "You have no calendars to export.": [
         "您未有行事曆可匯出。"
@@ -7773,6 +8003,9 @@
       "Event notifications": [
         "事件通知"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "排除所有信件裡的垃圾郵件"
+      ],
       "Expiration (${ patternExpiration })": [
         "到期日(${ patternExpiration })"
       ],
@@ -7802,6 +8035,9 @@
       ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
+      ],
+      "Gateway name": [
+        "閘道器名稱"
       ],
       "Gift code": [
         "禮品代碼"
@@ -7989,6 +8225,9 @@
       "Organization password": [
         "組織密碼"
       ],
+      "Organization size": [
+        "組織規模"
+      ],
       "Other amount": [
         "其它金額"
       ],
@@ -8084,6 +8323,9 @@
       ],
       "Select your country": [
         "請選擇您的國家"
+      ],
+      "Select your plan": [
+        "選擇你的方案"
       ],
       "Send auto-reply": [
         "發送自動回覆"
@@ -8446,6 +8688,9 @@
       "Common sign up issues": [
         "常見註冊問題"
       ],
+      "Contact us": [
+        "聯絡我們"
+      ],
       "create a ticket": [
         "新增申請"
       ],
@@ -8599,6 +8844,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "變更密碼"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -8667,9 +8915,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登入您的 ${ BRAND_NAME } 帳號以存取所有加密的 ${ BRAND_NAME } 服務，如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與更多。還沒有帳號？免費建立一個吧。"
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "${ BRAND_NAME } 帳號 - 存取 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 與更多"
       ],
       "Try ${ planName } for free with this link": [
         "免費 ${ planName } 試用連結請點擊這裡"
@@ -9006,7 +9251,7 @@
         "${ n } 個 VPN 連線"
       ],
       "${ n } VPN connections per user": [
-        "${ n } 個 VPN 連線 / 每一位使用者"
+        "每一位用戶${ n }個VPN連線"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
@@ -9067,6 +9312,9 @@
       ],
       "Centralized billing": [
         "集中式計費"
+      ],
+      "Centralized settings and billings": [
+        "集中的設定與帳單"
       ],
       "Contact groups": [
         "聯絡人群組"
@@ -9426,6 +9674,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "按下\"付款\"，代表您同意我們的${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }"
       ],
@@ -9522,6 +9773,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件地址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "具有專用 IP 地址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
@@ -9554,6 +9808,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "如同資料夾，保險櫃是整理您項目的便捷方法。與朋友及家人分享保險櫃正在開發中。"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "關閉公共網路，改為只能透過私有閘道器取用公司資源"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "管理您的訂閱，包括自訂化您的方案。接受的付款方法包括信用卡、PayPal、加密貨幣及電匯。"
@@ -9697,14 +9954,32 @@
       "Browser extension": [
         "瀏覽器擴充套件"
       ],
+      "Censorship circumvention": [
+        "繞過審查制度"
+      ],
+      "Central control panel": [
+        "中控面板"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
       ],
       "Create up to ${ n } calendars": [
         "建立多達 ${ n } 個行事曆"
       ],
+      "Dedicated Account manager": [
+        "專屬客戶經理"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "專用伺服器位於${ numberOfCountries }+個國家"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "專用伺服器位於北美或歐洲"
+      ],
       "Multi-platform support": [
         "多平台支援"
+      ],
+      "Private gateways": [
+        "私有閘道器"
       ],
       "Require 2FA": [
         "要求兩階段認證"
@@ -9728,6 +10003,9 @@
       ],
       "Invalid code": [
         "代碼無效"
+      ],
+      "IP Address copied to clipboard": [
+        "IP地址已復製到剪貼簿。"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "指紋為 ${ fp } 的金鑰已刪除。"
@@ -10020,8 +10298,14 @@
       "Secure Core configs": [
         "Secure Core 組態設定"
       ],
+      "Select who can access...": [
+        "選取誰可存取"
+      ],
       "Standard server configs": [
         "標準伺服器組態設定"
+      ],
+      "The whole organization": [
+        "整個組織"
       ]
     },
     "Option delay send seconds": {
@@ -10414,9 +10698,6 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm password": [
-        "確認密碼"
-      ],
       "domain.com": [
         "domain.com"
       ],
@@ -10496,6 +10777,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "將您的姓名 (或公司名稱) 及郵寄地址加入到您的繳款單"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "選取符合訂閱的IP數量。每個多餘IP需要${ price }。您若需要多餘${ maxIPs }IP，請聯絡銷售團隊的${ contactHref }。"
       ]
     },
     "plan customizer, users": {
@@ -10690,6 +10976,17 @@
       ],
       "Reading emails of non-private users": [
         "讀取非私密使用者的電郵"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "管理員"
+      ],
+      "Primary admin": [
+        "主要系統管理員"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "Select file": {
@@ -10980,7 +11277,7 @@
         "為期 1 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 12 months": [
-        "為期 12 個月收費 ${ amount } "
+        "12 個月的費用為${ amount }"
       ],
       "Billed at ${ amount } for 15 months": [
         "為期 15 個月收費 ${ amount } "
@@ -10989,7 +11286,7 @@
         "為期 24 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 30 months": [
-        "為期 30 個月收費 ${ amount } "
+        "30 個月的費用為${ amount }"
       ],
       "for ${ n } months": [
         "為期${ n }個月"
@@ -11004,7 +11301,7 @@
         "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Save ${ discount }%": [
-        "省下  ${ discount }%"
+        "省下 ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "長達 1 個月的標準價 ${ amount } "
@@ -11013,13 +11310,13 @@
         "長達 12 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 15 months": [
-        "長達 15 個月的標準價 ${ amount } "
+        "15 個月的原價 ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
         "長達 24 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 30 months": [
-        "長達 30 個月的標準價 ${ amount } "
+        "30 個月的原價 ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -11630,6 +11927,12 @@
       "Edit": [
         "編輯"
       ],
+      "Email": [
+        "電子郵件"
+      ],
+      "Email address": [
+        "電子郵件地址"
+      ],
       "Email address or domain": [
         "電子郵件位址或網域"
       ],
@@ -11647,6 +11950,12 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Role": [
+        "職責"
       ],
       "Status": [
         "狀態"
@@ -11775,8 +12084,14 @@
       "Add invoice details": [
         "加入繳款單詳細資料"
       ],
+      "Add new user": [
+        "新增使用者"
+      ],
       "Add PayPal payment method": [
         "加入 PayPal 付款方法"
+      ],
+      "Add servers": [
+        "新增伺服器"
       ],
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
@@ -11790,8 +12105,11 @@
       "Add to spam list": [
         "新增到垃圾郵件清單"
       ],
-      "Add user": [
-        "加入使用者"
+      "Add user accounts": [
+        "添加使用者帳號"
+      ],
+      "Add users": [
+        "新增使用者"
       ],
       "Address verification": [
         "電郵位址驗證"
@@ -11922,6 +12240,15 @@
       "Create ${ selectedUserIds.length } users": [
         "建立 ${ selectedUserIds.length } 個使用者"
       ],
+      "Create a new Gateway": [
+        "建立新閘道器"
+      ],
+      "Create a new gateway": [
+        "建立新閘道器"
+      ],
+      "Create Gateway": [
+        "建立閘道器"
+      ],
       "Create multiple user accounts": [
         "新增多個使用者帳號"
       ],
@@ -11952,11 +12279,17 @@
       "Custom filters": [
         "自訂篩選器"
       ],
+      "Custom selection of users": [
+        "自選使用者"
+      ],
       "Customize and confirm": [
         "自訂並確認"
       ],
       "Customize calendar import": [
         "自訂行事曆匯入"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "自訂方案使用的 IP 位址數量"
       ],
       "Customize your mail import": [
         "自訂您的郵件匯入"
@@ -12015,6 +12348,9 @@
       "Delete user": [
         "刪除使用者"
       ],
+      "Delete user?": [
+        "刪除使用者?"
+      ],
       "Delete version history?": [
         "刪除版本紀錄?"
       ],
@@ -12051,11 +12387,26 @@
       "Edit filter": [
         "編輯篩選器"
       ],
+      "Edit Gateway ${ currentName }": [
+        "設定閘道器 ${ currentName }"
+      ],
+      "Edit servers": [
+        "編輯伺服器"
+      ],
       "Edit Sieve filter": [
         "編輯 Sieve 篩選器"
       ],
+      "Edit the list of servers of the gateway": [
+        "編輯閘道器伺服器清單"
+      ],
       "Edit user": [
         "編輯使用者"
+      ],
+      "Edit users": [
+        "編輯用戶"
+      ],
+      "Edit who can access the gateway": [
+        "編輯誰可存取閘道器"
       ],
       "Email": [
         "電子郵件"
@@ -12080,6 +12431,9 @@
       ],
       "Error": [
         "錯誤"
+      ],
+      "Every member of the organization can access": [
+        "團隊內的每個成員都能存取"
       ],
       "Export": [
         "匯出"
@@ -12110,6 +12464,9 @@
       ],
       "Folders and labels": [
         "資料夾和標籤"
+      ],
+      "Gateways": [
+        "閘道器"
       ],
       "General": [
         "一般"
@@ -12327,6 +12684,9 @@
       "Remove user?": [
         "要移除使用者嗎？"
       ],
+      "Rename the gateway": [
+        "重新命名閘道器"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -12413,6 +12773,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "升級至企業以設定獨立伺服器"
       ],
       "Short domain (@pm.me)": [
         "短網域 (@pm.me)"
@@ -12506,6 +12869,12 @@
       ],
       "Upgrade plan": [
         "升級方案"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "上傳CSV檔案以創建多重帳號"
+      ],
+      "Users": [
+        "使用者"
       ],
       "Users and addresses": [
         "使用者及電郵位址"
@@ -12638,6 +13007,9 @@
       "Addresses": [
         "電郵位址"
       ],
+      "Email": [
+        "電子郵件"
+      ],
       "Features": [
         "功能"
       ],
@@ -12702,6 +13074,15 @@
       "Account is disconnected": [
         "帳號已中斷連線"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "系統管理員可以更改訂閱方案、管理使用者帳號與密碼、授予系統管理權限給其他使用者。"
+      ],
+      "An approximate location of the IP address": [
+        "IP 地址的大概位置"
+      ],
+      "Any protection applied to suspicious activity": [
+        "套用安全至可疑的活動"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好佈景主題之間自動切換"
       ],
@@ -12713,6 +13094,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "在 30天後刪除垃圾桶與垃圾郵件夾中的郵件。 自動刪除功能可以將移到這些資料夾超過30天的郵件清光。"
+      ],
+      "Device information such as operating system": [
+        "裝置資訊如作業系統"
       ],
       "Each imported email will have this label": [
         "每一封匯入的電郵將加上此標籤"
@@ -12770,6 +13154,9 @@
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "The Internet Service Provider of the IP address": [
+        "網路服務提供商的IP地址"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的訂閱週期開始在${ formattedTime }"

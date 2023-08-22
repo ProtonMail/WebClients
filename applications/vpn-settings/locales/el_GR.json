@@ -8,14 +8,32 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "activate": [
+        "ενεργοποιήστε"
+      ],
+      "Activate organization key": [
+        "Ενεργοποιήστε το κλειδί οργανισμού"
+      ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
+      ],
       "Add credit / debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
       ],
       "Add credits": [
         "Προσθήκη πιστωτικών μονάδων"
       ],
+      "Add domain": [
+        "Προσθήκη domain"
+      ],
+      "Add multiple users": [
+        "Προσθήκη πολλαπλών χρηστών"
+      ],
       "Add PayPal": [
         "Προσθήκη PayPal"
+      ],
+      "Add user": [
+        "Προσθήκη χρήστη"
       ],
       "Apply": [
         "Εφαρμογή"
@@ -68,6 +86,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Continue anyway": [
+        "Συνέχεια οπωσδήποτε"
+      ],
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
@@ -79,6 +100,15 @@
       ],
       "Create": [
         "Δημιουργία"
+      ],
+      "Create Gateway": [
+        "Δημιουργία Πύλης"
+      ],
+      "Create user": [
+        "Δημιουργία χρήστη"
+      ],
+      "Create users": [
+        "Δημιουργία χρηστών"
       ],
       "Current plan": [
         "Τρέχον πρόγραμμα"
@@ -94,6 +124,12 @@
       ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete Gateway": [
+        "Διαγραφή Πύλης"
+      ],
+      "Delete user": [
+        "Διαγραφή χρήστη"
       ],
       "Delete your account": [
         "Διαγραφή του λογαριασμού σας"
@@ -125,6 +161,9 @@
       "Download all configurations": [
         "Λήψη όλων των διαμορφώσεων"
       ],
+      "Download our CSV template": [
+        "Λήψη του προτύπου CSV αρχείου μας"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -137,11 +176,20 @@
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
       ],
+      "Edit Gateway": [
+        "Επεξεργασία Πύλης"
+      ],
+      "Edit name": [
+        "Επεξεργασία ονόματος"
+      ],
       "Edit password": [
         "Επεξεργασία κωδικού πρόσβασης"
       ],
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
+      ],
+      "Edit servers": [
+        "Επεξεργασία διακομιστών"
       ],
       "Edit sign-in details": [
         "Επεξεργασία στοιχείων εισόδου"
@@ -149,8 +197,14 @@
       "Edit subscription": [
         "Επεξεργασία συνδρομής"
       ],
+      "Edit users": [
+        "Επεξεργασία χρηστών"
+      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Enable multi-user support": [
+        "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Εξερεύνηση άλλων προγραμμάτων ${ BRAND_NAME }"
@@ -169,6 +223,15 @@
       ],
       "Get more": [
         "Λήψη περισσότερων"
+      ],
+      "Get more addresses": [
+        "Απόκτηση περισσότερων διευθύνσεων"
+      ],
+      "Get more licenses": [
+        "Απόκτηση περισσότερων αδειών χρήσης"
+      ],
+      "Get more servers": [
+        "Αποκτήστε περισσότερους διακομιστές"
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -190,6 +253,12 @@
       ],
       "Increase": [
         "Αύξηση"
+      ],
+      "Invite": [
+        "Πρόσκληση"
+      ],
+      "Invite user": [
+        "Πρόσκληση χρήστη"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Διατηρήστε τη ${ vpnPlanNameShort } συνδρομή μου"
@@ -248,11 +317,17 @@
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
+      ],
+      "Rename": [
+        "Μετονομασία"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -269,11 +344,17 @@
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
       ],
+      "Reset keys": [
+        "Επαναφορά κλειδιών"
+      ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
       ],
       "Restore": [
         "Επαναφορά"
+      ],
+      "Restore administrator privileges": [
+        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -290,6 +371,12 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save address": [
+        "Αποθήκευση διεύθυνσης"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ],
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
@@ -302,8 +389,14 @@
       "Send code": [
         "Αποστολή κωδικού"
       ],
+      "Send email reminder": [
+        "Αποστολή email υπενθύμισης"
+      ],
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
+      ],
+      "Send reminder": [
+        "Αποστολή υπενθύμισης"
       ],
       "Set new password": [
         "Ορίστε νέο κωδικό"
@@ -344,6 +437,9 @@
       "Support": [
         "Υποστήριξη"
       ],
+      "Switch account": [
+        "Εναλλαγή λογαριασμού"
+      ],
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
       ],
@@ -367,6 +463,12 @@
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to Business": [
+        "Αναβαθμίστε στο Business"
+      ],
+      "Upgrade your plan": [
+        "Αναβαθμίστε το πρόγραμμά σας"
       ],
       "Use ${ label } theme": [
         "Χρήση ${ label } θέματος"
@@ -410,6 +512,9 @@
       "What do I get?": [
         "Τι θα αποκτήσω;"
       ],
+      "Your server will be provisioned in the next days": [
+        "Ο διακομιστής σας θα παρασχεθεί τις επόμενες ημέρες"
+      ],
       "Zoom in": [
         "Μεγέθυνση"
       ],
@@ -446,6 +551,66 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Disable": [
+        "Απενεργοποίηση"
+      ],
+      "Disable E2EE mail": [
+        "Απενεργοποίηση E2EE mail"
+      ],
+      "Disallow unsigned mail": [
+        "Να μην επιτρέπεται η ανυπόγραφη αλληλογραφία"
+      ],
+      "Enable": [
+        "Ενεργοποίηση"
+      ],
+      "Enable E2EE mail": [
+        "Ενεργοποίηση E2EE mail"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
+      ],
+      "Saving": [
+        "Αποθήκευση"
+      ],
+      "Set as default": [
+        "Ορισμός ως προεπιλογή"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Ενεργό"
+      ],
+      "Allow unsigned mail": [
+        "Να επιτρέπεται η ανυπόγραφη αλληλογραφία"
+      ],
+      "Default": [
+        "Προεπιλογή"
+      ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
+      "External": [
+        "Εξωτερική"
+      ],
+      "Missing keys": [
+        "Κλειδιά που λείπουν"
+      ],
+      "No E2EE mail": [
+        "Χωρίς E2EE mail"
+      ],
+      "Orphan": [
+        "Ορφανό"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "διαχειριστής"
       ]
     },
     "Alter": {
@@ -1430,9 +1595,30 @@
         "(μέσω ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Δεν βρέθηκαν αποτελέσματα αναζήτησης"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Διαθέσιμες πιστώσεις"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Πρότυπο CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Σφάλμα στη σειρά ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Φαίνεται ότι από το αρχείο σας λείπει η '${ options.fieldName }' κεφαλίδα."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Εντοπίσαμε σφάλματα σε πολλές σειρές κατά την εισαγωγή, παρακαλούμε ελέγξτε το αρχείο CSV σας."
       ]
     },
     "Cycle": {
@@ -1446,6 +1632,14 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Καθυστερημένο τιμολόγιο"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "Λογότυπο ProtonMail και σύμβολο συν"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ]
     },
     "Downgrade account reason": {
@@ -1479,9 +1673,20 @@
         "Βοηθήστε μας να βελτιωθούμε!"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } είναι το όνομα χρήστη σας. Για να δημιουργήσετε ${ Local }@${ Domain }, παρακαλούμε πηγαίνετε Ρυθμίσεις > Μηνύματα και σύνταξη > Σύντομο domain (pm.me)"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
       ],
       "Amount above the maximum.": [
         "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
@@ -1504,17 +1709,32 @@
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
+      "Error": [
+        "Σφάλμα"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
       ],
+      "Impossible to create the gateway": [
+        "Δεν είναι δυνατή η δημιουργία της πύλης"
+      ],
+      "Impossible to edit the gateway": [
+        "Δεν είναι δυνατή η επεξεργασία της πύλης"
+      ],
+      "Impossible to rename the gateway": [
+        "Δεν είναι δυνατή η μετονομασία της πύλης"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Incorrect password": [
+        "Λανθασμένος κωδικός πρόσβασης"
       ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
@@ -1537,11 +1757,20 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Name does not match": [
+        "Το όνομα δεν ταιριάζει"
+      ],
       "Name on card required": [
         "Απαιτείται το όνομα κατόχου της κάρτας"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Organization key is not decrypted": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Organization key is not decrypted.": [
+        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
@@ -1561,6 +1790,15 @@
       "Payments are currently not available, please try again later": [
         "Οι πληρωμές δεν είναι διαθέσιμες προς το παρόν, παρακαλώ δοκιμάστε ξανά αργότερα"
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
+      ],
       "Please generate keys before you try to change your password": [
         "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
@@ -1569,6 +1807,12 @@
       ],
       "Please set a recovery phone number first": [
         "Παρακαλούμε ορίστε πρώτα ένα τηλέφωνο ανάκτησης"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
@@ -1603,6 +1847,12 @@
       "The minimum payment we accept is ${ price }": [
         "Η ελάχιστη αποδεκτή πληρωμή είναι ${ price }"
       ],
+      "The organization key must be activated first": [
+        "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
@@ -1636,8 +1886,34 @@
       "You have no invoices.": [
         "Δεν έχετε τιμολόγια."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Έχετε χρησιμοποιήσει όλες τις διευθύνσεις στο πρόγραμμά σας. Για προσθήκη νέας διεύθυνσης, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Πρέπει να ενεργοποιήσετε τα κλειδιά της επιχείρησής σας. Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας \"${ formattedFilename }\". Εσφαλμένη μορφή αρχείου."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου \"${ formattedFilename }\". Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Ανεβάστε ένα αρχείο CSV με ${ MAX_NUMBER_OF_USER_ROWS } λογαριασμούς χρηστών ή λιγότερο."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Το αρχείο σας \"${ formattedFilename }\" είναι άδειο."
       ]
     },
     "Error message": {
@@ -1683,11 +1959,23 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Δημιουργία νέου χρήστη"
+      ],
       "Decline invitation": [
         "Αρνηση πρόσκλησης."
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Πρόσκληση ενός υπάρχοντος χρήστη του ${ BRAND_NAME }"
+      ],
+      "Invite member to your family": [
+        "Προσκαλέστε μέλος στην οικογένειά σας"
+      ],
+      "Set up family group": [
+        "Ρύθμιση οικογενειακής ομάδας"
       ],
       "Switch plans": [
         "Αλλαγή προγράμματος;"
@@ -1749,8 +2037,14 @@
       "Manage user accounts": [
         "Διαχείριση λογαριασμών χρηστών"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Μόνο 10 αποδεκτές προσκλήσεις επιτρέπονται σε περίοδο 6 μηνών."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
       ],
       "Pending invitation": [
         "Πρόσκληση σε αναμονή"
@@ -1782,8 +2076,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Έχετε φτάσει το όριο των 10 αποδεκτών προσκλήσεων σε 6 μήνες."
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Έχετε φτάσει το όριο των 10 αποδεκτών προσκλήσεων σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες."
+      ],
       "You have successfully joined the Family plan": [
         "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν δημιουργήσετε έναν νέο χρήστη."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
@@ -1812,8 +2115,40 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Δημιουργήστε και διαχειριστείτε μέλη της οικογένειας και εκχωρήστε τους χώρο αποθήκευσης κοινόχρηστο μεταξύ ${ DRIVE_APP_NAME } και ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Εάν ο χρήστης έχει ήδη διεύθυνση ${ MAIL_APP_NAME }, πληκτρολογήστε την εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
+      ],
       "Online privacy, for your whole family": [
         "Online ιδιωτικότητα, για όλη την οικογένειά σας"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Για δημιουργία νέου χρήστη, απαιτείται ένας παραμετροποιημένος προσαρμοσμένος τομέας."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Μπορείτε να αυξήσετε ή να μειώσετε το χώρο αποθήκευσης για αυτόν το χρήστη."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Προσθέστε, καταργήστε και κάντε αλλαγές σε λογαριασμούς χρηστών στην ομάδα οικογένειάς σας."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Προσθέστε, καταργήστε και κάντε αλλαγές σε λογαριασμούς χρηστών στον οργανισμό σας."
       ]
     },
     "familyOffer_2023:Label": {
@@ -1822,6 +2157,9 @@
       ],
       "Enter organization name to confirm": [
         "Για επιβεβαίωση, εισάγετε το όνομα του οργανισμού"
+      ],
+      "Family name": [
+        "Όνομα οικογένειας"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -1832,15 +2170,44 @@
         "Αυτό θα καταργήσει όλες τις premium δυνατότητες του ${ BRAND_NAME } για κάθε μέλος της οικογένειας σας."
       ]
     },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "Το ${ member.Name } αφαιρέθηκε από το ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Παρουσιάστηκε σφάλμα. Παρακαλώ προσπαθήστε ξανά."
+      ],
+      "Member updated": [
+        "Το μέλος ενημερώθηκε"
+      ]
+    },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Προσθήκη χρήστη στον λογαριασμό σας ${ PLAN_NAMES.visionary2022 }"
+      ],
+      "Change family name": [
+        "Αλλαγή ονόματος οικογένειας"
+      ],
       "Delete family group?": [
         "Διαγραφή ομάδας οικογένειας;"
       ],
       "Delete organization?": [
         "Διαγραφή οργανισμού;"
       ],
+      "Edit user storage": [
+        "Επεξεργασία χώρου αποθήκευσης χρήστη"
+      ],
+      "Family name": [
+        "Όνομα οικογένειας"
+      ],
       "Introducing ${ planName }": [
         "Παρουσιάζουμε το ${ planName }"
+      ],
+      "Invite a user": [
+        "Πρόσκληση χρήστη"
+      ],
+      "Set family name": [
+        "Ορισμός ονόματος οικογένειας"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -1855,8 +2222,19 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } σύνδεση VPN",
+        "${ MaxVPN } συνδέσεις VPN"
+      ],
       "Access to all countries": [
         "Πρόσβαση σε όλες τις χώρες"
+      ],
+      "Add": [
+        "Προσθήκη"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Προσθήκη (${ numberOfAddedServers })",
+        "Προσθήκη (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Σύνδεση για έως και ${ plusVpnConnections } συσκευή",
@@ -2072,11 +2450,49 @@
       "Checkout": [
         "Ολοκλήρωση αγορών"
       ],
+      "Country": [
+        "Χώρα"
+      ],
       "Create your account": [
         "Δημιουργήστε το λογαριασμό σας."
       ],
+      "IP address": [
+        "Διεύθυνση IP"
+      ],
+      "Members": [
+        "Μέλη"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
       "Select your pricing plan": [
         "Επιλέξτε το πρόγραμμα χρέωσης:"
+      ],
+      "Server": [
+        "Διακομιστής"
+      ],
+      "Server load": [
+        "Φορτίο διακομιστή"
+      ],
+      "Servers": [
+        "Διακομιστές"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ],
+      "Username": [
+        "Όνομα χρήστη"
       ]
     },
     "Human verification method": {
@@ -2120,8 +2536,16 @@
         "${ number } διακομιστής",
         "${ number } διακομιστές"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
+        "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
+      ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } χρήστης βρέθηκε",
+        "${ userFound } χρήστες βρέθηκαν"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } απαιτείται για σύνδεση επιπέδου Χώρας."
@@ -2160,20 +2584,51 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "active": [
+        "ενεργό"
+      ],
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Προσθέστε άλλο ένα επίπεδο ασφάλειας στον λογαριασμό σας. Θα πρέπει να επαληθεύετε τον εαυτό σας με έλεγχο ταυτότητας δύο παραγόντων κάθε φορά που συνδέεστε."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
+        "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
+        "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Προσθήκη διακομιστή πύλης: ${ serverNumber } / ${ total }",
+        "Προσθήκη διακομιστών πύλης: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Πρόσθετες επιλογές"
+      ],
+      "address": [
+        "διεύθυνση",
+        "διευθύνσεις"
+      ],
+      "Admin account allocation": [
+        "Κατανομή στον λογαριασμό του διαχειριστή"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητές τους"
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
+      ],
+      "Allocated": [
+        "Κατανεμημένος"
+      ],
+      "Already allocated": [
+        "Ήδη κατανεμημένος"
+      ],
+      "Already used": [
+        "Ήδη σε χρήση"
       ],
       "American Express SafeKey logo": [
         "λογότυπο American Express SafeKey"
@@ -2190,11 +2645,20 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Τυχόν μέθοδος ${ twoFa } στον λογαριασμό σας θα απενεργοποιηθεί."
       ],
+      "Are you sure you want to delete this address?": [
+        "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
       ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
+      ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
@@ -2211,8 +2675,17 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Φροντίστε να αντιγράψετε τον κωδικό πρόσβασής σας και να τον αποθηκεύσετε κάπου ασφαλή."
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Πρωτού να δημιουργήσετε αυτήν τη διεύθυνση, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτήν."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Πρωτού να ενεργοποιήσετε αυτό το λογαριασμό, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για τη νέα διεύθυνση."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
       "Billed every 12 months": [
         "Χρέωση κάθε 12 μήνες"
@@ -2253,6 +2726,22 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "Δημιουργήστε έναν νέο λογαριασμό και κοινοποιείστε στον χρήστη τη διεύθυνση και τον κωδικό."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Δημιουργήστε διευθύνσεις για άλλα άτομα, διαχειριστείτε το ${ MAIL_APP_NAME } για μια επιχείρηση, σχολείο ή ομάδα. Ξεκινήστε προσθέτοντας το όνομα και τον ιδιαίτερο τομέα του οργανισμού σας (π.χ. @yourcompany.com). "
+      ],
+      "Create your first Gateway": [
+        "Δημιουργήστε την πρώτη Πύλη σας"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
+        "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Δημιουργία του λογαριασμού σας"
       ],
@@ -2268,14 +2757,30 @@
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
       ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
+        "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν το ξεχάσετε, δε θα μπορείτε να συνδεθείτε ή να αποκρυπτογραφήσετε τα μηνύματα σας."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Να μη χρησιμοποιούνται διαπιστευτήρια OpenVPN / IKEv2 στις εφαρμογές ${ VPN_APP_NAME } ή στον πίνακα ελέγχου του. ${ learnMore }"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
@@ -2301,6 +2806,9 @@
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
       ],
+      "Enhance your network security": [
+        "Βελτιώστε την ασφάλεια του δικτύου σας"
+      ],
       "Enter key manually instead": [
         "Εναλλακτικά, εισάγετε χειροκίνητα το κλειδί"
       ],
@@ -2315,6 +2823,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Εισάγετε τον κωδικό που στάλθηκε στο ${ email }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο των ενοχλητικών."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
@@ -2343,6 +2854,9 @@
       "expires ${ expirationDate }": [
         "λήγει ${ expirationDate }"
       ],
+      "Fill in user details": [
+        "Συμπληρώστε τα στοιχεία χρήστη"
+      ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
@@ -2358,6 +2872,9 @@
       "Free up some space or contact your administrator.": [
         "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
       ],
+      "Gateways": [
+        "Πύλες"
+      ],
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
@@ -2369,6 +2886,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Εάν δεν είναι κατάλληλο για εσάς, θα σας επιστρέψουμε τα χρήματα."
@@ -2412,6 +2932,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
+      "inactive": [
+        "ανενεργό"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
       ],
@@ -2432,6 +2955,9 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
+      ],
+      "Lean more about gateways": [
+        "Μάθετε περισσότερα σχετικά με τις πύλες"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Μάθετε πώς μπορείτε να συνδεθείτε στο ${ VPN_APP_NAME } με VPN εφαρμογές τρίτων."
@@ -2463,8 +2989,38 @@
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
+      "Member": [
+        "Μέλος"
+      ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
+      ],
+      "more": [
+        "περισσότερα"
+      ],
+      "Multi-user support not enabled.": [
+        "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
+      ],
+      "Must be between 3 and 20 characters long.": [
+        "Πρέπει να είναι μεταξύ 3 και 20 χαρακτήρες."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Πρέπει να περιέχει μόνο γράμματα, ψηφία και παύλες (-)."
+      ],
+      "Must not contain spaces.": [
+        "Δεν πρέπει να περιέχει κενά."
+      ],
+      "Must start with a letter.": [
+        "Πρέπει να ξεκινάει με γράμμα."
+      ],
+      "No addresses exist": [
+        "Δεν υπάρχουν διευθύνσεις"
+      ],
+      "No gateways": [
+        "Δεν υπάρχουν πύλες"
+      ],
+      "No Gateways yet": [
+        "Δεν υπάρχουν ακόμη πύλες"
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
@@ -2478,8 +3034,8 @@
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
-      "Number of users": [
-        "Αριθμός χρηστών"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Ο αριθμός των αποκλειστικών διακομιστών που προσπαθείτε να εκχωρήσετε (${ addedCount }) είναι μεγαλύτερος από αυτόν που είναι ακόμα διαθέσιμος στο πλάνο σας (${ remainingCount }) καθώς διαθέτετε ${ ownedCount } και χρησιμοποιείτε ήδη ${ usedCount }."
       ],
       "of": [
         "από"
@@ -2493,11 +3049,26 @@
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
       ],
+      "Organization keys activated": [
+        "Τα κλειδιά οργανισμού ενεργοποιήθηκαν"
+      ],
+      "Organization keys restored": [
+        "Τα κλειδιά του οργανισμού έχουν αποκατασταθεί"
+      ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Οργανώστε τους αποκλειστικούς διακομιστές σας σε Πύλες και αποφασίστε ποια μέλη μπορούν να έχουν πρόσβαση σε αυτούς."
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -2508,14 +3079,31 @@
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
       ],
+      "Please add a password for the user on row": [
+        "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε κωδικούς πρόσβασης για τους χρήστες στις σειρές"
+      ],
+      "Please add an email address for the user on row": [
+        "Παρακαλούμε προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε διευθύνσεις ηλεκτρονικού ταχυδρομείου για τους χρήστες στις σειρές"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Επαληθεύστε την πληρωμή σας στην καρτέλα επαλήθευσης."
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Ελέγξτε το αρχείο σας για σφάλματα ή επικοινωνήστε με την υποστήριξη πελατών για περισσότερες πληροφορίες."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Παρακαλούμε ελέγξτε το αρχείο σας ή δοκιμάστε να χρησιμοποιήσετε το ${ csvTemplateButton } μας."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Λάβετε υπόψη ότι αν διαγράψετε αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου χρησιμοποιώντας αυτήν τη διεύθυνση."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
@@ -2550,6 +3138,9 @@
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
       ],
+      "Queued": [
+        "Σε αναμονή"
+      ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
       ],
@@ -2562,11 +3153,17 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
+      ],
       "Restore": [
         "Επαναφορά"
       ],
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
       ],
       "Saving your password": [
         "Ο κωδικός πρόσβασης σας αποθηκεύεται"
@@ -2579,6 +3176,9 @@
       ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -2604,9 +3204,24 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Ορισμένοι από τους διαθέσιμους διακομιστές σας μπορούν να χρησιμοποιηθούν μόνο σε συγκεκριμένες χώρες λόγω πρόσφατων καταργήσεων"
+      ],
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
+      ],
+      "Storage allocated to this user": [
+        "Κατανεμημένος αποθηκευτικός χώρος σε αυτόν τον χρήστη"
+      ],
+      "Storage for users": [
+        "Αποθηκευτικός χώρος για χρήστες"
+      ],
+      "Storage used by this user": [
+        "Αποθηκευτικός χώρος σε χρήση από αυτόν τον χρήστη"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -2625,6 +3240,27 @@
       ],
       "Thank you": [
         "Ευχαριστούμε"
+      ],
+      "The following address is invalid.": [
+        "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
+        "Οι ακόλουθες διευθύνσεις είναι μη έγκυρες."
+      ],
+      "The following address is unavailable.": [
+        "Η ακόλουθη διεύθυνση είναι μη διαθέσιμη.",
+        "Οι ακόλουθες διευθύνσεις είναι μη διαθέσιμες."
+      ],
+      "The following address was not created.": [
+        "Η ακόλουθη διεύθυνση δεν δημιουργήθηκε.",
+        "Οι ακόλουθες διευθύνσεις δεν δημιουργήθηκαν."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Τα ακόλουθα μέλη θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να ενεργοποιήσουν τον έλεγχο ταυτότητας δύο παραγόντων το συντομότερο δυνατό."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Η μορφή του αρχείου CSV είναι εσφαλμένη."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
@@ -2647,14 +3283,26 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Αυτό μπορεί να πάρει μερικά δευτερόλεπτα ή μερικά λεπτά, αναλόγως της συσκευής σας"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή σας επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συσσωρεύσει. Το υπόλοιπο ποσό της εγγραφής σας θα επιστραφεί στον λογαριασμό σας ως πίστωση."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Αυτό θα δημιουργήσει ένα κλειδί κρυπτογράφησης για τον οργανισμό σας. Τα πλήκτρα 4096-bit λειτουργούν μόνο σε υπολογιστές υψηλής απόδοσης, για τους περισσότερους χρήστες συνιστούμε να χρησιμοποιείτε κλειδιά 2048-bit."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Αυτό θα διαγράψει μόνιμα τα δεδομένα και όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που σχετίζονται με αυτόν τον χρήστη."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Αυτό θα διαγράψει οριστικά το λογαριασμό σας και όλα τα δεδομένα του. Δεν θα μπορέσετε να επανενεργοποιήσετε αυτόν τον λογαριασμό."
@@ -2676,6 +3324,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
       "to continue to ${ product }": [
         "για συνέχιση στο ${ product }"
@@ -2740,11 +3391,20 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Ανεβάστε το ολοκληρωμένο CSV αρχείο σας για να δημιουργήσετε λογαριασμούς"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Χρησιμοποιήστε τους διαφορετικούς τύπους διευθύνσεων email και ψευδωνύμων που προσφέρονται από το ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
+      ],
+      "Users": [
+        "Χρήστες"
       ],
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
@@ -2766,6 +3426,9 @@
       ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
+      ],
+      "Want servers in other countries?": [
+        "Θέλετε διακομιστές σε άλλες χώρες;"
       ],
       "Warning:": [
         "Προειδοποίηση:"
@@ -2790,6 +3453,12 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Συνιστούμε να έχετε τουλάχιστον 2 διακομιστές για να παρέχετε εφεδρεία."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Συνιστούμε να έχετε πολλούς διακομιστές σε διαφορετικές τοποθεσίες για να παρέχετε πλεονασμό."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Συνιστούμε να ειδοποιήσετε τα μέλη του οργανισμού και να τους ζητήσετε να ρυθμίσουν το 2FA για τους λογαριασμούς τους πριν επιβάλετε τη χρήση του 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
         "Αντί για αυτό, συνιστούμε χρήση της φράσης σας ανάκτησης."
@@ -2824,8 +3493,17 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Κατά την ανανέωση της συνδρομής σας, θα χρησιμοποιηθούν τυχόν διαθέσιμες πιστώσεις πριν σας χρεώσουμε με τον παραπάνω τρόπο πληρωμής."
       ],
+      "Whole organization": [
+        "Ολόκληρος ο οργανισμός"
+      ],
       "Why?": [
         "Γιατί;"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
+      ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -2839,8 +3517,22 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
+        "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμων αποκλειστικών διακομιστών."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τη ${ organization.MaxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
+        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τις ${ organization.MaxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Μπορείτε να ξεκλειδώσετε αμέσως την παραπάνω ρύθμιση προσθέτοντας ${ specificCountryCount } στον αριθμό διευθύνσεων IP στο πλάνο σας ή να επικοινωνήσετε μαζί μας για εξατομικευμένες λύσεις."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
@@ -2858,6 +3550,9 @@
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη συνδρομή σας."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Τώρα μπορείτε να έχετε πρόσβαση και να διαχειριστείτε τον λογαριασμό ως διαχειριστής."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Μπορείτε να έχετε μόνο μία παρουσία συνομιλίας ανοιχτή κάθε φορά. Κλείστε τις προηγούμενες συνομιλίες πριν ξεκινήσετε μια νέα."
       ],
@@ -2867,11 +3562,18 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να συνδεθείτε σε εφαρμογές ${ VPN_APP_NAME } ή στον πίνακα ελέγχου ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Έχετε ${ availableCount } διαθέσιμο αποκλειστικό διακομιστή.",
+        "Έχετε ${ availableCount } διαθέσιμους αποκλειστικούς διακομιστές."
+      ],
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "Πρέπει να ενεργοποιήσετε το ιδιωτικό κλειδί του οργανισμού σας με τον κωδικό πρόσβασης του οργανισμού δημιουργίας αντιγράφων ασφαλείας που σας έχει δοθεί από τον διαχειριστή του οργανισμού σας."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Για να κάνετε εφικτή την υποβάθμιση, πρέπει να απενεργοποιήσετε ή αφαιρέσετε τυχόν πλεονάζοντες χρήστες, διευθύνσεις και τομείς του ${ MAIL_APP_NAME }."
@@ -2932,6 +3634,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Ο κωδικός πρόσβασης για τον οργανισμό σας μπορεί να διαμοιραστεί με άλλους χρήστες που θέλετε να δώσετε δικαιώματα διαχειριστή. Είναι επίσης ένας κώδικας επείγουσας ανάκτησης για να αποκτήσετε πρόσβαση στον οργανισμό σας σε περίπτωση που χάσετε την πρόσβαση στο λογαριασμό σας. Παρακαλώ αποθηκεύστε αυτόν τον κωδικό και κρατήστε τον ασφαλή."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Τα στοιχεία πληρωμών σας είναι προστατευμένα με κρυπτογράφηση TLS καθώς και με νόμους της Ελβετίας περί ιδιωτικότητας."
@@ -3025,6 +3730,14 @@
         "Συνδρομή"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Αργή, αλλά αυξημένης συμβατότητας με παλαιό λογισμικό)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Τάχιστη, πλέον σύγχρονη)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
@@ -3038,6 +3751,23 @@
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } ημέρα",
+        "${ nbDay } ημέρες"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
+        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων email"
+      ],
+      "Account storage": [
+        "Χωρητικότητα λογαριασμού"
+      ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Addresses": [
+        "Διευθύνσεις"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -3117,6 +3847,9 @@
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
       ],
+      "Confirm organization password": [
+        "Επιβεβαίωση κωδικού πρόσβασης οργανισμού"
+      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -3134,6 +3867,9 @@
       ],
       "Country": [
         "Χώρα"
+      ],
+      "Create password": [
+        "Δημιουργία κωδικού πρόσβασης"
       ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
@@ -3165,6 +3901,9 @@
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -3183,6 +3922,9 @@
       "Expires": [
         "Λήγει"
       ],
+      "Gateway name": [
+        "Όνομα πύλης"
+      ],
       "Gift code": [
         "Κωδικός δώρου"
       ],
@@ -3198,6 +3940,9 @@
       "Key": [
         "Κλειδί"
       ],
+      "Key strength": [
+        "Ισχύς Κλειδιού"
+      ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
       ],
@@ -3209,6 +3954,9 @@
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
+      ],
+      "Name": [
+        "Όνομα"
       ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
@@ -3227,6 +3975,9 @@
       ],
       "New mailbox password": [
         "Νέος Κωδικός Θυρίδας"
+      ],
+      "New organization password": [
+        "Νέος κωδικός οργανισμού"
       ],
       "New password": [
         "Νέος κωδικός"
@@ -3251,6 +4002,15 @@
       ],
       "Optional": [
         "Προαιρετικό"
+      ],
+      "Organization name": [
+        "Όνομα οργανισμού"
+      ],
+      "Organization password": [
+        "Κωδικός πρόσβασης οργανισμού"
+      ],
+      "Organization size": [
+        "Μέγεθος οργανισμού"
       ],
       "Other amount": [
         "Άλλο ποσό"
@@ -3291,6 +4051,12 @@
       "Recovery phrase": [
         "Φράση ανάκτησης"
       ],
+      "Require 2FA for administrators": [
+        "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για διαχειριστές"
+      ],
+      "Require 2FA for everyone": [
+        "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για όλους"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -3302,6 +4068,9 @@
       ],
       "Select your country": [
         "Επιλέξτε τη χώρα σας"
+      ],
+      "Select your plan": [
+        "Επιλέξτε το πλάνο σας"
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
@@ -3317,6 +4086,9 @@
       ],
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
+      ],
+      "User": [
+        "Χρήστης"
       ],
       "User's new password": [
         "Νέος κωδικός πρόσβασης χρήστη"
@@ -3352,6 +4124,17 @@
     "label": {
       "Recovery phone number": [
         "Τηλεφωνικός αριθμός ανάκτησης"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Διαχειριστής"
+      ],
+      "Private": [
+        "Ιδιωτικό"
+      ],
+      "VPN connections": [
+        "Συνδέσεις VPN"
       ]
     },
     "Label for news": {
@@ -3409,6 +4192,9 @@
       "Common sign up issues": [
         "Συνήθη ζητήματα εγγραφής"
       ],
+      "Contact us": [
+        "Επικοινωνήστε μαζί μας"
+      ],
       "Create account": [
         "Δημιουργία λογαριασμού"
       ],
@@ -3460,6 +4246,9 @@
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
       ],
+      "Upgrade your plan": [
+        "Αναβαθμίστε το πλάνο σας"
+      ],
       "View guide": [
         "Προβολή οδηγού"
       ],
@@ -3485,6 +4274,32 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Αναβαθμίστε για να ξεκλειδώσετε την υποστήριξη συνομιλίας και άλλες πριμοδοτημένες λειτουργίες ή χρησιμοποιήστε τη δωρεάν φόρμα υποστήριξης για να αναφέρετε το πρόβλημά σας."
+      ]
+    },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } του μέλους του οργανισμού σας χρησιμοποιεί έλεγχο ταυτότητας δύο παραγόντων.",
+        "${ twoFAMembers.length }/${ members.length } των μέλλων του οργανισμού σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
+      ]
+    },
+    "Member action": {
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
+      "Revoke sessions": [
+        "Ανάκληση Συνεδριών Σύνδεσης"
+      ],
+      "Sign in": [
+        "Είσοδος"
       ]
     },
     "Message": {
@@ -3560,6 +4375,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: action": {
@@ -3688,6 +4506,9 @@
       "Advanced sharing security": [
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+      ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
@@ -3775,6 +4596,9 @@
       "GDPR data processing agreement": [
         "Συμφωνία επεξεργασίας δεδομένων GDPR"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
       "High-speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
@@ -3827,6 +4651,12 @@
       ],
       "Router support": [
         "Υποστήριξη δρομολογητή"
+      ],
+      "Schedule messages at any time": [
+        "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
+      ],
+      "Search message content": [
+        "Αναζήτηση εντός περιεχομένου μηνυμάτων"
       ],
       "Secure Core servers": [
         "Διακομιστές Secure Core"
@@ -3904,6 +4734,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
+      "Up to 15 email addresses": [
+        "Έως 15 ηλ. διευθύνσεις"
+      ],
+      "Up to 3 TB of storage": [
+        "Έως 3 TB αποθηκευτικού χώρου"
+      ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
       ],
@@ -3917,6 +4753,20 @@
         "Κοινή χρήση Κρύπτης και Στοιχείων (σύντομα διαθέσιμη)"
       ]
     },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Χρησιμοποιήστε τη δική σας προσαρμοσμένη διεύθυνση τομέα ηλεκτρονικού ταχυδρομείου, π.χ. you@yourname.com"
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "Υποστήριξη"
@@ -3928,6 +4778,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "Το ${ BRAND_NAME } σας επιτρέπει τη δημιουργία διευθύνσεων και τη διαχείριση λογαριασμών για άλλους χρήστες. Ιδανικό για οικογένειες και οργανισμούς."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Προηγμένη ασφάλεια δικτύου και διαχείριση πρόσβασης με αποκλειστικές ασφαλείς Πύλες"
@@ -4239,6 +5092,11 @@
         "Μπορείτε να έχετε περισσότερους από έναν διαχειριστές. Όλοι οι διαχειριστές μπορούν να προσθέτουν και να διαχειρίζονται χρήστες, αλλά μόνο ο κύριος διαχειριστής έχει τον έλεγχο της χρέωσης."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Περιλαμβάνεται σε όλα τα προγράμματα ${ BRAND_NAME } για Επιχειρήσεις."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Υποστήριξη 24/7"
@@ -4297,11 +5155,32 @@
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
+      ],
+      "An external address cannot be default": [
+        "Μια εξωτερική διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
+      "IP Address copied to clipboard": [
+        "Η διεύθυνση IP αντιγράφηκε στο πρόχειρο"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
+      ],
+      "Reminder has been sent": [
+        "Η υπενθύμιση έχει σταλεί"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Ο έλεγχος ταυτότητας δύο παραγόντων έχει επιβληθεί για τους διαχειριστές"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Ο έλεγχος ταυτότητας δύο παραγόντων έχει επιβληθεί για όλα τα μέλη"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Ο έλεγχος ταυτότητας δύο παραγόντων δεν απαιτείται πλέον"
       ]
     },
     "Onboarding": {
@@ -4340,8 +5219,43 @@
       "Secure Core configs": [
         "Διαμορφώσεις Secure Core"
       ],
+      "Select who can access...": [
+        "Επιλέξτε ποιος μπορεί να έχει πρόσβαση..."
+      ],
       "Standard server configs": [
         "Ρυθμίσεις τυπικού διακομιστή"
+      ],
+      "The whole organization": [
+        "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } για να προσθέσετε περισσότερους χρήστες ή να καταργήσετε ορισμένους λογαριασμούς χρηστών για να ελευθερώσετε χώρο."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } για να αποκτήσετε περισσότερους λογαριασμούς ή να καταργήσετε την πρόσβαση VPN από ορισμένους χρήστες."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } για να λάβετε περισσότερες διευθύνσεις ή να καταργήσετε ορισμένες διευθύνσεις για να ελευθερώσετε χώρο."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } για να αποκτήσετε περισσότερο χώρο αποθήκευσης ή να αφαιρέσετε κάποιο χώρο αποθήκευσης για να ελευθερώσετε χώρο."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσια διεύθυνση.",
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσιες διευθύνσεις."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο του ${ availableNumberOfMembers } επιπλέον χρήστη του οργανισμού.",
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο των ${ availableNumberOfMembers } επιπλέον χρηστών του οργανισμού."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιο λογαριασμό VPN.",
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιους λογαριασμούς VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
       ]
     },
     "pass_signup_2023: Action": {
@@ -4383,6 +5297,15 @@
       "Add gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
+      "Address": [
+        "Διεύθυνση"
+      ],
+      "Choose a name": [
+        "Επιλέξτε ένα όνομα"
+      ],
+      "Choose display name": [
+        "Επιλέξτε εμφανιζόμενο όνομα"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -4406,6 +5329,15 @@
       ],
       "Please select the main reason": [
         "Παρακαλούμε επιλέξτε τον κύριο λόγο"
+      ],
+      "Search": [
+        "Αναζήτηση"
+      ],
+      "Search for a user or address": [
+        "Αναζήτηση χρήστη ή διεύθυνσης"
+      ],
+      "Search users": [
+        "Αναζήτηση χρηστών"
       ],
       "Select": [
         "Επιλογή"
@@ -4439,6 +5371,11 @@
     "Price": {
       "Free": [
         "Δωρεάν"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "ιδιωτικό"
       ]
     },
     "Recovery Email": {
@@ -4505,6 +5442,61 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Συμβατή"
+      ],
+      "State of the art": [
+        "Αιχμής"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Γίνεται αλλαγή κλειδιών οργανισμού"
+      ],
+      "Changing organization password": [
+        "Γίνεται αλλαγή κωδικού πρόσβασης οργανισμού"
+      ],
+      "Creating new users": [
+        "Γίνεται δημιουργία νέων χρηστών"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Λόγω αλλαγής κωδικού πρόσβασης, τα προνόμια του διαχειριστή του οργανισμού σας έχουν περιοριστεί. Οι ακόλουθες ενέργειες δεν επιτρέπονται πλέον:"
+      ],
+      "Reading emails of non-private users": [
+        "Γίνεται ανάγνωση μηνυμάτων μη ιδιωτικών χρηστών"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Διαχειριστής"
+      ],
+      "Primary admin": [
+        "Κύριος διαχειριστής"
+      ],
+      "User": [
+        "Χρήστης"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Ανέβασμα αρχείου CSV"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "ενεργός"
+      ],
+      "inactive": [
+        "απενεργοποιημένος"
+      ],
+      "pending": [
+        "σε εκκρεμότητα"
+      ],
+      "to be created": [
+        "προς δημιουργία"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4946,6 +5938,9 @@
       "Account deleted. Signing out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
       ],
+      "Address added": [
+        "Η διεύθυνση προστέθηκε"
+      ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
@@ -4973,14 +5968,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Αν έχετε εισάγει ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
       ],
+      "Invitation sent": [
+        "Η πρόσκληση στάλθηκε"
+      ],
       "Invoice customized": [
         "Το τιμολόγιο προσαρμόστηκε"
       ],
       "Invoice paid": [
         "Το τιμολόγιο πληρώθηκε"
       ],
+      "Keys updated": [
+        "Τα κλειδιά ενημερώθηκαν"
+      ],
       "Locale updated": [
         "Η εντοπιότητα ενημερώθηκε"
+      ],
+      "Organization activated": [
+        "Ο οργανισμός ενεργοποιήθηκε"
       ],
       "Password updated": [
         "Ο κωδικός πρόσβασης ενημερώθηκε"
@@ -5000,6 +6004,12 @@
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
+      "User created": [
+        "Ο χρήστης δημιουργήθηκε"
+      ],
+      "User updated": [
+        "Ο χρήστης ενημερώθηκε"
+      ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
       ],
@@ -5010,7 +6020,24 @@
         "Διαγραφήκατε με επιτυχία"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "Η συνεδρία ανακλήθηκε"
+      ],
+      "User deleted": [
+        "Ο χρήστης διαγράφηκε"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "Η διεύθυνση διαγράφηκε"
+      ],
+      "Address disabled": [
+        "Η διεύθυνση απενεργοποιήθηκε"
+      ],
+      "Address enabled": [
+        "Η διεύθυνση ενεργοποιήθηκε"
+      ],
       "Certificate ${ name } revoked": [
         "Το πιστοποιητικό ${ name } ανακλήθηκε"
       ],
@@ -5022,6 +6049,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "Παραγωγή αρχείου διαμόρφωσης για ${ serverName }"
+      ],
+      "Preference updated": [
+        "Οι προτιμήσεις ενημερώθηκαν"
       ]
     },
     "Suffix": {
@@ -5122,11 +6152,32 @@
       "Country": [
         "Χώρα"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις Email"
+      ],
       "Name": [
         "Όνομα"
       ],
+      "Password": [
+        "Κωδικός πρόσβασης"
+      ],
+      "Role": [
+        "Ρόλος"
+      ],
       "Status": [
         "Κατάσταση"
+      ],
+      "Total storage": [
+        "Συνολικός αποθηκευτικός χώρος"
       ]
     },
     "Themes": {
@@ -5171,6 +6222,15 @@
       "Action": [
         "Ενέργεια"
       ],
+      "Activate account and generate keys": [
+        "Ενεργοποίηση λογαριασμού και δημιουργία κλειδιών"
+      ],
+      "Activate organization key": [
+        "Ενεργοποιήστε το κλειδί οργανισμού"
+      ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
+      ],
       "Add credit/debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -5180,8 +6240,23 @@
       "Add invoice details": [
         "Προσθήκη στοιχείων τιμολογίου"
       ],
+      "Add new user": [
+        "Προσθήκη νέου χρήστη"
+      ],
       "Add PayPal payment method": [
         "Προσθέστε μία μέθοδο πληρωμής PayPal"
+      ],
+      "Add servers": [
+        "Προσθήκη διακομιστών"
+      ],
+      "Add user accounts": [
+        "Προσθήκη λογαριασμών χρηστών"
+      ],
+      "Add users": [
+        "Προσθήκη χρηστών"
+      ],
+      "Allocate storage": [
+        "Κατανομή αποθηκευτικού χώρου"
       ],
       "Amount": [
         "Ποσό"
@@ -5194,6 +6269,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
+      ],
+      "Authentication security": [
+        "Ασφάλεια ταυτοποίησης"
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
@@ -5216,8 +6294,17 @@
       "Change mailbox password": [
         "Αλλαγή κωδικού θυρίδας"
       ],
+      "Change organization keys": [
+        "Αλλαγή κλειδιών οργανισμού"
+      ],
+      "Change organization name": [
+        "Αλλαγή ονόματος οργανισμού"
+      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Change role": [
+        "Αλλαγή ρόλου"
       ],
       "Confirm address": [
         "Επιβεβαιώση διεύθυνσης"
@@ -5234,11 +6321,42 @@
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
+      "Couldn’t create accounts": [
+        "Αποτυχία δημιουργίας λογαριασμών"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Δημιουργία ${ selectedUserIds.length } χρήστη",
+        "Δημιουργία ${ selectedUserIds.length } χρηστών"
+      ],
+      "Create a new Gateway": [
+        "Δημιουργία νέας Πύλης"
+      ],
+      "Create a new gateway": [
+        "Δημιουργία νέας πύλης"
+      ],
+      "Create Gateway": [
+        "Δημιουργία Πύλης"
+      ],
+      "Create multiple user accounts": [
+        "Δημιουργία πολλαπλών λογαριασμών χρηστών"
+      ],
+      "Create user accounts": [
+        "Δημιουργία λογαριασμών χρηστών"
+      ],
+      "Creating user accounts": [
+        "Δημιουργία λογαριασμών χρηστών"
+      ],
       "Credits": [
         "Μονάδες"
       ],
       "Currency": [
         "Νόμισμα"
+      ],
+      "Custom selection of users": [
+        "Προσαρμοσμένη επιλογή χρηστών"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Προσαρμόστε τον αριθμό των διευθύνσεων IP στο πλάνο σας"
       ],
       "Customize your plan": [
         "Προσαρμόστε το πλάνο σας"
@@ -5252,11 +6370,27 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete ${ email }": [
+        "Διαγραφή ${ email }"
+      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
+        "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρες)"
+      ],
+      "Delete user": [
+        "Διαγραφή χρήστη"
+      ],
+      "Delete user?": [
+        "Διαγραφή χρήστη;"
+      ],
       "Device connected!": [
         "Συσκευή συνδεδεμένη!"
+      ],
+      "Disable ${ email }": [
+        "Απενεργοποίηση ${ email }"
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
@@ -5276,6 +6410,24 @@
       "Edit display name": [
         "Επεξεργασία εμφανιζόμενου ονόματος"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Επεξεργασία Πύλης ${ currentName }"
+      ],
+      "Edit servers": [
+        "Επεξεργασία διακομιστών"
+      ],
+      "Edit the list of servers of the gateway": [
+        "Επεξεργασία της λίστας διακομιστών της πύλης"
+      ],
+      "Edit user": [
+        "Επεξεργασία χρήστη"
+      ],
+      "Edit users": [
+        "Επεξεργασία χρηστών"
+      ],
+      "Edit who can access the gateway": [
+        "Επεξεργασία των μελών που μπορούν να έχουν πρόσβαση στην πύλη"
+      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -5288,11 +6440,24 @@
       "Error": [
         "Σφάλμα"
       ],
+      "Every member of the organization can access": [
+        "Κάθε μέλος του οργανισμού μπορεί να έχει πρόσβαση"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Αποτυχία δημιουργίας ${ failedUsers.length }\nλογαριασμού χρήστη.",
+        "Αποτυχία δημιουργίας ${ failedUsers.length } λογαριασμών χρηστών."
+      ],
       "Find email or username": [
         "Αναζήτηση E-mail ή όνομα χρήστη"
       ],
+      "Gateways": [
+        "Πύλες"
+      ],
       "General": [
         "Γενικά"
+      ],
+      "Generate missing keys": [
+        "Δημιουργία των κλειδιών που λείπουν"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ${ vpnPlus }"
@@ -5306,6 +6471,9 @@
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
+      "Increase your privacy with more addresses": [
+        "Αυξήστε το απόρρητό σας με περισσότερες διευθύνσεις"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
@@ -5317,6 +6485,9 @@
       ],
       "Login password": [
         "Κωδικός σύνδεσης"
+      ],
+      "Multi-user support": [
+        "Υποστήριξη Πολλαπλών Χρηστών"
       ],
       "Network error": [
         "Σφάλμα δικτύου"
@@ -5341,6 +6512,9 @@
       ],
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
+      ],
+      "Organization name": [
+        "Όνομα οργανισμού"
       ],
       "Password": [
         "Κωδικός"
@@ -5381,6 +6555,12 @@
       "Recovery": [
         "Ανάκτηση"
       ],
+      "Remove user?": [
+        "Κατάργηση χρήστη;"
+      ],
+      "Rename the gateway": [
+        "Μετονομασία της πύλης"
+      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -5390,11 +6570,17 @@
       "Request sent": [
         "Το Αίτημα εστάλη"
       ],
+      "Reset organization keys": [
+        "Επαναφορά κλειδιών οργανισμού"
+      ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
       ],
       "Reset password?": [
         "Επαναφορά κωδικού πρόσβασης?"
+      ],
+      "Restore administrator privileges": [
+        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Revoke certificate": [
         "Ανάκληση πιστοποιητικού"
@@ -5402,8 +6588,20 @@
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
       ],
+      "Send email reminders?": [
+        "Αποστολή υπενθυμίσεων μέσω email;"
+      ],
       "Set new password": [
         "Ορίστε νέο κωδικό"
+      ],
+      "Set organization keys": [
+        "Ορίστε τα κλειδιά του οργανισμού"
+      ],
+      "Set organization name": [
+        "Ορίστε το όνομα του οργανισμού"
+      ],
+      "Set organization password": [
+        "Ορισμός Κωδικού Πρόσβασης Οργανισμού"
       ],
       "Set up two-factor authentication": [
         "Δημιουργήστε έλεγχο ταυτότητας δύο παραγόντων"
@@ -5414,6 +6612,9 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Παραμετροποίηση αποκλειστικών διακομιστών με αναβάθμιση σε Business"
+      ],
       "Sign in": [
         "Είσοδος"
       ],
@@ -5423,11 +6624,22 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
+      "Signed in to member account": [
+        "Σύνδεση στον λογαριασμό μέλους"
+      ],
       "Status": [
         "Κατάσταση"
       ],
       "Subscription": [
         "Συνδρομή"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Δημιουργήθηκε με επιτυχία ${ localSuccessfullyCreatedUsers.length } ο λογαριασμός χρήστη",
+        "Δημιουργήθηκαν με επιτυχία ${ localSuccessfullyCreatedUsers.length } οι λογαριασμοί χρηστων"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμού χρήστη",
+        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμών χρηστών"
       ],
       "Summary": [
         "Περίληψη"
@@ -5444,6 +6656,12 @@
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
       ],
+      "Two-factor authentication enforcement": [
+        "Επιβολή ελέγχου ταυτότητας δύο παραγόντων"
+      ],
+      "Two-factor authentication reminders": [
+        "Υπενθυμίσεις ελέγχου ταυτότητας δύο παραγόντων"
+      ],
       "Type": [
         "Τύπος"
       ],
@@ -5455,6 +6673,12 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Αναβαθμίστε την προστασία του δικτύου σας με αποκλειστικούς διακομιστές"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
+      ],
+      "Users": [
+        "Χρήστες"
       ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
@@ -5503,6 +6727,23 @@
         "Τιμολόγιο ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Διευθύνσεις"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Features": [
+        "Χαρακτηριστικά"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Role": [
+        "Ρόλος"
+      ]
+    },
     "Title subscription": {
       "Actions": [
         "Ενέργειες"
@@ -5536,11 +6777,17 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Οι διαχειριστές μπορούν να κάνουν αλλαγές στη συνδρομή σας, να διαχειρίζονται λογαριασμούς χρηστών και κωδικούς πρόσβασης και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
@@ -5568,6 +6815,17 @@
     "upsell panel": {
       "Recommended": [
         "Προτεινόμενο"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Διαχειριστής"
+      ],
+      "Member": [
+        "Μέλος"
+      ],
+      "Primary admin": [
+        "Κύριος διαχειριστής"
       ]
     },
     "Validation": {
@@ -5699,6 +6957,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Απενεργοποιώντας αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα χρησιμοποιώντας την, ενώ επίσης θα απενεργοποιηθούν όλα τα συνδεδεμένα προϊόντα ${ BRAND_NAME }. Θέλετε σίγουρα να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
@@ -5710,6 +6971,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "Πρέπει να ${ activateLink } κλειδιά οργανισμού πριν προσθέσετε μια διεύθυνση email σε μη ιδιωτικό μέλος."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"

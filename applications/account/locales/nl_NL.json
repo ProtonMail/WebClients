@@ -98,6 +98,9 @@
       "Add label": [
         "Label toevoegen"
       ],
+      "Add multiple users": [
+        "Meerdere gebruikers toevoegen"
+      ],
       "Add notification": [
         "Melding toevoegen"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Map maken"
       ],
+      "Create Gateway": [
+        "Gateway opzetten"
+      ],
       "Create label": [
         "Label maken"
       ],
       "Create link": [
         "Link aanmaken"
+      ],
+      "Create user": [
+        "Gebruiker aanmaken"
       ],
       "Create users": [
         "Gebruikers aanmaken"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Verwijder en bevestig"
       ],
+      "Delete Gateway": [
+        "Gateway verwijderen"
+      ],
       "Delete link": [
         "Verwijder hyperlink"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Record verwijderen"
+      ],
+      "Delete user": [
+        "Gebruiker verwijderen"
       ],
       "Delete without exporting": [
         "Verwijder zonder te exporteren"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "ICS downloaden"
       ],
+      "Download our CSV template": [
+        "Ons CSV-sjabloon downloaden"
+      ],
       "Download recovery file": [
         "Herstelbestand downloaden"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "Edit Gateway": [
+        "Gateway bewerken"
+      ],
       "Edit label": [
         "Label bewerken"
+      ],
+      "Edit name": [
+        "Naam bewerken"
       ],
       "Edit password": [
         "Wachtwoord wijzigen"
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit servers": [
+        "Servers bewerken"
       ],
       "Edit sieve": [
         "Regel bewerken"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Wijzig abonnement"
+      ],
+      "Edit users": [
+        "Gebruikers bewerken"
       ],
       "Emoji": [
         "Emoji"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Krijg meer labels"
+      ],
+      "Get more licenses": [
+        "Krijg meer licenties"
+      ],
+      "Get more servers": [
+        "Krijg meer servers"
       ],
       "Get the deal": [
         "Pak deze deal"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Deze melding verwijderen"
+      ],
+      "Rename": [
+        "Hernoem"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -932,6 +971,9 @@
       "Upgrade now": [
         "Nu upgraden"
       ],
+      "Upgrade to Business": [
+        "Upgraden naar Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade om ${ PROTON_SENTINEL_NAME } in te schakelen"
       ],
@@ -1000,6 +1042,9 @@
       ],
       "Yes, undo": [
         "Ja, ongedaan maken"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Uw server wordt in de komende dagen geleverd"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -1133,6 +1178,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Krijg gratis 10 aliassen!"
+      ],
+      "Get unlimited aliases!": [
+        "Krijg ongelimiteerde aliassen!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Probeer ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "Met ${ PASS_APP_NAME } kunt u unieke aliassen genereren om uw identiteit te verbergen en e-mails door te sturen naar uw inbox."
       ]
     },
     "Alter": {
@@ -1513,7 +1572,7 @@
         "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren te updaten."
+        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren bij te werken."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -1530,11 +1589,6 @@
       ],
       "Week": [
         "Week"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Alles"
       ]
     },
     "Checkout row": {
@@ -3168,6 +3222,15 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
+      "Impossible to create the gateway": [
+        "De gateway instellen is niet mogelijk"
+      ],
+      "Impossible to edit the gateway": [
+        "De gateway aanpassen is niet mogelijk"
+      ],
+      "Impossible to rename the gateway": [
+        "De gateway hernoemen is niet mogelijk"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
@@ -4220,6 +4283,13 @@
       "Access to all countries": [
         "Toegang tot alle landen"
       ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Toevoegen (${ numberOfAddedServers })",
+        "Toevoegen (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Verbinding op ${ plusVpnConnections } apparaat",
         "Verbinding op ${ plusVpnConnections } apparaten"
@@ -4610,6 +4680,9 @@
       "Checkout": [
         "Afrekenen"
       ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Maak uw account aan"
       ],
@@ -4622,6 +4695,9 @@
       "Folders": [
         "Mappen"
       ],
+      "IP address": [
+        "IP-adres"
+      ],
       "Key type": [
         "Sleuteltype"
       ],
@@ -4630,6 +4706,9 @@
       ],
       "Location": [
         "Locatie"
+      ],
+      "Members": [
+        "Leden"
       ],
       "Name": [
         "Naam"
@@ -4648,6 +4727,15 @@
       ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Serverbelasting"
+      ],
+      "Servers": [
+        "Servers"
       ],
       "Status": [
         "Status"
@@ -5164,6 +5252,10 @@
         "${ providerFoldersNumLocalized } label gevonden in Gmail",
         "${ providerFoldersNumLocalized } labels gevonden in Gmail"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
+        "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
@@ -5274,6 +5366,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
+      "active": [
+        "actief"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
       ],
@@ -5297,6 +5392,18 @@
       ],
       "Add multiple users to your organization at once.": [
         "Voeg meerdere gebruikers tegelijk toe aan uw organisatie."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Server toevoegen (${ availableAddedCount } beschikbaar)",
+        "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } gatewayserver wordt toegevoegd",
+        "${ addedServerCount } gatewayservers worden toegevoegd"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Aanvullende opties"
@@ -5424,6 +5531,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -5564,6 +5674,13 @@
       "Create in": [
         "Maak in"
       ],
+      "Create your first Gateway": [
+        "Uw eerste gateway instellen"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -5600,6 +5717,9 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
+      "dedicated servers": [
+        "toegewijde servers"
+      ],
       "Dedicated servers": [
         "Dedicated servers"
       ],
@@ -5611,6 +5731,10 @@
       ],
       "Delete link?": [
         "Koppeling verwijderen?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } gatewayserver wordt verwijderd",
+        "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -5700,6 +5824,9 @@
       "Encryption setting updated": [
         "Versleutelingsinstelling bijgewerkt"
       ],
+      "Enhance your network security": [
+        "Verbeter uw netwerkbeveiliging"
+      ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
       ],
@@ -5754,6 +5881,9 @@
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logs."
       ],
+      "Fill in user details": [
+        "Vul gebruikers gegevens in"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
@@ -5777,6 +5907,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "ruimte vrijmaken door oudere berichten of andere gegevens te verwijderen"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
@@ -5911,6 +6044,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
+      "inactive": [
+        "inactief"
+      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -5974,6 +6110,9 @@
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
+      ],
+      "Lean more about gateways": [
+        "Meer info over gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
@@ -6047,6 +6186,18 @@
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Moet tussen de 3 en 20 tekens lang zijn."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Mag alleen letters, cijfers en streepjes (-) bevatten."
+      ],
+      "Must not contain spaces.": [
+        "Mag geen spaties bevatten."
+      ],
+      "Must start with a letter.": [
+        "Moet starten met een letter"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -6073,6 +6224,12 @@
       ],
       "No folder selected": [
         "Geen map geselecteerd"
+      ],
+      "No gateways": [
+        "Geen gateways"
+      ],
+      "No Gateways yet": [
+        "Nog geen gateways"
       ],
       "No imports or forwarding history.": [
         "Geen importeer- of doorstuurgeschiedenis."
@@ -6101,8 +6258,8 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
-      "Number of users": [
-        "Aantal gebruikers"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "De hoeveelheid toegewijde servers die u probeert toe te wijzen (${ addedCount }) ligt hoger dan wat er nog beschikbaar is in uw abonnement (${ remainingCount }), omdat u er ${ ownedCount } heeft en al ${ usedCount } gebruikt."
       ],
       "of": [
         "van"
@@ -6125,6 +6282,9 @@
       "Open source": [
         "Open source"
       ],
+      "Optional": [
+        "Optioneel"
+      ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
@@ -6136,6 +6296,9 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Orden uw toegewijde servers in Gateways en bepaal welke gebruikers er toegang toe hebben."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
@@ -6308,6 +6471,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
       "Remove one of your calendars to join this one": [
         "Verwijderen één van uw agenda's om lid te worden van deze"
       ],
@@ -6403,6 +6569,9 @@
       ],
       "Some keys successfully reactivated": [
         "Sommige sleutels zijn succesvol geheractiveerd"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Met SPF kan u bepalen wie uw domein mag gebruiken om e-mails te versturen. Het is raadzaam om ${ MAIL_APP_NAME } toe te voegen aan uw SPF-record. Voeg het volgende TXT-record toe aan uw DNS. Dit kunt u meestal doen in het beheerpaneel van uw domeinnaamregistrar of hostingprovider."
@@ -6525,8 +6694,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Dit kan tot 15 minuten duren. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
@@ -6732,6 +6901,9 @@
       "Upload picture": [
         "Afbeelding uploaden"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Upload uw voltooide CSV-bestand om accounts aan te maken."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
       ],
@@ -6749,6 +6921,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Gebruik het geselecteerde e-mailadres als de SMTP-gebruikersnaam bij de externe dienst, en het gegenereerde token als het SMTP-wachtwoord."
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
@@ -6776,6 +6951,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "Want servers in other countries?": [
+        "Wilt u servers in andere landen?"
       ],
       "Warning:": [
         "Waarschuwing:"
@@ -6861,8 +7039,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
       ],
+      "Whole organization": [
+        "Hele organisatie"
+      ],
       "Why?": [
         "Waarom?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Met een Business- of Enterprise-abonnement kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } instellen om te beheren welke gebruikers er toegang tot hebben."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kunt u gebruik maken van alle ${ BRAND_NAME_TWO }-diensten"
@@ -6891,6 +7075,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicentie",
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicenties"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
       ],
@@ -6905,6 +7097,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
@@ -6955,6 +7150,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "U heeft ${ availableCount } toegewijde server beschikbaar.",
+        "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
       "You have no calendars to export.": [
         "U heeft geen agenda's om te exporteren."
@@ -7926,6 +8125,9 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Naam Gateway"
+      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -8112,6 +8314,9 @@
       "Organization password": [
         "Organisatiewachtwoord"
       ],
+      "Organization size": [
+        "Grootte van de organisatie"
+      ],
       "Other amount": [
         "Ander bedrag"
       ],
@@ -8207,6 +8412,9 @@
       ],
       "Select your country": [
         "Selecteer uw land"
+      ],
+      "Select your plan": [
+        "Kies uw abonnement"
       ],
       "Send auto-reply": [
         "Automatisch antwoord versturen"
@@ -8569,6 +8777,9 @@
       "Common sign up issues": [
         "Problemen met algemene registratie"
       ],
+      "Contact us": [
+        "Neem contact op"
+      ],
       "create a ticket": [
         "een ticket aanmaken"
       ],
@@ -8730,6 +8941,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Wachtwoord wijzigen"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -8769,6 +8983,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Inschrijven"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } Account"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Maak een ${ BRAND_NAME }-account om alle geëncrypteerde ${ BRAND_NAME } diensten te gebruiken zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer, met een login. Krijg een Gratis ${ BRAND_NAME }-account."
       ],
@@ -8798,9 +9015,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Log in | ${ BRAND_NAME }-account - Toegang ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en meer"
       ],
       "Try ${ planName } for free with this link": [
         "U kan ${ planName } gratis proberen met deze link."
@@ -9914,6 +10128,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "IP Address copied to clipboard": [
+        "IP-adres gekopieerd naar het klembord"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Sleutel met vingerafdruk ${ fp } is verwijderd."
       ],
@@ -10212,6 +10429,9 @@
       ],
       "Standard server configs": [
         "Standaard server configuraties"
+      ],
+      "The whole organization": [
+        "De hele organisatie"
       ]
     },
     "Option delay send seconds": {
@@ -10607,9 +10827,6 @@
       "Confirm": [
         "Bevestig"
       ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
-      ],
       "domain.com": [
         "domein.com"
       ],
@@ -10891,6 +11108,17 @@
         "Lezen van e-mails van niet-particuliere gebruikers"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Beheerder"
+      ],
+      "Primary admin": [
+        "Primaire beheerder"
+      ],
+      "User": [
+        "Gebruiker"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Upload CSV-bestand"
@@ -10913,6 +11141,17 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "actief"
+      ],
+      "inactive": [
+        "inactief"
+      ],
+      "pending": [
+        "in behandeling"
       ]
     },
     "Settings description": {
@@ -11850,6 +12089,12 @@
       "Edit": [
         "Bewerken"
       ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Email address or domain": [
         "E-mailadres of domein"
       ],
@@ -11867,6 +12112,12 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Role": [
+        "Rol"
       ],
       "Status": [
         "Status"
@@ -12001,8 +12252,14 @@
       "Add invoice details": [
         "Facturatiegegevens opgeven"
       ],
+      "Add new user": [
+        "Voeg nieuwe gebruiker toe"
+      ],
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
+      ],
+      "Add servers": [
+        "Servers toevoegen"
       ],
       "Add Sieve filter": [
         "Sievefilter toevoegen"
@@ -12016,8 +12273,11 @@
       "Add to spam list": [
         "Toevoegen aan spamlijst"
       ],
-      "Add user": [
-        "Gebruiker toevoegen"
+      "Add user accounts": [
+        "Gebruikersaccounts toevoegen"
+      ],
+      "Add users": [
+        "Gebruikers toevoegen"
       ],
       "Address verification": [
         "Verificatie van adres"
@@ -12149,6 +12409,15 @@
         "Maak ${ selectedUserIds.length } gebruiker aan",
         "Maak ${ selectedUserIds.length } gebruikers aan"
       ],
+      "Create a new Gateway": [
+        "Een nieuwe gateway aanmaken"
+      ],
+      "Create a new gateway": [
+        "Een nieuwe gateway aanmaken"
+      ],
+      "Create Gateway": [
+        "Gateway aanmaken"
+      ],
       "Create multiple user accounts": [
         "Meerdere gebruikersaccounts aanmaken"
       ],
@@ -12179,11 +12448,17 @@
       "Custom filters": [
         "Aangepaste filters"
       ],
+      "Custom selection of users": [
+        "Aangepaste selectie van gebruikers"
+      ],
       "Customize and confirm": [
         "Aanpassen en bevestigen"
       ],
       "Customize calendar import": [
         "Agenda-import aanpassen"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Verander de hoeveelheid IP-adressen in uw abonnement"
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
@@ -12242,6 +12517,9 @@
       "Delete user": [
         "Gebruiker verwijderen"
       ],
+      "Delete user?": [
+        "Gebruiker verwijderen?"
+      ],
       "Delete version history?": [
         "Versiegeschiedenis verwijderen?"
       ],
@@ -12278,11 +12556,26 @@
       "Edit filter": [
         "Filter bewerken"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit servers": [
+        "Servers bewerken"
+      ],
       "Edit Sieve filter": [
         "Sieve filter bewerken"
       ],
+      "Edit the list of servers of the gateway": [
+        "De lijst van servers van de gateway bewerken"
+      ],
       "Edit user": [
         "Gebruiker bewerken"
+      ],
+      "Edit users": [
+        "Gebruikers bewerken"
+      ],
+      "Edit who can access the gateway": [
+        "Bewerk wie de gateway heeft tot the gateway"
       ],
       "Email": [
         "E-mailadres"
@@ -12338,6 +12631,9 @@
       ],
       "Folders and labels": [
         "Mappen en labels"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "General": [
         "Algemeen"
@@ -12556,6 +12852,9 @@
       "Remove user?": [
         "Gebruiker verwijderen?"
       ],
+      "Rename the gateway": [
+        "De gateway hernoemen"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -12642,6 +12941,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Toegewijde servers opzetten door te upgraden naar Business"
       ],
       "Short domain (@pm.me)": [
         "Korte domein (@pm.me)"
@@ -12737,6 +13039,12 @@
       ],
       "Upgrade plan": [
         "Abonnement upgraden"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Upload CSV-bestand om meerdere gebruikers te creëren"
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Users and addresses": [
         "Gebruikers en adressen"
@@ -12869,6 +13177,9 @@
       "Addresses": [
         "Adressen"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Features": [
         "Functies"
       ],
@@ -12932,6 +13243,9 @@
       ],
       "Account is disconnected": [
         "Account is verbroken"
+      ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Beheerders kunnen wijzigingen aanbrengen in je abonnement, gebruikersaccounts en wachtwoorden beheren, en beheerdersrechten toekennen aan andere gebruikers."
       ],
       "An approximate location of the IP address": [
         "Een geschatte locatie van het IP-adres"

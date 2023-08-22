@@ -491,6 +491,9 @@
       "Show more": [
         "Meer weergeven"
       ],
+      "Show side panel": [
+        "Toon zijpaneel"
+      ],
       "Show time zones": [
         "Tijdzones tonen"
       ],
@@ -961,7 +964,7 @@
         "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren te updaten."
+        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren bij te werken."
       ]
     },
     "Calendar view": {
@@ -3904,7 +3907,7 @@
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
       "Update recurring event": [
-        "Terugkerende afspraak updaten"
+        "Terugkerende afspraak bijwerken"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
@@ -5677,9 +5680,6 @@
       "Add your country's public holidays to your calendar.": [
         "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
       ],
-      "Easily access and customize your app experience.": [
-        "Gemakkelijk toegang tot en aanpassing van uw applicatie-ervaring."
-      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "Public holidays are here!": [
         "Wettelijke feestdagen zijn hier!"
-      ],
-      "Quick settings": [
-        "Snelle instellingen"
       ]
     },
     "Storage": {
@@ -6351,7 +6348,7 @@
         "Afspraak bijwerken"
       ],
       "Update recurring event": [
-        "Terugkerende afspraak updaten"
+        "Terugkerende afspraak bijwerken"
       ],
       "Warning": [
         "Waarschuwing"
@@ -6443,8 +6440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
+      "Hide side panel": [
+        "Verberg zijpaneel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Show side panel": [
+        "Toon zijpaneel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"

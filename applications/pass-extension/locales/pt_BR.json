@@ -11,6 +11,9 @@
       "Add current url": [
         "Adicionar URL atual"
       ],
+      "Add domain to pause list": [
+        "Adicionar domínio para a lista de pausa"
+      ],
       "Add more": [
         "Adicionar mais"
       ],
@@ -48,7 +51,7 @@
         "Fechar"
       ],
       "Close advanced options": [
-        "Fechar as opções avançadas"
+        "Fechar opções avançadas"
       ],
       "Close navigation": [
         "Fechar navegação"
@@ -360,8 +363,11 @@
       "Invalid password manager": [
         "O gerenciador de senhas não é valido."
       ],
-      "Item content cannot exceed 40kb": [
-        "O conteúdo do item não pode exceder 40 kb"
+      "Invalid url": [
+        "URL inválida"
+      ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40KB"
       ],
       "Item creation failed": [
         "Erro na criação do item"
@@ -413,6 +419,9 @@
       ],
       "The file you are trying to import is empty": [
         "O arquivo que você está tentando importar está vazio"
+      ],
+      "The url is in the list": [
+        "Esse URL já está no filtro"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Muitas tentativas erradas. Inicie sessão novamente."
@@ -926,6 +935,9 @@
       "Autofill": [
         "Preenchimento automático"
       ],
+      "Autofill 2FA": [
+        "Preenchimento automático de A2F"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Abre automaticamente o preenchimento automático ao focar nos campos de login"
       ],
@@ -982,6 +994,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Exibe o ícone do ${ PASS_APP_NAME } nos campos de login"
+      ],
+      "Domains": [
+        "Domínios"
       ],
       "Download logs": [
         "Registros de downloads"
@@ -1094,6 +1109,9 @@
       "Old-New": [
         "Do mais antigo para o mais recente"
       ],
+      "Older than last month": [
+        "Mais de um mês"
+      ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
       ],
@@ -1108,6 +1126,9 @@
       ],
       "Passwords": [
         "Senhas"
+      ],
+      "Pause list": [
+        "Lista de pausa"
       ],
       "Permanently delete items": [
         "Exclui os itens permanentemente"
@@ -1160,8 +1181,8 @@
       "Settings": [
         "Configurações"
       ],
-      "Show website thumbnails": [
-        "Mostrar miniaturas do site"
+      "Show website favicons": [
+        "Mostrar favicons do site"
       ],
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
@@ -1385,8 +1406,8 @@
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
-      "Import to vaults": [
-        "Importar para os cofres"
+      "Import to vault(s)": [
+        "Importar para cofre(s)"
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens ?"

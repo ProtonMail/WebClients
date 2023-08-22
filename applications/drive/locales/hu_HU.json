@@ -1911,7 +1911,7 @@
         "\"${ name }\" már létezik"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+        "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -2112,7 +2112,7 @@
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "status page": [
-        "állapot lap"
+        "állapotjelző oldalunkat"
       ],
       "The email addresses do not match": [
         "Az e-mail címek nem egyeznek"
@@ -2238,6 +2238,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "Missing FN property": [
+        "FN tulajdon hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -3378,7 +3381,7 @@
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
       "Enter the device name to confirm removal.": [
-        "Írja be az eszköz nevét az eltávolítás megerősítéséhez"
+        "Írja be az eszköz nevét az eltávolítás megerősítéséhez."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -5532,9 +5535,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
-      ],
-      "Quick settings": [
-        "Gyors beállítások"
       ]
     },
     "Storage": {
@@ -5641,7 +5641,7 @@
     },
     "summer2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+        "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
     "summer2023:Footer": {

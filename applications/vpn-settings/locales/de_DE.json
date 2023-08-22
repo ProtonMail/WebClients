@@ -8,14 +8,32 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "activate": [
+        "aktivieren"
+      ],
+      "Activate organization key": [
+        "Organisationsschlüssel aktivieren"
+      ],
+      "Add address": [
+        "Adresse hinzufügen"
+      ],
       "Add credit / debit card": [
         "Kredit-/Debitkarte hinzufügen"
       ],
       "Add credits": [
         "Guthaben hinzufügen"
       ],
+      "Add domain": [
+        "Domain hinzufügen"
+      ],
+      "Add multiple users": [
+        "Füge mehrere Benutzer hinzu"
+      ],
       "Add PayPal": [
         "Paypal hinzufügen"
+      ],
+      "Add user": [
+        "Benutzer hinzuf."
       ],
       "Apply": [
         "Übernehmen"
@@ -68,6 +86,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue anyway": [
+        "Trotzdem fortfahren"
+      ],
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
@@ -79,6 +100,15 @@
       ],
       "Create": [
         "Erstellen"
+      ],
+      "Create Gateway": [
+        "Gateway erstellen"
+      ],
+      "Create user": [
+        "Benutzer erstellen"
+      ],
+      "Create users": [
+        "Benutzer erstellen"
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -94,6 +124,12 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete Gateway": [
+        "Gateway löschen"
+      ],
+      "Delete user": [
+        "Benutzer löschen"
       ],
       "Delete your account": [
         "Konto löschen"
@@ -125,6 +161,9 @@
       "Download all configurations": [
         "Alle Konfigurationen herunterladen"
       ],
+      "Download our CSV template": [
+        "Lade unsere CSV-Vorlage herunter"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -137,11 +176,20 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit Gateway": [
+        "Gateway bearbeiten"
+      ],
+      "Edit name": [
+        "Name bearbeiten"
+      ],
       "Edit password": [
         "Passwort bearbeiten"
       ],
       "Edit phone number": [
         "Telefonnummer bearbeiten"
+      ],
+      "Edit servers": [
+        "Server bearbeiten"
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
@@ -149,8 +197,14 @@
       "Edit subscription": [
         "Abonnement bearbeiten"
       ],
+      "Edit users": [
+        "Benutzer bearbeiten"
+      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
+      ],
+      "Enable multi-user support": [
+        "Mehrbenutzerunterstützung aktivieren"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Entdecke weitere ${ BRAND_NAME }-Abonnements"
@@ -169,6 +223,15 @@
       ],
       "Get more": [
         "Mehr erhalten"
+      ],
+      "Get more addresses": [
+        "Hol dir mehr E-Mail-Adressen"
+      ],
+      "Get more licenses": [
+        "Weitere Lizenzen holen"
+      ],
+      "Get more servers": [
+        "Hol dir mehr Server"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -190,6 +253,12 @@
       ],
       "Increase": [
         "Vergrößern"
+      ],
+      "Invite": [
+        "Einladen"
+      ],
+      "Invite user": [
+        "Benutzer einladen"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "${ vpnPlanNameShort }-Abonnement behalten"
@@ -248,11 +317,17 @@
       "refresh the page": [
         "aktualisiere die Seite"
       ],
+      "Remove": [
+        "Entfernen"
+      ],
       "Remove bonuses": [
         "Prämien entfernen"
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
+      ],
+      "Rename": [
+        "Umbenennen"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -269,11 +344,17 @@
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
       ],
+      "Reset keys": [
+        "Schlüssel zurücksetzen"
+      ],
       "Reset password": [
         "Passwort zurücksetzen"
       ],
       "Restore": [
         "Wiederherstellen"
+      ],
+      "Restore administrator privileges": [
+        "Administrationsprivilegien wiederherstellen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -290,6 +371,12 @@
       "Save": [
         "Speichern"
       ],
+      "Save address": [
+        "E-Mail-Adresse speichern"
+      ],
+      "Search": [
+        "Suchen"
+      ],
       "Search countries": [
         "Länder durchsuchen"
       ],
@@ -302,8 +389,14 @@
       "Send code": [
         "Code senden"
       ],
+      "Send email reminder": [
+        "Erinnerungs-E-Mail senden"
+      ],
       "Send my username": [
         "Meinen Benutzernamen senden"
+      ],
+      "Send reminder": [
+        "Erinnerung senden"
       ],
       "Set new password": [
         "Neues Passwort festlegen"
@@ -344,6 +437,9 @@
       "Support": [
         "Support"
       ],
+      "Switch account": [
+        "Konto wechseln"
+      ],
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
@@ -367,6 +463,12 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to Business": [
+        "Auf Business upgraden"
+      ],
+      "Upgrade your plan": [
+        "Dein Abonnement upgraden"
       ],
       "Use ${ label } theme": [
         "Farbschema „${ label }“ verwenden"
@@ -410,6 +512,9 @@
       "What do I get?": [
         "Was bekomme ich dafür?"
       ],
+      "Your server will be provisioned in the next days": [
+        "Dein Server wird in den nächsten Tagen bereitgestellt."
+      ],
       "Zoom in": [
         "Vergrößern"
       ],
@@ -446,6 +551,66 @@
       "${ users } user": [
         "${ users } Benutzer",
         "${ users } Benutzer"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Löschen"
+      ],
+      "Disable": [
+        "Deaktivieren"
+      ],
+      "Disable E2EE mail": [
+        "E2EE-E-Mail deaktivieren"
+      ],
+      "Disallow unsigned mail": [
+        "Unsignierte E-Mails blockieren"
+      ],
+      "Enable": [
+        "Aktivieren"
+      ],
+      "Enable E2EE mail": [
+        "E2EE-E-Mail aktivieren"
+      ],
+      "Generate missing keys": [
+        "Fehlende Schlüssel erzeugen"
+      ],
+      "Saving": [
+        "Wird gespeichert"
+      ],
+      "Set as default": [
+        "Als Standard festlegen"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Allow unsigned mail": [
+        "Unsignierte E-Mails zulassen"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Missing keys": [
+        "Fehlende Schlüssel"
+      ],
+      "No E2EE mail": [
+        "Keine E2EE-E-Mails"
+      ],
+      "Orphan": [
+        "Verwaist"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "Administrator"
       ]
     },
     "Alter": {
@@ -1430,9 +1595,30 @@
         "(über ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Keine Suchergebnisse gefunden"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Verfügbares Guthaben"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV-Vorlage"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Fehler in Zeile ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Scheinbar fehlt deiner Datei die '${ options.fieldName }'-Kopfzeile."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Wir haben beim Import Fehler in mehreren Zeilen festgestellt. Bitte überprüfe deine CSV-Datei."
       ]
     },
     "Cycle": {
@@ -1446,6 +1632,14 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Überfällige Rechnung"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-Logo und ein Pluszeichen"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
       ]
     },
     "Downgrade account reason": {
@@ -1479,9 +1673,20 @@
         "Hilf uns, besser zu werden!"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } ist dein Benutzername. Um ${ Local }@${ Domain } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
       ],
       "Amount above the maximum.": [
         "Höchstbetrag überschritten"
@@ -1504,17 +1709,32 @@
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
+      "Error": [
+        "Fehler"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fehler beim Verbinden mit der Bitcoin-API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
       ],
+      "Impossible to create the gateway": [
+        "Gateway kann nicht erstellt werden"
+      ],
+      "Impossible to edit the gateway": [
+        "Gateway kann nicht bearbeitet werden"
+      ],
+      "Impossible to rename the gateway": [
+        "Gateway kann nicht umbenannt werden"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect password": [
+        "Ungültiges Passwort"
       ],
       "Invalid ${ name } code": [
         "Ungültiger ${ name }-Code"
@@ -1537,11 +1757,20 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
+      "Name does not match": [
+        "Name stimmt nicht überein"
+      ],
       "Name on card required": [
         "Karteninhaber erforderlich"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Organization key is not decrypted": [
+        "Organisationsschlüssel ist nicht entschlüsselt"
+      ],
+      "Organization key is not decrypted.": [
+        "Organisationsschlüssel wird nicht entschlüsselt."
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
@@ -1561,6 +1790,15 @@
       "Payments are currently not available, please try again later": [
         "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut."
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Bitte aktiviere die Mehrbenutzerunterstützung, bevor du Benutzer zu deiner Organisation hinzufügst."
+      ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ],
@@ -1569,6 +1807,12 @@
       ],
       "Please set a recovery phone number first": [
         "Bitte lege zuerst eine Wiederherstellungs-Telefonnummer fest."
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um Support für mehrere Benutzer zu erhalten."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
       "Process aborted": [
         "Prozess abgebrochen"
@@ -1603,6 +1847,12 @@
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
       ],
+      "The organization key must be activated first": [
+        "Der Organisationsschlüssel muss zunächst aktiviert werden"
+      ],
+      "The organization key must be activated first.": [
+        "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -1636,8 +1886,34 @@
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Beim Hochladen deiner Datei „${ formattedFilename }“ ist ein Fehler aufgetreten. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Beim Hochladen der Datei ist ein Fehler aufgetreten. Es wurde keine Datei ausgewählt."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Lade eine CSV-Datei hoch, die maximal ${ MAX_NUMBER_OF_USER_ROWS } Benutzerkonten enthält."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Deine Datei „${ formattedFilename }“ ist leer."
       ]
     },
     "Error message": {
@@ -1683,11 +1959,23 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Neuen Benutzer erstellen"
+      ],
       "Decline invitation": [
         "Einladung ablehnen"
       ],
       "Got it": [
         "Verstanden"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Lade einen bestehenden Benutzer von ${ BRAND_NAME } ein"
+      ],
+      "Invite member to your family": [
+        "Mitglied in Family einladen"
+      ],
+      "Set up family group": [
+        "Familiengruppe einrichten"
       ],
       "Switch plans": [
         "Tarife wechseln"
@@ -1749,8 +2037,14 @@
       "Manage user accounts": [
         "Benutzerkonten verwalten"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "In einem Zeitraum von 6 Monaten sind nur 10 angenommene Einladungen zulässig."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Besitzer eines Tarifs mit Mitgliedern können keinem anderen Gruppenabonnement beitreten."
+      ],
+      "Pending": [
+        "Ausstehend"
       ],
       "Pending invitation": [
         "Offene Einladung"
@@ -1782,8 +2076,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht."
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Du hast das Limit von 10 akzeptierten Einladungen in 6 Monaten erreicht. Die Schaltfläche wird wieder anklickbar, wenn du weitere Benutzer einladen kannst."
+      ],
       "You have successfully joined the Family plan": [
         "Du hast erfolgreich einen Family-Tarif abgeschlossen"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppentarif zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
@@ -1812,8 +2115,40 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Nur eine kostenlose Testversion pro Benutzer."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Standardmäßig weisen wir dem Administratorkonto ${ formattedStorage } Speicher zu. Du kannst den zugewiesenen Speicher verwalten, um ihn später auf weitere Benutzer zu verteilen."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Erstelle und verwalte Family-Mitglieder und weise ihnen gemeinsam genutzten Speicherplatz zwischen ${ DRIVE_APP_NAME } und ${ MAIL_APP_NAME } zu."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
+      ],
       "Online privacy, for your whole family": [
         "Online-Privatsphäre für deine ganze Familie"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Die Einladung wird storniert und der Benutzer kann ${ organization.Name } nicht beitreten."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Du kannst den Speicherplatz für diesen Benutzer erhöhen oder verringern."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Hinzufügen, Entfernen und Ändern von Benutzerkonten in deiner Family-Gruppe."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Hinzufügen, Entfernen und Ändern von Benutzerkonten in deiner Organisation."
       ]
     },
     "familyOffer_2023:Label": {
@@ -1822,6 +2157,9 @@
       ],
       "Enter organization name to confirm": [
         "Gib zur Bestätigung den Namen der Organisation ein"
+      ],
+      "Family name": [
+        "Family-Name"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -1832,15 +2170,44 @@
         "Dadurch werden alle Premiumfunktionen von ${ BRAND_NAME } für jedes Family-Mitglied entfernt."
       ]
     },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } wurde aus ${ organization.Name } entfernt"
+      ],
+      "An error occurred, please try again": [
+        "Ein Fehler ist aufgetreten. Bitte erneut versuchen"
+      ],
+      "Member updated": [
+        "Mitglied aktualisiert"
+      ]
+    },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Füge deinem ${ PLAN_NAMES.visionary2022 }-Konto einen Benutzer hinzu"
+      ],
+      "Change family name": [
+        "Family-Name ändern"
+      ],
       "Delete family group?": [
         "Family-Gruppe löschen?"
       ],
       "Delete organization?": [
         "Organisation löschen?"
       ],
+      "Edit user storage": [
+        "Benutzerspeicher bearbeiten"
+      ],
+      "Family name": [
+        "Family-Name"
+      ],
       "Introducing ${ planName }": [
         "Wir stellen vor: ${ planName }"
+      ],
+      "Invite a user": [
+        "Benutzer einladen"
+      ],
+      "Set family name": [
+        "Family-Name festlegen"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -1855,8 +2222,19 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-Verbindung",
+        "${ MaxVPN } VPN-Verbindungen"
+      ],
       "Access to all countries": [
         "Zugang zu allen Ländern"
+      ],
+      "Add": [
+        "Hinzufügen"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Hinzufügen (${ numberOfAddedServers })",
+        "Hinzufügen (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Verbindung für bis zu ${ plusVpnConnections } Gerät",
@@ -2072,11 +2450,49 @@
       "Checkout": [
         "Zur Kasse"
       ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Erstelle dein Konto"
       ],
+      "IP address": [
+        "IP-Adresse"
+      ],
+      "Members": [
+        "Mitglieder"
+      ],
+      "Name": [
+        "Name"
+      ],
       "Select your pricing plan": [
         "Wähle dein Abonnement"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Serverauslastung"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Username": [
+        "Benutzername"
       ]
     },
     "Human verification method": {
@@ -2120,8 +2536,16 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
+        "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
+      ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } Benutzer gefunden",
+        "${ userFound } Benutzer gefunden"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
@@ -2160,20 +2584,51 @@
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
+      "active": [
+        "aktiv"
+      ],
       "add a recovery method": [
         "eine Wiederherstellungsmethode hinzufügst"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit Zwei-Faktor-Authentifizierung verifizieren, wenn du dich anmeldest."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Server hinzufügen (${ availableAddedCount } verfügbar)",
+        "Server hinzufügen (${ availableAddedCount } verfügbar)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } Gateway-Server wird hinzugefügt",
+        "${ addedServerCount } Gateway-Server werden hinzugefügt"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Gateway-Server wird hinzugefügt: ${ serverNumber } / ${ total }",
+        "Gateway-Server werden hinzugefügt: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Zusätzliche Optionen"
+      ],
+      "address": [
+        "Adresse",
+        "Adressen"
+      ],
+      "Admin account allocation": [
+        "Admin-Konto-Zuweisung"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
+      ],
+      "Allocated": [
+        "Zugewiesen"
+      ],
+      "Already allocated": [
+        "Bereits zugewiesen"
+      ],
+      "Already used": [
+        "Bereits verwendet"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
@@ -2190,11 +2645,20 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Alle ${ twoFa }-Methoden deines Kontos werden deaktiviert."
       ],
+      "Are you sure you want to delete this address?": [
+        "Möchtest du diese Adresse wirklich löschen?"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Bist du sicher, dass du die Zwei-Faktor-Authentifizierung (2FA) deaktivieren willst?"
       ],
       "Are you sure you want to discard your changes?": [
         "Möchtest du deine Änderungen wirklich verwerfen?"
+      ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Möchtest du diesem Benutzer wirklich die Administratorrechte entziehen?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Bitte den Administrator deiner Organisation, Gateways einzurichten."
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -2211,8 +2675,17 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Kopiere dein Passwort und bewahre es an einem sicheren Ort auf."
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Vor dem Anlegen dieser Adresse musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die Adresse erstellen."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Vor dem Aktivieren dieses Kontos musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die neuen Adressen erstellen."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
       "Billed every 12 months": [
         "Jährliche Abrechnung"
@@ -2253,6 +2726,22 @@
       "Country code": [
         "Ländercode"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "Erstelle ein neues Konto und teile dem Benutzer die E-Mail-Adresse und das Passwort mit."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Du kannst E-Mail-Adressen für andere Bentzer erstellen und ${ MAIL_APP_NAME } für ein Unternehmen, eine Schule oder eine Gruppe verwalten. Beginne, indem du deinen Organisationsnamen und deine eigene Domain (z. B. @meinefirma.de) hinzufügst."
+      ],
+      "Create your first Gateway": [
+        "Erstelle dein erstes Gateway"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Gateway-Server wird erstellt: ${ serverNumber } / ${ total }",
+        "Gateway-Server werden erstellt: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Dein Konto wird erstellt"
       ],
@@ -2268,14 +2757,30 @@
       "Dedicated servers": [
         "Dezidierte Server"
       ],
+      "dedicated servers": [
+        "dedizierte Server"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } Gateway-Server wird gelöscht",
+        "${ deletedServerCount } Gateway-Server werden gelöscht"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Vergiss dieses Passwort NICHT. Solltest du es vergessen, kannst du dich weder anmelden noch deine Nachrichten entschlüsseln."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Verwende die OpenVPN / IKEv2 Zugangsdaten NICHT in ${ VPN_APP_NAME }-Anwendungen oder auf dem ${ VPN_APP_NAME }-Dashboard. ${ learnMore }"
+      ],
+      "Done": [
+        "Fertig"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Fertig! Es wurde ein Code an „${ destination }“ gesendet."
@@ -2301,6 +2806,9 @@
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
       ],
+      "Enhance your network security": [
+        "Erhöhe die Sicherheit deines Netzwerks"
+      ],
       "Enter key manually instead": [
         "Schlüssel stattdessen manuell eingeben"
       ],
@@ -2315,6 +2823,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Gib den an „${ email }” gesendeten Code ein. Solltest du die Nachricht nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -2343,6 +2854,9 @@
       "expires ${ expirationDate }": [
         "verfällt am ${ expirationDate }"
       ],
+      "Fill in user details": [
+        "Daten des Benutzers ausfüllen"
+      ],
       "for choosing ${ product }": [
         ", dass du dich für ${ product } entschieden hast."
       ],
@@ -2358,6 +2872,9 @@
       "Free up some space or contact your administrator.": [
         "Gib etwas Platz frei oder wende dich an deinen Administrator."
       ],
+      "Gateways": [
+        "Gateways"
+      ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } holen"
       ],
@@ -2369,6 +2886,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Wenn ein anderer Administrator dieses Passwort geändert hat, musst du ihn um das neue Organisationspasswort bitten."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Wenn es nicht das Richtige für dich ist, erstatten wir dir das Geld zurück."
@@ -2412,6 +2932,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
       ],
+      "inactive": [
+        "inaktiv"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installiere eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land deiner Wahl herzustellen."
       ],
@@ -2432,6 +2955,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
+      ],
+      "Lean more about gateways": [
+        "Mehr über Gateways erfahren"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
@@ -2463,8 +2989,38 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
+      "Member": [
+        "Mitglied"
+      ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "more": [
+        "mehr"
+      ],
+      "Multi-user support not enabled.": [
+        "Mehrbenutzerunterstützung nicht aktiviert."
+      ],
+      "Must be between 3 and 20 characters long.": [
+        "Muss zwischen 3 und 20 Zeichen lang sein."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Darf nur Buchstaben, Zahlen und Bindestriche (-) enthalten."
+      ],
+      "Must not contain spaces.": [
+        "Darf keine Leerzeichen enthalten."
+      ],
+      "Must start with a letter.": [
+        "Muss mit einem Buchstaben beginnen."
+      ],
+      "No addresses exist": [
+        "Keine Adressen vorhanden"
+      ],
+      "No gateways": [
+        "Keine Gateways"
+      ],
+      "No Gateways yet": [
+        "Noch keine Gateways"
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
@@ -2478,8 +3034,8 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
-      "Number of users": [
-        "Anzahl der Benutzer"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Die Anzahl der dedizierten Server, die du zuweisen möchtest (${ addedCount }), ist höher als die Anzahl der in deinem Abonnement noch verfügbaren Server (${ remainingCount }), da du ${ ownedCount } besitzt und ${ usedCount } bereits nutzt."
       ],
       "of": [
         "von"
@@ -2493,11 +3049,26 @@
       "Open source": [
         "Quelloffen"
       ],
+      "Optional": [
+        "Optional"
+      ],
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
       ],
+      "Organization keys activated": [
+        "Organisationsschlüssel aktiviert"
+      ],
+      "Organization keys restored": [
+        "Organisationsschlüssel wiederhergestellt"
+      ],
       "Organization size": [
         "Organisationsgröße"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Organisiere deine dedizierten Server in Gateways und entscheide, welche Mitglieder darauf zugreifen können."
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "In deiner Organisation gibt es weitere Administratoren. Du selbst bist verantwortlich dafür, ihnen das neue Passwort mitzuteilen."
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
@@ -2508,14 +3079,31 @@
       "Plan upgrade required": [
         "Umstieg auf ein anderes Abo erforderlich"
       ],
+      "Please add a password for the user on row": [
+        "Bitte füge ein Passwort für den Benutzer in der folgenden Zeile hinzu:",
+        "Bitte füge Passwörter für die Benutzer in den folgenden Zeilen hinzu:"
+      ],
+      "Please add an email address for the user on row": [
+        "Bitte füge eine E-Mail-Adresse für den Benutzer in der folgenden Zeile hinzu:",
+        "Bitte füge E-Mail-Adressen für die Benutzer in den folgenden Zeilen hinzu:"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bitte authentifiziere deine Karte im Verifikationstab."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Bitte authentifiziere deine Zahlung im Verifikationstab."
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Bitte überprüfe deine Datei auf Fehler oder wende dich an den Kundensupport, um weitere Informationen zu erhalten."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Wenn du diese E-Mail-Adresse löschst, kannst du keine E-Mails mehr über diese Adresse senden oder empfangen."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
@@ -2550,6 +3138,9 @@
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
       ],
+      "Queued": [
+        "Eingereiht"
+      ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
       ],
@@ -2562,11 +3153,17 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
+      ],
       "Restore": [
         "Wiederherstellen"
       ],
       "Revoke certificate ${ name }": [
         "Zertifikat ${ name } widerrufen"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Speichere dein Passwort an einem sicheren Ort. Klicke auf das Symbol, um zu bestätigen, dass du dein Passwort korrekt eingegeben hast."
       ],
       "Saving your password": [
         "Passwort wird gespeichert"
@@ -2579,6 +3176,9 @@
       ],
       "Securing your account": [
         "Dein Konto wird abgesichert"
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
       ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
@@ -2608,6 +3208,18 @@
         "Schritt ${ step }",
         "Schritt ${ step }"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
+      ],
+      "Storage allocated to this user": [
+        "Diesem Benutzer zugewiesener Speicherplatz"
+      ],
+      "Storage for users": [
+        "Speicherplatz für Benutzer"
+      ],
+      "Storage used by this user": [
+        "Von diesem Benutzer verwendeter Speicherplatz"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
@@ -2625,6 +3237,27 @@
       ],
       "Thank you": [
         "Vielen Dank"
+      ],
+      "The following address is invalid.": [
+        "Die folgende Adresse ist ungültig.",
+        "Die folgenden Adressen sind ungültig."
+      ],
+      "The following address is unavailable.": [
+        "Die folgende Adresse ist nicht verfügbar.",
+        "Die folgenden Adressen sind nicht verfügbar."
+      ],
+      "The following address was not created.": [
+        "Die folgende E-Mail-Adresse wurde nicht erstellt.",
+        "Die folgenden E-Mail-Adressen wurden nicht erstellt."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Die folgenden Mitglieder werden eine E-Mail erhalten, in der sie aufgefordert werden, die Zwei-Faktor-Authentifizierung so bald wie möglich zu aktivieren."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Das Format der CSV-Datei ist ungültig."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
       ],
       "The securest way to browse, stream, and be online.": [
         "Die sicherste Art, zu surfen, zu streamen und online zu sein."
@@ -2647,14 +3280,26 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne nicht die Verbindung zum Internet."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Dadurch wird ein Verschlüsselungscode für deine Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
@@ -2676,6 +3321,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "Gib zur Bestätigung bitte den Namen des zu löschenden Benutzers ein."
       ],
       "to continue to ${ product }": [
         "um zu ${ product } zu gelangen."
@@ -2740,11 +3388,20 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Lade deine ausgefüllte CSV-Datei hoch, um Konten zu erstellen"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Verwende die verschiedenen Arten von E-Mail-Adressen und Aliassen, die dir ${ BRAND_NAME } bietet."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
+      ],
+      "Users": [
+        "Benutzer"
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -2766,6 +3423,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure Logo"
+      ],
+      "Want servers in other countries?": [
+        "Du brauchst Server in anderen Ländern?"
       ],
       "Warning:": [
         "Warnung:"
@@ -2790,6 +3450,12 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Wir empfehlen, mindestens 2 Server zu betreiben, um Redundanz zu gewährleisten."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Wir empfehlen, mehrere Server an verschiedenen Standorten zu betreiben, um Redundanz zu gewährleisten."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Wir empfehlen, die Mitglieder der Organisation zu benachrichtigen und sie zu bitten, 2FA für ihre Konten einzurichten, bevor du die Verwendung von 2FA erzwingst."
       ],
       "We recommend using your recovery phrase instead.": [
         "Wir empfehlen, stattdessen deine Wiederherstellungsphrase zu verwenden."
@@ -2824,8 +3490,17 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wenn dein Abonnement verlängert wird, werden wir das verfügbare Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
       ],
+      "Whole organization": [
+        "Gesamte Organisation"
+      ],
       "Why?": [
         "Warum?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
+      ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -2838,6 +3513,17 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Du verwendest aktuell ${ ipCount } von deinem ${ ipAddresses } verfügbaren dedizierten Server.",
+        "Du verwendest aktuell ${ ipCount } von deinen ${ ipAddresses } verfügbaren dedizierten Servern."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Du verwendest aktuell ${ organization.UsedMembers } von deiner ${ organization.MaxMembers } verfügbaren Benutzerlizenz.",
+        "Du verwendest aktuell ${ organization.UsedMembers } von deinen ${ organization.MaxMembers } verfügbaren Benutzerlizenzen."
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Du bist beim Konto ${ memberAddress } angemeldet."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
@@ -2858,6 +3544,9 @@
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein Abonnement kündigst.",
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein Abonnement kündigst."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Du kannst nun als Administrator auf das Konto zugreifen und es verwalten."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kannst jeweils nur eine Chat-Instanz offen haben. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
       ],
@@ -2867,11 +3556,18 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
       ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
+        "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
+      ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "Du musst den privaten Schlüssel deiner Organisation mit dem Passwort für den gesicherten Organisationsschlüssel aktivieren, das du von deinem Organisationsadministrator erhalten hast."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
@@ -2932,6 +3628,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Dein Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn du diesen Administrationsberechtigungen erteilen möchtest. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf deine Organisation zu erhalten, wenn du den Zugriff auf dein Konto verlierst. Bitte speichere dieses Passwort sicher ab."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Deine Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -3025,6 +3724,14 @@
         "Abonnement"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Langsamer, bietet bessere Kompatibilität mit älterer Software)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Schnellste und modernste Methode)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
@@ -3038,6 +3745,23 @@
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } Tag",
+        "${ nbDay } Tage"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adresse",
+        "${ UsedAddresses }/${ MaxAddresses } E-Mail-Adressen"
+      ],
+      "Account storage": [
+        "Kontenspeicher"
+      ],
+      "Address": [
+        "Anschrift"
+      ],
+      "Addresses": [
+        "E-Mail-Adressen"
       ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
@@ -3117,6 +3841,9 @@
       "Confirm new password": [
         "Neues Passwort bestätigen"
       ],
+      "Confirm organization password": [
+        "Organisationspasswort bestätigen"
+      ],
       "Confirm password": [
         "Passwort bestätigen"
       ],
@@ -3134,6 +3861,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create password": [
+        "Passwort erstellen"
       ],
       "Credits used": [
         "Guthaben verwendet"
@@ -3165,6 +3895,9 @@
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
       ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -3183,6 +3916,9 @@
       "Expires": [
         "Gültig bis"
       ],
+      "Gateway name": [
+        "Gateway-Name"
+      ],
       "Gift code": [
         "Gutscheincode"
       ],
@@ -3198,6 +3934,9 @@
       "Key": [
         "Schlüssel"
       ],
+      "Key strength": [
+        "Schlüsselstärke"
+      ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
       ],
@@ -3209,6 +3948,9 @@
       ],
       "Moderate NAT": [
         "Moderates NAT"
+      ],
+      "Name": [
+        "Name"
       ],
       "Name on card": [
         "Karteninhaber"
@@ -3227,6 +3969,9 @@
       ],
       "New mailbox password": [
         "Neues Postfachpasswort"
+      ],
+      "New organization password": [
+        "Neues Organisationspasswort"
       ],
       "New password": [
         "Neues Passwort"
@@ -3251,6 +3996,15 @@
       ],
       "Optional": [
         "Optional"
+      ],
+      "Organization name": [
+        "Name der Organisation"
+      ],
+      "Organization password": [
+        "Passwort der Organisation"
+      ],
+      "Organization size": [
+        "Organisationsgröße"
       ],
       "Other amount": [
         "Anderer Betrag"
@@ -3291,6 +4045,12 @@
       "Recovery phrase": [
         "Wiederherstellungsphrase"
       ],
+      "Require 2FA for administrators": [
+        "2FA für Administratoren erfordern"
+      ],
+      "Require 2FA for everyone": [
+        "2FA für jeden erfordern"
+      ],
       "Reveal password": [
         "Passwort anzeigen"
       ],
@@ -3302,6 +4062,9 @@
       ],
       "Select your country": [
         "Wähle dein Land"
+      ],
+      "Select your plan": [
+        "Wähle dein Abonnement"
       ],
       "Start date": [
         "Anfangsdatum"
@@ -3317,6 +4080,9 @@
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
+      ],
+      "User": [
+        "Benutzer"
       ],
       "User's new password": [
         "Neues Passwort des Benutzers"
@@ -3352,6 +4118,17 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer für die Wiederherstellung"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Admin"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "VPN connections": [
+        "VPN-Verbindungen"
       ]
     },
     "Label for news": {
@@ -3409,6 +4186,9 @@
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
+      "Contact us": [
+        "Kontaktiere uns"
+      ],
       "Create account": [
         "Konto erstellen"
       ],
@@ -3460,6 +4240,9 @@
       "Upgrade account": [
         "Konto-Upgrade durchführen"
       ],
+      "Upgrade your plan": [
+        "Dein Abonnement upgraden"
+      ],
       "View guide": [
         "Anleitung anzeigen"
       ],
@@ -3485,6 +4268,32 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Führe ein Upgrade durch, um den Chat-Support und andere Premium-Funktionen freizuschalten, oder nutze unser kostenloses Support-Formular, um dein Problem zu melden."
+      ]
+    },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
+        "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
+      ]
+    },
+    "Member action": {
+      "Change password": [
+        "Passwort ändern"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Edit": [
+        "Ändern"
+      ],
+      "Remove": [
+        "Entfernen"
+      ],
+      "Revoke sessions": [
+        "Sitzungen widerrufen"
+      ],
+      "Sign in": [
+        "Anmelden"
       ]
     },
     "Message": {
@@ -3560,6 +4369,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: action": {
@@ -3688,6 +4500,9 @@
       "Advanced sharing security": [
         "Erweiterte Sicherheit beim Teilen"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
+      ],
       "Auto-reply": [
         "Automatische Antworten"
       ],
@@ -3775,6 +4590,9 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
       "High-speed streaming": [
         "Hochgeschwindigkeits-Steaming"
       ],
@@ -3827,6 +4645,12 @@
       ],
       "Router support": [
         "Router-Unterstützung"
+      ],
+      "Schedule messages at any time": [
+        "Nachrichten zu jeder Zeit planen"
+      ],
+      "Search message content": [
+        "Nachrichteninhalt durchsuchen"
       ],
       "Secure Core servers": [
         "Secure Core-Server"
@@ -3904,6 +4728,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
+      "Up to 15 email addresses": [
+        "Bis zu 15 E-Mail-Adressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Bis zu 3 TB Speicherplatz"
+      ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
       ],
@@ -3917,6 +4747,20 @@
         "Teilen von Tresoren und Einträgen (Demnächst verfügbar)"
       ]
     },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "Support"
@@ -3928,6 +4772,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "Mit ${ BRAND_NAME } kannst du E-Mail-Adressen erstellen und Konten für Unterbenutzer verwalten – das ist ideal für Familien und Organisationen."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
@@ -4239,6 +5086,11 @@
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Enthalten in allen ${ BRAND_NAME } for Business-Abonnements."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 Support"
@@ -4297,11 +5149,32 @@
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
+      ],
+      "An external address cannot be default": [
+        "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
+      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
+      "IP Address copied to clipboard": [
+        "IP-Adresse in Zwischenablage kopiert"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      ],
+      "Reminder has been sent": [
+        "Eine Erinnerung wurde versandt"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Die Zwei-Faktor-Authentifizierung wurde für Administratoren zur Pflicht."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Die Zwei-Faktor-Authentifizierung wurde für alle zur Pflicht."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
       ]
     },
     "Onboarding": {
@@ -4342,6 +5215,38 @@
       ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
+      ],
+      "The whole organization": [
+        "Die gesamte Organisation"
+      ]
+    },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink }, um weitere Benutzer hinzuzufügen, oder entferne einige Benutzerkonten, um Speicherplatz freizugeben."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink }, um mehr Konten zu erhalten, oder entferne den VPN-Zugang für einige Benutzer."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink }, um mehr E-Mail-Adressen zu erhalten oder entferne einige Adressen, um Platz zu schaffen."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink }, um mehr Speicherplatz zu erhalten oder entferne einige Dateien, um Speicherplatz freizugeben."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Dein Abonnement beinhaltet maximal ${ availableAddresses } weitere E-Mail-Adresse.",
+        "Dein Abonnement beinhaltet maximal ${ availableAddresses } weitere E-Mail-Adressen."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } weiteren Organisationsbenutzer.",
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } weitere Organisationsbenutzer."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } weiteres VPN-Konto.",
+        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } weitere VPN-Konten."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
       ]
     },
     "pass_signup_2023: Action": {
@@ -4383,6 +5288,15 @@
       "Add gift code": [
         "Gutscheincode hinzufügen"
       ],
+      "Address": [
+        "Adresse"
+      ],
+      "Choose a name": [
+        "Namen auswählen"
+      ],
+      "Choose display name": [
+        "Anzeigename auswählen"
+      ],
       "Confirm": [
         "Bestätigen"
       ],
@@ -4406,6 +5320,15 @@
       ],
       "Please select the main reason": [
         "Bitte wähle den Hauptgrund"
+      ],
+      "Search": [
+        "Suchen"
+      ],
+      "Search for a user or address": [
+        "Nach einem Benutzer oder einer Adresse suchen"
+      ],
+      "Search users": [
+        "Benutzer suchen"
       ],
       "Select": [
         "Auswählen"
@@ -4439,6 +5362,11 @@
     "Price": {
       "Free": [
         "Kostenlos"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "privat"
       ]
     },
     "Recovery Email": {
@@ -4505,6 +5433,61 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Kompatibilität"
+      ],
+      "State of the art": [
+        "Stand der Technik"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Schüssel der Organisation ändern"
+      ],
+      "Changing organization password": [
+        "Passwort der Organisation ändern"
+      ],
+      "Creating new users": [
+        "Neue Benutzer anlegen"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
+      ],
+      "Reading emails of non-private users": [
+        "E-Mails von nicht-privaten Nutzern lesen"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Administrator"
+      ],
+      "Primary admin": [
+        "Hauptadministrator"
+      ],
+      "User": [
+        "Benutzer"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "CSV-Datei hochladen"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktiv"
+      ],
+      "inactive": [
+        "inaktiv"
+      ],
+      "pending": [
+        "ausstehend"
+      ],
+      "to be created": [
+        "wird erstellt"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4946,6 +5929,9 @@
       "Account deleted. Signing out...": [
         "Konto gelöscht. Abmeldung wird ausgeführt..."
       ],
+      "Address added": [
+        "Adresse hinzugefügt"
+      ],
       "Bug reported": [
         "Fehler gemeldet"
       ],
@@ -4973,14 +5959,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinen Benutzernamen."
       ],
+      "Invitation sent": [
+        "Einladung gesendet"
+      ],
       "Invoice customized": [
         "Rechnung angepasst"
       ],
       "Invoice paid": [
         "Rechnung bezahlt"
       ],
+      "Keys updated": [
+        "Schlüssel aktualisiert"
+      ],
       "Locale updated": [
         "Gebietsschema aktualisiert"
+      ],
+      "Organization activated": [
+        "Organisation aktiviert"
       ],
       "Password updated": [
         "Passwort aktualisiert"
@@ -5000,6 +5995,12 @@
       "Preference saved": [
         "Einstellung gespeichert"
       ],
+      "User created": [
+        "Benutzer erstellt"
+      ],
+      "User updated": [
+        "Benutzer aktualisiert"
+      ],
       "Verification successful": [
         "Verifizierung erfolgreich"
       ],
@@ -5010,7 +6011,24 @@
         "Du hast das Abonnement erfolgreich gekündigt."
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "Sitzungen zurückgenommen"
+      ],
+      "User deleted": [
+        "Benutzer gelöscht"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "Adresse gelöscht"
+      ],
+      "Address disabled": [
+        "Adresse deaktiviert"
+      ],
+      "Address enabled": [
+        "Adresse aktiviert"
+      ],
       "Certificate ${ name } revoked": [
         "Zertifikat ${ name } widerrufen"
       ],
@@ -5022,6 +6040,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "Konfigurationsdatei für ${ serverName } wird erstellt"
+      ],
+      "Preference updated": [
+        "Einstellungen aktualisiert"
       ]
     },
     "Suffix": {
@@ -5122,11 +6143,32 @@
       "Country": [
         "Land"
       ],
+      "Display name": [
+        "Anzeigename"
+      ],
+      "Email": [
+        "E‐Mail‐Adresse"
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
+      ],
+      "Email addresses": [
+        "E‐Mail‐Adressen"
+      ],
       "Name": [
         "Name"
       ],
+      "Password": [
+        "Passwort"
+      ],
+      "Role": [
+        "Rolle"
+      ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Gesamter Speicherplatz"
       ]
     },
     "Themes": {
@@ -5174,6 +6216,15 @@
       "Action": [
         "Aktion"
       ],
+      "Activate account and generate keys": [
+        "Konto aktivieren und Schlüssel erzeugen"
+      ],
+      "Activate organization key": [
+        "Organisationsschlüssel aktivieren"
+      ],
+      "Add address": [
+        "E-Mail-Adr. hinzufügen"
+      ],
       "Add credit/debit card": [
         "Kredit-/Debitkarte hinzufügen"
       ],
@@ -5183,8 +6234,23 @@
       "Add invoice details": [
         "Rechnungsdetails hinzufügen"
       ],
+      "Add new user": [
+        "Neuen Benutzer hinzufügen"
+      ],
       "Add PayPal payment method": [
         "PayPal als Zahlungsmethode hinzufügen"
+      ],
+      "Add servers": [
+        "Server hinzufügen"
+      ],
+      "Add user accounts": [
+        "Benutzerkonten hinzufügen"
+      ],
+      "Add users": [
+        "Benutzer hinzufügen"
+      ],
+      "Allocate storage": [
+        "Speicherplatz zuweisen"
       ],
       "Amount": [
         "Betrag"
@@ -5197,6 +6263,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
+      ],
+      "Authentication security": [
+        "Sicherheit der Authentifizierung"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -5219,8 +6288,17 @@
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
+      "Change organization keys": [
+        "Organisationsschlüssel ändern"
+      ],
+      "Change organization name": [
+        "Namen der Organisation ändern"
+      ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Change role": [
+        "Rolle ändern"
       ],
       "Confirm address": [
         "Adresse bestätigen"
@@ -5237,11 +6315,39 @@
       "Contact us": [
         "Kontaktiere uns"
       ],
+      "Couldn’t create accounts": [
+        "Konten konnten nicht erstellt werden"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } Benutzer erstellt",
+        "${ selectedUserIds.length } Benutzer erstellt"
+      ],
+      "Create a new Gateway": [
+        "Erstelle ein neues Gateway"
+      ],
+      "Create a new gateway": [
+        "Erstelle ein neues Gateway"
+      ],
+      "Create Gateway": [
+        "Gateway erstellen"
+      ],
+      "Create multiple user accounts": [
+        "Mehrere Benutzerkonten erstellen"
+      ],
+      "Create user accounts": [
+        "Benutzerkonten erstellen"
+      ],
+      "Creating user accounts": [
+        "Benutzerkonten werden erstellt"
+      ],
       "Credits": [
         "Guthaben"
       ],
       "Currency": [
         "Währung"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Passe die Anzahl der IP-Adressen in deinem Abonnement an"
       ],
       "Customize your plan": [
         "Abonnement anpassen"
@@ -5255,11 +6361,23 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete ${ email }": [
+        "${ email } löschen"
+      ],
       "Delete account": [
         "Konto löschen"
       ],
+      "Delete user": [
+        "Benutzer löschen"
+      ],
+      "Delete user?": [
+        "Benutzer löschen?"
+      ],
       "Device connected!": [
         "Gerät verbunden!"
+      ],
+      "Disable ${ email }": [
+        "${ email } deaktivieren"
       ],
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
@@ -5279,6 +6397,18 @@
       "Edit display name": [
         "Anzeigename bearbeiten"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Gateway ${ currentName } bearbeiten"
+      ],
+      "Edit servers": [
+        "Server bearbeiten"
+      ],
+      "Edit user": [
+        "Benutzer bearb."
+      ],
+      "Edit users": [
+        "Benutzer bearbeiten"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -5291,11 +6421,21 @@
       "Error": [
         "Fehler"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Das Erstellen von ${ failedUsers.length } Benutzerkonto ist fehlgeschlagen.",
+        "Das Erstellen von ${ failedUsers.length } Benutzerkonten ist fehlgeschlagen."
+      ],
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername suchen"
       ],
+      "Gateways": [
+        "Gateways"
+      ],
       "General": [
         "Allgemein"
+      ],
+      "Generate missing keys": [
+        "Fehlende Schlüssel erzeugen"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Hol dir ${ vpnPlus }, um Zugriff auf alle Server zu erhalten"
@@ -5309,6 +6449,9 @@
       "Human verification": [
         "Captcha"
       ],
+      "Increase your privacy with more addresses": [
+        "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
@@ -5320,6 +6463,9 @@
       ],
       "Login password": [
         "Anmeldepasswort"
+      ],
+      "Multi-user support": [
+        "Mehrbenutzerunterstützung"
       ],
       "Network error": [
         "Netzwerkfehler"
@@ -5344,6 +6490,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN Konfigurationsdateien"
+      ],
+      "Organization name": [
+        "Name der Organisation"
       ],
       "Password": [
         "Passwort"
@@ -5384,6 +6533,12 @@
       "Recovery": [
         "Wiederherstellung"
       ],
+      "Remove user?": [
+        "Benutzer entfernen?"
+      ],
+      "Rename the gateway": [
+        "Benenne das Gateway um"
+      ],
       "Report a problem": [
         "Ein Problem melden"
       ],
@@ -5393,11 +6548,17 @@
       "Request sent": [
         "Anfrage gesendet"
       ],
+      "Reset organization keys": [
+        "Schlüssel der Organisation zurücksetzen"
+      ],
       "Reset password": [
         "Passwort zurücksetzen"
       ],
       "Reset password?": [
         "Passwort zurücksetzen?"
+      ],
+      "Restore administrator privileges": [
+        "Administrationsprivilegien wiederherstellen"
       ],
       "Revoke certificate": [
         "Zertifikat widerrufen"
@@ -5405,8 +6566,20 @@
       "Select a plan": [
         "Abonnement auswählen"
       ],
+      "Send email reminders?": [
+        "Erinnerungs-E-Mails senden?"
+      ],
       "Set new password": [
         "Neues Passwort festlegen"
+      ],
+      "Set organization keys": [
+        "Organisationsschlüssel festlegen"
+      ],
+      "Set organization name": [
+        "Name der Organisation festlegen"
+      ],
+      "Set organization password": [
+        "Passwort der Organisation festlegen"
       ],
       "Set up two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung einrichten"
@@ -5426,11 +6599,22 @@
       "Sign out": [
         "Abmelden"
       ],
+      "Signed in to member account": [
+        "In Mitgliedskonto angemeldet"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
+        "${ localSuccessfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "${ successfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
+        "${ successfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
       ],
       "Summary": [
         "Zusammenfassung"
@@ -5447,6 +6631,12 @@
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
+      "Two-factor authentication enforcement": [
+        "Erzwingen der Zwei-Faktor-Authentifizierung"
+      ],
+      "Two-factor authentication reminders": [
+        "Erinnerungen an die Zwei-Faktor-Authentifizierung"
+      ],
       "Type": [
         "Typ"
       ],
@@ -5458,6 +6648,12 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Verbessere den Schutz deines Netzwerks mit dedizierten Servern"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Lade eine CSV-Datei hoch, um mehrere Konten zu erstellen."
+      ],
+      "Users": [
+        "Benutzer"
       ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
@@ -5506,6 +6702,23 @@
         "${ MAIL_APP_NAME }-Rechnung"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Adressen"
+      ],
+      "Email": [
+        "E‐Mail‐Adresse"
+      ],
+      "Features": [
+        "Funktionen"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Role": [
+        "Rolle"
+      ]
+    },
     "Title subscription": {
       "Actions": [
         "Aktionen"
@@ -5539,11 +6752,17 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Administratoren können Änderungen an deinem Abonnement vornehmen, Benutzerkonten und Passwörter verwalten und anderen Benutzern Administratorrechte erteilen."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
@@ -5571,6 +6790,17 @@
     "upsell panel": {
       "Recommended": [
         "Empfohlen"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Admin"
+      ],
+      "Member": [
+        "Mitglied"
+      ],
+      "Primary admin": [
+        "Hauptadministrator"
       ]
     },
     "Validation": {
@@ -5702,6 +6932,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Wenn du diese E-Mail-Adresse deaktivierst, kannst du keine Nachrichten mehr über diese Adresse senden oder empfangen und alle damit verbundenen ${ BRAND_NAME }-Produkte werden ebenfalls deaktiviert. Möchtest du diese E-Mail-Adresse wirklich deaktivieren?"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
       ],
@@ -5713,6 +6946,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "Du musst Organisationsschlüssel ${ activateLink }, bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen kannst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"

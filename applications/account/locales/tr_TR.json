@@ -98,6 +98,9 @@
       "Add label": [
         "Etiket ekle"
       ],
+      "Add multiple users": [
+        "Birkaç kullanıcı ekle"
+      ],
       "Add notification": [
         "Bildirim ekle"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Klasör ekle"
       ],
+      "Create Gateway": [
+        "Ağ geçidi ekle"
+      ],
       "Create label": [
         "Etiket ekle"
       ],
       "Create link": [
         "Bağlantı oluştur"
+      ],
+      "Create user": [
+        "Kullanıcı ekle"
       ],
       "Create users": [
         "Kullanıcılar ekle"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Sil ve onayla"
       ],
+      "Delete Gateway": [
+        "Ağ geçidini sil"
+      ],
       "Delete link": [
         "Bağlantıyı sil"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Kaydı sil"
+      ],
+      "Delete user": [
+        "Kullanıcıyı sil"
       ],
       "Delete without exporting": [
         "Anahtar dışar aktarılmadan silinsin"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "ICS dosyasını indir"
       ],
+      "Download our CSV template": [
+        "CSV kalıbımızı indirin"
+      ],
       "Download recovery file": [
         "Kurtarma dosyasını indir"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "Edit Gateway": [
+        "Ağ geçidini düzenle"
+      ],
       "Edit label": [
         "Etiketi düzenle"
+      ],
+      "Edit name": [
+        "Adı düzenle"
       ],
       "Edit password": [
         "Parolayı düzenle"
       ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
+      ],
+      "Edit servers": [
+        "Sunucuları düzenle"
       ],
       "Edit sieve": [
         "Sieve kodunu düzenle"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Aboneliği düzenle"
+      ],
+      "Edit users": [
+        "Kullanıcıları düzenle"
       ],
       "Emoji": [
         "Emoji"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Daha fazla etiket alın"
+      ],
+      "Get more licenses": [
+        "Daha fazla lisans alın"
+      ],
+      "Get more servers": [
+        "Daha fazla sunucu alın"
       ],
       "Get the deal": [
         "Tekliften yararlanın"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Bu bildirimi kaldır"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
       ],
       "Report a problem": [
         "Sorun bildirin"
@@ -932,6 +971,12 @@
       "Upgrade now": [
         "Şimdi yükselt"
       ],
+      "Upgrade to Business": [
+        "Business tarifesine yükselt"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "${ PROTON_SENTINEL_NAME } özelliğini etkinleştirmek için tarifenizi yükseltin"
+      ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
       ],
@@ -998,6 +1043,9 @@
       "Yes, undo": [
         "Evet, geri al"
       ],
+      "Your server will be provisioned in the next days": [
+        "Sunucunuz bir kaç gün içinde hazırlanacak"
+      ],
       "Zoom in": [
         "Yakınlaştır"
       ],
@@ -1049,6 +1097,9 @@
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } size ayrılmış her sunucu için"
       ],
       "${ price } per domain": [
         "her etki alanı için ${ price }"
@@ -1127,6 +1178,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "10 takma adı ücretsiz alın!"
+      ],
+      "Get unlimited aliases!": [
+        "Sınırsız sayıda takma ad alın!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını deneyin"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "${ PASS_APP_NAME } ile kimliğinizi gizlemek ve e-postaları asıl gelen kutunuza iletmek için benzersiz takma adlar oluşturabilirsiniz."
       ]
     },
     "Alter": {
@@ -1526,11 +1591,6 @@
         "Hafta"
       ]
     },
-    "Checkbox label": {
-      "All": [
-        "Tümü"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } kullanıcı",
@@ -1539,6 +1599,17 @@
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "ay"
+      ],
+      "Servers": [
+        "Sunucular"
+      ],
+      "Users": [
+        "Kullanıcılar"
       ]
     },
     "Collapsible tooltip": {
@@ -2748,6 +2819,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Bu özelliklere erişmek için gelişmiş günlük ve ${ PROTON_SENTINEL_NAME } özelliklerini açın"
+      ],
+      "Enable advanced logs to access these features": [
+        "Bu özelliklere erişmek için gelişmiş günlük özelliğini açın"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
@@ -2798,6 +2878,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Yüklediğiniz CSV dosyasında aşağıdaki alanlar algılandı. İçe aktarmak istediklerinizi işaretleyin."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "${ signIn }maya dön."
+      ],
+      "Didn't create an account?": [
+        "Bir hesap açmadınız mı?"
+      ],
+      "I didn't create this account": [
+        "Bu hesabı ben açmadım"
+      ],
+      "sign in": [
+        "oturum aç"
+      ],
+      "Thanks for letting us know": [
+        "Bize bildirdiğiniz için teşekkür ederiz"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Bu durumdan genellikle endişelenmek gerekmez. Bu ${ BRAND_NAME } hesabının sizin olmadığını onaylamak için aşağıya tıklamanız yeterlidir. Biz de hesabı kullanım dışı bırakırız."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Bu hesabın size ait olmadığı bilgisini aldık. Konuyu soruşturup gerekli işlemleri yapacağız."
+      ],
+      "You can safely close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
       ]
     },
     "Domain label": {
@@ -3115,6 +3221,15 @@
       ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
+      ],
+      "Impossible to create the gateway": [
+        "Ağ geçidi oluşturulamıyor"
+      ],
+      "Impossible to edit the gateway": [
+        "Ağ geçidi düzenlenemiyor"
+      ],
+      "Impossible to rename the gateway": [
+        "Ağ geçidi yeniden adlandırılamıyor"
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -3685,6 +3800,11 @@
         "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Hesabınız kullanımdan kaldırılırken sorun çıktı."
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile görüşün"
@@ -4023,7 +4143,7 @@
         "*Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak aynı tutarla yenilenir."
       ],
       "Discounts are based on the standard monthly pricing.": [
-        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+        "İndirimler standart aylık ücretlendirmeye göre yapılır."
       ]
     },
     "familyOffer_2023:Get Proton Family": {
@@ -4159,6 +4279,10 @@
       ],
       "Access to all countries": [
         "Tüm ülkelere erişim"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Ekle (${ numberOfAddedServers })",
+        "Ekle (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } aygıta kadar bağlantı",
@@ -4550,6 +4674,9 @@
       "Checkout": [
         "Ödeme yapın"
       ],
+      "Country": [
+        "Ülke"
+      ],
       "Create your account": [
         "Hesabınızı açın"
       ],
@@ -4562,11 +4689,20 @@
       "Folders": [
         "Klasörler"
       ],
+      "IP address": [
+        "IP adresi"
+      ],
       "Key type": [
         "Anahtar türü"
       ],
       "Label": [
         "Etiket"
+      ],
+      "Location": [
+        "Konum"
+      ],
+      "Members": [
+        "Üyeler"
       ],
       "Name": [
         "Ad"
@@ -4584,7 +4720,16 @@
         "Koruma"
       ],
       "Select your pricing plan": [
-        "Ücretlendirme tarifenizi seçin"
+        "Ücret tarifenizi seçin"
+      ],
+      "Server": [
+        "Sunucu"
+      ],
+      "Server load": [
+        "Sunucu yükü"
+      ],
+      "Servers": [
+        "Sunucular"
       ],
       "Status": [
         "Durum"
@@ -5101,6 +5246,10 @@
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
         "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
+        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
@@ -5211,6 +5360,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
+      "active": [
+        "etkin"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
       ],
@@ -5234,6 +5386,18 @@
       ],
       "Add multiple users to your organization at once.": [
         "Kuruluşunuza bir kerede birkaç kullanıcı ekleyin."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
+        "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
+        "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }",
+        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Ek seçenekler"
@@ -5358,6 +5522,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bu kullanıcının yönetici yetkilerini kaldırmak istediğinize emin misiniz?"
       ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -5378,6 +5545,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "MacOS, Windows ve Linux üzerinde kullanılabilir."
+      ],
+      "Awaiting transaction": [
+        "Ödemenin tamamlanması bekleniyor"
       ],
       "Background color": [
         "Arka plan rengi"
@@ -5494,6 +5664,13 @@
       "Create in": [
         "Şuraya ekle"
       ],
+      "Create your first Gateway": [
+        "İlk ağ geçidinizi oluşturun"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
+        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
@@ -5530,6 +5707,9 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
+      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
       ],
@@ -5541,6 +5721,10 @@
       ],
       "Delete link?": [
         "Bağlantı silinsin mi?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
+        "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
@@ -5630,6 +5814,9 @@
       "Encryption setting updated": [
         "Şifreleme ayarları güncellendi"
       ],
+      "Enhance your network security": [
+        "Ağ güvenliğinizi artırın"
+      ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
       ],
@@ -5684,6 +5871,9 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
+      "Fill in user details": [
+        "Kullanıcı bilgilerini yazın"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
@@ -5707,6 +5897,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "eski iletileri veya diğer verileri silerek boş yer açın"
+      ],
+      "Gateways": [
+        "Ağ geçitleri"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Yeni bir kurtarma ifadesi oluşturmak, önceki ifadeyi kullanımdan kaldırır."
@@ -5841,6 +6034,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
+      "inactive": [
+        "etkin değil"
+      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -5904,6 +6100,9 @@
       ],
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
+      ],
+      "Lean more about gateways": [
+        "Ağ geçitleri hakkında ayrıntılı bilgi alın"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
@@ -5977,6 +6176,18 @@
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Uzunluğu 3 ile 20 karakter arasında olmalıdır."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Yalnızca harf, rakam ve tire (-) karakterleri bulunmalıdır."
+      ],
+      "Must not contain spaces.": [
+        "Boşluk karakteri bulunmamalıdır."
+      ],
+      "Must start with a letter.": [
+        "Bir harf ile başlamalıdır."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -6004,6 +6215,12 @@
       "No folder selected": [
         "Herhangi bir klasör seçilmemiş"
       ],
+      "No gateways": [
+        "Henüz bir ağ geçidi yok"
+      ],
+      "No Gateways yet": [
+        "Henüz bir ağ geçidi yok"
+      ],
       "No imports or forwarding history.": [
         "İçe aktarma veya iletme geçmişi yok."
       ],
@@ -6022,11 +6239,17 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Henüz Android mobil uygulamamızda kullanılamıyor."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Kullandığınız aygıt sizin değil mi? Arkanızda bir iz bırakmamak için özel/gizli pencere kullanın. ${ learnMore }"
       ],
-      "Number of users": [
-        "Kullanıcı sayısı"
+      "Number of dedicated servers in the organization": [
+        "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Atamaya çalıştığınız size ayrılmış sunucu sayısı (${ addedCount }), tarifenizde kalan (${ remainingCount }), sahip olduğunuz ${ ownedCount } ve kullandığınız ${ usedCount } taneden fazla."
       ],
       "of": [
         "/"
@@ -6049,6 +6272,9 @@
       "Open source": [
         "Açık kaynaklı"
       ],
+      "Optional": [
+        "İsteğe bağlı"
+      ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
@@ -6060,6 +6286,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Özel sunucularınızı ağ geçitleri olarak düzenleyin ve hangi üyelerin bunlara erişebileceğini belirleyin."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
@@ -6173,7 +6402,7 @@
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+        "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -6231,6 +6460,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
       ],
       "Remove one of your calendars to join this one": [
         "Bu takvime katılabilmek için var olan takvimlerinizden birini silin"
@@ -6298,6 +6530,9 @@
       "Setting up your Drive": [
         "Drive kurulumunuz yapılıyor"
       ],
+      "Setting up your organization": [
+        "Kuruluşunuz ayarlanıyor"
+      ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
       ],
@@ -6324,6 +6559,9 @@
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Kullanılabileceğiniz sunuculardan bazıları, son kaldırma işlemleri nedeniyle yalnızca belirli ülkelerde kullanılabilir"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
@@ -6446,8 +6684,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Bu işlemin tamamlanması 15 dakika kadar sürebilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ayarlanmanız istenen bu ifade 12 sözcükten oluşur."
@@ -6639,7 +6877,10 @@
         "Kurtarma ifadesini güncelle"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } tarifesine yükseltin."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
@@ -6649,6 +6890,9 @@
       ],
       "Upload picture": [
         "Görsel yükle"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "Hesapları oluşturmak için hazırladığınız CSV dosyasını yükleyin"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Yüklenen dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
@@ -6667,6 +6911,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "SMTP kullanıcı adı olarak seçilmiş dış hizmetin e-posta adresini ve SMTP parolası olarak oluşturulan kodu kullanın."
+      ],
+      "Users": [
+        "Kullanıcılar"
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -6695,6 +6942,9 @@
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
+      "Want servers in other countries?": [
+        "Başka ülkelerden sunucular ister misiniz?"
+      ],
       "Warning:": [
         "Uyarı:"
       ],
@@ -6718,6 +6968,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Yedeklilik sağlamak için en az 2 sunucunuz olması önerilir."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Yedeklilik sağlamak için farklı konumlarda birden fazla sunucu bulundurmanızı öneririz."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "İki adımlı doğrulama kullanımını zorunlu kılmadan önce kuruluş üyelerini bilgilendirmenizi ve hesapları için iki adımlı doğrulamayı kurmalarını istemenizi öneririz."
@@ -6762,7 +7015,7 @@
         "Hesap kurtarma için ayarladığınız telefon numarasına bir sıfırlama kodu göndereceğiz."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Geçerli tarifenizi aynı fiyata daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
+        "Geçerli tarifenizi aynı ücrete daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kapatıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
@@ -6779,8 +7032,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
       ],
+      "Whole organization": [
+        "Tüm kuruluş"
+      ],
       "Why?": [
         "Neden?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Bir Business ya da Enterprise tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve bunlara hangi kullanıcıların erişebileceğini kontrol etmek için ${ boldGateways } ayarlayabilirsiniz."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilirsiniz"
@@ -6809,6 +7068,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
       ],
@@ -6823,6 +7090,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Tarifenizdeki IP adreslerini sayıya ${ specificCountryCount } ekleyerek veya size özel çözümler için bize ulaşarak yukarıdaki kurulumun kilidini hemen açabilirsiniz."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -6873,6 +7143,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var.",
+        "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var."
       ],
       "You have no calendars to export.": [
         "Dışa aktarılabilecek bir takviminiz yok."
@@ -7811,6 +8085,9 @@
       "Event notifications": [
         "Etkinlik bildirimleri"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Tüm e-postalar klasöründe İstenmeyen/Çöp iletiler görüntülenmesin"
+      ],
       "Expiration (${ patternExpiration })": [
         "Geçerlilik süresi (${ patternExpiration })"
       ],
@@ -7840,6 +8117,9 @@
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
+      ],
+      "Gateway name": [
+        "Ağ geçidi adı"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -8027,6 +8307,9 @@
       "Organization password": [
         "Kuruluş parolası"
       ],
+      "Organization size": [
+        "Kuruluş boyutu"
+      ],
       "Other amount": [
         "Diğer tutar"
       ],
@@ -8122,6 +8405,9 @@
       ],
       "Select your country": [
         "Ülkenizi seçin"
+      ],
+      "Select your plan": [
+        "Tarifenizi seçin"
       ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
@@ -8484,6 +8770,9 @@
       "Common sign up issues": [
         "Sık karşılaşılan hesap açma sorunları"
       ],
+      "Contact us": [
+        "Bize ulaşın"
+      ],
       "create a ticket": [
         "bir destek kaydı oluşturun"
       ],
@@ -8645,6 +8934,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -8713,9 +9005,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "| ${ BRAND_NAME } hesabınızda oturum açın - ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve diğer uygulamalara erişin"
       ],
       "Try ${ planName } for free with this link": [
         "Bu bağlantı ile ${ planName } tarifesini ücretsiz olarak deneyin"
@@ -9093,6 +9382,9 @@
       "1 user": [
         "1 kullanıcı"
       ],
+      "24/7 support": [
+        "7/24 destek"
+      ],
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
@@ -9101,6 +9393,9 @@
       ],
       "Admin console": [
         "Yönetici panosu"
+      ],
+      "Advanced network security": [
+        "Gelişmiş ağ güvenliği"
       ],
       "Advanced sharing security": [
         "Gelişmiş paylaşım güvenliği"
@@ -9126,6 +9421,9 @@
       "Centralized billing": [
         "Tek merkezden faturalama"
       ],
+      "Centralized settings and billings": [
+        "Merkezde toplanmış ayarlar ve faturalama"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -9146,6 +9444,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Verilerin ele geçirilmesini izleme (yakında)"
+      ],
+      "Dedicated servers and IP": [
+        "Size ayrılmış sunucular ve IP adresleri"
       ],
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
@@ -9272,6 +9573,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
+      ],
+      "Start protecting your organization": [
+        "Kuruluşunuzu korumaya başlayın"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "İki kolay adımda kendinizi korumaya başlayın"
@@ -9453,16 +9757,16 @@
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size özel VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesabınızı silerseniz, fırsat fiyatınızı kaybedersiniz ve yeni bir hesap açtığınızda bu fiyatı kullanamazsınız."
+        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesabınızı silerseniz, fırsat ücretinizi kaybedersiniz ve yeni bir hesap açtığınızda bu ücreti kullanamazsınız."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
     "new_plans: Label": {
@@ -9482,6 +9786,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "\"Öde\" üzerine tıklayarak ${ termsAndConditions } metnini kabul etmiş olursunuz."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz"
       ],
@@ -9579,6 +9886,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -9611,6 +9921,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Bir kasa da bir klasör gibi ögelerinizi düzenlemenin bir yoludur. Kasaları arkadaşlarınızla ve ailenizle paylaşmanız için çalışmalarımız sürüyor."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Şirket kaynaklarınızı herkese açık internete kapatın ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -9730,11 +10043,20 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "7/24 Destek"
+      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 e-posta adresi ve 3 özel e-posta etki alanı ile daha fazla kişiselleştime sağlayın"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256-bit VPN şifreleme"
+      ],
+      "Auto-connect": [
+        "Otomatik bağlan"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Her kullanıcı için depolama alanınızı ${ bundleStorage } boyutuna kadar artırın"
@@ -9742,12 +10064,39 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
       ],
+      "Browser extension": [
+        "Tarayıcı eklentisi"
+      ],
+      "Censorship circumvention": [
+        "Sansürü aşma"
+      ],
+      "Central control panel": [
+        "Merkez yönetim panosu"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
       ],
       "Create up to ${ n } calendar": [
         "${ n } taneye kadar takvim oluşturun",
         "${ n } taneye kadar takvim oluşturun"
+      ],
+      "Dedicated Account manager": [
+        "Size ayrılmış hesap yöneticisi"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
+      ],
+      "Multi-platform support": [
+        "Çeşitli platformları destekler"
+      ],
+      "Private gateways": [
+        "Özel ağ geçitleri"
+      ],
+      "Require 2FA": [
+        "İki adımlı doğrulama gereksin"
       ]
     },
     "Notification": {
@@ -9768,6 +10117,9 @@
       ],
       "Invalid code": [
         "Kod geçersiz"
+      ],
+      "IP Address copied to clipboard": [
+        "IP adresi panoya kopyalandı"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Parmak izi ${ fp } olan anahtar silindi."
@@ -10065,8 +10417,14 @@
       "Secure Core configs": [
         "Secure Core yapılandırmaları"
       ],
+      "Select who can access...": [
+        "Erişebilecek kişileri seçin..."
+      ],
       "Standard server configs": [
         "Standart sunucu yapılandırmaları"
+      ],
+      "The whole organization": [
+        "Tüm kuruluş"
       ]
     },
     "Option delay send seconds": {
@@ -10462,9 +10820,6 @@
       "Confirm": [
         "Onayla"
       ],
-      "Confirm password": [
-        "Parola onayı"
-      ],
       "domain.com": [
         "etkialani.com"
       ],
@@ -10544,6 +10899,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Faturalarınıza adınızı (veya şirket adınızı) ve adresinizi ekleyin"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Tarifenize katılacak IP sayısını seçin. Bir ek IP adresinin maliyeti ${ price }. ${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, lütfen ${ contactHref } üzerinden satış ekibimiz ile görüşün."
       ]
     },
     "plan customizer, users": {
@@ -10739,6 +11099,17 @@
       ],
       "Reading emails of non-private users": [
         "Korunmayan kullanıcıların e-postalarını okuma"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Yönetici"
+      ],
+      "Primary admin": [
+        "Birincil yönetici"
+      ],
+      "User": [
+        "Kullanıcı"
       ]
     },
     "Select file": {
@@ -10985,7 +11356,7 @@
     },
     "specialoffer: Footer": {
       "Discounts are based on the standard monthly pricing.": [
-        "İndirimler standart aylık fiyatlandırmaya göre yapılır."
+        "İndirimler standart aylık ücretlendirmeye göre yapılır."
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
@@ -11063,19 +11434,19 @@
         "${ discount }% indirim"
       ],
       "Standard price ${ amount } for 1 month": [
-        "1 aylık standart fiyat ${ amount }"
+        "1 aylık standart ücret ${ amount }"
       ],
       "Standard price ${ amount } for 12 months": [
-        "12 aylık standart fiyat ${ amount }"
+        "12 aylık standart ücret ${ amount }"
       ],
       "Standard price ${ amount } for 15 months": [
-        "15 aylık standart fiyat ${ amount }"
+        "15 aylık standart ücret ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
-        "24 aylık standart fiyat ${ amount }"
+        "24 aylık standart ücret ${ amount }"
       ],
       "Standard price ${ amount } for 30 months": [
-        "30 aylık standart fiyat ${ amount }"
+        "30 aylık standart ücret ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -11700,6 +12071,12 @@
       "Edit": [
         "Düzenle"
       ],
+      "Email": [
+        "E-posta"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Email address or domain": [
         "E-posta adresi ya da etki alanı"
       ],
@@ -11717,6 +12094,12 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Role": [
+        "Rol"
       ],
       "Status": [
         "Durum"
@@ -11851,8 +12234,14 @@
       "Add invoice details": [
         "Fatura bilgileri ekle"
       ],
+      "Add new user": [
+        "Yeni kullanıcı ekle"
+      ],
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
+      ],
+      "Add servers": [
+        "Sunucular ekle"
       ],
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
@@ -11866,8 +12255,11 @@
       "Add to spam list": [
         "İstenmeyenler listesine ekle"
       ],
-      "Add user": [
-        "Kullanıcı ekle"
+      "Add user accounts": [
+        "Kullanıcı hesapları ekle"
+      ],
+      "Add users": [
+        "Kullanıcılar ekle"
       ],
       "Address verification": [
         "Adres doğrulaması"
@@ -11999,6 +12391,15 @@
         "${ selectedUserIds.length } kullanıcıyı ekle",
         "${ selectedUserIds.length } kullanıcıyı ekle"
       ],
+      "Create a new Gateway": [
+        "Yeni ağ geçidi ekle"
+      ],
+      "Create a new gateway": [
+        "Yeni ağ geçidi ekle"
+      ],
+      "Create Gateway": [
+        "Ağ geçidi ekle"
+      ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
       ],
@@ -12029,11 +12430,17 @@
       "Custom filters": [
         "Özel süzgeçler"
       ],
+      "Custom selection of users": [
+        "Özel kullanıcı seçimi"
+      ],
       "Customize and confirm": [
         "Özelleştir ve onayla"
       ],
       "Customize calendar import": [
         "Takvim içe aktarma işlemini özelleştirin"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Tarifenizdeki IP adreslerinin sayısını özelleştirin"
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
@@ -12092,6 +12499,9 @@
       "Delete user": [
         "Kullanıcıyı sil"
       ],
+      "Delete user?": [
+        "Kullanıcı silinsin mi?"
+      ],
       "Delete version history?": [
         "Sürüm geçmişi silinsin mi?"
       ],
@@ -12128,11 +12538,26 @@
       "Edit filter": [
         "Süzgeci düzenle"
       ],
+      "Edit Gateway ${ currentName }": [
+        "${ currentName } ağ geçidini düzenle"
+      ],
+      "Edit servers": [
+        "Sunucuları düzenle"
+      ],
       "Edit Sieve filter": [
         "Sieve kodunu düzenle"
       ],
+      "Edit the list of servers of the gateway": [
+        "Ağ geçidinin sunucu listesini düzenle"
+      ],
       "Edit user": [
         "Kullanıcıyı düzenle"
+      ],
+      "Edit users": [
+        "Kullanıcıları düzenle"
+      ],
+      "Edit who can access the gateway": [
+        "Ağ geçidine erişebilecek kişileri düzenle"
       ],
       "Email": [
         "E-posta"
@@ -12157,6 +12582,9 @@
       ],
       "Error": [
         "Hata"
+      ],
+      "Every member of the organization can access": [
+        "Kuruluşun tüm üyeleri erişebilir"
       ],
       "Export": [
         "Dışa aktar"
@@ -12188,6 +12616,9 @@
       ],
       "Folders and labels": [
         "Klasörler ve etiketler"
+      ],
+      "Gateways": [
+        "Ağ geçitleri"
       ],
       "General": [
         "Genel"
@@ -12406,6 +12837,9 @@
       "Remove user?": [
         "Kullanıcı kaldırılsın mı?"
       ],
+      "Rename the gateway": [
+        "Ağ geçidini yeniden adlandır"
+      ],
       "Report a problem": [
         "Sorun bildirin"
       ],
@@ -12492,6 +12926,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Business tarifesine yükselterek size ayrılmış sunucular kurun"
       ],
       "Short domain (@pm.me)": [
         "Kısa etki alanı (@pm.me)"
@@ -12587,6 +13024,12 @@
       ],
       "Upgrade plan": [
         "Tarifeyi yükselt"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Birkaç hesap eklemek için CSV dosyası yükleyin"
+      ],
+      "Users": [
+        "Kullanıcılar"
       ],
       "Users and addresses": [
         "Kullanıcılar ve adresler"
@@ -12719,6 +13162,9 @@
       "Addresses": [
         "Adresler"
       ],
+      "Email": [
+        "E-posta"
+      ],
       "Features": [
         "Özellikler"
       ],
@@ -12741,6 +13187,9 @@
       ],
       "Plan": [
         "Tarife"
+      ],
+      "Servers": [
+        "Sunucular"
       ],
       "Start date": [
         "Başlangıç tarihi"
@@ -12780,6 +13229,15 @@
       "Account is disconnected": [
         "Hesap bağlantısı kesildi"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Yöneticiler aboneliğinizde değişiklik yapabilir, kullanıcı hesaplarını ve parolaları yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir."
+      ],
+      "An approximate location of the IP address": [
+        "IP adresinin yaklaşık konumu"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Şüpheli etkinliğe uygulanan herhangi bir koruma"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
@@ -12791,6 +13249,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Çöp ve istenmeyen kutularındaki iletileri 30 gün durduktan sonra silebilirsiniz. Otomatik silmeyi açtığınızda, çöp ya da istenmeyen kutusundaki iletiler için, o kutuya kondukları tarihe göre bir silme tarihi belirlenir."
+      ],
+      "Device information such as operating system": [
+        "İşletim sistemi gibi aygıt bilgileri"
       ],
       "Each imported email will have this label": [
         "İçe aktarılan her e-postaya bu etiket atanacak"
@@ -12848,6 +13309,9 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IP adresinin internet hizmeti sağlayıcısı"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
