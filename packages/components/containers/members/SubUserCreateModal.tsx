@@ -19,6 +19,7 @@ import {
     MEMBER_ROLE,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
+import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -116,19 +117,18 @@ const SubUserCreateModal = ({
         setModel({ ...model, [key]: value });
 
     const getNormalizedAddress = () => {
-        let Local = model.address;
-        let Domain = model.domain;
-        if (!model.domain) {
-            const splitted = model.address.split('@');
-            Local = splitted[0];
-            Domain = splitted[1];
+        if (model.domain) {
+            return { Local: model.address, Domain: model.domain };
         }
+
+        const [Local, Domain] = getEmailParts(model.address);
 
         return { Local, Domain };
     };
 
     const save = async () => {
-        await api(checkMemberAddressAvailability(getNormalizedAddress()));
+        const normalizedAddress = getNormalizedAddress();
+        await api(checkMemberAddressAvailability(normalizedAddress));
 
         const userKeys = await getUserKeys();
 
@@ -143,7 +143,7 @@ const SubUserCreateModal = ({
             }),
         });
 
-        const { Address } = await api<{ Address: Address }>(createMemberAddress(Member.ID, getNormalizedAddress()));
+        const { Address } = await api<{ Address: Address }>(createMemberAddress(Member.ID, normalizedAddress));
 
         if (!model.private) {
             if (!organizationKey.privateKey) {
@@ -171,6 +171,10 @@ const SubUserCreateModal = ({
     const validate = () => {
         if (!model.private && !organizationKey) {
             return c('Error').t`The organization key must be activated first.`;
+        }
+
+        if (!validateEmailAddress(model.address)) {
+            return c('Error').t`Email address is invalid`;
         }
     };
 
