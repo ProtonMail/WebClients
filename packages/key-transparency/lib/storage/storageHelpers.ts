@@ -43,14 +43,17 @@ export const getAllKTBlobValuesWithInfo = async (
         }
 
         try {
-            const ktBlobsContent: KTBlobContent[] = JSON.parse(
-                (
-                    await CryptoProxy.decryptMessage({
-                        armoredMessage,
-                        decryptionKeys: userPrivateKeys,
-                    })
-                ).data
-            );
+            const decrypted = await CryptoProxy.decryptMessage({
+                armoredMessage,
+                decryptionKeys: userPrivateKeys,
+            }).catch((error) => {
+                console.log(error, 'This is expected after a password reset');
+                return null;
+            });
+            if (!decrypted) {
+                continue;
+            }
+            const ktBlobsContent: KTBlobContent[] = JSON.parse(decrypted.data);
             // Legacy blob did not set the revision, we ignore them
             const newKTBlobs = ktBlobsContent.filter(({ revision }) => revision !== undefined);
             ktBlobValuesWithInfoMap.set(storedAddress, {
@@ -174,7 +177,13 @@ export const getAuditResult = async (
             const decrypted = await CryptoProxy.decryptMessage({
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
+            }).catch((error) => {
+                console.log(error, 'This is expected after a password reset');
+                return null;
             });
+            if (!decrypted) {
+                return;
+            }
             const parsed = JSON.parse(decrypted.data);
             if (!parsed.nextAuditTime) {
                 return;

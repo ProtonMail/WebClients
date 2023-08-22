@@ -1,6 +1,7 @@
 import { serverTime } from '@proton/crypto';
 import {
     SelfAuditResult,
+    StaleEpochError,
     getAuditResult,
     getKTLocalStorage,
     getSelfAuditInterval,
@@ -34,6 +35,16 @@ const useRunSelfAudit = () => {
     const reportSelfAuditErrors = useReportSelfAuditErrors();
     const getAddressKeys = useGetAddressKeys();
     const selfAuditBaseInterval = getSelfAuditInterval();
+
+    const ignoreError = (error: any): boolean => {
+        return error instanceof StaleEpochError;
+    };
+
+    const reportError = (error: any, tooManyRetries: boolean) => {
+        if (tooManyRetries || !ignoreError(error)) {
+            ktSentryReportError(error, { context: 'runSelfAudit' });
+        }
+    };
 
     const runSelfAudit = async () => {
         const userKeys = await getUserKeys();
@@ -74,7 +85,6 @@ const useRunSelfAudit = () => {
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
             return { selfAuditResult, nextSelfAuditInterval: selfAuditBaseInterval };
         } catch (error: any) {
-            ktSentryReportError(error, { context: 'runSelfAudit' });
             const failedTrials = (lastSelfAudit?.error?.failedTrials ?? 0) + 1;
             const tooManyRetries = failedTrials >= SELF_AUDIT_MAX_TRIALS;
             const currentTime = +serverTime();
@@ -89,6 +99,7 @@ const useRunSelfAudit = () => {
                 localStorageAuditResultsOwnAddress: [],
                 error: { failedTrials: tooManyRetries ? 0 : failedTrials, tooManyRetries },
             };
+            reportError(error, tooManyRetries);
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
             return { selfAuditResult, nextSelfAuditInterval };
         }
