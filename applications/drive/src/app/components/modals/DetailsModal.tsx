@@ -50,9 +50,6 @@ interface RevisionDetailsModalProps {
     name: string;
 }
 
-const sizeTooltipMessage = c('Info')
-    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`;
-
 export function RevisionDetailsModal({
     shareId,
     linkId,
@@ -138,8 +135,17 @@ export function RevisionDetailsModal({
                     label={
                         <>
                             {c('Title').t`Size`}
-                            <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
-                                <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                            <Tooltip
+                                title={c('Info')
+                                    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                className="ml-1 mb-1"
+                            >
+                                <Icon
+                                    name="info-circle"
+                                    size={14}
+                                    alt={c('Info')
+                                        .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                />
                             </Tooltip>
                         </>
                     }
@@ -243,8 +249,17 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             label={
                                 <>
                                     {c('Title').t`Size`}
-                                    <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
-                                        <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                                    <Tooltip
+                                        title={c('Info')
+                                            .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                        className="ml-1 mb-1"
+                                    >
+                                        <Icon
+                                            name="info-circle"
+                                            size={14}
+                                            alt={c('Info')
+                                                .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                        />
                                     </Tooltip>
                                 </>
                             }
@@ -263,7 +278,29 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     {isShared}
                 </DetailsRow>
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
-                    <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                    <DetailsRow
+                        label={
+                            <>
+                                {c('Title').t`# of downloads`}
+                                <Tooltip
+                                    title={c('Info')
+                                        .t`The download count includes both actual downloads and instances when files are previewed.
+`}
+                                    className="ml-1 mb-1"
+                                >
+                                    <Icon
+                                        name="info-circle"
+                                        size={14}
+                                        alt={c('Info')
+                                            .t`The download count includes both actual downloads and instances when files are previewed.
+`}
+                                    />
+                                </Tooltip>
+                            </>
+                        }
+                    >
+                        {formatAccessCount(numberOfAccesses)}
+                    </DetailsRow>
                 )}
                 {link.digests && (
                     // This should not be visible in the UI, but needed for e2e
