@@ -278,18 +278,21 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         await onLogin(session);
     };
 
+    const loading = loadingDependencies || loadingChallenge;
+
     return (
         <>
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
             <link rel="prefetch" href={onboardingVPNWelcome2} as="image" />
             <link rel="prefetch" href={vpnUpsellIllustration} as="image" />
-            {(loadingDependencies || loadingChallenge) && <>{loader}</>}
+            {loading && <>{loader}</>}
             <UnAuthenticated>
                 {model.step === Steps.Account && (
                     <Step1
                         mode={signupParameters.mode}
                         defaultEmail={signupParameters.email}
-                        className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
+                        className={loading ? 'visibility-hidden' : undefined}
+                        loading={loading}
                         selectedPlan={selectedPlan}
                         isB2bPlan={isB2bPlan}
                         isDarkBg={isDarkBg}
