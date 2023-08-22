@@ -60,9 +60,11 @@ const AutoReplySection = () => {
 
     const handleToggle = async (enable: boolean) => {
         if (!hasPaidMail) {
-            throw new Error(
+            const error: any = new Error(
                 c('Error').t`Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.`
             );
+            error.trace = false;
+            throw error;
         }
 
         setIsEnabled(enable);
