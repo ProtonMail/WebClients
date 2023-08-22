@@ -173,7 +173,9 @@ const SubUserCreateModal = ({
             return c('Error').t`The organization key must be activated first.`;
         }
 
-        if (!validateEmailAddress(model.address)) {
+        const normalizedAddress = getNormalizedAddress();
+
+        if (!validateEmailAddress(`${normalizedAddress.Local}@${normalizedAddress.Domain}`)) {
             return c('Error').t`Email address is invalid`;
         }
     };
