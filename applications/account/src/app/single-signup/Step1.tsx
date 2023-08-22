@@ -325,6 +325,7 @@ const Step1 = ({
     onChallengeError,
     onChallengeLoaded,
     className,
+    loading,
 }: {
     defaultEmail?: string;
     mode: 'signup' | 'pricing';
@@ -346,6 +347,7 @@ const Step1 = ({
     onChallengeError: () => void;
     onChallengeLoaded: () => void;
     className?: string;
+    loading: boolean;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const { isDesktop, isTinyMobile } = useActiveBreakpoint();
@@ -367,11 +369,15 @@ const Step1 = ({
     const { plansMap, paymentMethodStatus } = model;
 
     useEffect(() => {
+        if (loading) {
+            return;
+        }
+
         metrics.core_vpn_single_signup_pageLoad_2_total.increment({
             step: 'plan_username_payment',
             flow: isB2bPlan ? 'b2b' : 'b2c',
         });
-    }, []);
+    }, [loading]);
 
     const showLifetimeDeal = !isB2bPlan;
 
