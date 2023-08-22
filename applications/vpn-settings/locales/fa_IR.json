@@ -8,14 +8,29 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
+      "activate": [
+        "فعال‌سازی"
+      ],
+      "Activate organization key": [
+        "کلید سازمان را فعال کنید"
+      ],
+      "Add address": [
+        "افزودن نشانی"
+      ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / نقدی"
       ],
       "Add credits": [
         "افزودن اعتبار"
       ],
+      "Add domain": [
+        "افزودن دامنه"
+      ],
       "Add PayPal": [
         "افزودن PayPal"
+      ],
+      "Add user": [
+        "افزودن کاربر"
       ],
       "Apply": [
         "اعمال"
@@ -137,6 +152,9 @@
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
+      "Enable multi-user support": [
+        "فعال‌سازی پشتیبانی چند کاربره"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "طرح‌های ${ BRAND_NAME } دیگر را بررسی کنید"
       ],
@@ -206,11 +224,17 @@
       "refresh the page": [
         "بازخوانی صفحه"
       ],
+      "Remove": [
+        "حذف"
+      ],
       "Remove bonuses": [
         "حذف پاداش‌ها"
       ],
       "Remove gift code": [
         "حذف کد هدیه"
+      ],
+      "Rename": [
+        "تغییر نام"
       ],
       "Report a problem": [
         "گزارش یک مشکل"
@@ -227,8 +251,14 @@
       "Reset credentials": [
         "بازنشانی اعتبارنامه‌ها"
       ],
+      "Reset keys": [
+        "بازنشانی کلیدها"
+      ],
       "Reset password": [
         "بازنشانی گذرواژه"
+      ],
+      "Restore administrator privileges": [
+        "بازیابی امتیازات مدیر"
       ],
       "Retry": [
         "تلاش دوباره"
@@ -244,6 +274,12 @@
       ],
       "Save": [
         "ذخیره"
+      ],
+      "Save address": [
+        "ذخیره نشانی"
+      ],
+      "Search": [
+        "جستجو"
       ],
       "Search countries": [
         "جستجوی کشورها"
@@ -289,6 +325,9 @@
       ],
       "Support": [
         "پشتیبانی"
+      ],
+      "Switch account": [
+        "تغییر حساب"
       ],
       "Top up": [
         "شارژ مجدد"
@@ -358,6 +397,40 @@
       ],
       "Zoom out": [
         "کوچک‌نمایی"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "حذف"
+      ],
+      "Disable": [
+        "غیرفعال"
+      ],
+      "Enable": [
+        "فعال‌سازی"
+      ],
+      "Generate missing keys": [
+        "تولید کلیدهای گمشده"
+      ],
+      "Saving": [
+        "درحال ذخیره"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "فعال"
+      ],
+      "Default": [
+        "پیش‌فرض"
+      ],
+      "Disabled": [
+        "غیرفعال"
+      ],
+      "Missing keys": [
+        "کلیدهای گمشده"
+      ],
+      "Orphan": [
+        "یتیم"
       ]
     },
     "Alter": {
@@ -1375,6 +1448,9 @@
       ]
     },
     "Error": {
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "تمام فضای ذخیره‌سازی اختصاص داده شده است. لطفا فضای ذخیره‌سازی اختصاص داده شده به سایر کاربران را کاهش دهید."
+      ],
       "Amount above the maximum.": [
         "مبلغ بالاتر از حداکثر است."
       ],
@@ -1396,6 +1472,9 @@
       "Enter 6 digits": [
         "6 رقم وارد کنید"
       ],
+      "Error": [
+        "خطا"
+      ],
       "Error connecting to the Bitcoin API.": [
         "در اتصال به Bitcoin API خطایی رخ داد."
       ],
@@ -1407,6 +1486,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "رمزعبور صندوق پیام نادرست است. لطفا دوباره امتحان کنید."
+      ],
+      "Incorrect password": [
+        "گذرواژه نادرست است"
       ],
       "Invalid ${ name } code": [
         "کد ${ name } نامعتبر است"
@@ -1429,11 +1511,20 @@
       "Invalid verification code": [
         "کد تایید نامعتبر است"
       ],
+      "Name does not match": [
+        "نام مطابقت ندارد"
+      ],
       "Name on card required": [
         "نام روی کارت الزامی است"
       ],
       "Not a valid number": [
         "عدد معتبری نیست"
+      ],
+      "Organization key is not decrypted": [
+        "کلید سازمان رمزگشایی نشده است"
+      ],
+      "Organization key is not decrypted.": [
+        "کلید سازمان رمزگشایی نشده است."
       ],
       "Passwords do not match": [
         "گذرواژه‌ها مطابقت ندارند"
@@ -1450,6 +1541,15 @@
       "Payments are currently not available, please try again later": [
         "در حال حاضر امکان پرداخت فراهم نیست، لطفا بعدا دوباره امتحان کنید"
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "دسترسی رد شد، امتیازات مدیر محدود شده است."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "لطفا قبل از افزودن کاربران به سازمان خود، یک دامنه سفارشی را پیکربندی کنید."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "لطفا قبل از اضافه کردن کاربران به سازمان خود، پشتیبانی چند کاربره را فعال کنید."
+      ],
       "Please generate keys before you try to change your password": [
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
       ],
@@ -1458,6 +1558,12 @@
       ],
       "Please set a recovery phone number first": [
         "لطفا ابتدا یک شماره تماس بازیابی تنظیم کنید"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "لطفا به طرح کسب وکار با بیش از 1 کاربر ارتقا دهید تا از پشتیبانی چند کاربره بهره ببرید"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "لطفا به طرح کسب وکار با بیش از 1 کاربر ارتقا دهید تا از مدیریت چند کاربره بهره ببرید."
       ],
       "Process aborted": [
         "فرایند قطع شد"
@@ -1483,6 +1589,12 @@
       "The minimum payment we accept is ${ price }": [
         "حداقل پرداختی که می‌پذیریم ${ price } است"
       ],
+      "The organization key must be activated first": [
+        "کلید سازمان باید ابتدا فعال شود"
+      ],
+      "The organization key must be activated first.": [
+        "کلید سازمان باید ابتدا فعال شود."
+      ],
       "This field is required": [
         "این قسمت الزامی است"
       ],
@@ -1504,8 +1616,22 @@
       "You have no invoices.": [
         "شما هیچ صورت‌حسابی ندارید."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "شما از همه نشانی‌ها در طرح خود استفاده کرده‌اید. لطفا برای افزودن نشانی جدید طرح خود را ارتقا دهید."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "شما از همه کاربران در طرح خود استفاده کرده‌اید. لطفا برای افزودن کاربر جدید طرح خود را ارتقا دهید."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "شما باید کلیدهای سازمان خود را فعال کنید. بدون فعال‌سازی، قادر به ایجاد کاربران جدید، افزودن نشانی به کاربران موجود یا دسترسی به حساب‌های کاربری غیر خصوصی نخواهید بود."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "حساب یا سازمان شما دارای یک صورت‌ حساب به تعویق افتاده است. لطفا تمام صورت‌ حساب‌های پرداخت نشده را پرداخت کنید."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "هنگام بارگذاری فایل شما خطایی رخ داد. هیچ فایلی انتخاب نشده است."
       ]
     },
     "Error message": {
@@ -1527,6 +1653,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } اتصال VPN",
+        "${ MaxVPN } اتصال VPN"
+      ],
       "Access to all countries": [
         "دسترسی به همه کشورها"
       ],
@@ -1636,6 +1766,28 @@
         "خدمات"
       ]
     },
+    "Header": {
+      "Name": [
+        "نام"
+      ],
+      "Status": [
+        "وضعیت"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "اقدامات"
+      ],
+      "Address": [
+        "نشانی"
+      ],
+      "Status": [
+        "وضعیت"
+      ],
+      "Username": [
+        "نام کاربری"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "رایانامه"
@@ -1696,8 +1848,24 @@
       "Additional options": [
         "امکانات اضافی"
       ],
+      "address": [
+        "نشانی",
+        "نشانی‌ها"
+      ],
+      "Admin account allocation": [
+        "تخصیص حساب مدیر"
+      ],
       "All your changes will be lost.": [
         "تمام تغییرات شما از دست خواهد رفت."
+      ],
+      "Allocated": [
+        "اختصاص داده شده"
+      ],
+      "Already allocated": [
+        "پیشتر اختصاص داده شده است"
+      ],
+      "Already used": [
+        "پیشتر استفاده شده است"
       ],
       "American Express SafeKey logo": [
         "لوگوی American Express SafeKey"
@@ -1705,17 +1873,32 @@
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
       ],
+      "Are you sure you want to delete this address?": [
+        "آیا مطمئن هستید که می‌خواهید این نشانی را حذف کنید؟"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
       ],
       "Are you sure you want to discard your changes?": [
         "آیا مطمئن هستید که می‌خواهید تغییرات خود را نادیده بگیرید؟"
       ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "آیا مطمئن هستید که می‌خواهید امتیازات مدیریتی این کاربر را حذف کنید؟"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "قبل از ایجاد این ادرس نیاز است تا یک رمزعبور ارائه کنید و برای آن کلید های رمزگذاری بسازید."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "قبل از فعال سازی این ادرس نیاز است تا یک رمزعبور ارائه کنید و برای آدرس های جدید کلید های رمزگذاری بسازید."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "قبل از درخواست کد تایید جدید، لطفا پوشه هرزنامه خود را برسسی کنید و مطمئن شوید آدرس ${ strong } صحیح است."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "قبل از شروع به ارسال و دریافت رایانامه از نشانی‌های جدید خود، لازم است که کلیدهای رمزنگاری شده برای آنها ایجاد کنید."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "با تنزیل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر دوباره در آینده طرح را ارتقا دهید."
@@ -1729,6 +1912,15 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "حسابی جدید ایجاد کنید و آدرس های ایمیل و رمزعبور را با کاربر به اشتراک بگذارید."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "حساب کاربری‌های فرعی ایجاد و مدیریت کنید و به آنها در دامنه سفارشی خود رایانشانی اختصاص دهید."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "برای دیگران ایمیل ایجاد کنید، ${ MAIL_APP_NAME } را برای مشاغل، مدرسه یا گروه مدیریت کنید. با افزودن نام سازمان و دامنه سفارشی خود شروع کنید (برای مثال yourcompany.com@). "
+      ],
       "Creating your account": [
         "درحال ایجاد حساب کاربری شما"
       ],
@@ -1741,8 +1933,14 @@
       "Discover ProtectBuy logo": [
         "لوگوی Discover ProtectBuy"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "این گذرواژه را فراموش نکنید اگر آن را فراموش کنید، نمی‌توانید سازمان خود را مدیریت کنید."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "از اطلاعات OpenVPN / IKEv2 در برنامه های ${ VPN_APP_NAME } یا برای داشبورد ${ VPN_APP_NAME } استفاده نکنید. ${ learnMore }"
+      ],
+      "Done": [
+        "انجام شد"
       ],
       "Done! We sent a code to ${ destination }.": [
         "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
@@ -1776,6 +1974,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "کدی که به ${ email } فرستاده شد را وارد کنید. اگر نمی‌توانید پیام را در صندوق ورودی پیدا کنید، لطفا پوشه هرزنامه خود را بررسی کنید."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "برای بازیابی امتیازات مدیر، گذرواژه سازمان را وارد کنید. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که به ${ destinationText } ارسال شد را وارد نمایید."
@@ -1812,6 +2013,9 @@
       ],
       "here": [
         "اینجا"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "اگر مدیران دیگری این گذرواژه را تغییر داده باشند، باید از آنها گذرواژه جدید سازمان را بخواهید."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
@@ -1885,6 +2089,18 @@
       "Mastercard SecureCode logo": [
         "لوگوی Mastercard SecureCode"
       ],
+      "Member": [
+        "عضو"
+      ],
+      "more": [
+        "بیشتر"
+      ],
+      "Multi-user support not enabled.": [
+        "پشتیبانی چند کاربره فعال نیست."
+      ],
+      "No addresses exist": [
+        "نشانی‌ای وجود ندارد"
+      ],
       "No payment is required at this time.": [
         "در حال حاضر پرداختی لازم نیست."
       ],
@@ -1894,14 +2110,20 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "از دستگاه شخص دیگری استفاده می‌کنید؟ برای ورود به سیستم یک پنجرهٔ مرور خصوصی ایجاد کرده و پس از اتمام کار آن را ببندید. ${ learnMore }"
       ],
-      "Number of users": [
-        "تعداد کاربران"
-      ],
       "of": [
         "از"
       ],
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
+      ],
+      "Organization keys activated": [
+        "کلیدهای سازمان فعال شدند"
+      ],
+      "Organization keys restored": [
+        "کلیدهای سازمان بازیابی شدند"
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "دیگر مدیرانی در سازمان شما وجود دارند، شما مسئول انتقال گذرواژه جدید به آنها هستید."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "پرداخت‌ها با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
@@ -1911,6 +2133,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "لطفا توجه کنید که اگر شما این نشانی را پاک کنید، دیگر قادر به ارسال یا دریافت رایانامه توسط این نشانی نمی‌باشید."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "لطفا توجه کنید که با فشار دکمه تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
@@ -1927,6 +2152,9 @@
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
       ],
+      "Queued": [
+        "در صف"
+      ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
       ],
@@ -1941,6 +2169,9 @@
       ],
       "Revoke certificate ${ name }": [
         "لغو کردن گواهی ${ name }"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "از گذرواژهٔ خود را در مکانی امن نگهداری کنید. روی نماد کلیک نمایید تا تأیید کنید که گذرواژه خود را به‌درستی وارد کرده‌اید."
       ],
       "Scan QR code instead": [
         "در عوض کد QR را پویش کنید"
@@ -1966,8 +2197,28 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
+      "Storage allocated to other users in this organisation": [
+        "فضای ذخیره سازی اختصاص داده شده به کابران دیگر این سازمان"
+      ],
+      "Storage allocated to this user": [
+        "فضای اختصاص داده شده به این کاربر"
+      ],
+      "Storage for users": [
+        "فضای ذخیره‌سازی برای کاربران"
+      ],
+      "Storage used by this user": [
+        "فضای مورد استفاده این کاربر"
+      ],
       "support team": [
         "تیم پشتیبانی"
+      ],
+      "The following address is invalid.": [
+        "نشانی زیر نامعتبر است.",
+        "نشانی‌های زیر نامعتبر هستند."
+      ],
+      "The following address is unavailable.": [
+        "نشانی زیر در دسترس نیست.",
+        "نشانی‌های زیر در دسترس نیستند."
       ],
       "The securest way to browse, stream, and be online.": [
         "امن ترین راه برای وبگردی، استریم و آنلاین بودن."
@@ -1987,11 +2238,20 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "بسته به دستگاه شما می‌تواند چند ثانیه یا چند دقیقه طول بکشد"
       ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "این کاربر در حال حاضر مسئول پرداخت‌های سازمان شما است. با تنزل درجه این عضو، شما مسئول پرداخت‌های سازمان خود خواهید بود."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "این یک کلید رمزگذاری برای سازمان شما ایجاد می‌کند. کلیدهای 4096 بیتی فقط در رایانه‌هایی با کارایی بالا کار می‌کنند، برای اکثر کاربران توصیه می‌کنیم از کلیدهای 2048 بیتی استفاده کنند."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "این گزینه امکان استفاده از PayPal را برای پرداخت اشتراک ${ BRAND_NAME } شما فراهم می‌کند. شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "این کار برای همیشه داده‌ها و همه رایانشانی‌های مرتبط با این کاربر را حذف خواهد کرد."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "با این کار حساب شما و همه داده‌های آن برای همیشه حذف می‌شود. شما نمی‌توانید این حساب را مجدد فعال کنید."
@@ -2001,6 +2261,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "این کنش شما را از تمامی نشست‌های فعال خارج می‌کند و احراز هویت دو عاملی نیز غیرفعال می‌شود."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "برای تایید، لطفا نام کاربری که مایلید حذف کنید را وارد کنید."
       ],
       "to continue to ${ toAppName }": [
         "برای ادامه به ${ toAppName }"
@@ -2101,6 +2364,9 @@
       "Why?": [
         "چرا؟"
       ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "بدون فعال‌سازی، قادر به ایجاد کاربران جدید، افزودن نشانی به کاربران موجود یا دسترسی به حساب‌های کاربری غیر خصوصی نخواهید بود."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
@@ -2124,6 +2390,9 @@
       ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "شما باید کلید خصوصی سازمان خود را با گذرواژه کلید سازمان پشتیبان فعال کنید که توسط مدیر سازمان به شما ارائه شده است."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "قبل از تنزیل طرح خود باید کاربران ${ MAIL_APP_NAME }، آدرس ها و دامنه های سفارشی اضافی را حذف یا غیرفعال کنید."
@@ -2154,6 +2423,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "گذرواژه سازمان شما با سایر کاربرانی که می‌خواهید امتیازات مدیریتی بدهید، به اشتراک گذاشته می‌شود. این همچنین یک کد بازیابی اضطراری است تا در صورت عدم دسترسی به حساب خود، به سازمان خود دسترسی پیدا کنید. لطفا این گذرواژه را ذخیره کرده و ایمن نگه دارید."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "جزئیات پرداخت‌ شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
@@ -2234,6 +2506,14 @@
         "اشتراک"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (کندتر اما سازگاری بیشتر با نرم افزارهای لگسی)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (سریعترین، مدرن ترین)"
+      ]
+    },
     "Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
@@ -2244,6 +2524,19 @@
       "${ n } month": [
         "${ n } ماه",
         "${ n } ماه"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
+      ],
+      "Account storage": [
+        "فضای ذخیره‌‌سازی حساب کاربری"
+      ],
+      "Address": [
+        "نشانی"
+      ],
+      "Addresses": [
+        "نشانی‌ها"
       ],
       "Allow recovery by email": [
         "اجازه بازیابی از طریق رایانامه"
@@ -2311,6 +2604,9 @@
       "Confirm new password": [
         "تایید گذرواژه جدید"
       ],
+      "Confirm organization password": [
+        "تایید گذرواژه سازمانی"
+      ],
       "Confirm password": [
         "تایید رمزعبور"
       ],
@@ -2328,6 +2624,9 @@
       ],
       "Country": [
         "کشور"
+      ],
+      "Create password": [
+        "ایجاد رمزعبور"
       ],
       "Credits used": [
         "اعتبار استفاده شده"
@@ -2359,6 +2658,9 @@
       "Do you have any suggestions for our team?": [
         "آیا برای تیم ما پیشنهادی دارید؟"
       ],
+      "Email": [
+        "رایانامه"
+      ],
       "Email address": [
         "رایانشانی"
       ],
@@ -2389,6 +2691,9 @@
       "Key": [
         "کلید"
       ],
+      "Key strength": [
+        "قدرت کلید"
+      ],
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
       ],
@@ -2397,6 +2702,9 @@
       ],
       "Main": [
         "اصلی"
+      ],
+      "Name": [
+        "نام"
       ],
       "Name on card": [
         "نام روی کارت"
@@ -2412,6 +2720,9 @@
       ],
       "New mailbox password": [
         "گذرواژه جدید نامه‌دان"
+      ],
+      "New organization password": [
+        "گذرواژه سازمانی جدید"
       ],
       "New password": [
         "گذرواژه‌ جدید"
@@ -2436,6 +2747,12 @@
       ],
       "Optional": [
         "اختیاری"
+      ],
+      "Organization name": [
+        "نام سازمان"
+      ],
+      "Organization password": [
+        "گذرواژه سازمان"
       ],
       "Other amount": [
         "مبلغ دیگر"
@@ -2494,6 +2811,9 @@
       "Two-password mode": [
         "حالت دوگذرواژه"
       ],
+      "User": [
+        "کاربر"
+      ],
       "User's new password": [
         "گذرواژه جدید کاربر"
       ],
@@ -2525,6 +2845,17 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "مدیر"
+      ],
+      "Private": [
+        "خصوصی"
+      ],
+      "VPN connections": [
+        "اتصالات VPN"
       ]
     },
     "Label for news": {
@@ -2592,6 +2923,9 @@
       "Upgrade account": [
         "ارتقای حساب"
       ],
+      "Upgrade your plan": [
+        "طرح خود را ارتقا دهید"
+      ],
       "View guide": [
         "مشاهده راهنما"
       ],
@@ -2614,6 +2948,20 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "طرح خود را ارتقا دهید تا از گفتگو با پشتیبانی و سایر قابلیت های ویژه بهره‌مند شوید، یا ازفرم پشتیبانی رایگان ما برای گزارش مشکل خود استفاده کنید."
+      ]
+    },
+    "Member action": {
+      "Delete": [
+        "حذف"
+      ],
+      "Edit": [
+        "ویرایش"
+      ],
+      "Revoke sessions": [
+        "لغو نشست‌ها"
+      ],
+      "Sign in": [
+        "ورود"
       ]
     },
     "Message": {
@@ -2660,6 +3008,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "حساب فعلی ${ currentPlanName } $ من را حفظ کن"
+      ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
       ]
     },
     "new_plans: action": {
@@ -2893,6 +3244,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } با شماره های آخر ${ last4 }"
       ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } به شما اجازه ایجاد آدرس های ایمیل و مدیریت حساب ها برای کابران فرعی را میدهد. مناسب برای خانواده ها و سازمان ها."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "اعتبارها، هزینهٔ لحظه‌ای و کوپن های قابل استفاده در قدم بعدی اعمال میشوند"
       ],
@@ -3121,6 +3475,11 @@
         "میتوانید بیش از یک مدیر داشته باشید. تمام مدیران میتوانند کاربران را اضافه و مدیریت کنند اما تنها مدیر اصلی بر روی صورتحساب کنترل دارند."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "مشمول با تمام طرح های ${ BRAND_NAME } برای مشاغل."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "به ویژگی‌های پیشرفته VPN دسترسی پیدا کنید"
@@ -3189,6 +3548,15 @@
       "Add gift code": [
         "افزودن کد هدیه"
       ],
+      "Address": [
+        "نشانی"
+      ],
+      "Choose a name": [
+        "یک نام انتخاب کنید"
+      ],
+      "Choose display name": [
+        "انتخاب نام نمایشی"
+      ],
       "Confirm": [
         "تایید"
       ],
@@ -3209,6 +3577,12 @@
       ],
       "Please describe the problem and include any error messages": [
         "لطفا مشکل را شرح دهید و هر گونه پیغام خطا را ذکر کنید"
+      ],
+      "Search": [
+        "جستجو"
+      ],
+      "Search users": [
+        "جستجوی کاربران"
       ],
       "Select": [
         "انتخاب"
@@ -3237,6 +3611,11 @@
     "Price": {
       "Free": [
         "رایگان"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "خصوصی"
       ]
     },
     "Recovery Email": {
@@ -3297,6 +3676,31 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "تایید کردن شماره تلفن شما امنیت حساب شما را افزایش داده و اجازه میدهد تا گزینه های بیشتری برای بازیابی داشته باشید."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "سازگاری"
+      ],
+      "State of the art": [
+        "پیشرفته ‌ترین"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "تغییر کلیدهای سازمان"
+      ],
+      "Changing organization password": [
+        "در حال تغییر گذرواژه سازمان"
+      ],
+      "Creating new users": [
+        "در حال ایجاد کاربران جدید"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "به دلیل تغییر گذرواژه، امتیازات مدیر سازمان شما محدود شده است. اقدامات زیر دیگر مجاز نیستند:"
+      ],
+      "Reading emails of non-private users": [
+        "در حال خواندن ایمیل های کابران غیر خصوصی"
       ]
     },
     "State": {
@@ -3391,6 +3795,9 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } در بریده‌دان شما کپی شد"
       ],
+      "Address added": [
+        "نشانی افزوده شد"
+      ],
       "Bug reported": [
         "اشکال گزارش شد"
       ],
@@ -3424,8 +3831,14 @@
       "Invoice paid": [
         "صورت‌حساب پرداخت شد"
       ],
+      "Keys updated": [
+        "کلید ها بروز شد"
+      ],
       "Locale updated": [
         "محلی بروز شد"
+      ],
+      "Organization activated": [
+        "سازمان فعال شد"
       ],
       "Password updated": [
         "گذرواژه بروز شد"
@@ -3445,6 +3858,12 @@
       "Preference saved": [
         "تنظیمات ذخیره شد"
       ],
+      "User created": [
+        "کاربر ایجاد شد"
+      ],
+      "User updated": [
+        "کاربر بروز شد"
+      ],
       "Verification successful": [
         "تایید با موفقیت بود"
       ],
@@ -3452,7 +3871,24 @@
         "شما با موفقیت لغو اشتراک کردید"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "نشست‌ها لغو شدند"
+      ],
+      "User deleted": [
+        "کاربر حذف گردید"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "نشانی حذف شد"
+      ],
+      "Address disabled": [
+        "نشانی غیرفعال شد"
+      ],
+      "Address enabled": [
+        "نشانی فعال شد"
+      ],
       "Certificate ${ name } revoked": [
         "گواهی ${ name } لغو شده است"
       ],
@@ -3497,11 +3933,20 @@
       "Country": [
         "کشور"
       ],
+      "Display name": [
+        "نام نمایشی"
+      ],
+      "Email addresses": [
+        "رایانشانی‌ها"
+      ],
       "Name": [
         "نام"
       ],
       "Status": [
         "وضعیت"
+      ],
+      "Total storage": [
+        "مجموع فضای ذخیره‌سازی"
       ]
     },
     "Themes": {
@@ -3543,6 +3988,15 @@
       "Action": [
         "اقدام"
       ],
+      "Activate account and generate keys": [
+        "فعال سازی حساب و تولید کلید"
+      ],
+      "Activate organization key": [
+        "کلید سازمان را فعال کنید"
+      ],
+      "Add address": [
+        "افزودن نشانی"
+      ],
       "Add credit/debit card": [
         "افزودن کارت اعتباری / نقدی"
       ],
@@ -3554,6 +4008,9 @@
       ],
       "Add PayPal payment method": [
         "افزودن روش پرداخت با PayPal"
+      ],
+      "Allocate storage": [
+        "اختصاص فضای ذخیره‌سازی"
       ],
       "Amount": [
         "مبلغ"
@@ -3576,8 +4033,17 @@
       "Change mailbox password": [
         "تغییر گذرواژه نامه‌دان"
       ],
+      "Change organization keys": [
+        "تغییر کلیدهای سازمان"
+      ],
+      "Change organization name": [
+        "تغییر نام سازمان"
+      ],
       "Change password": [
         "تغییر گذرواژه"
+      ],
+      "Change role": [
+        "تغییر نقش"
       ],
       "Confirm address": [
         "تایید نشانی"
@@ -3590,6 +4056,18 @@
       ],
       "Confirm phone number": [
         "تایید شماره تلفن"
+      ],
+      "Couldn’t create accounts": [
+        "حساب ها ساخته نشد"
+      ],
+      "Create multiple user accounts": [
+        "ایجاد چندین حساب کاربری"
+      ],
+      "Create user accounts": [
+        "ایجاد حساب های کاربری"
+      ],
+      "Creating user accounts": [
+        "در حال ایجاد حساب های کاربری"
       ],
       "Credits": [
         "اعتبار"
@@ -3606,11 +4084,20 @@
       "Delete": [
         "حذف"
       ],
+      "Delete ${ email }": [
+        "حذف ${ email }"
+      ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
+      "Delete user": [
+        "حذف کاربر"
+      ],
       "Device connected!": [
         "دستگاه متصل شد!"
+      ],
+      "Disable ${ email }": [
+        "غیرفعال کردن ${ email }"
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
@@ -3630,6 +4117,9 @@
       "Edit display name": [
         "ویرایش نام نمایشی"
       ],
+      "Edit user": [
+        "ویرایش کاربر"
+      ],
       "Email": [
         "ایمیل"
       ],
@@ -3647,6 +4137,9 @@
       ],
       "General": [
         "عمومی"
+      ],
+      "Generate missing keys": [
+        "تولید کلیدهای گمشده"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "جهت دسترسی به همه سرورها ${ vpnPlus } را دریافت کنید"
@@ -3671,6 +4164,9 @@
       ],
       "Login password": [
         "گذرواژه ورود"
+      ],
+      "Multi-user support": [
+        "پشتیبانی چند کاربره"
       ],
       "Network error": [
         "خطای شبکه"
@@ -3732,11 +4228,17 @@
       "Request new code": [
         "درخواست کد جدید"
       ],
+      "Reset organization keys": [
+        "بازنشانی کلیدهای سازمان"
+      ],
       "Reset password": [
         "بازنشانی گذرواژه"
       ],
       "Reset password?": [
         "بازنشانی گذرواژه?"
+      ],
+      "Restore administrator privileges": [
+        "بازیابی امتیازات مدیر"
       ],
       "Revoke certificate": [
         "لغو کردن گواهی"
@@ -3746,6 +4248,15 @@
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
+      ],
+      "Set organization keys": [
+        "تنظیم کلیدهای سازمان"
+      ],
+      "Set organization name": [
+        "تنظیم نام سازمان"
+      ],
+      "Set organization password": [
+        "تنظیم گذرواژه سازمان"
       ],
       "Set up two-factor authentication": [
         "تنظیم احراز هویت دو مرحله‌ای"
@@ -3759,8 +4270,19 @@
       "Sign out": [
         "خروج"
       ],
+      "Signed in to member account": [
+        "به حساب کاربری عضو وارد شدید"
+      ],
       "Status": [
         "وضعیت"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شد",
+        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شدند"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد",
+        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد"
       ],
       "Switch to one-password mode": [
         "گذر به حالت تک‌گذرواژه"
@@ -3812,6 +4334,20 @@
         "صورتحساب ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "نشانی‌ها"
+      ],
+      "Features": [
+        "ویژگی‌ها"
+      ],
+      "Name": [
+        "نام"
+      ],
+      "Role": [
+        "نقش"
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
@@ -3823,6 +4359,17 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "این نسخه از مرورگر Tor پشتیبانی نمیشود. لطفا به آخرین نسخه ${ stableRelease } بروزرسانی کنید"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "مدیر"
+      ],
+      "Member": [
+        "عضو"
+      ],
+      "Primary admin": [
+        "مدیر اصلی"
       ]
     },
     "Validation": {
@@ -3881,6 +4428,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "متاسفانه درحال حاضر آنلاین نیستیم. اطفا فرم ذیل را برای توضیح مشل خود پر کنید، ما آنرا بررسی کردن و هنگامی که آنلاین شدیم با شما تماس خواهیم گرفت."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "قبل از افزودن رایانشانی به یک عضو غیر خصوصی، باید کلیدهای سازمان را ${ activateLink } کنید."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "دورهٔ آزمایشی رایگان شما در ${ textDate } به پایان می‌رسد. ${ action }"

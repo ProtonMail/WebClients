@@ -8,14 +8,29 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "activate": [
+        "aktivér"
+      ],
+      "Activate organization key": [
+        "Aktivér organisationsnøgle"
+      ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
       "Add credit / debit card": [
         "Tilføj kredit / betalingskort"
       ],
       "Add credits": [
         "Tilføj kreditter"
       ],
+      "Add domain": [
+        "Tilføj domæne"
+      ],
       "Add PayPal": [
         "Tilføj PayPal"
+      ],
+      "Add user": [
+        "Tilføj bruger"
       ],
       "Apply": [
         "Anvend"
@@ -68,6 +83,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue anyway": [
+        "Fortsæt alligevel"
+      ],
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
@@ -79,6 +97,12 @@
       ],
       "Create": [
         "Opret"
+      ],
+      "Create user": [
+        "Opret bruger"
+      ],
+      "Create users": [
+        "Opret brugere"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -94,6 +118,9 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Delete user": [
+        "Slet bruger"
       ],
       "Delete your account": [
         "Slet din konto"
@@ -152,6 +179,9 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
+      "Enable multi-user support": [
+        "Aktivere understøttelse af flere brugere"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Udforsk andre ${ BRAND_NAME }-abonnementer"
       ],
@@ -163,6 +193,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
+      ],
+      "Get more addresses": [
+        "Få flere adresser"
       ],
       "Get the deal": [
         "Gør brug af tilbuddet"
@@ -184,6 +217,12 @@
       ],
       "Increase": [
         "Forøg"
+      ],
+      "Invite": [
+        "Invitér"
+      ],
+      "Invite user": [
+        "Invitér bruger"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Behold mit ${ vpnPlanNameShort } abonnement"
@@ -236,11 +275,17 @@
       "refresh the page": [
         "opdater siden"
       ],
+      "Remove": [
+        "Fjern"
+      ],
       "Remove bonuses": [
         "Fjern bonusser"
       ],
       "Remove gift code": [
         "Fjern gavekode"
+      ],
+      "Rename": [
+        "Omdøb"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -257,11 +302,17 @@
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
       ],
+      "Reset keys": [
+        "Nulstil nøgler"
+      ],
       "Reset password": [
         "Nulstil adgangskode"
       ],
       "Restore": [
         "Gendan"
+      ],
+      "Restore administrator privileges": [
+        "Gendan administratorprivilegier"
       ],
       "Retry": [
         "Prøv igen"
@@ -278,6 +329,12 @@
       "Save": [
         "Gem"
       ],
+      "Save address": [
+        "Gem adresse"
+      ],
+      "Search": [
+        "Søg"
+      ],
       "Search countries": [
         "Søg lande"
       ],
@@ -290,8 +347,14 @@
       "Send code": [
         "Send kode"
       ],
+      "Send email reminder": [
+        "Send e-mail-påmindelse"
+      ],
       "Send my username": [
         "Send mit brugernavn"
+      ],
+      "Send reminder": [
+        "Send påmindelse"
       ],
       "Set new password": [
         "Angiv ny adgangskode"
@@ -332,6 +395,9 @@
       "Support": [
         "Støtte"
       ],
+      "Switch account": [
+        "Skift konto"
+      ],
       "Switch or add account": [
         "Skift eller tilføj konto"
       ],
@@ -355,6 +421,9 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade your plan": [
+        "Opgradér dit abonnement"
       ],
       "Use ${ label } theme": [
         "Brug ${ label } tema"
@@ -408,6 +477,60 @@
     "Action subscription": {
       "Manage": [
         "Administrer"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } brugerdomæne",
+        "${ domains } brugerdomæner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Slet"
+      ],
+      "Disable": [
+        "Deaktivér"
+      ],
+      "Enable": [
+        "Aktivér"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
+      ],
+      "Saving": [
+        "Gemmer"
+      ],
+      "Set as default": [
+        "Angiv som standard"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
+      "External": [
+        "Ekstern"
+      ],
+      "Missing keys": [
+        "Nøgler mangler"
+      ],
+      "Orphan": [
+        "Forældreløs"
       ]
     },
     "Alter": {
@@ -1381,9 +1504,27 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Ingen søgeresultater fundet"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Tilgængelige kreditter"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV-skabelon"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Fejl i række ${ erroredRowsString }."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
     },
     "Cycle": {
@@ -1397,6 +1538,11 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail-logo og et plustegn"
       ]
     },
     "Downgrade account reason": {
@@ -1434,6 +1580,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Beskeder og skrivning > Kort domæne (pm.me)"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
+      ],
       "Amount above the maximum.": [
         "Beløb over maksimum."
       ],
@@ -1455,6 +1607,9 @@
       "Enter 6 digits": [
         "Indtast 6 cifre"
       ],
+      "Error": [
+        "Fejl"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
@@ -1466,6 +1621,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Forkert adgangskode til postkasse. Prøv venligst igen."
+      ],
+      "Incorrect password": [
+        "Forkert adgangskode"
       ],
       "Invalid ${ name } code": [
         "Ugyldig ${ name }-kode"
@@ -1488,11 +1646,20 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Name does not match": [
+        "Navn matcher ikke"
+      ],
       "Name on card required": [
         "Navn på kort kræves"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
+      ],
+      "Organization key is not decrypted": [
+        "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Organization key is not decrypted.": [
+        "Organisationsnøgle er ikke dekrypteret."
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -1512,6 +1679,15 @@
       "Payments are currently not available, please try again later": [
         "Betaling er pt. ikke mulig, forsøg igen senere"
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Opsæt et brugerdomæne, inden du tilføjer brugere til din organisation."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
+      ],
       "Please generate keys before you try to change your password": [
         "Generér nøgler, inden du forsøger at ændre din adgangskode"
       ],
@@ -1520,6 +1696,12 @@
       ],
       "Please set a recovery phone number first": [
         "Angiv først et gendannelsestelefonnummer"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -1554,6 +1736,12 @@
       "The minimum payment we accept is ${ price }": [
         "Den mindste betaling vi accepterer er ${ price }"
       ],
+      "The organization key must be activated first": [
+        "Organisationsnøglen skal først aktiveres"
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnøglen skal først aktiveres."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -1587,8 +1775,31 @@
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Du skal aktivere dine organisationsnøgler. Uden aktivering kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil \"${ formattedFilename }\". Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Upload en CSV-fil med ${ MAX_NUMBER_OF_USER_ROWS } brugerkonti eller færre."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Din fil \"${ formattedFilename }\" er tom."
       ]
     },
     "Error message": {
@@ -1634,6 +1845,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Opret en ny bruger"
+      ],
       "Decline invitation": [
         "Afvis invitation"
       ],
@@ -1642,6 +1856,9 @@
       ],
       "Switch plans": [
         "Skift abonnement"
+      ],
+      "View invitation": [
+        "Vis invitation"
       ],
       "View the invitation": [
         "Se invitationen"
@@ -1685,6 +1902,9 @@
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
+      ],
+      "Pending": [
+        "Afventer"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
@@ -1761,6 +1981,10 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-forbindelse",
+        "${ MaxVPN } VPN-forbindelser"
+      ],
       "Access to all countries": [
         "Adgang til alle lande"
       ],
@@ -1966,8 +2190,28 @@
       "Create your account": [
         "Opret din konto"
       ],
+      "Name": [
+        "Navn"
+      ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Username": [
+        "Brugernavn"
       ]
     },
     "Human verification method": {
@@ -2013,6 +2257,10 @@
       ],
       "${ storage } storage": [
         "${ storage } lagerplads"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } bruger fundet",
+        "${ userFound } brugere fundet"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
@@ -2060,11 +2308,27 @@
       "Additional options": [
         "Yderligere indstillinger"
       ],
+      "address": [
+        "adresse",
+        "adresser"
+      ],
+      "Admin account allocation": [
+        "Admin-konto tildeling"
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
+      ],
+      "Allocated": [
+        "Tildelt"
+      ],
+      "Already allocated": [
+        "Allerede tildelt"
+      ],
+      "Already used": [
+        "Allerede anvendt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -2078,14 +2342,23 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Enhver ${ twoFa } metode på in konto vil blive deaktiveret."
       ],
+      "Are you sure you want to delete this address?": [
+        "Er du sikker på, at du vil slette denne adresse?"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sikker på, at du vil deaktivere to-faktor-godkendelse?"
       ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
       ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
+      ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Awaiting transaction": [
+        "Afventer transaktion"
       ],
       "Balance from your previous subscription": [
         "Saldo fra dit tidligere abonnement"
@@ -2096,8 +2369,17 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Sørg for at kopiere din adgangskode og gemme den et sikkert sted."
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Før du opretter denne adresse, skal du angive en adgangskode og oprette krypteringsnøgler til den."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Før du aktiverer kontoen, skal du angive en adgangskode og oprette krypteringsnøgler til de nye adresser."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
       ],
       "Billed every 12 months": [
         "Faktureres hver 12. måned"
@@ -2138,6 +2420,15 @@
       "Country code": [
         "Landekode"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Opret e-mailadresser til andre personer, administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe. Kom i gang med at tilføje dit organisationsnavn og brugerdomæne (f.eks. @ditfirma.com). "
+      ],
       "Creating your account": [
         "Opretter din konto"
       ],
@@ -2150,11 +2441,23 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
+      "Dedicated servers": [
+        "Dedikerede servere"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Du må IKKE glemme denne adgangskode. Hvis du glemmer den, kan du ikke logge ind eller dekryptere dine beskeder."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Brug ikke OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
+      ],
+      "Done": [
+        "Udført"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Færdig! Vi sendte en kode til ${ destination }."
@@ -2195,6 +2498,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Indtast den kode, der blev sendt til ${ email }. Hvis du ikke kan finde beskeden i din indbakke, så tjek venligst din spam-mappe."
       ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Indtast Organisationsadgangskoden for at gendanne administratorprivilegier. ${ learnMore }"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
@@ -2222,6 +2528,9 @@
       "expires ${ expirationDate }": [
         "udløber ${ expirationDate }"
       ],
+      "Fill in user details": [
+        "Udfyld brugeroplysninger"
+      ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
@@ -2248,6 +2557,9 @@
       ],
       "here": [
         "hér"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Hvis det ikke er det rigtige for dig, refunderer vi beløbet."
@@ -2342,8 +2654,20 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Member": [
+        "Medlem"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "more": [
+        "mere"
+      ],
+      "Multi-user support not enabled.": [
+        "Understøttelse af flere brugere ikke aktiveret."
+      ],
+      "No addresses exist": [
+        "Ingen adresser findes"
       ],
       "No payment is required at this time.": [
         "Betaling er ikke påkrævet på nuværende tidspunkt."
@@ -2354,8 +2678,8 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
       ],
-      "Number of users": [
-        "Antal brugere"
+      "Number of dedicated servers in the organization": [
+        "Antal dedikerede servere i organisationen"
       ],
       "of": [
         "af"
@@ -2369,8 +2693,23 @@
       "Open source": [
         "Open source"
       ],
+      "Optional": [
+        "Valgfri"
+      ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
+      ],
+      "Organization keys activated": [
+        "Organisationsnøgler aktiveret"
+      ],
+      "Organization keys restored": [
+        "Organisationsnøgler gendannet"
+      ],
+      "Organization size": [
+        "Organisationsstørrelse"
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
@@ -2381,14 +2720,31 @@
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
       ],
+      "Please add a password for the user on row": [
+        "Tilføj en adgangskode til brugeren på række",
+        "Tilføj adgangskoder til brugerne på rækker"
+      ],
+      "Please add an email address for the user on row": [
+        "Tilføj venligst en e-mailadresse til brugeren på række",
+        "Tilføj venligst e-mailadresser til brugerne på rækker"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bekræft dit kort i verifikationsfanen."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Bekræft din betaling i verifikationsfanen."
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Tjek venligst din fil for fejl, eller kontakt kundeservice for at få flere oplysninger."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Tjek venligst din fil, eller prøv at bruge vores ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Bemærk, at hvis du sletter denne adresse, vil du ikke længere kunne sende eller modtage e-mails via denne adresse."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
@@ -2423,6 +2779,9 @@
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
       ],
+      "Queued": [
+        "Sat i kø"
+      ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
       ],
@@ -2435,11 +2794,17 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Husk at dele brugerens login-oplysninger med vedkommende."
+      ],
       "Restore": [
         "Gendan"
       ],
       "Revoke certificate ${ name }": [
         "Tilbagekald certifikat ${ name }"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
       ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
@@ -2449,6 +2814,9 @@
       ],
       "Securing your account": [
         "Sikrer din konto"
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Send e-mails for at opfordre dine medlemmer til at beskytte deres konti med 2FA."
       ],
       "Server is currently down": [
         "Serveren er i øjeblikket nede"
@@ -2475,6 +2843,18 @@
         "Trin ${ step }",
         "Trin ${ step }"
       ],
+      "Storage allocated to other users in this organisation": [
+        "Lagerplads tildelt andre brugere i denne organisation"
+      ],
+      "Storage allocated to this user": [
+        "Lagerplads tildelt denne bruger"
+      ],
+      "Storage for users": [
+        "Lagerplads til brugere"
+      ],
+      "Storage used by this user": [
+        "Lagerplads brugt af denne bruger"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
@@ -2492,6 +2872,27 @@
       ],
       "Thank you": [
         "Tak"
+      ],
+      "The following address is invalid.": [
+        "Den følgende adresse er ugyldig.",
+        "De følgende adresser er ugyldige."
+      ],
+      "The following address is unavailable.": [
+        "Den følgende adresse er ikke tilgængelig.",
+        "De følgende adresser er ikke tilgængelige."
+      ],
+      "The following address was not created.": [
+        "Følgende adresse blev ikke oprettet.",
+        "Følgende adresser blev ikke oprettet."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Følgende medlemmer vil modtage en e-mail, der beder dem om at aktivere to-faktor-godkendelse så hurtigt som muligt."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Formatet af din CSV-fil er forkert."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den sikreste måde at surfe, streame og være online på."
@@ -2514,14 +2915,26 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan tage nogle sekunder/minutter afhængigt af din enhed"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste eventuelle loyalitetsfordele, du har akkumuleret."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Dette vil oprette en krypteringsnøgle til din organisation. 4.096-bit nøgler fungerer kun på højtydende computere. Til de fleste brugere anbefales brugen af 2.048-bit nøgler."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Dette vil permanent slette data og alle e-mailadresser tilknyttet denne bruger."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette din konto og alle data, der er knyttet til den. Du vil ikke kunne genaktivere denne konto."
@@ -2535,8 +2948,14 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Denne guide aktiverer to-faktor-godkendelse (2FA) på din ${ BRAND_NAME }-konto. To-faktor-godkendelse vil gøre din ${ BRAND_NAME_TWO }-konto mere sikker, så vi anbefaler, at du aktiverer det."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Kontakt os for at opsige dit abonnement."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
       ],
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
@@ -2601,8 +3020,14 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Brug de forskellige typer e-mailadresser og aliasser udbudt af ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
+      ],
+      "Users": [
+        "Brugere"
       ],
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
@@ -2643,6 +3068,9 @@
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
       ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Vi anbefaler, at man underretter organisationens medlemmer og beder dem om at konfigurere 2FA til deres konti, før man gennemtvinger brugen af 2FA."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Vi anbefaler, at du i stedet bruger din gendannelsessætning."
       ],
@@ -2651,6 +3079,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
@@ -2673,6 +3104,9 @@
       "Why?": [
         "Hvorfor?"
       ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
@@ -2684,6 +3118,13 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Du bruger i øjeblikket ${ organization.UsedMembers } af din ${ organization.MaxMembers } tilgængelige brugerlicens.",
+        "Du bruger i øjeblikket ${ organization.UsedMembers } af dine ${ organization.MaxMembers } tilgængelige brugerlicenser."
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Du er logget ind på kontoen ${ memberAddress }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan tilpasse og downloade dine fakturaer til bogholderiformål."
@@ -2704,6 +3145,9 @@
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit abonnement."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Du kan nu få adgang til og administrere kontoen som administrator."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun have en chatinstans åben ad gangen. Luk venligst tidligere samtaler, før du starter en ny."
       ],
@@ -2718,6 +3162,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "Du skal aktivere din organisations private nøgle med den backup-organisationsnøgleadgangskode, som din organisationsadministrator har givet dig."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
@@ -2779,6 +3226,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
       ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Dit organisationsadgangskode kan deles med andre brugere, som du ønsker at give administrative privilegier. Det er også en nød-gendannelseskode til at få adgang til din organisation, såfremt du mister adgangen til din konto. Gem og opbevar denne adgangskode sikkert."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dine betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
@@ -2787,6 +3237,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Dit abonnement vil automatisk blive fornyet ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -2863,6 +3316,14 @@
         "Abonnement"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Langsommere, men øget kompatibilitet med ældre software)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Hurtigst, mest moderne)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
@@ -2876,6 +3337,23 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dage"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
+      ],
+      "Account storage": [
+        "Kontolagerplads"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "Addresses": [
+        "Adresser"
       ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
@@ -2955,6 +3433,9 @@
       "Confirm new password": [
         "Bekræft ny adgangskode"
       ],
+      "Confirm organization password": [
+        "Bekræft organisationsadgangskode"
+      ],
       "Confirm password": [
         "Bekræft adgangskode"
       ],
@@ -2972,6 +3453,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create password": [
+        "Opret adgangskode"
       ],
       "Credits used": [
         "Kredit forbrugt"
@@ -3002,6 +3486,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
+      ],
+      "Email": [
+        "E-mail"
       ],
       "Email address": [
         "E-mail"
@@ -3036,6 +3523,9 @@
       "Key": [
         "Nøgle"
       ],
+      "Key strength": [
+        "Nøglestyrke"
+      ],
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
@@ -3047,6 +3537,9 @@
       ],
       "Moderate NAT": [
         "Moderat NAT"
+      ],
+      "Name": [
+        "Navn"
       ],
       "Name on card": [
         "Navn på kort"
@@ -3065,6 +3558,9 @@
       ],
       "New mailbox password": [
         "Ny postkasseadgangskode"
+      ],
+      "New organization password": [
+        "Ny organisationsadgangskode"
       ],
       "New password": [
         "Ny adgangskode"
@@ -3089,6 +3585,12 @@
       ],
       "Optional": [
         "Valgfrit"
+      ],
+      "Organization name": [
+        "Organisationsnavn"
+      ],
+      "Organization password": [
+        "Oorganisationsadgangskode"
       ],
       "Other amount": [
         "Andet beløb"
@@ -3126,6 +3628,12 @@
       "Recovery phrase": [
         "Gendannelsessætning"
       ],
+      "Require 2FA for administrators": [
+        "Kræv 2FA for administratorer"
+      ],
+      "Require 2FA for everyone": [
+        "Kræv 2FA for alle"
+      ],
       "Reveal password": [
         "Vis adgangskode"
       ],
@@ -3137,6 +3645,9 @@
       ],
       "Select your country": [
         "Vælg dit land"
+      ],
+      "Select your plan": [
+        "Vælg dit abonnement"
       ],
       "Start date": [
         "Startdato"
@@ -3152,6 +3663,9 @@
       ],
       "Two-password mode": [
         "To-adgangskodetilstand"
+      ],
+      "User": [
+        "Bruger"
       ],
       "User's new password": [
         "Brugers nye adgangskode"
@@ -3184,6 +3698,17 @@
     "label": {
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Admin"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "VPN connections": [
+        "VPN-forbindelser"
       ]
     },
     "Label for news": {
@@ -3286,6 +3811,9 @@
       "Upgrade account": [
         "Opgradér konto"
       ],
+      "Upgrade your plan": [
+        "Opgradér abonnement"
+      ],
       "View guide": [
         "Se guide"
       ],
@@ -3311,6 +3839,29 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Opgradér for at låse op for chat-support og andre premium-funktioner, eller brug vores gratis supportformular til at rapportere dit problem."
+      ]
+    },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger to-faktor-godkendelse.",
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger to-faktor-godkendelse."
+      ]
+    },
+    "Member action": {
+      "Delete": [
+        "Slet"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Revoke sessions": [
+        "Tilbagekald sessioner"
+      ],
+      "Sign in": [
+        "Log ind"
       ]
     },
     "Message": {
@@ -3383,6 +3934,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: action": {
@@ -3499,6 +4053,9 @@
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Slet automatisk spam og beskeder i papirkurven"
+      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -3568,6 +4125,9 @@
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
       "High-speed streaming": [
         "Streaming ved høj hastighed"
       ],
@@ -3609,11 +4169,21 @@
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
       ],
+      "Schedule messages at any time": [
+        "Planlæg beskeder til ethvert tidspunkt"
+      ],
+      "Search message content": [
+        "Søg i beskedindhold"
+      ],
       "Secure Core servers": [
         "Secure Core servere"
       ],
       "Send & receive invitations": [
         "Send og modtag invitationer"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servere i ${ vpnServersCountData.paid.countries }+ land",
+        "Servere i ${ vpnServersCountData.paid.countries }+ lande"
       ],
       "Share calendar via link": [
         "Del kalender via link"
@@ -3678,6 +4248,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
+      "Up to 15 email addresses": [
+        "Op til 15 e-mailadresser"
+      ],
+      "Up to 3 TB of storage": [
+        "Op til 3 TB lagerplads"
+      ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
       ],
@@ -3691,6 +4267,20 @@
         "Boks og element-deling (kommer snart)"
       ]
     },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Brug din egen brugerdefinerede e-mail-domæneadresse, f.eks. dig@ditnavn.com"
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "Støtte"
@@ -3702,6 +4292,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } lader dig oprette e-mail-adresser og administrere konti for underbrugere. Ideel til familier og organisationer."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Gældende kreditter, proratering og kuponer anvendes i næste trin"
@@ -3884,6 +4477,11 @@
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Inkluderet i alle ${ BRAND_NAME } virksomhedsabonnementer."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
@@ -3903,11 +4501,35 @@
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "En deaktiveret adresse kan ikke være standard"
+      ],
+      "An external address cannot be default": [
+        "En ekstern adresse kan ikke være standard"
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
+      ],
+      "Reminder has been sent": [
+        "En påmindelse er blevet sendt."
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "To-faktor-godkendelse er blevet gjort obligatorisk for administratorer."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "To-faktor-godkendelse er blevet gjort obligatorisk for alle medlemmer."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "To-faktor-godkendelseskode er ikke længere påkrævet."
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Velkommen til ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Velkommen til ${ VPN_APP_NAME }"
       ]
@@ -3942,6 +4564,23 @@
       ],
       "Standard server configs": [
         "Standard serverkonfigurer"
+      ]
+    },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
+        "Dit abonnement har et maksimum ${ availableAddresses } adresser."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatorisk bruger.",
+        "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatoriske brugere."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konto.",
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konti."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
       ]
     },
     "pass_signup_2023: Action": {
@@ -3983,6 +4622,15 @@
       "Add gift code": [
         "Tilføj gavekode"
       ],
+      "Address": [
+        "Adresse"
+      ],
+      "Choose a name": [
+        "Vælg et navn"
+      ],
+      "Choose display name": [
+        "Vælg visningsnavn"
+      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -4003,6 +4651,15 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
+      ],
+      "Search": [
+        "Søg"
+      ],
+      "Search for a user or address": [
+        "Søg efter en bruger eller adresse"
+      ],
+      "Search users": [
+        "Søg brugere"
       ],
       "Select": [
         "Vælg"
@@ -4028,6 +4685,11 @@
     "Price": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "privat"
       ]
     },
     "Recovery Email": {
@@ -4094,6 +4756,36 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ved at verificere dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Kompatibilitet"
+      ],
+      "State of the art": [
+        "Den nyeste teknik"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Skift af organisationsnøgler"
+      ],
+      "Changing organization password": [
+        "Opretning af organisationsadgangskode"
+      ],
+      "Creating new users": [
+        "Opretter nye brugere"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
+      ],
+      "Reading emails of non-private users": [
+        "Læse e-mails af ikke-private brugere"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Upload en CSV-fil"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4358,6 +5050,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikeret server",
+        "${ ipAddresses } dedikerede servere"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } højhastigheds VPN-forbindelse",
         "${ maxVpn } højhastigheds VPN-forbindelser"
@@ -4453,6 +5149,9 @@
       "Account deleted. Signing out...": [
         "Konto slettet, logger ud..."
       ],
+      "Address added": [
+        "Adresse tilføjet"
+      ],
       "Bug reported": [
         "Fejl anmeldt"
       ],
@@ -4480,14 +5179,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Har du angivet en gyldig gendannelses-telefon, vil vi sende dig en sms med dine brugernavne inden for det næste minut."
       ],
+      "Invitation sent": [
+        "Invitation sendt"
+      ],
       "Invoice customized": [
         "Faktura tilpasset"
       ],
       "Invoice paid": [
         "Faktura betalt"
       ],
+      "Keys updated": [
+        "Nøgler opdateret"
+      ],
       "Locale updated": [
         "Lokalisering opdateret"
+      ],
+      "Organization activated": [
+        "Organisation aktiveret"
       ],
       "Password updated": [
         "Adgangskode opdateret"
@@ -4507,6 +5215,12 @@
       "Preference saved": [
         "Præferencer gemt"
       ],
+      "User created": [
+        "Bruger oprettet"
+      ],
+      "User updated": [
+        "Bruger opdateret"
+      ],
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
@@ -4517,7 +5231,24 @@
         "Du har afmeldt dig"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "Sessioner tilbagekaldt"
+      ],
+      "User deleted": [
+        "Bruger slettet"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "Adresse slettet"
+      ],
+      "Address disabled": [
+        "Adresse deaktiveret"
+      ],
+      "Address enabled": [
+        "Adresse aktiveret"
+      ],
       "Certificate ${ name } revoked": [
         "Certifikate ${ name } tilbagekaldt"
       ],
@@ -4529,6 +5260,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "Opretter konfigurationsfil for ${ serverName }"
+      ],
+      "Preference updated": [
+        "Præference opdateret"
       ]
     },
     "Suffix": {
@@ -4626,11 +5360,29 @@
       "Country": [
         "Land"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Name": [
         "Navn"
       ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Role": [
+        "Rolle"
+      ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Lagerplads i alt"
       ]
     },
     "Themes": {
@@ -4678,6 +5430,15 @@
       "Action": [
         "Handling"
       ],
+      "Activate account and generate keys": [
+        "Aktiver konto og generer nøgler"
+      ],
+      "Activate organization key": [
+        "Aktivér organisationsnøgle"
+      ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
       "Add credit/debit card": [
         "Tilføj kredit / betalingskort"
       ],
@@ -4687,8 +5448,17 @@
       "Add invoice details": [
         "Tilføj fakturaoplysninger"
       ],
+      "Add new user": [
+        "Tilføj ny bruger"
+      ],
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
+      ],
+      "Add user accounts": [
+        "Tilføj brugerkonti"
+      ],
+      "Allocate storage": [
+        "Tildel lagerplads"
       ],
       "Amount": [
         "Beløb"
@@ -4701,6 +5471,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
+      ],
+      "Authentication security": [
+        "Godkendelses-sikkerhed"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -4723,8 +5496,17 @@
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
+      "Change organization keys": [
+        "Skift organisationsnøgler"
+      ],
+      "Change organization name": [
+        "Skift organisationsnavn"
+      ],
       "Change password": [
         "Skift adgangskode"
+      ],
+      "Change role": [
+        "Skift rolle"
       ],
       "Confirm address": [
         "Bekræft adresse"
@@ -4737,6 +5519,25 @@
       ],
       "Confirm phone number": [
         "Bekræft telefonnummer"
+      ],
+      "Contact us": [
+        "Kontakt os"
+      ],
+      "Couldn’t create accounts": [
+        "Kunne ikke oprette konti"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Opret ${ selectedUserIds.length } bruger",
+        "Opret ${ selectedUserIds.length } brugere"
+      ],
+      "Create multiple user accounts": [
+        "Opret flere brugerkonti"
+      ],
+      "Create user accounts": [
+        "Opret brugerkonti"
+      ],
+      "Creating user accounts": [
+        "Opretter brugerkonti"
       ],
       "Credits": [
         "Kreditter"
@@ -4756,11 +5557,23 @@
       "Delete": [
         "Slet"
       ],
+      "Delete ${ email }": [
+        "Slet ${ email }"
+      ],
       "Delete account": [
         "Slet konto"
       ],
+      "Delete user": [
+        "Slet bruger"
+      ],
+      "Delete user?": [
+        "Slet bruger?"
+      ],
       "Device connected!": [
         "Enhed tilsluttet!"
+      ],
+      "Disable ${ email }": [
+        "Deaktiver ${ email }"
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -4780,6 +5593,9 @@
       "Edit display name": [
         "Redigér vist navn"
       ],
+      "Edit user": [
+        "Redigér bruger"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4792,11 +5608,18 @@
       "Error": [
         "Fejl"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Kunne ikke oprette ${ failedUsers.length } brugerkonto.",
+        "Kunne ikke oprette ${ failedUsers.length } brugerkonti."
+      ],
       "Find email or username": [
         "Find e-mail eller brugernavn"
       ],
       "General": [
         "Generelt"
+      ],
+      "Generate missing keys": [
+        "Generér manglende nøgler"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
@@ -4810,6 +5633,9 @@
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
+      "Increase your privacy with more addresses": [
+        "Forøg beskyttelsen af dit privatliv med flere adresser"
+      ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
@@ -4821,6 +5647,9 @@
       ],
       "Login password": [
         "Login-adgangskode"
+      ],
+      "Multi-user support": [
+        "Flerbrugerunderstøttelse"
       ],
       "Network error": [
         "Netværksfejl"
@@ -4845,6 +5674,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-opsætningsfiler"
+      ],
+      "Organization name": [
+        "Organisationsnavn"
       ],
       "Password": [
         "Adgangskode"
@@ -4885,11 +5717,20 @@
       "Recovery": [
         "Gendannelse"
       ],
+      "Remove user?": [
+        "Fjern bruger?"
+      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
       "Request new code": [
         "Anmod om ny kode"
+      ],
+      "Request sent": [
+        "Anmodning sendt"
+      ],
+      "Reset organization keys": [
+        "Nulstil organisationsnøgler"
       ],
       "Reset password": [
         "Nulstil adgangskode"
@@ -4897,14 +5738,29 @@
       "Reset password?": [
         "Nulstil adgangskode?"
       ],
+      "Restore administrator privileges": [
+        "Gendan administratorprivilegier"
+      ],
       "Revoke certificate": [
         "Tilbagekald certifikat"
       ],
       "Select a plan": [
         "Vælg et abonnement"
       ],
+      "Send email reminders?": [
+        "Send e-mail-påmindelser?"
+      ],
       "Set new password": [
         "Angiv ny adgangskode"
+      ],
+      "Set organization keys": [
+        "Angiv organisationsnøgler"
+      ],
+      "Set organization name": [
+        "Angiv organisationsnavn"
+      ],
+      "Set organization password": [
+        "Angiv organisationsadgangskode"
       ],
       "Set up two-factor authentication": [
         "Opsæt to-faktor-godkendelse"
@@ -4924,11 +5780,25 @@
       "Sign out": [
         "Log ud"
       ],
+      "Signed in to member account": [
+        "Logget ind på medlemskonto"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonto",
+        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonti"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Oprettede ${ successfullyCreatedUsers.length } brugerkonto",
+        "Oprettede ${ successfullyCreatedUsers.length } brugerkonti"
+      ],
+      "Summary": [
+        "Sammenfatning"
       ],
       "Switch to one-password mode": [
         "Skift til én-adgangskode-tilstand"
@@ -4941,6 +5811,12 @@
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
+      ],
+      "Two-factor authentication enforcement": [
+        "Gennemtvingelse af to-faktor-godkendelse"
+      ],
+      "Two-factor authentication reminders": [
+        "Påmindelser om to-faktor-godkendelse"
       ],
       "Type": [
         "Type"
@@ -5001,6 +5877,20 @@
         "${ MAIL_APP_NAME } faktura"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Adresser"
+      ],
+      "Features": [
+        "Funktioner"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Role": [
+        "Rolle"
+      ]
+    },
     "Title subscription": {
       "Actions": [
         "Handlinger"
@@ -5028,6 +5918,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem om at aktivere det hurtigst muligt."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
       ],
@@ -5044,6 +5937,17 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Admin"
+      ],
+      "Member": [
+        "Medlem"
+      ],
+      "Primary admin": [
+        "Primær admin"
       ]
     },
     "Validation": {
@@ -5108,6 +6012,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Ved at deaktivere denne adresse vil du ikke længere kunne benytte denne adresse til at sende eller modtage e-mails, og alle tilknyttede ${ BRAND_NAME }-produkter vil også deaktiveres. Er du sikker på, at du vil deaktivere denne adresse?"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
@@ -5119,6 +6026,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "Du skal ${ activateLink } organisationsnøgler før du tilføjer en e-mailadresse til et ikke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
