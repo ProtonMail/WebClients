@@ -11,6 +11,9 @@
       "Add current url": [
         "Dodaj obecny adres URL"
       ],
+      "Add domain to pause list": [
+        "Dodaj domenę do listy wykluczonych"
+      ],
       "Add more": [
         "Dodaj więcej"
       ],
@@ -289,6 +292,11 @@
         "Rozwiń"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Plik eksportu danych ${ provider } nie mógł zostać przetworzony. ${ errorDetail }"
@@ -362,7 +370,10 @@
       "Invalid password manager": [
         "Menadżer haseł jest nieprawidłowy"
       ],
-      "Item content cannot exceed 40kb": [
+      "Invalid url": [
+        "Adres URL jest nieprawidłowy"
+      ],
+      "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
       ],
       "Item creation failed": [
@@ -415,6 +426,9 @@
       ],
       "The file you are trying to import is empty": [
         "Plik, który próbujesz zaimportować, jest pusty"
+      ],
+      "The url is in the list": [
+        "Adres URL jest na liście"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Zbyt wiele nieudanych prób. Zaloguj się ponownie."
@@ -960,6 +974,9 @@
       "Autofill": [
         "Autouzupełnianie"
       ],
+      "Autofill 2FA": [
+        "Autouzupełnianie uwierzytelniania dwustopniowego"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Automatycznie otwieraj autouzupełnianie w polach logowania"
       ],
@@ -1016,6 +1033,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Pokaż ikonę ${ PASS_APP_NAME } w polach logowania"
+      ],
+      "Domains": [
+        "Domeny"
       ],
       "Download logs": [
         "Pobierz logi"
@@ -1146,6 +1166,9 @@
       "Passwords": [
         "Hasła"
       ],
+      "Pause list": [
+        "Lista wykluczonych"
+      ],
       "Permanently delete items": [
         "Usuń trwale elementy"
       ],
@@ -1194,7 +1217,7 @@
       "Settings": [
         "Ustawienia"
       ],
-      "Show website thumbnails": [
+      "Show website favicons": [
         "Pokaż ikony stron internetowych"
       ],
       "Special characters (!&*)": [
@@ -1345,6 +1368,12 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Wpisz \"${ vaultName }\", aby potwierdzić usunięcie"
       ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Przeszukaj ${ pluralItemType } w ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Przeszukaj ${ pluralItemType } we wszystkich sejfach"
+      ],
       "Search in ${ vault.content.name }": [
         "Przeszukaj ${ vault.content.name }"
       ],
@@ -1413,7 +1442,7 @@
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
-      "Import to vaults": [
+      "Import to vault(s)": [
         "Importuj do sejfów"
       ],
       "Permanently remove all items ?": [

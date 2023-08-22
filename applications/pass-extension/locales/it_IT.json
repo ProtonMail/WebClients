@@ -11,6 +11,9 @@
       "Add current url": [
         "Aggiungi l'url corrente"
       ],
+      "Add domain to pause list": [
+        "Aggiungi dominio all'elenco dei siti web in pausa"
+      ],
       "Add more": [
         "Aggiungi altro"
       ],
@@ -289,6 +292,11 @@
         "Espandi"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Elenco di domini in cui alcune funzioni automatiche in ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non devono essere eseguite."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }Impossibile analizzare il file .${ errorDetail }"
@@ -360,8 +368,11 @@
       "Invalid password manager": [
         "Gestore password non valido"
       ],
-      "Item content cannot exceed 40kb": [
-        "Il contenuto dell'elemento non può superare i 40kb"
+      "Invalid url": [
+        "URL non valido"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Il contenuto dell'elemento non può superare i 40 Kb"
       ],
       "Item creation failed": [
         "Creazione dell'elemento non riuscita"
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "Il file che stai tentando di importare è vuoto"
+      ],
+      "The url is in the list": [
+        "L'URL è nell'elenco"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Troppi tentativi errati. Effettua nuovamente l'accesso."
@@ -604,7 +618,7 @@
         "Inserisci il tuo PIN"
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
-        "L'esportazione è cifrata mediante PGP e richiede una passphrase forte."
+        "L'esportazione è crittografata mediante PGP e richiede una passphrase forte."
       ],
       "Follow these simple steps to get the best experience:": [
         "Segui questi semplici passaggi per ottenere la migliore esperienza:"
@@ -926,6 +940,9 @@
       "Autofill": [
         "Riempimento automatico"
       ],
+      "Autofill 2FA": [
+        "Compilazione automatica 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Apri la compilazione automatica quando selezioni i campi di login"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Mostra l'icona di ${ PASS_APP_NAME } nei campi di login"
+      ],
+      "Domains": [
+        "Domini"
       ],
       "Download logs": [
         "Scarica log"
@@ -1112,6 +1132,9 @@
       "Passwords": [
         "Password"
       ],
+      "Pause list": [
+        "Elenco dei siti web in pausa"
+      ],
       "Permanently delete items": [
         "Elimina definitivamente gli elementi"
       ],
@@ -1163,8 +1186,8 @@
       "Settings": [
         "Impostazioni"
       ],
-      "Show website thumbnails": [
-        "Mostra le miniature del sito web"
+      "Show website favicons": [
+        "Mostra le icone dei siti web"
       ],
       "Special characters (!&*)": [
         "Caratteri speciali (!&*)"
@@ -1388,8 +1411,8 @@
       "Import - ${ date }": [
         "Importa - ${ date }"
       ],
-      "Import to vaults": [
-        "Importa nelle casseforti"
+      "Import to vault(s)": [
+        "Importa in una o più casseforti"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -1522,7 +1545,7 @@
         "Frase segreta necessaria"
       ],
       "PGP encrypted export file requires passphrase": [
-        "L'esportazione del file cifrato mediante PGP richiede una passphrase"
+        "L'esportazione del file crittografato mediante PGP richiede una passphrase"
       ],
       "Please log back in": [
         "Per favore accedi nuovamente"

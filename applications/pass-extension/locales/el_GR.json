@@ -11,6 +11,9 @@
       "Add current url": [
         "Προσθήκη τρέχουσας διεύθυνσης URL"
       ],
+      "Add domain to pause list": [
+        "Προσθήκη τομέα στη λίστα παύσης"
+      ],
       "Add more": [
         "Προσθέστε περισσότερα"
       ],
@@ -289,6 +292,11 @@
         "Ανάπτυξη"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Λίστα τομέων όπου ορισμένες αυτόματες λειτουργίες στο ${ PASS_SHORT_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δεν πρέπει να εκτελούνται."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
@@ -360,8 +368,11 @@
       "Invalid password manager": [
         "Μη έγκυρος διαχειριστής κωδικών πρόσβασης"
       ],
-      "Item content cannot exceed 40kb": [
-        "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40kb"
+      "Invalid url": [
+        "Μη έγκυρη διεύθυνση URL"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
       ],
       "Item creation failed": [
         "Η δημιουργία του στοιχείου απέτυχε"
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
+      ],
+      "The url is in the list": [
+        "Το url βρίσκεται στη λίστα"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Αυτόματη συμπλήρωση"
       ],
+      "Autofill 2FA": [
+        "Αυτόματη συμπλήρωση 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Αυτόματο άνοιγμα της αυτόματης συμπλήρωσης κατά την εστίαση πεδίων σύνδεσης"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Εμφάνιση εικονιδίου ${ PASS_APP_NAME } στα πεδία σύνδεσης"
+      ],
+      "Domains": [
+        "Τομείς"
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
@@ -1112,6 +1132,9 @@
       "Passwords": [
         "Κωδικοί πρόσβασης"
       ],
+      "Pause list": [
+        "Παύση λίστας"
+      ],
       "Permanently delete items": [
         "Οριστική διαγραφή στοιχείων"
       ],
@@ -1163,8 +1186,8 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
-      "Show website thumbnails": [
-        "Εμφάνιση μικρογραφιών ιστότοπων"
+      "Show website favicons": [
+        "Εμφάνιση favicons ιστότοπου"
       ],
       "Special characters (!&*)": [
         "Ειδικοί χαρακτήρες (!&*)"
@@ -1388,8 +1411,8 @@
       "Import - ${ date }": [
         "Εισαγωγή - ${ date }"
       ],
-      "Import to vaults": [
-        "Εισαγωγή στις κρύπτες"
+      "Import to vault(s)": [
+        "Εισαγωγή στην(ις) κρύπτη(ες)"
       ],
       "Permanently remove all items ?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
