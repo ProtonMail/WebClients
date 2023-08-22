@@ -40,7 +40,13 @@ const usePayment = ({
     onBeforeTokenFetchPaypal,
     ignoreName = false,
 }: Props) => {
-    const { card, setCard, errors: cardErrors, fieldsStatus: cardFieldStatus, isValid } = useCard({ ignoreName });
+    const {
+        card,
+        setCard,
+        errors: cardErrors,
+        fieldsStatus: cardFieldStatus,
+        isValid,
+    } = useCard({ ignoreNameForNewCards: ignoreName });
     const [method, setMethod] = useState<PaymentMethodType | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
     const isPayPalActive = method === PAYPAL;
