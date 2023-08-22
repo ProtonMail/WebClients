@@ -952,6 +952,9 @@
       "Show preview": [
         "Mostra anteprima"
       ],
+      "Show side panel": [
+        "Mostra pannello laterale"
+      ],
       "Sign in": [
         "Accedi"
       ],
@@ -1230,7 +1233,7 @@
         "${ nameToDisplay } Posta in arrivo"
       ],
       "5 trackers removed": [
-        "5 tracciatori rimossi"
+        "5 tracker rimossi"
       ],
       "Auto forwarded": [
         "Inoltro automatico"
@@ -1239,7 +1242,7 @@
         "Email ricevuta"
       ],
       "Encrypted": [
-        "Criptato"
+        "Crittografato"
       ],
       "New email": [
         "Nuova email"
@@ -2863,7 +2866,7 @@
         "${ manageBlockedAddressesSettingsLink } nelle impostazioni."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Questo e altri benefici quando effettui l'aggiornamento del piano."
+        "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Usufruisci di questo e altri benefici quando effettui l'upgrade."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Decodifica dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
@@ -2897,7 +2900,7 @@
         "Logo Proton Mail e un segno più"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una funzione premium tra molte altre. Passa al piano superiore oggi."
+        "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una tra le molte funzioni premium. Effettua l'upgrade oggi."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
@@ -3130,7 +3133,7 @@
         "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Errore di decriptazione: decriptazione del contenuto cifrato di questo messaggio non riuscita."
+        "Errore di decriptazione: decriptazione del contenuto crittografato di questo messaggio non riuscita."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
@@ -5342,7 +5345,7 @@
         "Una o più chiavi fidate sono state contrassegnate come \"compromesse\" dal proprietario. Si consiglia di \"non fidarsi\" di queste chiavi."
       ],
       "Open shortcut cheat sheet": [
-        "Istruzioni di apertura delle scorciatoie"
+        "Apri le istruzioni per le scorciatoie"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Sei pregato di verificare che sia legittimo."
@@ -5742,19 +5745,19 @@
         "Aggiorna per aggiungere altri indirizzi al tuo profilo."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nella cartella Cestino o Spam dopo 30 giorni."
+        "Effettua l'upgrade per eliminare automaticamente gli elementi presenti nelle cartelle Cestino e Spam dopo 30 giorni."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Aggiorna per creare altre cartelle, filtri e indirizzi."
       ],
       "Upgrade to level up your privacy.": [
-        "Esegui l'upgrade per aumentare il livello della tua privacy."
+        "Effettua l'upgrade per aumentare il livello della tua privacy."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Aggiorna per inviare email dagli indirizzi @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
-        "Esegui l'upgrade per inviare email dal tuo dominio email personalizzato."
+        "Effettua l'upgrade per inviare email dal tuo dominio email personalizzato."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Aggiorna per inviare facilmente email ai gruppi di contatto."
@@ -5769,13 +5772,13 @@
         "Aggiorna per supportare la privacy e ottenere ulteriori funzionalità."
       ],
       "Upgrade to unlock premium features.": [
-        "Esegui l'upgrade per sbloccare funzionalità premium."
+        "Effettua l'upgrade per sbloccare funzionalità premium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
-        "Aggiorna il piano per usare ${ MAIL_APP_NAME } con Apple Mail, Outlook o Thunderbird."
+        "Effettua l'upgrade per usare ${ MAIL_APP_NAME } con Apple Mail, Outlook o Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Effettua l'Upgrade per usare la risposta automatica quando non ci sei."
+        "Effettua l'upgrade per usare la risposta automatica quando non ci sei."
       ],
       "Upload picture": [
         "Carica immagine"
@@ -7637,7 +7640,7 @@
         "Messaggio firmato PGP dal mittente verificato"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Messaggio firmato PGP. Verifica del mittente non riuscita"
+        "Messaggio firmato con PGP. Verifica del mittente non riuscita"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Inviato da ${ MAIL_APP_NAME } con crittografia ad accesso zero"
@@ -7781,7 +7784,7 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Messaggio cifrato con PGP. Verifica del mittente non riuscita: ${ verificationErrorsMessage }"
+        "Messaggio crittografato con PGP. Verifica del mittente non riuscita: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Messaggio firmato con PGP. Verifica del mittente non riuscita: ${ verificationErrorsMessage }"
@@ -8057,9 +8060,6 @@
       "Change setting": [
         "Cambia impostazione"
       ],
-      "Easily access and customize your app experience.": [
-        "Accedi e personalizza facilmente la tua esperienza con l'app."
-      ],
       "Email tracking protection": [
         "Protezione dal tracciamento email"
       ],
@@ -8068,9 +8068,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "Impostazioni rapide"
       ],
       "Schedule send": [
         "Pianifica invio"
@@ -9129,8 +9126,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
+      "Hide side panel": [
+        "Nascondi pannello laterale"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
+      ],
+      "Show side panel": [
+        "Mostra pannello laterale"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
