@@ -585,6 +585,9 @@
       "Show preview": [
         "Mostrar pré-visualização"
       ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
+      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -2195,6 +2198,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Não pode enviar ficheiros vCard de mais de 10 contactos."
       ],
+      "You have reached the contacts limit for your account": [
+        "Atingiu o limite de contactos da sua conta."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Atingiu o número máximo de calendários. Não é possível importar alguns calendários."
       ],
@@ -3170,6 +3176,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Tente também procurar no lixo."
@@ -5548,9 +5558,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Aceda e personalize facilmente a sua experiência com a aplicação."
-      ],
       "Encrypted search is here": [
         "A pesquisa encriptada está aqui"
       ],
@@ -5562,9 +5569,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Agora pode pesquisar facilmente ficheiros na unidade, mantendo os seus dados seguros."
-      ],
-      "Quick settings": [
-        "Definições rápidas"
       ]
     },
     "Storage": {
@@ -6316,8 +6320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."
       ],
+      "Hide side panel": [
+        "Ocultar o painel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema serão apresentadas como pastas separadas em ${ MAIL_APP_NAME }"

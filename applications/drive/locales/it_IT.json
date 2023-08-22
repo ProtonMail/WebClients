@@ -585,6 +585,9 @@
       "Show preview": [
         "Mostra anteprima"
       ],
+      "Show side panel": [
+        "Mostra pannello laterale"
+      ],
       "Sign in": [
         "Accedi"
       ],
@@ -1825,7 +1828,7 @@
         "Logo Proton Mail e un segno più"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una funzione premium tra molte altre. Passa al piano superiore oggi."
+        "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una tra le molte funzioni premium. Effettua l'upgrade oggi."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
@@ -5555,9 +5558,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Accedi e personalizza facilmente la tua esperienza con l'app."
-      ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
       ],
@@ -5569,9 +5569,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
-      ],
-      "Quick settings": [
-        "Impostazioni rapide"
       ]
     },
     "Storage": {
@@ -6323,8 +6320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
+      "Hide side panel": [
+        "Nascondi pannello laterale"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
+      ],
+      "Show side panel": [
+        "Mostra pannello laterale"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
