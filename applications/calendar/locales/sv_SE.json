@@ -491,6 +491,9 @@
       "Show more": [
         "Visa mer"
       ],
+      "Show side panel": [
+        "Visa sidopanel"
+      ],
       "Show time zones": [
         "Visa tidszoner"
       ],
@@ -5677,9 +5680,6 @@
       "Add your country's public holidays to your calendar.": [
         "Lägg till ditt lands allmänna helgdagar till din kalender."
       ],
-      "Easily access and customize your app experience.": [
-        "Kom enkelt åt och anpassa din appupplevelse."
-      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "Public holidays are here!": [
         "Allmänna helgdagar är här!"
-      ],
-      "Quick settings": [
-        "Snabbinställningar"
       ]
     },
     "Storage": {
@@ -6443,8 +6440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
+      "Hide side panel": [
+        "Dölj sidopanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
+      ],
+      "Show side panel": [
+        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
