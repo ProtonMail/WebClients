@@ -57,7 +57,7 @@ const PrivateHeader = ({
                         </TopNavbarListItem>
                     ) : null}
                     {userDropdown && !isNarrow ? (
-                        <TopNavbarListItem className="relative">{userDropdown}</TopNavbarListItem>
+                        <TopNavbarListItem className="relative no-mobile">{userDropdown}</TopNavbarListItem>
                     ) : null}
                 </TopNavbarList>
             </TopNavbar>
