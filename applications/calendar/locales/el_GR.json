@@ -491,6 +491,9 @@
       "Show more": [
         "Εμφάνιση περισσοτέρων"
       ],
+      "Show side panel": [
+        "Εμφάνιση πλαϊνού πλαισίου"
+      ],
       "Show time zones": [
         "Εμφάνιση ζωνών ώρας"
       ],
@@ -5677,9 +5680,6 @@
       "Add your country's public holidays to your calendar.": [
         "Προσθέστε τις επίσημες αργίες της χώρας σας στο ημερολόγιό σας."
       ],
-      "Easily access and customize your app experience.": [
-        "Αποκτήστε εύκολα πρόσβαση και προσαρμόστε την εμπειρία της εφαρμογής σας."
-      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "Public holidays are here!": [
         "Οι επίσημες αργίες είναι εδώ!"
-      ],
-      "Quick settings": [
-        "Γρήγορες ρυθμίσεις"
       ]
     },
     "Storage": {
@@ -6443,8 +6440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
+      "Hide side panel": [
+        "Απόκρυψη πλαϊνού πλαισίου"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
+      ],
+      "Show side panel": [
+        "Εμφάνιση πλαϊνού πλαισίου"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"

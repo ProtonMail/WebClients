@@ -11,6 +11,9 @@
       "Add current url": [
         "Lägg till nuvarande URL"
       ],
+      "Add domain to pause list": [
+        "Lägg till domän i pauslista"
+      ],
       "Add more": [
         "Lägg till fler"
       ],
@@ -360,8 +363,11 @@
       "Invalid password manager": [
         "Ogiltig lösenordshanterare"
       ],
-      "Item content cannot exceed 40kb": [
-        "Objektinnehåll får inte överstiga 40 kb"
+      "Invalid url": [
+        "Ogiltig URL"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Objektinnehåll får inte överstiga 40 kB"
       ],
       "Item creation failed": [
         "Misslyckades att skapa objekt"
@@ -413,6 +419,9 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du försöker importera är tom"
+      ],
+      "The url is in the list": [
+        "URL:en finns i listan"
       ],
       "Too many failed attempts. Please sign in again.": [
         "För många misslyckade försök. Logga in igen."
@@ -926,6 +935,9 @@
       "Autofill": [
         "Fyll automatiskt"
       ],
+      "Autofill 2FA": [
+        "Autofyll 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Öppna autofyll automatiskt vid fokusering på inloggningsfält"
       ],
@@ -982,6 +994,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Visa ikon ${ PASS_APP_NAME } på inloggningsfält"
+      ],
+      "Domains": [
+        "Domäner"
       ],
       "Download logs": [
         "Ladda ner loggar"
@@ -1112,6 +1127,9 @@
       "Passwords": [
         "Lösenord"
       ],
+      "Pause list": [
+        "Pauslista"
+      ],
       "Permanently delete items": [
         "Ta bort objekt permanent"
       ],
@@ -1163,8 +1181,8 @@
       "Settings": [
         "Inställningar"
       ],
-      "Show website thumbnails": [
-        "Visa webbplatsminatyrer"
+      "Show website favicons": [
+        "Visa webbplatsens favicon"
       ],
       "Special characters (!&*)": [
         "Specialtecken (!&*)"
@@ -1388,7 +1406,7 @@
       "Import - ${ date }": [
         "Importera – ${ date }"
       ],
-      "Import to vaults": [
+      "Import to vault(s)": [
         "Importera till valv"
       ],
       "Permanently remove all items ?": [

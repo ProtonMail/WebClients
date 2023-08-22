@@ -495,6 +495,9 @@
       "Show more": [
         "Розгорнути"
       ],
+      "Show side panel": [
+        "Показати бічну панель"
+      ],
       "Show time zones": [
         "Показати часові пояси"
       ],
@@ -2557,6 +2560,9 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Ви не можете надіслати файли vCard для понад 10 контактів"
+      ],
+      "You have reached the contacts limit for your account": [
+        "Ви досягли максимальної кількості контактів для Вашого облікового запису"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
@@ -5876,9 +5882,6 @@
       "Add your country's public holidays to your calendar.": [
         "Додайте державні свята вашої країни до свого календаря."
       ],
-      "Easily access and customize your app experience.": [
-        "Легко отримуйте доступ до програми й налаштовуйте роботу."
-      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
@@ -5887,9 +5890,6 @@
       ],
       "Public holidays are here!": [
         "Державні свята вже тут!"
-      ],
-      "Quick settings": [
-        "Швидкі налаштування"
       ]
     },
     "Storage": {
@@ -6670,8 +6670,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
+      "Hide side panel": [
+        "Приховати бічну панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Show side panel": [
+        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"

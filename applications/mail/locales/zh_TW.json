@@ -1559,7 +1559,7 @@
         "${ participantName } 已暫訂接受您的邀請。"
       ],
       "(Attendance optional)": [
-        "（出席可選）"
+        "(非必要出席)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "暫未支援加入重複次數到一個事件"
@@ -7818,7 +7818,7 @@
         "為期 1 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 12 months": [
-        "為期 12 個月收費 ${ amount } "
+        "12 個月的費用為${ amount }"
       ],
       "Billed at ${ amount } for 15 months": [
         "為期 15 個月收費 ${ amount } "
@@ -7827,7 +7827,7 @@
         "為期 24 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 30 months": [
-        "為期 30 個月收費 ${ amount } "
+        "30 個月的費用為${ amount }"
       ],
       "for ${ n } months": [
         "為期${ n }個月"
@@ -7842,7 +7842,7 @@
         "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Save ${ discount }%": [
-        "省下  ${ discount }%"
+        "省下 ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "長達 1 個月的標準價 ${ amount } "
@@ -7851,13 +7851,13 @@
         "長達 12 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 15 months": [
-        "長達 15 個月的標準價 ${ amount } "
+        "15 個月的原價 ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
         "長達 24 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 30 months": [
-        "長達 30 個月的標準價 ${ amount } "
+        "30 個月的原價 ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -7922,9 +7922,6 @@
       "Change setting": [
         "更改設定"
       ],
-      "Easily access and customize your app experience.": [
-        "提早存取和自訂您的應用程式體驗。"
-      ],
       "Email tracking protection": [
         "電郵追蹤防護"
       ],
@@ -7933,9 +7930,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "快速設定"
       ],
       "Schedule send": [
         "排程傳送"

@@ -439,6 +439,9 @@
       "Got it": [
         "はい"
       ],
+      "Help": [
+        "ヘルプ"
+      ],
       "Hide": [
         "非表示"
       ],
@@ -889,6 +892,9 @@
       "Set": [
         "設定"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "${ MAIL_APP_NAME } をデフォルトのメール アプリケーションとして設定します"
+      ],
       "Set as default": [
         "既定にする"
       ],
@@ -900,6 +906,9 @@
       ],
       "Set recovery phrase": [
         "回復フレーズを設定"
+      ],
+      "Settings": [
+        "設定"
       ],
       "Share via link": [
         "リンクを共有"
@@ -976,6 +985,9 @@
       "Submit": [
         "送信"
       ],
+      "Switch or add account": [
+        "アカウントを切り替え・追加"
+      ],
       "This message contains embedded images.": [
         "このメッセージには埋め込み画像が含まれています。"
       ],
@@ -990,6 +1002,9 @@
       ],
       "Toggle Contact app": [
         "連絡先アプリを切り替え"
+      ],
+      "Toggle settings": [
+        "設定を切り替え"
       ],
       "Tomorrow": [
         "明日"
@@ -1631,6 +1646,9 @@
       ],
       "azureish white": [
         "かなり白い青"
+      ],
+      "black": [
+        "黒"
       ],
       "blanched almond": [
         "かなり白い黄"
@@ -4094,6 +4112,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "${ strongText } を ${ BRAND_NAME } のアドレスに変更します"
       ],
+      "Changed accounts": [
+        "変更されたアカウント"
+      ],
       "Checklist complete": [
         "チェックリストが完了しました"
       ],
@@ -4102,6 +4123,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "すべてのステップを完了しました。おめでとう！"
+      ],
+      "Congratulation, you finished!": [
+        "おめでとうございます。完了しました。"
       ],
       "Continue setting up your email": [
         "メールの設定を続ける"
@@ -4117,6 +4141,9 @@
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強力な暗号化により、あなたと意図した宛先の受信者のみがメールを閲覧できます。"
+      ],
+      "For your eyes only": [
+        "あなたの目だけに"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
@@ -4142,6 +4169,9 @@
       "Open checklist": [
         "チェックリストを開く"
       ],
+      "Open checklist and get free storage": [
+        "チェックリストを開いて無料ストレージを入手"
+      ],
       "Popular online services": [
         "有名なオンラインサービス"
       ],
@@ -4159,6 +4189,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "モバイル端末でサインインして、このステップを達成"
+      ],
+      "Storage unlocked": [
+        "ストレージのロック解除"
       ],
       "Update your logins": [
         "ログイン情報を更新する"
@@ -4547,6 +4580,9 @@
       "${ count } unread messages": [
         "${ count } 件の未読メッセージ"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ totalProgress } のうち ${ currentProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 枚の埋め込み画像"
       ],
@@ -4709,6 +4745,9 @@
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
       ],
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してもよろしいですか?"
+      ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "この場所にあるすべてのメッセージをアーカイブに移動してもよろしいですか？"
       ],
@@ -4856,6 +4895,9 @@
       "Do you want to re-sign the contact details?": [
         "連絡先の詳細に再署名しますか?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "探しているものが見つかりませんか? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
@@ -4964,6 +5006,9 @@
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
       ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "さらに検索結果を表示するには、電子メール メッセージの内容でこのキーワードを検索してみてください。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -5026,6 +5071,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
+      ],
+      "Include Spam/Trash in your search results.": [
+        "検索結果にスパム/ゴミ箱を含めます。"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -5101,6 +5149,9 @@
       ],
       "Merged": [
         "結合済み"
+      ],
+      "Message download status:": [
+        "メッセージのダウンロード状況:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "メールの有効期限は相手が${ MAIL_APP_NAME }を使用している場合、何の設定も必要ありません。相手が${ BRAND_NAME }のユーザーでない場合、メールにパスワードを設定する必要があります。"
@@ -5195,6 +5246,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
+      "Open shortcut cheat sheet": [
+        "ショートカットのチートシートを開く"
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
       ],
@@ -5224,6 +5278,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "グループ作成のため、お名前とEメールアドレスをご記入ください。"
       ],
       "Please select the folders you would like to import:": [
         "インポートしたいフォルダーを選択してください:"
@@ -5290,6 +5347,9 @@
       ],
       "Saved yesterday": [
         "昨日保存したもの"
+      ],
+      "Saved: ${ dateString }": [
+        "保存済み: ${ dateString }"
       ],
       "Saving draft…": [
         "下書きを保存しています…"
@@ -5555,6 +5615,9 @@
       "Trackers blocked:": [
         "ブロックしたトラッカー:"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "日付、名前、メールアドレス、件名のみで検索する場合はオフにします。メッセージ内容の検索を無効にし、ダウンロードしたメッセージを削除するには、設定に進みます。"
       ],
@@ -5701,6 +5764,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "検索内容を変えるか ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "検索クエリを更新するか、クリアすることができます"
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -6126,6 +6192,9 @@
       "BCC": [
         "BCC"
       ],
+      "Beta Access": [
+        "ベータ版アクセス"
+      ],
       "Blind Carbon Copy": [
         "ブラインド カーボン コピー (Blind Carbon Copy)"
       ],
@@ -6312,6 +6381,9 @@
       "Last month only": [
         "過去 1 か月のみ"
       ],
+      "Layout": [
+        "レイアウト"
+      ],
       "Location": [
         "場所"
       ],
@@ -6447,6 +6519,9 @@
       "Street address": [
         "番地"
       ],
+      "Sync with system": [
+        "システムと同期する"
+      ],
       "Synchronize with system": [
         "システムとの同期"
       ],
@@ -6464,6 +6539,9 @@
       ],
       "the email was sent ${ label }": [
         "${ label } でメールを送信"
+      ],
+      "Theme": [
+        "テーマ"
       ],
       "Then": [
         "その後"
@@ -7841,6 +7919,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "設定変更"
+      ],
       "Email tracking protection": [
         "メールトラッキング防止"
       ],
@@ -7855,6 +7936,9 @@
       ],
       "Search just got smarter and faster": [
         "検索がより賢く、より速く"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "スパムメールとゴミ箱メールがすべてのメールから自動的に除外されるようになりました。 ${ settingsLink }"
       ],
       "Try it today.": [
         "今すぐ試してみよう。"
@@ -8303,6 +8387,9 @@
       ],
       "Addresses": [
         "メールアドレス"
+      ],
+      "All settings": [
+        "すべての設定"
       ],
       "Archive": [
         "アーカイブ"

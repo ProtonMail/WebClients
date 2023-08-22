@@ -8,14 +8,32 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "activate": [
+        "activeer"
+      ],
+      "Activate organization key": [
+        "Organisatiesleutel activeren"
+      ],
+      "Add address": [
+        "Adres toevoegen"
+      ],
       "Add credit / debit card": [
         "Krediet / debietkaart toevoegen"
       ],
       "Add credits": [
         "Voeg credits toe"
       ],
+      "Add domain": [
+        "Domein toevoegen"
+      ],
+      "Add multiple users": [
+        "Meerdere gebruikers toevoegen"
+      ],
       "Add PayPal": [
         "PayPal toevoegen"
+      ],
+      "Add user": [
+        "Gebruiker toevoegen"
       ],
       "Apply": [
         "Toepassen"
@@ -68,6 +86,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue anyway": [
+        "Ga toch verder"
+      ],
       "Continue with this password": [
         "Ga verder met dit wachtwoord"
       ],
@@ -79,6 +100,15 @@
       ],
       "Create": [
         "Aanmaken"
+      ],
+      "Create Gateway": [
+        "Gateway opzetten"
+      ],
+      "Create user": [
+        "Gebruiker aanmaken"
+      ],
+      "Create users": [
+        "Gebruikers aanmaken"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -94,6 +124,12 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete Gateway": [
+        "Gateway verwijderen"
+      ],
+      "Delete user": [
+        "Gebruiker verwijderen"
       ],
       "Delete your account": [
         "Uw account verwijderen"
@@ -125,6 +161,9 @@
       "Download all configurations": [
         "Download alle configuraties"
       ],
+      "Download our CSV template": [
+        "Ons CSV-sjabloon downloaden"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -137,11 +176,20 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "Edit Gateway": [
+        "Gateway bewerken"
+      ],
+      "Edit name": [
+        "Naam bewerken"
+      ],
       "Edit password": [
         "Wachtwoord wijzigen"
       ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
+      ],
+      "Edit servers": [
+        "Servers bewerken"
       ],
       "Edit sign-in details": [
         "Bewerk aanmeldgegevens"
@@ -149,8 +197,14 @@
       "Edit subscription": [
         "Wijzig abonnement"
       ],
+      "Edit users": [
+        "Gebruikers bewerken"
+      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
+      ],
+      "Enable multi-user support": [
+        "Ondersteuning voor meerdere gebruikers inschakelen"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Ontdek andere ${ BRAND_NAME }-abonnementen"
@@ -169,6 +223,15 @@
       ],
       "Get more": [
         "Verkrijg meer"
+      ],
+      "Get more addresses": [
+        "Krijg meer adressen"
+      ],
+      "Get more licenses": [
+        "Krijg meer licenties"
+      ],
+      "Get more servers": [
+        "Krijg meer servers"
       ],
       "Get the deal": [
         "Pak deze deal"
@@ -190,6 +253,12 @@
       ],
       "Increase": [
         "Verhogen"
+      ],
+      "Invite": [
+        "Uitnodigen"
+      ],
+      "Invite user": [
+        "Gebruiker uitnodigen"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Behoud mijn ${ vpnPlanNameShort }-abonnement"
@@ -248,11 +317,17 @@
       "refresh the page": [
         "pagina vernieuwen"
       ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Remove bonuses": [
         "Verwijder bonussen"
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
+      ],
+      "Rename": [
+        "Hernoem"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -269,11 +344,17 @@
       "Reset credentials": [
         "Inloggegevens resetten"
       ],
+      "Reset keys": [
+        "Reset sleutels"
+      ],
       "Reset password": [
         "Wachtwoord resetten"
       ],
       "Restore": [
         "Herstel"
+      ],
+      "Restore administrator privileges": [
+        "Herstel beheerdersbevoegdheden"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -290,6 +371,12 @@
       "Save": [
         "Opslaan"
       ],
+      "Save address": [
+        "Adres opslaan"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
       "Search countries": [
         "Zoek landen"
       ],
@@ -302,8 +389,14 @@
       "Send code": [
         "Code versturen"
       ],
+      "Send email reminder": [
+        "Stuur een e-mailherinnering"
+      ],
       "Send my username": [
         "Stuur mijn gebruikersnaam"
+      ],
+      "Send reminder": [
+        "Herinnering versturen"
       ],
       "Set new password": [
         "Nieuw wachtwoord instellen"
@@ -344,6 +437,9 @@
       "Support": [
         "Ondersteuning"
       ],
+      "Switch account": [
+        "Account wisselen"
+      ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
       ],
@@ -367,6 +463,12 @@
       ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade to Business": [
+        "Upgraden naar Business"
+      ],
+      "Upgrade your plan": [
+        "Upgrade uw abonnement"
       ],
       "Use ${ label } theme": [
         "Gebruik ${ label } thema"
@@ -410,6 +512,9 @@
       "What do I get?": [
         "Wat krijg ik?"
       ],
+      "Your server will be provisioned in the next days": [
+        "Uw server wordt in de komende dagen geleverd"
+      ],
       "Zoom in": [
         "Inzoomen"
       ],
@@ -446,6 +551,66 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Disable": [
+        "Uitschakelen"
+      ],
+      "Disable E2EE mail": [
+        "Schakel E2EE uit"
+      ],
+      "Disallow unsigned mail": [
+        "Verbied ongetekende mail"
+      ],
+      "Enable": [
+        "Inschakelen"
+      ],
+      "Enable E2EE mail": [
+        "Schakel E2EE mail in"
+      ],
+      "Generate missing keys": [
+        "Ontbrekende sleutels genereren"
+      ],
+      "Saving": [
+        "Bezig met opslaan"
+      ],
+      "Set as default": [
+        "Als standaard instellen"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Actief"
+      ],
+      "Allow unsigned mail": [
+        "Sta ongetekende mail toe"
+      ],
+      "Default": [
+        "Standaard"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Missing keys": [
+        "Ontbrekende sleutels"
+      ],
+      "No E2EE mail": [
+        "Geen E2EE mail"
+      ],
+      "Orphan": [
+        "Wees"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "beheerder"
       ]
     },
     "Alter": {
@@ -1430,9 +1595,30 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Geen zoekresultaten gevonden"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Beschikbaar tegoed"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV-template"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Fout op rij ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Het lijkt erop dat in uw bestand de '${ options.fieldName }'-header ontbreekt."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "We hebben fouten ontdekt in meerdere rijen tijdens het importeren, controleer uw CSV-bestand."
       ]
     },
     "Cycle": {
@@ -1446,6 +1632,14 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail-logo en een plus-teken"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ]
     },
     "Downgrade account reason": {
@@ -1479,9 +1673,20 @@
         "Help ons verbeteren!"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } is uw gebruikersnaam. Om ${ Local }@${ Domain } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
@@ -1504,17 +1709,32 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Error": [
+        "Fout"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
       ],
+      "Impossible to create the gateway": [
+        "De gateway instellen is niet mogelijk"
+      ],
+      "Impossible to edit the gateway": [
+        "De gateway aanpassen is niet mogelijk"
+      ],
+      "Impossible to rename the gateway": [
+        "De gateway hernoemen is niet mogelijk"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect password": [
+        "Ongeldig wachtwoord"
       ],
       "Invalid ${ name } code": [
         "Ongeldig ${ name } code"
@@ -1537,11 +1757,20 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Name does not match": [
+        "Naam komt niet overeen"
+      ],
       "Name on card required": [
         "Naam op kaart verplicht"
       ],
       "Not a valid number": [
         "Geen geldig getal"
+      ],
+      "Organization key is not decrypted": [
+        "Organisatiesleutel is niet ontsleuteld"
+      ],
+      "Organization key is not decrypted.": [
+        "Organisatiesleutel is niet gedecodeerd."
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -1561,6 +1790,15 @@
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
+      ],
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
@@ -1569,6 +1807,12 @@
       ],
       "Please set a recovery phone number first": [
         "Stel eerst een hersteltelefoonnummer in"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -1603,6 +1847,12 @@
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
       ],
+      "The organization key must be activated first": [
+        "De organisatiesleutel moet eerst geactiveerd worden"
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -1636,8 +1886,34 @@
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "U moet uw organisatiesleutels activeren. Zonder activatie kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen, of toegang krijgen tot niet-private gebruikeraccounts."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand \"${ formattedFilename }\". Onjuiste bestandsindeling."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand \"${ formattedFilename }\". Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Upload een CSV-bestand met ${ MAX_NUMBER_OF_USER_ROWS } gebruikers of minder."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Uw bestand \"${ formattedFilename }\" is leeg."
       ]
     },
     "Error message": {
@@ -1683,11 +1959,23 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Nieuwe gebruiker aanmaken"
+      ],
       "Decline invitation": [
         "Uitnodiging afwijzen"
       ],
       "Got it": [
         "Begrepen"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Bestaande ${ BRAND_NAME }-gebruiker uitnodigen"
+      ],
+      "Invite member to your family": [
+        "Lid uitnodigen voor uw gezin"
+      ],
+      "Set up family group": [
+        "Gezinsgroep configureren"
       ],
       "Switch plans": [
         "Van abonnement wisselen"
@@ -1749,8 +2037,14 @@
       "Manage user accounts": [
         "Gebruikersaccounts beheren"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Er mogen maximaal 10 uitnodigingen worden geaccepteerd in een periode van 6 maanden."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander groepsabonnement."
+      ],
+      "Pending": [
+        "In behandeling"
       ],
       "Pending invitation": [
         "Openstaande uitnodiging"
@@ -1782,8 +2076,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "U hebt de limiet bereikt van 10 geaccepteerde uitnodigingen in 6 maand."
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "U hebt de limiet van 10 geaccepteerde uitnodigingen in 6 maanden bereikt. U kunt weer op de knop klikken wanneer u extra gebruikers kunt uitnodigen."
+      ],
       "You have successfully joined the Family plan": [
         "U hebt zich aangesloten bij het Family-abonnement"
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "U moet een eigen domein configureren voordat u een nieuwe gebruiker aanmaakt."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
@@ -1812,8 +2115,40 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Maximaal één gratis proefversie per gebruiker."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Standaard wijzen we ${ formattedStorage } opslagruimte toe aan het beheerdersaccount. U kunt de toegewezen opslagruimte die moet worden verdeeld onder aanvullende gebruikers later beheren."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Maak gezinsgebruikers aan, beheer ze en wijs opslagruimte toe die wordt gedeeld tussen ${ DRIVE_APP_NAME } en ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
+      ],
       "Online privacy, for your whole family": [
         "Online privacy voor het hele gezin"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Voor het maken van een nieuwe gebruiker is een geconfigureerd aangepast domein vereist."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "U kunt de opslagruimte voor deze gebruiker uitbreiden of beperken."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Voeg gebruikersaccounts toe aan uw gezinsgroep, verwijder accounts en bewerk ze."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Voeg gebruikersaccounts toe aan uw organisatie, verwijder ze en bewerk ze."
       ]
     },
     "familyOffer_2023:Label": {
@@ -1822,6 +2157,9 @@
       ],
       "Enter organization name to confirm": [
         "Voer de organisatienaam in om te bevestigen"
+      ],
+      "Family name": [
+        "Gezinsnaam"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -1832,15 +2170,44 @@
         "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
       ]
     },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } is verwijderd uit ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Er is een fout opgetreden, probeer het opnieuw"
+      ],
+      "Member updated": [
+        "Lid bijgewerkt"
+      ]
+    },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Gebruiker toevoegen aan uw ${ PLAN_NAMES.visionary2022 }-account"
+      ],
+      "Change family name": [
+        "Gezinsnaam wijzigen"
+      ],
       "Delete family group?": [
         "Gezinsgroep verwijderen?"
       ],
       "Delete organization?": [
         "Organisatie verwijderen?"
       ],
+      "Edit user storage": [
+        "Gebruikersopslag bewerken"
+      ],
+      "Family name": [
+        "Gezinsnaam"
+      ],
       "Introducing ${ planName }": [
         "Ontdek ${ planName }"
+      ],
+      "Invite a user": [
+        "Een gebruiker uitnodigen"
+      ],
+      "Set family name": [
+        "Gezinsnaam instellen"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -1855,8 +2222,19 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-verbinding",
+        "${ MaxVPN } VPN-verbindingen"
+      ],
       "Access to all countries": [
         "Toegang tot alle landen"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Toevoegen (${ numberOfAddedServers })",
+        "Toevoegen (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Verbinding op ${ plusVpnConnections } apparaat",
@@ -2072,11 +2450,49 @@
       "Checkout": [
         "Afrekenen"
       ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Maak uw account aan"
       ],
+      "IP address": [
+        "IP-adres"
+      ],
+      "Members": [
+        "Leden"
+      ],
+      "Name": [
+        "Naam"
+      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Serverbelasting"
+      ],
+      "Servers": [
+        "Servers"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Acties"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Human verification method": {
@@ -2120,8 +2536,16 @@
         "${ number } server",
         "${ number } servers"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
+        "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } gebruiker gevonden",
+        "${ userFound } gebruikers gevonden"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
@@ -2160,20 +2584,51 @@
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
+      "active": [
+        "actief"
+      ],
       "add a recovery method": [
         "een herstelmethode toe voegt"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Server toevoegen (${ availableAddedCount } beschikbaar)",
+        "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } gatewayserver wordt toegevoegd",
+        "${ addedServerCount } gatewayservers worden toegevoegd"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Aanvullende opties"
+      ],
+      "address": [
+        "adres",
+        "adressen"
+      ],
+      "Admin account allocation": [
+        "Toewijzing beheerdersaccount"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "Allocated": [
+        "Toegewezen"
+      ],
+      "Already allocated": [
+        "Reeds toegewezen"
+      ],
+      "Already used": [
+        "Al gebruikt"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -2190,11 +2645,20 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Alle ${ twoFa }methodes op uw account worden uitgeschakeld."
       ],
+      "Are you sure you want to delete this address?": [
+        "Weet u zeker dat u dit adres wil verwijderen?"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
       ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
+      ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
       "Attention required": [
         "Aandacht vereist"
@@ -2211,8 +2675,17 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Zorg ervoor dat u uw wachtwoord kopieert en op een veilige plek bewaart."
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Voordat u dit adres aanmaakt, moet u een wachtwoord opgeven en er encryptiesleutels voor aanmaken."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Voordat u de account inschakelt, moet u een wachtwoord opgeven en encryptiesleutels aanmaken voor de nieuwe adressen."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
       "Billed every 12 months": [
         "Per 12 maanden betaald"
@@ -2253,6 +2726,22 @@
       "Country code": [
         "Landcode"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Maak e-mailadressen aan voor andere mensen, beheer ${ MAIL_APP_NAME } voor een bedrijf, school of groep. Ga aan de slag met het toevoegen van uw organisatienaam en aangepast domein (bijv. @yourcompany.com). "
+      ],
+      "Create your first Gateway": [
+        "Uw eerste gateway instellen"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -2268,14 +2757,30 @@
       "Dedicated servers": [
         "Dedicated servers"
       ],
+      "dedicated servers": [
+        "toegewijde servers"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } gatewayserver wordt verwijderd",
+        "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Vergeet dit wachtwoord NIET. Als u het vergeet, kunt u niet meer inloggen of uw berichten ontsleutelen."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      ],
+      "Done": [
+        "Klaar"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
@@ -2301,6 +2806,9 @@
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
       ],
+      "Enhance your network security": [
+        "Verbeter uw netwerkbeveiliging"
+      ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
       ],
@@ -2315,6 +2823,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Voer de code in die is verzonden naar ${ email }. Als u het bericht niet kan vinden in uw inbox, kijk dan in de map 'Spam'."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -2343,6 +2854,9 @@
       "expires ${ expirationDate }": [
         "verloopt op ${ expirationDate }"
       ],
+      "Fill in user details": [
+        "Vul gebruikers gegevens in"
+      ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
       ],
@@ -2358,6 +2872,9 @@
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
+      "Gateways": [
+        "Gateways"
+      ],
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
       ],
@@ -2369,6 +2886,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Als u het niet goed genoeg vindt, dan betalen we u terug."
@@ -2412,6 +2932,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
+      "inactive": [
+        "inactief"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
       ],
@@ -2432,6 +2955,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Lean more about gateways": [
+        "Meer info over gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
@@ -2463,8 +2989,38 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Member": [
+        "Lid"
+      ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "more": [
+        "meer"
+      ],
+      "Multi-user support not enabled.": [
+        "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
+      ],
+      "Must be between 3 and 20 characters long.": [
+        "Moet tussen de 3 en 20 tekens lang zijn."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Mag alleen letters, cijfers en streepjes (-) bevatten."
+      ],
+      "Must not contain spaces.": [
+        "Mag geen spaties bevatten."
+      ],
+      "Must start with a letter.": [
+        "Moet starten met een letter"
+      ],
+      "No addresses exist": [
+        "Adressen bestaan niet"
+      ],
+      "No gateways": [
+        "Geen gateways"
+      ],
+      "No Gateways yet": [
+        "Nog geen gateways"
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
@@ -2478,8 +3034,8 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
-      "Number of users": [
-        "Aantal gebruikers"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "De hoeveelheid toegewijde servers die u probeert toe te wijzen (${ addedCount }) ligt hoger dan wat er nog beschikbaar is in uw abonnement (${ remainingCount }), omdat u er ${ ownedCount } heeft en al ${ usedCount } gebruikt."
       ],
       "of": [
         "van"
@@ -2493,11 +3049,26 @@
       "Open source": [
         "Open source"
       ],
+      "Optional": [
+        "Optioneel"
+      ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
+      "Organization keys activated": [
+        "Organisatiesleutels geactiveerd"
+      ],
+      "Organization keys restored": [
+        "Organisatiesleutels hersteld"
+      ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Orden uw toegewijde servers in Gateways en bepaal welke gebruikers er toegang toe hebben."
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
@@ -2508,14 +3079,31 @@
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
       ],
+      "Please add a password for the user on row": [
+        "Voeg een wachtwoord toe voor de gebruiker op de rij",
+        "Voeg wachtwoorden toe voor de gebruikers op rijen"
+      ],
+      "Please add an email address for the user on row": [
+        "Voeg een e-mailadres toe voor de gebruiker op de rij",
+        "Voeg e-mailadressen toe voor de gebruikers op de rijen"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Controleer uw bestand op fouten, of neem contact op met de klantenservice voor meer informatie."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Controleer uw bestand, of probeer onze ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Let op: als u dit adres verwijdert, kunt u geen e-mails meer verzenden of ontvangen met behulp van dit adres."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
@@ -2550,6 +3138,9 @@
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
       ],
+      "Queued": [
+        "In wachtrij"
+      ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
@@ -2562,11 +3153,17 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
       "Restore": [
         "Herstel"
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Bewaar uw wachtwoord op een veilige plaats. Klik op het pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
       ],
       "Saving your password": [
         "Uw wachtwoord wordt bewaard"
@@ -2579,6 +3176,9 @@
       ],
       "Securing your account": [
         "Beveiliging van uw account"
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "E-mails verzenden om uw leden aan te moedigen om hun accounts te beschermen met 2FA."
       ],
       "Server is currently down": [
         "Server is momenteel offline"
@@ -2604,9 +3204,24 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
+      ],
       "Step ${ step }": [
         "Stap ${ step }",
         "Stap ${ step }"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
+      ],
+      "Storage allocated to this user": [
+        "Opslagruimte toegewezen aan deze gebruiker"
+      ],
+      "Storage for users": [
+        "Opslag voor gebruikers"
+      ],
+      "Storage used by this user": [
+        "Opslagruimte gebruikt door deze gebruiker"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -2625,6 +3240,27 @@
       ],
       "Thank you": [
         "Bedankt"
+      ],
+      "The following address is invalid.": [
+        "Het volgende adres is ongeldig.",
+        "De volgende adressen zijn ongeldig."
+      ],
+      "The following address is unavailable.": [
+        "Het volgende adres is niet beschikbaar.",
+        "De volgende adressen zijn niet beschikbaar."
+      ],
+      "The following address was not created.": [
+        "Het volgende adres werd niet aangemaakt.",
+        "De volgende adressen werden niet aangemaakt."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "De volgende leden zullen een e-mail ontvangen met een uitnodiging om zo snel mogelijk tweestapsverificatie in te schakelen."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Het formaat van uw CSV-bestand is onjuist."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
       ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
@@ -2647,14 +3283,26 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Dit maakt een nieuwe versleutelingssleutel aan voor uw organisatie. Sleutels met een lengte van 4096-bits werken alleen op krachtige computers. Voor de meeste gebruikers is het aangeraden de standaardwaarde van 2048-bits te gebruiken."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Dit verwijdert permanent alle gegevens en e-mailadressen die aan deze gebruiker zijn gekoppeld."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U zult dit account niet kunnen heractiveren."
@@ -2676,6 +3324,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "Om te bevestigen, voer de naam in van de gebruiker die u wilt verwijderen."
       ],
       "to continue to ${ product }": [
         "om door te gaan naar ${ product }"
@@ -2740,11 +3391,20 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Upload uw voltooide CSV-bestand om accounts aan te maken."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Gebruik de verschillende types e-mailadressen en aliassen die aangeboden worden door ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME }-servers zonder toepassing. Voorbeelden van gebruik zijn: Tunnelblick on macOS, OpenVPN op GNU/Linux."
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
@@ -2766,6 +3426,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "Want servers in other countries?": [
+        "Wilt u servers in andere landen?"
       ],
       "Warning:": [
         "Waarschuwing:"
@@ -2790,6 +3453,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "We bevelen aan om minstens 2 servers te bezitten om redundantie te bieden."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
       ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
@@ -2824,8 +3490,17 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
       ],
+      "Whole organization": [
+        "Hele organisatie"
+      ],
       "Why?": [
         "Waarom?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Met een Business- of Enterprise-abonnement kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } instellen om te beheren welke gebruikers er toegang tot hebben."
+      ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -2839,8 +3514,22 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicentie",
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicenties"
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "U bent ingelogd op het account ${ memberAddress }."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
@@ -2858,6 +3547,9 @@
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "U heeft nu toegang tot het account als administrator en kan deze beheren."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "U kunt slechts één chat-instantie tegelijk open hebben. Sluit eerdere gesprekken voordat u een nieuw gesprek begint."
       ],
@@ -2867,11 +3559,18 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
       ],
+      "You have ${ availableCount } dedicated server available.": [
+        "U heeft ${ availableCount } toegewijde server beschikbaar.",
+        "U heeft ${ availableCount } toegewijde servers beschikbaar."
+      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "U moet de geheime sleutel van uw organisatie met het wachtwoord van uw backup organisatiesleutel, die u via uw organisatiebeheerder kan verkrijgen, activeren."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
@@ -2932,6 +3631,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Het wachtwoord van uw organisatie kan worden gedeeld met andere gebruikers die uw beheerdersbevoegdheden wilt geven. Het is ook een noodherstel code om toegang te krijgen tot uw organisatie in het geval dat u uw toegang tot uw account verliest. Sla dit wachtwoord alstublieft op en houd het geheim."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
@@ -3025,6 +3727,14 @@
         "Abonnement"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (langzamer, maar meer compatibiliteit met oudere software)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Snelste, modernste)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -3038,6 +3748,23 @@
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
+      ],
+      "Account storage": [
+        "Opslagruimte account"
+      ],
+      "Address": [
+        "Adres"
+      ],
+      "Addresses": [
+        "Adressen"
       ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
@@ -3117,6 +3844,9 @@
       "Confirm new password": [
         "Bevestig nieuw wachtwoord"
       ],
+      "Confirm organization password": [
+        "Bevestiging organisatiewachtwoord"
+      ],
       "Confirm password": [
         "Bevestig wachtwoord"
       ],
@@ -3134,6 +3864,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create password": [
+        "Wachtwoord aanmaken"
       ],
       "Credits used": [
         "Verbruikt tegoed"
@@ -3165,6 +3898,9 @@
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
       ],
+      "Email": [
+        "E-mailadres"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -3183,6 +3919,9 @@
       "Expires": [
         "Verloopt"
       ],
+      "Gateway name": [
+        "Naam Gateway"
+      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -3198,6 +3937,9 @@
       "Key": [
         "Sleutel"
       ],
+      "Key strength": [
+        "Sleutelsterkte"
+      ],
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
       ],
@@ -3209,6 +3951,9 @@
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
+      ],
+      "Name": [
+        "Naam"
       ],
       "Name on card": [
         "Naam op de kaart"
@@ -3227,6 +3972,9 @@
       ],
       "New mailbox password": [
         "Nieuw mailbox-wachtwoord"
+      ],
+      "New organization password": [
+        "Nieuw organisatiewachtwoord"
       ],
       "New password": [
         "Nieuw wachtwoord"
@@ -3251,6 +3999,15 @@
       ],
       "Optional": [
         "Optioneel"
+      ],
+      "Organization name": [
+        "Organisatienaam"
+      ],
+      "Organization password": [
+        "Organisatiewachtwoord"
+      ],
+      "Organization size": [
+        "Grootte van de organisatie"
       ],
       "Other amount": [
         "Ander bedrag"
@@ -3291,6 +4048,12 @@
       "Recovery phrase": [
         "Herstelzin"
       ],
+      "Require 2FA for administrators": [
+        "2FA vereisen voor beheerders"
+      ],
+      "Require 2FA for everyone": [
+        "2FA vereisejn voor iedereen"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -3302,6 +4065,9 @@
       ],
       "Select your country": [
         "Selecteer uw land"
+      ],
+      "Select your plan": [
+        "Kies uw abonnement"
       ],
       "Start date": [
         "Begindatum"
@@ -3317,6 +4083,9 @@
       ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
+      ],
+      "User": [
+        "Gebruiker"
       ],
       "User's new password": [
         "Nieuw wachtwoord van gebruiker"
@@ -3352,6 +4121,17 @@
     "label": {
       "Recovery phone number": [
         "Herstel-telefoonnummer"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Beheerder"
+      ],
+      "Private": [
+        "Privé"
+      ],
+      "VPN connections": [
+        "VPN-verbindingen"
       ]
     },
     "Label for news": {
@@ -3409,6 +4189,9 @@
       "Common sign up issues": [
         "Problemen met algemene registratie"
       ],
+      "Contact us": [
+        "Neem contact op"
+      ],
       "Create account": [
         "Account aanmaken"
       ],
@@ -3460,6 +4243,9 @@
       "Upgrade account": [
         "Account upgraden"
       ],
+      "Upgrade your plan": [
+        "Upgrade uw abonnement"
+      ],
       "View guide": [
         "Bekijk gids"
       ],
@@ -3485,6 +4271,32 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Upgraden om chatondersteuning en andere premium functies te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
+      ]
+    },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } organisatielid gebruikt tweestapsverificatie",
+        "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
+      ]
+    },
+    "Member action": {
+      "Change password": [
+        "Wachtwoord wijzigen"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Edit": [
+        "Bewerken"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Revoke sessions": [
+        "Sessies intrekken"
+      ],
+      "Sign in": [
+        "Log in"
       ]
     },
     "Message": {
@@ -3560,6 +4372,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: action": {
@@ -3688,6 +4503,9 @@
       "Advanced sharing security": [
         "Geavanceerde beveiliging voor delen"
       ],
+      "Auto-delete spam and trashed messages": [
+        "Automatisch spam en verwijderde berichten verwijderen"
+      ],
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
@@ -3775,6 +4593,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
       "High-speed streaming": [
         "Streamen op hoge snelheid"
       ],
@@ -3827,6 +4648,12 @@
       ],
       "Router support": [
         "Routerondersteuning"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
       ],
       "Secure Core servers": [
         "Secure Core-servers"
@@ -3904,6 +4731,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
+      "Up to 15 email addresses": [
+        "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 3 TB of storage": [
+        "Tot wel 3 TB opslag"
+      ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
       ],
@@ -3917,6 +4750,20 @@
         "Kluis en delen van items (binnenkort beschikbaar)"
       ]
     },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "Ondersteuning"
@@ -3928,6 +4775,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "Met ${ BRAND_NAME } kunt u e-mailadressen maken en accounts beheren voor subgebruikers. Ideaal voor gezinnen en organisaties."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
@@ -4239,6 +5089,11 @@
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Inbegrepen bij alle ${ BRAND_NAME } voor Bedrijven-abonnementen."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 ondersteuning"
@@ -4297,11 +5152,32 @@
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "Een uitgeschakeld adres kan niet primair zijn"
+      ],
+      "An external address cannot be default": [
+        "Een extern adres kan niet primair zijn"
+      ],
       "Invalid code": [
         "Ongeldige code"
       ],
+      "IP Address copied to clipboard": [
+        "IP-adres gekopieerd naar het klembord"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
+      ],
+      "Reminder has been sent": [
+        "Herinnering is verstuurd"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Tweestapsverificatie werd vereist voor beheerders"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Tweestapsverificatie werd vereist voor alle leden"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Tweestapsverificatie is niet langer vereist"
       ]
     },
     "Onboarding": {
@@ -4342,6 +5218,38 @@
       ],
       "Standard server configs": [
         "Standaard server configuraties"
+      ],
+      "The whole organization": [
+        "De hele organisatie"
+      ]
+    },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } om meer gebruikers toe te voegen, of enkele gebruikersaccounts te verwijderen om ruimte vrij te maken."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } om meer accounts te krijgen, of de VPN toegang van sommige gebruikers verwijderen."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } om meer adressen te krijgen, of enkele adressen te verwijderen om ruimte vrij te maken."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } om meer opslagruimte te krijgen, of verwijder wat opslagruimte om ruimte vrij te maken."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adres.",
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adressen."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruiker.",
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruikers."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-account.",
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-accounts."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } extra opslag."
       ]
     },
     "pass_signup_2023: Action": {
@@ -4383,6 +5291,15 @@
       "Add gift code": [
         "Voeg geschenkcode toe"
       ],
+      "Address": [
+        "Adres"
+      ],
+      "Choose a name": [
+        "Kies een naam"
+      ],
+      "Choose display name": [
+        "Kies weergavenaam"
+      ],
       "Confirm": [
         "Bevestig"
       ],
@@ -4406,6 +5323,15 @@
       ],
       "Please select the main reason": [
         "Selecteer de hoofdreden"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Search for a user or address": [
+        "Naar gebruiker of adres zoeken"
+      ],
+      "Search users": [
+        "Zoek gebruikers"
       ],
       "Select": [
         "Selecteer"
@@ -4439,6 +5365,11 @@
     "Price": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "privé"
       ]
     },
     "Recovery Email": {
@@ -4505,6 +5436,58 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Compatibiliteit"
+      ],
+      "State of the art": [
+        "State-of-the-art"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Organisatiesleutels wijzigen"
+      ],
+      "Changing organization password": [
+        "Organisatiewachtwoord wijzigen"
+      ],
+      "Creating new users": [
+        "Aanmaken van nieuwe gebruikers"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
+      ],
+      "Reading emails of non-private users": [
+        "Lezen van e-mails van niet-particuliere gebruikers"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Beheerder"
+      ],
+      "Primary admin": [
+        "Primaire beheerder"
+      ],
+      "User": [
+        "Gebruiker"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Upload CSV-bestand"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "actief"
+      ],
+      "inactive": [
+        "inactief"
+      ],
+      "pending": [
+        "in behandeling"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4946,6 +5929,9 @@
       "Account deleted. Signing out...": [
         "Account verwijderd. Uitloggen..."
       ],
+      "Address added": [
+        "Adres toegevoegd"
+      ],
       "Bug reported": [
         "Bug gemeld"
       ],
@@ -4973,14 +5959,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Als u een geldig herstel-telefoonnummer heeft ingevoerd, sturen we u een sms met uw gebruikersnamen in de komende minuut."
       ],
+      "Invitation sent": [
+        "Uitnodiging verzonden"
+      ],
       "Invoice customized": [
         "Factuur aangepast"
       ],
       "Invoice paid": [
         "Factuur betaald"
       ],
+      "Keys updated": [
+        "Sleutels gewijzigd"
+      ],
       "Locale updated": [
         "Landinstelling bijgewerkt"
+      ],
+      "Organization activated": [
+        "Organisatie geactiveerd"
       ],
       "Password updated": [
         "Wachtwoord bijgewerkt"
@@ -5000,6 +5995,12 @@
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
+      "User created": [
+        "Gebruiker aangemaakt"
+      ],
+      "User updated": [
+        "Gebruiker bijgewerkt"
+      ],
       "Verification successful": [
         "Verificatie gelukt"
       ],
@@ -5010,7 +6011,24 @@
         "U bent succesvol afgemeld"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "Sessies ingetrokken"
+      ],
+      "User deleted": [
+        "Gebruiker verwijderd"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "Adres verwijderd"
+      ],
+      "Address disabled": [
+        "Adres uitgeschakeld"
+      ],
+      "Address enabled": [
+        "Adres ingeschakeld"
+      ],
       "Certificate ${ name } revoked": [
         "Certifcaat ${ name } ingetrokken"
       ],
@@ -5022,6 +6040,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "Configuratiebestand aanmaken voor ${ serverName }"
+      ],
+      "Preference updated": [
+        "Voorkeur bijgewerkt"
       ]
     },
     "Suffix": {
@@ -5122,11 +6143,32 @@
       "Country": [
         "Land"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Email addresses": [
+        "E-mailadressen"
+      ],
       "Name": [
         "Naam"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
+      "Role": [
+        "Rol"
+      ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
       ]
     },
     "Themes": {
@@ -5174,6 +6216,15 @@
       "Action": [
         "Actie"
       ],
+      "Activate account and generate keys": [
+        "Account activeren en sleutels genereren"
+      ],
+      "Activate organization key": [
+        "Organisatiesleutel activeren"
+      ],
+      "Add address": [
+        "E-mailadres toevoegen"
+      ],
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
       ],
@@ -5183,8 +6234,23 @@
       "Add invoice details": [
         "Facturatiegegevens opgeven"
       ],
+      "Add new user": [
+        "Voeg nieuwe gebruiker toe"
+      ],
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
+      ],
+      "Add servers": [
+        "Servers toevoegen"
+      ],
+      "Add user accounts": [
+        "Gebruikersaccounts toevoegen"
+      ],
+      "Add users": [
+        "Gebruikers toevoegen"
+      ],
+      "Allocate storage": [
+        "Opslag toewijzen"
       ],
       "Amount": [
         "Bedrag"
@@ -5197,6 +6263,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
+      ],
+      "Authentication security": [
+        "Authenticatiebeveiliging"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -5219,8 +6288,17 @@
       "Change mailbox password": [
         "Mailbox-wachtwoord wijzigen"
       ],
+      "Change organization keys": [
+        "Organisatiesleutels wijzigen"
+      ],
+      "Change organization name": [
+        "Organisatienaam wijzigen"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
+      ],
+      "Change role": [
+        "Privileges wijzigen"
       ],
       "Confirm address": [
         "Adres bevestigen"
@@ -5237,11 +6315,42 @@
       "Contact us": [
         "Contacteer ons"
       ],
+      "Couldn’t create accounts": [
+        "Kon geen accounts aanmaken"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Maak ${ selectedUserIds.length } gebruiker aan",
+        "Maak ${ selectedUserIds.length } gebruikers aan"
+      ],
+      "Create a new Gateway": [
+        "Een nieuwe gateway aanmaken"
+      ],
+      "Create a new gateway": [
+        "Een nieuwe gateway aanmaken"
+      ],
+      "Create Gateway": [
+        "Gateway aanmaken"
+      ],
+      "Create multiple user accounts": [
+        "Meerdere gebruikersaccounts aanmaken"
+      ],
+      "Create user accounts": [
+        "Gebruikersaccounts aanmaken"
+      ],
+      "Creating user accounts": [
+        "Gebruikersaccounts aan het maken"
+      ],
       "Credits": [
         "Tegoed"
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom selection of users": [
+        "Aangepaste selectie van gebruikers"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Verander de hoeveelheid IP-adressen in uw abonnement"
       ],
       "Customize your plan": [
         "Abonnement aanpassen"
@@ -5255,11 +6364,23 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete ${ email }": [
+        "Verwijderen ${ email }"
+      ],
       "Delete account": [
         "Account verwijderen"
       ],
+      "Delete user": [
+        "Gebruiker verwijderen"
+      ],
+      "Delete user?": [
+        "Gebruiker verwijderen?"
+      ],
       "Device connected!": [
         "Appparaat verbonden!"
+      ],
+      "Disable ${ email }": [
+        "Schakel ${ email } uit"
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
@@ -5279,6 +6400,24 @@
       "Edit display name": [
         "Wijzig weergavenaam"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit servers": [
+        "Servers bewerken"
+      ],
+      "Edit the list of servers of the gateway": [
+        "De lijst van servers van de gateway bewerken"
+      ],
+      "Edit user": [
+        "Gebruiker bewerken"
+      ],
+      "Edit users": [
+        "Gebruikers bewerken"
+      ],
+      "Edit who can access the gateway": [
+        "Bewerk wie de gateway heeft tot the gateway"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -5291,11 +6430,21 @@
       "Error": [
         "Fout"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
+        "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
+      ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
       ],
+      "Gateways": [
+        "Gateways"
+      ],
       "General": [
         "Algemeen"
+      ],
+      "Generate missing keys": [
+        "Ontbrekende sleutels genereren"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
@@ -5309,6 +6458,9 @@
       "Human verification": [
         "Persoonsverificatie"
       ],
+      "Increase your privacy with more addresses": [
+        "Verbeter uw privacy met meer adressen"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -5320,6 +6472,9 @@
       ],
       "Login password": [
         "Inlogwachtwoord"
+      ],
+      "Multi-user support": [
+        "Ondersteuning voor meerdere gebruikers"
       ],
       "Network error": [
         "Netwerkfout"
@@ -5344,6 +6499,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
+      ],
+      "Organization name": [
+        "Organisatienaam"
       ],
       "Password": [
         "Wachtwoord"
@@ -5384,6 +6542,12 @@
       "Recovery": [
         "Herstel"
       ],
+      "Remove user?": [
+        "Gebruiker verwijderen?"
+      ],
+      "Rename the gateway": [
+        "De gateway hernoemen"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -5393,11 +6557,17 @@
       "Request sent": [
         "Verzoek verzonden"
       ],
+      "Reset organization keys": [
+        "Organisatiesleutels resetten"
+      ],
       "Reset password": [
         "Wachtwoord resetten"
       ],
       "Reset password?": [
         "Wachtwoord resetten?"
+      ],
+      "Restore administrator privileges": [
+        "Herstel beheerdersbevoegdheden"
       ],
       "Revoke certificate": [
         "Certificaat intrekken"
@@ -5405,8 +6575,20 @@
       "Select a plan": [
         "Selecteer een abonnement"
       ],
+      "Send email reminders?": [
+        "E-mailherinneringen versturen?"
+      ],
       "Set new password": [
         "Nieuw wachtwoord instellen"
+      ],
+      "Set organization keys": [
+        "Organisatiesleutels instellen"
+      ],
+      "Set organization name": [
+        "Organisatienaam instellen"
+      ],
+      "Set organization password": [
+        "Stel organisatiewachtwoord in"
       ],
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
@@ -5417,6 +6599,9 @@
       "Settings": [
         "Instellingen"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Toegewijde servers opzetten door te upgraden naar Business"
+      ],
       "Sign in": [
         "Inloggen"
       ],
@@ -5426,11 +6611,22 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Signed in to member account": [
+        "Ingelogd op een gebruikersaccount"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccount aangemaakt",
+        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Met succes een gebruikersaccount aangemaakt",
+        "Met succes ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
       ],
       "Summary": [
         "Overzicht"
@@ -5447,6 +6643,12 @@
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
+      "Two-factor authentication enforcement": [
+        "Handhaving tweestapsverificatie"
+      ],
+      "Two-factor authentication reminders": [
+        "Tweestapsverificatie herinneringen"
+      ],
       "Type": [
         "Soort"
       ],
@@ -5458,6 +6660,12 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Upgrade uw netwerkbescherming met toegewijde servers"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Upload CSV-bestand om meerdere gebruikers te creëren"
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Verification failed": [
         "Verificatie mislukt"
@@ -5506,6 +6714,23 @@
         "${ MAIL_APP_NAME } factuur"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Adressen"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Features": [
+        "Functies"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Role": [
+        "Rol"
+      ]
+    },
     "Title subscription": {
       "Actions": [
         "Acties"
@@ -5539,11 +6764,17 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Beheerders kunnen wijzigingen aanbrengen in je abonnement, gebruikersaccounts en wachtwoorden beheren, en beheerdersrechten toekennen aan andere gebruikers."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "De nieuwe abonnementscyclus start op ${ formattedTime }"
@@ -5571,6 +6802,17 @@
     "upsell panel": {
       "Recommended": [
         "Aanbevolen"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Beheerder"
+      ],
+      "Member": [
+        "Lid"
+      ],
+      "Primary admin": [
+        "Primaire administrator"
       ]
     },
     "Validation": {
@@ -5702,6 +6944,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Door het uitschakelen van dit adres u kunt niet langer e-mails verzenden of ontvangen met dit adres en alle gekoppelde ${ BRAND_NAME } producten worden ook uitgeschakeld. Weet u zeker dat u dit adres wilt uitschakelen?"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
       ],
@@ -5713,6 +6958,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "U moet ${ activateLink } organisatiesleutels voordat u een e-mailadres toevoegt aan een niet-privé lid."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

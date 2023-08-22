@@ -5354,7 +5354,7 @@
         "為期 1 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 12 months": [
-        "為期 12 個月收費 ${ amount } "
+        "12 個月的費用為${ amount }"
       ],
       "Billed at ${ amount } for 15 months": [
         "為期 15 個月收費 ${ amount } "
@@ -5363,7 +5363,7 @@
         "為期 24 個月收費 ${ amount } "
       ],
       "Billed at ${ amount } for 30 months": [
-        "為期 30 個月收費 ${ amount } "
+        "30 個月的費用為${ amount }"
       ],
       "for ${ n } months": [
         "為期${ n }個月"
@@ -5378,7 +5378,7 @@
         "兩年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
       ],
       "Save ${ discount }%": [
-        "省下  ${ discount }%"
+        "省下 ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
         "長達 1 個月的標準價 ${ amount } "
@@ -5387,13 +5387,13 @@
         "長達 12 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 15 months": [
-        "長達 15 個月的標準價 ${ amount } "
+        "15 個月的原價 ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
         "長達 24 個月的標準價 ${ amount } "
       ],
       "Standard price ${ amount } for 30 months": [
-        "長達 30 個月的標準價 ${ amount } "
+        "30 個月的原價 ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -5455,9 +5455,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "提早存取和自訂您的應用程式體驗。"
-      ],
       "Encrypted search is here": [
         "經加密搜尋功能現已推出"
       ],
@@ -5469,9 +5466,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "現在您可輕易搜尋 Drive 檔案，同時保持您的資料安全。"
-      ],
-      "Quick settings": [
-        "快速設定"
       ]
     },
     "Storage": {

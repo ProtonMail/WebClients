@@ -952,6 +952,9 @@
       "Show preview": [
         "Vorschau anzeigen"
       ],
+      "Show side panel": [
+        "Seitenleiste anzeigen"
+      ],
       "Sign in": [
         "Anmelden"
       ],
@@ -3446,6 +3449,9 @@
       ],
       "You did not provide a file.": [
         "Du hast keine Datei angegeben."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Du hast das Kontaktlimit für dein Konto erreicht."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
@@ -8050,9 +8056,6 @@
       "Change setting": [
         "Einstellung ändern"
       ],
-      "Easily access and customize your app experience.": [
-        "Einfacher Zugriff und individuelle Anpassung der App-Erfahrung."
-      ],
       "Email tracking protection": [
         "Schutz vor E-Mail-Trackern"
       ],
@@ -8061,9 +8064,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Lade Freunde zu ${ BRAND_NAME } ein"
-      ],
-      "Quick settings": [
-        "Schnelleinstellungen"
       ],
       "Schedule send": [
         "Senden planen"
@@ -9122,8 +9122,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
+      "Hide side panel": [
+        "Seitenleiste ausblenden"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
+      ],
+      "Show side panel": [
+        "Seitenleiste anzeigen"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
