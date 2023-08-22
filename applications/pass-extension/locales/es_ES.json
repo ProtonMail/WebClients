@@ -11,6 +11,9 @@
       "Add current url": [
         "Añadir la URL actual"
       ],
+      "Add domain to pause list": [
+        "Añadir el dominio a la lista de pausa"
+      ],
       "Add more": [
         "Añadir más"
       ],
@@ -289,6 +292,11 @@
         "Expandir"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (rellenar automáticamente, sugerencias automáticas, guardar automáticamente) no deberían de ejecutarse."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
@@ -360,8 +368,11 @@
       "Invalid password manager": [
         "Contraseña del gestor no válida"
       ],
-      "Item content cannot exceed 40kb": [
-        "El contenido del elemento no puede superar los 40kb"
+      "Invalid url": [
+        "La URL no es válida."
+      ],
+      "Item content cannot exceed 40KB": [
+        "El contenido del elemento no puede exceder de 40 KB"
       ],
       "Item creation failed": [
         "Error al crear el elemento"
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "El archivo que intentas importar está vacío."
+      ],
+      "The url is in the list": [
+        "La URL está en la lista."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicia sesión de nuevo."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Autorelleno"
       ],
+      "Autofill 2FA": [
+        "Relleno automático 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Abrir automáticamente AutoFill al enfocar los campos de inicio de sesión"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Mostrar el icono de ${ PASS_APP_NAME } en campos de inicio de sesión"
+      ],
+      "Domains": [
+        "Dominios"
       ],
       "Download logs": [
         "Descargar los registros"
@@ -1112,6 +1132,9 @@
       "Passwords": [
         "Contraseñas"
       ],
+      "Pause list": [
+        "Lista de pausa"
+      ],
       "Permanently delete items": [
         "Eliminar los elementos permanentemente"
       ],
@@ -1163,8 +1186,8 @@
       "Settings": [
         "Configuración"
       ],
-      "Show website thumbnails": [
-        "Mostrar las miniaturas de sitio web"
+      "Show website favicons": [
+        "Mostrar los faviconos de sitios web"
       ],
       "Special characters (!&*)": [
         "Caracteres especiales (!&*)"
@@ -1388,7 +1411,7 @@
       "Import - ${ date }": [
         "Importación - ${ date }"
       ],
-      "Import to vaults": [
+      "Import to vault(s)": [
         "Importar a las bóvedas"
       ],
       "Permanently remove all items ?": [

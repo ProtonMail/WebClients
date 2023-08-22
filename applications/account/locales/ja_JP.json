@@ -98,6 +98,9 @@
       "Add label": [
         "ラベルを追加"
       ],
+      "Add multiple users": [
+        "複数のユーザーを追加する"
+      ],
       "Add notification": [
         "通知を追加"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "フォルダーの作成"
       ],
+      "Create Gateway": [
+        "ゲートウェイ作成"
+      ],
       "Create label": [
         "ラベルを作成"
       ],
       "Create link": [
         "リンクを作成"
+      ],
+      "Create user": [
+        "ユーザー作成"
       ],
       "Create users": [
         "ユーザーを作成"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "削除と確認"
       ],
+      "Delete Gateway": [
+        "ゲートウェイ削除"
+      ],
       "Delete link": [
         "リンクを削除"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "レコードを削除"
+      ],
+      "Delete user": [
+        "ユーザー削除"
       ],
       "Delete without exporting": [
         "エクスポートせずに削除"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "ICS をダウンロード"
       ],
+      "Download our CSV template": [
+        "CSVテンプレートのダウンロード"
+      ],
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "Edit Gateway": [
+        "ゲートウェイを編集する"
+      ],
       "Edit label": [
         "ラベルを編集"
+      ],
+      "Edit name": [
+        "名前の編集"
       ],
       "Edit password": [
         "パスワードを編集"
       ],
       "Edit phone number": [
         "電話番号を編集"
+      ],
+      "Edit servers": [
+        "サーバーの編集"
       ],
       "Edit sieve": [
         "Sieve を編集"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "サブスクリプションを編集"
+      ],
+      "Edit users": [
+        "ユーザーの編集"
       ],
       "Emoji": [
         "絵文字"
@@ -437,6 +467,12 @@
       "Get a new encrypted email address": [
         "新しい暗号化メールアドレスを取得する"
       ],
+      "Get in touch": [
+        "連絡する"
+      ],
+      "Get more": [
+        "もっと見る"
+      ],
       "Get more addresses": [
         "さらにメールアドレスを取得"
       ],
@@ -449,6 +485,12 @@
       "Get more labels": [
         "もっとラベルを取得"
       ],
+      "Get more licenses": [
+        "より多くのライセンスを取得する"
+      ],
+      "Get more servers": [
+        "サーバーを増やす"
+      ],
       "Get the deal": [
         "割引をゲット"
       ],
@@ -460,6 +502,9 @@
       ],
       "Got it": [
         "はい"
+      ],
+      "Help": [
+        "ヘルプ"
       ],
       "Hide": [
         "非表示"
@@ -523,6 +568,9 @@
       ],
       "Leave": [
         "退出"
+      ],
+      "Let's talk": [
+        "話をしよう"
       ],
       "Load more": [
         "さらに読み込む"
@@ -590,6 +638,9 @@
       "Pay": [
         "支払う"
       ],
+      "Pay ${ price }": [
+        "${ price } を支払う"
+      ],
       "Pay ${ price } now": [
         "${ price } を支払う"
       ],
@@ -652,6 +703,9 @@
       ],
       "Remove this notification": [
         "この通知を削除"
+      ],
+      "Rename": [
+        "名前を変更"
       ],
       "Report a problem": [
         "問題を報告"
@@ -788,6 +842,9 @@
       "Set recovery phrase": [
         "回復フレーズを設定"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Share": [
         "共有"
       ],
@@ -866,6 +923,9 @@
       "Switch account": [
         "アカウントを切り替え"
       ],
+      "Switch or add account": [
+        "アカウントを切り替え・追加"
+      ],
       "Top up": [
         "チャージ"
       ],
@@ -910,6 +970,12 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "Upgrade to Business": [
+        "ビジネスへのアップグレード"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "アップグレードして ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
       "Upgrade your plan": [
         "プランをアップグレード"
@@ -977,6 +1043,9 @@
       "Yes, undo": [
         "取り消す"
       ],
+      "Your server will be provisioned in the next days": [
+        "サーバーは数日以内にプロビジョニングされます"
+      ],
       "Zoom in": [
         "拡大"
       ],
@@ -1018,6 +1087,26 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "拒否"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } servers": [
+        "${ ips } のサーバー"
+      ],
+      "${ price } per dedicated server": [
+        "専用サーバーあたり ${ price }"
+      ],
+      "${ price } per domain": [
+        "ドメインあたり ${ price }"
+      ],
+      "${ price } per user": [
+        "ユーザーあたり ${ price }"
+      ],
+      "${ users } users": [
+        "${ users } のユーザー"
       ]
     },
     "Address action": {
@@ -1086,6 +1175,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "今終了すると、インポートされない予定がある可能性があります"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "10個のエイリアスを無料で入手！"
+      ],
+      "Get unlimited aliases!": [
+        "エイリアスは無制限！"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } をお試しください"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "${ PASS_APP_NAME } を使用すると、独自のエイリアスを生成して身元を隠し、メールをメインの受信箱に転送できます。"
       ]
     },
     "Alter": {
@@ -1485,17 +1588,23 @@
         "週"
       ]
     },
-    "Checkbox label": {
-      "All": [
-        "すべて"
-      ]
-    },
     "Checkout row": {
       "${ users } users": [
         "${ users } 人のユーザー"
       ],
       "Total for ${ n } months": [
         "合計 ${ n } か月"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "月"
+      ],
+      "Servers": [
+        "サーバー"
+      ],
+      "Users": [
+        "ユーザー"
       ]
     },
     "Collapsible tooltip": {
@@ -1512,6 +1621,9 @@
       ],
       "azureish white": [
         "かなり白い青"
+      ],
+      "black": [
+        "黒"
       ],
       "blanched almond": [
         "かなり白い黄"
@@ -2749,6 +2861,32 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
       ]
     },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "${ signIn } に戻ります。"
+      ],
+      "Didn't create an account?": [
+        "アカウントを作成していない？"
+      ],
+      "I didn't create this account": [
+        "私はこのアカウントを作成していない"
+      ],
+      "sign in": [
+        "サインイン"
+      ],
+      "Thanks for letting us know": [
+        "知らせてくれてありがとう"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "これは通常、心配することではありません。以下をクリックして、この${ BRAND_NAME }があなたのアカウントでないことを確認してください。アカウントを無効にします。"
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "このアカウントはあなたのものではありません。私たちは調査し、それに従って行動します。"
+      ],
+      "You can safely close this tab.": [
+        "安心してこのタブを閉じてください。"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "確認済み"
@@ -3062,6 +3200,15 @@
       ],
       "IMAP server is required": [
         "IMAP サーバーは必須です"
+      ],
+      "Impossible to create the gateway": [
+        "ゲートウェイを作成できません"
+      ],
+      "Impossible to edit the gateway": [
+        "ゲートウェイを編集できません"
+      ],
+      "Impossible to rename the gateway": [
+        "ゲートウェイの名前を編集できません"
       ],
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
@@ -3628,6 +3775,11 @@
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "あなたのアカウントを無効にする問題が発生しました。"
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "${ BRAND_NAME } に問い合わせる"
@@ -4101,6 +4253,9 @@
       "Access to all countries": [
         "すべての国にアクセス"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "追加 ( ${ numberOfAddedServers } )"
+      ],
       "Connection for up to ${ plusVpnConnections } devices": [
         "最大 ${ plusVpnConnections } 台のデバイスに接続"
       ],
@@ -4485,6 +4640,9 @@
       "Checkout": [
         "チェックアウト"
       ],
+      "Country": [
+        "国"
+      ],
       "Create your account": [
         "アカウントを作成"
       ],
@@ -4497,11 +4655,20 @@
       "Folders": [
         "フォルダー"
       ],
+      "IP address": [
+        "IPアドレス"
+      ],
       "Key type": [
         "鍵の種類"
       ],
       "Label": [
         "ラベル"
+      ],
+      "Location": [
+        "場所"
+      ],
+      "Members": [
+        "メンバー"
       ],
       "Name": [
         "名前"
@@ -4520,6 +4687,15 @@
       ],
       "Select your pricing plan": [
         "料金プランを選択してください"
+      ],
+      "Server": [
+        "サーバー"
+      ],
+      "Server load": [
+        "サーバー負荷"
+      ],
+      "Servers": [
+        "サーバー"
       ],
       "Status": [
         "状態"
@@ -5020,6 +5196,9 @@
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
       ],
+      "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } サーバーはまだセットアップ中です。 通常、これには ${ provisioningDuration } 程度かかります。"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -5122,6 +5301,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
+      "active": [
+        "アクティブ"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "あなたのアカウントに @pm.me メールアドレスを追加します。このシンプルな短縮ドメインは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
       ],
@@ -5145,6 +5327,15 @@
       ],
       "Add multiple users to your organization at once.": [
         "複数のユーザーを一度に組織に追加します。"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "サーバーを追加 (${ availableAddedCount } が利用可能)"
+      ],
+      "Adding ${ addedServerCount } gateway servers": [
+        "${ addedServerCount } ゲートウェイ サーバーを追加しています"
+      ],
+      "Adding gateway servers: ${ serverNumber } / ${ total }": [
+        "ゲートウェイ サーバーの追加: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "追加のオプション"
@@ -5203,6 +5394,9 @@
       "Amount below minimum (${ amount }).": [
         "最低金額 (${ amount }) を下回っています。"
       ],
+      "Amount due": [
+        "支払額"
+      ],
       "An error occurred while communicating with the extension": [
         "拡張機能との通信中にエラーが発生しました"
       ],
@@ -5254,11 +5448,17 @@
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
       ],
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してもよろしいですか?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "すべてのログを完全に削除してよろしいですか?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
       "Attention required": [
         "注意が必要です"
@@ -5280,6 +5480,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "macOS、Windows、Linux に対応しています。"
+      ],
+      "Awaiting transaction": [
+        "トランザクション待ち"
       ],
       "Background color": [
         "背景色"
@@ -5395,6 +5598,12 @@
       "Create in": [
         "作成日時"
       ],
+      "Create your first Gateway": [
+        "最初のゲートウェイを作成する"
+      ],
+      "Creating gateway servers: ${ serverNumber } / ${ total }": [
+        "ゲートウェイ サーバーの作成: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "アカウントを作成しています"
       ],
@@ -5431,11 +5640,23 @@
       "Data locked": [
         "ロックされたデータ"
       ],
+      "dedicated servers": [
+        "専用サーバー"
+      ],
+      "Dedicated servers": [
+        "専用サーバー"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
       ],
       "Delete link?": [
         "リンクを削除しますか?"
+      ],
+      "Deleting ${ deletedServerCount } gateway servers": [
+        "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
@@ -5524,6 +5745,9 @@
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
       ],
+      "Enhance your network security": [
+        "ネットワークセキュリティの強化"
+      ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
       ],
@@ -5578,6 +5802,9 @@
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
+      "Fill in user details": [
+        "ユーザーの詳細を入力します"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
       ],
@@ -5601,6 +5828,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "古いメッセージやその他のデータを削除して空き容量を増やすことができます"
+      ],
+      "Gateways": [
+        "ゲートウェイ"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新たな回復用フレーズを生成すると古いものは無効になります。"
@@ -5734,6 +5964,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
+      "inactive": [
+        "非アクティブ"
+      ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
       ],
@@ -5796,6 +6029,9 @@
       ],
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
+      ],
+      "Lean more about gateways": [
+        "ゲートウェイについてもっと知る"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
@@ -5869,6 +6105,18 @@
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
       ],
+      "Must be between 3 and 20 characters long.": [
+        "3文字以上20文字以内。"
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "アルファベット、数字、ダッシュ（-）のみ。"
+      ],
+      "Must not contain spaces.": [
+        "スペースを含んではならない。"
+      ],
+      "Must start with a letter.": [
+        "文字で始まること。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -5896,6 +6144,12 @@
       "No folder selected": [
         "フォルダーが選択されていません"
       ],
+      "No gateways": [
+        "ゲートウェイなし"
+      ],
+      "No Gateways yet": [
+        "ゲートウェイはまだない"
+      ],
       "No imports or forwarding history.": [
         "インポートや転送の履歴はありません。"
       ],
@@ -5914,11 +6168,17 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Android携帯アプリではまだご利用いただけません。"
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
-      "Number of users": [
-        "ユーザー数"
+      "Number of dedicated servers in the organization": [
+        "組織内の専用サーバー数"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "${ ownedCount } を所有しており、すでに ${ usedCount } を使用しているため、割り当てようとしている専用サーバーの数 (${ addedCount }) は、プランでまだ利用可能な数 (${ remainingCount }) を超えています。"
       ],
       "of": [
         " / "
@@ -5941,6 +6201,9 @@
       "Open source": [
         "オープンソース"
       ],
+      "Optional": [
+        "オプション"
+      ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
       ],
@@ -5949,6 +6212,12 @@
       ],
       "Organization keys restored": [
         "組織用の鍵を復元しました"
+      ],
+      "Organization size": [
+        "組織の規模"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "専用サーバーをゲートウェイに編成し、どのメンバーがアクセスできるかを決定します。"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
@@ -6118,6 +6387,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
+      "Remember to share the user's sign in details with them.": [
+        "ユーザーのサインイン情報を共有することを忘れないでください。"
+      ],
       "Remove one of your calendars to join this one": [
         "このカレンダーに参加するには、いずれかのカレンダーを削除してください"
       ],
@@ -6138,6 +6410,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコンをクリックしてください。"
+      ],
+      "Saving your password": [
+        "パスワードの保存"
       ],
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
@@ -6181,6 +6456,9 @@
       "Setting up your Drive": [
         "Drive をセットアップしています"
       ],
+      "Setting up your organization": [
+        "組織の設定"
+      ],
       "Settings update failed": [
         "設定の更新に失敗しました"
       ],
@@ -6207,6 +6485,9 @@
       ],
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "最近削除されたため、特定の国でのみ使用可能なサーバーがあります。"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF は送信元のドメインを明示するために使用されます。そのため、SPFレコードに ${ MAIL_APP_NAME } を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
@@ -6325,8 +6606,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "この処理には機器により、数秒から数分を要します。"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "これには 15 分ほどかかります。ページを閉じたりインターネットから切断しないでください。"
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "時間がかかる場合があります。このページを閉じたり、インターネットから切断したりしないでください。"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "これは設定するように促された 12 語の語句です。"
@@ -6397,14 +6678,23 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "このウィザードでは、あなたの ${ BRAND_NAME } アカウントの 2 要素認証 (2FA) を有効にします。2 要素認証を使用することで、${ BRAND_NAME_TWO } アカウントのセキュリティがより高まるため、有効にすることをおすすめします。"
       ],
+      "to ${ product } Business": [
+        "${ product }ビジネスへ"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "サブスクリプションをキャンセルされる場合は、弊社までご連絡ください。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "お支払い手続きを完了するために、下のアドレスに ${ btcAmountBold } を送信してください。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "確認のため、削除するユーザー名を入力してください。"
+      ],
+      "to continue to ${ product }": [
+        "${ product } に進む"
       ],
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
@@ -6511,6 +6801,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります。"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
       ],
@@ -6519,6 +6812,9 @@
       ],
       "Upload picture": [
         "写真をアップロード"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "完成したCSVファイルをアップロードしてアカウントを作成する"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "アップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
@@ -6537,6 +6833,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "選択したメールアドレスを外部サービスの SMTP ユーザー名として、生成されたトークンを SMTP パスワードとして使用します。"
+      ],
+      "Users": [
+        "ユーザー"
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
@@ -6565,6 +6864,9 @@
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
+      "Want servers in other countries?": [
+        "他の国のサーバーが必要ですか？"
+      ],
       "Warning:": [
         "警告:"
       ],
@@ -6577,11 +6879,20 @@
       "We couldn’t process your payment.": [
         "お支払いを処理できませんでした。"
       ],
+      "We generated a strong password for you": [
+        "強力なパスワードを作成しました"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "お客様のお支払方法を銀行で認証する必要があります。"
       ],
       "We need to authenticate your payment with your bank.": [
         "お客様のお支払いを銀行で認証する必要があります。"
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "冗長性を確保するため、少なくとも2台のサーバーを設置することをお勧めします。"
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "冗長性を確保するため、異なる場所に複数のサーバーを設置することをお勧めします。"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "2FA の使用を強制する前に、組織のメンバーに通知し、アカウントに 2FA を設定するよう依頼することをお勧めします。"
@@ -6598,6 +6909,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
+      "We'll get back to you shortly.": [
+        "すぐにお返事します。"
+      ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
       ],
@@ -6612,6 +6926,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
+      ],
+      "Welcome": [
+        "ようこそ"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
@@ -6637,8 +6954,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
       ],
+      "Whole organization": [
+        "組織全体"
+      ],
       "Why?": [
         "なぜ?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "ビジネス プランまたはエンタープライズ プランでは、組織用に ${ boldDedicatedServers } を購入し、${ boldGateways } を設定してアクセスできるユーザーを制御できます。"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "暗号化された ${ BRAND_NAME } アドレスを使用すると、すべての ${ BRAND_NAME_TWO } サービスを使用できます"
@@ -6667,6 +6990,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
+        "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
+        "現在、利用可能な ${ organization.MaxMembers } ユーザー ライセンスのうち ${ organization.UsedMembers } を使用しています。"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
       ],
@@ -6681,6 +7010,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "認証サインインを有効にすると、自分のアカウントにいつ、どのIPからアクセスがあったかを確認することができます。アカウントにアクセスしたIPアドレスと時間、失敗した試行回数を記録します。"
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "プラン内の IP アドレスの番号に ${ specificCountryCount } を追加することで、上記の設定をすぐにロック解除できます。または、カスタマイズされたソリューションについては当社までご連絡ください。"
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -6726,6 +7058,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
+      ],
+      "You have ${ availableCount } dedicated servers available.": [
+        "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
       "You have no calendars to export.": [
         "エクスポートするカレンダーがありません。"
@@ -6867,6 +7202,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "サブスクリプションは ${ renewalTime } に自動的に更新されます。"
       ]
     },
     "info": {
@@ -7686,6 +8024,9 @@
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "ゲートウェイ名"
+      ],
       "Gift code": [
         "ギフトコード"
       ],
@@ -8302,6 +8643,9 @@
       "Add a gift code": [
         "ギフトコードを追加"
       ],
+      "Add gift code": [
+        "ギフトコードを追加"
+      ],
       "Apps and extensions": [
         "アプリと拡張機能"
       ],
@@ -8319,6 +8663,9 @@
       ],
       "Common sign up issues": [
         "一般的なサインアップの問題"
+      ],
+      "Contact us": [
+        "お問い合わせ"
       ],
       "create a ticket": [
         "チケットを作成する"
@@ -8473,6 +8820,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "パスワードを変更する"
+      ],
       "Delete": [
         "削除"
       ],
@@ -8512,17 +8862,38 @@
       "${ appName }: Sign-up": [
         "${ appName }: アカウント作成"
       ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } アカウントを作成すると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスをすべて 1 回のログインで使用できます。 無料の ${ BRAND_NAME } アカウントを取得してください。"
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "${ BRAND_NAME } アカウントを作成する | プライバシーを取り戻しましょう"
+      ],
       "Create a new ${ appName } account": [
         "新しい ${ appName } アカウントを作成する"
       ],
       "Find ${ BRAND_NAME } Account username": [
         "${ BRAND_NAME } アカウントのユーザー名を探す"
       ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } アカウントのパスワードをお忘れですか? ここで回復コード、メール、または SMS を使用してリセットすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などに再びアクセスできるようになります。"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } アカウントのユーザー名をお忘れですか? 予備のメールアドレスまたは電話番号を使用して検索し、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などへのアクセスを取り戻します。"
+      ],
+      "Private and secure email, no credit card required": [
+        "プライベートで安全なEメール、クレジットカード不要"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } アカウントのパスワードをリセット"
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } アカウントにアクセスするには、サインインしてください"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "${ BRAND_NAME } アカウントにログインすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスのすべてにアクセスできます。 アカウントをお持ちでない場合は、 無料で作成してください。"
+      ],
+      "Try ${ planName } for free with this link": [
+        "このリンクから ${ planName } を無料でお試しください"
       ]
     },
     "Modal title": {
@@ -8767,6 +9138,9 @@
       "Keep my ${ currentPlanName } account": [
         "${ currentPlanName } アカウントを継続"
       ],
+      "Upgrade": [
+        "アップグレード"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ]
@@ -8873,6 +9247,9 @@
       "1 user": [
         "1ユーザー"
       ],
+      "24/7 support": [
+        "24時間365日のサポート"
+      ],
       "99.95% SLA": [
         "SLA 99.95%"
       ],
@@ -8881,6 +9258,9 @@
       ],
       "Admin console": [
         "管理者コンソール"
+      ],
+      "Advanced network security": [
+        "高度なネットワークセキュリティ"
       ],
       "Advanced sharing security": [
         "高度な共有セキュリティ"
@@ -8906,6 +9286,9 @@
       "Centralized billing": [
         "支払いを一元管理"
       ],
+      "Centralized settings and billings": [
+        "設定と請求の一元化"
+      ],
       "Contact groups": [
         "連絡先グループ"
       ],
@@ -8926,6 +9309,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "情報漏洩のモニタリング (近日公開)"
+      ],
+      "Dedicated servers and IP": [
+        "専用サーバーとIP"
       ],
       "DNS leak prevention": [
         "DNS 漏洩防止"
@@ -9035,6 +9421,9 @@
       "Send & receive invitations": [
         "招待を送受信"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
+        "${ vpnServersCountData.paid.countries }+ か国のサーバー"
+      ],
       "Share calendar via link": [
         "リンクでカレンダーを共有"
       ],
@@ -9046,6 +9435,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
+      ],
+      "Start protecting your organization": [
+        "組織の保護を開始する"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "2 つの簡単なステップでオンラインで身を守り始めましょう"
@@ -9246,6 +9638,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "「支払う」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
       ],
@@ -9493,11 +9888,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24時間365日のサポート"
+      ],
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+      ],
+      "Auto-connect": [
+        "自動接続"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "ストレージ容量をユーザーあたり ${ bundleStorage } に増量します"
@@ -9505,11 +9906,23 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
       ],
+      "Browser extension": [
+        "ブラウザ拡張機能"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
       ],
       "Create up to ${ n } calendars": [
         "最大 ${ n } 個までのカレンダーを作成"
+      ],
+      "Multi-platform support": [
+        "マルチプラットフォーム対応"
+      ],
+      "Private gateways": [
+        "プライベート ゲートウェイ"
+      ],
+      "Require 2FA": [
+        "2段階認証が必要"
       ]
     },
     "Notification": {
@@ -9527,6 +9940,9 @@
       ],
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
+      ],
+      "IP Address copied to clipboard": [
+        "IP アドレスがクリップボードにコピーされました"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "フィンガープリント ${ fp } の鍵が削除されました。"
@@ -9634,6 +10050,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "${ product } へようこそ"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } へようこそ"
       ]
@@ -9816,8 +10235,14 @@
       "Secure Core configs": [
         "Secure Core の設定"
       ],
+      "Select who can access...": [
+        "アクセスできる人を選択してください..."
+      ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
+      ],
+      "The whole organization": [
+        "組織全体"
       ]
     },
     "Option delay send seconds": {
@@ -9916,14 +10341,26 @@
       "Continue to ${ free }": [
         "${ free } に進む"
       ],
+      "Continue with Bitcoin": [
+        "ビットコインを続ける"
+      ],
+      "create a new account": [
+        "新しいアカウントを作成する"
+      ],
       "Create another account instead": [
         "代わりに別のアカウントを作成してください"
+      ],
+      "Download again ${ size }": [
+        "ダウンロード ${ size }"
       ],
       "Download to continue ${ size }": [
         "ダウンロードして続行 ${ size }"
       ],
       "Keep this plan and use ${ appName }": [
         "このプランを維持し、${ appName } を使用してください"
+      ],
+      "Or ${ createANewAccount }": [
+        "または ${ createANewAccount }"
       ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
@@ -10198,9 +10635,6 @@
       "Confirm": [
         "確認"
       ],
-      "Confirm password": [
-        "パスワードの確認"
-      ],
       "domain.com": [
         "domain.com"
       ],
@@ -10277,6 +10711,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "請求書の宛名用に、あなたの名前 （または会社名）と住所を追加できます。"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。 ${ maxIPs } を超える IP が必要な場合は、弊社営業チーム ${ contactHref } までお問い合わせください。"
       ]
     },
     "plan customizer, users": {
@@ -10471,6 +10910,17 @@
       ],
       "Reading emails of non-private users": [
         "非公開ユーザーの電子メールの閲覧"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "管理者"
+      ],
+      "Primary admin": [
+        "プライマリ管理者"
+      ],
+      "User": [
+        "ユーザー"
       ]
     },
     "Select file": {
@@ -10921,6 +11371,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated servers": [
+        "${ ipAddresses } の専用サーバー"
+      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } 件の高速 VPN 接続"
       ],
@@ -11391,6 +11844,12 @@
       "Edit": [
         "編集"
       ],
+      "Email": [
+        "メール"
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
       "Email address or domain": [
         "メールアドレスかドメイン"
       ],
@@ -11408,6 +11867,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Password": [
+        "パスワード"
       ],
       "Status": [
         "状態"
@@ -11536,8 +11998,14 @@
       "Add invoice details": [
         "請求書の詳細を追加"
       ],
+      "Add new user": [
+        "新規ユーザーの追加"
+      ],
       "Add PayPal payment method": [
         "PayPal 支払いの追加"
+      ],
+      "Add servers": [
+        "サーバー追加"
       ],
       "Add Sieve filter": [
         "Sieve フィルターの追加"
@@ -11551,8 +12019,11 @@
       "Add to spam list": [
         "迷惑メールリストに追加"
       ],
-      "Add user": [
-        "ユーザーを追加"
+      "Add user accounts": [
+        "ユーザーアカウントの追加"
+      ],
+      "Add users": [
+        "ユーザー追加"
       ],
       "Address verification": [
         "アドレスの検証"
@@ -11671,6 +12142,9 @@
       "Connect ${ name }": [
         "${ name } に接続"
       ],
+      "Contact us": [
+        "お問い合わせ"
+      ],
       "Continue with partial import?": [
         "部分的なインポートを続行しますか?"
       ],
@@ -11679,6 +12153,15 @@
       ],
       "Create ${ selectedUserIds.length } users": [
         "${ selectedUserIds.length } ユーザーを作成します"
+      ],
+      "Create a new Gateway": [
+        "新しいゲートウェイを作成する"
+      ],
+      "Create a new gateway": [
+        "新しいゲートウェイを作る"
+      ],
+      "Create Gateway": [
+        "ゲートウェイ作成"
       ],
       "Create multiple user accounts": [
         "アカウントを複数作成する"
@@ -11710,11 +12193,17 @@
       "Custom filters": [
         "仕分けフィルター"
       ],
+      "Custom selection of users": [
+        "ユーザーのカスタム選択"
+      ],
       "Customize and confirm": [
         "カスタマイズと確認"
       ],
       "Customize calendar import": [
         "カレンダーのインポートをカスタマイズ"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "プランのIPアドレス数のカスタマイズ"
       ],
       "Customize your mail import": [
         "メールのインポートをカスタマイズ"
@@ -11809,11 +12298,26 @@
       "Edit filter": [
         "フィルターの編集"
       ],
+      "Edit Gateway ${ currentName }": [
+        "ゲートウェイ ${ currentName } を編集します"
+      ],
+      "Edit servers": [
+        "サーバー編集"
+      ],
       "Edit Sieve filter": [
         "Sieve フィルターの編集"
       ],
+      "Edit the list of servers of the gateway": [
+        "ゲートウェイのサーバーリストを編集する"
+      ],
       "Edit user": [
         "ユーザーを編集"
+      ],
+      "Edit users": [
+        "ユーザー編集"
+      ],
+      "Edit who can access the gateway": [
+        "ゲートウェイにアクセスできる人を編集する"
       ],
       "Email": [
         "メールアドレス"
@@ -11838,6 +12342,9 @@
       ],
       "Error": [
         "エラー"
+      ],
+      "Every member of the organization can access": [
+        "組織の全メンバーがアクセスできる"
       ],
       "Export": [
         "エクスポート"
@@ -11868,6 +12375,9 @@
       ],
       "Folders and labels": [
         "フォルダーとラベル"
+      ],
+      "Gateways": [
+        "ゲートウェイ"
       ],
       "General": [
         "一般"
@@ -12085,11 +12595,17 @@
       "Remove user?": [
         "ユーザーを削除しますか？"
       ],
+      "Rename the gateway": [
+        "ゲートウェイの名前を変更する"
+      ],
       "Report a problem": [
         "問題を報告"
       ],
       "Request new code": [
         "新しいコードを発行"
+      ],
+      "Request sent": [
+        "リクエスト送信"
       ],
       "Reset organization keys": [
         "組織の鍵をリセット"
@@ -12169,6 +12685,9 @@
       "Settings": [
         "設定"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Businessへのアップグレードによる専用サーバーの設定"
+      ],
       "Short domain (@pm.me)": [
         "短縮ドメイン (@pm.me)"
       ],
@@ -12220,6 +12739,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "${ successfullyCreatedUsers.length }ユーザー アカウントが正常に作成されました"
       ],
+      "Summary": [
+        "概要"
+      ],
       "Switch to one-password mode": [
         "標準のパスワードモードに切り替える"
       ],
@@ -12258,6 +12780,12 @@
       ],
       "Upgrade plan": [
         "プランをアップグレード"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "CSVファイルをアップロードして複数のアカウントを作成する"
+      ],
+      "Users": [
+        "ユーザー"
       ],
       "Users and addresses": [
         "ユーザーとアドレス"
@@ -12389,6 +12917,9 @@
     "Title header for members table": {
       "Addresses": [
         "メールアドレス"
+      ],
+      "Email": [
+        "メール"
       ],
       "Features": [
         "機能"
@@ -12689,6 +13220,11 @@
       ],
       "Replay video": [
         "ビデオを再生"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "その他"
       ]
     },
     "VPN info": {

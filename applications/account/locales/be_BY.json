@@ -98,6 +98,9 @@
       "Add label": [
         "Дадаць метку"
       ],
+      "Add multiple users": [
+        "Дадаць некалькі карыстальнікаў"
+      ],
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Стварыць папку"
       ],
+      "Create Gateway": [
+        "Стварыць шлюз"
+      ],
       "Create label": [
         "Стварыць метку"
       ],
       "Create link": [
         "Стварыць спасылку"
+      ],
+      "Create user": [
+        "Стварыць карыстальніка"
       ],
       "Create users": [
         "Стварыць карыстальнікаў"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Выдаліць і пацвердзіць"
       ],
+      "Delete Gateway": [
+        "Выдаліць шлюз"
+      ],
       "Delete link": [
         "Выдаліць спасылку"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Выдаліць запіс"
+      ],
+      "Delete user": [
+        "Выдаліць карыстальніка"
       ],
       "Delete without exporting": [
         "Выдаліць без экспартавання"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "Спампаваць ICS"
       ],
+      "Download our CSV template": [
+        "Спампаваць наш шаблон CSV"
+      ],
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
+      "Edit Gateway": [
+        "Рэдагаваць шлюз"
+      ],
       "Edit label": [
         "Рэдагаваць метку"
+      ],
+      "Edit name": [
+        "Рэдагаваць назву"
       ],
       "Edit password": [
         "Рэдагаваць пароль"
       ],
       "Edit phone number": [
         "Рэдагаваць нумар тэлефона"
+      ],
+      "Edit servers": [
+        "Рэдагаваць серверы"
       ],
       "Edit sieve": [
         "Рэдагаваць Sieve"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Рэдагаваць падпіску"
+      ],
+      "Edit users": [
+        "Рэдагаваць карыстальнікаў"
       ],
       "Emoji": [
         "Эмодзі"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Атрымаць больш метак"
+      ],
+      "Get more licenses": [
+        "Атрымаць больш ліцэнзій"
+      ],
+      "Get more servers": [
+        "Атрымаць больш сервераў"
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Выдаліць гэта апавяшчэнне"
+      ],
+      "Rename": [
+        "Перайменаваць"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -932,6 +971,12 @@
       "Upgrade now": [
         "Палепшыць зараз"
       ],
+      "Upgrade to Business": [
+        "Палепшыць да Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Палепшыце, каб уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
       ],
@@ -998,6 +1043,9 @@
       "Yes, undo": [
         "Так, адрабіць"
       ],
+      "Your server will be provisioned in the next days": [
+        "Вашы серверы будуць падрыхтаваны на працягу некалькіх дзён"
+      ],
       "Zoom in": [
         "Павялічыць"
       ],
@@ -1053,6 +1101,9 @@
         "${ ips } серверы",
         "${ ips } сервераў",
         "${ ips } сервераў"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } за вылучаны сервер"
       ],
       "${ price } per domain": [
         "${ price } за дамен"
@@ -1133,6 +1184,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Калі выйсці цяпер, некаторыя падзеі не будуць імпартаваны"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Атрымайце 10 псеўданімаў бясплатна!"
+      ],
+      "Get unlimited aliases!": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Паспрабуйце ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "З дапамогай ${ PASS_APP_NAME } вы зможаце генерыраваць унікальныя псеўданімы, каб хаваць свае асабістыя даныя і перасылаць лісты на вашу асноўную паштовую скрыню."
       ]
     },
     "Alter": {
@@ -1532,11 +1597,6 @@
         "Тыдзень"
       ]
     },
-    "Checkbox label": {
-      "All": [
-        "Усе"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } карыстальнік",
@@ -1549,6 +1609,17 @@
         "Усяго за ${ n } месяцы",
         "Усяго за ${ n } месяцаў",
         "Усяго за ${ n } месяцы"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "месяц"
+      ],
+      "Servers": [
+        "Серверы"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ]
     },
     "Collapsible tooltip": {
@@ -2766,6 +2837,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Уключыце пашыраны журнал і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
+      ],
+      "Enable advanced logs to access these features": [
+        "Уключыце пашыраны журнал, каб атрымаць доступ да гэтых функцый"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
@@ -2818,6 +2898,32 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+      ]
+    },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Вярнуцца ў ${ signIn }."
+      ],
+      "Didn't create an account?": [
+        "Яшчэ не стваралі ўліковы запіс?"
+      ],
+      "I didn't create this account": [
+        "Я не ствараў гэты ўліковы запіс"
+      ],
+      "sign in": [
+        "увайсці"
+      ],
+      "Thanks for letting us know": [
+        "Дзякуй, што паведамілі нам пра гэта"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Звычайна не варта за гэта хвалявацца. Проста націсніце ніжэй для пацвярджэння, што гэты ўліковы запіс ${ BRAND_NAME } не належыць вам, і мы адключым яго."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Мы заўважылі, што гэты ўліковы запіс не належыць вам. Мы правядзём расследаванне і прымем адпаведныя меры."
+      ],
+      "You can safely close this tab.": [
+        "Вы можаце бяспечна закрыць гэту ўкладку."
       ]
     },
     "Domain label": {
@@ -3139,6 +3245,15 @@
       ],
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
+      ],
+      "Impossible to create the gateway": [
+        "Немагчыма стварыць шлюз"
+      ],
+      "Impossible to edit the gateway": [
+        "Немагчыма рэдагаваць шлюз"
+      ],
+      "Impossible to rename the gateway": [
+        "Немагчыма перайменаваць шлюз"
       ],
       "Incorrect login credentials. Please try again.": [
         "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
@@ -3717,6 +3832,11 @@
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Адбылася памылка падчас адключэння вашага ўліковага запісу."
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "Звязацца з ${ BRAND_NAME }"
@@ -4196,6 +4316,12 @@
       "Access to all countries": [
         "Доступ да ўсіх краін"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Падключайце да ${ plusVpnConnections } прылады",
         "Падключайце да ${ plusVpnConnections } прылад",
@@ -4598,6 +4724,9 @@
       "Checkout": [
         "Аплата"
       ],
+      "Country": [
+        "Краіна"
+      ],
       "Create your account": [
         "Стварэнне ўліковага запісу"
       ],
@@ -4610,11 +4739,20 @@
       "Folders": [
         "Папкі"
       ],
+      "IP address": [
+        "IP-адрас"
+      ],
       "Key type": [
         "Тып ключа"
       ],
       "Label": [
         "Метка"
+      ],
+      "Location": [
+        "Месцазнаходжанне"
+      ],
+      "Members": [
+        "Удзельнікі"
       ],
       "Name": [
         "Назва"
@@ -4633,6 +4771,15 @@
       ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
+      ],
+      "Server": [
+        "Сервер"
+      ],
+      "Server load": [
+        "Загружанасць сервера"
+      ],
+      "Servers": [
+        "Серверы"
       ],
       "Status": [
         "Статус"
@@ -5181,6 +5328,12 @@
         "У Gmail знойдзены ${ providerFoldersNumLocalized } метак",
         "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "Адбываецца наладжванне ${ provisioningCounter } сервера. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календара",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
@@ -5307,6 +5460,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін метад аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
+      "active": [
+        "актыўна"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
       ],
@@ -5330,6 +5486,24 @@
       ],
       "Add multiple users to your organization at once.": [
         "Дадаць некалькі карыстальнікаў у вашу арганізацыю за раз."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Дадаць сервер (${ availableAddedCount } даступны)",
+        "Дадаць сервер (${ availableAddedCount } даступна)",
+        "Дадаць сервер (${ availableAddedCount } даступна)",
+        "Дадаць сервер (${ availableAddedCount } даступна)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Даданне ${ addedServerCount } сервера шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Даданне сервера шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Дадатковы параметры"
@@ -5460,6 +5634,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
       ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -5480,6 +5657,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Даступна на macOS, Windows і Linux."
+      ],
+      "Awaiting transaction": [
+        "Чаканне трансакцыі"
       ],
       "Background color": [
         "Колер фону"
@@ -5598,6 +5778,15 @@
       "Create in": [
         "Стварыць у"
       ],
+      "Create your first Gateway": [
+        "Стварыце свой першы шлюз"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
       ],
@@ -5634,6 +5823,9 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
+      "dedicated servers": [
+        "вылучаныя серверы"
+      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
@@ -5645,6 +5837,12 @@
       ],
       "Delete link?": [
         "Выдаліць спасылку?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Выдаленне ${ deletedServerCount } сервера шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза"
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -5736,6 +5934,9 @@
       "Encryption setting updated": [
         "Налады шыфравання абноўлены"
       ],
+      "Enhance your network security": [
+        "Паляпшэнне бяспекі вашай сеткі"
+      ],
       "Enter key manually instead": [
         "Увесці ключ уручную"
       ],
@@ -5790,6 +5991,9 @@
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
       ],
+      "Fill in user details": [
+        "Запоўніце даныя карыстальніка"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсёй пошты, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
@@ -5813,6 +6017,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "вызваліць месца шляхам выдалення старых паведамленняў або іншых даных"
+      ],
+      "Gateways": [
+        "Шлюзы"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
@@ -5949,6 +6156,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
+      "inactive": [
+        "неактыўна"
+      ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
       ],
@@ -5962,13 +6172,13 @@
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Усталюйце файл канфігурацыі бясплатнага сервера для падключэння да пазначанага сервера ў адной з трох бясплатных краін."
+        "Усталюйце файл канфігурацыі бясплатнага сервера для падключэння да вызначанага сервера ў адной з трох бясплатных краін."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Усталюйце файл канфігурацыі Secure Core, каб атрымаць дадатковую абарону ад кампраметацыі канчатковага пункта VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Усталюйце файл канфігурацыі сервера для падключэння да пазначанага сервера ў краіне, якую вы выбралі."
+        "Усталюйце файл канфігурацыі сервера для падключэння да вызначанага сервера ў краіне, якую вы выбралі."
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -6014,6 +6224,9 @@
       ],
       "Large imports can take several days.": [
         "Вялікае імпартаванне можа заняць некалькі дзён."
+      ],
+      "Lean more about gateways": [
+        "Даведацца больш пра шлюзы"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
@@ -6087,6 +6300,18 @@
       "Multi-user support not enabled.": [
         "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Даўжыня назвы павінна быць у межах ад 3 да 20 сімвалаў."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Назва павінна змяшчаць толькі літары, лічбы і злучкі (-)."
+      ],
+      "Must not contain spaces.": [
+        "Назва не павінна змяшчаць прабелы."
+      ],
+      "Must start with a letter.": [
+        "Назва павінна пачынацца з літары."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
@@ -6114,6 +6339,12 @@
       "No folder selected": [
         "Папка не выбрана"
       ],
+      "No gateways": [
+        "Без шлюзоў"
+      ],
+      "No Gateways yet": [
+        "Шлюзы пакуль адсутнічаюць"
+      ],
       "No imports or forwarding history.": [
         "Гісторыя імпартавання або перасылкі адсутнічае."
       ],
@@ -6132,11 +6363,17 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Пакуль недаступна ў нашай мабільнай праграме для Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Гэта не ваша прылада? Скарыстайцеся акном прыватнага браўзера для ўваходу і закрыйце яго пасля завяршэння працы. ${ learnMore }"
       ],
-      "Number of users": [
-        "Колькасць карыстальнікаў"
+      "Number of dedicated servers in the organization": [
+        "Колькасць вылучаных сервераў у арганізацыі"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Колькасць вылучаных сервераў, якія вы спрабуеце прызначыць (${ addedCount }) усё яшчэ больш, чым даступна на вашым тарыфным плане (${ remainingCount }). Пакуль вы валодаеце ${ ownedCount }, а выкарыстоўваецца ${ usedCount }."
       ],
       "of": [
         "з"
@@ -6159,6 +6396,9 @@
       "Open source": [
         "Адкрыты зыходны код"
       ],
+      "Optional": [
+        "Неабавязкова"
+      ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
@@ -6170,6 +6410,9 @@
       ],
       "Organization size": [
         "Памер арганізацыі"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Арганізуйце свае вылучаныя серверы ў шлюзы і вырашыце, якія ўдзельнікі змогуць атрымаць доступ да іх."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
@@ -6348,6 +6591,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
+      ],
       "Remove one of your calendars to join this one": [
         "Выдаліце адзін з вашых календароў, каб далучыцца да гэтага"
       ],
@@ -6414,6 +6660,9 @@
       "Setting up your Drive": [
         "Наладжванне вашага Drive"
       ],
+      "Setting up your organization": [
+        "Наладжванне вашай арганізацыі"
+      ],
       "Settings update failed": [
         "Не ўдалося абнавіць налады"
       ],
@@ -6440,6 +6689,9 @@
       ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF выкарыстоўваецца для абазначэння тых, каму дазволена адпраўляць пошту ад імя дамена. Мы настойліва рэкамендуем дадаць ${ MAIL_APP_NAME } у ваш запіс SPF. Дадайце наступны запіс TXT у ваш DNS. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
@@ -6570,8 +6822,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Гэта можа заняць ад некалькіх секунд да некалькіх хвілін у залежнасці ад вашай прылады"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Гэта зойме не больш за 15 хвілін. Не закрывайце гэту старонку і не адключайцеся ад інтэрнэту."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Гэта фраза з 12 слоў, якую вам прапанавалі задаць."
@@ -6765,6 +7017,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Палепшыце да тарыфных планаў ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
       ],
@@ -6773,6 +7028,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "Запампуйце свой завершаны файл CSV, каб стварыць уліковыя запісы"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз."
@@ -6791,6 +7049,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Выкарыстоўвайце выбраны адрас электроннай пошты ў якасці імя карыстальніка SMTP у знешнім сэрвісе і згенерыраваны токен у якасці пароля SMTP."
+      ],
+      "Users": [
+        "Карыстальнікі"
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -6819,6 +7080,9 @@
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
+      "Want servers in other countries?": [
+        "Хочаце прапанаваць сервер у іншай краіне?"
+      ],
       "Warning:": [
         "Папярэджанне:"
       ],
@@ -6842,6 +7106,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Мы рэкамендуем мець прынамсі 2 серверы, каб забяспечыць лішкавасць."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Мы рэкамендуем мець некалькі сервераў, якія размешчаны ў розных месцах для забеспячэння лішкавасці."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рэкамендуем апавяшчаць удзельнікаў арганізацыі і прасіць іх наладзіць 2ФА для сваіх уліковых запісаў перад прымусовым ужываннем гэтай тэхналогіі."
@@ -6903,8 +7170,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Калі ваша падпіска будзе падаўжацца, першапачаткова будуць выкарыстаны любыя даступныя крэдыты перад выкарыстаннем азначанага вышэй спосабу аплаты."
       ],
+      "Whole organization": [
+        "Уся арганізацыя"
+      ],
       "Why?": [
         "Чаму?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME_TWO }"
@@ -6933,6 +7206,18 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступнага вам вылучанага сервера.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
       ],
@@ -6947,6 +7232,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можаце ўключыць журнал аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Вы зможаце адразу разблакіраваць налады вышэй дадаўшы ${ specificCountryCount } да нумара IP-адрасоў у вашым тарыфным плане, або звязацца з намі для атрымання індывідуальнага рашэння."
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
@@ -7007,6 +7295,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Вам даступны ${ availableCount } вылучаны сервер.",
+        "Вам даступна ${ availableCount } вылучаныя серверы.",
+        "Вам даступна ${ availableCount } вылучаных сервераў.",
+        "Вам даступна ${ availableCount } вылучаных сервераў."
       ],
       "You have no calendars to export.": [
         "У вас няма календароў для экспартавання."
@@ -7955,6 +8249,9 @@
       "Event notifications": [
         "Апавяшчэнні пра падзею"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Выключыць папкі Спам і Сметніца з папкі Уся пошта"
+      ],
       "Expiration (${ patternExpiration })": [
         "Тэрмін дзеяння (${ patternExpiration })"
       ],
@@ -7984,6 +8281,9 @@
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
+      ],
+      "Gateway name": [
+        "Назва шлюза"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -8171,6 +8471,9 @@
       "Organization password": [
         "Пароль арганізацыі"
       ],
+      "Organization size": [
+        "Памер арганізацыі"
+      ],
       "Other amount": [
         "Іншая сума"
       ],
@@ -8266,6 +8569,9 @@
       ],
       "Select your country": [
         "Выберыце сваю краіну"
+      ],
+      "Select your plan": [
+        "Выберыце тарыфны план"
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
@@ -8628,6 +8934,9 @@
       "Common sign up issues": [
         "Распаўсюджаныя праблемы рэгістрацыі"
       ],
+      "Contact us": [
+        "Звязацца з намі"
+      ],
       "create a ticket": [
         "стварыце запыт"
       ],
@@ -8805,6 +9114,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Змяніць пароль"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -8873,9 +9185,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увайдзіце ў свой уліковы запіс ${ BRAND_NAME }, каб атрымаць доступ да ўсіх зашыфраваных сэрвісаў ${ BRAND_NAME }, такіх як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых. Не маеце ўліковага запісу? Стварыце яго БЯСПЛАТНА."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Увайсці | Уліковы запіс ${ BRAND_NAME } - Доступ да ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і іншых"
       ],
       "Try ${ planName } for free with this link": [
         "Паспрабуйце тарыфны план ${ planName } бясплатна па гэтай спасылцы"
@@ -9289,6 +9598,9 @@
       "1 user": [
         "1 карыстальнік"
       ],
+      "24/7 support": [
+        "Падтрымка 24/7"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
       ],
@@ -9297,6 +9609,9 @@
       ],
       "Admin console": [
         "Кансоль адміністратара"
+      ],
+      "Advanced network security": [
+        "Пашыраная бяспека сеткі"
       ],
       "Advanced sharing security": [
         "Дадатковая бяспека пры абагульванні"
@@ -9322,6 +9637,9 @@
       "Centralized billing": [
         "Цэнтралізаваная аплата"
       ],
+      "Centralized settings and billings": [
+        "Цэнтралізаваныя налады і выстаўленне рахункаў"
+      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
@@ -9342,6 +9660,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Адсочванне ўзлому даных (неўзабаве з'явіцца)"
+      ],
+      "Dedicated servers and IP": [
+        "Вылучаныя серверы і IP"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -9474,6 +9795,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
+      ],
+      "Start protecting your organization": [
+        "Пачніце абараняць сваю арганізацыю"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
@@ -9686,6 +10010,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Націснуўшы на кнопку \"Заплаціць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ствараючы ўліковы запіс ${ BRAND_NAME }, вы пагаджаецеся з нашымі ${ terms }"
       ],
@@ -9785,6 +10112,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -9817,6 +10147,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Сховішча, як і папкі, з'яўляюцца зручным спосабам арганізаваць вашы элементы. Абагульванне сховішчаў з сябрамі і сям'ёй знаходзіцца ў стадыі распрацоўкі."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Ізалюйце рэсурсы сваёй кампаніі ад агульнадаступнага інтэрнэту і зрабіце іх даступнымі толькі праз вашы прыватныя шлюзы"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Кіруйце падпіскай і наладжвайце свой тарыфны план. Вы можаце разлічыцца з намі банкаўскай карткай, PayPal, крыптавалютай і банкаўскім пераводам."
@@ -9936,17 +10269,35 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Падтрымка 24/7"
+      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Дадайце больш персаналізацыі з 15 адрасамі электроннай пошты і падтрымкай 3 карыстальніцкіх даменаў"
       ],
+      "AES 256-bit VPN encryption": [
+        "Шыфраванне VPN AES 256-біт"
+      ],
+      "Auto-connect": [
+        "Аўтаматычнае падключэнне"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+      ],
+      "Browser extension": [
+        "Пашырэнне для браўзера"
+      ],
+      "Censorship circumvention": [
+        "Абыход цэнзуры"
+      ],
+      "Central control panel": [
+        "Цэнтральная панэль кіравання"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
@@ -9956,6 +10307,24 @@
         "Стварыць да ${ n } календароў",
         "Стварыць да ${ n } календароў",
         "Стварыць да ${ n } календароў"
+      ],
+      "Dedicated Account manager": [
+        "Вылучаны менеджар уліковага запісу"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Размяшчэнні вылучаных сервераў у больш чым ${ numberOfCountries } краінах"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
+      ],
+      "Multi-platform support": [
+        "Шматплатформенная падтрымка"
+      ],
+      "Private gateways": [
+        "Прыватныя шлюзы"
+      ],
+      "Require 2FA": [
+        "Патрэбна 2ФА"
       ]
     },
     "Notification": {
@@ -9976,6 +10345,9 @@
       ],
       "Invalid code": [
         "Памылковы код"
+      ],
+      "IP Address copied to clipboard": [
+        "IP-адрас скапіяваны ў буфер абмену"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ з адбіткам ${ fp } быў выдалены."
@@ -10283,8 +10655,14 @@
       "Secure Core configs": [
         "Канфігурацыі Secure Core"
       ],
+      "Select who can access...": [
+        "Выберыце ўдзельнікаў, якія будуць мець доступ..."
+      ],
       "Standard server configs": [
         "Канфігурацыі стандартнага сервера"
+      ],
+      "The whole organization": [
+        "Уся арганізацыя"
       ]
     },
     "Option delay send seconds": {
@@ -10686,9 +11064,6 @@
       "Confirm": [
         "Пацвердзіць"
       ],
-      "Confirm password": [
-        "Пацвердзіце пароль"
-      ],
       "domain.com": [
         "domain.com"
       ],
@@ -10768,6 +11143,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Выберыце колькасць IP, якія будуць уключаны ў ваш тарыфны план. Кожны дадатковы IP будзе каштаваць ${ price }. У выпадку, калі вам спатрэбіцца больш чым ${ maxIPs } IP, звярніцеся ў нашу службу падтрымкі ${ contactHref }"
       ]
     },
     "plan customizer, users": {
@@ -10965,6 +11345,17 @@
       ],
       "Reading emails of non-private users": [
         "Чытанне лістоў непрыватных карыстальнікаў"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Адміністратар"
+      ],
+      "Primary admin": [
+        "Асноўны адміністратар"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "Select file": {
@@ -11968,6 +12359,12 @@
       "Edit": [
         "Рэдагаваць"
       ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email address or domain": [
         "Адрас электроннай пошты або дамен"
       ],
@@ -11985,6 +12382,12 @@
       ],
       "Name": [
         "Імя"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Role": [
+        "Роля"
       ],
       "Status": [
         "Статус"
@@ -12131,8 +12534,14 @@
       "Add invoice details": [
         "Дадаць падрабязнасці рахунка"
       ],
+      "Add new user": [
+        "Дадаць новага карыстальніка"
+      ],
       "Add PayPal payment method": [
         "Дадаць спосаб аплаты PayPal"
+      ],
+      "Add servers": [
+        "Дадаць серверы"
       ],
       "Add Sieve filter": [
         "Дадаць фільтр Sieve"
@@ -12146,8 +12555,11 @@
       "Add to spam list": [
         "Дадаць у спіс са спамам"
       ],
-      "Add user": [
-        "Дадаць карыстальніка"
+      "Add user accounts": [
+        "Дадаць уліковыя запісы карыстальнікаў"
+      ],
+      "Add users": [
+        "Дадаць карыстальнікаў"
       ],
       "Address verification": [
         "Праверка адраса"
@@ -12281,6 +12693,15 @@
         "Стварыць ${ selectedUserIds.length } карыстальнікаў",
         "Стварыць ${ selectedUserIds.length } карыстальнікаў"
       ],
+      "Create a new Gateway": [
+        "Стварыць новы шлюз"
+      ],
+      "Create a new gateway": [
+        "Стварыць новы шлюз"
+      ],
+      "Create Gateway": [
+        "Стварыць шлюз"
+      ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
       ],
@@ -12311,11 +12732,17 @@
       "Custom filters": [
         "Карыстальніцкія фільтры"
       ],
+      "Custom selection of users": [
+        "Персаналізаваны выбар карыстальнікаў"
+      ],
       "Customize and confirm": [
         "Наладзіць і пацвердзіць"
       ],
       "Customize calendar import": [
         "Наладзіць імпартаванне календара"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Наладзьце колькасць IP-адрасоў на сваім тарыфным плане"
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
@@ -12374,6 +12801,9 @@
       "Delete user": [
         "Выдаліць карыстальніка"
       ],
+      "Delete user?": [
+        "Выдаліць карыстальніка?"
+      ],
       "Delete version history?": [
         "Выдаліць гісторыю версій?"
       ],
@@ -12410,11 +12840,26 @@
       "Edit filter": [
         "Рэдагаванне фільтра"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Рэдагаваць шлюз з назвай ${ currentName }"
+      ],
+      "Edit servers": [
+        "Рэдагаваць серверы"
+      ],
       "Edit Sieve filter": [
         "Рэдагаваць фільтр Sieve"
       ],
+      "Edit the list of servers of the gateway": [
+        "Рэдагаваць спіс сервераў шлюза"
+      ],
       "Edit user": [
         "Рэдагаваць карыстальніка"
+      ],
+      "Edit users": [
+        "Рэдагаваць карыстальнікаў"
+      ],
+      "Edit who can access the gateway": [
+        "Рэдагаваць спіс удзельнікаў, якія маюць доступ да шлюза"
       ],
       "Email": [
         "Электронная пошта"
@@ -12439,6 +12884,9 @@
       ],
       "Error": [
         "Памылка"
+      ],
+      "Every member of the organization can access": [
+        "Кожны ўдзельнік арганізацыі будзе мець доступ"
       ],
       "Export": [
         "Экспартаванне"
@@ -12472,6 +12920,9 @@
       ],
       "Folders and labels": [
         "Папкі і меткі"
+      ],
+      "Gateways": [
+        "Шлюзы"
       ],
       "General": [
         "Агульныя"
@@ -12692,6 +13143,9 @@
       "Remove user?": [
         "Выдаліць карыстальніка?"
       ],
+      "Rename the gateway": [
+        "Перайменаваць шлюз"
+      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -12778,6 +13232,9 @@
       ],
       "Settings": [
         "Налады"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Палепшыце да Business, каб наладзіць вылучаныя серверы"
       ],
       "Short domain (@pm.me)": [
         "Кароткі дамен (@pm.me)"
@@ -12877,6 +13334,12 @@
       ],
       "Upgrade plan": [
         "Палепшыць тарыфны план"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Запампаваць файл CSV, каб стварыць некалькі ўліковых запісаў"
+      ],
+      "Users": [
+        "Карыстальнікі"
       ],
       "Users and addresses": [
         "Карыстальнікі і адрасы"
@@ -13009,6 +13472,9 @@
       "Addresses": [
         "Адрасы"
       ],
+      "Email": [
+        "Электронная пошта"
+      ],
       "Features": [
         "Функцыі"
       ],
@@ -13031,6 +13497,9 @@
       ],
       "Plan": [
         "Тарыфны план"
+      ],
+      "Servers": [
+        "Серверы"
       ],
       "Start date": [
         "Дата пачатку"
@@ -13070,6 +13539,15 @@
       "Account is disconnected": [
         "Уліковы запіс адключаны"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Адміністратары могуць змяняць вашу падпіску, кіраваць уліковымі запісамі карыстальнікаў, паролямі і даваць правы адміністратара іншым карыстальнікам."
+      ],
+      "An approximate location of the IP address": [
+        "Прыблізнае месцазнаходжанне IP-адраса"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Любая абарона ўжываецца да падазронай актыўнасці"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
@@ -13081,6 +13559,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Выдаліць смецце і спам праз 30 дзён. Пры ўключэнні аўтаматычнага выдалення паведамленні, якія ўжо знаходзяцца ў сметніцы/спаме, атрымаюць дату выдалення на аснове даты іх перамяшчэння туды."
+      ],
+      "Device information such as operating system": [
+        "Звесткі пра прыладу, такія як аперацыйная сістэма"
       ],
       "Each imported email will have this label": [
         "Кожны імпартаваны ліст будзе мець гэту метку"
@@ -13138,6 +13619,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "Пастаўшчык паслуг інтэрнэту IP-адраса"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"

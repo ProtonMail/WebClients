@@ -98,6 +98,9 @@
       "Add label": [
         "Adicionar marcador"
       ],
+      "Add multiple users": [
+        "Adicionar vários usuários"
+      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Criar pasta"
       ],
+      "Create Gateway": [
+        "Criar gateway"
+      ],
       "Create label": [
         "Criar marcador"
       ],
       "Create link": [
         "Criar link"
+      ],
+      "Create user": [
+        "Criar usuário"
       ],
       "Create users": [
         "Criar usuários"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Excluir e confirmar"
       ],
+      "Delete Gateway": [
+        "Excluir gateway"
+      ],
       "Delete link": [
         "Excluir link"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Excluir registro"
+      ],
+      "Delete user": [
+        "Excluir usuário"
       ],
       "Delete without exporting": [
         "Excluir sem exportar"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "Baixar ICS"
       ],
+      "Download our CSV template": [
+        "Baixe nosso modelo CSV"
+      ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
+      "Edit Gateway": [
+        "Editar gateway"
+      ],
       "Edit label": [
         "Editar marcador"
+      ],
+      "Edit name": [
+        "Editar nome"
       ],
       "Edit password": [
         "Alterar senha"
       ],
       "Edit phone number": [
         "Editar número de telefone"
+      ],
+      "Edit servers": [
+        "Editar servidores"
       ],
       "Edit sieve": [
         "Editar Sieve"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Editar assinatura"
+      ],
+      "Edit users": [
+        "Editar usuários"
       ],
       "Emoji": [
         "Emoji"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Obter mais marcadores"
+      ],
+      "Get more licenses": [
+        "Obtenha mais licenças"
+      ],
+      "Get more servers": [
+        "Obter mais servidores"
       ],
       "Get the deal": [
         "Obtenha a oferta"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Remover esta notificação"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -932,6 +971,9 @@
       "Upgrade now": [
         "Atualizar agora"
       ],
+      "Upgrade to Business": [
+        "Fazer upgrade para o Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
@@ -1000,6 +1042,9 @@
       ],
       "Yes, undo": [
         "Sim, desfazer"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Seu servidor será provisionado nos próximos dias"
       ],
       "Zoom in": [
         "Aumentar zoom"
@@ -1133,6 +1178,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ao sair agora, alguns eventos podem não ser importados"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Tenha 10 aliases grátis!"
+      ],
+      "Get unlimited aliases!": [
+        "Tenha aliases ilimitados!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Experimente o ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "Com o ${ PASS_APP_NAME }, você pode gerar aliases únicos para ocultar sua identidade e encaminhar e-mails para sua caixa de entrada principal."
       ]
     },
     "Alter": {
@@ -1530,11 +1589,6 @@
       ],
       "Week": [
         "Semana"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Todos"
       ]
     },
     "Checkout row": {
@@ -3168,6 +3222,15 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
+      "Impossible to create the gateway": [
+        "Impossível criar o gateway"
+      ],
+      "Impossible to edit the gateway": [
+        "Impossível editar o gateway"
+      ],
+      "Impossible to rename the gateway": [
+        "Impossível renomear o gateway"
+      ],
       "Incorrect login credentials. Please try again.": [
         "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
@@ -4220,6 +4283,13 @@
       "Access to all countries": [
         "Acesso a todos os países"
       ],
+      "Add": [
+        "Adicionar"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Adicionar (${ numberOfAddedServers })",
+        "Adicionar (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Conexão para até ${ plusVpnConnections } dispositivo",
         "Conexão para até ${ plusVpnConnections } dispositivos"
@@ -4610,6 +4680,9 @@
       "Checkout": [
         "Finalizar compra"
       ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Crie sua conta"
       ],
@@ -4622,6 +4695,9 @@
       "Folders": [
         "Pastas"
       ],
+      "IP address": [
+        "Endereço IP"
+      ],
       "Key type": [
         "Categoria de chave"
       ],
@@ -4630,6 +4706,9 @@
       ],
       "Location": [
         "Localização"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Name": [
         "Nome"
@@ -4648,6 +4727,15 @@
       ],
       "Select your pricing plan": [
         "Selecione o seu plano"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Server load": [
+        "Carga do servidor"
+      ],
+      "Servers": [
+        "Servidores"
       ],
       "Status": [
         "Status"
@@ -5167,6 +5255,10 @@
         "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
         "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
+        "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
@@ -5277,6 +5369,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ative pelo menos um método de recuperação de dados para garantir que você possa continuar acessando o conteúdo de sua conta da ${ BRAND_NAME } caso perca sua senha."
       ],
+      "active": [
+        "ativo"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
       ],
@@ -5300,6 +5395,18 @@
       ],
       "Add multiple users to your organization at once.": [
         "Adicione vários usuários na sua organização de uma só vez."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Adicionar servidor (${ availableAddedCount } disponíveis)",
+        "Adicionar servidor (${ availableAddedCount } disponíveis)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Adicionando ${ addedServerCount } servidor gateway",
+        "Adicionando ${ addedServerCount } servidores gateway"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Adicionando servidor gateway: ${ serverNumber } / ${ total }",
+        "Adicionando servidores gateway: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Opções adicionais"
@@ -5427,6 +5534,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Peça ao administrador da sua organização para configurar Gateways."
       ],
       "Attention required": [
         "Atenção necessária"
@@ -5567,6 +5677,13 @@
       "Create in": [
         "Criar em"
       ],
+      "Create your first Gateway": [
+        "Crie seu primeiro gateway"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Criando servidor gateway: ${ serverNumber } / ${ total }",
+        "Criando servidores gateway: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Criando sua conta"
       ],
@@ -5603,6 +5720,9 @@
       "Data locked": [
         "Dados bloqueados"
       ],
+      "dedicated servers": [
+        "servidores dedicados"
+      ],
       "Dedicated servers": [
         "Servidores dedicados"
       ],
@@ -5614,6 +5734,10 @@
       ],
       "Delete link?": [
         "Excluir link?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Deletando ${ deletedServerCount } servidor gateway",
+        "Deletando ${ deletedServerCount } servidores gateway"
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -5703,6 +5827,9 @@
       "Encryption setting updated": [
         "Configuração de criptografia atualizada"
       ],
+      "Enhance your network security": [
+        "Melhore sua segurança de rede"
+      ],
       "Enter key manually instead": [
         "Em vez disso, digite a chave manualmente"
       ],
@@ -5757,6 +5884,9 @@
       "Failed to fetch logs.": [
         "Erro ao buscar os registros."
       ],
+      "Fill in user details": [
+        "Preencha os detalhes do usuário"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
@@ -5780,6 +5910,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "liberar espaço, apagando mensagens antigas ou outros dados"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
@@ -5914,6 +6047,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
       ],
+      "inactive": [
+        "inativo"
+      ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
       ],
@@ -5977,6 +6113,9 @@
       ],
       "Large imports can take several days.": [
         "Grandes importações podem levar vários dias."
+      ],
+      "Lean more about gateways": [
+        "Saiba mais sobre gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
@@ -6050,6 +6189,18 @@
       "Multi-user support not enabled.": [
         "Suporte a múltiplos usuários desativado."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Deve ter entre 3 e 20 caracteres."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Deve conter apenas letras, dígitos e traços (-)."
+      ],
+      "Must not contain spaces.": [
+        "Não deve conter espaços."
+      ],
+      "Must start with a letter.": [
+        "Precisa começar com uma letra."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -6076,6 +6227,12 @@
       ],
       "No folder selected": [
         "Nenhuma pasta selecionada"
+      ],
+      "No gateways": [
+        "Sem gateways"
+      ],
+      "No Gateways yet": [
+        "Sem Gateways ainda"
       ],
       "No imports or forwarding history.": [
         "Sem histórico de importação ou encaminhamento."
@@ -6104,8 +6261,8 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
-      "Number of users": [
-        "Numero de usuários"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "O número de servidores dedicados que você tentou atribuir (${ addedCount }) é maior do que o que ainda está disponível no seu plano (${ remainingCount }), já que você possui ${ ownedCount } e já usa ${ usedCount }."
       ],
       "of": [
         "de"
@@ -6128,6 +6285,9 @@
       "Open source": [
         "Código aberto"
       ],
+      "Optional": [
+        "Opcional"
+      ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
@@ -6139,6 +6299,9 @@
       ],
       "Organization size": [
         "Tamanho da organização"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Organize seus servidores dedicados em Gateways e decida quais membros podem acessá-los."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existem outros administradores na sua organização. Você é responsável por informar a nova senha."
@@ -6314,6 +6477,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Lembre-se de compartilhar os detalhes de login do usuário com ele."
+      ],
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
       ],
@@ -6409,6 +6575,9 @@
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Alguns dos seus servidores disponíveis só podem ser usados em países específicos devido a remoções recentes"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "O SPF é usado para especificar quem tem permissão de enviar e-mails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
@@ -6531,8 +6700,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Isto pode demorar até 15 minutos. Não feche esta página ou desconecte da Internet."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Isso pode levar algum tempo. Por favor, não feche esta página ou desconecte-se da internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi solicitado definir."
@@ -6741,6 +6910,9 @@
       "Upload picture": [
         "Carregar imagem"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Faça o upload do seu arquivo CSV completo para criar contas"
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Verifique e tente novamente."
       ],
@@ -6758,6 +6930,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Use o e-mail selecionado como nome de usuário do SMTP no serviço externo e o token gerado como senha do SMTP."
+      ],
+      "Users": [
+        "Usuários"
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -6786,6 +6961,9 @@
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
       ],
+      "Want servers in other countries?": [
+        "Quer servidores em outros países?"
+      ],
       "Warning:": [
         "Aviso:"
       ],
@@ -6809,6 +6987,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomendamos no mínimo 2 servidores para obter redundância."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Recomendamos ter vários servidores em diferentes localidades para fornecer redundância."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da organização e pedir que eles configurem A2F para suas contas antes de impor o uso de A2F."
@@ -6870,8 +7051,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
       ],
+      "Whole organization": [
+        "Toda a organização"
+      ],
       "Why?": [
         "Por quê?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Com um endereço da ${ BRAND_NAME } criptografado, você pode usar todos os serviços da ${ BRAND_NAME_TWO }"
@@ -6900,6 +7087,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis.",
+        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Você está usando atualmente ${ organization.UsedMembers } de sua ${ organization.MaxMembers } licença de usuário disponível.",
+        "Você está usando atualmente ${ organization.UsedMembers } de suas ${ organization.MaxMembers } licenças de usuário disponíveis."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Você iniciou sessão à conta ${ memberAddress }."
       ],
@@ -6914,6 +7109,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Você pode ativar o registro de autenticação para ver quando sua conta e de qual IP ela é acessada. Registramos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Você pode desbloquear imediatamente a configuração acima adicionando ${ specificCountryCount } ao número de endereços IP no seu plano ou nos contactar para soluções personalizadas."
       ],
       "You can import one data type at a time.": [
         "Você pode importar uma categoria de dado por vez."
@@ -6964,6 +7162,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Você tem ${ availableCount } servidor dedicado disponível.",
+        "Você tem ${ availableCount } servidores dedicados disponíveis."
       ],
       "You have no calendars to export.": [
         "Você não tem calendários para exportar."
@@ -7935,6 +8137,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Nome do gateway"
+      ],
       "Gift code": [
         "Código do vale-presente"
       ],
@@ -8121,6 +8326,9 @@
       "Organization password": [
         "Senha da organização"
       ],
+      "Organization size": [
+        "Tamanho da organização"
+      ],
       "Other amount": [
         "Outra quantia"
       ],
@@ -8216,6 +8424,9 @@
       ],
       "Select your country": [
         "Selecione seu país"
+      ],
+      "Select your plan": [
+        "Selecione seu plano"
       ],
       "Send auto-reply": [
         "Enviar resposta automática"
@@ -8578,6 +8789,9 @@
       "Common sign up issues": [
         "Problemas frequentes ao se cadastrar"
       ],
+      "Contact us": [
+        "Contate-nos"
+      ],
       "create a ticket": [
         "criar um ticket"
       ],
@@ -8739,6 +8953,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Alterar senha"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -8778,6 +8995,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Inscrever-se"
       ],
+      "${ BRAND_NAME } Account": [
+        "Conta da ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Crie uma conta ${ BRAND_NAME } para, com um único nome de usuário, utilizar todos os serviços ${ BRAND_NAME } criptografados como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais. Obtenha gratuitamente uma conta ${ BRAND_NAME }."
       ],
@@ -8807,9 +9027,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Acesse a sua conta ${ BRAND_NAME } para ter acesso a todos os serviços criptografados de ${ BRAND_NAME }, como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais. Ainda não tem uma conta? Crie uma GRATUITAMENTE."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Entrar | Conta ${ BRAND_NAME } — Acessar ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e muito mais."
       ],
       "Try ${ planName } for free with this link": [
         "Experimente ${ planName } gratuitamente com este link"
@@ -9923,6 +10140,9 @@
       "Invalid code": [
         "Código inválido"
       ],
+      "IP Address copied to clipboard": [
+        "Endereço de IP copiado para a área de transferência"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Chave com impressão digital ${ fp } foi deletada."
       ],
@@ -10222,11 +10442,17 @@
       "Secure Core configs": [
         "Configurações do Secure Core"
       ],
+      "Select who can access...": [
+        "Selecionar quem pode acessar..."
+      ],
       "Standard server configs": [
         "Configurações padrão do servidor"
       ],
       "TCP": [
         "TCP"
+      ],
+      "The whole organization": [
+        "Toda a organização"
       ],
       "UDP": [
         "UDP"
@@ -10625,9 +10851,6 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm password": [
-        "Confirmar senha"
-      ],
       "domain.com": [
         "dominio.com"
       ],
@@ -10909,6 +11132,17 @@
         "Ler e-mails de usuários não privados"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Administrador"
+      ],
+      "Primary admin": [
+        "Administrador principal"
+      ],
+      "User": [
+        "Usuário"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Enviar arquivo CSV"
@@ -10931,6 +11165,20 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "ativo"
+      ],
+      "inactive": [
+        "inativo"
+      ],
+      "pending": [
+        "pendente"
+      ],
+      "to be created": [
+        "a ser criado"
       ]
     },
     "Settings description": {
@@ -11871,6 +12119,12 @@
       "Edit": [
         "Editar"
       ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
       "Email address or domain": [
         "Endereço de e-mail ou domínio"
       ],
@@ -11888,6 +12142,12 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Password": [
+        "Senha"
+      ],
+      "Role": [
+        "Cargo"
       ],
       "Status": [
         "Status"
@@ -12022,8 +12282,14 @@
       "Add invoice details": [
         "Adicionar detalhes na fatura"
       ],
+      "Add new user": [
+        "Adicionar novo usuário"
+      ],
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
+      ],
+      "Add servers": [
+        "Adicionar servidores"
       ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
@@ -12037,8 +12303,11 @@
       "Add to spam list": [
         "Adicionar à lista de spam"
       ],
-      "Add user": [
-        "Adicionar usuário"
+      "Add user accounts": [
+        "Adicionar contas de usuário"
+      ],
+      "Add users": [
+        "Adicionar usuários"
       ],
       "Address verification": [
         "Verificação de endereço"
@@ -12170,6 +12439,15 @@
         "Criar ${ selectedUserIds.length } usuário",
         "Criar ${ selectedUserIds.length } usuários"
       ],
+      "Create a new Gateway": [
+        "Criar um novo gateway"
+      ],
+      "Create a new gateway": [
+        "Criar um novo gateway"
+      ],
+      "Create Gateway": [
+        "Criar gateway"
+      ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
       ],
@@ -12200,11 +12478,17 @@
       "Custom filters": [
         "Filtros personalizados"
       ],
+      "Custom selection of users": [
+        "Seleção personalizada de usuários"
+      ],
       "Customize and confirm": [
         "Personalize e confirme"
       ],
       "Customize calendar import": [
         "Personalizar importação de calendário"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Personalize o número de endereços IP no seu plano"
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
@@ -12260,8 +12544,15 @@
       "Delete logs": [
         "Excluir registros"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dia)",
+        "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dias)"
+      ],
       "Delete user": [
         "Excluir usuário"
+      ],
+      "Delete user?": [
+        "Excluir usuário?"
       ],
       "Delete version history?": [
         "Excluir histórico de versões?"
@@ -12299,11 +12590,26 @@
       "Edit filter": [
         "Editar filtro"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Editar gateway ${ currentName }"
+      ],
+      "Edit servers": [
+        "Editar servidores"
+      ],
       "Edit Sieve filter": [
         "Editar filtro Sieve"
       ],
+      "Edit the list of servers of the gateway": [
+        "Editar a lista de servidores do gateway"
+      ],
       "Edit user": [
         "Editar usuário"
+      ],
+      "Edit users": [
+        "Editar usuários"
+      ],
+      "Edit who can access the gateway": [
+        "Editar quem pode acessar o gateway"
       ],
       "Email": [
         "E-mail"
@@ -12328,6 +12634,9 @@
       ],
       "Error": [
         "Erro"
+      ],
+      "Every member of the organization can access": [
+        "Todos os membros da organização podem acessar"
       ],
       "Export": [
         "Exportar"
@@ -12359,6 +12668,9 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "General": [
         "Geral"
@@ -12577,6 +12889,9 @@
       "Remove user?": [
         "Remover usuário?"
       ],
+      "Rename the gateway": [
+        "Renomear o gateway"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -12663,6 +12978,9 @@
       ],
       "Settings": [
         "Configurações"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Configure servidores dedicados fazendo upgrade para o Business"
       ],
       "Short domain (@pm.me)": [
         "Domínio curto (@pm.me)"
@@ -12758,6 +13076,12 @@
       ],
       "Upgrade plan": [
         "Fazer upgrade de plano"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Faça o upload do arquivo CSV para criar várias contas"
+      ],
+      "Users": [
+        "Usuários"
       ],
       "Users and addresses": [
         "Usuários e endereços"
@@ -12890,6 +13214,9 @@
       "Addresses": [
         "Endereços"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Features": [
         "Recursos"
       ],
@@ -12953,6 +13280,9 @@
       ],
       "Account is disconnected": [
         "A conta está desconectada"
+      ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Os administradores podem fazer alterações na sua assinatura, gerenciar contas de usuário e senhas, e dar privilégios de administrador a outros usuários."
       ],
       "An approximate location of the IP address": [
         "Uma localização aproximada do endereço de IP"

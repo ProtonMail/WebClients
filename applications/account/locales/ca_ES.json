@@ -257,6 +257,9 @@
       "Create link": [
         "Crear enllaç"
       ],
+      "Create user": [
+        "Crea el usuari"
+      ],
       "Create users": [
         "Crea usuaris"
       ],
@@ -295,6 +298,9 @@
       ],
       "Delete record": [
         "Suprimeix el registre"
+      ],
+      "Delete user": [
+        "Elimina l'usuari"
       ],
       "Delete without exporting": [
         "Elimina sense exportar"
@@ -533,6 +539,9 @@
       "Leave": [
         "Surt"
       ],
+      "Let's talk": [
+        "Parlem-ne"
+      ],
       "Load more": [
         "Carrega'n més"
       ],
@@ -664,6 +673,9 @@
       ],
       "Remove this notification": [
         "Elimina aquesta notificació"
+      ],
+      "Rename": [
+        "Canvia el nom"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -1039,6 +1051,10 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidors"
@@ -1520,11 +1536,6 @@
       ],
       "Week": [
         "Setmana"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Tot"
       ]
     },
     "Checkout row": {
@@ -4186,6 +4197,9 @@
       "Access to all countries": [
         "Accés a tots els països"
       ],
+      "Add": [
+        "Afegeix"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexió per fins a ${ plusVpnConnections } dispositiu",
         "Connexió per fins a ${ plusVpnConnections } dispositius"
@@ -6051,9 +6065,6 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
       ],
-      "Number of users": [
-        "Nombre d'usuaris"
-      ],
       "of": [
         "de"
       ],
@@ -6074,6 +6085,9 @@
       ],
       "Open source": [
         "Codi obert"
+      ],
+      "Optional": [
+        "Opcional"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -6475,9 +6489,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Això pot trigar uns segons o minuts depenent del vostre dispositiu"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Això podria trigar fins a 15 minuts. No tanqueu aquesta pàgina ni us desconnecteu d'Internet."
-      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Això és una frase de 12 paraules que se't va demanar definir."
       ],
@@ -6687,6 +6698,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el token generat com a contrasenya SMTP."
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Verification can take a few minutes.": [
         "La verificació pot trigar uns minuts."
@@ -8035,6 +8049,9 @@
       "Organization password": [
         "Contrasenya d'organització"
       ],
+      "Organization size": [
+        "Mida de l'organització"
+      ],
       "Other amount": [
         "Una altra quantitat"
       ],
@@ -8127,6 +8144,9 @@
       ],
       "Select your country": [
         "Seleccioni el seu país"
+      ],
+      "Select your plan": [
+        "Seleccioneu el vostre pla"
       ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
@@ -8647,6 +8667,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -8715,9 +8738,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu sessió al vostre compte ${ BRAND_NAME } per accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Inici de sessió | Compte ${ BRAND_NAME } - Accés ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, i més"
       ],
       "Try ${ planName } for free with this link": [
         "Proveu ${ planName } de forma gratuïta amb aquest enllaç."
@@ -9258,6 +9278,10 @@
       ],
       "Send & receive invitations": [
         "Enviament i recepció d'invitacions"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servidors en més d'${ vpnServersCountData.paid.countries } país",
+        "Servidors en més de ${ vpnServersCountData.paid.countries } països"
       ],
       "Share calendar via link": [
         "Compartició d'un calendari mitjançant un enllaç"
@@ -10466,9 +10490,6 @@
       "Confirm": [
         "Confirma"
       ],
-      "Confirm password": [
-        "Confirmeu la contrasenya"
-      ],
       "domain.com": [
         "domini.com"
       ],
@@ -10764,6 +10785,17 @@
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "actiu"
+      ],
+      "inactive": [
+        "inactiu"
+      ],
+      "pending": [
+        "pendent"
       ]
     },
     "Settings description": {
@@ -11214,6 +11246,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } servidor dedicat",
+        "${ ipAddresses } servidors dedicats"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexió VPN d'alta velocitat",
         "${ maxVpn } connexions VPN d'alta velocitat"
@@ -11697,6 +11733,9 @@
       "Edit": [
         "Edita"
       ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
       "Email address or domain": [
         "Adreça de correu electrònic o domini"
       ],
@@ -11714,6 +11753,12 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Role": [
+        "Rol"
       ],
       "Status": [
         "Estat"
@@ -11848,6 +11893,9 @@
       "Add invoice details": [
         "Afegir detalls de la factura"
       ],
+      "Add new user": [
+        "Afegeix un nou usuari"
+      ],
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
       ],
@@ -11862,9 +11910,6 @@
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
-      ],
-      "Add user": [
-        "Afegir usuari"
       ],
       "Address verification": [
         "Verificació d'adreça"
@@ -12088,6 +12133,9 @@
       ],
       "Delete user": [
         "Eliminar usuari"
+      ],
+      "Delete user?": [
+        "Voleu eliminar l'usuari?"
       ],
       "Delete version history?": [
         "Voleu eliminar l'historial de versions?"
@@ -12715,6 +12763,9 @@
     "Title header for members table": {
       "Addresses": [
         "Adreces"
+      ],
+      "Email": [
+        "Corrreu electrònic"
       ],
       "Features": [
         "Característiques"

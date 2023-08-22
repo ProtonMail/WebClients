@@ -98,6 +98,9 @@
       "Add label": [
         "Lisää tunniste"
       ],
+      "Add multiple users": [
+        "Lisää useita käyttäjiä"
+      ],
       "Add notification": [
         "Lisää ilmoitus"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Luo kansio"
       ],
+      "Create Gateway": [
+        "Luo yhdyskäytävä"
+      ],
       "Create label": [
         "Luo tunniste"
       ],
       "Create link": [
         "Luo linkki"
+      ],
+      "Create user": [
+        "Luo käyttäjä"
       ],
       "Create users": [
         "Luo käyttäjiä"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Poista ja vahvista"
       ],
+      "Delete Gateway": [
+        "Oletusyhdyskäytävä"
+      ],
       "Delete link": [
         "Poista linkki"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Poista tapahtuma"
+      ],
+      "Delete user": [
+        "Poista käyttäjä"
       ],
       "Delete without exporting": [
         "Poista ilman vientiä"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "Lataa ICS-tiedosto"
       ],
+      "Download our CSV template": [
+        "Lataa CSV-malli"
+      ],
       "Download recovery file": [
         "Lataa palautustiedosto"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
+      "Edit Gateway": [
+        "Muokkaa yhdyskäytävää"
+      ],
       "Edit label": [
         "Muokkaa tunnistetta"
+      ],
+      "Edit name": [
+        "Muokkaa nimeä"
       ],
       "Edit password": [
         "Muokkaa salasanaa"
       ],
       "Edit phone number": [
         "Muokkaa puhelinnumeroa"
+      ],
+      "Edit servers": [
+        "Muokkaa palvelimia"
       ],
       "Edit sieve": [
         "Muokkaa Sieveä"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Muokkaa tilausta"
+      ],
+      "Edit users": [
+        "Muokkaa käyttäjiä"
       ],
       "Emoji": [
         "Emoji"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Hanki lisää tunnisteita"
+      ],
+      "Get more licenses": [
+        "Hanki lisää lisenssejä"
+      ],
+      "Get more servers": [
+        "Hanki lisää palvelimia"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Poista ilmoitus"
+      ],
+      "Rename": [
+        "Nimeä uudelleen"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -932,6 +971,9 @@
       "Upgrade now": [
         "Päivitä nyt"
       ],
+      "Upgrade to Business": [
+        "Päivitä Business-tilaukseen"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
       ],
@@ -1000,6 +1042,9 @@
       ],
       "Yes, undo": [
         "Kyllä, kumoa"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Palvelimesi määritetään muutaman muutaman päivän kuluessa"
       ],
       "Zoom in": [
         "Lähennä"
@@ -1133,6 +1178,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Jos poistut nyt, kaikkia tapahtumia ei välttämättä tuoda"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Hanki 10 ilmaista aliasta!"
+      ],
+      "Get unlimited aliases!": [
+        "Hanki rajattomasti aliaksia!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "${ PASS_APP_NAME }illa voit luoda yksilöllisiä aliaksia identiteettisi piilotukseen ja sähköpostiviestiesi ohjaukseen."
       ]
     },
     "Alter": {
@@ -1530,11 +1589,6 @@
       ],
       "Week": [
         "Viikko"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Kaikki"
       ]
     },
     "Checkout row": {
@@ -3168,6 +3222,15 @@
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
       ],
+      "Impossible to create the gateway": [
+        "Yhdyskäytävän luonti on mahdotonta"
+      ],
+      "Impossible to edit the gateway": [
+        "Yhdyskäytävän muokkaus on mahdotonta"
+      ],
+      "Impossible to rename the gateway": [
+        "Yhdyskäytävän uudelleenimeäminen on mahdotonta"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Virheelliset kirjautumistiedot. Yritä uudelleen."
       ],
@@ -4220,6 +4283,13 @@
       "Access to all countries": [
         "Kaikkien maiden käyttöoikeus"
       ],
+      "Add": [
+        "Lisää"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Lisää (${ numberOfAddedServers })",
+        "Lisää (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Yhteys enintään ${ plusVpnConnections } laitteelle",
         "Yhteys enintään ${ plusVpnConnections } laitteelle"
@@ -4610,6 +4680,9 @@
       "Checkout": [
         "Kassa"
       ],
+      "Country": [
+        "Maa"
+      ],
       "Create your account": [
         "Luo oma tilisi"
       ],
@@ -4622,6 +4695,9 @@
       "Folders": [
         "Kansiot"
       ],
+      "IP address": [
+        "IP-osoite"
+      ],
       "Key type": [
         "Avaimen tyyppi"
       ],
@@ -4630,6 +4706,9 @@
       ],
       "Location": [
         "Sijainti"
+      ],
+      "Members": [
+        "Jäsenet"
       ],
       "Name": [
         "Nimi"
@@ -4648,6 +4727,15 @@
       ],
       "Select your pricing plan": [
         "Valitse maksusuunnitelma:"
+      ],
+      "Server": [
+        "Palvelin"
+      ],
+      "Server load": [
+        "Palvelimen kuormitus"
+      ],
+      "Servers": [
+        "Palvelimet"
       ],
       "Status": [
         "Tila"
@@ -5164,6 +5252,10 @@
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
         "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
+        "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
@@ -5274,6 +5366,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivoi ainakin yksi tietojen palautustapa varmistaaksesi, että pääset käsiksi ${ BRAND_NAME }-tilisi sisältöön, jos unohdat salasanasi."
       ],
+      "active": [
+        "käytössä"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lisää tilillesi @pm.me-sähköpostiosoite. Tämä yksinkertainen, lyhyempi osoite on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
       ],
@@ -5297,6 +5392,18 @@
       ],
       "Add multiple users to your organization at once.": [
         "Lisää organisaatioosi kerralla useita käyttäjiä."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Lisää palvelin (${ availableAddedCount } käytettävissä)",
+        "Lisää palvelin (${ availableAddedCount } käytettävissä)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta",
+        "Lisätään ${ addedServerCount } yhdyskäytäväpalvelinta"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Lisätään yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
+        "Lisätään yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "Lisävalinnat"
@@ -5424,6 +5531,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
       "Attention required": [
         "Huomiota vaaditaan"
@@ -5564,6 +5674,13 @@
       "Create in": [
         "Luo kalenteriin"
       ],
+      "Create your first Gateway": [
+        "Luo ensimmäinen yhdyskäytäväsi"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Luodaan yhdyskäytäväpalvelinta: ${ serverNumber }/${ total }",
+        "Luodaan yhdyskäytäväpalvelimia: ${ serverNumber }/${ total }"
+      ],
       "Creating your account": [
         "Luodaan tiliä"
       ],
@@ -5600,6 +5717,9 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
+      "dedicated servers": [
+        "kohdistettuja palvelimia"
+      ],
       "Dedicated servers": [
         "Kohdistetut palvelimet"
       ],
@@ -5611,6 +5731,10 @@
       ],
       "Delete link?": [
         "Poistetaanko linkki?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
+        "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
@@ -5700,6 +5824,9 @@
       "Encryption setting updated": [
         "Salausasetukset päivitetty"
       ],
+      "Enhance your network security": [
+        "Paranna verkkotietoturvaasi"
+      ],
       "Enter key manually instead": [
         "Syötä avain sen sijaan manuaalisesti"
       ],
@@ -5754,6 +5881,9 @@
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
       ],
+      "Fill in user details": [
+        "Täytä käyttäjän tiedot"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Suodattimet koskevat kaikkia viestejä, saapuvat ja lähetetyt mukaan lukien. Jokaisen suodattimen tulee sisältää ainakin nimi, ehto ja toiminto."
       ],
@@ -5777,6 +5907,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "vapauttaa tilaa poistamalla vanhoja viestejä tai muita tietoja"
+      ],
+      "Gateways": [
+        "yhdyskäytäviä"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Uuden palautuslausekkeen luonti poistaa vanhan lausekkeen käytöstä."
@@ -5911,6 +6044,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
+      "inactive": [
+        "ei käytössä"
+      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -5974,6 +6110,9 @@
       ],
       "Large imports can take several days.": [
         "Suuret tuonnit saattavat kestää useita päiviä."
+      ],
+      "Lean more about gateways": [
+        "Lue lisää yhdyskäytävistä"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lue miten kirjaudut ${ VPN_APP_NAME }:ään kolmannen osapuolen VPN-sovelluksilla."
@@ -6047,6 +6186,18 @@
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Täytyy sisältää 3-20 merkkiä."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Voi sisältää vain kirjaimia, numeroita ja väliviivoja (-)."
+      ],
+      "Must not contain spaces.": [
+        "Ei voi sisältää välilyöntejä."
+      ],
+      "Must start with a letter.": [
+        "Täytyy alkaa kirjaimella."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -6073,6 +6224,12 @@
       ],
       "No folder selected": [
         "Kansiota ei valittu"
+      ],
+      "No gateways": [
+        "Yhdyskäytäviä ei ole"
+      ],
+      "No Gateways yet": [
+        "Yhdyskäytäviä ei vielä ole"
       ],
       "No imports or forwarding history.": [
         "Ei tuonti- tai ohjaushistoriaa."
@@ -6101,8 +6258,8 @@
       "Number of dedicated servers in the organization": [
         "Organisaation kohdistettujen palvelinten määrä"
       ],
-      "Number of users": [
-        "Käyttäjämäärä"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Yrität määrittää suurempaa kohdistettujen palvelimien määrää (${ addedCount }) kuin tilauksessasi on vielä käytettävissä (${ remainingCount }). Tilauksesi sisältää ${ ownedCount } palvelinta, joista olet varannut jo ${ usedCount }."
       ],
       "of": [
         "/"
@@ -6125,6 +6282,9 @@
       "Open source": [
         "Avoin lähdekoodi"
       ],
+      "Optional": [
+        "Valinnainen"
+      ],
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
       ],
@@ -6136,6 +6296,9 @@
       ],
       "Organization size": [
         "Organisaation koko"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Lajittele kohdistetut palvelimesi yhdyskäytäviin ja määritä millä käyttäjillä on niiden käyttöoikeus."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
@@ -6189,7 +6352,7 @@
         "Todenna maksusi vahvistusvälilehdellä."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Tarkista tiedostosi virheiden varalta tai ota yhteyttä tukeen saadaksesi lisätietoja."
+        "Tarkista tiedostosi virheiden varalta tai ota yhteyttä asiakaspalveluun saadaksesi lisätietoja."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Tarkista tiedostosi tai kokeile ${ csvTemplateButton }."
@@ -6258,7 +6421,7 @@
         "Sveitsin tietosuojalakien suojaama"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Julkisuuden henkilöitä, toimittajia, yritysjohtajia ja muita verkkohyökkäyksille erityisesti alttiita tahoja kehotetaan ottamaan ${ PROTON_SENTINEL_NAME } käyttöön."
+        "Julkisuuden henkilöitä, toimittajia, yritysjohtajia ja muita kyberhyökkäyksille erityisesti alttiita tahoja kehotetaan ottamaan ${ PROTON_SENTINEL_NAME } käyttöön."
       ],
       "Public link invite": [
         "Kutsu julkisella linkillä"
@@ -6307,6 +6470,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
       "Remove one of your calendars to join this one": [
         "Poista jokin kalentereistasi liittyäksesi tähän kalenteriin"
@@ -6404,6 +6570,9 @@
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Osaa palvelimistasi voidaan hiljattaisten poistojen vuoksi käyttää vain tietyissä maissa"
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF-todennuksella määritetään tahot, jotka voivat lähettää viestejä verkkotunnuksellasi, joten suosittelemme vahvasti, että lisäät ${ MAIL_APP_NAME }in SFP-tietueeseesi. Lisää seuraavat TXT-tietueet verkkotunnuksesi DNS-asetuksiin. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
       ],
@@ -6448,7 +6617,7 @@
         "Sveitsiläinen"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen."
+        "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
       "Test link": [
         "Kokeile linkkiä"
@@ -6525,8 +6694,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Tämä saattaa laitteesta riippuen kestää muutamasta sekunnista muutamaan minuuttiin"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Tämä sattaa kestää jopa 15 minuuttia. Älä sulje tätä sivua tai katkaise Internet-yhteyttä."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Tämä on 12-sanainen lauseke, joka sinua pyydettiin määrittämään."
@@ -6732,6 +6901,9 @@
       "Upload picture": [
         "Lataa kuva"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Luo tilejä tuomalla täydellinen CSV-tiedosto"
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Ladattu tiedosto ei ole kelvollinen ykisityinen avain. Tarkista ja yritä uudelleen."
       ],
@@ -6749,6 +6921,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Käytä valittua sähköpostiosoitetta ulkoisen palvelun SMTP-palvelimen käyttäjätunnuksena ja salasanana luotua tunnistetta."
+      ],
+      "Users": [
+        "Käyttäjät"
       ],
       "Verification can take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
@@ -6777,6 +6952,9 @@
       "Visa Secure logo": [
         "Visa Secure -logo"
       ],
+      "Want servers in other countries?": [
+        "Haluatko palvelimia muista maista?"
+      ],
       "Warning:": [
         "Varoitus:"
       ],
@@ -6800,6 +6978,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Suosittelemme ainakin kahta palvelinta parempaa vikasietoisuutta varten."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Suosittelemme vikasietoisuutta varten useita palvelimia eri sijainneista."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Suosittelemme, että ilmoitat asiasta organisaation jäsenille ja pyydät heitä ottamaan 2FA:n käyttöön omilla tileillään ennen 2FA:n käytön pakottamista."
@@ -6861,8 +7042,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kun tilauksesi uudistuu, kulutetaan ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
       ],
+      "Whole organization": [
+        "Koko organisaatio"
+      ],
       "Why?": [
         "Miksi?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Business- tai Eterprise-tilaajana voit ostaa organisaatiollesi ${ boldDedicatedServers } ja määrittää ${ boldGateways } hallitaksesi millä käyttäjillä on niiden käyttöoikeus."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME_TWO }-palveluita"
@@ -6891,6 +7078,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Käytössäsi on ${ ipCount } IP-osoite tilaukseesi sisältyvästä kohdistetuille palvelimille varatusta ${ ipAddresses } osoitteesta.",
+        "Käytössäsi on ${ ipCount } IP-osoite tilaukseesi sisältyvästä kohdistetuille palvelimille varatusta ${ ipAddresses } osoitteesta."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Käytössäsi on ${ organization.UsedMembers } käyttäjä lisenssiisi sisältyvästä ${ organization.MaxMembers } käyttäjästä.",
+        "Käytössäsi on ${ organization.UsedMembers } käyttäjä lisenssiisi sisältyvästä ${ organization.MaxMembers } käyttäjästä."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Olet kirjautunut tunnuksella ${ memberAddress }."
       ],
@@ -6905,6 +7100,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Voit ottaa todennuslokin käyttöön nähdäksesi, milloin ja mistä IP-osoitteista tiliäsi on käytetty. Tallennamme tilin käytön IP-osoitteen, ajan sekä epäonnistuneet yritykset."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Voi vapauttaa yllä olevan määrityksen välittömästi korottamalla tilaukseesi sisältyvää IP-osoitemäärää ${ specificCountryCount } osoitteella tai ottaa yhteyttä asiakaspalveluumme räätälöityjä ratkaisuja varten."
       ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
@@ -6955,6 +7153,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
+        "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
       ],
       "You have no calendars to export.": [
         "Sinulla ei ole vietäviä kelentereita."
@@ -7537,7 +7739,7 @@
         "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoitetta"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen.)"
+        "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
       "Account storage": [
         "Tilin tallennustila"
@@ -7926,6 +8128,9 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Yhdyskäytävän nimi"
+      ],
       "Gift code": [
         "Lahjakoodi"
       ],
@@ -8112,6 +8317,9 @@
       "Organization password": [
         "Organisaation salasana"
       ],
+      "Organization size": [
+        "Organisaation koko"
+      ],
       "Other amount": [
         "Muu summa"
       ],
@@ -8207,6 +8415,9 @@
       ],
       "Select your country": [
         "Valitse maasi"
+      ],
+      "Select your plan": [
+        "Valitse tilauksesi"
       ],
       "Send auto-reply": [
         "Lähetä automaattivastaus"
@@ -8569,6 +8780,9 @@
       "Common sign up issues": [
         "Yleiset rekisteröitymisongelmat"
       ],
+      "Contact us": [
+        "Ota yhteyttä"
+      ],
       "create a ticket": [
         "luo tukipyyntö"
       ],
@@ -8730,6 +8944,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Vaihda salasana"
+      ],
       "Delete": [
         "Poista"
       ],
@@ -8769,6 +8986,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Rekisteröidy"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-tili"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Luo ${ BRAND_NAME } -tili käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluja, kuten ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muita, vain yhdellä kirjautumisella. Hanki ilmainen ${ BRAND_NAME } -tili."
       ],
@@ -8779,28 +8999,25 @@
         "Luo uusi ${ appName } -tili"
       ],
       "Find ${ BRAND_NAME } Account username": [
-        "Löydä ${ BRAND_NAME } -tilin käyttäjätunnus"
+        "Etsi ${ BRAND_NAME }-tilin käyttäjätunnus"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se tästä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muiden palveluiden käyttämistä."
+        "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Etsi se palautussähköpostin tai -puhelinnumeron avulla ja jatka ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muiden palveluiden käyttämistä."
+        "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Etsi se palautussähköpostin tai -puhelimen avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
       "Private and secure email, no credit card required": [
         "Yksityinen ja turvallinen sähköposti, eikä luottokorttia tarvita"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Nollaa ${ BRAND_NAME } -tilisi salasana"
+        "Nollaa ${ BRAND_NAME }-tilisi salasana"
       ],
       "Sign in to access your ${ appName } account": [
         "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Kirjaudu sisään | ${ BRAND_NAME }-tili - Käytä mm. ${ MAIL_APP_NAME }ia ja ${ DRIVE_SHORT_APP_NAME }a"
       ],
       "Try ${ planName } for free with this link": [
         "Kokeile ${ planName } -tilausta ilmaiseksi tästä linkistä"
@@ -9725,7 +9942,7 @@
         "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
+        "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Yksi VPN-yhteys sallii ${ BRAND_NAME } VPN -yhteyden yhdelle laitteelle kerrallaan. Esimerkiksi matkapuhelimen ja kannettavan tietokoneen samanaikainen ${ BRAND_NAME_TWO } VPN -käyttö edellyttää kahta VPN-yhteyttä."
@@ -9913,6 +10130,9 @@
       ],
       "Invalid code": [
         "Virheellinen koodi"
+      ],
+      "IP Address copied to clipboard": [
+        "IP-osoite kopioitiin leikepöydälle"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Avain sormenjäljellä ${ fp } on poistettu."
@@ -10210,8 +10430,14 @@
       "Secure Core configs": [
         "Secure Core -määritykset"
       ],
+      "Select who can access...": [
+        "Valitse kuka voi käyttää..."
+      ],
       "Standard server configs": [
         "Vakiopalvelinten määritykset"
+      ],
+      "The whole organization": [
+        "Koko organisaatio"
       ]
     },
     "Option delay send seconds": {
@@ -10607,9 +10833,6 @@
       "Confirm": [
         "Vahvista"
       ],
-      "Confirm password": [
-        "Vahvista salasana"
-      ],
       "domain.com": [
         "verkkotunnus.fi"
       ],
@@ -10891,6 +11114,17 @@
         "Ei-yksityisten käyttäjien sähköpostien luku"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Ylläpitäjä"
+      ],
+      "Primary admin": [
+        "Ensisijainen ylläpitäjä"
+      ],
+      "User": [
+        "Käyttäjä"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Lataa CSV-tiedosto"
@@ -10913,6 +11147,20 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktiivinen"
+      ],
+      "inactive": [
+        "ei aktiivinen"
+      ],
+      "pending": [
+        "odottaa"
+      ],
+      "to be created": [
+        "luodaan"
       ]
     },
     "Settings description": {
@@ -11850,6 +12098,12 @@
       "Edit": [
         "Muokkaa"
       ],
+      "Email": [
+        "Sähköpostiosoite"
+      ],
+      "Email address": [
+        "Sähköpostiosoite"
+      ],
       "Email address or domain": [
         "Sähköpostiosoite tai verkkotunnus"
       ],
@@ -11867,6 +12121,12 @@
       ],
       "Name": [
         "Nimi"
+      ],
+      "Password": [
+        "Salasana"
+      ],
+      "Role": [
+        "Rooli"
       ],
       "Status": [
         "Tila"
@@ -12001,8 +12261,14 @@
       "Add invoice details": [
         "Lisää laskulle tietoja"
       ],
+      "Add new user": [
+        "Lisää uusi käyttäjä"
+      ],
       "Add PayPal payment method": [
         "Lisää PayPal-maksutapa"
+      ],
+      "Add servers": [
+        "Lisää palvelimia"
       ],
       "Add Sieve filter": [
         "Lisää Sieve-suodatin"
@@ -12016,8 +12282,11 @@
       "Add to spam list": [
         "Lisää roskapostilistalle"
       ],
-      "Add user": [
-        "Lisää käyttäjä"
+      "Add user accounts": [
+        "Lisää käyttäjätilejä"
+      ],
+      "Add users": [
+        "Lisää käyttäjiä"
       ],
       "Address verification": [
         "Osoitteen vahvistus"
@@ -12149,6 +12418,15 @@
         "Luo ${ selectedUserIds.length } käyttäjä",
         "Luo ${ selectedUserIds.length } käyttäjää"
       ],
+      "Create a new Gateway": [
+        "Luo uusi yhdyskäytävä"
+      ],
+      "Create a new gateway": [
+        "Luo uusi yhdyskäytävä"
+      ],
+      "Create Gateway": [
+        "Luo yhdyskäytävä"
+      ],
       "Create multiple user accounts": [
         "Luo useita käyttäjätilejä"
       ],
@@ -12179,11 +12457,17 @@
       "Custom filters": [
         "Omat suodattimet"
       ],
+      "Custom selection of users": [
+        "Mukautettu käyttäjävalinta"
+      ],
       "Customize and confirm": [
         "Mukauta ja vahvista"
       ],
       "Customize calendar import": [
         "Mukauta kalenterin tuontia"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Muuta tilauksesi IP-osoitemäärää"
       ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
@@ -12239,8 +12523,15 @@
       "Delete logs": [
         "Poista lokitiedot"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)",
+        "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)"
+      ],
       "Delete user": [
         "Poista käyttäjä"
+      ],
+      "Delete user?": [
+        "Poistetaanko käyttäjä?"
       ],
       "Delete version history?": [
         "Poistetaanko versiohistoria?"
@@ -12278,11 +12569,26 @@
       "Edit filter": [
         "Muokkaa suodatinta"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Muokkaa yhdyskäytävää ${ currentName }"
+      ],
+      "Edit servers": [
+        "Muokkaa palvelimia"
+      ],
       "Edit Sieve filter": [
         "Muokkaa Sieve-suodatinta"
       ],
+      "Edit the list of servers of the gateway": [
+        "Muokkaa yhdyskäytävän palvelimia"
+      ],
       "Edit user": [
         "Muokkaa käyttäjää"
+      ],
+      "Edit users": [
+        "Muokkaa käyttäjiä"
+      ],
+      "Edit who can access the gateway": [
+        "Mä'äritä kuka voi käyttää yhdyskäytävää"
       ],
       "Email": [
         "Sähköposti"
@@ -12307,6 +12613,9 @@
       ],
       "Error": [
         "Virhe"
+      ],
+      "Every member of the organization can access": [
+        "Organisaation kaikki käyttäjät voivat käyttää"
       ],
       "Export": [
         "Vienti"
@@ -12338,6 +12647,9 @@
       ],
       "Folders and labels": [
         "Kansiot ja tunnisteet"
+      ],
+      "Gateways": [
+        "Yhdyskäytävät"
       ],
       "General": [
         "Yleiset"
@@ -12556,6 +12868,9 @@
       "Remove user?": [
         "Poistetaanko käyttäjä?"
       ],
+      "Rename the gateway": [
+        "Nimeä yhdyskäytävä uudelleen"
+      ],
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
@@ -12642,6 +12957,9 @@
       ],
       "Settings": [
         "Asetukset"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Määritä kohdistettuja palvelimia päivittämällä Business-tilaukseen"
       ],
       "Short domain (@pm.me)": [
         "Lyhyt verkkotunnus (@pm.me)"
@@ -12737,6 +13055,12 @@
       ],
       "Upgrade plan": [
         "Päivitä tilaus"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Lisää useiden tilien luontiin käytettävä CSV-malli"
+      ],
+      "Users": [
+        "Käyttäjät"
       ],
       "Users and addresses": [
         "Käyttäjät ja osoitteet"
@@ -12869,6 +13193,9 @@
       "Addresses": [
         "Osoitteet"
       ],
+      "Email": [
+        "Sähköpostiosoite"
+      ],
       "Features": [
         "Ominaisuudet"
       ],
@@ -12932,6 +13259,9 @@
       ],
       "Account is disconnected": [
         "Yhteys tiliin on katkaistu"
+      ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Ylläpitäjät voivat tehdä muutoksia tilaukseesi, hallita käyttäjätilejä ja salasanoja sekä myöntää ylläpito-oikeudet muille käyttäjille."
       ],
       "An approximate location of the IP address": [
         "IP-osoitteen arvioitu sijainti"

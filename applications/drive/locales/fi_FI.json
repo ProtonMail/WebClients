@@ -585,6 +585,9 @@
       "Show preview": [
         "Näytä esikatselu"
       ],
+      "Show side panel": [
+        "Näytä sivupaneeli"
+      ],
       "Sign in": [
         "Kirjaudu sisään"
       ],
@@ -3848,7 +3851,7 @@
         "Synkronoi kansiot helposti työpöytäsovelluksemme avulla, jotta tiedostosi ovat aina ajan tasalla ja käytettävissä missä tahansa."
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen."
+        "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Tilillä saattaa olla uusi avain tai seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa se vain, jos luotat siihen."
@@ -4204,7 +4207,7 @@
         "(erääntynyt)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen.)"
+        "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -5555,9 +5558,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Pääset helposti käyttämään ja mukauttamaan sovelluskokemustasi."
-      ],
       "Encrypted search is here": [
         "Salattu haku löytyy tästä"
       ],
@@ -5569,9 +5569,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyt voit etsiä Drive tiedostoja helposti pitäen tietosi samalla turvassa."
-      ],
-      "Quick settings": [
-        "Pika-asetukset"
       ]
     },
     "Storage": {
@@ -6323,8 +6320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
+      "Hide side panel": [
+        "Piilota sivupaneeli"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
+      ],
+      "Show side panel": [
+        "Näytä sivupaneeli"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"

@@ -583,6 +583,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Show side panel": [
+        "Tampilkan panel samping"
+      ],
       "Sign in": [
         "Masuk"
       ],
@@ -2186,6 +2189,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
+      "You have reached the contacts limit for your account": [
+        "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
       ],
@@ -3121,6 +3127,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
+      ],
       "Also try looking in Trash.": [
         "Cobalah juga untuk mencari di Sampah."
       ],
@@ -3965,7 +3974,7 @@
         "akan dipulihkan ke versi dari ${ formattedRevisionDate }. Semua versi lainnya masih akan disimpan."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Dengan ${ DRIVE_APP_NAME }, data Anda terlindungi oleh enkripsi end-to-end. Data Anda hanya akan dapat didekripsi oleh diri Anda."
+        "Dengan ${ DRIVE_APP_NAME }, data Anda terlindung oleh enkripsi end-to-end. Data Anda hanya akan dapat didekripsi oleh diri Anda seorang."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -5455,9 +5464,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Akses dan ubah pengalaman aplikasi Anda secara mudah."
-      ],
       "Encrypted search is here": [
         "Pencarian terenkripsi kini telah hadir"
       ],
@@ -5469,9 +5475,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
-      ],
-      "Quick settings": [
-        "Pengaturan cepat"
       ]
     },
     "Storage": {
@@ -6202,8 +6205,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
+      "Hide side panel": [
+        "Sembunyikan panel samping"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Show side panel": [
+        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
