@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky, Tooltip } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -86,6 +86,20 @@ export const GridHeader = <T extends string>({
                             isLoading={isLoading}
                         >
                             {activeSortingText}
+                            {sortField === 'numAccesses' && (
+                                <Tooltip
+                                    className="pl-1"
+                                    title={c('Info')
+                                        .t`The download count includes both actual downloads and instances when files are previewed.`}
+                                >
+                                    <Icon
+                                        name="info-circle"
+                                        size={14}
+                                        alt={c('Info')
+                                            .t`The download count includes both actual downloads and instances when files are previewed.`}
+                                    />
+                                </Tooltip>
+                            )}
                         </TableHeaderCell>
                         <TableHeaderCell>
                             <SortDropdown
