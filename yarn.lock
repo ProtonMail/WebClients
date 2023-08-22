@@ -4565,27 +4565,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/common@npm:latest":
-  version: 1.2.6
-  resolution: "@pdfme/common@npm:1.2.6"
+"@pdfme/common@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@pdfme/common@npm:2.1.0"
   dependencies:
     buffer: ^6.0.3
     fontkit: ^2.0.2
     zod: ^3.20.2
-  checksum: a3e67a3e80f44490114e2cc98bbeee33a1ffaa64196b8d972482be2ec246d322dc37dafd23af302e10f1cb41bfa706406c2108d5056287f51300ff08db3356b8
+  checksum: 4c64951b8e6e35e43c8c2c783261b71846d7b7c22b763d541e1db45fe6bca9b1e7c09afa98dc6f6a6d8ed33785b56767412e8d6a6707200d55a8d1607f75ef1b
   languageName: node
   linkType: hard
 
-"@pdfme/generator@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "@pdfme/generator@npm:1.2.6"
+"@pdfme/generator@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@pdfme/generator@npm:2.1.0"
   dependencies:
-    "@pdfme/common": latest
     "@pdfme/pdf-lib": ^1.17.3
     atob: ^2.1.2
     bwip-js: ^3.2.2
     fontkit: ^2.0.2
-  checksum: a373f1b389f10dbcc46f67a8cb65d987c234ca2365983d338dfa6db3441a19bf15a2b4aa52fbba735fda6b92542269660611ec781e4a0f1a3af345c2add4f91e
+  peerDependencies:
+    "@pdfme/common": ^2.1.0
+  checksum: 6c9bd6704167c13510e553041ccea8ece725a6175b16d07c5068e7e8c69177ee5e9dbcf458de27f7e9deb18c02ac8db799acc12dbbc84451a7bfb7ee742f7dc6
   languageName: node
   linkType: hard
 
@@ -4601,14 +4602,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/ui@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "@pdfme/ui@npm:1.2.6"
+"@pdfme/ui@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@pdfme/ui@npm:2.1.0"
   dependencies:
     "@dnd-kit/core": ^5.0.1
     "@dnd-kit/sortable": ^6.0.0
     "@heroicons/react": ^2.0.13
-    "@pdfme/common": latest
     "@scena/react-guides": ^0.16.0
     hotkeys-js: ^3.8.7
     pdfjs-dist: 2.12.313
@@ -4616,7 +4616,9 @@ __metadata:
     react-dom: ^17.0.2
     react-moveable: ^0.30.3
     react-selecto: ^1.12.0
-  checksum: cf67efeb6c6e15b877f39e151c0c32d7d6a4c85bbd64775c71a9d2ff58a9ebbf15f9f9c32c8105c5bb52618fb4e4ee01707a3f37cd67774253bdfcac96fcafa5
+  peerDependencies:
+    "@pdfme/common": ^2.1.0
+  checksum: a7232559629f47e78c027bcf2ef990c552310982a7891fa5b0b4fd9e9379a8e619cb92a78a3d2c372088d38daa86042980b865a035207baefae42f92c9f8e5a4
   languageName: node
   linkType: hard
 
@@ -5302,7 +5304,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
-    "@pdfme/generator": ^1.2.6
+    "@pdfme/common": ^2.1.0
+    "@pdfme/generator": ^2.1.0
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:packages/utils"
     eslint: ^8.47.0
@@ -25530,7 +25533,8 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
-    "@pdfme/ui": ^1.2.6
+    "@pdfme/common": ^2.1.0
+    "@pdfme/ui": ^2.1.0
     "@types/toastify-js": ^1.12.0
     eslint: ^8.47.0
     toastify-js: ^1.12.0
