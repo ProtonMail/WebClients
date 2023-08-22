@@ -219,14 +219,14 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 .then(() => {
                     metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
                         status: 'success',
-                        flow: isB2bPlan ? 'b2b' : 'b2c',
+                        flow: getIsVpnB2BPlan(signupParameters.preSelectedPlan as PLANS) ? 'b2b' : 'b2c',
                     });
                 })
                 .catch((error) => {
                     observeApiError(error, (status) =>
                         metrics.core_vpn_single_signup_fetchDependencies_2_total.increment({
                             status,
-                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                            flow: getIsVpnB2BPlan(signupParameters.preSelectedPlan as PLANS) ? 'b2b' : 'b2c',
                         })
                     );
                     setError(error);
