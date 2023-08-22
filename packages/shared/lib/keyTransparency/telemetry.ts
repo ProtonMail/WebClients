@@ -16,6 +16,9 @@ export const getWarningReason = (warningDetails?: AddressAuditWarningDetails) =>
 
         return 'unverifiable_history';
     }
+    if (reason === AddressAuditWarningReason.AddressWithNoKeys) {
+        return 'address_with_no_keys';
+    }
     // should not fall here
     return 'unknown';
 };
