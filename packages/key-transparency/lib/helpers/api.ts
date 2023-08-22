@@ -21,12 +21,12 @@ export const getCertificateRoute = ({ EpochID }: GetCertificateParams) => ({
 
 export interface GetProofParams {
     EpochID: number;
-    Email: string;
+    Identifier: string;
     Revision: number;
 }
 
-export const getProofRoute = ({ EpochID, Email, Revision }: GetProofParams) => ({
-    url: `kt/v1/epochs/${EpochID}/proof/${Email}/${Revision}`,
+export const getProofRoute = ({ EpochID, Identifier, Revision }: GetProofParams) => ({
+    url: `kt/v1/epochs/${EpochID}/proof/${encodeURIComponent(Identifier)}/${Revision}`,
     method: 'get',
 });
 
