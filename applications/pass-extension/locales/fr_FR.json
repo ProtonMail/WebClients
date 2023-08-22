@@ -11,6 +11,9 @@
       "Add current url": [
         "Ajouter l'URL actuelle"
       ],
+      "Add domain to pause list": [
+        "Ajouter le domaine dans la liste de pause"
+      ],
       "Add more": [
         "Ajouter"
       ],
@@ -289,6 +292,11 @@
         "Développer"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Liste des domaines où certaines fonctions automatiques dans ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
@@ -360,7 +368,10 @@
       "Invalid password manager": [
         "Le gestionnaire de mots de passe n'est pas valide."
       ],
-      "Item content cannot exceed 40kb": [
+      "Invalid url": [
+        "L'URL n'est pas valide."
+      ],
+      "Item content cannot exceed 40KB": [
         "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
       "Item creation failed": [
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "Le fichier que vous essayez d'importer est vide."
+      ],
+      "The url is in the list": [
+        "L'URL est dans la liste."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Trop de tentatives n'ont pas abouti. Connectez-vous à nouveau."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Remplissage automatique"
       ],
+      "Autofill 2FA": [
+        "Remplissage automatique A2F"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Proposer automatiquement le remplissage automatique dans les champs d'identifiant"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Afficher l'icône ${ PASS_APP_NAME } dans les champs d'identification"
+      ],
+      "Domains": [
+        "Domaines"
       ],
       "Download logs": [
         "Télécharger les journaux"
@@ -1112,6 +1132,9 @@
       "Passwords": [
         "Mots de passe"
       ],
+      "Pause list": [
+        "Liste de pause"
+      ],
       "Permanently delete items": [
         "Supprimer définitivement les éléments"
       ],
@@ -1163,8 +1186,8 @@
       "Settings": [
         "Paramètres"
       ],
-      "Show website thumbnails": [
-        "Afficher les vignettes des sites internet"
+      "Show website favicons": [
+        "Afficher les favicônes des sites web"
       ],
       "Special characters (!&*)": [
         "Caractères spéciaux (!&*)"
@@ -1388,8 +1411,8 @@
       "Import - ${ date }": [
         "Importation - ${ date }"
       ],
-      "Import to vaults": [
-        "Importez dans les coffres-forts"
+      "Import to vault(s)": [
+        "Importer dans les coffres-forts"
       ],
       "Permanently remove all items ?": [
         "Voulez-vous définitivement supprimer tous les éléments ?"

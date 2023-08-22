@@ -360,8 +360,11 @@
       "Invalid password manager": [
         "Ugyldig adgangskodeadministrator"
       ],
-      "Item content cannot exceed 40kb": [
-        "Element-indhold kan ikke overstige 40 kb"
+      "Invalid url": [
+        "Ugyldig URL"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Element-indhold må ikke overstige 40 kB"
       ],
       "Item creation failed": [
         "Oprettelse af element mislykkedes"
@@ -413,6 +416,9 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver at importere er tom"
+      ],
+      "The url is in the list": [
+        "URL'en er i listen"
       ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøg. Log venligst ind igen."
@@ -926,6 +932,9 @@
       "Autofill": [
         "Autofyld"
       ],
+      "Autofill 2FA": [
+        "Autofyld 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Åbn automatisk autofyld, når der fokuseres på login-felter"
       ],
@@ -982,6 +991,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Vis ${ PASS_APP_NAME }-ikon på login-felter"
+      ],
+      "Domains": [
+        "Domæner"
       ],
       "Download logs": [
         "Hent logfiler"
@@ -1094,6 +1106,9 @@
       "Old-New": [
         "Gammelt-Nyt"
       ],
+      "Older than last month": [
+        "Ældre end seneste måned"
+      ],
       "Oldest to newest": [
         "Ældste til nyeste"
       ],
@@ -1160,8 +1175,8 @@
       "Settings": [
         "Indstillinger"
       ],
-      "Show website thumbnails": [
-        "Vis websteds-miniaturebilleder"
+      "Show website favicons": [
+        "Vis websteders favicon"
       ],
       "Special characters (!&*)": [
         "Specielle tegn (!&*)"
@@ -1311,6 +1326,12 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Indtast \"${ vaultName }\" igen for at bekræfte sletning"
       ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Søg ${ pluralItemType } i ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Søg ${ pluralItemType } i alle bokse"
+      ],
       "Search in ${ vault.content.name }": [
         "Søg i ${ vault.content.name }"
       ],
@@ -1379,8 +1400,8 @@
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
-      "Import to vaults": [
-        "Importér til bokse"
+      "Import to vault(s)": [
+        "Importér til boks(e)"
       ],
       "Permanently remove all items ?": [
         "Fjern alle elementer permanent?"
