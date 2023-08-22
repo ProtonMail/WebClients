@@ -26,12 +26,13 @@ const getInitialFieldStatus = (): CardFieldStatus => ({
 
 const useCard = ({
     initialCard,
-    ignoreName = false,
+    ignoreNameForNewCards = false,
 }: {
     initialCard?: CardModel;
-    ignoreName?: boolean;
+    ignoreNameForNewCards?: boolean;
 } = {}) => {
-    const definedInitialCard = initialCard ?? getDefaultCard(ignoreName);
+    const definedInitialCard = initialCard ?? getDefaultCard(ignoreNameForNewCards);
+    const ignoreName = !!initialCard ? !initialCard.fullname : ignoreNameForNewCards;
 
     const [card, update] = useState<CardModel>(definedInitialCard);
     const setCard = (key: keyof CardModel, value: string) => update((card) => ({ ...card, [key]: value }));
