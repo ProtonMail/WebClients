@@ -11,6 +11,9 @@
       "Add current url": [
         "Adicionar o URL actual"
       ],
+      "Add domain to pause list": [
+        "Adicionar o domínio na lista de pausa"
+      ],
       "Add more": [
         "Adicionar mais"
       ],
@@ -289,6 +292,11 @@
         "Expandir"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista de domínios onde determinadas funções automáticas em ${ PASS_SHORT_APP_NAME } (preenchimento automático, sugestão automática, gravação automática) não devem ser executadas."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O ficheiro ${ provider } não pôde ser analisado. ${ errorDetail }"
@@ -360,8 +368,11 @@
       "Invalid password manager": [
         "Gestor de palavras-passe inválido"
       ],
-      "Item content cannot exceed 40kb": [
-        "O conteúdo do item não pode exceder 40kb"
+      "Invalid url": [
+        "O URL não é válido."
+      ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40 KB."
       ],
       "Item creation failed": [
         "Falha na criação do item"
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "O ficheiro que está a tentar importar está vazio"
+      ],
+      "The url is in the list": [
+        "O URL está na lista."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiadas tentativas erradas. Inicie sessão novamente."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Preenchimento automático"
       ],
+      "Autofill 2FA": [
+        "Preenchimento automático de A2F"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Abrir automaticamente o preenchimento automático ao focar nos campos de início de sessão."
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Apresentar o ícone ${ PASS_APP_NAME } nos campos de início de sessão."
+      ],
+      "Domains": [
+        "Domínios"
       ],
       "Download logs": [
         "Transferir os registos"
@@ -1094,6 +1114,9 @@
       "Old-New": [
         "Do mais antigo ao mais recente"
       ],
+      "Older than last month": [
+        "Mais de um mês"
+      ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
       ],
@@ -1108,6 +1131,9 @@
       ],
       "Passwords": [
         "Palavras-passe"
+      ],
+      "Pause list": [
+        "Lista de pausa"
       ],
       "Permanently delete items": [
         "Eliminar permanentemente itens"
@@ -1160,8 +1186,8 @@
       "Settings": [
         "Definições"
       ],
-      "Show website thumbnails": [
-        "Mostrar miniaturas do sítio web"
+      "Show website favicons": [
+        "Mostrar os favicons do sítio web"
       ],
       "Special characters (!&*)": [
         "Caracteres especiais (!&*)"
@@ -1311,6 +1337,12 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Introduza novamente \"${ vaultName }\" para confirmar a eliminação."
       ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Pesquisar ${ pluralItemType } em ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Pesquisar ${ pluralItemType } em todos os cofres"
+      ],
       "Search in ${ vault.content.name }": [
         "Pesquisar em ${ vault.content.name }"
       ],
@@ -1379,7 +1411,7 @@
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
-      "Import to vaults": [
+      "Import to vault(s)": [
         "Importar para os cofres"
       ],
       "Permanently remove all items ?": [

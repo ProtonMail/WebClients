@@ -11,6 +11,9 @@
       "Add current url": [
         "Tambahkan URL saat ini"
       ],
+      "Add domain to pause list": [
+        "Tambah domain ke daftar jeda"
+      ],
       "Add more": [
         "Tambahkan lagi"
       ],
@@ -289,6 +292,11 @@
         "Lebarkan"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Daftar domain yang tidak akan memberlakukan fungsi otomatis ${ PASS_SHORT_APP_NAME } tertentu (Autofill, Autosuggest, Autosave)"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
@@ -318,10 +326,10 @@
         "Tidak dapat melanjutkan sesi Anda : ${ description }"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "Berkas CSV tidak memiliki header yang sewajarnya dimiliki oleh berkas: ${ missingHeaders }"
+        "Berkas CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Gagal mendekripsikan berkas ekspor ${ PASS_APP_NAME } Anda. ${ errorDetail }"
+        "Berkas ekspor ${ PASS_APP_NAME } Anda gagal didekripsi. ${ errorDetail }"
       ],
       "Deleting item failed": [
         "Item gagal dihapus"
@@ -330,7 +338,7 @@
         "Gagal menghapus brankas \"${ payload.content.name }\""
       ],
       "Detected ${ errors.length } corrupted csv rows": [
-        "Terdeteksi ${ errors.length } baris CSV yang rusak"
+        "${ errors.length } baris CSV yang rusak terdeteksi"
       ],
       "Editing item failed": [
         "Item gagal disunting"
@@ -351,7 +359,7 @@
         "Berkas tidak dapat diurai"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Pengimporan gagal untuk brankas \"${ vaultData.name }\": ${ description }"
+        "Proses impor brankas \"${ vaultData.name }\" gagal: ${ description }"
       ],
       "Importing items failed": [
         "Item gagal diimpor"
@@ -359,14 +367,17 @@
       "Invalid password manager": [
         "Pengelola kata sandi tidak valid"
       ],
-      "Item content cannot exceed 40kb": [
-        "Konten item tidak dapat melebihi 40KB"
+      "Invalid url": [
+        "URL tidak valid"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Konten item tidak boleh melebihi 40KB"
       ],
       "Item creation failed": [
         "Item gagal dibuat"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass akan mengekspor file CSV yang rusak jika salah satu kolom item Anda mengandung koma, tanda kutip atau beberapa baris yang tidak terduga."
+        "LastPass akan mengekspor file CSV yang rusak apabila terdapat kolom pada item Anda yang mengandung koma, tanda kutip, atau deretan baris yang tidak terduga"
       ],
       "Moving item failed": [
         "Item gagal dipindahkan"
@@ -375,10 +386,10 @@
         "Frasa sandi salah"
       ],
       "PIN codes do not match": [
-        "Kode PIN tidak cocok"
+        "Kode PIN tidak sesuai"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Mohon berikan ${ PASS_APP_NAME } izin ekstensi yang diperlukan untuk dapat melanjutkan"
+        "Mohon berikan ${ PASS_APP_NAME } izin ekstensi yang dibutuhkan untuk melanjutkan"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Silakan sematkan ekstensi atau pilih \"Lanjutkan tanpa menyemat\"."
@@ -402,7 +413,7 @@
         "Pengaturan gagal diperbarui"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Sebagian berkas tidak lagi dapat diakses akibat pengaturan ulang kata sandi. Aktifkan ulang kunci akun Anda untuk dapat kembali mengakses berkas yang terkunci. ${ reactivateLink }"
+        "Sebagian brankas tidak lagi dapat diakses akibat pengaturan ulang kata sandi. Aktifkan ulang kunci akun Anda untuk mengakses kembali brankas yang terkunci. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Terjadi kesalahan"
@@ -412,6 +423,9 @@
       ],
       "The file you are trying to import is empty": [
         "Berkas yang ingin Anda impor kosong"
+      ],
+      "The url is in the list": [
+        "URL ini tidak berada dalam daftar"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Terlalu banyak percobaan gagal. Mohon masuk lagi."
@@ -423,7 +437,7 @@
         "Tidak dapat melangsungkan proses booting"
       ],
       "Unable to generate an OTP code for this item": [
-        "Tidak dapat membuat kode OTP untuk item ini"
+        "Kode OTP untuk item ini tidak dapat dibuat"
       ],
       "Unable to sync": [
         "Tidak dapat menyinkronkan"
@@ -491,7 +505,7 @@
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Tingkatkan ke paket berbayar untuk membuat beberapa brankas."
+        " Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
@@ -716,7 +730,7 @@
         "Mohon konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini.\nSetelahnya, ${ PASS_APP_NAME } tidak akan lagi pernah terkunci."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Silakan mengonfirmasikan kode PIN Anda untuk menyunting pengaturan ini."
+        "Mohon konfirmasi kode PIN Anda untuk menyunting pengaturan ini."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
         "Silakan konfirmasi kode PIN Anda untuk menyelesaikan pendaftaran pengaturan penguncian otomatis Anda."
@@ -725,7 +739,7 @@
         "Mohon pertimbangkan untuk memberikan ulasan."
       ],
       "Please enter your current pin code to continue": [
-        "Silakan masukan kode PIN saat ini untuk melanjutkan"
+        "Mohon masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
@@ -764,7 +778,7 @@
         "Seluruh item Anda berhasil diekspor"
       ],
       "Successfully synced all vaults": [
-        "Seluruh berkas berhasil disinkronkan"
+        "Seluruh brankas berhasil disinkronkan"
       ],
       "Syncing your vaults…": [
         "Menyinkronkan berkas Anda…"
@@ -909,6 +923,9 @@
       "Autofill": [
         "Isi otomatis"
       ],
+      "Autofill 2FA": [
+        "Pengisian 2FA otomatis"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Buka modul autofill secara otomatis pada saat kursor terfokus pada kolom login"
       ],
@@ -955,7 +972,7 @@
         "Waktu Dibuat"
       ],
       "Credit Card": [
-        "Kartu kredit"
+        "Kartu Kredit"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -965,6 +982,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Tampilkan ikon ${ PASS_APP_NAME } pada kolom login"
+      ],
+      "Domains": [
+        "Domain"
       ],
       "Download logs": [
         "Unduh log"
@@ -1078,7 +1098,7 @@
         "Lama–Baru"
       ],
       "Older than last month": [
-        "Lebih dari satu bulan"
+        "Lebih dari sebulan yang lalu"
       ],
       "Oldest to newest": [
         "Terlama ke terbaru"
@@ -1094,6 +1114,9 @@
       ],
       "Passwords": [
         "Kata sandi"
+      ],
+      "Pause list": [
+        "Daftar jeda"
       ],
       "Permanently delete items": [
         "Hapus item secara permanen"
@@ -1146,8 +1169,8 @@
       "Settings": [
         "Pengaturan"
       ],
-      "Show website thumbnails": [
-        "Tampilkan thumbnail situs web"
+      "Show website favicons": [
+        "Tampilkan ikon favorit situs web"
       ],
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
@@ -1183,13 +1206,13 @@
         "Tipe"
       ],
       "Unnamed Credit Card": [
-        "Kartu Kredit Tanpa Nama"
+        "Kartu Kredit tidak bernama"
       ],
       "Unnamed item": [
         "Item tidak bernama"
       ],
       "Unnamed note": [
-        "Item tidak bernama"
+        "Catatan tidak bernama"
       ],
       "Untitled": [
         "Tanpa judul"
@@ -1371,7 +1394,7 @@
       "Import - ${ date }": [
         "Impor - ${ date }"
       ],
-      "Import to vaults": [
+      "Import to vault(s)": [
         "Impor ke brankas"
       ],
       "Permanently remove all items ?": [
@@ -1541,7 +1564,7 @@
         "Nama brankas dibutuhkan"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "Anda tidak dapat membuat lebih banyak brankas lebih dari batas langganan Anda."
+        "Anda tidak dapat membuat lebih banyak brankas dari yang diizinkan oleh paket langganan Anda."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Anda memiliki perubahan yang belum disimpan. Apakah Anda yakin untuk membatalkan perubahan ini?"
@@ -1556,10 +1579,10 @@
         "Paket Anda hanya mengizinkan pengisian otomatis dari brankas utama Anda"
       ],
       "Your session was locked due to inactivity": [
-        "Sesi Anda dikunci karena tidak ada rekam jejak aktivitas"
+        "Sesi Anda dikunci karena tidak adanya aktivitas"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Langganan Anda tidak memperbolehkan Anda untuk membuat beberapa brankas. Semua item akan diimpor ke brankas utama Anda. Untuk mengimpor beberapa brankas, tingkatkan langganan Anda."
+        "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas utama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."
       ]
     }
   }
