@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/components/hooks';
-import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getIpPricePerMonth } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -200,7 +200,13 @@ const PlanSelection = ({
      * The check for length of plans is needed for the case if the VPN B2B plans are not available.
      * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
-    const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0 && showVpnB2bPlans && !featureLoading;
+    const isVpnB2bPlans =
+        isVpnSettingsApp &&
+        vpnB2BPlans.length !== 0 &&
+        isFreeSubscription(subscription) &&
+        showVpnB2bPlans &&
+        !featureLoading;
+
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else {
