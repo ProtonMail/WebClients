@@ -11,7 +11,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
     const hasVpnPlan = hasVPN(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
-    const vpnB2BOrgMember = organization && getIsVpnB2BPlan(organization.PlanName);
+    const vpnB2BOrgMember = !!organization && getIsVpnB2BPlan(organization.PlanName);
 
     const isAdmin = user.isAdmin && !user.isSubUser;
     const canHaveOrganization = !!organization && isAdmin;
@@ -182,7 +182,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             text: multiUserTitle,
             to: '/multi-user-support',
             icon: 'users',
-            available: canHaveOrganization && !hasOrganizationKey,
+            available: canHaveOrganization && hasVpnB2BPlan && !hasOrganizationKey,
             subsections: [
                 {
                     text: multiUserTitle,
