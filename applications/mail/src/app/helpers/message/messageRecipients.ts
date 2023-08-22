@@ -80,9 +80,13 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
     );
 };
 
-export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGroupsMap?: ContactGroupsMap) =>
+export const recipientsToRecipientOrGroup = (
+    recipients: Recipient[],
+    contactGroupsMap?: ContactGroupsMap,
+    alwaysShowRecipients: boolean = false
+) =>
     recipients.reduce<RecipientOrGroup[]>((acc, value) => {
-        if (value.Group) {
+        if (value.Group && !alwaysShowRecipients) {
             const existingGroup = acc.find((recipientsOrGroup) => recipientsOrGroup.group?.group?.Path === value.Group);
             if (existingGroup) {
                 existingGroup.group?.recipients.push(value);
@@ -99,6 +103,7 @@ export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGro
                 }
             }
         } else {
+            // Show recipient if no group is set or when we force the recipient display (e.g. print modal)
             acc.push({ recipient: value });
         }
         return acc;
