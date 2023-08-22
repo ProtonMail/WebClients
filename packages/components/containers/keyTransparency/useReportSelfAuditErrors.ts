@@ -35,14 +35,21 @@ const useReportSelfAuditErrors = () => {
 
         const tooManyRetries = selfAuditResult.error?.tooManyRetries;
 
-        if (failedAddressAudits.length || failedLSAuditsOwn.length || failedLSAuditsOther.length || tooManyRetries) {
+        if (
+            failedAddressAudits.filter(({ status }) => status === AddressAuditStatus.Failure) ||
+            failedLSAuditsOwn.length ||
+            failedLSAuditsOther.length ||
+            tooManyRetries
+        ) {
             ktSentryReport('Self audit would display an error', {
                 failedAddressAudits,
                 failedLSAuditsOwn,
                 failedLSAuditsOther,
                 tooManyRetries: selfAuditResult.error?.tooManyRetries,
             });
+        }
 
+        if (failedAddressAudits.length || failedLSAuditsOwn.length || failedLSAuditsOther.length || tooManyRetries) {
             const reports: TelemetryReport[] = [];
 
             const group = {
