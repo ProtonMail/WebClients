@@ -585,6 +585,9 @@
       "Show preview": [
         "Mostrar vista previa"
       ],
+      "Show side panel": [
+        "Mostrar el panel lateral"
+      ],
       "Sign in": [
         "Iniciar sesión"
       ],
@@ -5112,7 +5115,7 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
+        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5555,9 +5558,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Accede y personaliza fácilmente tu experiencia en la aplicación."
-      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí."
       ],
@@ -5569,9 +5569,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puedes buscar fácilmente archivos en tu unidad de almacenamiento mientras mantienes tus datos seguros."
-      ],
-      "Quick settings": [
-        "Ajustes rápidos"
       ]
     },
     "Storage": {
@@ -6323,8 +6320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como Redes Sociales o Promociones. Puedes seleccionar a dónde importar estos correos."
       ],
+      "Hide side panel": [
+        "Ocultar el panel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que el formato PGP/Inline te obliga a enviar mensajes de texto plano."
+      ],
+      "Show side panel": [
+        "Mostrar el panel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
