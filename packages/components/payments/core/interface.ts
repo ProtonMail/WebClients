@@ -124,7 +124,7 @@ export function isPaypalDetails(obj: any): obj is PayPalDetails {
 }
 
 export interface SavedCardDetails {
-    Name: string;
+    Name?: string | null;
     ExpMonth: string;
     ExpYear: string;
     ZIP: string;
@@ -138,7 +138,8 @@ export function isSavedCardDetails(obj: any): obj is SavedCardDetails {
         return false;
     }
 
-    const props: (keyof SavedCardDetails)[] = ['Name', 'ExpMonth', 'ExpYear', 'ZIP', 'Country', 'Last4', 'Brand'];
+    // Name is optional property, so we don't need to check it here
+    const props: (keyof SavedCardDetails)[] = ['ExpMonth', 'ExpYear', 'ZIP', 'Country', 'Last4', 'Brand'];
 
     return props.every((prop) => typeof obj[prop] === 'string');
 }
