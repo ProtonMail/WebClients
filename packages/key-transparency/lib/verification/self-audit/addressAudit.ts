@@ -5,6 +5,7 @@ import {
     ActiveSignedKeyList,
     Address,
     Api,
+    DecryptedAddressKey,
     DecryptedKey,
     FetchedSignedKeyList,
     SaveSKLToLS,
@@ -27,7 +28,7 @@ import {
     Epoch,
     VerifiedEpoch,
 } from '../../interfaces';
-import { checkKeysInSKL, importKeys, verifySKLSignature } from '../verifyKeys';
+import { checkKeysInSKL, verifySKLSignature } from '../verifyKeys';
 import { verifyProofOfAbsenceForRevision } from '../verifyProofs';
 import { SKLAuditResult, SKLAuditStatus, auditSKL } from './sklAudit';
 
@@ -171,7 +172,7 @@ const auditAddressImplementation = async (
     saveSKLToLS: SaveSKLToLS,
     api: Api,
     uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
@@ -207,10 +208,10 @@ const auditAddressImplementation = async (
             });
         })
     );
-    const addressKeys = await importKeys(address.Keys.filter(({ Active }) => Active === 1));
+    const addressKeys = await getAddressKeys(address.ID);
     const addressVerificationKeys = addressKeys
         .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
-        .map(({ PublicKey }) => PublicKey);
+        .map(({ publicKey }) => publicKey);
 
     const sklAudits = await Promise.all(
         range(verifiedRevision + 1, lastIncludedRevision).map((revision) => {
@@ -247,14 +248,14 @@ const auditAddressImplementation = async (
             return throwKTError('Audited SKL doesnt match the input SKL', { email, inputSKL });
         }
         if (audit.status !== SKLAuditStatus.ExistentVerified) {
-            const primaryAddressKey = (await getAddressKeys(address.ID))[0].privateKey;
+            const primaryAddressKey = addressKeys[0].privateKey;
             await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
             signatureWasInTheFuture = true;
         }
     } else {
         const verified = await verifySKLSignature(addressVerificationKeys, inputSKL.Data, inputSKL.Signature);
         if (verified === null) {
-            const primaryAddressKey = (await getAddressKeys(address.ID))[0].privateKey;
+            const primaryAddressKey = addressKeys[0].privateKey;
             await checkAndFixSKLInTheFuture(address, primaryAddressKey, api);
             signatureWasInTheFuture = true;
         }
@@ -265,7 +266,11 @@ const auditAddressImplementation = async (
         await saveSKLToLS(email, inputSKL.Data, inputSKL.Revision, expectedMinEpochID, address.ID);
     }
 
-    await checkKeysInSKL(email, addressKeys, inputSKL.Data);
+    await checkKeysInSKL(
+        email,
+        addressKeys.map(({ Flags, privateKey }) => ({ flags: Flags, key: privateKey })),
+        inputSKL.Data
+    );
 
     await uploadNewVerifiedEpoch(sklAudits, epoch, address, userPrimaryKey, api);
 
@@ -279,7 +284,7 @@ export const auditAddress = async (
     saveSKLToLS: SaveSKLToLS,
     api: Api,
     uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
 ): Promise<AddressAuditResult> => {
     try {
         return await auditAddressImplementation(

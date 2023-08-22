@@ -1,4 +1,4 @@
-import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, KeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import {
     Api,
     FetchedSignedKeyList,
@@ -31,13 +31,13 @@ export const checkSKLEquality = (skl1: FetchedSignedKeyList, skl2: FetchedSigned
 /**
  * Parse a key list into a list of key info
  */
-export const parseKeyList = async (keyList: ProcessedApiAddressKey[]): Promise<SignedKeyListItem[]> =>
+export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyListItem[]> =>
     Promise.all(
-        keyList.map(async ({ PublicKeyRef, Flags }, index) => ({
-            Fingerprint: PublicKeyRef.getFingerprint(),
-            SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: PublicKeyRef }),
+        keyList.map(async ({ key, flags }, index) => ({
+            Fingerprint: key.getFingerprint(),
+            SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key }),
             Primary: index === 0 ? 1 : 0,
-            Flags: Flags,
+            Flags: flags,
         }))
     );
 
@@ -99,10 +99,14 @@ export const verifyKeyList = async (
     keyListInfo.forEach((key, i) => compareKeyInfo(email, key, signedKeyListInfo[i]));
 };
 
+interface KeyWithFlags {
+    key: KeyReference;
+    flags: number;
+}
 /**
  * Check that the given keys mirror what's inside the given SKL Data
  */
-export const checkKeysInSKL = async (email: string, apiKeys: ProcessedApiAddressKey[], sklData: string) => {
+export const checkKeysInSKL = async (email: string, apiKeys: KeyWithFlags[], sklData: string) => {
     const parsedSKL = getParsedSignedKeyList(sklData);
     if (!parsedSKL) {
         return throwKTError('SignedKeyList data parsing failed', { sklData });
@@ -160,7 +164,11 @@ const verifyPublicKeys = async (
         const verifySKL = async () => {
             if (signedKeyList?.Data) {
                 // Verify key list matches the signed key list
-                await checkKeysInSKL(email, apiKeys, signedKeyList.Data!);
+                await checkKeysInSKL(
+                    email,
+                    apiKeys.map(({ PublicKeyRef, Flags }) => ({ key: PublicKeyRef, flags: Flags })),
+                    signedKeyList.Data!
+                );
             }
         };
 
