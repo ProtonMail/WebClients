@@ -289,6 +289,11 @@
         "Erweitern"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Liste der Domains, in denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) nicht ausgeführt werden sollen."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
@@ -360,7 +365,10 @@
       "Invalid password manager": [
         "Ungültiger Passwort-Manager"
       ],
-      "Item content cannot exceed 40kb": [
+      "Invalid url": [
+        "Ungültige URL"
+      ],
+      "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
       "Item creation failed": [
@@ -413,6 +421,9 @@
       ],
       "The file you are trying to import is empty": [
         "Die Datei, die du importieren möchtest, ist leer."
+      ],
+      "The url is in the list": [
+        "Die URL ist in der Liste"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Zu viele Fehlversuche! Bitte melde dich erneut an."
@@ -983,6 +994,9 @@
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "${ PASS_APP_NAME } Symbol auf Anmeldefeldern anzeigen"
       ],
+      "Domains": [
+        "Domains"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -1112,6 +1126,9 @@
       "Passwords": [
         "Passwörter"
       ],
+      "Pause list": [
+        "Pausierliste"
+      ],
       "Permanently delete items": [
         "Einträge dauerhaft löschen"
       ],
@@ -1163,8 +1180,8 @@
       "Settings": [
         "Einstellungen"
       ],
-      "Show website thumbnails": [
-        "Website-Thumbnails anzeigen"
+      "Show website favicons": [
+        "Website-Symbole anzeigen"
       ],
       "Special characters (!&*)": [
         "Sonderzeichen (!&*)"
@@ -1384,9 +1401,6 @@
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
-      ],
-      "Import to vaults": [
-        "In Tresore importieren"
       ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"
