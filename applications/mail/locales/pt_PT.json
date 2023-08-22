@@ -952,6 +952,9 @@
       "Show preview": [
         "Mostrar pré-visualização"
       ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
+      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -3447,6 +3450,9 @@
       "You did not provide a file.": [
         "Não forneceu um ficheiro."
       ],
+      "You have reached the contacts limit for your account": [
+        "Atingiu o limite de contactos da sua conta."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Atingiu o número máximo de calendários. Não é possível importar alguns calendários."
       ],
@@ -4141,6 +4147,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Altere ${ strongText } para o seu endereço ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "As contas foram alteradas."
+      ],
       "Checklist complete": [
         "Lista de verificação completa"
       ],
@@ -4149,6 +4158,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Parabéns! Completou todas as etapas."
+      ],
+      "Congratulation, you finished!": [
+        "Parabéns, terminaste!"
       ],
       "Continue setting up your email": [
         "Continue a configurar o seu email"
@@ -4212,6 +4224,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicie sessão na aplicação móvel para concluir este passo"
+      ],
+      "Storage unlocked": [
+        "O armazenamento foi desbloqueado."
       ],
       "Update your logins": [
         "Atualize os seus dados"
@@ -4790,6 +4805,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Foi detetada uma chave pública desconhecida para este destinatário."
@@ -8041,9 +8060,6 @@
       "Change setting": [
         "Alterar a configuração"
       ],
-      "Easily access and customize your app experience.": [
-        "Aceda e personalize facilmente a sua experiência com a aplicação."
-      ],
       "Email tracking protection": [
         "Proteção contra rastreamento de e-mail"
       ],
@@ -8052,9 +8068,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convidar amigos para ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "Definições rápidas"
       ],
       "Schedule send": [
         "Agendar o envio"
@@ -9113,8 +9126,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."
       ],
+      "Hide side panel": [
+        "Ocultar o painel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema serão apresentadas como pastas separadas em ${ MAIL_APP_NAME }"
