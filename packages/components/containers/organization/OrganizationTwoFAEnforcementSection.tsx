@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Alert, Info, useApi } from '@proton/components';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
-import { ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import { Label, Loader, Row, Toggle } from '../../components';
-import { useNotifications } from '../../hooks';
+import { useConfig, useNotifications } from '../../hooks';
 import { SettingsParagraph } from '../account';
 
 interface Props {
@@ -19,6 +19,8 @@ interface Props {
 
 const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
     const api = useApi();
+    const { APP_NAME } = useConfig();
+
     const [isTwoFARequiredForAdminOnlyChecked, setIsTwoFARequiredForAdminOnlyChecked] = useState(
         hasTwoFARequiredForAdminOnly(organization)
     );
@@ -72,7 +74,13 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                 <Label>
                     <span className="mr-0.5">{c('Label').t`Require 2FA for administrators`}</span>
                     <span className="no-mobile">
-                        <Info url={getKnowledgeBaseUrl('/two-factor-authentication-2fa')} />
+                        <Info
+                            url={
+                                APP_NAME === APPS.PROTONVPN_SETTINGS
+                                    ? 'https://protonvpn.com/support/require-2fa-organization'
+                                    : getKnowledgeBaseUrl('/two-factor-authentication-2fa')
+                            }
+                        />
                     </span>
                 </Label>
                 <div className="flex flex-align-items-center">
@@ -93,7 +101,13 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                 <Label>
                     <span className="mr-0.5">{c('Label').t`Require 2FA for everyone`}</span>
                     <span className="no-mobile">
-                        <Info url={getKnowledgeBaseUrl('/two-factor-authentication-2fa')} />
+                        <Info
+                            url={
+                                APP_NAME === APPS.PROTONVPN_SETTINGS
+                                    ? 'https://protonvpn.com/support/require-2fa-organization'
+                                    : getKnowledgeBaseUrl('/two-factor-authentication-2fa')
+                            }
+                        />
                     </span>
                 </Label>
                 <div className="flex flex-align-items-center">
