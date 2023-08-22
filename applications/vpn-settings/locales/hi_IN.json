@@ -8,14 +8,29 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
+      "activate": [
+        "सक्रिय"
+      ],
+      "Activate organization key": [
+        "संगठन की कुंजी सक्रिय करें"
+      ],
+      "Add address": [
+        "पता जोड़ें"
+      ],
       "Add credit / debit card": [
         "क्रेडिट / डेबिट कार्ड जोड़ें"
       ],
       "Add credits": [
         "क्रेडिट जोड़ें"
       ],
+      "Add domain": [
+        "डोमेन जोड़ें"
+      ],
       "Add PayPal": [
         "PayPal जोड़ें"
+      ],
+      "Add user": [
+        "उपयोगकर्ता जोड़ें"
       ],
       "Apply": [
         "लागू करें"
@@ -76,6 +91,9 @@
       ],
       "Create": [
         "बनाएँ"
+      ],
+      "Create users": [
+        "यूज़र बनाएं"
       ],
       "Current plan": [
         "वर्तमान योजना"
@@ -149,6 +167,9 @@
       "enable desktop notifications": [
         "डेस्कटॉप सूचनाएं सक्षम करें"
       ],
+      "Enable multi-user support": [
+        "बहु-उपयोगकर्ता समर्थन सक्षम करें"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "दूसरे ${ BRAND_NAME } प्लान देखें"
       ],
@@ -160,6 +181,9 @@
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } प्राप्त करें"
+      ],
+      "Get more addresses": [
+        "ज़्यादा पते लें"
       ],
       "Get the deal": [
         "सौदा लें"
@@ -175,6 +199,12 @@
       ],
       "Increase": [
         "बढ़ना"
+      ],
+      "Invite": [
+        "न्योता भेजें"
+      ],
+      "Invite user": [
+        "यूज़र को न्योता भेजें"
       ],
       "Load more": [
         "और लोड करें"
@@ -224,11 +254,17 @@
       "refresh the page": [
         "पन्ना रिफ्रेश करें"
       ],
+      "Remove": [
+        "हटाएं"
+      ],
       "Remove bonuses": [
         "बोनस निकालें"
       ],
       "Remove gift code": [
         "उपहार कोड निकालें"
+      ],
+      "Rename": [
+        "नाम बदलें"
       ],
       "Report a problem": [
         "समस्या रिपोर्ट करें"
@@ -245,11 +281,17 @@
       "Reset credentials": [
         "क्रेडेंशियल रीसेट करें"
       ],
+      "Reset keys": [
+        "कुंजी रीसेट करें"
+      ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
       ],
       "Restore": [
         "रिस्टोर करें"
+      ],
+      "Restore administrator privileges": [
+        "व्यवस्थापक विशेषाधिकार बहाल करें"
       ],
       "Retry": [
         "वापस कोशिश करें"
@@ -265,6 +307,12 @@
       ],
       "Save": [
         "सेव करें"
+      ],
+      "Save address": [
+        "पता सहेजें"
+      ],
+      "Search": [
+        "खोजें"
       ],
       "Search countries": [
         "देश खोजें"
@@ -317,6 +365,9 @@
       "Support": [
         "सहयोग"
       ],
+      "Switch account": [
+        "खाता बदलें"
+      ],
       "Top up": [
         "ऊपर से"
       ],
@@ -337,6 +388,9 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
+      ],
+      "Upgrade your plan": [
+        "अपना प्लान अपग्रेड करें"
       ],
       "Use ${ label } theme": [
         "${ label } थीम इस्तेमाल करें"
@@ -385,6 +439,46 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "मिटाए"
+      ],
+      "Disable": [
+        "डिसेबल"
+      ],
+      "Enable": [
+        "एनेबल"
+      ],
+      "Generate missing keys": [
+        "लापता कुंजी उत्पन्न करें"
+      ],
+      "Saving": [
+        "सहेजा जा रहा है"
+      ],
+      "Set as default": [
+        "डिफाल्ट सेट करें"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "सक्रिय"
+      ],
+      "Default": [
+        "डिफॉल्ट"
+      ],
+      "Disabled": [
+        "अक्षम"
+      ],
+      "External": [
+        "बाहरी"
+      ],
+      "Missing keys": [
+        "खोई हुई चाबियां"
+      ],
+      "Orphan": [
+        "अनाथ"
       ]
     },
     "Alter": {
@@ -1358,9 +1452,30 @@
         "(${ entryCountryName } के माध्यम से)"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "कोई खोज परिणाम नहीं मिला"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "उपलब्ध क्रेडिट"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV सांचा"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "${ erroredRowsString } रो में गलती।"
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "ऐसा लग रहा है की आपके फाइल में '${ options.fieldName }' हैडर नहीं हैं।"
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "हमने आयात के वक्त कई रो में गड़बड़ पाई। अपनी CSV फाइल देख लें।"
       ]
     },
     "Cycle": {
@@ -1374,6 +1489,11 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "अतिदेय चालान"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail लोगो और एक प्लस साइन"
       ]
     },
     "Downgrade account reason": {
@@ -1407,7 +1527,18 @@
         "हमें सुधरने में मदद करें!"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2-एफए"
+      ]
+    },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } आपका यूज़रनाम है। ${ Local }@${ Domain } बनाने कि लिए, कृपया जाए सेटिंग > संदेश और बनाना > छोटा डोमेन (pm.me)"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
+      ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
       ],
@@ -1429,6 +1560,9 @@
       "Enter 6 digits": [
         "6 अंक दर्ज करें"
       ],
+      "Error": [
+        "गड़बड़"
+      ],
       "Error connecting to the Bitcoin API.": [
         "बिटकॉइन एपीआई से जुड़ने में त्रुटि।"
       ],
@@ -1440,6 +1574,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
+      ],
+      "Incorrect password": [
+        "गलत पासवर्ड"
       ],
       "Invalid ${ name } code": [
         "अमान्य ${ name } कोड"
@@ -1462,11 +1599,20 @@
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
+      "Name does not match": [
+        "नाम मेल नहीं खाता"
+      ],
       "Name on card required": [
         "कार्ड पर नाम आवश्यक है"
       ],
       "Not a valid number": [
         "मान्य संख्या नहीं है"
+      ],
+      "Organization key is not decrypted": [
+        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
+      ],
+      "Organization key is not decrypted.": [
+        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
       ],
       "Passwords do not match": [
         "पासवर्ड्स समान नहीं हैं"
@@ -1486,6 +1632,15 @@
       "Payments are currently not available, please try again later": [
         "भुगतान वर्तमान में उपलब्ध नहीं हैं, कृपया बाद में पुनः प्रयास करें"
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "कृपया अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले बहु-उपयोगकर्ता समर्थन सक्षम करें।"
+      ],
       "Please generate keys before you try to change your password": [
         "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ],
@@ -1494,6 +1649,12 @@
       ],
       "Please set a recovery phone number first": [
         "कृपया पहले एक पुनर्प्राप्ति फ़ोन नंबर सेट करें"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "कई-यूज़र सपोर्ट लेने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
       ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
@@ -1525,6 +1686,12 @@
       "The minimum payment we accept is ${ price }": [
         "हम ${ price } से कम रकम नहीं लेते"
       ],
+      "The organization key must be activated first": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "The organization key must be activated first.": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
       ],
@@ -1555,8 +1722,34 @@
       "You have no invoices.": [
         "आपका कोई चालान नहीं है।"
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "आपको अपनी संगठन कुंजियों को सक्रिय करना होगा। सक्रियण के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन का इनवॉइस बकाया है. कृपया सभी बकाया चालानों का भुगतान करें।"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "आपके फाइल \"${ formattedFilename }\" को पढ़ते समय एक गड़बड़ हो गई। गलत फाइल फॉर्मेट।"
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "आपकी फाइल ${ formattedFilename } अपलोड करते समय एक गड़बड़ हुई। फाइल साइज़ ${ MAX_IMPORT_FILE_SIZE_STRING } तक हो सकता है।"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "आपकी फ़ाइल अपलोड करते समय एक त्रुटि हुई। कोई फ़ाइल नहीं चुनी गई है."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "${ MAX_NUMBER_OF_USER_ROWS } या उससे कम यूज़र खातों के साथ एक CSV फाइल अपलोड करें।"
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "आपका \"${ formattedFilename }\" फाइल खाली है।"
       ]
     },
     "Error message": {
@@ -1594,8 +1787,20 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "नया यूज़र बनाएं"
+      ],
       "Got it": [
         "समझ गए"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "मौजूदा ${ BRAND_NAME } यूज़र को न्योता भेजें"
+      ],
+      "Invite member to your family": [
+        "अपने परिवार में किसी को बुलाएं"
+      ],
+      "Set up family group": [
+        "परिवार ग्रुप सेट करें"
       ],
       "Switch plans": [
         "प्लान बदलें"
@@ -1648,6 +1853,9 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
+      "Pending": [
+        "लंबित"
+      ],
       "Pending invitation": [
         "लंबित न्योते"
       ],
@@ -1670,6 +1878,9 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*हर यूज़र पे सिर्फ एक मुफ्त ट्रायल।"
+      ],
       "Online privacy, for your whole family": [
         "ऑनलाइन निजता, आपके पूरे परिवार के लिए"
       ]
@@ -1680,20 +1891,50 @@
       ],
       "Enter organization name to confirm": [
         "पक्का करने के लिए संगठन नाम डालें"
+      ],
+      "Family name": [
+        "परिवार नाम"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "An error occurred, please try again": [
+        "एक गड़बड़ हुई, वापस कोशिश करें"
+      ],
+      "Member updated": [
+        "सदस्य अपडेट किया"
       ]
     },
     "familyOffer_2023:Title": {
+      "Change family name": [
+        "परिवार नाम बदलें"
+      ],
       "Delete family group?": [
         "परिवार ग्रुप मिटाएं?"
       ],
       "Delete organization?": [
         "संगठन मिटाएं?"
       ],
+      "Edit user storage": [
+        "यूज़र स्टोरेज बदलें"
+      ],
+      "Family name": [
+        "परिवार नाम"
+      ],
       "Introducing ${ planName }": [
         "ला रहे है ${ planName }"
+      ],
+      "Invite a user": [
+        "किसी यूज़र को न्योता भेजें"
+      ],
+      "Set family name": [
+        "परिवार नाम सेट करें"
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN कनेक्शन",
+        "${ MaxVPN } VPN कनेक्शन"
+      ],
       "Access to all countries": [
         "सभी देशों तक पहुंच"
       ],
@@ -1882,8 +2123,28 @@
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
+      "Name": [
+        "नाम"
+      ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
+      ],
+      "Status": [
+        "स्थिति"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "कार्रवाई"
+      ],
+      "Address": [
+        "पता"
+      ],
+      "Status": [
+        "स्थिति"
+      ],
+      "Username": [
+        "यूज़रनेम"
       ]
     },
     "Human verification method": {
@@ -1926,6 +2187,10 @@
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } यूज़र मिले",
+        "${ userFound } यूज़र मिले"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "देश स्तर के कनेक्शन के लिए ${ vpnPlus } चाहिए।"
@@ -1973,8 +2238,24 @@
       "Additional options": [
         "अतिरिक्त विकल्प"
       ],
+      "address": [
+        "पता",
+        "पतें"
+      ],
+      "Admin account allocation": [
+        "एडमिन खाता बंटवारा"
+      ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
+      ],
+      "Allocated": [
+        "आवंटित"
+      ],
+      "Already allocated": [
+        "पहले से दिया गया"
+      ],
+      "Already used": [
+        "पहले से ही इस्तेमाल किया हुआ"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey लोगो"
@@ -1982,11 +2263,17 @@
       "Amount below minimum (${ amount }).": [
         "न्यूनतम से कम राशि (${ amount })।"
       ],
+      "Are you sure you want to delete this address?": [
+        "क्या आप वाकई इस पते को हटाना चाहते हैं?"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "क्या आप वाकई दो-कारक प्रमाणीकरण को अक्षम करना चाहते हैं?"
       ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
+      ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
       ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
@@ -1997,8 +2284,17 @@
       "Basic, Plus or Visionary subscription required": [
         "बेसिक, प्लस या दूरदर्शी सदस्यता आवश्यक"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "खाता बनाने से पहले आपको उसके लिए पासवर्ड देना और एन्क्रिशन चाबी बनाना पड़ेगा।"
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "खाता सक्षम करने से पहले आपको नए पते के लिए पासवर्ड देना और एन्क्रिशन चाबी बनाना पड़ेगा।"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "नए सत्यापन कोड का अनुरोध करने से पहले, अपना स्पैम फ़ोल्डर जांचें और जांचें कि ${ strong } सही पता है।"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "इससे पहले कि आप अपने नए पते से ईमेल भेजना और प्राप्त करना शुरू कर सकें, आपको उनके लिए एन्क्रिप्शन कुंजी बनाने की आवश्यकता है।"
       ],
       "Billed every 12 months": [
         "बिल हर 12 महीने पे"
@@ -2039,6 +2335,15 @@
       "Country code": [
         "देश कोड"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "एक नया खाता बनाएं और यूज़र के साथ ईमेल पता और पासवर्ड शेयर करें।"
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "अन्य लोगों के लिए ईमेल पते बनाएं, व्यवसाय, स्कूल या समूह के लिए ${ MAIL_APP_NAME } प्रबंधित करें। अपने संगठन का नाम और कस्टम डोमेन (उदा. @aapkicompany.in) जोड़कर प्रारंभ करें। "
+      ],
       "Creating your account": [
         "आपका खाता बन रहा है"
       ],
@@ -2051,8 +2356,17 @@
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "इस पासवर्ड को न भूलें। अगर आप इसे भूल जाते है, तो आप साइन-इन या अपने मैसेज को डिक्रिप्ट नहीं कर पाएंगे।"
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } एप्लिकेशन में या ${ VPN_APP_NAME } डैशबोर्ड पर OpenVPN / IKEv2 क्रेडेंशियल का उपयोग न करें। ${ learnMore }"
+      ],
+      "Done": [
+        "हो गया"
       ],
       "Done! We sent a code to ${ destination }.": [
         "किया हुआ! हमने ${ destination } पर एक कोड भेजा है।"
@@ -2092,6 +2406,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "वह कोड दर्ज करें जो ${ email } को भेजा गया था। यदि आपको अपने इनबॉक्स में संदेश नहीं मिल रहा है, तो कृपया अपना स्पैम फ़ोल्डर देखें।"
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "व्यवस्थापक विशेषाधिकार बहाल करने के लिए संगठन पासवर्ड दर्ज करें। ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
@@ -2140,6 +2457,9 @@
       ],
       "here": [
         "यहां"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
       ],
       "If it’s not right for you, we’ll refund you.": [
         "अगर ये आपके लिए सही नहीं, तो हम आपको पूरे पैसे वापस कर देंगे।"
@@ -2228,8 +2548,20 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
       ],
+      "Member": [
+        "सदस्य"
+      ],
       "MM/YY": [
         "महीना/साल"
+      ],
+      "more": [
+        "और"
+      ],
+      "Multi-user support not enabled.": [
+        "बहु-उपयोगकर्ता समर्थन सक्षम नहीं है।"
+      ],
+      "No addresses exist": [
+        "कोई पता मौजूद नहीं है"
       ],
       "No payment is required at this time.": [
         "इस समय कोई भुगतान आवश्यक नहीं है।"
@@ -2239,9 +2571,6 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "आपका उपकरण नहीं है? साइन इन करने के लिए एक निजी ब्राउज़िंग विंडो का उपयोग करें और हो जाने पर इसे बंद कर दें। ${ learnMore }"
-      ],
-      "Number of users": [
-        "यूज़र का नंबर"
       ],
       "of": [
         "का"
@@ -2255,6 +2584,15 @@
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
+      "Organization keys activated": [
+        "संगठन कुंजियाँ सक्रिय की गईं"
+      ],
+      "Organization keys restored": [
+        "संगठन की कुंजी बहाल"
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "आपके संगठन में अन्य व्यवस्थापक मौजूद हैं, आप उनके लिए नया पासवर्ड संचार करने के लिए जिम्मेदार हैं।"
+      ],
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
       ],
@@ -2264,14 +2602,31 @@
       "Plan upgrade required": [
         "योजना के उन्नयन की आवश्यकता"
       ],
+      "Please add a password for the user on row": [
+        "रो पे जो यूज़र है उसके लिए कृपया पासवर्ड जोड़ें",
+        "रो पे जो यूज़र है उनके लिए कृपया पासवर्ड जोड़ें"
+      ],
+      "Please add an email address for the user on row": [
+        "जो यूज़र रो पे है उनके लिए कृपया एक ईमेल पता जोड़ें",
+        "जो यूज़र रो पे है उनके लिए कृपया ईमेल पते जोड़ें"
+      ],
       "Please authenticate your card in the verification tab.": [
         "सत्यापन टैब में कृपया अपना कार्ड सत्यापित करें।"
       ],
       "Please authenticate your payment in the verification tab.": [
         "सत्यापन टैब में कृपया अपना भुगतान सत्यापित करें।"
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "अपने फाइल में गड़बड़ ढुंढें, या ज़्यादा जानकारी के लिए हमारे सहायता टीम से संपर्क करें।"
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "कृपया अपना फाइन देखें, या ${ csvTemplateButton } आज़माकर देखें"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "कृपया अपने खाते से संबद्ध 12-शब्द पुनर्प्राप्ति वाक्यांश दर्ज करें।"
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "कृपया ध्यान दें कि यदि आप इस पते को हटाते हैं, तो आप इस पते का उपयोग करके ईमेल भेज या प्राप्त नहीं कर पाएंगे।"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "कृपया ध्यान दें कि कन्फर्म बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रह जाएंगे।"
@@ -2306,6 +2661,9 @@
       "Protected by Swiss privacy laws": [
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
       ],
+      "Queued": [
+        "कतार में"
+      ],
       "read our two-factor authentication guide first": [
         "पहले हमारे दो-फैक्टर सत्यापन गाइड को पढ़े"
       ],
@@ -2323,6 +2681,9 @@
       ],
       "Revoke certificate ${ name }": [
         "${ name } प्रमाणपत्र रद्द करें"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "अपना पासवर्ड कहीं सुरक्षित रखें। यह पुष्टि करने के लिए कि आपने अपना पासवर्ड सही टाइप किया है, आइकन पर क्लिक करें।"
       ],
       "Scan QR code instead": [
         "इसके बजाय QR कोड स्कैन करें"
@@ -2358,6 +2719,18 @@
         "कदम ${ step }",
         "कदम ${ step }"
       ],
+      "Storage allocated to other users in this organisation": [
+        "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
+      ],
+      "Storage allocated to this user": [
+        "इस यूज़र को दिया गया स्टोरेज"
+      ],
+      "Storage for users": [
+        "यूज़र के लिए स्टोरेज"
+      ],
+      "Storage used by this user": [
+        "इस यूज़र का स्टोरेज इस्तेमाल"
+      ],
       "support team": [
         "टीम का समर्थन"
       ],
@@ -2366,6 +2739,24 @@
       ],
       "Thank you": [
         "शुक्रिया"
+      ],
+      "The following address is invalid.": [
+        "ये पता अमान्य है।",
+        "ये पते अमान्य है।"
+      ],
+      "The following address is unavailable.": [
+        "ये पता उपलब्ध नहीं।",
+        "ये पतें उपलब्ध नहीं।"
+      ],
+      "The following address was not created.": [
+        "ये पता बनाया नहीं गया।",
+        "ये पते बनाए नहीं गए।"
+      ],
+      "The format of your CSV file is incorrect.": [
+        "आपके CSV फाइल का फॉर्मेट गलत हैं।"
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
       ],
       "The securest way to browse, stream, and be online.": [
         "ब्राउज़ करने, स्ट्रीम करने और ऑनलाइन रहने का सबसे सुरक्षित तरीका।"
@@ -2388,11 +2779,20 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "यह आपके डिवाइस के आधार पर कुछ सेकंड या कुछ मिनट ले सकता है"
       ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "यह आपकी वर्तमान सशुल्क सदस्यता को रद्द कर देगा और आपके द्वारा जमा किए गए किसी भी लॉयल्टी लाभ को खो देंगे। आपकी सदस्यता की शेष राशि खाता क्रेडिट के रूप में वापस कर दी जाएगी।"
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "यह आपके संगठन के लिए एक एन्क्रिप्शन कुंजी बनाएगा। 4096-बिट कुंजियाँ केवल उच्च प्रदर्शन कंप्यूटर पर काम करती हैं, अधिकांश उपयोगकर्ताओं के लिए, हम 2048-बिट कुंजियों का उपयोग करने की सलाह देते हैं।"
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉपअप ब्लॉकर इस्तेमाल करते है, तो जारी रखने के लिए कृपया उसे अक्षम कर दे।"
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "यह डेटा और इस उपयोगकर्ता से जुड़े सभी ईमेल पतों को स्थायी रूप से हटा देगा।"
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "यह आपके खाते और उसके सभी डेटा को स्थायी रूप से हटा देगा। आप इस खाते को फिर से सक्रिय नहीं कर पाएंगे."
@@ -2402,6 +2802,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "यह आपको किसी भी सक्रिय सत्र से साइन आउट कर देगा और 2-कारक प्रमाणीकरण को अक्षम कर देगा।"
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } को जारी रखने के लिए"
@@ -2532,6 +2935,9 @@
       "Why?": [
         "क्यों?"
       ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "सक्रियण के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे या वैकल्पिक सत्यापन विधि का उपयोग करना चाहेंगे?"
       ],
@@ -2543,6 +2949,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "${ memberAddress } खाते से साइनइन हो।"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "आप लेखांकन उद्देश्यों के लिए अपने चालान को अनुकूलित और डाउनलोड कर सकते हैं।"
@@ -2563,6 +2972,9 @@
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।",
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।"
       ],
+      "You can now access and manage the account as an administrator.": [
+        "आप अब खाते को एक एडमिन की तरह एक्सेस कर और संभाल सकते है।"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "एक वक्त में सिर्फ एक बातचीत खोला जा सकता है। नई बातचीत शुरू करने से पहले पिछले बातचीत बंद कर लें।"
       ],
@@ -2577,6 +2989,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "आप अपने बैंक की वेबसाइट पे रीडायरेक्ट हो सकते हो।"
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "आपको अपने संगठन व्यवस्थापक द्वारा आपको प्रदान किए गए बैकअप संगठन कुंजी पासवर्ड के साथ अपने संगठन की निजी कुंजी को सक्रिय करना होगा।"
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } उपयोगकर्ताओं, पतों और कस्टम डोमेन को अक्षम या निकालना होगा।"
@@ -2625,6 +3040,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "आपके संगठन का पासवर्ड अन्य उपयोगकर्ताओं के साथ साझा किया जा सकता है जिन्हें आप प्रशासनिक विशेषाधिकार देना चाहते हैं। यदि आप अपने खाते तक पहुँच खोते हैं तो यह आपके संगठन तक पहुँच प्राप्त करने के लिए एक आपातकालीन पुनर्प्राप्ति कोड भी है। कृपया इस पासवर्ड को सहेजें और इसे सुरक्षित रखें।"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "आपके भुगतान विवरण TLS एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं।"
@@ -2710,6 +3128,14 @@
         "सदस्यता"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-बिट (लेगेसी सॉफ़्टवेयर के साथ धीमी, लेकिन बढ़ी हुई संगतता)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (सबसे तेज़, सबसे आधुनिक)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } यूज़रनाम"
@@ -2723,6 +3149,23 @@
       "${ n } month": [
         "${ n } महीना",
         "${ n } महीने"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } दिन",
+        "${ nbDay } दिन"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
+      ],
+      "Account storage": [
+        "खाता संग्रहण"
+      ],
+      "Address": [
+        "पता"
+      ],
+      "Addresses": [
+        "पतों"
       ],
       "Allow recovery by email": [
         "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
@@ -2790,6 +3233,9 @@
       "Confirm new password": [
         "नए पासवर्ड की पुष्टि करें"
       ],
+      "Confirm organization password": [
+        "संगठन पासवर्ड की पुष्टि करें"
+      ],
       "Confirm password": [
         "पासवर्ड की पुष्टि करें"
       ],
@@ -2807,6 +3253,9 @@
       ],
       "Country": [
         "देश"
+      ],
+      "Create password": [
+        "पासवर्ड बनाएं"
       ],
       "Credits used": [
         "क्रेडिट का इस्तेमाल किया"
@@ -2838,6 +3287,9 @@
       "Do you have any suggestions for our team?": [
         "क्या आपके पास हमारी टीम के लिए कोई सुझाव है?"
       ],
+      "Email": [
+        "ईमेल"
+      ],
       "Email address": [
         "ई-मेल पता"
       ],
@@ -2868,6 +3320,9 @@
       "Key": [
         "चाबी"
       ],
+      "Key strength": [
+        "प्रमुख ताकत"
+      ],
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
       ],
@@ -2879,6 +3334,9 @@
       ],
       "Moderate NAT": [
         "मध्यम एनएटी"
+      ],
+      "Name": [
+        "नाम"
       ],
       "Name on card": [
         "कार्ड पर नाम"
@@ -2897,6 +3355,9 @@
       ],
       "New mailbox password": [
         "नया मेलबॉक्स पासवर्ड"
+      ],
+      "New organization password": [
+        "नया संगठन पासवर्ड"
       ],
       "New password": [
         "नया पासवर्ड"
@@ -2921,6 +3382,12 @@
       ],
       "Optional": [
         "वैकल्पिक"
+      ],
+      "Organization name": [
+        "संगठन का नाम"
+      ],
+      "Organization password": [
+        "संगठन का पासवर्ड"
       ],
       "Other amount": [
         "दूसरा रकम"
@@ -2979,6 +3446,9 @@
       "Two-password mode": [
         "दो-पासवर्ड मोड"
       ],
+      "User": [
+        "यूज़र"
+      ],
       "User's new password": [
         "उपयोगकर्ता का नया पासवर्ड"
       ],
@@ -3010,6 +3480,17 @@
     "label": {
       "Recovery phone number": [
         "पुनर्प्राप्ति फ़ोन नंबर"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "व्यवस्थापक"
+      ],
+      "Private": [
+        "निजी"
+      ],
+      "VPN connections": [
+        "वीपीएन कनेक्शन"
       ]
     },
     "Label for news": {
@@ -3100,6 +3581,9 @@
       "Upgrade account": [
         "खाते को अपग्रेड करें"
       ],
+      "Upgrade your plan": [
+        "अपना प्लान अपग्रेड करें"
+      ],
       "View guide": [
         "गाइड देखें"
       ],
@@ -3122,6 +3606,23 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "बातचीत और दूसरे प्रीमियम सुविधाओं के लिए अपग्रेड करें, या फिर अपनी समस्या रिपोर्ट करने के लिए हमारा मुफ्त सपोर्ट फॉर्म इस्तेमाल करें।"
+      ]
+    },
+    "Member action": {
+      "Delete": [
+        "मिटाए"
+      ],
+      "Edit": [
+        "बदलाव करें"
+      ],
+      "Remove": [
+        "हटाएं"
+      ],
+      "Revoke sessions": [
+        "सत्र निरस्त करें"
+      ],
+      "Sign in": [
+        "साइनइन करें"
       ]
     },
     "Message": {
@@ -3168,6 +3669,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "मेरा ${ currentPlanName } खाता रखें"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: action": {
@@ -3279,6 +3783,9 @@
       "Advanced sharing security": [
         "एडवांस शेयर करते हुए सुरक्षा"
       ],
+      "Auto-delete spam and trashed messages": [
+        "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
+      ],
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
       ],
@@ -3348,6 +3855,9 @@
       "GDPR data processing agreement": [
         "जीडीपीआर डाटा प्रोसेस समझोता"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
+      ],
       "High-speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
@@ -3394,6 +3904,12 @@
       ],
       "Router support": [
         "राउटर सपोर्ट"
+      ],
+      "Schedule messages at any time": [
+        "संदेश कभी भी शेड्यूल करें"
+      ],
+      "Search message content": [
+        "संदेश कंटेंट खोजें"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -3455,6 +3971,9 @@
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } स्टोरेज तक"
       ],
+      "Up to 15 email addresses": [
+        "15 ईमेल पते तक"
+      ],
       "User credential management": [
         "यूज़र प्रमाण मैनेजमेंट"
       ],
@@ -3468,6 +3987,14 @@
         "तिजोरी और चीज़ शेयर करना (जल्द आ रहा है)"
       ]
     },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } के SimpleLogin से असीमित नकलीनाम लें"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "मदद"
@@ -3479,6 +4006,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } आपको ईमेल पते बनाने और उप-यूज़र के खाते संभालने देता हैं। परिवारों और संगठनों के लिए अच्छा।"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
@@ -3718,6 +4248,11 @@
         "आपके पास एक से ज़्यादा एडमिन है। सारे एडमिन यूज़र को जोड़ और संभाल सकते है लेकिन बिल के ऊपर नियंत्रण सिर्फ मुख्य एडमिन के पास है।"
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "सारे ${ BRAND_NAME } for Business प्लान के साथ मौजूद"
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
@@ -3733,6 +4268,12 @@
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "एक अक्षम पता डिफॉल्ट नहीं हो सकता"
+      ],
+      "An external address cannot be default": [
+        "एक बाहरी पता डिफॉल्ट नहीं हो सकता"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 क्रेडेंशियल फिर से जनरेट किए गए"
       ]
@@ -3774,6 +4315,35 @@
         "स्टैंडर्ड सर्वर कॉन्फ़िगरेशन"
       ]
     },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } और यूज़र जोड़ने के लिए, या जगह खाली करने के लिए कुछ यूज़र खाते हटाएं।"
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } और खाते लेने के लिए, या कुछ यूज़र से वीपीएन एक्सेस हटाएं।"
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } करें और पते लेने के लिए, या जगह खाली करने के लिए कुछ पते हटाएं।"
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } करें और स्टोरेज लेने के लिए, या जगह खाली करने के लिए कुछ स्टोरेज हटाएं।"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "आपके प्लान में ${ availableAddresses } और पता है।",
+        "आपके प्लान में ${ availableAddresses } और पते है।"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।",
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाता है।",
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाते है।"
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "क्रेडिट/डेबिट कार्ड"
@@ -3788,6 +4358,15 @@
       ],
       "Add gift code": [
         "उपहार कोड जोड़ें"
+      ],
+      "Address": [
+        "पता"
+      ],
+      "Choose a name": [
+        "एक नाम चुनें"
+      ],
+      "Choose display name": [
+        "प्रदर्शन नाम चुनें"
       ],
       "Confirm": [
         "पुष्टि करें"
@@ -3809,6 +4388,15 @@
       ],
       "Please describe the problem and include any error messages": [
         "कृपया समस्या का वर्णन करें और किसी भी त्रुटि संदेश शामिल करें"
+      ],
+      "Search": [
+        "खोजें"
+      ],
+      "Search for a user or address": [
+        "यूज़र या पता खोजें"
+      ],
+      "Search users": [
+        "उपयोगकर्ताओं को खोजें"
       ],
       "Select": [
         "चुनें"
@@ -3837,6 +4425,11 @@
     "Price": {
       "Free": [
         "मुफ्त"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "निजी"
       ]
     },
     "Recovery Email": {
@@ -3903,6 +4496,36 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "संगतता"
+      ],
+      "State of the art": [
+        "अत्याधुनिक"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "संगठन की चाबियाँ बदलना"
+      ],
+      "Changing organization password": [
+        "संगठन का पासवर्ड बदलना"
+      ],
+      "Creating new users": [
+        "नए उपयोगकर्ता बन रहे है"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
+      ],
+      "Reading emails of non-private users": [
+        "गैर-निजी उपयोगकर्ताओं के ईमेल पढ़ना"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "CSV फाइल अपलोड करे"
       ]
     },
     "Signup label": {
@@ -4254,6 +4877,9 @@
       "Account deleted. Signing out...": [
         "खाता मिटाया गया। साइनआउट कर रहे..."
       ],
+      "Address added": [
+        "पता जोड़ा गया"
+      ],
       "Bug reported": [
         "बग की सूचना दी"
       ],
@@ -4281,14 +4907,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "यदि आप एक मान्य पुनर्प्राप्ति ईमेल दर्ज करते हैं तो हम आपको अगले मिनट में आपके उपयोगकर्ता नाम के साथ एक ईमेल भेजेंगे।"
       ],
+      "Invitation sent": [
+        "न्योता भेजा गया"
+      ],
       "Invoice customized": [
         "चालान अनुकूलित"
       ],
       "Invoice paid": [
         "चालान भुगतान किया"
       ],
+      "Keys updated": [
+        "कुंजी अद्यतन की गई"
+      ],
       "Locale updated": [
         "लोकेल अपडेट किया गया"
+      ],
+      "Organization activated": [
+        "संगठन सक्रिय"
       ],
       "Password updated": [
         "पासवर्ड अपडेट किया गया"
@@ -4308,6 +4943,12 @@
       "Preference saved": [
         "वरीयता बचाई गई"
       ],
+      "User created": [
+        "उपयोगकर्ता बनाया गया"
+      ],
+      "User updated": [
+        "यूज़र अपडेट किए गए"
+      ],
       "Verification successful": [
         "सत्यापन सफल रहा"
       ],
@@ -4315,7 +4956,24 @@
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त किया"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "सत्र निरस्त हो गया"
+      ],
+      "User deleted": [
+        "उपयोगकर्ता को हटा दिया गया"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "पता हटा दिया गया"
+      ],
+      "Address disabled": [
+        "पता अक्षम है"
+      ],
+      "Address enabled": [
+        "पता सक्षम है"
+      ],
       "Certificate ${ name } revoked": [
         "${ name } प्रमाणपत्र रद्द किया गया"
       ],
@@ -4327,6 +4985,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "${ serverName } के संरचना फाइल बना रहे"
+      ],
+      "Preference updated": [
+        "पसंद अपडेट किया गया"
       ]
     },
     "Suffix": {
@@ -4363,11 +5024,20 @@
       "Country": [
         "देश"
       ],
+      "Display name": [
+        "प्रदर्शित होने वाला नाम"
+      ],
+      "Email addresses": [
+        "ईमेल पता"
+      ],
       "Name": [
         "नाम"
       ],
       "Status": [
         "स्थिति"
+      ],
+      "Total storage": [
+        "कुल स्टोरेज"
       ]
     },
     "Themes": {
@@ -4412,6 +5082,15 @@
       "Action": [
         "कार्य"
       ],
+      "Activate account and generate keys": [
+        "खाता सक्षम करें और चाबी बनाएं"
+      ],
+      "Activate organization key": [
+        "संगठन की कुंजी सक्रिय करें"
+      ],
+      "Add address": [
+        "पता जोड़े"
+      ],
       "Add credit/debit card": [
         "क्रेडिट / डेबिट कार्ड जोड़ें"
       ],
@@ -4423,6 +5102,9 @@
       ],
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"
+      ],
+      "Allocate storage": [
+        "भंडारण आवंटित करें"
       ],
       "Amount": [
         "रकम"
@@ -4451,8 +5133,17 @@
       "Change mailbox password": [
         "मेलबॉक्स पासवर्ड बदलें"
       ],
+      "Change organization keys": [
+        "संगठन की चाबियाँ बदलें"
+      ],
+      "Change organization name": [
+        "संगठन का नाम बदलें"
+      ],
       "Change password": [
         "पासवर्ड परिवर्तित करें"
+      ],
+      "Change role": [
+        "रोल परिवर्तित करें"
       ],
       "Confirm address": [
         "पते की पुष्टि"
@@ -4465,6 +5156,22 @@
       ],
       "Confirm phone number": [
         "फ़ोन नंबर की पुष्टि करें"
+      ],
+      "Couldn’t create accounts": [
+        "खाते नहीं बना सके"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } यूज़र खाता बनाए",
+        "${ selectedUserIds.length } यूज़र खाते बनाए"
+      ],
+      "Create multiple user accounts": [
+        "कई यूज़र खाते बनाएं"
+      ],
+      "Create user accounts": [
+        "यूज़र खाता बनाएं"
+      ],
+      "Creating user accounts": [
+        "यूज़र खाते बना रहे"
       ],
       "Credits": [
         "आभार"
@@ -4481,11 +5188,20 @@
       "Delete": [
         "मिटाएं"
       ],
+      "Delete ${ email }": [
+        "${ email } हटाएं"
+      ],
       "Delete account": [
         "खाता हटा दो"
       ],
+      "Delete user": [
+        "उपयोगकर्ता को हटाएँ"
+      ],
       "Device connected!": [
         "डिवाइस जुड़ गया।"
+      ],
+      "Disable ${ email }": [
+        "${ email } अक्षम करें"
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
@@ -4505,6 +5221,9 @@
       "Edit display name": [
         "डिस्प्ले नाम बदले"
       ],
+      "Edit user": [
+        "यूजर को संपादित करो"
+      ],
       "Email": [
         "ईमेल"
       ],
@@ -4517,11 +5236,18 @@
       "Error": [
         "गड़बड़"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } यूज़र खाता बनाने में असफल",
+        "${ failedUsers.length } यूज़र खाते बनाने में असफल"
+      ],
       "Find email or username": [
         "ईमेल या उपयोगकर्ता नाम खोजें"
       ],
       "General": [
         "सामान्य"
+      ],
+      "Generate missing keys": [
+        "लापता कुंजी उत्पन्न करें"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus } लें सारे सर्वर एक्सेस करने के लिए"
@@ -4535,6 +5261,9 @@
       "Human verification": [
         "मानव सत्यापन"
       ],
+      "Increase your privacy with more addresses": [
+        "ज़्यादा पतो के साथ अपनी निजता बढ़ाएं"
+      ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
@@ -4546,6 +5275,9 @@
       ],
       "Login password": [
         "लॉग इन पासवर्ड"
+      ],
+      "Multi-user support": [
+        "बहु-उपयोगकर्ता समर्थन"
       ],
       "Network error": [
         "नेटवर्क एरर"
@@ -4567,6 +5299,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN विन्यास फाइल"
+      ],
+      "Organization name": [
+        "संगठन नाम"
       ],
       "Password": [
         "पासवर्ड"
@@ -4607,17 +5342,26 @@
       "Recovery": [
         "स्वास्थ्य लाभ"
       ],
+      "Remove user?": [
+        "यूज़र हटाएं?"
+      ],
       "Report a problem": [
         "समस्या रिपोर्ट करें"
       ],
       "Request new code": [
         "नए कोड का अनुरोध करें"
       ],
+      "Reset organization keys": [
+        "संगठन कुंजी रीसेट करें"
+      ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
       ],
       "Reset password?": [
         "पासवर्ड रीसेट करें?"
+      ],
+      "Restore administrator privileges": [
+        "व्यवस्थापक विशेषाधिकार पुनर्स्थापित करें"
       ],
       "Revoke certificate": [
         "प्रमाणपत्र रद्द करें"
@@ -4627,6 +5371,15 @@
       ],
       "Set new password": [
         "नया पासवर्ड सेट करें"
+      ],
+      "Set organization keys": [
+        "संगठन कुंजी सेट करें"
+      ],
+      "Set organization name": [
+        "संगठन का नाम सेट करें"
+      ],
+      "Set organization password": [
+        "संगठन पासवर्ड सेट करें"
       ],
       "Set up two-factor authentication": [
         "दो-कारक प्रमाणीकरण सेट करें"
@@ -4646,8 +5399,19 @@
       "Sign out": [
         "साइन आउट करें"
       ],
+      "Signed in to member account": [
+        "सदस्य खाते पे साइनइन हुए"
+      ],
       "Status": [
         "स्थिति"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाता बनाया गया",
+        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाते बनाए गए"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाता बनाया गया",
+        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाते बनाए गए"
       ],
       "Switch to one-password mode": [
         "एक-पासवर्ड मोड में स्विच करें"
@@ -4717,6 +5481,20 @@
         "${ MAIL_APP_NAME } चालान"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "पतों"
+      ],
+      "Features": [
+        "विशेषताएं"
+      ],
+      "Name": [
+        "नाम"
+      ],
+      "Role": [
+        "भूमिका"
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
@@ -4731,6 +5509,17 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "व्यवस्थापक"
+      ],
+      "Member": [
+        "सदस्य"
+      ],
+      "Primary admin": [
+        "प्राथमिक व्यवस्थापक"
       ]
     },
     "Validation": {
@@ -4781,6 +5570,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अपने खाते को पुनर्प्राप्त नहीं कर पाएंगे।"
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "इस पते को अक्षम करके, आप इस पते का इस्तेमाल करके ईमेल भेज या ले नहीं पाएंगे और सभी लिंक किए गए ${ BRAND_NAME } प्रोडक्ट भी अक्षम हो जाएंगे। क्या आप पक्का इस पते को अक्षम करना चाहते है?"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "कृपया ध्यान दें कि इस भुगतान विधि को चुनकर, आपके खाते को तुरंत अपग्रेड नहीं किया जा सकता है। भुगतान क्लियर होते ही हम आपके खाते को अपडेट कर देंगे।"
       ],
@@ -4792,6 +5584,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "दुर्भाग्य से, हम इस समय ऑनलाइन नहीं हैं। अपनी समस्या का वर्णन करने के लिए कृपया नीचे दिया गया फ़ॉर्म भरें, और जब हम वापस ऑनलाइन होंगे तो हम इस पर गौर करेंगे और संपर्क में रहेंगे।"
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "गैर-निजी सदस्य को ईमेल पता जोड़ने से पहले आपको ${ activateLink } संगठन कुंजियाँ होनी चाहिए।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"

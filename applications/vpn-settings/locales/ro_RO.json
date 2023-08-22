@@ -8,14 +8,32 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "activate": [
+        "activare"
+      ],
+      "Activate organization key": [
+        "Activare chei organizație"
+      ],
+      "Add address": [
+        "Adăugare adresă"
+      ],
       "Add credit / debit card": [
         "Adăugare card de credit/debit"
       ],
       "Add credits": [
         "Adăugare credite"
       ],
+      "Add domain": [
+        "Adăugare domeniu"
+      ],
+      "Add multiple users": [
+        "Adăugare utilizatori multipli"
+      ],
       "Add PayPal": [
         "Adăugare PayPal"
+      ],
+      "Add user": [
+        "Adăugare utilizator"
       ],
       "Apply": [
         "Aplicare"
@@ -68,6 +86,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue anyway": [
+        "Continuare așa"
+      ],
       "Continue with this password": [
         "Continuare cu această parolă"
       ],
@@ -79,6 +100,15 @@
       ],
       "Create": [
         "Creare"
+      ],
+      "Create Gateway": [
+        "Creare poartă de acces"
+      ],
+      "Create user": [
+        "Creare utilizator"
+      ],
+      "Create users": [
+        "Creare utilizatori"
       ],
       "Current plan": [
         "Plan actual"
@@ -94,6 +124,12 @@
       ],
       "Delete": [
         "Ștergere"
+      ],
+      "Delete Gateway": [
+        "Ștergere poartă de acces"
+      ],
+      "Delete user": [
+        "Ștergere utilizator"
       ],
       "Delete your account": [
         "Ștergere cont"
@@ -125,6 +161,9 @@
       "Download all configurations": [
         "Descărcare toate configurațiile"
       ],
+      "Download our CSV template": [
+        "Descărcare șablon CSV"
+      ],
       "Edit": [
         "Editare"
       ],
@@ -137,11 +176,20 @@
       "Edit email address": [
         "Editare adresa de e-mail"
       ],
+      "Edit Gateway": [
+        "Editare poartă de acces"
+      ],
+      "Edit name": [
+        "Editare nume"
+      ],
       "Edit password": [
         "Editare parolă"
       ],
       "Edit phone number": [
         "Editare număr de telefon"
+      ],
+      "Edit servers": [
+        "Editare servere"
       ],
       "Edit sign-in details": [
         "Editare detalii de conectare"
@@ -149,8 +197,14 @@
       "Edit subscription": [
         "Editare abonament"
       ],
+      "Edit users": [
+        "Editare utilizatori"
+      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
+      ],
+      "Enable multi-user support": [
+        "Activare suport utilizatori multipli"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorare alte planuri ${ BRAND_NAME }"
@@ -169,6 +223,15 @@
       ],
       "Get more": [
         "Obțineți mai mult"
+      ],
+      "Get more addresses": [
+        "Obțineți mai multe adrese"
+      ],
+      "Get more licenses": [
+        "Obținere mai multe licențe"
+      ],
+      "Get more servers": [
+        "Obțineți mai multe servere"
       ],
       "Get the deal": [
         "Obțineți oferta"
@@ -190,6 +253,12 @@
       ],
       "Increase": [
         "Mărire"
+      ],
+      "Invite": [
+        "Invitare"
+      ],
+      "Invite user": [
+        "Invitare utilizator"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Păstrez abonamentul ${ vpnPlanNameShort }"
@@ -248,11 +317,17 @@
       "refresh the page": [
         "Împrospătați pagina"
       ],
+      "Remove": [
+        "Eliminare"
+      ],
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
       "Remove gift code": [
         "Eliminare cod cadou"
+      ],
+      "Rename": [
+        "Redenumire"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -269,11 +344,17 @@
       "Reset credentials": [
         "Resetare acreditări"
       ],
+      "Reset keys": [
+        "Resetare chei"
+      ],
       "Reset password": [
         "Resetare parolă"
       ],
       "Restore": [
         "Restaurare"
+      ],
+      "Restore administrator privileges": [
+        "Restaurare privilegii administrator"
       ],
       "Retry": [
         "Reîncercare"
@@ -290,6 +371,12 @@
       "Save": [
         "Salvare"
       ],
+      "Save address": [
+        "Salvare adresă"
+      ],
+      "Search": [
+        "Căutare"
+      ],
       "Search countries": [
         "Căutare țări"
       ],
@@ -302,8 +389,14 @@
       "Send code": [
         "Trimitere cod"
       ],
+      "Send email reminder": [
+        "Trimitere notificare pe e-mail"
+      ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
+      ],
+      "Send reminder": [
+        "Trimitere notificare"
       ],
       "Set new password": [
         "Setare parolă nouă"
@@ -344,6 +437,9 @@
       "Support": [
         "Asistenţă"
       ],
+      "Switch account": [
+        "Comutare cont"
+      ],
       "Switch or add account": [
         "Schimbare sau adăugare cont"
       ],
@@ -367,6 +463,12 @@
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Upgrade to Business": [
+        "Trecere la Business"
+      ],
+      "Upgrade your plan": [
+        "Modificare plan"
       ],
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
@@ -410,6 +512,9 @@
       "What do I get?": [
         "Ce primesc?"
       ],
+      "Your server will be provisioned in the next days": [
+        "Serverul vă va fi furnizat în următoarele zile."
+      ],
       "Zoom in": [
         "Mărire"
       ],
@@ -436,6 +541,9 @@
         "${ ips } servere",
         "${ ips } de servere"
       ],
+      "${ price } per dedicated server": [
+        "${ price } per server dedicat"
+      ],
       "${ price } per domain": [
         "${ price } per domeniu"
       ],
@@ -446,6 +554,66 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Ștergere"
+      ],
+      "Disable": [
+        "Dezactivare"
+      ],
+      "Disable E2EE mail": [
+        "Dezactivare criptare"
+      ],
+      "Disallow unsigned mail": [
+        "Refuzare mesaje nesemnate"
+      ],
+      "Enable": [
+        "Activare"
+      ],
+      "Enable E2EE mail": [
+        "Activare criptare"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
+      ],
+      "Saving": [
+        "Se salvează"
+      ],
+      "Set as default": [
+        "Setare ca implicită"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Activă"
+      ],
+      "Allow unsigned mail": [
+        "Permitere mesaje nesemnate"
+      ],
+      "Default": [
+        "Implicită"
+      ],
+      "Disabled": [
+        "Dezactivată"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Missing keys": [
+        "Lipsesc cheile"
+      ],
+      "No E2EE mail": [
+        "Mesaj necriptat"
+      ],
+      "Orphan": [
+        "Neasociată"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "administrator"
       ]
     },
     "Alter": {
@@ -567,6 +735,17 @@
         "Total pentru o lună",
         "Total pentru ${ n } luni",
         "Total pentru ${ n } de luni"
+      ]
+    },
+    "Checkout summary": {
+      "month": [
+        "lună"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Users": [
+        "Utilizatori"
       ]
     },
     "Collapsible tooltip": {
@@ -1421,9 +1600,30 @@
         "(prin ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Nu s-au găsit rezultate"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Credite disponibile"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "Șablon CSV"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Eroare pe rândul ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Se pare că fișierului îi lipsește antetul „${ options.fieldName }”."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "S-au detectat erori pe rânduri multiple la importare. Reverificați fișierul CSV."
       ]
     },
     "Cycle": {
@@ -1437,6 +1637,14 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
+      ]
+    },
+    "Description": {
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail și semnul plus"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ]
     },
     "Downgrade account reason": {
@@ -1470,9 +1678,20 @@
         "Ajutaţi-ne să ne îmbunătățim!"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "A2F"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)."
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
       ],
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
@@ -1495,17 +1714,32 @@
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
+      "Error": [
+        "Eroare"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
       ],
+      "Impossible to create the gateway": [
+        "Imposibil de creat poarta de acces."
+      ],
+      "Impossible to edit the gateway": [
+        "Imposibil de editat poarta de acces."
+      ],
+      "Impossible to rename the gateway": [
+        "Imposibil de redenumit poarta de acces."
+      ],
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Parolă mesaje incorectă. Reîncercați."
+      ],
+      "Incorrect password": [
+        "Parolă incorectă"
       ],
       "Invalid ${ name } code": [
         "Cod ${ name } nevalid."
@@ -1528,11 +1762,20 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
+      "Name does not match": [
+        "Numele nu se potrivește."
+      ],
       "Name on card required": [
         "Numele de pe card este obligatoriu."
       ],
       "Not a valid number": [
         "Nu este un număr valid"
+      ],
+      "Organization key is not decrypted": [
+        "Cheia organizației nu este decriptată."
+      ],
+      "Organization key is not decrypted.": [
+        "Cheia organizației nu este decriptată."
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
@@ -1552,6 +1795,15 @@
       "Payments are currently not available, please try again later": [
         "Plățile nu sunt disponibile acum, reîncercați mai târziu."
       ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permisiune refuzată, drepturile de administrator au fost restricționate."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
+      ],
       "Please generate keys before you try to change your password": [
         "Generați cheile înainte de a vă schimba parola."
       ],
@@ -1560,6 +1812,12 @@
       ],
       "Please set a recovery phone number first": [
         "Setați mai întâi un număr de telefon de recuperare"
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Treceți la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
       "Process aborted": [
         "Proces abandonat"
@@ -1594,6 +1852,12 @@
       "The minimum payment we accept is ${ price }": [
         "Plata minimă acceptată este de ${ price }."
       ],
+      "The organization key must be activated first": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
+      "The organization key must be activated first.": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -1627,8 +1891,34 @@
       "You have no invoices.": [
         "Nu aveți facturi."
       ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Trebuie să activați cheile organizației. Fără activare nu veți mai putea crea utilizatori noi, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "A apărut o eroare la citirea fișierului „${ formattedFilename }”. Fișierul nu are formatul corect."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului „${ formattedFilename }”. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu a fost selectat niciun fișier."
+      ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Încărcați un fișier CSV cu ${ MAX_NUMBER_OF_USER_ROWS } conturi de utilizator sau mai puține."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Fișierul „${ formattedFilename }” este gol."
       ]
     },
     "Error message": {
@@ -1660,7 +1950,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 TB spațiu total"
+        "3 TiB spațiu total"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
@@ -1674,11 +1964,23 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Creare utilizator"
+      ],
       "Decline invitation": [
         "Refuzare invitație"
       ],
       "Got it": [
         "Am înțeles"
+      ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Invitare utilizator ${ BRAND_NAME } existent"
+      ],
+      "Invite member to your family": [
+        "Invitare membru în familie"
+      ],
+      "Set up family group": [
+        "Setare grup de familie"
       ],
       "Switch plans": [
         "Schimbare plan"
@@ -1740,8 +2042,14 @@
       "Manage user accounts": [
         "Gestionare conturi utilizatori"
       ],
+      "Only 10 accepted invitations are allowed in a 6-month period.": [
+        "Sunt permise doar 10 invitații acceptate într-o perioadă de 6 luni."
+      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de grup."
+      ],
+      "Pending": [
+        "În așteptare"
       ],
       "Pending invitation": [
         "Invitație în așteptare"
@@ -1773,8 +2081,17 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of 10 accepted invitations in 6 months.": [
+        "Ați atins limita de 10 invitații acceptate în 6 luni."
+      ],
+      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
+        "Ați atins limita a 10 invitații acceptate în 6 luni. Butonul va deveni activ atunci când puteți invita utilizatori suplimentari."
+      ],
       "You have successfully joined the Family plan": [
         "V-ați alăturat cu succes planului de familie."
+      ],
+      "You need to configure a custom domain before creating a new user.": [
+        "Trebuie să configurați un domeniu personal înainte de a crea un utilizator."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
@@ -1803,8 +2120,40 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "* O singură încercare gratuită per utilizator."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Creați și gestionați membrii familiei și alocați-le spațiu de stocare partajat între${ DRIVE_APP_NAME } și ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
+      ],
       "Online privacy, for your whole family": [
         "Confidențialitate online, pentru întreaga familie"
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "Pentru a crea un utilizator este necesar un domeniu personal configurat."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Puteți crește sau reduce spațiul de stocare pentru acest utilizator."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Adăugați, eliminați și faceți modificări în conturile de utilizator din grupul de familie."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Adăugați, eliminați și faceți modificări în conturile de utilizator din organizație."
       ]
     },
     "familyOffer_2023:Label": {
@@ -1813,6 +2162,9 @@
       ],
       "Enter organization name to confirm": [
         "Introduceți numele organizației pentru confirmare"
+      ],
+      "Family name": [
+        "Nume familie"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -1823,15 +2175,44 @@
         "Aceasta va elimina toate funcțiile ${ BRAND_NAME } premium pentru fiecare membru al familiei."
       ]
     },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } a fost eliminat din ${ organization.Name }."
+      ],
+      "An error occurred, please try again": [
+        "A apărut o eroare. Reîncercați mai târziu."
+      ],
+      "Member updated": [
+        "Membru actualizat"
+      ]
+    },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Adăugare utilizator la contul ${ PLAN_NAMES.visionary2022 }"
+      ],
+      "Change family name": [
+        "Schimbare nume familie"
+      ],
       "Delete family group?": [
         "Ștergeți grupul de familie?"
       ],
       "Delete organization?": [
         "Ștergeți organizația?"
       ],
+      "Edit user storage": [
+        "Editare spațiu utilizator"
+      ],
+      "Family name": [
+        "Nume familie"
+      ],
       "Introducing ${ planName }": [
         "Vă prezentăm ${ planName }"
+      ],
+      "Invite a user": [
+        "Invitare utilizator"
+      ],
+      "Set family name": [
+        "Setare nume familie"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -1846,8 +2227,18 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "O conexiune VPN",
+        "${ MaxVPN } conexiuni VPN",
+        "${ MaxVPN } de conexiuni VPN"
+      ],
       "Access to all countries": [
         "Acces la toate ţările"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Adăugare (${ numberOfAddedServers })",
+        "Adăugare (${ numberOfAddedServers })",
+        "Adăugare (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Conectare cu un dispozitiv",
@@ -1959,13 +2350,13 @@
         "de baiți"
       ],
       "GB": [
-        "GB"
+        "GiB"
       ],
       "KB": [
-        "KB"
+        "KiB"
       ],
       "MB": [
-        "MB"
+        "MiB"
       ]
     },
     "file size format, long": {
@@ -2069,11 +2460,49 @@
       "Checkout": [
         "Finalizare"
       ],
+      "Country": [
+        "Țara"
+      ],
       "Create your account": [
         "Creați-vă contul"
       ],
+      "IP address": [
+        "Adresa IP"
+      ],
+      "Members": [
+        "Membri"
+      ],
+      "Name": [
+        "Nume"
+      ],
       "Select your pricing plan": [
         "Selectați planul de prețuri"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Solicitare server"
+      ],
+      "Servers": [
+        "Servere"
+      ],
+      "Status": [
+        "Stare"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Status": [
+        "Stare"
+      ],
+      "Username": [
+        "Nume utilizator"
       ]
     },
     "Human verification method": {
@@ -2119,8 +2548,18 @@
         "${ number } servere",
         "${ number } de servere"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
+        "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
+        "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
       "${ storage } storage": [
         "Stocare ${ storage }"
+      ],
+      "${ userFound } user found": [
+        "S-a găsit ${ userFound } utilizator",
+        "S-au găsit ${ userFound } utilizatori",
+        "S-au găsit ${ userFound } de utilizatori"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
@@ -2160,20 +2599,55 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "active": [
+        "activă"
+      ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adaugă o nouă protecție contului. Va trebui să folosiți verificarea cu doi factori de fiecare dată când vă conectați."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Adăugare server (${ availableAddedCount } disponibil)",
+        "Adăugare server (${ availableAddedCount } disponibile)",
+        "Adăugare server (${ availableAddedCount } disponibile)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Se adaugă ${ addedServerCount } server poartă de acces",
+        "Se adaugă ${ addedServerCount } servere poartă de acces",
+        "Se adaugă ${ addedServerCount } de servere poartă de acces"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Se adaugă serverul poartă de acces: ${ serverNumber } / ${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Opțiuni adiționale"
+      ],
+      "address": [
+        "adresă",
+        "adrese",
+        "de adrese"
+      ],
+      "Admin account allocation": [
+        "Alocare cont admin"
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "Allocated": [
+        "Alocat"
+      ],
+      "Already allocated": [
+        "Deja alocat"
+      ],
+      "Already used": [
+        "Deja folosit"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2190,14 +2664,26 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Orice metodă de ${ twoFa } din cont va fi dezactivată."
       ],
+      "Are you sure you want to delete this address?": [
+        "Sigur doriți ștergerea acestei adrese?"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sigur doriți dezactivarea autentificării cu doi factori?"
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Solicitați administratorului organizației să seteze porți de acces."
+      ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Awaiting transaction": [
+        "Se așteaptă tranzacția"
       ],
       "Balance from your previous subscription": [
         "Balanța de la abonamentul anterior"
@@ -2208,8 +2694,17 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Asigurați-vă că ați copiat parola și stocați-o undeva în siguranță."
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Înainte de a crea această adresă trebuie să furnizați o parolă și să creați o cheie de criptare pentru ea."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Înainte de a activa acest cont trebuie să furnizați o parolă și să creați chei de criptare pentru adresele noi."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
       ],
       "Billed every 12 months": [
         "Facturat la fiecare 12 luni"
@@ -2250,6 +2745,23 @@
       "Country code": [
         "Cod țară"
       ],
+      "Create a new account and share the email address and password with the user.": [
+        "Creați un cont nou și partajați adresa de e-mail și parola cu utilizatorul."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
+      ],
+      "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
+        "Creați adrese de e-mail pentru alte persoane, gestionați ${ MAIL_APP_NAME } pentru o afacere, o școală sau un grup. Începeți prin adăugarea numelui organizației și a domeniului personal (de ex. @numecompanie.com)."
+      ],
+      "Create your first Gateway": [
+        "Creați prima poartă de acces"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
+        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
+        "Creare server poartă de acces: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Creare cont"
       ],
@@ -2265,14 +2777,31 @@
       "Dedicated servers": [
         "Servere dedicate"
       ],
+      "dedicated servers": [
+        "servere dedicate"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Se șterge ${ deletedServerCount } server poartă de acces",
+        "Se șterg ${ deletedServerCount } servere poartă de acces",
+        "Se șterg ${ deletedServerCount } de servere poartă de acces"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea conecta sau decripta mesajele."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Nu utilizați acreditările OpenVPN / IKEv2 în aplicația ${ VPN_APP_NAME } sau în panoul general al ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "Done": [
+        "Gata"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
@@ -2298,6 +2827,9 @@
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
       ],
+      "Enhance your network security": [
+        "Îmbunătățiți-vă securitatea rețelei"
+      ],
       "Enter key manually instead": [
         "Introduceți cheia manual"
       ],
@@ -2312,6 +2844,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Introduceți codul de recuperare trimis la ${ email }. Dacă nu găsiți mesajul în mesajele primite, verificați în folderul cu mesaje nedorite."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -2340,6 +2875,9 @@
       "expires ${ expirationDate }": [
         "expiră ${ expirationDate }"
       ],
+      "Fill in user details": [
+        "Completați detaliile utilizatorului"
+      ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
@@ -2355,6 +2893,9 @@
       "Free up some space or contact your administrator.": [
         "Eliberați ceva spațiu sau contactați administratorul."
       ],
+      "Gateways": [
+        "Porți de acces"
+      ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
       ],
@@ -2366,6 +2907,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Dacă nu vi se potrivește, vă vom rambursa."
@@ -2409,6 +2953,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
+      "inactive": [
+        "inactivă"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
       ],
@@ -2429,6 +2976,9 @@
       ],
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
+      ],
+      "Lean more about gateways": [
+        "Aflați mai multe despre porțile de acces"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Aflați cum să vă conectați la ${ VPN_APP_NAME } cu aplicații VPN terțe."
@@ -2460,8 +3010,38 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Member": [
+        "Membru"
+      ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "more": [
+        "mai mult"
+      ],
+      "Multi-user support not enabled.": [
+        "Suportul pentru utilizatori multipli nu e activat."
+      ],
+      "Must be between 3 and 20 characters long.": [
+        "Trebuie să aibă între 3 și 20 de caractere."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Trebuie să conțină numai litere, cifre și liniuțe (-)."
+      ],
+      "Must not contain spaces.": [
+        "Nu trebuie să conțină spații."
+      ],
+      "Must start with a letter.": [
+        "Trebuie să înceapă cu o literă."
+      ],
+      "No addresses exist": [
+        "Nu există adrese"
+      ],
+      "No gateways": [
+        "Nu există porți de acces"
+      ],
+      "No Gateways yet": [
+        "Încă nu există porți de acces"
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
@@ -2472,8 +3052,11 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nu este dispozitivul dvs.? Folosiți o fereastră de navigare privată pentru a vă conecta și închideți-o când ați terminat. ${ learnMore }"
       ],
-      "Number of users": [
-        "Număr de utilizatori"
+      "Number of dedicated servers in the organization": [
+        "Număr servere dedicate din organizație"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Numărul de servere dedicate pe care încercați să le atribuiți (${ addedCount }) este mai mare decât cel încă disponibil în planul actual (${ remainingCount }), deoarece dețineți ${ ownedCount } și utilizați deja ${ usedCount }."
       ],
       "of": [
         "din"
@@ -2487,11 +3070,26 @@
       "Open source": [
         "Cod sursă public"
       ],
+      "Optional": [
+        "Opțional"
+      ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
       ],
+      "Organization keys activated": [
+        "Chei organizație activate"
+      ],
+      "Organization keys restored": [
+        "Chei organizație restaurate"
+      ],
       "Organization size": [
         "Mărime organizație"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Organizați-vă serverele dedicate în porți de acces și decideți ce membri le pot accesa."
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -2502,14 +3100,33 @@
       "Plan upgrade required": [
         "Trebuie trecut la alt plan"
       ],
+      "Please add a password for the user on row": [
+        "Adăugați o parolă pentru utilizator pe rândul",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile"
+      ],
+      "Please add an email address for the user on row": [
+        "Adăugați o adresă de e-mail pentru utilizator pe rândul",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentificați cardul în fila de verificare."
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentificați plata în fila de verificare."
       ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Verificați fișierul cu erori sau contactați suportul pentru clienți pentru mai multe informații."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Verificați fișierul sau încercați să folosiți ${ csvTemplateButton }."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Dacă ștergeți această adresă, nu veți mai putea trimite sau primi mesaje folosind această adresă."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
@@ -2544,6 +3161,9 @@
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
       ],
+      "Queued": [
+        "În așteptare"
+      ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
       ],
@@ -2556,11 +3176,17 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
+      ],
       "Restore": [
         "Restaurare"
       ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Păstrați-vă parola într-un loc sigur. Faceți clic pe pictogramă pentru a confirma că ați scris parola corect."
       ],
       "Saving your password": [
         "Se salvează parola"
@@ -2573,6 +3199,9 @@
       ],
       "Securing your account": [
         "Securizare cont"
+      ],
+      "Send emails to encourage your members to protect their accounts with 2FA.": [
+        "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
       ],
       "Server is currently down": [
         "Serverul este în prezent inactiv"
@@ -2589,16 +3218,34 @@
       "Setting up your Drive": [
         "Se configurează Drive"
       ],
+      "Setting up your organization": [
+        "Setare organizație"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
+      ],
       "Step ${ step }": [
         "Pasul ${ step }",
         "Pasul ${ step }",
         "Pasul ${ step }"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "Spațiu alocat altor utilizatori din această organizație"
+      ],
+      "Storage allocated to this user": [
+        "Spațiu alocat acestui utilizator"
+      ],
+      "Storage for users": [
+        "Spațiu pentru utilizatori"
+      ],
+      "Storage used by this user": [
+        "Spațiu folosit de utilizator"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
@@ -2617,6 +3264,30 @@
       ],
       "Thank you": [
         "Vă mulțumim"
+      ],
+      "The following address is invalid.": [
+        "Următoarea adresă nu este validă.",
+        "Următoarele adrese nu sunt valide.",
+        "Următoarele adrese nu sunt valide."
+      ],
+      "The following address is unavailable.": [
+        "Următoarea adresă nu este disponibilă.",
+        "Următoarele adrese nu sunt disponibile.",
+        "Următoarele adrese nu sunt disponibile."
+      ],
+      "The following address was not created.": [
+        "Următoarea adresă nu a fost creată.",
+        "Următoarele adrese nu au fost create.",
+        "Următoarele adrese nu au fost create."
+      ],
+      "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
+        "Următorii membri vor primi un mesaj pe e-mail solicitându-le să-și activeze autentificarea cu doi factori cât mai curând."
+      ],
+      "The format of your CSV file is incorrect.": [
+        "Formatul fișierului CSV nu este corect."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Numele va fi vizibil utilizatorilor când sunt conectați."
       ],
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
@@ -2639,14 +3310,26 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Aceasta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Aceasta va crea o cheie de criptare pentru organizație. Cheile de 4096 de biți funcționează doar pe calculatoare foarte performante. Pentru majoritatea utilizatorilor recomandăm utilizarea cheilor de 2048 de biți."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Acest lucru va şterge definitiv datele şi toate adresele de e-mail asociate cu acest utilizator."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Această operațiune va șterge permanent contul și toate datele sale. Nu veți mai putea reactiva acest cont."
@@ -2668,6 +3351,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "Pentru a confirma, introduceţi numele utilizatorului pe care doriţi să-l ştergeţi."
       ],
       "to continue to ${ product }": [
         "pentru a continua cu ${ product }"
@@ -2732,11 +3418,20 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Încărcați fișierul CSV completat pentru a crea conturi"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Folosiți tipuri diferite de adrese de e-mail și pseudonime oferite de ${ BRAND_NAME }."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
+      ],
+      "Users": [
+        "Utilizatori"
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -2758,6 +3453,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "Want servers in other countries?": [
+        "Doriți servere în alte țări?"
       ],
       "Warning:": [
         "Avertizare:"
@@ -2782,6 +3480,12 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vă recomandăm să aveți cel puțin două servere pentru a beneficia de redundanță."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Vă recomandăm să aveți mai multe servere în locuri diferite pentru a oferi redundanță."
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Se recomandă notificarea membrilor organizației și solicitarea ca aceștia să-ți activeze autentificarea cu doi factori înainte de forțarea utilizării acesteia."
       ],
       "We recommend using your recovery phrase instead.": [
         "Vă recomandăm să folosiți în schimb fraza de recuperare."
@@ -2816,8 +3520,17 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
       ],
+      "Whole organization": [
+        "Întreaga organizație"
+      ],
       "Why?": [
         "De ce?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Cu un plan Business sau Enterprise, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla ce utilizatori le pot accesa."
+      ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -2831,8 +3544,24 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } de servere dedicate disponibile."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile."
+      ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Este conectat contul ${ memberAddress }."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Vă puteți personaliza și descărca facturile pentru contabilitate."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -2854,6 +3583,9 @@
         "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea.",
         "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea."
       ],
+      "You can now access and manage the account as an administrator.": [
+        "Acum puteți accesa și gestiona contul ca administrator."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta nouă."
       ],
@@ -2863,11 +3595,19 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Nu puteți utiliza acreditările OpenVPN / IKEv2 pentru a vă conecta la aplicațiile ${ VPN_APP_NAME } sau la panoul general al ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Aveți ${ availableCount } server dedicat disponibil.",
+        "Aveți ${ availableCount } servere dedicate disponibile.",
+        "Aveți ${ availableCount } de servere dedicate disponibile."
+      ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
       ],
       "You may be redirected to your bank’s website.": [
         "Ar putea fi necesară redirecționarea spre pagina web a băncii."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
@@ -2928,6 +3668,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detaliile de plată vă sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -3021,6 +3764,14 @@
         "Abonament"
       ]
     },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096 de biți (Mai lent, dar cu o compatibilitate sporită cu programele vechi)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Cel mai rapid, cel mai modern)"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -3035,6 +3786,25 @@
         "O lună",
         "${ n } luni",
         "${ n } de luni"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } zi",
+        "${ nbDay } zile",
+        "${ nbDay } de zile"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } din ${ MaxAddresses } adresă de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } adrese de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } de e-mail adrese"
+      ],
+      "Account storage": [
+        "Spațiu cont"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Addresses": [
+        "Adrese"
       ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
@@ -3064,7 +3834,7 @@
         "Blocare doar malware"
       ],
       "Block malware, ads and trackers": [
-        "Blocare malware, reclame și monitorizare"
+        "Blocare malware, reclame și instrumente de urmărire"
       ],
       "Browser": [
         "Navigator"
@@ -3114,6 +3884,9 @@
       "Confirm new password": [
         "Confirmare parola nouă"
       ],
+      "Confirm organization password": [
+        "Confirmare parolă organizație"
+      ],
       "Confirm password": [
         "Confirmare parolă"
       ],
@@ -3131,6 +3904,9 @@
       ],
       "Country": [
         "Țara"
+      ],
+      "Create password": [
+        "Creare parolă"
       ],
       "Credits used": [
         "Credite folosite"
@@ -3162,6 +3938,9 @@
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -3180,6 +3959,9 @@
       "Expires": [
         "Expirare"
       ],
+      "Gateway name": [
+        "Nume poartă de acces"
+      ],
       "Gift code": [
         "Cod cadou"
       ],
@@ -3195,6 +3977,9 @@
       "Key": [
         "Cheie"
       ],
+      "Key strength": [
+        "Putere cheie"
+      ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
@@ -3206,6 +3991,9 @@
       ],
       "Moderate NAT": [
         "NAT moderat"
+      ],
+      "Name": [
+        "Nume"
       ],
       "Name on card": [
         "Titular card"
@@ -3224,6 +4012,9 @@
       ],
       "New mailbox password": [
         "Parola nouă mesaje"
+      ],
+      "New organization password": [
+        "Parolă nouă organizație"
       ],
       "New password": [
         "Parola nouă"
@@ -3248,6 +4039,15 @@
       ],
       "Optional": [
         "Opțional"
+      ],
+      "Organization name": [
+        "Nume organizație"
+      ],
+      "Organization password": [
+        "Parolă organizație"
+      ],
+      "Organization size": [
+        "Mărime organizație"
       ],
       "Other amount": [
         "Altă sumă"
@@ -3288,6 +4088,12 @@
       "Recovery phrase": [
         "Fraza de recuperare"
       ],
+      "Require 2FA for administrators": [
+        "Solicitare A2F pentru administratori"
+      ],
+      "Require 2FA for everyone": [
+        "Solicitare A2F pentru toți"
+      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -3299,6 +4105,9 @@
       ],
       "Select your country": [
         "Selectaţi ţara"
+      ],
+      "Select your plan": [
+        "Selectați planul"
       ],
       "Start date": [
         "Dată început"
@@ -3314,6 +4123,9 @@
       ],
       "Two-password mode": [
         "Mod cu două parole"
+      ],
+      "User": [
+        "Utilizator"
       ],
       "User's new password": [
         "Parolă nouă utilizator"
@@ -3349,6 +4161,17 @@
     "label": {
       "Recovery phone number": [
         "Numărul de telefon pentru recuperare"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Administrator"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "VPN connections": [
+        "Conexiuni VPN"
       ]
     },
     "Label for news": {
@@ -3406,6 +4229,9 @@
       "Common sign up issues": [
         "Probleme comune de înregistrare"
       ],
+      "Contact us": [
+        "Contactați-ne"
+      ],
       "Create account": [
         "Creare cont"
       ],
@@ -3457,6 +4283,9 @@
       "Upgrade account": [
         "Modificare cont"
       ],
+      "Upgrade your plan": [
+        "Treceți la alt plan"
+      ],
       "View guide": [
         "Consultare ghid"
       ],
@@ -3481,7 +4310,34 @@
         "Modificare plan"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Modernizați-vă planul pentru a debloca asistența live și alte funcții premium sau folosiți formularul de suport gratuit pentru a raporta o problemă."
+        "Modificați-vă planul pentru a debloca asistența live și alte funcții premium sau folosiți formularul de suport gratuit pentru a raporta o problemă."
+      ]
+    },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
+      ]
+    },
+    "Member action": {
+      "Change password": [
+        "Schimbare parolă"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Edit": [
+        "Editare"
+      ],
+      "Remove": [
+        "Eliminare"
+      ],
+      "Revoke sessions": [
+        "Anulare sesiuni"
+      ],
+      "Sign in": [
+        "Autentificare"
       ]
     },
     "Message": {
@@ -3556,6 +4412,9 @@
         "Păstrez contul ${ currentPlanName } $"
       ],
       "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
         "Modificare"
       ]
     },
@@ -3682,6 +4541,9 @@
       "1 user": [
         "Un utilizator"
       ],
+      "24/7 support": [
+        "Asistență 24/7"
+      ],
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
       ],
@@ -3691,8 +4553,14 @@
       "Admin console": [
         "Consolă administrare"
       ],
+      "Advanced network security": [
+        "Securitate avansată a rețelei"
+      ],
       "Advanced sharing security": [
         "Securitate avansată partajări"
+      ],
+      "Auto-delete spam and trashed messages": [
+        "Ștergere automată mesaje nedorite și din gunoi"
       ],
       "Auto-reply": [
         "Răspuns automat"
@@ -3711,6 +4579,9 @@
       ],
       "Centralized billing": [
         "Facturare centralizată"
+      ],
+      "Centralized settings and billings": [
+        "Setări și facturare centralizate"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -3732,6 +4603,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitorizarea divulgării datelor (în curând)"
+      ],
+      "Dedicated servers and IP": [
+        "Servere și IP dedicate"
       ],
       "DNS leak prevention": [
         "Prevenire breșe DNS"
@@ -3774,6 +4648,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisii în flux de mare viteză"
@@ -3830,6 +4707,12 @@
       "Router support": [
         "Suport ruter"
       ],
+      "Schedule messages at any time": [
+        "Programați mesajele oricând"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
+      ],
       "Secure Core servers": [
         "Servere Secure Core"
       ],
@@ -3852,6 +4735,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
+      ],
+      "Start protecting your organization": [
+        "Începeți să vă protejați organizația"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Începeți să vă protejați online în doi pași simpli"
@@ -3904,6 +4790,12 @@
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
+      "Up to 15 email addresses": [
+        "Până la 15 adrese de e-mail"
+      ],
+      "Up to 3 TB of storage": [
+        "Până la 3 TiB spațiu de stocare"
+      ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
       ],
@@ -3917,6 +4809,20 @@
         "Partajarea seifurilor și a datelor (în curând)"
       ]
     },
+    "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
+      ],
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "Utilizați propria adresă de domeniu pentru e-mail, de ex., nume@adresapersonala.com."
+      ]
+    },
     "new_plans: heading": {
       "Support": [
         "Asistență"
@@ -3928,6 +4834,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } vă permite să creați adrese de e-mail și să gestionați conturi pentru utilizatori secundari. Ideal pentru familii și organizații."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
@@ -4019,6 +4928,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Făcând clic pe «Plătire», sunteți de acord cu ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "termenii și condițiile"
       ]
@@ -4090,6 +5002,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese / aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
       ],
@@ -4122,6 +5037,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Asemenea unui folder, seiful este o modalitate convenabilă de a vă organiza datele. Partajarea seifurilor cu alte persoane este în lucru."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Blocați resursele companiei de pe internetul public și faceți-le accesibile numai prin porțile de acces private."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Vă gestionați abonamentul, inclusiv personalizarea planului. Metodele de plată acceptate sunt cardul de credit, PayPal, criptomonedele și transferul bancar."
@@ -4232,18 +5150,41 @@
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Inclus cu toate planurile ${ BRAND_NAME } for Business."
+      ]
+    },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Asistență 24/7"
+      ],
       "Access advanced VPN features": [
         "Accesați caracteristici VPN avansate"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
       ],
+      "AES 256-bit VPN encryption": [
+        "Criptare VPN AES 256-biți"
+      ],
+      "Auto-connect": [
+        "Conectare automată"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Măriți spațiul de stocare la ${ bundleStorage } per utilizator"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
+      ],
+      "Browser extension": [
+        "Extensie de navigator"
+      ],
+      "Censorship circumvention": [
+        "Ocolire cenzură"
+      ],
+      "Central control panel": [
+        "Panou de control central"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
@@ -4252,14 +5193,53 @@
         "Creați maxim ${ n } calendar",
         "Creați până la ${ n } calendare",
         "Creați până la ${ n } de calendare"
+      ],
+      "Dedicated Account manager": [
+        "Manager dedicat al contului"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Locuri de servere dedicate în America de Nord și Europa"
+      ],
+      "Multi-platform support": [
+        "Suport platforme multiple"
+      ],
+      "Private gateways": [
+        "Porți de acces private"
+      ],
+      "Require 2FA": [
+        "Necesită A2F"
       ]
     },
     "Notification": {
+      "A disabled address cannot be default": [
+        "O adresă dezactivată nu poate fi implicită."
+      ],
+      "An external address cannot be default": [
+        "O adresă externă nu poate fi implicită."
+      ],
       "Invalid code": [
         "Cod nevalid"
       ],
+      "IP Address copied to clipboard": [
+        "Adresa IP a fost copiată în memorie"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credențiale OpenVPN/IKE2 regenerate"
+      ],
+      "Reminder has been sent": [
+        "Notificările au fost trimise"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "Autentificarea cu doi factori este obligatorie pentru administratori."
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "Autentificarea cu doi factori este obligatorie pentru toți membrii."
+      ],
+      "Two-factor authentication is not required anymore": [
+        "Autentificarea cu doi factori nu mai este obligatorie."
       ]
     },
     "Onboarding": {
@@ -4298,8 +5278,46 @@
       "Secure Core configs": [
         "Configurări Secure Core"
       ],
+      "Select who can access...": [
+        "Selectați cine are acces..."
+      ],
       "Standard server configs": [
         "Configurări standard de server"
+      ],
+      "The whole organization": [
+        "Întreaga organizație"
+      ]
+    },
+    "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } pentru a adăuga mai mulți utilizatori sau eliminați câteva conturi de utilizator pentru a elibera spațiul."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } pentru a obține mai multe conturi sau eliminați accesul la VPN pentru unii utilizatori."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } pentru a obține mai multe adrese sau eliminați câteva adrese pentru a elibera spațiu."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați din spațiul alocat pentru a elibera spațiu."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Planul actual mai include maxim o adresă.",
+        "Planul actual mai include maxim ${ availableAddresses } adrese.",
+        "Planul actual mai include maxim ${ availableAddresses } de adrese."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Planul actual include maxim un utilizator în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } utilizatori în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } de utilizatori în organizație."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Planul actual mai include maxim un cont VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } conturi VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } de conturi VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
     },
     "pass_signup_2023: Action": {
@@ -4341,6 +5359,15 @@
       "Add gift code": [
         "Adăugare cod cadou"
       ],
+      "Address": [
+        "Adresa"
+      ],
+      "Choose a name": [
+        "Alegeți un nume"
+      ],
+      "Choose display name": [
+        "Alegere nume afișat"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -4365,6 +5392,15 @@
       "Please select the main reason": [
         "Selectați motivul principal"
       ],
+      "Search": [
+        "Căutare"
+      ],
+      "Search for a user or address": [
+        "Căutați utilizator sau adresă"
+      ],
+      "Search users": [
+        "Căutare utilizatori"
+      ],
       "Select": [
         "Selectare"
       ],
@@ -4375,6 +5411,11 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Adăugare nume (sau nume companie) și adresă pe facturi"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
+        "Selectați numărul de IP-uri de inclus în plan. Fiecare IP suplimentar costă ${ price }. Dacă aveți nevoie de mai mult de ${ maxIPs } adrese IP, ${ contactHref } echipa noastră de vânzări."
       ]
     },
     "plan customizer, users": {
@@ -4393,6 +5434,11 @@
     "Price": {
       "Free": [
         "Gratuit"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "privat"
       ]
     },
     "Recovery Email": {
@@ -4459,6 +5505,47 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Compatibilitate"
+      ],
+      "State of the art": [
+        "De ultimă oră"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Schimbarea cheilor organizației"
+      ],
+      "Changing organization password": [
+        "Schimbarea parolei organizației"
+      ],
+      "Creating new users": [
+        "Crearea utilizatorilor"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Datorită modificării parolei, drepturile de administrare a organizației v-au fost restricționate. Următoarele acțiuni nu mai sunt permise:"
+      ],
+      "Reading emails of non-private users": [
+        "Citirea mesajelor utilizatorilor non-privați"
+      ]
+    },
+    "Role": {
+      "Admin": [
+        "Administrator"
+      ],
+      "Primary admin": [
+        "Administrator principal"
+      ],
+      "User": [
+        "Utilizator"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Încărcați un fișier CSV"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4530,7 +5617,7 @@
         "${ storageSize } spațiu total"
       ],
       "3 TB": [
-        "3 TB"
+        "3 TiB"
       ],
       "6 users": [
         "6 utilizatori"
@@ -4920,6 +6007,9 @@
       "Account deleted. Signing out...": [
         "Cont șters. Se deconectează..."
       ],
+      "Address added": [
+        "Adresă adăugată"
+      ],
       "Bug reported": [
         "Eroare raportată"
       ],
@@ -4947,14 +6037,23 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Dacă ați introdus un număr de telefon de recuperare valid veți primi un SMS cu numele de utilizator în curând."
       ],
+      "Invitation sent": [
+        "Invitația a fost trimisă."
+      ],
       "Invoice customized": [
         "Factură personalizată"
       ],
       "Invoice paid": [
         "Factură plătită"
       ],
+      "Keys updated": [
+        "Chei actualizate"
+      ],
       "Locale updated": [
         "Limbă actualizată"
+      ],
+      "Organization activated": [
+        "Organizație activată"
       ],
       "Password updated": [
         "Parolă actualizată"
@@ -4974,6 +6073,12 @@
       "Preference saved": [
         "Preferințe salvate"
       ],
+      "User created": [
+        "Utilizator creat"
+      ],
+      "User updated": [
+        "Utilizator actualizat"
+      ],
       "Verification successful": [
         "Verificare reușită"
       ],
@@ -4984,7 +6089,24 @@
         "V-ați dezabonat cu succes"
       ]
     },
+    "Success message": {
+      "Sessions revoked": [
+        "Sesiuni anulate"
+      ],
+      "User deleted": [
+        "Utilizator șters"
+      ]
+    },
     "Success notification": {
+      "Address deleted": [
+        "Adresă ștearsă"
+      ],
+      "Address disabled": [
+        "Adresă dezactivată"
+      ],
+      "Address enabled": [
+        "Adresă activată"
+      ],
       "Certificate ${ name } revoked": [
         "Cerificatul ${ name } a fost anulat."
       ],
@@ -4996,6 +6118,9 @@
       ],
       "Creating config file for ${ serverName }": [
         "Se crează fișierul de configurare pentru ${ serverName }."
+      ],
+      "Preference updated": [
+        "Preferințe actualizate"
       ]
     },
     "Suffix": {
@@ -5096,11 +6221,32 @@
       "Country": [
         "Țara"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "Adresa de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
       "Name": [
         "Nume"
       ],
+      "Password": [
+        "Parola"
+      ],
+      "Role": [
+        "Rol"
+      ],
       "Status": [
         "Stare"
+      ],
+      "Total storage": [
+        "Spațiu total"
       ]
     },
     "Themes": {
@@ -5148,6 +6294,15 @@
       "Action": [
         "Acțiune"
       ],
+      "Activate account and generate keys": [
+        "Activare cont și generare chei"
+      ],
+      "Activate organization key": [
+        "Activare chei organizație"
+      ],
+      "Add address": [
+        "Adăugare adresă"
+      ],
       "Add credit/debit card": [
         "Adăugare card de credit/debit"
       ],
@@ -5157,8 +6312,23 @@
       "Add invoice details": [
         "Adăugare detalii factură"
       ],
+      "Add new user": [
+        "Adăugare utilizator"
+      ],
       "Add PayPal payment method": [
         "Adăugare PayPal ca metodă de plată"
+      ],
+      "Add servers": [
+        "Adăugare servere"
+      ],
+      "Add user accounts": [
+        "Adăugare conturi utilizatori"
+      ],
+      "Add users": [
+        "Adăugare utilizatori"
+      ],
+      "Allocate storage": [
+        "Alocare spațiu"
       ],
       "Amount": [
         "Suma"
@@ -5171,6 +6341,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
+      ],
+      "Authentication security": [
+        "Securitate autentificare"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -5193,8 +6366,17 @@
       "Change mailbox password": [
         "Schimbare parolă mesaje"
       ],
+      "Change organization keys": [
+        "Schimbare chei organizație"
+      ],
+      "Change organization name": [
+        "Schimbare nume organizație"
+      ],
       "Change password": [
         "Schimbare parolă"
+      ],
+      "Change role": [
+        "Schimbare rol"
       ],
       "Confirm address": [
         "Confirmare adresă"
@@ -5211,11 +6393,43 @@
       "Contact us": [
         "Contactați-ne"
       ],
+      "Couldn’t create accounts": [
+        "Nu s-au putut crea conturi"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Creare un utilizator",
+        "Creare ${ selectedUserIds.length } utilizatori",
+        "Creare ${ selectedUserIds.length } de utilizatori"
+      ],
+      "Create a new Gateway": [
+        "Creare poartă de acces"
+      ],
+      "Create a new gateway": [
+        "Creare poartă de acces"
+      ],
+      "Create Gateway": [
+        "Creare poartă de acces"
+      ],
+      "Create multiple user accounts": [
+        "Creare conturi multiple de utilizatori"
+      ],
+      "Create user accounts": [
+        "Creare conturi de utilizator"
+      ],
+      "Creating user accounts": [
+        "Se creează conturile de utilizator"
+      ],
       "Credits": [
         "Credite"
       ],
       "Currency": [
         "Monedă"
+      ],
+      "Custom selection of users": [
+        "Selectare utilizatori preferați"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Personalizați-vă numărul adreselor IP din plan"
       ],
       "Customize your plan": [
         "Personalizare plan"
@@ -5229,11 +6443,23 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete ${ email }": [
+        "Ștergere ${ email }"
+      ],
       "Delete account": [
         "Ștergere cont"
       ],
+      "Delete user": [
+        "Ștergere utilizator"
+      ],
+      "Delete user?": [
+        "Ștergere utilizator?"
+      ],
       "Device connected!": [
         "Dispozitiv conectat!"
+      ],
+      "Disable ${ email }": [
+        "Dezactivare ${ email }"
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
@@ -5253,6 +6479,24 @@
       "Edit display name": [
         "Editare nume afișat"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Editare poartă de acces ${ currentName }"
+      ],
+      "Edit servers": [
+        "Editare servere"
+      ],
+      "Edit the list of servers of the gateway": [
+        "Editare lista de servere a porții de acces"
+      ],
+      "Edit user": [
+        "Editare utilizator"
+      ],
+      "Edit users": [
+        "Editare utilizatori"
+      ],
+      "Edit who can access the gateway": [
+        "Editare cine poate accesa poarta de acces"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5265,11 +6509,25 @@
       "Error": [
         "Eroare"
       ],
+      "Every member of the organization can access": [
+        "Orice membru din organizație are acces"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nu s-a putut crea un cont de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } conturi de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } de conturi de utilizator."
+      ],
       "Find email or username": [
         "Căutare e-mail sau utilizator"
       ],
+      "Gateways": [
+        "Porți de acces"
+      ],
       "General": [
         "Generale"
+      ],
+      "Generate missing keys": [
+        "Generare chei lipsă"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obțineți ${ vpnPlus } pentru a accesa toate serverele"
@@ -5283,6 +6541,9 @@
       "Human verification": [
         "Verificare persoană"
       ],
+      "Increase your privacy with more addresses": [
+        "Măriți-vă intimitatea cu adrese mai multe"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
@@ -5294,6 +6555,9 @@
       ],
       "Login password": [
         "Parolă conectare"
+      ],
+      "Multi-user support": [
+        "Suport utilizatori multipli"
       ],
       "Network error": [
         "Eroare de rețea"
@@ -5318,6 +6582,9 @@
       ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
+      ],
+      "Organization name": [
+        "Nume organizație"
       ],
       "Password": [
         "Parola"
@@ -5358,6 +6625,12 @@
       "Recovery": [
         "Recuperare"
       ],
+      "Remove user?": [
+        "Eliminare utilizator?"
+      ],
+      "Rename the gateway": [
+        "Redenumire poartă de acces"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -5367,11 +6640,17 @@
       "Request sent": [
         "Solicitare trimisă"
       ],
+      "Reset organization keys": [
+        "Resetare chei organizație"
+      ],
       "Reset password": [
         "Resetare parolă"
       ],
       "Reset password?": [
         "Resetare parolă?"
+      ],
+      "Restore administrator privileges": [
+        "Restaurare privilegii administrator"
       ],
       "Revoke certificate": [
         "Anulare certificat"
@@ -5379,8 +6658,20 @@
       "Select a plan": [
         "Selectare plan"
       ],
+      "Send email reminders?": [
+        "Trimiteți notificări pe e-mail?"
+      ],
       "Set new password": [
         "Setare parolă nouă"
+      ],
+      "Set organization keys": [
+        "Setare chei organizație"
+      ],
+      "Set organization name": [
+        "Setare nume organizație"
+      ],
+      "Set organization password": [
+        "Setare parolă organizație"
       ],
       "Set up two-factor authentication": [
         "Setare autentificare cu doi factori"
@@ -5391,6 +6682,9 @@
       "Settings": [
         "Setări"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Setați servere dedicate trecând la panul Business"
+      ],
       "Sign in": [
         "Autentificare"
       ],
@@ -5400,11 +6694,24 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Signed in to member account": [
+        "Conectat în cont de membru"
+      ],
       "Status": [
         "Stare"
       ],
       "Subscription": [
         "Abonament"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } conturi de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } de conturi de utilizator"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } conturi",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } de conturi"
       ],
       "Summary": [
         "Sumar"
@@ -5421,6 +6728,12 @@
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
+      "Two-factor authentication enforcement": [
+        "Obligare autentificare cu doi factori"
+      ],
+      "Two-factor authentication reminders": [
+        "Notificări autentificare cu doi factori"
+      ],
       "Type": [
         "Tip"
       ],
@@ -5432,6 +6745,12 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Îmbunătățiți-vă protecția rețelei cu servere dedicate"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Încărcare fișier CSV pentru a crea conturi multiple"
+      ],
+      "Users": [
+        "Utilizatori"
       ],
       "Verification failed": [
         "Verificarea a eșuat"
@@ -5480,6 +6799,23 @@
         "Factura ${ MAIL_APP_NAME }"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Adrese"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Features": [
+        "Funcții"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Role": [
+        "Rol"
+      ]
+    },
     "Title subscription": {
       "Actions": [
         "Acțiuni"
@@ -5492,6 +6828,9 @@
       ],
       "Plan": [
         "Plan"
+      ],
+      "Servers": [
+        "Servere"
       ],
       "Start date": [
         "Dată început"
@@ -5510,11 +6849,17 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Administratorii pot face modificări abonamentului, pot gestiona conturile de utilizator și parolele și pot acorda privilegii de administrator altor utilizatori."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
+      ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Membrii care nu folosesc A2F vor primi un mesaj pe e-mail solicitându-le să o activeze cât mai curând."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
@@ -5542,6 +6887,17 @@
     "upsell panel": {
       "Recommended": [
         "Recomandat"
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Administrator"
+      ],
+      "Member": [
+        "Membru"
+      ],
+      "Primary admin": [
+        "Administrator principal"
       ]
     },
     "Validation": {
@@ -5681,6 +7037,9 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ștergând acest număr de telefon, nu veți mai putea să vă recuperați contul."
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Dezactivând această adresă, nu veți mai putea primi și trimite mesaje folosind această adresă și toate produsele conectate la ${ BRAND_NAME } vor fi dezactivate. Sigur doriți să o dezactivați?"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
@@ -5692,6 +7051,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "Trebuie să ${ activateLink } chei organizație înainte de a adăuga o adresă de e-mail unui membru non-privat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
