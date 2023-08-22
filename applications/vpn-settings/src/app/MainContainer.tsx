@@ -29,6 +29,7 @@ import {
     PlansSection,
     PrivateAppContainer,
     PrivateHeader,
+    PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
     SettingsListItem,
@@ -83,7 +84,7 @@ const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 const MainContainer = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [organization] = useOrganization();
+    const [organization, loadingOrganization] = useOrganization();
     const [tagsArray, setTagsArray] = useState<string[]>([]);
     const [userSettings] = useUserSettings();
     const history = useHistory();
@@ -300,9 +301,17 @@ const MainContainer = () => {
                                     </PrivateMainSettingsArea>
                                 </Route>
                             )}
-                            <Redirect
-                                to={getIsSectionAvailable(routes.dashboard) ? routes.dashboard.to : routes.downloads.to}
-                            />
+                            {loadingSubscription || loadingOrganization ? (
+                                <PrivateMainAreaLoading />
+                            ) : (
+                                <Redirect
+                                    to={
+                                        getIsSectionAvailable(routes.dashboard)
+                                            ? routes.dashboard.to
+                                            : routes.downloads.to
+                                    }
+                                />
+                            )}
                         </Switch>
                         {showChat.render && canEnableChat ? (
                             <LiveChatZendesk
