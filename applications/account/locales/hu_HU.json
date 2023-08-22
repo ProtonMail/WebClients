@@ -105,7 +105,7 @@
         "Igazítás"
       ],
       "Allow": [
-        "Engedélyez"
+        "Engedélyezés"
       ],
       "Apply": [
         "Alkalmazás"
@@ -185,11 +185,14 @@
       "Contact support": [
         "Kapcsolatfelvétel"
       ],
+      "Contact us": [
+        "Lépj velünk kapcsolatba"
+      ],
       "Continue": [
         "Tovább"
       ],
       "Continue anyway": [
-        "Mindenképpen folytassa"
+        "Folytatás mindenképp"
       ],
       "Continue import": [
         "Importálás folytatása"
@@ -489,7 +492,7 @@
         "Megtartás"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
-        "Folytassa a ${ vpnPlanNameShort } előfizetésemet"
+        "A ${ vpnPlanNameShort } előfizetés megtartása"
       ],
       "label emails as": [
         "címke hozzáadása:"
@@ -564,7 +567,7 @@
         "Fizetés"
       ],
       "Pay ${ price } now": [
-        "Fizessen ${ price } összeget"
+        "${ price } kifizetése"
       ],
       "Preview": [
         "Előnézet"
@@ -625,6 +628,9 @@
       ],
       "Remove this notification": [
         "Emlékeztető törlése"
+      ],
+      "Rename": [
+        "Átnevezés"
       ],
       "Report a problem": [
         "Probléma jelentése"
@@ -1401,11 +1407,6 @@
       ],
       "Week": [
         "Hét"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Mind"
       ]
     },
     "Checkout row": {
@@ -2827,7 +2828,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+        "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -3126,7 +3127,7 @@
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "status page": [
-        "állapot lap"
+        "állapotjelző oldalunkat"
       ],
       "Tab closed": [
         "Fül bezárva"
@@ -3309,6 +3310,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "Missing FN property": [
+        "FN tulajdon hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -5143,7 +5147,7 @@
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Ha törli, az Ön ${ vpnPlanName } előfizetése nem lesz megújítva amikor az lejár, ${ expiryDate } napján."
+        "Ha törli, az Ön ${ vpnPlanName } előfizetése nem lesz megújítva amikor lejár: ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
@@ -5395,9 +5399,6 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nem saját eszköze? Használjon privát ablakot a bejelentkezéshez és zárja be amikor készen van. ${ learnMore }"
-      ],
-      "Number of users": [
-        "Felhasználók száma"
       ],
       "of": [
         "/"
@@ -5753,9 +5754,6 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Ez néhány másodpercet vagy néhány percet is igénybe vehet"
-      ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Akár 15 percig is eltarthat. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ez egy 12 szóból álló jelmondat, amelynek kértük öntől a beállítását."
@@ -8786,6 +8784,9 @@
       "Ask each time": [
         "Mindig kérdezze"
       ],
+      "Auto": [
+        "Automatikus"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatikus (${ defaultDay })"
       ],
@@ -8993,9 +8994,6 @@
       ],
       "Confirm": [
         "Jóváhagyás"
-      ],
-      "Confirm password": [
-        "Jelszó megerősítése"
       ],
       "E.g., ": [
         "Pl., "
@@ -10002,7 +10000,7 @@
     },
     "summer2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+        "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
     "summer2023:Footer": {
@@ -10199,9 +10197,6 @@
       ],
       "Add to spam list": [
         "Hozzáadás a levélszemét listához"
-      ],
-      "Add user": [
-        "Felhasználó hozzáadása"
       ],
       "Address verification": [
         "Cím ellenőrzése"
