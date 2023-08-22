@@ -952,6 +952,9 @@
       "Show preview": [
         "Visa förhandsgranskning"
       ],
+      "Show side panel": [
+        "Visa sidopanel"
+      ],
       "Sign in": [
         "Logga in"
       ],
@@ -6135,16 +6138,16 @@
         "Flytta åt höger/expandera"
       ],
       "Move to Archive": [
-        "Flytta till Arkiv"
+        "Flytta till arkiv"
       ],
       "Move to Inbox": [
-        "Flytta till Inkorg"
+        "Flytta till inkorg"
       ],
       "Move to Spam": [
-        "Flytta till Skräppost"
+        "Flytta till skräppost"
       ],
       "Move to Trash": [
-        "Flytta till Papperskorg"
+        "Flytta till papperskorg"
       ],
       "Move to...": [
         "Flytta till..."
@@ -8057,9 +8060,6 @@
       "Change setting": [
         "Ändra inställningar"
       ],
-      "Easily access and customize your app experience.": [
-        "Kom enkelt åt och anpassa din appupplevelse."
-      ],
       "Email tracking protection": [
         "E-postspårningsskydd"
       ],
@@ -8068,9 +8068,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "Snabbinställningar"
       ],
       "Schedule send": [
         "Schemalägg sändning"
@@ -9129,8 +9126,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
+      "Hide side panel": [
+        "Dölj sidopanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
+      ],
+      "Show side panel": [
+        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
