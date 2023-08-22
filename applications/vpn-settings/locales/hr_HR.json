@@ -8,14 +8,29 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "activate": [
+        "aktiviraj"
+      ],
+      "Activate organization key": [
+        "Aktivirajte ključ organizacije"
+      ],
+      "Add address": [
+        "Dodajte adresu"
+      ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
       ],
       "Add credits": [
         "Dodaj kredit"
       ],
+      "Add domain": [
+        "Dodaj domenu"
+      ],
       "Add PayPal": [
         "Dodaj PayPal"
+      ],
+      "Add user": [
+        "Dodaj korisnika"
       ],
       "Apply": [
         "Primijeni"
@@ -119,6 +134,9 @@
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
+      "Enable multi-user support": [
+        "Omogući podršku za više korisnika"
+      ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
@@ -176,11 +194,17 @@
       "refresh the page": [
         "osvježi stranicu"
       ],
+      "Remove": [
+        "Ukloni"
+      ],
       "Remove bonuses": [
         "Ukloni bonuse"
       ],
       "Remove gift code": [
         "Ukloni darovni kôd"
+      ],
+      "Rename": [
+        "Preimenuj"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -197,14 +221,26 @@
       "Reset credentials": [
         "Poništi vjerodajnice"
       ],
+      "Reset keys": [
+        "Ponovno postavljanje ključeva"
+      ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
+      ],
+      "Restore administrator privileges": [
+        "Vraćanje administratorskih ovlasti"
       ],
       "Retry": [
         "Pokušaj ponovno"
       ],
       "Save": [
         "Spremi"
+      ],
+      "Save address": [
+        "Spremi adresu"
+      ],
+      "Search": [
+        "Pretraga"
       ],
       "Send code": [
         "Pošalji kôd"
@@ -295,6 +331,37 @@
       ],
       "Zoom out": [
         "Smanji"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Izbriši"
+      ],
+      "Disable": [
+        "Onemogući"
+      ],
+      "Enable": [
+        "Omogući"
+      ],
+      "Generate missing keys": [
+        "Generiraj ključeve koji nedostaju"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Aktivno"
+      ],
+      "Default": [
+        "Zadano"
+      ],
+      "Disabled": [
+        "Onemogućeno"
+      ],
+      "Missing keys": [
+        "Nedostaju ključevi"
+      ],
+      "Orphan": [
+        "Siroče"
       ]
     },
     "Billing cycle option": {
@@ -1001,6 +1068,9 @@
       ]
     },
     "Error": {
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
+      ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
@@ -1016,6 +1086,9 @@
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
+      "Error": [
+        "Pogreška"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
@@ -1027,6 +1100,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
+      ],
+      "Incorrect password": [
+        "Nevažeća lozinka"
       ],
       "Invalid ${ name } code": [
         "Nevažeći ${ name } kôd"
@@ -1052,6 +1128,9 @@
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
+      "Organization key is not decrypted.": [
+        "Organizacijski ključ nije dešifriran."
+      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -1066,6 +1145,15 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Pristup odbijen, administratorske ovlasti su ograničene."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
       "Please set a recovery phone number first": [
         "Prvo postavite broj telefona za oporavak"
@@ -1085,6 +1173,9 @@
       "The minimum amount that can be donated is ${ price }": [
         "Minimalni iznos koji se može donirati je ${ price }"
       ],
+      "The organization key must be activated first.": [
+        "Prvo se mora aktivirati organizacijski ključ."
+      ],
       "This field is required": [
         "Ovo polje je obavezno"
       ],
@@ -1099,6 +1190,20 @@
       ],
       "You have no invoices.": [
         "Nemate faktura."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "Iskoristili ste sve adrese u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novu adresu."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Morate aktivirati ključeve vaše organizacije. Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
       ]
     },
     "Error message": {
@@ -1164,6 +1269,22 @@
         "Usluge"
       ]
     },
+    "Header": {
+      "Name": [
+        "Naziv"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Radnje"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Username": [
+        "Korisničko ime"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-pošta"
@@ -1201,11 +1322,19 @@
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
+      "address": [
+        "adresa",
+        "adrese",
+        "adresa"
+      ],
       "All your changes will be lost.": [
         "Sve vaše promjene će biti izgubljene."
       ],
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
+      ],
+      "Are you sure you want to delete this address?": [
+        "Jeste li sigurni da želite ukloniti ovu adresu?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sigurno želite onemogućiti dvofaktorsku autentikaciju?"
@@ -1213,8 +1342,14 @@
       "Are you sure you want to discard your changes?": [
         "Jeste li sigurni da želite odbaciti vaše promjene?"
       ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Jeste li sigurni da želite ukloniti administrativne ovlasti ovog korisnika?"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus ili Visionary pretplata je potrebna"
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Da biste mogli početi slati i primati e-poštu s vaših novih adresa -pošte, morate za njih stvoriti ključeve za šifriranje."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
@@ -1224,6 +1359,15 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
+      ],
+      "Done": [
+        "Gotovo"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
@@ -1242,6 +1386,9 @@
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Unesite kôd koji je poslan na ${ email }. Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Unesite lozinku organizacije za vraćanje privilegija administratora. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
@@ -1263,6 +1410,9 @@
       ],
       "here": [
         "ovdje"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
@@ -1324,23 +1474,41 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ switchButton }."
       ],
+      "more": [
+        "više"
+      ],
+      "Multi-user support not enabled.": [
+        "Višekorisnička podrška nije omogućena."
+      ],
+      "No addresses exist": [
+        "Ne postoji ni jedna adresa e-pošte"
+      ],
       "No payment is required at this time.": [
         "Trenutno nije potrebno plaćanje."
       ],
       "No results found": [
         "Nema rezultata"
       ],
-      "Number of users": [
-        "Broj korisnika"
-      ],
       "of": [
         "od"
+      ],
+      "Organization keys activated": [
+        "Aktivirani su ključevi organizacije"
+      ],
+      "Organization keys restored": [
+        "Vraćeni su ključevi organizacije"
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
       "Plan upgrade required": [
         "Potrebna je nadogradnja plana"
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
@@ -1356,6 +1524,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
+      ],
+      "Queued": [
+        "Na čekanju"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
@@ -1390,17 +1561,29 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Ovo može potrajati nekoliko sekundi ili nekoliko minuta, ovisno o uređaju"
       ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "Ovaj je korisnik trenutno odgovoran za plaćanja za vašu organizaciju. Demotiranjem ovog člana postat ćete odgovorni za plaćanja za svoju organizaciju."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ovo će otkazati vašu trenutnu pretplatu i izgubit ćete sve privilegije vjernosti koje ste nakupili. Preostali iznos vaše pretplate vratit će se kao kredit na vašem računu."
       ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "Ovo će stvoriti ključ za šifriranje za vašu organizaciju. 4096-bitni ključevi rade samo na računalima s visokim performansama, a za većinu korisnika preporučujemo upotrebu 2048-bitnih ključeva."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše ${ BRAND_NAME } pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "Ovim ćete trajno izbrisati podatke i sve adrese e-pošte povezane s ovim korisnikom."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ovim će te trajno izbrisati vaš račun i sve podatke povezane s njim. Nećete moći ponovno aktivirati ovaj račun."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ovo će zamijeniti vašu privremenu lozinku. Ubuduće će te ga koristiti za pristup vašem ${ BRAND_NAME } računu."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
       ],
       "to continue to ${ toAppName }": [
         "za nastavak u ${ toAppName }"
@@ -1441,6 +1624,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
       ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
       ],
@@ -1452,6 +1638,9 @@
       ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "Morate aktivirati privatni ključ organizacije, pomoću rezervne lozinke ključa organizacije koju vam je dao administrator organizacije."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
@@ -1479,6 +1668,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Lozinka vaše organizacije može se dijeliti s drugim korisnicima kojima želite dati administratorske privilegije. To je i kôd za hitnu obnovu kako biste dobili pristup nad vašoj organizaciji u slučaju da izgubite pristup svom računu. Spremite ovu lozinku i čuvajte je na sigurnom."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaši podaci o plaćanju zaštićeni su TLS enkripcijom i švicarskim zakonima o privatnosti."
@@ -1557,6 +1749,15 @@
       ]
     },
     "Label": {
+      "Account storage": [
+        "Prostor za pohranu računa"
+      ],
+      "Address": [
+        "Adresa"
+      ],
+      "Addresses": [
+        "Adrese"
+      ],
       "Allow recovery by email": [
         "Omogući oporavak putem adrese e-pošte"
       ],
@@ -1602,6 +1803,9 @@
       "Confirm new password": [
         "Potvrdi novu lozinku"
       ],
+      "Confirm organization password": [
+        "Potvrdite organizacijsku lozinku"
+      ],
       "Confirm password": [
         "Potvrdi lozinku"
       ],
@@ -1629,6 +1833,9 @@
       "Display name": [
         "Zaslonski naziv"
       ],
+      "Email": [
+        "E-pošta"
+      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -1650,11 +1857,17 @@
       "Key": [
         "Ključ"
       ],
+      "Key strength": [
+        "Jačina ključa"
+      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
       "Main": [
         "Glavno"
+      ],
+      "Name": [
+        "Naziv"
       ],
       "Name on card": [
         "Ime na kartici"
@@ -1667,6 +1880,9 @@
       ],
       "New mailbox password": [
         "Nova lozinka sandučića e-pošte"
+      ],
+      "New organization password": [
+        "Nova lozinka organizacije"
       ],
       "New password": [
         "Nova lozinka"
@@ -1685,6 +1901,12 @@
       ],
       "Optional": [
         "Neobavezno"
+      ],
+      "Organization name": [
+        "Naziv organizacije"
+      ],
+      "Organization password": [
+        "Lozinka organizacije"
       ],
       "Other amount": [
         "Ostali iznos"
@@ -1716,6 +1938,9 @@
       "Two-password mode": [
         "Način rada s dvije lozinke"
       ],
+      "User": [
+        "Korisnik"
+      ],
       "User's new password": [
         "Nova lozinka za korisnika"
       ],
@@ -1739,6 +1964,11 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ]
+    },
+    "Label for new member": {
+      "Private": [
+        "Privatno"
       ]
     },
     "Label on payment method": {
@@ -1805,6 +2035,20 @@
         "Što je ovo?"
       ]
     },
+    "Member action": {
+      "Delete": [
+        "Izbriši"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Revoke sessions": [
+        "Opozovi sesije"
+      ],
+      "Sign in": [
+        "Prijavite se"
+      ]
+    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
@@ -1816,6 +2060,11 @@
       ],
       "Swiss franc": [
         "Švicarski franak"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: action": {
@@ -1893,6 +2142,15 @@
       "Add gift code": [
         "Dodaj darovni kôd"
       ],
+      "Address": [
+        "Adresa"
+      ],
+      "Choose a name": [
+        "Odaberite naziv"
+      ],
+      "Choose display name": [
+        "Odaberite zaslonski naziv"
+      ],
       "Confirm": [
         "Potvrdi"
       ],
@@ -1914,6 +2172,12 @@
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
+      "Search": [
+        "Pretraga"
+      ],
+      "Search users": [
+        "Pretraživanje korisnika"
+      ],
       "Select": [
         "Odaberi"
       ]
@@ -1926,6 +2190,11 @@
     "Price": {
       "Free": [
         "Besplatno"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "privatno"
       ]
     },
     "Recovery Email": {
@@ -1944,6 +2213,31 @@
     "Recovery Phone": {
       "Cancel": [
         "Poništi"
+      ]
+    },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Kompatibilnost"
+      ],
+      "State of the art": [
+        "Najmodernije"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Mijenjanje organizacijskih ključeva"
+      ],
+      "Changing organization password": [
+        "Mijenanje organizacijske lozinke"
+      ],
+      "Creating new users": [
+        "Stvaranje novog korisnika"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Zbog promjene lozinke, ograničene su ovlasti administratora vaše organizacije. Sljedeće radnje više nisu dopuštene:"
+      ],
+      "Reading emails of non-private users": [
+        "Čitanje e-pošte od korisnika koji nisu privatni"
       ]
     },
     "State": {
@@ -1979,6 +2273,9 @@
       ]
     },
     "Success": {
+      "Address added": [
+        "Adresa je dodana"
+      ],
       "Bug reported": [
         "Problem je prijavljen"
       ],
@@ -2009,8 +2306,14 @@
       "Invoice paid": [
         "Plaćen račun"
       ],
+      "Keys updated": [
+        "Ažurirani su ključevi"
+      ],
       "Locale updated": [
         "Lokalizacija je ažurirana"
+      ],
+      "Organization activated": [
+        "Organizacija je aktivirana"
       ],
       "Password updated": [
         "Lozinka je ažurirana"
@@ -2030,11 +2333,36 @@
       "Preference saved": [
         "Postavke su spremljene"
       ],
+      "User created": [
+        "Korisnik je stvoren"
+      ],
+      "User updated": [
+        "Korisnik je ažuriran"
+      ],
       "Verification successful": [
         "Uspješna provjera"
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
+      ]
+    },
+    "Success message": {
+      "Sessions revoked": [
+        "Sesije su opozvane"
+      ],
+      "User deleted": [
+        "Korisnik je izbrisan"
+      ]
+    },
+    "Success notification": {
+      "Address deleted": [
+        "Adresa je uklonjena"
+      ],
+      "Address disabled": [
+        "Adresa je onemogućena"
+      ],
+      "Address enabled": [
+        "Adresa je omogućena"
       ]
     },
     "TableHeader": {
@@ -2046,6 +2374,12 @@
       ],
       "Country": [
         "Država"
+      ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
+      "Email addresses": [
+        "Adrese e-pošte"
       ],
       "Name": [
         "Naziv"
@@ -2075,6 +2409,12 @@
       "Action": [
         "Radnja"
       ],
+      "Activate organization key": [
+        "Aktivirajte ključ organizacije"
+      ],
+      "Add address": [
+        "Dodaj adresu"
+      ],
       "Add credit/debit card": [
         "Dodaj kreditnu/debitnu karticu"
       ],
@@ -2086,6 +2426,9 @@
       ],
       "Add PayPal payment method": [
         "Dodaj PayPal način plaćanja"
+      ],
+      "Allocate storage": [
+        "Dodijelite prostor za pohranu"
       ],
       "Amount": [
         "Iznos"
@@ -2108,8 +2451,17 @@
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
+      "Change organization keys": [
+        "Promijeni organizacijske ključeve"
+      ],
+      "Change organization name": [
+        "Promijeni naziv organizacije"
+      ],
       "Change password": [
         "Promjena lozinke"
+      ],
+      "Change role": [
+        "Promjeni ulogu"
       ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"
@@ -2138,6 +2490,9 @@
       "Delete account": [
         "Ukloni račun"
       ],
+      "Delete user": [
+        "Izbriši korisnika"
+      ],
       "Device connected!": [
         "Uređaj je povezan!"
       ],
@@ -2149,6 +2504,9 @@
       ],
       "Edit credit/debit card": [
         "Uredi kreditnu/debitnu karticu"
+      ],
+      "Edit user": [
+        "Uređivanje korisnika"
       ],
       "Email": [
         "E-pošta"
@@ -2168,6 +2526,9 @@
       "General": [
         "Općenito"
       ],
+      "Generate missing keys": [
+        "Generirajte ključeve koji nedostaju"
+      ],
       "Gift code": [
         "Darovni kôd"
       ],
@@ -2185,6 +2546,9 @@
       ],
       "Login password": [
         "Lozinka za prijavu"
+      ],
+      "Multi-user support": [
+        "Višekorisnička podrška"
       ],
       "Network error": [
         "Pogreška mreže"
@@ -2240,17 +2604,32 @@
       "Request new code": [
         "Zatraži novi kôd"
       ],
+      "Reset organization keys": [
+        "Poništi organizacijske ključeve"
+      ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
       ],
       "Reset password?": [
         "Ponovno postavljanje lozinke?"
       ],
+      "Restore administrator privileges": [
+        "Vraćanje administratorskih ovlasti"
+      ],
       "Select a plan": [
         "Odaberite plan"
       ],
       "Set new password": [
         "Postavi novu lozinku"
+      ],
+      "Set organization keys": [
+        "Postavite organizacijske ključeve"
+      ],
+      "Set organization name": [
+        "Postavite naziv organizacije"
+      ],
+      "Set organization password": [
+        "Postavite lozinku za organizaciju"
       ],
       "Set up two-factor authentication": [
         "Postavite dvofaktorsku autentikaciju"
@@ -2300,9 +2679,31 @@
         "Metoda"
       ]
     },
+    "Title header for members table": {
+      "Addresses": [
+        "Adrese"
+      ],
+      "Features": [
+        "Značajke"
+      ],
+      "Name": [
+        "Naziv"
+      ],
+      "Role": [
+        "Uloga"
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
+      ]
+    },
+    "User role": {
+      "Member": [
+        "Član"
+      ],
+      "Primary admin": [
+        "Glavni Admin"
       ]
     },
     "Validation": {
@@ -2338,6 +2739,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
       ]
     }
   }

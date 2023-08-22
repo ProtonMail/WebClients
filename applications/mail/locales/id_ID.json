@@ -949,6 +949,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Show side panel": [
+        "Tampilkan panel samping"
+      ],
       "Sign in": [
         "Masuk"
       ],
@@ -3425,6 +3428,9 @@
       "You did not provide a file.": [
         "Anda tidak menyertakan berkas."
       ],
+      "You have reached the contacts limit for your account": [
+        "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
       ],
@@ -4686,7 +4692,7 @@
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Permintaan untuk berhenti langganan dari milis ini akan dikirim ke pengirim newsletter dan akan diproses secara otomatis."
+        "Permintaan untuk berhenti berlangganan dari milis ini akan disampaikan kepada pengirim buletin dan akan diproses secara otomatis."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
@@ -4723,6 +4729,9 @@
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Kunci publik tidak dikenal terdeteksi untuk penerima ini."
@@ -7922,9 +7931,6 @@
       "Change setting": [
         "Ubah pengaturan"
       ],
-      "Easily access and customize your app experience.": [
-        "Akses dan ubah pengalaman aplikasi Anda secara mudah."
-      ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
       ],
@@ -7933,9 +7939,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "Pengaturan cepat"
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"
@@ -8950,8 +8953,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
+      "Hide side panel": [
+        "Sembunyikan panel samping"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Show side panel": [
+        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"

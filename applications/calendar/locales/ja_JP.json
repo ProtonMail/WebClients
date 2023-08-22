@@ -246,6 +246,9 @@
       "Got it": [
         "はい"
       ],
+      "Help": [
+        "ヘルプ"
+      ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
       ],
@@ -462,6 +465,9 @@
       "Set recovery phrase": [
         "回復フレーズを設定"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Share": [
         "共有"
       ],
@@ -513,11 +519,17 @@
       "Submit": [
         "送信"
       ],
+      "Switch or add account": [
+        "アカウントを切り替え・追加"
+      ],
       "Today": [
         "今日"
       ],
       "Toggle Contact app": [
         "連絡先アプリを切り替え"
+      ],
+      "Toggle settings": [
+        "設定を切り替え"
       ],
       "Trust": [
         "信頼する"
@@ -3421,6 +3433,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
       ],
+      "Are you sure you want to discard your import?": [
+        "インポートを破棄してもよろしいですか?"
+      ],
       "Attention required": [
         "注意が必要です"
       ],
@@ -3682,6 +3697,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "グループ作成のため、お名前とEメールアドレスをご記入ください。"
+      ],
       "Please remove the duplicates and try again.": [
         "重複を削除して再度お試しください。"
       ],
@@ -3816,6 +3834,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
       "Update recurring event": [
         "定期的な予定の更新"
@@ -4106,6 +4127,9 @@
       "Bad": [
         "悪い"
       ],
+      "Beta Access": [
+        "ベータ版アクセス"
+      ],
       "Browser": [
         "ブラウザ"
       ],
@@ -4367,8 +4391,14 @@
       "Street address": [
         "番地"
       ],
+      "Sync with system": [
+        "システムと同期する"
+      ],
       "System information": [
         "システム情報"
+      ],
+      "Theme": [
+        "テーマ"
       ],
       "Time zone": [
         "タイムゾーン"
@@ -5892,6 +5922,9 @@
       ],
       "Addresses": [
         "メールアドレス"
+      ],
+      "All settings": [
+        "すべての設定"
       ],
       "Billing cycle": [
         "支払い間隔"

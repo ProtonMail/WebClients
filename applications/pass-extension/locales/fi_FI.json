@@ -11,6 +11,9 @@
       "Add current url": [
         "Lisää nykyinen URL"
       ],
+      "Add domain to pause list": [
+        "Lisää verkkotunnus keskeytyslistalle"
+      ],
       "Add more": [
         "Lisää kenttiä"
       ],
@@ -289,6 +292,11 @@
         "Laajenna"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Listaus verkkotunnuksista, joilla joitakin ${ PASS_SHORT_APP_NAME }in automaattisia toimintoja ei suoriteta (Automaattitäyttö, -ehdotus ja -tallennus)."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
@@ -360,8 +368,11 @@
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
       ],
-      "Item content cannot exceed 40kb": [
-        "Kohteen sisältö ei voi olla 40 kt suurempi"
+      "Invalid url": [
+        "Virheellinen URL-osoite"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Kohteen sisältö ei voi olla 40 kilotavua suurempi"
       ],
       "Item creation failed": [
         "Kohteen luonti epäonnistui"
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
+      ],
+      "The url is in the list": [
+        "URL-osoite on jo listalla"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Automaattitäyttö"
       ],
+      "Autofill 2FA": [
+        "Kaksivaiheisen todennuskoodin automaattitäyttö"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Näytä automaattitäyttö automaattisesti kun kirjautumiskenttä aktivoidaan"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Näytä ${ PASS_APP_NAME } -kuvake kirjautumiskentissä"
+      ],
+      "Domains": [
+        "Verkkotunnukset"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -1112,6 +1132,9 @@
       "Passwords": [
         "Salasanat"
       ],
+      "Pause list": [
+        "Keskeytyslista"
+      ],
       "Permanently delete items": [
         "Poista kohteet pysyvästi"
       ],
@@ -1163,7 +1186,7 @@
       "Settings": [
         "Asetukset"
       ],
-      "Show website thumbnails": [
+      "Show website favicons": [
         "Näytä verkkosivustojen kuvakkeet"
       ],
       "Special characters (!&*)": [
@@ -1388,8 +1411,8 @@
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
       ],
-      "Import to vaults": [
-        "Kohdeholvit"
+      "Import to vault(s)": [
+        "Tuo holviin/holveihin"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"

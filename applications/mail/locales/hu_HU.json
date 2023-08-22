@@ -2895,7 +2895,7 @@
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Kapcsold be az email követő védelmet,hogy megakadályozd a hirdetők,és mások számára azt,hogy nyomon kövessék a tartózkodási helyedet,és az internetes aktivitásodat"
+        "Kapcsolja be az e-mail nyomkövetés elleni védelmet, hogy megakadályozza, hogy a hirdetők és mások nyomon kövessék az Ön tartózkodási helyét és online tevékenységét."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
@@ -2910,7 +2910,7 @@
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Nem találtunk egyetlen ismert URL,és egyéb követőt ebben az emailben."
+        "Nem találtunk egyetlen ismert követőt és követő hivatkozást sem ebben az e-mailben."
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
@@ -3062,7 +3062,7 @@
         "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+        "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -3341,7 +3341,7 @@
         "Az üzenetet a ${ BRAND_NAME } nem tudta visszafejteni. Kérjük ellenőrizze, hogy minden kulcsa aktív-e."
       ],
       "status page": [
-        "állapot lap"
+        "állapotjelző oldalunkat"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
@@ -3516,6 +3516,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
+      ],
+      "Missing FN property": [
+        "FN tulajdon hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -4106,7 +4109,7 @@
         "${ MAIL_APP_NAME } a Play Áruházban"
       ],
       "Block email communications from scammers permanently.": [
-        "A csalók e-mail kommunikációjának végleges blokkolása"
+        "A csalók e-mail kommunikációjának végleges blokkolása."
       ],
       "Block unsavory senders": [
         "Blokkolja a kellemetlen feladókat"
@@ -4115,19 +4118,19 @@
         "Az ellenőrző lista kész"
       ],
       "Close": [
-        "Bezár"
+        "Bezárás"
       ],
       "Congratulation, you completed all the steps!": [
-        "Gratulálunk,minden lépést teljesítettél!"
+        "Gratulálunk, minden lépést befejezett!"
       ],
       "Continue setting up your email": [
-        "Folytasd az e-mail címed beállítását"
+        "Az e-mail cím beállításának folytatása"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
-        "Duplázd meg az ingyenes tárhelyedet 1 GB-ra,az alábbi lépések elvégzésével:"
+        "Duplázza meg az ingyenes tárhelyét 1 GB-ra, az alábbi lépésekkel:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "A titkosítás olyan erős, hogy csak Ön és a tervezett címzettek láthatják az e-mail üzeneteit"
+        "A titkosítás olyan erős, hogy csak Ön és a címzettek láthatják az e-mail üzeneteit."
       ],
       "For your eyes only": [
         "Csak Önnek látható"
@@ -4136,16 +4139,16 @@
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } az adatvédelmet és hogyan egyszerűsíti az e-mailezést."
+        "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } a magánszféráját és hogyan egyszerűsíti az e-mailezést."
       ],
       "Learn more": [
-        "Tudjon meg többet"
+        "További információk"
       ],
       "Maybe later": [
         "Talán később"
       ],
       "Nice! You've updated all services in this category.": [
-        "Kiváló! Minden szolgáltatást frissített ebben a kategóriában"
+        "Kiváló! Minden szolgáltatást frissített ebben a kategóriában."
       ],
       "Open checklist": [
         "Ellenőrzőlista megnyitása"
@@ -4163,10 +4166,10 @@
         "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat"
+        "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Megakadályozzuk, hogy a hirdetők és az adatgyűjtők profilokat készítsenek Önről"
+        "Megakadályozzuk, hogy a hirdetők és az adatgyűjtők profilokat készítsenek Önről."
       ],
       "You've unlocked 1 GB": [
         "Ön feloldott 1 GB-ot"
@@ -4689,6 +4692,10 @@
       "(No Recipient)": [
         "(Nincs címzett)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** találat a következő címkére: ${ labelName }",
+        "**${ elementsFoundCount }** találat a következő címkére: ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
       ],
@@ -5020,7 +5027,7 @@
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "További keresési eredményekért próbáljon meg erre a kulcsszóra keresni az email üzenetek tartalmában"
+        "További keresési eredményekért, próbáljon meg erre a kulcsszóra keresni az e-mail üzenetek tartalmában"
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -5707,13 +5714,13 @@
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "A következő hirdetők és szervezetek számára megakadályoztuk, hogy lássák, mikor nyitod meg ezt az e-mailt, milyen eszközt használsz, és hol tartózkodsz."
+        "Megakadályoztuk, hogy a következő hirdetők és szervezetek lássák, mikor nyitja meg ezt az e-mailt, milyen eszközt használ, és hol tartózkodik."
       ],
       "We could not verify the sender's trusted keys.": [
         "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "A következő linkekről eltávolítottuk a nyomkövető információkat,hogy megvédjünk a hirdetők,és mások, online tevékenységednek a nyomon követésétől."
+        "Eltávolítottuk a nyomkövető információkat a következő hivatkozásokról, annak megakadályozására, hogy hirdetők és mások az online tevékenységét nyomon követhessék."
       ],
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
@@ -5773,7 +5780,7 @@
         "Próbálkozzon másik kereséssel vagy ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Módosíthatja a keresési lekérdezést, vagy törölheti azt"
+        "Módosíthatja a keresést, vagy törölheti azt"
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -7957,9 +7964,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ],
-      "Quick settings": [
-        "Gyors beállítások"
-      ],
       "Schedule send": [
         "Küldés ütemezése"
       ],
@@ -8293,7 +8297,7 @@
     },
     "summer2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+        "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ]
     },
     "summer2023:Footer": {
@@ -8927,8 +8931,8 @@
         "Figyelem: gyanítottan hamis weboldal"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Megvédtünk téged ${ trackersCount } követőtől",
-        "Megvédtünk téged ${ trackersCount } követőtől"
+        "Megvédtük ${ trackersCount } követőtől",
+        "Megvédtük ${ trackersCount } követőtől"
       ],
       "Welcome": [
         "Üdvözöljük"

@@ -98,6 +98,9 @@
       "Add label": [
         "Lägg till etikett"
       ],
+      "Add multiple users": [
+        "Lägg till flera användare"
+      ],
       "Add notification": [
         "Lägg till avisering"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Skapa mapp"
       ],
+      "Create Gateway": [
+        "Skapa gateway"
+      ],
       "Create label": [
         "Skapa etikett"
       ],
       "Create link": [
         "Skapa länk"
+      ],
+      "Create user": [
+        "Skapa användare"
       ],
       "Create users": [
         "Skapa användare"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Ta bort och bekräfta"
       ],
+      "Delete Gateway": [
+        "Ta bort gateway"
+      ],
       "Delete link": [
         "Ta bort länk"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Ta bort post"
+      ],
+      "Delete user": [
+        "Ta bort användare"
       ],
       "Delete without exporting": [
         "Ta bort utan exportering"
@@ -344,6 +359,9 @@
       "Download ICS": [
         "Ladda ner ICS"
       ],
+      "Download our CSV template": [
+        "Ladda ner vår CSV-mall"
+      ],
       "Download recovery file": [
         "Ladda ner återställningsfil"
       ],
@@ -362,14 +380,23 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
+      "Edit Gateway": [
+        "Redigera gateway"
+      ],
       "Edit label": [
         "Redigera etikett"
+      ],
+      "Edit name": [
+        "Redigera namn"
       ],
       "Edit password": [
         "Redigera lösenord"
       ],
       "Edit phone number": [
         "Redigera telefonnummer"
+      ],
+      "Edit servers": [
+        "Redigera servrar"
       ],
       "Edit sieve": [
         "Redigera sieve"
@@ -379,6 +406,9 @@
       ],
       "Edit subscription": [
         "Redigera prenumeration"
+      ],
+      "Edit users": [
+        "Redigera användare"
       ],
       "Emoji": [
         "Emoji"
@@ -454,6 +484,12 @@
       ],
       "Get more labels": [
         "Skaffa fler etiketter"
+      ],
+      "Get more licenses": [
+        "Skaffa fler licenser"
+      ],
+      "Get more servers": [
+        "Skaffa fler servrar"
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -667,6 +703,9 @@
       ],
       "Remove this notification": [
         "Ta bort denna avisering"
+      ],
+      "Rename": [
+        "Ändra namn"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -932,6 +971,9 @@
       "Upgrade now": [
         "Uppgradera nu"
       ],
+      "Upgrade to Business": [
+        "Uppgradera till Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
@@ -1000,6 +1042,9 @@
       ],
       "Yes, undo": [
         "Ja, ångra"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Din server kommer att tillhandahållas under de närmaste dagarna"
       ],
       "Zoom in": [
         "Zooma in"
@@ -1133,6 +1178,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "Genom att lämna nu kanske vissa händelser inte importeras"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "Skaffa 10 alias gratis!"
+      ],
+      "Get unlimited aliases!": [
+        "Skaffa obegränsat antal alias!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prova ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "Med ${ PASS_APP_NAME } kan du skapa unika alias för att dölja din identitet och vidarebefordra e-post till din primära inkorg."
       ]
     },
     "Alter": {
@@ -1530,11 +1589,6 @@
       ],
       "Week": [
         "Vecka"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Alla"
       ]
     },
     "Checkout row": {
@@ -3168,6 +3222,15 @@
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
       ],
+      "Impossible to create the gateway": [
+        "Omöjligt att skapa gateway"
+      ],
+      "Impossible to edit the gateway": [
+        "Omöjligt att redigera gateway"
+      ],
+      "Impossible to rename the gateway": [
+        "Omöjligt att byta namn på gateway"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
       ],
@@ -4220,6 +4283,13 @@
       "Access to all countries": [
         "Åtkomst till alla länder"
       ],
+      "Add": [
+        "Lägg till"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Lägg till (${ numberOfAddedServers })",
+        "Lägg till (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Anslutning för upp till ${ plusVpnConnections } enhet",
         "Anslutning för upp till ${ plusVpnConnections } enheter"
@@ -4610,6 +4680,9 @@
       "Checkout": [
         "Kassa"
       ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Skapa ditt konto"
       ],
@@ -4622,6 +4695,9 @@
       "Folders": [
         "Mappar"
       ],
+      "IP address": [
+        "IP-adress"
+      ],
       "Key type": [
         "Nyckeltyp"
       ],
@@ -4630,6 +4706,9 @@
       ],
       "Location": [
         "Plats"
+      ],
+      "Members": [
+        "Medlemmar"
       ],
       "Name": [
         "Namn"
@@ -4648,6 +4727,15 @@
       ],
       "Select your pricing plan": [
         "Välj ditt prispaket"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Serverbelastning"
+      ],
+      "Servers": [
+        "Servrar"
       ],
       "Status": [
         "Status"
@@ -5164,6 +5252,10 @@
         "${ providerFoldersNumLocalized } etikett hittades i Gmail",
         "${ providerFoldersNumLocalized } etiketter hittades i Gmail"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }.",
+        "${ provisioningCounter } servrar håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
@@ -5274,6 +5366,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
+      "active": [
+        "aktiv"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
@@ -5297,6 +5392,18 @@
       ],
       "Add multiple users to your organization at once.": [
         "Lägg till flera användare till din organisation på en gång."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Lägg till server (${ availableAddedCount } tillgänglig)",
+        "Lägg till server (${ availableAddedCount } tillgängliga)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Lägger till ${ addedServerCount } gatewayserver",
+        "Lägger till ${ addedServerCount } gatewayservrar"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Lägger till gatewayserver: ${ serverNumber }/${ total }",
+        "Lägger till gatewayservrar: ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "Ytterligare alternativ"
@@ -5424,6 +5531,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Be din organisations administratör att ställa in gateways."
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -5564,6 +5674,13 @@
       "Create in": [
         "Skapa i"
       ],
+      "Create your first Gateway": [
+        "Skapa din första gateway"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Skapar gatewayserver: ${ serverNumber }/${ total }",
+        "Skapar gatewayservrar: ${ serverNumber }/${ total }"
+      ],
       "Creating your account": [
         "Skapar ditt konto"
       ],
@@ -5600,6 +5717,9 @@
       "Data locked": [
         "Data låst"
       ],
+      "dedicated servers": [
+        "dedikerade servrar"
+      ],
       "Dedicated servers": [
         "Dedikerade servrar"
       ],
@@ -5611,6 +5731,10 @@
       ],
       "Delete link?": [
         "Ta bort länk?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Tar bort ${ deletedServerCount } gatewayserver",
+        "Tar bort ${ deletedServerCount } gatewayservrar"
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
@@ -5700,6 +5824,9 @@
       "Encryption setting updated": [
         "Krypteringsinställning uppdaterad"
       ],
+      "Enhance your network security": [
+        "Förbättra din nätverkssäkerhet"
+      ],
       "Enter key manually instead": [
         "Ange nyckel manuellt istället"
       ],
@@ -5754,6 +5881,9 @@
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
       ],
+      "Fill in user details": [
+        "Fyll i användaruppgifter"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
@@ -5777,6 +5907,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Att generera en ny återställningsfras kommer inaktivera din gamla."
@@ -5911,6 +6044,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
       ],
+      "inactive": [
+        "inaktiv"
+      ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
       ],
@@ -5974,6 +6110,9 @@
       ],
       "Large imports can take several days.": [
         "Stora importer kan ta flera dagar."
+      ],
+      "Lean more about gateways": [
+        "Lär dig mer om gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lär dig hur du loggar in på ${ VPN_APP_NAME } med VPN-appar från tredje part."
@@ -6047,6 +6186,18 @@
       "Multi-user support not enabled.": [
         "Stöd för flera användare är inte aktiverat."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Måste vara mellan 3 och 20 tecken långt."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Får endast innehålla bokstäver, siffror och bindestreck (-)."
+      ],
+      "Must not contain spaces.": [
+        "Får inte innehålla mellanslag."
+      ],
+      "Must start with a letter.": [
+        "Måste börja med en bokstav."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
@@ -6073,6 +6224,12 @@
       ],
       "No folder selected": [
         "Ingen mapp vald"
+      ],
+      "No gateways": [
+        "Inga gateways"
+      ],
+      "No Gateways yet": [
+        "Inga gateways ännu"
       ],
       "No imports or forwarding history.": [
         "Ingen import- eller vidarebefordringshistorik."
@@ -6101,8 +6258,8 @@
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
-      "Number of users": [
-        "Antal användare"
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Antalet dedikerade servrar du försöker tilldela (${ addedCount }) är fler än vad som fortfarande är tillgängligt i ditt paket (${ remainingCount }) eftersom du äger ${ ownedCount } och du redan använder ${ usedCount }."
       ],
       "of": [
         "av"
@@ -6125,6 +6282,9 @@
       "Open source": [
         "Öppen källkod"
       ],
+      "Optional": [
+        "Valfritt"
+      ],
       "Or select a particular server:": [
         "Eller välj en specifik server:"
       ],
@@ -6136,6 +6296,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Organisera dina dedikerade servrar i gateways och bestäm vilka medlemmar som kan komma åt dem."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
@@ -6308,6 +6471,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Kom ihåg att dela användarens inloggningsinformation med dem."
+      ],
       "Remove one of your calendars to join this one": [
         "Ta bort en av dina kalendrar för att gå med i denna"
       ],
@@ -6403,6 +6569,9 @@
       ],
       "Some keys successfully reactivated": [
         "Några nycklar har återaktiverats"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Vissa av dina tillgängliga servrar kan endast användas i specifika länder på grund av de senaste borttagningarna"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF används för att ange vem som får skicka e-post för domänen så vi rekommenderar starkt att du lägger till ${ MAIL_APP_NAME } till din SPF-post. Lägg till följande TXT-post i din DNS. Detta kan oftast göras i Kontrollpanelen hos din domännamnsregistrator."
@@ -6525,8 +6694,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Detta kan ta några sekunder eller minuter beroende på din enhet"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Detta kan ta upp till 15 minuter. Stäng inte denna sida eller koppla från Internet."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Detta är en fras på 12 ord som du blev ombedd att ställa in."
@@ -6732,6 +6901,9 @@
       "Upload picture": [
         "Ladda upp bild"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Ladda upp din färdiga CSV-fil för att skapa konton"
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen."
       ],
@@ -6749,6 +6921,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Använd den valda e-postadressen som SMTP-användarnamn i den externa tjänsten och den genererade token som SMTP-lösenord."
+      ],
+      "Users": [
+        "Användare"
       ],
       "Verification can take a few minutes.": [
         "Verifiering kan ta några minuter."
@@ -6777,6 +6952,9 @@
       "Visa Secure logo": [
         "Logga för Visa Secure"
       ],
+      "Want servers in other countries?": [
+        "Vill du ha servrar i andra länder?"
+      ],
       "Warning:": [
         "Varning:"
       ],
@@ -6800,6 +6978,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi rekommenderar att du har minst 2 servrar för att ge redundans."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Vi rekommenderar att du har flera servrar på olika platser för att ge redundans."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi rekommenderar att du aviserar organisationsmedlemmarna och ber dem ställa in 2FA för sina konton innan verkställning med användningen av 2FA."
@@ -6861,8 +7042,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "När din prenumeration förnyas kommer vi att använda alla tillgängliga krediter innan vi debiterar betalningsmetoden ovan."
       ],
+      "Whole organization": [
+        "Hela organisationen"
+      ],
       "Why?": [
         "Varför?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME_TWO }-tjänster"
@@ -6955,6 +7142,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har inte angett en återställningsmetod så kontoåterställning är omöjlig om du glömmer ditt lösenord. Fortsätt utan återställningsmetod?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Du har ${ availableCount } dedikerad server tillgänglig.",
+        "Du har ${ availableCount } dedikerade servrar tillgängliga."
       ],
       "You have no calendars to export.": [
         "Du har inga kalendrar att exportera."
@@ -7366,16 +7557,16 @@
         "Flytta åt höger/expandera"
       ],
       "Move to Archive": [
-        "Flytta till Arkiv"
+        "Flytta till arkiv"
       ],
       "Move to Inbox": [
-        "Flytta till Inkorg"
+        "Flytta till inkorg"
       ],
       "Move to Spam": [
-        "Flytta till Skräppost"
+        "Flytta till skräppost"
       ],
       "Move to Trash": [
-        "Flytta till Papperskorg"
+        "Flytta till papperskorg"
       ],
       "Move to...": [
         "Flytta till..."
@@ -7926,6 +8117,9 @@
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Gateway-namn"
+      ],
       "Gift code": [
         "Presentkod"
       ],
@@ -8112,6 +8306,9 @@
       "Organization password": [
         "Organisationens lösenord"
       ],
+      "Organization size": [
+        "Organisationens storlek"
+      ],
       "Other amount": [
         "Annat belopp"
       ],
@@ -8207,6 +8404,9 @@
       ],
       "Select your country": [
         "Välj ditt land"
+      ],
+      "Select your plan": [
+        "Välj ditt paket"
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -8569,6 +8769,9 @@
       "Common sign up issues": [
         "Vanliga registreringsproblem"
       ],
+      "Contact us": [
+        "Kontakta oss"
+      ],
       "create a ticket": [
         "skapa ett supportärende"
       ],
@@ -8730,6 +8933,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -8769,6 +8975,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Registrera"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-konto"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Skapa ett ${ BRAND_NAME }-konto för att använda alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler, med endast en inloggning. Skaffa ett gratis ${ BRAND_NAME }-konto."
       ],
@@ -8798,9 +9007,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
-      ],
-      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
-        "Logga in | ${ BRAND_NAME }-konto - Åtkomst till ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och mer"
       ],
       "Try ${ planName } for free with this link": [
         "Prova ${ planName } gratis med denna länk"
@@ -9914,6 +10120,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "IP Address copied to clipboard": [
+        "IP-adress kopierad till urklipp"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nyckel med fingeravtryck ${ fp } har tagits bort."
       ],
@@ -10210,8 +10419,14 @@
       "Secure Core configs": [
         "Secure Core-konfigurationer"
       ],
+      "Select who can access...": [
+        "Välj vem som kan komma åt..."
+      ],
       "Standard server configs": [
         "Konfiguration för standardserver "
+      ],
+      "The whole organization": [
+        "Hela organisationen"
       ]
     },
     "Option delay send seconds": {
@@ -10464,7 +10679,7 @@
         "Installera app"
       ],
       "Install app and extension": [
-        "Installera appar och tillägg"
+        "Installera app och tillägg"
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
         "Det är det enda sättet att helt återställa ditt konto, så se till att förvara detta **återställningskit** någonstans på ett säkert sätt."
@@ -10607,9 +10822,6 @@
       "Confirm": [
         "Bekräfta"
       ],
-      "Confirm password": [
-        "Bekräfta lösenord"
-      ],
       "domain.com": [
         "domän.com"
       ],
@@ -10620,7 +10832,7 @@
         "E-postadress"
       ],
       "example@domain.com": [
-        "exempel@domän.com"
+        "example@domain.com"
       ],
       "Feedback": [
         "Feedback"
@@ -10891,6 +11103,17 @@
         "Läsa e-post för icke-privata underanvändare"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Admin"
+      ],
+      "Primary admin": [
+        "Primär admin"
+      ],
+      "User": [
+        "Användare"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Ladda upp CSV-fil"
@@ -10913,6 +11136,20 @@
       ],
       "No results found": [
         "Inga resultat hittades"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktiv"
+      ],
+      "inactive": [
+        "inaktiv"
+      ],
+      "pending": [
+        "väntande"
+      ],
+      "to be created": [
+        "att skapas"
       ]
     },
     "Settings description": {
@@ -11850,6 +12087,12 @@
       "Edit": [
         "Redigera"
       ],
+      "Email": [
+        "E-post"
+      ],
+      "Email address": [
+        "E-postadress"
+      ],
       "Email address or domain": [
         "E-postadress eller domän"
       ],
@@ -11867,6 +12110,12 @@
       ],
       "Name": [
         "Namn"
+      ],
+      "Password": [
+        "Lösenord"
+      ],
+      "Role": [
+        "Roll"
       ],
       "Status": [
         "Status"
@@ -12001,8 +12250,14 @@
       "Add invoice details": [
         "Lägg till fakturadetaljer"
       ],
+      "Add new user": [
+        "Lägg till ny användare"
+      ],
       "Add PayPal payment method": [
         "Lägg till PayPal betalningsmetod"
+      ],
+      "Add servers": [
+        "Lägg till servrar"
       ],
       "Add Sieve filter": [
         "Lägg till Sieve-filter"
@@ -12016,7 +12271,10 @@
       "Add to spam list": [
         "Lägg till i skräppostlista"
       ],
-      "Add user": [
+      "Add user accounts": [
+        "Lägg till användarkonton"
+      ],
+      "Add users": [
         "Lägg till användare"
       ],
       "Address verification": [
@@ -12149,6 +12407,15 @@
         "Skapa ${ selectedUserIds.length } användare",
         "Skapa ${ selectedUserIds.length } användare"
       ],
+      "Create a new Gateway": [
+        "Skapa en ny gateway"
+      ],
+      "Create a new gateway": [
+        "Skapa en ny gateway"
+      ],
+      "Create Gateway": [
+        "Skapa gateway"
+      ],
       "Create multiple user accounts": [
         "Skapa flera användarkonton"
       ],
@@ -12179,11 +12446,17 @@
       "Custom filters": [
         "Anpassade filter"
       ],
+      "Custom selection of users": [
+        "Anpassat val av användare"
+      ],
       "Customize and confirm": [
         "Anpassa och bekräfta"
       ],
       "Customize calendar import": [
         "Anpassa kalenderimport"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Anpassa antalet IP-adresser i ditt paket"
       ],
       "Customize your mail import": [
         "Anpassa din e-postimport"
@@ -12239,8 +12512,15 @@
       "Delete logs": [
         "Ta bort loggar"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dag)",
+        "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dagar)"
+      ],
       "Delete user": [
         "Ta bort användare"
+      ],
+      "Delete user?": [
+        "Ta bort användare?"
       ],
       "Delete version history?": [
         "Ta bort versionshistorik?"
@@ -12278,11 +12558,26 @@
       "Edit filter": [
         "Redigera filter"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Redigera gateway ${ currentName }"
+      ],
+      "Edit servers": [
+        "Redigera servrar"
+      ],
       "Edit Sieve filter": [
         "Redigera Sieve-filter"
       ],
+      "Edit the list of servers of the gateway": [
+        "Redigera listan över servrar för gateway"
+      ],
       "Edit user": [
         "Redigera användare"
+      ],
+      "Edit users": [
+        "Redigera användare"
+      ],
+      "Edit who can access the gateway": [
+        "Redigera vem som kan komma åt gateway"
       ],
       "Email": [
         "E-post"
@@ -12307,6 +12602,9 @@
       ],
       "Error": [
         "Fel"
+      ],
+      "Every member of the organization can access": [
+        "Varje medlem i organisationen kan komma åt"
       ],
       "Export": [
         "Exportera"
@@ -12338,6 +12636,9 @@
       ],
       "Folders and labels": [
         "Mappar och etiketter"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "General": [
         "Allmänt"
@@ -12556,6 +12857,9 @@
       "Remove user?": [
         "Ta bort användare?"
       ],
+      "Rename the gateway": [
+        "Byt namn på gateway"
+      ],
       "Report a problem": [
         "Rapportera ett problem"
       ],
@@ -12642,6 +12946,9 @@
       ],
       "Settings": [
         "Inställningar"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Ställ in dedikerade servrar genom att uppgradera till Business"
       ],
       "Short domain (@pm.me)": [
         "Kort domän (@pm.me)"
@@ -12737,6 +13044,12 @@
       ],
       "Upgrade plan": [
         "Uppgradera paket"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Ladda upp CSV-fil för att skapa flera konton"
+      ],
+      "Users": [
+        "Användare"
       ],
       "Users and addresses": [
         "Användare och adresser"
@@ -12869,6 +13182,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "Email": [
+        "E-post"
+      ],
       "Features": [
         "Funktioner"
       ],
@@ -12932,6 +13248,9 @@
       ],
       "Account is disconnected": [
         "Kontot är frånkopplat"
+      ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Administratörer kan göra ändringar i din prenumeration, hantera användarkonton och lösenord och ge administratörsbehörigheter till andra användare."
       ],
       "An approximate location of the IP address": [
         "En ungefärlig plats för IP-adressen"

@@ -98,6 +98,9 @@
       "Add label": [
         "Adicionar etiqueta"
       ],
+      "Add multiple users": [
+        "Adicionar vários utilizadores"
+      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -251,11 +254,17 @@
       "Create folder": [
         "Criar pasta"
       ],
+      "Create Gateway": [
+        "Criar o gateway"
+      ],
       "Create label": [
         "Criar etiqueta"
       ],
       "Create link": [
         "Criar ligação"
+      ],
+      "Create user": [
+        "Criar utilizador"
       ],
       "Create users": [
         "Criar utilizadores"
@@ -287,6 +296,9 @@
       "Delete and confirm": [
         "Confirmar e eliminar"
       ],
+      "Delete Gateway": [
+        "Eliminar o gateway"
+      ],
       "Delete link": [
         "Eliminar ligação"
       ],
@@ -295,6 +307,9 @@
       ],
       "Delete record": [
         "Eliminar registo"
+      ],
+      "Delete user": [
+        "Excluir o utilizador"
       ],
       "Delete without exporting": [
         "Eliminar sem exportar"
@@ -362,14 +377,23 @@
       "Edit email address": [
         "Editar o endereço de e-mail "
       ],
+      "Edit Gateway": [
+        "Editar o gateway"
+      ],
       "Edit label": [
         "Editar etiqueta"
+      ],
+      "Edit name": [
+        "Editar o nome"
       ],
       "Edit password": [
         "Editar a palavra-passe"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
+      ],
+      "Edit servers": [
+        "Editar servidores"
       ],
       "Edit sieve": [
         "Editar Sieve"
@@ -379,6 +403,9 @@
       ],
       "Edit subscription": [
         "Editar subscrição"
+      ],
+      "Edit users": [
+        "Editar utilizadores"
       ],
       "Emoji": [
         "Emoji"
@@ -437,6 +464,9 @@
       "Get a new encrypted email address": [
         "Obtenha um novo endereço de e-mail encriptado"
       ],
+      "Get more": [
+        "Obter mais"
+      ],
       "Get more addresses": [
         "Obter mais endereços"
       ],
@@ -448,6 +478,9 @@
       ],
       "Get more labels": [
         "Obter mais etiquetas"
+      ],
+      "Get more servers": [
+        "Obter mais servidores"
       ],
       "Get the deal": [
         "Obtenha a promoção"
@@ -596,6 +629,9 @@
       "Pay": [
         "Pagar"
       ],
+      "Pay ${ price }": [
+        "Pagar ${ price }"
+      ],
       "Pay ${ price } now": [
         "Pague ${ price } agora"
       ],
@@ -658,6 +694,9 @@
       ],
       "Remove this notification": [
         "Remover esta notificação"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -1030,6 +1069,26 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Recusar"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ price } per domain": [
+        "${ price } por domínio"
+      ],
+      "${ price } per user": [
+        "${ price } por utilizador"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "Address action": {
@@ -1480,11 +1539,6 @@
       ],
       "Week": [
         "Semana"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Todos"
       ]
     },
     "Checkout row": {
@@ -2768,8 +2822,20 @@
       ]
     },
     "Disable account": {
+      "Back to ${ signIn }.": [
+        "Voltar a ${ signIn }."
+      ],
       "sign in": [
         "iniciar sessão"
+      ],
+      "Thanks for letting us know": [
+        "Obrigado por nos informar."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Notamos que esta conta não lhe pertence. Iremos investigar e atuar em conformidade."
+      ],
+      "You can safely close this tab.": [
+        "Pode fechar este separador com segurança."
       ]
     },
     "Domain label": {
@@ -3417,6 +3483,9 @@
       ],
       "You have no invoices.": [
         "Não tem faturas."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Atingiu o limite de contactos da sua conta."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Atingiu o número máximo de calendários. Não é possível importar alguns calendários."
@@ -4132,6 +4201,13 @@
       "Access to all countries": [
         "Acesso a todos os países"
       ],
+      "Add": [
+        "Adicionar"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Adicionar (${ numberOfAddedServers })",
+        "Adicionar (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Ligação para ${ plusVpnConnections } dispositivo",
         "Ligação para até ${ plusVpnConnections } dispositivos"
@@ -4522,6 +4598,9 @@
       "Checkout": [
         "Pagamento"
       ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Crie a sua conta"
       ],
@@ -4534,11 +4613,20 @@
       "Folders": [
         "Pastas"
       ],
+      "IP address": [
+        "Endereço IP"
+      ],
       "Key type": [
         "Tipo de chave"
       ],
       "Label": [
         "Etiqueta"
+      ],
+      "Location": [
+        "Localização"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Name": [
         "Nome"
@@ -4557,6 +4645,15 @@
       ],
       "Select your pricing plan": [
         "Selecione o seu plano"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Server load": [
+        "Carga do servidor"
+      ],
+      "Servers": [
+        "Servidores"
       ],
       "Status": [
         "Estado"
@@ -5186,6 +5283,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ativar pelo menos um método de recuperação de dados para garantir que pode continuar a aceder ao conteúdo da sua conta ${ BRAND_NAME } se perder a sua palavra-passe."
       ],
+      "active": [
+        "ativa"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
@@ -5245,6 +5345,10 @@
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Todos os seus contactos serão importados até o limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Alocado"
@@ -5505,6 +5609,12 @@
       "Data locked": [
         "Dados bloqueados"
       ],
+      "dedicated servers": [
+        "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
       ],
@@ -5677,6 +5787,9 @@
       "free up space by deleting older messages or other data": [
         "libertar espaço eliminando mensagens antigas ou outros dados"
       ],
+      "Gateways": [
+        "Gateways"
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "A geração de uma nova frase de recuperação irá desativar a antiga."
       ],
@@ -5809,6 +5922,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
+      ],
+      "inactive": [
+        "inativa"
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
@@ -5973,6 +6089,12 @@
       "No folder selected": [
         "Nenhuma pasta selecionada"
       ],
+      "No gateways": [
+        "Sem gateways"
+      ],
+      "No Gateways yet": [
+        "Sem gateways ainda"
+      ],
       "No imports or forwarding history.": [
         "Sem histórico de importação ou encaminhamento."
       ],
@@ -5993,9 +6115,6 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Não é o seu dispositivo? Utilize uma janela de navegação privada para iniciar sessão e feche-a quando terminar. ${ learnMore }"
-      ],
-      "Number of users": [
-        "Número de utilizadores"
       ],
       "of": [
         "de"
@@ -6018,6 +6137,9 @@
       "Open source": [
         "Código aberto"
       ],
+      "Optional": [
+        "Opcional"
+      ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
@@ -6026,6 +6148,9 @@
       ],
       "Organization keys restored": [
         "Chaves da organização restauradas"
+      ],
+      "Organization size": [
+        "Tamanho da organização"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A sua organização tem mais administradores. Deve comunicar-lhes a nova palavra-passe."
@@ -6412,8 +6537,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Isto pode demorar até 15 minutos. Não feche esta página nem se desligue da Internet."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Isto pode demorar algum tempo. Não feche esta página nem se desligue da internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi pedida para definir."
@@ -6440,7 +6565,7 @@
         "Este token não estará disponível depois de fechar esta janela e não deve ser partilhado com ninguém."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Esta ligação para anular a subscrição expirou. Abra um e-mail mais recente desta lista de distribuição."
+        "Esta ligação para anular a subscrição expirou. Abra um e-mail mais recente desta lista de correio."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
@@ -6628,6 +6753,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilize o endereço de e-mail selecionado como o nome de utilizador SMTP no serviço externo e o token gerado como a palavra-passe SMTP."
       ],
+      "Users": [
+        "Utilizadores"
+      ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
       ],
@@ -6688,6 +6816,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redirecionada para um novo separador PayPal no seu navegador, para concluir a transação. Se utiliza bloqueadores de janelas, desative-os."
       ],
+      "We'll get back to you shortly.": [
+        "Entraremos em contacto consigo em breve."
+      ],
       "We'll notify you when the import is done.": [
         "Vamos avisá-lo quando a importação for concluída."
       ],
@@ -6729,6 +6860,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
+      ],
+      "Whole organization": [
+        "Toda a organização"
       ],
       "Why?": [
         "Por quê?"
@@ -7789,6 +7923,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Nome do gateway"
+      ],
       "Gift code": [
         "Código de oferta"
       ],
@@ -7974,6 +8111,9 @@
       ],
       "Organization password": [
         "Palavra-passe da organização"
+      ],
+      "Organization size": [
+        "Tamanho da organização"
       ],
       "Other amount": [
         "Outro valor"
@@ -8405,6 +8545,9 @@
       "Add a gift code": [
         "Adicionar código de oferta"
       ],
+      "Add gift code": [
+        "Adicionar um código de presente"
+      ],
       "Apps and extensions": [
         "Aplicações e extensões"
       ],
@@ -8422,6 +8565,9 @@
       ],
       "Common sign up issues": [
         "Problemas de registo comuns"
+      ],
+      "Contact us": [
+        "Contacte-nos"
       ],
       "create a ticket": [
         "criar um ticket"
@@ -8622,6 +8768,9 @@
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Inscrição"
+      ],
+      "${ BRAND_NAME } Account": [
+        "Conta ${ BRAND_NAME }"
       ],
       "Create a new ${ appName } account": [
         "Criar uma conta do ${ appName }"
@@ -9390,6 +9539,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Ao clicar em \"Pagar\", concorda com os nossos ${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Ao criar uma conta ${ BRAND_NAME }, concorda com nossos ${ terms }"
       ],
@@ -9649,6 +9801,9 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente o seu espaço de armazenamento para um total de ${ bundleStorage }."
+      ],
+      "Browser extension": [
+        "Extensão do navegador"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Beneficie-se de ainda mais possibilidades com o suporte a 10 domínios de e-mail personalizados."
@@ -10370,9 +10525,6 @@
       "Confirm": [
         "Confirmar"
       ],
-      "Confirm password": [
-        "Confirmar a palavra-passe"
-      ],
       "domain.com": [
         "domínio.com"
       ],
@@ -10413,7 +10565,7 @@
         "Introduza primeiro a hiperligação"
       ],
       "Please select a country": [
-        "Escolhe um país"
+        "Selecione um país"
       ],
       "Printer": [
         "Impressora"
@@ -10646,6 +10798,17 @@
         "Ler e-mails de utilizadores não privados"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Administrador"
+      ],
+      "Primary admin": [
+        "Administrador principal"
+      ],
+      "User": [
+        "Utilizador"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Carregar um ficheiro CSV"
@@ -10668,6 +10831,20 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "ativo"
+      ],
+      "inactive": [
+        "inativo"
+      ],
+      "pending": [
+        "pendente"
+      ],
+      "to be created": [
+        "a criar"
       ]
     },
     "Settings description": {
@@ -11103,6 +11280,17 @@
         "Adicione calendários partilhados, externos ou públicos."
       ]
     },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Faturação a cada 15 meses"
+      ],
+      "Billed every 30 months": [
+        "Faturação a cada 30 meses"
+      ],
+      "Billed yearly": [
+        "Faturação anual"
+      ]
+    },
     "Subscription attribute": {
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } ligação VPN de alta velocidade",
@@ -11268,13 +11456,13 @@
         "Calendário criado"
       ],
       "Calendar information updated": [
-        "As informações do calendário foram actualizadas."
+        "As informações do calendário foram atualizadas."
       ],
       "Calendar removed": [
         "Calendário removido"
       ],
       "Calendar updated": [
-        "Calendário actualizado"
+        "Calendário atualizado"
       ],
       "Canceling import": [
         "A cancelar importação"
@@ -11587,6 +11775,12 @@
       "Edit": [
         "Editar"
       ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
       "Email address or domain": [
         "Endereço de e-mail ou domínio"
       ],
@@ -11604,6 +11798,12 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Password": [
+        "Palavra-passe"
+      ],
+      "Role": [
+        "Papel"
       ],
       "Status": [
         "Estado"
@@ -11738,8 +11938,14 @@
       "Add invoice details": [
         "Adicionar detalhes da fatura"
       ],
+      "Add new user": [
+        "Adicionar um novo utilizador"
+      ],
       "Add PayPal payment method": [
         "Adicionar pagamento com PayPal"
+      ],
+      "Add servers": [
+        "Adicionar servidores"
       ],
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
@@ -11753,8 +11959,8 @@
       "Add to spam list": [
         "Adicionar à lista de endereços spam"
       ],
-      "Add user": [
-        "Adicionar utilizador"
+      "Add users": [
+        "Adicionar utilizadores"
       ],
       "Address verification": [
         "Verificação de endereço"
@@ -11796,7 +12002,7 @@
         "Assinar automaticamente as mensagens de saída?"
       ],
       "Backup and export": [
-        "Salvaguarda e exportação"
+        "Cópia de segurança e exportação"
       ],
       "Billing cycle": [
         "Ciclo de faturação"
@@ -11886,6 +12092,9 @@
         "Criar o utilizador ${ selectedUserIds.length }",
         "Criar os utilizadores ${ selectedUserIds.length }"
       ],
+      "Create Gateway": [
+        "Criar o gateway"
+      ],
       "Create multiple user accounts": [
         "Criar várias contas de utilizador"
       ],
@@ -11929,7 +12138,7 @@
         "Personalize o seu plano"
       ],
       "Dashboard": [
-        "Painel"
+        "Painel de Controlo"
       ],
       "Data locked": [
         "Dados bloqueados"
@@ -11979,6 +12188,9 @@
       "Delete user": [
         "Eliminar utilizador"
       ],
+      "Delete user?": [
+        "Excluir o utilizador?"
+      ],
       "Delete version history?": [
         "Eliminar o histórico de versões?"
       ],
@@ -12015,11 +12227,17 @@
       "Edit filter": [
         "Editar filtro"
       ],
+      "Edit servers": [
+        "Editar servidores"
+      ],
       "Edit Sieve filter": [
         "Editar filtro Sieve"
       ],
       "Edit user": [
         "Editar utilizador"
+      ],
+      "Edit users": [
+        "Editar utilizadores"
       ],
       "Email": [
         "E-mail"
@@ -12075,6 +12293,9 @@
       ],
       "Folders and labels": [
         "Pastas e etiquetas"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "General": [
         "Geral"
@@ -12168,7 +12389,7 @@
         "Idioma e hora"
       ],
       "Layout": [
-        "Esquema"
+        "Layout"
       ],
       "Leave ${ organisationName }?": [
         "Deixar ${ organisationName }?"
@@ -12298,6 +12519,9 @@
       ],
       "Request new code": [
         "Pedir novo código"
+      ],
+      "Request sent": [
+        "O pedido foi enviado."
       ],
       "Reset organization keys": [
         "Redefinir as chaves da organização"
@@ -12472,6 +12696,9 @@
       "Upgrade plan": [
         "Atualizar o plano"
       ],
+      "Users": [
+        "Utilizadores"
+      ],
       "Users and addresses": [
         "Utilizadores e endereços"
       ],
@@ -12602,6 +12829,9 @@
     "Title header for members table": {
       "Addresses": [
         "Endereços"
+      ],
+      "Email": [
+        "E-mail"
       ],
       "Features": [
         "Funcionalidades"
@@ -12911,6 +13141,9 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "It’s too expensive": [
+        "É demasiado caro."
+      ],
       "Other": [
         "Outro"
       ]

@@ -2929,7 +2929,7 @@
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
-        "Nu am găsit funcții de monitorizare și adrese URL cunoscute în acest e-mail."
+        "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
       ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
@@ -3094,7 +3094,7 @@
         "Nu s-a găsit adresa cheii private primare"
       ],
       "Attachments are limited to 25 MB": [
-        "Atașamentele sunt limitate la 25 MB."
+        "Atașamentele sunt limitate la 25 MiB."
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -3775,7 +3775,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 TB spațiu total"
+        "3 TiB spațiu total"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
@@ -3956,13 +3956,13 @@
         "de baiți"
       ],
       "GB": [
-        "GB"
+        "GiB"
       ],
       "KB": [
-        "KB"
+        "KiB"
       ],
       "MB": [
-        "MB"
+        "MiB"
       ]
     },
     "file size format, long": {
@@ -4165,7 +4165,7 @@
         "Blocați expeditorii nesăbuiți"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
-        "Felicitări că v-ați vă face e-mailul și mai sigur, mai convenabil și mai relevant! Am ridicat stocarea gratuită la un total de 1 GB."
+        "Felicitări că v-ați vă face e-mailul și mai sigur, mai convenabil și mai relevant! Am ridicat stocarea gratuită la un total de 1 GiB."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
@@ -4195,7 +4195,7 @@
         "Descoperiți funcțiile de confidențialitate"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
-        "Dublați-vă stocarea gratuită la 1 GB după ce executați următoarele:"
+        "Dublați-vă stocarea gratuită la 1 GiB după ce executați următoarele:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Criptarea atât de puternică, încât doar dvs. și destinatarii doriți vă puteți vedea mesajele."
@@ -4261,7 +4261,7 @@
         "Oprim agenții de publicitate și colectorii de date să vă urmărească activitatea."
       ],
       "You've unlocked 1 GB": [
-        "Ați deblocat 1 GB de spațiu"
+        "Ați deblocat 1 GiB de spațiu"
       ]
     },
     "Gmail forwarding": {
@@ -4702,9 +4702,9 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
-        "A fost blocată ${ numberOfImageTrackers } funcție de urmărire din e-mail.",
-        "S-au blocat ${ numberOfImageTrackers } funcții de urmărire din e-mail.",
-        "S-au blocat ${ numberOfImageTrackers } de funcții de monitorizare din e-mail."
+        "A fost blocat ${ numberOfImageTrackers } instrument de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } instrumente de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } de instrumente de urmărire din e-mail."
       ],
       "${ numberOfImageTrackers } tracker blocked": [
         "S-a blocat ${ numberOfImageTrackers } funcție de urmărire.",
@@ -5827,7 +5827,7 @@
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Modernizați-vă planul pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
+        "Modificați-vă planul pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
@@ -7359,7 +7359,7 @@
         "Până la 15 adrese de e-mail"
       ],
       "Up to 3 TB of storage": [
-        "Până la 3 TB spațiu de stocare"
+        "Până la 3 TiB spațiu de stocare"
       ]
     },
     "new_plans: feature info": {
@@ -7986,7 +7986,7 @@
         "${ storageSize } spațiu total"
       ],
       "3 TB": [
-        "3 TB"
+        "3 TiB"
       ],
       "6 users": [
         "6 utilizatori"
@@ -8178,9 +8178,6 @@
       "Change setting": [
         "Modificare setări"
       ],
-      "Easily access and customize your app experience.": [
-        "Accesați și personalizați ușor experiența cu aplicația."
-      ],
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
@@ -8189,9 +8186,6 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
-      ],
-      "Quick settings": [
-        "Setări rapide"
       ],
       "Schedule send": [
         "Trimitere programată"
@@ -9226,9 +9220,9 @@
         "Avertisment: suspectare site fals"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "S-a blocat ${ trackersCount } funcție de monitorizare.",
-        "S-au blocat ${ trackersCount } funcții de monitorizare.",
-        "S-au blocat ${ trackersCount } de funcții de monitorizare."
+        "S-a blocat ${ trackersCount } instrument de urmărire.",
+        "S-au blocat ${ trackersCount } instrumente de urmărire.",
+        "S-au blocat ${ trackersCount } de instrumente de urmărire."
       ],
       "Welcome": [
         "Bun venit"

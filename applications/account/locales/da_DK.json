@@ -251,6 +251,9 @@
       "Create link": [
         "Opret link"
       ],
+      "Create user": [
+        "Opret bruger"
+      ],
       "Create users": [
         "Opret brugere"
       ],
@@ -289,6 +292,9 @@
       ],
       "Delete record": [
         "Slet post"
+      ],
+      "Delete user": [
+        "Slet bruger"
       ],
       "Delete without exporting": [
         "Slet uden at eksportere"
@@ -649,6 +655,9 @@
       ],
       "Remove this notification": [
         "Fjern denne notifikation"
+      ],
+      "Rename": [
+        "Omdøb"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -1013,6 +1022,20 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Afslå"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } brugerdomæne",
+        "${ domains } brugerdomæner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "Address action": {
@@ -1458,11 +1481,6 @@
       ],
       "Week": [
         "Uge"
-      ]
-    },
-    "Checkbox label": {
-      "All": [
-        "Alle"
       ]
     },
     "Checkout row": {
@@ -3736,6 +3754,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Opret en ny bruger"
+      ],
       "Decline invitation": [
         "Afvis invitation"
       ],
@@ -3744,6 +3765,9 @@
       ],
       "Switch plans": [
         "Skift abonnement"
+      ],
+      "View invitation": [
+        "Vis invitation"
       ],
       "View the invitation": [
         "Se invitationen"
@@ -4238,6 +4262,9 @@
       ],
       "Label": [
         "Etiket"
+      ],
+      "Location": [
+        "Placering"
       ],
       "Name": [
         "Navn"
@@ -5044,6 +5071,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Tilgængelig på macOS, Windows og Linux."
       ],
+      "Awaiting transaction": [
+        "Afventer transaktion"
+      ],
       "Background color": [
         "Baggrundsfarve"
       ],
@@ -5195,6 +5225,9 @@
       "Data locked": [
         "Data låst"
       ],
+      "Dedicated servers": [
+        "Dedikerede servere"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
@@ -5342,6 +5375,9 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
+      ],
+      "Fill in user details": [
+        "Udfyld brugeroplysninger"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
@@ -5681,11 +5717,14 @@
       "Not a valid URL": [
         "Ugyldig URL"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Endnu ikke tilgængelig i vores Android-mobilapp."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
       ],
-      "Number of users": [
-        "Antal brugere"
+      "Number of dedicated servers in the organization": [
+        "Antal dedikerede servere i organisationen"
       ],
       "of": [
         "af"
@@ -5708,6 +5747,9 @@
       "Open source": [
         "Open source"
       ],
+      "Optional": [
+        "Valgfri"
+      ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
       ],
@@ -5716,6 +5758,9 @@
       ],
       "Organization keys restored": [
         "Organisationsnøgler gendannet"
+      ],
+      "Organization size": [
+        "Organisationsstørrelse"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
@@ -5887,6 +5932,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Husk at dele brugerens login-oplysninger med vedkommende."
       ],
       "Remove one of your calendars to join this one": [
         "Fjern en af dine kalendere for at deltage i denne"
@@ -6099,8 +6147,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan tage nogle sekunder/minutter afhængigt af din enhed"
       ],
-      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Dette kan tage op til 15 minutter. Du må ikke lukke denne side eller afbryde forbindelsen til internettet."
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
@@ -6173,6 +6221,9 @@
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "Kontakt os for at opsige dit abonnement."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For at gennemføre din betaling skal du sende ${ btcAmountBold } til nedenstående adresse."
@@ -6285,6 +6336,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Opgradér til ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-abonnement for at få adgang til ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgradér for at tilføje en kortere @pm.me-adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
       ],
@@ -6311,6 +6365,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne tjeneste, og det genererede token som SMTP-adgangskode."
+      ],
+      "Users": [
+        "Brugere"
       ],
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
@@ -6371,6 +6428,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
+      ],
+      "We'll get back to you shortly.": [
+        "Tak! Vi vender tilbage til dig inden længe."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -6440,6 +6500,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Du bruger i øjeblikket ${ organization.UsedMembers } af din ${ organization.MaxMembers } tilgængelige brugerlicens.",
+        "Du bruger i øjeblikket ${ organization.UsedMembers } af dine ${ organization.MaxMembers } tilgængelige brugerlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -6647,6 +6711,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Dit abonnement vil automatisk blive fornyet ${ renewalTime }."
       ]
     },
     "info": {
@@ -7741,6 +7808,9 @@
       "Select your country": [
         "Vælg dit land"
       ],
+      "Select your plan": [
+        "Vælg dit abonnement"
+      ],
       "Send auto-reply": [
         "Send auto-svar"
       ],
@@ -8812,6 +8882,10 @@
       "Send & receive invitations": [
         "Send og modtag invitationer"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servere i ${ vpnServersCountData.paid.countries }+ land",
+        "Servere i ${ vpnServersCountData.paid.countries }+ lande"
+      ],
       "Share calendar via link": [
         "Del kalender via link"
       ],
@@ -9182,6 +9256,9 @@
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
       ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nøgle med fingeraftryk ${ fp } slettet."
       ],
@@ -9293,6 +9370,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Velkommen til ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Velkommen til ${ VPN_APP_NAME }"
       ]
@@ -9859,9 +9939,6 @@
       ],
       "Confirm": [
         "Bekræft"
-      ],
-      "Confirm password": [
-        "Bekræft adgangskode"
       ],
       "domain.com": [
         "domæne.dk"
@@ -10568,6 +10645,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikeret server",
+        "${ ipAddresses } dedikerede servere"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } højhastigheds VPN-forbindelse",
         "${ maxVpn } højhastigheds VPN-forbindelser"
@@ -11001,6 +11082,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Email address": [
+        "E-mailadresse"
+      ],
       "Email address or domain": [
         "E-mailadresse eller domæne"
       ],
@@ -11018,6 +11102,12 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Role": [
+        "Rolle"
       ],
       "Status": [
         "Status"
@@ -11152,6 +11242,9 @@
       "Add invoice details": [
         "Tilføj fakturaoplysninger"
       ],
+      "Add new user": [
+        "Tilføj ny bruger"
+      ],
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
       ],
@@ -11167,8 +11260,8 @@
       "Add to spam list": [
         "Føj til spam-liste"
       ],
-      "Add user": [
-        "Tilføj bruger"
+      "Add user accounts": [
+        "Tilføj brugerkonti"
       ],
       "Address verification": [
         "Adressebekræftelse"
@@ -11287,6 +11380,9 @@
       "Connect ${ name }": [
         "Forbind ${ name }"
       ],
+      "Contact us": [
+        "Kontakt os"
+      ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
@@ -11389,6 +11485,9 @@
       ],
       "Delete user": [
         "Slet bruger"
+      ],
+      "Delete user?": [
+        "Slet bruger?"
       ],
       "Delete version history?": [
         "Slet versionshistorik?"
@@ -11710,6 +11809,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Request sent": [
+        "Anmodning sendt"
+      ],
       "Reset organization keys": [
         "Nulstil organisationsnøgler"
       ],
@@ -11840,6 +11942,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Oprettede ${ successfullyCreatedUsers.length } brugerkonto",
         "Oprettede ${ successfullyCreatedUsers.length } brugerkonti"
+      ],
+      "Summary": [
+        "Sammenfatning"
       ],
       "Switch to one-password mode": [
         "Skift til én-adgangskode-tilstand"
