@@ -1,6 +1,12 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { getSignedKeyListRoute, getSignedKeyListsRoute, updateSignedKeyListRoute, updateSignedKeyListSignatureRoute } from '@proton/shared/lib/api/keys';
+import {
+    getSignedKeyListRoute,
+    getSignedKeyListsRoute,
+    updateSignedKeyListRoute,
+    updateSignedKeyListSignatureRoute,
+} from '@proton/shared/lib/api/keys';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants';
@@ -32,8 +38,9 @@ export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promis
 /**
  * Fetch the KT proof of a given email address in a given epoch
  */
-export const fetchProof = async (EpochID: number, Email: string, Revision: number, api: Api) => {
-    const { Proof } = await api<{ Proof: Proof }>(getProofRoute({ EpochID, Email, Revision }));
+export const fetchProof = async (EpochID: number, Identifier: string, Revision: number, api: Api) => {
+    const cleanIdentifier = canonicalizeInternalEmail(Identifier);
+    const { Proof } = await api<{ Proof: Proof }>(getProofRoute({ EpochID, Identifier: cleanIdentifier, Revision }));
     return Proof;
 };
 
@@ -45,8 +52,9 @@ export const fetchSignedKeyLists = async (
     AfterRevision: number,
     Identifier: string
 ): Promise<FetchedSignedKeyList[]> => {
+    const cleanIdentifier = canonicalizeInternalEmail(Identifier);
     const { SignedKeyLists } = await api<{ SignedKeyLists: FetchedSignedKeyList[] }>(
-        getSignedKeyListsRoute({ AfterRevision, Identifier })
+        getSignedKeyListsRoute({ AfterRevision, Identifier: cleanIdentifier })
     );
     return SignedKeyLists;
 };
@@ -71,8 +79,9 @@ export const fetchSignedKeyList = async (
     Identifier: string
 ): Promise<FetchedSignedKeyList | null> => {
     try {
+        const cleanIdentifier = canonicalizeInternalEmail(Identifier);
         const { SignedKeyList } = await api<{ SignedKeyList: FetchedSignedKeyList }>(
-            getSignedKeyListRoute({ Revision, Identifier })
+            getSignedKeyListRoute({ Revision, Identifier: cleanIdentifier })
         );
         return SignedKeyList;
     } catch (error: any) {
@@ -111,30 +120,6 @@ export const fetchVerifiedEpoch = async (
                 return null;
             }
         }
-        const verifiedEpochData: VerifiedEpoch = JSON.parse(Data);
-        return verifiedEpochData;
-    } catch (error: any) {
-        // If the returned error is 422, it means that the verified
-        // epoch was never uploaded, e.g. because the address has just been created
-        if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
-            return null;
-        }
-        throw error;
-    }
-};
-
-/**
- * Fetch the latest verified epoch
- */
-export const fetchVerifiedEpochWithoutVerification = async (
-    address: Address,
-    userVerificationKeys: PublicKeyReference[],
-    api: Api
-): Promise<VerifiedEpoch | null> => {
-    try {
-        const { Data } = await api<{ Data: string; Signature: string }>(
-            getLatestVerifiedEpochRoute({ AddressID: address.ID })
-        );
         const verifiedEpochData: VerifiedEpoch = JSON.parse(Data);
         return verifiedEpochData;
     } catch (error: any) {
