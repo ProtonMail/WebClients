@@ -491,6 +491,9 @@
       "Show more": [
         "Afficher plus"
       ],
+      "Show side panel": [
+        "Afficher le panneau latéral"
+      ],
       "Show time zones": [
         "Afficher les fuseaux horaires"
       ],
@@ -5677,9 +5680,6 @@
       "Add your country's public holidays to your calendar.": [
         "Ajoutez les jours fériés de votre pays à votre calendrier."
       ],
-      "Easily access and customize your app experience.": [
-        "Accédez facilement à votre application et personnalisez-la."
-      ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "Public holidays are here!": [
         "Les jours fériés sont arrivés !"
-      ],
-      "Quick settings": [
-        "Paramètres rapides"
       ]
     },
     "Storage": {
@@ -6443,8 +6440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
+      "Hide side panel": [
+        "Masquer le panneau latéral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
+      ],
+      "Show side panel": [
+        "Afficher le panneau latéral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
