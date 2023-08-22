@@ -386,7 +386,11 @@ const SubscriptionModal = ({
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
         usePayment({
             api,
-            amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0, // Define amount only in the payment step to generate payment tokens
+            amount:
+                model.step === SUBSCRIPTION_STEPS.CHECKOUT ||
+                model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+                    ? amountDue // Define amount only in the payment step to generate payment tokens
+                    : 0,
             currency: checkResult?.Currency || DEFAULT_CURRENCY,
             onPaypalPay(params) {
                 return withLoading(handleSubscribe(params));
