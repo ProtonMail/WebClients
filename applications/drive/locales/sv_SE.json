@@ -585,6 +585,9 @@
       "Show preview": [
         "Visa förhandsgranskning"
       ],
+      "Show side panel": [
+        "Visa sidopanel"
+      ],
       "Sign in": [
         "Logga in"
       ],
@@ -5555,9 +5558,6 @@
       ]
     },
     "Spotlight": {
-      "Easily access and customize your app experience.": [
-        "Kom enkelt åt och anpassa din appupplevelse."
-      ],
       "Encrypted search is here": [
         "Krypterad sökning är här"
       ],
@@ -5569,9 +5569,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
-      ],
-      "Quick settings": [
-        "Snabbinställningar"
       ]
     },
     "Storage": {
@@ -6323,8 +6320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelande som Sociala eller Kampanjer. Du kan välja vart dessa e-postmeddelanden ska importeras till."
       ],
+      "Hide side panel": [
+        "Dölj sidopanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
+      ],
+      "Show side panel": [
+        "Visa sidopanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
