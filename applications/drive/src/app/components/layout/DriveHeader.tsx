@@ -5,14 +5,12 @@ import { c } from 'ttag';
 import {
     PrivateHeader,
     RebrandingFeedbackModal,
-    TopNavbarListItemContactsDropdown,
     TopNavbarListItemFeedbackButton,
     UserDropdown,
     useActiveBreakpoint,
     useHasRebrandingFeedback,
     useModalState,
 } from '@proton/components';
-import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SearchField } from './search/SearchField';
@@ -35,7 +33,6 @@ export const DriveHeader = ({
     const { isNarrow, isTablet } = useActiveBreakpoint();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
-    const displayContactsInHeader = useDisplayContactsWidget();
 
     return (
         <>
@@ -47,7 +44,6 @@ export const DriveHeader = ({
                 }
                 userDropdown={<UserDropdown app={APPS.PROTONDRIVE} />}
                 title={title}
-                contactsButton={displayContactsInHeader && <TopNavbarListItemContactsDropdown />}
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
                 isNarrow={isNarrow}
