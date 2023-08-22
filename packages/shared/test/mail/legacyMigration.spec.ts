@@ -55,6 +55,7 @@ describe('legacy message migration helpers', () => {
                     ID: 'keyID',
                     privateKey: decryptionKey,
                     publicKey: primaryKey,
+                    Flags: 3,
                 },
             ],
         });
@@ -103,6 +104,7 @@ describe('legacy message migration helpers', () => {
                     ID: 'keyID',
                     privateKey: decryptionKey,
                     publicKey: decryptionKey,
+                    Flags: 3,
                 },
             ],
         });
