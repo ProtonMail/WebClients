@@ -90,6 +90,7 @@ function createNotificationManager(
                     if (node.tagName === 'A') {
                         node.setAttribute('rel', 'noopener noreferrer');
                         node.setAttribute('target', '_blank');
+                        node.setAttribute('class', 'color-inherit');
                     }
                 });
                 expiration = Math.max(5000, expiration);
