@@ -19,6 +19,8 @@ interface Base {
     isCurrentPlan?: boolean;
     recommended?: boolean;
     canSelect?: boolean;
+    actionLabel?: ReactNode;
+    enableActionLabelSpacing?: boolean;
 }
 
 interface ActionElement {
@@ -55,6 +57,8 @@ const PlanCard = ({
     price,
     info,
     action,
+    actionLabel,
+    enableActionLabelSpacing,
     onSelect,
     features,
     currency,
@@ -64,6 +68,26 @@ const PlanCard = ({
     recommended,
     actionElement,
 }: Props) => {
+    const actionButton = (() => {
+        if (actionElement) {
+            return actionElement;
+        }
+        if (onSelect && action) {
+            return (
+                <PrimaryButton
+                    onClick={() => onSelect(planName)}
+                    disabled={disabled}
+                    className="w100"
+                    aria-describedby={`desc_${planName}`}
+                    data-testid={`select-${planName}`}
+                >
+                    {action}
+                </PrimaryButton>
+            );
+        }
+        return null;
+    })();
+
     return (
         <>
             <div
@@ -107,18 +131,9 @@ const PlanCard = ({
                     )}
                 </div>
 
-                {actionElement ? (
-                    actionElement
-                ) : onSelect && action ? (
-                    <PrimaryButton
-                        onClick={() => onSelect(planName)}
-                        disabled={disabled}
-                        className="w100"
-                        aria-describedby={`desc_${planName}`}
-                        data-testid={`select-${planName}`}
-                    >
-                        {action}
-                    </PrimaryButton>
+                {actionButton}
+                {actionLabel || enableActionLabelSpacing ? (
+                    <div className="mb-1 plan-selection-spacing">{actionLabel}</div>
                 ) : null}
 
                 <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
