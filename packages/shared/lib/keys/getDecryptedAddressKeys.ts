@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { DecryptedKey, KeyPair, KeysPair, User, Key as tsKey } from '../interfaces';
+import { DecryptedAddressKey, KeyPair, KeysPair, User, AddressKey as tsAddressKey, Key as tsKey } from '../interfaces';
 import { getAddressKeyToken } from './addressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { splitKeys } from './keys';
@@ -34,24 +34,25 @@ const getAddressKeyPassword = (
     return Promise.resolve(keyPassword);
 };
 
-const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassword: string) => {
+const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags }: tsAddressKey, addressKeyPassword: string) => {
     const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: addressKeyPassword });
     const publicKey = await CryptoProxy.importPublicKey({
         binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
     });
     return {
         ID,
+        Flags,
         privateKey,
         publicKey,
     };
 };
 
 export const getDecryptedAddressKeys = async (
-    addressKeys: tsKey[] = [],
+    addressKeys: tsAddressKey[] = [],
     userKeys: KeyPair[] = [],
     keyPassword: string,
     organizationKey?: KeyPair
-): Promise<DecryptedKey[]> => {
+): Promise<DecryptedAddressKey[]> => {
     if (!addressKeys.length || !userKeys.length) {
         return [];
     }
@@ -80,11 +81,11 @@ export const getDecryptedAddressKeys = async (
     return [primaryKeyResult, ...restKeyResults].filter(isTruthy);
 };
 export const getDecryptedAddressKeysHelper = async (
-    addressKeys: tsKey[] = [],
+    addressKeys: tsAddressKey[] = [],
     user: User,
     userKeys: KeyPair[] = [],
     keyPassword: string
-): Promise<DecryptedKey[]> => {
+): Promise<DecryptedAddressKey[]> => {
     if (!user.OrganizationPrivateKey) {
         return getDecryptedAddressKeys(addressKeys, userKeys, keyPassword);
     }
