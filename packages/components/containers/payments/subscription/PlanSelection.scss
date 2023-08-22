@@ -96,6 +96,26 @@
 				min-block-size: 0;
 			}
 		}
+
+		&-spacing {
+			min-block-size: 5em;
+
+			@include media('<=#{em(1100, 16)}') {
+				min-block-size: 6em;
+			}
+
+			@include media('<=#{em(970, 16)}') {
+				min-block-size: 7.5em;
+			}
+
+			@include media('<=medium') {
+				min-block-size: 6em;
+			}
+
+			@include media('<=small') {
+				min-block-size: 0;
+			}
+		}
 	}
 
 	@include media('<=medium') {
