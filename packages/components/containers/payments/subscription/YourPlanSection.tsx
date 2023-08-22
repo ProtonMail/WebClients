@@ -66,14 +66,16 @@ const YourPlanSection = ({ app }: Props) => {
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
+
+    const isVpnB2b = getHasVpnB2BPlan(subscription);
     /**
      * for VPN B2B, we display the upsells in {@link UpgradeVpnSection}
      */
-    const shouldRenderUpsells = !getHasVpnB2BPlan(subscription);
+    const shouldRenderUpsells = !isVpnB2b;
+    // VPN B2B plans must not have a usage panel
+    const shouldRenderUsagePanel = organization.UsedMembers > 1 && !isVpnB2b;
 
     const shouldRenderPendingInvitation = Boolean(invites.length);
-    const shouldRenderUsagePanel = organization.UsedMembers > 1;
-
     const totalPanelsToDisplay = 1 + (+shouldRenderPendingInvitation || upsells.length) + +shouldRenderUsagePanel;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
@@ -81,6 +83,17 @@ const YourPlanSection = ({ app }: Props) => {
     // we use the extra wide one when we have > 2 panels to display
     const shouldRenderInLargeSection = totalPanelsToDisplay > 2;
     const SettingsSection = shouldRenderInLargeSection ? SettingsSectionExtraWide : SettingsSectionWide;
+
+    // Either display pending invitations if any, or upsell(s)
+    const invitationsOrUpsells = (() => {
+        if (shouldRenderPendingInvitation) {
+            return <PendingInvitationsPanel invites={invites} />;
+        }
+        if (shouldRenderUpsells) {
+            return <UpsellPanels upsells={upsells} subscription={subscription} />;
+        }
+        return null;
+    })();
 
     return (
         <SettingsSection>
@@ -108,12 +121,7 @@ const YourPlanSection = ({ app }: Props) => {
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
 
-                {/* Either display pending invitations if any, or upsell(s) */}
-                {shouldRenderPendingInvitation ? (
-                    <PendingInvitationsPanel invites={invites} />
-                ) : shouldRenderUpsells ? (
-                    <UpsellPanels upsells={upsells} subscription={subscription} />
-                ) : null}
+                {invitationsOrUpsells}
             </div>
         </SettingsSection>
     );
