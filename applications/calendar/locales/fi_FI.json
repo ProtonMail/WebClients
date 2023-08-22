@@ -491,6 +491,9 @@
       "Show more": [
         "Näytä lisää"
       ],
+      "Show side panel": [
+        "Näytä sivupaneeli"
+      ],
       "Show time zones": [
         "Näytä aikavyöhykkeet"
       ],
@@ -3826,7 +3829,7 @@
         "tukeemme"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen."
+        "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Sovelluksen on purettava yhteystietojesi salaus paikallisesti ennen niiden vientiä. Käsittelyn lopuksi luodaan ladattava VCF-tiedosto."
@@ -4158,7 +4161,7 @@
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Tilapäisesti ei käytettävissä. Yritä myöhemmin uudelleen.)"
+        "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -5677,9 +5680,6 @@
       "Add your country's public holidays to your calendar.": [
         "Lisää oman maasi yleiset vapaapäivät kalenteriisi."
       ],
-      "Easily access and customize your app experience.": [
-        "Pääset helposti käyttämään ja mukauttamaan sovelluskokemustasi."
-      ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "Public holidays are here!": [
         "Yleiset vapaapäivät ovat täällä!"
-      ],
-      "Quick settings": [
-        "Pika-asetukset"
       ]
     },
     "Storage": {
@@ -6443,8 +6440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
+      "Hide side panel": [
+        "Piilota sivupaneeli"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
+      ],
+      "Show side panel": [
+        "Näytä sivupaneeli"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"
