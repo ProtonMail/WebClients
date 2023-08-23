@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -12,13 +12,15 @@ export interface BitcoinTokenModel {
     amountBitcoin: number;
     address: string;
     token: string | null;
+    amount: number;
+    currency: string | null;
 }
 
 const useBitcoin = (api: Api, { Amount: amount, Currency: currency }: AmountAndCurrency) => {
     const silentApi = getSilentApi(api);
 
     const [error, setError] = useState(false);
-    const INITIAL_STATE: BitcoinTokenModel = { amountBitcoin: 0, address: '', token: null };
+    const INITIAL_STATE: BitcoinTokenModel = { amountBitcoin: 0, address: '', token: null, amount: 0, currency: null };
     const [model, setModel] = useState(INITIAL_STATE);
     const [loading, withLoading] = useLoading();
 
@@ -35,7 +37,13 @@ const useBitcoin = (api: Api, { Amount: amount, Currency: currency }: AmountAndC
                 },
             };
             const { Token, Data } = await silentApi<any>(createToken(data));
-            setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
+            setModel({
+                amountBitcoin: Data.CoinAmount,
+                address: Data.CoinAddress,
+                token: Token,
+                amount: amount,
+                currency: currency,
+            });
         } catch (error) {
             setModel(INITIAL_STATE);
             throw error;
@@ -43,6 +51,12 @@ const useBitcoin = (api: Api, { Amount: amount, Currency: currency }: AmountAndC
     };
 
     const request = async () => {
+        const isCorrectAmount = amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT;
+        const alreadyHasToken = model.amount === amount && model.currency === currency && !!model.token;
+        if (!isCorrectAmount || alreadyHasToken) {
+            return;
+        }
+
         setError(false);
         try {
             await withLoading(fetchAsToken());
@@ -50,12 +64,6 @@ const useBitcoin = (api: Api, { Amount: amount, Currency: currency }: AmountAndC
             setError(true);
         }
     };
-
-    useEffect(() => {
-        if (amount >= MIN_BITCOIN_AMOUNT && amount <= MAX_BITCOIN_AMOUNT) {
-            request();
-        }
-    }, [amount, currency]);
 
     return {
         model,
