@@ -1,7 +1,12 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { createPreAuthKTVerifier } from '@proton/components/containers';
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import useLoading from '@proton/hooks/useLoading';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import {
     APPS,
     APP_NAMES,
@@ -15,9 +20,20 @@ import { hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
+import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
+import { Credentials } from '@proton/shared/lib/srp';
 
 import { Field, Label, Loader, PrimaryButton, Row, SettingsLink, useAppLink } from '../../components';
-import { useConfig, useModals, useNotifications, useSubscription, useUser } from '../../hooks';
+import {
+    useApi,
+    useAuthentication,
+    useConfig,
+    useGetAddresses,
+    useModals,
+    useNotifications,
+    useSubscription,
+    useUser,
+} from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
 import OrganizationNameModal from './OrganizationNameModal';
@@ -33,8 +49,13 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [user] = useUser();
+    const getAddresses = useGetAddresses();
+    const api = useApi();
     const [subscription] = useSubscription();
     const appLink = useAppLink();
+    const [loading, withLoading] = useLoading();
+    const ktActivation = useKTActivation();
+    const authentication = useAuthentication();
 
     const { createNotification } = useNotifications();
     const isPartOfFamily = hasFamily(subscription);
@@ -127,6 +148,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                     {c('Info').t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
                 </SettingsParagraph>
                 <PrimaryButton
+                    loading={loading}
                     onClick={async () => {
                         if (organization?.MaxMembers === 1) {
                             return createNotification({
@@ -136,13 +158,46 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                             });
                         }
 
-                        await new Promise((resolve, reject) => {
-                            createModal(
-                                <AuthModal onCancel={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
-                            );
-                        });
-                        onSetupOrganization?.();
-                        createModal(<SetupOrganizationModal />);
+                        const run = async () => {
+                            const { credentials } = await new Promise<{
+                                credentials: Credentials;
+                            }>((resolve, reject) => {
+                                createModal(
+                                    <AuthModal onCancel={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
+                                );
+                            });
+
+                            // VPN username only users might arrive here through the VPN business plan in protonvpn.com
+                            if (user.isPrivate && !user.Keys.length) {
+                                const [addresses, domains] = await Promise.all([
+                                    getAddresses(),
+                                    api<{
+                                        Domains: string[];
+                                    }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+                                ]);
+                                const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation, api);
+                                const passphrase = await handleSetupAddressKeys({
+                                    addresses,
+                                    api,
+                                    username: user.Name,
+                                    password: credentials.password,
+                                    domains,
+                                    preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
+                                });
+                                await innerMutatePassword({
+                                    api,
+                                    authentication,
+                                    keyPassword: passphrase,
+                                    User: user,
+                                });
+                                await preAuthKTVerifier.preAuthKTCommit(user.ID);
+                            }
+
+                            onSetupOrganization?.();
+                            createModal(<SetupOrganizationModal />);
+                        };
+
+                        withLoading(run());
                     }}
                 >{c('Action').t`Enable multi-user support`}</PrimaryButton>
             </>
