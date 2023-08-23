@@ -97,6 +97,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
 
     const deleteDraft = useHandler(async (message: MessageState) => {
         cancel();
+        const hasMessageID = message.data?.ID;
 
         try {
             await pendingSave.promise;
@@ -109,7 +110,12 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
             await deleteDraftSource(message);
         } finally {
             pendingSave.resolver();
-            restart();
+            // Restart function can trigger an autoSave
+            // If message has not been saved yet (no messageID),
+            // we don't want to trigger an autoSave
+            if (hasMessageID) {
+                restart();
+            }
         }
     });
 
