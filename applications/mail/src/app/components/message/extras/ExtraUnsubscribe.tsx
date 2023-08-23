@@ -29,7 +29,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { getOriginalTo, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
+import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -76,8 +76,12 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     // If the user doesn't have the simple login extension, we want to show an extra modal to upsell the feature
     // However, if the received email is coming from Simple Login, the user is probably already using SL, so we don't want to display the extra modal
+    // Finally, if the sender is an official Proton address, we don't want to show this modal
     const needsSimpleLoginPresentation =
-        simpleLoginIntegrationFeature?.Value && !hasSimpleLogin && !hasSimpleLoginSender(message);
+        simpleLoginIntegrationFeature?.Value &&
+        !hasSimpleLogin &&
+        !hasSimpleLoginSender(message) &&
+        !hasProtonSender(message);
 
     const [unsubscribeModalProps, setUnsubscribeModalOpen] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
