@@ -8,10 +8,15 @@ import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import {
+    OnboardingContent,
+    OnboardingModal,
+    OnboardingStep,
+    OnboardingStepRenderCallback,
+    useActiveBreakpoint,
+} from '@proton/components';
 import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';
 import SignInWithGoogle from '@proton/components/containers/gmailSyncModal/SignInWithGoogle';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockSender from '@proton/styles/assets/img/onboarding/mail_onboarding_block_sender.svg';
 import blockTrackers from '@proton/styles/assets/img/onboarding/mail_onboarding_block_trackers.svg';
@@ -30,6 +35,7 @@ interface Props {
 
 const MailOnboardingModal = (props: Props) => {
     const { markItemsAsDone } = useGetStartedChecklist();
+    const { isNarrow } = useActiveBreakpoint();
 
     const dispatch = useEasySwitchDispatch();
     const syncState = useEasySwitchSelector(selectCreateSyncState);
@@ -37,9 +43,6 @@ const MailOnboardingModal = (props: Props) => {
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('loc_nightly:Error').t`Your sync will not be processed.`,
     });
-
-    const mobile = isMobile();
-    const maxContentHeight = mobile ? '27rem' : '30rem';
 
     const handleGoogleSync = (onNext: () => void) => {
         triggerOAuthPopup({
@@ -103,6 +106,7 @@ const MailOnboardingModal = (props: Props) => {
         },
     ];
 
+    const maxContentHeight = isNarrow ? 'auto' : '30rem';
     const onboardingSteps = [
         ({ onNext }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
@@ -111,12 +115,12 @@ const MailOnboardingModal = (props: Props) => {
                     className="h-custom"
                     style={{ '--h-custom': maxContentHeight }}
                 >
-                    <div className={clsx('flex', mobile ? 'gap-y-4 pt-4' : 'gap-y-8 pt-6')}>
+                    <div className={clsx('flex', isNarrow ? 'gap-y-4 pt-4' : 'gap-y-8 pt-6')}>
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
                             <div className="flex flex-row gap-4 flex-align-items-center" key={index}>
                                 <img
-                                    className={clsx('w-custom', mobile && 'flex-align-self-start')}
-                                    style={{ '--w-custom': mobile ? '3rem' : '5rem' }}
+                                    className={clsx('w-custom', isNarrow && 'flex-align-self-start')}
+                                    style={{ '--w-custom': isNarrow ? '3rem' : '5rem' }}
                                     src={imgSrc}
                                     alt=""
                                 />
