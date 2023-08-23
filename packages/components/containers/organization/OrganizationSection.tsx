@@ -82,7 +82,8 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                         component: UPSELL_COMPONENT.BANNER,
                         fromApp: app,
                     })}
-                >{c('new_plans: upgrade').t`Included with all ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
+                >{c('new_plans: upgrade')
+                    .t`Included with multiple users ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
             </SettingsSectionWide>
         );
     }
