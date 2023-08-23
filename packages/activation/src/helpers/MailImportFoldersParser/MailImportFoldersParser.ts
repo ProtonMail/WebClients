@@ -188,7 +188,10 @@ class MailImportFoldersParser {
             return result;
         })();
 
-        return verifiedPath;
+        // We remove all separators from the paths and replace them with '-' except if it starts with '[XXXXXX]' (system folder)
+        return verifiedPath.map((pathChunk) =>
+            pathChunk.match(/^\[[a-zA-Z]*]/) ? pathChunk : pathChunk.replaceAll(separator, '-')
+        );
     };
 
     private getProtonPath = (
