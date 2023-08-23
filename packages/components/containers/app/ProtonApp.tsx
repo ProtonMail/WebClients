@@ -5,6 +5,7 @@ import { History, createBrowserHistory as createHistory } from 'history';
 
 import { ExperimentsProvider, FeaturesProvider } from '@proton/components/containers';
 import useInstance from '@proton/hooks/useInstance';
+import metrics from '@proton/metrics';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -113,6 +114,11 @@ interface Props {
     hasInitialAuth?: boolean;
 }
 
+const syncUID = (UID: string | undefined) => {
+    sentry.setUID(UID);
+    metrics.setAuthHeaders(UID || '');
+};
+
 const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) => {
     const pathRef = useRef<string | undefined>();
     const cacheRef = useRef<Cache<string, any>>();
@@ -125,6 +131,8 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                 ? undefined
                 : getInitialState(authentication.getUID(), authentication.getLocalID());
         const history = createHistory({ basename: getBasename(state?.localID) });
+
+        syncUID(state?.UID);
 
         return {
             ...state,
@@ -144,6 +152,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             trusted,
             path,
         }: OnLoginCallbackArguments) => {
+            syncUID(newUID);
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
             authentication.setPersistent(persistent);
@@ -205,6 +214,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             persistedSession?: PersistedSession;
             type?: 'soft';
         } = {}) => {
+            syncUID(undefined);
             authentication.setUID(undefined);
             authentication.setPassword(undefined);
             authentication.setPersistent(undefined);
@@ -278,10 +288,6 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             logout: handleLogout,
             onLogout: logoutListener.subscribe,
         };
-    }, [UID]);
-
-    useEffect(() => {
-        sentry.setUID(UID);
     }, [UID]);
 
     const [, setRerender] = useState<any>();
