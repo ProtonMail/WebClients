@@ -86,7 +86,7 @@ const CycleItemView = ({
                         {headerText}
                     </div>
                 )}
-                <div className="p-4">
+                <div className="p-4" data-testid={`plan-${cycle}`}>
                     <div>
                         <div className="flex flex-justify-space-between gap-1 flex-nowrap">
                             <div className="flex flex-align-items-center flex-nowrap">
