@@ -35,7 +35,7 @@ export const getMailMappingError = (
     const itemName = item.protonPath[item.protonPath.length - 1];
     const hasFoldersTooLongError = item.checked && isNameTooLong(itemName);
     const hasReservedNamesError = item.checked && isNameReserved(itemName);
-    const hasUnavailableNamesError = isNameAlreadyUsed(item.id, unavailableNameErrorPaths);
+    const hasUnavailableNamesError = isNameAlreadyUsed(itemName, unavailableNameErrorPaths);
     const hasEmptyError = isNameEmpty(itemName);
     const hasMergeWarningError = hasMergeWarning(collection, item, isLabelMapping);
 
