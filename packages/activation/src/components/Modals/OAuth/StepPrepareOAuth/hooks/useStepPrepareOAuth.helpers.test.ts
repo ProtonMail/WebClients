@@ -454,7 +454,7 @@ describe('importerHasErrors test check and general behavior', () => {
 
 describe('importerHasErrors test for Gmail imports', () => {
     const socialFolder = {
-        id: 'Social',
+        id: 'id',
         checked: true,
         color: 'test color',
         isSystemFolderChild: false,
@@ -526,7 +526,7 @@ describe('importerHasErrors test for Gmail imports', () => {
         expect(errors).toBe(false);
     });
 
-    it('Should return an error when Social folder and label exists when non Gmail import', () => {
+    it('Should not return an error when Social folder and label exists when non Gmail import', () => {
         const products: ImportType[] = [ImportType.MAIL];
 
         const importerData: ImporterData = {
