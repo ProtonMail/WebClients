@@ -196,32 +196,32 @@ describe('MailFolderMapping', () => {
         it('Should ensure that a folder with no parents containing separator is a valid folder', () => {
             const apiFolders = getApiFolders(['p/c/cc', 'parent', 'parent/child']);
             const foldersMapping = getMapping(new MailImportFoldersParser(apiFolders, false).folders);
-            expect(foldersMapping['p/c/cc'].protonPath).toEqual(['p/c/cc']);
-            expect(foldersMapping['p/c/cc'].providerPath).toEqual(['p/c/cc']);
+            expect(foldersMapping['p/c/cc'].protonPath).toEqual(['p-c-cc']);
+            expect(foldersMapping['p/c/cc'].providerPath).toEqual(['p-c-cc']);
             const labelsMapping = getMapping(new MailImportFoldersParser(apiFolders, true).folders);
-            expect(labelsMapping['p/c/cc'].protonPath).toEqual(['p/c/cc']);
-            expect(labelsMapping['p/c/cc'].providerPath).toEqual(['p/c/cc']);
+            expect(labelsMapping['p/c/cc'].protonPath).toEqual(['p-c-cc']);
+            expect(labelsMapping['p/c/cc'].providerPath).toEqual(['p-c-cc']);
 
             const apiFoldersA = getApiFolders(['p/c', 'parent', 'parent/child']);
             const foldersMappingA = getMapping(new MailImportFoldersParser(apiFoldersA, false).folders);
-            expect(foldersMappingA['p/c'].protonPath).toEqual(['p/c']);
-            expect(foldersMappingA['p/c'].providerPath).toEqual(['p/c']);
+            expect(foldersMappingA['p/c'].protonPath).toEqual(['p-c']);
+            expect(foldersMappingA['p/c'].providerPath).toEqual(['p-c']);
             const labelsMappingA = getMapping(new MailImportFoldersParser(apiFoldersA, true).folders);
-            expect(labelsMappingA['p/c'].protonPath).toEqual(['p/c']);
-            expect(labelsMappingA['p/c'].providerPath).toEqual(['p/c']);
+            expect(labelsMappingA['p/c'].protonPath).toEqual(['p-c']);
+            expect(labelsMappingA['p/c'].providerPath).toEqual(['p-c']);
 
             const apiFoldersB = getApiFolders(['p', 'p/c', 'p/c/cc/ccc']);
             const foldersMappingB = getMapping(new MailImportFoldersParser(apiFoldersB, false).folders);
-            expect(foldersMappingB['p/c/cc/ccc'].protonPath).toEqual(['p', 'c/cc/ccc']);
-            expect(foldersMappingB['p/c/cc/ccc'].providerPath).toEqual(['p', 'c/cc/ccc']);
+            expect(foldersMappingB['p/c/cc/ccc'].protonPath).toEqual(['p', 'c-cc-ccc']);
+            expect(foldersMappingB['p/c/cc/ccc'].providerPath).toEqual(['p', 'c-cc-ccc']);
 
             const apiFoldersC = getApiFolders(['p', 'p/c', 'p/c/cc', 'p/c/cc/ccc', 'p/c/cc/ccc/cccc/ccccc']);
             const foldersMappingC = getMapping(new MailImportFoldersParser(apiFoldersC, false).folders);
-            expect(foldersMappingC['p/c/cc/ccc/cccc/ccccc'].protonPath).toEqual(['p', 'c', 'cc/ccc/cccc/ccccc']);
-            expect(foldersMappingC['p/c/cc/ccc/cccc/ccccc'].providerPath).toEqual(['p', 'c', 'cc', 'ccc/cccc/ccccc']);
+            expect(foldersMappingC['p/c/cc/ccc/cccc/ccccc'].protonPath).toEqual(['p', 'c', 'cc/ccc-cccc-ccccc']);
+            expect(foldersMappingC['p/c/cc/ccc/cccc/ccccc'].providerPath).toEqual(['p', 'c', 'cc', 'ccc-cccc-ccccc']);
             const labelsMappingC = getMapping(new MailImportFoldersParser(apiFoldersC, true).folders);
-            expect(labelsMappingC['p/c/cc/ccc/cccc/ccccc'].providerPath).toEqual(['p', 'c', 'cc', 'ccc/cccc/ccccc']);
-            expect(labelsMappingC['p/c/cc/ccc/cccc/ccccc'].protonPath).toEqual(['p-c-cc-ccc/cccc/ccccc']);
+            expect(labelsMappingC['p/c/cc/ccc/cccc/ccccc'].providerPath).toEqual(['p', 'c', 'cc', 'ccc-cccc-ccccc']);
+            expect(labelsMappingC['p/c/cc/ccc/cccc/ccccc'].protonPath).toEqual(['p-c-cc-ccc-cccc-ccccc']);
         });
     });
 });
