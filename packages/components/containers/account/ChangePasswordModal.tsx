@@ -6,9 +6,8 @@ import { Button } from '@proton/atoms';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { BRAND_NAME, MAIL_APP_NAME, isSSOMode } from '@proton/shared/lib/constants';
-import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
+import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -157,30 +156,14 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
     };
 
     const mutatePassword = async (keyPassword: string) => {
-        // Don't mutate the password when signed in as sub-user
-        if (isSubUser) {
-            return;
-        }
-        const localID = authentication.getLocalID?.();
-        if (!isSSOMode || localID === undefined) {
-            authentication.setPassword(keyPassword);
-            return;
-        }
         try {
-            authentication.setPassword(keyPassword);
-
-            await persistSessionWithPassword({
+            await innerMutatePassword({
                 api,
+                authentication,
                 keyPassword,
                 User,
-                UID: authentication.getUID(),
-                LocalID: localID,
-                persistent: authentication.getPersistent(),
-                trusted: authentication.getTrusted(),
             });
-            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
         } catch (e: any) {
-            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: false });
             // If persisting the password fails for some reason.
             setPartialError({ fatalError: true, persistError: true });
             throw e;
