@@ -60,7 +60,7 @@ const useCheckStatus = (
             }
         }
 
-        run();
+        void run();
 
         return () => {
             active = false;
@@ -122,6 +122,10 @@ const Bitcoin = ({
         onAwaitingPayment?.(awaitingPayment && !loading);
     }, [awaitingPayment, loading]);
 
+    useEffect(() => {
+        void request();
+    }, [amount, currency]);
+
     if (amount < MIN_BITCOIN_AMOUNT) {
         const i18n = (amount: ReactNode) => c('Info').jt`Amount below minimum (${amount}).`;
         return (
@@ -160,11 +164,15 @@ const Bitcoin = ({
         );
     }
 
-    const qrCodeStatus: BitcoinQRCodeProps['status'] = processingToken
-        ? 'pending'
-        : paymentValidated
-        ? 'confirmed'
-        : 'initial';
+    const qrCodeStatus: BitcoinQRCodeProps['status'] = (() => {
+        if (processingToken) {
+            return 'pending';
+        }
+        if (paymentValidated) {
+            return 'confirmed';
+        }
+        return 'initial';
+    })();
 
     const btcAmountBold = (
         <span className="text-bold" key="btc-info-amount">
