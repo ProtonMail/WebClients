@@ -300,4 +300,40 @@ describe('Unsubscribe banner', () => {
         // Second modal should not be opened
         expect(screen.queryByText('hide-my-email aliases')).toBeNull();
     });
+
+    it('should not show an extra modal when the message was coming from an official Proton address', async () => {
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+                Sender: { Address: 'sender@simplelogin.co', Name: 'SimpleLoginAlias', IsProton: 1 },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, false);
+
+        const button = screen.getByTestId('unsubscribe-banner');
+
+        expect(button.textContent).toMatch(/Unsubscribe/);
+
+        if (button) {
+            fireEvent.click(button);
+        }
+
+        // Submit first modal
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
+        }
+
+        // Second modal should not be opened
+        expect(screen.queryByText('hide-my-email aliases')).toBeNull();
+    });
 });
