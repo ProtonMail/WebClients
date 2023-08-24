@@ -15,6 +15,7 @@ import {
 } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
+import { isVerifyAddressOwnership } from './helper';
 import { HumanVerificationSteps } from './interface';
 
 interface Props<T> extends ModalProps {
@@ -40,6 +41,8 @@ const HumanVerificationModal = <T,>({
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
+
+    const [isMandatory, setIsMandatory] = useState<boolean>(true);
 
     const handleSubmit = async (token: string, tokenType: HumanVerificationMethodType) => {
         if (loading) {
@@ -70,8 +73,15 @@ const HumanVerificationModal = <T,>({
     };
 
     return (
-        <Modal className="human-verification-modal" size="small" onClose={onClose} data-testid="verification" {...rest}>
-            <ModalHeader title={title} />
+        <Modal
+            className="human-verification-modal"
+            size="small"
+            onClose={onClose}
+            data-testid="verification"
+            disableCloseOnEscape={isMandatory}
+            {...rest}
+        >
+            <ModalHeader title={title} hasClose={!isMandatory} />
             <ModalContent>
                 <HumanVerificationForm
                     step={step}
@@ -80,6 +90,9 @@ const HumanVerificationModal = <T,>({
                     onClose={onClose}
                     methods={methods}
                     token={token}
+                    onLoaded={(ownershipCache) => {
+                        setIsMandatory(isVerifyAddressOwnership(ownershipCache['ownership-email'].result));
+                    }}
                 />
             </ModalContent>
         </Modal>
