@@ -4160,7 +4160,7 @@
         "Félicitations, vous avez effectué toutes les actions !"
       ],
       "Congratulation, you finished!": [
-        "Félicitations·! Vous avez terminé."
+        "Félicitations ! Vous avez terminé."
       ],
       "Continue setting up your email": [
         "Continuez la configuration de votre messagerie"
@@ -4205,7 +4205,7 @@
         "Ouvrir la checklist"
       ],
       "Open checklist and get free storage": [
-        "Ouvrez la checklist et obtenez plus d'espace de stockage"
+        "Ouvrez la checklist et profitez gratuitement de plus d'espace de stockage"
       ],
       "Popular online services": [
         "Services en ligne les plus courants"
@@ -4226,7 +4226,7 @@
         "Connectez-vous avec l'application mobile pour compléter cette étape."
       ],
       "Storage unlocked": [
-        "Le stockage a été débloqué."
+        "L'espace de stockage est disponible."
       ],
       "Update your logins": [
         "Mettez à jour vos identifiants"
@@ -4633,8 +4633,8 @@
         "${ count } messages non lus"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } de ${ totalProgress }",
-        "${ currentProgress } de ${ totalProgress }"
+        "${ currentProgress } sur ${ totalProgress }",
+        "${ currentProgress } sur ${ totalProgress }"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } image intégrée",
@@ -4807,8 +4807,8 @@
         "Toutes vos modifications seront perdues."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }.",
-        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }."
+        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Une clé publique inconnue a été détectée pour ce destinataire."
@@ -4987,7 +4987,7 @@
         "Voulez-vous signer à nouveau les coordonnées du contact ?"
       ],
       "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Vous ne trouvez pas ce que vous recherchez·? ${ displayAllMailButton }"
+        "Vous ne trouvez pas ce que vous recherchez ? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire."
@@ -5249,7 +5249,7 @@
         "Fusionné"
       ],
       "Message download status:": [
-        "État du téléchargement des messages:"
+        "État du téléchargement des messages :"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Les messages avec une date d'expiration fonctionnent pour l'envoi de messages à des personnes qui utilisent ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
@@ -5448,7 +5448,7 @@
         "Enregistré hier"
       ],
       "Saved: ${ dateString }": [
-        "Enregistrement·: le ${ dateString }"
+        "Enregistré : ${ dateString }"
       ],
       "Saving draft…": [
         "Enregistrement du brouillon en cours"
@@ -8076,7 +8076,7 @@
         "La recherche est devenue plus intelligente et plus rapide."
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Les e-mails indésirables/spam et dans la corbeille sont automatiquement exclus du dossier Tous les messages.${ settingsLink }"
+        "Le dossier « Tous les messages » exclut automatiquement les messages des dossiers « Indésirables/spam » et « Corbeille ». ${ settingsLink }"
       ],
       "Try it today.": [
         "Essayez dès maintenant."
