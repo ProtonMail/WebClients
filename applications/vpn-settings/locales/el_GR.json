@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
+      "Email address is invalid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
@@ -2536,6 +2539,9 @@
         "${ number } διακομιστής",
         "${ number } διακομιστές"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
         "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } απαιτείται για το χαρακτηριστικό Secure Core."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /μήνα)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -5093,8 +5102,8 @@
       ]
     },
     "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Περιλαμβάνεται σε όλα τα προγράμματα ${ BRAND_NAME } για Επιχειρήσεις."
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά σχέδια."
       ]
     },
     "new_plans: Upsell attribute": {
