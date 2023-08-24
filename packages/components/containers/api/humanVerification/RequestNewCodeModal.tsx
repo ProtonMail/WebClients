@@ -5,6 +5,7 @@ import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 import { Prompt } from '../../../components';
+import { isVerifyAddressOwnership } from './helper';
 import { VerificationModel } from './interface';
 
 interface Props {
@@ -18,6 +19,29 @@ interface Props {
 const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClose }: Props) => {
     const strong = <strong key="email">{verificationModel.value}</strong>;
     const [loading, withLoading] = useLoading();
+
+    const editText = (() => {
+        if (verificationModel.method === 'ownership-email') {
+            if (verificationModel.type === 'external') {
+                return c('Action').t`Edit email address`;
+            }
+            if (verificationModel.type === 'login') {
+                return c('Action').t`Edit sign-in details`;
+            }
+        }
+        if (verificationModel.method === 'ownership-sms') {
+            if (verificationModel.type === 'login') {
+                return c('Action').t`Edit sign-in details`;
+            }
+        }
+        if (verificationModel.method === 'email') {
+            return c('Action').t`Edit email address`;
+        }
+        if (verificationModel.method === 'sms') {
+            return c('Action').t`Edit phone number`;
+        }
+    })();
+
     return (
         <Prompt
             open={open}
@@ -36,53 +60,35 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
                 >
                     {c('Action').t`Request new code`}
                 </Button>,
-                <Button
-                    onClick={() => {
-                        onClose();
-                        onEdit();
-                    }}
-                    disabled={loading}
-                >
-                    {(() => {
-                        if (verificationModel.method === 'ownership-email') {
-                            if (verificationModel.type === 'external') {
-                                return c('Action').t`Edit email address`;
-                            }
-                            if (verificationModel.type === 'login') {
-                                return c('Action').t`Edit sign-in details`;
-                            }
-                        }
-                        if (verificationModel.method === 'ownership-sms') {
-                            if (verificationModel.type === 'login') {
-                                return c('Action').t`Edit sign-in details`;
-                            }
-                        }
-                        if (verificationModel.method === 'email') {
-                            return c('Action').t`Edit email address`;
-                        }
-                        if (verificationModel.method === 'sms') {
-                            return c('Action').t`Edit phone number`;
-                        }
-                    })()}
-                </Button>,
+                !editText || isVerifyAddressOwnership(verificationModel) ? (
+                    <></>
+                ) : (
+                    <Button
+                        onClick={() => {
+                            onClose();
+                            onEdit();
+                        }}
+                        disabled={loading}
+                    >
+                        {editText}
+                    </Button>
+                ),
                 <Button onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>,
             ]}
         >
             {(() => {
-                if (verificationModel.method === 'ownership-email' || verificationModel.method === 'ownership-sms') {
-                    if (verificationModel.type === 'login' || verificationModel.type === 'external') {
-                        return c('Info').jt`We'll send a new verification code to ${strong}`;
-                    }
-                }
-                if (verificationModel.method === 'email') {
+                if (verificationModel.method === 'email' || verificationModel.method === 'ownership-email') {
                     return c('Info')
                         .jt`Before requesting a new verification code, check your spam folder and check that ${strong} is the correct address.`;
                 }
                 if (verificationModel.method === 'sms') {
                     return c('Info')
                         .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`;
+                }
+                if (verificationModel.method === 'ownership-sms') {
+                    return c('Info').jt`We'll send a new verification code to ${strong}`;
                 }
             })()}
         </Prompt>
