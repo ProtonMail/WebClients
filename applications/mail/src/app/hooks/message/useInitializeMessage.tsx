@@ -102,7 +102,7 @@ export const useInitializeMessage = () => {
         try {
             // Ensure the message data is loaded
             const message = await loadMessage(messageFromState, api);
-            dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID, api }));
+            dispatch(load.fulfilled(message.data, load.fulfilled.toString(), { ID: localID }));
 
             const messageKeys = await getMessageKeys(message.data);
 
