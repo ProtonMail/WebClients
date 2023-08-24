@@ -34,3 +34,6 @@ export const getAvailableMethods = (methods: HumanVerificationMethodType[]) => {
         invite: !!map.invite,
     } as const;
 };
+
+export const isVerifyAddressOwnership = (model?: VerificationModel) =>
+    !!model && model.method === 'ownership-email' && model.type === 'verify_address';
