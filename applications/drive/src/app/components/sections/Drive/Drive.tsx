@@ -39,7 +39,6 @@ export interface DriveItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
-    corruptedLink?: boolean;
 }
 
 interface Props {
