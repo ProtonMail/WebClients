@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "Sähköpostiosoite ei ole käytössä"
       ],
+      "Email address is invalid": [
+        "Sähköpostiosoite on virheellinen"
+      ],
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
       ],
@@ -5241,6 +5244,9 @@
         "${ numberOfNonPrivateKeys } ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen.",
         "${ numberOfNonPrivateKeys } ladattua tiedostoa eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } on edistynyt tilisuojausratkaisu, joka koostuu kehittyneistä tekoälyjärjestelmistä ja ympäri vuorokauden työskentelevistä asiantuntijoista, jotka suojaavat sinua vaarallisilta tahoilta ja tietoturvauhkilta."
       ],
@@ -5295,6 +5301,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /kuukausi)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(suodata, jos KAIKKI seuraavat ehdot täyttyvät)"
@@ -10050,9 +10059,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Sisältyy ${ plus }-, ${ bundle }- ja ${ BRAND_NAME } for Business -tilauksiin."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Sisältyy kaikkiin ${ BRAND_NAME } for Business -tilauksiin."
       ]
     },
     "new_plans: Upsell attribute": {

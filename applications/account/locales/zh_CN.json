@@ -80,6 +80,9 @@
       "Add label": [
         "添加标签"
       ],
+      "Add multiple users": [
+        "批量添加用户"
+      ],
       "Add notification": [
         "添加通知"
       ],
@@ -144,7 +147,7 @@
         "更改密码"
       ],
       "Chat with us": [
-        "联系我们"
+        "与我们实时对话"
       ],
       "Check import progress": [
         "查看导入进度"
@@ -406,6 +409,9 @@
       ],
       "Got it": [
         "知道了"
+      ],
+      "Help": [
+        "帮助"
       ],
       "Hide": [
         "隐藏"
@@ -707,6 +713,9 @@
       "Set recovery phrase": [
         "设置恢复密语"
       ],
+      "Settings": [
+        "设置"
+      ],
       "Share": [
         "分享"
       ],
@@ -784,6 +793,9 @@
       ],
       "Switch account": [
         "切换账户"
+      ],
+      "Switch or add account": [
+        "切换或添加账户"
       ],
       "Top up": [
         "充值"
@@ -4518,6 +4530,9 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
+      ],
       "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
@@ -4547,6 +4562,9 @@
       ],
       "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /月)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "（满足下列所有条件）"
@@ -8463,9 +8481,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "开通 ${ plus }、${ bundle } 或 ${ BRAND_NAME } 企业版即可使用此功能。"
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "所有 ${ BRAND_NAME } 商务账户等级均包含此功能。"
       ]
     },
     "new_plans: Upsell attribute": {

@@ -3183,6 +3183,9 @@
       "Email address disabled": [
         "E‐Mail‐Adresse deaktiviert"
       ],
+      "Email address is invalid": [
+        "E-Mail-Adresse ist ungültig"
+      ],
       "Email address is required": [
         "E-Mail-Adresse ist erforderlich"
       ],
@@ -5238,6 +5241,9 @@
         "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut.",
         "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } ist ein fortschrittliches Kontoschutzprogramm, das von hochentwickelten KI-Systemen und Spezialisten betrieben wird, die rund um die Uhr arbeiten, um dich vor böswilligen Akteuren und Sicherheitsbedrohungen zu schützen."
       ],
@@ -5292,6 +5298,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/Monat)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
@@ -10034,9 +10043,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Enthalten in ${ plus }, ${ bundle } und ${ BRAND_NAME } for Business."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Enthalten in allen ${ BRAND_NAME } for Business-Abonnements."
       ]
     },
     "new_plans: Upsell attribute": {
