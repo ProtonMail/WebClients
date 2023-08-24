@@ -1,6 +1,5 @@
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 
@@ -80,26 +79,3 @@ export const hasMergeWarning = (
         );
     });
 };
-
-export const mappingHasNameTooLong = (mapping: MailImportFolder[]) =>
-    mapping.some((m) => {
-        const tooLong = isNameTooLong(m.protonPath[m.protonPath.length - 1]);
-        return tooLong;
-    });
-
-export const mappingHasUnavailableNames = (
-    mapping: MailImportFolder[],
-    collection: Label[] | Folder[],
-    isLabelMapping: boolean
-) => {
-    const destinations = mapping
-        .map((m) => (isLabelMapping ? m.protonPath.join(m.separator) : m.protonPath.join(m.separator)))
-        .filter(isTruthy);
-
-    const paths = collection.map((m) => m.Path);
-
-    return destinations.some((dest) => isNameAlreadyUsed(dest, paths));
-};
-
-export const mappingHasReservedNames = (mapping: MailImportFolder[]) =>
-    mapping.some((m) => isNameReserved(m.protonPath.join(m.separator)));
