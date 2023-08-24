@@ -102,7 +102,7 @@
         "Créer"
       ],
       "Create Gateway": [
-        "Créer une passerelle"
+        "Créer une Passerelle"
       ],
       "Create user": [
         "Créer un utilisateur"
@@ -126,7 +126,7 @@
         "Supprimer"
       ],
       "Delete Gateway": [
-        "Supprimer la passerelle"
+        "Supprimer la Passerelle"
       ],
       "Delete user": [
         "Supprimer un utilisateur"
@@ -177,7 +177,7 @@
         "Modifier l'adresse e-mail"
       ],
       "Edit Gateway": [
-        "Modifier la passerelle"
+        "Modifier la Passerelle"
       ],
       "Edit name": [
         "Modifier le nom"
@@ -219,10 +219,10 @@
         "Obtenir ${ vpnPlus }"
       ],
       "Get in touch": [
-        "Contactez-nous"
+        "Nous contacter"
       ],
       "Get more": [
-        "En obtenir plus"
+        "Plus de fonctionnalités"
       ],
       "Get more addresses": [
         "Bénéficiez de plus d'adresses"
@@ -465,7 +465,7 @@
         "Changer d'abonnement"
       ],
       "Upgrade to Business": [
-        "Passer à l'offre Business"
+        "Passer à l'abonnement Business"
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
@@ -513,7 +513,7 @@
         "Votre abonnement comprend :"
       ],
       "Your server will be provisioned in the next days": [
-        "Votre serveur sera configuré dans quelques jours."
+        "Votre serveur sera mis à disposition dans quelques jours."
       ],
       "Zoom in": [
         "Zoom avant"
@@ -561,7 +561,7 @@
         "Désactiver"
       ],
       "Disable E2EE mail": [
-        "Désactiver e-mail E2EE"
+        "E-mail chiffré (E2EE) OFF"
       ],
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
@@ -570,7 +570,7 @@
         "Activer"
       ],
       "Enable E2EE mail": [
-        "Activer e-mail E2EE"
+        "E-mail chiffré (E2EE) ON"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -602,7 +602,7 @@
         "Clés manquantes"
       ],
       "No E2EE mail": [
-        "Pas d'e-mail E2EE"
+        "Pas d'e-mail chiffré (E2EE)"
       ],
       "Orphan": [
         "Orpheline"
@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
+      "Email address is invalid": [
+        "L'adresse e-mail n'est pas valide."
+      ],
       "Email is not valid": [
         "L'adresse e-mail n'est pas valide."
       ],
@@ -1719,13 +1722,13 @@
         "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et saisissez à nouveau votre code."
       ],
       "Impossible to create the gateway": [
-        "La passerelle ne peut être créée."
+        "La Passerelle ne peut pas être créée."
       ],
       "Impossible to edit the gateway": [
-        "La passerelle ne peut être modifiée."
+        "La Passerelle ne peut pas être modifiée."
       ],
       "Impossible to rename the gateway": [
-        "Le nom de la passerelle ne peut être modifié."
+        "Le nom de la passerelle ne peut pas être modifié."
       ],
       "Incorrect login credentials. Please try again.": [
         "Les identifiants de connexion ne sont pas corrects, nous vous invitons à réessayer."
@@ -2536,6 +2539,9 @@
         "${ number } serveur",
         "${ number } serveurs"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement environ ${ provisioningDuration }.",
         "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } est nécessaire pour la fonctionnalité Secure Core."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/mois)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -2598,12 +2607,12 @@
         "Ajouter un serveur (${ availableAddedCount } disponibles)"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Ajout pour ${ addedServerCount } serveur de passerelle",
-        "Ajout pour ${ addedServerCount } serveurs de passerelle"
+        "Ajout de ${ addedServerCount } serveur de Passerelle",
+        "Ajout de ${ addedServerCount } serveurs de Passerelle"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Ajout d'un serveur de passerelle : ${ serverNumber } / ${ total }",
-        "Ajout de serveurs de passerelle : ${ serverNumber } / ${ total }"
+        "Ajout d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
+        "Ajout de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
       ],
       "Additional options": [
         "Options supplémentaires"
@@ -2658,7 +2667,7 @@
         "Voulez-vous vraiment supprimer les droits administrateur de cet utilisateur ?"
       ],
       "Ask your organisation admin to setup Gateways.": [
-        "Demandez à l'administrateur de votre organisation de configurer des passerelles."
+        "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
       ],
       "Attention required": [
         "Attention requise"
@@ -2736,11 +2745,11 @@
         "Créez des adresses e-mail pour d'autres personnes, gérez ${ MAIL_APP_NAME } pour une entreprise, une école ou un groupe. Commencez par ajouter le nom de votre organisation et le domaine personnalisé (par exemple @votreentreprise.com). "
       ],
       "Create your first Gateway": [
-        "Créez votre première passerelle"
+        "Créez votre première Passerelle"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Création d'un serveur de passerelle : ${ serverNumber } / ${ total }",
-        "Création de serveurs de passerelle : ${ serverNumber } / ${ total }"
+        "Création d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
+        "Création de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
       ],
       "Creating your account": [
         "Création de votre compte"
@@ -2761,11 +2770,11 @@
         "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Vous pouvez ajouter des serveurs dédiés avec ds adresses IP dédiées à des passerelles privées pour un contrôle plus précis des accès."
+        "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Élimination pour ${ deletedServerCount } serveur de passerelle",
-        "Élimination pour ${ deletedServerCount } serveurs de passerelle"
+        "Suppression de ${ deletedServerCount } serveur de Passerelle",
+        "Suppression de ${ deletedServerCount } serveurs de Passerelle"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -2957,7 +2966,7 @@
         "La connexion internet est rétablie."
       ],
       "Lean more about gateways": [
-        "En savoir plus sur les passerelles"
+        "En savoir plus sur les Passerelles"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apprenez comment vous connecter à ${ VPN_APP_NAME } avec des applications VPN tierces."
@@ -3002,7 +3011,7 @@
         "La prise en charge du multi-utilisateur n'est pas activée."
       ],
       "Must be between 3 and 20 characters long.": [
-        "La longueur doit être entre 3 et 20 caractères."
+        "La longueur doit être comprise entre 3 et 20 caractères."
       ],
       "Must contain only letters, digits, and dashes (-).": [
         "Les caractères autorisés se limitent aux lettres, chiffres et tirets (-)."
@@ -3017,10 +3026,10 @@
         "Aucune adresse n'existe."
       ],
       "No gateways": [
-        "Aucune passerelle"
+        "Aucune Passerelle"
       ],
       "No Gateways yet": [
-        "Aucune passerelle n'existe pour le moment."
+        "Aucune Passerelle pour le moment"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
@@ -3035,7 +3044,7 @@
         "Nombre de serveurs dédiés dans l'organisation"
       ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "Le nombre de serveurs dédiés que vous tentez d'attribuer (${ addedCount }) est supérieur à celui de votre abonnement (${ remainingCount })·: vous en avez ${ ownedCount } et vous en utilisez ${ usedCount }."
+        "Le nombre de serveurs dédiés que vous tentez d'attribuer (${ addedCount }) est supérieur à celui de votre abonnement (${ remainingCount }) : vous en avez ${ ownedCount } et vous en utilisez ${ usedCount }."
       ],
       "of": [
         "sur"
@@ -3065,7 +3074,7 @@
         "Taille de l’organisation"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organisez vos serveurs dédiés en passerelles et décidez des membres y ayant accès."
+        "Organisez vos serveurs dédiés en Passerelles et décidez des membres y ayant accès."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
@@ -3284,7 +3293,7 @@
         "Cela peut prendre quelques secondes ou minutes selon votre appareil."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Cela peut prendre un moment. Veuillez ne pas fermer cette page ou vous déconnecter d'internet."
+        "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
@@ -3452,7 +3461,7 @@
         "Nous devons authentifier votre paiement auprès de votre banque."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Nous vous recommandons d'avoir au moins 2 serveurs pour assurer la redondance."
+        "Nous vous recommandons d'avoir au moins deux serveurs pour assurer la redondance."
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Nous conseillons l'utilisation de plusieurs serveurs dans différents endroits pour assurer la redondance."
@@ -3500,7 +3509,7 @@
         "Pourquoi ?"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Dans l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
+        "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
@@ -3522,8 +3531,8 @@
         "Vous utilisez ${ ipCount } / ${ ipAddresses } serveurs dédiés disponibles."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Vous utilisez ${ organization.UsedMembers } / ${ organization.MaxMembers } licence utilisateur disponible.",
-        "Vous utilisez ${ organization.UsedMembers } / ${ organization.MaxMembers } licences utilisateur disponibles."
+        "Vous utilisez ${ organization.UsedMembers } licence utilisateur sur ${ organization.MaxMembers }.",
+        "Vous utilisez ${ organization.UsedMembers } licences utilisateur sur ${ organization.MaxMembers }."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
@@ -3532,7 +3541,7 @@
         "Vous pouvez personnaliser et télécharger vos factures à des fins comptables."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Vous pouvez débloquer immédiatement la configuration en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
+        "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
@@ -3923,7 +3932,7 @@
         "Expire le"
       ],
       "Gateway name": [
-        "Nom de la passerelle"
+        "Nom de la Passerelle"
       ],
       "Gift code": [
         "Code cadeau"
@@ -4034,7 +4043,7 @@
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
       "Please share any feedback to help us improve.": [
-        "Faites-nous part de tout commentaire pouvant nous aider à nous améliorer."
+        "N'hésitez pas à nous faire part de vos commentaires pour nous aider à nous améliorer."
       ],
       "Postal code": [
         "Code postal"
@@ -4112,7 +4121,7 @@
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
       ],
       "Why would you like to cancel?": [
-        "Pourquoi souhaitez-vous annuler votre abonnement·?"
+        "Pourquoi voulez-vous annuler votre abonnement ?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
@@ -4193,7 +4202,7 @@
         "Problèmes d'inscription courants"
       ],
       "Contact us": [
-        "Contactez-nous"
+        "Nous contacter"
       ],
       "Create account": [
         "Créer un compte"
@@ -4501,7 +4510,7 @@
         "Console d'administration"
       ],
       "Advanced network security": [
-        "Réseau sécurisé avancé"
+        "Sécurité avancée du réseau"
       ],
       "Advanced sharing security": [
         "Sécurité avancée pour le partage"
@@ -4783,7 +4792,7 @@
         "${ BRAND_NAME } vous permet de créer des adresses e-mail et de gérer les comptes utilisateurs de votre organisation. Idéal pour les familles et les entreprises."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Gestion des accès et de réseau sécurisé avancé grâce à des passerelles dédiées et sécurisées"
+        "Bénéficiez d'une sécurité de réseau et d'une gestion d'accès avancées grâce à des passerelles sécurisées dédiées."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
@@ -4816,7 +4825,7 @@
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Accédez à internet en toute sécurité depuis n'importe où grâce à une surveillance essentielle du réseau"
+        "Accédez à internet en toute sécurité, où que vous soyez, avec les fonctionnalités essentielles de surveillance du réseau."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
@@ -4828,7 +4837,7 @@
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
-        "Des solutions personnalisées pour les grandes organisations ayant des besoins spécifiques en matière de sécurité"
+        "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solution VPN dédiée qui offre un accès à internet sûr, illimité et haut débit."
@@ -4872,7 +4881,7 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "En cliquant sur «·Payer·», vous acceptez nos ${ termsAndConditions }."
+        "En cliquant sur « Payer », vous acceptez nos ${ termsAndConditions }."
       ],
       "terms and conditions": [
         "conditions générales d'utilisation"
@@ -4945,7 +4954,7 @@
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Vous pouvez ajouter des serveurs dédiés avec ds adresses IP dédiées à des passerelles privées pour un contrôle plus précis des accès."
+        "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
@@ -4981,7 +4990,7 @@
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments. Le partage des coffres-forts avec vos amis et votre famille est en cours de développement."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Protégez les ressources de votre entreprise d'un accès public à internet et mettez-les uniquement à disposition par le biais de passerelles privées."
+        "Sécurisez les ressources de votre entreprise sur internet et rendez-les accessibles uniquement par le biais de vos passerelles privées."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gérez votre abonnement, notamment sa personnalisation. Les moyens de paiement acceptés sont les cartes de crédit, PayPal, les cryptomonnaies et les virements bancaires."
@@ -5092,11 +5101,6 @@
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inclus avec tous les abonnements ${ BRAND_NAME } for Business."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Support 24h/24 et 7j/7"
@@ -5136,7 +5140,7 @@
         "Créez jusqu'à ${ n } calendriers"
       ],
       "Dedicated Account manager": [
-        "Gestionnaire de compte dédié"
+        "Responsable de compte dédié"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Emplacements de serveurs dédiés dans plus de ${ numberOfCountries } pays"
@@ -5145,13 +5149,13 @@
         "Emplacements de serveurs dédiés en Amérique du Nord et en Europe"
       ],
       "Multi-platform support": [
-        "Compatibilité avec de nombreuses plateformes"
+        "Prise en charge multiplateforme"
       ],
       "Private gateways": [
         "Passerelles privées"
       ],
       "Require 2FA": [
-        "Nécessite A2F"
+        "Demande d'authentification A2F"
       ]
     },
     "Notification": {
@@ -5165,7 +5169,7 @@
         "Le code n’est pas valide."
       ],
       "IP Address copied to clipboard": [
-        "L'adresse IP a été copiée dans le presse-papier."
+        "L'adresse IP a été copiée dans le presse-papiers."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Les identifiants OpenVPN/IKEv2 ont été regénérés."
@@ -5328,7 +5332,7 @@
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Please select the main reason": [
-        "Veuillez sélectionner la raison principale."
+        "Sélectionnez la raison principale."
       ],
       "Search": [
         "Rechercher"
@@ -5358,7 +5362,7 @@
     },
     "plan customizer, users": {
       "contact": [
-        "contacter"
+        "contactez"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
@@ -5776,19 +5780,19 @@
     },
     "Subscription": {
       "Billed every 15 months": [
-        "Facturation tous les 15 mois"
+        "Facturé tous les 15 mois"
       ],
       "Billed every 2 years": [
-        "Facturation tous les 2 ans"
+        "Facturé tous les 2 ans"
       ],
       "Billed every 30 months": [
-        "Facturation tous les 30 mois"
+        "Facturé tous les 30 mois"
       ],
       "Billed monthly": [
-        "Facturation mensuelle"
+        "Facturé mensuellement"
       ],
       "Billed yearly": [
-        "Facturation annuelle"
+        "Facturé annuellement"
       ]
     },
     "Subscription attribute": {
@@ -6322,7 +6326,7 @@
         "Confirmer le numéro de téléphone"
       ],
       "Contact us": [
-        "Contactez-nous"
+        "Nous contacter"
       ],
       "Couldn’t create accounts": [
         "Les comptes n'ont pas pu être créés."
@@ -6332,13 +6336,13 @@
         "Créer ${ selectedUserIds.length } utilisateurs"
       ],
       "Create a new Gateway": [
-        "Créer une passerelle"
+        "Créer une Passerelle"
       ],
       "Create a new gateway": [
-        "Créer une passerelle"
+        "Créer une Passerelle"
       ],
       "Create Gateway": [
-        "Créer une passerelle"
+        "Créer une Passerelle"
       ],
       "Create multiple user accounts": [
         "Créer plusieurs comptes utilisateurs"
@@ -6380,14 +6384,14 @@
         "Supprimer le compte"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Supprimez le serveur (vous pourrez toujours le récupérer pendant ${ days } jour).",
-        "Supprimez le serveur (vous pourrez toujours le récupérer pendant ${ days } jours)."
+        "Supprimer le serveur (vous pourrez le récupérer pendant ${ days } jour).",
+        "Supprimer le serveur (vous pourrez le récupérer pendant ${ days } jours)."
       ],
       "Delete user": [
         "Supprimer l'utilisateur"
       ],
       "Delete user?": [
-        "Supprimer l'utilisateur?"
+        "Supprimer l'utilisateur ?"
       ],
       "Device connected!": [
         "L'appareil est connecté !"
@@ -6414,13 +6418,13 @@
         "Modifier le nom d’affichage"
       ],
       "Edit Gateway ${ currentName }": [
-        "Modifier la passerelle ${ currentName }"
+        "Modifier la Passerelle ${ currentName }"
       ],
       "Edit servers": [
         "Modifier les serveurs"
       ],
       "Edit the list of servers of the gateway": [
-        "Modifier la liste des serveurs de la passerelle"
+        "Modifier la liste des serveurs de la Passerelle"
       ],
       "Edit user": [
         "Modifier l'utilisateur"
@@ -6429,7 +6433,7 @@
         "Modifier les utilisateurs"
       ],
       "Edit who can access the gateway": [
-        "Modifier les utilisateurs accédant à la passerelle"
+        "Modifier les personnes autorisées à accéder à la Passerelle"
       ],
       "Email": [
         "Adresse e-mail"
@@ -6562,7 +6566,7 @@
         "Supprimer l'utilisateur ?"
       ],
       "Rename the gateway": [
-        "Modifier le nom de passerelle"
+        "Modifier le nom de la Passerelle"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -6781,7 +6785,7 @@
     },
     "Tooltip": {
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "Un administrateur peut modifier votre abonnement, gérer les comptes utilisateurs et mots de passe et attribuer des droits administrateur à d'autres utilisateurs."
+        "Les administrateurs peuvent modifier votre abonnement, gérer les comptes utilisateurs et mots de passe, ainsi qu'accorder des droits d'administrateur à d'autres utilisateurs."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
@@ -6849,7 +6853,7 @@
         "Il manque une fonction importante."
       ],
       "It’s too expensive": [
-        "C'est trop cher"
+        "C'est trop cher."
       ],
       "Other": [
         "Autre"

@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "Dirección de correo deshabilitada"
       ],
+      "Email address is invalid": [
+        "Dirección de correo inválida"
+      ],
       "Email address is required": [
         "Dirección de correo requerida"
       ],
@@ -5241,6 +5244,9 @@
         "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
         "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sistemas sofisticados de inteligencia artificial y especialistas que trabajan las 24 horas para protegerle de malos actores y amenazas de seguridad."
       ],
@@ -5295,6 +5301,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembro)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/mes)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtra si se cumplen TODAS las siguientes condiciones)"
@@ -10051,8 +10060,8 @@
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Se incluye en ${ plus }, ${ bundle } y ${ BRAND_NAME } para empresas."
       ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Se incluye en todos los planes de ${ BRAND_NAME } para empresas."
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Se incluye con múltiples usuarios en los planes de ${ BRAND_NAME } para empresas."
       ]
     },
     "new_plans: Upsell attribute": {

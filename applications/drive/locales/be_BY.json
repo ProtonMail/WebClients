@@ -589,6 +589,9 @@
       "Show preview": [
         "Папярэдні прагляд"
       ],
+      "Show side panel": [
+        "Паказаць бакавую панэль"
+      ],
       "Sign in": [
         "Увайсці"
       ],
@@ -2213,6 +2216,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
       ],
+      "You have reached the contacts limit for your account": [
+        "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
       ],
@@ -2758,9 +2764,6 @@
     "Header": {
       "Contacts": [
         "Кантакты"
-      ],
-      "Contacts, groups and settings": [
-        "Кантакты, групы і налады"
       ]
     },
     "Hint": {
@@ -6450,9 +6453,6 @@
       "Version history": [
         "Гісторыя версій"
       ],
-      "View contacts": [
-        "Прагледзець кантакты"
-      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -6532,8 +6532,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
+      "Hide side panel": [
+        "Схаваць бакавую панэль"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"
+      ],
+      "Show side panel": [
+        "Паказаць бакавую панэль"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"

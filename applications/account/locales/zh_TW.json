@@ -3174,6 +3174,9 @@
       "Email address disabled": [
         "電郵位址已停用"
       ],
+      "Email address is invalid": [
+        "電子郵件位址無效"
+      ],
       "Email address is required": [
         "電郵位址為必填"
       ],
@@ -3545,6 +3548,9 @@
       ],
       "You have no invoices.": [
         "您沒有任何帳單。"
+      ],
+      "You have reached the contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
@@ -4261,6 +4267,9 @@
       ],
       "Access to all countries": [
         "所有國家任選"
+      ],
+      "Add": [
+        "新增"
       ],
       "Add (${ numberOfAddedServers })": [
         "添加(${ numberOfAddedServers })"
@@ -5196,6 +5205,9 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
       ],
@@ -5240,6 +5252,9 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 位成員)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /月)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(篩選須符合下列「全部」條件)"
@@ -5378,6 +5393,9 @@
       ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "Allocated": [
         "已分配"
@@ -8886,6 +8904,9 @@
       "${ appName }: Sign-up": [
         "${ appName }：註冊"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } 帳號"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "建立 ${ BRAND_NAME } 帳號以使用所有加密的 ${ BRAND_NAME } 服務，如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與更多，只要登入一次。取得免費的 ${ BRAND_NAME } 帳號。"
       ],
@@ -9924,9 +9945,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "包含於 ${ plus }、${ bundle } 和 ${ BRAND_NAME } 企業版。"
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "包含於所有 ${ BRAND_NAME } 企業版方案。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11011,6 +11029,20 @@
       ],
       "No results found": [
         "查無結果"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "啟用"
+      ],
+      "inactive": [
+        "未啟用"
+      ],
+      "pending": [
+        "擱置中"
+      ],
+      "to be created": [
+        "待創建"
       ]
     },
     "Settings description": {
@@ -12344,6 +12376,9 @@
       ],
       "Delete logs": [
         "刪除記錄檔"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } days)": [
+        "刪除伺服器（您仍可於 ${ days } 天內還原）"
       ],
       "Delete user": [
         "刪除使用者"

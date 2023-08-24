@@ -11,6 +11,9 @@
       "Add current url": [
         "Adăugare URL actual"
       ],
+      "Add domain to pause list": [
+        "Adăugare domeniu în lista de suspendări"
+      ],
       "Add more": [
         "Adăugare"
       ],
@@ -289,6 +292,11 @@
         "Extindere"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista de domenii în care anumite funcții automate din ${ PASS_SHORT_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
@@ -361,6 +369,9 @@
       "Invalid password manager": [
         "Manager de parole nevalid"
       ],
+      "Invalid url": [
+        "URL nevalid."
+      ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
       ],
@@ -414,6 +425,9 @@
       ],
       "The file you are trying to import is empty": [
         "Fișierul pe care încercați să îl importați este gol."
+      ],
+      "The url is in the list": [
+        "Adresa URL este deja în listă."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Prea multe încercări eșuate. Reconectați-vă."
@@ -943,6 +957,9 @@
       "Autofill": [
         "Autocompletare"
       ],
+      "Autofill 2FA": [
+        "Autocompletare A2F"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Autocompletare câmpuri de conectare selectate"
       ],
@@ -999,6 +1016,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Afișare pictograme ${ PASS_APP_NAME } pe câmpurile de conectare"
+      ],
+      "Domains": [
+        "Domenii"
       ],
       "Download logs": [
         "Descărcare jurnale"
@@ -1128,6 +1148,9 @@
       ],
       "Passwords": [
         "Parole"
+      ],
+      "Pause list": [
+        "Listă suspendări"
       ],
       "Permanently delete items": [
         "Ștergere permanentă articole"

@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
+      "Email address is invalid": [
+        "Sähköpostiosoite on virheellinen"
+      ],
       "Email is not valid": [
         "Virheellinen sähköpostiosoite"
       ],
@@ -2536,6 +2539,9 @@
         "${ number } palvelin",
         "${ number } palvelinta"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core -ominaisuus edellyttää ${ vpnPlus } -tilausta."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /kuukausi)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
@@ -5090,11 +5099,6 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Sinulla voi olla useita ylläpitäjiä. Kaikki ylläpitäjät voivat lisätä ja poistaa käyttäjiä, mutta vain ensisijainen ylläpitäjä voi hallita laskutusta."
-      ]
-    },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Sisältyy kaikkiin ${ BRAND_NAME } for Business -tilauksiin."
       ]
     },
     "new_plans: Upsell attribute": {

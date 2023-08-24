@@ -4611,7 +4611,7 @@
     },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
-        "Telah memiliki akun? ${ signIn }"
+        "Sudah memiliki akun? ${ signIn }"
       ]
     },
     "Go to sign up": {
@@ -5202,8 +5202,11 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } adalah program perlindungan akun bertingkat lanjut diberdayakan oleh sistem kecerdasan buatan canggih dan para ahli bekerja seharian untuk melindungi Anda dari pelaku kejahatan dan ancamanan keamanan."
+        "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun tingkat lanjut yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -5246,6 +5249,9 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /bulan)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Saring apabila SEMUA kondisi terpenuhi)"
@@ -5662,7 +5668,7 @@
         "server khusus"
       ],
       "Dedicated servers": [
-        "Server terdedikasi"
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -5683,7 +5689,7 @@
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak akan dapat masuk atau mendekripsi pesan Anda."
+        "JANGAN lupakan kata sandi ini. Apabila Anda sampai lupa, Anda tidak akan dapat masuk ke akun Anda atau mendekripsi isi pesan Anda."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
@@ -5785,7 +5791,7 @@
         "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
-        "Masukkan Kata sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
+        "Masukkan Kata Sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -5818,7 +5824,7 @@
         "kedaluwarsa ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "Gagal mengambil log."
+        "Log gagal diperoleh."
       ],
       "Fill in user details": [
         "Isi rincian pengguna"
@@ -6145,13 +6151,13 @@
         "Tidak ada kunci akun"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko unuk kehilangan akses menuju akun Anda"
+        "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko untuk kehilangan akses menuju akun Anda"
       ],
       "No action selected": [
         "Tidak ada tindakan yang dipilih"
       ],
       "No addresses exist": [
-        "Alamat tidak ada"
+        "Tidak ada alamat"
       ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
@@ -6328,7 +6334,7 @@
         "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
+        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Mohon verifikasi pembayaran di tab baru yang terbuka."
@@ -6532,7 +6538,7 @@
         "Simpan kata sandi dan berkas ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Kirimkan deposit menggunakan alamat berikut atau pindai kode QR. Deposit Anda akan tercermin di akun setelah konfirmasi."
+        "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
@@ -6772,7 +6778,7 @@
         "autentikasi dua faktor (2FA)"
       ],
       "Two-factor authentication disabled": [
-        "Oentikasi dua faktor dinonaktifkan"
+        "Autentikasi dua faktor dinonaktifkan"
       ],
       "Two-factor authentication enabled": [
         "Autentikasi dua faktor diaktifkan"
@@ -7102,7 +7108,7 @@
         "Akun PayPal Anda harus terhubung ke kartu kredit atau rekening bank agar bisa ditambahkan sebagai metode pembayaran."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
+        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
@@ -7222,7 +7228,7 @@
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
       ],
       "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Langganan Anda akan diperbarui secara otomatis di ${ renewalTime }."
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "info": {
@@ -9936,9 +9942,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Terliput dalam paket ${ plus }, ${ bundle }, dan ${ BRAND_NAME } for Business."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Terliput dalam seluruh paket ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {

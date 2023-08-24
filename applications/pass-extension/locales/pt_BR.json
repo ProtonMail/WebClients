@@ -292,6 +292,11 @@
         "Expandir"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista de domínios onde determinadas funções automáticas ${ PASS_SHORT_APP_NAME } (Preencher, Sugerir e Salvar automaticamente) não deveriam ser executadas."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } o arquivo não pôde ser analisado ${ errorDetail }"
