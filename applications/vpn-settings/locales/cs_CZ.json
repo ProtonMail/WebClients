@@ -2238,6 +2238,9 @@
       "Access to all countries": [
         "Přístup ke všem zemím"
       ],
+      "Add": [
+        "Přidat"
+      ],
       "Add (${ numberOfAddedServers })": [
         "Přidat (${ numberOfAddedServers })",
         "Přidat (${ numberOfAddedServers })",
@@ -5172,11 +5175,6 @@
         "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Dostupné v rámci všech tarifů ${ BRAND_NAME } pro Firmy."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Podpora 24/7"
@@ -5570,6 +5568,14 @@
     "Select file": {
       "Upload CSV file": [
         "Nahrát CSV soubor"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktivní"
+      ],
+      "inactive": [
+        "neaktivní"
       ]
     },
     "Shared calendar; Info about calendar owner": {
