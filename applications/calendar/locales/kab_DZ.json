@@ -2025,6 +2025,9 @@
       "Start time must be before end time": [
         "Asrag n beddu yessfk ad yili send asrag n tagara"
       ],
+      "status page": [
+        "asebter n waddad"
+      ],
       "The address might be misspelled": [
         "Yezmer tella tuccḍa deg tira n tansa"
       ],
@@ -2067,8 +2070,17 @@
       "Unknown error": [
         "Tuccḍa tarussint"
       ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Ur tezmireḍ ara ad tazneḍ ifuhla vCard i wugar n 10 n yinermisen"
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
@@ -2774,6 +2786,9 @@
       "Discard changes?": [
         "Sefsex ibeddilen?"
       ],
+      "Drop file here to upload": [
+        "Sers dagi afaylu ara tessaliḍ"
+      ],
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
@@ -2825,6 +2840,9 @@
       ],
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
@@ -3119,6 +3137,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
@@ -4105,6 +4126,36 @@
         "Zmel"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } wayyur",
+        "i ${ n } wayyuren"
+      ]
+    },
     "Storage": {
       "Release notes": [
         "Tizmilin n llqem"
@@ -4310,6 +4361,14 @@
       "${ hours } h": [
         "${ hours } n usrag",
         "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
@@ -4317,12 +4376,20 @@
         "${ hours } n usrag",
         "${ hours } n yisragen"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
+      ],
       "${ minutes } minute": [
         "${ minutes } n tesdat",
         "${ minutes } n tesdatin"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } tansa n yimayl",
+        "${ emailsCount } n tansiwin imayl"
+      ],
       "Account suspended": [
         "Amiḍan yettwaḥebsen"
       ],
