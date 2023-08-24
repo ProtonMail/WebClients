@@ -17,13 +17,12 @@ import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../mode
 import { SearchParameters } from '../../models/tools';
 
 export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const esDBStatus = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
 
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
     const isLive = useSelector(isLiveSelector);
-    const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
+    const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
     const taskRunning = useSelector(taskRunningSelector);
 
     // Listen to event manager and update the cache

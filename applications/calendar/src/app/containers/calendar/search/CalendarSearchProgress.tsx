@@ -29,10 +29,10 @@ const getProgressStatusText = ({
 
 interface Props {
     esState: ESIndexingState;
-    isPaused: boolean;
+    isPaused?: boolean;
 }
 
-const CalendarSearchProgress = ({ esState, isPaused }: Props) => {
+const CalendarSearchProgress = ({ esState, isPaused = false }: Props) => {
     const [progressValue, setProgresValue] = useState(0);
     const { estimatedMinutes, totalIndexingItems, esProgress, currentProgressValue } = esState;
 

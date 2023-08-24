@@ -30,8 +30,8 @@ const SortDropdown = ({
     className,
     isSearch,
 }: Props) => {
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = esStatus;
     const hideSizeSorting = isSearch && dbExists && esEnabled;
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
 

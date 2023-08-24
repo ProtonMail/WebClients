@@ -147,7 +147,7 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     openDropdown: () => {},
     closeDropdown: () => {},
     setTemporaryToggleOff: () => {},
-    getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
+    esStatus: { ...defaultESContext.esStatus, ...defaultESMailStatus },
 };
 export const MAIL_EVENTLOOP_NAME = 'core';
 

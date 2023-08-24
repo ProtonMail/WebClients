@@ -25,7 +25,7 @@ const CalendarSearch = ({ isNarrow, showSearchField, containerRef, onSearch, onB
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { cacheIndexedDB } = useEncryptedSearchLibrary();
-    const { searchParams, isActive, isIndexing, loading } = useCalendarSearch();
+    const { searchParams, isActive, loading } = useCalendarSearch();
     const keyword = searchParams.keyword || '';
 
     const [searchInputValue, setSearchInputValue] = useState(keyword);
@@ -75,7 +75,6 @@ const CalendarSearch = ({ isNarrow, showSearchField, containerRef, onSearch, onB
                     searchInputParams={{ keyword: searchInputValue }}
                     isNarrow={isNarrow}
                     containerRef={containerRef}
-                    isIndexing={isIndexing}
                     isSearchActive={isActive}
                     onSearch={onSearch}
                     onClose={close}

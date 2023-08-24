@@ -30,7 +30,6 @@ interface Props {
     searchInputParams: ESCalendarSearchParams;
     isNarrow: boolean;
     containerRef: HTMLDivElement | null;
-    isIndexing: boolean;
     isSearchActive: boolean;
     onSearch: () => void;
     onClose: () => void;
@@ -42,7 +41,6 @@ const AdvancedSearch = ({
     searchInputParams,
     isNarrow,
     containerRef,
-    isIndexing,
     isSearchActive,
     onSearch,
     onClose,
@@ -115,6 +113,7 @@ const AdvancedSearch = ({
                     onChange={handleSearch}
                     onSubmit={handleSubmit}
                     showSearchIcon={false}
+                    disabled={!isSearchActive}
                     ref={searchInputRef}
                     suffix={
                         model.keyword ? (
@@ -133,7 +132,7 @@ const AdvancedSearch = ({
                 />
             </div>
             {!isSearchActive ? (
-                <CalendarSearchActivation isIndexing={isIndexing} onClose={onClose} />
+                <CalendarSearchActivation onClose={onClose} />
             ) : (
                 <CalendarSearchForm
                     model={model}

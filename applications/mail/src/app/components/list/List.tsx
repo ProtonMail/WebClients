@@ -112,9 +112,9 @@ const List = (
     ref: Ref<HTMLDivElement>
 ) => {
     const [mailSettings] = useMailSettings();
-    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
+    const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
-    const { contentIndexingDone, esEnabled } = getESDBStatus();
+    const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 

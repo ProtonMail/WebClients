@@ -56,7 +56,7 @@ interface Props {
 }
 const CalendarSearchProvider = ({ children }: Props) => {
     const history = useHistory();
-    const { isLibraryInitialized, encryptedSearch, getESDBStatus } = useEncryptedSearchLibrary();
+    const { isLibraryInitialized, encryptedSearch, esStatus } = useEncryptedSearchLibrary();
 
     const lastNonSearchViewRef = useRef<VIEWS>();
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
@@ -64,7 +64,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const [loading, withLoading, setLoading] = useLoading(true);
     const [openedSearchItem, setOpenedSearchItem] = useState<VisualSearchItem>();
 
-    const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = getESDBStatus();
+    const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = esStatus;
 
     const isIndexing = isEnablingEncryptedSearch || isRefreshing || isMetadataIndexingPaused;
     const isActive = dbExists && !isIndexing;
