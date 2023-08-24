@@ -2235,6 +2235,9 @@
       "Access to all countries": [
         "Acces la toate ţările"
       ],
+      "Add": [
+        "Adăugare"
+      ],
       "Add (${ numberOfAddedServers })": [
         "Adăugare (${ numberOfAddedServers })",
         "Adăugare (${ numberOfAddedServers })",
@@ -2548,6 +2551,9 @@
         "${ number } servere",
         "${ number } de servere"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
@@ -2566,6 +2572,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Trebuie ${ vpnPlus } pentru opțiunea Secure Core."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } / lună)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
@@ -5150,11 +5159,6 @@
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inclus cu toate planurile ${ BRAND_NAME } for Business."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Asistență 24/7"
@@ -5546,6 +5550,20 @@
     "Select file": {
       "Upload CSV file": [
         "Încărcați un fișier CSV"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "activ"
+      ],
+      "inactive": [
+        "inactiv"
+      ],
+      "pending": [
+        "în așteptare"
+      ],
+      "to be created": [
+        "va fi creat"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6448,6 +6466,11 @@
       ],
       "Delete account": [
         "Ștergere cont"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zile).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } de zile)."
       ],
       "Delete user": [
         "Ștergere utilizator"
