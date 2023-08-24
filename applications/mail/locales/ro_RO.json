@@ -955,6 +955,9 @@
       "Show preview": [
         "Afișare previzualizare"
       ],
+      "Show side panel": [
+        "Afișare panou lateral"
+      ],
       "Sign in": [
         "Autentificare"
       ],
@@ -3469,6 +3472,9 @@
       "You did not provide a file.": [
         "Nu ați furnizat un fișier."
       ],
+      "You have reached the contacts limit for your account": [
+        "Ați atins limita de contacte disponibilă în cont."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ați atins maximul de calendare disponibile. Unele calendare nu au putut fi importate."
       ],
@@ -4875,6 +4881,11 @@
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "S-a detectat o cheie publică necunoscută pentru acest destinatar."
@@ -9285,8 +9296,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
+      "Hide side panel": [
+        "Ascundere panou lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
+      ],
+      "Show side panel": [
+        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
