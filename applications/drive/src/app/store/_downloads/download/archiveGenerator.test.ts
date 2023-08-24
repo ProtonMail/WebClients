@@ -7,8 +7,10 @@ type TestLink = {
     isFile: boolean;
     name: string;
     path?: string[];
+    fileModifyTime?: number;
     expectedName?: string;
     expectedPath?: string;
+    expectedLastModified?: Date;
 };
 
 async function* generateLinks(links: TestLink[]) {
@@ -19,12 +21,14 @@ async function* generateLinks(links: TestLink[]) {
                 name: link.name,
                 parentPath: link.path || [],
                 stream: new ReadableStream<Uint8Array>(),
+                fileModifyTime: link.fileModifyTime || 0,
             };
         } else {
             yield {
                 isFile: link.isFile,
                 name: link.name,
                 parentPath: link.path || [],
+                fileModifyTime: link.fileModifyTime || 0,
             };
         }
     }
@@ -43,13 +47,16 @@ describe('ArchiveGenerator', () => {
                 const path = link.expectedPath || (link.path || []).join('/');
                 const fileName = link.expectedName || link.name;
                 const name = path ? `${path}/${fileName}` : fileName;
+                const lastModified = link.expectedLastModified || new Date('1970-01-01 00:00:00+00:00');
                 return link.isFile
                     ? {
                           name,
                           input: expect.anything(),
+                          lastModified: lastModified,
                       }
                     : {
                           name,
+                          lastModified: lastModified,
                       };
             })
         );
@@ -121,6 +128,23 @@ describe('ArchiveGenerator', () => {
             { isFile: true, name: 'FILE.TXT', expectedName: 'FILE (4).TXT' },
             { isFile: true, name: 'File.Txt', expectedName: 'File (5).Txt' },
             { isFile: true, name: 'FilE.TxT', expectedName: 'FilE (6).TxT' },
+        ]);
+    });
+
+    it('generates modify date from link timestamp', async () => {
+        await checkWritingLinks([
+            {
+                isFile: true,
+                name: 'driveEpoch.txt',
+                fileModifyTime: 1571314130,
+                expectedLastModified: new Date('2019-10-17 15:08:50+0300'),
+            },
+            {
+                isFile: false,
+                name: 'negative',
+                fileModifyTime: -10,
+                expectedLastModified: new Date('1969-12-31 23:59:50+00:00'),
+            },
         ]);
     });
 });

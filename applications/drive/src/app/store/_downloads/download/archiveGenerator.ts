@@ -1,4 +1,5 @@
 import { makeZip } from 'client-zip';
+import { fromUnixTime } from 'date-fns';
 import { ReadableStream, TransformStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
@@ -56,11 +57,13 @@ export default class ArchiveGenerator {
                 yield {
                     name: name.slice(1), // Windows doesn't like leading root slash.
                     input: link.stream,
+                    lastModified: fromUnixTime(link.fileModifyTime),
                 };
             } else {
                 const name = this.adjustFolderPath(link.parentPath, link.name);
                 yield {
                     name: name.slice(1), // Windows doesn't like leading root slash.
+                    lastModified: fromUnixTime(link.fileModifyTime),
                 };
             }
         }

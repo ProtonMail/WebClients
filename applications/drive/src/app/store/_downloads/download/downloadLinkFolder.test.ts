@@ -82,6 +82,7 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
         mimeType: size !== undefined ? 'text/plain' : 'Folder',
         size: size || 0,
         signatureAddress: 'address',
+        fileModifyTime: 0,
     };
 }
 

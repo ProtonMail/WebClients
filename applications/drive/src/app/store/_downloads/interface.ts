@@ -16,6 +16,8 @@ export interface LinkDownload {
     revisionId?: string;
     signatureAddress?: string;
     signatureIssues?: SignatureIssues;
+    // Used only to preserve timestamp when downloading a zip archive.
+    fileModifyTime: number;
 
     buffer?: Uint8Array[];
 }
@@ -82,7 +84,7 @@ type OnErrorCallback = (err: any) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
-    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues'
+    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues' | 'fileModifyTime'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,

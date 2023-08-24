@@ -146,6 +146,7 @@ export class FolderTreeLoader {
                 size: link.size,
                 signatureAddress: link.signatureAddress,
                 signatureIssues: link.signatureIssues,
+                fileModifyTime: link.fileModifyTime,
             })),
         ];
         return Promise.all(
