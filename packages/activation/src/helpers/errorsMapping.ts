@@ -20,8 +20,17 @@ export const isNameAlreadyUsed = (
 
     /**
      * 1. Check if item has same name than folder or labels
-     * Because Folder can't have the same name than a label and vice versa,
-     * if `labelMapping` is `true` we check over folder names and vice versa
+     *
+     * When `labelMapping` is `true` we check over folder names and vice versa
+     *
+     * This check can seem strange at first glance. Why when we import folders
+     * we ensure that no labels have the same name and vice versa ?
+     *
+     * Because when importing folders if a folder has same name we move it's content directly inside.
+     * Short answer is "Mapping is already done"
+     *
+     * On our side Label and folders as the same root entity so their names can't be the same.
+     * So if we import folders and a local label has the same name, we need to ask for a rename.
      */
     const folderOrLabelsCollection = isLabelMapping
         ? folders.map((item) => item.Path)
