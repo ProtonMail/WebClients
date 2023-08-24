@@ -20,7 +20,7 @@ import './HumanVerificationModal.scss';
 export interface HumanVerificationFormProps {
     onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;
     onClose: () => void;
-    onLoaded?: () => void;
+    onLoaded?: (data: OwnershipCache) => void;
     onError?: (error: unknown) => void;
     token: string;
     methods: HumanVerificationMethodType[];
@@ -60,12 +60,14 @@ const HumanVerificationForm = ({
         return firstAvailableMethod || 'captcha';
     });
 
+    const ownershipCacheRef = useRef<OwnershipCache>({ 'ownership-sms': {}, 'ownership-email': {} });
+    const verificationModelCacheRef = useRef<VerificationModel | undefined>(undefined);
     const loadedOnceRef = useRef(false);
     const handleLoaded = () => {
         if (loadedOnceRef.current) {
             return;
         }
-        onLoaded?.();
+        onLoaded?.(ownershipCacheRef.current);
         loadedOnceRef.current = true;
     };
 
@@ -77,9 +79,6 @@ const HumanVerificationForm = ({
             handleLoaded();
         }
     }, [onLoaded, selectedMethod]);
-
-    const ownershipCacheRef = useRef<OwnershipCache>({ 'ownership-sms': {}, 'ownership-email': {} });
-    const verificationModelCacheRef = useRef<VerificationModel | undefined>(undefined);
 
     const codeMethod = (
         <CodeMethod
