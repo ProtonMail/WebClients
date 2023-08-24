@@ -27,6 +27,33 @@ import useLinksState from './useLinksState';
 // same time not too high to not overflow available memory on the device.
 const FAILING_FETCH_BACKOFF_MS = 10 * 60 * 1000; // 10 minutes.
 
+const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string): DecryptedLink => ({
+    encryptedName: encryptedLink.name,
+    name,
+    linkId: encryptedLink.linkId,
+    createTime: encryptedLink.createTime,
+    corruptedLink: true,
+    activeRevision: encryptedLink.activeRevision,
+    digests: { sha1: '' },
+    hash: encryptedLink.hash,
+    size: encryptedLink.size,
+    originalSize: encryptedLink.size,
+    fileModifyTime: encryptedLink.metaDataModifyTime,
+    metaDataModifyTime: encryptedLink.metaDataModifyTime,
+    isFile: encryptedLink.isFile,
+    mimeType: encryptedLink.mimeType,
+    hasThumbnail: encryptedLink.hasThumbnail,
+    isShared: encryptedLink.isShared,
+    parentLinkId: encryptedLink.parentLinkId,
+    rootShareId: encryptedLink.rootShareId,
+    signatureIssues: encryptedLink.signatureIssues,
+    originalDimensions: {
+        height: 0,
+        width: 0,
+    },
+    trashed: encryptedLink.trashed,
+});
+
 export default function useLink() {
     const linksKeys = useLinksKeys();
     const linksState = useLinksState();
@@ -405,10 +432,13 @@ export function useLinkInner(
                                   : undefined,
                           }));
 
-                const [
-                    { name, nameVerified },
-                    { fileModifyTime, fileModifyTimeVerified, originalSize, originalDimensions, digests },
-                ] = await Promise.all([namePromise, xattrPromise]);
+                const [nameResult, xattrResult] = await Promise.allSettled([namePromise, xattrPromise]);
+
+                if (nameResult.status === 'rejected') {
+                    return generateCorruptDecryptedLink(encryptedLink, '�');
+                }
+
+                const { nameVerified, name } = nameResult.value;
 
                 const signatureIssues: SignatureIssues = {};
                 if (
@@ -419,6 +449,13 @@ export function useLinkInner(
                 ) {
                     signatureIssues.name = nameVerified;
                 }
+
+                if (xattrResult.status === 'rejected') {
+                    return generateCorruptDecryptedLink(encryptedLink, name);
+                }
+                const { fileModifyTimeVerified, fileModifyTime, originalSize, originalDimensions, digests } =
+                    xattrResult.value;
+
                 if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                     signatureIssues.xattrs = fileModifyTimeVerified;
                 }
