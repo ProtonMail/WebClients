@@ -225,30 +225,34 @@ const MailboxContainer = ({
 
     const handleElement = useCallback(
         (elementID: string | undefined, preventComposer = false) => {
-            // Using the getter to prevent having elements in dependency of the callback
-            const [element] = getElementsFromIDs([elementID || '']);
+            const fetchElementThenCompose = async () => {
+                // Using the getter to prevent having elements in dependency of the callback
+                const [element] = getElementsFromIDs([elementID || '']);
 
-            if (isMessage(element) && isDraft(element) && !preventComposer) {
-                onCompose({
-                    type: ComposeTypes.existingDraft,
-                    existingDraft: { localID: element.ID as string, data: element as Message },
-                    fromUndo: false,
-                });
-            }
-            if (isConversationContentView && isMessage(element)) {
-                onMessageLoad();
-                history.push(
-                    setParamsInLocation(history.location, {
-                        labelID,
-                        elementID: (element as Message).ConversationID,
-                        messageID: element.ID,
-                    })
-                );
-            } else {
-                onMessageLoad();
-                history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
-            }
-            handleCheckAll(false);
+                if (isMessage(element) && isDraft(element) && !preventComposer) {
+                    void onCompose({
+                        type: ComposeTypes.existingDraft,
+                        existingDraft: { localID: element.ID as string, data: element as Message },
+                        fromUndo: false,
+                    });
+                }
+                if (isConversationContentView && isMessage(element)) {
+                    onMessageLoad();
+                    history.push(
+                        setParamsInLocation(history.location, {
+                            labelID,
+                            elementID: (element as Message).ConversationID,
+                            messageID: element.ID,
+                        })
+                    );
+                } else {
+                    onMessageLoad();
+                    history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
+                }
+                handleCheckAll(false);
+            };
+
+            void fetchElementThenCompose();
         },
         [onCompose, isConversationContentView, labelID, history]
     );

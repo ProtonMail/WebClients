@@ -1,9 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { Optional, Recipient } from '@proton/shared/lib/interfaces';
 
 import { RecipientType } from '../../models/address';
 import { globalReset } from '../actions';
+import { MessageState } from '../messages/messagesTypes';
 import { Composer, ComposerID, ComposersState } from './composerTypes';
 
 const initialState: ComposersState = {
@@ -21,18 +22,38 @@ const composersSlice = createSlice({
     reducers: {
         addComposer(
             state,
-            action: PayloadAction<Pick<Composer, 'messageID' | 'type' | 'senderEmailAddress' | 'recipients'>>
+            action: PayloadAction<
+                Optional<
+                    Pick<Composer, 'messageID' | 'type' | 'senderEmailAddress' | 'recipients' | 'status'>,
+                    'recipients'
+                >
+            >
         ) {
             const composerID = getComposerUID();
-            const { messageID, type, senderEmailAddress, recipients } = action.payload;
+            const { messageID, type, senderEmailAddress, recipients, status } = action.payload;
 
-            state.composers[composerID] = {
+            const composer = {
                 ID: composerID,
                 messageID,
                 type,
                 senderEmailAddress,
                 changesCount: 0,
-                recipients,
+                recipients: {
+                    ToList: recipients?.ToList || [],
+                    CCList: recipients?.CCList || [],
+                    BCCList: recipients?.BCCList || [],
+                },
+                status,
+            } as Composer;
+
+            state.composers[composerID] = composer;
+        },
+        setInitialized(state, action: PayloadAction<{ ID: ComposerID; message: MessageState }>) {
+            state.composers[action.payload.ID].senderEmailAddress = action.payload.message?.data?.Sender.Address;
+            state.composers[action.payload.ID].recipients = {
+                ToList: action.payload.message.data?.ToList || [],
+                CCList: action.payload.message.data?.CCList || [],
+                BCCList: action.payload.message.data?.BCCList || [],
             };
         },
         removeComposer(state, action: PayloadAction<{ ID: ComposerID }>) {
