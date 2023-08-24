@@ -166,6 +166,9 @@
       "Continue": [
         "Kemmel"
       ],
+      "Continue anyway": [
+        "Ad tkemmeleḍ akken yebɣu yili"
+      ],
       "Continue import": [
         "Kemmel akter"
       ],
@@ -205,8 +208,14 @@
       "Create link": [
         "Rnu aseɣwen"
       ],
+      "Create user": [
+        "Rnu aseqdac"
+      ],
       "Create users": [
         "Rnu iseqdacen"
+      ],
+      "Create your own": [
+        "Rnu amiḍan"
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -240,6 +249,9 @@
       ],
       "Delete record": [
         "Kkes asekles"
+      ],
+      "Delete user": [
+        "Kkes aseqdac"
       ],
       "Delete without exporting": [
         "Kkes s war asifeḍ"
@@ -310,6 +322,9 @@
       "Edit name": [
         "Ẓreg isem"
       ],
+      "Edit password": [
+        "Ẓreg awal uffir"
+      ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
       ],
@@ -379,6 +394,9 @@
       "Get more addresses": [
         "Awi ugar n tansiwin"
       ],
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
@@ -426,6 +444,12 @@
       ],
       "Insert link": [
         "Ger aseɣwen"
+      ],
+      "Invite": [
+        "Snubget"
+      ],
+      "Invite user": [
+        "Nced iseqdacen"
       ],
       "Italic": [
         "Yekna"
@@ -498,6 +522,9 @@
       ],
       "Pay": [
         "Xelleṣ"
+      ],
+      "Pay ${ price }": [
+        "Xelleṣ ${ price }"
       ],
       "Preview": [
         "Taskant"
@@ -673,6 +700,9 @@
       "Set catch-all": [
         "Sbadu catch-all"
       ],
+      "Set new password": [
+        "Sbadu awal uffir amaynut"
+      ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
@@ -714,6 +744,9 @@
       ],
       "Sign out of all accounts": [
         "Ffeɣ seg meṛṛa imiḍanen"
+      ],
+      "Sign up for free": [
+        "Jerred baṭel"
       ],
       "Signing in": [
         "Tuqqna"
@@ -2204,6 +2237,12 @@
     "Domain spam notification": {
       "${ name } added": [
         "${ name } yettwarna"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } yemutti ɣer tebdart yettusirgen"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } imutti akken iwata"
       ]
     },
     "Downgrade account reason": {
@@ -2290,6 +2329,12 @@
     "Email spam notification": {
       "${ name } added": [
         "${ name } yettwarna"
+      ],
+      "${ name } moved to block list": [
+        "${ name } yemutti ɣer tebdart n yiḥder"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } yettwakkes akken iwata"
       ]
     },
     "Email subject": {
@@ -2571,6 +2616,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
+      "status page": [
+        "asebter n waddad"
+      ],
       "Tab closed": [
         "Iccer yettwamdel"
       ],
@@ -2639,6 +2687,12 @@
       ],
       "Unknown payment token status": [
         "Addad n ujiṭun n uxelleṣ d arussin"
+      ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Asenqed ur yeddi ara, ɛreḍ akka yiwen usrag ticki."
@@ -2968,6 +3022,9 @@
       "Access to all countries": [
         "Kcem ɣer tmura meṛṛa"
       ],
+      "Add": [
+        "Rnu"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Tuqqna alamma d ${ plusVpnConnections } n yibenk",
         "Tuqqna alamma d ${ plusVpnConnections } n yibenkan"
@@ -3091,6 +3148,20 @@
       ],
       "starred": [
         "s yitran"
+      ]
+    },
+    "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Rnu amsizdeg udmawan i useddu n kra n tigawin s wudem awurman, am ucraḍ d uḥraz n yiznan."
+      ],
+      "Allow:": [
+        "Sireg:"
+      ],
+      "Block:": [
+        "Sewḥel:"
+      ],
+      "Spam:": [
+        "Aspam:"
       ]
     },
     "Font Face Default": {
@@ -3545,6 +3616,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } yesseḥbes akatar i kra n wakud acku amiḍan-ik·im txuṣṣ deg-s tallunt. Tzemreḍ:"
       ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwidthLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } ad yettusbadu d awitay amezwer."
       ],
@@ -3643,6 +3717,9 @@
       "2. They try ${ planName }": [
         "2. Ttaɛraḍen ${ planName }"
       ],
+      "30-day money-back guarantee": [
+        "Aɣram ɣef 30 n wussan yettwaḍmen"
+      ],
       "30-day money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
       ],
@@ -3730,6 +3807,9 @@
       "Amount below minimum (${ amount }).": [
         "Azal ddaw n wadday (${ amount })."
       ],
+      "Amount due": [
+        "Tallayt ara txelseḍ"
+      ],
       "and": [
         "akked"
       ],
@@ -3801,6 +3881,21 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Uqbel ad tizmireḍ ad tazneḍ neɣ ad teṭṭfeḍ imaylen s tansiwin-ik timaynutin, ilaq ad asent-id-tesnulfuḍ tisura n uwgelhen."
+      ],
+      "Billed every 12 months": [
+        "After n yal 12 wayyuren"
+      ],
+      "Billed every 15 months": [
+        "After n yal 15 wayyuren"
+      ],
+      "Billed every 24 months": [
+        "After n yal 24 wayyuren"
+      ],
+      "Billed every 30 months": [
+        "After n yal 30 wayyuren"
+      ],
+      "Billed every month": [
+        "After yal ayyur"
       ],
       "Billing cycle: ${ text }": [
         "Asellek yal:${ text }"
@@ -3915,6 +4010,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Sader tisura-k·m PGP i useqdec n yimeẓla-nniḍen yemṣadan d PGP."
       ],
+      "Drop file here to upload": [
+        "Sers dagi afaylu ara tessaliḍ"
+      ],
       "Edit label": [
         "Ẓreg tabzimt"
       ],
@@ -3996,6 +4094,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Asirew n tefyirt n tririt tamaynut ad tsens tafyirt-ik·im taqburt."
       ],
+      "Get ${ upsellPlanName }": [
+        "Awi ${ upsellPlanName }"
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Awi tansa-w ${ BRAND_NAME }"
       ],
@@ -4022,6 +4123,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
+      ],
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
+        "Ma yella tesεiḍ taɣult tudmawant s ${ MAIL_APP_NAME }, tzemreḍ ad tesbaduḍ tansa n yimayl n tuṭṭfa kullec ara d-iremsen iznan yettwaznen ɣer taɣult-ik·im, maca tansa n yimayl tarameɣtut (am., imi tili tuccda deg tira)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ma yella tesεiḍ tangalt n usefk, sekcem-itt ddaw i wakken ad yettwasnas asenqes-inek·inem."
@@ -4050,6 +4154,9 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Ma yella tebɣiḍ ad tsuddseḍ amiḍan-a akked yiwen-nniḍen, UR t-ttekkes ARA."
       ],
+      "Image description": [
+        "Aglam n tugna"
+      ],
       "Image URL": [
         "URL n tugna"
       ],
@@ -4074,6 +4181,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "Ɣur-k·m: Kra n lbiruwat n uklas ur qebblen ara azalen n CNAME s twala deg taggara (deg wadeg i ssuturen wiyaḍ ayenni). Ma yella aseklas ur iqbil ara isekalasen-inek·inem CNAME, ttxil-k·m kkes tawala deg taggara n yal azal n CNAME value syen ɛreḍ tikkelt-nniḍen."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
@@ -4132,6 +4242,9 @@
       ],
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Issin amek ara tkecmeḍ ɣer ${ VPN_APP_NAME } s yisnasen VPN n wis kraḍ."
       ],
       "Learn more": [
         "Issin ugar"
@@ -4241,11 +4354,20 @@
       "Only you can see the labels.": [
         "Ala kečč·kemm i izemren ad iwali tibzimin."
       ],
+      "Open source": [
+        "Aɣbalu yeldin"
+      ],
+      "Optional": [
+        "Afrayan"
+      ],
       "Organization keys activated": [
         "Tisura n tuddsa remdent"
       ],
       "Organization keys restored": [
         "Tisura n tuddsa uɣalent-d"
+      ],
+      "Organization size": [
+        "Teɣzi n tkebbanit"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Inedbalen-nniḍen llan di tuddsa-k. D kečč ara sen-yefken awal uffir amaynut."
@@ -4299,6 +4421,9 @@
       "Priority support": [
         "Tallalt yezwaren"
       ],
+      "Protected by Swiss privacy laws": [
+        "Yettummesten s isaḍufen n tbaḍnit n Sswis"
+      ],
       "Public link invite": [
         "Aseɣwen n usnubget azayaz"
       ],
@@ -4341,6 +4466,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Ḥrez awale-ik•im uffir deg umḍiq yettwamanen. Tekki ɣef tignit akken ad tsentmeḍ d akken turiḍ awal-ik•im uffir akken iwata."
       ],
+      "Saving your password": [
+        "Asekles awal-ik uffir"
+      ],
       "Scan QR code instead": [
         "Mtawi tangalt QR deg umḍiq-is"
       ],
@@ -4361,6 +4489,9 @@
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
+      ],
+      "Setting up your organization": [
+        "Sbadu tkebbanit-ik"
       ],
       "Show original message": [
         "Sken izen anaṣli"
@@ -4383,8 +4514,14 @@
       "Storage used by this user": [
         "Aḥraz yettwasqedcen sɣur useqdec-a"
       ],
+      "Summary": [
+        "Agzul"
+      ],
       "support team": [
         "tarbaɛt n tallalt"
+      ],
+      "Swiss based": [
+        "Deg Swis"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
@@ -4397,6 +4534,9 @@
       ],
       "Text to display": [
         "Aḍris ad d-yettwaseknen"
+      ],
+      "Thank you": [
+        "Tanemmirt-ik!"
       ],
       "The calendar will be removed from your account.": [
         "Awitay ad yettwakkes seg umiḍan-ik·im."
@@ -4454,11 +4594,17 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Akken ad tsentmeḍ, ttxil-k m sekcem isem n useqdac i tebɣiḍ ad tekkseḍ."
       ],
+      "to continue to ${ product }": [
+        "i ukemmel ɣer ${ product }"
+      ],
       "to continue to ${ toAppName }": [
         "i ukemmel ɣer ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
+      ],
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ${ VPN_APP_NAME } i yibenk-ik sakin qqen ɣer uqeddac."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ččar amiḍan-ik·im s yisemdan i tzemreḍ ad tesxedmeḍ i uttekki deg uɣawas amaynut neɣ allus n uɣawas-ik·im amiran. Ad d-tesɛud asmad i yal ${ i18nCurrency } i tserfeḍ."
@@ -4496,6 +4642,9 @@
       "Update recovery phrase": [
         "Leqqem tafyirt n tririt"
       ],
+      "Upgrade to unlock": [
+        "Sali ad yeldi"
+      ],
       "Upload picture": [
         "Sili tugna"
       ],
@@ -4516,6 +4665,9 @@
       ],
       "Version ${ version }": [
         "Lqem ${ version }"
+      ],
+      "Version history": [
+        "Amezruy n lqem"
       ],
       "Want servers in other countries?": [
         "Tesriḍ iqeddacen deg tmura niḍen?"
@@ -4547,6 +4699,9 @@
       "Week and month views only apply to desktop.": [
         "Tiskanin n yimalas d wayyuren teddunt kan ɣef tnarit."
       ],
+      "Welcome": [
+        "Ansuf"
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Mi ara yettusens, aya ad issewḥel ifuyla n tugniwin ad d-alin deg yibenk-ik·im s war ma teẓriḍ."
       ],
@@ -4558,6 +4713,9 @@
       ],
       "Whole organization": [
         "Meṛṛa takebbanit"
+      ],
+      "Why?": [
+        "Ayɣer?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "S war armad, ur tettizmireḍ ara ad ternuḍ iseqdacen imaynuten, ad ternuḍ tansiwin i yiseqdacen yellan, neɣ ad tkecmeḍ ar umiḍan n iseqdacen ur yellin ara d usligen."
@@ -4604,6 +4762,9 @@
       ],
       "You cannot undo this action.": [
         "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Ur tezmireḍ ara ad tesqedceḍ inekcam n tuqqna n OpenVPN / IKEv2 akken ad tkecmeḍ ɣer yisnasen n ${ VPN_APP_NAME } neɣ ɣer tfelwit n tedbelt n ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
@@ -4655,6 +4816,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
@@ -5103,6 +5267,9 @@
       "ALL": [
         "AKK"
       ],
+      "Allow": [
+        "Sireg"
+      ],
       "Allow recovery by email": [
         "Sireg tiririt s imayl"
       ],
@@ -5154,6 +5321,9 @@
       "Billing cycle": [
         "Tawala n ufter"
       ],
+      "Block": [
+        "Sewḥel"
+      ],
       "Block email tracking": [
         "Sewḥel aḍfar n yimaylen"
       ],
@@ -5168,6 +5338,12 @@
       ],
       "Browser version": [
         "Lqem n yiminig"
+      ],
+      "BTC address": [
+        "Tansa BTC"
+      ],
+      "BTC amount": [
+        "Azal BTC"
       ],
       "Calendar": [
         "Awitay"
@@ -5535,6 +5711,9 @@
       "Organization password": [
         "Awal uffir n tuddsa"
       ],
+      "Organization size": [
+        "Teɣzi n tkebbanit"
+      ],
       "Other amount": [
         "Tasmekta-nniḍen"
       ],
@@ -5616,8 +5795,14 @@
       "Select your country": [
         "Fren tamurt-ik/m"
       ],
+      "Select your plan": [
+        "Fren aɣawas"
+      ],
       "Send auto-reply": [
         "Azen tiririt tawurmant"
+      ],
+      "Send in": [
+        "Yettwazen deg"
       ],
       "Show secondary time zone": [
         "Sken izḍi usrid wis sin"
@@ -5702,6 +5887,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Sali 1 neɣ ugar n yifuyla n tririt neɣ tisura n uwgelhen"
+      ],
+      "Use a recovery phone number": [
+        "Seqdec uṭṭun n tilifun n tririt"
       ],
       "Use folder colors": [
         "Seqdec initen n ukaram"
@@ -6013,6 +6201,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Kcem"
       ],
+      "${ BRAND_NAME } Account": [
+        "Amiḍan ${ BRAND_NAME }"
+      ],
       "Create a new ${ appName } account": [
         "Rnu amiḍan amaynut ${ appName }"
       ]
@@ -6190,6 +6381,9 @@
       "All": [
         "Akk"
       ],
+      "Allow": [
+        "Sireg"
+      ],
       "Back": [
         "Ɣer deffir"
       ],
@@ -6198,6 +6392,9 @@
       ],
       "Back to inbox": [
         "Uɣal ar tnaka n urmas"
+      ],
+      "Block": [
+        "Sewḥel"
       ],
       "Calendar": [
         "Awitay"
@@ -6309,8 +6506,14 @@
       "${ size } storage": [
         "${ size } n uḥraz"
       ],
+      "1 user": [
+        "1 useqdac"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Advanced network security": [
+        "Seǧhed taɣellist n uzeṭṭa-k"
       ],
       "Auto-reply": [
         "Tiririt tawurmant"
@@ -6498,6 +6701,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } yensa"
+      ],
       "${ PROTON_SENTINEL_NAME } has been enabled": [
         "${ PROTON_SENTINEL_NAME } yettwarmed"
       ],
@@ -6552,6 +6758,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Ansuf ɣer ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Ansuf ɣer ${ VPN_APP_NAME }"
       ]
@@ -7233,6 +7442,36 @@
         "Asenqed"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } wayyur",
+        "i ${ n } wayyuren"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Yettili-d usader n lqem n umiḍan-ik.im, ttxil rǧu"
@@ -7448,6 +7687,9 @@
       "Import record deleted": [
         "Kter asekles yettwakksen"
       ],
+      "Invitation sent": [
+        "Tinnubga tettwazen"
+      ],
       "Invoice customized": [
         "Tafaturt tudmawant"
       ],
@@ -7481,6 +7723,9 @@
       "Phone number updated": [
         "Uṭṭun n tiliɣri yettuleqqem"
       ],
+      "Port copied to clipboard": [
+        "Tawwurt yettwanɣel ɣer tecfawt"
+      ],
       "Preference saved": [
         "Ismenyifen ttwaskelsen"
       ],
@@ -7489,6 +7734,9 @@
       ],
       "Resuming import": [
         "Kemmel taktert"
+      ],
+      "Server copied to clipboard": [
+        "Aqeddac yettwanɣel ɣef afus"
       ],
       "Session revoked": [
         "Tiɣimit tettwaḥwi"
@@ -7619,6 +7867,12 @@
       "Import": [
         "Kter"
       ],
+      "List": [
+        "Tabdart"
+      ],
+      "Marked as": [
+        "Yettwacreḍ am"
+      ],
       "Name": [
         "Isem"
       ],
@@ -7645,12 +7899,24 @@
       "${ hours } h": [
         "${ hours } n usrag",
         "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } n usrag",
         "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
       ],
       "${ minutes } minute": [
         "${ minutes } n tesdat",
@@ -7676,6 +7942,9 @@
       "4. Select a server to connect to": [
         "4. Fren aqeddac wuɣur ara teqqneḍ"
       ],
+      "Accessibility": [
+        "Tuffart"
+      ],
       "Account and password": [
         "Amiḍan d wawal uffir"
       ],
@@ -7687,6 +7956,9 @@
       ],
       "Action": [
         "Tigawt"
+      ],
+      "Activate @pm.me": [
+        "Rmed @pm.me"
       ],
       "Activate organization key": [
         "Rmed tasarut n tuddsa"
@@ -7715,6 +7987,9 @@
       "Add invoice details": [
         "Rnu ttfaṣil n ufter"
       ],
+      "Add new user": [
+        "Rnu aseqdac amaynut"
+      ],
       "Add PayPal payment method": [
         "Rnu tarrayt n uxelleṣ PayPal"
       ],
@@ -7724,8 +7999,14 @@
       "Add Sieve filter": [
         "Rnu imsizdeg Sieve"
       ],
+      "Add to block list": [
+        "Rnu ɣer tebdart n usewḥel"
+      ],
       "Add to spam list": [
         "Rnu ɣer tebdart n yispamen"
+      ],
+      "Add user accounts": [
+        "Rnu imiḍanen n useqdac"
       ],
       "Add users": [
         "Rnu iseqdacen"
@@ -7771,6 +8052,9 @@
       ],
       "Cancel subscription": [
         "Sefsex ajerred"
+      ],
+      "Cancel subscription?": [
+        "Sefsex ajerred?"
       ],
       "Card verification": [
         "Takerḍa n usenqed"
@@ -7823,6 +8107,9 @@
       "Connect ${ name }": [
         "Qqen ɣer ${ name }"
       ],
+      "Contact us": [
+        "Nermes-aɣ-d"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Rnu ${ selectedUserIds.length } useqdac",
         "Rnu ${ selectedUserIds.length } yiseqdacen"
@@ -7830,11 +8117,17 @@
       "Create Gateway": [
         "Rnu tanezgert"
       ],
+      "Create user accounts": [
+        "Rnu imiḍanen n useqdac"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Rnu amiḍan-ik ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Rnu tansa-ik ${ BRAND_NAME }"
+      ],
+      "Creating user accounts": [
+        "Timerna n yimiḍanen n useqdac"
       ],
       "Credentials": [
         "Inekcumen"
@@ -8131,6 +8424,9 @@
       "OpenVPN configuration files": [
         "Ifuyla n twila OpenVPN"
       ],
+      "Organization name": [
+        "Isem n tuddsa"
+      ],
       "Other calendars": [
         "Iwitayen-nniḍen"
       ],
@@ -8257,6 +8553,9 @@
       "Set up two-factor authentication": [
         "Sbadu asesteb s snat n tarrayin"
       ],
+      "Set your password": [
+        "Sbadu awal-ik uffir"
+      ],
       "Settings": [
         "Iɣewwaren"
       ],
@@ -8300,6 +8599,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Ttwarnan akken iwata ${ successfullyCreatedUsers.length } umiḍan n useqdac",
         "Ttwarnan akken iwata ${ successfullyCreatedUsers.length } imiḍanen n useqdac"
+      ],
+      "Summary": [
+        "Agzul"
       ],
       "Switch to one-password mode": [
         "Uɣal ar uskar n yiwen n wawal uffir"

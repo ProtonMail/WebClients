@@ -4310,6 +4310,9 @@
       "Access to all countries": [
         "Přístup ke všem zemím"
       ],
+      "Add": [
+        "Přidat"
+      ],
       "Add (${ numberOfAddedServers })": [
         "Přidat (${ numberOfAddedServers })",
         "Přidat (${ numberOfAddedServers })",
@@ -10221,9 +10224,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro Firmy."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Dostupné v rámci všech tarifů ${ BRAND_NAME } pro Firmy."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11335,6 +11335,14 @@
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktivní"
+      ],
+      "inactive": [
+        "neaktivní"
       ]
     },
     "Settings description": {

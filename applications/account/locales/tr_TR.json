@@ -3561,6 +3561,9 @@
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
       ],
+      "You have reached the contacts limit for your account": [
+        "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
@@ -4279,6 +4282,9 @@
       ],
       "Access to all countries": [
         "Tüm ülkelere erişim"
+      ],
+      "Add": [
+        "Ekle"
       ],
       "Add (${ numberOfAddedServers })": [
         "Ekle (${ numberOfAddedServers })",
@@ -5235,6 +5241,9 @@
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin.",
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
       ],
@@ -5289,6 +5298,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /ay)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
@@ -5434,6 +5446,10 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak",
+        "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak"
       ],
       "Allocated": [
         "Ayrılmış"
@@ -8976,6 +8992,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Hesap aç"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } hesabı"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabı açarak, tek hesap ile ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerini kullanın. Ücretsiz bir ${ BRAND_NAME } hesabı açın."
       ],
@@ -10037,9 +10056,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "${ plus }, ${ bundle } ve ${ BRAND_NAME } for Business tarifelerinde bulunur."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Tüm ${ BRAND_NAME } for Business tarifelerinde bulunur."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11134,6 +11150,20 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "kullanımda"
+      ],
+      "inactive": [
+        "kullanım dışı"
+      ],
+      "pending": [
+        "bekliyor"
+      ],
+      "to be created": [
+        "oluşturulacak"
       ]
     },
     "Settings description": {
@@ -12495,6 +12525,10 @@
       ],
       "Delete logs": [
         "Günlük kayıtlarını sil"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
       ],
       "Delete user": [
         "Kullanıcıyı sil"

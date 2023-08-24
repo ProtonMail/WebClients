@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "E-postadress inaktiverad"
       ],
+      "Email address is invalid": [
+        "E-postadress är ogiltig"
+      ],
       "Email address is required": [
         "E-postadress är obligatoriskt"
       ],
@@ -5241,6 +5244,9 @@
         "${ numberOfNonPrivateKeys } uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen.",
         "${ numberOfNonPrivateKeys } uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
       ],
@@ -5295,6 +5301,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmar)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/månad)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrera om ALLA av följande villkor är uppfyllda)"
@@ -7077,6 +7086,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Du använder för närvarande ${ organization.UsedMembers } av din ${ organization.MaxMembers } tillgängliga användarlicens.",
+        "Du använder för närvarande ${ organization.UsedMembers } av dina ${ organization.MaxMembers } tillgängliga användarlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du är inloggad på kontot ${ memberAddress }."
@@ -10039,9 +10052,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {
