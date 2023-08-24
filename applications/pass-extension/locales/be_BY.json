@@ -11,6 +11,9 @@
       "Add current url": [
         "Дадаць бягучы URL-адрас"
       ],
+      "Add domain to pause list": [
+        "Дадаць дамен у спіс прыпыненых"
+      ],
       "Add more": [
         "Дадаць яшчэ"
       ],
@@ -289,6 +292,11 @@
         "Разгарнуць"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
@@ -362,6 +370,9 @@
       "Invalid password manager": [
         "Памылковы менеджар пароляў"
       ],
+      "Invalid url": [
+        "Памылковы URL-адрас"
+      ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
       ],
@@ -415,6 +426,9 @@
       ],
       "The file you are trying to import is empty": [
         "Файл, які вы спрабуеце імпартаваць нічога не змяшчае"
+      ],
+      "The url is in the list": [
+        "URL-адрас ужо знаходзіцца ў спісе"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Занадта шмат няўдалых спроб. Увайдзіце яшчэ раз."
@@ -960,6 +974,9 @@
       "Autofill": [
         "Аўтазапаўненне"
       ],
+      "Autofill 2FA": [
+        "Аўтазапаўненне 2ФА"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Аўтаматычна адкрываць аўтазапаўненне пры факусіроўцы палёў уваходу"
       ],
@@ -1016,6 +1033,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Паказваць значок ${ PASS_APP_NAME } у палях уваходу"
+      ],
+      "Domains": [
+        "Дамены"
       ],
       "Download logs": [
         "Спампаваць журналы"
@@ -1145,6 +1165,9 @@
       ],
       "Passwords": [
         "Паролі"
+      ],
+      "Pause list": [
+        "Спіс прыпыненых"
       ],
       "Permanently delete items": [
         "Незваротна выдаліць элементы"

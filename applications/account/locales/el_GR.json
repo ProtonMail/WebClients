@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
+      "Email address is invalid": [
+        "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
       ],
@@ -5241,6 +5244,9 @@
         "${ numberOfNonPrivateKeys } ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά.",
         "${ numberOfNonPrivateKeys } ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και οι ειδικοί εργάζονται συνεχώς για να σας προστατεύσουν από κακούς λειτουργούς και από απειλές ασφαλείας."
       ],
@@ -5295,6 +5301,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /μήνα)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
@@ -10051,8 +10060,8 @@
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Περιλαμβάνεται στα ${ plus }, ${ bundle } και ${ BRAND_NAME } για Επιχειρήσεις."
       ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Περιλαμβάνεται σε όλα τα προγράμματα ${ BRAND_NAME } για Επιχειρήσεις."
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Περιλαμβάνεται με πολλαπλούς χρήστες ${ BRAND_NAME } για επιχειρηματικά σχέδια."
       ]
     },
     "new_plans: Upsell attribute": {

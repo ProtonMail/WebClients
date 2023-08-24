@@ -1848,6 +1848,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
+      "status page": [
+        "asebter n waddad"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Isem n ukaram d arameɣtu. Ttxil-k·m fren isem-nniḍen."
       ],
@@ -1881,8 +1884,17 @@
       "Unknown error": [
         "Tuccḍa tarussint"
       ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Ur tezmireḍ ara ad tazneḍ ifuhla vCard i wugar n 10 n yinermisen"
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
@@ -2186,9 +2198,6 @@
     "Header": {
       "Contacts": [
         "Inermisen"
-      ],
-      "Contacts, groups and settings": [
-        "Inermisen, igrawen akked iɣewwaren"
       ]
     },
     "Hint": {
@@ -2654,6 +2663,9 @@
       "Downloading": [
         "Asider"
       ],
+      "Drop file here to upload": [
+        "Sers dagi afaylu ara tessaliḍ"
+      ],
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
@@ -2727,6 +2739,9 @@
       ],
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
@@ -3031,6 +3046,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dayen ur tettizmireḍ ara ad tkecmeḍ ɣer yifuyla-inek·inem ssebba n uwenez n wawal uffir. Ales asali n tsarut n uwgelhen taqburt i wakken ad d-terred anekcum. ${ KeyReactivationButton }"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
@@ -3901,6 +3919,36 @@
         "Zmel"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } wayyur",
+        "i ${ n } wayyuren"
+      ]
+    },
     "Spotlight": {
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
@@ -4030,6 +4078,14 @@
       "${ hours } h": [
         "${ hours } n usrag",
         "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
@@ -4037,12 +4093,20 @@
         "${ hours } n usrag",
         "${ hours } n yisragen"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
+      ],
       "${ minutes } minute": [
         "${ minutes } n tesdat",
         "${ minutes } n tesdatin"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } tansa n yimayl",
+        "${ emailsCount } n tansiwin imayl"
+      ],
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } yecceḍ usader",
         "${ numberOfFailedTransfer.total } ccḍen isadaren"
@@ -4376,9 +4440,6 @@
       ],
       "Uploaded by": [
         "Yuli sɣur"
-      ],
-      "View contacts": [
-        "Wali inermisen"
       ],
       "Warning": [
         "Alɣu"

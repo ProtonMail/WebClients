@@ -5241,6 +5241,9 @@
         "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
         "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
       ],
@@ -5295,6 +5298,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /maand)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
@@ -5882,7 +5888,7 @@
         "Fout bij het ophalen van logs."
       ],
       "Fill in user details": [
-        "Vul gebruikers gegevens in"
+        "Vul gebruikersgegevens in"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -6902,7 +6908,7 @@
         "Afbeelding uploaden"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Upload uw voltooide CSV-bestand om accounts aan te maken."
+        "Upload uw voltooide CSV-bestand om accounts aan te maken"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
@@ -6978,6 +6984,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "We bevelen aan om minstens 2 servers te bezitten om redundantie te bieden."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "We raden aan om meerdere servers op verschillende locaties te hebben voor redundantie."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
@@ -10047,9 +10056,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inbegrepen bij ${ plus }, ${ bundle } en ${ BRAND_NAME } voor Bedrijven."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inbegrepen bij alle ${ BRAND_NAME } voor Bedrijven-abonnementen."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10426,6 +10432,9 @@
       ],
       "Secure Core configs": [
         "Secure Core configuraties"
+      ],
+      "Select who can access...": [
+        "Selecteer wie toegang krijgt tot..."
       ],
       "Standard server configs": [
         "Standaard server configuraties"
@@ -11152,6 +11161,9 @@
       ],
       "pending": [
         "in behandeling"
+      ],
+      "to be created": [
+        "aan te maken"
       ]
     },
     "Settings description": {
@@ -12514,6 +12526,10 @@
       "Delete logs": [
         "Logs wissen"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
+      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -12600,6 +12616,9 @@
       ],
       "Error": [
         "Fout"
+      ],
+      "Every member of the organization can access": [
+        "Elke gebruiker binnen uw organisatie kan"
       ],
       "Export": [
         "Exporteren"
@@ -13041,7 +13060,7 @@
         "Abonnement upgraden"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Upload CSV-bestand om meerdere gebruikers te creëren"
+        "Upload CSV-bestand om meerdere gebruikers aan te maken"
       ],
       "Users": [
         "Gebruikers"

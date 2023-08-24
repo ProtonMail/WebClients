@@ -2734,9 +2734,6 @@
     "Header": {
       "Contacts": [
         "Contacts"
-      ],
-      "Contacts, groups and settings": [
-        "Contacts, groupes et paramètres"
       ]
     },
     "Hint": {
@@ -3178,8 +3175,8 @@
         "Toutes vos modifications seront perdues."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }.",
-        "Tous vos contacts seront importés jusqu'à une limite de ${ MAX_CONTACTS_PER_USER }."
+        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
+        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Vérifiez aussi dans le dossier Corbeille."
@@ -6237,9 +6234,6 @@
       ],
       "Version history": [
         "Historique des versions"
-      ],
-      "View contacts": [
-        "Afficher les contacts"
       ],
       "Warning": [
         "Attention"

@@ -11,6 +11,9 @@
       "Add current url": [
         "加入目前的 url"
       ],
+      "Add domain to pause list": [
+        "新增網域至暫停清單"
+      ],
       "Add more": [
         "加入更多"
       ],
@@ -289,6 +292,11 @@
         "展開"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "不應執行 ${ PASS_SHORT_APP_NAME } 中的某些自動功能（自動填寫、自動建議、自動儲存）的網域清單。"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 的檔案無法進行剖析。 ${ errorDetail }"
@@ -359,6 +367,9 @@
       "Invalid password manager": [
         "錯誤密碼管理器"
       ],
+      "Invalid url": [
+        "無效的網址"
+      ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
       ],
@@ -412,6 +423,9 @@
       ],
       "The file you are trying to import is empty": [
         "您匯入的檔案為空白的"
+      ],
+      "The url is in the list": [
+        "此網址於清單中"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗次數過多。請重新再登入。"
@@ -909,6 +923,9 @@
       "Autofill": [
         "自動填入"
       ],
+      "Autofill 2FA": [
+        "自動填入雙重驗證"
+      ],
       "Automatically open autofill when focusing login fields": [
         "登入欄位取得焦點時自動開啟自動填入"
       ],
@@ -965,6 +982,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "顯示${ PASS_APP_NAME }圖示於登入欄位"
+      ],
+      "Domains": [
+        "網域"
       ],
       "Download logs": [
         "下載記錄檔"
@@ -1094,6 +1114,9 @@
       ],
       "Passwords": [
         "密碼"
+      ],
+      "Pause list": [
+        "暫停清單"
       ],
       "Permanently delete items": [
         "永久刪除項目"

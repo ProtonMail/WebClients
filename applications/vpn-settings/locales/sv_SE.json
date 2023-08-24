@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
+      "Email address is invalid": [
+        "E-postadress är ogiltig"
+      ],
       "Email is not valid": [
         "E-post är inte giltig"
       ],
@@ -2536,6 +2539,9 @@
         "${ number } server",
         "${ number } servrar"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }.",
         "${ provisioningCounter } servrar håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } krävs för Secure Core-funktion."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/månad)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -3516,6 +3525,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Du använder för närvarande ${ organization.UsedMembers } av din ${ organization.MaxMembers } tillgängliga användarlicens.",
+        "Du använder för närvarande ${ organization.UsedMembers } av dina ${ organization.MaxMembers } tillgängliga användarlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du är inloggad på kontot ${ memberAddress }."
@@ -5079,11 +5092,6 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
-      ]
-    },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {

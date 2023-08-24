@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
+      "Email address is invalid": [
+        "E-Mail-Adresse ist ungültig"
+      ],
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
       ],
@@ -2536,6 +2539,9 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } ist für die Secure Core-Funktion notwendig."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/Monat)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
@@ -5084,11 +5093,6 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
-      ]
-    },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Enthalten in allen ${ BRAND_NAME } for Business-Abonnements."
       ]
     },
     "new_plans: Upsell attribute": {

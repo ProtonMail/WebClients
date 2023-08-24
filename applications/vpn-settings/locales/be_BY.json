@@ -2241,6 +2241,9 @@
       "Access to all countries": [
         "Доступ да ўсіх краін"
       ],
+      "Add": [
+        "Дадаць"
+      ],
       "Add (${ numberOfAddedServers })": [
         "Дадаць (${ numberOfAddedServers })",
         "Дадаць (${ numberOfAddedServers })",
@@ -2563,6 +2566,9 @@
         "${ number } сервераў",
         "${ number } серверы"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Адбываецца наладжванне ${ provisioningCounter } сервера. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
@@ -2583,6 +2589,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функцыі Secure Core патрабуецца тарыфны план ${ vpnPlus }."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } штомесяц)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -5211,11 +5220,6 @@
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Пастаўляецца з усімі тарыфнымі планамі ${ BRAND_NAME } для бізнесу."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Падтрымка 24/7"
@@ -5612,6 +5616,17 @@
     "Select file": {
       "Upload CSV file": [
         "Запампаваць файл CSV"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "актыўна"
+      ],
+      "inactive": [
+        "неактыўна"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6535,6 +6550,12 @@
       ],
       "Delete account": [
         "Выдаліць уліковы запіс"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"

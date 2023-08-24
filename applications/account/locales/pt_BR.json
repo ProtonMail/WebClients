@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "Endereço de e-mail desativado"
       ],
+      "Email address is invalid": [
+        "O endereço de e-mail não é válido."
+      ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório"
       ],
@@ -5244,6 +5247,9 @@
         "${ numberOfNonPrivateKeys } arquivo enviado não é uma chave privada válida. Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } requer pelo menos 1 servidor dedicado servidor${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
@@ -5298,6 +5304,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /mês)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrar se TODAS as seguintes condições forem atendidas)"
@@ -10059,9 +10068,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Incluso com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Incluso com todos os planos ${ BRAND_NAME } para Empresas."
       ]
     },
     "new_plans: Upsell attribute": {
