@@ -3,10 +3,12 @@ import { DEFAULT_OFFSET, VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { serverTime } from '../serverTime';
-import type { ApiInterface as CryptoApiInterface } from '../worker/api';
+import type { ApiInterface } from '../worker/api';
 import { WorkerVerifyOptions } from '../worker/api.models';
 
-export { CryptoApiInterface, VERIFICATION_STATUS };
+export { VERIFICATION_STATUS };
+
+export type CryptoApiInterface = ApiInterface;
 
 const assertNotNull = (value: CryptoApiInterface | null): CryptoApiInterface => {
     if (value === null) {
@@ -26,6 +28,7 @@ interface CryptoProxyInterface extends CryptoApiInterface {
      * @param onRelease - callback called after `this.releaseEndpoint()` is invoked and endpoint is released
      */
     setEndpoint<T extends CryptoApiInterface>(endpoint: T, onRelease?: (endpoint: T) => Promise<void>): void;
+
     /**
      * Release endpoint. Afterwards, a different one may be set via `setEndpoint()`.
      * If a `onRelease` callback was passed to `setEndpoint()`, the callback is called before returning.
