@@ -46,7 +46,12 @@ export interface MailImportFolder {
 /**
  * Parse folders from provider
  *
- * @returns an array of MailImportFolder
+ * @example
+ * ```
+ * const parser = new MailImportFoldersParser(apiFolders, isLabelMapping);
+ * const parsedFolders = parser.folders;
+ * ```
+ * @returns MailImportFoldersParser.folders - The parsed folders - MailImportFolder[]
  */
 class MailImportFoldersParser {
     private separatorSplitToken: string;
