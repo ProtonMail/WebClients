@@ -1,7 +1,7 @@
 import { Alignment, Direction } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
-
+import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
@@ -9,7 +9,6 @@ import Icon from '../../icon/Icon';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata } from '../interface';
 import ToolbarDropdown from './ToolbarDropdown';
-
 
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 
@@ -21,7 +20,7 @@ interface Props {
 
 const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
     <ToolbarDropdown
-        content={<Icon name="three-dots-horizontal" alt={c('Action').t`More`} />}
+        content={<Icon name="three-dots-horizontal" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`More`} />}
         className="flex-item-noshrink ml-auto editor-toolbar-more-dropdown"
         title={c('Action').t`More`}
         data-testid="editor-toolbar-more"

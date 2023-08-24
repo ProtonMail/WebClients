@@ -26,6 +26,7 @@ export interface ToolbarConfig {
     bold: ItemToggle;
     italic: ItemToggle;
     underline: ItemToggle;
+    strikethrough: ItemToggle;
     fontFace: Optional<ItemValue, 'value'>;
     fontSize: Optional<ItemValue, 'value'>;
     fontColor: ItemValue;
@@ -75,6 +76,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         toggleItalic,
         toggleNumbering,
         toggleUnderline,
+        toggleStrikethrough
     } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
     if (!editorInstance || editorInstance.isDisposed()) {
         return;
@@ -105,6 +107,12 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
             isActive: !!formatState.isUnderline,
             toggle: () => {
                 toggleUnderline(editorInstance);
+            },
+        },
+        strikethrough: {
+            isActive: !!formatState.isStrikeThrough,
+            toggle: () => {
+                toggleStrikethrough(editorInstance);
             },
         },
         fontFace: {
