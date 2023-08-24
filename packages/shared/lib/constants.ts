@@ -1146,3 +1146,8 @@ export enum PROTON_WEBSITES {
 export const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
     [PLANS.VPN_BUSINESS]: 1,
 } as const;
+
+/**
+ * Mail Composer toolbar
+ */
+export const COMPOSER_TOOLBAR_ICON_SIZE = 14;
