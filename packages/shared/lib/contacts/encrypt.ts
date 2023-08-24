@@ -87,8 +87,9 @@ export const prepareCardsFromVCard = (
 
     // The FN field could be empty on contact creation, this is intentional but we need to compute it from first and last name field if that's the case
     if (!vCardContact.fn) {
-        const [lastName, firstName] = vCardContact.n?.value ?? [];
-        const computedFirstAndLastName = [firstName, lastName].join(' ');
+        const givenName = vCardContact?.n?.value?.givenNames?.[0].trim() ?? '';
+        const familyName = vCardContact?.n?.value?.familyNames?.[0].trim() ?? '';
+        const computedFirstAndLastName = `${givenName} ${familyName}` || ''; // Fallback that should never happen since we should always have a first and last name
         const fallbackEmail = vCardContact.email?.[0]?.value; // Fallback that should never happen since we should always have a first and last name
 
         const computedFullName: VCardProperty = {

@@ -4,63 +4,71 @@ import { c } from 'ttag';
 
 import { ErrorZone } from '@proton/components/components';
 import { isFirstLastNameValid } from '@proton/shared/lib/contacts/property';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import ContactFieldString from './ContactFieldString';
 
 interface Props {
     contactID?: string;
     vCardContact: VCardContact;
-    vCardProperty: VCardProperty<string[]>;
+    vCardProperty: VCardProperty<VcardNValue>;
     isSubmitted: boolean;
-    onChangeVCard: (vCardProperty: VCardProperty) => void;
+    onChangeVCard: (vCardProperty: VCardProperty<VcardNValue>) => void;
 }
 
 enum FieldsPos {
-    lastName = 0,
-    firstName = 1,
+    familyName = 0,
+    givenName = 1,
 }
 
 const ContactFieldN = (
     { contactID, vCardContact, vCardProperty, isSubmitted, onChangeVCard, ...rest }: Props,
     firstNameFieldRef: Ref<HTMLInputElement>
 ) => {
-    const [lastName, firstName] = vCardProperty.value;
-    const requiredError =
-        !contactID && !vCardContact.fn?.[0].value && isSubmitted && !vCardProperty.value.join('').trim().length;
+    const givenName = vCardProperty.value.givenNames[0] || '';
+    const familyName = vCardProperty.value.familyNames[0] || '';
 
     // The N field is an array where the first element is the family name and the second element is the given name.
     const handleChange = (change: VCardProperty, pos: FieldsPos) => {
         const { value } = change;
-        const newValue = [...vCardProperty.value];
-        newValue[pos] = value;
+        const newValue = { ...vCardProperty.value };
+        if (pos === FieldsPos.familyName) {
+            newValue.familyNames[0] = value;
+        } else {
+            newValue.givenNames[0] = value;
+        }
 
         onChangeVCard({ ...vCardProperty, field: 'n', value: newValue });
     };
 
-    const firstNameTooLong = !isFirstLastNameValid(firstName);
-    const lastNameTooLong = !isFirstLastNameValid(lastName);
+    const givenNameTooLong = !isFirstLastNameValid(givenName);
+    const familyNameTooLong = !isFirstLastNameValid(familyName);
+    const requiredError = !contactID && !vCardContact.fn?.[0].value && isSubmitted && !givenName && !familyName;
 
     return (
         <div className="flex flex-col on-mobile-flex-column gap-2">
             <div className="flex-item-fluid">
                 <ContactFieldString
                     ref={firstNameFieldRef}
-                    vCardProperty={{ ...vCardProperty, field: 'firstName', value: firstName }}
-                    onChange={(change) => handleChange(change, FieldsPos.firstName)}
-                    error={requiredError || firstNameTooLong}
+                    placeholder={c('Placeholder').t`First name`}
+                    data-testid="First name"
+                    vCardProperty={{ ...vCardProperty, field: 'givenName', value: givenName }}
+                    onChange={(change) => handleChange(change, FieldsPos.givenName)}
+                    error={requiredError || givenNameTooLong}
                     {...rest}
                 />
-                {firstNameTooLong ? <ErrorZone>{c('Error').t`First name is too long`}</ErrorZone> : null}
+                {givenNameTooLong ? <ErrorZone>{c('Error').t`First name is too long`}</ErrorZone> : null}
             </div>
             <div className="flex-item-fluid">
                 <ContactFieldString
-                    vCardProperty={{ ...vCardProperty, field: 'lastName', value: lastName }}
-                    onChange={(change) => handleChange(change, FieldsPos.lastName)}
-                    error={requiredError || lastNameTooLong}
+                    placeholder={c('Placeholder').t`Last name`}
+                    data-testid="Last name"
+                    vCardProperty={{ ...vCardProperty, field: 'familyName', value: familyName }}
+                    onChange={(change) => handleChange(change, FieldsPos.familyName)}
+                    error={requiredError || familyNameTooLong}
                     {...rest}
                 />
-                {lastNameTooLong ? <ErrorZone>{c('Error').t`Last name is too long`}</ErrorZone> : null}
+                {familyNameTooLong ? <ErrorZone>{c('Error').t`Last name is too long`}</ErrorZone> : null}
             </div>
         </div>
     );

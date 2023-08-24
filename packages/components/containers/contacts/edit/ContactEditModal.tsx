@@ -17,7 +17,7 @@ import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
@@ -78,7 +78,7 @@ const ContactEditModal = ({
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
 
     const displayNameProperty = getSortedProperties(vCardContact, 'fn')[0] as VCardProperty<string>;
-    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<string[]>;
+    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<VcardNValue>;
     const photoProperty = getSortedProperties(vCardContact, 'photo')[0] as VCardProperty<string>;
 
     const getContactEmail = (email: string) => {
@@ -113,8 +113,9 @@ const ContactEditModal = ({
 
         const emails = vCardContact.email || [];
         const displayName = displayNameProperty.value;
-        const [lastName, firstName] = vCardContact?.n?.value || [];
-        const computedName = `${firstName} ${lastName}`;
+        const givenName = vCardContact?.n?.value.givenNames.join(' ').trim() || '';
+        const familyName = vCardContact?.n?.value.familyNames.join(' ').trim() || '';
+        const computedName = `${givenName} ${familyName}`;
 
         // The name can either be the display name, or the computed name if we're creating a new contact
         const Name = contactID ? displayName : displayName || computedName;
@@ -175,26 +176,24 @@ const ContactEditModal = ({
             return false;
         }
 
-        const displayName = displayNameProperty.value;
+        const displayName = displayNameProperty.value.trim();
 
-        const isNameStoredInArray = Array.isArray(nameProperty.value);
-        // The casting is required if the N field is not an array (can happen from mobile)
-        const lastName = isNameStoredInArray ? nameProperty.value[0].trim() : (nameProperty.value as unknown as string);
-        const firstName = isNameStoredInArray ? nameProperty.value[1].trim() : '';
-        const fullName = `${firstName} ${lastName}`;
+        const givenName = nameProperty.value.givenNames[0].trim();
+        const familyName = nameProperty.value.familyNames[0].trim();
+        const fullName = `${givenName} ${familyName}`;
 
         // Check if there is any name present in the contact
-        if (!lastName && !firstName && !displayName) {
+        if (!familyName && !givenName && !displayName) {
             return false;
         }
 
         // Check if the last name is valid
-        if (lastName && isNameStoredInArray ? !isFirstLastNameValid(lastName) : !isContactNameValid(lastName)) {
+        if (familyName && !isFirstLastNameValid(familyName)) {
             return false;
         }
 
         // Check if the first name is valid
-        if (firstName && !isFirstLastNameValid(firstName)) {
+        if (givenName && !isFirstLastNameValid(givenName)) {
             return false;
         }
 
