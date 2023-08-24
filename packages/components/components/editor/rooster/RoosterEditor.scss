@@ -13,8 +13,8 @@
 	.editor-toolbar-button {
 		position: relative;
 		padding-block: 0.3em;
-		padding-inline: 0.5em;
-		min-block-size: 2.1em;
+		padding-inline: 0.4em;
+		min-block-size: 2em;
 		border-radius: var(--border-radius-sm);
 	}
 
@@ -92,7 +92,7 @@
 }
 
 .editor-toolbar-button {
-	padding: 0.5em;
+	padding: 0.4em;
 
 	& > span {
 		margin-inline: 0;
