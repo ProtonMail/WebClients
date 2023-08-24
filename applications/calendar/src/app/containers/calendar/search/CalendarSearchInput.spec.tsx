@@ -52,7 +52,7 @@ describe('CalendarSearchInput', () => {
         renderComponent(baseProps);
 
         expect(screen.getByText('Search for events'));
-        expect(screen.getByText('Easily find the event you’re looking for with our new search feature.'));
+        expect(screen.getByText("Easily find the event you're looking for with our new search feature."));
         expect(screen.getByRole('link', { name: /Learn more/ }));
     });
 
@@ -62,7 +62,7 @@ describe('CalendarSearchInput', () => {
 
         expect(screen.queryByText('Search for events')).not.toBeInTheDocument();
         expect(
-            screen.queryByText('Easily find the event you’re looking for with our new search feature.')
+            screen.queryByText("Easily find the event you're looking for with our new search feature.")
         ).not.toBeInTheDocument();
         expect(screen.queryByRole('link', { name: /Learn more/ })).not.toBeInTheDocument();
     });

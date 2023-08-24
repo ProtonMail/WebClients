@@ -24,8 +24,9 @@ export interface EncryptedSearchFunctionsDrive
         | 'encryptedSearch'
         | 'enableEncryptedSearch'
         | 'esDelete'
-        | 'getESDBStatus'
-        | 'getProgressRecorderRef'
+        | 'esStatus'
+        | 'progressRecorderRef'
+        | 'esIndexingProgressState'
         | 'cacheIndexedDB'
     > {}
 

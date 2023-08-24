@@ -3,12 +3,12 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useCalendarModelEventManager } from '@proton/components/containers';
+import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
-import { getESCallbacks } from '../helpers/encryptedSearch/encryptedSearchCalendarHelpers';
+import { getESCallbacks } from '../helpers/encryptedSearch/calendarESCallbacks';
 import { processCalendarEvents, processCoreEvents } from '../helpers/encryptedSearch/esUtils';
 import {
     ESCalendarContent,
@@ -25,6 +25,7 @@ const EncryptedSearchLibraryContext = createContext<EncryptedSearchLibrary>({
     ...defaultESContext,
     isLibraryInitialized: false,
 });
+
 export const useEncryptedSearchLibrary = () => useContext(EncryptedSearchLibraryContext);
 
 interface Props {
@@ -108,7 +109,13 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
         );
     }, [calendarIDs]);
 
+    const { isConfigFromESDBLoaded } = esLibraryFunctions.esStatus;
+
     useEffect(() => {
+        if (!isConfigFromESDBLoaded) {
+            return;
+        }
+
         const initializeLibrary = async () => {
             // TODO: error handling
             await esLibraryFunctions.initializeES();
@@ -116,7 +123,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
         };
 
         void initializeLibrary();
-    }, []);
+    }, [isConfigFromESDBLoaded]);
 
     const value = { ...esLibraryFunctions, isLibraryInitialized };
 

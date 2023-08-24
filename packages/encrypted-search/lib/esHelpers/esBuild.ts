@@ -1,7 +1,6 @@
 import { IDBPDatabase } from 'idb';
 
 import { CryptoProxy } from '@proton/crypto';
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -35,7 +34,6 @@ import {
 import {
     AesGcmCiphertext,
     ESCache,
-    ESIndexingState,
     ESItemInfo,
     ESProgress,
     ESTimepoint,
@@ -207,7 +205,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
     queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'],
     getItemInfo: GetItemInfo<ESItemMetadata>,
     abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordProgress: (progress: number) => void,
+    recordProgress: () => Promise<void>,
     isBackgroundIndexing?: boolean
 ) => {
     let { resultMetadata, setRecoveryPoint } = await queryItemsMetadata(
@@ -220,13 +218,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
         return false;
     }
 
-    let batchLength = 0;
     while (resultMetadata.length) {
-        // When metadata indexing is paused or aborted
-        if (abortIndexingRef.current.signal.aborted) {
-            return true;
-        }
-
         const success = await storeItemsMetadata<ESItemMetadata>(
             userID,
             resultMetadata,
@@ -249,14 +241,24 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
             return false;
         }
 
+        await recordProgress();
+
         if (setRecoveryPoint) {
             await setRecoveryPoint();
         }
 
-        batchLength += resultMetadata.length;
-        recordProgress(batchLength);
+        /**
+         * If process gets aborted, we shut it down right before next fetch batch
+         */
+        if (abortIndexingRef.current.signal.aborted) {
+            return true;
+        }
 
-        ({ resultMetadata, setRecoveryPoint } = await queryItemsMetadata(abortIndexingRef.current.signal));
+        ({ resultMetadata, setRecoveryPoint } = await queryItemsMetadata(
+            abortIndexingRef.current.signal,
+            isBackgroundIndexing
+        ));
+
         if (!resultMetadata) {
             return false;
         }
@@ -504,47 +506,4 @@ export const estimateIndexingDuration = (
     }
 
     return { indexTime, totalInterruptions };
-};
-
-/**
- * Compute the estimated time remaining of indexing
- * @param userID the user ID
- * @param esProgress the number of items indexed so far
- * @param esTotal the total number of items to be indexed
- * @param endTime the time when this helper is called
- * @param esState the indexing state, which is a data structure to keep track of
- * indexing progress
- * @returns the estimated time to completion (in minutes) and the current progress
- * expressed as a number between 0 and 100
- */
-export const estimateIndexingProgress = async (
-    userID: string,
-    esProgress: number,
-    esTotal: number,
-    endTime: number,
-    esState: ESIndexingState,
-    setEstimate: boolean = true
-) => {
-    let estimatedMinutes = 0;
-    let currentProgressValue = 0;
-
-    if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
-        const remainingItems = esTotal - esProgress;
-
-        if (setEstimate) {
-            await contentIndexingProgress.setOriginalEstimate(
-                userID,
-                Math.floor(
-                    (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingItems) / SECOND
-                )
-            );
-        }
-
-        estimatedMinutes = Math.ceil(
-            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingItems) / MINUTE
-        );
-        currentProgressValue = Math.ceil((esProgress / esTotal) * 100);
-    }
-
-    return { estimatedMinutes, currentProgressValue };
 };

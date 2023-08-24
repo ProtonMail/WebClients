@@ -17,7 +17,7 @@ interface Props {
 }
 
 const EncryptedSearchField = ({ esState }: Props) => {
-    const { enableContentSearch, getESDBStatus, pauseContentIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+    const { enableContentSearch, esStatus, progressRecorderRef, pauseContentIndexing, toggleEncryptedSearch } =
         useEncryptedSearchContext();
 
     const {
@@ -28,8 +28,10 @@ const EncryptedSearchField = ({ esState }: Props) => {
         isEnablingEncryptedSearch,
         isContentIndexingPaused,
         contentIndexingDone,
-    } = getESDBStatus();
-    const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
+        lastContentTime,
+    } = esStatus;
+
+    const { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
 
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
@@ -42,13 +44,13 @@ const EncryptedSearchField = ({ esState }: Props) => {
     // ES progress
     const progressFromBuildEvent = isRefreshing
         ? 0
-        : Math.ceil((getProgressRecorderRef().current[0] / getProgressRecorderRef().current[1]) * 100);
+        : Math.ceil((progressRecorderRef.current[0] / progressRecorderRef.current[1]) * 100);
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Header
     const esTitle = <span className="mr-2">{c('Action').t`Search message content`}</span>;
     // Remove one day from limit because the last day in IndexedDB might not be complete
-    const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
+    const oldestDate = formatSimpleDate(add(new Date(lastContentTime), { days: 1 }));
     const subTitleSection = (
         // translator: the variable is a date, which is already localised
         <span className="color-weak mr-2">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
@@ -111,7 +113,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     );
 
     // Progress indicator
-    const totalProgress = getProgressRecorderRef().current[1];
+    const totalProgress = progressRecorderRef.current[1];
     const currentProgress = Math.min(esProgress, totalProgress);
     isEstimating ||= currentProgress === 0;
     let progressStatus: ReactNode = '';

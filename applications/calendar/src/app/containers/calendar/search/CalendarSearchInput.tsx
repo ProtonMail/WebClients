@@ -4,9 +4,9 @@ import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
-import { ToolbarButton } from '@proton/components/components';
 import { Icon } from '@proton/components/components/icon';
 import { Spotlight, useSpotlightShow } from '@proton/components/components/spotlight';
+import { ToolbarButton } from '@proton/components/components/toolbar';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';

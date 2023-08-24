@@ -7,6 +7,7 @@ import {
     ES_MAX_CONCURRENT,
     ES_SYNC_ACTIONS,
     EventsObject,
+    apiHelper,
     normalizeKeyword,
     readAllLastEvents,
     readSortedIDs,
@@ -122,9 +123,21 @@ export const getESEvent = async (
     eventID: string,
     calendarID: string,
     api: Api,
-    getCalendarEventRaw: GetCalendarEventRaw
+    getCalendarEventRaw: GetCalendarEventRaw,
+    signal?: AbortSignal
 ): Promise<ESCalendarMetadata> => {
-    const { Event } = await api<{ Event: CalendarEvent }>(getEvent(calendarID, eventID));
+    const response = await apiHelper<{ Event: CalendarEvent }>(
+        api,
+        signal,
+        getEvent(calendarID, eventID),
+        'queryEventMetadata'
+    );
+
+    if (!response?.Event) {
+        throw new Error('Could not fetch event metadata');
+    }
+
+    const { Event } = response;
 
     let hasError = false;
     const { veventComponent } = await getCalendarEventRaw(Event).catch(() => {
@@ -190,7 +203,7 @@ export const getAllESEventsFromCalendar = async (
  */
 export const getESEventsFromCalendarInBatch = async ({
     calendarID,
-    limit = 200,
+    limit = 100,
     eventCursor,
     api,
     getCalendarEventRaw,

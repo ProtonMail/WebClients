@@ -147,6 +147,8 @@ export const defaultESStatus = {
     isContentIndexingPaused: false,
     isMetadataIndexingPaused: false,
     contentIndexingDone: false,
+    isConfigFromESDBLoaded: false,
+    getCacheStatus: () => ({ isCacheReady: false, isCacheLimited: false }),
 };
 
 export const defaultESCache = {
@@ -154,6 +156,16 @@ export const defaultESCache = {
     cacheSize: 0,
     isCacheLimited: false,
     isCacheReady: false,
+};
+
+export const defaultESIndexingState = {
+    esProgress: 0,
+    estimatedMinutes: 0,
+    startTime: 0,
+    endTime: 0,
+    esPrevProgress: 0,
+    totalIndexingItems: 0,
+    currentProgressValue: 0,
 };
 
 export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
@@ -165,12 +177,6 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     handleEvent: async () => {},
     isSearchResult: () => false,
     esDelete: async () => {},
-    getESDBStatus: () => ({
-        ...defaultESStatus,
-        isCacheLimited: defaultESCache.isCacheLimited,
-        isCacheReady: defaultESCache.isCacheReady,
-    }),
-    getProgressRecorderRef: () => ({ current: [0, 0] }),
     shouldHighlight: () => false,
     initializeES: async () => {},
     pauseContentIndexing: async () => {},
@@ -178,17 +184,9 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     cacheIndexedDB: async () => {},
     toggleEncryptedSearch: async () => {},
     resetCache: () => {},
-};
-
-export const defaultESIndexingState = {
-    esProgress: 0,
-    estimatedMinutes: 0,
-    startTime: 0,
-    endTime: 0,
-    oldestTime: 0,
-    esPrevProgress: 0,
-    totalIndexingItems: 0,
-    currentProgressValue: 0,
+    esStatus: defaultESStatus,
+    progressRecorderRef: { current: [0, 0] },
+    esIndexingProgressState: defaultESIndexingState,
 };
 
 export const defaultESCallbacks = {
