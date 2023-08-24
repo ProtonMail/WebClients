@@ -67,6 +67,7 @@ interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 
     status?: PlanCardFeatureDefinition['status'];
     included?: PlanCardFeatureDefinition['included'];
     actionElement?: ReactNode;
+    dataTestId?: string;
 }
 
 interface SubscriptionListProps {
@@ -77,7 +78,15 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
     return (
         <>
             {items.map(
-                ({ icon = 'checkmark', text, included = true, status = 'available', tooltip, actionElement }) => {
+                ({
+                    icon = 'checkmark',
+                    text,
+                    included = true,
+                    status = 'available',
+                    tooltip,
+                    actionElement,
+                    dataTestId,
+                }) => {
                     if (!included) {
                         return null;
                     }
@@ -90,7 +99,10 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
                             className={clsx(status === 'coming-soon' && 'color-weak')}
                             left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
                         >
-                            <div className="flex flex-justify-space-between flex-align-items-baseline">
+                            <div
+                                className="flex flex-justify-space-between flex-align-items-baseline"
+                                data-testid={dataTestId}
+                            >
                                 {text}
                                 {actionElement}
                             </div>
@@ -372,6 +384,7 @@ const SubscriptionPanel = ({
                     MaxMembers
                 ),
                 actionElement: getMoreButton,
+                dataTestId: 'users',
             },
             {
                 icon: 'servers',
@@ -381,6 +394,7 @@ const SubscriptionPanel = ({
                     ipAddresses
                 ),
                 actionElement: hasVpnBusiness(subscription) ? getMoreButton : null,
+                dataTestId: 'servers',
             },
         ].filter(isTruthy) as Item[];
 
