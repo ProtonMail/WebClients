@@ -199,12 +199,12 @@ const ContactEditModal = ({
         }
 
         // Check if the display name is valid when editing a contact
-        if (contactID && displayName && !isContactNameValid(displayName)) {
+        if ((contactID && displayName && !isContactNameValid(displayName)) || (contactID && !displayName)) {
             return false;
         }
 
         // Check if the full name is valid when creating a contact
-        if (!contactID && fullName && !isContactNameValid(fullName)) {
+        if ((!contactID && fullName && !isContactNameValid(fullName)) || (!contactID && !fullName)) {
             return false;
         }
 
