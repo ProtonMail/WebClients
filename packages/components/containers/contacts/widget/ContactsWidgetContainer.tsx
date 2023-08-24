@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { CircleLoader } from '@proton/atoms';
 import { SearchInput, useMailSettings } from '@proton/components';
 import { useApi, useNotifications, useUser, useUserKeys } from '@proton/components/hooks';
-import { MAX_RECIPIENTS } from '@proton/shared/lib/contacts/constants';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -106,7 +106,7 @@ const ContactsWidgetContainer = ({
     };
 
     const handleCompose = () => {
-        const maxContacts = mailSettings?.RecipientLimit || MAX_RECIPIENTS;
+        const maxContacts = mailSettings?.RecipientLimit || CONTACT_GROUP_MAX_MEMBERS;
 
         if (selectedIDs.length > maxContacts) {
             createNotification({

@@ -35,6 +35,14 @@ describe('ContactEditModal', () => {
         onLimitReached: jest.fn(),
     };
 
+    const propsNoContactID: ContactEditProps & ContactEditModalProps = {
+        vCardContact: { fn: [] },
+        onUpgrade: jest.fn(),
+        onSelectImage: jest.fn(),
+        onGroupEdit: jest.fn(),
+        onLimitReached: jest.fn(),
+    };
+
     beforeAll(() => {
         CryptoProxy.setEndpoint(mockedCryptoApi);
     });
@@ -165,7 +173,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
 VERSION:4.0
 TEL;PREF=1:newtel
 NOTE:NewNote
-N:;
+N:;;;;
 TITLE:NewTitle
 END:VCARD`.replaceAll('\n', '\r\n');
 
@@ -213,13 +221,32 @@ END:VCARD`.replaceAll('\n', '\r\n');
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
         ).Data;
 
-        const encryptedAndSignedCardContent = cards.find(
+        const encryptedCardContent = cards.find(
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED
         ).Data;
 
-        console.log(encryptedAndSignedCardContent);
         expect(signedCardContent).toContain('FN;PREF=1:New name');
-        expect(encryptedAndSignedCardContent).toContain('N:Mars;Bruno');
         expect(signedCardContent).toContain('ITEM1.EMAIL;PREF=1:new@email.com');
+        expect(encryptedCardContent).toContain('N:Mars;Bruno');
+    });
+
+    it('should trigger an error if display name is empty when creating a contact', async () => {
+        const { getByText } = render(<ContactEditModal open={true} {...propsNoContactID} />);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        const errorZone = getByText('Please provide either a first name, a last name or a display name');
+        expect(errorZone).toBeVisible();
+    });
+
+    it('should trigger an error if display name is empty when editing a contact', async () => {
+        const { getByText } = render(<ContactEditModal open={true} {...props} />);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        const errorZone = getByText('This field is required');
+        expect(errorZone).toBeVisible();
     });
 });
