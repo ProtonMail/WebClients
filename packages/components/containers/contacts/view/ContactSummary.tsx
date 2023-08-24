@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
@@ -25,9 +25,11 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
     const loadImageDirectRef = useRef<() => void>(null);
 
     const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
-    const [lastName, firstName] = getSortedProperties(vCardContact, 'n')[0]?.value || ['', ''];
     const displayName = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
-    const computedName = `${firstName} ${lastName}`;
+    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<VcardNValue>;
+    const givenName = nameProperty?.value?.givenNames.join(' ').trim() || '';
+    const familyName = nameProperty?.value?.familyNames.join(' ').trim() || '';
+    const computedName = `${givenName} ${familyName}`;
 
     const nameIsEmail = validateEmailAddress(displayName);
 

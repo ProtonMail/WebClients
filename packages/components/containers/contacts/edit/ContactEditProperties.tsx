@@ -154,44 +154,54 @@ const ContactEditProperties = (
     }
 
     const handleAdd = () => {
-        if (canAdd && onAdd) {
-            // Other fields (at the bottom of the form) don't have fields and can be added at anytime
-            if (!field) {
-                onAdd();
-                return;
+        if (!canAdd || !onAdd) {
+            return;
+        }
+
+        // Other fields (at the bottom of the form) don't have fields and can be added at anytime
+        if (!field) {
+            onAdd();
+            return;
+        }
+
+        const vcardPropertyField: any = vCardContact[field as keyof VCardContact];
+        const presentData = vcardPropertyField?.map((item: any) => item.value).filter(isTruthy);
+
+        // We add a field if all the fields are filled, or there is no data yet
+        if (rows?.length === presentData?.length || !presentData) {
+            onAdd();
+            return;
+        }
+
+        // We find the first empty row and focus on it, the row can be an input or a textarea
+        const firstEmptyRow = vcardPropertyField?.findIndex((field: any) => {
+            // Address field are objects and not a string, we need to make sure that all the values are empty
+            if (field.field === 'adr') {
+                return Object.values(field.value).every((value: any) => !value);
             }
 
-            const vcardPropertyField: any = vCardContact[field as keyof VCardContact];
-            const presentData = vcardPropertyField?.map((item: any) => item.value).filter(isTruthy);
+            return !field.value;
+        });
 
-            // We add a field if all the fields are filled, or there is no data yet
-            if (rows?.length === presentData?.length || !presentData) {
-                onAdd();
-                return;
-            }
+        if (firstEmptyRow === -1) {
+            return;
+        }
 
-            // We find the first empty row and focus on it, the row can be an input or a textarea
-            const firstEmptyRow = vcardPropertyField?.findIndex((field: any) => {
-                // Address field are objects and not a string, we need to make sure that all the values are empty
-                if (field.field === 'adr') {
-                    return Object.values(field.value).every((value: any) => !value);
-                }
+        // We didn't use ref here because the ref is not available for the child rows
+        const contactFieldToFocus = document.querySelector(
+            `[data-contact-property-id="${vcardPropertyField[firstEmptyRow]?.uid}"]`
+        );
 
-                return !field.value;
-            });
+        const input = contactFieldToFocus?.getElementsByTagName('input')?.[0];
+        if (input) {
+            input.focus();
+            return;
+        }
 
-            if (firstEmptyRow > -1) {
-                const contactFieldToFocus = document.querySelector(
-                    `[data-contact-property-id="${vcardPropertyField[firstEmptyRow]?.uid}"]`
-                );
-                const input = contactFieldToFocus?.getElementsByTagName('input')?.[0];
-                const textarea = contactFieldToFocus?.getElementsByTagName('textarea')?.[0];
-                if (input) {
-                    input.focus();
-                } else if (textarea) {
-                    textarea.focus();
-                }
-            }
+        const textarea = contactFieldToFocus?.getElementsByTagName('textarea')?.[0];
+        if (textarea) {
+            textarea.focus();
+            return;
         }
     };
 

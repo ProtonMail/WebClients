@@ -61,6 +61,9 @@ const MergeTableBodyRow = (
         },
     ].filter(Boolean) as { text: string; onClick: () => void }[];
 
+    const givenName = vCardContact?.n?.value.givenNames?.join(' ')?.trim() ?? '-';
+    const familyName = vCardContact?.n?.value.familyNames?.join(' ')?.trim() ?? '-';
+
     const cells = [
         <NameTableCell
             key="displayName"
@@ -72,8 +75,8 @@ const MergeTableBodyRow = (
             greyedOut={deleted}
             onToggle={onClickCheckbox}
         />,
-        <span className="max-w100 inline-block text-ellipsis">{vCardContact?.n?.value[1] ?? '-'}</span>,
-        <span className="max-w100 inline-block text-ellipsis">{vCardContact?.n?.value[0] ?? '-'}</span>,
+        <span className="max-w100 inline-block text-ellipsis">{givenName}</span>,
+        <span className="max-w100 inline-block text-ellipsis">{familyName}</span>,
         <EmailsTableCell
             key="email"
             contactID={ID}
