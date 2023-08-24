@@ -585,6 +585,9 @@
       "Show preview": [
         "Ön izlemeyi göster"
       ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
+      ],
       "Sign in": [
         "Oturum aç"
       ],
@@ -2195,6 +2198,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
       ],
+      "You have reached the contacts limit for your account": [
+        "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
@@ -2728,9 +2734,6 @@
     "Header": {
       "Contacts": [
         "Kişiler"
-      ],
-      "Contacts, groups and settings": [
-        "Kişiler, gruplar ve ayarlar"
       ]
     },
     "Hint": {
@@ -3170,6 +3173,10 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak",
+        "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak"
       ],
       "Also try looking in Trash.": [
         "Çöp kutusuna da bakmayı deneyin."
@@ -6228,9 +6235,6 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
-      "View contacts": [
-        "Kişileri görüntüle"
-      ],
       "Warning": [
         "Uyarı"
       ],
@@ -6310,8 +6314,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
+      "Hide side panel": [
+        "Yan panoyu gizle"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"

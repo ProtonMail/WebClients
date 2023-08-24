@@ -2719,9 +2719,6 @@
     "Header": {
       "Contacts": [
         "Kontak"
-      ],
-      "Contacts, groups and settings": [
-        "Kontak, grup dan pengaturan"
       ]
     },
     "Hint": {
@@ -3170,7 +3167,7 @@
         "Diperlukan perhatian"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Karena ${ DRIVE_APP_NAME } terenkripsi secara ujung ke ujung, kami tidak dapat mengakses atau mendekripsi berkas Anda untuk Anda sendiri. Untuk membuka kunci drive setelah pengaturan ulang kata sandi, Anda harus memiliki salah satu dari hal berikut:"
+        "Karena ${ DRIVE_APP_NAME } terenkripsi secara end-to-end, kami tidak dapat mengakses\natau mendekripsi data Anda. Untuk kembali membuka kunci drive setelah pengaturan ulang kata sandi, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
@@ -6122,9 +6119,6 @@
       ],
       "Version history": [
         "Riwayat versi"
-      ],
-      "View contacts": [
-        "Lihat kontak"
       ],
       "Warning": [
         "Peringatan"

@@ -2229,6 +2229,9 @@
       "Access to all countries": [
         "Tüm ülkelere erişim"
       ],
+      "Add": [
+        "Ekle"
+      ],
       "Add (${ numberOfAddedServers })": [
         "Ekle (${ numberOfAddedServers })",
         "Ekle (${ numberOfAddedServers })"
@@ -2533,6 +2536,9 @@
         "${ number } sunucu",
         "${ number } sunucu"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
@@ -2549,6 +2555,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core özelliği için ${ vpnPlus } tarifesi gereklidir."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /ay)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -5089,11 +5098,6 @@
         "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Tüm ${ BRAND_NAME } for Business tarifelerinde bulunur."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "7/24 Destek"
@@ -5480,6 +5484,20 @@
     "Select file": {
       "Upload CSV file": [
         "CSV dosyası yükle"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "kullanımda"
+      ],
+      "inactive": [
+        "kullanım dışı"
+      ],
+      "pending": [
+        "bekliyor"
+      ],
+      "to be created": [
+        "oluşturulacak"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6361,6 +6379,10 @@
       ],
       "Delete account": [
         "Hesabı sil"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
       ],
       "Delete user": [
         "Kullanıcıyı sil"

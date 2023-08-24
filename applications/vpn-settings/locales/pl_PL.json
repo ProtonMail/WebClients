@@ -1713,6 +1713,9 @@
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
+      "Email address is invalid": [
+        "Adres e-mail jest nieprawidłowy"
+      ],
       "Email is not valid": [
         "Adres e-mail nie jest prawidłowy"
       ],
@@ -2566,6 +2569,9 @@
         "${ number } serwerów",
         "${ number } serwerów"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } wymaga co najmniej 1 serwera dedykowanego ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Trwa konfiguracja ${ provisioningCounter } serwera. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
@@ -2586,6 +2592,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Funkcja Secure Core wymaga posiadania planu ${ vpnPlus }."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } miesięcznie)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -5214,11 +5223,6 @@
         "Możesz mieć więcej niż jednego administratora. Wszyscy administratorzy mogą dodawać i zarządzać użytkownikami, ale tylko główny administrator ma kontrolę nad płatnościami."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Funkcja dostępna we wszystkich planach ${ BRAND_NAME } for Business."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Wsparcie 24/7"
@@ -6428,7 +6432,7 @@
         "Dodaj serwery"
       ],
       "Add user accounts": [
-        "Dodaj konta użytkownika"
+        "Dodaj konta użytkowników"
       ],
       "Add users": [
         "Dodaj użytkowników"

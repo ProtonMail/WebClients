@@ -11,6 +11,9 @@
       "Add current url": [
         "Tilføj nuværende URL"
       ],
+      "Add domain to pause list": [
+        "Tilføj domæne til pauseliste"
+      ],
       "Add more": [
         "Tilføj mere"
       ],
@@ -287,6 +290,11 @@
       ],
       "Expand": [
         "Udvid"
+      ]
+    },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Liste over domæner, hvor visse automatiske funktioner i ${ PASS_SHORT_APP_NAME } (Autofyld, Autoforslag, Autogem) ikke skal køre."
       ]
     },
     "Error": {
@@ -1123,6 +1131,9 @@
       ],
       "Passwords": [
         "Adgangskoder"
+      ],
+      "Pause list": [
+        "Pauseliste"
       ],
       "Permanently delete items": [
         "Slet elementer permanent"

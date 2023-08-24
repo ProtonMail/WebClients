@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "Indirizzo email disabilitato"
       ],
+      "Email address is invalid": [
+        "L'indirizzo email non è valido"
+      ],
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
       ],
@@ -5241,6 +5244,9 @@
         "${ numberOfNonPrivateKeys } file caricato non è una chiave privata valida. Si prega di verificare e riprovare.",
         "${ numberOfNonPrivateKeys } file caricati non sono chiavi private valide. Si prega di verificare e riprovare."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } è un programma di protezione avanzato per gli account, basato su una sofisticata intelligenza artificiale e specialisti pronti a proteggerti dai malintenzionati in rete e da tutte le minacce di sicurezza."
       ],
@@ -5295,6 +5301,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /mese)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrare se TUTTE le condizioni seguenti sono soddisfatte)"
@@ -10054,8 +10063,8 @@
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Incluso con ${ plus }, ${ bundle }, e ${ BRAND_NAME } for Business."
       ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Incluso con tutti i piani ${ BRAND_NAME } per le aziende."
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Incluso con i piani ${ BRAND_NAME } for Business con più utenti"
       ]
     },
     "new_plans: Upsell attribute": {
