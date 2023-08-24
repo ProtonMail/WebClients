@@ -26,6 +26,10 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
         );
         return vrfHash;
     } catch (error: any) {
+        const isProxyError = error instanceof Error && error.message.includes('CryptoProxy: endpoint not initialized');
+        if (isProxyError) {
+            throw error;
+        }
         return throwKTError('VRF proof verification failed', { email, verifier: proof.Verifier, cause: error });
     }
 };
