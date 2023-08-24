@@ -3591,6 +3591,9 @@
       "You have no invoices.": [
         "У вас няма рахункаў."
       ],
+      "You have reached the contacts limit for your account": [
+        "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
       ],
@@ -4315,6 +4318,9 @@
       ],
       "Access to all countries": [
         "Доступ да ўсіх краін"
+      ],
+      "Add": [
+        "Дадаць"
       ],
       "Add (${ numberOfAddedServers })": [
         "Дадаць (${ numberOfAddedServers })",
@@ -5313,6 +5319,9 @@
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
         "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
@@ -5387,6 +5396,9 @@
         "(${ memberCount } удзельнікі)",
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікі)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } штомесяц)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтраваць, калі ЎСЕ з наступных умоў выкананы)"
@@ -9156,6 +9168,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Зарэгістравацца"
       ],
+      "${ BRAND_NAME } Account": [
+        "Уліковы запіс ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Стварыце ўліковы запіс ${ BRAND_NAME }, каб карыстацца ўсімі зашыфраванымі сэрвісамі ${ BRAND_NAME }, такімі як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншымі. Атрымайце бясплатны ўліковы запіс ${ BRAND_NAME }."
       ],
@@ -10263,9 +10278,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Пастаўляецца з усімі тарыфнымі планамі ${ BRAND_NAME } для бізнесу."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11380,6 +11392,17 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "актыўна"
+      ],
+      "inactive": [
+        "неактыўна"
+      ],
+      "pending": [
+        "у чаканні"
       ]
     },
     "Settings description": {
@@ -12797,6 +12820,12 @@
       ],
       "Delete logs": [
         "Выдаліць журналы"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"
