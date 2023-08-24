@@ -2536,6 +2536,9 @@
         "${ number } server",
         "${ number } servers"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
         "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
@@ -2552,6 +2555,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } vereist voor Secure Core functies."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /maand)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -2855,7 +2861,7 @@
         "verloopt op ${ expirationDate }"
       ],
       "Fill in user details": [
-        "Vul gebruikers gegevens in"
+        "Vul gebruikersgegevens in"
       ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
@@ -3392,7 +3398,7 @@
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Upload uw voltooide CSV-bestand om accounts aan te maken."
+        "Upload uw voltooide CSV-bestand om accounts aan te maken"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
@@ -3453,6 +3459,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "We bevelen aan om minstens 2 servers te bezitten om redundantie te bieden."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "We raden aan om meerdere servers op verschillende locaties te hebben voor redundantie."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "We raden aan om de organisatieleden op de hoogte te brengen en ze te vragen om 2FA in te stellen voor hun account voordat u het gebruik van 2FA forceert."
@@ -5089,11 +5098,6 @@
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
       ]
     },
-    "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inbegrepen bij alle ${ BRAND_NAME } voor Bedrijven-abonnementen."
-      ]
-    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 ondersteuning"
@@ -5215,6 +5219,9 @@
       ],
       "Secure Core configs": [
         "Secure Core configuraties"
+      ],
+      "Select who can access...": [
+        "Selecteer wie toegang krijgt tot..."
       ],
       "Standard server configs": [
         "Standaard server configuraties"
@@ -5488,6 +5495,9 @@
       ],
       "pending": [
         "in behandeling"
+      ],
+      "to be created": [
+        "aan te maken"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6370,6 +6380,10 @@
       "Delete account": [
         "Account verwijderen"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
+      ],
       "Delete user": [
         "Gebruiker verwijderen"
       ],
@@ -6429,6 +6443,9 @@
       ],
       "Error": [
         "Fout"
+      ],
+      "Every member of the organization can access": [
+        "Elke gebruiker binnen uw organisatie kan"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
@@ -6662,7 +6679,7 @@
         "Upgrade uw netwerkbescherming met toegewijde servers"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Upload CSV-bestand om meerdere gebruikers te creëren"
+        "Upload CSV-bestand om meerdere gebruikers aan te maken"
       ],
       "Users": [
         "Gebruikers"

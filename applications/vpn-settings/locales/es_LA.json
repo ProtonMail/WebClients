@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
       ],
+      "Email address is invalid": [
+        "Dirección de correo inválida"
+      ],
       "Email is not valid": [
         "Correo no válido"
       ],
@@ -2536,6 +2539,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Todavía se está configurando ${ provisioningCounter } servidor. Esto usualmente toma ${ provisioningDuration }.",
         "Todavía se están configurando ${ provisioningCounter } servidores. Esto usualmente toma ${ provisioningDuration }."
@@ -2552,6 +2558,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } para la función de Secure Core."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/mes)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
@@ -5093,8 +5102,8 @@
       ]
     },
     "new_plans: upgrade": {
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Se incluye en todos los planes de ${ BRAND_NAME } para empresas."
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Se incluye con múltiples usuarios en los planes de ${ BRAND_NAME } para empresas."
       ]
     },
     "new_plans: Upsell attribute": {
