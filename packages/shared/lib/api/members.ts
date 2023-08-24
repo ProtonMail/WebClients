@@ -100,9 +100,10 @@ export const privatizeMember = (memberID: string) => ({
     url: `core/v4/members/${memberID}/privatize`,
 });
 
-export const authMember = (memberID: string) => ({
+export const authMember = (memberID: string, data: { Unlock?: boolean } = {}) => ({
     method: 'post',
     url: `core/v4/members/${memberID}/auth`,
+    data,
 });
 
 export const inviteMember = (email: string, maxSpace: number) => ({
