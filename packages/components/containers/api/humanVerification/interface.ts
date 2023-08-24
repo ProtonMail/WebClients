@@ -1,4 +1,4 @@
-type OwnershipChallengeType = 'external' | 'login';
+type OwnershipChallengeType = 'external' | 'login' | 'verify_address';
 
 export interface OwnershipVerificationModel {
     description: string;
