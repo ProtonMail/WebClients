@@ -37,7 +37,6 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
         const nextOptions = optionGroups.map((optionGroup) => {
             return {
                 ...optionGroup,
-                // @ts-expect-error typescript signature conflict between the different items type
                 items: optionGroup.items.filter((item) => item.text.toLowerCase().includes(lowerCaseSearch)),
             };
         });
