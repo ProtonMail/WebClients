@@ -18,7 +18,6 @@ import headerCells from './headerCells';
 export interface DeviceItem extends FileBrowserBaseItem {
     modificationTime: number;
     name: string;
-    corruptedLink?: boolean;
 }
 interface Props {
     view: ReturnType<typeof useDevicesView>;

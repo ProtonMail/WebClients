@@ -61,7 +61,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 export const ModifiedCell = ({ item }: { item: DriveItem }) => {
     return (
         <TableCell className="flex flex-align-items-center m-0 w15" data-testid="column-modified">
-            {item.corruptedLink ? '-' : <TimeCell time={item.fileModifyTime} />}
+            <TimeCell time={item.fileModifyTime} />
         </TableCell>
     );
 };
