@@ -79,7 +79,7 @@ export interface AddonDescription {
     pricing: Pricing;
 }
 
-interface SubscriptionCheckoutData {
+export interface SubscriptionCheckoutData {
     planName: PLANS | null;
     planTitle: string;
     usersTitle: string;
