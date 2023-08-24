@@ -22,12 +22,14 @@ interface Props {
 const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
     const location = useLocation();
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled, isSearchPartial, getCacheStatus, isSearching } = esStatus;
     const searchParameters = extractSearchParameters(location);
     const isSearch = testIsSearch(searchParameters);
 
+    const { isCacheLimited } = getCacheStatus();
     const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
+
     const loadMore = isSearching ? (
         <div className="flex flex-justify-center">
             <EllipsisLoader />

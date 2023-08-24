@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
@@ -47,6 +47,7 @@ import {
     uncachedSearch,
 } from './esHelpers';
 import {
+    IndexedDBRow,
     checkVersionedESDB,
     contentIndexingProgress,
     deleteESDB,
@@ -64,7 +65,6 @@ import {
 import {
     ESCache,
     ESCallbacks,
-    ESDBStatus,
     ESEvent,
     ESItem,
     ESProgress,
@@ -81,6 +81,8 @@ import {
     HighlightString,
     InternalESCallbacks,
 } from './models';
+import useEncryptedSearchIndexingProgress from './useEncryptedSearchIndexingProgress';
+import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
@@ -116,20 +118,38 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const { getSearchParams } = esCallbacks;
     const { isSearch } = getSearchParams();
 
-    // Keep a state of search results to update in case of new events
-    // and information on the status of IndexedDB
-    const [esStatus, setESStatus] =
-        useState<ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>>(defaultESStatus);
     // Keep a reference to cached items, such that they can be queried at any time
     const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
     // Allow to abort indexing
     const abortIndexingRef = useRef<AbortController>(new AbortController());
     // Allow to abort searching
     const abortSearchingRef = useRef<AbortController>(new AbortController());
-    // Allow to track progress during indexing or refreshing
-    const progressRecorderRef = useRef<[number, number]>([0, 0]);
     // Allow to track progress during syncing
     const syncingEventsRef = useRef<Promise<void>>(Promise.resolve());
+
+    const [esStatus, setESStatus] = useEncryptedSearchStatus<ESItemMetadata, ESSearchParameters, ESItemContent>({
+        esCacheRef,
+        userID,
+        getUserKeys,
+    });
+
+    const { esIndexingProgressState, progressRecorderRef, recordProgress } = useEncryptedSearchIndexingProgress();
+
+    const resetProgress = (indexDBRow: IndexedDBRow) => {
+        void recordProgress([0, 0], indexDBRow);
+    };
+
+    const recordMetadataProgress = async () => {
+        const newProgress = (await readNumMetadata(userID)) || 0;
+        const totalItems = await esCallbacks.getTotalItems();
+        void recordProgress([newProgress, totalItems], 'metadata');
+    };
+
+    const recordContentProgress = async () => {
+        const newProgress = (await readNumContent(userID)) || 0;
+        const totalItems = await esCallbacks.getTotalItems();
+        void recordProgress([newProgress, totalItems], 'content');
+    };
 
     /**
      * Chain several synchronisations to account for events being fired when
@@ -176,74 +196,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             text: c('Error').t`Please activate your search again`,
             type: 'error',
         });
-    };
-
-    /**
-     * Store progress of operations
-     */
-    const recordProgress = (progress: number, total: number) => {
-        progressRecorderRef.current = [progress, total];
-    };
-
-    /**
-     * @returns a reference object to two values related to an IndexedDB operation status.
-     * The first number in the returned list is the current number of items processed while
-     * the second is the total number of items to process. It is useful to show a progress bar
-     */
-    const getProgressRecorderRef = () => {
-        return progressRecorderRef;
-    };
-
-    /**
-     * @returns an object containing boolean variables descrbing the status of the library,
-     * which is useful to determine specific UI in certain occasions. The status contains
-     * the following variables.
-     * @var dbExists whether an instance of IndexedDB exists
-     * @var isEnablingContentSearch whether indexing is ongoing
-     * @var isDBLimited whether IndexedDB has fewer than the total amount of items
-     * @var esEnabled whether ES is enabled (in case a fallback to server-side search exists)
-     * @var isRefreshing whether a refresh of IndexedDB (when correcting decryption errors) is ongoing
-     * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
-     * @var isSearching whether a search is ongoing
-     * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
-     * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
-     * @var isContentIndexingPaused whether content indexing is paused
-     * @var isMetadataIndexingPaused whether metadata indexing is paused
-     * @var contentIndexingDone whether content indexing has completed
-     */
-    const getESDBStatus = () => {
-        const {
-            dbExists,
-            isEnablingContentSearch,
-            isDBLimited,
-            esEnabled,
-            esSupported,
-            isRefreshing,
-            isSearchPartial,
-            isSearching,
-            isEnablingEncryptedSearch,
-            isContentIndexingPaused,
-            isMetadataIndexingPaused,
-            contentIndexingDone,
-        } = esStatus;
-        const { isCacheLimited, isCacheReady } = esCacheRef.current;
-        const esDBStatus: ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters> = {
-            dbExists,
-            isEnablingContentSearch,
-            isDBLimited,
-            esEnabled,
-            esSupported,
-            isCacheLimited,
-            isCacheReady,
-            isRefreshing,
-            isSearchPartial,
-            isSearching,
-            isEnablingEncryptedSearch,
-            isContentIndexingPaused,
-            isMetadataIndexingPaused,
-            contentIndexingDone,
-        };
-        return esDBStatus;
     };
 
     /**
@@ -316,13 +268,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     /**
      * Keep IndexedDB in sync with new events
      */
-    const syncIndexedDB = async (
-        event: ESEvent<ESItemMetadata>,
-        indexKey: CryptoKey | undefined,
-        recordProgressLocal?: () => void
-    ) => {
+    const syncIndexedDB = async (event: ESEvent<ESItemMetadata>, indexKey: CryptoKey | undefined) => {
         const { Items, attemptReDecryption } = event;
-        const isUpdatingItemContent = typeof recordProgressLocal !== 'undefined';
 
         const { permanentResults, setResultsList, contentIndexingDone } = esStatus;
 
@@ -330,15 +277,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // have happened during indexing, but only if content indexing is done, otherwise
         // there might not be all content in IDB
         if (contentIndexingDone && attemptReDecryption && !!esCallbacks.fetchESItemContent) {
-            recordProgress(0, 0);
+            void resetProgress('content');
 
-            // In case we weren't already showing the refreshing UI, we do now
-            if (!isUpdatingItemContent) {
-                setESStatus((esStatus) => ({
-                    ...esStatus,
-                    isRefreshing: true,
-                }));
-            }
+            setESStatus((esStatus) => ({
+                ...esStatus,
+                isRefreshing: true,
+            }));
 
             if (indexKey) {
                 abortIndexingRef.current = new AbortController();
@@ -356,13 +300,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                     resetCache();
                 }
             }
-
-            if (!isUpdatingItemContent) {
-                setESStatus((esStatus) => ({
-                    ...esStatus,
-                    isRefreshing: false,
-                }));
-            }
         }
 
         if (!Items || !Items.length) {
@@ -371,7 +308,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
         if (attemptReDecryption) {
-            recordProgress(0, 0);
+            void resetProgress('content');
         }
 
         const { esSearchParams } = getSearchParams();
@@ -383,7 +320,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             indexKey,
             esSearchParams,
             esCallbacks,
-            recordProgressLocal
+            recordContentProgress
         );
 
         if (searchChanged) {
@@ -463,17 +400,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }));
 
         // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
-        recordProgress(0, 0);
-
-        const recordProgressLocal = () => {
-            const [current] = progressRecorderRef.current;
-            recordProgress(current + 1, newEvents.length);
-        };
+        void resetProgress('content');
 
         try {
             // It's important that these events are synced sequentially
             for (const eventToCheck of newEvents) {
-                await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
+                await syncIndexedDB(eventToCheck, indexKey);
             }
             return await finaliseSyncing(eventsToStore, indexKey);
         } catch (error: any) {
@@ -626,17 +558,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortIndexingRef.current = new AbortController();
 
         const previousProgress = await metadataIndexingProgress.read(userID);
-        const currentItems = (await readNumMetadata(userID)) || 0;
-        let totalItems = await esCallbacks.getTotalItems();
-        recordProgress(currentItems, totalItems);
-        const recordProgressLocal = (progress: number) => {
-            const newProgress = currentItems + progress;
-            recordProgress(newProgress, totalItems);
-        };
+
+        void recordMetadataProgress();
 
         if (previousProgress) {
             await metadataIndexingProgress.setStatus(userID, INDEXING_STATUS.INDEXING);
-            ({ totalItems } = previousProgress);
         }
 
         let success = false;
@@ -649,7 +575,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 esCallbacks.queryItemsMetadata,
                 esCallbacks.getItemInfo,
                 abortIndexingRef,
-                recordProgressLocal,
+                recordMetadataProgress,
                 isBackgroundIndexing
             );
 
@@ -786,7 +712,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         const previousProgress = await contentIndexingProgress.read(userID);
 
-        const currentItems = (await readNumContent(userID)) || 0;
         let totalItems = 0;
         let recoveryPoint: ESTimepoint | undefined;
         if (!previousProgress) {
@@ -826,22 +751,17 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // only revert if by the end IDB is not limited
         await setLimited(userID, true);
 
-        recordProgress(currentItems, totalItems);
+        void recordContentProgress();
 
         let indexingOutcome = STORING_OUTCOME.SUCCESS;
         let success = totalItems === 0;
         while (!success) {
-            const recordProgressLocal = (progress: number) => {
-                const newProgress = currentItems + progress;
-                recordProgress(newProgress, totalItems);
-            };
-
             try {
                 indexingOutcome = await buildContentDB<ESItemContent>(
                     userID,
                     indexKey,
                     abortIndexingRef,
-                    recordProgressLocal,
+                    recordContentProgress,
                     fetchESItemContent,
                     recoveryPoint,
                     true,
@@ -1270,7 +1190,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return dbCorruptError();
         }
 
-        if ([INDEXING_STATUS.INDEXING, INDEXING_STATUS.PAUSED].includes(metadataProgress.status)) {
+        if (metadataProgress.status === INDEXING_STATUS.PAUSED) {
+            return;
+        }
+
+        if (metadataProgress.status === INDEXING_STATUS.INDEXING) {
             void enableEncryptedSearch();
             return;
         }
@@ -1339,13 +1263,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         return {
             encryptedSearch,
             cacheIndexedDB,
-            getESDBStatus,
             toggleEncryptedSearch,
             enableEncryptedSearch,
             enableContentSearch,
             pauseContentIndexing,
             pauseMetadataIndexing,
-            getProgressRecorderRef,
             highlightString,
             highlightMetadata,
             shouldHighlight,
@@ -1354,6 +1276,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             handleEvent,
             initializeES,
             resetCache,
+            esStatus,
+            esIndexingProgressState,
+            progressRecorderRef,
         };
     }, [userID, esStatus, inputESCallbacks]);
 

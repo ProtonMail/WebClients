@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -116,12 +116,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Report the status of IndexedDB with the addition of Mail-specific fields
      */
-    const getESDBStatus = () => {
-        return {
-            ...esLibraryFunctions.getESDBStatus(),
+    const esStatus = useMemo(
+        () => ({
+            ...esLibraryFunctions.esStatus,
             ...esMailStatus,
-        };
-    };
+        }),
+        [esLibraryFunctions.esStatus, esMailStatus]
+    );
 
     /**
      * Initialize ES
@@ -212,11 +213,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             }
         };
 
-        const { dbExists, contentIndexingDone } = getESDBStatus();
+        const { dbExists, contentIndexingDone } = esStatus;
         if (dbExists && contentIndexingDone) {
             void run();
         }
-    }, [getESDBStatus().contentIndexingDone]);
+    }, [esStatus.contentIndexingDone]);
 
     /**
      * Re-enable ES in case it was disabled because of a slow search
@@ -241,7 +242,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     const esFunctions = {
         ...esLibraryFunctions,
-        getESDBStatus,
+        esStatus,
         openDropdown,
         closeDropdown,
         setTemporaryToggleOff,

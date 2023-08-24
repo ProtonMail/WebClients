@@ -48,16 +48,15 @@ export const useApplyEncryptedSearch = ({
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
 
-    const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();
-    const esDBStatus = getESDBStatus();
-    const { esEnabled } = esDBStatus;
+    const { esStatus, encryptedSearch } = useEncryptedSearchContext();
+    const { esEnabled } = esStatus;
 
     const params = { labelID, conversationMode, sort, filter, search, esEnabled };
 
-    const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
+    const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
     const messagesToLoadMoreES = useSelector((state: RootState) =>
-        messagesToLoadMoreESSelector(state, { page, search, esDBStatus })
+        messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
 
     const setEncryptedSearchResults = (elements: Element[]) => {

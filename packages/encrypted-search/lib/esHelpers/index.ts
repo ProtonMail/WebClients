@@ -6,3 +6,4 @@ export * from './esSearch';
 export * from './esSync';
 export * from './esUtils';
 export * from './esRetries';
+export * from './esProgress';

@@ -29,9 +29,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     );
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
 
-    const { getESDBStatus } = useEncryptedSearchContext();
+    const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
-        getESDBStatus();
+        esStatus;
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;

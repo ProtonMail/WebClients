@@ -2,6 +2,7 @@ import { IDBPDatabase } from 'idb';
 
 import { ES_MAX_PARALLEL_ITEMS, ES_SYNC_ACTIONS, STORING_OUTCOME } from '../constants';
 import {
+    IndexedDBRow,
     executeContentOperations,
     executeMetadataOperations,
     openESDB,
@@ -36,7 +37,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     indexKey: CryptoKey | undefined,
     esSearchParams: ESSearchParameters | undefined,
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    recordProgressLocal?: () => void
+    recordProgress?: () => void
 ) => {
     const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esCallbacks;
 
@@ -254,8 +255,8 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                 }
             }
 
-            if (recordProgressLocal) {
-                recordProgressLocal();
+            if (recordProgress) {
+                recordProgress();
             }
         }
     }
@@ -327,7 +328,7 @@ export const correctDecryptionErrors = async <ESItemMetadata, ESSearchParameters
     userID: string,
     indexKey: CryptoKey,
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    recordProgress: (progress: number, total: number) => void,
+    recordProgress: (progress: [number, number], indexedDBRow?: IndexedDBRow) => void,
     abortIndexingRef: React.MutableRefObject<AbortController>
 ) => {
     const { fetchESItemContent } = esCallbacks;
@@ -344,13 +345,13 @@ export const correctDecryptionErrors = async <ESItemMetadata, ESSearchParameters
     const { timepoint, contentLen, metadataLen } = recoveryPoint;
 
     const total = metadataLen - contentLen;
-    recordProgress(0, total);
+    recordProgress([0, total], 'content');
 
     await buildContentDB(
         userID,
         indexKey,
         abortIndexingRef,
-        (progress: number) => recordProgress(progress, total),
+        (progress: number) => recordProgress([progress, total], 'content'),
         fetchESItemContent,
         timepoint,
         false
