@@ -17,6 +17,15 @@ module.exports = (config) => {
             mode: 'development',
             resolve: {
                 extensions: ['.js', '.ts', '.tsx'],
+                fallback: {
+                    crypto: false,
+                    buffer: false,
+                    stream: false,
+                },
+                // Mock JSBI to avoid using BigInt
+                alias: {
+                    jsbi: 'jsbi/dist/jsbi-cjs.js',
+                },
             },
             module: {
                 rules: [
