@@ -1,127 +1,20 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '@proton/components/payments/core';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
-import { BitcoinTokenModel } from './useBitcoin';
+import useBitcoin from './useBitcoin';
 
-function pause() {
-    return wait(10000);
-}
-
-const useCheckStatus = (
-    api: Api,
-    token: string | null,
-    onTokenValidated: (token: string) => void,
-    enabled: boolean = true
-) => {
-    const [paymentValidated, setPaymentValidated] = useState(false);
-    const awaitingPayment = token !== null && !paymentValidated;
-
-    useEffect(() => {
-        let active = enabled;
-
-        const validate = async (token: string): Promise<boolean> => {
-            try {
-                const { Status } = await api<any>(getTokenStatus(token));
-                if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
-                    return true;
-                }
-            } catch {}
-
-            return false;
-        };
-
-        async function run() {
-            if (!token) {
-                return;
-            }
-
-            await pause();
-            while (active) {
-                const resolved = await validate(token);
-                if (resolved && active) {
-                    setPaymentValidated(true);
-                    onTokenValidated?.(token);
-                    active = false;
-                    break;
-                }
-                await pause();
-            }
-        }
-
-        void run();
-
-        return () => {
-            active = false;
-        };
-    }, [token]);
-
-    return {
-        paymentValidated,
-        awaitingPayment,
-    };
+export type Props = ReturnType<typeof useBitcoin> & {
+    processingToken?: boolean;
 };
 
-export interface ValidatedBitcoinToken extends TokenPaymentMethod {
-    cryptoAmount: number;
-    cryptoAddress: string;
-}
-
-export interface Props {
-    api: Api;
-    amount: number;
-    currency: Currency;
-    onTokenValidated?: (data: ValidatedBitcoinToken) => void;
-    onAwaitingPayment?: (awaitingPayment: boolean) => void;
-    processingToken?: boolean;
-    model: BitcoinTokenModel;
-    loading: boolean;
-    error: boolean;
-    request: () => Promise<void>;
-}
-
-const Bitcoin = ({
-    api,
-    amount,
-    currency,
-    onTokenValidated,
-    onAwaitingPayment,
-    processingToken,
-    model,
-    loading,
-    error,
-    request,
-}: Props) => {
-    const silentApi = getSilentApi(api);
-
-    const { paymentValidated, awaitingPayment } = useCheckStatus(silentApi, model.token, (token) =>
-        onTokenValidated?.({
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: token,
-                },
-            },
-            cryptoAmount: model.amountBitcoin,
-            cryptoAddress: model.address,
-        })
-    );
-
-    useEffect(() => {
-        onAwaitingPayment?.(awaitingPayment && !loading);
-    }, [awaitingPayment, loading]);
-
+const Bitcoin = ({ amount, currency, processingToken, paymentValidated, model, loading, error, request }: Props) => {
     useEffect(() => {
         void request();
     }, [amount, currency]);
