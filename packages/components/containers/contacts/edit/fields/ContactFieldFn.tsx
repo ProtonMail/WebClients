@@ -32,11 +32,12 @@ const ContactFieldFn = (
     const firstAndLastName = isFirstAndLastNameArray ? vCardContact.n?.value.join('').trim() : '';
 
     const nameTooLongError = !isContactNameValid(vCardProperty.value);
+
     // The fn field is required for existing contacts but can be left empty for new contacts
-    const requiredError = contactID && isSubmitted && requiredValidator(vCardProperty.value);
     // Display an error border when the fn field and the n field is empty during contact creation
-    const noNameInfoDuringCreationError =
-        !contactID && isSubmitted && !firstAndLastName && requiredValidator(vCardProperty.value);
+    const requiredError = contactID
+        ? isSubmitted && requiredValidator(vCardProperty.value)
+        : isSubmitted && !firstAndLastName && requiredValidator(vCardProperty.value);
 
     return (
         <>
@@ -46,12 +47,12 @@ const ContactFieldFn = (
                 placeholder={label}
                 onChange={handleChange}
                 data-testid={label}
-                error={!!requiredError || nameTooLongError || noNameInfoDuringCreationError}
+                error={!!requiredError || nameTooLongError}
                 {...rest}
             />
-            {!!requiredError ? <ErrorZone>{requiredError}</ErrorZone> : null}
             {nameTooLongError ? <ErrorZone>{c('Error').t`Contact name is too long`}</ErrorZone> : null}
-            {noNameInfoDuringCreationError ? (
+            {!!requiredError && contactID ? <ErrorZone>{requiredError}</ErrorZone> : null}
+            {!!requiredError && !contactID ? (
                 <ErrorZone>{c('Error').t`Please provide either a first name, a last name or a display name`}</ErrorZone>
             ) : null}
         </>
