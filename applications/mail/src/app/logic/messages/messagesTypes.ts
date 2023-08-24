@@ -332,7 +332,6 @@ export type PartialMessageState = Partial<Omit<MessageState, 'data'> & { data: P
 
 export interface LoadParams {
     ID: string;
-    api: Api;
 }
 
 export interface DocumentInitializeParams {

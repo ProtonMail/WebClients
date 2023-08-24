@@ -116,7 +116,6 @@ const setup = async ({
             messageID: nextMessage.localID || '',
             // @ts-expect-error
             recipients: pick(nextMessage?.data, ['ToList', 'CCList', 'BCCList']),
-            // @ts-expect-error
             senderEmailAddress: nextMessage.data?.Sender.Address,
         })
     );
