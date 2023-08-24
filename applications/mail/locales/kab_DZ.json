@@ -2646,6 +2646,10 @@
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Fren azemz deg ${ EXPIRATION_TIME_MAX_DAYS } n wass i d-itteddun.",
+        "Fren azemz deg ${ EXPIRATION_TIME_MAX_DAYS } n wussan i d-itteddun."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wass i d-itteddun.",
         "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wussan i d-itteddun."
@@ -2833,6 +2837,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
+      "status page": [
+        "asebter n waddad"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Taceqquft yeddan yugi ad as-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nafaylu s wahil am GnuPG.",
         "Ticeqqufin yeddan yugi ad asent-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nifuyla s wahil am GnuPG."
@@ -2894,11 +2901,20 @@
       "Unknown error.": [
         "Tuccḍa tarussint."
       ],
+      "Username must begin with a letter or digit": [
+        "Isem n useqdac ilaq ad yebdu s usekkil neɣ s umḍan"
+      ],
+      "Username must end with a letter or digit": [
+        "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
+      ],
       "Wrong mailbox password": [
         "Yir awal uffir n tnaka n yimayl"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Ur tezmireḍ ara ad tazneḍ ifuhla vCard i wugar n 10 n yinermisen"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n usfaylu n umsuddes ɣef tikkelt",
@@ -3630,6 +3646,14 @@
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
       ],
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } n umeḍfar n yimayl iweḥlen",
+        "${ numberOfImageTrackers } n yimeḍfaren n yimayl iweḥlen"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } n uneḍfar iweḥlen",
+        "${ numberOfImageTrackers } n yimeḍfaren iweḥlen"
+      ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } n temseḍriwt i yettwafen",
         "${ numOccurrences } n temseḍriwin i yettwafen"
@@ -3891,6 +3915,9 @@
       "Draft saved.": [
         "Arewway yettusekles."
       ],
+      "Drop file here to upload": [
+        "Sers dagi afaylu ara tessaliḍ"
+      ],
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
@@ -3935,6 +3962,10 @@
       "Expiration time": [
         "Tanzagt n taggara"
       ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Ad yemmet ma drus deg ${ hoursDiff } usrag",
+        "Ad yemmet ma drus deg ${ hoursDiff } yiseggasen"
+      ],
       "file attached": [
         "afaylu yeddan",
         "afaylu yeddan"
@@ -3972,6 +4003,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
       ],
+      "Image description": [
+        "Aglam n tugna"
+      ],
       "Image URL": [
         "URL n tugna"
       ],
@@ -3990,6 +4024,9 @@
       ],
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
@@ -4120,6 +4157,9 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
+      "Normal": [
+        "Amagnu"
+      ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
@@ -4185,6 +4225,9 @@
       ],
       "Saved at ${ dateString }": [
         "Yettwasekles deg ${ dateString }"
+      ],
+      "Saved: ${ dateString }": [
+        "Yettwasekles: ${ dateString }"
       ],
       "Saving draft…": [
         "Asekles n urewway…"
@@ -4286,6 +4329,9 @@
       "This conversation contains trashed messages.": [
         "Adiwenni-a yegber iznan yellan deg iḍumman."
       ],
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Imayl-agi yecceḍ deg usekyed n usesteb n taɣult-is. Ahat beddlen-t neɣ wwin-t s tuccḍa aniɣer nniḍen."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Leɛraḍa-agi tettwasekles deg uwitay yensan."
       ],
@@ -4321,6 +4367,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Izen-agi ad yemmet deg ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Izen-agi ad yemmet di ${ longDateMEssage }"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "Izen-agi ad immet ass-a ɣef ${ shortDateMessage }"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Izen-agi ad immet azekka ɣef ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tasarut-a tazayezt ad tettwaseqdec s wudem awurman i uwgelhen n yimayl i yettwaznen ɣer tansa-a."
@@ -4381,6 +4436,9 @@
       ],
       "URL link": [
         "Aseɣwen URL"
+      ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Seqdec inegzumen n unasiw akken ad tesferkeḍ Imaylen-ik·im s tɣawla."
@@ -4487,6 +4545,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
@@ -6024,6 +6085,36 @@
         "Ameẓẓyan maḍi qbel"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Offers": {
+      "for ${ n } month": [
+        "i ${ n } wayyur",
+        "i ${ n } wayyuren"
+      ]
+    },
     "Spotlight": {
       "Schedule send": [
         "Sɣiwes tuzna"
@@ -6313,6 +6404,14 @@
       "${ hours } h": [
         "${ hours } n usrag",
         "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
@@ -6320,12 +6419,20 @@
         "${ hours } n usrag",
         "${ hours } n yisragen"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
+      ],
       "${ minutes } minute": [
         "${ minutes } n tesdat",
         "${ minutes } n tesdatin"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } tansa n yimayl",
+        "${ emailsCount } n tansiwin imayl"
+      ],
       "${ unreads } unread message": [
         "${ unreads } n yizen ur yettwaɣran ara",
         "${ unreads } n yiznan ur yettwaɣran ara"
