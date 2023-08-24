@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky, Tooltip } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import SortDropdown from '../../sections/SortDropdown';
@@ -87,17 +88,8 @@ export const GridHeader = <T extends string>({
                         >
                             {activeSortingText}
                             {sortField === 'numAccesses' && (
-                                <Tooltip
-                                    className="pl-1"
-                                    title={c('Info')
-                                        .t`The download count includes both actual downloads and instances when files are previewed.`}
-                                >
-                                    <Icon
-                                        name="info-circle"
-                                        size={14}
-                                        alt={c('Info')
-                                            .t`The download count includes both actual downloads and instances when files are previewed.`}
-                                    />
+                                <Tooltip className="pl-1" title={getNumAccessesTooltipMessage()}>
+                                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
                                 </Tooltip>
                             )}
                         </TableHeaderCell>

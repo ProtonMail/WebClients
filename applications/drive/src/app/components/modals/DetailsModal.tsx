@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { useLoading } from '@proton/hooks';
+import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
@@ -249,17 +250,8 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             label={
                                 <>
                                     {c('Title').t`Size`}
-                                    <Tooltip
-                                        title={c('Info')
-                                            .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
-                                        className="ml-1 mb-1"
-                                    >
-                                        <Icon
-                                            name="info-circle"
-                                            size={14}
-                                            alt={c('Info')
-                                                .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
-                                        />
+                                    <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
+                                        <Icon name="info-circle" size={14} alt={getSizeTooltipMessage()} />
                                     </Tooltip>
                                 </>
                             }
@@ -282,19 +274,8 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         label={
                             <>
                                 {c('Title').t`# of downloads`}
-                                <Tooltip
-                                    title={c('Info')
-                                        .t`The download count includes both actual downloads and instances when files are previewed.
-`}
-                                    className="ml-1 mb-1"
-                                >
-                                    <Icon
-                                        name="info-circle"
-                                        size={14}
-                                        alt={c('Info')
-                                            .t`The download count includes both actual downloads and instances when files are previewed.
-`}
-                                    />
+                                <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
+                                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
                                 </Tooltip>
                             </>
                         }
