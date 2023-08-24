@@ -2810,6 +2810,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "おめでとうございます! ${ plusPlanName } を ${ rewardsLimit } ヶ月間無料で獲得しました。"
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "これらの機能にアクセスするには、詳細ログと ${ PROTON_SENTINEL_NAME } を有効にしてください"
+      ],
+      "Enable advanced logs to access these features": [
+        "これらの機能にアクセスするには、詳細ログを有効にします。"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -3163,6 +3172,9 @@
         "ドメインが利用できません。再度お試しください。"
       ],
       "Email address disabled": [
+        "メールアドレスが無効です"
+      ],
+      "Email address is invalid": [
         "メールアドレスが無効です"
       ],
       "Email address is required": [
@@ -4253,6 +4265,9 @@
       "Access to all countries": [
         "すべての国にアクセス"
       ],
+      "Add": [
+        "追加"
+      ],
       "Add (${ numberOfAddedServers })": [
         "追加 ( ${ numberOfAddedServers } )"
       ],
@@ -5187,6 +5202,9 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 件のアップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
       ],
@@ -5231,6 +5249,9 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /月)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -7994,6 +8015,9 @@
       "Event notifications": [
         "予定の通知"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "すべてのメールからスパム/ゴミを除外する"
+      ],
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
       ],
@@ -8213,6 +8237,9 @@
       "Organization password": [
         "組織のパスワード"
       ],
+      "Organization size": [
+        "組織規模"
+      ],
       "Other amount": [
         "その他の金額"
       ],
@@ -8251,6 +8278,9 @@
       ],
       "Please select files to upload": [
         "アップロードするファイルを選択してください"
+      ],
+      "Please share any feedback to help us improve.": [
+        "ご意見、ご感想がありましたら、ぜひお聞かせください。"
       ],
       "Port": [
         "ポート"
@@ -8305,6 +8335,9 @@
       ],
       "Select your country": [
         "国を選択してください"
+      ],
+      "Select your plan": [
+        "プランの選択"
       ],
       "Send auto-reply": [
         "自動返信を送信"
@@ -8458,6 +8491,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "アカウントを削除する主な理由は何ですか?"
+      ],
+      "Why would you like to cancel?": [
+        "なぜキャンセルしたいのですか？"
       ],
       "With attachment": [
         "添付ファイルあり"
@@ -8862,6 +8898,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: アカウント作成"
       ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウント"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } アカウントを作成すると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスをすべて 1 回のログインで使用できます。 無料の ${ BRAND_NAME } アカウントを取得してください。"
       ],
@@ -9229,6 +9268,9 @@
       "${ n } VPN connections per user": [
         "1 ユーザーあたり ${ n } 件の VPN 接続"
       ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
+        "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス付きの ${ PASS_APP_NAME }"
       ],
@@ -9564,6 +9606,9 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 30 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
       ],
@@ -9597,6 +9642,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "必要不可欠なネットワーク監視で、どこからでも安全にインターネットにアクセス"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
       ],
@@ -9608,6 +9656,9 @@
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "自動返信を設定し、外出中であることや返信できないことを連絡先に伝えます。"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "特定のセキュリティ ニーズを持つ大規模組織向けにカスタマイズされたソリューション"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "インターネットへの安全かつ無制限の高速アクセスを提供する VPN のプランです。"
@@ -9737,6 +9788,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します (例: ショッピングアカウントのJohnShopper@${ domain })。"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
       ],
@@ -9769,6 +9823,9 @@
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "フォルダーと同様、ボールトはアイテムを整理するのに便利な方法です。 友人や家族との保管庫の共有は現在開発中です。"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "企業のリソースを一般インターネットからロックダウンし、プライベートゲートウェイ経由でのみアクセスできるようにする。"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "プランのカスタマイズなど、サブスクリプションを管理することができます。お支払い方法は、クレジットカード、PayPal、暗号資産、および電信送金に対応しています。"
@@ -9882,9 +9939,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "${ plus }、${ bundle }、${ BRAND_NAME } for Business に含まれます。"
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "すべての ${ BRAND_NAME } for Business プランに含まれます。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9896,6 +9950,9 @@
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 件のメールアドレスと 3 件の独自メールドメインを使用可能"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256ビットVPN暗号化"
       ],
       "Auto-connect": [
         "自動接続"
@@ -9909,11 +9966,26 @@
       "Browser extension": [
         "ブラウザ拡張機能"
       ],
+      "Censorship circumvention": [
+        "検閲回避"
+      ],
+      "Central control panel": [
+        "中央制御盤"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "10 個のカスタム電子メール ドメインのサポートでさらに多くの領域をカバー"
       ],
       "Create up to ${ n } calendars": [
         "最大 ${ n } 個までのカレンダーを作成"
+      ],
+      "Dedicated Account manager": [
+        "専任のアカウントマネージャー"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "${ numberOfCountries } か国の専用サーバーの場所"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "北米とヨーロッパに専用サーバーを設置"
       ],
       "Multi-platform support": [
         "マルチプラットフォーム対応"
@@ -9940,6 +10012,9 @@
       ],
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
+      ],
+      "Invalid code": [
+        "無効なコード"
       ],
       "IP Address copied to clipboard": [
         "IP アドレスがクリップボードにコピーされました"
@@ -10677,6 +10752,9 @@
       "Please select a country": [
         "国を選択してください"
       ],
+      "Please select the main reason": [
+        "主な理由をお選びください。"
+      ],
       "Printer": [
         "プリンター"
       ],
@@ -10945,6 +11023,20 @@
       ],
       "No results found": [
         "該当する結果が見つかりませんでした"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "アクティブ"
+      ],
+      "inactive": [
+        "非アクティブ"
+      ],
+      "pending": [
+        "保留中"
+      ],
+      "to be created": [
+        "作成される"
       ]
     },
     "Settings description": {
@@ -11368,6 +11460,23 @@
       ],
       "Add public, external, or shared calendars.": [
         "公開、外部、共有カレンダーを追加できます。"
+      ]
+    },
+    "Subscription": {
+      "Billed every 15 months": [
+        "15ヶ月ごとに請求"
+      ],
+      "Billed every 2 years": [
+        "2年ごとに請求"
+      ],
+      "Billed every 30 months": [
+        "30ヶ月ごとに請求"
+      ],
+      "Billed monthly": [
+        "毎月請求"
+      ],
+      "Billed yearly": [
+        "年間請求"
       ]
     },
     "Subscription attribute": {
@@ -11871,6 +11980,9 @@
       "Password": [
         "パスワード"
       ],
+      "Role": [
+        "役職"
+      ],
       "Status": [
         "状態"
       ],
@@ -12259,8 +12371,14 @@
       "Delete logs": [
         "ログの削除"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } days)": [
+        "サーバーを削除します (${ days } 日間はまだ復元できます)"
+      ],
       "Delete user": [
         "ユーザーを削除"
+      ],
+      "Delete user?": [
+        "ユーザーを削除しますか？"
       ],
       "Delete version history?": [
         "バージョン履歴を削除しますか？"
@@ -12944,6 +13062,9 @@
       "Plan": [
         "プラン"
       ],
+      "Servers": [
+        "サーバー"
+      ],
       "Start date": [
         "開始日"
       ],
@@ -12982,6 +13103,15 @@
       "Account is disconnected": [
         "アカウントは切断されました"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "管理者は、サブスクリプションの変更、ユーザーアカウントとパスワードの管理、他のユーザーへの管理者権限の付与を行うことができます。"
+      ],
+      "An approximate location of the IP address": [
+        "IPアドレスのおおよその位置"
+      ],
+      "Any protection applied to suspicious activity": [
+        "疑わしいアクティビティに適用される保護"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
       ],
@@ -12993,6 +13123,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "ごみ箱と迷惑メールのメッセージを 30 日後に削除します。自動削除をオンにすると、既にごみ箱や迷惑メールにあるメッセージに、そこに移動された日に基づいた削除日が設定されます。"
+      ],
+      "Device information such as operating system": [
+        "オペレーティングシステムなどのデバイス情報"
       ],
       "Each imported email will have this label": [
         "インポートされたメールすべてにこのラベルがついています"
@@ -13050,6 +13183,9 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IPアドレスのインターネットサービスプロバイダ"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
@@ -13223,6 +13359,15 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "もっと気に入ったサービスを見つけた"
+      ],
+      "It’s missing a key feature": [
+        "重要な機能が欠けている"
+      ],
+      "It’s too expensive": [
+        "これは高すぎる"
+      ],
       "Other": [
         "その他"
       ]
