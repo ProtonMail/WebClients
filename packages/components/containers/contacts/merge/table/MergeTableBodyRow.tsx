@@ -6,7 +6,7 @@ import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
 import { DropdownActions, OrderableTableBody, OrderableTableRow, TableRow } from '../../../../components';
-import useContact from '../../hooks/useContact';
+import useContactConditionally from '../../hooks/useContactConditionally';
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';
 import NameTableCell from './NameTableCell';
@@ -42,7 +42,7 @@ const MergeTableBodyRow = (
     const { Name, emails } = Contact;
     const [userKeysList] = useUserKeys();
     // Allow to control when we fetch contacts and avoid fetching them when the row is not visible
-    const [contact] = useContact(isIntersecting ? ID : undefined);
+    const [contact] = useContactConditionally(isIntersecting ? ID : undefined);
     const { vCardContact } = useVCardContact({ contact, userKeysList });
 
     const deleted = beDeleted[ID];
