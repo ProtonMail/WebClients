@@ -55,8 +55,8 @@ const VerificationStep = ({ title, onBack, onSubmit, onClose, onLoaded, onError,
                             throw error;
                         }
                     }}
-                    onLoaded={() => {
-                        onLoaded?.();
+                    onLoaded={(data) => {
+                        onLoaded?.(data);
                         void metrics.core_signup_pageLoad_total.increment({
                             step: 'verification',
                             application: getSignupApplication(APP_NAME),
