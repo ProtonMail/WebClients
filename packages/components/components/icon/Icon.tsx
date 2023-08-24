@@ -321,6 +321,7 @@ export type IconName =
     | 'text-bold'
     | 'text-italic'
     | 'text-quote'
+    | 'text-strikethrough'
     | 'text-underline'
     | 'three-dots-horizontal'
     | 'three-dots-vertical'
