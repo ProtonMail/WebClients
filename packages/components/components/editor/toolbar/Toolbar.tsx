@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { ErrorBoundary } from '@proton/components/containers';
+import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -76,7 +77,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
                 >
-                    <Icon name="text-bold" className="m-auto" alt={c('Action').t`Bold`} />
+                    <Icon
+                        name="text-bold"
+                        size={COMPOSER_TOOLBAR_ICON_SIZE}
+                        className="m-auto"
+                        alt={c('Action').t`Bold`}
+                    />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.italic.toggle}
@@ -85,7 +91,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
                 >
-                    <Icon name="text-italic" className="m-auto" alt={c('Action').t`Italic`} />
+                    <Icon
+                        name="text-italic"
+                        size={COMPOSER_TOOLBAR_ICON_SIZE}
+                        className="m-auto"
+                        alt={c('Action').t`Italic`}
+                    />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.underline.toggle}
@@ -94,7 +105,26 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
                 >
-                    <Icon name="text-underline" className="m-auto" alt={c('Action').t`Underline`} />
+                    <Icon
+                        name="text-underline"
+                        size={COMPOSER_TOOLBAR_ICON_SIZE}
+                        className="m-auto"
+                        alt={c('Action').t`Underline`}
+                    />
+                </ToolbarButton>
+                <ToolbarButton
+                    onClick={config.strikethrough.toggle}
+                    aria-pressed={config.strikethrough.isActive}
+                    className={clsx(['flex-item-noshrink', config.strikethrough.isActive && 'is-active'])}
+                    title={c('Action').t`Strikethrough`}
+                    data-testid="editor-strikethrough"
+                >
+                    <Icon
+                        name="text-strikethrough"
+                        size={COMPOSER_TOOLBAR_ICON_SIZE}
+                        className="m-auto"
+                        alt={c('Action').t`Strikethrough`}
+                    />
                 </ToolbarButton>
             </>
             {!isNarrow ? (
@@ -108,6 +138,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     >
                         <Icon
                             name="list-bullets"
+                            size={COMPOSER_TOOLBAR_ICON_SIZE}
                             className="m-auto on-rtl-mirror"
                             alt={c('Action').t`Unordered list`}
                         />
@@ -119,7 +150,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
                     >
-                        <Icon name="list-numbers" className="m-auto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
+                        <Icon
+                            name="list-numbers"
+                            size={COMPOSER_TOOLBAR_ICON_SIZE}
+                            className="m-auto on-rtl-mirror"
+                            alt={c('Action').t`Ordered list`}
+                        />
                     </ToolbarButton>
                     <Vr aria-hidden="true" />
                     <ToolbarAlignmentDropdown setAlignment={config.alignment.setValue} />
@@ -140,7 +176,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
                     >
-                        <Icon name="text-quote" className="m-auto" alt={c('Action').t`Quote`} />
+                        <Icon
+                            name="text-quote"
+                            size={COMPOSER_TOOLBAR_ICON_SIZE}
+                            className="m-auto"
+                            alt={c('Action').t`Quote`}
+                        />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.link.showModal}
@@ -148,7 +189,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Insert link`}
                         data-testid="editor-insert-link"
                     >
-                        <Icon name="link" className="m-auto" alt={c('Action').t`Insert link`} />
+                        <Icon
+                            name="link"
+                            size={COMPOSER_TOOLBAR_ICON_SIZE}
+                            className="m-auto"
+                            alt={c('Action').t`Insert link`}
+                        />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.formatting.clear}
@@ -156,7 +202,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         title={c('Action').t`Clear all formatting`}
                         data-testid="editor-clear-formatting"
                     >
-                        <Icon name="eraser" className="m-auto" alt={c('Action').t`Clear all formatting`} />
+                        <Icon
+                            name="eraser"
+                            size={COMPOSER_TOOLBAR_ICON_SIZE}
+                            className="m-auto"
+                            alt={c('Action').t`Clear all formatting`}
+                        />
                     </ToolbarButton>
                     {simple && metadata.supportImages && (
                         <>
@@ -166,7 +217,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Insert image`}
                             >
-                                <Icon name="file-image" className="m-auto" alt={c('Action').t`Insert image`} />
+                                <Icon
+                                    name="file-image"
+                                    size={COMPOSER_TOOLBAR_ICON_SIZE}
+                                    className="m-auto"
+                                    alt={c('Action').t`Insert image`}
+                                />
                             </ToolbarButton>
                         </>
                     )}
