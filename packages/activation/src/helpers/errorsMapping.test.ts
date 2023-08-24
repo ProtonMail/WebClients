@@ -1,3 +1,6 @@
+import { Label } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+
 import MailImportFoldersParser from './MailImportFoldersParser/MailImportFoldersParser';
 import { getApiFoldersTestHelper } from './MailImportFoldersParser/MailImportFoldersParser.test';
 import { isNameAlreadyUsed, isNameEmpty, isNameReserved, isNameTooLong } from './errorsMapping';
@@ -34,69 +37,172 @@ describe('Activation errors mapping', () => {
     });
 
     describe('isNameAlreadyUsed', () => {
-        it('Should return false if the name not present in collection', () => {
+        describe('Is folder mapping', () => {
             const isLabelMapping = false;
-            const collection = new MailImportFoldersParser(
-                getApiFoldersTestHelper(['path1', 'path2', 'path3']),
-                isLabelMapping
-            ).folders;
-            const item = collection[0];
+            it('Should return false if the name not present in collection', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2', 'path3']),
+                    isLabelMapping
+                ).folders;
+                const item = collection[0];
 
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(false);
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return false if a parent has same name as the child', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['marco', 'marco/marco']),
+                    isLabelMapping
+                ).folders;
+                const item = collection[0];
+
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return false if name not present in array', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2']),
+                    isLabelMapping
+                ).folders;
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return false if name not present in array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2']),
+                    isLabelMapping
+                ).folders;
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return true if name present in array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                // @ts-expect-error need to override the ID because test will think it's the same item
+                item.id = 'anothername';
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2', 'path3']),
+                    isLabelMapping
+                ).folders;
+
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(true);
+            });
+
+            it('Should return false if name present in an empty array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+                const collection = new MailImportFoldersParser(getApiFoldersTestHelper([]), isLabelMapping).folders;
+
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return false if label with similar name exists', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+                const collection = new MailImportFoldersParser(getApiFoldersTestHelper([]), isLabelMapping).folders;
+
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return true if label has same name', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+
+                const res = isNameAlreadyUsed(item, [], [{ Path: 'path1' } as Label], [], isLabelMapping);
+                expect(res).toBe(true);
+            });
+
+            it('Should return false if folder has same name', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+
+                const res = isNameAlreadyUsed(item, [], [], [{ Path: 'path1' } as Folder], isLabelMapping);
+                expect(res).toBe(false);
+            });
         });
 
-        it('Should return false if a parent has same name as the child', () => {
-            const isLabelMapping = false;
-            const collection = new MailImportFoldersParser(
-                getApiFoldersTestHelper(['marco', 'marco/marco']),
-                isLabelMapping
-            ).folders;
-            const item = collection[0];
+        describe('Is label mapping', () => {
+            const isLabelMapping = true;
+            it('Should return false if the name not present in collection', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2', 'path3']),
+                    isLabelMapping
+                ).folders;
+                const item = collection[0];
 
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(false);
-        });
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
 
-        it('Should return false if name not present in array', () => {
-            const isLabelMapping = false;
-            const collection = new MailImportFoldersParser(getApiFoldersTestHelper(['path1', 'path2']), isLabelMapping)
-                .folders;
-            const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(false);
-        });
+            it('Should return false if a parent has same name as the child', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['marco', 'marco/marco']),
+                    isLabelMapping
+                ).folders;
+                const item = collection[0];
 
-        it('Should return false if name not present in array', () => {
-            const isLabelMapping = false;
-            const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
-            const collection = new MailImportFoldersParser(getApiFoldersTestHelper(['path1', 'path2']), isLabelMapping)
-                .folders;
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(false);
-        });
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
 
-        it('Should return true if name present in array', () => {
-            const isLabelMapping = false;
-            const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
-            // @ts-expect-error need to override the ID because test will think it's the same item
-            item.id = 'anothername';
-            const collection = new MailImportFoldersParser(
-                getApiFoldersTestHelper(['path1', 'path2', 'path3']),
-                isLabelMapping
-            ).folders;
+            it('Should return false if name not present in array', () => {
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2']),
+                    isLabelMapping
+                ).folders;
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
 
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(true);
-        });
+            it('Should return false if name not present in array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2']),
+                    isLabelMapping
+                ).folders;
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
 
-        it('Should return false if name present in an empty array', () => {
-            const isLabelMapping = false;
-            const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
-            const collection = new MailImportFoldersParser(getApiFoldersTestHelper([]), isLabelMapping).folders;
+            it('Should return true if name present in array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path3']), isLabelMapping).folders[0];
+                // @ts-expect-error need to override the ID because test will think it's the same item
+                item.id = 'anothername';
+                const collection = new MailImportFoldersParser(
+                    getApiFoldersTestHelper(['path1', 'path2', 'path3']),
+                    isLabelMapping
+                ).folders;
 
-            const res = isNameAlreadyUsed(item, collection, [], [], false);
-            expect(res).toBe(false);
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(true);
+            });
+
+            it('Should return false if name present in an empty array', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+                const collection = new MailImportFoldersParser(getApiFoldersTestHelper([]), isLabelMapping).folders;
+
+                const res = isNameAlreadyUsed(item, collection, [], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return false if label has same name', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+
+                const res = isNameAlreadyUsed(item, [], [{ Path: 'path1' } as Label], [], isLabelMapping);
+                expect(res).toBe(false);
+            });
+
+            it('Should return true if folder has same name', () => {
+                const item = new MailImportFoldersParser(getApiFoldersTestHelper(['path1']), isLabelMapping).folders[0];
+
+                const res = isNameAlreadyUsed(item, [], [], [{ Path: 'path1' } as Folder], isLabelMapping);
+                expect(res).toBe(true);
+            });
         });
 
         describe('Spaces checks', () => {
