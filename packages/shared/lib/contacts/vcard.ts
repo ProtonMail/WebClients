@@ -319,6 +319,10 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
 };
 
 const getProperty = (name: string, { value, params = {}, group }: any) => {
+    if (!value) {
+        return;
+    }
+
     const nameWithGroup = [group, name].filter(isTruthy).join('.');
     const property = new ICAL.Property(nameWithGroup);
 
@@ -364,12 +368,23 @@ export const serialize = (contact: any) => {
 
         if (Array.isArray(jsonProperty)) {
             jsonProperty.forEach((property) => {
-                icalComponent.addProperty(getProperty(name, property));
+                const data = getProperty(name, property);
+                if (!data) {
+                    return;
+                }
+
+                icalComponent.addProperty(data);
             });
             return;
         }
 
-        icalComponent.addProperty(getProperty(name, jsonProperty));
+        const data = getProperty(name, jsonProperty);
+
+        if (!data) {
+            return;
+        }
+
+        icalComponent.addProperty(data);
     });
 
     return icalComponent.toString();
