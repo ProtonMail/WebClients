@@ -108,7 +108,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     if (!data) {
         return (
             <AuthModal
-                config={authMember(member.ID)}
+                config={authMember(member.ID, { Unlock: true })}
                 {...rest}
                 onCancel={onClose}
                 onSuccess={async ({ credentials, response }) => {
@@ -157,7 +157,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         );
     };
 
-    const changeMemberPasssword = async ({ memberApi, credentials }: { memberApi: Api; credentials: Credentials }) => {
+    const changeMemberPassword = async ({ memberApi, credentials }: { memberApi: Api; credentials: Credentials }) => {
         const keyPassword = authentication.getPassword();
         const User = await memberApi<{ User: User }>(getUser()).then(({ User }) => formatUser(User));
 
@@ -218,7 +218,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
 
             const { UID, credentials } = data;
             const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-            await changeMemberPasssword({ memberApi, credentials });
+            await changeMemberPassword({ memberApi, credentials });
             await call();
 
             notifySuccess();
