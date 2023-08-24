@@ -89,6 +89,7 @@ const ContactEditProperty = (
         }
     };
 
+    // The data-contact-property-id is used to focus on the element in ContactEditProperties
     return (
         <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={vCardProperty.uid}>
             {sortable ? (
