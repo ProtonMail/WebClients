@@ -178,7 +178,9 @@ const SubscriptionsSection = () => {
             text: c('Action subscription').t`Manage`,
             onClick: () =>
                 openSubscriptionModal({
-                    step: SUBSCRIPTION_STEPS.CHECKOUT,
+                    step: getHasVpnB2BPlan(current)
+                        ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+                        : SUBSCRIPTION_STEPS.CHECKOUT,
                     metrics: {
                         source: 'subscription-section',
                     },
