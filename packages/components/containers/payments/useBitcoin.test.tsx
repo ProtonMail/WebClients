@@ -1,11 +1,14 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { AmountAndCurrency } from '@proton/components/payments/core';
-import { createToken } from '@proton/shared/lib/api/payments';
+import { AmountAndCurrency, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
+import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
-import { addApiMock, apiMock } from '@proton/testing/index';
+import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing/index';
 
 import useBitcoin from './useBitcoin';
+
+const onTokenValidated = jest.fn();
+const onAwaitingPayment = jest.fn();
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -17,7 +20,15 @@ it('should render', () => {
         Currency: 'EUR',
     };
 
-    const { result } = renderHook(() => useBitcoin(apiMock, amountAndCurrency));
+    const { result } = renderHook(() =>
+        useBitcoin({
+            api: apiMock,
+            onTokenValidated,
+            onAwaitingPayment,
+            enablePolling: true,
+            ...amountAndCurrency,
+        })
+    );
 
     expect(result.current).toBeDefined();
 });
@@ -28,7 +39,15 @@ it('should request the token', async () => {
         Currency: 'EUR',
     };
 
-    const { result } = renderHook(() => useBitcoin(apiMock, amountAndCurrency));
+    const { result } = renderHook(() =>
+        useBitcoin({
+            api: apiMock,
+            onTokenValidated,
+            onAwaitingPayment,
+            enablePolling: true,
+            ...amountAndCurrency,
+        })
+    );
 
     await result.current.request();
     jest.runAllTicks();
@@ -42,11 +61,21 @@ it('should not request the token automatically', () => {
         Currency: 'EUR',
     };
 
-    const { rerender } = renderHook(({ amountAndCurrency }) => useBitcoin(apiMock, amountAndCurrency), {
-        initialProps: {
-            amountAndCurrency,
-        },
-    });
+    const { rerender } = renderHook(
+        ({ amountAndCurrency }) =>
+            useBitcoin({
+                api: apiMock,
+                onTokenValidated,
+                onAwaitingPayment,
+                enablePolling: true,
+                ...amountAndCurrency,
+            }),
+        {
+            initialProps: {
+                amountAndCurrency,
+            },
+        }
+    );
 
     expect(apiMock).toHaveBeenCalledTimes(0);
 
@@ -66,7 +95,15 @@ it('should not request the token if the amount is too low', async () => {
         Currency: 'EUR',
     };
 
-    const { result } = renderHook(() => useBitcoin(apiMock, amountAndCurrency));
+    const { result } = renderHook(() =>
+        useBitcoin({
+            api: apiMock,
+            onTokenValidated,
+            onAwaitingPayment,
+            enablePolling: true,
+            ...amountAndCurrency,
+        })
+    );
 
     await result.current.request();
 
@@ -79,39 +116,196 @@ it('should not request the token if the amount is too high', async () => {
         Currency: 'EUR',
     };
 
-    const { result } = renderHook(() => useBitcoin(apiMock, amountAndCurrency));
+    const { result } = renderHook(() =>
+        useBitcoin({
+            api: apiMock,
+            onTokenValidated,
+            onAwaitingPayment,
+            enablePolling: true,
+            ...amountAndCurrency,
+        })
+    );
 
     await result.current.request();
 
     expect(apiMock).toHaveBeenCalledTimes(0);
 });
 
-it('should not request if the token exists and amount and currency are the same', async () => {
-    const amountAndCurrency: AmountAndCurrency = {
-        Amount: 1000,
-        Currency: 'EUR',
-    };
+describe('', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.useFakeTimers();
+    });
 
-    addApiMock(createToken({} as any).url, () => ({
-        Code: 1000,
-        Token: 'Token-12345',
-        Status: 0,
-        Data: {
-            CoinAddress: 'some-btc-address',
-            CoinAmount: 0.000789,
-            CoinType: 6,
-            CoinAddressReused: false,
-        },
-    }));
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
-    const { result } = renderHook(() => useBitcoin(apiMock, amountAndCurrency));
+    it('should not request if the token exists and amount and currency are the same', async () => {
+        const amountAndCurrency: AmountAndCurrency = {
+            Amount: 1000,
+            Currency: 'EUR',
+        };
 
-    await result.current.request();
-    jest.runAllTicks();
+        addApiMock(createToken({} as any).url, () => ({
+            Code: 1000,
+            Token: 'Token-12345',
+            Status: 0,
+            Data: {
+                CoinAddress: 'some-btc-address',
+                CoinAmount: 0.000789,
+                CoinType: 6,
+                CoinAddressReused: false,
+            },
+        }));
 
-    expect(apiMock).toHaveBeenCalledTimes(1);
+        const { result } = renderHook(() =>
+            useBitcoin({
+                api: apiMock,
+                onTokenValidated,
+                onAwaitingPayment,
+                enablePolling: true,
+                ...amountAndCurrency,
+            })
+        );
 
-    await result.current.request();
-    jest.runAllTicks();
-    expect(apiMock).toHaveBeenCalledTimes(1);
+        await result.current.request();
+        jest.runAllTicks();
+
+        expect(apiMock).toHaveBeenCalledTimes(1);
+
+        await result.current.request();
+        jest.runAllTicks();
+        expect(apiMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('should stop polling when enablePolling is set to false', async () => {
+        const amountAndCurrency: AmountAndCurrency = {
+            Amount: 1000,
+            Currency: 'EUR',
+        };
+
+        addApiMock(createToken({} as any).url, () => ({
+            Code: 1000,
+            Token: 'Token-12345',
+            Status: 0,
+            Data: {
+                CoinAddress: 'some-btc-address',
+                CoinAmount: 0.000789,
+                CoinType: 6,
+                CoinAddressReused: false,
+            },
+        }));
+
+        addApiMock(getTokenStatus('Token-12345').url, () => ({
+            Code: 1000,
+            Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+        }));
+
+        const { result, rerender } = renderHook(
+            ({ enablePolling }) =>
+                useBitcoin({
+                    api: apiMock,
+                    onTokenValidated,
+                    onAwaitingPayment,
+                    enablePolling,
+                    ...amountAndCurrency,
+                }),
+            {
+                initialProps: {
+                    enablePolling: true,
+                },
+            }
+        );
+
+        await result.current.request();
+        expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
+
+        jest.advanceTimersByTime(10000);
+        await flushPromises();
+        expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the first time
+
+        rerender({
+            enablePolling: false,
+        });
+
+        jest.advanceTimersByTime(10000);
+        await flushPromises();
+        expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the second time must not happen after polling was disabled
+
+        jest.advanceTimersByTime(100000);
+        await flushPromises();
+        expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the second time must not happen after polling was disabled
+    });
+
+    it('should stop polling when the token is invalid', async () => {
+        const amountAndCurrency: AmountAndCurrency = {
+            Amount: 1000,
+            Currency: 'EUR',
+        };
+
+        addApiMock(createToken({} as any).url, () => ({
+            Code: 1000,
+            Token: 'Token-12345',
+            Status: 0,
+            Data: {
+                CoinAddress: 'some-btc-address',
+                CoinAmount: 0.000789,
+                CoinType: 6,
+                CoinAddressReused: false,
+            },
+        }));
+
+        let resolvers: ReturnType<typeof addApiResolver>;
+        const updateResolvers = () => {
+            resolvers = addApiResolver(getTokenStatus('Token-12345').url);
+        };
+        updateResolvers();
+
+        const resolveToken = () =>
+            resolvers.resolve({
+                Code: 1000,
+                Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
+            });
+
+        const rejectToken = () =>
+            resolvers.reject({
+                status: 400,
+            });
+
+        const { result } = renderHook(
+            ({ enablePolling }) =>
+                useBitcoin({
+                    api: apiMock,
+                    onTokenValidated,
+                    onAwaitingPayment,
+                    enablePolling,
+                    ...amountAndCurrency,
+                }),
+            {
+                initialProps: {
+                    enablePolling: true,
+                },
+            }
+        );
+
+        await result.current.request();
+        expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
+
+        updateResolvers();
+        await jest.advanceTimersByTimeAsync(10000);
+        resolveToken();
+        expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the first time
+
+        updateResolvers();
+        await jest.advanceTimersByTimeAsync(10000);
+        rejectToken();
+        expect(apiMock).toHaveBeenCalledTimes(3); // checking the token for the second time
+
+        updateResolvers();
+        await jest.advanceTimersByTimeAsync(10000);
+        resolveToken();
+        // because of the rejection last time, the next call should never happen, the script must exit from the loop
+        expect(apiMock).toHaveBeenCalledTimes(3);
+    });
 });

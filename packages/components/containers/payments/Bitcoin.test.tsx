@@ -1,18 +1,33 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, flushPromises } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../payments/core';
-import Bitcoin, { Props } from './Bitcoin';
-import useBitcoin from './useBitcoin';
+import Bitcoin from './Bitcoin';
+import useBitcoin, { OnBitcoinAwaitingPayment, OnBitcoinTokenValidated } from './useBitcoin';
 
 const onTokenValidated = jest.fn();
+const onAwaitingPayment = jest.fn();
 
-const BitcoinTestComponent = (props: Omit<Props, 'model' | 'error' | 'loading' | 'request'>) => {
-    const bitcoinHook = useBitcoin(props.api, {
+type InnerProps = {
+    onTokenValidated: OnBitcoinTokenValidated;
+    onAwaitingPayment: OnBitcoinAwaitingPayment;
+    api: Api;
+    amount: number;
+    currency: Currency;
+    processingToken: boolean;
+};
+
+const BitcoinTestComponent = (props: InnerProps) => {
+    const bitcoinHook = useBitcoin({
+        api: props.api,
         Amount: props.amount,
         Currency: props.currency,
+        onTokenValidated: props.onTokenValidated,
+        onAwaitingPayment: props.onAwaitingPayment,
+        enablePolling: true,
     });
 
     return <Bitcoin {...props} {...bitcoinHook} />;
@@ -48,6 +63,7 @@ it('should render', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -66,6 +82,7 @@ it('should render for signup-pass', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -84,6 +101,7 @@ it('should show loading during the initial fetching', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -102,6 +120,7 @@ it('should check the token every 10 seconds', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -145,6 +164,7 @@ it('should render Try again button in case of error', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -170,6 +190,7 @@ it('should render warning if the amount is too low', async () => {
             amount={100}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -186,6 +207,7 @@ it('should render warning if the amount is too high', async () => {
             amount={4000100}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
