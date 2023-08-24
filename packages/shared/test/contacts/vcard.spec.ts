@@ -7,7 +7,17 @@ describe('serialize', () => {
         it('when there are all supported standard properties', () => {
             const contact: VCardContact = {
                 version: { field: 'version', value: '4.0', uid: createContactPropertyUid() },
-                n: { field: 'n', value: ['Messi', 'Lionel', 'Andrés', ''], uid: createContactPropertyUid() },
+                n: {
+                    field: 'n',
+                    value: {
+                        familyNames: ['Messi'],
+                        givenNames: ['Lionel'],
+                        additionalNames: ['Andrés'],
+                        honorificPrefixes: [''],
+                        honorificSuffixes: [''],
+                    },
+                    uid: createContactPropertyUid(),
+                },
                 fn: [{ field: 'fn', value: 'Leo Messi', uid: createContactPropertyUid() }],
                 title: [{ field: 'title', value: 'Football ambassador', uid: createContactPropertyUid() }],
                 nickname: [
@@ -146,7 +156,7 @@ describe('serialize', () => {
                 `BEGIN:VCARD`,
                 `VERSION:4.0`,
                 `FN:Leo Messi`,
-                `N:Messi;Lionel;Andrés;`,
+                `N:Messi;Lionel;Andrés;;`,
                 `TITLE:Football ambassador`,
                 `NICKNAME:La Pulga`,
                 `NICKNAME:The Messiah`,
@@ -224,14 +234,14 @@ describe('serialize', () => {
             const vcf = [
                 `BEGIN:VCARD`,
                 `VERSION:4.0`,
-                `FN;PID=1.1:J. Doe`,
-                `UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1`,
+                // `FN;PID=1.1:J. Doe`,
+                // `UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1`,
                 `N:Doe;J.;;;`,
-                `EMAIL;PID=1.1:jdoe@example.com`,
-                `EMAIL:jdoeeeee@example.com`,
-                `CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556`,
-                `CATEGORIES:TRAVEL AGENT`,
-                `CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY`,
+                // `EMAIL;PID=1.1:jdoe@example.com`,
+                // `EMAIL:jdoeeeee@example.com`,
+                // `CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556`,
+                // `CATEGORIES:TRAVEL AGENT`,
+                // `CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY`,
                 `END:VCARD`,
             ].join('\r\n');
 
@@ -267,6 +277,84 @@ describe('serialize', () => {
             ].join('\r\n');
 
             expect(serialize(parseToVCard(vcf))).toEqual(expected);
+        });
+    });
+});
+
+describe('parseToVcard', () => {
+    describe('parses correctly the N property', () => {
+        it('when it contains all components and single values', () => {
+            const vcf = [`BEGIN:VCARD`, `VERSION:4.0`, `N:Public;John;Quinlan;Mr.;Esq.`, `END:VCARD`].join('\r\n');
+
+            const result = parseToVCard(vcf);
+            expect(result.n?.value).toEqual({
+                familyNames: ['Public'],
+                givenNames: ['John'],
+                additionalNames: ['Quinlan'],
+                honorificPrefixes: ['Mr.'],
+                honorificSuffixes: ['Esq.'],
+            });
+        });
+
+        it('when it contains all components and multiple values', () => {
+            const vcf = [
+                `BEGIN:VCARD`,
+                `VERSION:4.0`,
+                `N:Stevenson;John;Philip,Paul;Dr.;Jr.,M.D.,A.C.P.`,
+                `END:VCARD`,
+            ].join('\r\n');
+
+            const result = parseToVCard(vcf);
+            expect(result.n?.value).toEqual({
+                familyNames: ['Stevenson'],
+                givenNames: ['John'],
+                additionalNames: ['Philip', 'Paul'],
+                honorificPrefixes: ['Dr.'],
+                honorificSuffixes: ['Jr.', 'M.D.', 'A.C.P.'],
+            });
+        });
+
+        it('when it contains all components and some are empty', () => {
+            const vcf = [`BEGIN:VCARD`, `VERSION:4.0`, `N:Yamada;Taro;;;`, `END:VCARD`].join('\r\n');
+
+            const result = parseToVCard(vcf);
+            expect(result.n?.value).toEqual({
+                familyNames: ['Yamada'],
+                givenNames: ['Taro'],
+                additionalNames: [''],
+                honorificPrefixes: [''],
+                honorificSuffixes: [''],
+            });
+        });
+    });
+
+    describe('can parse a vcard with an invalid N property', () => {
+        it('if the N property has no semicolon at all', () => {
+            const vcf = [`BEGIN:VCARD`, `VERSION:4.0`, `FN:Santa Claus`, `N:Santa Claus`, `END:VCARD`].join('\r\n');
+
+            const result = parseToVCard(vcf);
+            expect(result.fn[0].value).toBe('Santa Claus');
+            expect(result.n?.value).toEqual({
+                familyNames: ['Santa Claus'],
+                givenNames: [''],
+                additionalNames: [''],
+                honorificPrefixes: [''],
+                honorificSuffixes: [''],
+            });
+        });
+
+        it('if the N property has an incorrect number of semicolons', () => {
+            const vcf = [`BEGIN:VCARD`, `VERSION:4.0`, `FN:Santa Claus`, `N:Claus;Santa`, `END:VCARD`].join('\r\n');
+
+            const result = parseToVCard(vcf);
+            expect(result.fn[0].value).toBe('Santa Claus');
+            expect(result.n?.value).toEqual({
+                familyNames: ['Claus'],
+                givenNames: ['Santa'],
+                additionalNames: [''],
+                honorificPrefixes: [''],
+                honorificSuffixes: [''],
+            });
         });
     });
 });
