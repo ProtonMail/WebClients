@@ -949,6 +949,9 @@
       "Show preview": [
         "顯示預覽"
       ],
+      "Show side panel": [
+        "顯示側邊面板"
+      ],
       "Sign in": [
         "登入"
       ],
@@ -3425,6 +3428,9 @@
       "You did not provide a file.": [
         "您沒有提供檔案。"
       ],
+      "You have reached the contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
@@ -4723,6 +4729,9 @@
       ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "An unknown public key has been detected for this recipient.": [
         "已檢測到此收件者的未知公開金鑰。"
@@ -8944,8 +8953,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
+      "Hide side panel": [
+        "隱藏側邊面板"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
+      ],
+      "Show side panel": [
+        "顯示側邊面板"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"

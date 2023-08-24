@@ -12,7 +12,7 @@
         "Ajouter l'URL actuelle"
       ],
       "Add domain to pause list": [
-        "Ajouter le domaine dans la liste de pause"
+        "Ajouter le domaine à la liste des fonctionnalités et domaines exclus"
       ],
       "Add more": [
         "Ajouter"
@@ -294,7 +294,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Liste des domaines où certaines fonctions automatiques dans ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées."
+        "Liste des domaines pour lesquels certaines fonctionnalités automatiques de ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées."
       ]
     },
     "Error": {
@@ -1115,7 +1115,7 @@
         "Du plus ancien au plus récent"
       ],
       "Older than last month": [
-        "Antérieur au mois dernier"
+        "Plus d'un mois"
       ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
@@ -1133,7 +1133,7 @@
         "Mots de passe"
       ],
       "Pause list": [
-        "Liste de pause"
+        "Fonctionnalités et domaines exclus"
       ],
       "Permanently delete items": [
         "Supprimer définitivement les éléments"
@@ -1187,7 +1187,7 @@
         "Paramètres"
       ],
       "Show website favicons": [
-        "Afficher les favicônes des sites web"
+        "Afficher les favicônes des sites internet"
       ],
       "Special characters (!&*)": [
         "Caractères spéciaux (!&*)"

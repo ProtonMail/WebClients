@@ -3576,6 +3576,9 @@
       "You have no invoices.": [
         "Nu aveți facturi."
       ],
+      "You have reached the contacts limit for your account": [
+        "Ați atins limita de contacte disponibilă în cont."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ați atins maximul de calendare disponibile. Unele calendare nu au putut fi importate."
       ],
@@ -4297,6 +4300,9 @@
       ],
       "Access to all countries": [
         "Acces la toate ţările"
+      ],
+      "Add": [
+        "Adăugare"
       ],
       "Add (${ numberOfAddedServers })": [
         "Adăugare (${ numberOfAddedServers })",
@@ -5274,6 +5280,9 @@
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja de atacatori și amenințările de securitate."
       ],
@@ -5338,6 +5347,9 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } / lună)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
@@ -5490,6 +5502,11 @@
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Alocat"
@@ -9066,6 +9083,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Înregistrare"
       ],
+      "${ BRAND_NAME } Account": [
+        "Cont ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Creați un cont ${ BRAND_NAME } pentru a folosi toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele, cu doar o singură autentificare. Obțineți un cont ${ BRAND_NAME } gratuit."
       ],
@@ -10150,9 +10170,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } for Business."
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inclus cu toate planurile ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11257,6 +11274,20 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "activ"
+      ],
+      "inactive": [
+        "inactiv"
+      ],
+      "pending": [
+        "în așteptare"
+      ],
+      "to be created": [
+        "va fi creat"
       ]
     },
     "Settings description": {
@@ -12646,6 +12677,11 @@
       ],
       "Delete logs": [
         "Ştergere jurnale"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zile).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } de zile)."
       ],
       "Delete user": [
         "Ștergere utilizator"
