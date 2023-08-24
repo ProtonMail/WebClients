@@ -20,8 +20,8 @@
         "@noble/ed25519@1.7.3": "patch:@noble/ed25519@npm%3A1.7.3#./.yarn/patches/@noble-ed25519-npm-1.7.3-033c70acb7.patch",
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
-        "@types/jest": "^29.5.3",
-        "@types/react": "^17.0.64",
+        "@types/jest": "^29.5.4",
+        "@types/react": "^17.0.65",
         "@types/react-dom": "^17.0.20",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
@@ -33,7 +33,7 @@
         "is-ci": "^3.0.1",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.0",
-        "typescript": "^5.1.6"
+        "typescript": "^5.2.2"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.2.0",
@@ -43,7 +43,7 @@
         "prettier": "^2.8.8",
         "sort-package-json": "^2.5.1"
     },
-    "packageManager": "yarn@3.6.2",
+    "packageManager": "yarn@3.6.3",
     "engines": {
         "node": ">= v18.17.1"
     }
