@@ -7,12 +7,13 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getHasB2BPlan,
     getHasLegacyPlans,
+    getHasVpnB2BPlan,
     getIsB2BPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, Cycle, Nullable, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, Nullable, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
@@ -56,6 +57,15 @@ interface Props {
     app: APP_NAMES;
     onClose?: () => void;
 }
+
+const normalizeStep = (subscription: SubscriptionModel | undefined, step: SUBSCRIPTION_STEPS): SUBSCRIPTION_STEPS => {
+    // Users with VPN B2B plans must not have access to the checkout step.
+    if (getHasVpnB2BPlan(subscription) && step === SUBSCRIPTION_STEPS.CHECKOUT) {
+        return SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION;
+    }
+
+    return step;
+};
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
@@ -164,7 +174,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 
                         subscriptionProps.current = {
                             planIDs,
-                            step,
+                            step: normalizeStep(subscription, step),
                             currency: currency || getCurrency(user, subscription, plans),
                             cycle: cycle || subscriptionCycle,
                             coupon: coupon || subscription.CouponCode || undefined,
