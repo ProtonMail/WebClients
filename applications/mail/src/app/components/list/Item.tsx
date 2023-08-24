@@ -65,8 +65,9 @@ const Item = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [labels] = useLabels();
-    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled, contentIndexingDone } = getESDBStatus();
+    const { shouldHighlight, esStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled, contentIndexingDone } = esStatus;
+
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
 

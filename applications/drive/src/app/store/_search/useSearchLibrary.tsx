@@ -91,9 +91,10 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     }, [searchEnabled, isInitialized]);
 
     useEffect(() => {
-        if (!esFunctions.getESDBStatus().dbExists) {
+        if (!esFunctions.esStatus.dbExists) {
             return;
         }
+
         const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events) => {
             // The store is updated via volume events which includes all shares
             // including my files or devices. Encrypted search works only for

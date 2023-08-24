@@ -54,6 +54,9 @@ const popOneCalendar = (
     };
 };
 
+const MIN_EVENT_BATCH = 20;
+const MAX_EVENT_BATCH = 200;
+
 export const getESCallbacks = ({
     api,
     calendarIDs,
@@ -66,7 +69,10 @@ export const getESCallbacks = ({
     // index content
     let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
 
-    const queryItemsMetadata = async (): Promise<ItemMetadataQueryResult> => {
+    const queryItemsMetadata = async (
+        signal: AbortSignal,
+        isBackgroundIndexing?: boolean
+    ): Promise<ItemMetadataQueryResult> => {
         let recoveryPoint: MetadataRecoveryPoint = metadataRecoveryPoint ?? popOneCalendar(calendarIDs);
         // Note that indexing, and therefore an instance of this function,
         // can exist even without an IDB, because we can index in memory only.
@@ -86,6 +92,10 @@ export const getESCallbacks = ({
 
         const { events: esMetadataEvents, cursor: newCursor } = await getESEventsFromCalendarInBatch({
             calendarID: currentCalendarId,
+            /**
+             * experimental: on calendar with a lot of events, having a pseudo-random batch size on each iteration can make the indexing look a bit more dynamic
+             */
+            limit: Math.floor(Math.random() * (MAX_EVENT_BATCH - MIN_EVENT_BATCH + 1)) + MIN_EVENT_BATCH,
             eventCursor: recoveryPoint.eventCursor,
             api,
             getCalendarEventRaw,
@@ -111,7 +121,7 @@ export const getESCallbacks = ({
         if (!esMetadataEvents.length && newRecoveryPoint.currentCalendarId) {
             console.warn('empty calendar, skipping: next one please!');
             await setNewRecoveryPoint?.();
-            return queryItemsMetadata();
+            return queryItemsMetadata(signal, isBackgroundIndexing);
         }
 
         return {

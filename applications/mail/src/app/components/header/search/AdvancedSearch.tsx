@@ -137,8 +137,8 @@ const AdvancedSearch = ({
     });
 
     const [user] = useUser();
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { isDBLimited, lastContentTime, esEnabled } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { isDBLimited, lastContentTime, esEnabled } = esStatus;
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);

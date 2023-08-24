@@ -55,9 +55,9 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [labels] = useLabels();
     const [folders] = useFolders();
 
-    const { getESDBStatus } = useEncryptedSearchContext();
+    const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
-        getESDBStatus();
+        esStatus;
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);

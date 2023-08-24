@@ -21,8 +21,8 @@ interface Props {
 const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, borderBottom }: Props) => {
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
 
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = esStatus;
     const hideSizeSorting = isSearch && dbExists && esEnabled;
     const SORT_OPTIONS = {
         SMALL_TO_LARGE: c('Sort option').t`Smallest first`,

@@ -4,60 +4,49 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, Tooltip } from '@proton/components/components';
-import useEncryptedSearchState from '@proton/encrypted-search/lib/useEncryptedSearchState';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import CalendarSearchProgress from './CalendarSearchProgress';
 
 interface Props {
-    isIndexing: boolean;
     onClose: () => void;
 }
-const CalendarSearchActivation = ({ isIndexing, onClose }: Props) => {
-    const {
-        isLibraryInitialized,
-        enableEncryptedSearch,
-        getProgressRecorderRef,
-        pauseMetadataIndexing,
-        getESDBStatus,
-    } = useEncryptedSearchLibrary();
-    const { isMetadataIndexingPaused } = getESDBStatus();
-    const { esState } = useEncryptedSearchState({
-        isIndexing,
-        getProgressRecorderRef,
-    });
+
+const CalendarSearchActivation = ({ onClose }: Props) => {
+    const { isLibraryInitialized, enableEncryptedSearch, pauseMetadataIndexing, esIndexingProgressState, esStatus } =
+        useEncryptedSearchLibrary();
+
+    const { isMetadataIndexingPaused, isConfigFromESDBLoaded } = esStatus;
 
     useEffect(() => {
-        if (!isLibraryInitialized) {
+        if (!isLibraryInitialized || !isConfigFromESDBLoaded) {
             return;
         }
 
         if (!isMetadataIndexingPaused) {
             void enableEncryptedSearch();
         }
-    }, [isLibraryInitialized, isMetadataIndexingPaused]);
+    }, [isLibraryInitialized, isMetadataIndexingPaused, isConfigFromESDBLoaded]);
 
     return (
         <div className="p-4">
-            <div className="text-bold text-xl flex flex-justify-space-between flex-align-items-center flex-nowrap">
-                <span>{c('Title').t`Enabling Calendar Search`}</span>
+            <div className="text-bold text-xl flex flex-justify-space-between flex-align-items-center flex-nowrap mb-4">
+                <span>{c('Title').t`We're setting up Calendar search`}</span>
                 <Tooltip title={c('Action').t`Close`}>
                     <Button icon color="weak" shape="ghost" onClick={onClose}>
                         <Icon name="cross" size={20} />
                     </Button>
                 </Tooltip>
             </div>
-            <div>
-                {c('Description')
-                    .t`To enable truly private search ${CALENDAR_APP_NAME} needs to index your files locally. You can still use ${CALENDAR_APP_NAME} normally — we'll let you know when indexing is done.`}
+            <div className="mb-4">
+                {c('Description').t`This can take a few minutes. Meanwhile, you can continue using Calendar as usual.`}
             </div>
-            <CalendarSearchProgress esState={esState} isPaused={isMetadataIndexingPaused} />
-            <div className="flex flex-row-reverse mt-4">
+            <CalendarSearchProgress esState={esIndexingProgressState} isPaused={isMetadataIndexingPaused} />
+            <div className="flex flex-row-reverse ">
                 <Button shape="ghost" color="norm" onClick={onClose}>
                     {c('Action').t`Got it`}
                 </Button>
-                {isMetadataIndexingPaused ? (
+                {esStatus.isMetadataIndexingPaused ? (
                     <Button
                         shape="ghost"
                         color="norm"

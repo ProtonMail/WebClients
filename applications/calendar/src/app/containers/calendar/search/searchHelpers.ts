@@ -1,5 +1,5 @@
 import { getUnixTime, isAfter, isBefore, startOfDay } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ESItem } from '@proton/encrypted-search/lib';
 import { OccurrenceIterationCache, getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
@@ -233,7 +233,11 @@ export const getTimeString = ({
         }
 
         // translator: the variable plusDaysToEnd is a numeric value for the duration of the event in days
-        return c('Event info in search view; event duration').t`All day, lasts ${plusDaysToEnd} days`;
+        return c('Event info in search view; event duration').ngettext(
+            msgid`All day, lasts ${plusDaysToEnd} day`,
+            `All day, lasts ${plusDaysToEnd} days`,
+            plusDaysToEnd
+        );
     }
 
     const formattedStartTime = formatUTC(startDate, 'p', { locale: dateLocale });
