@@ -11,6 +11,9 @@
       "Add current url": [
         "Huidige url toevoegen"
       ],
+      "Add domain to pause list": [
+        "Voeg domein toe aan pauze lijst"
+      ],
       "Add more": [
         "Meer toevoegen"
       ],
@@ -289,6 +292,11 @@
         "Uitvouwen"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
@@ -360,6 +368,9 @@
       "Invalid password manager": [
         "Ongeldige wachtwoordbeheerder"
       ],
+      "Invalid url": [
+        "Ongeldige url"
+      ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
       ],
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "Het bestand dat u probeert te importeren is leeg"
+      ],
+      "The url is in the list": [
+        "De url is in de lijst"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Te veel mislukte pogingen. Log opnieuw in."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Autom. aanvullen"
       ],
+      "Autofill 2FA": [
+        "Automatisch invullen 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Automatisch open automatisch aanvullen bij focus op inlogvelden"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "${ PASS_APP_NAME }-icoon weergeven op loginvelden"
+      ],
+      "Domains": [
+        "Domeinen"
       ],
       "Download logs": [
         "Logboeken downloaden"
@@ -1111,6 +1131,9 @@
       ],
       "Passwords": [
         "Wachtwoorden"
+      ],
+      "Pause list": [
+        "Pauze lijst"
       ],
       "Permanently delete items": [
         "Items definitief verwijderen"
