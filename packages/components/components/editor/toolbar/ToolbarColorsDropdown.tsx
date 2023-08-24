@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit } from '@proton/components/components';
+import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
 import ColorSelector from '../../color/ColorSelector';
 import Icon from '../../icon/Icon';
@@ -35,7 +36,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
     return (
         <ToolbarDropdown
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
-            content={<Icon name="circle-half-filled" alt={c('Action').t`Color`} />}
+            content={<Icon name="circle-half-filled" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             data-testid="editor-font-color"
             title={c('Action').t`Color`}
