@@ -11,6 +11,9 @@
       "Add current url": [
         "Geçerli adresi ekle"
       ],
+      "Add domain to pause list": [
+        "Etki alanını duraklatma listesine ekle"
+      ],
       "Add more": [
         "Başka ekle"
       ],
@@ -289,6 +292,11 @@
         "Genişlet"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
@@ -360,6 +368,9 @@
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
       ],
+      "Invalid url": [
+        "Adres geçersiz"
+      ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
       ],
@@ -413,6 +424,9 @@
       ],
       "The file you are trying to import is empty": [
         "İçe aktarmak istediğiniz dosya boş"
+      ],
+      "The url is in the list": [
+        "Adres listede zaten var"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
@@ -926,6 +940,9 @@
       "Autofill": [
         "Otomatik doldurma"
       ],
+      "Autofill 2FA": [
+        "Otomatik iki adımlı doğrulama doldurma"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Oturum açma alanına geçildiğinde otomatik doldurma açılsın"
       ],
@@ -982,6 +999,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Oturum açma alanlarında ${ PASS_APP_NAME } simgesi görüntülensin"
+      ],
+      "Domains": [
+        "Etki alanları"
       ],
       "Download logs": [
         "Günlükleri indir"
@@ -1111,6 +1131,9 @@
       ],
       "Passwords": [
         "Parolalar"
+      ],
+      "Pause list": [
+        "Duraklatma listesi"
       ],
       "Permanently delete items": [
         "Ögeleri kalıcı olarak sil"
