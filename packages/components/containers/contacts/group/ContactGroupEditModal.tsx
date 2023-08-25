@@ -42,15 +42,15 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [contactGroups = []] = useContactGroups();
-    const [contactEmails] = useContactEmails();
+    const contactEmails = useContactEmails()[0] || [];
     const [value, setValue] = useState('');
     const updateGroup = useUpdateGroup();
     const isValidEmail = useMemo(() => validateEmailAddress(value), [value]);
 
     const contactGroup = contactGroupID && contactGroups.find(({ ID }) => ID === contactGroupID);
-    const existingContactEmails =
-        contactGroupID &&
-        contactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) => LabelIDs.includes(contactGroupID));
+    const existingContactEmails = contactGroupID
+        ? contactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) => LabelIDs.includes(contactGroupID))
+        : [];
     const title = contactGroupID ? c('Title').t`Edit contact group` : c('Title').t`Create new group`;
 
     const [model, setModel] = useState<{ name: string; color: string; contactEmails: ContactEmail[] }>({

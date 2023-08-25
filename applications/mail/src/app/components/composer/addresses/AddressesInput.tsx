@@ -14,7 +14,6 @@ import {
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -62,7 +61,7 @@ const AddressesInput = ({
     const groupsWithContactsMap = useGroupsWithContactsMap();
 
     const { getRecipientsOrGroups } = useRecipientLabel();
-    const [contactEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
+    const [contactEmails] = useContactEmails();
     const [contactGroups] = useContactGroups();
 
     const { createNotification } = useNotifications();

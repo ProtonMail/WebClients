@@ -66,7 +66,7 @@ interface Props {
     children?: ReactNode;
 }
 const ContactEmailsProvider = ({ children }: Props) => {
-    const [contactEmails = []] = useContactEmails() as [ContactEmail[], boolean, Error];
+    const [contactEmails = []] = useContactEmails();
     const [contactGroups = []] = useContactGroups();
     const cache = useMemo(() => {
         return {
