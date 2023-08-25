@@ -17,15 +17,17 @@ const Step2 = ({
     img,
     isB2bPlan,
     isDarkBg,
+    hasPayment,
 }: {
     onSetup: () => Promise<void>;
     product: string;
     img: ReactNode;
     isB2bPlan: boolean;
     isDarkBg: boolean;
+    hasPayment: boolean;
 }) => {
     const steps: string[] = [
-        c('Info').t`Verifying your payment`,
+        hasPayment && c('Info').t`Verifying your payment`,
         c('Info').t`Creating your account`,
         c('Info').t`Securing your account`,
     ].filter(isTruthy);
