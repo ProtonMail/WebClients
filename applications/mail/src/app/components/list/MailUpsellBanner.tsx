@@ -5,14 +5,20 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { MailShortcutsModal, PromotionBanner, SettingsLink, useModalState, useTheme } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, UPSELL_COMPONENT, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    MAIL_APP_NAME,
+    PROTON_SENTINEL_NAME,
+    UPSELL_COMPONENT,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../constants';
 
-const { plansSelection, vpn, protonBusiness, drive } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
+const { plansSelection, vpn, protonBusiness, drive, securityAndPrivacy } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 enum UPSELL_MAIL_BANNER_LINK_ID {
     SEND_FROM_PM_ADDRESS = 3,
@@ -28,6 +34,7 @@ enum UPSELL_MAIL_BANNER_LINK_ID {
     PRIVACY_FOR_ALL = 20,
     PREMIUM_FEATURES = 23,
     LVL_UP_PRIVACY = 24,
+    PROTON_SENTINEL = 25,
 }
 
 interface MessageOption {
@@ -282,6 +289,20 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
                         tabIndex={0}
                     >
                         {callToActionTexts.upgrade}
+                    </SettingsLink>
+                ),
+            },
+            {
+                id: 25,
+                // translator: full sentence: "Learn more about Proton Sentinel high-security program."
+                text: c('Info').t`Learn more about ${PROTON_SENTINEL_NAME} high-security program.`,
+                cta: (
+                    <SettingsLink
+                        path={getLink(securityAndPrivacy, UPSELL_MAIL_BANNER_LINK_ID.PROTON_SENTINEL)}
+                        className="text-bold link align-baseline"
+                        tabIndex={0}
+                    >
+                        {callToActionTexts.learnMore}
                     </SettingsLink>
                 ),
             },
