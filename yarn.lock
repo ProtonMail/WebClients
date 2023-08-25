@@ -4970,6 +4970,7 @@ __metadata:
     "@types/react-router": ^5.1.20
     "@types/react-router-dom": ^5.3.3
     "@types/react-virtualized": ^9.21.22
+    "@unleash/proxy-client-react": ^3.6.0
     babel-jest: ^29.6.4
     babel-plugin-transform-require-context: ^0.1.1
     card-validator: ^8.1.1
@@ -5005,6 +5006,7 @@ __metadata:
     tinycolor2: ^1.6.0
     ttag: ^1.7.24
     typescript: ^5.2.2
+    unleash-proxy-client: ^2.5.0
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -8545,6 +8547,15 @@ __metadata:
     "@typescript-eslint/types": 6.4.1
     eslint-visitor-keys: ^3.4.1
   checksum: bd9cd56fc793e1d880c24193f939c4992b2653f330baece41cd461d1fb48edb2c53696987cba0e29074bbb452dd181fd009db92dd19060fdcc417ad76768f18a
+  languageName: node
+  linkType: hard
+
+"@unleash/proxy-client-react@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@unleash/proxy-client-react@npm:3.6.0"
+  peerDependencies:
+    unleash-proxy-client: ^2.5.0
+  checksum: 010ef403958ebb5dbe8b7e53aa249255af62468f35ecc8984053012ce92913d9006d4c1af6d297aee85d07dfc15bcb713d5af702928a677f4337614c7743d672
   languageName: node
   linkType: hard
 
@@ -31596,6 +31607,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"tiny-emitter@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "tiny-emitter@npm:2.1.0"
+  checksum: fbcfb5145751a0e3b109507a828eb6d6d4501352ab7bb33eccef46e22e9d9ad3953158870a6966a59e57ab7c3f9cfac7cab8521db4de6a5e757012f4677df2dd
+  languageName: node
+  linkType: hard
+
 "tiny-inflate@npm:^1.0.0, tiny-inflate@npm:^1.0.3":
   version: 1.0.3
   resolution: "tiny-inflate@npm:1.0.3"
@@ -32781,6 +32799,16 @@ fsevents@^1.2.7:
   dependencies:
     normalize-path: ^2.1.1
   checksum: 3be30e48579fc6c7390bd59b4ab9e745fede0c164dfb7351cf710bd1dbef8484b1441186205af6bcb13b731c0c88caf9b33459f7bf8c89e79c046e656ae433f0
+  languageName: node
+  linkType: hard
+
+"unleash-proxy-client@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "unleash-proxy-client@npm:2.5.0"
+  dependencies:
+    tiny-emitter: ^2.1.0
+    uuid: ^8.3.2
+  checksum: 937cb2c0c1b5f9de1f97af379126e79d66accad13cf3b3e9876514e0bb9018ef4bff118baf589ee2d96bc8a617fd5186dbc26b5c4e7a575ac4c327db28cd6bd3
   languageName: node
   linkType: hard
 
