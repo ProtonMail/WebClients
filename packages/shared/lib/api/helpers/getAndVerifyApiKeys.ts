@@ -34,11 +34,12 @@ const getApiKeySource = (source: number): ApiAddressKeySource => {
 
 const importKeys = (keys: ApiAddressKey[]): Promise<ProcessedApiAddressKey[]> => {
     return Promise.all(
-        keys.map(async (key) => {
+        keys.map(async ({ PublicKey, Flags, Source }) => {
             return {
-                ...key,
-                PublicKeyRef: await CryptoProxy.importPublicKey({ armoredKey: key.PublicKey }),
-                Source: getApiKeySource(key.Source),
+                armoredPublicKey: PublicKey,
+                flags: Flags,
+                publicKeyRef: await CryptoProxy.importPublicKey({ armoredKey: PublicKey }),
+                source: getApiKeySource(Source),
             };
         })
     );

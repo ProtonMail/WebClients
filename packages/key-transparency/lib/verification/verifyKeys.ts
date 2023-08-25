@@ -33,10 +33,10 @@ export const checkSKLEquality = (skl1: FetchedSignedKeyList, skl2: FetchedSigned
  */
 export const parseKeyList = async (keyList: KeyWithFlags[]): Promise<SignedKeyListItem[]> =>
     Promise.all(
-        keyList.map(async ({ key, flags }, index) => ({
+        keyList.map(async ({ key, flags, primary }, index) => ({
             Fingerprint: key.getFingerprint(),
             SHA256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key }),
-            Primary: index === 0 ? 1 : 0,
+            Primary: primary ?? index === 0 ? 1 : 0,
             Flags: flags,
         }))
     );
@@ -102,6 +102,7 @@ export const verifyKeyList = async (
 interface KeyWithFlags {
     key: KeyReference;
     flags: number;
+    primary?: 1 | 0;
 }
 /**
  * Check that the given keys mirror what's inside the given SKL Data
@@ -166,7 +167,7 @@ const verifyPublicKeys = async (
                 // Verify key list matches the signed key list
                 await checkKeysInSKL(
                     email,
-                    apiKeys.map(({ PublicKeyRef, Flags }) => ({ key: PublicKeyRef, flags: Flags })),
+                    apiKeys.map(({ publicKeyRef, flags }) => ({ key: publicKeyRef, flags })),
                     signedKeyList.Data!
                 );
             }
