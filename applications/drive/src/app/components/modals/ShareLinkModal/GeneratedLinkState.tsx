@@ -153,7 +153,7 @@ function GeneratedLinkState({
             <ModalTwoHeader title={c('Title').t`Share via link`} closeButtonProps={{ disabled: saving || deleting }} />
             <ModalTwoContent>
                 <div ref={contentRef}>
-                    <p>{c('Info').jt`Shareable link for ${boldNameText}`}</p>
+                    <p data-testid="shareable-info-text">{c('Info').jt`Shareable link for ${boldNameText}`} </p>
                     <Row className="mb-2 md:mb-0">
                         <div className="flex flex-item-fluid mb-2 md:mb-0">
                             <Input
@@ -169,7 +169,9 @@ function GeneratedLinkState({
                             ).t`Copy link`}</PrimaryButton>
                         </div>
                     </Row>
-                    <Alert className="mb-4">{sharedInfoMessage}</Alert>
+                    <Alert data-testid="secure-link-text" className="mb-4">
+                        {sharedInfoMessage}
+                    </Alert>
                     <Details
                         open={additionalSettingsExpanded}
                         onToggle={() => {
@@ -191,10 +193,12 @@ function GeneratedLinkState({
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
+                                    <div
+                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        data-testid="sharing-modal-passwordModeToggle"
+                                    >
                                         <Toggle
                                             id="passwordModeToggle"
-                                            data-testid="sharing-modal-passwordModeToggle"
                                             className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={passwordToggledOn}
@@ -236,10 +240,12 @@ function GeneratedLinkState({
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start pt-2 mr-0 md:mr-2">
+                                    <div
+                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        data-testid="sharing-modal-expirationTimeModeToggle"
+                                    >
                                         <Toggle
                                             id="expirationTimeModeToggle"
-                                            data-testid="sharing-modal-expirationTimeModeToggle"
                                             className="mb-2 md:mb-0"
                                             disabled={saving}
                                             checked={expirationToggledOn}

@@ -75,6 +75,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
                     (dragging || item.isLocked) && 'opacity-50',
                 ])}
                 aria-disabled={item.isLocked}
+                data-testid="grid-item"
                 {...itemHandlers}
                 {...dragnDropControls.itemHandlers}
             >

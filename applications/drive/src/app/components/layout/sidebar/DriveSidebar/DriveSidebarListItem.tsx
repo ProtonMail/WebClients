@@ -66,6 +66,7 @@ const DriveSidebarListItem = ({
                         left={left}
                         right={rightIcon}
                         title={typeof children === 'string' ? children : undefined}
+                        data-testid="sidebar-main-sections"
                     >
                         {children}
                     </SidebarListItemContent>
