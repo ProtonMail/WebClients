@@ -1018,10 +1018,11 @@ const SignupContainer = ({
     );
 
     const hasDecoration = [AccountCreationUsername].includes(step);
+    const isCurrentStepSignup = step === SignupSteps.CreatingAccount && !hasDecoration;
 
     return (
         <Layout
-            currentSignupStep={step}
+            centeredContent={isCurrentStepSignup}
             onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
             hasDecoration={hasDecoration}
