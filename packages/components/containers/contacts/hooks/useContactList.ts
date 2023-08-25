@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { Contact, ContactEmail, ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmail, ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useContactEmails, useContactGroups, useContacts } from '../../../hooks';
@@ -16,7 +16,7 @@ interface Props {
 
 const useContactList = ({ search, contactID, contactGroupID }: Props) => {
     const [contactEmails, loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
-    const [contacts = [], loadingContacts] = useContacts() as [Contact[], boolean, any];
+    const [contacts = [], loadingContacts] = useContacts();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
 
     const normalizedSearch = normalize(search, true);
