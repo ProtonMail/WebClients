@@ -37,6 +37,9 @@ const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
     });
 };
 
+const getFailedOrUnVerified = (failed: boolean) =>
+    failed ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
+
 const getPublicKeysEmailHelperWithKT = async (
     api: Api,
     Email: string,
@@ -60,6 +63,21 @@ const getPublicKeysEmailHelperWithKT = async (
             };
         }
 
+        const hasDisabledE2EE = addressKeys.some((key) => !supportsMail(key.flags));
+
+        if (hasDisabledE2EE) {
+            return {
+                publicKeys: [],
+                RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
+                ktVerificationResult: {
+                    status: getFailedOrUnVerified(
+                        addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
+                    ),
+                },
+                ...rest,
+            };
+        }
+
         const keysChangedRecently = !!addressKTResult?.keysChangedRecently || !!catchAllKTResult?.keysChangedRecently;
         const verificationFailed =
             addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED ||
@@ -69,9 +87,7 @@ const getPublicKeysEmailHelperWithKT = async (
         if (unverifiedKeys) {
             const mailCapableUnverifiedInternalKeys = getMailCapableKeys(getInternalKeys(unverifiedKeys));
             if (mailCapableUnverifiedInternalKeys.length != 0) {
-                const status = verificationFailed
-                    ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-                    : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
+                const status = getFailedOrUnVerified(verificationFailed);
                 return {
                     publicKeys: castKeys(mailCapableUnverifiedInternalKeys),
                     ktVerificationResult: { status, keysChangedRecently },
@@ -99,9 +115,7 @@ const getPublicKeysEmailHelperWithKT = async (
         }
 
         const ktVerificationResult = {
-            status: verificationFailed
-                ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-                : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS,
+            status: getFailedOrUnVerified(verificationFailed),
             keysChangedRecently,
         };
 
