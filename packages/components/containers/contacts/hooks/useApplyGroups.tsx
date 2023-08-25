@@ -56,8 +56,8 @@ const useApplyGroups = (
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
-    const [userContactEmails] = useContactEmails();
-    const [contacts = []] = useContacts();
+    const contacts = useContacts()[0] || [];
+    const userContactEmails = useContactEmails()[0] || [];
     const [groups = []] = useContactGroups();
 
     const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] = useModalTwo<
@@ -161,7 +161,7 @@ const useApplyGroups = (
 
             await call();
         },
-        [contacts]
+        [contacts, userContactEmails]
     );
 
     return { applyGroups, contactGroupLimitReachedModal };
