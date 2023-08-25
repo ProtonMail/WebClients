@@ -358,21 +358,14 @@ export default function useUploadFile() {
             createBlockLinks: async (
                 abortSignal: AbortSignal,
                 fileBlocks: FileRequestBlock[],
-                thumbnailBlock?: ThumbnailRequestBlock
+                thumbnailBlocks?: ThumbnailRequestBlock[]
             ) => {
                 const createdFileRevision = await createdFileRevisionPromise;
                 if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
                 const addressKeyInfo = await getShareKeys(abortSignal);
-                const thumbnailParams = thumbnailBlock
-                    ? {
-                          Thumbnail: 1,
-                          ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.hash),
-                          ThumbnailSize: thumbnailBlock.size,
-                      }
-                    : {};
-                const { UploadLinks, ThumbnailLink } = await debouncedRequest<RequestUploadResult>(
+                const { UploadLinks, ThumbnailLinks } = await debouncedRequest<RequestUploadResult>(
                     queryRequestUpload({
                         BlockList: fileBlocks.map((block) => ({
                             Index: block.index,
@@ -387,24 +380,25 @@ export default function useUploadFile() {
                         LinkID: createdFileRevision.fileID,
                         RevisionID: createdFileRevision.revisionID,
                         ShareID: shareId,
-                        ...thumbnailParams,
+                        ThumbnailList: thumbnailBlocks?.map((block) => ({
+                            Hash: uint8ArrayToBase64String(block.hash),
+                            Size: block.size,
+                            Type: block.type,
+                        })),
                     }),
                     abortSignal
                 );
-
                 return {
                     fileLinks: UploadLinks.map((link, index) => ({
                         index: fileBlocks[index].index,
                         token: link.Token,
                         url: link.BareURL,
                     })),
-                    thumbnailLink: ThumbnailLink
-                        ? {
-                              index: 0,
-                              token: ThumbnailLink.Token,
-                              url: ThumbnailLink.BareURL,
-                          }
-                        : undefined,
+                    thumbnailLinks: ThumbnailLinks?.map((link, index) => ({
+                        index,
+                        token: link.Token,
+                        url: link.BareURL,
+                    })),
                 };
             },
             finalize: queuedFunction(

@@ -58,7 +58,7 @@ export interface UploadLink {
 
 export interface RequestUploadResult {
     UploadLinks: UploadLink[];
-    ThumbnailLink?: UploadLink;
+    ThumbnailLinks?: UploadLink[];
 }
 
 export interface DriveFileBlock {

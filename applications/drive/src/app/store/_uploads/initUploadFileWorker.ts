@@ -1,3 +1,4 @@
+import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
@@ -11,7 +12,7 @@ import {
     UploadFileProgressCallbacks,
 } from './interface';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { makeThumbnail } from './thumbnail';
+import { ThumbnailType, makeThumbnail } from './thumbnail';
 import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
@@ -38,12 +39,32 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) =>
-            makeThumbnail(mimeType, file).catch((err) => {
+        const thumbnailsDataPromise = mimeTypePromise.then(async (mimeType) => {
+            const previewThumbnail = await makeThumbnail(mimeType, file).catch((err) => {
                 traceError(err);
                 return undefined;
-            })
-        );
+            });
+            if (!previewThumbnail) {
+                return undefined;
+            }
+            if (
+                !isPhoto ||
+                (mimeType == SupportedMimeTypes.jpg &&
+                    previewThumbnail?.originalWidth &&
+                    previewThumbnail?.originalWidth <= HD_THUMBNAIL_MAX_SIDE)
+            ) {
+                return [previewThumbnail];
+            }
+            const photoThumbnail = await makeThumbnail(mimeType, file, ThumbnailType.PHOTO).catch((err) => {
+                traceError(err);
+                return undefined;
+            });
+            if (photoThumbnail) {
+                return [previewThumbnail, photoThumbnail];
+            }
+            return undefined;
+        });
+
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
                 new URL(
@@ -62,7 +83,7 @@ export function initUploadFileWorker(
 
                                     return Promise.all([
                                         getParentHashKey(abortController.signal),
-                                        thumbnailDataPromise,
+                                        thumbnailsDataPromise,
                                         getVerificationData(abortController.signal),
                                     ]).then(async ([parentHashKey, thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
@@ -83,9 +104,9 @@ export function initUploadFileWorker(
                         })
                         .catch(reject);
                 },
-                createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => {
-                    createBlockLinks(abortController.signal, fileBlocks, thumbnailBlock)
-                        .then(({ fileLinks, thumbnailLink }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLink))
+                createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => {
+                    createBlockLinks(abortController.signal, fileBlocks, thumbnailBlocks)
+                        .then(({ fileLinks, thumbnailLinks }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLinks))
                         .catch(reject);
                 },
                 onProgress: (increment: number) => {
