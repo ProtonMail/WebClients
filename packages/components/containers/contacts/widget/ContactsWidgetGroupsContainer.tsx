@@ -48,7 +48,7 @@ const ContactsWidgetGroupsContainer = ({
 
     const [groups = [], loadingGroups] = useContactGroups();
     const orderedGroups = orderContactGroups(groups);
-    const [contactEmails = [], loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
+    const [contactEmails = [], loadingContactEmails] = useContactEmails();
 
     const normalizedSearch = normalize(search);
 
