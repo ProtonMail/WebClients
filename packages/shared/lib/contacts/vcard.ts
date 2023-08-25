@@ -12,6 +12,7 @@ import {
     VCardDateOrText,
     VCardGenderValue,
     VCardProperty,
+    VcardNValue,
 } from '../interfaces/contacts/VCard';
 import { getMimeTypeVcard, getPGPSchemeVcard } from './keyProperties';
 import { createContactPropertyUid, getStringContactValue } from './properties';
@@ -75,6 +76,40 @@ export const isDateType = (type = '') => {
 
 export const isCustomField = (field = '') => field.startsWith('x-');
 
+const getArrayStringValue = (value: undefined | string | string[]) => {
+    if (!value) {
+        return [''];
+    }
+    if (!Array.isArray(value)) {
+        return [value];
+    }
+    return value;
+};
+
+export const icalValueToNValue = (value: string | string[]): VcardNValue => {
+    // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.2.2
+    // N is split into 5 strings or string arrays with different meaning at each position
+    if (Array.isArray(value)) {
+        const [familyNames, givenNames, additionalNames, honorificPrefixes, honorificSuffixes] = value;
+
+        return {
+            familyNames: getArrayStringValue(familyNames),
+            givenNames: getArrayStringValue(givenNames),
+            additionalNames: getArrayStringValue(additionalNames),
+            honorificPrefixes: getArrayStringValue(honorificPrefixes),
+            honorificSuffixes: getArrayStringValue(honorificSuffixes),
+        };
+    }
+
+    return {
+        familyNames: [value],
+        givenNames: [''],
+        additionalNames: [''],
+        honorificPrefixes: [''],
+        honorificSuffixes: [''],
+    };
+};
+
 export const icalValueToInternalAddress = (adr: string | string[]): VCardAddress => {
     // Input sanitization
     const value = (Array.isArray(adr) ? adr : [adr]).map((entry) => getStringContactValue(entry));
@@ -102,6 +137,9 @@ export const icalValueToInternalAddress = (adr: string | string[]): VCardAddress
 export const icalValueToInternalValue = (name: string, type: string, property: any) => {
     const value = getValue(property, name) as string | string[];
 
+    if (name === 'n') {
+        return icalValueToNValue(value);
+    }
     if (name === 'adr') {
         return icalValueToInternalAddress(value);
     }
@@ -210,6 +248,17 @@ export const parseToVCard = (vcard: string): VCardContact => {
 };
 
 export const internalValueToIcalValue = (name: string, value: any) => {
+    if (name === 'n') {
+        const {
+            familyNames = [''],
+            givenNames = [''],
+            additionalNames = [''],
+            honorificPrefixes = [''],
+            honorificSuffixes = [''],
+        } = value;
+
+        return [familyNames, givenNames, additionalNames, honorificPrefixes, honorificSuffixes];
+    }
     if (name === 'adr') {
         const {
             postOfficeBox = '',
