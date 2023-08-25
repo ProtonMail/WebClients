@@ -243,8 +243,8 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="domain-icon"
-                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
-                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'checkmark' : 'cross'}
+                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'success' : 'error'}
+                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'checkmark' : 'cross'}
             />
         ),
         !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
