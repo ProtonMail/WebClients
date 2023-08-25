@@ -8,7 +8,7 @@ import {
     TOKEN_EXPIRATION_TIME,
     WAIT_TIME,
 } from '../constants';
-import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
+import { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
 import { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
 import { waitForCondition } from './pauser';
 
@@ -32,7 +32,9 @@ import { waitForCondition } from './pauser';
  * }
  */
 export default class UploadWorkerBuffer {
-    encryptedBlocks = new Map<number, EncryptedBlock | EncryptedThumbnailBlock>();
+    encryptedBlocks = new Map<number, EncryptedBlock>();
+
+    thumbnailsEncryptedBlocks = new Map<number, ThumbnailEncryptedBlock>();
 
     uploadingBlocks: UploadingBlock[] = [];
 
@@ -44,7 +46,16 @@ export default class UploadWorkerBuffer {
 
     uploadingFinished = false;
 
-    async feedEncryptedBlocks(encryptedBlocksGenerator: AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock>) {
+    async feedEncryptedBlocks(
+        encryptedBlocksGenerator: AsyncGenerator<EncryptedBlock>,
+        thumbnailsEncryptedBlockGenerator?: AsyncGenerator<ThumbnailEncryptedBlock>
+    ) {
+        if (thumbnailsEncryptedBlockGenerator) {
+            // We don't need the waitForCondition there as we generate a limited number of thumbnails consisting of one small block we don't count for the limit.
+            for await (const encryptedThumbnailBlock of thumbnailsEncryptedBlockGenerator) {
+                this.thumbnailsEncryptedBlocks.set(encryptedThumbnailBlock.index, encryptedThumbnailBlock);
+            }
+        }
         for await (const encryptedBlock of encryptedBlocksGenerator) {
             await waitForCondition(
                 () =>
@@ -53,21 +64,21 @@ export default class UploadWorkerBuffer {
             );
             this.encryptedBlocks.set(encryptedBlock.index, encryptedBlock);
         }
+
         this.encryptionFinished = true;
     }
 
     runBlockLinksCreation(
-        requestBlockCreation: (blocks: EncryptedBlock[], thumbnailBlock?: EncryptedThumbnailBlock) => void
+        requestBlockCreation: (blocks: EncryptedBlock[], thumbnailBlocks?: ThumbnailEncryptedBlock[]) => void
     ) {
         const run = async () => {
             if (this.encryptedBlocks.size >= MAX_ENCRYPTED_BLOCKS || this.uploadingBlocks.length < MAX_UPLOAD_JOBS) {
-                const blocks = Array.from(this.encryptedBlocks)
-                    .map(([, block]) => block)
-                    .filter((block) => block.index !== 0) as EncryptedBlock[];
-                const thumbnailBlock = this.encryptedBlocks.get(0);
+                const blocks = Array.from(this.encryptedBlocks).map(([, block]) => block);
+                const thumbnailBlocks = Array.from(this.thumbnailsEncryptedBlocks).map(([, block]) => block);
+
                 if (blocks.length > 0) {
                     this.requestingBlockLinks = true;
-                    requestBlockCreation(blocks, thumbnailBlock);
+                    requestBlockCreation(blocks, thumbnailBlocks);
                     await waitForCondition(() => !this.requestingBlockLinks);
                 }
             }
@@ -84,10 +95,10 @@ export default class UploadWorkerBuffer {
         void run();
     }
 
-    setBlockLinks(links: Link[]) {
+    setBlockLinks(links: Link[], encryptedBlocks: Map<number, EncryptedBlock | ThumbnailEncryptedBlock>) {
         const createTime = Date.now();
         links.forEach((link) => {
-            const block = this.encryptedBlocks.get(link.index);
+            const block = encryptedBlocks.get(link.index);
             if (!block) {
                 return;
             }
@@ -98,9 +109,16 @@ export default class UploadWorkerBuffer {
                 uploadToken: link.token,
                 isTokenExpired: () => Date.now() - createTime > TOKEN_EXPIRATION_TIME,
             });
-            this.encryptedBlocks.delete(link.index);
+            encryptedBlocks.delete(link.index);
         });
-        this.requestingBlockLinks = false;
+    }
+
+    setFileBlockLinks(fileLinks: Link[]) {
+        this.setBlockLinks(fileLinks, this.encryptedBlocks);
+    }
+
+    setThumbnailBlockLinks(thumbnailLinks: Link[]) {
+        this.setBlockLinks(thumbnailLinks, this.thumbnailsEncryptedBlocks);
     }
 
     async *generateUploadingBlocks(): AsyncGenerator<UploadingBlockControl> {
@@ -132,7 +150,11 @@ export default class UploadWorkerBuffer {
                     // eslint-disable-next-line @typescript-eslint/no-loop-func
                     onTokenExpiration: () => {
                         blocksInProgress--;
-                        this.encryptedBlocks.set(block.index, block);
+                        if (block.thumbnailType) {
+                            this.thumbnailsEncryptedBlocks.set(block.index, block);
+                        } else {
+                            this.encryptedBlocks.set(block.index, block);
+                        }
                     },
                 };
             } else {

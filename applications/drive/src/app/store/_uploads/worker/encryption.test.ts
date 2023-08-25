@@ -9,7 +9,9 @@ import {
     setupCryptoProxyForTesting,
 } from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
-import generateBlocks from './encryption';
+import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
+import { ThumbnailData, ThumbnailType } from '../thumbnail';
+import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
 import { Verifier } from './interface';
 import { createVerifier } from './verifier';
 
@@ -50,12 +52,10 @@ describe('block generator', () => {
     it('should generate all file blocks', async () => {
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
-        const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
-        const generator = generateBlocks(
+        const generator = generateEncryptedBlocks(
             file,
-            thumbnailData,
             addressPrivateKey,
             privateKey,
             sessionKey,
@@ -63,7 +63,7 @@ describe('block generator', () => {
             mockHasher,
             mockVerifier
         );
-        const blocks = await asyncGeneratorToArray(generator);
+        const blocks = await asyncGeneratorToArray<EncryptedBlock>(generator);
         expect(blocks.length).toBe(3);
         expect(blocks.map((block) => block.index)).toMatchObject([1, 2, 3]);
         expect(blocks.map((block) => block.originalSize)).toMatchObject([
@@ -73,32 +73,30 @@ describe('block generator', () => {
         ]);
     });
 
-    it('should generate thumbnail as first block', async () => {
-        const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE)], 'foo.txt');
-        const thumbnailData = new Uint8Array([1, 2, 3, 3, 2, 1]);
-        const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
+    it('should generate all thumbnails blocks', async () => {
+        const thumbnailData: ThumbnailData[] = [
+            {
+                thumbnailData: new Uint8Array([1, 2, 3, 3, 2, 1]),
+                thumbnailType: ThumbnailType.PREVIEW,
+            },
+            {
+                thumbnailData: new Uint8Array([1, 2, 3, 3, 2, 1]),
+                thumbnailType: ThumbnailType.PHOTO,
+            },
+        ];
+        const { addressPrivateKey, sessionKey } = await setupPromise();
 
-        const generator = generateBlocks(
-            file,
-            thumbnailData,
-            addressPrivateKey,
-            privateKey,
-            sessionKey,
-            noop,
-            mockHasher,
-            mockVerifier
-        );
-        const blocks = await asyncGeneratorToArray(generator);
-        expect(blocks.length).toBe(3);
-        expect(blocks.map((block) => block.index)).toMatchObject([0, 1, 2]);
+        const generator = generateThumbnailEncryptedBlocks(thumbnailData, addressPrivateKey, sessionKey);
+        const blocks = await asyncGeneratorToArray<ThumbnailEncryptedBlock>(generator);
+        expect(blocks.length).toBe(2);
+        expect(blocks.map((block) => block.index)).toMatchObject([0, 1]);
         // Thumbnail has always zero original size to not mess up the progress.
-        expect(blocks.map((block) => block.originalSize)).toMatchObject([0, FILE_CHUNK_SIZE, FILE_CHUNK_SIZE]);
+        expect(blocks.map((block) => block.originalSize)).toMatchObject([0, 0]);
     });
 
     it('should throw and log if there is a consistent encryption error', async () => {
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
-        const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
         const encryptSpy = jest.spyOn(CryptoProxy, 'encryptMessage').mockImplementation(async () => {
@@ -116,9 +114,8 @@ describe('block generator', () => {
             verifierSessionKey: sessionKey,
         });
 
-        const generator = generateBlocks(
+        const generator = generateEncryptedBlocks(
             file,
-            thumbnailData,
             addressPrivateKey,
             privateKey,
             sessionKey,
@@ -138,7 +135,6 @@ describe('block generator', () => {
     it('should retry and log if there is an encryption error once', async () => {
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
-        const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
         let mockCalled = false;
@@ -163,9 +159,8 @@ describe('block generator', () => {
             verifierSessionKey: sessionKey,
         });
 
-        const generator = generateBlocks(
+        const generator = generateEncryptedBlocks(
             file,
-            thumbnailData,
             addressPrivateKey,
             privateKey,
             sessionKey,
@@ -173,7 +168,7 @@ describe('block generator', () => {
             mockHasher,
             verifier
         );
-        const blocks = await asyncGeneratorToArray(generator);
+        const blocks = await asyncGeneratorToArray<EncryptedBlock>(generator);
 
         expect(blocks.length).toBe(3);
         expect(blocks.map((block) => block.index)).toMatchObject([1, 2, 3]);
@@ -198,12 +193,10 @@ describe('block generator', () => {
 
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
-        const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
-        const generator = generateBlocks(
+        const generator = generateEncryptedBlocks(
             file,
-            thumbnailData,
             addressPrivateKey,
             privateKey,
             sessionKey,
@@ -228,12 +221,10 @@ describe('block generator', () => {
                 const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
                 const file = new File(['a'.repeat(fileSize)], 'foo.txt');
-                const thumbnailData = undefined;
 
                 const verifier = jest.fn(mockVerifier);
-                const generator = generateBlocks(
+                const generator = generateEncryptedBlocks(
                     file,
-                    thumbnailData,
                     addressPrivateKey,
                     privateKey,
                     sessionKey,
@@ -261,13 +252,11 @@ describe('block generator', () => {
             const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
             const file = new File(['a'.repeat(32)], 'foo.txt');
-            const thumbnailData = undefined;
 
             const verifier = jest.fn(() => Promise.reject(new Error('oh no')));
             const notifySentry = jest.fn();
-            const generator = generateBlocks(
+            const generator = generateEncryptedBlocks(
                 file,
-                thumbnailData,
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
