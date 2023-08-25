@@ -40,6 +40,12 @@ export interface DecryptedKey extends KeyPair {
     ID: string;
 }
 
+export interface DecryptedAddressKey extends KeyPair {
+    ID: string;
+    Flags: number;
+    Primary: 1 | 0;
+}
+
 export interface InactiveKey {
     Key: Key;
     publicKey?: PublicKeyReference;
