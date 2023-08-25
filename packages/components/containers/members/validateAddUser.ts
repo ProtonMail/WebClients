@@ -5,6 +5,10 @@ import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import { UserManagementMode } from './types';
 
+export const getDomainError = () => {
+    return c('Error').t`Please configure a custom domain before adding users to your organization.`;
+};
+
 const validateAddUser = (
     organization: Organization,
     organizationKey: CachedOrganizationKey | undefined,
@@ -22,7 +26,7 @@ const validateAddUser = (
         return c('Error').t`Please enable multi-user support before adding users to your organization.`;
     }
     if (shouldValidateDomain && !verifiedDomains.length) {
-        return c('Error').t`Please configure a custom domain before adding users to your organization.`;
+        return getDomainError();
     }
     if (MaxMembers - UsedMembers < 1) {
         return c('Error').t`You have used all users in your plan. Please upgrade your plan to add a new user.`;

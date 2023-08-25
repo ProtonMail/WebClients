@@ -5,12 +5,13 @@ import { c, msgid } from 'ttag';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { APP_NAMES, DOMAIN_STATE, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
+import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
 import {
@@ -53,9 +54,8 @@ import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
 import { UserManagementMode } from '../types';
+import { getDomainError } from '../validateAddUser';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
-
-const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
 const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [organization, loadingOrganization] = useOrganization();
@@ -73,6 +73,9 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const hasReachedLimit = organization.InvitationsRemaining === 0;
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
+
+    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+    const mode = hasVpnB2BPlan ? UserManagementMode.VPN_B2B : UserManagementMode.DEFAULT;
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
@@ -94,10 +97,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] =
         useModalState(cleanOption);
 
-    const verifiedDomains = useMemo(
-        () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
-        [domains]
-    );
+    const verifiedDomains = useMemo(() => (domains || []).filter(getIsDomainActive), [domains]);
 
     const handleSearch = (value: string) => setKeywords(value);
 
@@ -172,6 +172,10 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         if (hasVisionary(subscription) || hasNewVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
         } else {
+            if (mode === UserManagementMode.DEFAULT && !verifiedDomains.length) {
+                createNotification({ text: getDomainError(), type: 'error' });
+                return;
+            }
             setSubUserCreateModalOpen(true);
         }
     };
@@ -218,15 +222,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     ];
 
     const disableInviteUserButton = loadingOrganization || loadingDomains || hasReachedLimit;
+
     const disableAddUserButton =
         loadingOrganization ||
         loadingDomains ||
         loadingOrganizationKey ||
         organization.UsedMembers === organization.MaxMembers;
     const loadingAddAddresses = loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers;
-
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const mode = hasVpnB2BPlan ? UserManagementMode.VPN_B2B : UserManagementMode.DEFAULT;
 
     const settingsTitle = (() => {
         if (hasFamily(subscription)) {
@@ -245,9 +247,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         return c('familyOffer_2023:Info for members section')
             .t`Add, remove, and make changes to user accounts in your organization.`;
     })();
-
-    const canOpenSubuserModal =
-        renderSubUserCreateModal && organizationKey && (verifiedDomains?.length > 0 || hasVpnB2BPlan);
 
     return (
         <SettingsSectionWide>
@@ -275,11 +274,11 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 {renderUserRemoveModal && tmpMember && (
                     <UserRemoveModal member={tmpMember} organization={organization} {...userRemoveModalProps} />
                 )}
-                {canOpenSubuserModal && (
+                {renderSubUserCreateModal && organizationKey && (
                     <SubUserCreateModal
                         organization={organization}
                         organizationKey={organizationKey}
-                        domains={verifiedDomains}
+                        verifiedDomains={verifiedDomains}
                         mode={mode}
                         app={app}
                         {...subUserCreateModalProps}
