@@ -24,6 +24,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsVpnB2BPlan, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Cycle, CycleMapping, Plan, PlansMap } from '@proton/shared/lib/interfaces';
@@ -384,6 +385,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 )}
                 {model.step === Steps.Loading && (
                     <Step2
+                        hasPayment={
+                            hasPlanIDs(model.subscriptionData.planIDs) &&
+                            model.subscriptionData.checkResult.AmountDue > 0
+                        }
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
                         isDarkBg={isDarkBg}
