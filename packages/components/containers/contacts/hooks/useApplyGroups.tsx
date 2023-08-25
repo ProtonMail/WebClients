@@ -57,7 +57,7 @@ const useApplyGroups = (
     const { call } = useEventManager();
     const api = useApi();
     const [userContactEmails] = useContactEmails();
-    const [contacts] = useContacts() as [Contact[], boolean, any];
+    const [contacts = []] = useContacts();
     const [groups = []] = useContactGroups();
 
     const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] = useModalTwo<
