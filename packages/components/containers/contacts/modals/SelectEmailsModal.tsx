@@ -43,7 +43,7 @@ type CheckableContact = ContactEmail & { isChecked?: boolean };
  */
 const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, onReject, ...rest }: Props) => {
     const [contactGroups] = useContactGroups();
-    const [allContactEmails = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
+    const [allContactEmails = []] = useContactEmails();
 
     const groups = groupIDs.map((groupID) => contactGroups?.find((group) => group.ID === groupID)).filter(isTruthy);
 

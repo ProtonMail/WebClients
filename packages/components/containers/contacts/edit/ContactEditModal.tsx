@@ -16,7 +16,7 @@ import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
@@ -68,7 +68,7 @@ const ContactEditModal = ({
     const [vCardContact, setVCardContact] = useState<VCardContact>(prepareForEdition(inputVCardContact));
 
     const nameFieldRef = useRef<HTMLInputElement>(null);
-    const [contactEmails, loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
+    const [contactEmails = [], loadingContactEmails] = useContactEmails();
     const [modelContactEmails, setModelContactEmails] = useState<SimpleMap<ContactEmailModel>>({});
 
     const saveVCardContact = useSaveVCardContact();
