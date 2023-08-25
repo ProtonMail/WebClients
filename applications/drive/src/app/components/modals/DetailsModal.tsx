@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { useLoading } from '@proton/hooks';
+import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
@@ -49,9 +50,6 @@ interface RevisionDetailsModalProps {
     revision: DriveFileRevision;
     name: string;
 }
-
-const sizeTooltipMessage = c('Info')
-    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`;
 
 export function RevisionDetailsModal({
     shareId,
@@ -138,8 +136,17 @@ export function RevisionDetailsModal({
                     label={
                         <>
                             {c('Title').t`Size`}
-                            <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
-                                <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                            <Tooltip
+                                title={c('Info')
+                                    .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                className="ml-1 mb-1"
+                            >
+                                <Icon
+                                    name="info-circle"
+                                    size={14}
+                                    alt={c('Info')
+                                        .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
+                                />
                             </Tooltip>
                         </>
                     }
@@ -243,8 +250,8 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             label={
                                 <>
                                     {c('Title').t`Size`}
-                                    <Tooltip title={sizeTooltipMessage} className="ml-1 mb-1">
-                                        <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                                    <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
+                                        <Icon name="info-circle" size={14} alt={getSizeTooltipMessage()} />
                                     </Tooltip>
                                 </>
                             }
@@ -263,7 +270,18 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                     {isShared}
                 </DetailsRow>
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
-                    <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                    <DetailsRow
+                        label={
+                            <>
+                                {c('Title').t`# of downloads`}
+                                <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
+                                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
+                                </Tooltip>
+                            </>
+                        }
+                    >
+                        {formatAccessCount(numberOfAccesses)}
+                    </DetailsRow>
                 )}
                 {link.digests && (
                     // This should not be visible in the UI, but needed for e2e
