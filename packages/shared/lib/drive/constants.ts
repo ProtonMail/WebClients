@@ -50,6 +50,10 @@ export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
 export const THUMBNAIL_MAX_SIDE = 512; // in pixels
 export const THUMBNAIL_MAX_SIZE = 60 * 1024; // in bytes, 60kB
+
+export const HD_THUMBNAIL_MAX_SIDE = 1920; // in pixels
+export const HD_THUMBNAIL_MAX_SIZE = 1024 * 1024; // in bytes, 1mB
+
 export const THUMBNAIL_QUALITIES = [0.7, 0.5, 0.3, 0.1, 0]; // Used qualities to stick under THUMBNAIL_MAX_SIZE.
 
 export const VIDEO_THUMBNAIL_MAX_TIME_LOCATION: number = 300; // In seconds

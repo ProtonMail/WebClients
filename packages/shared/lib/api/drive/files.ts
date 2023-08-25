@@ -1,3 +1,5 @@
+import { ThumbnailType } from 'proton-drive/src/app/store/_uploads/thumbnail';
+
 import { UPLOAD_TIMEOUT } from '../../drive/constants';
 import { CreateDriveFile, UpdateFileRevision } from '../../interfaces/drive/file';
 
@@ -75,6 +77,7 @@ export const queryRequestUpload = (data: {
             Token: string;
         };
     }[];
+    ThumbnailList?: { Size: number; Type: ThumbnailType; Hash: string }[];
     AddressID: string;
     ShareID: string;
     LinkID: string;

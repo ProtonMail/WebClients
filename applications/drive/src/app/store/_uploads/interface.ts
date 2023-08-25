@@ -2,6 +2,8 @@ import React from 'react';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
+import { ThumbnailType } from './thumbnail';
+
 export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;
 
 export interface UploadConflictModalProps {
@@ -43,8 +45,8 @@ export interface UploadCallbacks {
     createBlockLinks: (
         abortSignal: AbortSignal,
         fileBlocks: FileRequestBlock[],
-        thumbnailBlock?: ThumbnailRequestBlock
-    ) => Promise<{ fileLinks: Link[]; thumbnailLink?: Link }>;
+        thumbnailBlocks?: ThumbnailRequestBlock[]
+    ) => Promise<{ fileLinks: Link[]; thumbnailLinks?: Link[] }>;
     finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => Promise<void>;
     onError?: (error: Error) => void;
 }
@@ -80,13 +82,19 @@ export type EncryptedBlock = {
     hash: Uint8Array;
     signature: string;
     verificationToken: Uint8Array;
+
+    // Thumbnails specific properties
+    thumbnailType?: never;
 };
 
-export type EncryptedThumbnailBlock = {
+export type ThumbnailEncryptedBlock = {
     index: number;
     originalSize: number;
     encryptedData: Uint8Array;
     hash: Uint8Array;
+
+    // Thumbnails specific properties
+    thumbnailType: ThumbnailType;
 };
 
 export type FileRequestBlock = {
@@ -100,6 +108,7 @@ export type FileRequestBlock = {
 export type ThumbnailRequestBlock = {
     size: number;
     hash: Uint8Array;
+    type: ThumbnailType;
 };
 
 export type VerificationData = {
