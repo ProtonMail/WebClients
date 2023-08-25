@@ -15,7 +15,7 @@ interface Props {
 }
 
 const useContactList = ({ search, contactID, contactGroupID }: Props) => {
-    const [contactEmails, loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
+    const [contactEmails, loadingContactEmails] = useContactEmails();
     const [contacts = [], loadingContacts] = useContacts();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
 

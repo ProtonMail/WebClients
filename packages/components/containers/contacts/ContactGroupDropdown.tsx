@@ -94,7 +94,7 @@ const ContactGroupDropdown = ({
     const [loading, setLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [contactGroups = []] = useContactGroups();
-    const [userContactEmails] = useContactEmails();
+    const [userContactEmails = []] = useContactEmails();
     const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));

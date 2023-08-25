@@ -41,7 +41,6 @@ import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
@@ -89,7 +88,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const getCalendarEventRaw = useGetCalendarEventRaw();
-    const contactEmails = (useContactEmails()[0] as ContactEmail[]) || [];
+    const contactEmails = useContactEmails()[0] || [];
     const getCalendars = useGetCalendars();
     const getAddressKeys = useGetAddressKeys();
 

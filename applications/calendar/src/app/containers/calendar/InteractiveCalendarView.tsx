@@ -81,7 +81,6 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
@@ -321,7 +320,7 @@ const InteractiveCalendarView = ({
 
     const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
 
-    const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
+    const contacts = useContactEmails()[0] || [];
     const displayNameEmailMap = useMemo(() => {
         const result = contacts.reduce<SimpleMap<DisplayNameEmail>>((acc, { Email, Name }) => {
             const canonicalEmail = canonicalizeEmailByGuess(Email);
