@@ -1,19 +1,34 @@
-import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
+import {
+    MutableRefObject,
+    ReactNode,
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { ESItem } from '@proton/encrypted-search/lib';
 import { useLoading } from '@proton/hooks';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import noop from '@proton/utils/noop';
 
-import { extractSearchParameters } from '../../../helpers/encryptedSearch/esUtils';
-import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
+import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
+import { ESCalendarContent, ESCalendarMetadata, ESCalendarSearchParams } from '../../../interfaces/encryptedSearch';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
+import { VisualSearchItem } from './interface';
 
 interface UseCalendarSearch {
-    keyword: string;
+    searchParams: ESCalendarSearchParams;
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[];
+    search: (params: ESCalendarSearchParams) => void;
     triggerSearch: () => void;
     hasSearchedCounter: number;
+    openedSearchItem: VisualSearchItem | undefined;
+    setOpenedSearchItem: (item: VisualSearchItem | undefined) => void;
+    lastNonSearchViewRef: MutableRefObject<VIEWS | undefined>;
     isIndexing: boolean;
     isActive: boolean;
     disabled: boolean;
@@ -21,9 +36,13 @@ interface UseCalendarSearch {
 }
 
 const CalendarSearchContext = createContext<UseCalendarSearch>({
-    keyword: '',
+    searchParams: {},
     items: [],
+    search: noop,
     triggerSearch: noop,
+    openedSearchItem: undefined,
+    setOpenedSearchItem: noop,
+    lastNonSearchViewRef: { current: undefined },
     hasSearchedCounter: 0,
     isIndexing: false,
     isActive: false,
@@ -39,9 +58,11 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const { isLibraryInitialized, encryptedSearch, getESDBStatus } = useEncryptedSearchLibrary();
 
+    const lastNonSearchViewRef = useRef<VIEWS>();
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
     const [loading, withLoading, setLoading] = useLoading(true);
+    const [openedSearchItem, setOpenedSearchItem] = useState<VisualSearchItem>();
 
     const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = getESDBStatus();
 
@@ -54,6 +75,16 @@ const CalendarSearchProvider = ({ children }: Props) => {
 
     const searchParams = extractSearchParameters(history.location);
     const keyword = searchParams?.keyword || '';
+
+    const search = ({ keyword, begin, end }: ESCalendarSearchParams) => {
+        history.push(
+            generatePathnameWithSearchParams(history.location, {
+                keyword,
+                begin: begin ? begin.toString() : undefined,
+                end: end ? end.toString() : undefined,
+            })
+        );
+    };
 
     const [items, setItems] = useState<ESItem<ESCalendarMetadata, ESCalendarContent>[]>([]);
 
@@ -73,10 +104,14 @@ const CalendarSearchProvider = ({ children }: Props) => {
     }, [renderCounter, isLibraryInitialized, keyword]);
 
     const value = {
-        keyword,
+        searchParams,
         items,
+        search,
         triggerSearch,
         hasSearchedCounter,
+        openedSearchItem,
+        setOpenedSearchItem,
+        lastNonSearchViewRef,
         isIndexing,
         isActive,
         disabled: !isLibraryInitialized || !isActive,

@@ -74,6 +74,7 @@ import getDateRange from './getDateRange';
 import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
+import { useCalendarSearch } from './search/CalendarSearchProvider';
 
 const { DAY, WEEK, MONTH, SEARCH } = VIEWS;
 
@@ -160,7 +161,7 @@ const CalendarContainer = ({
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
-    const lastNonSearchViewRef = useRef<VIEWS | undefined>();
+    const { lastNonSearchViewRef } = useCalendarSearch();
 
     const [nowDate, setNowDate] = useState(() => new Date());
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();

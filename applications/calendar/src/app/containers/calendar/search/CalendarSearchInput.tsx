@@ -4,6 +4,7 @@ import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
+import { ToolbarButton } from '@proton/components/components';
 import { Icon } from '@proton/components/components/icon';
 import { Spotlight, useSpotlightShow } from '@proton/components/components/spotlight';
 import { FeatureCode } from '@proton/components/containers/features';
@@ -16,9 +17,10 @@ interface Props {
     value: string;
     loading: boolean;
     onClear: () => void;
+    onBack: () => void;
 }
 
-const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Ref<HTMLInputElement>) => {
+const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props, ref: Ref<HTMLButtonElement>) => {
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { isNarrow } = useActiveBreakpoint();
@@ -47,6 +49,11 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
         onClear();
     };
 
+    const handleBack = (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        onBack();
+    };
+
     const handleFocus = () => {
         // close spotlight if it's on display
         if (shouldShowCalendarEsSpotlight) {
@@ -59,71 +66,79 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear }: Props, ref: Re
     };
 
     return (
-        <div className="searchbox flex" role="search">
-            <div ref={ref} className="w100 m-auto">
-                <Spotlight
-                    originalPlacement="bottom-start"
-                    show={shouldShowCalendarEsSpotlight}
-                    onDisplayed={onSpotlightDisplayed}
-                    type="new"
-                    anchorRef={spotlightAnchorRef}
-                    content={
-                        <>
-                            <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
-                            <p className="m-0">{c('Spotlight')
-                                .t`Easily find the event you’re looking for with our new search feature.`}</p>
-                            <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
-                        </>
-                    }
-                >
-                    <Input
-                        ref={inputRef}
-                        inputClassName="cursor-text"
-                        value={value}
-                        placeholder={c('Placeholder').t`Search events`}
-                        onFocus={() => handleFocus()}
-                        data-testid="search-keyword"
-                        readOnly
-                        prefix={
-                            loading ? (
-                                <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
-                            ) : (
-                                <Button
-                                    type="submit"
-                                    icon
-                                    shape="ghost"
-                                    color="weak"
-                                    size="small"
-                                    className="rounded-sm no-pointer-events"
-                                    title={c('Action').t`Search`}
-                                    onClick={() => onOpen()}
-                                    data-shorcut-target="searchbox-button"
-                                    ref={spotlightAnchorRef}
-                                >
-                                    <Icon name="magnifier" alt={c('Action').t`Search`} />
-                                </Button>
-                            )
+        <>
+            <ToolbarButton
+                ref={ref}
+                icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
+                className="mr-2"
+                onClick={handleBack}
+            />
+            <div className="searchbox flex" role="search">
+                <div className="w100 m-auto">
+                    <Spotlight
+                        originalPlacement="bottom-start"
+                        show={shouldShowCalendarEsSpotlight}
+                        onDisplayed={onSpotlightDisplayed}
+                        type="new"
+                        anchorRef={spotlightAnchorRef}
+                        content={
+                            <>
+                                <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
+                                <p className="m-0">{c('Spotlight')
+                                    .t`Easily find the event you're looking for with our new search feature.`}</p>
+                                <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
+                            </>
                         }
-                        suffix={
-                            value.length ? (
-                                <Button
-                                    type="button"
-                                    shape="ghost"
-                                    color="weak"
-                                    size="small"
-                                    className="rounded-sm"
-                                    title={c('Action').t`Clear search`}
-                                    onClick={handleClear}
-                                    data-testid="clear-button"
-                                >
-                                    {c('Action').t`Clear`}
-                                </Button>
-                            ) : null
-                        }
-                    />
-                </Spotlight>
+                    >
+                        <Input
+                            ref={inputRef}
+                            inputClassName="cursor-text"
+                            value={value}
+                            placeholder={c('Placeholder').t`Search events`}
+                            onFocus={() => handleFocus()}
+                            data-testid="search-keyword"
+                            readOnly
+                            prefix={
+                                loading ? (
+                                    <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
+                                ) : (
+                                    <Button
+                                        type="submit"
+                                        icon
+                                        shape="ghost"
+                                        color="weak"
+                                        size="small"
+                                        className="rounded-sm no-pointer-events"
+                                        title={c('Action').t`Search`}
+                                        onClick={() => onOpen()}
+                                        data-shorcut-target="searchbox-button"
+                                        ref={spotlightAnchorRef}
+                                    >
+                                        <Icon name="magnifier" alt={c('Action').t`Search`} />
+                                    </Button>
+                                )
+                            }
+                            suffix={
+                                value.length ? (
+                                    <Button
+                                        type="button"
+                                        shape="ghost"
+                                        color="weak"
+                                        size="small"
+                                        className="rounded-sm"
+                                        title={c('Action').t`Clear search`}
+                                        onClick={handleClear}
+                                        data-testid="clear-button"
+                                    >
+                                        {c('Action').t`Clear`}
+                                    </Button>
+                                ) : null
+                            }
+                        />
+                    </Spotlight>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -10,7 +10,10 @@
 		outline: none;
 	}
 
-	background-color: var(--interaction-default);
+	&:not([class*='bg-']) {
+		background-color: var(--interaction-default);
+	}
+
 	color: inherit;
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 

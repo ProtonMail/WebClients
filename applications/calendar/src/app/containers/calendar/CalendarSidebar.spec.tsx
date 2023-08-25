@@ -183,7 +183,6 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
             AutoImportInvite: 0,
         },
         onCreateCalendar: noop,
-        onBackFromSearch: noop,
     };
 
     return (
