@@ -19,7 +19,6 @@ import {
     TableHeader,
     useApi,
     useBeforeUnload,
-    useDomains,
     useEventManager,
     useGetAddresses,
     useGetUserKeys,
@@ -32,10 +31,11 @@ import {
 import { useLoading } from '@proton/hooks';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import { APP_NAMES, DOMAIN_STATE } from '@proton/shared/lib/constants';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { Domain } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import removeIndex from '@proton/utils/removeIndex';
@@ -48,8 +48,6 @@ import { createUser } from '../lib';
 import { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
 import validateOrganizationCapacity, { OrganizationCapacityError } from './validateOrganizationCapacity';
-
-const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
 enum STEPS {
     SELECT_USERS,
@@ -90,9 +88,10 @@ interface Props extends ModalProps {
     usersToImport: UserTemplate[];
     app: APP_NAMES;
     mode: UserManagementMode;
+    verifiedDomains: Domain[];
 }
 
-const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }: Props) => {
+const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose, mode, ...rest }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
     const [organization, loadingOrganization] = useOrganization();
@@ -101,12 +100,6 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }:
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
-
-    const [domains, loadingDomains] = useDomains();
-    const verifiedDomains = useMemo(
-        () => (domains || []).filter(({ State }) => State === DOMAIN_STATE_ACTIVE),
-        [domains]
-    );
 
     const abortControllerRef = useRef<AbortController>();
     const { createNotification } = useNotifications();
@@ -334,7 +327,7 @@ const CreateUserAccountsModal = ({ usersToImport, app, onClose, mode, ...rest }:
     } = (() => {
         if (step === STEPS.SELECT_USERS) {
             const isCreateUsersButtonDisabled =
-                loadingOrganization || loadingOrganizationKey || loadingDomains || !selectedUserIds.length;
+                loadingOrganization || loadingOrganizationKey || !selectedUserIds.length;
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
