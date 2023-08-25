@@ -8,7 +8,7 @@ import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { refresh } from '../../logic/contacts/contactsActions';
@@ -57,7 +57,7 @@ export const useContactsListener = () => {
     const dispatch = useAppDispatch();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
-    const [contacts = []] = useContactEmails() as [ContactEmail[], boolean, Error];
+    const [contacts = []] = useContactEmails();
     const [contactGroups = []] = useContactGroups();
 
     const { publicKeys } = splitKeys(userKeys);

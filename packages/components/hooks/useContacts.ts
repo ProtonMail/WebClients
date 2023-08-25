@@ -17,7 +17,7 @@ export const useGetContacts = (): GetContacts => {
     }, [cache, miss]);
 };
 
-export const useContacts = (): [Contact[] | undefined, boolean, any] => {
+export const useContacts = (): [result: Contact[] | undefined, loading: boolean, error: any] => {
     const cache = useCache();
     const miss = useGetContacts();
     return useCachedModelResult(cache, ContactsModel.key, miss);
