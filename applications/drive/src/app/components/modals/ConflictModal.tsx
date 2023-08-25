@@ -101,10 +101,9 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Replace}
                         onChange={() => setStrategy(TransferConflictStrategy.Replace)}
                         name="strategy"
-                        data-testid="replace-exiting"
                         className="inline-flex flex-nowrap"
                     >
-                        <div>
+                        <div data-testid="replace-exiting">
                             <strong>
                                 {originalIsFolder
                                     ? c('Label').t`Replace existing folder`
@@ -135,10 +134,9 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Rename}
                         onChange={() => setStrategy(TransferConflictStrategy.Rename)}
                         name="strategy"
-                        data-testid="keep-both"
                         className="inline-flex flex-nowrap"
                     >
-                        <div>
+                        <div data-testid="keep-both">
                             <strong>
                                 {isSameType ? (
                                     <>
@@ -165,10 +163,9 @@ export default function ConflictModal({
                         checked={strategy === TransferConflictStrategy.Skip}
                         onChange={() => setStrategy(TransferConflictStrategy.Skip)}
                         name="strategy"
-                        data-testid="skip-upload"
                         className="inline-flex flex-nowrap"
                     >
-                        <div>
+                        <div data-testid="skip-upload">
                             <strong>{isFolder ? c('Label').t`Skip folder` : c('Label').t`Skip file`}</strong>
                             <br />
                             <span className="color-weak">

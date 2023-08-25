@@ -58,6 +58,7 @@ const HeaderCell = <T,>({
                                 ? selection.clearSelections
                                 : selection.toggleAllSelected
                         }
+                        data-testid="checkbox-select-all"
                     >
                         {selection?.selectionState !== SelectionState.NONE ? (
                             <span className="ml-2">{c('Info').jt`${selectedCount} selected`}</span>
@@ -87,6 +88,7 @@ const HeaderCell = <T,>({
             direction={getSortDirectionForKey(item.type)}
             onSort={item.sorting ? () => onSort?.(item.type) : undefined}
             isLoading={isLoading && sortParams?.sortField === item.type}
+            data-testid="sort-by"
         >
             {item.getText()}
             {item.type === 'numAccesses' && (
