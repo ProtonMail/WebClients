@@ -31,12 +31,12 @@ const InviteSendEmail = () => {
     const [apiLoading, withLoading] = useLoading();
 
     const filteredContactEmails = useMemo(() => {
-        if (contactEmailIsLoading) {
+        if (!contactEmails || contactEmailIsLoading) {
             return [];
         }
 
         return filterContactEmails(contactEmails);
-    }, [contactEmails]);
+    }, [contactEmails, contactEmailIsLoading]);
 
     const handleSendEmails = () => {
         if (!recipients.length) {

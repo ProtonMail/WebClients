@@ -2,7 +2,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import noop from '@proton/utils/noop';
 
 import { Icon, ModalProps, ModalTwo } from '../../../components';
@@ -42,7 +41,7 @@ const ContactGroupDetailsModal = ({
 }: Props) => {
     const [user] = useUser();
     const [contactGroups = [], loadingGroups] = useContactGroups();
-    const [contactEmails = [], loadingEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
+    const [contactEmails = [], loadingEmails] = useContactEmails();
     const loading = loadingGroups || loadingEmails;
     const group = contactGroups.find(({ ID }) => ID === contactGroupID);
     const emails = contactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) =>
