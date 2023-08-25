@@ -1,14 +1,7 @@
-import { PublicKeyReference } from '@proton/crypto';
 import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants';
 import { KeyTransparencyError } from './helpers';
-
-export interface KeyWithFlags {
-    Flags: number;
-    PublicKey: PublicKeyReference;
-    Primary?: 0 | 1;
-}
 
 export enum KTPROOF_TYPE {
     ABSENCE,
