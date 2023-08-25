@@ -9,6 +9,7 @@ import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import clsx from '@proton/utils/clsx';
 
 import { ContactEditProps } from '../edit/ContactEditModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
@@ -204,6 +205,7 @@ const ContactsWidgetContainer = ({
 
     const contactsCount = formattedContacts.length;
     const contactsLength = contacts ? contacts.length : 0;
+    const selectedContactsLength = selectedIDs.length;
 
     const loading = loadingContacts || loadingUser;
     const showPlaceholder = !loading && !contactsCount;
@@ -251,6 +253,17 @@ const ContactsWidgetContainer = ({
                     onSelectEmails={onSelectEmails}
                     isDrawer={isDrawer}
                 />
+
+                <p className={clsx('color-weak text-sm m-0', contactsLength > 0 && 'mt-2')}>
+                    {contactsLength
+                        ? // translator: Number of selected contacts out of total number of contacts, e.g. "1/10 items selected"
+                          c('Info').ngettext(
+                              msgid`${selectedContactsLength} / ${contactsLength} item selected`,
+                              `${selectedContactsLength} / ${contactsLength} items selected`,
+                              selectedContactsLength
+                          )
+                        : ''}
+                </p>
             </div>
             {showList && countMergeableContacts ? (
                 <MergeContactBanner onMerge={() => handleMerge(true)} countMergeableContacts={countMergeableContacts} />
