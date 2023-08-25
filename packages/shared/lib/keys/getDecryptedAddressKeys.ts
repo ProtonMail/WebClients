@@ -34,7 +34,7 @@ const getAddressKeyPassword = (
     return Promise.resolve(keyPassword);
 };
 
-const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags }: tsAddressKey, addressKeyPassword: string) => {
+const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags, Primary }: tsAddressKey, addressKeyPassword: string) => {
     const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: addressKeyPassword });
     const publicKey = await CryptoProxy.importPublicKey({
         binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
@@ -44,6 +44,7 @@ const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags }: tsAddressKey, a
         Flags,
         privateKey,
         publicKey,
+        Primary,
     };
 };
 

@@ -21,19 +21,19 @@ const supportsMail = (flags: number): Boolean => {
 };
 
 const getMailCapableKeys = (keys: ProcessedApiAddressKey[]) => {
-    return keys.filter(({ Flags }) => supportsMail(Flags));
+    return keys.filter(({ flags }) => supportsMail(flags));
 };
 
 const getInternalKeys = (keys: ProcessedApiAddressKey[]) => {
-    return keys.filter(({ Source }) => Source === ApiAddressKeySource.PROTON);
+    return keys.filter(({ source }) => source === ApiAddressKeySource.PROTON);
 };
 const getExternalKeys = (keys: ProcessedApiAddressKey[]) => {
-    return keys.filter(({ Source }) => Source !== ApiAddressKeySource.PROTON);
+    return keys.filter(({ source }) => source !== ApiAddressKeySource.PROTON);
 };
 
 const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
-    return keys.map(({ PublicKey, Flags, PublicKeyRef }) => {
-        return { armoredKey: PublicKey, flags: Flags, publicKey: PublicKeyRef };
+    return keys.map(({ armoredPublicKey, flags, publicKeyRef }) => {
+        return { armoredKey: armoredPublicKey, flags, publicKey: publicKeyRef };
     });
 };
 
@@ -49,7 +49,7 @@ const getPublicKeysEmailHelperWithKT = async (
             await getAndVerifyApiKeys(api, Email, true, verifyOutboundPublicKeys, silence, noCache);
 
         // First we use verified internal address keys
-        const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.Flags));
+        const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.flags));
 
         if (mailCapableAddressKeys.length != 0) {
             return {

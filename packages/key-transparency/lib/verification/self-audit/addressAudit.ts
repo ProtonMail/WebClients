@@ -268,7 +268,7 @@ const auditAddressImplementation = async (
 
     await checkKeysInSKL(
         email,
-        addressKeys.map(({ Flags, privateKey }) => ({ flags: Flags, key: privateKey })),
+        addressKeys.map(({ Flags, privateKey, Primary }) => ({ flags: Flags, key: privateKey, primary: Primary })),
         inputSKL.Data
     );
 
