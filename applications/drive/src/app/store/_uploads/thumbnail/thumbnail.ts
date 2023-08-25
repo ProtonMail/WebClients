@@ -1,7 +1,7 @@
 import { isSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
 
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
-import { ThumbnailData, ThumbnailGenerator } from './interface';
+import { ThumbnailData, ThumbnailGenerator, ThumbnailType } from './interface';
 import { scaleSvgFile } from './svg';
 import { createVideoThumbnail, isVideoForThumbnail } from './video';
 
@@ -17,8 +17,8 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     { checker: isSVG, creator: scaleSvgFile },
     {
         checker: isSupportedImage,
-        creator: async (file: Blob) =>
-            scaleImageFile(file).catch((err) => {
+        creator: async (file: Blob, thumbnailType: ThumbnailType) =>
+            scaleImageFile(file, thumbnailType).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
                     return undefined;
@@ -29,5 +29,17 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     { checker: isVideoForThumbnail, creator: createVideoThumbnail },
 ] as const;
 
-export const makeThumbnail = async (mimeType: string, file: Blob): Promise<ThumbnailData | undefined> =>
-    CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType))?.creator(file);
+export const makeThumbnail = async (
+    mimeType: string,
+    file: Blob,
+    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
+): Promise<ThumbnailData | undefined> =>
+    CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType))
+        ?.creator(file, thumbnailType)
+        .then(
+            (thumbnailData) =>
+                thumbnailData && {
+                    ...thumbnailData,
+                    thumbnailType,
+                }
+        );

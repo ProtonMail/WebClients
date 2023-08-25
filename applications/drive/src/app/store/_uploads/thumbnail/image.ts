@@ -1,14 +1,17 @@
 import { canvasToThumbnail } from './canvasUtil';
-import { ThumbnailData } from './interface';
+import { ThumbnailData, ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 export const imageCannotBeLoadedError = new Error('Image cannot be loaded');
 
-export function scaleImageFile(file: Blob): Promise<ThumbnailData> {
+export function scaleImageFile(
+    file: Blob,
+    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
+): Promise<ThumbnailData> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.addEventListener('load', () => {
-            scaleImage(img).then(resolve).catch(reject);
+            scaleImage(img, thumbnailType).then(resolve).catch(reject);
         });
         // If image fails to be loaded, it doesn't provide any error.
         // We need to provide custom to state clearly what is happening.
@@ -19,7 +22,10 @@ export function scaleImageFile(file: Blob): Promise<ThumbnailData> {
     });
 }
 
-async function scaleImage(img: HTMLImageElement): Promise<ThumbnailData> {
+async function scaleImage(
+    img: HTMLImageElement,
+    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
+): Promise<ThumbnailData> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -28,7 +34,7 @@ async function scaleImage(img: HTMLImageElement): Promise<ThumbnailData> {
         throw new Error('Context is not available');
     }
 
-    const [width, height] = calculateThumbnailSize(img);
+    const [width, height] = calculateThumbnailSize(img, thumbnailType);
     canvas.width = width;
     canvas.height = height;
 
@@ -41,6 +47,7 @@ async function scaleImage(img: HTMLImageElement): Promise<ThumbnailData> {
     return {
         originalWidth: img.width,
         originalHeight: img.height,
-        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas)),
+        thumbnailType,
+        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas, thumbnailType)),
     };
 }

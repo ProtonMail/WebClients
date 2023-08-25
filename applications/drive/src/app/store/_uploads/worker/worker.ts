@@ -18,12 +18,12 @@ import {
     getPhotoDimensions,
     getPhotoExtendedAttributes,
 } from '../../_photos/exifInfo';
-import { EncryptedBlock, EncryptedThumbnailBlock, Link, VerificationData } from '../interface';
+import { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
 import { ThumbnailData } from '../thumbnail';
 import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
-import generateEncryptedBlocks from './encryption';
+import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
 import { Pauser } from './pauser';
 import startUploadJobs from './upload';
 import { createVerifier } from './verifier';
@@ -81,7 +81,7 @@ async function start(
     file: File,
     mimeType: string,
     isPhoto: boolean,
-    thumbnailData: ThumbnailData | undefined,
+    thumbnailData: ThumbnailData[] | undefined,
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
@@ -96,19 +96,19 @@ async function start(
         .feedEncryptedBlocks(
             generateEncryptedBlocks(
                 file,
-                thumbnailData?.thumbnailData,
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
                 uploadWorker.postNotifySentry,
                 hashInstance,
                 verifier
-            )
+            ),
+            thumbnailData && generateThumbnailEncryptedBlocks(thumbnailData, addressPrivateKey, sessionKey)
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 
-    buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlock?: EncryptedThumbnailBlock) => {
-        uploadWorker.postCreateBlocks(blocks, thumbnailBlock);
+    buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlocks?: ThumbnailEncryptedBlock[]) => {
+        uploadWorker.postCreateBlocks(blocks, thumbnailBlocks);
     });
 
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
@@ -133,8 +133,8 @@ async function start(
         const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
 
         const { width, height } = {
-            width: thumbnailData?.originalWidth || photoDimensions.width,
-            height: thumbnailData?.originalHeight || photoDimensions.height,
+            width: thumbnailData?.[0].originalWidth || photoDimensions.width,
+            height: thumbnailData?.[0].originalHeight || photoDimensions.height,
         };
 
         const sha1 = sha1Digest ? arrayToHexString(sha1Digest) : undefined;
@@ -187,9 +187,12 @@ async function start(
 /**
  * createdBlocks is called as a result to postCreateBlocks.
  */
-function createdBlocks(fileLinks: Link[], thumbnailLink?: Link) {
-    const links = thumbnailLink ? [thumbnailLink, ...fileLinks] : fileLinks;
-    buffer.setBlockLinks(links);
+function createdBlocks(fileLinks: Link[], thumbnailLinks?: Link[]) {
+    buffer.setFileBlockLinks(fileLinks);
+    if (thumbnailLinks) {
+        buffer.setThumbnailBlockLinks(thumbnailLinks);
+    }
+    buffer.requestingBlockLinks = false;
 }
 
 function pause() {
