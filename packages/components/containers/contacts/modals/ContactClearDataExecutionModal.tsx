@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
 import { Key } from '@proton/shared/lib/interfaces';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     Alert,
@@ -25,7 +24,7 @@ export interface ContactClearDataExecutionProps {
 type Props = ContactClearDataExecutionProps & ModalProps;
 
 const ContactClearDataExecutionModal = ({ errorKey, ...rest }: Props) => {
-    const [contacts = [], loadingContacts] = useContacts() as [Contact[] | undefined, boolean, Error];
+    const [contacts = [], loadingContacts] = useContacts();
     const api = useApi();
     const { call } = useEventManager();
     const [userKeys] = useUserKeys();
