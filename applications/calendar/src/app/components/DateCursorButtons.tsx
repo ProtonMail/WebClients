@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -35,7 +35,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 {currentRange}
             </span>
             <span className="flex flex-nowrap ml-auto md:ml-0">
-                <span className="no-tablet no-desktop flex-item-noshrink">
+                <span className="no-tablet no-desktop flex-item-noshrink flex flex-nowrap">
                     <ToolbarButton
                         data-testid="calendar-toolbar:today"
                         className="flex-item-noshrink flex-align-items-centers"
@@ -45,6 +45,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                         <Icon name="calendar-today" />
                     </ToolbarButton>
                 </span>
+                <Vr className="mx-1 no-tablet no-desktop" />
                 <Button
                     shape="outline"
                     data-testid="calendar-toolbar:today"

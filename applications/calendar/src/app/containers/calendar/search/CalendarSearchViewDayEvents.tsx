@@ -1,12 +1,13 @@
 import React, { MouseEvent } from 'react';
 
-import { isBefore, isSameDay } from 'date-fns';
+import { isSameDay } from 'date-fns';
 
 import { useAddresses } from '@proton/components/hooks';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
+import { useCalendarSearch } from './CalendarSearchProvider';
 import { getEventTraits } from './CalendarSearchViewDayEvents.utils';
 import { VisualSearchItem } from './interface';
 import { getEventsDayDateString, getTimeString } from './searchHelpers';
@@ -28,7 +29,8 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
     const day = formatUTC(startDate, 'd', { locale: dateLocale });
 
     const isToday = isSameDay(now, startDate);
-    const isPast = isBefore(startDate, now);
+    // const isPast = isBefore(startDate, now); // might be used again
+    const { openedSearchItem } = useCalendarSearch();
 
     return (
         <div
@@ -49,16 +51,22 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                 <div className="flex-item-grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
                     {dailyEvents.map((event) => {
                         const {
+                            UID,
                             ID,
                             CalendarID,
                             visualCalendar,
                             fakeUTCStartDate,
                             fakeUTCEndDate,
                             isAllDay,
+                            occurrenceNumber,
                             plusDaysToEnd,
                             Summary,
                             isClosestToDate,
                         } = event;
+                        const isOpen =
+                            UID === openedSearchItem?.UID &&
+                            CalendarID === openedSearchItem?.CalendarID &&
+                            occurrenceNumber === openedSearchItem?.occurrenceNumber;
 
                         const { isCancelled, isUnanswered } = getEventTraits(event, addresses);
 
@@ -74,9 +82,9 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                 type="button"
                                 key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
                                 className={clsx(
-                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left interactive-pseudo w100',
+                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w100 color-norm rounded-sm pl-1',
                                     isCancelled && 'text-strike',
-                                    isPast ? 'color-weak' : 'color-norm'
+                                    isOpen && 'bg-weak'
                                 )}
                                 onClick={(e) => onClickSearchItem?.(e, event)}
                             >
@@ -96,8 +104,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     </span>
                                     <span
                                         className={clsx(
-                                            'text-lg text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary',
-                                            isPast ? 'text-nobold' : 'text-bold'
+                                            'text-lg text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
                                         {Summary}

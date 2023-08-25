@@ -169,6 +169,7 @@ import {
     TargetEventData,
     TimeGridRef,
 } from './interface';
+import { useCalendarSearch } from './search/CalendarSearchProvider';
 import { getInitialTargetEventData } from './targetEventHelper';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
@@ -1019,8 +1020,11 @@ const InteractiveCalendarView = ({
         });
     };
 
+    const { setOpenedSearchItem } = useCalendarSearch();
+
     const closeAllPopovers = () => {
         setInteractiveData(undefined);
+        setOpenedSearchItem(undefined);
     };
 
     useEffect(() => {

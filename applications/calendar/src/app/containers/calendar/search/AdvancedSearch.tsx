@@ -1,15 +1,14 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { fromUnixTime, getUnixTime } from 'date-fns';
-import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
+import { ESCalendarSearchParams } from '../../../interfaces/encryptedSearch';
 import CalendarSearchActivation from './CalendarSearchActivation';
 import CalendarSearchForm from './CalendarSearchForm';
+import { useCalendarSearch } from './CalendarSearchProvider';
 import SearchField from './SearchField';
 import { SearchModel } from './interface';
 
@@ -17,41 +16,43 @@ const DEFAULT_MODEL: SearchModel = {
     keyword: '',
 };
 
-const initializeModel = (history: History, searchInputValue: string) => () => {
-    const { keyword, begin, end } = extractSearchParameters(history.location);
+const initializeModel = (params: ESCalendarSearchParams) => () => {
+    const { keyword, begin, end } = params;
 
     return {
-        keyword: searchInputValue ? keyword || '' : '',
+        keyword: keyword || '',
         startDate: begin !== undefined ? fromUnixTime(+begin) : undefined,
         endDate: end !== undefined ? fromUnixTime(+end) : undefined,
     };
 };
 
 interface Props {
-    // calendars: VisualCalendar[];
+    searchInputParams: ESCalendarSearchParams;
     isNarrow: boolean;
     containerRef: HTMLDivElement | null;
     isIndexing: boolean;
     isSearchActive: boolean;
+    onSearch: () => void;
     onClose: () => void;
     showMore: boolean;
     toggleShowMore: () => void;
-    searchInputValue: string;
 }
 
 const AdvancedSearch = ({
+    searchInputParams,
     isNarrow,
     containerRef,
     isIndexing,
     isSearchActive,
+    onSearch,
     onClose,
     showMore,
-    searchInputValue,
     toggleShowMore,
 }: Props) => {
+    const { search } = useCalendarSearch();
+
     const searchInputRef = useRef<HTMLInputElement>(null);
-    const history = useHistory();
-    const [model, updateModel] = useState<SearchModel>(initializeModel(history, searchInputValue));
+    const [model, updateModel] = useState<SearchModel>(initializeModel(searchInputParams));
 
     const handleSearch = ({ target }: ChangeEvent<HTMLInputElement>) => {
         if (!isSearchActive) {
@@ -66,15 +67,14 @@ const AdvancedSearch = ({
 
         const { keyword, startDate, endDate } = reset ? DEFAULT_MODEL : model;
 
-        history.push(
-            generatePathnameWithSearchParams(history.location, {
-                keyword,
-                begin: startDate ? `${getUnixTime(startDate)}` : undefined,
-                end: endDate ? `${getUnixTime(endDate)}` : undefined,
-            })
-        );
+        search({
+            keyword,
+            begin: startDate ? getUnixTime(startDate) : undefined,
+            end: endDate ? getUnixTime(endDate) : undefined,
+        });
 
         onClose();
+        onSearch();
     };
 
     const handleClear = () => {
@@ -89,7 +89,7 @@ const AdvancedSearch = ({
         searchInputRef.current?.focus();
     };
 
-    const canReset = !!(model.keyword || model.startDate || model.endDate);
+    const canReset = false && !!(model.keyword || model.startDate || model.endDate);
 
     // Taken from the useClickMailContent component
     // '' mousedown and touchstart avoid issue with the click in portal (modal, notification, dropdown) ''

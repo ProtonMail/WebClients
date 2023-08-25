@@ -61,7 +61,6 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
-    onBackFromSearch: () => void;
 }
 
 const CalendarSidebar = ({
@@ -76,7 +75,6 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
-    onBackFromSearch,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const api = useApi();
@@ -171,12 +169,11 @@ const CalendarSidebar = ({
     const primaryAction = (
         <SidebarPrimaryButton
             data-testid="calendar-view:new-event-button"
-            disabled={isSearchView ? false : !onCreateEvent}
-            onClick={isSearchView ? onBackFromSearch : onCreateEvent}
-            className="flex flex-align-items-center flex-justify-center flex-nowrap flex-gap-0-5 no-mobile"
+            disabled={isSearchView ? true : !onCreateEvent}
+            onClick={isSearchView ? undefined : onCreateEvent}
+            className="flex flex-align-items-center flex-justify-center flex-nowrap gap-2 no-mobile"
         >
-            {isSearchView && <Icon name="arrow-left" className="on-rtl-mirror flex-item-noshrink mr-1" />}
-            <span className="text-ellipsis">{isSearchView ? c('Action').t`Calendar` : c('Action').t`New event`}</span>
+            <span className="text-ellipsis">{c('Action').t`New event`}</span>
         </SidebarPrimaryButton>
     );
 
