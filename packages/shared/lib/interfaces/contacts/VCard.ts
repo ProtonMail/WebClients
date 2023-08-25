@@ -32,6 +32,14 @@ export type VCardProperty<T = any> = {
     group?: string;
 };
 
+export type VcardNValue = {
+    familyNames: string[];
+    givenNames: string[];
+    additionalNames: string[];
+    honorificPrefixes: string[];
+    honorificSuffixes: string[];
+};
+
 export enum VCardGender {
     Male = 'M',
     Female = 'F',
@@ -63,7 +71,7 @@ export type VCardDateOrText = {
 
 export interface VCardContact {
     fn: VCardProperty<string>[];
-    n?: VCardProperty<string[]>;
+    n?: VCardProperty<VcardNValue>;
     nickname?: VCardProperty<string>[];
     photo?: VCardProperty<string>[];
     bday?: VCardProperty<VCardDateOrText>;
