@@ -95,14 +95,13 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const [userSettings] = useUserSettings();
     const authentication = useAuthentication();
     const [redDotReferral, setRedDotReferral] = useState(false);
-    const { Email, DisplayName, Name } = user;
+    const { Email, DisplayName, Name, isMember } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
-
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
 
     const subscriptionStartedThirtyDaysAgo =
@@ -135,7 +134,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         }
     };
 
-    const planName = getPlanTitle(subscription, APP_NAME);
+    const planName = isMember ? '' : getPlanTitle(subscription, APP_NAME);
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
@@ -246,7 +245,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         {organizationName ? (
                             <span
-                                className="text-ellipsis color-weak block"
+                                className="ml-auto text-ellipsis color-weak block"
                                 title={organizationName}
                                 data-testid="userdropdown:label:org-name"
                             >
