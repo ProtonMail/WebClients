@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky, Tooltip } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -88,6 +89,11 @@ const HeaderCell = <T,>({
             isLoading={isLoading && sortParams?.sortField === item.type}
         >
             {item.getText()}
+            {item.type === 'numAccesses' && (
+                <Tooltip className="pl-1" title={getNumAccessesTooltipMessage()}>
+                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
+                </Tooltip>
+            )}
         </TableHeaderCell>
     );
 };
