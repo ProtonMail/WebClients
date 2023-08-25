@@ -66,8 +66,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
     const [loadingDiscard, withLoadingDiscard] = useLoading();
     const [recoveryPhone, setRecoveryPhone] = useState(defaultPhone || '');
     const [recoveryEmail, setRecoveryEmail] = useState(defaultEmail || '');
-    const [savePhone, setSavePhone] = useState(!!defaultPhone);
-    const [saveEmail, setSaveEmail] = useState(!!defaultEmail);
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
     const inputRecoveryPhoneRef = useRef<HTMLInputElement>(null);
     const inputRecoveryEmailRef = useRef<HTMLInputElement>(null);
@@ -81,8 +79,8 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
         });
     }, []);
 
-    const phoneValidations = savePhone ? [requiredValidator(recoveryPhone)] : [];
-    const emailValidations = saveEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];
+    const phoneValidations = recoveryPhone ? [requiredValidator(recoveryPhone)] : [];
+    const emailValidations = recoveryEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];
 
     const handleSubmit = async () => {
         if (loading) {
@@ -98,22 +96,22 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
             return;
         }
 
-        if (!saveEmail && !savePhone) {
+        if (!recoveryPhone && !recoveryEmail) {
             setConfirmModal(true);
             return;
         }
 
-        if (saveEmail) {
+        if (recoveryEmail) {
             await api(validateEmail(recoveryEmail));
         }
 
-        if (savePhone) {
+        if (recoveryPhone) {
             await api(validatePhone(recoveryPhone));
         }
 
         return onSubmit({
-            recoveryPhone: savePhone ? recoveryPhone : undefined,
-            recoveryEmail: saveEmail ? recoveryEmail : undefined,
+            recoveryPhone: recoveryPhone ?? undefined,
+            recoveryEmail: recoveryEmail ?? undefined,
         });
     };
     return (
@@ -156,7 +154,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 value={recoveryPhone}
                                 onChange={(value: string) => {
                                     setRecoveryPhone(value);
-                                    setSavePhone(!!value);
                                 }}
                                 ref={inputRecoveryPhoneRef}
                             />
@@ -176,7 +173,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 value={recoveryEmail}
                                 onValue={(value: string) => {
                                     setRecoveryEmail(value);
-                                    setSaveEmail(!!value);
                                 }}
                                 ref={inputRecoveryEmailRef}
                             />
