@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     Alert,
@@ -18,7 +17,7 @@ import {
 import { useApi, useContacts, useEventManager, useUserKeys } from '../../../hooks';
 
 const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
-    const [contacts = [], loadingContacts] = useContacts() as [Contact[] | undefined, boolean, Error];
+    const [contacts = [], loadingContacts] = useContacts();
     const [userKeys] = useUserKeys();
     const api = useApi();
     const { call } = useEventManager();

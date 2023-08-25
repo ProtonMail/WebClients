@@ -5,7 +5,7 @@ import { useLoading } from '@proton/hooks';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import { Alert, ErrorButton, ModalProps, Prompt } from '../../../components';
 import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
@@ -51,8 +51,8 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
     };
 
     const count = contactIDs.length;
-    const contact = contacts.find((contact: ContactEmail) => contact.ID === contactIDs[0]);
-    const Name = contact?.Name || contact?.Email || '';
+    const contact = contacts.find((contact: Contact) => contact.ID === contactIDs[0]);
+    const Name = contact?.Name || contact?.ContactEmails[0]?.Email || '';
     const title =
         count === 1
             ? c('Title').t`Delete ${Name}`
