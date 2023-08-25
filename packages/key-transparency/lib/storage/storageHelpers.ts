@@ -47,7 +47,7 @@ export const getAllKTBlobValuesWithInfo = async (
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
             }).catch((error) => {
-                console.log(error, 'This is expected after a password reset');
+                console.warn(error, 'This is expected after a password reset');
                 return null;
             });
             if (!decrypted) {
@@ -178,7 +178,7 @@ export const getAuditResult = async (
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
             }).catch((error) => {
-                console.log(error, 'This is expected after a password reset');
+                console.warn(error, 'This is expected after a password reset');
                 return null;
             });
             if (!decrypted) {
