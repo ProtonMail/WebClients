@@ -69,16 +69,19 @@ const MailOnboardingModal = (props: Props) => {
         });
     };
 
+    // translator: Complete the sentence "We stop advertisers and data collectors from profiling you. Learn more"
     const kbLinkPrivacy = (
         <Href className="color-weak text-ellipsis" href={getKnowledgeBaseUrl('/email-tracker-protection')}>
             {c('Info').t`Learn more`}
         </Href>
     );
+    // translator: Complete the sentence "Block email communications from scammers permanently. Learn more"
     const kbLinkSender = (
         <Href className="color-weak text-ellipsis" href={getKnowledgeBaseUrl('/block-sender')}>
             {c('Info').t`Learn more`}
         </Href>
     );
+    // translator: Complete the sentence "Encryption so strong, only you and intended recipients can view your emails. Learn more"
     const kbLinkEncryption = (
         <Href className="color-weak text-ellipsis" href={getKnowledgeBaseUrl('/proton-mail-encryption-explained')}>
             {c('Info').t`Learn more`}
@@ -88,18 +91,21 @@ const MailOnboardingModal = (props: Props) => {
     const privacyFeature = [
         {
             title: c('Onboarding modal').t`Protection from trackers`,
+            // translator: full sentence is: "We stop advertisers and data collectors from profiling you. Learn more"
             description: c('Onboarding modal')
                 .jt`We stop advertisers and data collectors from profiling you. ${kbLinkPrivacy}`,
             imgSrc: blockTrackers,
         },
         {
             title: c('Onboarding modal').t`Block unsavory senders`,
+            // translator: full sentence is: "Block email communications from scammers permanently. Learn more"
             description: c('Onboarding modal')
                 .jt`Block email communications from scammers permanently. ${kbLinkSender}`,
             imgSrc: blockSender,
         },
         {
             title: c('Onboarding modal').t`For your eyes only`,
+            // translator: full sentence is: "Encryption so strong, only you and intended recipients can view your emails. Learn more"
             description: c('Onboarding modal')
                 .jt`Encryption so strong, only you and intended recipients can view your emails. ${kbLinkEncryption}`,
             imgSrc: encryption,

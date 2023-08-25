@@ -10,7 +10,6 @@ import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
 
-import { SignupSteps } from '../signup/interfaces';
 import BackButton from './BackButton';
 import LanguageSelect from './LanguageSelect';
 import LayoutFooter from './LayoutFooter';
@@ -27,23 +26,13 @@ export interface Props {
     hasWelcome?: boolean;
     headerClassName?: string;
     stepper?: ReactNode;
-    currentSignupStep?: SignupSteps;
+    centeredContent?: boolean;
 }
 
-const Layout = ({
-    children,
-    stepper,
-    hasDecoration,
-    bottomRight,
-    onBack,
-    headerClassName,
-    currentSignupStep,
-}: Props) => {
+const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName, centeredContent }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
-
-    const isCurrentStepSignup = currentSignupStep === SignupSteps.CreatingAccount && !hasDecoration;
 
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
@@ -87,10 +76,10 @@ const Layout = ({
             <div
                 className={clsx(
                     'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
-                    isCurrentStepSignup && 'h-full'
+                    centeredContent && 'h-full'
                 )}
             >
-                <main className={clsx(isCurrentStepSignup && 'flex flex-item-centered-vert')}>
+                <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
@@ -111,7 +100,7 @@ const Layout = ({
                     >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (
-                <footer className="pt-0 md:pt-7" />
+                <footer className={clsx('pt-0', centeredContent ? 'md:pt-0' : 'md:pt-7')} />
             )}
         </div>
     );
