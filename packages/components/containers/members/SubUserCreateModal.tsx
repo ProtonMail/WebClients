@@ -64,7 +64,7 @@ enum Step {
 interface Props extends ModalProps {
     organization: Organization;
     organizationKey: CachedOrganizationKey;
-    domains: Domain[];
+    verifiedDomains: Domain[];
     mode?: UserManagementMode;
     app: APP_NAMES;
 }
@@ -72,7 +72,7 @@ interface Props extends ModalProps {
 const SubUserCreateModal = ({
     organization,
     organizationKey,
-    domains,
+    verifiedDomains,
     mode = UserManagementMode.DEFAULT,
     onClose,
     app,
@@ -97,7 +97,7 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
-        domain: domains[0]?.DomainName ?? null,
+        domain: verifiedDomains[0]?.DomainName ?? null,
         vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
@@ -111,7 +111,7 @@ const SubUserCreateModal = ({
 
     const [bulkUserCreateModalProps, setBulkUserModalOpen] = useModalState();
 
-    const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
+    const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
     const handleChange = (key: keyof typeof model) => (value: (typeof model)[typeof key]) =>
         setModel({ ...model, [key]: value });
@@ -209,6 +209,7 @@ const SubUserCreateModal = ({
     if (step === Step.BULK) {
         return (
             <SubUserBulkCreateModal
+                verifiedDomains={verifiedDomains}
                 {...bulkUserCreateModalProps}
                 onBack={setSingleStep}
                 onClose={handleClose}
