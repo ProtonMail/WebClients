@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import fetch from 'cross-fetch';
 
 import '@proton/testing/lib/mockMatchMedia';
+import '@proton/testing/lib/mockUnleash';
 
 import './jest.mock';
 
