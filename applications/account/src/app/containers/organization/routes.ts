@@ -60,7 +60,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Create multiple user accounts`,
                         id: 'multi-user-creation',
-                        available: organization && !!organization.RequiresKey,
+                        available: organization && !!organization.RequiresKey && !hasVpnB2BPlan,
                     },
                 ],
             },
