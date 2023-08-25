@@ -1,5 +1,5 @@
-import { MEMBER_ROLE, MEMBER_SUBSCRIBER, PLANS } from '../constants';
-import { CachedOrganizationKey, Member, Organization } from '../interfaces';
+import { DOMAIN_STATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, PLANS } from '../constants';
+import { CachedOrganizationKey, Domain, Member, Organization } from '../interfaces';
 
 export const isSuperAdmin = (members: Member[]) =>
     (members || []).some(({ Subscriber, Self }) => Self === 1 && Subscriber === MEMBER_SUBSCRIBER.PAYER);
@@ -30,4 +30,9 @@ export const getOrganizationKeyInfo = (
         userNeedsToReactivateKey:
             organizationHasKeys && userHasActivatedOrganizationKeys && !organizationKey?.privateKey,
     };
+};
+
+// Active domains is one that's verified or in warning state, but it can be used to create addresses to
+export const getIsDomainActive = (domain: Domain) => {
+    return domain.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED || domain.State === DOMAIN_STATE.DOMAIN_STATE_WARN;
 };
