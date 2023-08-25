@@ -20,6 +20,7 @@ const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     loading: false,
     onOpen: jest.fn(),
     onClear: jest.fn(),
+    onBack: jest.fn(),
 };
 
 const renderComponent = (props: ComponentProps<typeof CalendarSearchInput>) => {

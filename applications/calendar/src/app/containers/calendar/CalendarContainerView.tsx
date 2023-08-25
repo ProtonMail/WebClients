@@ -449,34 +449,67 @@ const CalendarContainerView = ({
         targetTzid: calendarUserSettings.PrimaryTimezone,
     });
 
-    const toolbar = (isDrawerApp: boolean) => {
-        return !isDrawerApp ? (
-            <CalendarToolbar
-                date={noonDate}
-                timezone={tzid}
-                setTzid={setTzid}
-                telemetrySource="temporary_timezone"
-                dateCursorButtons={
-                    <DateCursorButtons
-                        view={view}
-                        currentRange={currentRange}
-                        now={localNowDate}
-                        onToday={onClickToday}
-                        onNext={handleClickNext}
-                        onPrev={handleClickPrev}
-                    />
-                }
-                viewSelector={
-                    <ViewSelector
-                        data-testid="calendar-view:view-options"
-                        view={view}
-                        range={range}
-                        onChange={onChangeView}
-                    />
-                }
-            />
-        ) : undefined;
-    };
+    const toolbar = (
+        <>
+            {!isDrawerApp && !isSearchView && (
+                <CalendarToolbar
+                    date={noonDate}
+                    timezone={tzid}
+                    setTzid={setTzid}
+                    telemetrySource="temporary_timezone"
+                    dateCursorButtons={
+                        <DateCursorButtons
+                            view={view}
+                            currentRange={currentRange}
+                            now={localNowDate}
+                            onToday={onClickToday}
+                            onNext={handleClickNext}
+                            onPrev={handleClickPrev}
+                        />
+                    }
+                    viewSelector={
+                        <ViewSelector
+                            data-testid="calendar-view:view-options"
+                            view={view}
+                            range={range}
+                            onChange={onChangeView}
+                        />
+                    }
+                    searchButton={
+                        isCalendarEncryptedSearchEnabled && (
+                            <CalendarSearch
+                                isNarrow={isNarrow}
+                                showSearchField={isSearchView}
+                                containerRef={containerRef}
+                                onSearch={onSearch}
+                                onBackFromSearch={onBackFromSearch}
+                            />
+                        )
+                    }
+                />
+            )}
+            {!isDrawerApp && isSearchView && (
+                <CalendarToolbar
+                    date={noonDate}
+                    timezone={tzid}
+                    setTzid={setTzid}
+                    telemetrySource="temporary_timezone"
+                    hideTimeZoneSelector={true}
+                    searchField={
+                        isCalendarEncryptedSearchEnabled && (
+                            <CalendarSearch
+                                isNarrow={isNarrow}
+                                showSearchField={isSearchView}
+                                containerRef={containerRef}
+                                onSearch={onSearch}
+                                onBackFromSearch={onBackFromSearch}
+                            />
+                        )
+                    }
+                />
+            )}
+        </>
+    );
 
     const drawerSettingsButton = (
         <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
@@ -514,28 +547,12 @@ const CalendarContainerView = ({
             <PrivateHeader
                 userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}
                 floatingButton={
-                    <FloatingButton onClick={() => onCreateEvent?.()}>
-                        <Icon size={24} name="plus" className="m-auto" />
-                    </FloatingButton>
+                    !isSearchView && (
+                        <FloatingButton onClick={() => onCreateEvent?.()}>
+                            <Icon size={24} name="plus" className="m-auto" />
+                        </FloatingButton>
+                    )
                 }
-                {...(isCalendarEncryptedSearchEnabled && {
-                    searchBox: (
-                        <CalendarSearch
-                            isNarrow={isNarrow}
-                            containerRef={containerRef}
-                            onSearch={onSearch}
-                            onBackFromSearch={onBackFromSearch}
-                        />
-                    ),
-                    searchDropdown: (
-                        <CalendarSearch
-                            isNarrow={isNarrow}
-                            containerRef={containerRef}
-                            onSearch={onSearch}
-                            onBackFromSearch={onBackFromSearch}
-                        />
-                    ),
-                })}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
@@ -545,7 +562,7 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
-                actionArea={toolbar(isDrawerApp)}
+                actionArea={toolbar}
                 hideUpsellButton={isNarrow}
                 settingsButton={drawerSettingsButton}
             />
@@ -577,7 +594,6 @@ const CalendarContainerView = ({
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             onCreateCalendar={onCreateCalendarFromSidebar}
-            onBackFromSearch={onBackFromSearch}
             miniCalendar={
                 <LocalizedMiniCalendar
                     min={MINIMUM_DATE}

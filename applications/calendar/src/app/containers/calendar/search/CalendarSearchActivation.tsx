@@ -40,7 +40,7 @@ const CalendarSearchActivation = ({ isIndexing, onClose }: Props) => {
 
     return (
         <div className="p-4">
-            <div className="text-bold text-xl flex flex-justify-space-between flex-align-items-center">
+            <div className="text-bold text-xl flex flex-justify-space-between flex-align-items-center flex-nowrap">
                 <span>{c('Title').t`Enabling Calendar Search`}</span>
                 <Tooltip title={c('Action').t`Close`}>
                     <Button icon color="weak" shape="ghost" onClick={onClose}>

@@ -164,6 +164,7 @@ const CalendarSearchView = ({
         metadataOnly: false,
     });
 
+    const { setOpenedSearchItem } = useCalendarSearch();
     // visualItems are sorted by StartTime, so we can paginate them directly without sorting them again
     const {
         items: paginatedItems,
@@ -201,6 +202,7 @@ const CalendarSearchView = ({
         const calendarViewEvent = getCalendarViewEventWithMetadata(item);
 
         setTargetEventRef(e.currentTarget);
+        setOpenedSearchItem(item);
 
         // setting search data opens the popover
         setInteractiveData({
@@ -241,7 +243,7 @@ const CalendarSearchView = ({
 
     return (
         <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">
-            <div className="flex flex-justify-space-between flex-align-items-center w100 py-3 px-5 bg-norm border-bottom">
+            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-justify-space-between py-1 pr-2 pl-4 w100">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
