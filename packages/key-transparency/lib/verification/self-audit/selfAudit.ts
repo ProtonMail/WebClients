@@ -3,6 +3,7 @@ import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import {
     Address,
     Api,
+    DecryptedAddressKey,
     DecryptedKey,
     GetLatestEpoch,
     KTLocalStorageAPI,
@@ -28,7 +29,7 @@ export const selfAudit = async (
     saveSKLToLS: SaveSKLToLS,
     getLatestEpoch: GetLatestEpoch,
     uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
 ): Promise<SelfAuditResult> => {
     const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
 
