@@ -66,7 +66,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     ];
 
     return (
-        <Panel title={c('new_plans: Title').t`Your account's usage`}>
+        <Panel title={c('new_plans: Title').t`Your account's usage`} data-testid="your-account-usage">
             <StripedList>
                 <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
