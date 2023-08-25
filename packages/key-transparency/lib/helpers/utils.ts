@@ -69,13 +69,9 @@ export const ktSentryReportError = (error: any, extra?: { [key: string]: any }) 
     ktSentryReport(errorMessage, { ...extra, stack });
 };
 
-export class KeyTransparencyError extends Error {
-    name = 'KeyTransparencyError';
-}
+export class KeyTransparencyError extends Error {}
 
-export class StaleEpochError extends Error {
-    name = 'StaleEpochError';
-}
+export class StaleEpochError extends Error {}
 
 export const throwKTError = (errorMessage: string, extra?: { [key: string]: any }): never => {
     ktSentryReport(errorMessage, extra);
