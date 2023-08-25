@@ -55,7 +55,6 @@ const MemberActions = ({
         addresses.length > 0;
 
     const canChangePassword =
-        APP_NAME === APPS.PROTONVPN_SETTINGS &&
         hasSetupOrganizationWithKeys &&
         !member.Self &&
         member.Private === MEMBER_PRIVATE.READABLE &&
