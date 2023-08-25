@@ -358,7 +358,7 @@ export enum MEMBER_TYPE {
 
 export enum DOMAIN_STATE {
     DOMAIN_STATE_DEFAULT = 0, // Domain's State before verify or after deactivation
-    DOMAIN_STATE_ACTIVE = 1, // active once verified
+    DOMAIN_STATE_VERIFIED = 1, // active once verified
     DOMAIN_STATE_WARN = 2, // detected backward DNS change after ACTIVE
 }
 

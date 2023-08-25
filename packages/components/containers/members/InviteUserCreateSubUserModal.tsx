@@ -117,7 +117,7 @@ const InviteUserCreateSubUserModal = ({
                 <SubUserCreateModal
                     organization={organization}
                     organizationKey={organizationKey}
-                    domains={verifiedDomains}
+                    verifiedDomains={verifiedDomains}
                     {...subUserCreateModalProps}
                     onClose={() => modalState.onClose()}
                     app={app}
