@@ -121,12 +121,7 @@ const Sidebar = ({
 
                 {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
-                <div
-                    className={clsx(
-                        'flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4',
-                        !contactsButton && 'mt-2'
-                    )}
-                >
+                <div className={clsx('flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4 md:mt-2')}>
                     {contactsButton}
                     {children}
                 </div>
