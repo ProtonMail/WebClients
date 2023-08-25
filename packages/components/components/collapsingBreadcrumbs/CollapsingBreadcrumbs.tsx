@@ -47,7 +47,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
     );
 
     return (
-        <ul className={clsx(['collapsing-breadcrumbs unstyled', className])}>
+        <ul className={clsx(['collapsing-breadcrumbs unstyled', className])} data-testid="collapsing-breadcrumbs">
             {groupedBreadcrumbs.map((group, i, arr) => {
                 const { key, text, richText, highlighted, ...breadcrumbProps } =
                     group instanceof Array ? group[0] : group;
