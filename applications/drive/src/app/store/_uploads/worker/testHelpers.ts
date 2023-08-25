@@ -1,5 +1,6 @@
 import { WAIT_TIME } from '../constants';
-import { EncryptedBlock, Link } from '../interface';
+import { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
+import { ThumbnailType } from '../thumbnail';
 import { UploadingBlock, UploadingBlockControl } from './interface';
 
 export function waitFor(callback: () => boolean, timeout = 100): Promise<string> {
@@ -33,8 +34,33 @@ export function createBlock(index: number): EncryptedBlock {
     };
 }
 
+export function createThumbnailBlock(index: number, thumbnailType: ThumbnailType): ThumbnailEncryptedBlock {
+    const data = Uint8Array.from(Array.from(`data${index}`).map((letter) => letter.charCodeAt(0)));
+    const hash = Uint8Array.from(Array.from(`hash${index}`).map((letter) => letter.charCodeAt(0)));
+    return {
+        index,
+        originalSize: 0,
+        encryptedData: data,
+        hash,
+        thumbnailType,
+    };
+}
+
 export function createUploadingBlock(index: number, isTokenExpired = () => false): UploadingBlock {
     const block = createBlock(index);
+    return {
+        block,
+        uploadLink: `link${index}`,
+        uploadToken: `token${index}`,
+        isTokenExpired,
+    };
+}
+export function createThumbnailUploadingBlock(
+    index: number,
+    isTokenExpired = () => false,
+    thumbnailType: ThumbnailType
+): UploadingBlock {
+    const block = createThumbnailBlock(index, thumbnailType);
     return {
         block,
         uploadLink: `link${index}`,

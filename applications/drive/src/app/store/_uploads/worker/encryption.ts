@@ -6,29 +6,24 @@ import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
-import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
+import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
+import { ThumbnailData } from '../thumbnail';
 import { Verifier } from './interface';
 
 /**
  * generateEncryptedBlocks generates blocks for the specified file.
  * Each block is chunked to FILE_CHUNK_SIZE and encrypted, counting index
- * from one. If file has thumbnail, it is ensured to be the first generated
- * block to ensure proper order, as thumbnail has special index equal to zero.
+ * from one.
  */
-export default async function* generateEncryptedBlocks(
+export async function* generateEncryptedBlocks(
     file: File,
-    thumbnailData: Uint8Array | undefined,
     addressPrivateKey: PrivateKeyReference,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     postNotifySentry: (e: Error) => void,
     hashInstance: Sha1,
     verifier: Verifier
-): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
-    if (thumbnailData) {
-        yield await encryptThumbnail(addressPrivateKey, sessionKey, thumbnailData);
-    }
-
+): AsyncGenerator<EncryptedBlock> {
     let index = 1;
     const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
     while (!reader.isEOF()) {
@@ -40,13 +35,32 @@ export default async function* generateEncryptedBlocks(
     }
 }
 
+/**
+ * generateEncryptedThumbnailsBlocks generates blocks for the specified thumbnails
+ * Each thumbnail will fit on a single block.
+ * Index is not taken in consideration for Thumbnails, so we can start it at 0
+ */
+export async function* generateThumbnailEncryptedBlocks(
+    thumbnailData: ThumbnailData[] | undefined,
+    addressPrivateKey: PrivateKeyReference,
+    sessionKey: SessionKey
+): AsyncGenerator<ThumbnailEncryptedBlock> {
+    if (!!thumbnailData?.length) {
+        let index = 0;
+        for (let i = 0; i < thumbnailData?.length; i++) {
+            yield await encryptThumbnail(index++, addressPrivateKey, sessionKey, thumbnailData[i]);
+        }
+    }
+}
+
 async function encryptThumbnail(
+    index: number,
     addressPrivateKey: PrivateKeyReference,
     sessionKey: SessionKey,
-    thumbnail: Uint8Array
-): Promise<EncryptedThumbnailBlock> {
+    thumbnail: ThumbnailData
+): Promise<ThumbnailEncryptedBlock> {
     const { message: encryptedData } = await CryptoProxy.encryptMessage({
-        binaryData: thumbnail,
+        binaryData: thumbnail.thumbnailData,
         sessionKey,
         signingKeys: addressPrivateKey,
         format: 'binary',
@@ -54,12 +68,13 @@ async function encryptThumbnail(
     });
     const hash = (await generateContentHash(encryptedData)).BlockHash;
     return {
-        index: 0,
+        index,
         // Original size is used only for showing progress. We don't want to
         // include thumbnail to it, otherwise it would show more than 100%.
         originalSize: 0,
         encryptedData,
         hash,
+        thumbnailType: thumbnail.thumbnailType,
     };
 }
 

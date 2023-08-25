@@ -1,6 +1,7 @@
 import { THUMBNAIL_MAX_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { scaleImageFile } from './image';
+import { ThumbnailType } from './interface';
 
 describe('scaleImageFile', () => {
     beforeEach(() => {
@@ -31,6 +32,7 @@ describe('scaleImageFile', () => {
             originalWidth: undefined,
             originalHeight: undefined,
             thumbnailData: new Uint8Array([97, 98, 99]),
+            thumbnailType: ThumbnailType.PREVIEW,
         });
     });
 
