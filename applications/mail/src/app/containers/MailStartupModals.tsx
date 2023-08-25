@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { EasySwitchProvider } from '@proton/activation/index';
+import { EasySwitchProvider } from '@proton/activation';
 import {
     FeatureCode,
     RebrandingFeedbackModal,
