@@ -39,6 +39,7 @@ describe('EditEmailSubscription', () => {
         expect(screen.getByText('Proton welcome emails'));
         expect(screen.getByText('Proton Mail and Calendar new features'));
         expect(screen.getByText('Proton Drive product updates'));
+        expect(screen.getByText('Proton Pass product updates'));
         expect(screen.getByText('Proton VPN product updates'));
     });
 
