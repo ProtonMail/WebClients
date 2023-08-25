@@ -55,9 +55,11 @@ export interface ApiAddressKey {
     Source: number;
 }
 
-export interface ProcessedApiAddressKey extends Omit<ApiAddressKey, 'Source'> {
-    PublicKeyRef: PublicKeyReference;
-    Source: ApiAddressKeySource;
+export interface ProcessedApiAddressKey {
+    armoredPublicKey: string;
+    flags: number;
+    publicKeyRef: PublicKeyReference;
+    source: ApiAddressKeySource;
 }
 
 export type VerifyOutboundPublicKeys = (
