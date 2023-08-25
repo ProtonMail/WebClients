@@ -9,6 +9,7 @@ import UploadCSVFileButton from '@proton/components/containers/members/multipleU
 import { downloadVPNB2BSampleCSV } from '@proton/components/containers/members/multipleUserCreation/csv';
 import { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { Domain } from '@proton/shared/lib/interfaces';
 
 import {
     InlineLinkButton,
@@ -62,9 +63,10 @@ const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
 interface Props extends ModalProps {
     onBack: () => void;
     app: APP_NAMES;
+    verifiedDomains: Domain[];
 }
 
-const SubUserBulkCreateModal = ({ onBack, app, ...rest }: Props) => {
+const SubUserBulkCreateModal = ({ verifiedDomains, onBack, app, ...rest }: Props) => {
     const [step, setStep] = useState<Step>(Step.INSTRUCTION);
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
@@ -79,6 +81,7 @@ const SubUserBulkCreateModal = ({ onBack, app, ...rest }: Props) => {
             <CreateUserAccountsModal
                 usersToImport={usersToImport}
                 app={app}
+                verifiedDomains={verifiedDomains}
                 {...createUserAccountsModal}
                 mode={UserManagementMode.VPN_B2B}
                 {...rest}

@@ -48,7 +48,7 @@ const DomainStatus = ({ domain, domainAddresses }) => {
         { text: c('Domain label').t`Verified`, type: VERIFY_TYPES[domain.VerifyState] },
         {
             text: c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n),
-            type: domain.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE && n ? 'success' : 'error',
+            type: domain.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED && n ? 'success' : 'error',
         },
         { text: 'MX', type: MX_TYPES[domain.MxState] },
         { text: 'SPF', type: SPF_TYPES[domain.SpfState] },

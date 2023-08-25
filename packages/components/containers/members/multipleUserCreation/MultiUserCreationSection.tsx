@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,6 +8,7 @@ import { Tooltip } from '@proton/components/components/tooltip';
 import { UserManagementMode } from '@proton/components/containers/members/types';
 import useDomains from '@proton/components/hooks/useDomains';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
@@ -20,6 +21,8 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
 
+    const verifiedDomains = useMemo(() => (domains || []).filter(getIsDomainActive), [domains]);
+
     const onCSVFileUpload = (usersToImport: UserTemplate[]) => {
         setUsersToImport(usersToImport);
         setCreateUserAccountsModal(true);
@@ -31,6 +34,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                 <CreateUserAccountsModal
                     usersToImport={usersToImport}
                     app={app}
+                    verifiedDomains={verifiedDomains}
                     {...createUserAccountsModal}
                     mode={UserManagementMode.DEFAULT}
                 />
@@ -43,7 +47,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                 </SettingsParagraph>
 
                 <div className="flex flex-rows gap-4">
-                    {domains.length === 0 ? (
+                    {verifiedDomains.length === 0 ? (
                         <Tooltip
                             title={c('familyOffer_2023:Family plan')
                                 .t`You need to configure a custom domain before adding multiple users.`}
