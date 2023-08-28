@@ -5,7 +5,7 @@ import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing/index';
 
-import useBitcoin from './useBitcoin';
+import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';
 
 const onTokenValidated = jest.fn();
 const onAwaitingPayment = jest.fn();
@@ -221,7 +221,7 @@ describe('', () => {
         await result.current.request();
         expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
 
-        jest.advanceTimersByTime(10000);
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
         await flushPromises();
         expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the first time
 
@@ -229,11 +229,11 @@ describe('', () => {
             enablePolling: false,
         });
 
-        jest.advanceTimersByTime(10000);
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
         await flushPromises();
         expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the second time must not happen after polling was disabled
 
-        jest.advanceTimersByTime(100000);
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
         await flushPromises();
         expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the second time must not happen after polling was disabled
     });
@@ -293,17 +293,17 @@ describe('', () => {
         expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
 
         updateResolvers();
-        await jest.advanceTimersByTimeAsync(10000);
+        await jest.advanceTimersByTimeAsync(BITCOIN_POLLING_INTERVAL);
         resolveToken();
         expect(apiMock).toHaveBeenCalledTimes(2); // checking the token for the first time
 
         updateResolvers();
-        await jest.advanceTimersByTimeAsync(10000);
+        await jest.advanceTimersByTimeAsync(BITCOIN_POLLING_INTERVAL);
         rejectToken();
         expect(apiMock).toHaveBeenCalledTimes(3); // checking the token for the second time
 
         updateResolvers();
-        await jest.advanceTimersByTimeAsync(10000);
+        await jest.advanceTimersByTimeAsync(BITCOIN_POLLING_INTERVAL);
         resolveToken();
         // because of the rejection last time, the next call should never happen, the script must exit from the loop
         expect(apiMock).toHaveBeenCalledTimes(3);
