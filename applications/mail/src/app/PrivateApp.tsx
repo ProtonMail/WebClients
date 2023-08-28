@@ -78,7 +78,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             locales={locales}
             preloadModels={PRELOAD_MODELS}
-            preloadFeatures={[FeatureCode.CleanUTMTrackers, FeatureCode.ESAutomaticBackgroundIndexing]}
+            preloadFeatures={[FeatureCode.CleanUTMTrackers, FeatureCode.ESAutomaticBackgroundIndexing, FeatureCode.MailActionsChunkSize]}
             eventModels={EVENTS_MODELS}
             eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration

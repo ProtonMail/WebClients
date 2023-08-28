@@ -3,10 +3,21 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import {
+    ErrorButton,
+    FeatureCode,
+    Prompt,
+    useApi,
+    useEventManager,
+    useFeature,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { runParallelUndoableChunkedActions } from 'proton-mail/helpers/chunk';
 
 import { isConversation } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
@@ -138,6 +149,7 @@ export const usePermanentDelete = (labelID: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
     const dispatch = useAppDispatch();
+    const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
@@ -166,8 +178,23 @@ export const usePermanentDelete = (labelID: string) => {
         try {
             dispatch(backendActionStarted());
             rollback = optimisticDelete(elements, labelID);
-            const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
-            await api(action);
+
+            const results = await Promise.all(
+                await runParallelUndoableChunkedActions({
+                    api,
+                    items: selectedIDs,
+                    chunkSize: mailActionsChunkSize,
+                    action: (chunk) => (conversationMode ? deleteConversations(chunk, labelID) : deleteMessages(chunk)),
+                    canUndo: false,
+                })
+            );
+
+            results.forEach((res) => {
+                if (res.status === 'rejected') {
+                    throw new Error();
+                }
+            });
+
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
         } catch {
