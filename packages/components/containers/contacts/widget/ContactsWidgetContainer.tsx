@@ -232,7 +232,7 @@ const ContactsWidgetContainer = ({
                     )}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar py-4 border-bottom border-weak flex-item-noshrink">
+            <div className="contacts-widget-toolbar py-3 border-bottom border-weak flex-item-noshrink">
                 <ContactsWidgetToolbar
                     allChecked={hasCheckedAllFiltered}
                     selected={selectedIDs}
@@ -254,16 +254,28 @@ const ContactsWidgetContainer = ({
                     isDrawer={isDrawer}
                 />
 
-                <p className={clsx('color-weak text-sm m-0', contactsLength > 0 && 'mt-2')}>
-                    {contactsLength
-                        ? // translator: Number of selected contacts out of total number of contacts, e.g. "1/10 items selected"
-                          c('Info').ngettext(
-                              msgid`${selectedContactsLength} / ${contactsLength} item selected`,
-                              `${selectedContactsLength} / ${contactsLength} items selected`,
-                              selectedContactsLength
-                          )
-                        : ''}
-                </p>
+                {contactsLength ? (
+                    <p
+                        className={clsx(
+                            'text-sm font-semibold m-0 pt-3',
+                            selectedContactsLength ? 'color-weak' : 'color-hint'
+                        )}
+                    >
+                        {selectedContactsLength
+                            ? // translator: Number of selected contacts out of total number of contacts, e.g. "1/10 contacts selected"
+                              c('Info').ngettext(
+                                  msgid`${selectedContactsLength}/${contactsLength} contact selected`,
+                                  `${selectedContactsLength}/${contactsLength} contacts selected`,
+                                  selectedContactsLength
+                              )
+                            : // translator: Total number of contact when none are selected, e.g. "10 contacts"
+                              c('Info').ngettext(
+                                  msgid`${contactsLength} contact`,
+                                  `${contactsLength} contacts`,
+                                  contactsLength
+                              )}
+                    </p>
+                ) : null}
             </div>
             {showList && countMergeableContacts ? (
                 <MergeContactBanner onMerge={() => handleMerge(true)} countMergeableContacts={countMergeableContacts} />
