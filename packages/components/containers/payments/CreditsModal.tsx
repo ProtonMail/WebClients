@@ -86,13 +86,14 @@ const CreditsModal = (props: ModalProps) => {
     const selectedMethodType = paymentFacade.methods.selectedMethod?.type;
     const method = paymentFacade.methods.selectedMethod?.value;
 
-    const bitcoinAmountInRange =
-        (debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT) ||
-        method !== PAYMENT_METHOD_TYPES.BITCOIN;
+    const submit = (() => {
+        const bitcoinAmountInRange = debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT;
+        if (debouncedAmount < MIN_CREDIT_AMOUNT || (method === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinAmountInRange)) {
+            return null;
+        }
 
-    const submit =
-        debouncedAmount >= MIN_CREDIT_AMOUNT && bitcoinAmountInRange ? (
-            paymentFacade.methods.isNewPaypal ? (
+        if (paymentFacade.methods.isNewPaypal) {
+            return (
                 <StyledPayPalButton
                     type="submit"
                     paypal={paymentFacade.paypal}
@@ -101,21 +102,33 @@ const CreditsModal = (props: ModalProps) => {
                     loading={loading}
                     data-testid="paypal-button"
                 />
-            ) : method === PAYMENT_METHOD_TYPES.BITCOIN ? (
+            );
+        }
+
+        const topUpText = c('Action').t`Top up`;
+        if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+            return (
                 <PrimaryButton
                     loading={!bitcoinValidated && awaitingBitcoinPayment}
                     disabled={true}
                     data-testid="top-up-button"
-                >{c('Info').t`Awaiting transaction`}</PrimaryButton>
-            ) : (
-                <PrimaryButton
-                    loading={loading}
-                    disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
-                    type="submit"
-                    data-testid="top-up-button"
-                >{c('Action').t`Top up`}</PrimaryButton>
-            )
-        ) : null;
+                >
+                    {awaitingBitcoinPayment ? c('Info').t`Awaiting transaction` : topUpText}
+                </PrimaryButton>
+            );
+        }
+
+        return (
+            <PrimaryButton
+                loading={loading}
+                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
+                type="submit"
+                data-testid="top-up-button"
+            >
+                {topUpText}
+            </PrimaryButton>
+        );
+    })();
 
     const process = async (processor?: PaymentProcessorHook) =>
         withLoading(async () => {
@@ -168,7 +181,7 @@ const CreditsModal = (props: ModalProps) => {
                     onBitcoinTokenValidated={async (data) => {
                         setBitcoinValidated(true);
                         await handleChargableToken(data);
-                        wait(2000).then(() => exitSuccess());
+                        void wait(2000).then(() => exitSuccess());
                     }}
                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                 />
