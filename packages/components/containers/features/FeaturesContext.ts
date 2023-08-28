@@ -1,5 +1,7 @@
 import { createContext } from 'react';
 
+import noop from '@proton/utils/noop';
+
 export type FeatureType = 'boolean' | 'integer' | 'float' | 'string' | 'enumeration' | 'mixed';
 
 export interface Feature<V = any> {
@@ -132,6 +134,12 @@ export interface FeatureContextValue<V = any> {
     code: FeatureCode;
 }
 
-export const FeaturesContext = createContext<FeaturesContextValue>({} as FeaturesContextValue);
+export const FeaturesContext = createContext<FeaturesContextValue>({
+    features: {},
+    loading: {},
+    enqueue: noop,
+    get: async (): Promise<any> => null,
+    put: async (): Promise<any> => null,
+});
 
 export const FeaturesLoadContext = createContext<FeaturesLoadContextValue>(null as unknown as FeaturesLoadContextValue);
