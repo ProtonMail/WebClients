@@ -2,7 +2,7 @@ import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
-import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
+import { getAttachments, hasProtonSender, isDraft } from '@proton/shared/lib/mail/messages';
 
 import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
 import {
@@ -26,7 +26,7 @@ export const transformEmbedded = async (
     const showEmbeddedImages =
         message.messageImages?.showEmbeddedImages === true ||
         hasShowEmbedded(mailSettings) ||
-        !!message.data?.Sender.IsProton;
+        hasProtonSender(message.data);
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
