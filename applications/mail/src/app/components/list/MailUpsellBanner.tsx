@@ -294,8 +294,9 @@ const MailUpsellBanner = ({ needToShowUpsellBanner, columnMode, onClose }: Props
             },
             {
                 id: 25,
-                // translator: full sentence: "Learn more about Proton Sentinel high-security program."
-                text: c('Info').t`Learn more about ${PROTON_SENTINEL_NAME} high-security program.`,
+                // translator: full sentence: "Join Proton Sentinel program for the highest level of account security and support."
+                text: c('Info')
+                    .t`Join ${PROTON_SENTINEL_NAME} program for the highest level of account security and support.`,
                 cta: (
                     <SettingsLink
                         path={getLink(securityAndPrivacy, UPSELL_MAIL_BANNER_LINK_ID.PROTON_SENTINEL)}
