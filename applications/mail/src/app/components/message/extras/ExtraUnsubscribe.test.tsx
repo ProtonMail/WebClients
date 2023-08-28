@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -13,9 +13,11 @@ import {
     clearAll,
     generateKeys,
     render,
+    setFeatureFlags,
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
+import * as useSimpleLoginExtension from '../../../hooks/simpleLogin/useSimpleLoginExtension';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
@@ -66,9 +68,9 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, false);
 
-        const button = getByTestId('unsubscribe-banner');
+        const button = screen.getByTestId('unsubscribe-banner');
 
         expect(button.textContent).toMatch(/Unsubscribe/);
 
@@ -76,7 +78,7 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const submitButton = getByTestId('unsubscribe-banner:submit');
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
             fireEvent.click(submitButton);
         }
@@ -109,9 +111,9 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, false);
 
-        const button = getByTestId('unsubscribe-banner');
+        const button = screen.getByTestId('unsubscribe-banner');
 
         expect(button.textContent).toMatch(/Unsubscribe/);
 
@@ -119,7 +121,7 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const submitButton = getByTestId('unsubscribe-banner:submit');
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
             fireEvent.click(submitButton);
         }
@@ -145,9 +147,9 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, false);
 
-        const button = getByTestId('unsubscribe-banner');
+        const button = screen.getByTestId('unsubscribe-banner');
 
         expect(button.textContent).toMatch(/Unsubscribe/);
 
@@ -155,7 +157,7 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(button);
         }
 
-        const submitButton = getByTestId('unsubscribe-banner:submit');
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
             fireEvent.click(submitButton);
         }
@@ -164,5 +166,174 @@ describe('Unsubscribe banner', () => {
 
         expect(openNewTabMock).toHaveBeenCalled();
         expect(markUnsubscribedCall).toHaveBeenCalled();
+    });
+
+    it('should show an extra modal when the user has no SimpleLogin extension', async () => {
+        setFeatureFlags('SLIntegration', true);
+        jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
+            hasSimpleLogin: false,
+            hasSLExtension: false,
+            canUseExtension: true,
+            hasAccountLinked: true,
+            isFetchingAccountLinked: true,
+        });
+
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, false);
+
+        const button = screen.getByTestId('unsubscribe-banner');
+
+        expect(button.textContent).toMatch(/Unsubscribe/);
+
+        if (button) {
+            fireEvent.click(button);
+        }
+
+        // Submit first modal
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
+        }
+
+        // Second modal should be opened
+        screen.getByText('hide-my-email aliases');
+    });
+
+    it('should not show an extra modal when the user has SimpleLogin extension', async () => {
+        setFeatureFlags('SLIntegration', true);
+        jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
+            hasSimpleLogin: true,
+            hasSLExtension: true,
+            canUseExtension: true,
+            hasAccountLinked: true,
+            isFetchingAccountLinked: true,
+        });
+
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, false);
+
+        const button = screen.getByTestId('unsubscribe-banner');
+
+        expect(button.textContent).toMatch(/Unsubscribe/);
+
+        if (button) {
+            fireEvent.click(button);
+        }
+
+        // Submit first modal
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
+        }
+
+        // Second modal should not be opened
+        expect(screen.queryByText('hide-my-email aliases')).toBeNull();
+    });
+
+    it('should not show an extra modal when the user has no SimpleLogin extension but the message is from SimpleLogin', async () => {
+        setFeatureFlags('SLIntegration', true);
+        jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
+            hasSimpleLogin: false,
+            hasSLExtension: false,
+            canUseExtension: true,
+            hasAccountLinked: true,
+            isFetchingAccountLinked: true,
+        });
+
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+                Sender: { Address: 'sender@simplelogin.co', Name: 'SimpleLoginAlias', IsSimpleLogin: 1 },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, false);
+
+        const button = screen.getByTestId('unsubscribe-banner');
+
+        expect(button.textContent).toMatch(/Unsubscribe/);
+
+        if (button) {
+            fireEvent.click(button);
+        }
+
+        // Submit first modal
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
+        }
+
+        // Second modal should not be opened
+        expect(screen.queryByText('hide-my-email aliases')).toBeNull();
+    });
+
+    it('should not show an extra modal when the message was coming from an official Proton address', async () => {
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
+        minimalCache();
+        addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
+        const message = mergeMessages(defaultMessage, {
+            data: {
+                UnsubscribeMethods: { OneClick: 'OneClick' },
+                Sender: { Address: 'sender@simplelogin.co', Name: 'SimpleLoginAlias', IsProton: 1 },
+            },
+        }) as MessageStateWithData;
+
+        await render(<ExtraUnsubscribe message={message.data} />, false);
+
+        const button = screen.getByTestId('unsubscribe-banner');
+
+        expect(button.textContent).toMatch(/Unsubscribe/);
+
+        if (button) {
+            fireEvent.click(button);
+        }
+
+        // Submit first modal
+        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+        if (submitButton) {
+            fireEvent.click(submitButton);
+        }
+
+        // Second modal should not be opened
+        expect(screen.queryByText('hide-my-email aliases')).toBeNull();
     });
 });
