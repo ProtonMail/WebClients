@@ -9,8 +9,10 @@ import { Api } from '@proton/shared/lib/interfaces';
 
 import { AmountAndCurrency, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '../../payments/core';
 
+export const BITCOIN_POLLING_INTERVAL = 60000;
+
 function pause() {
-    return wait(10000);
+    return wait(BITCOIN_POLLING_INTERVAL);
 }
 
 type TokenValidationStatus = 'chargeable' | 'pending' | 'error-token-invalid';

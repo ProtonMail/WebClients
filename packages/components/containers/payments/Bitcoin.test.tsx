@@ -6,7 +6,7 @@ import { addApiMock, apiMock, flushPromises } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../payments/core';
 import Bitcoin from './Bitcoin';
-import useBitcoin, { OnBitcoinAwaitingPayment, OnBitcoinTokenValidated } from './useBitcoin';
+import useBitcoin, { BITCOIN_POLLING_INTERVAL, OnBitcoinAwaitingPayment, OnBitcoinTokenValidated } from './useBitcoin';
 
 const onTokenValidated = jest.fn();
 const onAwaitingPayment = jest.fn();
@@ -125,14 +125,14 @@ it('should check the token every 10 seconds', async () => {
         />
     );
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     addApiMock(getTokenStatus('token-123').url, function second() {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
     });
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1);
@@ -147,7 +147,7 @@ it('should check the token every 10 seconds', async () => {
         cryptoAmount: '0.00135',
     });
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1); // check that it's called only once
@@ -252,7 +252,7 @@ it('should call awaitingPayment callback when the token is validated', async () 
         />
     );
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onAwaitingPayment).toHaveBeenLastCalledWith(false);
@@ -283,7 +283,7 @@ it('should call awaitingPayment callback when amount or currency is changed', as
         />
     );
 
-    jest.advanceTimersByTime(6000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onAwaitingPayment).toHaveBeenLastCalledWith(false);
