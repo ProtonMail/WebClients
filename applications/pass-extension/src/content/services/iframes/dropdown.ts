@@ -44,7 +44,7 @@ export const createDropdown = (): InjectedDropdown => {
             return {
                 top: top - bodyTop + offsetBox.top + height,
                 left: boxLeft + width - DROPDOWN_WIDTH,
-                zIndex: zIndex,
+                zIndex,
             };
         },
         dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
