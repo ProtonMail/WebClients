@@ -28,6 +28,7 @@ import {
     WELCOME_FLAGS_CACHE_KEY,
     getWelcomeFlagsValue,
     useApi,
+    useAuthentication,
     useCache,
     useConfig,
     useLoadFeature,
@@ -36,13 +37,14 @@ import { getCryptoWorkerOptions } from '../app/cryptoWorkerOptions';
 import { ContactProvider } from '../contacts';
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
 import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
-import { FeatureCode } from '../features';
+import { ExperimentsProvider } from '../experiments';
+import { FeatureCode, FeaturesProvider } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
 import ThemeInjector from '../themes/ThemeInjector';
-import { useFlagsReady } from '../unleash';
+import { UnleashFlagProvider, useFlagsReady } from '../unleash';
 import DelinquentContainer from './DelinquentContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
@@ -67,7 +69,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     eventQuery?: (eventID: string) => object;
 }
 
-const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
+const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     locales = {},
     onLogout,
     onInit,
@@ -239,6 +241,20 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 </ContactProvider>
             </CalendarModelEventManagerProvider>
         </EventManagerProvider>
+    );
+};
+
+const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>(props: Props<T, M, E, EvtM>) => {
+    const config = useConfig();
+    const { UID } = useAuthentication();
+    return (
+        <UnleashFlagProvider config={config} UID={UID}>
+            <FeaturesProvider>
+                <ExperimentsProvider>
+                    <InnerStandardPrivateApp<T, M, E, EvtM> {...props} />
+                </ExperimentsProvider>
+            </FeaturesProvider>
+        </UnleashFlagProvider>
     );
 };
 
