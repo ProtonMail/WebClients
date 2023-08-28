@@ -270,7 +270,7 @@ describe('Mailbox labels actions', () => {
             await waitForSpyCall(deleteRequestSpy);
         };
 
-        it('should delete permamently conversations', async () => {
+        it('should delete permanently conversations', async () => {
             const deleteRequestSpy = jest.fn(() => {});
             addApiMock(`mail/v4/conversations/delete`, deleteRequestSpy, 'put');
 
@@ -294,7 +294,7 @@ describe('Mailbox labels actions', () => {
             expect(items.length).toBe(1);
         });
 
-        it('should delete permamently messages', async () => {
+        it('should delete permanently messages', async () => {
             const deleteRequestSpy = jest.fn(() => {});
             addApiMock(`mail/v4/messages/delete`, deleteRequestSpy, 'put');
 
@@ -316,7 +316,7 @@ describe('Mailbox labels actions', () => {
             expect(items.length).toBe(1);
         });
 
-        it('should delete permamently conversations and rollback', async () => {
+        it('should delete permanently conversations and rollback', async () => {
             const deleteRequestSpy = jest.fn(() => {
                 throw new Error('failed');
             });

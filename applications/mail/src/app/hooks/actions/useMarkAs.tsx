@@ -2,11 +2,13 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { FeatureCode, useApi, useEventManager, useFeature, useNotifications } from '@proton/components';
 import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+
+import { getFilteredUndoTokens, runParallelUndoableChunkedActions } from 'proton-mail/helpers/chunk';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -63,6 +65,7 @@ export const useMarkAs = () => {
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
+    const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS, silent = true) => {
         if (!elements.length) {
@@ -78,7 +81,7 @@ export const useMarkAs = () => {
         let rollback: (() => void) | undefined = () => {};
 
         const request = async () => {
-            let token;
+            let tokens = [];
             try {
                 // Stop the event manager to prevent race conditions
                 stop();
@@ -87,13 +90,17 @@ export const useMarkAs = () => {
                     status,
                     displaySnoozedReminder,
                 });
-                const { UndoToken } = await api(
-                    action(
-                        elements.map((element) => element.ID),
-                        labelID
-                    )
-                );
-                token = UndoToken.Token;
+
+                tokens = await runParallelUndoableChunkedActions({
+                    api,
+                    items: elements,
+                    chunkSize: mailActionsChunkSize,
+                    action: (chunk) =>
+                        action(
+                            chunk.map((element: Element) => element.ID),
+                            labelID
+                        ),
+                });
             } catch (error: any) {
                 rollback?.();
                 throw error;
@@ -102,7 +109,7 @@ export const useMarkAs = () => {
                 start();
                 await call();
             }
-            return token;
+            return tokens;
         };
 
         // No await since we are doing optimistic UI here
@@ -116,8 +123,10 @@ export const useMarkAs = () => {
                     // Stop the event manager to prevent race conditions
                     stop();
                     rollback?.();
-                    const token = await promise;
-                    await api(undoActions(token));
+                    const tokens = await promise;
+                    const filteredTokens = getFilteredUndoTokens(tokens);
+
+                    await Promise.allSettled(filteredTokens.map((token) => api(undoActions(token))));
                 } finally {
                     start();
                     await call();
