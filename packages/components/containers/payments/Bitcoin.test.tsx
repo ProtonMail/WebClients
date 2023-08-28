@@ -1,18 +1,33 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, flushPromises } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../payments/core';
-import Bitcoin, { Props } from './Bitcoin';
-import useBitcoin from './useBitcoin';
+import Bitcoin from './Bitcoin';
+import useBitcoin, { BITCOIN_POLLING_INTERVAL, OnBitcoinAwaitingPayment, OnBitcoinTokenValidated } from './useBitcoin';
 
 const onTokenValidated = jest.fn();
+const onAwaitingPayment = jest.fn();
 
-const BitcoinTestComponent = (props: Omit<Props, 'model' | 'error' | 'loading' | 'request'>) => {
-    const bitcoinHook = useBitcoin(props.api, {
+type InnerProps = {
+    onTokenValidated: OnBitcoinTokenValidated;
+    onAwaitingPayment: OnBitcoinAwaitingPayment;
+    api: Api;
+    amount: number;
+    currency: Currency;
+    processingToken: boolean;
+};
+
+const BitcoinTestComponent = (props: InnerProps) => {
+    const bitcoinHook = useBitcoin({
+        api: props.api,
         Amount: props.amount,
         Currency: props.currency,
+        onTokenValidated: props.onTokenValidated,
+        onAwaitingPayment: props.onAwaitingPayment,
+        enablePolling: true,
     });
 
     return <Bitcoin {...props} {...bitcoinHook} />;
@@ -48,6 +63,7 @@ it('should render', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -66,6 +82,7 @@ it('should render for signup-pass', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -84,6 +101,7 @@ it('should show loading during the initial fetching', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -102,18 +120,19 @@ it('should check the token every 10 seconds', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     addApiMock(getTokenStatus('token-123').url, function second() {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
     });
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1);
@@ -128,7 +147,7 @@ it('should check the token every 10 seconds', async () => {
         cryptoAmount: '0.00135',
     });
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1); // check that it's called only once
@@ -145,6 +164,7 @@ it('should render Try again button in case of error', async () => {
             amount={1000}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -170,6 +190,7 @@ it('should render warning if the amount is too low', async () => {
             amount={100}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -186,6 +207,7 @@ it('should render warning if the amount is too high', async () => {
             amount={4000100}
             currency="USD"
             onTokenValidated={onTokenValidated}
+            onAwaitingPayment={onAwaitingPayment}
             processingToken={false}
         />
     );
@@ -230,7 +252,7 @@ it('should call awaitingPayment callback when the token is validated', async () 
         />
     );
 
-    jest.advanceTimersByTime(11000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onAwaitingPayment).toHaveBeenLastCalledWith(false);
@@ -261,7 +283,7 @@ it('should call awaitingPayment callback when amount or currency is changed', as
         />
     );
 
-    jest.advanceTimersByTime(6000);
+    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onAwaitingPayment).toHaveBeenLastCalledWith(false);
