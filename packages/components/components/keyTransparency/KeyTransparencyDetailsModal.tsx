@@ -126,9 +126,15 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
     };
 
     const getAddressAuditWarnings = () => {
-        const warningAddressAudits = selfAuditResult.addressAuditResults.filter(
-            ({ status }) => status === AddressAuditStatus.Warning
-        );
+        const warningAddressAudits = selfAuditResult.addressAuditResults
+            .filter(({ status }) => status === AddressAuditStatus.Warning)
+            .filter(
+                ({ warningDetails }) =>
+                    !(
+                        warningDetails?.reason === AddressAuditWarningReason.UnverifiableHistory &&
+                        !warningDetails.addressWasDisabled
+                    )
+            );
         return warningAddressAudits.map(({ email, warningDetails }) => {
             return (
                 <div>
@@ -194,7 +200,13 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
 
     const getAuditSuccess = () => {
         const successEmails = selfAuditResult.addressAuditResults
-            .filter(({ status }) => status === AddressAuditStatus.Success)
+            .filter(
+                ({ status, warningDetails }) =>
+                    status === AddressAuditStatus.Success ||
+                    (status === AddressAuditStatus.Warning &&
+                        warningDetails?.reason === AddressAuditWarningReason.UnverifiableHistory &&
+                        !warningDetails.addressWasDisabled)
+            )
             .map(({ email }) => email);
         if (!successEmails.length) {
             return <></>;
