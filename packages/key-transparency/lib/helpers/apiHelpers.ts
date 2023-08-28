@@ -13,7 +13,7 @@ import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants'
 import { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification';
 import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, uploadVerifiedEpochRoute } from './api';
-import { isTimestampTooOld, ktSentryReport, throwKTError } from './utils';
+import { StaleEpochError, isTimestampTooOld, throwKTError } from './utils';
 
 /**
  * Fetch the latest issued epoch. Note that there is no guarantee that the
@@ -39,9 +39,19 @@ export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promis
  * Fetch the KT proof of a given email address in a given epoch
  */
 export const fetchProof = async (EpochID: number, Identifier: string, Revision: number, api: Api) => {
-    const cleanIdentifier = canonicalizeInternalEmail(Identifier);
-    const { Proof } = await api<{ Proof: Proof }>(getProofRoute({ EpochID, Identifier: cleanIdentifier, Revision }));
-    return Proof;
+    try {
+        const cleanIdentifier = canonicalizeInternalEmail(Identifier);
+        const { Proof } = await api<{ Proof: Proof }>(
+            getProofRoute({ EpochID, Identifier: cleanIdentifier, Revision })
+        );
+        return Proof;
+    } catch (error: any) {
+        // If the returned error is 422, it means that the epoch is stale, self audit should start over
+        if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
+            throw new StaleEpochError();
+        }
+        throw error;
+    }
 };
 
 /**
@@ -106,17 +116,17 @@ export const fetchVerifiedEpoch = async (
             getLatestVerifiedEpochRoute({ AddressID: address.ID })
         );
         if (userVerificationKeys?.length) {
-            const { verified, errors } = await CryptoProxy.verifyMessage({
+            const { verified } = await CryptoProxy.verifyMessage({
                 armoredSignature: Signature,
                 verificationKeys: userVerificationKeys,
                 textData: Data,
                 context: KT_VE_VERIFICATION_CONTEXT,
             });
             if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                ktSentryReport('Verified epoch signature verification failed', {
-                    errors: JSON.stringify(errors),
-                    email: address.Email,
-                });
+                console.warn(
+                    "Verified epoch's signature could not be verified",
+                    'This is expected after a password reset'
+                );
                 return null;
             }
         }
