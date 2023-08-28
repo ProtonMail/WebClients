@@ -12,6 +12,7 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
+import { FeatureFlag, useFlag } from '../../unleash';
 import { ImportModal } from '../importModal';
 
 interface Props {
@@ -22,6 +23,7 @@ interface Props {
 
 const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
+    const isImporterInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
 
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
     const hasActiveCalendars = !!activeWritableCalendars.length;
@@ -55,14 +57,16 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                     .t`Here's how`}</Href>
             </SettingsParagraph>
 
-            <EasySwitchProvider>
-                <EasySwitchOauthImportButton
-                    className="mr-4"
-                    source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
-                    defaultCheckedTypes={[ImportType.CALENDAR]}
-                    displayOn={'GoogleCalendar'}
-                />
-            </EasySwitchProvider>
+            {!isImporterInMaintenance && (
+                <EasySwitchProvider>
+                    <EasySwitchOauthImportButton
+                        className="mr-4"
+                        source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
+                        defaultCheckedTypes={[ImportType.CALENDAR]}
+                        displayOn={'GoogleCalendar'}
+                    />
+                </EasySwitchProvider>
+            )}
 
             <PrimaryButton onClick={handleManualImport} disabled={!hasNonDelinquentScope || !hasActiveCalendars}>
                 {c('Action').t`Import from ICS`}

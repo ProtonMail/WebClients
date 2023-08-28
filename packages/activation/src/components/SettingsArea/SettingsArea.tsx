@@ -21,33 +21,34 @@ interface Props {
 const SettingsArea = ({ config }: Props) => {
     const { loading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
+    if (loading) {
+        return (
+            <PrivateMainSettingsAreaBase title={config.text} description={config.description}>
+                <Loader size="medium" className="py-14 text-center" />
+            </PrivateMainSettingsAreaBase>
+        );
+    }
+
     return (
         <EasySwitchStoreProvider>
-            {loading ? (
-                <PrivateMainSettingsAreaBase title={config.text} description={config.description}>
-                    <Loader size="medium" className="py-14 text-center" />
-                </PrivateMainSettingsAreaBase>
-            ) : (
-                <PrivateMainSettingsArea config={config}>
-                    <SettingsSectionWide>
-                        <SettingsParagraph data-testid="SettingsArea:forwardSection">
-                            {c('Info')
-                                .t`Forward incoming mail from another account to your secure ${MAIL_APP_NAME} inbox.`}
-                        </SettingsParagraph>
-                        <GmailForwarding />
-                    </SettingsSectionWide>
-                    <SettingsSectionWide>
-                        <SettingsParagraph>
-                            {c('Info')
-                                .t`Import your emails, calendars, and contacts from another service to ${BRAND_NAME}.`}
-                        </SettingsParagraph>
-                        <ProviderCards />
-                    </SettingsSectionWide>
-                    <SettingsSectionWide>
-                        <ReportsTable />
-                    </SettingsSectionWide>
-                </PrivateMainSettingsArea>
-            )}
+            <PrivateMainSettingsArea config={config}>
+                <SettingsSectionWide>
+                    <SettingsParagraph data-testid="SettingsArea:forwardSection">
+                        {c('Info').t`Forward incoming mail from another account to your secure ${MAIL_APP_NAME} inbox.`}
+                    </SettingsParagraph>
+                    <GmailForwarding />
+                </SettingsSectionWide>
+                <SettingsSectionWide>
+                    <SettingsParagraph>
+                        {c('Info')
+                            .t`Import your emails, calendars, and contacts from another service to ${BRAND_NAME}.`}
+                    </SettingsParagraph>
+                    <ProviderCards />
+                </SettingsSectionWide>
+                <SettingsSectionWide>
+                    <ReportsTable />
+                </SettingsSectionWide>
+            </PrivateMainSettingsArea>
         </EasySwitchStoreProvider>
     );
 };
