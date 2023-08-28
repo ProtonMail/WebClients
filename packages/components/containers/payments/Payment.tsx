@@ -22,14 +22,14 @@ import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import { PaymentMethodData, PaymentMethodFlows } from '../paymentMethods/interface';
 import Alert3DS from './Alert3ds';
-import Bitcoin, { ValidatedBitcoinToken } from './Bitcoin';
+import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
-import useBitcoin from './useBitcoin';
+import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
 import { CardFieldStatus } from './useCard';
 
 export interface Props {
@@ -53,7 +53,7 @@ export interface Props {
     disabled?: boolean;
     cardFieldStatus?: CardFieldStatus;
     paypalPrefetchToken?: boolean;
-    onBitcoinTokenValidated?: (data: ValidatedBitcoinToken) => Promise<void>;
+    onBitcoinTokenValidated?: OnBitcoinTokenValidated;
     onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
     isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
@@ -100,7 +100,16 @@ export const PaymentsNoApi = ({
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
-    const bitcoinHook = useBitcoin(api, { Amount: amount, Currency: currency });
+    const showBitcoinMethod = method === PAYMENT_METHOD_TYPES.BITCOIN;
+
+    const bitcoinHook = useBitcoin({
+        api,
+        Amount: amount,
+        Currency: currency,
+        onTokenValidated: (data) => withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data)),
+        onAwaitingPayment: onAwaitingBitcoinPayment,
+        enablePolling: showBitcoinMethod,
+    });
 
     useEffect(() => {
         if (loading) {
@@ -191,7 +200,7 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
-                    {method === PAYMENT_METHOD_TYPES.BITCOIN && (
+                    {showBitcoinMethod && (
                         <>
                             {!isAuthenticated && (
                                 <p>
@@ -202,15 +211,7 @@ export const PaymentsNoApi = ({
                             {isAuthenticated && (
                                 <>
                                     <BitcoinInfoMessage />
-                                    <Bitcoin
-                                        api={api}
-                                        processingToken={handlingBitcoinPayment}
-                                        onTokenValidated={(data) =>
-                                            withHandlingBitcoinPayment(async () => onBitcoinTokenValidated?.(data))
-                                        }
-                                        onAwaitingPayment={onAwaitingBitcoinPayment}
-                                        {...bitcoinHook}
-                                    />
+                                    <Bitcoin processingToken={handlingBitcoinPayment} {...bitcoinHook} />
                                 </>
                             )}
                         </>
