@@ -1,26 +1,51 @@
-/* Recursively determines the maximum z-index value required for overlaying
- * an element on the DOM. During traversal, z-index evaluation occurs only if :
- * - The current element's position is not 'static' (ie: relatively, absolutely, or fixedly positioned)
- * - Or if the maximum z-index value is still 0 (indicating no z-index value has been resolved yet) */
-const zTraverse = (el: HTMLElement, max: number = 0): number => {
-    const styles = getComputedStyle(el);
-    const { position, zIndex } = styles;
+import { invert } from '../fp/predicates';
 
+type StackResult =
+    | [true, number] /* Represents a stacking context with a z-index value */
+    | [false, null] /* Indicates that there is no stacking context or no z-index value */;
+
+/* This function provides a minimal version of stacking context detection.
+ * check MDN documentation for missing cases in case they become relevant :
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context */
+export const isStackingContext = (el: HTMLElement): StackResult => {
     const parent = el.parentElement;
-    if (!parent) return max;
+    const styles = getComputedStyle(el);
+    const value = parseInt(styles.zIndex, 10);
 
-    if (position !== 'static' || max === 0) {
-        const value = parseInt(zIndex, 10);
-        if (!isNaN(value)) return zTraverse(parent, Math.max(value, max));
-    }
+    if (isNaN(value)) return [false, null];
 
-    return zTraverse(parent, max);
+    const elementStack =
+        !parent ||
+        styles.position !== 'static' ||
+        styles.containerType === 'size' ||
+        styles.containerType === 'inline-size';
+
+    if (elementStack) return [true, value];
+
+    const parentStyles = getComputedStyle(parent);
+    const childStack = parentStyles.display === 'flex' || parentStyles.display === 'grid';
+
+    if (childStack) return [true, value];
+
+    return [false, null];
 };
 
-export const getMaxZIndex = (rootElement: HTMLElement) => {
-    const zChildren = Array.from(rootElement.querySelectorAll('*'), (el) =>
-        parseInt(window.getComputedStyle(el).zIndex, 10)
-    ).filter((zIndex) => !Number.isNaN(zIndex));
+/* Recursively determines the maximum z-index value required for overlaying
+ * a direct root child element & over the specified element. During traversal,
+ * z-index evaluation occurs only if the current element is a valid stacking
+ * context */
+export const zTraverse = (el: HTMLElement, max: number = 0): number => {
+    const [isStack, zIndex] = isStackingContext(el);
+    const nextMax = isStack ? zIndex : max;
+    const parent = el.parentElement;
 
-    return Math.max(zTraverse(rootElement), ...zChildren);
+    return parent ? zTraverse(parent, nextMax) : max;
+};
+
+/* Gets the maximum z-index value for an HTML element and its descendants */
+export const getMaxZIndex = (start: HTMLElement) => {
+    const children = start.querySelectorAll('*');
+    const childZIndexes = Array.from(children, (el) => parseInt(getComputedStyle(el).zIndex, 10));
+
+    return Math.max(zTraverse(start), ...childZIndexes.filter(invert(Number.isNaN)));
 };

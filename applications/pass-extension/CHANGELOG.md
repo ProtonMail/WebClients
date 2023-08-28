@@ -1,3 +1,7 @@
+## Version 1.5.3
+
+-   Fix disallowed domains not being cleaned-up in persisted settings when deleting an entry
+
 ## Version 1.5.2
 
 -   Resolved autofill inconsistency in domain matching for partial string matches.
