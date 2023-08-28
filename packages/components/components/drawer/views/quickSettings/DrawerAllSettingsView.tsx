@@ -1,22 +1,22 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { useSettingsLink } from '@proton/components/components';
+import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import { SettingsLink } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
-import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 const DrawerAllSettingsView = () => {
-    const goToSettings = useSettingsLink();
     const { APP_NAME } = useConfig();
 
-    const path = APPS_CONFIGURATION[APP_NAME].publicPath;
-
     return (
-        <Button
-            onClick={() => goToSettings(path, APP_NAME, false)}
+        <ButtonLike
+            as={SettingsLink}
+            path="/"
+            app={APP_NAME}
             data-testid="drawer-quick-settings:all-settings-button"
             className="w100"
-        >{c('Title').t`All settings`}</Button>
+            color="norm"
+            shape="outline"
+        >{c('Title').t`All settings`}</ButtonLike>
     );
 };
 
