@@ -278,13 +278,13 @@ const Step1 = ({
                     </h1>
                 </div>
                 {!isOnboardingMode && (
-                    <div className="flex flex-nowrap mb-4 md:gap-8 gap-3">
+                    <div className="flex flex-nowrap mb-4 gap-1 md:gap-8">
                         {features.map(({ left, text }, i, arr) => {
                             return (
                                 <Fragment key={text}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
-                                        <Vr className="h-custom" style={{ '--h-custom': '2.25rem' }} />
+                                        <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />
                                     )}
                                 </Fragment>
                             );
