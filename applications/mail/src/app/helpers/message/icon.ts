@@ -6,7 +6,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
+import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
 import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
@@ -384,7 +384,7 @@ const getReceivedStatusIconInternalWithKT = (
     }
 
     if (verificationStatus === NOT_SIGNED) {
-        if (message.Sender.IsProton && message.Time < SIGNATURE_START.BULK) {
+        if (hasProtonSender(message) && message.Time < SIGNATURE_START.BULK) {
             // Don't show a warning on official emails
             return {
                 ...result,
