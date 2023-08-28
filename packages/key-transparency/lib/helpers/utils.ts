@@ -71,6 +71,8 @@ export const ktSentryReportError = (error: any, extra?: { [key: string]: any }) 
 
 export class KeyTransparencyError extends Error {}
 
+export class StaleEpochError extends Error {}
+
 export const throwKTError = (errorMessage: string, extra?: { [key: string]: any }): never => {
     ktSentryReport(errorMessage, extra);
     throw new KeyTransparencyError(errorMessage);
@@ -117,4 +119,4 @@ export const getBaseDomain = (sendReport: boolean = true) => {
 
 export const getSelfAuditInterval = () => {
     return EXPECTED_EPOCH_INTERVAL;
-}
+};
