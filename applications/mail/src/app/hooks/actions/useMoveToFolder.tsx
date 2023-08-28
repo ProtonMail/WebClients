@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { useApi, useEventManager, useFolders, useLabels, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useFolders, useLabels, useNotifications, useFeature, FeatureCode } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -30,6 +30,7 @@ import {
 } from '../../helpers/moveToFolder';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import useMailModel from '../../hooks/useMailModel';
+import { getFilteredUndoTokens, runParallelUndoableChunkedActions } from '../../helpers/chunk';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import { useAppDispatch } from '../../logic/store';
@@ -53,6 +54,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const mailSettings = useMailModel('MailSettings');
     const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
+    const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
     const isSearch = testIsSearch(searchParameters);
@@ -145,7 +147,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             let rollback = () => {};
 
             const handleDo = async () => {
-                let token;
+                let tokens: PromiseSettledResult<string | undefined>[] = [];
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
@@ -158,15 +160,15 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                         destinationLabelID
                     );
 
-                    const [{ UndoToken }] = await Promise.all([
-                        api<{ UndoToken: { Token: string } }>(
-                            action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })
-                        ),
+                    [tokens] = await Promise.all([
+                        await runParallelUndoableChunkedActions({
+                            api,
+                            items: elementIDs,
+                            chunkSize: mailActionsChunkSize,
+                            action: (chunk) => action({ LabelID: folderID, IDs: chunk, SpamAction: spamAction }),
+                        }),
                         createFilters ? doCreateFilters(elements, [folderID], true) : undefined,
                     ]);
-
-                    // We are not checking ValidUntil since notification stay for few seconds after this action
-                    token = UndoToken.Token;
                 } catch (error: any) {
                     rollback();
                 } finally {
@@ -176,7 +178,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                         await call();
                     }
                 }
-                return token;
+                return tokens;
             };
 
             // No await ==> optimistic
@@ -195,13 +197,14 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 const handleUndo = async () => {
                     try {
                         undoing = true;
-                        const token = await promise;
+                        const tokens = await promise;
                         // Stop the event manager to prevent race conditions
                         stop();
                         rollback();
+                        const filteredTokens = getFilteredUndoTokens(tokens);
 
-                        await Promise.all([
-                            token !== undefined ? api(undoActions(token)) : undefined,
+                        await Promise.allSettled([
+                            Promise.allSettled(filteredTokens.map((token) => api(undoActions(token)))),
                             createFilters ? undoCreateFilters() : undefined,
                         ]);
                     } finally {

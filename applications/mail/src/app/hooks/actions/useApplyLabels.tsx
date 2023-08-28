@@ -2,12 +2,13 @@ import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useApi, useEventManager, useLabels, useNotifications } from '@proton/components';
+import { FeatureCode, useApi, useEventManager, useFeature, useLabels, useNotifications } from '@proton/components';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
+
+import { getFilteredUndoTokens, runParallelUndoableChunkedActions } from 'proton-mail/helpers/chunk';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -92,6 +93,7 @@ export const useApplyLabels = () => {
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
+    const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const applyLabels = useCallback(
         async (
@@ -122,16 +124,19 @@ export const useApplyLabels = () => {
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
-                    [tokens] = await Promise.all([
+
+                    const [apiResults] = await Promise.all([
                         Promise.all(
                             changesKeys.map(async (LabelID) => {
                                 rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
                                 try {
                                     const action = changes[LabelID] ? labelAction : unlabelAction;
-                                    const { UndoToken } = await api<{ UndoToken: { Token: string } }>(
-                                        action({ LabelID, IDs: elementIDs })
-                                    );
-                                    return UndoToken.Token;
+                                    return await runParallelUndoableChunkedActions({
+                                        api,
+                                        items: elementIDs,
+                                        chunkSize: mailActionsChunkSize,
+                                        action: (chunk) => action({ LabelID, IDs: chunk }),
+                                    });
                                 } catch (error: any) {
                                     rollbacks[LabelID]();
                                     throw error;
@@ -140,6 +145,8 @@ export const useApplyLabels = () => {
                         ),
                         createFilters ? doCreateFilters(elements, selectedLabelIDs, false) : undefined,
                     ]);
+
+                    tokens = apiResults.flat();
                 } finally {
                     dispatch(backendActionFinished());
                     if (!undoing) {
@@ -160,10 +167,10 @@ export const useApplyLabels = () => {
                     // Stop the event manager to prevent race conditions
                     stop();
                     Object.values(rollbacks).forEach((rollback) => rollback());
-                    const filteredTokens = tokens.filter(isTruthy);
+                    const filteredTokens = getFilteredUndoTokens(tokens);
 
-                    await Promise.all([
-                        Promise.all(filteredTokens.map((token) => api(undoActions(token)))),
+                    await Promise.allSettled([
+                        Promise.allSettled(filteredTokens.map((token) => api(undoActions(token)))),
                         createFilters ? undoCreateFilters() : undefined,
                     ]);
                 } finally {
