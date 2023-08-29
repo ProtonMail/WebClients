@@ -98,6 +98,9 @@
       "Create": [
         "Crear"
       ],
+      "Create Gateway": [
+        "Crea la passarel·la"
+      ],
       "Create user": [
         "Crea el usuari"
       ],
@@ -118,6 +121,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete Gateway": [
+        "Elimina la passarel·la"
       ],
       "Delete user": [
         "Elimina l'usuari"
@@ -164,17 +170,29 @@
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
+      "Edit Gateway": [
+        "Edita la passarel·la"
+      ],
+      "Edit name": [
+        "Edita el nom"
+      ],
       "Edit password": [
         "Edita la contrasenya"
       ],
       "Edit phone number": [
         "Edita el número de telèfon"
       ],
+      "Edit servers": [
+        "Edita els servidors"
+      ],
       "Edit sign-in details": [
         "Edita detalls d'inici de sessió"
       ],
       "Edit subscription": [
         "Edita la subscripció"
+      ],
+      "Edit users": [
+        "Edita usuaris"
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
@@ -2401,14 +2419,32 @@
       "Checkout": [
         "Pagament"
       ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Creeu el vostre compte"
+      ],
+      "IP address": [
+        "Adreça IP"
+      ],
+      "Members": [
+        "Membres"
       ],
       "Name": [
         "Nom"
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Server load": [
+        "Càrrega de servidor"
+      ],
+      "Servers": [
+        "Servidors"
       ],
       "Status": [
         "Estat"
@@ -2512,6 +2548,9 @@
       ],
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
+      ],
+      "active": [
+        "actiu"
       ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
@@ -2757,6 +2796,9 @@
       "Free up some space or contact your administrator.": [
         "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
       ],
+      "Gateways": [
+        "Passarel·les"
+      ],
       "Get ${ upsellPlanName }": [
         "Obtén ${ upsellPlanName }"
       ],
@@ -2813,6 +2855,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
+      ],
+      "inactive": [
+        "inactiu"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de país per connectar a un servidor a l'atzar al país que trieu."
@@ -3711,6 +3756,9 @@
       "Expires": [
         "Expira"
       ],
+      "Gateway name": [
+        "Nom de la passarel·la"
+      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -3971,6 +4019,9 @@
       ],
       "Common sign up issues": [
         "Problemes comuns de registre"
+      ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
       ],
       "Create account": [
         "Crea un compte"
@@ -5170,6 +5221,17 @@
         "Llegint els correus electrònics d'usuaris no privats"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Administardor"
+      ],
+      "Primary admin": [
+        "Administrador principal"
+      ],
+      "User": [
+        "Usuari"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Puja fitxer CSV"
@@ -5842,6 +5904,9 @@
       "Display name": [
         "Nom a mostrar"
       ],
+      "Email": [
+        "Corrreu electrònic"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -5933,6 +5998,12 @@
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
       ],
+      "Add servers": [
+        "Afegeix servidors"
+      ],
+      "Add users": [
+        "Afegeix usuaris"
+      ],
       "Allocate storage": [
         "Assignar espai"
       ],
@@ -6006,6 +6077,9 @@
         "Crea ${ selectedUserIds.length } usuari",
         "Crea ${ selectedUserIds.length } usuaris"
       ],
+      "Create Gateway": [
+        "Crea la passarel·la"
+      ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
       ],
@@ -6069,8 +6143,14 @@
       "Edit display name": [
         "Edita el nom a mostrar"
       ],
+      "Edit servers": [
+        "Edita els servidors"
+      ],
       "Edit user": [
         "Edita l'usuari"
+      ],
+      "Edit users": [
+        "Edita usuaris"
       ],
       "Email": [
         "Correu electrònic"
@@ -6090,6 +6170,9 @@
       ],
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
+      ],
+      "Gateways": [
+        "Passarel·les"
       ],
       "General": [
         "General"
@@ -6305,6 +6388,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Verification failed": [
         "Error en la verificació"
