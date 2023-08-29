@@ -299,31 +299,30 @@ export const getSidebarNavItems = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
-    sidebarNavItemsPayload: SystemFolderPayload[]
-): SystemFolder[] => {
-    const systemFolders = getDefaultSytemFolders(showMoved, showScheduled, showAlmostAllMail);
+    apiSystemFolders: SystemFolderPayload[]
+): { orderedSystemFolders: SystemFolder[]; unexpectedFolderIDs: MAILBOX_LABEL_IDS[] } => {
+    /** Harcoded system folders, used to complete missing infos in API fetched ones */
+    const defaultSystemFolders = getDefaultSytemFolders(showMoved, showScheduled, showAlmostAllMail);
 
     /**
      * 1 - Fill the needed data from API
      */
-    const formattedSystemFolders = systemFolders
-        .map((systemFolder): SystemFolder | null => {
-            const itemPayload = sidebarNavItemsPayload.find((pItem) => {
-                return pItem.ID === systemFolder.labelID;
-            });
+    const systemFolders = defaultSystemFolders
+        .map((defaultSystemFolder): SystemFolder | null => {
+            const apiSystemFolder = apiSystemFolders.find((pItem) => pItem.ID === defaultSystemFolder.labelID);
 
-            if (!itemPayload) {
+            if (!apiSystemFolder) {
                 return null;
             }
 
             return {
-                ...systemFolder,
-                order: itemPayload.Order ?? systemFolder.order,
-                display: itemPayload.Display ?? systemFolder.display,
+                ...defaultSystemFolder,
+                order: apiSystemFolder.Order ?? defaultSystemFolder.order,
+                display: apiSystemFolder.Display ?? defaultSystemFolder.display,
                 payloadExtras: {
                     // Voluntary override in order to guarantee a valid color
                     Color: ACCENT_COLORS[0],
-                    Name: itemPayload.Name,
+                    Name: apiSystemFolder.Name,
                 },
             };
         })
@@ -333,21 +332,28 @@ export const getSidebarNavItems = (
      * 2 - Split list in two sections (MAIN and MORE) and order them by 'order' value
      */
     const mainSectionSystemFolders = orderBy(
-        formattedSystemFolders.filter((item) => item.display === SYSTEM_FOLDER_SECTION.MAIN),
+        systemFolders.filter((item) => item.display === SYSTEM_FOLDER_SECTION.MAIN),
         'order'
     );
     const moreSectionSystemFolders = orderBy(
-        formattedSystemFolders.filter((item) => item.display === SYSTEM_FOLDER_SECTION.MORE),
+        systemFolders.filter((item) => item.display === SYSTEM_FOLDER_SECTION.MORE),
         'order'
     );
 
     /**
      * 3 - Merge previous ordered lists into 1 and update the order value based on the index
      */
-    const reorderedSystemFolders = [...mainSectionSystemFolders, ...moreSectionSystemFolders].map((item, index) => ({
+    const orderedSystemFolders = [...mainSectionSystemFolders, ...moreSectionSystemFolders].map((item, index) => ({
         ...item,
         order: index + 1,
     }));
 
-    return reorderedSystemFolders;
+    /**
+     * 4 - Check if API returned unexpected folders
+     */
+    const unexpectedFolderIDs = apiSystemFolders
+        .filter((apiFolder) => systemFolders.every((folder) => apiFolder.ID !== folder.labelID))
+        .map((apiFolder) => apiFolder.ID);
+
+    return { orderedSystemFolders, unexpectedFolderIDs };
 };
