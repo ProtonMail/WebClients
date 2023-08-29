@@ -1,5 +1,6 @@
 import {
     BrowserOptions,
+    Integrations as SentryIntegrations,
     captureException,
     configureScope,
     init,
@@ -192,6 +193,12 @@ function main({
         normalizeDepth: 5,
         transport: makeProtonFetchTransport,
         autoSessionTracking: sessionTracking,
+        // do not log calls to console.log, console.error, etc.
+        integrations: [
+            new SentryIntegrations.Breadcrumbs({
+                console: false,
+            }),
+        ],
         // Disable client reports. Client reports are used by sentry to retry events that failed to send on visibility change.
         // Unfortunately Sentry does not use the custom transport for those, and thus fails to add the headers the API requires.
         sendClientReports: false,
