@@ -1185,7 +1185,7 @@
         "10 takma adı ücretsiz alın!"
       ],
       "Get unlimited aliases!": [
-        "Sınırsız sayıda takma ad alın!"
+        "Sınırsız sayıda takma ad edinin!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
@@ -2860,7 +2860,7 @@
         "Tarifenizi yükselterek gelen kutunuzu düzenleyecek sınırsız sayıda süzgeç gibi pek çok ücretli özelliğe erişin."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
-        "Tarifenizi yükselterek sınırsız sayıda klasör ve etikete gibi pek çok ücretli özelliğe erişin."
+        "Tarifenizi yükselterek sınırsız sayıda klasör ve etiket gibi pek çok ücretli özelliğe erişin."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
         "${ BRAND_NAME } logosu ardından bir artı işareti bulunan ek satış simgesi"
@@ -3185,6 +3185,9 @@
       ],
       "Email address disabled": [
         "E-posta adresi kullanımdan kaldırılmış"
+      ],
+      "Email address is invalid": [
+        "E-posta adresi geçersiz"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -6869,10 +6872,10 @@
         "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz etkin kalır. Oturumlar 60 günlük hareketsizlikten sonra kapanır."
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
       "Unlimited messages": [
-        "Sınırsız ileti"
+        "Sınırsız sayıda ileti"
       ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
@@ -9384,7 +9387,7 @@
         "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } sınırsız hide-my-email takma ad ile birlikte"
+        "${ PASS_APP_NAME } sınırsız sayıda hide-my-email takma adı ile birlikte"
       ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
@@ -9615,16 +9618,16 @@
         "Sınırsız sayıda aygıt"
       ],
       "Unlimited filters": [
-        "Sınırsız süzgeç"
+        "Sınırsız sayıda süzgeç"
       ],
       "Unlimited folders": [
-        "Sınırsız klasör"
+        "Sınırsız sayıda klasör"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
       "Unlimited hide-my-email aliases": [
-        "Sınırsız hide-my-email takma adı"
+        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -9633,7 +9636,7 @@
         "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited messages per day": [
-        "Her gün sınırsız ileti"
+        "Her gün sınırsız sayıda ileti"
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
@@ -9671,7 +9674,7 @@
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+        "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
@@ -10056,6 +10059,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "${ plus }, ${ bundle } ve ${ BRAND_NAME } for Business tarifelerinde bulunur."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "${ BRAND_NAME } Business tarifelerinde birden çok kullanıcı ile bulunur."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -13465,7 +13471,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı kullanmak için ${ passPlusPlanName } tarifesine yükseltin"
+        "Sınırsız sayıda hide-my-email takma adı edinmek için ${ passPlusPlanName } tarifesine yükseltin"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
