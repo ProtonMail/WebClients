@@ -101,11 +101,17 @@
       "Continue import": [
         "Kemmel akter"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Kemmel ɣer ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Kemmel s Google"
       ],
       "Copy address": [
         "Nɣel tansa"
+      ],
+      "Copy email address": [
+        "Nɣel tansa n yimayl"
       ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
@@ -119,6 +125,9 @@
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
+      "Create calendar": [
+        "Snulfu-d awitay"
+      ],
       "Create event": [
         "Snulfu-d tadyant"
       ],
@@ -130,6 +139,9 @@
       ],
       "Customize import": [
         "Sagen aktar"
+      ],
+      "Decline invite": [
+        "Gdel ancad"
       ],
       "Delete": [
         "Kkes"
@@ -235,8 +247,14 @@
       "Import emails": [
         "Kter imaylen"
       ],
+      "Import events": [
+        "Kter tidyanin"
+      ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
+      ],
+      "Join calendar": [
+        "Rnu ɣer uwitay"
       ],
       "Load": [
         "Sali"
@@ -316,6 +334,9 @@
       "Open navigation": [
         "Ldi tunigin"
       ],
+      "Open settings": [
+        "Ldi iɣewwaren"
+      ],
       "Preview contact": [
         "Anerms yezrin"
       ],
@@ -387,6 +408,9 @@
       ],
       "Select calendar view": [
         "Fren askan n uwitay"
+      ],
+      "Select time zone": [
+        "Fren izḍi usrid"
       ],
       "Send": [
         "Azen"
@@ -509,6 +533,11 @@
         "Ih, ad ttikkiɣ"
       ]
     },
+    "Action title": {
+      "Share with anyone": [
+        "Bḍu d walbaɛḍ"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } neɣ ${ importContact }."
@@ -548,11 +577,32 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } yebda iḍelli ɣef ${ formattedHour }"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } yebda ɣef ${ formattedHour }"
+      ],
       "${ title } starts now": [
         "${ title } ad yebdu tura"
       ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } yebda deg ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } yebda deg ${ formattedDate } ɣef ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } yebda deg ${ formattedDateWithoutTime }"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } yebda deg ${ formattedDateWithTime }"
+      ],
       "${ title } starts today": [
         "${ title } ad yebdu ass-a"
+      ],
+      "${ title } starts tomorrow": [
+        "${ title } ad yebdu azekka"
+      ],
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        "${ title } ad yebdu azekka ɣef ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -675,6 +725,11 @@
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Rnu imdanen neɣ igrawen"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Attekki?"
@@ -693,6 +748,9 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } yeqbel kan akka tinubga-inek·inem"
       ],
+      "This event has been canceled": [
+        "Tadyant-a tettusefsex"
+      ],
       "You accepted the invitation": [
         "Tqebleḍ tinnubga"
       ],
@@ -704,6 +762,24 @@
       ],
       "You tentatively accepted the invitation": [
         "Tqebleḍ tinubga i kra n wakud kan"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Ala kečč·kemm i izemren ad iwali tabzimt"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Tisirag"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Sefrek iseɣwan"
+      ],
+      "Manage members": [
+        "Sefrek imttekkiyen"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -743,6 +819,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Yugen"
+      ],
       "Day": [
         "Ass"
       ],
@@ -753,12 +832,23 @@
         "Dduṛt"
       ]
     },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } d wugar",
+        "${ more } d wugar"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fneẓ"
       ],
       "Expand": [
         "Snefli"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ": "
       ]
     },
     "color": {
@@ -1697,6 +1787,11 @@
         "Seqdec amezwer amatu (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Kkes tadyant"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tafaturt ur nettwaxelleṣ ara"
@@ -1752,6 +1847,11 @@
         "Tadyant-a n uwitay yettusensen."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Ur d-ssutur ara tikkelt niḍen"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Rnu awitay"
@@ -1769,6 +1869,11 @@
       ],
       "90 minutes": [
         "90 n tesdatin"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Ẓreg tadyant"
       ]
     },
     "Email body for description (description part)": {
@@ -1845,6 +1950,9 @@
       ],
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
+      ],
+      "Account does not exist": [
+        "Ulac amiḍan"
       ],
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
@@ -1963,6 +2071,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "Ulac tasarut WKD yettwaffen i useqdac adigan i yeɣtan i tuzna"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } mačči d amiḍan"
+      ],
       "Not a valid number": [
         "Mačči d uṭṭun ameɣtu"
       ],
@@ -2076,6 +2187,9 @@
       "Username must end with a letter or digit": [
         "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ],
+      "Validation error": [
+        "Tuccḍa n usentem"
+      ],
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
       ],
@@ -2087,6 +2201,11 @@
       ],
       "Your import will not be processed.": [
         "Taktert-inek•inem ur tettwasekkar ara."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Tansa i d-yettusnubegten ulac-it"
       ]
     },
     "Error importing calendar": {
@@ -2248,6 +2367,12 @@
       ],
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
+      ],
+      "Something went wrong": [
+        "Yella wayen yeḍran"
+      ],
+      "You need an active personal calendar to import events": [
+        "Tesriḍ ad tremdeḍ awitay udmawan i wakken ad tketreḍ tidyanin"
       ]
     },
     "Error notification": {
@@ -2263,6 +2388,17 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Agmuḍ yettwasra"
+      ]
+    },
+    "Event canceled status badge": {
+      "canceled": [
+        "yettwasefsex"
+      ]
+    },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } yimettekki",
+        "${ numberOfAttendees } yimettekkiyen"
       ]
     },
     "Event info. Organizer name": {
@@ -2320,6 +2456,9 @@
       "no": [
         "uhu"
       ],
+      "pending": [
+        "yettṛaǧun"
+      ],
       "yes": [
         "ih"
       ]
@@ -2327,6 +2466,25 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Gdel tinnubga"
+      ],
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Switch plans": [
+        "Beddel iɣawasen"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "tallalt tudmawant"
+      ],
+      "Manage addresses.": [
+        "Sefrek tansiwin."
       ]
     },
     "Feedback Modal Title": {
@@ -2368,6 +2526,22 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } yettwaleqqem"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Anagraw amezwar"
+      ]
+    },
+    "Font size option": {
+      "Small": [
+        "Wezzil"
+      ],
+      "Very large": [
+        "Meqqer aṭas"
+      ],
+      "Very small": [
+        "Wezzil aṭas"
       ]
     },
     "Group": {
@@ -2618,6 +2792,9 @@
       ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
     "Info": {
@@ -2880,6 +3057,9 @@
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
+      "Link created": [
+        "Yettwarna useɣwen"
+      ],
       "Loading": [
         "Azdam"
       ],
@@ -3138,6 +3318,9 @@
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
+      "Your events will be encrypted and then saved.": [
+        "Tidyanin-ik ad ttwawgelhen syin ad ttwaskelsen."
+      ],
       "Your files will be encrypted and then saved": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
@@ -3159,6 +3342,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Sken kan"
+      ]
+    },
+    "Input label": {
+      "Label (optional)": [
+        "Tabzimt (d afrayan)"
       ]
     },
     "Input placeholder": {
@@ -3187,6 +3375,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "Isem n useqdac ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
       ],
@@ -3216,6 +3407,9 @@
       ],
       "Awful": [
         "Yessewḥac"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
       ],
       "Browser": [
         "Iminig"
@@ -3283,11 +3477,20 @@
       "Emails": [
         "Imaylen"
       ],
+      "Emails (all messages)": [
+        "Imaylen (akk iznan)"
+      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
       "Ends": [
         "Ad yekfu"
+      ],
+      "Event duration": [
+        "Tanzagt n tedyant"
+      ],
+      "Event notifications": [
+        "Ilɣa n tedyant"
       ],
       "Event title": [
         "Azwel n uneḍru"
@@ -3337,6 +3540,9 @@
       "Label messages as": [
         "Semmi i yiznan am"
       ],
+      "Language": [
+        "Tutlayt"
+      ],
       "Last 12 months only": [
         "12 wayyuren-nni kan ineggura"
       ],
@@ -3357,6 +3563,9 @@
       ],
       "Main": [
         "Agejdan"
+      ],
+      "Manage categories": [
+        "Sefrek taggayin"
       ],
       "Move to Archive": [
         "Awi ar uɣbar"
@@ -3412,6 +3621,9 @@
       "Postal code": [
         "Tangalt n lpusṭa"
       ],
+      "Primary": [
+        "Agejdan"
+      ],
       "Public keys": [
         "Tisura tizuyaz"
       ],
@@ -3427,6 +3639,12 @@
       "Reveal password": [
         "Sken awal uffir"
       ],
+      "Secondary": [
+        "Wis sin"
+      ],
+      "Secondary time zone": [
+        "Izḍi usrid wis sin"
+      ],
       "Show week numbers": [
         "Sken-d imḍanen n dduṛt"
       ],
@@ -3438,6 +3656,9 @@
       ],
       "System information": [
         "Talɣut n unagraw"
+      ],
+      "Theme": [
+        "Asentel"
       ],
       "Time zone": [
         "Izḍi usrig"
@@ -3454,6 +3675,9 @@
       "Upload picture": [
         "Sali-d tugna"
       ],
+      "URL": [
+        "URL"
+      ],
       "Verification code": [
         "Tangalt n usenqed"
       ],
@@ -3465,6 +3689,9 @@
       ],
       "Wonderful": [
         "Igerrez"
+      ],
+      "Your calendar URL": [
+        "Tansiwin URL n uwitay-ik·im"
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
@@ -3512,6 +3739,9 @@
       "My calendars": [
         "Iwitayen-inu"
       ],
+      "Other calendars": [
+        "Iwitayen niḍen"
+      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
@@ -3520,6 +3750,16 @@
       ],
       "Upgrade account": [
         "Sali aswir n umiḍan"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Ldi deg ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "D acu i d tarrayt n tririt?"
       ]
     },
     "Loading info": {
@@ -3549,11 +3789,25 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "Sefsex"
+      ],
+      "Manage calendars": [
+        "Sefrek iwitayen"
+      ],
       "Upgrade": [
         "Lqem"
       ]
     },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Rnu ɣer uwitay"
+      ]
+    },
     "Modal title": {
+      "Edit calendar": [
+        "Ẓreg awitay"
+      ],
       "How to import calendars from another service": [
         "Amek ara tketreḍ iwitayen seg yimeẓluyen-nniḍen"
       ],
@@ -3571,6 +3825,9 @@
       ],
       "How to import emails from Yahoo": [
         "Amek ara tketreḍ imaylen si Yahoo"
+      ],
+      "Share calendar": [
+        "Bḍu awitay"
       ],
       "Time zone changed": [
         "Iẓdi n wakud ibeddel"
@@ -3757,6 +4014,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Calendar added": [
+        "Awitay yettwarna"
+      ],
       "Calendar updated": [
         "Awitay yettwasnifel"
       ]
@@ -3769,6 +4029,14 @@
     "Notification time input": {
       "at": [
         "ar"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "imayl"
+      ],
+      "notification": [
+        "ilɣa"
       ]
     },
     "Notification when": {
@@ -3901,6 +4169,9 @@
       "All events": [
         "Akk tidyanin"
       ],
+      "Auto": [
+        "Awurman"
+      ],
       "Automatic (${ defaultDay })": [
         "Awurman (${ defaultDay })"
       ],
@@ -4023,6 +4294,9 @@
       "Please describe the problem and include any error messages": [
         "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
       ],
+      "Please select a country": [
+        "Ttxil-k·m fren tamurt"
+      ],
       "Search for group name": [
         "Nadi isem n ugraw"
       ],
@@ -4116,14 +4390,34 @@
         "Ulac igmaḍ"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Yecceḍ uleqqem n yiɣewwaren"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Bḍu akked yiseqdacen n ${ BRAND_NAME }"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Sefrek awitay"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Tuccḍa deg usenqed n uzmul"
+      ]
+    },
     "Signing preference for emails": {
       "Sign": [
         "Zmel"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Mdel"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -4150,6 +4444,14 @@
         "${ n } wayyuren BAṬEL"
       ]
     },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Rzu ɣer yiɣawasen n ujerred"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ]
+    },
     "specialoffer: Offers": {
       "for ${ n } month": [
         "i ${ n } wayyur",
@@ -4165,6 +4467,11 @@
       ],
       "Your current storage:": [
         "Aklas-ik amiran:"
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL n tfada"
       ]
     },
     "Success": {
@@ -4197,6 +4504,9 @@
       ],
       "Calendar created": [
         "Awitay yettwasnulfa-d"
+      ],
+      "Calendar information updated": [
+        "Talɣut n uwitay tettwaleqqem"
       ],
       "Calendar updated": [
         "Awitay yettwasnifel"
@@ -4385,6 +4695,11 @@
         "${ minutes } n tesdatin"
       ]
     },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Nadi timnaḍin tisraganin"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } tansa n yimayl",
@@ -4420,6 +4735,9 @@
       ],
       "Addresses": [
         "Tansiwin"
+      ],
+      "All settings": [
+        "Akk iɣewwaren"
       ],
       "Billing cycle": [
         "Twala n ufter"
@@ -4457,6 +4775,9 @@
       "Create new group": [
         "Snulfu-d agraw amaynut"
       ],
+      "Create public link": [
+        "Rnu aseɣwen azayaz"
+      ],
       "Currency": [
         "Azamul n tedrimt"
       ],
@@ -4468,6 +4789,9 @@
       ],
       "Customize your mail import": [
         "Sagen tektert n imayl inek•inem"
+      ],
+      "Day theme": [
+        "Asentel n wass"
       ],
       "Delete ${ count } contact": [
         "Kkes ${ count } n unermis",
@@ -4489,11 +4813,17 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
+      "Drop to upload": [
+        "Ẓuɣer asali"
+      ],
       "Edit contact": [
         "Ẓreg anermis"
       ],
       "Edit contact group": [
         "Ẓreg agraw n unermes"
+      ],
+      "Edit email settings": [
+        "Ẓreg iɣewwaren n yimayl"
       ],
       "Edit image": [
         "Ẓreg tugna"
@@ -4503,6 +4833,9 @@
       ],
       "Email settings": [
         "Iɣewwaren n yimayl"
+      ],
+      "Encrypted event": [
+        "Tadyant yettwagedlen"
       ],
       "Enter your password": [
         "Sekcem awal-ik uffir"
@@ -4534,6 +4867,12 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Import events": [
+        "Kter tidyanin"
+      ],
+      "Import failed": [
+        "Akter ur yeddi ara"
+      ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
@@ -4545,6 +4884,9 @@
       ],
       "Merging contacts": [
         "Azday inermisen"
+      ],
+      "Night theme": [
+        "Asentel n yiḍ"
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
@@ -4587,6 +4929,9 @@
       ],
       "Request new code": [
         "Suter tangalt tamaynutt"
+      ],
+      "Reshare your calendars": [
+        "Ales beṭṭu iwitayen-ik"
       ],
       "Save changes": [
         "Sekles ibeddilen"
@@ -4657,6 +5002,9 @@
       "Sign in and grant access": [
         "Qqen, tmuddeḍ anekcum"
       ],
+      "Sign in with 2FA": [
+        "Qqen s 2FA"
+      ],
       "Sign out": [
         "Ffeɣ"
       ],
@@ -4694,6 +5042,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Fren uṭṭun"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Snulfu-d awitay"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Ẓreg awitay"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4738,6 +5096,9 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen deg ${ MAIL_APP_NAME }"
       ],
+      "The image could not be loaded": [
+        "Tugna ulamek ara d-tali"
+      ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
       ],
@@ -4746,6 +5107,11 @@
       ],
       "You do not have any contacts to export": [
         "Ulac akk ɣur-k·m inermisen i usifeḍ"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Beṭṭu iwgelhen si ṭṭerf ɣer ṭṭerf"
       ]
     },
     "Validation": {
@@ -4760,6 +5126,11 @@
       ],
       "Replay video": [
         "Urar tikkelt-nniḍen tavidyut"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Ldi deg iccer amaynut"
       ]
     },
     "Warning": {
