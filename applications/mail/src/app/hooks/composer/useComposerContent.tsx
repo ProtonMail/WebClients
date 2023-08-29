@@ -60,6 +60,7 @@ export interface EditorComposer {
     toggleMinimized?: () => void;
     toggleMaximized?: () => void;
     composerID: ComposerID;
+    minimizeButtonRef: RefObject<HTMLButtonElement>;
 }
 
 export interface EditorQuickReply {
@@ -643,6 +644,7 @@ export const useComposerContent = (args: EditorArgs) => {
               saving,
               hasHotkeysEnabled,
               editorRef: args.editorRef,
+              minimizeButtonRef: args.minimizeButtonRef,
           }
         : {
               type: EditorTypes.quickReply,

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Ref, RefObject, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,21 +16,30 @@ interface ButtonProps {
     dataTestId?: string;
 }
 
-const TitleBarButton = ({ onClick, children, className = '', title, disabled = false, dataTestId }: ButtonProps) => {
-    return (
-        <Tooltip title={title}>
-            <button
-                type="button"
-                className={clsx(['composer-title-bar-button interactive-pseudo-inset relative flex p-2', className])}
-                onClick={onClick}
-                disabled={disabled}
-                data-testid={dataTestId}
-            >
-                {children}
-            </button>
-        </Tooltip>
-    );
-};
+const TitleBarButton = forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+        { onClick, children, className = '', title, disabled = false, dataTestId }: ButtonProps,
+        ref: Ref<HTMLButtonElement>
+    ) => {
+        return (
+            <Tooltip title={title}>
+                <button
+                    type="button"
+                    className={clsx([
+                        'composer-title-bar-button interactive-pseudo-inset relative flex p-2',
+                        className,
+                    ])}
+                    onClick={onClick}
+                    disabled={disabled}
+                    data-testid={dataTestId}
+                    ref={ref}
+                >
+                    {children}
+                </button>
+            </Tooltip>
+        );
+    }
+);
 
 interface Props {
     title: string;
@@ -40,6 +49,7 @@ interface Props {
     toggleMaximized: () => void;
     onClose: () => void;
     handleStartDragging: React.MouseEventHandler<HTMLElement>;
+    minimizeButtonRef: RefObject<HTMLButtonElement>;
 }
 
 const ComposerTitleBar = ({
@@ -50,6 +60,7 @@ const ComposerTitleBar = ({
     toggleMaximized,
     handleStartDragging,
     onClose,
+    minimizeButtonRef,
 }: Props) => {
     const isSafari = checkIsSafari();
 
@@ -119,6 +130,7 @@ const ComposerTitleBar = ({
                 title={titleMinimize}
                 onClick={toggleMinimized}
                 dataTestId="composer:minimize-button"
+                ref={minimizeButtonRef}
             >
                 <Icon name="low-dash" alt={title} className="m-auto" />
             </TitleBarButton>
