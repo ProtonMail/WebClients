@@ -2216,6 +2216,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
+      "You have reached the contacts limit for your account": [
+        "Dosáhli jste limitu kontaktů vašeho účtu"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
       ],
@@ -3270,6 +3273,12 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Zkuste se podívat také do Koše."

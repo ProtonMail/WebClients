@@ -547,6 +547,9 @@
       "Show preview": [
         "显示预览"
       ],
+      "Show side panel": [
+        "显示侧边栏"
+      ],
       "Sign in": [
         "登录"
       ],
@@ -1874,6 +1877,9 @@
       "\"${ name }\" already exists": [
         "“${ name }”已存在"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }，或查看我们的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -2066,6 +2072,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "status page": [
+        "运行状态网页"
+      ],
       "The email addresses do not match": [
         "邮箱地址不一致"
       ],
@@ -2140,6 +2149,9 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "您不能发送超过 10 个联系人的 vCard 文件"
+      ],
+      "You have reached the contacts limit for your account": [
+        "您的账户联系人数量已达上限"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您的日历数量已达上限，因此部分日历无法导入。"
@@ -3088,6 +3100,9 @@
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
       ],
+      "Are you sure you want to discard your import?": [
+        "确定要放弃导入吗？"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
       ],
@@ -3978,6 +3993,9 @@
       "Bad": [
         "很差"
       ],
+      "Beta Access": [
+        "测试版功能"
+      ],
       "Browser": [
         "浏览器"
       ],
@@ -4278,11 +4296,17 @@
       "Street address": [
         "街道地址"
       ],
+      "Sync with system": [
+        "跟随系统"
+      ],
       "System information": [
         "系统信息"
       ],
       "Text": [
         "文本"
+      ],
+      "Theme": [
+        "配色"
       ],
       "This will permanently delete all files in your locked drive.": [
         "这将永久删除您的锁定网盘中的所有文件。"
@@ -5455,6 +5479,9 @@
       "All": [
         "全部"
       ],
+      "All settings": [
+        "所有设置"
+      ],
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
       ],
@@ -5918,8 +5945,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"

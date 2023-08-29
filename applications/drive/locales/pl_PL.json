@@ -3967,6 +3967,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Liczba pobrań obejmuje zarówno rzeczywiste pobrania, jak i przypadki podglądu plików."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
       ],
@@ -4074,6 +4077,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Spróbuj wyszukać za pomocą nazwy, daty lub typu."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Nie można odszyfrować pliku lub niektórych danych."
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
