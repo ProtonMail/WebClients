@@ -3115,6 +3115,10 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength }/${ contactsLength } objekt valt",
+        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } valda"
       ],
@@ -3856,6 +3860,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen måste avkryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras som du sedan kan ladda ner."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Den krypterade datan är något större på grund av överbelastningen av krypteringen och signaturerna, som säkerställer säkerheten för dina data."
       ],
@@ -3961,6 +3968,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Försök att söka efter filnamn, datum eller typ."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
       ],
       "Unknown error": [
         "Okänt fel"
