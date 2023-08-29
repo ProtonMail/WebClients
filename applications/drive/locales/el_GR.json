@@ -3115,6 +3115,10 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } στοιχείο επιλέχθηκε",
+        "${ selectedContactsLength } / ${ contactsLength } στοιχεία επιλέχθηκαν"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } επιλεγμένα"
       ],
@@ -3856,6 +3860,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
       ],
@@ -3961,6 +3968,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Δοκιμάστε αναζήτηση κατά όνομα, ημερομηνία ή τύπο αρχείου."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Δυστυχώς, φαίνεται ότι το αρχείο ή ορισμένα από τα δεδομένα του δεν μπορούν να αποκρυπτογραφηθούν."
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"

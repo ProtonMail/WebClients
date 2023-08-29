@@ -3073,6 +3073,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ selectedContactsLength } / ${ contactsLength } item dipilih"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } terpilih"
       ],
@@ -3799,6 +3802,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
@@ -3903,6 +3909,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Cobalah untuk mencari berdasarkan nama, tanggal pembuatan, atau tipe berkas."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -5442,10 +5451,10 @@
         "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide-my-email, berbagi kalender, dan lainnya."
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias Hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+        "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
