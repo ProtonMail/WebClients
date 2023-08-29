@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import {
@@ -27,6 +27,8 @@ import { fromUrlParams } from './getUrlHelper';
 
 const MainContainer = () => {
     useCalendarFavicon();
+
+    const hasReactivatedCalendarsRef = useRef<boolean>(false);
 
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
@@ -112,6 +114,7 @@ const MainContainer = () => {
                     setCalendarsToUnlock([]);
                 }}
                 drawerView={drawerView}
+                hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
             />
         );
     }
@@ -122,6 +125,7 @@ const MainContainer = () => {
             addresses={memoedAddresses}
             calendars={memoedCalendars}
             drawerView={drawerView}
+            hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
         />
     );
 };

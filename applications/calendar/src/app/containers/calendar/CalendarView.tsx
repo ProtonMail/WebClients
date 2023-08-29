@@ -138,6 +138,7 @@ const CalendarView = ({
                 calendarsEventsCacheRef={calendarsEventsCacheRef}
                 tzid={tzid}
                 date={date}
+                now={now}
                 setTargetEventRef={setTargetEventRef}
                 setInteractiveData={setInteractiveData}
                 getOpenedMailEvents={getOpenedMailEvents}

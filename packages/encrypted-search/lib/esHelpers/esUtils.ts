@@ -1,4 +1,6 @@
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
+import { AddressEvent } from '@proton/shared/lib/interfaces';
 
 import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
 import { AesGcmCiphertext, ESTimepoint, GetItemInfo } from '../models';
@@ -84,3 +86,30 @@ export const replaceQuotes = (str: string) => str.replace(QUOTES_REGEXP, `"`);
  * turn unusual apostrophes into normal ones
  */
 export const replaceApostrophes = (str: string) => str.replace(APOSTROPHES_REGEXP, `'`);
+
+/**
+ * Returns true if one or more keys have been reactivated
+ */
+export const hasReactivatedKey = ({
+    Addresses,
+    numAddresses,
+}: {
+    Addresses?: AddressEvent[];
+    numAddresses: number;
+}) => {
+    /**
+     * `EVENT_ACTIONS.UPDATE` on AddressEvent can have several meaning: address key reactivation, address set as default
+     *
+     * However, only key reactivation affects all the addresses at once, that's why we check if the number of addresses
+     * with this action matches the total nbr of addresses
+     *
+     * 3 (very) edge cases:
+     *  - when we have strictly 2 addresses and change the one set as default, both will have `EVENT_ACTIONS.UPDATE`
+     *  - when we reactivate a key for only a single address, this condition won't be matched then.
+     *  - if a key gets reactivated during the indexation, this condition will be matched, but the event will be consume and we won't correct undecrypted ones
+     */
+    return (
+        !!Addresses &&
+        Addresses.filter((AddressEvent) => AddressEvent.Action === EVENT_ACTIONS.UPDATE).length === numAddresses
+    );
+};

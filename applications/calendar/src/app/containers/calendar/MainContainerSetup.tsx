@@ -37,9 +37,10 @@ interface Props {
     addresses: Address[];
     user: UserModel;
     drawerView?: VIEWS;
+    hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactivatedCalendarsRef }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
@@ -86,7 +87,10 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
     });
 
     return (
-        <EncryptedSearchLibraryProvider calendarIDs={allCalendarIDs}>
+        <EncryptedSearchLibraryProvider
+            calendarIDs={allCalendarIDs}
+            hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
+        >
             <ContactEmailsProvider>
                 <CalendarStartupModals setStartupModalState={setStartupModalState} />
                 <Switch>

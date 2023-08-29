@@ -1,4 +1,11 @@
-import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
+import {
+    ADDRESS_FLAGS,
+    ADDRESS_RECEIVE,
+    ADDRESS_SEND,
+    ADDRESS_STATUS,
+    ADDRESS_TYPE,
+    EVENT_ACTIONS,
+} from '../constants';
 import { AddressKey } from './Key';
 import { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
@@ -48,4 +55,10 @@ export interface Recipient {
     DisplaySenderImage?: number;
     IsProton?: number;
     IsSimpleLogin?: number;
+}
+
+export interface AddressEvent {
+    ID: string;
+    Action: EVENT_ACTIONS;
+    Address?: Address;
 }
