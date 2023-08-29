@@ -56,6 +56,7 @@ interface Props {
     onClose: () => void;
     onSubject: (subject: string) => void;
     isFocused: boolean;
+    minimizeButtonRef: RefObject<HTMLButtonElement>;
 }
 
 const Composer = (
@@ -68,6 +69,7 @@ const Composer = (
         onClose: inputOnClose,
         onSubject,
         isFocused,
+        minimizeButtonRef,
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
@@ -153,6 +155,7 @@ const Composer = (
         composerFrameRef,
         editorRef,
         editorReady,
+        minimizeButtonRef,
     });
 
     // Update subject on ComposerFrame
