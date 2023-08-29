@@ -3115,6 +3115,10 @@
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } elemento selezionato",
+        "${ selectedContactsLength } / ${ contactsLength } elementi selezionati"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } selezionati"
       ],
@@ -3218,7 +3222,7 @@
         "Attenzione"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Poiché ${ DRIVE_APP_NAME } è crittografato end-to-end, non possiamo accedere o decifrare i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere una delle seguenti opzioni:"
+        "Poiché ${ DRIVE_APP_NAME } è crittografato end-to-end, non possiamo accedere o decriptare i tuoi file per te. Per sbloccare il tuo drive dopo la reimpostazione della password,\ndevi avere una delle seguenti opzioni:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -3839,7 +3843,7 @@
         "team di supporto"
       ],
       "Swiss encrypted file storage": [
-        "Spazio di archiviazione cifrato svizzero"
+        "Spazio di archiviazione crittografato svizzero"
       ],
       "Sync folders from your computer": [
         "Sincronizza cartelle dal tuo computer"
@@ -3855,6 +3859,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'applicazione deve decifrare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Il conteggio dei download include sia i download effettivi sia le istanze in cui i file sono stati mostrati in anteprima."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "I dati crittografati sono leggermente più grandi a causa della crittografia e delle firme, che garantiscono la sicurezza dei dati."
@@ -3962,6 +3969,9 @@
       "Try searching by file name, date, or type.": [
         "Prova a cercare per nome file, data o tipo."
       ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decrittografati."
+      ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
@@ -4029,7 +4039,7 @@
         "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Con ${ DRIVE_APP_NAME }, i tuoi dati sono protetti da crittografia end-to-end. Solo tu puoi decifrarli."
+        "Con ${ DRIVE_APP_NAME }, i tuoi dati sono protetti dalla crittografia end-to-end. Solo tu puoi decriptarli."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -5533,7 +5543,7 @@
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione del calendario, archiviazione su cloud e file sharing cifrati e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e altro ancora."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."

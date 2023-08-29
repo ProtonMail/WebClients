@@ -329,7 +329,7 @@
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Decifratura del tuo file esportato da ${ PASS_APP_NAME } non riuscita. ${ errorDetail }"
+        "Decriptazione del tuo file esportato da ${ PASS_APP_NAME } non riuscita. ${ errorDetail }"
       ],
       "Deleting item failed": [
         "Eliminazione dell'elemento non riuscita"
@@ -588,7 +588,7 @@
         "Campi personalizzati"
       ],
       "Decrypting your data": [
-        "Decifrando i tuoi dati"
+        "Decriptazione dei tuoi dati in corso..."
       ],
       "Deleted items will be moved here first": [
         "Gli elementi eliminati verranno spostati prima qui"
@@ -713,7 +713,7 @@
         "Caricamento in corso..."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono cifrati end to end e rimangono accessibili solo a te."
+        "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
       ],
       "Multiple vaults": [
         "Molteplici casseforti"
@@ -807,7 +807,7 @@
         "Il testo che stai provando a incollare è più lungo del numero massimo consentito di ${ maxLength } caratteri."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Questa esportazione non sarà cifrata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
+        "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
@@ -1013,7 +1013,7 @@
         "Svuota il cestino"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Cifra il file con i dati esportati da ${ PASS_APP_NAME }"
+        "Cripta il file con i dati esportati da ${ PASS_APP_NAME }"
       ],
       "Expires on": [
         "Scade il"

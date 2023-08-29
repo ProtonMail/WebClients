@@ -3115,6 +3115,10 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } elemento seleccionado",
+        "${ selectedContactsLength } / ${ contactsLength } elementos seleccionados"
+      ],
       "${ selectedCount } selected": [
         "Selección: ${ selectedCount }"
       ],
@@ -3856,6 +3860,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente sus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrá descargarlo."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Los datos cifrados son un poco más grandes debido a la sobrecarga del cifrado y las firmas que garantizan la seguridad de sus datos."
       ],
@@ -3961,6 +3968,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Pruebe a buscar por nombre de archivo, fecha o tipo."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Lamentablemente, parece que el archivo o algunos de sus datos no pueden descifrarse."
       ],
       "Unknown error": [
         "Error desconocido"

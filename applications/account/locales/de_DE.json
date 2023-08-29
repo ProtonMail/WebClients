@@ -914,6 +914,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Strikethrough": [
+        "Durchstreichen"
+      ],
       "Submit": [
         "Senden"
       ],
@@ -973,6 +976,9 @@
       ],
       "Upgrade to Business": [
         "Auf Business upgraden"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
@@ -5447,6 +5453,10 @@
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
       ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
+      ],
       "Allocated": [
         "Zugewiesen"
       ],
@@ -6572,6 +6582,9 @@
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF wird benutzt um anzugeben, wem es erlaubt ist E-Mails von einer Domain zu versenden. Wir empfehlen dringend, ${ MAIL_APP_NAME } deinem SPF-Eintrag hinzuzufügen. Bitte füge den folgenden TXT-Eintrag deiner DNS-Zone hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
@@ -6888,6 +6901,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade auf ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder das ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } Abonnement, um Zugriff zu ${ PROTON_SENTINEL_NAME } zu erhalten."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
@@ -7096,6 +7112,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kannst die Protokollierung von Authentifizierungen aktivieren, um zu sehen, wann von welcher IP-Adresse auf dein Konto zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen aufzeichnen."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
@@ -10420,6 +10439,9 @@
       "Secure Core configs": [
         "Secure Core-Konfigurationen"
       ],
+      "Select who can access...": [
+        "Auswählen, wer ... zugreifen kann"
+      ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
       ],
@@ -12444,6 +12466,9 @@
       "Custom filters": [
         "Benutzerdefinierte Filter"
       ],
+      "Custom selection of users": [
+        "Individuelle Auswahl von Nutzern"
+      ],
       "Customize and confirm": [
         "Anpassen und bestätigen"
       ],
@@ -12507,6 +12532,10 @@
       "Delete logs": [
         "Protokolle löschen"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Lösche den Server (Du kannst ihn während ${ days } Tag wiederherstellen)",
+        "Lösche den Server (Du kannst ihn während ${ days } Tagen wiederherstellen)"
+      ],
       "Delete user": [
         "Benutzer löschen"
       ],
@@ -12558,11 +12587,17 @@
       "Edit Sieve filter": [
         "Sieve-Filter bearbeiten"
       ],
+      "Edit the list of servers of the gateway": [
+        "Bearbeite die Liste der Server des Gateways"
+      ],
       "Edit user": [
         "Benutzer bearb."
       ],
       "Edit users": [
         "Benutzer bearbeiten"
+      ],
+      "Edit who can access the gateway": [
+        "Bearbeiten, wer auf das Gateway zugreifen kann"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -12587,6 +12622,9 @@
       ],
       "Error": [
         "Fehler"
+      ],
+      "Every member of the organization can access": [
+        "Jedes Mitglied der Organisation kann darauf zugreifen"
       ],
       "Export": [
         "Exportieren"
@@ -12929,6 +12967,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Richten Sie dedizierte Server ein, indem Sie auf Business upgraden"
+      ],
       "Short domain (@pm.me)": [
         "Kurzdomain (@pm.me)"
       ],
@@ -13233,6 +13274,9 @@
       ],
       "An approximate location of the IP address": [
         "Eine ungefähre Lage der IP-Adresse."
+      ],
+      "Any protection applied to suspicious activity": [
+        "Jeder Schutz vor verdächtigen Aktivitäten wird angewendet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."

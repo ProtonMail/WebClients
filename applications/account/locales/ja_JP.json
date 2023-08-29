@@ -914,6 +914,9 @@
       "Stay": [
         "終了しない"
       ],
+      "Strikethrough": [
+        "取り消し線"
+      ],
       "Submit": [
         "送信"
       ],
@@ -3549,6 +3552,9 @@
       "You have no invoices.": [
         "請求書はありません。"
       ],
+      "You have reached the contacts limit for your account": [
+        "アカウントの連絡先が上限に達しています。"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
       ],
@@ -5390,6 +5396,9 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "Allocated": [
         "割り当て"
@@ -9939,6 +9948,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "${ plus }、${ bundle }、${ BRAND_NAME } for Business に含まれます。"
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "複数のユーザーに${ BRAND_NAME } for Businesが含まれます。"
       ]
     },
     "new_plans: Upsell attribute": {

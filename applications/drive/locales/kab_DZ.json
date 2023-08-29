@@ -2075,6 +2075,9 @@
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
       ],
+      "Something went wrong": [
+        "Yella wayen yeḍran"
+      ],
       "You may also refresh the page or try again later.": [
         "Ahat ilaq asmiren n usebter neɣ εreḍ ticki."
       ]
@@ -2137,6 +2140,25 @@
         "(ulac azwel)"
       ]
     },
+    "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Gdel tinnubga"
+      ],
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Switch plans": [
+        "Beddel iɣawasen"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "tallalt tudmawant"
+      ],
+      "Manage addresses.": [
+        "Sefrek tansiwin."
+      ]
+    },
     "Feedback Modal Title": {
       "Your feedback": [
         "Tamawt-ik•im"
@@ -2176,6 +2198,22 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } yettwaleqqem"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Anagraw amezwar"
+      ]
+    },
+    "Font size option": {
+      "Small": [
+        "Wezzil"
+      ],
+      "Very large": [
+        "Meqqer aṭas"
+      ],
+      "Very small": [
+        "Wezzil aṭas"
       ]
     },
     "Group": {
@@ -2423,6 +2461,9 @@
       ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
     "Info": {
@@ -3112,6 +3153,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "Isem n useqdac ${ BRAND_NAME }"
+      ],
       "(Expired)": [
         "(Ifut)"
       ],
@@ -3150,6 +3194,9 @@
       ],
       "Awful": [
         "Yessewḥac"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
       ],
       "Browser": [
         "Iminig"
@@ -3226,6 +3273,9 @@
       ],
       "Emails": [
         "Imaylen"
+      ],
+      "Emails (all messages)": [
+        "Imaylen (akk iznan)"
       ],
       "Encrypt emails": [
         "Wgelhen imaylen"
@@ -3316,6 +3366,9 @@
       ],
       "Malware": [
         "Aseɣẓan"
+      ],
+      "Manage categories": [
+        "Sefrek taggayin"
       ],
       "Modified": [
         "Yettwabeddel"
@@ -3409,6 +3462,9 @@
       ],
       "Text": [
         "Aḍris"
+      ],
+      "Theme": [
+        "Asentel"
       ],
       "To: ${ to }": [
         "I: ${ to }"
@@ -3919,6 +3975,11 @@
         "Zmel"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Mdel"
+      ]
+    },
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } n wass",
@@ -3941,6 +4002,14 @@
       "${ n } month FREE": [
         "${ n } wayyur BAṬEL",
         "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Rzu ɣer yiɣawasen n ujerred"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "specialoffer: Offers": {
@@ -4141,6 +4210,12 @@
       "All": [
         "Akk"
       ],
+      "All settings": [
+        "Akk iɣewwaren"
+      ],
+      "Are you sure you want to close the preview?": [
+        "D tidet tebɣiḍ ad tmedleḍ taskant?"
+      ],
       "Billing cycle": [
         "Twala n ufter"
       ],
@@ -4186,6 +4261,9 @@
       "Date": [
         "Azemz"
       ],
+      "Day theme": [
+        "Asentel n wass"
+      ],
       "Delete ${ count } contact": [
         "Kkes ${ count } n unermis",
         "Kkes ${ count } n inermisen"
@@ -4209,6 +4287,9 @@
       "Discard changes?": [
         "Sefsex ibeddilen?"
       ],
+      "Drop to upload": [
+        "Ẓuɣer asali"
+      ],
       "Duplicate file found": [
         "Afaylu uslig yettwaf"
       ],
@@ -4220,6 +4301,9 @@
       ],
       "Edit contact group": [
         "Ẓreg agraw n unermes"
+      ],
+      "Edit email settings": [
+        "Ẓreg iɣewwaren n yimayl"
       ],
       "Edit image": [
         "Ẓreg tugna"
@@ -4273,6 +4357,12 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Import events": [
+        "Kter tidyanin"
+      ],
+      "Import failed": [
+        "Akter ur yeddi ara"
+      ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
@@ -4309,6 +4399,9 @@
       "Name": [
         "Isem"
       ],
+      "Night theme": [
+        "Asentel n yiḍ"
+      ],
       "Number of files": [
         "Amḍan n ifuyla"
       ],
@@ -4329,6 +4422,9 @@
       ],
       "Phone numbers": [
         "Uṭṭunen n tiliɣṛi"
+      ],
+      "Preview": [
+        "Taskant"
       ],
       "Privacy settings": [
         "Iqewwaren n tbaḍnit"
@@ -4395,6 +4491,9 @@
       ],
       "Sign in and grant access": [
         "Qqen, tmuddeḍ anekcum"
+      ],
+      "Sign in with 2FA": [
+        "Qqen s 2FA"
       ],
       "Sign out": [
         "Ffeɣ"
@@ -4504,6 +4603,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen deg ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Tugna ulamek ara d-tali"
       ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."

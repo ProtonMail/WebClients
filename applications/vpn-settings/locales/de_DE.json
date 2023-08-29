@@ -3213,6 +3213,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
+      ],
       "Step ${ step }": [
         "Schritt ${ step }",
         "Schritt ${ step }"
@@ -3536,6 +3539,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
@@ -5217,6 +5223,9 @@
       "Secure Core configs": [
         "Secure Core-Konfigurationen"
       ],
+      "Select who can access...": [
+        "Auswählen, wer ... zugreifen kann"
+      ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
       ],
@@ -6350,6 +6359,9 @@
       "Currency": [
         "Währung"
       ],
+      "Custom selection of users": [
+        "Individuelle Auswahl von Nutzern"
+      ],
       "Customize the number of IP addresses in your plan": [
         "Passe die Anzahl der IP-Adressen in deinem Abonnement an"
       ],
@@ -6370,6 +6382,10 @@
       ],
       "Delete account": [
         "Konto löschen"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Lösche den Server (Du kannst ihn während ${ days } Tag wiederherstellen)",
+        "Lösche den Server (Du kannst ihn während ${ days } Tagen wiederherstellen)"
       ],
       "Delete user": [
         "Benutzer löschen"
@@ -6407,11 +6423,17 @@
       "Edit servers": [
         "Server bearbeiten"
       ],
+      "Edit the list of servers of the gateway": [
+        "Bearbeite die Liste der Server des Gateways"
+      ],
       "Edit user": [
         "Benutzer bearb."
       ],
       "Edit users": [
         "Benutzer bearbeiten"
+      ],
+      "Edit who can access the gateway": [
+        "Bearbeiten, wer auf das Gateway zugreifen kann"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -6424,6 +6446,9 @@
       ],
       "Error": [
         "Fehler"
+      ],
+      "Every member of the organization can access": [
+        "Jedes Mitglied der Organisation kann darauf zugreifen"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Das Erstellen von ${ failedUsers.length } Benutzerkonto ist fehlgeschlagen.",
@@ -6593,6 +6618,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Richten Sie dedizierte Server ein, indem Sie auf Business upgraden"
       ],
       "Sign in": [
         "Melde dich an,"

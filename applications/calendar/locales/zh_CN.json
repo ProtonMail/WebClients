@@ -480,6 +480,9 @@
       "Show more": [
         "显示更多"
       ],
+      "Show side panel": [
+        "显示侧边栏"
+      ],
       "Show time zones": [
         "显示时区"
       ],
@@ -2132,6 +2135,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }，或查看我们的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -2381,6 +2387,9 @@
       "Start time must be before end time": [
         "起始时间必须早于结束时间"
       ],
+      "status page": [
+        "运行状态网页"
+      ],
       "The address might be misspelled": [
         "地址可能拼写不正确"
       ],
@@ -2449,6 +2458,9 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "您不能发送超过 10 个联系人的 vCard 文件"
+      ],
+      "You have reached the contacts limit for your account": [
+        "您的账户联系人数量已达上限"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您的日历数量已达上限，因此部分日历无法导入。"
@@ -3388,6 +3400,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
       ],
+      "Are you sure you want to discard your import?": [
+        "确定要放弃导入吗？"
+      ],
       "Attention required": [
         "需要关注"
       ],
@@ -4062,6 +4077,9 @@
       "Bad": [
         "很差"
       ],
+      "Beta Access": [
+        "测试版功能"
+      ],
       "Browser": [
         "浏览器"
       ],
@@ -4311,8 +4329,14 @@
       "Street address": [
         "街道地址"
       ],
+      "Sync with system": [
+        "跟随系统"
+      ],
       "System information": [
         "系统信息"
+      ],
+      "Theme": [
+        "配色"
       ],
       "To: ${ to }": [
         "收件人：${ to }"
@@ -5775,6 +5799,9 @@
       "Addresses": [
         "地址"
       ],
+      "All settings": [
+        "所有设置"
+      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -6154,8 +6181,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"

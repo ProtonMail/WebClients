@@ -3423,6 +3423,10 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } Eintrag ausgewählt",
+        "${ selectedContactsLength } / ${ contactsLength } Einträgen ausgewählt"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } Ordner ausgewählt",
         "${ selectedFoldersCount } Ordner ausgewählt"
@@ -3478,6 +3482,10 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
       ],
       "An invitation will be sent to added participants.": [
         "Eine Einladung wird an hinzugefügte Teilnehmer gesendet."
