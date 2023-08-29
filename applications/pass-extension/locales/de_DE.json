@@ -937,6 +937,9 @@
       "Autofill": [
         "Auto-Ausfüllen"
       ],
+      "Autofill 2FA": [
+        "2FA automatisch ausfüllen"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Automatisches Öffnen der Autofill-Funktion beim Fokussieren von Anmeldefeldern"
       ],
@@ -1330,6 +1333,9 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Gib \"${ vaultName }\" erneut ein, um die Löschung zu bestätigen."
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "${ pluralItemType } in ${ vault.content.name } suchen"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "In allen Tresoren nach ${ pluralItemType } suchen"
