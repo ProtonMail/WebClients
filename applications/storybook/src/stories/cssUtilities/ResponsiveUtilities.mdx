@@ -8,7 +8,7 @@ import Resizeme from './Resizeme';
 
 The most common utilities can be applied conditionally at different breakpoints, making it easy to build complex responsive directly using classes on your components.
 
-Here are those breakpoints:
+Here are default breakpoints (apps can override default breakpoints values):
 
 <Table className="color-norm">
     <TableHeader>
@@ -88,3 +88,78 @@ Following this logic, if you want to apply a class only on mobile, for example, 
 ```html
 <Component className="flex sm:block">…</Component>
 ```
+
+## Available utility classes
+
+These are all helpers which are available with `sm`, `md`, `lg`, `xl` variants.
+
+### Spacings
+
+-   <a href="?path=/docs/css-utilities-margin--margin">all margin classes</a>
+-   <a href="?path=/docs/css-utilities-padding--padding">all padding classes</a>
+-   <a href="?path=/docs/css-utilities-gap--gap">all gap classes</a>
+
+### Layout
+
+-   block
+-   inline
+-   inline-block
+-   hidden
+-   flex
+-   inline-flex
+
+### <a href="?path=/docs/css-utilities-flexbox-flex--flex">Flex</a>
+
+-   flex
+-   inline-flex
+-   flex-row
+-   flex-row-reverse
+-   flex-column
+-   flex-column-reverse
+-   flex-justify-start
+-   flex-justify-center
+-   flex-justify-end
+-   flex-justify-space-between
+-   flex-justify-space-around
+-   flex-justify-space-evenly
+-   flex-wrap
+-   flex-wrap-reverse
+-   flex-nowrap
+-   flex-item-fluid
+-   flex-item-fluid-auto
+-   flex-item-shrink
+-   order-1
+
+### Position
+
+-   absolute
+-   relative
+-   fixed
+-   static
+
+### Sizing
+
+-   <a href="?path=/docs/css-utilities-sizing--fractions">fraction classes</a>
+-   wauto
+-   h100
+
+### Typography
+
+-   text-2xs
+-   text-xs
+-   text-sm
+-   text-rg
+-   text-lg
+-   text-xl
+-   text-2xl
+-   text-3xl
+-   text-4xl
+-   text-left
+-   text-center
+-   text-right
+
+### Shadow
+
+-   shadow-norm
+-   shadow-lifted
+-   shadow-none
