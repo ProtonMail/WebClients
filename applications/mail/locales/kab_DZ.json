@@ -98,6 +98,15 @@
       "Block": [
         "Sewḥel"
       ],
+      "Block email tracking": [
+        "Sewḥel aḍfar n yimaylen"
+      ],
+      "Block sender": [
+        "Sewḥel amazan"
+      ],
+      "Block senders": [
+        "Sewḥel imazanen"
+      ],
       "Bold": [
         "Azuran"
       ],
@@ -106,6 +115,9 @@
       ],
       "Carbon Copy": [
         "Anɣal n Carbon"
+      ],
+      "Change email": [
+        "Beddel imayl"
       ],
       "Change page": [
         "Beddel asebter"
@@ -279,6 +291,9 @@
       ],
       "Download ${ attachmentName }": [
         "Sader ${ attachmentName }"
+      ],
+      "Downloading": [
+        "Asader"
       ],
       "Edit": [
         "Ẓreg"
@@ -518,6 +533,9 @@
       "Merge contacts": [
         "Smezdi inermisen"
       ],
+      "Messages to this recipient": [
+        "Iznan i uɣerwaḍ-a"
+      ],
       "Minimize composer": [
         "Semẓi amsuddes"
       ],
@@ -538,6 +556,9 @@
       ],
       "Move": [
         "Senkez"
+      ],
+      "Move all to archive": [
+        "Smutti meṛṛa ɣer teṛcivt"
       ],
       "Move all to trash": [
         "Smutti kullec ɣer tqecwalt"
@@ -757,6 +778,9 @@
       ],
       "Select all messages": [
         "Fren akk iznan"
+      ],
+      "Self-destruct message": [
+        "Truẓi tawurmant n yizen"
       ],
       "Send": [
         "Azen"
@@ -1060,6 +1084,11 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Anṣuf"
+      ]
+    },
+    "Animation": {
+      "New email": [
+        "Imayl amaynut"
       ]
     },
     "Attached ics file error": {
@@ -3101,6 +3130,9 @@
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
       ],
+      "Something went wrong": [
+        "Yella wayen yeḍran"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ur tesεiḍ ara εad anermis. Bdu s tmerna n unermis amaynut"
       ]
@@ -3161,6 +3193,25 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "Gdel tinnubga"
+      ],
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Switch plans": [
+        "Beddel iɣawasen"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "customer support": [
+        "tallalt tudmawant"
+      ],
+      "Manage addresses.": [
+        "Sefrek tansiwin."
       ]
     },
     "Feedback Modal Title": {
@@ -3296,9 +3347,25 @@
         "Amezwar"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Anagraw amezwar"
+      ]
+    },
     "Font Size Default": {
       "Default": [
         "Amezwar"
+      ]
+    },
+    "Font size option": {
+      "Small": [
+        "Wezzil"
+      ],
+      "Very large": [
+        "Meqqer aṭas"
+      ],
+      "Very small": [
+        "Wezzil aṭas"
       ]
     },
     "forwardmessage": {
@@ -3319,8 +3386,17 @@
       "account logins": [
         "inekcam n umiḍan"
       ],
+      "Close": [
+        "Mdel"
+      ],
       "Get the App": [
         "Awi asnas"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ],
+      "Maybe later": [
+        "Ahat ticki"
       ]
     },
     "Group": {
@@ -3597,6 +3673,9 @@
       ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
     "Info": {
@@ -4151,11 +4230,17 @@
       "No label selected": [
         "Ulac tabzimt yettwafernen"
       ],
+      "No links cleaned": [
+        "Ulac iseɣwan yettwasefḍen"
+      ],
       "No more results found": [
         "Ulac igmaḍ-nniḍen yettwafen"
       ],
       "No results found": [
         "Ulac igmaḍ"
+      ],
+      "No trackers found": [
+        "Ulac ineḍfaren yettwafen"
       ],
       "Normal": [
         "Amagnu"
@@ -4226,6 +4311,9 @@
       "Saved at ${ dateString }": [
         "Yettwasekles deg ${ dateString }"
       ],
+      "Saved yesterday": [
+        "Yettwasekles iḍelli"
+      ],
       "Saved: ${ dateString }": [
         "Yettwasekles: ${ dateString }"
       ],
@@ -4294,6 +4382,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Isefka i terriḍ ɣer urewway yezmer ur ttuseklasen ma yella teffɣeḍ seg usebter."
+      ],
+      "The message has expired": [
+        "Izen yemmut"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izen-a anaṣli i tettaεraḍeḍ ad tazneḍ/ad terreḍ fell-as ha-t-an deg ukala n tuzna. Ma yella tkemmleḍ, ur tettizmireḍ ara akk ad tesfesxeḍ tuzna n yizen anaṣli."
@@ -4719,6 +4810,9 @@
       "New message": [
         "Izen amaynut"
       ],
+      "Open command panel": [
+        "Ldi agalis n tiludna"
+      ],
       "Open next message": [
         "Ldi izen uḍfir"
       ],
@@ -4792,6 +4886,9 @@
       " and ${ l }": [
         " akked ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "Isem n useqdac ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
       ],
@@ -4848,6 +4945,9 @@
       ],
       "BCC": [
         "Anɣ. Uff. I"
+      ],
+      "Beta Access": [
+        "Anekcum Biṭa"
       ],
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
@@ -4930,6 +5030,9 @@
       "Emails": [
         "Imaylen"
       ],
+      "Emails (all messages)": [
+        "Imaylen (akk iznan)"
+      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
@@ -5011,6 +5114,9 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
+      "Layout": [
+        "Taneɣruft"
+      ],
       "Location": [
         "Adeg"
       ],
@@ -5022,6 +5128,9 @@
       ],
       "Main": [
         "Agejdan"
+      ],
+      "Manage categories": [
+        "Sefrek taggayin"
       ],
       "Manage my addresses": [
         "Sefrek tansiwin-inu"
@@ -5052,6 +5161,9 @@
       ],
       "OK": [
         "Seɣbel"
+      ],
+      "Open in a new tab": [
+        "Ldi deg iccer amaynut"
       ],
       "Operating system": [
         "Anagraw n wammud"
@@ -5149,6 +5261,9 @@
       "the email was sent ${ label }": [
         "imayl yettwazen ${ label }"
       ],
+      "Theme": [
+        "Asentel"
+      ],
       "Then": [
         "Sakin"
       ],
@@ -5169,6 +5284,9 @@
       ],
       "Toolbar": [
         "Tafeggagt n ifecka"
+      ],
+      "Type a command...": [
+        "Aru anezḍay..."
       ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
@@ -5823,6 +5941,9 @@
       "Text": [
         "Aḍris"
       ],
+      "Type a command…": [
+        "Aru anezḍay…"
+      ],
       "Type text or keyword": [
         "Aru aḍris neɣ awal ufrin"
       ],
@@ -6085,6 +6206,11 @@
         "Ameẓẓyan maḍi qbel"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Mdel"
+      ]
+    },
     "specialoffer: Countdown unit": {
       "${ days } day": [
         "${ days } n wass",
@@ -6107,6 +6233,14 @@
       "${ n } month FREE": [
         "${ n } wayyur BAṬEL",
         "${ n } wayyuren BAṬEL"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Rzu ɣer yiɣawasen n ujerred"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "specialoffer: Offers": {
@@ -6282,6 +6416,9 @@
       "Message added to ${ labelName }.": [
         "Izen yettwarna ɣer ${ labelName }."
       ],
+      "Message content search enabled": [
+        "Anadi n ugbur n yizen yermed"
+      ],
       "Message deleted": [
         "Izen yettwakkes"
       ],
@@ -6433,9 +6570,15 @@
         "${ emailsCount } tansa n yimayl",
         "${ emailsCount } n tansiwin imayl"
       ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "Inegzumen n unasiw ${ MAIL_APP_NAME }"
+      ],
       "${ unreads } unread message": [
         "${ unreads } n yizen ur yettwaɣran ara",
         "${ unreads } n yiznan ur yettwaɣran ara"
+      ],
+      "(active)": [
+        "(urmid)"
       ],
       "Account suspended": [
         "Amiḍan yettwaḥebsen"
@@ -6456,8 +6599,14 @@
       "Addresses": [
         "Tansiwin"
       ],
+      "All settings": [
+        "Akk iɣewwaren"
+      ],
       "Archive": [
         "Tarcivt"
+      ],
+      "Are you sure you want to close the preview?": [
+        "D tidet tebɣiḍ ad tmedleḍ taskant?"
       ],
       "Are you sure you want to close?": [
         "D tidet tebɣiḍ ad t-tmedleḍ?"
@@ -6473,6 +6622,9 @@
       ],
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
+      ],
+      "Block sender": [
+        "Sewḥel amazan"
       ],
       "Carbon Copy": [
         "Anɣal n Carbon"
@@ -6524,6 +6676,9 @@
       ],
       "Customize your mail import": [
         "Sagen tektert n imayl inek•inem"
+      ],
+      "Day theme": [
+        "Asentel n wass"
       ],
       "Decryption error": [
         "Tuccḍa n uzmak"
@@ -6578,6 +6733,9 @@
       "Edit contact group": [
         "Ẓreg agraw n unermes"
       ],
+      "Edit email settings": [
+        "Ẓreg iɣewwaren n yimayl"
+      ],
       "Edit filter": [
         "Ẓreg amsizdeg"
       ],
@@ -6614,6 +6772,12 @@
       "Feedback": [
         "Awennit"
       ],
+      "Filter on...": [
+        "Imsizdeg deg..."
+      ],
+      "Folder options": [
+        "Tixtiṛiyin n ukaram"
+      ],
       "Forward": [
         "Ɣer zdat"
       ],
@@ -6629,6 +6793,12 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Import events": [
+        "Kter tidyanin"
+      ],
+      "Import failed": [
+        "Akter ur yeddi ara"
+      ],
       "Insert contacts": [
         "Sekcem inermisen"
       ],
@@ -6637,6 +6807,9 @@
       ],
       "Label as": [
         "(rnu tabzimt am)"
+      ],
+      "Label options": [
+        "Tixtiṛiyin n tebzimt"
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
@@ -6698,6 +6871,9 @@
       "Move to trash": [
         "Awi ar iḍumman"
       ],
+      "Moving a scheduled message": [
+        "Asenkez n yizen yettusɣawsen"
+      ],
       "New message": [
         "Izen amaynut"
       ],
@@ -6707,8 +6883,14 @@
       "Next message": [
         "Izen d-iteddun"
       ],
+      "Night theme": [
+        "Asentel n yiḍ"
+      ],
       "No attachment found": [
         "Ulac amedday i d-yettwafen"
+      ],
+      "No trackers found": [
+        "Ulac ineḍfaren yettwafen"
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
@@ -6721,6 +6903,9 @@
       ],
       "Phone numbers": [
         "Uṭṭunen n tiliɣṛi"
+      ],
+      "Preview": [
+        "Taskant"
       ],
       "Previous conversation": [
         "Adiwenni yezrin"
@@ -6773,6 +6958,9 @@
       "Select contact group": [
         "Fren agraw n urmas"
       ],
+      "Self-destruct message": [
+        "Truẓi tawurmant n yizen"
+      ],
       "Send email": [
         "Azen imayl"
       ],
@@ -6805,6 +6993,9 @@
       ],
       "Sign in and grant access": [
         "Qqen, tmuddeḍ anekcum"
+      ],
+      "Sign in with 2FA": [
+        "Qqen s 2FA"
       ],
       "Sign out": [
         "Ffeɣ"
@@ -6909,6 +7100,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Idukaramen n unagraw ad ttwabeqqeḍen s talɣa n yikaramen iberzen deg ${ MAIL_APP_NAME }"
+      ],
+      "The image could not be loaded": [
+        "Tugna ulamek ara d-tali"
       ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
