@@ -1710,6 +1710,9 @@
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
+      "Email address is invalid": [
+        "E-mailová adresa je neplatná"
+      ],
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
@@ -2563,6 +2566,9 @@
         "${ number } serverů",
         "${ number } serverů"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server je stále nastavován. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
@@ -2583,6 +2589,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ${ vpnPlus }."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /měsíc)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -2799,6 +2808,9 @@
       ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K privátním branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -3244,6 +3256,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Některé z vašich dostupných serverů lze kvůli nedávnému odstranění používat pouze v určitých zemích."
+      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -3471,6 +3486,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "Want servers in other countries?": [
+        "Chcete servery v dalších zemích?"
       ],
       "Warning:": [
         "Upozornění:"
@@ -6496,6 +6514,12 @@
       ],
       "Delete account": [
         "Smazat účet"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
       "Delete user": [
         "Smazat uživatele"
