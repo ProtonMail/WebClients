@@ -3423,6 +3423,10 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } στοιχείο επιλέχθηκε",
+        "${ selectedContactsLength } / ${ contactsLength } στοιχεία επιλέχθηκαν"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
         "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
