@@ -144,6 +144,7 @@ export class FolderTreeLoader {
                 name: link.name,
                 mimeType: link.mimeType,
                 size: link.size,
+                fileModifyTime: link.fileModifyTime,
                 signatureAddress: link.signatureAddress,
                 signatureIssues: link.signatureIssues,
             })),
