@@ -63,6 +63,7 @@ const useMoveSystemFolders = ({
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());
     const [systemFoldersFromApi, loading] = useSystemFolders();
     const [systemFolders, setSystemFolders] = useState<SystemFolder[]>([]);
+    const [unexpectedSystemFolderIDs, setUnexpectedSystemFolderIDs] = useState<MAILBOX_LABEL_IDS[]>([]);
     const visibleSystemFolders = systemFolders.filter((element) => element.visible);
 
     const moveItem = (draggedID: MAILBOX_LABEL_IDS, droppedID: MAILBOX_LABEL_IDS | 'MORE_FOLDER_ITEM') => {
@@ -102,7 +103,9 @@ const useMoveSystemFolders = ({
         }
 
         void api({
-            ...orderSystemFolders({ LabelIDs: nextItems.map((item) => item.labelID) }),
+            ...orderSystemFolders({
+                LabelIDs: [...nextItems.map((item) => item.labelID), ...unexpectedSystemFolderIDs],
+            }),
             signal: abortUpdateOrderCallRef.current.signal,
         });
     };
@@ -119,9 +122,15 @@ const useMoveSystemFolders = ({
                 }))
                 .filter((item) => !!item.ID);
 
-            const systemFolders = getSidebarNavItems(showMoved, showScheduled, showAlmostAllMail, formattedLabels);
+            const { orderedSystemFolders, unexpectedFolderIDs } = getSidebarNavItems(
+                showMoved,
+                showScheduled,
+                showAlmostAllMail,
+                formattedLabels
+            );
 
-            setSystemFolders(systemFolders);
+            setSystemFolders(orderedSystemFolders);
+            setUnexpectedSystemFolderIDs(unexpectedFolderIDs);
         }
     }, [systemFoldersFromApi, showMoved, showScheduled, showAlmostAllMail]);
 
