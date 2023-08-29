@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
+      "Email address is invalid": [
+        "E-mailadres is ongeldig"
+      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -5098,6 +5101,11 @@
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inbegrepen bij verschillende gebruikers ${ BRAND_NAME } voor Bedrijven-abonnementen."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 ondersteuning"
@@ -6430,7 +6438,7 @@
         "Gebruikers bewerken"
       ],
       "Edit who can access the gateway": [
-        "Bewerk wie de gateway heeft tot the gateway"
+        "Bewerk wie toegang heeft tot de gateway"
       ],
       "Email": [
         "E-mailadres"

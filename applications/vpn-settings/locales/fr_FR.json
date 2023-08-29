@@ -222,7 +222,7 @@
         "Nous contacter"
       ],
       "Get more": [
-        "Plus de fonctionnalités"
+        "Obtenir plus de fonctionnalités"
       ],
       "Get more addresses": [
         "Bénéficiez de plus d'adresses"
@@ -3531,8 +3531,8 @@
         "Vous utilisez ${ ipCount } / ${ ipAddresses } serveurs dédiés disponibles."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Vous utilisez ${ organization.UsedMembers } licence utilisateur sur ${ organization.MaxMembers }.",
-        "Vous utilisez ${ organization.UsedMembers } licences utilisateur sur ${ organization.MaxMembers }."
+        "Nombre de licences utilisateurs que vous utilisez : ${ organization.UsedMembers } sur ${ organization.MaxMembers }",
+        "Nombre de licences utilisateurs que vous utilisez : ${ organization.UsedMembers } sur ${ organization.MaxMembers }"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
@@ -5101,6 +5101,11 @@
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inclus avec plusieurs utilisateurs ${ BRAND_NAME } pour les abonnements Business."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Support 24h/24 et 7j/7"
@@ -6433,7 +6438,7 @@
         "Modifier les utilisateurs"
       ],
       "Edit who can access the gateway": [
-        "Modifier les personnes autorisées à accéder à la Passerelle"
+        "Modifier les personnes qui peuvent accéder à la Passerelle"
       ],
       "Email": [
         "Adresse e-mail"

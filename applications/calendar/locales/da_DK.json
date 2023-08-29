@@ -491,6 +491,9 @@
       "Show more": [
         "Vis mere"
       ],
+      "Show side panel": [
+        "Vis sidepanel"
+      ],
       "Show time zones": [
         "Vis tidszoner"
       ],
@@ -2514,6 +2517,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nået det maksimale antal kontakter for din konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
       ],
@@ -3417,6 +3423,10 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } element valgt",
+        "${ selectedContactsLength } / ${ contactsLength } elementer valgt"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
         "${ selectedFoldersCount } mapper valgt"
@@ -3472,6 +3482,10 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "En invitation vil blive sendt til tilføjede deltagere."
@@ -6430,8 +6444,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Hide side panel": [
+        "Skjul sidepanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Show side panel": [
+        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"

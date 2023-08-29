@@ -914,6 +914,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Strikethrough": [
+        "Tachar"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -6268,7 +6271,7 @@
         "Número de servidores dedicados en la organización"
       ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "El número de servidores dedicados que intentas asignar (${ addedCount }) es mayor al que tienes en tu plan (${ remainingCount }) ya que posees ${ ownedCount } y tienes en uso ${ usedCount }."
+        "El número de servidores dedicados que intentas asignar (${ addedCount }) es mayor al que tienes en tu plan (${ remainingCount }), ya que posees ${ ownedCount } y tienes en uso ${ usedCount }."
       ],
       "of": [
         "de"
@@ -7058,7 +7061,7 @@
         "¿Por qué?"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Con un plan Business o Enterprise, puedes comprar ${ boldDedicatedServers } para tu organización y configurar ${ boldGateways } para controlar cuáles usuarios pueden acceder a ellas."
+        "Con un plan Business o Enterprise, puedes comprar ${ boldDedicatedServers } para tu organización y configurar ${ boldGateways } para controlar qué usuarios pueden acceder a ellas."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes utilizar todos los servicios de ${ BRAND_NAME_TWO }."
@@ -9809,7 +9812,7 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "Al hacer clikc en \"Pagar\", aceptas nuestros ${ termsAndConditions }."
+        "Al pulsar en \"Pagar\", aceptas nuestros ${ termsAndConditions }."
       ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Al crear una cuenta ${ BRAND_NAME }, aceptas nuestros ${ terms }"
@@ -10059,6 +10062,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Se incluye en ${ plus }, ${ bundle } y ${ BRAND_NAME } for Business."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Se incluye con varios usuarios en los planes de ${ BRAND_NAME } para empresas."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11737,7 +11743,7 @@
         "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una version con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una versión con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {

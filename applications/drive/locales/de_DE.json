@@ -3115,6 +3115,10 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } Eintrag ausgewählt",
+        "${ selectedContactsLength } / ${ contactsLength } Einträgen ausgewählt"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } ausgewählt"
       ],
@@ -3173,6 +3177,10 @@
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Versuchen, auch den Papierkorb zu durchsuchen."
@@ -3852,6 +3860,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Die verschlüsselten Daten sind aufgrund des Overheads der Verschlüsselung und der Signaturen, die die Sicherheit deiner Daten gewährleisten, etwas größer."
       ],
@@ -3957,6 +3968,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Versuche, nach Dateiname, Datum oder Typ zu suchen."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Leider scheint es, dass die Datei oder einige ihrer Daten nicht entschlüsselt werden können."
       ],
       "Unknown error": [
         "Unbekannter Fehler"

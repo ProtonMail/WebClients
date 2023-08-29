@@ -2199,7 +2199,7 @@
         "取消傳送失敗"
       ],
       "Cannot export this contact": [
-        "無法匯出通訊內容"
+        "無法匯出通訊名片"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -2376,7 +2376,7 @@
         "簽名驗證失敗"
       ],
       "Some contacts could not be deleted": [
-        "一些聯絡人未能刪除"
+        "某些聯絡名片無法刪除"
       ],
       "Some contacts don't have a valid email address: ${ list }": [
         "某些聯絡人不具備有效的電郵位址 ${ list }"
@@ -3359,7 +3359,7 @@
         "${ contactEmailsLength } 位成員"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } 聯絡人包含數組電郵位址。"
+        "${ contactName } 聯絡名片包含多組電郵位址。"
       ],
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
@@ -3375,6 +3375,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -3476,10 +3479,10 @@
         "關閉此螢幕以離開。"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "聯絡人已指派給群組 ${ contactGroupName }"
+        "指派通訊錄給群組 ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "聯絡人已取消指派給群組 ${ contactGroupName }"
+        "取消指派通訊錄給群組 ${ contactGroupName }"
       ],
       "Country code": [
         "國家代碼"

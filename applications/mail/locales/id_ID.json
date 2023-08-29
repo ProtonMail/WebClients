@@ -985,6 +985,9 @@
       "Stay": [
         "Tinggal"
       ],
+      "Strikethrough": [
+        "Coret"
+      ],
       "Submit": [
         "Kirim"
       ],
@@ -2897,7 +2900,7 @@
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Nyalakan perlindungan pelacak surel untuk mencegah pengiklan dan lainnya dari melacak aktivitas lokasi dan daring Anda."
+        "Aktifkan perlindungan pelacak email untuk mencegah pengiklan dan pihak lainnya dari melacak lokasi dan aktivitas online Anda."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Dapatkan fitur penjadwalan pesan khusus dan berbagai kelebihan lainnya dengan meningkatkan akun Anda."
@@ -4637,6 +4640,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ selectedContactsLength } / ${ contactsLength } item dipilih"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
       ],
@@ -5119,6 +5125,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Pelajari lebih lanjut mengenai program ${ PROTON_SENTINEL_NAME } yang berkeamanan tinggi."
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -7909,10 +7918,10 @@
         "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias Hide-my-email, berbagi kalender, dan lainnya."
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias Hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beserta dukungan untuk 3 domain surel kustom, 15 alamat surel, alias Hide-my-email tidak terbatas, pembagian kalender, dan lebih banyak lagi."
+        "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Cocok untuk keluarga atau tim kecil, setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Membutuhkan domain kustom."
@@ -7947,7 +7956,7 @@
         "Pencarian kini hadir lebih cerdas dan lebih cepat"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Surel Spam dan Sampah sekarang tidak disertakan dalam Semua Surat. ${ settingsLink }"
+        "Email Spam dan Sampah tidak lagi akan diikutsertakan secara otomatis dalam Semua Surat. ${ settingsLink }"
       ],
       "Try it today.": [
         "Coba hari ini."
