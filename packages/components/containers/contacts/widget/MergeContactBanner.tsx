@@ -24,7 +24,7 @@ const MergeContactBanner = ({ onMerge, countMergeableContacts }: Props) => {
     );
 
     return (
-        <div className="px-4 py-2 bg-weak border-bottom">
+        <div className="px-4 py-2 text-sm bg-weak border-bottom">
             <span>
                 {mergeText}
                 {mergeAction}
