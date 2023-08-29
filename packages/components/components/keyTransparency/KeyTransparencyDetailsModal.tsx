@@ -76,7 +76,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
             case AddressAuditWarningReason.AddressWithNoKeys: {
                 return (
                     <span>{c('loc_nightly: Key transparency details')
-                        .t`${appName} detected that this address has no encryption keys. Please ask your organization administrator to generate keys for this address.`}</span>
+                        .t`${appName} detected that this address has no encryption keys. Please re-login to generate keys for this address.`}</span>
                 );
             }
         }
