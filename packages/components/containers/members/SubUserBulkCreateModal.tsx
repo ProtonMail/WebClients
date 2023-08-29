@@ -38,7 +38,6 @@ const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
             <ModalHeader
                 title={c('Title').t`Add user accounts`}
                 subline={c('Title').t`Upload CSV file to create multiple accounts`}
-                hasClose={false}
             />
             <ModalContent className="pb-1">
                 <ol className="flex flex-column gap-2 pl-5 mb-6">
