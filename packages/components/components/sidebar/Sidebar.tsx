@@ -103,29 +103,25 @@ const Sidebar = ({
                 {...rest}
                 {...focusTrapProps}
             >
+                <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-5 mt-2">
+                    <Hamburger expanded={expanded} onToggle={onToggleExpand} className="opacity-on-focus bg-norm" />
+                </div>
+
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
                 <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                     {logo}
                     <div className="no-mobile">{appsDropdown}</div>
-                    <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-3">
-                        <Hamburger expanded={expanded} onToggle={onToggleExpand} className="opacity-on-focus" />
-                    </div>
                 </div>
 
                 {isNarrow && (
-                    <div className="px-3">
+                    <div className="px-3 no-desktop no-tablet">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>
                 )}
 
                 {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
-                <div
-                    className={clsx(
-                        'flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4',
-                        !contactsButton && 'mt-2'
-                    )}
-                >
+                <div className={clsx('flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4 md:mt-2')}>
                     {contactsButton}
                     {children}
                 </div>
