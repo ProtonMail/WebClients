@@ -89,14 +89,21 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const [items, setItems] = useState<ESItem<ESCalendarMetadata, ESCalendarContent>[]>([]);
 
     useEffect(() => {
-        if (!isLibraryInitialized || !keyword) {
+        if (!isLibraryInitialized) {
+            return;
+        }
+
+        if (!keyword) {
             setLoading(false);
             return;
         }
 
         void withLoading(
-            encryptedSearch((items) => {
-                setItems(items);
+            encryptedSearch((result) => {
+                /**
+                 * We have to copy to a new reference because ES library mutates the initial one and it prevents a normal rerendering
+                 */
+                setItems([...result]);
             }).then(() => {
                 setHasSearchedCounter((c) => c + 1);
             })

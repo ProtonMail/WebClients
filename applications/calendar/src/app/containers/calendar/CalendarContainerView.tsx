@@ -185,11 +185,14 @@ const CalendarContainerView = ({
         return [toLocalDate(fromUTCDate(utcStart)), toLocalDate(fromUTCDate(utcEnd))];
     }, [utcDateRange]);
 
-    const handleSelectDateRange = useCallback(([start, end]: [Date, Date], resetRange?: boolean) => {
-        const numberOfDays = differenceInCalendarDays(end, start);
-        const newDate = localToUtcDate(start);
-        onChangeDateRange(newDate, numberOfDays, resetRange);
-    }, []);
+    const handleSelectDateRange = useCallback(
+        ([start, end]: [Date, Date], resetRange?: boolean) => {
+            const numberOfDays = differenceInCalendarDays(end, start);
+            const newDate = localToUtcDate(start);
+            onChangeDateRange(newDate, numberOfDays, resetRange);
+        },
+        [onChangeDateRange]
+    );
 
     const handleClickLocalDate = useCallback(
         (newDate) => {

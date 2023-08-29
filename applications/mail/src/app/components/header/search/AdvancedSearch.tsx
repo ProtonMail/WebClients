@@ -102,7 +102,7 @@ interface Props {
     isNarrow: boolean;
     showEncryptedSearch: boolean;
     onClose: () => void;
-    esState: ESIndexingState;
+    esIndexingProgressState: ESIndexingState;
     showMore: boolean;
     toggleShowMore: () => void;
     searchInputValue: string;
@@ -113,7 +113,7 @@ const AdvancedSearch = ({
     isNarrow,
     showEncryptedSearch,
     onClose,
-    esState,
+    esIndexingProgressState,
     showMore,
     searchInputValue,
     toggleShowMore,
@@ -233,7 +233,7 @@ const AdvancedSearch = ({
                 />
             </div>
             <div className="pt-4 px-5 pb-0">
-                {showEncryptedSearch && <EncryptedSearchField esState={esState} />}
+                {showEncryptedSearch && <EncryptedSearchField esIndexingProgressState={esIndexingProgressState} />}
                 <div>
                     <LocationField
                         value={model.labelID}

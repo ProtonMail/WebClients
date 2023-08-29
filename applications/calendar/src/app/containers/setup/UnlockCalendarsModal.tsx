@@ -43,8 +43,9 @@ interface Props {
     calendars: VisualCalendar[];
     unlockAll: boolean;
     onDone: () => void;
+    hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
-const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) => {
+const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef, onDone }: Props) => {
     const api = useApi();
     const cache = useCache();
     const getAddresses = useGetAddresses();
@@ -131,6 +132,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
     const handleReactivate = () => {
         handleProcess()
             .then(() => {
+                hasReactivatedCalendarsRef.current = true;
                 if (hasCalendarsToReset) {
                     setReactivateModalOpen(false);
                     setResetModalOpen(true);
@@ -156,7 +158,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
     return (
         <>
             {renderErrorModal && (
-                <Modal {...errorModal} {...rest}>
+                <Modal {...errorModal}>
                     <ModalHeader title={c('Title').t`Error`} hasClose={false} />
                     <ModalContent>
                         <GenericError />
@@ -167,7 +169,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                 </Modal>
             )}
             {renderResetModal && (
-                <Modal {...resetModal} {...rest} size="large">
+                <Modal {...resetModal} size="large">
                     <ModalHeader
                         title={
                             unlockAll
@@ -195,7 +197,6 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
             {renderReshareModal && (
                 <Prompt
                     {...reshareModal}
-                    {...rest}
                     title={c('Title').t`Reshare your calendars`}
                     buttons={[
                         <ButtonLike
@@ -218,7 +219,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                 </Prompt>
             )}
             {renderReactivateModal && (
-                <Modal {...reactivateModal} {...rest}>
+                <Modal {...reactivateModal}>
                     <ModalHeader title={c('Title').t`Reactivate calendar keys`} hasClose={false} />
                     <ModalContent>
                         <CalendarReactivateSection calendarsToReactivate={calendarsToReactivate} />

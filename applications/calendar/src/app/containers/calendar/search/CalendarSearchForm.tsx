@@ -99,7 +99,7 @@ const CalendarSearchForm = ({ model, isNarrow, showMore, canReset, updateModel, 
                     <PrimaryButton
                         data-testid="advanced-search:submit"
                         type="submit"
-                        disabled={!model.keyword}
+                        disabled={!model.keyword.trim()}
                         className="mb-2 on-mobile-w100"
                         loading={loading}
                     >{c('Action').t`Search`}</PrimaryButton>

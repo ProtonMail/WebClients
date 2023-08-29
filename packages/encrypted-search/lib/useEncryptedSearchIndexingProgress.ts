@@ -4,45 +4,67 @@ import { useUser } from '@proton/components/hooks';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
 import { estimateIndexingProgress } from './esHelpers';
-import { IndexedDBRow } from './esIDB';
-import { ESIndexingState } from './models';
+import { ESIndexingState, RecordProgress } from './models';
 
 /**
  * This hook provides helpers related to the progress of the ES indexing
  */
 const useEncryptedSearchIndexingProgress = () => {
     const [user] = useUser();
+
+    /**
+     * State to display progress indicator in the UI
+     */
     const [esIndexingProgressState, setESIndexingProgressState] =
         useState<ESIndexingState>(defaultESIndexingProgressState);
 
-    // Allow to track progress during indexing or refreshing
+    /**
+     * Last record progress to compare with new new one
+     */
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
+    /**
+     * Last record timestamp to compare with new new one
+     */
+    const recordTimestampRef = useRef<number | null>(null);
 
-    const recordProgress = async (progress: [number, number], indexedDbRow?: IndexedDBRow) => {
-        let localESState: ESIndexingState = { ...esIndexingProgressState };
-        progressRecorderRef.current = progress;
+    const recordProgress: RecordProgress = async (newProgress, indexedDbRow) => {
+        const [prevProgress, totalItems] = progressRecorderRef.current;
+        const prevRecordTimestamp = recordTimestampRef.current;
 
-        const [esProgress, esTotal] = progress;
+        const currentRecordTimestamp = performance.now();
 
-        const endTime = performance.now();
+        progressRecorderRef.current = Array.isArray(newProgress) ? newProgress : [newProgress, totalItems];
+        recordTimestampRef.current = currentRecordTimestamp;
 
-        const { estimatedMinutes, currentProgressValue } = await estimateIndexingProgress(
-            user.ID,
-            esProgress,
-            esTotal,
-            endTime,
-            localESState,
-            indexedDbRow
-        );
+        const [currentProgress] = progressRecorderRef.current;
 
-        setESIndexingProgressState((prev) => ({
-            ...prev,
-            endTime,
-            esProgress,
-            totalIndexingItems: esTotal,
-            estimatedMinutes: estimatedMinutes,
-            currentProgressValue: currentProgressValue,
-        }));
+        if (prevRecordTimestamp && prevProgress) {
+            const estimationResult = await estimateIndexingProgress(
+                user.ID,
+                totalItems,
+                prevProgress,
+                prevRecordTimestamp,
+                currentProgress,
+                currentRecordTimestamp,
+                indexedDbRow
+            );
+
+            if (!estimationResult) {
+                return;
+            }
+
+            const { estimatedMinutes, currentProgressValue } = estimationResult;
+
+            setESIndexingProgressState((prev) => {
+                return {
+                    ...prev,
+                    esProgress: currentProgress,
+                    estimatedMinutes,
+                    currentProgressValue,
+                    totalIndexingItems: totalItems,
+                };
+            });
+        }
     };
 
     return { esIndexingProgressState, progressRecorderRef, recordProgress };

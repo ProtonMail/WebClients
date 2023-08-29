@@ -28,7 +28,6 @@ import {
     buildContentDB,
     buildMetadataDB,
     cacheIDB,
-    correctDecryptionErrors,
     esSentryReport,
     findItemIndex,
     getIndexKey,
@@ -136,19 +135,17 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const { esIndexingProgressState, progressRecorderRef, recordProgress } = useEncryptedSearchIndexingProgress();
 
     const resetProgress = (indexDBRow: IndexedDBRow) => {
-        void recordProgress([0, 0], indexDBRow);
+        void recordProgress(0, indexDBRow);
     };
 
     const recordMetadataProgress = async () => {
         const newProgress = (await readNumMetadata(userID)) || 0;
-        const totalItems = await esCallbacks.getTotalItems();
-        void recordProgress([newProgress, totalItems], 'metadata');
+        void recordProgress(newProgress, 'metadata');
     };
 
     const recordContentProgress = async () => {
         const newProgress = (await readNumContent(userID)) || 0;
-        const totalItems = await esCallbacks.getTotalItems();
-        void recordProgress([newProgress, totalItems], 'content');
+        void recordProgress(newProgress, 'content');
     };
 
     /**
@@ -182,7 +179,10 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // Note that currently no local storage blobs exist,
         // however in a legacy version they did
         removeESFlags(userID);
-        setESStatus(() => defaultESStatus);
+        setESStatus(() => ({
+            ...defaultESStatus,
+            isConfigFromESDBLoaded: true,
+        }));
         return deleteESDB(userID);
     };
 
@@ -265,20 +265,43 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         return cacheIDB<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef);
     };
 
+    const correctDecryptionErrors = async () => {
+        const { cachedIndexKey } = esStatus;
+
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        if (!indexKey) {
+            await dbCorruptError();
+            return 0;
+        }
+
+        abortIndexingRef.current = new AbortController();
+        const result = await esCallbacks.correctDecryptionErrors(
+            userID,
+            indexKey,
+            abortIndexingRef,
+            esStatus,
+            recordProgress
+        );
+
+        if (result > 0) {
+            resetCache();
+        }
+
+        return result;
+    };
+
     /**
      * Keep IndexedDB in sync with new events
      */
     const syncIndexedDB = async (event: ESEvent<ESItemMetadata>, indexKey: CryptoKey | undefined) => {
         const { Items, attemptReDecryption } = event;
 
-        const { permanentResults, setResultsList, contentIndexingDone } = esStatus;
+        const { permanentResults, setResultsList } = esStatus;
 
         // In case a key is reactivated, try to fix any decryption error that might
         // have happened during indexing, but only if content indexing is done, otherwise
         // there might not be all content in IDB
-        if (contentIndexingDone && attemptReDecryption && !!esCallbacks.fetchESItemContent) {
-            void resetProgress('content');
-
+        if (attemptReDecryption) {
             setESStatus((esStatus) => ({
                 ...esStatus,
                 isRefreshing: true,
@@ -286,13 +309,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
             if (indexKey) {
                 abortIndexingRef.current = new AbortController();
-                const newItemsFound = await correctDecryptionErrors<ESItemMetadata, ESSearchParameters, ESItemContent>(
-                    userID,
-                    indexKey,
-                    esCallbacks,
-                    recordProgress,
-                    abortIndexingRef
-                );
+                const newItemsFound = await correctDecryptionErrors();
 
                 // In case new items were added to ESDB this way, cache should be reset.
                 // Next time the user interacts with the searchbar or searches, it will be rebuilt
@@ -306,11 +323,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return;
         }
 
-        // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
-        if (attemptReDecryption) {
-            void resetProgress('content');
-        }
-
         const { esSearchParams } = getSearchParams();
         const searchChanged = await syncItemEvents<ESItemContent, ESItemMetadata, ESSearchParameters>(
             Items,
@@ -319,8 +331,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             permanentResults,
             indexKey,
             esSearchParams,
-            esCallbacks,
-            recordContentProgress
+            esCallbacks
         );
 
         if (searchChanged) {
@@ -488,6 +499,10 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         */
         let previousEventID = await esCallbacks.getPreviousEventID();
 
+        const expectedTotalIndexed = await esCallbacks.getTotalItems();
+
+        void recordProgress([esIndexingProgressState.esProgress, expectedTotalIndexed], 'metadata');
+
         let indexKey: CryptoKey | undefined;
         let esSupported = true;
         if (esdbExists) {
@@ -525,7 +540,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                     getUserKeys,
                     previousEventID,
                     isRefreshed,
-                    await esCallbacks.getTotalItems()
+                    expectedTotalIndexed
                 ));
 
                 esSupported = !!indexKey && !!esDB;
@@ -558,9 +573,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortIndexingRef.current = new AbortController();
 
         const previousProgress = await metadataIndexingProgress.read(userID);
-
-        void recordMetadataProgress();
-
         if (previousProgress) {
             await metadataIndexingProgress.setStatus(userID, INDEXING_STATUS.INDEXING);
         }
@@ -620,7 +632,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // out which ones, we instead just delete everything and notify users
         if (wasESDBCreated) {
             const totalIndexed = await readNumMetadata(userID);
-            const expectedTotalIndexed = await esCallbacks.getTotalItems();
             if (typeof totalIndexed === 'undefined' || totalIndexed < expectedTotalIndexed) {
                 return handleError();
             }
@@ -679,7 +690,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // If there is no fetch content callback, content search cannot be activated at all
         const { fetchESItemContent } = esCallbacks;
         if (!fetchESItemContent) {
-            console.error('Content search cannot be activated without the fetch content helper');
             return;
         }
 
@@ -711,6 +721,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }));
 
         const previousProgress = await contentIndexingProgress.read(userID);
+        const expectedTotalIndexed = await esCallbacks.getTotalItems();
+
+        void recordProgress([esIndexingProgressState.esProgress, expectedTotalIndexed], 'content');
 
         let totalItems = 0;
         let recoveryPoint: ESTimepoint | undefined;
@@ -720,7 +733,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             // after indexing has completed
             await writeAllEvents(userID, await esCallbacks.getPreviousEventID());
 
-            totalItems = await esCallbacks.getTotalItems();
+            totalItems = expectedTotalIndexed;
             const initialProgress: ESProgress = {
                 ...defaultESProgress,
                 totalItems,
@@ -750,8 +763,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // We default to having the limited flag to true and
         // only revert if by the end IDB is not limited
         await setLimited(userID, true);
-
-        void recordContentProgress();
 
         let indexingOutcome = STORING_OUTCOME.SUCCESS;
         let success = totalItems === 0;
@@ -1268,6 +1279,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             enableContentSearch,
             pauseContentIndexing,
             pauseMetadataIndexing,
+            correctDecryptionErrors,
             highlightString,
             highlightMetadata,
             shouldHighlight,
@@ -1280,7 +1292,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esIndexingProgressState,
             progressRecorderRef,
         };
-    }, [userID, esStatus, inputESCallbacks]);
+    }, [userID, esStatus, esIndexingProgressState, inputESCallbacks]);
 
     return esFunctions;
 };

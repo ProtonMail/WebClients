@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Info, Loader, Toggle } from '@proton/components/components';
+import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components/components';
 import {
     DefaultQuickSettings,
+    QuickSettingsButtonSection,
     QuickSettingsMain,
     QuickSettingsSection,
     QuickSettingsSectionHeadline,
@@ -20,6 +21,8 @@ import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
+import NukeSearchIndexButton from '../../containers/calendar/confirmationModals/NukeSearchIndexButton';
+
 const CalendarQuickSettings = () => {
     const api = useApi();
     const { call } = useEventManager();
@@ -29,8 +32,9 @@ const CalendarQuickSettings = () => {
         useCalendarUserSettings();
 
     const [loadingWeekNumberDisplay, withLoadingWeekNumberDisplay] = useLoading();
-
     const [loadingView, withLoadingView] = useLoading();
+
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
@@ -137,6 +141,10 @@ const CalendarQuickSettings = () => {
                 )}
             </QuickSettingsSection>
             <DefaultQuickSettings />
+            <QuickSettingsButtonSection>
+                <NukeSearchIndexButton showConfirmModal={showConfirmModal} />
+            </QuickSettingsButtonSection>
+            {confirmModal}
         </QuickSettingsMain>
     );
 };

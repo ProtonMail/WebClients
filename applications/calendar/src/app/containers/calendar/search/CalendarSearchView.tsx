@@ -1,4 +1,4 @@
-import React, { MouseEvent, MutableRefObject, useEffect, useMemo, useState } from 'react';
+import React, { MouseEvent, MutableRefObject, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -30,7 +30,6 @@ import {
     getCalendarViewEventWithMetadata,
     getVisualSearchItems,
     groupItemsByDay,
-    markClosestToDate,
 } from './searchHelpers';
 import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
@@ -58,6 +57,7 @@ interface Props {
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     tzid: string;
     date: Date;
+    now: Date;
     setTargetEventRef: (targetEvent: HTMLElement) => void;
     setInteractiveData: (state: InteractiveState) => void;
     getOpenedMailEvents: () => OpenedMailEvent[];
@@ -68,6 +68,7 @@ const CalendarSearchView = ({
     calendarsEventsCacheRef,
     tzid,
     date,
+    now,
     setTargetEventRef,
     setInteractiveData,
     getOpenedMailEvents,
@@ -119,12 +120,9 @@ const CalendarSearchView = ({
             items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current),
             calendarsMap,
             tzid,
+            date,
         });
-    }, [visibleItems]);
-
-    useEffect(() => {
-        markClosestToDate(visualItems, date);
-    }, [date, visualItems]);
+    }, [visibleItems, date]);
 
     useEffect(() => {
         closestToDateRef?.scrollIntoView(true);
@@ -174,48 +172,57 @@ const CalendarSearchView = ({
         previous,
     } = useCalendarSearchPagination(visualItems, date);
 
-    const handleClickSearchItem = (e: MouseEvent<HTMLButtonElement>, item: VisualSearchItem) => {
-        const calendarsEventsCache = calendarsEventsCacheRef.current;
-        if (!calendarsEventsCache) {
-            return;
-        }
-        const { calendars } = calendarsEventsCache;
-        let calendarEventsCache = calendars[item.CalendarID];
+    const handleClickSearchItem = useCallback(
+        (e: MouseEvent<HTMLButtonElement>, item: VisualSearchItem) => {
+            const calendarsEventsCache = calendarsEventsCacheRef.current;
+            if (!calendarsEventsCache) {
+                return;
+            }
 
-        if (!calendarEventsCache) {
-            calendarEventsCache = getCalendarEventsCache();
-            calendarsEventsCache.calendars[item.CalendarID] = calendarEventsCache;
-        }
+            const { calendars } = calendarsEventsCache;
+            let calendarEventsCache = calendars[item.CalendarID];
 
-        /**
-         * Upsert event metadata in cache in case it's not there
-         *
-         * This is a bit of a hack to avoid modifying too much our current structure for reading events.
-         * That structure is quite rigid:
-         * 1/ First we insert the API calendar event (with or without blob data) in the cache. This is done by
-         *    useCalendarsEventFetcher or by the event loop.
-         * 2/ Then we decrypt the cached events with useCalendarsEventReader
-         * This hack plays the role of step 1 for events that appear in the list of results but were not fetched previously.
-         */
+            if (!calendarEventsCache) {
+                calendarEventsCache = getCalendarEventsCache();
+                calendarsEventsCache.calendars[item.CalendarID] = calendarEventsCache;
+            }
 
-        upsertCalendarApiEventWithoutBlob(item, calendarEventsCache);
-        const calendarViewEvent = getCalendarViewEventWithMetadata(item);
+            /**
+             * Upsert event metadata in cache in case it's not there
+             *
+             * This is a bit of a hack to avoid modifying too much our current structure for reading events.
+             * That structure is quite rigid:
+             * 1/ First we insert the API calendar event (with or without blob data) in the cache. This is done by
+             *    useCalendarsEventFetcher or by the event loop.
+             * 2/ Then we decrypt the cached events with useCalendarsEventReader
+             * This hack plays the role of step 1 for events that appear in the list of results but were not fetched previously.
+             */
 
-        setTargetEventRef(e.currentTarget);
-        setOpenedSearchItem(item);
+            upsertCalendarApiEventWithoutBlob(item, calendarEventsCache);
+            const calendarViewEvent = getCalendarViewEventWithMetadata(item);
 
-        // setting search data opens the popover
-        setInteractiveData({
-            searchData: calendarViewEvent,
-        });
+            setTargetEventRef(e.currentTarget);
+            setOpenedSearchItem(item);
 
-        // trigger event reader
-        setCalendarViewEvents([calendarViewEvent]);
-    };
+            // setting search data opens the popover, its content is loaded by useCalendarsEventsReader
+            setInteractiveData({
+                searchData: calendarViewEvent,
+            });
 
-    if (loading || !visualItems) {
+            // trigger event reader
+            setCalendarViewEvents([calendarViewEvent]);
+        },
+        [setTargetEventRef, setOpenedSearchItem, setCalendarViewEvents]
+    );
+
+    const maybeWithEmptyToday = useMemo(() => {
+        const eventsGroupedByDay = groupItemsByDay(paginatedItems);
+        return fillEmptyToday(eventsGroupedByDay, now);
+    }, [paginatedItems]);
+
+    if (loading) {
         return (
-            <div className="h-full">
+            <div className="h-full w-full">
                 {/* Custom py to have the same height as normal state's header */}
                 <div className="py-custom px-5 border-bottom border-weak" style={{ '--py-custom': '0.912rem' }}>
                     <div className="h6">
@@ -237,9 +244,6 @@ const CalendarSearchView = ({
     }
 
     const hasResults = Boolean(visualItems.length);
-
-    const eventsGroupedByDay = groupItemsByDay(paginatedItems);
-    const maybeWithEmptyToday = fillEmptyToday(eventsGroupedByDay);
 
     return (
         <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">

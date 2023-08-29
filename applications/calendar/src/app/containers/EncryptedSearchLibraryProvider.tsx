@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -31,9 +31,10 @@ export const useEncryptedSearchLibrary = () => useContext(EncryptedSearchLibrary
 interface Props {
     calendarIDs: string[];
     children?: ReactNode;
+    hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
+const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRef, children }: Props) => {
     const api = useApi();
     const history = useHistory();
     const [{ ID: userID }] = useUser();
@@ -43,13 +44,17 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
 
     const [isLibraryInitialized, setIsLibraryInitialized] = useState(false);
 
-    const esCallbacks = getESCallbacks({
-        api,
-        calendarIDs,
-        history,
-        userID,
-        getCalendarEventRaw,
-    });
+    const esCallbacks = useMemo(
+        () =>
+            getESCallbacks({
+                api,
+                calendarIDs,
+                history,
+                userID,
+                getCalendarEventRaw,
+            }),
+        [api, calendarIDs, history, userID, getCalendarEventRaw]
+    );
 
     const successMessage = c('Success').t`Calendar search activated`;
 
@@ -74,11 +79,19 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
                 /**
                  * If we have `More` core events to handle, the application itself will take care of the pagination so this handler will automatically get called next.
                  */
-                const esEvent = await processCoreEvents(userID, Calendars, Refresh, EventID, api, getCalendarEventRaw);
+                const esEvent = await processCoreEvents({
+                    userID,
+                    Calendars,
+                    Refresh,
+                    EventID,
+                    api,
+                    getCalendarEventRaw,
+                });
+
                 return esLibraryFunctions.handleEvent(esEvent);
             }
         );
-    }, []);
+    }, [esLibraryFunctions, esCallbacks, getCalendarEventRaw]);
 
     // Calendars loop
     useEffect(() => {
@@ -104,10 +117,11 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
                     api,
                     getCalendarEventRaw
                 );
+
                 return esLibraryFunctions.handleEvent(esEvent);
             }
         );
-    }, [calendarIDs]);
+    }, [calendarIDs, esLibraryFunctions, esCallbacks]);
 
     const { isConfigFromESDBLoaded } = esLibraryFunctions.esStatus;
 
@@ -120,6 +134,11 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, children }: Props) => {
             // TODO: error handling
             await esLibraryFunctions.initializeES();
             setIsLibraryInitialized(true);
+
+            if (hasReactivatedCalendarsRef.current) {
+                await esLibraryFunctions.correctDecryptionErrors();
+                hasReactivatedCalendarsRef.current = false;
+            }
         };
 
         void initializeLibrary();

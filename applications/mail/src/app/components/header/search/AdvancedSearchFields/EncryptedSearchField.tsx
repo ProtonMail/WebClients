@@ -13,10 +13,10 @@ import { formatSimpleDate } from '../../../../helpers/date';
 import EnableEncryptedSearchModal from '../AdvancedSearchFields/EnableEncryptedSearchModal';
 
 interface Props {
-    esState: ESIndexingState;
+    esIndexingProgressState: ESIndexingState;
 }
 
-const EncryptedSearchField = ({ esState }: Props) => {
+const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     const { enableContentSearch, esStatus, progressRecorderRef, pauseContentIndexing, toggleEncryptedSearch } =
         useEncryptedSearchContext();
 
@@ -31,7 +31,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
         lastContentTime,
     } = esStatus;
 
-    const { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
+    const { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue } = esIndexingProgressState;
 
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
