@@ -2762,6 +2762,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }，或查看我们的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3053,6 +3056,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "status page": [
+        "运行状态网页"
+      ],
       "Tab closed": [
         "标签页已关闭"
       ],
@@ -3169,6 +3175,9 @@
       ],
       "You have no invoices.": [
         "您目前没有账单。"
+      ],
+      "You have reached the contacts limit for your account": [
+        "您的账户联系人数量已达上限"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您的日历数量已达上限，因此部分日历无法导入。"
@@ -4748,6 +4757,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
+      ],
+      "Are you sure you want to discard your import?": [
+        "确定要放弃导入吗？"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "确定要永久删除所有日志吗？"
