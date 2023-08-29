@@ -988,6 +988,9 @@
       "Stay": [
         "Resta"
       ],
+      "Strikethrough": [
+        "Barrato"
+      ],
       "Submit": [
         "Invia"
       ],
@@ -4697,6 +4700,10 @@
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } elemento selezionato",
+        "${ selectedContactsLength } / ${ contactsLength } elementi selezionati"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } cartella selezionata",
         "${ selectedFoldersCount } cartelle selezionate"
@@ -5208,6 +5215,9 @@
       ],
       "Learn more": [
         "Per saperne di più"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Scopri di più sul programma ad alta sicurezza di ${ PROTON_SENTINEL_NAME }."
       ],
       "Left to Right": [
         "Da sinistra a destra"
@@ -8035,7 +8045,7 @@
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione del calendario, archiviazione su cloud e file sharing cifrati e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e altro ancora."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."

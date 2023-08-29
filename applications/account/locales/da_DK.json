@@ -365,11 +365,17 @@
       "Edit label": [
         "Redigér etikette"
       ],
+      "Edit name": [
+        "Rediger navn"
+      ],
       "Edit password": [
         "Redigér adgangskode"
       ],
       "Edit phone number": [
         "Rediger telefonnummer"
+      ],
+      "Edit servers": [
+        "Rediger servere"
       ],
       "Edit sieve": [
         "Redigér Sieve"
@@ -379,6 +385,9 @@
       ],
       "Edit subscription": [
         "Rediger abonnement"
+      ],
+      "Edit users": [
+        "Rediger brugere"
       ],
       "Emoji": [
         "Emoji"
@@ -448,6 +457,9 @@
       ],
       "Get more labels": [
         "Få flere etiketter"
+      ],
+      "Get more servers": [
+        "Få flere servere"
       ],
       "Get the deal": [
         "Gør brug af tilbuddet"
@@ -865,6 +877,9 @@
       ],
       "Stay": [
         "Bliv her"
+      ],
+      "Strikethrough": [
+        "Gennemstregning"
       ],
       "Submit": [
         "Indsend"
@@ -3359,6 +3374,9 @@
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nået det maksimale antal kontakter for din konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
       ],
@@ -4178,6 +4196,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "account logins": [
+        "konto-logins"
+      ],
       "auto-forwarding": [
         "automatisk videresendelse"
       ],
@@ -4186,6 +4207,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Indstil ${ strongText } fra Gmail"
+      ],
+      "Update your logins": [
+        "Opdatér dine logins"
       ]
     },
     "Gmail forwarding": {
@@ -4906,6 +4930,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivér mindst én datagendannelsesmetode for at sikre dig, at du fortsat kan få adgang til indholdet af din ${ BRAND_NAME }-konto, hvis du mister din adgangskode."
       ],
+      "active": [
+        "aktiv"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Privat Message me.\""
       ],
@@ -4965,6 +4992,10 @@
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Tildelt"
@@ -5224,6 +5255,9 @@
       ],
       "Data locked": [
         "Data låst"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers": [
         "Dedikerede servere"
@@ -5536,6 +5570,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
+      "inactive": [
+        "inaktiv"
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -5725,6 +5762,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Antallet af dedikerede servere, du forsøger at tildele (${ addedCount }) er større end det, der stadig er tilgængeligt i dit abonnement (${ remainingCount }) da du ejer ${ ownedCount } og allerede bruger ${ usedCount }."
       ],
       "of": [
         "af"
@@ -6025,6 +6065,9 @@
       ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF benyttes til at angive, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ${ MAIL_APP_NAME } i din SPF-post. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i webkontrolpanelet hos din domæneudbyder."
@@ -6396,6 +6439,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "Want servers in other countries?": [
+        "Vil du have servere i andre lande?"
+      ],
       "Warning:": [
         "Advarsel:"
       ],
@@ -6569,6 +6615,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Du har ${ availableCount } dedikeret server tilgængelig.",
+        "Du har ${ availableCount } dedikerede servere tilgængelig."
       ],
       "You have no calendars to export.": [
         "Du har ingen kalendere at eksportere."
@@ -8162,6 +8212,9 @@
       ],
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
+      ],
+      "Contact us": [
+        "Kontakt os"
       ],
       "create a ticket": [
         "opret en sag"

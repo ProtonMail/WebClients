@@ -988,6 +988,9 @@
       "Stay": [
         "Nicht schließen"
       ],
+      "Strikethrough": [
+        "Durchstreichen"
+      ],
       "Submit": [
         "Senden"
       ],
@@ -4697,6 +4700,10 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } Eintrag ausgewählt",
+        "${ selectedContactsLength } / ${ contactsLength } Einträgen ausgewählt"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } Ordner ausgewählt",
         "${ selectedFoldersCount } Ordner ausgewählt"
@@ -4805,6 +4812,10 @@
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Für diesen Empfänger wurde ein unbekannter öffentlicher Schlüssel erkannt."
@@ -5204,6 +5215,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Erfahre mehr über das ${ PROTON_SENTINEL_NAME }-Hochsicherheitsprogramm"
       ],
       "Left to Right": [
         "Von links nach rechts"

@@ -3087,7 +3087,7 @@
         "行事曆數量已達上限"
       ],
       "Cannot export this contact": [
-        "無法匯出通訊內容"
+        "無法匯出通訊名片"
       ],
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
@@ -3300,7 +3300,7 @@
         "簽名驗證失敗"
       ],
       "Some contacts could not be deleted": [
-        "一些聯絡人未能刪除"
+        "某些聯絡名片無法刪除"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
@@ -4578,7 +4578,7 @@
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 位成員)"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } 聯絡人包含數組電郵位址。"
+        "${ contactName } 聯絡名片包含多組電郵位址。"
       ],
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
@@ -4636,6 +4636,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -4839,10 +4842,10 @@
         "確認網路釣魚報告"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "聯絡人已指派給群組 ${ contactGroupName }"
+        "指派通訊錄給群組 ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "聯絡人已取消指派給群組 ${ contactGroupName }"
+        "取消指派通訊錄給群組 ${ contactGroupName }"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -5119,6 +5122,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "了解更多${ PROTON_SENTINEL_NAME }高安全計畫"
       ],
       "Left to Right": [
         "由左至右"

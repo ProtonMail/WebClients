@@ -3423,6 +3423,10 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength }/${ contactsLength } objekt valt",
+        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mapp vald",
         "${ selectedFoldersCount } mappar valda"
