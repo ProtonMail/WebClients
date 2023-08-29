@@ -10,7 +10,7 @@ import {
     updateOrganizationKeysV2,
     updateOrganizationName,
 } from '@proton/shared/lib/api/organization';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
@@ -47,12 +47,10 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
-import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
 
 enum STEPS {
     NAME,
-    KEYS,
     PASSWORD,
     STORAGE,
 }
@@ -67,7 +65,6 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [addresses] = useAddresses();
     const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
-    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const [organization] = useOrganization();
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
     const storageSizeUnit = GIGA;
@@ -102,11 +99,11 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const setStepStorage = async () => {
-        if (!hasVpnB2BPlan) {
-            setStep(STEPS.STORAGE);
-        } else {
+        if (hasVpnB2BPlan) {
             // If user setting up organization for VPN B2B plan then the storage step must be skipped.
             await finalizeOrganizationCreation();
+        } else {
+            setStep(STEPS.STORAGE);
         }
     };
 
@@ -140,31 +137,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
                     // So that other users can get connections allocated.
                     await (hasPaidVpn && api(updateVPN(selfMemberID, VPN_CONNECTIONS)));
-                    await Promise.all([api(updateOrganizationName(model.name))]);
+                    await api(updateOrganizationName(model.name));
 
                     if (organization.RequiresKey) {
-                        setStep(STEPS.KEYS);
+                        setStep(STEPS.PASSWORD);
                     } else {
                         await setStepStorage();
                     }
-                },
-            };
-        }
-
-        if (step === STEPS.KEYS) {
-            return {
-                title: c('Title').t`Set organization keys`,
-                section: (
-                    <>
-                        <div className="mb-4">
-                            {c('Info')
-                                .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
-                        </div>
-                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </>
-                ),
-                async onSubmit() {
-                    setStep(STEPS.PASSWORD);
                 },
             };
         }
@@ -219,7 +198,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                         await generateOrganizationKeys({
                             keyPassword: authentication.getPassword(),
                             backupPassword: model.password,
-                            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
                         });
 
                     if (getHasMigratedAddressKeys(addresses)) {
