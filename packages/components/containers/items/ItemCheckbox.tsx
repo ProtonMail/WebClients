@@ -91,7 +91,7 @@ const ItemCheckbox = ({
                     )}
                 </span>
                 <span className="item-icon-fakecheck m-auto">
-                    <Icon color="white" name="checkmark" className="item-icon-fakecheck-icon" />
+                    <Icon color={color ? 'white' : undefined} name="checkmark" className="item-icon-fakecheck-icon" />
                 </span>
             </span>
         </label>
