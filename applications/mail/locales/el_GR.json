@@ -988,6 +988,9 @@
       "Stay": [
         "Παραμονή"
       ],
+      "Strikethrough": [
+        "Διαγραμμισμένο Κείμενο"
+      ],
       "Submit": [
         "Υποβολή"
       ],
@@ -4697,6 +4700,10 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } στοιχείο επιλέχθηκε",
+        "${ selectedContactsLength } / ${ contactsLength } στοιχεία επιλέχθηκαν"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
         "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
@@ -5208,6 +5215,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Μάθετε περισσότερα σχετικά με το πρόγραμμα υψηλής ασφάλειας ${ PROTON_SENTINEL_NAME }."
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"

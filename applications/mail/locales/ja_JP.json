@@ -949,6 +949,9 @@
       "Show preview": [
         "プレビューを表示"
       ],
+      "Show side panel": [
+        "サイドパネルを表示"
+      ],
       "Sign in": [
         "サインイン"
       ],
@@ -981,6 +984,9 @@
       ],
       "Stay": [
         "終了しない"
+      ],
+      "Strikethrough": [
+        "取り消し線"
       ],
       "Submit": [
         "送信"
@@ -3425,6 +3431,9 @@
       "You did not provide a file.": [
         "ファイルが選択されていません。"
       ],
+      "You have reached the contacts limit for your account": [
+        "アカウントの連絡先が上限に達しています。"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
       ],
@@ -4631,6 +4640,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 個のアイテムが選択されました"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
       ],
@@ -4723,6 +4735,9 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "An unknown public key has been detected for this recipient.": [
         "この受信者の不明な公開鍵が検出されました。"
@@ -5110,6 +5125,9 @@
       ],
       "Learn more": [
         "詳細"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "${ PROTON_SENTINEL_NAME } の高セキュリティ プログラムの詳細をご覧ください。"
       ],
       "Left to Right": [
         "左から右"
@@ -8944,8 +8962,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"

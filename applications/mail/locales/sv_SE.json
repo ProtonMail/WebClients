@@ -988,6 +988,9 @@
       "Stay": [
         "Stanna"
       ],
+      "Strikethrough": [
+        "Genomstrykning"
+      ],
       "Submit": [
         "Skicka"
       ],
@@ -4697,6 +4700,10 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength }/${ contactsLength } objekt valt",
+        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mapp vald",
         "${ selectedFoldersCount } mappar valda"
@@ -5208,6 +5215,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Lär dig mer om ${ PROTON_SENTINEL_NAME } högsäkerhetsprogram."
       ],
       "Left to Right": [
         "Vänster till höger"

@@ -892,6 +892,9 @@
       "Set": [
         "设置"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮件应用"
+      ],
       "Set as default": [
         "设为默认"
       ],
@@ -945,6 +948,9 @@
       ],
       "Show preview": [
         "显示预览"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "Sign in": [
         "登录"
@@ -3047,6 +3053,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ email } 的${ error.message }。您可以为此联系人添加其他密钥或关闭邮件加密以解决此问题。"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }，或查看我们的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3317,6 +3326,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "对不起，${ BRAND_NAME } 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
+      "status page": [
+        "运行状态网页"
+      ],
       "The email addresses do not match": [
         "邮箱地址不一致"
       ],
@@ -3406,6 +3418,9 @@
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
+      ],
+      "You have reached the contacts limit for your account": [
+        "您的账户联系人数量已达上限"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "您的日历数量已达上限，因此部分日历无法导入。"
@@ -4085,6 +4100,9 @@
       "Congratulation, you completed all the steps!": [
         "恭喜，您已完成所有步骤！"
       ],
+      "Congratulation, you finished!": [
+        "恭喜您，大功告成！"
+      ],
       "Continue setting up your email": [
         "继续设置您的电子邮件"
       ],
@@ -4673,6 +4691,9 @@
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
       ],
+      "Are you sure you want to discard your import?": [
+        "确定要放弃导入吗？"
+      ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "确定要将此处所有邮件存档吗？"
       ],
@@ -4817,6 +4838,9 @@
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "没找到想要的结果？${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
       ],
@@ -4925,6 +4949,9 @@
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
       ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "如需更多搜索结果，请尝试全文搜索此关键词。"
+      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -4987,6 +5014,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
+      ],
+      "Include Spam/Trash in your search results.": [
+        "在搜索结果中显示垃圾邮件和废件箱中的邮件。"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -5062,6 +5092,9 @@
       ],
       "Merged": [
         "已合并"
+      ],
+      "Message download status:": [
+        "邮件下载状态："
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "向其他 ${ MAIL_APP_NAME } 用户发送的邮件可以直接设置有效期，如需对非 ${ BRAND_NAME } 用户设置邮件有效期，请先取消操作并为该邮件设置密码保护。"
@@ -5155,6 +5188,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
+      ],
+      "Open shortcut cheat sheet": [
+        "打开快捷键列表"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
@@ -5251,6 +5287,9 @@
       ],
       "Saved yesterday": [
         "昨日已保存"
+      ],
+      "Saved: ${ dateString }": [
+        "保存于 ${ dateString }"
       ],
       "Saving draft…": [
         "正在保存草稿…"
@@ -5597,6 +5636,9 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "我们阻止了下列广告商和组织机构监控您打开邮件的时间、使用的设备和所在位置。"
+      ],
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
       ],
@@ -5656,6 +5698,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "您可以更改或${ button }搜索条件。"
+      ],
+      "You can either update your search query or clear it": [
+        "您可以修改或清除搜索内容"
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -6081,6 +6126,9 @@
       "BCC": [
         "密送"
       ],
+      "Beta Access": [
+        "测试版功能"
+      ],
       "Blind Carbon Copy": [
         "密送"
       ],
@@ -6267,6 +6315,9 @@
       "Last month only": [
         "仅上个月"
       ],
+      "Layout": [
+        "布局"
+      ],
       "Location": [
         "位置"
       ],
@@ -6402,6 +6453,9 @@
       "Street address": [
         "街道地址"
       ],
+      "Sync with system": [
+        "跟随系统"
+      ],
       "Synchronize with system": [
         "跟随系统"
       ],
@@ -6419,6 +6473,9 @@
       ],
       "the email was sent ${ label }": [
         "邮件${ label }"
+      ],
+      "Theme": [
+        "配色"
       ],
       "Then": [
         "则"
@@ -7790,6 +7847,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "更改设置"
+      ],
       "Email tracking protection": [
         "邮件追踪防护"
       ],
@@ -7804,6 +7864,9 @@
       ],
       "Search just got smarter and faster": [
         "搜索变得更智能、更快速"
+      ],
+      "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
+        "今后「所有邮件」中将不再显示垃圾邮件和废件箱中的邮件。${ settingsLink }"
       ],
       "Try it today.": [
         "期待您的体验。"
@@ -8252,6 +8315,9 @@
       ],
       "Addresses": [
         "地址"
+      ],
+      "All settings": [
+        "所有设置"
       ],
       "Archive": [
         "存档"
@@ -8739,6 +8805,9 @@
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
       ],
+      "We protected you from ${ trackersCount } trackers": [
+        "我们已为您清除 ${ trackersCount } 款跟踪器"
+      ],
       "Welcome": [
         "欢迎"
       ],
@@ -8800,8 +8869,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"

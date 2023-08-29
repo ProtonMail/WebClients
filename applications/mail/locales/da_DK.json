@@ -952,6 +952,9 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
+      "Show side panel": [
+        "Vis sidepanel"
+      ],
       "Sign in": [
         "Log ind"
       ],
@@ -984,6 +987,9 @@
       ],
       "Stay": [
         "Bliv her"
+      ],
+      "Strikethrough": [
+        "Gennemstregning"
       ],
       "Submit": [
         "Indsend"
@@ -3447,6 +3453,9 @@
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nået det maksimale antal kontakter for din konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
       ],
@@ -4117,6 +4126,9 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } i Play Store"
       ],
+      "account logins": [
+        "konto-logins"
+      ],
       "auto-forwarding": [
         "automatisk videresendelse"
       ],
@@ -4197,6 +4209,9 @@
       ],
       "Storage unlocked": [
         "Lager låst op"
+      ],
+      "Update your logins": [
+        "Opdatér dine logins"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Scan denne QR-kode med din mobil eller besøg iOS- eller Android-butikken"
@@ -4664,6 +4679,10 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } element valgt",
+        "${ selectedContactsLength } / ${ contactsLength } elementer valgt"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
         "${ selectedFoldersCount } mapper valgt"
@@ -4772,6 +4791,10 @@
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "En ukendt offentlig nøgle er fundet for denne modtager."
@@ -5171,6 +5194,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
+        "Få mere at vide om ${ PROTON_SENTINEL_NAME } højsikkerhedsprogram."
       ],
       "Left to Right": [
         "Venstre mod højre"
@@ -9089,8 +9115,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Hide side panel": [
+        "Skjul sidepanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Show side panel": [
+        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
