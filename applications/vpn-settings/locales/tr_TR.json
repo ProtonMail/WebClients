@@ -1703,6 +1703,9 @@
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
+      "Email address is invalid": [
+        "E-posta adresi geçersiz"
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -4477,7 +4480,7 @@
         "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } sınırsız hide-my-email takma ad ile birlikte"
+        "${ PASS_APP_NAME } sınırsız sayıda hide-my-email takma adı ile birlikte"
       ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
@@ -4708,16 +4711,16 @@
         "Sınırsız sayıda aygıt"
       ],
       "Unlimited filters": [
-        "Sınırsız süzgeç"
+        "Sınırsız sayıda süzgeç"
       ],
       "Unlimited folders": [
-        "Sınırsız klasör"
+        "Sınırsız sayıda klasör"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
       "Unlimited hide-my-email aliases": [
-        "Sınırsız hide-my-email takma adı"
+        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -4726,7 +4729,7 @@
         "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited messages per day": [
-        "Her gün sınırsız ileti"
+        "Her gün sınırsız sayıda ileti"
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
@@ -4764,7 +4767,7 @@
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+        "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
@@ -5096,6 +5099,11 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "${ BRAND_NAME } Business tarifelerinde birden çok kullanıcı ile bulunur."
       ]
     },
     "new_plans: Upsell attribute": {

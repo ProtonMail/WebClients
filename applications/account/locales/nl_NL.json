@@ -3186,6 +3186,9 @@
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
+      "Email address is invalid": [
+        "E-mailadres is ongeldig"
+      ],
       "Email address is required": [
         "E-mailadres is vereist"
       ],
@@ -5448,8 +5451,8 @@
         "Alle wijzigingen gaan verloren."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
-        "Al je contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Toegewezen"
@@ -10056,6 +10059,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inbegrepen bij ${ plus }, ${ bundle } en ${ BRAND_NAME } voor Bedrijven."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inbegrepen bij verschillende gebruikers ${ BRAND_NAME } voor Bedrijven-abonnementen."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12591,7 +12597,7 @@
         "Gebruikers bewerken"
       ],
       "Edit who can access the gateway": [
-        "Bewerk wie de gateway heeft tot the gateway"
+        "Bewerk wie toegang heeft tot de gateway"
       ],
       "Email": [
         "E-mailadres"

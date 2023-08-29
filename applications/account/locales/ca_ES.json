@@ -251,6 +251,9 @@
       "Create folder": [
         "Crear carpeta"
       ],
+      "Create Gateway": [
+        "Crea la passarel·la"
+      ],
       "Create label": [
         "Crear etiqueta"
       ],
@@ -289,6 +292,9 @@
       ],
       "Delete and confirm": [
         "Elimina i confirma"
+      ],
+      "Delete Gateway": [
+        "Elimina la passarel·la"
       ],
       "Delete link": [
         "Elimina l'enllaç"
@@ -368,14 +374,23 @@
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
+      "Edit Gateway": [
+        "Edita la passarel·la"
+      ],
       "Edit label": [
         "Edita l'etiqueta"
+      ],
+      "Edit name": [
+        "Edita el nom"
       ],
       "Edit password": [
         "Edita la contrasenya"
       ],
       "Edit phone number": [
         "Edita el número de telèfon"
+      ],
+      "Edit servers": [
+        "Edita els servidors"
       ],
       "Edit sieve": [
         "Editar sieve"
@@ -385,6 +400,9 @@
       ],
       "Edit subscription": [
         "Edita la subscripció"
+      ],
+      "Edit users": [
+        "Edita usuaris"
       ],
       "Emoji": [
         "Emoji"
@@ -4590,6 +4608,9 @@
       "Checkout": [
         "Pagament"
       ],
+      "Country": [
+        "País"
+      ],
       "Create your account": [
         "Creeu el vostre compte"
       ],
@@ -4602,6 +4623,9 @@
       "Folders": [
         "Carpetes"
       ],
+      "IP address": [
+        "Adreça IP"
+      ],
       "Key type": [
         "Tipus de clau"
       ],
@@ -4610,6 +4634,9 @@
       ],
       "Location": [
         "Ubicació"
+      ],
+      "Members": [
+        "Membres"
       ],
       "Name": [
         "Nom"
@@ -4628,6 +4655,15 @@
       ],
       "Select your pricing plan": [
         "Seleccioneu el vostre pla de preus"
+      ],
+      "Server": [
+        "Servidor"
+      ],
+      "Server load": [
+        "Càrrega de servidor"
+      ],
+      "Servers": [
+        "Servidors"
       ],
       "Status": [
         "Estat"
@@ -5254,6 +5290,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
+      "active": [
+        "actiu"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
       ],
@@ -5748,6 +5787,9 @@
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
       ],
+      "Gateways": [
+        "Passarel·les"
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà l'antiga."
       ],
@@ -5880,6 +5922,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
+      ],
+      "inactive": [
+        "inactiu"
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -7863,6 +7908,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Nom de la passarel·la"
+      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -8505,6 +8553,9 @@
       ],
       "Common sign up issues": [
         "Problemes comuns de registre"
+      ],
+      "Contact us": [
+        "Contacteu amb nosaltres"
       ],
       "create a ticket": [
         "creeu un tiquet"
@@ -10760,6 +10811,17 @@
         "Llegint els correus electrònics d'usuaris no privats"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Administardor"
+      ],
+      "Primary admin": [
+        "Administrador principal"
+      ],
+      "User": [
+        "Usuari"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Puja fitxer CSV"
@@ -11730,6 +11792,9 @@
       "Edit": [
         "Edita"
       ],
+      "Email": [
+        "Corrreu electrònic"
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -11896,6 +11961,9 @@
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
       ],
+      "Add servers": [
+        "Afegeix servidors"
+      ],
       "Add Sieve filter": [
         "Afegeix un filtre Sieve"
       ],
@@ -11907,6 +11975,9 @@
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
+      ],
+      "Add users": [
+        "Afegeix usuaris"
       ],
       "Address verification": [
         "Verificació d'adreça"
@@ -12037,6 +12108,9 @@
       "Create ${ selectedUserIds.length } user": [
         "Crea ${ selectedUserIds.length } usuari",
         "Crea ${ selectedUserIds.length } usuaris"
+      ],
+      "Create Gateway": [
+        "Crea la passarel·la"
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
@@ -12170,11 +12244,17 @@
       "Edit filter": [
         "Editar filtre"
       ],
+      "Edit servers": [
+        "Edita els servidors"
+      ],
       "Edit Sieve filter": [
         "Editar filtre Sieve"
       ],
       "Edit user": [
         "Edita l'usuari"
+      ],
+      "Edit users": [
+        "Edita usuaris"
       ],
       "Email": [
         "Correu electrònic"
@@ -12230,6 +12310,9 @@
       ],
       "Folders and labels": [
         "Carpetes i etiquetes"
+      ],
+      "Gateways": [
+        "Passarel·les"
       ],
       "General": [
         "General"
@@ -12629,6 +12712,9 @@
       ],
       "Upgrade plan": [
         "Millora el pla"
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Users and addresses": [
         "Usuaris i adreces"

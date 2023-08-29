@@ -3204,6 +3204,9 @@
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
       ],
+      "Email address is invalid": [
+        "E-mailová adresa je neplatná"
+      ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
       ],
@@ -3584,6 +3587,9 @@
       ],
       "You have no invoices.": [
         "Nemáte žádné faktury."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
@@ -5310,6 +5316,9 @@
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
@@ -5384,6 +5393,9 @@
         "(${ memberCount } členové)",
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /měsíc)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
@@ -5543,6 +5555,12 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Přiděleno"
@@ -5819,6 +5837,9 @@
       ],
       "Data locked": [
         "Data uzamčena"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers": [
         "Dedikované servery"
@@ -6678,6 +6699,9 @@
       "Some keys successfully reactivated": [
         "Některé klíče byly úspěšně znovu aktivovány"
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Některé z vašich dostupných serverů lze kvůli nedávnému odstranění používat pouze v určitých zemích."
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ${ MAIL_APP_NAME } mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ],
@@ -7064,6 +7088,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "Want servers in other countries?": [
+        "Chcete servery v dalších zemích?"
       ],
       "Warning:": [
         "Upozornění:"
@@ -12757,6 +12784,12 @@
       ],
       "Delete logs": [
         "Odstranit záznamy"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
       "Delete user": [
         "Smazat uživatele"

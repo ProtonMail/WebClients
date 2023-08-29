@@ -583,6 +583,9 @@
       "Show preview": [
         "プレビューを表示"
       ],
+      "Show side panel": [
+        "サイドパネルを表示"
+      ],
       "Sign in": [
         "サインイン"
       ],
@@ -2186,6 +2189,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "10 件以上の連絡先の vCard ファイルを送信することはできません"
       ],
+      "You have reached the contacts limit for your account": [
+        "アカウントの連絡先が上限に達しています。"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
       ],
@@ -3067,6 +3073,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 個のアイテムが選択されました"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } 件選択済み"
       ],
@@ -3117,6 +3126,9 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "Also try looking in Trash.": [
         "ごみ箱もご確認ください。"
@@ -3790,6 +3802,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "データのセキュリティを保証する暗号化と署名のオーバーヘッドの分、暗号化済みデータはサイズが大きくなります。"
       ],
@@ -3894,6 +3909,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "ファイル名、日付、種類で検索してみてください。"
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "残念ながら、ファイルまたはそのデータの一部は復号化できないようだ。"
       ],
       "Unknown error": [
         "不明なエラー"
@@ -6190,8 +6208,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"

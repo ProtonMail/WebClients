@@ -1713,6 +1713,9 @@
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
+      "Email address is invalid": [
+        "Памылковы адрас электроннай пошты"
+      ],
       "Email is not valid": [
         "Несапраўдная электронная пошта"
       ],
@@ -5220,6 +5223,11 @@
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Уключана некалькі карыстальнікаў для тарыфных планаў ${ BRAND_NAME } for Business."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Падтрымка 24/7"
@@ -5627,6 +5635,9 @@
       ],
       "pending": [
         "у чаканні"
+      ],
+      "to be created": [
+        "будзе створаны"
       ]
     },
     "Shared calendar; Info about calendar owner": {

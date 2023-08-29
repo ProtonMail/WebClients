@@ -585,6 +585,9 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
+      "Show side panel": [
+        "Vis sidepanel"
+      ],
       "Sign in": [
         "Log ind"
       ],
@@ -2195,6 +2198,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
+      "You have reached the contacts limit for your account": [
+        "Du har nået det maksimale antal kontakter for din konto"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
       ],
@@ -3109,6 +3115,10 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } item selected": [
+        "${ selectedContactsLength } / ${ contactsLength } element valgt",
+        "${ selectedContactsLength } / ${ contactsLength } elementer valgt"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } valgt"
       ],
@@ -3167,6 +3177,10 @@
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }",
+        "Alle dine kontakter vil blive importeret, op til en grænse på ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Prøv også at kigge i papirkurven."
@@ -3846,6 +3860,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
       ],
@@ -3951,6 +3968,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Prøv at søge efter filnavn, dato eller type."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Desværre ser det ud til, at filen eller nogle af dens data ikke kan dekrypteres."
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -6304,8 +6324,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Hide side panel": [
+        "Skjul sidepanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Show side panel": [
+        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"

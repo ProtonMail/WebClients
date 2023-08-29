@@ -489,6 +489,9 @@
       "Show more": [
         "さらに表示"
       ],
+      "Show side panel": [
+        "サイドパネルを表示"
+      ],
       "Show time zones": [
         "タイムゾーンを表示"
       ],
@@ -2492,6 +2495,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "10 件以上の連絡先の vCard ファイルを送信することはできません"
       ],
+      "You have reached the contacts limit for your account": [
+        "アカウントの連絡先が上限に達しています。"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "カレンダーの個数が上限に達しました。いくつかのカレンダーはインポートできませんでした。"
       ],
@@ -3370,6 +3376,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
+      "${ selectedContactsLength } / ${ contactsLength } items selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 個のアイテムが選択されました"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
       ],
@@ -3417,6 +3426,9 @@
       ],
       "All (${ totalFoldersCount } labels)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "An invitation will be sent to added participants.": [
         "追加した参加者に招待状を送信します。"
@@ -6310,8 +6322,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
