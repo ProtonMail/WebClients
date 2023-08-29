@@ -3210,6 +3210,9 @@
       "Email address disabled": [
         "Адрас электроннай пошты адключаны"
       ],
+      "Email address is invalid": [
+        "Памылковы адрас электроннай пошты"
+      ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
       ],
@@ -5558,6 +5561,12 @@
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Вылучана"
@@ -10278,6 +10287,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Уключана некалькі карыстальнікаў для тарыфных планаў ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11403,6 +11415,9 @@
       ],
       "pending": [
         "у чаканні"
+      ],
+      "to be created": [
+        "будзе створаны"
       ]
     },
     "Settings description": {
