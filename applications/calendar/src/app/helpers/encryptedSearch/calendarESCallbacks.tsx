@@ -4,16 +4,24 @@ import {
     CachedItem,
     ESCallbacks,
     ESItemInfo,
+    ESStatusBooleans,
+    ES_MAX_CONCURRENT,
+    ES_MAX_ITEMS_PER_BATCH,
     EventsObject,
+    RecordProgress,
     checkVersionedESDB,
+    esSentryReport,
     metadataIndexingProgress,
     normalizeKeyword,
+    storeItemsMetadata,
     testKeywords,
 } from '@proton/encrypted-search';
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { Api } from '@proton/shared/lib/interfaces';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import chunk from '@proton/utils/chunk';
 
 import {
     ESCalendarContent,
@@ -21,12 +29,14 @@ import {
     ESCalendarSearchParams,
     MetadataRecoveryPoint,
 } from '../../interfaces/encryptedSearch';
-import { CALENDAR_CORE_LOOP } from './constants';
+import { CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
 import {
     extractAttendees,
     generateID,
+    getESEvent,
     getESEventsFromCalendarInBatch,
     parseSearchParams,
+    searchUndecryptedElements,
     transformAttendees,
 } from './esUtils';
 
@@ -53,9 +63,6 @@ const popOneCalendar = (
         currentCalendarId: first,
     };
 };
-
-const MIN_EVENT_BATCH = 20;
-const MAX_EVENT_BATCH = 200;
 
 export const getESCallbacks = ({
     api,
@@ -90,12 +97,14 @@ export const getESCallbacks = ({
             return { resultMetadata: [] };
         }
 
+        /**
+         * On calendar with a lot of events, having a pseudo-random batch size on each iteration makes the indexing look a bit more dynamic
+         */
+        const batchSize = Math.floor(Math.random() * (MAX_EVENT_BATCH - MIN_EVENT_BATCH + 1)) + MIN_EVENT_BATCH;
+
         const { events: esMetadataEvents, cursor: newCursor } = await getESEventsFromCalendarInBatch({
             calendarID: currentCalendarId,
-            /**
-             * experimental: on calendar with a lot of events, having a pseudo-random batch size on each iteration can make the indexing look a bit more dynamic
-             */
-            limit: Math.floor(Math.random() * (MAX_EVENT_BATCH - MIN_EVENT_BATCH + 1)) + MIN_EVENT_BATCH,
+            limit: batchSize,
             eventCursor: recoveryPoint.eventCursor,
             api,
             getCalendarEventRaw,
@@ -222,6 +231,60 @@ export const getESCallbacks = ({
         return true;
     };
 
+    const correctDecryptionErrors = async (
+        userID: string,
+        indexKey: CryptoKey,
+        abortIndexingRef: React.MutableRefObject<AbortController>,
+        esStatus: ESStatusBooleans,
+        recordProgress: RecordProgress
+    ) => {
+        if (esStatus.isEnablingEncryptedSearch || !esStatus.esEnabled) {
+            return 0;
+        }
+
+        let correctedEventsCount = 0;
+        let events = await searchUndecryptedElements(userID, indexKey, abortIndexingRef);
+        void recordProgress([0, events.length], 'metadata');
+
+        const chunks = chunk(events, ES_MAX_ITEMS_PER_BATCH);
+
+        for (const chunk of chunks) {
+            const metadatas = await runInQueue(
+                chunk.map(({ ID, CalendarID }) => () => {
+                    return getESEvent(ID, CalendarID, api, getCalendarEventRaw);
+                }),
+                ES_MAX_CONCURRENT
+            );
+
+            const decryptedMetadatas = metadatas.filter((item) => item.IsDecryptable);
+
+            // if we reach this part of code, es is considered supported
+            const esSupported = true;
+            const success = await storeItemsMetadata<ESCalendarMetadata>(
+                userID,
+                decryptedMetadatas,
+                esSupported,
+                indexKey,
+                getItemInfo
+            ).catch((error: any) => {
+                if (!(error?.message === 'Operation aborted') && !(error?.name === 'AbortError')) {
+                    esSentryReport('storeItemsBatches: storeItems', { error });
+                }
+
+                return false;
+            });
+
+            if (!success) {
+                break;
+            }
+
+            correctedEventsCount += decryptedMetadatas.length;
+            void recordProgress(correctedEventsCount, 'metadata');
+        }
+
+        return correctedEventsCount;
+    };
+
     return {
         queryItemsMetadata,
         getPreviousEventID,
@@ -232,5 +295,6 @@ export const getESCallbacks = ({
         getTotalItems,
         getEventFromIDB,
         applyFilters,
+        correctDecryptionErrors,
     };
 };

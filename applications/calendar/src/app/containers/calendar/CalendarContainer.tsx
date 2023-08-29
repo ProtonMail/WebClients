@@ -352,10 +352,12 @@ const CalendarContainer = ({
             defaultView,
             range,
         });
+
         if (location.pathname === newRoute) {
             return;
         }
-        history.push({ pathname: newRoute });
+
+        history.push({ pathname: newRoute, hash: view === SEARCH ? history.location.hash : undefined });
         // Intentionally not listening to everything to only trigger URL updates when these variables change.
     }, [view, range, utcDate]);
 
@@ -408,26 +410,35 @@ const CalendarContainer = ({
         setCustom({ date: newDate, view: lastNonSearchViewRef.current || defaultView });
     }, []);
 
-    const handleChangeDateRange = useCallback((newDate: Date, numberOfDays: number, resetRange?: boolean) => {
-        if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
-            return;
-        }
-        if (numberOfDays >= 7) {
+    const handleChangeDateRange = useCallback(
+        (newDate: Date, numberOfDays: number, resetRange?: boolean) => {
+            if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
+                return;
+            }
+
+            if (view === SEARCH) {
+                setCustom({ date: newDate });
+                return;
+            }
+
+            if (numberOfDays >= 7) {
+                setCustom({
+                    view: MONTH,
+                    range: Math.floor(numberOfDays / 7),
+                    date: newDate,
+                });
+                lastNonSearchViewRef.current = MONTH;
+                return;
+            }
             setCustom({
-                view: MONTH,
-                range: Math.floor(numberOfDays / 7),
+                view: WEEK,
+                range: resetRange ? undefined : numberOfDays,
                 date: newDate,
             });
-            lastNonSearchViewRef.current = MONTH;
-            return;
-        }
-        setCustom({
-            view: WEEK,
-            range: resetRange ? undefined : numberOfDays,
-            date: newDate,
-        });
-        lastNonSearchViewRef.current = WEEK;
-    }, []);
+            lastNonSearchViewRef.current = WEEK;
+        },
+        [view]
+    );
 
     const handleClickDateWeekView = useCallback((newDate: Date) => {
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {

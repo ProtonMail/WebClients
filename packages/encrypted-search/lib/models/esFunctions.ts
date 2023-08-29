@@ -156,6 +156,11 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     pauseMetadataIndexing: () => Promise<void>;
 
     /**
+     * Wrapper around `correctDecryptionErrors` es callback, used to correct previous decryption errors after a key recovery
+     */
+    correctDecryptionErrors: () => Promise<number>;
+
+    /**
      * Start the caching routine, i.e. fetching and decrypting as many items from the ES
      * database as possible to be stored in memory for quick access
      * @returns the reference to the current cache

@@ -1,11 +1,17 @@
-import { getUnixTime, isAfter, isBefore, startOfDay } from 'date-fns';
+import { getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ESItem } from '@proton/encrypted-search/lib';
 import { OccurrenceIterationCache, getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { DAY, SECOND } from '@proton/shared/lib/constants';
-import { endOfDay, format as formatUTC, isSameDay as isSameUTCDay } from '@proton/shared/lib/date-fns-utc';
+import {
+    addDays,
+    endOfDay,
+    format as formatUTC,
+    isSameDay as isSameUTCDay,
+    startOfDay,
+} from '@proton/shared/lib/date-fns-utc';
 import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -34,10 +40,12 @@ const getVisualSearchItem = ({
     item,
     calendarsMap,
     tzid,
+    isClosestToDate,
 }: {
     item: ESItem<ESCalendarMetadata, ESCalendarContent>;
     calendarsMap: SimpleMap<VisualCalendar>;
     tzid: string;
+    isClosestToDate: boolean;
 }): VisualSearchItem | undefined => {
     const { CalendarID, StartTime, EndTime, FullDay } = item;
     const calendar = calendarsMap[CalendarID];
@@ -55,37 +63,64 @@ const getVisualSearchItem = ({
         ...item,
         isAllDay,
         plusDaysToEnd,
+        isClosestToDate,
         visualCalendar: calendar,
         fakeUTCStartDate,
         fakeUTCEndDate,
     };
 };
 
+const getClosestToDateIndex = (date: Date, items: ESItem<ESCalendarMetadata, ESCalendarContent>[]) => {
+    const dateTimestamp = getUnixTime(date);
+
+    /**
+     * Closest event before date
+     */
+    const lowClosestToDateIndex = items.findLastIndex(
+        ({ StartTime, EndTime }) => StartTime <= dateTimestamp || EndTime <= dateTimestamp
+    );
+
+    /**
+     * Closest event after date
+     */
+    const highClosestToDateIndex = items.findIndex(
+        ({ StartTime, EndTime }) => StartTime >= dateTimestamp || EndTime >= dateTimestamp
+    );
+
+    const lowStartTime = items[lowClosestToDateIndex]?.StartTime;
+    const highStartTime = items[highClosestToDateIndex]?.StartTime;
+
+    if (!highStartTime) {
+        return lowClosestToDateIndex;
+    }
+
+    if (!lowStartTime) {
+        return highClosestToDateIndex;
+    }
+
+    return dateTimestamp - lowStartTime <= dateTimestamp - highStartTime
+        ? lowClosestToDateIndex
+        : highClosestToDateIndex;
+};
+
 export const getVisualSearchItems = ({
     items,
     calendarsMap,
     tzid,
+    date,
 }: {
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[];
     calendarsMap: SimpleMap<VisualCalendar>;
     tzid: string;
+    date: Date;
 }) => {
-    return items.map((item) => getVisualSearchItem({ item, calendarsMap, tzid })).filter(isTruthy);
-};
+    const closestToDateIndex = getClosestToDateIndex(date, items);
 
-export const markClosestToDate = (items: VisualSearchItem[], date: Date) => {
-    const dateTimestamp = getUnixTime(date);
-    const index = items.findIndex(({ StartTime, EndTime }) => StartTime >= dateTimestamp || EndTime >= dateTimestamp);
-
-    const totalItems = items.length;
-    if (index === -1) {
-        if (totalItems) {
-            // set last element in the list as first
-            items[totalItems - 1].isClosestToDate = true;
-        }
-    } else {
-        items[index].isClosestToDate = true;
-    }
+    return items
+        .map((item, index) =>
+            getVisualSearchItem({ item, calendarsMap, tzid, isClosestToDate: closestToDateIndex === index })
+        )
+        .filter(isTruthy);
 };
 
 const expandSearchItem = (
@@ -180,7 +215,7 @@ export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): Calend
     const result: CalendarViewEvent = {
         id: ID,
         start: fakeUTCStartDate,
-        end: fakeUTCEndDate,
+        end: isAllDay ? addDays(fakeUTCEndDate, -1) : fakeUTCEndDate,
         isAllDay,
         isAllPartDay: false,
         data: {
@@ -258,39 +293,31 @@ export const getEventsDayDateString = (date: Date) => {
 };
 
 /**
- * Used to know in which position append empty today, returns either -1, 0 or 1:
+ * Used to know in which position append empty today, returns either 0 or 1:
  *
- * - -1: empty today should be placed before current day (used only when today is before first event)
  * - 0: empty today should not be displayed (because there are events today)
- * - 1: empty today should be placed after current day (either because today is between current & next day or there is simply no next day)
+ * - 1: empty today should be placed after current day (either because today is between current & next day or there is no next day)
  */
 const getEmptyTodayPosition = ({
     currentStartDate,
     nextStartDate,
-    today,
-    isFirstDay,
+    now,
 }: {
     currentStartDate: Date;
-    today: Date;
+    now: Date;
     nextStartDate?: Date;
-    isFirstDay: boolean;
-}) => {
-    switch (true) {
-        case isFirstDay && isBefore(today, startOfDay(currentStartDate)):
-            return -1;
-        case isAfter(today, startOfDay(currentStartDate)) &&
-            (!nextStartDate || isBefore(today, startOfDay(nextStartDate))):
-            return 1;
-        default:
-            return 0;
-    }
+}): number => {
+    return +Boolean(
+        isAfter(startOfDay(now), startOfDay(currentStartDate)) &&
+            nextStartDate &&
+            isBefore(startOfDay(now), startOfDay(nextStartDate))
+    );
 };
 
 /**
  * If `today` has no event, we'll add an empty group
  */
-export const fillEmptyToday = (eventsGroupedByDay: VisualSearchItem[][]) => {
-    const today = startOfDay(new Date());
+export const fillEmptyToday = (eventsGroupedByDay: VisualSearchItem[][], now: Date) => {
     return eventsGroupedByDay.reduce((acc: VisualSearchItem[][], currentDayEvents, index) => {
         const [{ fakeUTCStartDate }] = eventsGroupedByDay[index];
         const nextDailyEvents = eventsGroupedByDay[index + 1];
@@ -298,8 +325,7 @@ export const fillEmptyToday = (eventsGroupedByDay: VisualSearchItem[][]) => {
         const emptyTodayPosition = getEmptyTodayPosition({
             currentStartDate: fakeUTCStartDate,
             nextStartDate: nextDailyEvents?.[0]?.fakeUTCStartDate,
-            isFirstDay: index === 0,
-            today,
+            now,
         });
 
         const withMaybeEmptyToday = [currentDayEvents];

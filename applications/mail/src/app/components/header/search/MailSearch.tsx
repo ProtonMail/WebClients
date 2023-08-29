@@ -122,7 +122,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
                     isNarrow={breakpoints.isNarrow || breakpoints.isTablet}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
-                    esState={esIndexingProgressState}
+                    esIndexingProgressState={esIndexingProgressState}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}
                     searchInputValue={searchInputValue}

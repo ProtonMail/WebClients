@@ -161,13 +161,13 @@ export const encryptItem = async (itemToStore: Object, indexKey: CryptoKey): Pro
 /**
  * Store one batch of items metadata to IndexedDB
  */
-const storeItemsMetadata = async <ESItemMetadata extends Object>(
+export const storeItemsMetadata = async <ESItemMetadata extends Object>(
     userID: string,
     resultMetadata: ESItemMetadata[],
     esSupported: boolean,
     indexKey: CryptoKey | undefined,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
+    getItemInfo: GetItemInfo<ESItemMetadata>,
+    esCacheRef?: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>
 ) => {
     const batchSize = resultMetadata.reduce((sum, item) => sum + sizeOfESItem(item), 0);
 
@@ -183,7 +183,7 @@ const storeItemsMetadata = async <ESItemMetadata extends Object>(
         );
 
         await executeMetadataOperations(userID, [], itemsToAdd);
-    } else {
+    } else if (esCacheRef) {
         resultMetadata.forEach((metadataItem) => {
             esCacheRef.current.esCache.set(getItemInfo(metadataItem).ID, { metadata: metadataItem });
         });
@@ -224,8 +224,8 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
             resultMetadata,
             esSupported,
             indexKey,
-            esCacheRef,
-            getItemInfo
+            getItemInfo,
+            esCacheRef
         ).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&

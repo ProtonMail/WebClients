@@ -66,7 +66,7 @@ const AdvancedSearch = ({
         const { keyword, startDate, endDate } = reset ? DEFAULT_MODEL : model;
 
         search({
-            keyword,
+            keyword: keyword.trim(),
             begin: startDate ? getUnixTime(startDate) : undefined,
             end: endDate ? getUnixTime(endDate) : undefined,
         });

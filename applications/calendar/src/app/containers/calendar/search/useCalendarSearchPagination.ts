@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import {
@@ -54,12 +54,17 @@ export const useCalendarSearchPagination = (
         setCurrentPage(getInitialPage(items, maxItemsPerPage));
     }, [items, date]);
 
+    const paginatedItems = useMemo(
+        () => items.slice(currentPage * maxItemsPerPage, (currentPage + 1) * maxItemsPerPage),
+        [items, currentPage, maxItemsPerPage]
+    );
+
     return {
         currentPage,
         first: () => setPage(0),
         previous: () => setPage(isPreviousEnabled ? currentPage - 1 : currentPage),
         next: () => setPage(isNextEnabled ? currentPage + 1 : currentPage),
-        items: items.slice(currentPage * maxItemsPerPage, (currentPage + 1) * maxItemsPerPage),
+        items: paginatedItems,
         isPreviousEnabled,
         isNextEnabled,
     };

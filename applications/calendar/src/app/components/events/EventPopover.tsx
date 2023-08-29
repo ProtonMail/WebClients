@@ -409,7 +409,7 @@ const EventPopover = ({
                         <CalendarInviteButtons
                             actions={actions}
                             partstat={userPartstat}
-                            disabled={isCalendarDisabled || !isSelfAddressActive}
+                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
                         />
                     </div>
                 </PopoverFooter>

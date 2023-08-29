@@ -5,11 +5,15 @@ import {
     ESEvent,
     ESItemEvent,
     ES_MAX_CONCURRENT,
+    ES_MAX_ITEMS_PER_BATCH,
     ES_SYNC_ACTIONS,
+    EncryptedItemWithInfo,
     EventsObject,
     apiHelper,
+    decryptFromDB,
     normalizeKeyword,
     readAllLastEvents,
+    readMetadataBatch,
     readSortedIDs,
 } from '@proton/encrypted-search';
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
@@ -140,7 +144,8 @@ export const getESEvent = async (
     const { Event } = response;
 
     let hasError = false;
-    const { veventComponent } = await getCalendarEventRaw(Event).catch(() => {
+    const { veventComponent } = await getCalendarEventRaw(Event).catch((error) => {
+        console.error('cannot decrypt event: ', error);
         hasError = true;
         return {
             veventComponent: {
@@ -203,13 +208,13 @@ export const getAllESEventsFromCalendar = async (
  */
 export const getESEventsFromCalendarInBatch = async ({
     calendarID,
-    limit = 100,
+    limit,
     eventCursor,
     api,
     getCalendarEventRaw,
 }: {
     calendarID: string;
-    limit?: number;
+    limit: number;
     eventCursor?: string;
     api: Api;
     getCalendarEventRaw: GetCalendarEventRaw;
@@ -236,14 +241,67 @@ export const getESEventsFromCalendarInBatch = async ({
     };
 };
 
-export const processCoreEvents = async (
+/**
+ * Returns all the elements stored in the IDB and flagged as not decryptable
+ */
+export const searchUndecryptedElements = async (
     userID: string,
-    Calendars: CalendarEventManager[],
-    Refresh: number,
-    EventID: string,
-    api: Api,
-    getCalendarEventRaw: GetCalendarEventRaw
-): Promise<ESEvent<ESCalendarMetadata> | undefined> => {
+    indexKey: CryptoKey,
+    abortSearchingRef?: React.MutableRefObject<AbortController>
+): Promise<ESCalendarMetadata[]> => {
+    const results: ESCalendarMetadata[] = [];
+
+    let remainingIDs = await readSortedIDs(userID, false);
+
+    if (!remainingIDs?.length) {
+        return results;
+    }
+
+    while (remainingIDs.length) {
+        const IDs = remainingIDs.slice(0, ES_MAX_ITEMS_PER_BATCH);
+        remainingIDs = remainingIDs?.slice(ES_MAX_ITEMS_PER_BATCH);
+
+        const metadatas = await readMetadataBatch(userID, IDs);
+        if (!metadatas || abortSearchingRef?.current.signal.aborted) {
+            return results;
+        }
+
+        const plaintextMetadatas: ESCalendarMetadata[] = await Promise.all(
+            metadatas
+                .filter((item): item is EncryptedItemWithInfo => !!item)
+                .map(async (encryptedMetadata) => {
+                    const plaintextMetadata = await decryptFromDB<ESCalendarMetadata>(
+                        encryptedMetadata.aesGcmCiphertext,
+                        indexKey
+                    );
+
+                    return plaintextMetadata;
+                })
+        );
+
+        const undecryptedMetadatas = plaintextMetadatas.filter((item) => !item.IsDecryptable);
+
+        results.push(...undecryptedMetadatas);
+    }
+
+    return results;
+};
+
+export const processCoreEvents = async ({
+    userID,
+    Calendars,
+    Refresh,
+    EventID,
+    api,
+    getCalendarEventRaw,
+}: {
+    userID: string;
+    Calendars: CalendarEventManager[];
+    Refresh: number;
+    EventID: string;
+    api: Api;
+    getCalendarEventRaw: GetCalendarEventRaw;
+}): Promise<ESEvent<ESCalendarMetadata> | undefined> => {
     if (!Calendars.length && !Refresh) {
         return;
     }
@@ -253,6 +311,7 @@ export const processCoreEvents = async (
     if (!oldEventsObject) {
         return;
     }
+
     const eventLoopsToDelete = [];
 
     const newEventsObject: EventsObject = {};
