@@ -1708,6 +1708,9 @@
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
+      "Email address is invalid": [
+        "Adresa de e-mail nu este validă."
+      ],
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
@@ -5157,6 +5160,11 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inclus cu utilizatori multipli din planul ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {
