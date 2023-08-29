@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { LoaderPage, LocationErrorBoundary, ModalsChildren, useWelcomeFlags } from '@proton/components';
+import {
+    GlobalLoader,
+    GlobalLoaderProvider,
+    LoaderPage,
+    LocationErrorBoundary,
+    ModalsChildren,
+    useWelcomeFlags,
+} from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
 
@@ -107,13 +114,16 @@ const InitContainer = () => {
 
 const MainContainer = () => {
     return (
-        <LocationErrorBoundary>
-            <DriveProvider>
-                <QuickSettingsRemindersProvider>
-                    <InitContainer />
-                </QuickSettingsRemindersProvider>
-            </DriveProvider>
-        </LocationErrorBoundary>
+        <GlobalLoaderProvider>
+            <GlobalLoader />
+            <LocationErrorBoundary>
+                <DriveProvider>
+                    <QuickSettingsRemindersProvider>
+                        <InitContainer />
+                    </QuickSettingsRemindersProvider>
+                </DriveProvider>
+            </LocationErrorBoundary>
+        </GlobalLoaderProvider>
     );
 };
 
