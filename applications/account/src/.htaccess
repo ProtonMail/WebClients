@@ -41,10 +41,6 @@ ErrorDocument 404 /assets/404.html
     Header set Access-Control-Allow-Origin "%{origin}e" env=match
 </Files>
 
-<IfModule mod_mime.c>
-  AddType application/font-woff2 .woff2
-</IfModule>
-
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>

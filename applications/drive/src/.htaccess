@@ -45,10 +45,6 @@ ErrorDocument 404 /assets/404.html
   Header set Service-Worker "script"
 </Files>
 
-<IfModule mod_mime.c>
-  AddType application/font-woff2 .woff2
-</IfModule>
-
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>
