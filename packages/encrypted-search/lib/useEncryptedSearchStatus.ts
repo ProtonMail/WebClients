@@ -57,7 +57,7 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
             }
 
             /**
-             * We need to set those variable whether we have already existing esdb or not
+             * We need to set those variables whether we have already existing esdb or not
              */
             setESStatus((esStatus) => ({
                 ...esStatus,

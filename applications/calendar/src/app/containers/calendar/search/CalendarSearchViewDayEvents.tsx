@@ -3,6 +3,7 @@ import React, { MouseEvent } from 'react';
 import { isSameDay } from 'date-fns';
 
 import { useAddresses } from '@proton/components/hooks';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
@@ -64,6 +65,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                             isClosestToDate,
                         } = event;
                         const isOpen =
+                            ID === openedSearchItem?.ID &&
                             UID === openedSearchItem?.UID &&
                             CalendarID === openedSearchItem?.CalendarID &&
                             occurrenceNumber === openedSearchItem?.occurrenceNumber;
@@ -107,7 +109,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                             'text-lg text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
-                                        {Summary}
+                                        {getDisplayTitle(Summary)}
                                     </span>
                                 </span>
                             </button>

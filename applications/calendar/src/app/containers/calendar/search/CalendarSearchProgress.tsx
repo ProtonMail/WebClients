@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { Progress } from '@proton/components/components';
@@ -28,13 +26,12 @@ const getProgressStatusText = ({
 };
 
 interface Props {
-    esState: ESIndexingState;
+    esIndexingProgressState: ESIndexingState;
     isPaused?: boolean;
 }
 
-const CalendarSearchProgress = ({ esState, isPaused = false }: Props) => {
-    const [progressValue, setProgresValue] = useState(0);
-    const { estimatedMinutes, totalIndexingItems, esProgress, currentProgressValue } = esState;
+const CalendarSearchProgress = ({ esIndexingProgressState, isPaused = false }: Props) => {
+    const { estimatedMinutes, totalIndexingItems, esProgress, currentProgressValue } = esIndexingProgressState;
 
     const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
     const etaMessage =
@@ -53,14 +50,6 @@ const CalendarSearchProgress = ({ esState, isPaused = false }: Props) => {
         total: totalIndexingItems,
     });
 
-    useEffect(() => {
-        // currentProgressValue is set to 0 when indexing is paused
-        // but we want the progress bar to keep the real progress value
-        if (currentProgressValue >= progressValue) {
-            setProgresValue(currentProgressValue);
-        }
-    }, [currentProgressValue]);
-
     return (
         <div className="mt-6 flex flex-column">
             <span className="color-weak relative advanced-search-progress-status" aria-live="polite" aria-atomic="true">
@@ -68,7 +57,7 @@ const CalendarSearchProgress = ({ esState, isPaused = false }: Props) => {
             </span>
             <div className="flex flex-justify-space-between">
                 <Progress
-                    value={progressValue}
+                    value={currentProgressValue}
                     aria-describedby="timeRemaining"
                     className={clsx(['my-2 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
                 />

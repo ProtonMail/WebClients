@@ -5,13 +5,16 @@ import {
     ESCallbacks,
     ESEvent,
     ESItemInfo,
+    ESStatusBooleans,
     ESTimepoint,
     ES_BACKGROUND_METADATA_BATCH,
     ES_MAX_METADATA_BATCH,
     ES_MAX_PARALLEL_ITEMS,
     EncryptedItemWithInfo,
     EventsObject,
+    RecordProgress,
     apiHelper,
+    buildContentDB,
     checkVersionedESDB,
     encryptItem,
     esSentryReport,
@@ -19,6 +22,7 @@ import {
     metadataIndexingProgress,
     readLastEvent,
     readMetadataItem,
+    readNumContent,
     testKeywords,
 } from '@proton/encrypted-search';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
@@ -44,7 +48,7 @@ import { decryptMessage } from '../message/messageDecrypt';
 import { queryConversation, queryEvents, queryMessage } from './esAPI';
 import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getExternalID } from './esBuild';
 import { shouldOnlySortResults, testMetadata, transformRecipients } from './esSearch';
-import { convertEventType, getTotal } from './esSync';
+import { convertEventType, findRecoveryPoint, getTotal } from './esSync';
 import { parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 
 interface Props {
@@ -371,6 +375,43 @@ export const getESCallbacks = ({
         }
     };
 
+    /**
+     * When an old key is activated, try to correct any previous decryption errors
+     */
+    const correctDecryptionErrors = async (
+        userID: string,
+        indexKey: CryptoKey,
+        abortIndexingRef: React.MutableRefObject<AbortController>,
+        esStatus: ESStatusBooleans,
+        recordProgress: RecordProgress
+    ) => {
+        const recoveryPoint = await findRecoveryPoint(userID);
+        if (!esStatus.contentIndexingDone || !recoveryPoint) {
+            // There are no items for which decryption failed
+            return 0;
+        }
+
+        const { timepoint, contentLen, metadataLen } = recoveryPoint;
+
+        const total = metadataLen - contentLen;
+        void recordProgress([0, total], 'content');
+
+        const recordProgressLocal = (progress: number) => recordProgress(progress, 'content');
+
+        await buildContentDB(
+            userID,
+            indexKey,
+            abortIndexingRef,
+            recordProgressLocal,
+            fetchESItemContent,
+            timepoint,
+            false
+        );
+
+        const count = (await readNumContent(userID)) || 0;
+        return count - contentLen;
+    };
+
     return {
         getItemInfo,
         fetchESItemContent,
@@ -387,5 +428,6 @@ export const getESCallbacks = ({
         searchKeywords,
         getSearchInterval,
         onContentDeletion,
+        correctDecryptionErrors,
     };
 };

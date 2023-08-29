@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import { ESProgress, EncryptedSearchFunctions } from './models';
+import { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
 
 /**
  * Number of items to add to the search results list during
@@ -158,12 +158,9 @@ export const defaultESCache = {
     isCacheReady: false,
 };
 
-export const defaultESIndexingState = {
+export const defaultESIndexingState: ESIndexingState = {
     esProgress: 0,
     estimatedMinutes: 0,
-    startTime: 0,
-    endTime: 0,
-    esPrevProgress: 0,
     totalIndexingItems: 0,
     currentProgressValue: 0,
 };
@@ -184,18 +181,20 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     cacheIndexedDB: async () => {},
     toggleEncryptedSearch: async () => {},
     resetCache: () => {},
+    correctDecryptionErrors: async () => 0,
     esStatus: defaultESStatus,
     progressRecorderRef: { current: [0, 0] },
     esIndexingProgressState: defaultESIndexingState,
 };
 
-export const defaultESCallbacks = {
+export const defaultESCallbacks: OptionalESCallbacks<any, any, any> = {
     checkIsReverse: () => true,
     shouldOnlySortResults: () => false,
     resetSort: noop,
     getSearchInterval: () => ({ begin: undefined, end: undefined }),
     applyFilters: () => true,
     onContentDeletion: async () => {},
+    correctDecryptionErrors: async () => 0,
 };
 
 export const defaultESProgress: ESProgress = {

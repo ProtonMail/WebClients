@@ -41,8 +41,11 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
             <div className="mb-4">
                 {c('Description').t`This can take a few minutes. Meanwhile, you can continue using Calendar as usual.`}
             </div>
-            <CalendarSearchProgress esState={esIndexingProgressState} isPaused={isMetadataIndexingPaused} />
-            <div className="flex flex-row-reverse ">
+            <CalendarSearchProgress
+                esIndexingProgressState={esIndexingProgressState}
+                isPaused={isMetadataIndexingPaused}
+            />
+            <div className="flex flex-row-reverse mt-1">
                 <Button shape="ghost" color="norm" onClick={onClose}>
                     {c('Action').t`Got it`}
                 </Button>
