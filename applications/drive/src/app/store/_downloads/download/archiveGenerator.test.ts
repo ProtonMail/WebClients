@@ -1,3 +1,4 @@
+import { fromUnixTime } from 'date-fns';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
@@ -6,9 +7,11 @@ import ArchiveGenerator from './archiveGenerator';
 type TestLink = {
     isFile: boolean;
     name: string;
+    fileModifyTime?: number;
     path?: string[];
     expectedName?: string;
     expectedPath?: string;
+    expectedLastModified?: Date;
 };
 
 async function* generateLinks(links: TestLink[]) {
@@ -18,6 +21,7 @@ async function* generateLinks(links: TestLink[]) {
                 isFile: link.isFile,
                 name: link.name,
                 parentPath: link.path || [],
+                fileModifyTime: link.fileModifyTime,
                 stream: new ReadableStream<Uint8Array>(),
             };
         } else {
@@ -43,10 +47,13 @@ describe('ArchiveGenerator', () => {
                 const path = link.expectedPath || (link.path || []).join('/');
                 const fileName = link.expectedName || link.name;
                 const name = path ? `${path}/${fileName}` : fileName;
+                const lastModified =
+                    link.expectedLastModified || (link.fileModifyTime && fromUnixTime(link.fileModifyTime));
                 return link.isFile
                     ? {
                           name,
                           input: expect.anything(),
+                          lastModified,
                       }
                     : {
                           name,
@@ -57,8 +64,13 @@ describe('ArchiveGenerator', () => {
 
     it('generates two files and one folder in the root', async () => {
         await checkWritingLinks([
-            { isFile: true, name: 'Hello.txt' },
-            { isFile: true, name: 'World.txt' },
+            { isFile: true, name: 'Hello.txt', fileModifyTime: 1692780131 },
+            {
+                isFile: true,
+                name: 'World.txt',
+                fileModifyTime: 1692780009,
+                expectedLastModified: new Date('2023-08-23T08:40:09.000Z'),
+            },
             { isFile: false, name: 'dir' },
         ]);
     });

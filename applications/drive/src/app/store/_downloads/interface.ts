@@ -82,7 +82,7 @@ type OnErrorCallback = (err: any) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,
-    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'signatureAddress' | 'signatureIssues'
+    'isFile' | 'linkId' | 'name' | 'mimeType' | 'size' | 'fileModifyTime' | 'signatureAddress' | 'signatureIssues'
 >;
 export type GetChildrenCallback = (
     abortSignal: AbortSignal,
