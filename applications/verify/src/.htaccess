@@ -35,10 +35,6 @@ ErrorDocument 404 /assets/404.html
     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
 </Files>
 
-<IfModule mod_mime.c>
-  AddType application/font-woff2 .woff2
-</IfModule>
-
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>
