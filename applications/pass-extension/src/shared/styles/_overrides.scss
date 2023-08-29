@@ -4,15 +4,22 @@
 	--border-radius-xl: 0.88rem;
 }
 
+// Force the default font-size to the standard 16px value
+// for all pass extension components in order to avoid
+// inconsistencies when user overrides browser settings
+html {
+	font-size: 16px;
+}
+
 .overflow-overlay {
 	overflow: overlay;
 }
 
-//  Slider.scss override
-//  Something fishy happening here with the order of the css loading into the dom.
-//  It's only in pass (or maybe only in the extension) for some reason, maybe something
-//  to do with the webpack config. In any case, this gets overwritten by the word-break
-//  defined in the tooltip.
+// Slider.scss override
+// Something fishy happening here with the order of the css loading into the dom.
+// It's only in pass (or maybe only in the extension) for some reason, maybe something
+// to do with the webpack config. In any case, this gets overwritten by the word-break
+// defined in the tooltip.
 .slider-thumb-tooltip {
 	word-break: initial !important;
 }
