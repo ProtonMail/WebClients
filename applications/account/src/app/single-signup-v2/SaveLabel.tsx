@@ -1,11 +1,26 @@
+import { ComponentPropsWithoutRef } from 'react';
+
 import './SaveLabel.scss';
 
-const SaveLabel = ({ highlightPrice, percent }: { highlightPrice: boolean; percent: number }) => {
+interface Props extends ComponentPropsWithoutRef<'span'> {
+    highlightPrice: boolean;
+    percent: number;
+}
+
+const SaveLabel = ({ highlightPrice, percent, ...rest }: Props) => {
     const children = `− ${percent}%`;
     if (highlightPrice) {
-        return <span className="text-sm save-label py-0-5 rounded">{children}</span>;
+        return (
+            <span {...rest} className="text-sm save-label py-0-5 rounded">
+                {children}
+            </span>
+        );
     }
-    return <span className="text-sm color-success">{children}</span>;
+    return (
+        <span {...rest} className="text-sm color-success">
+            {children}
+        </span>
+    );
 };
 
 export default SaveLabel;
