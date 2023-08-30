@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { Icon, ToolbarButton, generateUID, usePopperAnchor, useToggle } from '@proton/components';
+import { generateUID, usePopperAnchor } from '@proton/components';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
-import AdvancedSearch from './AdvancedSearch';
+import CalendarSearchActivation from './CalendarSearchActivation';
 import CalendarSearchInput from './CalendarSearchInput';
 import { useCalendarSearch } from './CalendarSearchProvider';
 import SearchOverlay from './SearchOverlay';
@@ -13,74 +11,43 @@ import SearchOverlay from './SearchOverlay';
 import './SearchOverlay.scss';
 
 interface Props {
-    isNarrow: boolean;
-    showSearchField: boolean;
     containerRef: HTMLDivElement | null;
     onSearch: () => void;
     onBackFromSearch: () => void;
 }
 
-const CalendarSearch = ({ isNarrow, showSearchField, containerRef, onSearch, onBackFromSearch }: Props) => {
+const CalendarSearch = ({ onSearch, onBackFromSearch }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
-    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
 
     const { cacheIndexedDB } = useEncryptedSearchLibrary();
-    const { searchParams, isActive, loading } = useCalendarSearch();
-    const keyword = searchParams.keyword || '';
-
-    const [searchInputValue, setSearchInputValue] = useState(keyword);
-    // Show more from inside AdvancedSearch to persist the state when the overlay is closed
-    const { state: showMore, toggle: toggleShowMore } = useToggle(false);
-
-    const handleOpen = () => {
-        if (isOpen) {
-            return;
-        }
-
-        anchorRef.current?.blur();
-        void cacheIndexedDB();
-        open();
-    };
-
-    const handleClear = () => {
-        setSearchInputValue('');
-        open();
-    };
+    const { searchParams, isActive: isSearchActive, loading } = useCalendarSearch();
 
     useEffect(() => {
-        setSearchInputValue(keyword);
-    }, [keyword]);
+        void cacheIndexedDB();
+
+        if (!isSearchActive) {
+            open();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isOpen && isSearchActive) {
+            close();
+        }
+    }, [isOpen, isSearchActive]);
 
     return (
         <>
-            {showSearchField ? (
-                <CalendarSearchInput
-                    ref={anchorRef}
-                    value={searchInputValue}
-                    onOpen={handleOpen}
-                    onClear={handleClear}
-                    onBack={onBackFromSearch}
-                    loading={loading}
-                />
-            ) : (
-                <ToolbarButton
-                    icon={<Icon name="magnifier" />}
-                    title={c('Header').t`Search`}
-                    onClick={handleOpen}
-                    ref={anchorRef}
-                />
-            )}
+            <CalendarSearchInput
+                ref={anchorRef}
+                value={searchParams.keyword || ''}
+                onSearch={onSearch}
+                onBack={onBackFromSearch}
+                loading={loading}
+            />
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <AdvancedSearch
-                    searchInputParams={{ keyword: searchInputValue }}
-                    isNarrow={isNarrow}
-                    containerRef={containerRef}
-                    isSearchActive={isActive}
-                    onSearch={onSearch}
-                    onClose={close}
-                    showMore={showMore}
-                    toggleShowMore={toggleShowMore}
-                />
+                {!isSearchActive && <CalendarSearchActivation onClose={close} />}
             </SearchOverlay>
         </>
     );

@@ -1,4 +1,4 @@
-import { MouseEvent, Ref, forwardRef, useRef } from 'react';
+import { FormEvent, MouseEvent, Ref, forwardRef, useRef, useState } from 'react';
 
 import { isBefore, sub } from 'date-fns';
 import { c } from 'ttag';
@@ -12,21 +12,26 @@ import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } 
 import { SECOND } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { useCalendarSearch } from './CalendarSearchProvider';
+
 interface Props {
-    onOpen: () => void;
     value: string;
     loading: boolean;
-    onClear: () => void;
+    onSearch: () => void;
     onBack: () => void;
 }
 
-const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props, ref: Ref<HTMLButtonElement>) => {
+const CalendarSearchInput = ({ value: inputValue, loading, onSearch, onBack }: Props, ref: Ref<HTMLDivElement>) => {
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { isNarrow } = useActiveBreakpoint();
+    const { search } = useCalendarSearch();
 
     const inputRef = useRef<HTMLInputElement>(null);
     const spotlightAnchorRef = useRef<HTMLButtonElement>(null);
+
+    const [keyword, setKeyWord] = useState(inputValue);
+
     const {
         show: showCalendarEsSpotlight,
         onDisplayed: onSpotlightDisplayed,
@@ -44,9 +49,26 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props,
 
     const shouldShowCalendarEsSpotlight = useSpotlightShow(showCalendarEsSpotlight);
 
-    const handleClear = (event: MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation();
-        onClear();
+    const handleChange = (event: FormEvent<HTMLInputElement>) => {
+        setKeyWord(event.currentTarget.value);
+    };
+
+    const handleClear = () => {
+        setKeyWord('');
+        inputRef.current?.focus();
+    };
+
+    const handleSearch = () => {
+        const trimmedKeyword = keyword.trim();
+
+        if (!trimmedKeyword) {
+            return;
+        }
+
+        search({
+            keyword: keyword.trim(),
+        });
+        onSearch();
     };
 
     const handleBack = (event: MouseEvent<HTMLButtonElement>) => {
@@ -60,20 +82,19 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props,
             onCloseSpotlight();
         }
 
-        // Blur the input to avoid the focus to be triggered after search submission
-        inputRef.current?.blur();
-        onOpen();
+        // // Blur the input to avoid the focus to be triggered after search submission
+        // inputRef.current?.blur();
+        // onOpen();
     };
 
     return (
         <>
             <ToolbarButton
-                ref={ref}
                 icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
                 className="mr-2"
                 onClick={handleBack}
             />
-            <div className="searchbox flex" role="search">
+            <div className="searchbox flex" role="search" ref={ref}>
                 <div className="w100 m-auto">
                     <Spotlight
                         originalPlacement="bottom-start"
@@ -93,11 +114,19 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props,
                         <Input
                             ref={inputRef}
                             inputClassName="cursor-text"
-                            value={value}
+                            value={keyword}
                             placeholder={c('Placeholder').t`Search events`}
-                            onFocus={() => handleFocus()}
+                            onChange={handleChange}
+                            onKeyDown={(event) => {
+                                if (event.key === 'Enter') {
+                                    handleSearch();
+                                    event.preventDefault();
+                                }
+                            }}
+                            onSubmit={handleSearch}
+                            onFocus={handleFocus}
                             data-testid="search-keyword"
-                            readOnly
+                            autoFocus
                             prefix={
                                 loading ? (
                                     <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
@@ -110,7 +139,6 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props,
                                         size="small"
                                         className="rounded-sm no-pointer-events"
                                         title={c('Action').t`Search`}
-                                        onClick={() => onOpen()}
                                         data-shorcut-target="searchbox-button"
                                         ref={spotlightAnchorRef}
                                     >
@@ -119,13 +147,14 @@ const CalendarSearchInput = ({ value, loading, onOpen, onClear, onBack }: Props,
                                 )
                             }
                             suffix={
-                                value.length ? (
+                                keyword.length ? (
                                     <Button
                                         type="button"
                                         shape="ghost"
                                         color="weak"
                                         size="small"
                                         className="rounded-sm"
+                                        disabled={loading}
                                         title={c('Action').t`Clear search`}
                                         onClick={handleClear}
                                         data-testid="clear-button"
