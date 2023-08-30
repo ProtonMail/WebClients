@@ -17,11 +17,11 @@
         "bcryptjs": "^2.4.3"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.22.10",
+        "@babel/preset-env": "^7.22.14",
         "@babel/preset-typescript": "^7.22.11",
         "@babel/register": "^7.22.5",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "eslint": "^8.47.0",
+        "eslint": "^8.48.0",
         "mocha": "^10.2.0",
         "prettier": "^2.8.8",
         "typescript": "^5.2.2"
