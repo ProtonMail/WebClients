@@ -7,3 +7,8 @@ export interface ThumbnailData {
 export interface ThumbnailGenerator {
     (file: Blob): Promise<ThumbnailData | undefined>;
 }
+
+export enum ThumbnailType {
+    PREVIEW = 1,
+    PHOTO = 2,
+}

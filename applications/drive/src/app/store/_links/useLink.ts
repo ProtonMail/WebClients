@@ -628,6 +628,7 @@ export function useLinkInner(
             const res = (await debouncedRequest(
                 queryFileRevisionThumbnail(shareId, linkId, activeRevisionId)
             )) as DriveFileRevisionThumbnailResult;
+
             return {
                 isFresh: true,
                 downloadUrl: res.ThumbnailBareURL,

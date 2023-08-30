@@ -40,10 +40,15 @@ export const queryFileRevision = (
     return query;
 };
 
-export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revisionId: string) => {
+export const queryFileRevisionThumbnail = (
+    shareId: string,
+    linkId: string,
+    revisionId: string,
+    thumbnailType: 1 | 2 | 3 = 1
+) => {
     return {
         method: 'get',
-        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail`,
+        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail?Type=${thumbnailType}`,
         silence: true,
     };
 };
