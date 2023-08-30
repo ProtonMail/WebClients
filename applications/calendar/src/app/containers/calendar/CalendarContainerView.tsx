@@ -23,6 +23,7 @@ import {
     PrivateMainArea,
     QuickSettingsAppButton,
     RebrandingFeedbackModal,
+    ToolbarButton,
     Tooltip,
     TopBanners,
     TopNavbarListItemFeedbackButton,
@@ -75,6 +76,7 @@ import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
 import { toUrlParams } from './getUrlHelper';
 import CalendarSearch from './search/CalendarSearch';
+import { useCalendarSearch } from './search/CalendarSearchProvider';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -163,6 +165,13 @@ const CalendarContainerView = ({
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
     const defaultView = getDefaultView(calendarUserSettings);
+
+    const { isSearching, setIsSearching } = useCalendarSearch();
+
+    const handleBackFromSearch = () => {
+        setIsSearching(false);
+        onBackFromSearch();
+    };
 
     const toLink = toUrlParams({
         date: utcDate,
@@ -452,66 +461,59 @@ const CalendarContainerView = ({
         targetTzid: calendarUserSettings.PrimaryTimezone,
     });
 
+    const handleClickSearch = () => {
+        setIsSearching(true);
+    };
+
     const toolbar = (
-        <>
-            {!isDrawerApp && !isSearchView && (
-                <CalendarToolbar
-                    date={noonDate}
-                    timezone={tzid}
-                    setTzid={setTzid}
-                    telemetrySource="temporary_timezone"
-                    dateCursorButtons={
-                        <DateCursorButtons
-                            view={view}
-                            currentRange={currentRange}
-                            now={localNowDate}
-                            onToday={onClickToday}
-                            onNext={handleClickNext}
-                            onPrev={handleClickPrev}
-                        />
-                    }
-                    viewSelector={
-                        <ViewSelector
-                            data-testid="calendar-view:view-options"
-                            view={view}
-                            range={range}
-                            onChange={onChangeView}
-                        />
-                    }
-                    searchButton={
-                        isCalendarEncryptedSearchEnabled && (
-                            <CalendarSearch
-                                isNarrow={isNarrow}
-                                showSearchField={isSearchView}
-                                containerRef={containerRef}
-                                onSearch={onSearch}
-                                onBackFromSearch={onBackFromSearch}
-                            />
-                        )
-                    }
-                />
-            )}
-            {!isDrawerApp && isSearchView && (
-                <CalendarToolbar
-                    date={noonDate}
-                    timezone={tzid}
-                    setTzid={setTzid}
-                    telemetrySource="temporary_timezone"
-                    hideTimeZoneSelector={true}
-                    searchField={
-                        isCalendarEncryptedSearchEnabled && (
-                            <CalendarSearch
-                                isNarrow={isNarrow}
-                                showSearchField={isSearchView}
-                                containerRef={containerRef}
-                                onSearch={onSearch}
-                                onBackFromSearch={onBackFromSearch}
-                            />
-                        )
-                    }
-                />
-            )}
-        </>
+        <CalendarToolbar
+            date={noonDate}
+            timezone={tzid}
+            setTzid={setTzid}
+            telemetrySource="temporary_timezone"
+            hideTimeZoneSelector={isSearching}
+            dateCursorButtons={
+                !isSearching && (
+                    <DateCursorButtons
+                        view={view}
+                        currentRange={currentRange}
+                        now={localNowDate}
+                        onToday={onClickToday}
+                        onNext={handleClickNext}
+                        onPrev={handleClickPrev}
+                    />
+                )
+            }
+            viewSelector={
+                !isSearching && (
+                    <ViewSelector
+                        data-testid="calendar-view:view-options"
+                        view={view}
+                        range={range}
+                        onChange={onChangeView}
+                    />
+                )
+            }
+            searchButton={
+                isCalendarEncryptedSearchEnabled &&
+                !isSearching && (
+                    <ToolbarButton
+                        icon={<Icon name="magnifier" />}
+                        title={c('Header').t`Search`}
+                        onClick={handleClickSearch}
+                    />
+                )
+            }
+            searchField={
+                isSearching && (
+                    <CalendarSearch
+                        containerRef={containerRef}
+                        onSearch={onSearch}
+                        onBackFromSearch={handleBackFromSearch}
+                    />
+                )
+            }
+        />
     );
 
     const drawerSettingsButton = (
@@ -565,7 +567,7 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
-                actionArea={toolbar}
+                actionArea={!isDrawerApp ? toolbar : null}
                 hideUpsellButton={isNarrow}
                 settingsButton={drawerSettingsButton}
             />
@@ -643,7 +645,7 @@ const CalendarContainerView = ({
                 isDrawerApp ? null : (
                     <DrawerApp
                         contactCustomActions={contactCustomActions}
-                        customAppSettings={<CalendarQuickSettings />}
+                        customAppSettings={<CalendarQuickSettings onBackFromSearch={onBackFromSearch} />}
                     />
                 )
             }
