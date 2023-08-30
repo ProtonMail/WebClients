@@ -114,11 +114,11 @@ const AttachmentItem = ({
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
                 className={clsx([
-                    'message-attachmentList-item flex border flex-nowrap pm_button p-0 rounded overflow-hidden',
+                    'message-attachmentList-item flex border flex-nowrap pm_button p-0 rounded',
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
-                <span className="relative flex flex-item-fluid message-attachmentPrimaryAction interactive">
+                <span className="relative flex flex-item-fluid rounded message-attachmentPrimaryAction interactive-pseudo">
                     <button
                         className="pl-2 py-2 flex flex-item-noshrink message-attachmentTypeIcon"
                         type="button"
@@ -133,7 +133,7 @@ const AttachmentItem = ({
                         )}
                     </button>
                     <button
-                        className="flex-item-fluid flex flex-nowrap"
+                        className="flex-item-fluid flex flex-nowrap outline-none--at-all"
                         title={primaryActionTitle}
                         type="button"
                         onClick={handleAction(true)}
@@ -153,17 +153,20 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex p-2 pl-1 no-pointer-events-children relative flex-item-noshrink message-attachmentSecondaryAction interactive interactive--no-background"
+                        className="inline-flex p-2 pl-1 no-pointer-events-children rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}
                         aria-busy={loading}
                         data-testid={`attachment-item:${name}--secondary-action`}
                     >
-                        <span className="message-attachmentSecondaryAction-size color-weak" aria-hidden="true">
+                        <span
+                            className="message-attachmentSecondaryAction-size color-weak text-ellipsis text-sm mt-1"
+                            aria-hidden="true"
+                        >
                             {humanAttachmentSize}
                         </span>
-                        <span className="message-attachmentSecondaryAction-download flex">
+                        <span className="message-attachmentSecondaryAction-download flex flex-item-noshrink">
                             {loading ? (
                                 <CircleLoader className="m-auto" size="small" />
                             ) : (
