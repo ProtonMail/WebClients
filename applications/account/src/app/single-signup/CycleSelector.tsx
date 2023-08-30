@@ -3,7 +3,8 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Price, Radio } from '@proton/components/components';
+import { Radio } from '@proton/components/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
@@ -11,20 +12,21 @@ import { Currency, CycleMapping } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Guarantee from './Guarantee';
+import SaveLabel2 from './SaveLabel2';
 import { getBillingCycleText, getOffText } from './helper';
 
 export const getBilledText = (cycle: CYCLE): string | null => {
     switch (cycle) {
         case CYCLE.MONTHLY:
-            return c('Info').t`Billed every month`;
+            return c('Info').t`per month`;
         case CYCLE.YEARLY:
-            return c('Info').t`Billed every 12 months`;
+            return c('Info').t`per month, billed every 12 months`;
         case CYCLE.TWO_YEARS:
-            return c('Info').t`Billed every 24 months`;
+            return c('Info').t`per month, billed every 24 months`;
         case CYCLE.FIFTEEN:
-            return c('Info').t`Billed every 15 months`;
+            return c('Info').t`per month, billed every 15 months`;
         case CYCLE.THIRTY:
-            return c('Info').t`Billed every 30 months`;
+            return c('Info').t`per month, billed every 30 months`;
         default:
             return null;
     }
@@ -36,8 +38,8 @@ const CycleItemView = ({
     text,
     billedText,
     headerText,
-    monthlySuffix,
     totalPerMonth,
+    totalWithoutPerMonth,
     highlightPrice,
     discountPercentage,
     selected,
@@ -51,9 +53,9 @@ const CycleItemView = ({
     text: string;
     billedText: string | null;
     headerText: ReactNode;
-    monthlySuffix: string;
     highlightPrice: boolean;
     totalPerMonth: number;
+    totalWithoutPerMonth: number;
     discountPercentage: number;
     selected: boolean;
     guarantee: boolean;
@@ -103,35 +105,39 @@ const CycleItemView = ({
                                     {text}
                                 </strong>
                             </div>
+                        </div>
+
+                        <div id={`${cycle}-price`} className={clsx('flex flex-align-items-center flex-nowrap gap-2')}>
+                            <span
+                                className={clsx(
+                                    'flex-item-noshrink',
+                                    highlightPrice && 'color-primary',
+                                    'text-bold h2'
+                                )}
+                            >
+                                {getSimplePriceString(currency, totalPerMonth, '')}
+                            </span>
                             {discountPercentage > 0 && (
-                                <div id={`${cycle}-save`} className="text-right mt-0.5 ml-2">
-                                    <span className={clsx(highlightPrice ? 'color-success' : 'color-weak')}>
-                                        {`− ${discountPercentage}%`}
+                                <div className="flex flex-column flex-justify-center text-left">
+                                    <div>
+                                        <SaveLabel2 highlightPrice percent={discountPercentage} id={`${cycle}-save`} />
+                                    </div>
+                                    <span className="text-strike color-weak">
+                                        {getSimplePriceString(currency, totalWithoutPerMonth, '')}
                                     </span>
                                 </div>
                             )}
                         </div>
 
-                        <div id={`${cycle}-price`} className={clsx('pl-8', highlightPrice && 'color-primary')}>
-                            <Price
-                                currency={currency}
-                                suffix={monthlySuffix}
-                                amountClassName="text-bold h2"
-                                currencyClassName="text-bold h2"
-                                suffixClassName="color-weak"
-                            >
-                                {totalPerMonth}
-                            </Price>
+                        <div className="text-sm">
+                            <div className="color-weak" id={`${cycle}-billed`}>
+                                {billedText}
+                            </div>
                         </div>
                     </div>
 
                     {selected && (
                         <div>
-                            <div className="pl-8 text-sm">
-                                <div className="color-weak" id={`${cycle}-billed`}>
-                                    {billedText}
-                                </div>
-                            </div>
                             {cta && <div className="mt-4">{cta}</div>}
                             {guarantee && (
                                 <div className="text-sm mt-4 text-center" id={`${cycle}-guarantee`}>
@@ -184,8 +190,8 @@ const CycleSelector = ({
                         billedText={getBilledText(cycleItem)}
                         key={cycleItem}
                         currency={currency}
-                        monthlySuffix={c('Suffix').t`/month`}
                         totalPerMonth={currentCheckout.withDiscountPerMonth}
+                        totalWithoutPerMonth={currentCheckout.withoutDiscountPerMonth}
                         discountPercentage={currentCheckout.discountPercent}
                         upsell={
                             cycleItem !== upsellCycle && (
