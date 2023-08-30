@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import {
@@ -29,16 +29,7 @@ import {
     PasswordInputTwo,
     useFormErrors,
 } from '../../components';
-import {
-    useApi,
-    useAuthentication,
-    useEventManager,
-    useGetAddresses,
-    useModals,
-    useNotifications,
-    useStep,
-} from '../../hooks';
-import SelectEncryption from '../keys/addKey/SelectEncryption';
+import { useApi, useAuthentication, useEventManager, useGetAddresses, useModals, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
@@ -64,18 +55,16 @@ const ChangeOrganizationKeysModal = ({
     const { validator, onFormSubmit } = useFormErrors();
 
     const getAddresses = useGetAddresses();
-    const { step, next, previous } = useStep();
     const [loading, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
 
     const handleSubmit = async () => {
         const { privateKey, privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } =
             await generateOrganizationKeys({
                 keyPassword: authentication.getPassword(),
                 backupPassword: newPassword,
-                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
             });
 
         // Check this case for safety.
@@ -126,28 +115,28 @@ const ChangeOrganizationKeysModal = ({
         onClose?.();
     };
 
-    const { section, submitText, onSubmit } = (() => {
-        if (step === 0) {
-            return {
-                section: (
-                    <>
-                        <div className="mb-4">
-                            {c('Info')
-                                .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
-                        </div>
-                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </>
-                ),
-                submitText: c('Action').t`Next`,
-                onSubmit() {
-                    next();
-                },
-            };
-        }
+    const handleClose = loading ? noop : onClose;
 
-        if (step === 1) {
-            return {
-                section: (
+    return (
+        <Modal
+            as={Form}
+            onSubmit={() => {
+                if (!onFormSubmit()) {
+                    return;
+                }
+
+                void withLoading(handleSubmit());
+            }}
+            onClose={handleClose}
+            {...rest}
+        >
+            <ModalHeader
+                title={
+                    mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`
+                }
+            />
+            <ModalContent>
+                {
                     <>
                         {hasOtherAdmins && (
                             <Alert className="mb-4">{c('Info')
@@ -187,44 +176,14 @@ const ChangeOrganizationKeysModal = ({
                             autoComplete="new-password"
                         />
                     </>
-                ),
-                submitText: c('Action').t`Save`,
-                onSubmit() {
-                    if (!onFormSubmit()) {
-                        return;
-                    }
-
-                    void withLoading(handleSubmit());
-                },
-            };
-        }
-
-        throw new Error('Unknown step');
-    })();
-
-    const handleClose = loading ? noop : onClose;
-
-    return (
-        <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} {...rest}>
-            <ModalHeader
-                title={
-                    mode === 'reset' ? c('Title').t`Reset organization keys` : c('Title').t`Change organization keys`
                 }
-            />
-            <ModalContent>{section}</ModalContent>
+            </ModalContent>
             <ModalFooter>
-                {step ? (
-                    <Button onClick={previous} disabled={loading}>
-                        {c('Action').t`Back`}
-                    </Button>
-                ) : (
-                    <Button onClick={handleClose} disabled={loading}>
-                        {c('Action').t`Close`}
-                    </Button>
-                )}
-
+                <Button onClick={handleClose} disabled={loading}>
+                    {c('Action').t`Close`}
+                </Button>
                 <Button loading={loading} type="submit" color="norm">
-                    {submitText}
+                    {c('Action').t`Save`}
                 </Button>
             </ModalFooter>
         </Modal>
