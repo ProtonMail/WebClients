@@ -3,18 +3,19 @@ import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from
 import { useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { Photo } from '../../../store/_photos/interface';
-import { usePhotosView } from '../../../store/_views/usePhotosView';
-import { PhotosCard } from './grid';
+import { PhotoGridItem, PhotoLink, usePhotosView } from '../../../store/_views/usePhotosView';
+import { PhotosCard, PhotosGroup } from './grid';
 
-export type PhotoGridItem = Photo | string;
+import './grid/PhotosGrid.scss';
 
 type Props = {
     data: PhotoGridItem[];
     getPhotoLink: ReturnType<typeof usePhotosView>['getPhotoLink'];
+    onItemRender: (item: PhotoLink) => void;
+    shareId: string;
 };
 
-export const PhotosGrid: FC<Props> = ({ data, getPhotoLink }) => {
+export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
     const [itemsPerLine, setItemsPerLine] = useState(0);
@@ -31,7 +32,7 @@ export const PhotosGrid: FC<Props> = ({ data, getPhotoLink }) => {
             width: 10 * emRatio,
             height: 13.75 * emRatio,
             gap: 0.25 * emRatio,
-            groupHeight: 2 * emRatio,
+            groupHeight: 2.75 * emRatio,
         };
     }, []);
 
@@ -105,33 +106,33 @@ export const PhotosGrid: FC<Props> = ({ data, getPhotoLink }) => {
 
             if (typeof item === 'string') {
                 gridItems.push(
-                    <div
+                    <PhotosGroup
                         style={{
                             position: 'absolute',
                             height: `${itemDimensions.groupHeight}px`,
                             width: '100%',
                             top: `${y}px`,
-                            backgroundColor: 'blue',
-                            color: 'white',
                         }}
-                    >
-                        {item}
-                    </div>
+                        text={item}
+                        showSeparatorLine={i !== 0}
+                    />
                 );
             } else {
-                // void getPhotoLink(new AbortController().signal, item.linkId)?.then((data) => console.log(data));
                 gridItems.push(
                     <PhotosCard
                         key={item.linkId}
                         photo={item}
+                        onRender={onItemRender}
                         style={{
                             position: 'absolute',
-                            backgroundColor: 'red',
                             width: itemWidth,
                             height: itemHeight,
                             top: `${y}px`,
                             left: `${x}px`,
+                            // This makes the loading animation more dynamic (7 is arbitrary)
+                            animationDelay: `${(i % 7) / 3.5}s`,
                         }}
+                        shareId={shareId}
                     />
                 );
             }
