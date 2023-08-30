@@ -508,14 +508,6 @@
 			visibility: hidden;
 		}
 	}
-
-	&--is-maximized {
-		@include media('>large') {
-			.message-attachmentList-item-container {
-				inline-size: calc((100% / 3) - (1em / 3));
-			}
-		}
-	}
 }
 
 .addresses-contacts-table {
