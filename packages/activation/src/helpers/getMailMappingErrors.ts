@@ -25,17 +25,10 @@ export const getMailMappingError = (
 ): MailImportPayloadError[] => {
     const errors: MailImportPayloadError[] = [];
 
-    const unavailableNameErrorPaths = [
-        // item ids who are checked and not current item
-        ...collection.filter((colItem) => colItem.id && colItem.id !== item.id && colItem.checked).map((m) => m.id),
-        // labels and folders can be merged but a label and a folder cannot have the same name
-        ...(isLabelMapping ? folders.map((item) => item.Path) : labels.map((item) => item.Path)),
-    ];
-
     const itemName = item.protonPath[item.protonPath.length - 1];
     const hasFoldersTooLongError = item.checked && isNameTooLong(itemName);
     const hasReservedNamesError = item.checked && isNameReserved(itemName);
-    const hasUnavailableNamesError = isNameAlreadyUsed(item.id, unavailableNameErrorPaths);
+    const hasUnavailableNamesError = isNameAlreadyUsed(item, collection, labels, folders, isLabelMapping);
     const hasEmptyError = isNameEmpty(itemName);
     const hasMergeWarningError = hasMergeWarning(collection, item, isLabelMapping);
 
