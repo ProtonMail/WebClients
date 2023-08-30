@@ -1,11 +1,32 @@
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, useEffect } from 'react';
 
-import { Photo } from '../../../../store/_photos/interfaces';
+import { c } from 'ttag';
+
+import { PhotoLink } from '../../../../store/_views/usePhotosView';
+import { getMimeTypeDescription } from '../../helpers';
 
 type Props = {
-    photo: Photo;
+    photo: PhotoLink;
+    onRender: (item: PhotoLink) => void;
     style: CSSProperties;
+    shareId: string;
 };
-export const PhotosCard: FC<Props> = ({ style }) => {
-    return <div style={style}>abc</div>;
+
+const getAltText = ({ mimeType, name }: PhotoLink) =>
+    `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
+
+export const PhotosCard: FC<Props> = ({ style, onRender, photo }) => {
+    useEffect(() => {
+        onRender(photo);
+    }, [photo]);
+
+    const thumbUrl = photo.cachedThumbnailUrl;
+
+    return (
+        // TODO: Thumbnails on click
+        // TODO: Keyboard navigation
+        <div style={style} className="photos-card cursor-pointer">
+            {thumbUrl ? <img src={thumbUrl} alt={getAltText(photo)} className="photos-card--thumbnail" /> : null}
+        </div>
+    );
 };
