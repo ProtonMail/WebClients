@@ -86,6 +86,7 @@ export interface SubscriptionCheckoutData {
     users: number;
     addons: AddonDescription[];
     withDiscountPerCycle: number;
+    withoutDiscountPerMonth: number;
     withDiscountPerMonth: number;
     membersPerMonth: number;
     addonsPerMonth: number;
@@ -218,6 +219,7 @@ export const getCheckout = ({
         addons: usersAndAddons.addons,
         usersTitle: getUserTitle(usersAndAddons.users || 1), // VPN and free plan has no users
         users: usersAndAddons.users || 1,
+        withoutDiscountPerMonth,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
