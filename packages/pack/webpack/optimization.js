@@ -28,7 +28,16 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
                 keep_fnames: isProduction,
             },
         }),
-        new CssMinimizerPlugin(),
+        new CssMinimizerPlugin({
+            minimizerOptions: {
+                preset: [
+                    'default',
+                    {
+                        calc: false,
+                    },
+                ],
+            },
+        }),
     ],
     splitChunks: {
         chunks(chunk) {
