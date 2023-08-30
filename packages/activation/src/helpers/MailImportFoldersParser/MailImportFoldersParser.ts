@@ -46,7 +46,12 @@ export interface MailImportFolder {
 /**
  * Parse folders from provider
  *
- * @returns an array of MailImportFolder
+ * @example
+ * ```
+ * const parser = new MailImportFoldersParser(apiFolders, isLabelMapping);
+ * const parsedFolders = parser.folders;
+ * ```
+ * @returns MailImportFoldersParser.folders - The parsed folders - MailImportFolder[]
  */
 class MailImportFoldersParser {
     private separatorSplitToken: string;
@@ -188,10 +193,7 @@ class MailImportFoldersParser {
             return result;
         })();
 
-        // We remove all separators from the paths and replace them with '-' except if it starts with '[XXXXXX]' (system folder)
-        return verifiedPath.map((pathChunk) =>
-            pathChunk.match(/^\[[a-zA-Z]*]/) ? pathChunk : pathChunk.replaceAll(separator, '-')
-        );
+        return verifiedPath;
     };
 
     private getProtonPath = (

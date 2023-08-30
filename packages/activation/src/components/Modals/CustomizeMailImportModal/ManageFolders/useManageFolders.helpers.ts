@@ -1,3 +1,4 @@
+import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getMailMappingError } from '@proton/activation/src/helpers/getMailMappingErrors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Label } from '@proton/shared/lib/interfaces';
@@ -12,24 +13,24 @@ interface FormatItemsProps {
     labels: Label[];
 }
 
+const isItemDisabled = (item: MailImportFolder, collection: MailImportFolder[]) => {
+    const isRootFolder = item.providerPath.length === 1;
+    const isParentItemChecked = collection.find((val) => val.id === item.folderParentID)?.checked;
+
+    return !(item.checked || isRootFolder || isParentItemChecked);
+};
+
 export const formatItems = ({ isLabelMapping, mapping, labels, folders }: FormatItemsProps) => {
     return mapping
-        .map<FolderMapItem>((item, index, collection) => {
-            const disabled = (() => {
-                const isRootFolder = item.providerPath.length === 1;
-                const parentItem = collection.find((val) => val.id === item.folderParentID);
-
-                return !(item.checked || isRootFolder || (parentItem && parentItem.checked));
-            })();
-
+        .map<FolderMapItem>((item, _, collection) => {
             return {
                 ...item,
-                disabled,
+                disabled: isItemDisabled(item, collection),
                 errors: [],
                 isLabel: isLabelMapping,
             };
         })
-        .map((item, index, collection) => {
+        .map((item, _, collection) => {
             const errors = getMailMappingError(item, labels, folders, collection, isLabelMapping);
             return { ...item, errors };
         });
