@@ -335,6 +335,9 @@ const SubscriptionModal = ({
             });
         }
 
+        // When user has an error during checkout, we need to return him to the exact same step
+        // Two possible cases: CHECKOUT and CHECKOUT_WITH_CUSTOMIZATION
+        const checkoutStep = model.step;
         try {
             setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
             await api({
@@ -378,7 +381,7 @@ const SubscriptionModal = ({
                 })
             );
 
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.CHECKOUT });
+            setModel({ ...model, step: checkoutStep });
             throw error;
         }
     };
