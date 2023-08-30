@@ -8,10 +8,11 @@ import { useCalendarSearch } from '../search/CalendarSearchProvider';
 
 interface Props {
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
+    onBackFromSearch: () => void;
 }
-const NukeSearchIndexButton = ({ showConfirmModal }: Props) => {
+const NukeSearchIndexButton = ({ showConfirmModal, onBackFromSearch }: Props) => {
     const { esDelete } = useEncryptedSearchLibrary();
-    const { isActive: isSearchActive } = useCalendarSearch();
+    const { isActive: isSearchActive, isSearching, setIsSearching } = useCalendarSearch();
 
     if (!isSearchActive) {
         return null;
@@ -19,7 +20,13 @@ const NukeSearchIndexButton = ({ showConfirmModal }: Props) => {
 
     const handleDeleteESIndex = () => {
         void showConfirmModal({
-            onSubmit: esDelete,
+            onSubmit: async () => {
+                void esDelete();
+                if (isSearching) {
+                    setIsSearching(false);
+                    onBackFromSearch();
+                }
+            },
             title: c('Info').t`Clear encrypted search data`,
             submitText: c('Info').t`Clear data`,
             message: c('Info')

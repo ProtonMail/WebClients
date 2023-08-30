@@ -23,7 +23,11 @@ import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import NukeSearchIndexButton from '../../containers/calendar/confirmationModals/NukeSearchIndexButton';
 
-const CalendarQuickSettings = () => {
+interface Props {
+    onBackFromSearch: () => void;
+}
+
+const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -142,7 +146,7 @@ const CalendarQuickSettings = () => {
             </QuickSettingsSection>
             <DefaultQuickSettings />
             <QuickSettingsButtonSection>
-                <NukeSearchIndexButton showConfirmModal={showConfirmModal} />
+                <NukeSearchIndexButton showConfirmModal={showConfirmModal} onBackFromSearch={onBackFromSearch} />
             </QuickSettingsButtonSection>
             {confirmModal}
         </QuickSettingsMain>

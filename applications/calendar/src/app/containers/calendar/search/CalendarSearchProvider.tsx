@@ -28,6 +28,8 @@ interface UseCalendarSearch {
     hasSearchedCounter: number;
     openedSearchItem: VisualSearchItem | undefined;
     setOpenedSearchItem: (item: VisualSearchItem | undefined) => void;
+    isSearching: boolean;
+    setIsSearching: (isSearching: boolean) => void;
     lastNonSearchViewRef: MutableRefObject<VIEWS | undefined>;
     isIndexing: boolean;
     isActive: boolean;
@@ -42,6 +44,8 @@ const CalendarSearchContext = createContext<UseCalendarSearch>({
     triggerSearch: noop,
     openedSearchItem: undefined,
     setOpenedSearchItem: noop,
+    isSearching: false,
+    setIsSearching: noop,
     lastNonSearchViewRef: { current: undefined },
     hasSearchedCounter: 0,
     isIndexing: false,
@@ -61,6 +65,8 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const lastNonSearchViewRef = useRef<VIEWS>();
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
+    // isSearching determines if the UI displays a search bar (if true) or a magnifier button (if false);
+    const [isSearching, setIsSearching] = useState(false);
     const [loading, withLoading, setLoading] = useLoading(true);
     const [openedSearchItem, setOpenedSearchItem] = useState<VisualSearchItem>();
 
@@ -101,7 +107,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
         void withLoading(
             encryptedSearch((result) => {
                 /**
-                 * We have to copy to a new reference because ES library mutates the initial one and it prevents a normal rerendering
+                 * We have to copy to a new reference because ES library mutates the initial one, and it prevents a normal rerendering
                  */
                 setItems([...result]);
             }).then(() => {
@@ -118,6 +124,8 @@ const CalendarSearchProvider = ({ children }: Props) => {
         hasSearchedCounter,
         openedSearchItem,
         setOpenedSearchItem,
+        isSearching,
+        setIsSearching,
         lastNonSearchViewRef,
         isIndexing,
         isActive,
