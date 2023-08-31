@@ -50,6 +50,9 @@
       "Back": [
         "Ɣer deffir"
       ],
+      "Back to Homepage": [
+        "Uɣal ɣer usebter agejdan"
+      ],
       "Cancel": [
         "Sefsex"
       ],
@@ -184,6 +187,12 @@
       "Delete permanently": [
         "Kkes i lebda"
       ],
+      "Delete this version": [
+        "Kkes lqem-a"
+      ],
+      "Delete version": [
+        "Err-d lqem-a"
+      ],
       "Deselect all": [
         "Kkes afran i meṛṛa"
       ],
@@ -197,13 +206,22 @@
         "Immed"
       ],
       "Download": [
-        "Sider"
+        "Sader"
+      ],
+      "Download (${ count })": [
+        "Sader (${ count })"
       ],
       "Download all": [
         "Sider kullec"
       ],
       "Download anyway": [
         "Sader akken yebɣu yili"
+      ],
+      "Download apps": [
+        "Sader isnasen"
+      ],
+      "Download Drive for Windows": [
+        "Sader Drive i Windows"
       ],
       "Drive Locked": [
         "Ameɣri usekkeṛ"
@@ -232,6 +250,9 @@
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
       ],
+      "Enable drive search": [
+        "Rmed n unadi n yibenk"
+      ],
       "Expand": [
         "Snefli"
       ],
@@ -249,6 +270,9 @@
       ],
       "Forward as attachment": [
         "Welleh am umedday"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Awi ${ DRIVE_APP_NAME }"
       ],
       "Get link": [
         "Awi aseɣwen"
@@ -270,6 +294,9 @@
       ],
       "Got it": [
         "Gziɣ"
+      ],
+      "Grid layout": [
+        "Tissi n uferrug"
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -346,6 +373,9 @@
       "Move to trash": [
         "Awi ar iḍumman"
       ],
+      "New": [
+        "Amynut"
+      ],
       "New message": [
         "Izen amaynut"
       ],
@@ -406,11 +436,17 @@
       "Remove": [
         "Kkes"
       ],
+      "Remove device": [
+        "Kkes ibenk"
+      ],
       "Remove from this list": [
         "Kkes seg tebdart-a"
       ],
       "Rename": [
         "Beddel isem"
+      ],
+      "Replace file": [
+        "Semselsi afaylu"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -439,6 +475,12 @@
       "Restore from trash": [
         "Err-d seg tqecwalt"
       ],
+      "Restore this version": [
+        "Kkes lqem-a"
+      ],
+      "Restore version": [
+        "Err-d lqem"
+      ],
       "Resume all": [
         "Ales asenker i kullec"
       ],
@@ -454,6 +496,9 @@
       "Save": [
         "Sekles"
       ],
+      "Save version as copy": [
+        "Sekles lqem am tenɣalt"
+      ],
       "Search": [
         "Anadi"
       ],
@@ -462,6 +507,9 @@
       ],
       "Search drive": [
         "Nadi deg umeɣri"
+      ],
+      "See version history": [
+        "Wali azray n lqem"
       ],
       "Select all": [
         "Fren akk"
@@ -538,6 +586,9 @@
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
       ],
+      "Try for free": [
+        "Ɛreḍ win n baṭel"
+      ],
       "Undo": [
         "Sefsex"
       ],
@@ -567,6 +618,9 @@
       ],
       "Upload file": [
         "Sali afaylu"
+      ],
+      "Upload files": [
+        "Sali ifuyla"
       ],
       "Upload folder": [
         "Sali akaram"
@@ -1279,6 +1333,9 @@
       "Mali": [
         "Mali"
       ],
+      "Malta": [
+        "Malta"
+      ],
       "Marshall Islands": [
         "Tigzirin n Marcal"
       ],
@@ -1317,6 +1374,9 @@
       ],
       "Mozambique": [
         "Muzumbik"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibya"
@@ -1366,11 +1426,17 @@
       "Oman": [
         "Uman"
       ],
+      "Pakistan": [
+        "Pakistan"
+      ],
       "Palau": [
         "Palawu"
       ],
       "Palestine": [
         "Filasṭin"
+      ],
+      "Panama": [
+        "Panama"
       ],
       "Papua New Guinea": [
         "Ɣinya Tamaynut Tapaput"
@@ -1480,6 +1546,9 @@
       "Spain": [
         "Spanya"
       ],
+      "Sudan": [
+        "Sudan"
+      ],
       "Suriname": [
         "Surinam"
       ],
@@ -1533,6 +1602,9 @@
       ],
       "Turks and Caicos Islands": [
         "Ṭurk d Tegzirin n Kaykus"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
       ],
       "Uganda": [
         "Uganda"
@@ -2542,6 +2614,9 @@
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } yettwafernen"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } d akaram yettwafernen",
         "${ selectedFoldersCount } d ikaramen yettwafernen"
@@ -2610,6 +2685,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Tebɣiḍ s tidet ad tsefḍeḍ taqecwalt daɣen ad tekkseḍ s wudem imezgi akk iferdisen?"
       ],
+      "Are you sure you want to permanently delete": [
+        "Tebɣiḍ s tidet ad tekkseḍ i lebda"
+      ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Tebɣiḍ s tidet ad tekkseḍ s wudem imezgi iferdisen yettwafernen seg tqecwalt?"
       ],
@@ -2639,6 +2717,9 @@
       ],
       "Clear data": [
         "Sfeḍ isefka"
+      ],
+      "Clear encrypted search data": [
+        "Sfeḍ isefka n unadi yettwawgelhen"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
@@ -2710,6 +2791,12 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
+      "Enable drive search": [
+        "Rmed n unadi n yibenk"
+      ],
+      "Enabling drive search": [
+        "Armad n unadi n yibenk"
+      ],
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
       ],
@@ -2741,17 +2828,26 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
       ],
+      "File will not be updated": [
+        "Afaylu ur yettuleqqem ara"
+      ],
       "Finalizing": [
         "Akemmel"
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
       ],
+      "Free forever": [
+        "Baṭel i lebda"
+      ],
       "Free up some space or add more storage space.": [
         "Slelli kra n tallunt neɣ rnu tallunt-nniḍen n weḥraz."
       ],
       "Free up some space or contact your administrator.": [
         "Slelli kra n tallunt neɣ nermes anedbal-inek .m."
+      ],
+      "from the version history?": [
+        "seg uzray n lqem?"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ddu ɣer \"Ifuyla-inu\" sakin sili kra n yifuyla."
@@ -2819,6 +2915,9 @@
       ],
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
+      ],
+      "Last week": [
+        "Dduṛt yezrin"
       ],
       "Learn more": [
         "Issin ugar"
@@ -2952,6 +3051,9 @@
       "Share files with links": [
         "Bḍu ifuyla s yisɣewnen"
       ],
+      "Shared link not found": [
+        "Aseɣwen yettwabḍan ulac-it"
+      ],
       "Signature issue": [
         "Ugur n usezmel"
       ],
@@ -2963,6 +3065,9 @@
       ],
       "support team": [
         "tarbaɛt n tallalt"
+      ],
+      "Swiss encrypted file storage": [
+        "Aḥraz n yifuyla yettwawgelhen, i d-yezgan deg Swiss"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
@@ -3122,6 +3227,9 @@
       "file data key": [
         "tasarut n yisefka n ufaylu"
       ],
+      "file data order": [
+        "asizwer n yisefka n ufaylu"
+      ],
       "keys": [
         "tisura"
       ],
@@ -3153,6 +3261,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "# n yisadaren"
+      ],
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
       ],
@@ -3253,11 +3364,17 @@
       "Deleted": [
         "Ittwakkes"
       ],
+      "Device": [
+        "Ibenk"
+      ],
       "Don't ask again": [
         "Ur d-ssutur ara tikkelt niḍen"
       ],
       "Download anyway": [
         "Sader akken yebɣu yili"
+      ],
+      "Duplicate found": [
+        "Uslig yettwaf"
       ],
       "Email": [
         "Imayl"
@@ -3429,6 +3546,9 @@
       ],
       "Region": [
         "Tamnaḍt"
+      ],
+      "Report": [
+        "Aneqqis"
       ],
       "Reveal password": [
         "Sken awal uffir"
@@ -4172,6 +4292,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# n yisadaren"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } tansa n yimayl",
         "${ emailsCount } n tansiwin imayl"
@@ -4219,6 +4342,9 @@
       "Billing cycle": [
         "Twala n ufter"
       ],
+      "Cannot load link": [
+        "Aferdis yegguma ad d-yali"
+      ],
       "Change layout": [
         "Snifel taneɣruft"
       ],
@@ -4236,6 +4362,9 @@
       ],
       "Contacts": [
         "Inermisen"
+      ],
+      "Create a new file": [
+        "Rnu afaylu tamaynut"
       ],
       "Create a new folder": [
         "Rnu tabzimt tamaynut"
@@ -4316,6 +4445,9 @@
       ],
       "Empty trash": [
         "Silem iḍumman"
+      ],
+      "Enable drive search": [
+        "Rmed n unadi n yibenk"
       ],
       "Enter your password": [
         "Sekcem awal-ik uffir"
@@ -4402,6 +4534,9 @@
       "Night theme": [
         "Asentel n yiḍ"
       ],
+      "No results found": [
+        "Ulac igmaḍ"
+      ],
       "Number of files": [
         "Amḍan n ifuyla"
       ],
@@ -4413,6 +4548,9 @@
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
+      ],
+      "Original size": [
+        "Teɣzi tagejdant"
       ],
       "Other information": [
         "Talɣut nniḍen"
@@ -4539,6 +4677,9 @@
       ],
       "Uploaded by": [
         "Yuli sɣur"
+      ],
+      "Version history": [
+        "Azray n lqem"
       ],
       "Warning": [
         "Alɣu"

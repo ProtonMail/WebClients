@@ -3073,6 +3073,10 @@
         "${ contactsCount } Kontakt gefunden",
         "${ contactsCount } Kontakte gefunden"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } Kontakt",
+        "${ contactsLength } Kontakte"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } beendet",
         "${ doneCount } beendet"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } Eintrag ausgewählt",
-        "${ selectedContactsLength } / ${ contactsLength } Einträgen ausgewählt"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } Kontakt ausgewählt",
+        "${ selectedContactsLength }/${ contactsLength } Kontakte ausgewählt"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } ausgewählt"

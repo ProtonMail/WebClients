@@ -3073,6 +3073,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contacto encontrado"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } finalizada",
         "${ doneCount } finalizadas"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } elemento seleccionado",
-        "${ selectedContactsLength } / ${ contactsLength } elementos seleccionados"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
       "${ selectedCount } selected": [
         "Selección: ${ selectedCount }"

@@ -1592,7 +1592,7 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
+        "(tramite ${ entryCountryName })"
       ]
     },
     "Create user accounts empty state": {
@@ -2696,21 +2696,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Prima di iniziare a inviare e ricevere email dai tuoi nuovi indirizzi devi creare le loro chiavi di crittografia."
       ],
-      "Billed every 12 months": [
-        "Fatturazione ogni 12 mesi"
-      ],
-      "Billed every 15 months": [
-        "Fatturazione ogni 15 mesi"
-      ],
-      "Billed every 24 months": [
-        "Fatturazione ogni 24 mesi"
-      ],
-      "Billed every 30 months": [
-        "Fatturazione ogni 30 mesi"
-      ],
-      "Billed every month": [
-        "Fatturazione ogni mese"
-      ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
@@ -3303,9 +3288,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
-      ],
-      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Questo creerà una chiave di crittografia per l'organizzazione. Le chiavi a 4096 bit funzionano solo su computer ad alte prestazioni, per la maggior parte degli utenti, si consiglia di utilizzare chiavi a 2048 bit."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento a ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi alcun blocco popup, sei pregato di disabilitarlo per continuare."
@@ -6608,9 +6590,6 @@
       ],
       "Set new password": [
         "Imposta nuova password"
-      ],
-      "Set organization keys": [
-        "Imposta le chiavi dell'organizzazione"
       ],
       "Set organization name": [
         "Imposta il nome dell'organizzazione"
