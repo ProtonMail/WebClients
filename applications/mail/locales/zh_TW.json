@@ -4637,9 +4637,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
-      ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
       ],
@@ -5122,9 +5119,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "了解更多${ PROTON_SENTINEL_NAME }高安全計畫"
       ],
       "Left to Right": [
         "由左至右"
