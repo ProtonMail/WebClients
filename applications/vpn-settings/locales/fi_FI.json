@@ -2696,21 +2696,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
-      "Billed every 12 months": [
-        "Laskutetaan 12 kuukauden välein"
-      ],
-      "Billed every 15 months": [
-        "Laskutetaan 15 kuukauden välein"
-      ],
-      "Billed every 24 months": [
-        "Laskutetaan 24 kuukauden välein"
-      ],
-      "Billed every 30 months": [
-        "Laskutetaan 30 kuukauden välein"
-      ],
-      "Billed every month": [
-        "Laskutetaan kuukausittain"
-      ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
@@ -3303,9 +3288,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tämä lopettaa nykyisen tilauksen ja menetät kaikki kertyneet uskollisuusedut. Jäljellä oleva tilausaika palautetaan tilillesi krediitteinä."
-      ],
-      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Tämä luo organisaatiollesi uuden salausavaimen. 4096-bittiset avaimet toimivat vain tehokkaissa tietokoneissa, useimmille käyttäjille suosittelemme 2048-bittisten avainten käyttöä."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
@@ -5101,6 +5083,11 @@
         "Sinulla voi olla useita ylläpitäjiä. Kaikki ylläpitäjät voivat lisätä ja poistaa käyttäjiä, mutta vain ensisijainen ylläpitäjä voi hallita laskutusta."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Sisältyy kaikkiin useita käyttäjiä sisältäviin ${ BRAND_NAME } for Business -tilauksiin."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 tuki"
@@ -6600,9 +6587,6 @@
       ],
       "Set new password": [
         "Aseta uusi salasana"
-      ],
-      "Set organization keys": [
-        "Aseta organisaation avaimet"
       ],
       "Set organization name": [
         "Aseta organisaation nimi"

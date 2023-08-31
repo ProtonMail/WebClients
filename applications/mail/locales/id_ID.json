@@ -4586,6 +4586,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } kontak"
+      ],
       "${ count } unread messages": [
         "${ count } pesan yang belum dibaca"
       ],
@@ -4638,10 +4641,10 @@
         "${ pureAttachmentsCount } berkas terlampir"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
-        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
+        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ selectedContactsLength } / ${ contactsLength } item dipilih"
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
@@ -5108,6 +5111,9 @@
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Bergabunglah dengan program ${ PROTON_SENTINEL_NAME } untuk memperoleh keamanan dan dukungan akun yang maksimal."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
@@ -5125,9 +5131,6 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Pelajari lebih lanjut mengenai program ${ PROTON_SENTINEL_NAME } yang berkeamanan tinggi."
       ],
       "Left to Right": [
         "Kiri ke Kanan"

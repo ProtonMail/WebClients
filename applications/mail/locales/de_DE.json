@@ -4631,6 +4631,10 @@
         "${ contactsCount } Kontakt gefunden",
         "${ contactsCount } Kontakte gefunden"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } Kontakt",
+        "${ contactsLength } Kontakte"
+      ],
       "${ count } unread message": [
         "${ count } ungelesene Nachricht",
         "${ count } ungelesene Nachrichten"
@@ -4700,9 +4704,9 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } Eintrag ausgewählt",
-        "${ selectedContactsLength } / ${ contactsLength } Einträgen ausgewählt"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } Kontakt ausgewählt",
+        "${ selectedContactsLength }/${ contactsLength } Kontakte ausgewählt"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } Ordner ausgewählt",
@@ -5215,9 +5219,6 @@
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Erfahre mehr über das ${ PROTON_SENTINEL_NAME }-Hochsicherheitsprogramm"
       ],
       "Left to Right": [
         "Von links nach rechts"
