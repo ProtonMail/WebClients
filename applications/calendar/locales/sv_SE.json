@@ -3407,6 +3407,10 @@
         "${ contactsCount } kontakt hittades",
         "${ contactsCount } kontakter hittades"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
@@ -3423,9 +3427,9 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength }/${ contactsLength } objekt valt",
-        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt vald",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mapp vald",
