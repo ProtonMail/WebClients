@@ -3040,6 +3040,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } kontak"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } telah selesai terproses"
       ],
@@ -3071,10 +3074,10 @@
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
-        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
+        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ selectedContactsLength } / ${ contactsLength } item dipilih"
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } terpilih"

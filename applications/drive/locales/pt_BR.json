@@ -3073,6 +3073,10 @@
         "${ contactsCount } contato encontrado",
         "${ contactsCount } contatos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contato",
+        "${ contactsLength } contatos"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } concluído",
         "${ doneCount } concluídos"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contato selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } selecionado"
@@ -3856,6 +3864,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
       ],
@@ -3961,6 +3972,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Tente pesquisar pelos nome do arquivo, data ou tipo."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Infelizmente, parece que o arquivo ou alguns de seus dados não podem ser descriptografados."
       ],
       "Unknown error": [
         "Erro desconhecido"
