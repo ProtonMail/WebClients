@@ -17,15 +17,22 @@ interface Props {
 
 const LoginContainer = ({ metaTags, onLogin, paths }: Props) => {
     const location = useLocation<{ from?: H.Location }>();
+    const searchParams = new URLSearchParams(location.search);
+    const vpnTestflight = searchParams.get('redirect') === 'ios-beta';
 
     return (
         <AccountLoginContainer
+            testflight={vpnTestflight ? 'vpn' : undefined}
             metaTags={metaTags}
             paths={paths}
             toApp={APPS.PROTONVPN_SETTINGS}
             setupVPN={false}
             hasRemember={false}
             onLogin={async (data) => {
+                if (vpnTestflight) {
+                    document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
+                    return;
+                }
                 const { User } = data;
                 const previousLocation = location.state?.from;
                 const previousHash = previousLocation?.hash || '';
