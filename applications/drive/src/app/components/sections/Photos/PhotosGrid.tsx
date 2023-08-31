@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import { useElementRect } from '@proton/components';
+import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { PhotoGridItem, PhotoLink, usePhotosView } from '../../../store/_views/usePhotosView';
@@ -13,9 +13,10 @@ type Props = {
     getPhotoLink: ReturnType<typeof usePhotosView>['getPhotoLink'];
     onItemRender: (item: PhotoLink) => void;
     shareId: string;
+    isLoadingMore: boolean;
 };
 
-export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId }) => {
+export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMore }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
     const [itemsPerLine, setItemsPerLine] = useState(0);
@@ -157,6 +158,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId }) => {
             >
                 {gridItems}
             </div>
+            {isLoadingMore && <Loader />}
         </div>
     );
 };
