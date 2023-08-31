@@ -5224,7 +5224,7 @@
         "Server ${ provisioningCounter } masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
-        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
+        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
@@ -5546,21 +5546,6 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
-      ],
-      "Billed every 12 months": [
-        "Ditagihkan per 12 bulan"
-      ],
-      "Billed every 15 months": [
-        "Ditagihkan per 15 bulan"
-      ],
-      "Billed every 24 months": [
-        "Ditagihkan per 24 bulan"
-      ],
-      "Billed every 30 months": [
-        "Ditagihkan per 30 bulan"
-      ],
-      "Billed every month": [
-        "Ditagihkan secara bulanan"
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -6276,6 +6261,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
+      "per month": [
+        "per bulan"
+      ],
+      "per month, billed every 12 months": [
+        "per bulan, ditagihkan setiap 12 bulan"
+      ],
+      "per month, billed every 15 months": [
+        "per bulan, ditagihkan setiap 15 bulan"
+      ],
+      "per month, billed every 24 months": [
+        "per bulan, ditagihkan setiap 24 bulan"
+      ],
+      "per month, billed every 30 months": [
+        "per bulan, ditagihkan setiap 30 bulan"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Klien PGP akan mendeteksi kunci PGP Anda secara otomatis jika pesan keluar ditandatangani."
       ],
@@ -6674,9 +6674,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
-      ],
-      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Ini akan menciptakan kunci enkripsi baru untuk organisasi Anda. Kunci 4096-bit hanya bekerja pada komputer dengan kinerja tinggi, untuk sebagian besar pengguna, sebaiknya gunakan kunci 2048-bit."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dengan ini, seluruh versi berkas Anda yang lebih lawas dari ${ rententionLabel } akan dihapus."
@@ -7340,7 +7337,7 @@
         "Saldo"
       ],
       "Donation": [
-        "Sumbangan"
+        "Donasi"
       ],
       "Modification": [
         "Penyesuaian"
@@ -10600,16 +10597,16 @@
         "per bulan, ditagihkan secara tahunan"
       ],
       "per month, billed every 15 months": [
-        "per bulan, ditagihkan per 15 bulan"
+        "per bulan, ditagihkan setiap 15 bulan"
       ],
       "per month, billed every 30 months": [
-        "per bulan, ditagihkan per 30 bulan"
+        "per bulan, ditagihkan setiap 30 bulan"
       ],
       "per month, billed every month": [
         "per bulan, ditagihkan secara bulanan"
       ],
       "per month, billed every two years": [
-        "per bulan, ditagihkan per dua tahun"
+        "per bulan, ditagihkan setiap dua tahun"
       ],
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
@@ -11476,13 +11473,13 @@
     },
     "Subscription": {
       "Billed every 15 months": [
-        "Ditagih setiap 15 bulan"
+        "Ditagihkan setiap 15 bulan"
       ],
       "Billed every 2 years": [
-        "Ditagih setiap 2 tahun"
+        "Ditagihkan setiap 2 tahun"
       ],
       "Billed every 30 months": [
-        "Ditagih setiap 30 bulan"
+        "Ditagihkan setiap 30 bulan"
       ],
       "Billed monthly": [
         "Ditagih bulanan"
@@ -12794,9 +12791,6 @@
       "Set new password": [
         "Atur kata sandi baru"
       ],
-      "Set organization keys": [
-        "Atur kunci organisasi"
-      ],
       "Set organization name": [
         "Atur nama organisasi"
       ],
@@ -13408,13 +13402,13 @@
         "${ billedText }, akan diperbarui pada ${ formattedEndTime }"
       ],
       "Billed every 15 months": [
-        "Ditagihkan per 15 bulan"
+        "Ditagihkan setiap 15 bulan"
       ],
       "Billed every 2 years": [
-        "Ditagihkan per 2 tahun"
+        "Ditagihkan setiap 2 tahun"
       ],
       "Billed every 30 months": [
-        "Ditagihkan per 30 bulan"
+        "Ditagihkan setiap 30 bulan"
       ],
       "Billed monthly": [
         "Ditagihkan secara bulanan"
