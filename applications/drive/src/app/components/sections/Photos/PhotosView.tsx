@@ -13,7 +13,7 @@ import { PhotosGrid } from './PhotosGrid';
 import { PhotosToolbar } from './toolbar';
 
 export const PhotosView: FC<void> = () => {
-    const { photos, getPhotoLink, isLoading } = usePhotosView();
+    const { photos, getPhotoLink, isLoading, isLoadingMore } = usePhotosView();
     const { shareId, linkId } = usePhotosProvider();
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
@@ -27,7 +27,7 @@ export const PhotosView: FC<void> = () => {
         [shareId]
     );
 
-    if (isLoading) {
+    if (isLoading && !isLoadingMore) {
         return <Loader />;
     }
 
@@ -55,6 +55,7 @@ export const PhotosView: FC<void> = () => {
                     getPhotoLink={getPhotoLink}
                     onItemRender={handleItemRender}
                     shareId={shareId}
+                    isLoadingMore={isLoadingMore}
                 />
             )}
         </UploadDragDrop>
