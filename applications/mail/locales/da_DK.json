@@ -4610,6 +4610,10 @@
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
       "${ count } unread message": [
         "${ count } ulæst besked",
         "${ count } ulæste beskeder"
@@ -4679,9 +4683,9 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } element valgt",
-        "${ selectedContactsLength } / ${ contactsLength } elementer valgt"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
@@ -5177,6 +5181,9 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Tilmeld dig ${ PROTON_SENTINEL_NAME }-programmet for at få det højeste niveau af kontosikkerhed og support."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
       ],
@@ -5194,9 +5201,6 @@
       ],
       "Learn more": [
         "Få mere at vide"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Få mere at vide om ${ PROTON_SENTINEL_NAME } højsikkerhedsprogram."
       ],
       "Left to Right": [
         "Venstre mod højre"

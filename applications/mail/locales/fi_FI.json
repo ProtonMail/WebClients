@@ -4631,6 +4631,10 @@
         "${ contactsCount } yhteystieto löytyi",
         "${ contactsCount } yhteystietoa löytyi"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } yhteystieto",
+        "${ contactsLength } yhteystiedot"
+      ],
       "${ count } unread message": [
         "${ count } lukematon viesti",
         "${ count } lukematonta viestiä"
@@ -4699,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
+        "${ selectedContactsLength }/${ contactsLength } yhteystiedot valittu"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } kansio valittu",
@@ -5193,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Liity ${ PROTON_SENTINEL_NAME } ohjelmaan saadaksesi korkeimman tason turvan tilillesi ja tuen."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."

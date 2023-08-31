@@ -4631,6 +4631,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contacto encontrado"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ count } unread message": [
         "${ count } mensaje no leído",
         "${ count } mensaje no leído"
@@ -4700,9 +4704,9 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } elemento seleccionado",
-        "${ selectedContactsLength } / ${ contactsLength } elementos seleccionados"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -5198,6 +5202,9 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Únase al programa ${ PROTON_SENTINEL_NAME } para tener el nivel más alto en seguridad de la cuenta y soporte."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar su selección y nosotros haremos el resto."
       ],
@@ -5215,9 +5222,6 @@
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Más información acerca del programa de alta seguridad ${ PROTON_SENTINEL_NAME }."
       ],
       "Left to Right": [
         "Izquierda a derecha"
