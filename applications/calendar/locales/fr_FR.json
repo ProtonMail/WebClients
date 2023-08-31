@@ -3407,6 +3407,10 @@
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacts"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
@@ -3422,6 +3426,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
+        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -3904,7 +3912,7 @@
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Testez les nouveaux produits, mises à jour, et fonctionnalités de ${ BRAND_NAME } avant leur sortie publique. Ceci rechargera l'application."
+        "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
       "Update recurring event": [
         "Mettre à jour l'événement récurrent"
