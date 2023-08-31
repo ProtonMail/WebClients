@@ -64,6 +64,7 @@ import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -422,15 +423,16 @@ const InteractiveCalendarView = ({
 
         // For the modal, we handle this on submit instead
         if (!createEventModal.isOpen) {
-            const startDate = propertyToUTCDate(
-                modelToDateProperty(newTemporaryEvent.tmpData.start, newTemporaryEvent.tmpData.isAllDay)
+            const newStartDate = toUTCDate(
+                modelToDateProperty(newTemporaryEvent.tmpData.start, newTemporaryEvent.tmpData.isAllDay).value
             );
-            const hasStartChanged =
-                +propertyToUTCDate(
-                    modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
-                ) !== +startDate;
 
-            changeDate(startDate, hasStartChanged);
+            const previousStartDate = toUTCDate(
+                modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay).value
+            );
+
+            const hasStartChanged = +previousStartDate !== +newStartDate;
+            changeDate(newStartDate, hasStartChanged);
         }
 
         setInteractiveData({
@@ -1287,25 +1289,15 @@ const InteractiveCalendarView = ({
                 await Promise.all(sendActions.map((action) => handleSendIcs(action)));
             }
 
-            if (temporaryEvent.tmpOriginalTarget) {
-                changeDate(
-                    propertyToUTCDate(
-                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
-                    ),
-                    hasStartChanged
-                );
-            } else {
-                const hasChanged =
-                    +propertyToUTCDate(
-                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
-                    ) !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
+            const newStartDate = toUTCDate(
+                modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay).value
+            );
 
-                changeDate(
-                    propertyToUTCDate(
-                        modelToDateProperty(temporaryEvent.tmpData.start, temporaryEvent.tmpData.isAllDay)
-                    ),
-                    hasChanged
-                );
+            if (temporaryEvent.tmpOriginalTarget) {
+                changeDate(newStartDate, hasStartChanged);
+            } else {
+                const hasChanged = +newStartDate !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
+                changeDate(newStartDate, hasChanged);
             }
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
