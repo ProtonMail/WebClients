@@ -2570,7 +2570,7 @@
         "${ number } serwerów"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } wymaga co najmniej 1 serwera dedykowanego ${ serverPricePerMonth }"
+        "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Trwa konfiguracja ${ provisioningCounter } serwera. Zazwyczaj trwa to około ${ provisioningDuration }.",
@@ -2594,7 +2594,7 @@
         "Funkcja Secure Core wymaga posiadania planu ${ vpnPlus }."
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice } miesięcznie)"
+        "(${ serverPrice } / miesiąc)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -2739,21 +2739,6 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Zanim zaczniesz wysyłać i odbierać wiadomości e-mail z nowych adresów, musisz utworzyć dla nich klucze szyfrowania."
-      ],
-      "Billed every 12 months": [
-        "Płatne co 12 miesięcy"
-      ],
-      "Billed every 15 months": [
-        "Płatne co 15 miesięcy"
-      ],
-      "Billed every 24 months": [
-        "Płatne co 24 miesiące"
-      ],
-      "Billed every 30 months": [
-        "Płatne co 30 miesięcy"
-      ],
-      "Billed every month": [
-        "Płatne co miesiąc"
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
@@ -3133,6 +3118,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
       ],
+      "per month": [
+        "miesięcznie"
+      ],
+      "per month, billed every 12 months": [
+        "miesięcznie, płatne co 12 miesięcy"
+      ],
+      "per month, billed every 15 months": [
+        "miesięcznie, płatne co 15 miesięcy"
+      ],
+      "per month, billed every 24 months": [
+        "miesięcznie, płatne co 24 miesiące"
+      ],
+      "per month, billed every 30 months": [
+        "miesięcznie, płatne co 30 miesięcy"
+      ],
       "Plan upgrade required": [
         "Ulepszenie planu jest wymagane"
       ],
@@ -3363,9 +3363,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
-      ],
-      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Spowoduje to utworzenie nowego klucza szyfrowania dla Twojej organizacji. 4096-bitowe klucze działają jedynie na komputerach wysokiej wydajności. Dla większości użytkowników zaleca się użycie kluczy 2048-bitowych."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
@@ -6786,9 +6783,6 @@
       ],
       "Set new password": [
         "Ustaw nowe hasło"
-      ],
-      "Set organization keys": [
-        "Ustaw klucze organizacji"
       ],
       "Set organization name": [
         "Ustaw nazwę organizacji"
