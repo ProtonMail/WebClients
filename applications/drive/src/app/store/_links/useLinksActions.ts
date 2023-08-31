@@ -8,6 +8,7 @@ import {
     queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
+import { queryVolumeEmptyTrash } from '@proton/shared/lib/api/drive/volume';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
@@ -18,7 +19,7 @@ import groupWith from '@proton/utils/groupWith';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
-import { useShare } from '../_shares';
+import { useDefaultShare, useShare } from '../_shares';
 import { useVolumesState } from '../_volumes';
 import useLink from './useLink';
 import useLinks from './useLinks';
@@ -54,7 +55,9 @@ export function useLinksActions({
     const events = useDriveEventManager();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
-    const { lockLinks, unlockLinks, lockTrash } = useLinksState();
+    const { lockLinks, lockTrash, unlockLinks } = useLinksState();
+    const { getDefaultShare } = useDefaultShare();
+
     const { getShareCreatorKeys } = useShare();
     const volumeState = useVolumesState();
 
@@ -294,14 +297,12 @@ export function useLinksActions({
         });
     };
 
-    const emptyTrash = async (abortSignal: AbortSignal, shareId: string) => {
-        lockTrash(shareId);
-        await debouncedRequest(queryEmptyTrashOfShare(shareId), abortSignal);
-        const volumeId = volumeState.findVolumeId(shareId);
+    const emptyTrash = async (abortSignal: AbortSignal) => {
+        const { volumeId } = await getDefaultShare();
+        lockTrash();
+        await debouncedRequest(queryVolumeEmptyTrash(volumeId), abortSignal);
 
-        if (volumeId) {
-            await events.pollEvents.volumes(volumeId);
-        }
+        await events.pollEvents.volumes(volumeId);
     };
 
     return {

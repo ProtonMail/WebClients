@@ -34,6 +34,11 @@ export const queryVolumeTrash = (
     };
 };
 
+export const queryVolumeEmptyTrash = (volumeId: string) => ({
+    method: 'delete',
+    url: `drive/volumes/${volumeId}/trash`,
+});
+
 export const queryVolumeSharedLinks = (
     volumeId: string,
     params: { Page: number; PageSize?: number; Recursive?: 1 | 0 }
