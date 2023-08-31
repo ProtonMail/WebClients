@@ -3073,6 +3073,10 @@
         "${ contactsCount } contatto trovato",
         "${ contactsCount } contatti trovati"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contatto",
+        "${ contactsLength } contatti"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } completato",
         "${ doneCount } completato"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } elemento selezionato",
-        "${ selectedContactsLength } / ${ contactsLength } elementi selezionati"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contatto selezionato",
+        "${ selectedContactsLength }/${ contactsLength } contatti selezionati"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } selezionati"
@@ -3970,7 +3974,7 @@
         "Prova a cercare per nome file, data o tipo."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decrittografati."
+        "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decriptati."
       ],
       "Unknown error": [
         "Errore sconosciuto"

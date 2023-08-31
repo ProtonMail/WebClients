@@ -3073,6 +3073,10 @@
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacts"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } terminé",
         "${ doneCount } terminés"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
+        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "Sélection : ${ selectedCount }"
@@ -3856,6 +3864,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Le nombre de téléchargements comprend les téléchargements et les prévisualisations de fichiers."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
       ],
@@ -3957,13 +3968,13 @@
         "Corbeille"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Testez les nouveaux produits, mises à jour, et fonctionnalités de ${ BRAND_NAME } avant leur sortie publique. Ceci rechargera l'application."
+        "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
       "Try searching by file name, date, or type.": [
         "Essayez une recherche par nom, date ou type de fichier."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Il semble malheureusement que le fichier ou certaines de ses données ne puissent pas être déchiffrés."
+        "Il n'est malheureusement pas possible de déchiffrer le fichier ou certaines de ses données."
       ],
       "Unknown error": [
         "Erreur inconnue"

@@ -3073,9 +3073,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
-      ],
       "${ selectedCount } selected": [
         "已選取 ${ selectedCount } 個"
       ],
