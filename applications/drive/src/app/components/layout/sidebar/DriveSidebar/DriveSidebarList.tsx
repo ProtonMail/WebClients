@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { SidebarList } from '@proton/components';
 
 import { ShareWithKey } from '../../../../store';
-import useDevicesFeatureFlag from '../../../../store/_devices/useDevicesFeatureFlag';
 import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
 import SidebarDevices from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
@@ -19,7 +18,6 @@ interface Props {
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
-    const isDevicesSectionEnabled = useDevicesFeatureFlag();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
@@ -38,7 +36,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                     setSidebarLevel={setSidebarLevel}
                 />
             ))}
-            {isDevicesSectionEnabled && <SidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />}
+            <SidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
             <DriveSidebarListItem
                 to="/shared-urls"
                 icon="link"
