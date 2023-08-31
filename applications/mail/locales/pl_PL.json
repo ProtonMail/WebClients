@@ -4721,6 +4721,12 @@
         "${ contactsCount } znalezionych kontaktów",
         "${ contactsCount } znalezionych kontaktów"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakty",
+        "${ contactsLength } kontaktów",
+        "${ contactsLength } kontaktów"
+      ],
       "${ count } unread message": [
         "${ count } nieprzeczytana wiadomość",
         "${ count } nieprzeczytane wiadomości",
@@ -5372,6 +5378,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Dołącz do programu ${ PROTON_SENTINEL_NAME }, aby uzyskać najwyższy poziom bezpieczeństwa konta i wsparcia."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
@@ -5389,9 +5398,6 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Dowiedz się więcej na temat ${ PROTON_SENTINEL_NAME } programu o wysokim bezpieczeństwie."
       ],
       "Left to Right": [
         "Od lewej do prawej"

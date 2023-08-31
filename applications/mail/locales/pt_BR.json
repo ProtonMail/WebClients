@@ -988,6 +988,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Strikethrough": [
+        "Tachado"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -4628,6 +4631,10 @@
         "${ contactsCount } contato encontrado",
         "${ contactsCount } contatos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contato",
+        "${ contactsLength } contatos"
+      ],
       "${ count } unread message": [
         "${ count } mensagem não lida",
         "${ count } mensagens não lidas"
@@ -4696,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contato selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -5190,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Participe do programa ${ PROTON_SENTINEL_NAME } para obter o mais alto nível de segurança e suporte de conta."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
