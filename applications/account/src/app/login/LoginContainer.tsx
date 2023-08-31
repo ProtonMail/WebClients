@@ -24,7 +24,7 @@ import {
 } from '@proton/components/containers/login/loginActions';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
@@ -39,6 +39,7 @@ import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
+import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 
@@ -62,6 +63,7 @@ interface Props {
     modal?: boolean;
     metaTags: MetaTags | null;
     render?: (renderProps: RenderProps) => ReactNode;
+    testflight?: 'vpn';
 }
 
 const defaultRender = (data: RenderProps) => {
@@ -86,6 +88,7 @@ const LoginContainer = ({
     paths,
     modal,
     render = defaultRender,
+    testflight,
 }: Props) => {
     const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
@@ -168,6 +171,25 @@ const LoginContainer = ({
         };
     })();
 
+    const titles = (() => {
+        if (testflight === 'vpn') {
+            const app = `${VPN_APP_NAME} iOS`;
+            return {
+                title: c('Title').t`Sign in to join the Beta program`,
+                // translator: full sentence is: "Enter your Proton Account details to join the Proton VPN iOS Beta program"
+                subTitle: c('Title').t`Enter your ${BRAND_NAME} Account details to join the ${app} Beta program`,
+            };
+        }
+        const title = c('Title').t`Sign in`;
+        const subTitle = toAppName
+            ? c('Info').t`to continue to ${toAppName}`
+            : c('Info').t`Enter your ${BRAND_NAME} Account details.`;
+        return {
+            title,
+            subTitle,
+        };
+    })();
+
     const children = (
         <>
             <AbuseModal
@@ -178,44 +200,50 @@ const LoginContainer = ({
             {step === AuthStep.LOGIN && (
                 <>
                     {render({
-                        title: c('Title').t`Sign in`,
-                        subTitle: toAppName
-                            ? c('Info').t`to continue to ${toAppName}`
-                            : c('Info').t`Enter your ${BRAND_NAME} Account details.`,
+                        title: titles.title,
+                        subTitle: titles.subTitle,
                         onBack: handleBackStep,
                         content: (
-                            <LoginForm
-                                signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
-                                paths={paths}
-                                defaultUsername={previousUsernameRef.current}
-                                hasRemember={hasRemember}
-                                trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
-                                onSubmit={async ({ username, password, payload, persistent }) => {
-                                    try {
-                                        const validateFlow = createFlow();
-                                        await startUnAuthFlow();
-                                        const result = await handleLogin({
-                                            username,
-                                            password,
-                                            persistent,
-                                            api: silentApi,
-                                            hasTrustedDeviceRecovery,
-                                            appName: APP_NAME,
-                                            toApp,
-                                            ignoreUnlock: false,
-                                            payload,
-                                            setupVPN,
-                                            ktActivation,
-                                        });
-                                        if (validateFlow()) {
-                                            return await handleResult(result);
+                            <>
+                                {testflight === 'vpn' ? (
+                                    <>
+                                        <Testflight className="mb-8" />
+                                        <div className="mb-1" />
+                                    </>
+                                ) : null}
+                                <LoginForm
+                                    signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
+                                    paths={paths}
+                                    defaultUsername={previousUsernameRef.current}
+                                    hasRemember={hasRemember}
+                                    trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
+                                    onSubmit={async ({ username, password, payload, persistent }) => {
+                                        try {
+                                            const validateFlow = createFlow();
+                                            await startUnAuthFlow();
+                                            const result = await handleLogin({
+                                                username,
+                                                password,
+                                                persistent,
+                                                api: silentApi,
+                                                hasTrustedDeviceRecovery,
+                                                appName: APP_NAME,
+                                                toApp,
+                                                ignoreUnlock: false,
+                                                payload,
+                                                setupVPN,
+                                                ktActivation,
+                                            });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
+                                            }
+                                        } catch (e) {
+                                            handleError(e);
+                                            handleCancel();
                                         }
-                                    } catch (e) {
-                                        handleError(e);
-                                        handleCancel();
-                                    }
-                                }}
-                            />
+                                    }}
+                                />
+                            </>
                         ),
                     })}
                 </>
