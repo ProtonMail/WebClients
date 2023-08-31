@@ -930,27 +930,38 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
             passphrase: 'passphrase',
         });
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+        expect(charlieKey.subkeys.length).to.equal(1);
     });
 
     it('generateE2EEForwardingMaterial - supports proxying multiple subkeys', async () => {
+        // three subkeys, where the middle one cannot encrypt. the other 2 are compatible with forwarding.
         const bobKey = await CryptoWorker.importPrivateKey({
             armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
-xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
-BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
-zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
-AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
-mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
-nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
-GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
-mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
-ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
-YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
-I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
-Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
-7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
-AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
-=p5Q+
+xVgEZPCzChYJKwYBBAHaRw8BAQdAzNwn+VrPldqod1clidK65VV9A8Z7EP42
+nBsRLC5VbkYAAQDk09zgBMPtfL+yECBFUfxbxFyTTljJWopHlJRw1mOYQxEr
+zRJCb2IgPGluZm9AYm9iLmNvbT7CjAQQFgoAPgWCZPCzCgQLCQcICZBGtkcg
+A5qpvQMVCAoEFgACAQIZAQKbAwIeARYhBFDSH63FH1VAxOw+4Ea2RyADmqm9
+AABWGwD+IQWdHPmJaFf1Bez5Pw9nnHAB0GWcg4gY46I4lSIgTbQA/iYzMNjz
+8hYexOvGf7hYuDBqlKxiVIuuzEEd8QEKORcAx10EZPCzChIKKwYBBAGXVQEF
+AQEHQBGVJmsdqGIHqvcg/yZGRVXargSkWcZudHxB2hYOwH9cAwEIBwAA/0qX
+4OS46seRkKl1tRmOx8cLGCvrCCIOV4BRIFHEbyBAD9PCeAQYFggAKgWCZPCz
+CgmQRrZHIAOaqb0CmwwWIQRQ0h+txR9VQMTsPuBGtkcgA5qpvQAAmWcA/R/F
+dQiOqdLbQ7F46lgS6T18DJ8g64GaX0vQG283xunHAQDtImMFRT0j5MFVRBmf
+0T/i5VJRlKxdMqV5+KIId1l2BsdYBGTwswoWCSsGAQQB2kcPAQEHQIV3i+Nv
+Q9kDBvM/4cuglV0EGYhLvsDT9VUOu1eV+WiZAAEAxrJslu4wUCzNf9I+c5P/
+73Q9Aoy9h8uThRLsBFvM5UgRIcLALwQYFgoAoQWCZPCzCgmQRrZHIAOaqb0C
+mwJ2oAQZFgoAJwWCZPCzCgmQxpgQadwIqbMWIQQQBJo9CdJeHhXAYrXGmBBp
+3AipswAA+aQBAKvKgxuGRmQcwRcQ0BGYLWHHmCjXR37hboZtpVhcJ4q9AQDb
+OLXyzKjb5ZEIXcMD2IbyucPdijCC6pz6TM0XeD/7BRYhBFDSH63FH1VAxOw+
+4Ea2RyADmqm9AACmowD/QD6kaeQ8hBqI0133Q/xQ4onW1YnasvUSVgumILUP
+FY4BAOY4aXiZdCsiALm9FwzlQzAabwv6r5qzLnTYfo4yjnABx10EZPCzChIK
+KwYBBAGXVQEFAQEHQP1eT6H0RIV9HGF2QFnI86T733sHBeckitHkpF8WyIwJ
+AwEIBwAA/3uWKfmjoblcKAeEKmQ8dcssCOG6xiCRFNPZ2oJ1LVVYD/nCeAQY
+FggAKgWCZPCzCgmQRrZHIAOaqb0CmwwWIQRQ0h+txR9VQMTsPuBGtkcgA5qp
+vQAAn/gBAIgdrWJLDYdgCLQXXzfdpW7KUyq4YTXPa++wWlX9MAxsAP9iHWYQ
+RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
+=XyY6
 -----END PGP PRIVATE KEY BLOCK-----`,
             passphrase: null,
         });
@@ -960,13 +971,16 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
             userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
             passphrase: 'passphrase',
         });
-        expect(proxyParameters).to.have.length(1);
+        expect(proxyParameters).to.have.length(2);
         expect(proxyParameters[0]).to.have.length(32);
+        expect(proxyParameters[1]).to.have.length(32);
+
         const charlieKey = await CryptoWorker.importPrivateKey({
             armoredKey: forwardeeKey,
             passphrase: 'passphrase',
         });
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
+        expect(charlieKey.subkeys.length).to.equal(2);
     });
 
     it('generateE2EEForwardingMaterial - throws on unsuitable forwarder key (NIST P256)', async () => {
