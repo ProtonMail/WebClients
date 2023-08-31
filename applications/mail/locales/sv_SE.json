@@ -4631,6 +4631,10 @@
         "${ contactsCount } kontakt hittades",
         "${ contactsCount } kontakter hittades"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
       "${ count } unread message": [
         "${ count } oläst meddelande",
         "${ count } olästa meddelanden"
@@ -4700,9 +4704,9 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength }/${ contactsLength } objekt valt",
-        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt vald",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mapp vald",
@@ -5198,6 +5202,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Gå med i ${ PROTON_SENTINEL_NAME }-programmet för högsta nivå av kontosäkerhet och support."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
       ],
@@ -5215,9 +5222,6 @@
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Lär dig mer om ${ PROTON_SENTINEL_NAME } högsäkerhetsprogram."
       ],
       "Left to Right": [
         "Vänster till höger"

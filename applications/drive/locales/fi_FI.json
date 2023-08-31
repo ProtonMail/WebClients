@@ -3073,6 +3073,10 @@
         "${ contactsCount } yhteystieto löytyi",
         "${ contactsCount } yhteystietoa löytyi"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } yhteystieto",
+        "${ contactsLength } yhteystiedot"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } valmistunut",
         "${ doneCount } valmistunutta"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
+        "${ selectedContactsLength }/${ contactsLength } yhteystiedot valittu"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } valittu"
@@ -3856,6 +3864,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Sovelluksen on purettava yhteystietojesi salaus paikallisesti ennen niiden vientiä. Käsittelyn lopuksi luodaan ladattava VCF-tiedosto."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Latausmäärä sisältää sekä todelliset lataukset että tapaukset, jolloin tiedostoja esikatsellaan."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Salatut tiedot vaativat hieman enemmän tallennustilaa tietojesi suojauksen takaavan salauksen ja allekirjoitusten vuoksi."
       ],
@@ -3961,6 +3972,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Yritä etsiä tiedoston nimellä, päiväyksellä tai tyypillä."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Valitettavasti näyttää siltä, että tiedostoa tai osaa sen tiedoista ei voida purkaa."
       ],
       "Unknown error": [
         "Tuntematon virhe"

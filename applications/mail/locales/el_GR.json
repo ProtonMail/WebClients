@@ -4631,6 +4631,10 @@
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } επαφή",
+        "${ contactsLength } επαφές"
+      ],
       "${ count } unread message": [
         "${ count } μη διαβασμένο μήνυμα",
         "${ count } μη διαβασμένα μηνύματα"
@@ -4700,9 +4704,9 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } στοιχείο επιλέχθηκε",
-        "${ selectedContactsLength } / ${ contactsLength } στοιχεία επιλέχθηκαν"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
@@ -5198,6 +5202,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Εγγραφείτε στο πρόγραμμα ${ PROTON_SENTINEL_NAME } για το υψηλότερο επίπεδο ασφάλειας και υποστήριξης λογαριασμού."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
@@ -5215,9 +5222,6 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "Μάθετε περισσότερα σχετικά με το πρόγραμμα υψηλής ασφάλειας ${ PROTON_SENTINEL_NAME }."
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"

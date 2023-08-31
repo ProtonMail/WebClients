@@ -3407,6 +3407,10 @@
         "${ contactsCount } yhteystieto löytyi",
         "${ contactsCount } yhteystietoa löytyi"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } yhteystieto",
+        "${ contactsLength } yhteystiedot"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
@@ -3422,6 +3426,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
+        "${ selectedContactsLength }/${ contactsLength } yhteystiedot valittu"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } kansio valittu",
