@@ -52,7 +52,6 @@ export enum FeatureCode {
     DriveMyDevices = 'DriveWebMyDevices',
     DrivePlan = 'DrivePlan',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
-    DriveWindowsGA = 'DriveWindowsGA',
     DriveWindowsGAMailSpotlight = 'DriveWindowsGAMailSpotlight',
     DriveWindowsGAMailSpotlightShown = 'DriveWindowsGAMailSpotlightShown',
     ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
