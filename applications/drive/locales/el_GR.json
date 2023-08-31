@@ -3073,6 +3073,10 @@
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } επαφή",
+        "${ contactsLength } επαφές"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } τελείωσε",
         "${ doneCount } τελείωσαν"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } στοιχείο επιλέχθηκε",
-        "${ selectedContactsLength } / ${ contactsLength } στοιχεία επιλέχθηκαν"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } επιλεγμένα"
