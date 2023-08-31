@@ -3407,6 +3407,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contacto encontrado"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
@@ -3423,9 +3427,9 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } elemento seleccionado",
-        "${ selectedContactsLength } / ${ contactsLength } elementos seleccionados"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
