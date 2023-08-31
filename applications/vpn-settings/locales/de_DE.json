@@ -2696,21 +2696,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
-      "Billed every 12 months": [
-        "Jährliche Abrechnung"
-      ],
-      "Billed every 15 months": [
-        "Wird alle 15 Monate abgerechnet"
-      ],
-      "Billed every 24 months": [
-        "Wird alle 24 Monate abgerechnet"
-      ],
-      "Billed every 30 months": [
-        "Wird alle 30 Monate abgerechnet"
-      ],
-      "Billed every month": [
-        "Monatliche Abrechnung"
-      ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
       ],
@@ -3085,6 +3070,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
+      "per month": [
+        "pro Monat"
+      ],
+      "per month, billed every 12 months": [
+        "pro Monat, Abrechnung alle 12 Monate"
+      ],
+      "per month, billed every 15 months": [
+        "pro Monat, Abrechnung alle 15 Monate"
+      ],
+      "per month, billed every 24 months": [
+        "pro Monat, Abrechnung alle 24 Monate"
+      ],
+      "per month, billed every 30 months": [
+        "pro Monat, Abrechnung alle 30 Monate"
+      ],
       "Plan upgrade required": [
         "Umstieg auf ein anderes Abo erforderlich"
       ],
@@ -3303,9 +3303,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dadurch wird dein aktuelles kostenpflichtiges Abonnement aufgehoben und du verlierst alle angesammelten Treuevorteile. Der verbleibende Restbetrag deines Abonnements wird als Kontoguthaben zurückerstattet."
-      ],
-      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "Dadurch wird ein Verschlüsselungscode für deine Organisation erstellt. 4096-Bit-Schlüssel funktionieren nur auf Hochleistungscomputern. Für die meisten Benutzer empfehlen wir die Verwendung von 2048-Bit-Schlüsseln."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
@@ -6600,9 +6597,6 @@
       ],
       "Set new password": [
         "Neues Passwort festlegen"
-      ],
-      "Set organization keys": [
-        "Organisationsschlüssel festlegen"
       ],
       "Set organization name": [
         "Name der Organisation festlegen"

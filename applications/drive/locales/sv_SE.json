@@ -3073,6 +3073,10 @@
         "${ contactsCount } kontakt hittades",
         "${ contactsCount } kontakter hittades"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } slutförd",
         "${ doneCount } slutförda"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength }/${ contactsLength } objekt valt",
-        "${ selectedContactsLength }/${ contactsLength } objekt valda"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt vald",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } valda"

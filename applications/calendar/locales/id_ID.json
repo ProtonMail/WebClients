@@ -3364,6 +3364,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } kontak"
+      ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
@@ -3374,10 +3377,10 @@
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
-        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
+        "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ selectedContactsLength } / ${ contactsLength } item dipilih"
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"

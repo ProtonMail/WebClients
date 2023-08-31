@@ -4640,9 +4640,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ selectedContactsLength } / ${ contactsLength } 個のアイテムが選択されました"
-      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
       ],
@@ -5125,9 +5122,6 @@
       ],
       "Learn more": [
         "詳細"
-      ],
-      "Learn more about ${ PROTON_SENTINEL_NAME } high-security program.": [
-        "${ PROTON_SENTINEL_NAME } の高セキュリティ プログラムの詳細をご覧ください。"
       ],
       "Left to Right": [
         "左から右"

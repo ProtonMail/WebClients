@@ -3073,9 +3073,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } items selected": [
-        "${ selectedContactsLength } / ${ contactsLength } 個のアイテムが選択されました"
-      ],
       "${ selectedCount } selected": [
         "${ selectedCount } 件選択済み"
       ],

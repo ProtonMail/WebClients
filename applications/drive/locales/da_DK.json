@@ -3073,6 +3073,10 @@
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
         "${ doneCount } færdig"
@@ -3115,9 +3119,9 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
-      "${ selectedContactsLength } / ${ contactsLength } item selected": [
-        "${ selectedContactsLength } / ${ contactsLength } element valgt",
-        "${ selectedContactsLength } / ${ contactsLength } elementer valgt"
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } valgt"
