@@ -6,17 +6,20 @@ import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
 export const usePhotos = () => {
     const request = useDebouncedRequest();
 
-    const getPhotos = (abortSignal: AbortSignal, volumeId: string) => {
-        return request<{ Photos: Photo[]; Code: number }>(queryPhotos(volumeId, {}), abortSignal).then(
-            ({ Photos, Code }) => {
-                if (Code === 1000) {
-                    return Photos.map(photoPayloadToPhotos);
-                }
-
-                // TODO: Error cases
-                return [];
+    const getPhotos = (abortSignal: AbortSignal, volumeId: string, lastLinkId?: string) => {
+        return request<{ Photos: Photo[]; Code: number }>(
+            queryPhotos(volumeId, {
+                PreviousPageLastLinkID: lastLinkId,
+            }),
+            abortSignal
+        ).then(({ Photos, Code }) => {
+            if (Code === 1000) {
+                return Photos.map(photoPayloadToPhotos);
             }
-        );
+
+            // TODO: Error cases
+            return [];
+        });
     };
 
     return {

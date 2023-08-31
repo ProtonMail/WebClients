@@ -101,20 +101,26 @@ export const usePhotosView = () => {
             return;
         }
 
-        const fetchPhotos = async () => {
+        const fetchPhotos = async (lastLinkId?: string) => {
             const share = await getDefaultShare(abortSignal);
-            const photos = await getPhotos(abortSignal, share.volumeId);
+            const photos = await getPhotos(abortSignal, share.volumeId, lastLinkId);
 
             return photos;
         };
 
-        void withPhotosLoading(
-            fetchPhotos()
+        const photoCall = async (lastLinkId?: string) =>
+            fetchPhotos(lastLinkId)
                 .then((data) => {
-                    setPhotos(data);
+                    if (!!data.length) {
+                        setPhotos((prevPhotos) => [...prevPhotos, ...data]);
+                        void photoCall(data[data.length - 1].linkId);
+                    } else {
+                        void Promise.resolve();
+                    }
                 })
-                .catch(() => {})
-        );
+                .catch(() => {});
+
+        void withPhotosLoading(photoCall());
     }, [shareId, linkId]);
 
     const getPhotoLink = (abortSignal: AbortSignal, linkId: string) => {
@@ -128,5 +134,6 @@ export const usePhotosView = () => {
         photos: photosViewData,
         getPhotoLink,
         isLoading: photosLoading || isLoading,
+        isLoadingMore: photosLoading && !!photos.length,
     };
 };
