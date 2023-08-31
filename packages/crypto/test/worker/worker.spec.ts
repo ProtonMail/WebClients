@@ -918,19 +918,24 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
             passphrase: null,
         });
 
-        const { proxyParameters, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
+        const { proxyInstances, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
             forwarderKey: bobKey,
             userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
             passphrase: 'passphrase',
         });
-        expect(proxyParameters).to.have.length(1);
-        expect(proxyParameters[0]).to.have.length(32);
+        expect(proxyInstances).to.have.length(1);
+        expect(proxyInstances[0].proxyParameter).to.have.length(32);
         const charlieKey = await CryptoWorker.importPrivateKey({
             armoredKey: forwardeeKey,
             passphrase: 'passphrase',
         });
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
         expect(charlieKey.subkeys.length).to.equal(1);
+        expect(proxyInstances[0].keyVersion).to.equal(4);
+        expect(arrayToHexString(proxyInstances[0].forwarderKeyFingerprint)).to.include(bobKey.subkeys[0].getKeyID());
+        expect(arrayToHexString(proxyInstances[0].forwardeeKeyFingerprint)).to.include(
+            charlieKey.subkeys[0].getKeyID()
+        );
     });
 
     it('generateE2EEForwardingMaterial - supports proxying multiple subkeys', async () => {
@@ -966,14 +971,13 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
             passphrase: null,
         });
 
-        const { proxyParameters, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
+        const { proxyInstances, forwardeeKey } = await CryptoWorker.generateE2EEForwardingMaterial({
             forwarderKey: bobKey,
             userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
             passphrase: 'passphrase',
         });
-        expect(proxyParameters).to.have.length(2);
-        expect(proxyParameters[0]).to.have.length(32);
-        expect(proxyParameters[1]).to.have.length(32);
+        expect(proxyInstances).to.have.length(2);
+        const bobForwardingSubkeys = [bobKey.subkeys[0], bobKey.subkeys[2]]; // second subkey is sign-only
 
         const charlieKey = await CryptoWorker.importPrivateKey({
             armoredKey: forwardeeKey,
@@ -981,6 +985,17 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
         });
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
         expect(charlieKey.subkeys.length).to.equal(2);
+
+        proxyInstances.forEach((proxyInstance, i) => {
+            expect(proxyInstance.proxyParameter).to.have.length(32);
+            expect(proxyInstance.keyVersion).to.equal(4);
+            expect(arrayToHexString(proxyInstance.forwarderKeyFingerprint)).to.include(
+                bobForwardingSubkeys[i].getKeyID()
+            );
+            expect(arrayToHexString(proxyInstance.forwardeeKeyFingerprint)).to.include(
+                charlieKey.subkeys[i].getKeyID()
+            );
+        });
     });
 
     it('generateE2EEForwardingMaterial - throws on unsuitable forwarder key (NIST P256)', async () => {
