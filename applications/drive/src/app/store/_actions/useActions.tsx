@@ -285,7 +285,7 @@ export default function useActions() {
         });
     };
 
-    const emptyTrash = async (abortSignal: AbortSignal, shareId: string) => {
+    const emptyTrash = async (abortSignal: AbortSignal) => {
         const title = c('Title').t`Empty trash`;
         const confirm = c('Action').t`Empty trash`;
         const message = c('Info').t`Are you sure you want to empty trash and permanently delete all the items?`;
@@ -296,7 +296,7 @@ export default function useActions() {
             message,
             onSubmit: async () => {
                 await links
-                    .emptyTrash(abortSignal, shareId)
+                    .emptyTrash(abortSignal)
                     .then(() => {
                         const notificationText = c('Notification')
                             .t`All items will soon be permanently deleted from trash`;
