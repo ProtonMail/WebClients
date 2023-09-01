@@ -1,6 +1,7 @@
 import { ComponentProps } from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { sub } from 'date-fns';
 
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
@@ -19,6 +20,7 @@ const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     loading: false,
     onBack: jest.fn(),
     onSearch: jest.fn(),
+    isSearchActive: true,
 };
 
 const renderComponent = (props: ComponentProps<typeof CalendarSearchInput>) => {
@@ -129,69 +131,58 @@ describe('CalendarSearchInput', () => {
         });
     });
 
-    // describe('when input is focused', () => {
-    //     const onSpotlightClose = jest.fn();
-    //
-    //     beforeEach(() => {
-    //         mockUseSpotlightOnFeature({ show: true, onClose: onSpotlightClose });
-    //     });
-    //
-    //     afterEach(() => {
-    //         onOpen.mockClear();
-    //         onSpotlightClose.mockClear();
-    //     });
-    //
-    //     // it('should call onOpen', async () => {
-    //     //     renderComponent({ ...baseProps });
-    //     //     const input = screen.getByRole('textbox');
-    //     //     await userEvent.click(input);
-    //     //
-    //     //     await waitFor(() => {
-    //     //         expect(onOpen).toHaveBeenCalledTimes(1);
-    //     //     });
-    //     // });
-    //
-    //     it('should hide spotlight', async () => {
-    //         renderComponent({ ...baseProps, onOpen });
-    //         const input = screen.getByRole('textbox');
-    //         await userEvent.click(input);
-    //
-    //         await waitFor(() => {
-    //             expect(onSpotlightClose).toHaveBeenCalledTimes(1);
-    //         });
-    //     });
-    // });
-    //
-    // describe('when Search button is hit', () => {
-    //     it('should open', async () => {
-    //         const onOpen = jest.fn();
-    //
-    //         renderComponent({ ...baseProps, value: 'test', onOpen });
-    //
-    //         const button = screen.getByText('Search');
-    //         await userEvent.click(button);
-    //
-    //         await waitFor(() => {
-    //             expect(onOpen).toHaveBeenCalledTimes(1);
-    //         });
-    //
-    //         expect(onOpen).toHaveBeenCalledWith();
-    //     });
-    // });
-    //
-    // describe('when clear button is hit', () => {
-    //     it('act clear search and open', async () => {
-    //         const onClear = jest.fn();
-    //         renderComponent({ ...baseProps, value: 'test value here', onClear });
-    //
-    //         expect(screen.getByDisplayValue('test value here'));
-    //
-    //         const button = screen.getByText('Clear');
-    //         await userEvent.click(button);
-    //
-    //         await waitFor(() => {
-    //             expect(onClear).toHaveBeenCalledTimes(1);
-    //         });
-    //     });
-    // });
+    describe('when input is focused', () => {
+        const onSpotlightClose = jest.fn();
+
+        beforeEach(() => {
+            mockUseSpotlightOnFeature({ show: true, onClose: onSpotlightClose });
+        });
+
+        afterEach(() => {
+            onSpotlightClose.mockClear();
+        });
+
+        it('should be focused on click', async () => {
+            renderComponent({ ...baseProps });
+            const input = screen.getByRole('textbox');
+            await userEvent.click(input);
+
+            await waitFor(() => {
+                expect(input).toHaveFocus();
+            });
+        });
+    });
+
+    describe('when Search button is hit', () => {
+        it('should open', async () => {
+            const onSearch = jest.fn();
+
+            renderComponent({ ...baseProps, value: 'test', onSearch });
+
+            const button = screen.getByRole('button', { name: 'Search' });
+            await userEvent.click(button);
+
+            await waitFor(() => {
+                expect(onSearch).toHaveBeenCalledTimes(1);
+            });
+
+            expect(onSearch).toHaveBeenCalledWith();
+        });
+    });
+
+    describe('when clear button is hit', () => {
+        it('act clear search and open', async () => {
+            const testValue = 'test value here';
+            renderComponent({ ...baseProps, value: testValue });
+
+            expect(screen.getByDisplayValue(testValue));
+
+            const button = screen.getByText('Clear');
+            await userEvent.click(button);
+
+            await waitFor(() => {
+                expect(screen.queryByText(testValue)).not.toBeInTheDocument();
+            });
+        });
+    });
 });

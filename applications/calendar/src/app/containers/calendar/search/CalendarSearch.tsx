@@ -45,6 +45,7 @@ const CalendarSearch = ({ onSearch, onBackFromSearch }: Props) => {
                 onSearch={onSearch}
                 onBack={onBackFromSearch}
                 loading={loading}
+                isSearchActive={isSearchActive}
             />
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 {!isSearchActive && <CalendarSearchActivation onClose={close} />}

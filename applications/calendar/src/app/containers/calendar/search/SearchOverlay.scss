@@ -1,8 +1,6 @@
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
 
-// 	@include media('<=#{$searchoverlay-breakpoint}') {
-
 $searchoverlay-breakpoint: em(1000, 16);
 
 .overlay {
@@ -57,12 +55,10 @@ $searchoverlay-breakpoint: em(1000, 16);
 	}
 
 	@include media('>#{$searchoverlay-breakpoint}') {
-		inset-block-start: calc(var(--top) * 1px - 1px);
+		inset-block-start: calc(var(--top) * 1px - 1px + var(--space-2));
 		/* stylelint-disable */
 		inset-inline-start: calc(var(--left) * 1px - 1px);
 		/* stylelint-enable */
-		margin-inline: -1em -0.5em;
-		margin-block-start: -0.5em;
 		border-radius: calc(var(--border-radius) * 1px);
 		box-shadow: var(--shadow-lifted);
 		border: 1px solid var(--border-norm);
@@ -116,7 +112,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 		}
 
 		@include media('>#{$searchoverlay-breakpoint}') {
-			inline-size: calc(var(--width) * 1px + #{rem(28)}); // 28px for paddings
+			inline-size: calc(var(--width) * 1px);
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);
 			min-inline-size: rem(340);

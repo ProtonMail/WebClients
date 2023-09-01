@@ -19,9 +19,13 @@ interface Props {
     loading: boolean;
     onSearch: () => void;
     onBack: () => void;
+    isSearchActive: boolean;
 }
 
-const CalendarSearchInput = ({ value: inputValue, loading, onSearch, onBack }: Props, ref: Ref<HTMLDivElement>) => {
+const CalendarSearchInput = (
+    { value: inputValue, loading, onSearch, onBack, isSearchActive }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { isNarrow } = useActiveBreakpoint();
@@ -81,10 +85,6 @@ const CalendarSearchInput = ({ value: inputValue, loading, onSearch, onBack }: P
         if (shouldShowCalendarEsSpotlight) {
             onCloseSpotlight();
         }
-
-        // // Blur the input to avoid the focus to be triggered after search submission
-        // inputRef.current?.blur();
-        // onOpen();
     };
 
     return (
@@ -94,78 +94,85 @@ const CalendarSearchInput = ({ value: inputValue, loading, onSearch, onBack }: P
                 className="mr-2"
                 onClick={handleBack}
             />
-            <div className="searchbox flex" role="search" ref={ref}>
-                <div className="w100 m-auto">
-                    <Spotlight
-                        originalPlacement="bottom-start"
-                        show={shouldShowCalendarEsSpotlight}
-                        onDisplayed={onSpotlightDisplayed}
-                        type="new"
-                        anchorRef={spotlightAnchorRef}
-                        content={
-                            <>
-                                <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
-                                <p className="m-0">{c('Spotlight')
-                                    .t`Easily find the event you're looking for with our new search feature.`}</p>
-                                <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
-                            </>
-                        }
-                    >
-                        <Input
-                            ref={inputRef}
-                            inputClassName="cursor-text"
-                            value={keyword}
-                            placeholder={c('Placeholder').t`Search events`}
-                            onChange={handleChange}
-                            onKeyDown={(event) => {
-                                if (event.key === 'Enter') {
-                                    handleSearch();
-                                    event.preventDefault();
+            <div className="flex flex-nowrap gap-2">
+                <div
+                    className="searchbox flex max-w-custom"
+                    role="search"
+                    style={{ '--max-w-custom': '360px' }}
+                    ref={ref}
+                >
+                    <div className="w100 m-auto">
+                        <Spotlight
+                            originalPlacement="bottom-start"
+                            show={shouldShowCalendarEsSpotlight}
+                            onDisplayed={onSpotlightDisplayed}
+                            type="new"
+                            anchorRef={spotlightAnchorRef}
+                            content={
+                                <>
+                                    <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
+                                    <p className="m-0">{c('Spotlight')
+                                        .t`Easily find the event you're looking for with our new search feature.`}</p>
+                                    <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link')
+                                        .t`Learn more`}</Href>
+                                </>
+                            }
+                        >
+                            <Input
+                                ref={inputRef}
+                                inputClassName="cursor-text"
+                                value={keyword}
+                                placeholder={
+                                    isSearchActive ? c('Placeholder').t`Search events` : c('Placeholder').t`Indexing...`
                                 }
-                            }}
-                            onSubmit={handleSearch}
-                            onFocus={handleFocus}
-                            data-testid="search-keyword"
-                            autoFocus
-                            prefix={
-                                loading ? (
-                                    <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
-                                ) : (
-                                    <Button
-                                        type="submit"
-                                        icon
-                                        shape="ghost"
-                                        color="weak"
-                                        size="small"
-                                        className="rounded-sm no-pointer-events"
-                                        title={c('Action').t`Search`}
-                                        data-shorcut-target="searchbox-button"
-                                        ref={spotlightAnchorRef}
-                                    >
+                                onChange={handleChange}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter') {
+                                        handleSearch();
+                                        event.preventDefault();
+                                    }
+                                }}
+                                onSubmit={handleSearch}
+                                onFocus={handleFocus}
+                                data-testid="search-keyword"
+                                autoFocus
+                                disabled={!isSearchActive}
+                                prefix={
+                                    loading ? (
+                                        <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
+                                    ) : (
                                         <Icon name="magnifier" alt={c('Action').t`Search`} />
-                                    </Button>
-                                )
-                            }
-                            suffix={
-                                keyword.length ? (
-                                    <Button
-                                        type="button"
-                                        shape="ghost"
-                                        color="weak"
-                                        size="small"
-                                        className="rounded-sm"
-                                        disabled={loading}
-                                        title={c('Action').t`Clear search`}
-                                        onClick={handleClear}
-                                        data-testid="clear-button"
-                                    >
-                                        {c('Action').t`Clear`}
-                                    </Button>
-                                ) : null
-                            }
-                        />
-                    </Spotlight>
+                                    )
+                                }
+                                suffix={
+                                    keyword.length ? (
+                                        <Button
+                                            type="button"
+                                            shape="ghost"
+                                            color="weak"
+                                            size="small"
+                                            className="rounded-sm"
+                                            disabled={loading}
+                                            title={c('Action').t`Clear search`}
+                                            onClick={handleClear}
+                                            data-testid="clear-button"
+                                        >
+                                            {c('Action').t`Clear`}
+                                        </Button>
+                                    ) : null
+                                }
+                            />
+                        </Spotlight>
+                    </div>
                 </div>
+                <Button
+                    type="submit"
+                    shape="solid"
+                    color="norm"
+                    onClick={handleSearch}
+                    disabled={!isSearchActive || loading}
+                    className="no-mobile"
+                >{c('Action').t`Search`}</Button>
             </div>
         </>
     );

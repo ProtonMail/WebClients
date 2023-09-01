@@ -1,11 +1,12 @@
 @use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
+// hardcoded media queries, need to be checked
+
 .search {
 	&-result-line {
 		border-block-end: 1px solid var(--border-weak);
 
-		// @include media('<=medium') { // TO CHECK
 		@include media('<=#{em(1000, 16)}') {
 			border: 0;
 		}
@@ -41,23 +42,16 @@
 		}
 
 		@include media('<=#{em(1000, 16)}') {
-			// @include media('<=medium') {
 			min-block-size: rem(44);
 		}
 
 		@include media('<=#{em(870, 16)}') {
-			// @include media('<=small') {
 			min-block-size: rem(34);
 		}
-
-		/* &::before {
-			content: '#{map.get($breakpoints, "medium")}';
-		} */
 	}
 
 	&-event-time-details {
 		@include media('<=#{em(870, 16)}') {
-			// @include media('<=small') {
 			line-height: 1.3;
 		}
 	}
@@ -65,7 +59,6 @@
 	&-event-time,
 	&-event-summary {
 		@include media('<=#{em(870, 16)}') {
-			// @include media('<=small') {
 			font-size: rem(13);
 		}
 	}
