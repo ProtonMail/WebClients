@@ -1,5 +1,5 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { FormType, resetFormFlags, setIgnoreFlag } from '@proton/pass/fathom';
+import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 
@@ -43,8 +43,8 @@ export const createNotification = (): InjectedNotification => {
                             .getTrackedForms()
                             .filter(({ formType }) => formType === FormType.MFA)
                             .forEach(({ element }) => {
-                                resetFormFlags(element);
-                                setIgnoreFlag(element);
+                                removeClassifierFlags(element);
+                                flagAsIgnored(element);
                             });
                     }
                     return service.autosave.reconciliate();
