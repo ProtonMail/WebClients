@@ -50,7 +50,6 @@ import {
 } from '../../components';
 import { useApi, useEventManager, useGetAddresses, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
-import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
@@ -103,8 +102,6 @@ const SubUserCreateModal = ({
     });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
 
-    const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
-
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -156,7 +153,7 @@ const SubUserCreateModal = ({
                 member: Member,
                 memberAddresses: [Address],
                 organizationKey: organizationKey.privateKey,
-                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
                 password: model.password,
                 keyTransparencyVerify,
             });
@@ -314,16 +311,6 @@ const SubUserCreateModal = ({
 
                 {!isVpnB2B && (
                     <>
-                        {model.private && (
-                            <div className="mb-6">
-                                <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
-                                <SelectEncryption
-                                    encryptionType={encryptionType}
-                                    setEncryptionType={setEncryptionType}
-                                />
-                            </div>
-                        )}
-
                         <MemberStorageSelector
                             className="mb-5"
                             value={model.storage}
