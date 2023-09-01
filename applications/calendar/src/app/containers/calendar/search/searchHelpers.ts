@@ -128,34 +128,39 @@ const expandSearchItem = (
     cache: Partial<OccurrenceIterationCache> = {},
     recurrenceIDs?: number[]
 ): MaybeArray<ESItem<ESCalendarMetadata, ESCalendarContent> | undefined> => {
-    if (!item.RRule) {
-        return item;
-    }
-    const component = getComponentFromCalendarEventWithoutBlob(item);
-
-    const occurrences = getOccurrences({ component, maxCount: 500, cache });
-    const isSingleOccurrence = occurrences.length === 1;
-
-    return occurrences.map((recurrence) => {
-        const { dtstart, dtend } = getCurrentEvent(component, recurrence);
-
-        const { localStart, localEnd, occurrenceNumber } = recurrence;
-        const startTime = getUnixTime(propertyToUTCDate(dtstart));
-
-        if (recurrenceIDs?.includes(startTime)) {
-            return;
+    try {
+        if (!item.RRule) {
+            return item;
         }
+        const component = getComponentFromCalendarEventWithoutBlob(item);
 
-        return {
-            ...item,
-            StartTime: getUnixTime(propertyToUTCDate(dtstart)),
-            EndTime: getUnixTime(propertyToUTCDate(dtend)),
-            occurrenceNumber,
-            localStart,
-            localEnd,
-            isSingleOccurrence,
-        };
-    });
+        const occurrences = getOccurrences({ component, maxCount: 500, cache });
+        const isSingleOccurrence = occurrences.length === 1;
+
+        return occurrences.map((recurrence) => {
+            const { dtstart, dtend } = getCurrentEvent(component, recurrence);
+
+            const { localStart, localEnd, occurrenceNumber } = recurrence;
+            const startTime = getUnixTime(propertyToUTCDate(dtstart));
+
+            if (recurrenceIDs?.includes(startTime)) {
+                return;
+            }
+
+            return {
+                ...item,
+                StartTime: getUnixTime(propertyToUTCDate(dtstart)),
+                EndTime: getUnixTime(propertyToUTCDate(dtend)),
+                occurrenceNumber,
+                localStart,
+                localEnd,
+                isSingleOccurrence,
+            };
+        });
+    } catch (e) {
+        // ignore events that fail to be expanded
+        console.log(item);
+    }
 };
 
 const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;

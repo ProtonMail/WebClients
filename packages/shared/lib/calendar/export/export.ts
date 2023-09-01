@@ -7,7 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
-import { getEvent, queryEventIDs } from '../../api/calendars';
+import { getEvent, queryEventsIDs } from '../../api/calendars';
 import { getSilentApi } from '../../api/helpers/customConfig';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
@@ -28,7 +28,7 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '../../interfaces/calendar';
-import { CalendarEventIDsQuery } from '../../interfaces/calendar/Api';
+import { CalendarEventsIDsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getIsAutoAddedInvite } from '../apiModels';
@@ -283,12 +283,12 @@ export const processInBatches = async ({
             return [[], [], totalToProcess];
         }
 
-        const params: CalendarEventIDsQuery = {
+        const params: CalendarEventsIDsQuery = {
             Limit: PAGE_SIZE,
             AfterID: lastId,
         };
 
-        const IDs = (await api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params))).IDs;
+        const IDs = (await api<{ IDs: string[] }>(queryEventsIDs(calendar.ID, params))).IDs;
 
         if (signal.aborted) {
             return [[], [], totalToProcess];

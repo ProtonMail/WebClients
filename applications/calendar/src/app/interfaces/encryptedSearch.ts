@@ -3,9 +3,12 @@ import {
     AttendeeModel,
     CalendarEventMetadata,
     CalendarEventSharedData,
+    OrganizerModel,
     VcalAttendeeProperty,
+    VcalOrganizerProperty,
 } from '@proton/shared/lib/interfaces/calendar';
 
+export interface ESOrganizerModel extends Pick<OrganizerModel, 'email' | 'cn'> {}
 export interface ESAttendeeModel extends Pick<AttendeeModel, 'email' | 'cn' | 'role' | 'partstat'> {}
 
 export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEventMetadata {
@@ -15,7 +18,7 @@ export interface ESCalendarMetadata extends CalendarEventSharedData, CalendarEve
     Location: string;
     Description: string;
     Attendees: VcalAttendeeProperty[];
-    Organizer: string;
+    Organizer?: VcalOrganizerProperty;
     IsDecryptable: boolean;
 }
 

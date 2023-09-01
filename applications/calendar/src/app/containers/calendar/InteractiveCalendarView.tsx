@@ -362,7 +362,7 @@ const InteractiveCalendarView = ({
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
-        getInitialTargetEventData(eventTargetAction, dateRange)
+        getInitialTargetEventData(eventTargetAction, dateRange, view)
     );
 
     // Open event handlers for opening events from search view
@@ -385,7 +385,7 @@ const InteractiveCalendarView = ({
             if (!eventTargetAction) {
                 return;
             }
-            setInteractiveData(getInitialTargetEventData(eventTargetAction, dateRange));
+            setInteractiveData(getInitialTargetEventData(eventTargetAction, dateRange, view));
             if (eventTargetAction.isAllDay || eventTargetAction.isAllPartDay) {
                 return;
             }
@@ -848,10 +848,6 @@ const InteractiveCalendarView = ({
         });
     };
 
-    // const handleNavigateToEventFromSearchView = () => {
-    //
-    // }
-
     const handleSendPrefsErrors = async ({
         inviteActions,
         vevent,
@@ -1020,7 +1016,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const { setOpenedSearchItem } = useCalendarSearch();
+    const { setOpenedSearchItem, setIsSearching } = useCalendarSearch();
 
     const closeAllPopovers = () => {
         setInteractiveData(undefined);
@@ -1837,6 +1833,8 @@ const InteractiveCalendarView = ({
                                 eventComponent: VcalVeventComponent,
                                 occurrence?: { localStart: Date; occurrenceNumber: number }
                             ) => {
+                                setIsSearching(false);
+                                setTargetEventRef(null);
                                 if (!occurrence) {
                                     return goToEvent(eventData, eventComponent);
                                 }

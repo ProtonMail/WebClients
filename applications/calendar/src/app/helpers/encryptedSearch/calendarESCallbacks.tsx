@@ -32,12 +32,14 @@ import {
 import { CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
 import {
     extractAttendees,
+    extractOrganizer,
     generateID,
     getESEvent,
     getESEventsFromCalendarInBatch,
     parseSearchParams,
     searchUndecryptedElements,
     transformAttendees,
+    transformOrganizer,
 } from './esUtils';
 
 interface Props {
@@ -186,7 +188,8 @@ export const getESCallbacks = ({
             metadata?.Description || '',
             metadata?.Location || '',
             metadata?.Summary || '',
-            ...transformAttendees(extractAttendees({ attendee: metadata?.Attendees })),
+            ...transformOrganizer(extractOrganizer(metadata?.Organizer)),
+            ...transformAttendees(extractAttendees(metadata?.Attendees)),
         ];
 
         return testKeywords(keywords, stringsToSearch, hasApostrophe);
