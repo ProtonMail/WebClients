@@ -16,26 +16,47 @@ interface Props {
     onBackFromSearch: () => void;
 }
 
-const CalendarSearch = ({ onSearch, onBackFromSearch }: Props) => {
+const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
 
     const { cacheIndexedDB } = useEncryptedSearchLibrary();
-    const { searchParams, isActive: isSearchActive, loading } = useCalendarSearch();
+    const { searchParams, isEnabled, isActive: isSearchActive, loading, setIsSearching } = useCalendarSearch();
+
+    const isSearchEnabled = isEnabled !== false;
+
+    const handleCloseOverlay = () => {
+        if (!isSearchActive) {
+            close();
+            setIsSearching(false);
+        }
+    };
 
     useEffect(() => {
         void cacheIndexedDB();
-
-        if (!isSearchActive) {
-            open();
-        }
     }, []);
 
     useEffect(() => {
-        if (isOpen && isSearchActive) {
+        if (!isOpen && !isSearchEnabled) {
+            open();
+        }
+        if (isOpen && isSearchEnabled) {
             close();
         }
-    }, [isOpen, isSearchActive]);
+    }, [isOpen, isSearchEnabled]);
+
+    useEffect(() => {
+        if (!containerRef) {
+            return;
+        }
+        containerRef.addEventListener('mousedown', handleCloseOverlay, { passive: true });
+        containerRef.addEventListener('touchstart', handleCloseOverlay, { passive: true });
+
+        return () => {
+            containerRef.removeEventListener('mousedown', handleCloseOverlay);
+            containerRef.removeEventListener('touchstart', handleCloseOverlay);
+        };
+    }, [containerRef, handleCloseOverlay]);
 
     return (
         <>
@@ -47,8 +68,8 @@ const CalendarSearch = ({ onSearch, onBackFromSearch }: Props) => {
                 loading={loading}
                 isSearchActive={isSearchActive}
             />
-            <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                {!isSearchActive && <CalendarSearchActivation onClose={close} />}
+            <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} disableFocusTrap>
+                {!isSearchEnabled && <CalendarSearchActivation onClose={handleCloseOverlay} />}
             </SearchOverlay>
         </>
     );

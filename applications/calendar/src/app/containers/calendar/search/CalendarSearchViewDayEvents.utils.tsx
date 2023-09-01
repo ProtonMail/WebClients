@@ -10,7 +10,7 @@ export const getEventTraits = (event: VisualSearchItem, addresses: Address[]) =>
     const eventStatus = getEventStatus({ status: { value: Status } });
     const isCancelled = eventStatus === ICAL_EVENT_STATUS.CANCELLED;
     const { selfAttendeeIndex } = getSelfAddressData({
-        organizer: { value: Organizer },
+        organizer: Organizer,
         attendees: Attendees,
         addresses,
     });

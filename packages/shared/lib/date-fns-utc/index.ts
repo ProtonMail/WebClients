@@ -8,6 +8,7 @@ export { default as startOfWeek } from './startOfWeek';
 export { default as endOfWeek } from './endOfWeek';
 export { default as getWeekNumber } from './getWeekNumber';
 export { default as differenceInCalendarDays } from './differenceInCalendarDays';
+export { default as differenceInCalendarWeeks } from './differenceInCalendarWeeks';
 
 export const startOfYear = (date: Date) => {
     return new Date(Date.UTC(date.getUTCFullYear(), 0, 1));

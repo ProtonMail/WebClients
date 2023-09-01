@@ -22,13 +22,24 @@ import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, CalendarEventsIDsQuery, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import {
+    CalendarEvent,
+    CalendarEventsIDsQuery,
+    VcalAttendeeProperty,
+    VcalOrganizerProperty,
+} from '@proton/shared/lib/interfaces/calendar';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { propertiesToAttendeeModel } from '../../components/eventModal/eventForm/propertiesToAttendeeModel';
+import { propertiesToOrganizerModel } from '../../components/eventModal/eventForm/propertiesToOrganizerModel';
 import { CalendarSearchQuery } from '../../containers/calendar/interface';
-import { ESAttendeeModel, ESCalendarMetadata, ESCalendarSearchParams } from '../../interfaces/encryptedSearch';
+import {
+    ESAttendeeModel,
+    ESCalendarMetadata,
+    ESCalendarSearchParams,
+    ESOrganizerModel,
+} from '../../interfaces/encryptedSearch';
 import { CALENDAR_CORE_LOOP } from './constants';
 
 export const generateID = (calendarID: string, eventID: string) => `${calendarID}.${eventID}`;
@@ -90,6 +101,11 @@ export const parseSearchParams = (location: Location) => {
     };
 };
 
+export const transformOrganizer = (organizer: ESOrganizerModel) => [
+    organizer.email.toLocaleLowerCase(),
+    organizer.cn.toLocaleLowerCase(),
+];
+
 export const transformAttendees = (attendees: ESAttendeeModel[]) => [
     ...attendees.map((attendee) => attendee.email.toLocaleLowerCase()),
     ...attendees.map((attendee) => attendee.cn.toLocaleLowerCase()),
@@ -116,10 +132,13 @@ export const getAllEventsIDs = async (calendarID: string, api: Api, Limit: numbe
     return result;
 };
 
-export const extractAttendees = <T extends { attendee: VcalVeventComponent['attendee'] }>(
-    veventComponent: T
-): ESAttendeeModel[] => {
-    const attendees = propertiesToAttendeeModel(veventComponent.attendee);
+export const extractOrganizer = (organizerProperty?: VcalOrganizerProperty): ESOrganizerModel => {
+    const { email = '', cn = '' } = propertiesToOrganizerModel(organizerProperty) || {};
+    return { email, cn };
+};
+
+export const extractAttendees = (attendeeProperty: VcalAttendeeProperty[]): ESAttendeeModel[] => {
+    const attendees = propertiesToAttendeeModel(attendeeProperty);
     return attendees.map(({ email, cn, role, partstat }) => ({ email, cn, role, partstat }));
 };
 
@@ -165,7 +184,7 @@ export const getESEvent = async (
         Location: veventComponent.location?.value || '',
         Description: veventComponent.description?.value || '',
         Attendees: veventComponent.attendee ?? [],
-        Organizer: veventComponent.organizer?.value || '',
+        Organizer: veventComponent.organizer,
         Order: await generateOrder(generateID(calendarID, eventID)),
         ID: Event.ID,
         SharedEventID: Event.SharedEventID,
