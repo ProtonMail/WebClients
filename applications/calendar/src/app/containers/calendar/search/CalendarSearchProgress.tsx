@@ -51,7 +51,7 @@ const CalendarSearchProgress = ({ esIndexingProgressState, isPaused = false }: P
     });
 
     return (
-        <div className="mt-6 flex flex-column">
+        <div className="my-6 flex flex-column">
             <span className="color-weak relative advanced-search-progress-status" aria-live="polite" aria-atomic="true">
                 {statusMessage}
             </span>
