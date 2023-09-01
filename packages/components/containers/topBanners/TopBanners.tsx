@@ -8,6 +8,7 @@ import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import PendingInvitationTopBanner from './PendingInvitationTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
+import SessionRecoveryBanners from './SessionRecoveryBanners';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
@@ -31,6 +32,7 @@ const TopBanners = ({ children, app }: Props) => {
             <ReferralTopBanner />
             <PendingInvitationTopBanner />
             <SubscriptionEndsBanner />
+            <SessionRecoveryBanners />
             {children}
         </>
     );
