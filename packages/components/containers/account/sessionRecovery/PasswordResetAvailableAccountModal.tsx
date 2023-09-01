@@ -1,0 +1,370 @@
+import { ReactNode, useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { Button, Href } from '@proton/atoms';
+import {
+    useIsSessionRecoveryInitiatedByCurrentSession,
+    useSessionRecoveryInsecureTimeRemaining,
+} from '@proton/components/hooks/useSessionRecovery';
+import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
+import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
+import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
+import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
+import { srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
+import {
+    Form,
+    InputFieldTwo,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    PasswordInputTwo,
+    useFormErrors,
+} from '../../../components';
+import {
+    useApi,
+    useAuthentication,
+    useErrorHandler,
+    useEventManager,
+    useGetAddresses,
+    useGetOrganizationKeyRaw,
+    useGetUserKeys,
+    useNotifications,
+    useUser,
+    useUserSettings,
+} from '../../../hooks';
+import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
+import passwordResetIllustration from './password-reset-illustration.svg';
+
+enum STEP {
+    INFO,
+    PASSWORD,
+    CONFIRM_CANCELLATION,
+}
+
+interface Props extends ModalProps {
+    skipInfoStep?: boolean;
+}
+
+const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...rest }: Props) => {
+    const [user] = useUser();
+    const [userSettings] = useUserSettings();
+    const api = useApi();
+    const { call, stop, start } = useEventManager();
+
+    const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
+    const getUserKeys = useGetUserKeys();
+    const getAddresses = useGetAddresses();
+
+    const [loading, setLoading] = useState(false);
+    const { validator, onFormSubmit } = useFormErrors();
+    const errorHandler = useErrorHandler();
+    const { createNotification } = useNotifications();
+    const authentication = useAuthentication();
+
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const [step, setStep] = useState(skipInfoStep ? STEP.PASSWORD : STEP.INFO);
+
+    const isSessionRecoveryInitiatedByCurrentSession = useIsSessionRecoveryInitiatedByCurrentSession();
+    const timeRemaining = useSessionRecoveryInsecureTimeRemaining();
+
+    if (timeRemaining === null) {
+        return null;
+    }
+
+    if (step === STEP.CONFIRM_CANCELLATION) {
+        return <ConfirmSessionRecoveryCancellationModal open={rest.open} onDismiss={() => setStep(STEP.INFO)} />;
+    }
+
+    const infoSubline =
+        timeRemaining.inDays === 0
+            ? c('Info').ngettext(
+                  msgid`This permission expires in ${timeRemaining.inHours} hour`,
+                  `This permission expires in ${timeRemaining.inHours} hours`,
+                  timeRemaining.inHours
+              )
+            : c('Info').ngettext(
+                  msgid`This permission expires in ${timeRemaining.inDays} day`,
+                  `This permission expires in ${timeRemaining.inDays} days`,
+                  timeRemaining.inDays
+              );
+
+    const boldEmail = (
+        <b key="bold-user-email" className="text-break">
+            {user.Email}
+        </b>
+    );
+
+    const boldDaysRemaining = (
+        <b key="bold-days-remaining">
+            {timeRemaining.inDays === 0
+                ? c('Info').ngettext(
+                      msgid`${timeRemaining.inHours} hour`,
+                      `${timeRemaining.inHours} hours`,
+                      timeRemaining.inHours
+                  )
+                : c('Info').ngettext(
+                      msgid`${timeRemaining.inDays} day`,
+                      `${timeRemaining.inDays} days`,
+                      timeRemaining.inDays
+                  )}
+        </b>
+    );
+
+    if (!isSessionRecoveryInitiatedByCurrentSession) {
+        return (
+            <Modal onClose={onClose} {...rest}>
+                <ModalHeader title={c('Title').t`Reset your password`} subline={infoSubline} />
+                <ModalContent>
+                    <>
+                        <div className="flex flex-justify-center">
+                            <img
+                                src={passwordResetIllustration}
+                                alt={c('Session recovery').t`Password reset available`}
+                            />
+                        </div>
+                        <div>
+                            {c('Info')
+                                .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
+                        </div>
+                        <div>
+                            {c('Info')
+                                .t`Please go to the signed-in device (in the session where the request was initiated) to change your password.`}
+                        </div>
+                        <Href
+                            href={
+                                // TODO: add knowledge base url
+                                getKnowledgeBaseUrl('/session-recovery')
+                            }
+                        >{c('Link').t`Learn more`}</Href>
+                    </>
+                </ModalContent>
+                <ModalFooter>
+                    <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('Action').t`Cancel reset`}</Button>
+                    <Button color="norm" onClick={onClose}>
+                        {c('Action').t`Ok`}
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        );
+    }
+
+    const {
+        as,
+        onSubmit,
+        title,
+        subline,
+        content,
+        footer,
+    }: {
+        as?: typeof Form;
+        onSubmit?: () => void;
+        title: string;
+        subline?: string;
+        content: ReactNode;
+        footer: ReactNode;
+    } = (() => {
+        if (step === STEP.INFO) {
+            return {
+                title: c('Title').t`Reset your password`,
+                subline: infoSubline,
+                content: (
+                    <>
+                        <div className="flex flex-justify-center">
+                            <img
+                                src={passwordResetIllustration}
+                                alt={c('Session recovery').t`Password reset available`}
+                            />
+                        </div>
+                        <div>
+                            {c('Info')
+                                .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
+                        </div>
+                        <Href
+                            href={
+                                // TODO: add knowledge base url
+                                getKnowledgeBaseUrl('/session-recovery')
+                            }
+                        >{c('Link').t`Learn more`}</Href>
+                    </>
+                ),
+                footer: (
+                    <>
+                        <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>
+                            {c('Action').t`Cancel reset`}
+                        </Button>
+                        <Button color="norm" onClick={() => setStep(STEP.PASSWORD)}>
+                            {c('Action').t`Reset password`}
+                        </Button>
+                    </>
+                ),
+            };
+        }
+
+        if (step === STEP.PASSWORD) {
+            const handleSubmit = async () => {
+                if (!onFormSubmit()) {
+                    return;
+                }
+                setLoading(true);
+
+                try {
+                    stop();
+
+                    const [addresses, userKeysList, organizationKey] = await Promise.all([
+                        getAddresses(),
+                        getUserKeys(),
+                        user.isAdmin ? getOrganizationKeyRaw() : undefined,
+                    ]);
+
+                    /**
+                     * This is the case for a user who does not have any keys set-up.
+                     * They will be in 2-password mode, but not have any keys.
+                     * Changing to one-password mode or mailbox password is not allowed.
+                     * It's not handled better because it's a rare case.
+                     */
+                    if (userKeysList.length === 0) {
+                        throw new Error(c('Error').t`Please generate keys before you try to change your password`);
+                    }
+
+                    const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
+                    if (!hasMigratedAddressKeys) {
+                        throw new Error(c('Error').t`Account recovery not available for legacy address keys`);
+                    }
+
+                    const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
+
+                    const [armoredUserKeys, armoredOrganizationKey] = await Promise.all([
+                        getArmoredPrivateUserKeys(userKeysList, keyPassword),
+                        getEncryptedArmoredOrganizationKey(organizationKey?.privateKey, keyPassword),
+                    ]);
+
+                    const routeConfig = consumeSessionRecovery({
+                        UserKeys: armoredUserKeys,
+                        KeySalt: keySalt,
+                        OrganizationKey: armoredOrganizationKey,
+                    });
+
+                    if (userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE) {
+                        await api(routeConfig);
+                    } else {
+                        await srpVerify({
+                            api,
+                            credentials: {
+                                password: newPassword,
+                            },
+                            config: routeConfig,
+                        });
+                    }
+
+                    await innerMutatePassword({
+                        api,
+                        authentication,
+                        keyPassword,
+                        User: user,
+                    });
+
+                    await call();
+
+                    createNotification({
+                        text: c('Notification').t`Password saved`,
+                        showCloseButton: false,
+                    });
+
+                    void api(lockSensitiveSettings());
+                    onClose?.();
+                } catch (error) {
+                    errorHandler(error);
+                } finally {
+                    setLoading(false);
+                    start();
+                }
+            };
+
+            return {
+                as: Form,
+                onSubmit: handleSubmit,
+                title: c('Title').t`Change password`,
+                content: (
+                    <>
+                        <div className="mb-4">
+                            {
+                                // translator: full sentence "Proton's encryption technology means that nobody can access your password - not even us."
+                                c('Info')
+                                    .jt`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`
+                            }
+                        </div>
+                        <InputFieldTwo
+                            id="password"
+                            label={c('Label').t`New password`}
+                            error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
+                            as={PasswordInputTwo}
+                            autoFocus
+                            autoComplete="new-password"
+                            value={newPassword}
+                            onValue={(value: string) => setNewPassword(value)}
+                            disabled={loading}
+                        />
+                        <InputFieldTwo
+                            id="confirmPassword"
+                            label={c('Label').t`Confirm password`}
+                            error={validator([
+                                requiredValidator(confirmPassword),
+                                passwordLengthValidator(confirmPassword),
+                                confirmPasswordValidator(newPassword, confirmPassword),
+                            ])}
+                            as={PasswordInputTwo}
+                            autoComplete="new-password"
+                            value={confirmPassword}
+                            onValue={(value: string) => setConfirmPassword(value)}
+                            disabled={loading}
+                        />
+                    </>
+                ),
+                footer: (
+                    <>
+                        {skipInfoStep ? (
+                            <Button disabled={loading} onClick={onClose}>
+                                {c('Action').t`Close`}
+                            </Button>
+                        ) : (
+                            <Button disabled={loading} onClick={() => setStep(STEP.INFO)}>
+                                {c('Action').t`Back`}
+                            </Button>
+                        )}
+                        <Button color="norm" loading={loading} type="submit">
+                            {c('Action').t`Save`}
+                        </Button>
+                    </>
+                ),
+            };
+        }
+
+        throw new Error('Step not found');
+    })();
+
+    return (
+        <Modal as={as} onSubmit={onSubmit} onClose={loading ? noop : onClose} {...rest} size="small">
+            <ModalHeader title={title} subline={subline} />
+            <ModalContent>{content}</ModalContent>
+            <ModalFooter>{footer}</ModalFooter>
+        </Modal>
+    );
+};
+
+export default PasswordResetAvailableAccountModal;

@@ -7,3 +7,22 @@ export const abortSessionRecovery = () => ({
     url: 'account/v1/recovery/session/abort',
     method: 'POST',
 });
+
+export const consumeSessionRecovery = (data: {
+    Auth: { ModulusID: string; Version: number; Salt: string; Verifier: string };
+    UserKeys: {
+        ID: string;
+        PrivateKey: string;
+    }[];
+    KeySalt: string;
+}) => ({
+    url: 'account/v1/recovery/session/consume',
+    method: 'POST',
+    data,
+});
+
+export const updateSessionAccountRecovery = (data: { SessionAccountRecovery: 0 | 1 }) => ({
+    url: 'core/v4/settings/sessionaccountrecovery',
+    method: 'PUT',
+    data,
+});
