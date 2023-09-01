@@ -318,7 +318,7 @@ class KeyManagementApi {
     }) {
         const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
 
-        const { proxyParameters, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
+        const { proxyInstances, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
 
         const maybeEncryptedKey = passphrase
             ? await encryptKey({ privateKey: forwardeeKey, passphrase })
@@ -326,7 +326,7 @@ class KeyManagementApi {
 
         return {
             forwardeeKey: maybeEncryptedKey.armor(),
-            proxyParameters,
+            proxyInstances,
         };
     }
 
