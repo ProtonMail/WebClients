@@ -10,7 +10,7 @@ import {
     getVCardProperties,
     hasPref,
 } from '../properties';
-import { prepareForSaving } from '../surgery';
+import { getFallbackFNValue, prepareForSaving } from '../surgery';
 import { ONE_OR_MORE_MAY_BE_PRESENT, ONE_OR_MORE_MUST_BE_PRESENT, PROPERTIES, isCustomField } from '../vcard';
 
 const getPref = (params: { [key: string]: string | undefined } | undefined) => {
@@ -87,11 +87,25 @@ export const linkConnections = (connections: number[][]): number[][] => {
  * @returns List of groups of contacts that can be merged
  */
 export const extractMergeable = (contacts: FormattedContact[] = []) => {
+    const fallbackFN = getFallbackFNValue();
+    const fallbackNormalizedProtonNames = unique([
+        'Unknown',
+        // fallback value used by the back-end (they add the angular brackets)
+        '<Unknown>',
+        fallbackFN,
+        `<${fallbackFN}>`,
+    ]).map((name) => normalize(name));
     // detect duplicate names
     // namesConnections = { name: [contact indices with this name] }
     const namesConnections = Object.values(
         contacts.reduce<{ [Name: string]: number[] }>((acc, { Name }, index) => {
             const name = normalize(Name);
+
+            if (fallbackNormalizedProtonNames.includes(name)) {
+                // These names have been probably added by us during an import (because we did not have anything better).
+                // So they will most likely not identify identical contacts
+                return acc;
+            }
 
             if (!acc[name]) {
                 acc[name] = [index];

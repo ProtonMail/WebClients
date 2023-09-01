@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { CryptoProxy } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
@@ -9,7 +7,7 @@ import { Contact, ContactCard } from '../interfaces/contacts/Contact';
 import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { CLEAR_FIELDS, SIGNED_FIELDS } from './constants';
 import { createContactPropertyUid, getVCardProperties, hasCategories } from './properties';
-import { prepareForSaving } from './surgery';
+import { getFallbackFNValue, prepareForSaving } from './surgery';
 import { vCardPropertiesToICAL } from './vcard';
 
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, SIGNED } = CONTACT_CARD_TYPE;
@@ -98,8 +96,8 @@ export const prepareCardsFromVCard = (
         }
 
         if (!hasFN) {
-            const defaultFN = c('Default display name vcard').t`Unknown`;
-            toSign.push({ field: 'fn', value: defaultFN, uid: createContactPropertyUid() });
+            const fallbackFN = getFallbackFNValue();
+            toSign.push({ field: 'fn', value: fallbackFN, uid: createContactPropertyUid() });
         }
 
         const textData: string = vCardPropertiesToICAL(toSign).toString();
