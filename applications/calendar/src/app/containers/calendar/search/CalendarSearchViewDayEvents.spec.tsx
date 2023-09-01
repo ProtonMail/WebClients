@@ -15,7 +15,7 @@ const dailyEvents = [
         Summary: 'Tataratatata',
         fakeUTCStartDate: new Date('2021-09-01T14:00:00.000Z'),
         fakeUTCEndDate: new Date('2021-09-01T14:30:00.000Z'),
-        Organizer: 'jovan@proton.me',
+        Organizer: { value: 'mailto:jovan@proton.me' },
         visualCalendar: {
             Color: '#415DF0',
         },
@@ -28,7 +28,7 @@ const dailyEvents = [
         fakeUTCEndDate: new Date('2021-09-01T15:30:00.000Z'),
         Summary: 'Testerere',
         plusDaysToEnd: 0,
-        Organizer: 'jovan@proton.me',
+        Organizer: { value: 'mailto:jovan@proton.me' },
         visualCalendar: {
             Color: '#415DF0',
         },
@@ -139,7 +139,7 @@ describe('CalendarSearchViewDayEvents', () => {
                 fakeUTCEndDate: new Date('2021-09-01T15:30:00.000Z'),
                 Summary: 'Testerere',
                 plusDaysToEnd: 0,
-                Organizer: 'mike@proton.me',
+                Organizer: { value: 'mailto:mike@proton.me' },
                 visualCalendar: {
                     Color: '#415DF0',
                 },
@@ -169,10 +169,10 @@ describe('CalendarSearchViewDayEvents', () => {
                 Summary: 'Tataratatata',
                 fakeUTCStartDate: new Date('2021-09-01T14:00:00.000Z'),
                 fakeUTCEndDate: new Date('2021-09-01T14:30:00.000Z'),
-                Organizer: 'mike@proton.me',
+                Organizer: { value: 'mailto:mike@proton.me' },
                 Attendees: [
                     {
-                        value: 'jovan@proton.me',
+                        value: 'mailto:jovan@proton.me',
                         parameters: {
                             cn: 'jovan@proton.me',
                             role: 'REQ-PARTICIPANT',

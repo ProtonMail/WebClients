@@ -15,17 +15,17 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
     const { isLibraryInitialized, enableEncryptedSearch, pauseMetadataIndexing, esIndexingProgressState, esStatus } =
         useEncryptedSearchLibrary();
 
-    const { isMetadataIndexingPaused, isConfigFromESDBLoaded } = esStatus;
+    const { esEnabled, isMetadataIndexingPaused, isConfigFromESDBLoaded } = esStatus;
 
     useEffect(() => {
-        if (!isLibraryInitialized || !isConfigFromESDBLoaded) {
+        if (!isLibraryInitialized || !isConfigFromESDBLoaded || esEnabled) {
             return;
         }
 
         if (!isMetadataIndexingPaused) {
             void enableEncryptedSearch();
         }
-    }, [isLibraryInitialized, isMetadataIndexingPaused, isConfigFromESDBLoaded]);
+    }, [isLibraryInitialized, isMetadataIndexingPaused, isConfigFromESDBLoaded, esEnabled]);
 
     return (
         <div className="px-6 py-4">

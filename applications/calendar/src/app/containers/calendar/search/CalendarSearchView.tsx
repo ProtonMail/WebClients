@@ -283,10 +283,10 @@ const CalendarSearchView = ({
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
                         const previousDailyEvents = maybeWithEmptyToday[index - 1];
-                        const previousUtStartDate = previousDailyEvents?.[0]?.fakeUTCStartDate ?? new Date();
+                        const previousUtcStartDate = previousDailyEvents?.[0]?.fakeUTCStartDate ?? new Date();
 
                         const shouldDisplayYearSeparatorBeforeCurrentDay =
-                            !previousDailyEvents || !isSameYear(previousUtStartDate, utcStartDate);
+                            !previousDailyEvents || !isSameYear(previousUtcStartDate, utcStartDate);
 
                         const year = getYear(utcStartDate);
 

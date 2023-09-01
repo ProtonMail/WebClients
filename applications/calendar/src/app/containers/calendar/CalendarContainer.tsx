@@ -161,7 +161,7 @@ const CalendarContainer = ({
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
-    const { lastNonSearchViewRef } = useCalendarSearch();
+    const { lastNonSearchViewRef, setIsSearching } = useCalendarSearch();
 
     const [nowDate, setNowDate] = useState(() => new Date());
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();
@@ -200,6 +200,8 @@ const CalendarContainer = ({
             setCustom({ view: urlView, range: urlRange, date: urlDate });
             if (urlView !== SEARCH) {
                 lastNonSearchViewRef.current = urlView;
+            } else if (urlView === SEARCH) {
+                setIsSearching(true);
             }
         }
     }, [urlDate, urlView, urlRange]);

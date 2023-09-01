@@ -24,18 +24,17 @@ const eventConversionObject = Object.fromEntries([
 ]);
 
 export const convertEventType = (event: Event, numAddresses: number): ESEvent<ESBaseMessage> | undefined => {
-    const { EventID, Refresh, Messages, Addresses } = event;
+    const { EventID, Refresh, Messages: MessageEvents, Addresses: AddressEvents } = event;
 
     if (!EventID) {
         return;
     }
 
-    const attemptReDecryption = hasReactivatedKey({ Addresses, numAddresses });
+    const attemptReDecryption = hasReactivatedKey({ AddressEvents, numAddresses });
 
-    const Items = !Messages
+    const Items = !MessageEvents
         ? undefined
-        : Messages.map((messageEvent) => {
-              const { ID, Action, Message } = messageEvent;
+        : MessageEvents.map(({ ID, Action, Message }) => {
               return {
                   ID,
                   Action: eventConversionObject[Action],

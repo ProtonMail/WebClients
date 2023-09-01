@@ -18,6 +18,7 @@ import noop from '@proton/utils/noop';
 import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
 import { ESCalendarContent, ESCalendarMetadata, ESCalendarSearchParams } from '../../../interfaces/encryptedSearch';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
+import { fromUrlParams } from '../getUrlHelper';
 import { VisualSearchItem } from './interface';
 
 interface UseCalendarSearch {
@@ -28,9 +29,15 @@ interface UseCalendarSearch {
     hasSearchedCounter: number;
     openedSearchItem: VisualSearchItem | undefined;
     setOpenedSearchItem: (item: VisualSearchItem | undefined) => void;
+    /**
+     * the state `isSearching` determines if the UI displays:
+     * * a search bar (if true)
+     * * a magnifier button (if false)
+     */
     isSearching: boolean;
     setIsSearching: (isSearching: boolean) => void;
     lastNonSearchViewRef: MutableRefObject<VIEWS | undefined>;
+    isEnabled?: boolean;
     isIndexing: boolean;
     isActive: boolean;
     disabled: boolean;
@@ -48,6 +55,7 @@ const CalendarSearchContext = createContext<UseCalendarSearch>({
     setIsSearching: noop,
     lastNonSearchViewRef: { current: undefined },
     hasSearchedCounter: 0,
+    isEnabled: undefined,
     isIndexing: false,
     isActive: false,
     disabled: true,
@@ -65,12 +73,12 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const lastNonSearchViewRef = useRef<VIEWS>();
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
-    // isSearching determines if the UI displays a search bar (if true) or a magnifier button (if false);
-    const [isSearching, setIsSearching] = useState(false);
+    const isInitialSearching = fromUrlParams(history.location.pathname).view === VIEWS.SEARCH;
+    const [isSearching, setIsSearching] = useState(isInitialSearching);
     const [loading, withLoading, setLoading] = useLoading(true);
     const [openedSearchItem, setOpenedSearchItem] = useState<VisualSearchItem>();
 
-    const { dbExists, isEnablingEncryptedSearch, isRefreshing, isMetadataIndexingPaused } = esStatus;
+    const { dbExists, isEnablingEncryptedSearch, esEnabled, isRefreshing, isMetadataIndexingPaused } = esStatus;
 
     const isIndexing = isEnablingEncryptedSearch || isRefreshing || isMetadataIndexingPaused;
     const isActive = dbExists && !isIndexing;
@@ -127,6 +135,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
         isSearching,
         setIsSearching,
         lastNonSearchViewRef,
+        isEnabled: isLibraryInitialized ? esEnabled : undefined,
         isIndexing,
         isActive,
         disabled: !isLibraryInitialized || !isActive,
