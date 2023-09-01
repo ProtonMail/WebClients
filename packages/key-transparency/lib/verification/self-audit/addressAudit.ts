@@ -176,7 +176,8 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
  */
 const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, saveSKLToLS: SaveSKLToLS) => {
     const inputSKL = address.SignedKeyList;
-    const proof = await fetchProof(epoch.EpochID, address.Email, inputSKL?.Revision ?? 1, api);
+    const revisionToCheck = inputSKL?.Revision ?? 1;
+    const proof = await fetchProof(epoch.EpochID, address.Email, revisionToCheck, api);
     if (!inputSKL) {
         await verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
         return;
@@ -186,6 +187,7 @@ const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, 
             inputSKL,
         });
     }
+    // If MinEpochID is not set, the SKL is not yet included in KT.
     if (!inputSKL.MinEpochID) {
         if (!inputSKL.Revision || !inputSKL.ExpectedMinEpochID) {
             return throwKTError('Expected an ExpectedMinEpochID and Revision', {
@@ -202,7 +204,12 @@ const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, 
         );
         return;
     }
+    // Check that proof is a valid obsolescence proof.
     await verifyProofOfObsolescence(proof, address.Email, epoch.TreeHash, inputSKL);
+
+    // The proof of the next revision must be an absence proof.
+    const absenceProof = await fetchProof(epoch.EpochID, address.Email, revisionToCheck + 1, api);
+    await verifyProofOfAbsenceForRevision(absenceProof, address.Email, epoch.TreeHash, revisionToCheck + 1);
 };
 
 const auditAddressImplementation = async (
