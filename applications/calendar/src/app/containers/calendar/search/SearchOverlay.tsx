@@ -110,7 +110,7 @@ const SearchOverlay = ({
     }
 
     const varPosition = {
-        '--top': boundingRect?.top,
+        '--top': boundingRect?.bottom,
         '--left': boundingRect?.left,
     };
 

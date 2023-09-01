@@ -67,6 +67,7 @@ html,
 	--field-background-color: var(--background-weak);
 	--field-hover-background-color: var(--field-background-color);
 	--field-focus-background-color: var(--search-field-focus-background);
+	--field-disabled-background-color: var(--field-background-color);
 
 	inline-size: clamp(
 		#{rem(340)},
