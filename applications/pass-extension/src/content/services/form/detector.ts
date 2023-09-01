@@ -1,16 +1,13 @@
+import type { FieldType } from '@proton/pass/fathom';
 import {
     type FNode,
-    FieldType,
     FormType,
     clearDetectionCache,
-    isActiveField,
-    isFormProcessed,
-    isVisibleForm,
-    resetFormFlags,
+    fieldTypes,
+    formTypes,
+    prepass,
     rulesetMaker,
-    selectAllForms,
-    selectDanglingInputs,
-    selectUnprocessedInputs,
+    shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/protonpass-fathom/fathom';
 import { logger } from '@proton/pass/utils/logger';
@@ -22,8 +19,6 @@ import type { DetectedField, DetectedForm } from '../../types';
 
 const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
-const DETECTABLE_FORMS = Object.values(FormType);
-const DETECTABLE_FIELDS = Object.values(FieldType);
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: FNode; type: T; score: number };
@@ -46,37 +41,9 @@ type PredictionBestSelector<T extends string> = (a: PredictionResult<T>, b: Pred
 const shouldRunDetection = (): Promise<boolean> =>
     new Promise(async (resolve) => {
         await wait(50);
-        requestAnimationFrame(() => {
-            const runForForms = selectAllForms().reduce<boolean>((runDetection, form) => {
-                if (isFormProcessed(form)) {
-                    const unprocessedFields = selectUnprocessedInputs(form).some(isActiveField);
-
-                    /* in case the form type should change due to field updates :
-                     * remove the current cached detection result */
-                    if (unprocessedFields) {
-                        logger.info('[Detector::assess] new tracked form fields detected');
-                        resetFormFlags(form);
-                    }
-
-                    return runDetection || unprocessedFields;
-                }
-
-                if (isVisibleForm(form)) {
-                    logger.info('[Detector::assess] new form of interest');
-                    return true;
-                }
-
-                return runDetection;
-            }, false);
-
-            if (runForForms) return resolve(true);
-
-            const danglingFields = selectDanglingInputs().filter(isActiveField);
-            const runForFields = danglingFields.length > 0;
-
-            if (runForFields) logger.debug('[Detector::assess] new unprocessed fields');
-
-            return resolve(runForFields);
+        requestIdleCallback(() => {
+            prepass();
+            resolve(shouldRunClassifier());
         });
     });
 
@@ -157,12 +124,12 @@ const createDetectionRunner =
                 return [
                     getPredictionsFor<FormType>(boundRuleset, {
                         type: 'form',
-                        subTypes: DETECTABLE_FORMS,
+                        subTypes: formTypes,
                         selectBest: selectBestForm,
                     }),
                     getPredictionsFor(boundRuleset, {
                         type: 'field',
-                        subTypes: DETECTABLE_FIELDS,
+                        subTypes: fieldTypes,
                         selectBest,
                     }),
                 ];
@@ -204,6 +171,7 @@ const createDetectionRunner =
         const formsToTrack = forms.filter(({ formType, fields }) => formType !== FormType.NOOP || fields.length > 0);
 
         clearDetectionCache(); /* clear visibility cache on each detection run */
+
         return formsToTrack;
     };
 
