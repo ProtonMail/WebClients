@@ -91,10 +91,10 @@ export const replaceApostrophes = (str: string) => str.replace(APOSTROPHES_REGEX
  * Returns true if one or more keys have been reactivated
  */
 export const hasReactivatedKey = ({
-    Addresses,
+    AddressEvents,
     numAddresses,
 }: {
-    Addresses?: AddressEvent[];
+    AddressEvents?: AddressEvent[];
     numAddresses: number;
 }) => {
     /**
@@ -109,7 +109,6 @@ export const hasReactivatedKey = ({
      *  - if a key gets reactivated during the indexation, this condition will be matched, but the event will be consume and we won't correct undecrypted ones
      */
     return (
-        !!Addresses &&
-        Addresses.filter((AddressEvent) => AddressEvent.Action === EVENT_ACTIONS.UPDATE).length === numAddresses
+        !!AddressEvents && AddressEvents.filter(({ Action }) => Action === EVENT_ACTIONS.UPDATE).length === numAddresses
     );
 };

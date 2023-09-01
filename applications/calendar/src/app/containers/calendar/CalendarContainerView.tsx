@@ -1,9 +1,9 @@
-import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react';
+import { ReactNode, Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader, Href } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -35,12 +35,12 @@ import {
     useModalState,
     useNotifications,
     useOpenDrawerOnLoad,
-    useProgressiveRollout,
     useSpotlightOnFeature,
     useSpotlightShow,
     useToggle,
     useWelcomeFlags,
 } from '@proton/components';
+import { Spotlight } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
@@ -57,6 +57,7 @@ import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -154,7 +155,8 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-    const isCalendarEncryptedSearchEnabled = useProgressiveRollout(FeatureCode.CalendarEncryptedSearch) || true;
+    const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
+    const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
         useModalState();
@@ -400,7 +402,7 @@ const CalendarContainerView = ({
     const logo = <MainLogo to="/" />;
 
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { show, onDisplayed } = useSpotlightOnFeature(
+    const { show: showSharingSpotlight, onDisplayed: onSharingSpotlightDisplayed } = useSpotlightOnFeature(
         FeatureCode.CalendarSharingSpotlight,
         !isWelcomeFlow && !isDrawerApp && !isNarrow && calendarSharingEnabled && hasPaidMail(user),
         {
@@ -409,7 +411,17 @@ const CalendarContainerView = ({
             default: Date.UTC(2023, 3, 12, 12),
         }
     );
-    const shouldShowCalendarSharingPopup = useSpotlightShow(show);
+    const shouldShowCalendarSharingPopup = useSpotlightShow(showSharingSpotlight);
+    const {
+        show: showSearchSpotlight,
+        onDisplayed: onSearchSpotlightDisplayed,
+        onClose: onCloseSearchSpotlight,
+    } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isNarrow && !isWelcomeFlow, {
+        alpha: Date.UTC(2023, 8, 13, 12),
+        beta: Date.UTC(2023, 8, 20, 12),
+        default: Date.UTC(2023, 8, 27, 12),
+    });
+    const shouldShowCalendarSearchSpotlight = useSpotlightShow(showSearchSpotlight);
 
     useEffect(() => {
         if (shouldShowCalendarSharingPopup) {
@@ -462,6 +474,9 @@ const CalendarContainerView = ({
     });
 
     const handleClickSearch = () => {
+        if (shouldShowCalendarSearchSpotlight) {
+            onCloseSearchSpotlight();
+        }
         setIsSearching(true);
     };
 
@@ -497,11 +512,28 @@ const CalendarContainerView = ({
             searchButton={
                 isCalendarEncryptedSearchEnabled &&
                 !isSearching && (
-                    <ToolbarButton
-                        icon={<Icon name="magnifier" />}
-                        title={c('Header').t`Search`}
-                        onClick={handleClickSearch}
-                    />
+                    <Spotlight
+                        originalPlacement="bottom-start"
+                        show={shouldShowCalendarSearchSpotlight}
+                        onDisplayed={onSearchSpotlightDisplayed}
+                        type="new"
+                        anchorRef={searchSpotlightAnchorRef}
+                        content={
+                            <>
+                                <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
+                                <p className="m-0">{c('Spotlight')
+                                    .t`Easily find the event you're looking for with our new search feature.`}</p>
+                                <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
+                            </>
+                        }
+                    >
+                        <ToolbarButton
+                            ref={searchSpotlightAnchorRef}
+                            icon={<Icon name="magnifier" />}
+                            title={c('Header').t`Search`}
+                            onClick={handleClickSearch}
+                        />
+                    </Spotlight>
                 )
             }
             searchField={
@@ -547,7 +579,7 @@ const CalendarContainerView = ({
     ) : (
         <>
             {renderCalendarSharingPopupModal && (
-                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onDisplayed} />
+                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onSharingSpotlightDisplayed} />
             )}
             <PrivateHeader
                 userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}

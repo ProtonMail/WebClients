@@ -2,16 +2,9 @@ import { ComponentProps } from 'react';
 
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { sub } from 'date-fns';
 
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import { SECOND } from '@proton/shared/lib/constants';
-import {
-    mockUseActiveBreakpoint,
-    mockUseSpotlightOnFeature,
-    mockUseUser,
-    mockUseWelcomeFlags,
-} from '@proton/testing/index';
+import { mockUseSpotlightOnFeature } from '@proton/testing/index';
 
 import CalendarSearchInput from './CalendarSearchInput';
 
@@ -32,105 +25,6 @@ const renderComponent = (props: ComponentProps<typeof CalendarSearchInput>) => {
 };
 
 describe('CalendarSearchInput', () => {
-    let mockedUseUser: ReturnType<typeof mockUseUser>;
-    let mockedUseSpotlightOnFeature: ReturnType<typeof mockUseSpotlightOnFeature>;
-
-    beforeEach(() => {
-        mockedUseUser = mockUseUser([{ CreateTime: Math.floor(sub(new Date(), { weeks: 4 }).getTime() / SECOND) }]);
-        mockedUseSpotlightOnFeature = mockUseSpotlightOnFeature({});
-        mockUseActiveBreakpoint();
-        mockUseWelcomeFlags();
-    });
-
-    afterEach(() => {
-        mockedUseUser.mockReset();
-        mockedUseSpotlightOnFeature.mockReset();
-    });
-
-    it('should display spotlight', () => {
-        mockUseSpotlightOnFeature({ show: true });
-        renderComponent(baseProps);
-
-        expect(screen.getByText('Search for events'));
-        expect(screen.getByText("Easily find the event you're looking for with our new search feature."));
-        expect(screen.getByRole('link', { name: /Learn more/ }));
-    });
-
-    it('should not display spotlight', () => {
-        mockUseSpotlightOnFeature({ show: false });
-        renderComponent(baseProps);
-
-        expect(screen.queryByText('Search for events')).not.toBeInTheDocument();
-        expect(
-            screen.queryByText("Easily find the event you're looking for with our new search feature.")
-        ).not.toBeInTheDocument();
-        expect(screen.queryByRole('link', { name: /Learn more/ })).not.toBeInTheDocument();
-    });
-
-    describe('when user has been create <1 week ago', () => {
-        beforeEach(() => {
-            mockUseUser([{ CreateTime: Math.floor(sub(new Date(), { days: 2 }).getTime() / SECOND) }]);
-        });
-
-        it('should set false to useSpotlightOnFeature call', () => {
-            renderComponent(baseProps);
-
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
-                alpha: 1653480000000,
-                beta: 1653480000000,
-                default: 1653480000000,
-            });
-        });
-    });
-
-    describe('when user has been create >1 week ago', () => {
-        describe('when user is on narrow device', () => {
-            beforeEach(() => {
-                mockUseUser([{ CreateTime: Math.floor(sub(new Date(), { days: 2 }).getTime() / SECOND) }]);
-                mockUseActiveBreakpoint({ breakpoint: 'mobile', isDesktop: false, isMobile: true });
-            });
-
-            it('should set false to useSpotlightOnFeature call', () => {
-                renderComponent(baseProps);
-
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
-                    alpha: 1653480000000,
-                    beta: 1653480000000,
-                    default: 1653480000000,
-                });
-            });
-        });
-
-        describe('when user is on wide device', () => {
-            it('should set true to useSpotlightOnFeature call', () => {
-                renderComponent(baseProps);
-
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-                expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', true, {
-                    alpha: 1653480000000,
-                    beta: 1653480000000,
-                    default: 1653480000000,
-                });
-            });
-        });
-    });
-
-    describe('when user is in welcome flow', () => {
-        it('should set false to useSpotlightOnFeature call', () => {
-            mockUseWelcomeFlags([{ isWelcomeFlow: true }]);
-            renderComponent(baseProps);
-
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledTimes(1);
-            expect(mockedUseSpotlightOnFeature).toHaveBeenCalledWith('CalendarEncryptedSearchSpotlight', false, {
-                alpha: 1653480000000,
-                beta: 1653480000000,
-                default: 1653480000000,
-            });
-        });
-    });
-
     describe('when input is focused', () => {
         const onSpotlightClose = jest.fn();
 
