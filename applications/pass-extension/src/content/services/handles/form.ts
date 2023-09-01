@@ -1,5 +1,5 @@
 import type { FormType } from '@proton/pass/fathom';
-import { setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
+import { removeProcessedFlag } from '@proton/pass/fathom';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -48,7 +48,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         detachField: (field: HTMLInputElement) => {
             formHandle.fields.get(field)?.detach();
             formHandle.fields.delete(field);
-            setFieldProcessable(field);
+            removeProcessedFlag(field);
         },
 
         shouldRemove: () => !document.body.contains(form),
@@ -89,9 +89,11 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         detach() {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             listeners.removeAll();
-            setFormProcessable(form);
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());
+
+            removeProcessedFlag(form);
+            form.querySelectorAll('input').forEach(removeProcessedFlag);
         },
     };
 
