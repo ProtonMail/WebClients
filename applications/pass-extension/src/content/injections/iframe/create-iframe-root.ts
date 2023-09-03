@@ -15,7 +15,7 @@ export const createIframeRoot = (): ProtonPassRoot => {
     });
 
     iframeRoot.style.display = 'none';
-    iframeRoot.addEventListener('ready', () => iframeRoot.style.removeProperty('display'));
+    iframeRoot.addEventListener('ready', () => iframeRoot.style.removeProperty('display'), { once: true });
 
     return iframeRoot;
 };
