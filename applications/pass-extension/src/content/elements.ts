@@ -6,8 +6,12 @@ import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
 import { StyledShadowHost } from './injections/custom-elements/StyledShadowHost';
 
 export const createCustomElements = () => {
-    const publicPath = document.currentScript?.getAttribute('public-path');
+    const script = document.currentScript;
+    if (!script) throw new Error('Could not reference current script');
+
+    const publicPath = script.getAttribute('public-path');
     if (!publicPath) throw new Error('Custom elements could not be registered');
+
     StyledShadowHost.publicPath = publicPath;
 
     if (!customElements.get('protonpass-root')) customElements.define('protonpass-root', ProtonPassRoot);
