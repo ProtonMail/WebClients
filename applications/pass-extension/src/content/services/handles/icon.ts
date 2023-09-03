@@ -111,5 +111,7 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
         { childList: true, subtree: true }
     );
 
+    reposition(); /* fire reposition on initial icon handle creation */
+
     return { element: icon, setStatus, setCount, detach, reposition };
 };
