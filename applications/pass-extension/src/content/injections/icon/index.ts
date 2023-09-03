@@ -231,7 +231,6 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     else input.parentElement!.insertBefore(control, input);
 
     control.shadowRoot?.appendChild(icon);
-    applyInjectionStyles(elements);
 
     return elements;
 };
