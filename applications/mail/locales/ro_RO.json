@@ -991,6 +991,9 @@
       "Stay": [
         "Nu închide"
       ],
+      "Strikethrough": [
+        "Tăiat cu o linie"
+      ],
       "Submit": [
         "Trimite"
       ],
@@ -4673,6 +4676,11 @@
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacte",
+        "${ contactsLength } de contacte"
+      ],
       "${ count } unread message": [
         "Un mesaj necitit",
         "${ count } mesaje necitite",
@@ -4756,6 +4764,11 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact selectat",
+        "${ selectedContactsLength }/${ contactsLength } contacte selectate",
+        "${ selectedContactsLength }/${ contactsLength } de contacte selectate"
       ],
       "${ selectedFoldersCount } folder selected": [
         "S-a selectat un folder",
@@ -5279,6 +5292,9 @@
       ],
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Alăturați-vă programului ${ PROTON_SENTINEL_NAME } pentru cel mai înalt nivel de securitate și asistență pentru cont."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
