@@ -122,7 +122,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     useEffect(() => {
         window.addEventListener('message', onPostMessageHandler);
         return () => window.removeEventListener('message', onPostMessageHandler);
-    }, [endpoint]);
+    }, []);
 
     useEffect(() => {
         if (port && forwardTo) {
