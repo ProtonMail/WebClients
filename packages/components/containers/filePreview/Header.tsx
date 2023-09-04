@@ -25,7 +25,7 @@ interface Props {
     onClose?: () => void;
     onDownload?: () => void;
     onSave?: () => Promise<void>;
-    onDetail?: () => void;
+    onDetails?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
     date?: Date | string | number;
@@ -41,7 +41,7 @@ const Header = ({
     onClose,
     onDownload,
     onSave,
-    onDetail,
+    onDetails,
     onShare,
     onRestore,
     date,
@@ -138,12 +138,12 @@ const Header = ({
                         />
                     </Button>
                 )}
-                {onDetail && (
+                {onDetails && (
                     <Button
                         icon
                         shape="ghost"
                         title={c('Action').t`Details`}
-                        onClick={onDetail}
+                        onClick={onDetails}
                         className="ml-2 no-mobile"
                         data-testid="file-preview:actions:details"
                     >
