@@ -5188,7 +5188,7 @@
         "${ BRAND_NAME } proverà a riprendere l'importazione non appena il fornitore della tua email avrà ripristinato il ${ bandwidthLimitLink } del tuo account. Non devi fare nulla. Se annulli l'importazione, non potrai riprenderla, e dovrai riavviarla."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "La tecnologia di criptazione di ${ BRAND_NAME } significa che nessuno può accedere alla tua password - nemmeno noi."
+        "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } verrà impostato come calendario predefinito."
@@ -6079,7 +6079,7 @@
         "Inviti inviati con successo"
       ],
       "It appears some of your data is encrypted and locked.": [
-        "Sembra che alcuni dei tuoi dati siano criptati e bloccati."
+        "Sembra che alcuni dei tuoi dati siano crittografati e bloccati."
       ],
       "it’s imperative": [
         "è obbligatorio"
@@ -6088,7 +6088,7 @@
         "Sto usando @ProtonMail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con Il mio link di riferimento per ottenere 1 mese di funzioni premium gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Basta confermare la tua selezione e noi faremo il resto."
+        "Devi solo confermare la tua selezione e noi faremo il resto."
       ],
       "Just send them your personal referral link.": [
         "Invia loro il tuo link di riferimento personale."
@@ -6325,6 +6325,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
+      "per month": [
+        "al mese"
+      ],
+      "per month, billed every 12 months": [
+        "al mese con fatturazione ogni 12 mesi"
+      ],
+      "per month, billed every 15 months": [
+        "al mese con fatturazione ogni 15 mesi"
+      ],
+      "per month, billed every 24 months": [
+        "al mese con fatturazione ogni 24 mesi"
+      ],
+      "per month, billed every 30 months": [
+        "al mese con fatturazione ogni 30 mesi"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "È più probabile che i client PGP siano in grado di riconoscere le chiavi PGP se i tuoi messaggi sono firmati."
       ],
@@ -6376,7 +6391,7 @@
         "Nota che se elimini questo filtro verrà interrotta l'elaborazione di tutti i processi automatici."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Per favore fornisci un indirizzo email nel caso in cui dovessimo contattarti."
@@ -6737,7 +6752,7 @@
         "Questo eliminerà tutte le versioni precedenti dei tuoi file."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Questo disabiliterà la tua frase di recupero corrente. Non potrai utilizzarlo per accedere al tuo account o decifrare i tuoi dati."
+        "Questo disabiliterà la tua frase di recupero corrente. Non potrai utilizzarla per accedere al tuo account o decriptare i tuoi dati."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Questo scaricherà un file contenente la tua chiave privata. Proteggi questo file crittografandolo con una password."
@@ -6815,7 +6830,7 @@
         "Per usare ${ toAppName }, hai bisogno di un indirizzo ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Per funzionare correttamente, ogni filtro deve contenere almeno un nome e uno script Sieve valido. Puoi ${ link }."
+        "Per funzionare correttamente, ogni filtro deve contenere almeno un nome e uno script Sieve valido. ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
@@ -6845,7 +6860,7 @@
         "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decriptare la tua casella di posta. (Avanzato)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
+        "La modalità a doppia password utilizza due password separate per il login e la decriptazione della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Impossibile verificare la firma del file di ripristino. Si prega di contattare l'assistenza."
@@ -7190,6 +7205,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti affinché l'host possa vedere la tua risposta."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderai l'accesso ai server e le funzionalità del piano ${ vpnPlanNameShort } a partire da questa data."
@@ -7922,7 +7940,7 @@
         "Conferma gli URL di collegamento"
       ],
       "Confirm login password": [
-        "Confermare password"
+        "Conferma password di accesso"
       ],
       "Confirm mailbox password": [
         "Conferma la password della casella postale"
@@ -12394,7 +12412,7 @@
         "Conferma la perdita dei bonus di ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
-        "Conferma numero di telefono"
+        "Conferma il numero di telefono"
       ],
       "Congratulations on choosing privacy!": [
         "Congratulazioni per aver scelto la privacy!"
@@ -12604,6 +12622,9 @@
       ],
       "Encryption and keys": [
         "Crittografia e chiavi"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -12963,6 +12984,9 @@
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
+      ],
+      "Sign in to join the Beta program": [
+        "Accedi per partecipare al programma Beta"
       ],
       "Sign in with 2FA": [
         "Accedi con autenticazione a 2 fattori"
@@ -13653,7 +13677,7 @@
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
+        "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "Skip verification?": [
         "Saltare la verifica?"
