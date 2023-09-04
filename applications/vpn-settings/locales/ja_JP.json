@@ -3046,6 +3046,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
       ],
+      "per month": [
+        "月あたり"
+      ],
+      "per month, billed every 12 months": [
+        "月額、12ヶ月ごとに請求"
+      ],
+      "per month, billed every 15 months": [
+        "月額、15ヶ月ごとに請求"
+      ],
+      "per month, billed every 24 months": [
+        "月額、24ヶ月ごとに請求"
+      ],
+      "per month, billed every 30 months": [
+        "月額、30ヶ月ごとに請求"
+      ],
       "Plan upgrade required": [
         "プランのアップグレードが必要です"
       ],
@@ -4030,7 +4045,7 @@
         "サブスクリプションのオプション"
       ],
       "Synchronize with system": [
-        "システムとの同期"
+        "システムと同期する"
       ],
       "System information": [
         "システム情報"
@@ -6709,7 +6724,7 @@
         "安定版"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "このバージョンの Tor Brower はサポートしていません、最新のバージョン ${ stableRelease } にアップグレードしてください"
+        "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
     "upsell panel": {
