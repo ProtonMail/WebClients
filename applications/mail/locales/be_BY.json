@@ -994,6 +994,9 @@
       "Stay": [
         "Застацца"
       ],
+      "Strikethrough": [
+        "Закрэсліванне"
+      ],
       "Submit": [
         "Адправіць"
       ],
@@ -4718,6 +4721,12 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } кантакт",
+        "${ contactsLength } кантакты",
+        "${ contactsLength } кантактаў",
+        "${ contactsLength } кантактаў"
+      ],
       "${ count } unread message": [
         "${ count } непрачытанае паведамленне",
         "${ count } непрачытаныя паведамленні",
@@ -4816,6 +4825,12 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантакты з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",
@@ -5368,6 +5383,9 @@
       ],
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Далучайцеся да праграмы ${ PROTON_SENTINEL_NAME } для забеспячэння найвышэйшага ўзроўню бяспекі ўліковага запісу і падтрымкі."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."

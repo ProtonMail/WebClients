@@ -519,9 +519,6 @@
       "${ count } items": [
         "${ count } item"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor data login dan catatan. Impor kartu kredit, paspor, berkas lampiran, dan lain sebagainya saat ini tidak didukung."
-      ],
       "${ revisionNumber } times": [
         "${ revisionNumber } kali"
       ],
@@ -635,9 +632,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menyarankan membuat kata sandi yang kuat pada formulir pendaftaran."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Apabila diaktifkan, menu dropdown penyimpanan otomatis akan terbuka dengan sendirinya pada saat kursor terfokus pada kolom login."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Apabila diaktifkan, Anda dapat mengisi informasi kredensial Anda secara otomatis dengan mengklik ikon ${ PASS_APP_NAME }."

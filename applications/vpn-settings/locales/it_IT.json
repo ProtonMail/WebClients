@@ -2517,7 +2517,7 @@
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
-        "La tecnologia di criptazione di ${ BRAND_NAME } significa che nessuno può accedere alla tua password - nemmeno noi."
+        "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
       "${ discountPercentage } forever": [
         "${ discountPercentage } per sempre"
@@ -3070,6 +3070,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
+      "per month": [
+        "al mese"
+      ],
+      "per month, billed every 12 months": [
+        "al mese con fatturazione ogni 12 mesi"
+      ],
+      "per month, billed every 15 months": [
+        "al mese con fatturazione ogni 15 mesi"
+      ],
+      "per month, billed every 24 months": [
+        "al mese con fatturazione ogni 24 mesi"
+      ],
+      "per month, billed every 30 months": [
+        "al mese con fatturazione ogni 30 mesi"
+      ],
       "Plan upgrade required": [
         "Upgrade del piano necessario"
       ],
@@ -3100,7 +3115,7 @@
         "Nota che se elimini questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Per favore fornisci un indirizzo email nel caso in cui dovessimo contattarti."
@@ -3365,7 +3380,7 @@
         "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decriptare la tua casella di posta. (Avanzato)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
+        "La modalità a doppia password utilizza due password separate per il login e la decriptazione della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
@@ -3580,6 +3595,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Hai raggiunto il 100% della tua capacità di archiviazione. Non puoi inviare o ricevere nuove email. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderai l'accesso ai server e le funzionalità del piano ${ vpnPlanNameShort } a partire da questa data."
@@ -3830,7 +3848,7 @@
         "Configurazione per connettersi a ${ serverName }"
       ],
       "Confirm login password": [
-        "Confermare password"
+        "Conferma password di accesso"
       ],
       "Confirm mailbox password": [
         "Conferma la password della casella postale"
@@ -6313,7 +6331,7 @@
         "Conferma la perdita dei bonus di ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
-        "Conferma numero di telefono"
+        "Conferma il numero di telefono"
       ],
       "Contact us": [
         "Contattaci"
@@ -6430,6 +6448,9 @@
       ],
       "Email subscriptions": [
         "Newsletter"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -6611,6 +6632,9 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "Sign in to join the Beta program": [
+        "Accedi per partecipare al programma Beta"
       ],
       "Sign in with 2FA": [
         "Accedi con autenticazione a 2 fattori"
@@ -6958,7 +6982,7 @@
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
+        "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"

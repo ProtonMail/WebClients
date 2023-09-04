@@ -3450,6 +3450,11 @@
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacte",
+        "${ contactsLength } de contacte"
+      ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
@@ -3469,6 +3474,11 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact selectat",
+        "${ selectedContactsLength }/${ contactsLength } contacte selectate",
+        "${ selectedContactsLength }/${ contactsLength } de contacte selectate"
       ],
       "${ selectedFoldersCount } folder selected": [
         "S-a selectat un folder",

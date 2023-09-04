@@ -3670,6 +3670,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "W tym dniu stracisz dostęp do serwerów planu ${ vpnPlanNameShort } i ich funkcji."
       ],
@@ -6622,6 +6625,9 @@
       "Email subscriptions": [
         "Listy mailingowe"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
+      ],
       "Enter your password": [
         "Wpisz hasło"
       ],
@@ -6804,6 +6810,9 @@
       ],
       "Sign in": [
         "Zaloguj się"
+      ],
+      "Sign in to join the Beta program": [
+        "Zaloguj się, aby dołączyć do wersji beta"
       ],
       "Sign in with 2FA": [
         "Zaloguj się z uwierzytelnianiem dwustopniowym"

@@ -561,7 +561,7 @@
         "Désactiver"
       ],
       "Disable E2EE mail": [
-        "E-mail chiffré (E2EE) OFF"
+        "E-mail non chiffré"
       ],
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
@@ -570,7 +570,7 @@
         "Activer"
       ],
       "Enable E2EE mail": [
-        "E-mail chiffré (E2EE) ON"
+        "E-mail chiffré"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -2570,10 +2570,10 @@
         "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
       ],
       "30-day money-back guarantee": [
-        "Remboursement garanti pendant 30 jours"
+        "Garantie satisfait ou remboursé pendant 30 jours"
       ],
       "30-day money-back guarantee.": [
-        "Remboursement garanti pendant 30 jours."
+        "Garantie satisfait ou remboursé pendant 30 jours"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
@@ -3595,6 +3595,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux messages. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Après votre identification, vous serez redirigé vers ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de ${ vpnPlanNameShort }."
@@ -5157,7 +5160,7 @@
         "Passerelles privées"
       ],
       "Require 2FA": [
-        "Nécessite l'authentification à deux facteurs (2FA)"
+        "Demande d'authentification A2F"
       ]
     },
     "Notification": {
@@ -6443,6 +6446,9 @@
       "Email subscriptions": [
         "Newsletters"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Saisissez les informations de votre compte ${ BRAND_NAME } pour rejoindre le programme bêta de ${ app }."
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -6623,6 +6629,9 @@
       ],
       "Sign in": [
         "Se connecter"
+      ],
+      "Sign in to join the Beta program": [
+        "Connectez-vous pour rejoindre le programme bêta"
       ],
       "Sign in with 2FA": [
         "Se connecter avec l'authentification à deux facteurs (A2F)"

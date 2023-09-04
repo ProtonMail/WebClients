@@ -3293,7 +3293,7 @@
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne nicht die Verbindung zum Internet."
+        "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
@@ -3595,6 +3595,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ vpnPlanNameShort }-Servern und -funktionen."
@@ -6438,6 +6441,9 @@
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -6618,6 +6624,9 @@
       ],
       "Sign in": [
         "Melde dich an,"
+      ],
+      "Sign in to join the Beta program": [
+        "Melde dich an, um am Beta-Programm teilzunehmen."
       ],
       "Sign in with 2FA": [
         "Mit 2FA anmelden"
