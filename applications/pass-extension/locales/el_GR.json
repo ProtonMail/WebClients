@@ -526,9 +526,6 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις και σημειώσεις. Πιστωτικές κάρτες, διαβατήρια, συνημμένα αρχεία κλπ. δεν υποστηρίζονται προς το παρόν."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } φορά",
         "${ revisionNumber } φορές"
@@ -646,9 +643,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα προτείνει τη δημιουργία ισχυρών κωδικών πρόσβασης σε φόρμες εγγραφής."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Εάν ενεργοποιηθεί, το αναπτυσσόμενο μενού αυτόματης αποθήκευσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Εάν είναι ενεργοποιημένη, μπορείτε να συμπληρώσετε αυτόματα τα διαπιστευτήριά σας κάνοντας κλικ στο ${ PASS_APP_NAME } εικονίδιο."
