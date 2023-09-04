@@ -60,8 +60,8 @@ export const useRecipientLabel = () => {
     const getRecipientsOrGroupsLabels = (recipientsOrGroups: RecipientOrGroup[], detailed = false): string[] =>
         recipientsOrGroups.map((recipientsOrGroups) => getRecipientOrGroupLabel(recipientsOrGroups, detailed));
 
-    const getRecipientsOrGroups = (recipients: Recipient[]): RecipientOrGroup[] =>
-        recipientsToRecipientOrGroup(recipients, contactGroupsMap);
+    const getRecipientsOrGroups = (recipients: Recipient[], alwaysShowRecipient = false): RecipientOrGroup[] =>
+        recipientsToRecipientOrGroup(recipients, contactGroupsMap, alwaysShowRecipient);
 
     return {
         getRecipientLabel,
