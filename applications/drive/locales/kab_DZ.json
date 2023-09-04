@@ -161,6 +161,9 @@
       "Create new folder": [
         "Rnu akaram amaynut"
       ],
+      "Create new text file": [
+        "Rnu afaylu n uḍris amaynu"
+      ],
       "Customize": [
         "Sagen"
       ],
@@ -282,6 +285,9 @@
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
+      ],
+      "Go to Drive": [
+        "Ddu ɣer yimeɣri"
       ],
       "Go to label": [
         "Ddu ɣer tecreḍt"
@@ -649,6 +655,9 @@
       "View invoice": [
         "Wali tafaturt"
       ],
+      "Your 500 MB bonus": [
+        "Abunus-ik 500 MAṬ"
+      ],
       "Zoom in": [
         "Semɣer"
       ],
@@ -967,6 +976,9 @@
       "Aruba": [
         "Aruba"
       ],
+      "Ascension Island": [
+        "Tigzirt n Aṣunsyun"
+      ],
       "Australia": [
         "Ustṛalya"
       ],
@@ -1143,6 +1155,9 @@
       ],
       "Ethiopia": [
         "Ityupya"
+      ],
+      "Falkland Islands": [
+        "Tigzirin n Fankland"
       ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
@@ -1816,6 +1831,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
       ],
+      "Device name does not match": [
+        "Isem n yibenk ur imṣada ara"
+      ],
       "Domain not available, try again later": [
         "Ulac taɣult, ɛreḍ tikkelt-nniḍen ticki"
       ],
@@ -2275,6 +2293,9 @@
     "Font face option": {
       "System default": [
         "Anagraw amezwar"
+      ],
+      "Theme font": [
+        "Tasefsit n usentel"
       ]
     },
     "Font size option": {
@@ -2633,6 +2654,9 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
+      "${ speed }/s": [
+        "${ speed }/s"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -2688,6 +2712,9 @@
       "Are you sure you want to permanently delete": [
         "Tebɣiḍ s tidet ad tekkseḍ i lebda"
       ],
+      "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
+        "Tebɣiḍ s tidet ad tekkseḍ \"${ itemName }\" seg tqecwalt?"
+      ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Tebɣiḍ s tidet ad tekkseḍ s wudem imezgi iferdisen yettwafernen seg tqecwalt?"
       ],
@@ -2730,6 +2757,9 @@
       "Conflict": [
         "Amgirred"
       ],
+      "Country code": [
+        "Tangalt n tmurt"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
         "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
@@ -2770,6 +2800,10 @@
       "Decrypting files": [
         "Kkes awgelhen i yifuyla"
       ],
+      "Delete locked drive": [
+        "Kkes ameɣri isekkren",
+        "Kkes imeɣriyen isekkren"
+      ],
       "Download canceled": [
         "Asader yefsex"
       ],
@@ -2778,6 +2812,9 @@
       ],
       "Download finished": [
         "Asader yeḥbes"
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "Asader n ${ downloadFileName } ad yettwasefsax"
       ],
       "Downloaded": [
         "Yettusader"
@@ -2824,6 +2861,12 @@
       ],
       "Failed": [
         "Yecceḍ"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Tuccḍa deg usirew n useɣwen aɣellsan. Tamentilt d: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Asirew n useɣwen aɣellsan ur yeddi ara. Ɛreḍ tikkelt-nniḍen ticki"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
@@ -2931,6 +2974,9 @@
       "Loading ${ appName }": [
         "Asali ${ appName }"
       ],
+      "Loading link": [
+        "Asali n useɣwen"
+      ],
       "Loading links": [
         "Asali n useɣwen"
       ],
@@ -2982,8 +3028,15 @@
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
+      "Nothing here yet": [
+        "Ulac i yellan akka tura"
+      ],
       "of": [
         "si"
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Slid ${ MAX_CUSTOM_PASSWORD_LENGTH }",
+        "Slid ${ MAX_CUSTOM_PASSWORD_LENGTH }"
       ],
       "Only the people with the link and the password can access this file.": [
         "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
@@ -3029,6 +3082,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
+      ],
+      "Report has been sent": [
+        "Aneqqis yettwazen"
       ],
       "Restore": [
         "Err-d"
@@ -3121,6 +3177,9 @@
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
       ],
+      "Updating drive search...": [
+        "Akeqqem n unadi n yimeɣri..."
+      ],
       "Uploaded": [
         "Yuli"
       ],
@@ -3129,6 +3188,12 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Asili n tmiḍa n yifuyla ɣef tikkelt yezmer ad iḍur tamellit."
+      ],
+      "Version is deleted": [
+        "Lqem yettwakkes"
+      ],
+      "Version is restored": [
+        "Lqem yettwarr-d"
       ],
       "We'll notify you when the import is done.": [
         "Ad k•m-nazen talɣut mi ara temmed tektert."
@@ -3205,6 +3270,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Tangalt n tmurt"
+      ],
       "Your previous password": [
         "Awal-ik•im uffir yezrin"
       ],
@@ -3229,6 +3297,9 @@
       ],
       "file data order": [
         "asizwer n yisefka n ufaylu"
+      ],
+      "hash key": [
+        "tasarut n uwgelhen"
       ],
       "keys": [
         "tisura"
@@ -3267,6 +3338,14 @@
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } n wass",
+        "${ nbDay } n wussan"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } n useggas",
+        "${ nbYear } yiseggasen"
+      ],
       "(Expired)": [
         "(Ifut)"
       ],
@@ -3290,6 +3369,9 @@
       ],
       "Apply to all duplicated folders": [
         "Snes ɣef yikaramen usligen merra"
+      ],
+      "Apply to all unverified items": [
+        "Snes ɣef meṛṛa iferdisen ur nettwasenqed ara"
       ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
@@ -3351,6 +3433,9 @@
       "Create ${ BRAND_NAME } account": [
         "Rnu amiḍan ${ BRAND_NAME }"
       ],
+      "Create a share link": [
+        "Rnu aseɣwen n beṭṭu"
+      ],
       "Created": [
         "Yettwarna"
       ],
@@ -3372,6 +3457,9 @@
       ],
       "Download anyway": [
         "Sader akken yebɣu yili"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "Asader n ${ percentageValue }%"
       ],
       "Duplicate found": [
         "Uslig yettwaf"
@@ -3457,6 +3545,15 @@
       "Import to:": [
         "Kter ɣer:"
       ],
+      "Keep both": [
+        "Eǧǧ isin"
+      ],
+      "Keep both files": [
+        "Eǧǧ ifuyla isin"
+      ],
+      "Keep both folders": [
+        "Eǧǧ ikaramen isin"
+      ],
       "Label messages as": [
         "Semmi i yiznan am"
       ],
@@ -3529,6 +3626,9 @@
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
+      "Please provide full details to help us take appropriate action": [
+        "Ttxil-k mudd-d akk umlan ilaqen i wakken ad aɣ-yall ad neg ayen ilaqen."
+      ],
       "Port": [
         "Tawwurt"
       ],
@@ -3547,11 +3647,20 @@
       "Region": [
         "Tamnaḍt"
       ],
+      "Replace existing file": [
+        "Semselsi afaylu yellan"
+      ],
+      "Replace existing folder": [
+        "Semselsi akaram yellan"
+      ],
       "Report": [
         "Aneqqis"
       ],
       "Reveal password": [
         "Sken awal uffir"
+      ],
+      "Select type of abuse": [
+        "Fren anaw n yir aseqdec"
       ],
       "Set expiration date": [
         "Sbadu azemz n taggara"
@@ -3573,6 +3682,9 @@
       ],
       "Spam": [
         "Aspam"
+      ],
+      "Stolen data": [
+        "Isefka yettwakren"
       ],
       "Street address": [
         "Tansa n uxxam"
@@ -3775,11 +3887,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name } d awezɣi ad d-yettwaru seg tqecwalt"
       ],
+      "\"${ name }\" failed to be saved": [
+        "Asekles n \"${ name }\" ur yeddi ara"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" imutti ɣer tqecwalt"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" yettwarra-d seg tqecwalt"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" yettwasekles akken iwata"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" imutti akken iwata"
@@ -3849,11 +3967,33 @@
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
       ],
+      "Device failed to be removed": [
+        "Tecceḍ tukksa n yibenk"
+      ],
+      "Device failed to be renamed": [
+        "Abeddel n yisem n yibenk yecceḍ"
+      ],
       "Device removed": [
         "Yettwakkes yibenk"
       ],
+      "Device renamed": [
+        "Yettwabeddel yisem n yibenk"
+      ],
+      "Encrypted search activated": [
+        "Anadi awgelgan yermed"
+      ],
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Afaylu neɣ akaram \"${ filename }\" d ${ count } wiyeḍ yuli-d yakan",
+        "Akaram neɣ afaylu \"${ filename }\" d ${ count } wiyaḍ ulin-d yakan"
+      ],
+      "File or folder \"${ filename }\" is already uploading": [
+        "Akaram neɣ afaylu \"${ filename }\" yuli-d yakan"
+      ],
+      "File or folder is missing a name": [
+        "Afaylu neɣ akaram ixuṣṣ-as yisem"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Smutti ${ itemsToMoveCount } n ufaylu",
@@ -3882,6 +4022,12 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ulac tallunt i usali n ${ formattedTotal }"
       ],
+      "Root folder failed to be loaded": [
+        "Akaram aẓar yegguma ad d-yali"
+      ],
+      "Subfolder failed to be loaded": [
+        "Akaram arnaw yegguma ad d-yali"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Aseɣwen ɣer \"${ name }\" yegguma ad yettwakkes"
       ],
@@ -3893,6 +4039,12 @@
       ],
       "The link to your item was deleted": [
         "Aseɣwen ɣer uferdis-inek m yettwakkes"
+      ],
+      "Trash failed to be emptied": [
+        "Yecceḍ usilem n tqecwalt"
+      ],
+      "Your settings failed to be saved": [
+        "Iɣewwaren-ik ugin ad ttwaskelsen"
       ],
       "Your settings have been changed successfully": [
         "Iɣewwaren-ik·im ggwabeddlen war ugur"
@@ -3907,8 +4059,15 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Rnu aseɣwen n beṭṭu"
+      ],
       "Set a recovery method": [
         "Sbadu tarrayt n tririt"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Yewwi-d kan ad tsemdeḍ tigawin-a deg sya ${ expiresInDays } wass:",
+        "Yewwi-d kan ad tsemdeḍ tigawin-a deg sya ${ expiresInDays } wussan:"
       ],
       "Upload a file": [
         "Sali afaylu"
@@ -3979,6 +4138,9 @@
       ],
       "Enter a new folder name": [
         "Sekcem isem n ukaram amaynut"
+      ],
+      "Enter device name": [
+        "Sekcem isem n yibenk"
       ],
       "Enter your email address": [
         "Sekcem tansa-inek·inem n yimayl"
@@ -4155,6 +4317,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } unermis yettban kifkif.",
+        "${ countMergeableContacts } yinermisen ttbanen kifkif."
+      ],
       "Address copied to clipboard": [
         "Tansa tettwanɣel ɣef afus"
       ],
@@ -4353,6 +4519,9 @@
       ],
       "Completed": [
         "Immed"
+      ],
+      "Computers": [
+        "Iselkimen"
       ],
       "Contact Details": [
         "Talqayt unermis"
@@ -4579,11 +4748,17 @@
       "Recover data": [
         "Err-d isefka"
       ],
+      "Remove device?": [
+        "Kkes ibenk?"
+      ],
       "Rename a file": [
         "Beddel isem n ufaylu"
       ],
       "Rename a folder": [
         "Beddel isem n ukaram"
+      ],
+      "Rename device": [
+        "Ales isem n yibenk"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -4663,6 +4838,9 @@
       "The link expired": [
         "Yemmut useɣwen"
       ],
+      "This link is password protected": [
+        "Aseɣwen-a yettummesten s wawal uffir"
+      ],
       "Total size": [
         "Tiddi tuɣridt"
       ],
@@ -4677,6 +4855,9 @@
       ],
       "Uploaded by": [
         "Yuli sɣur"
+      ],
+      "Version details": [
+        "Talqayt n lqem"
       ],
       "Version history": [
         "Azray n lqem"
@@ -4701,6 +4882,9 @@
       ],
       "You have no folders yet": [
         "Ur tesεiḍ ara εad ikaramen"
+      ],
+      "Your 500 MB bonus": [
+        "Abunus-ik 500 MAṬ"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4770,6 +4954,10 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Isem ur izir ara ad yegber isekkilen uffiren, / neɣ \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n usekkil deg teɣzi ma aṭas",
+        "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n yisekkilen deg teɣzi ma aṭas"
       ],
       "Name must not be empty": [
         "Isem ur ilaq ara ad yili d ilem"
