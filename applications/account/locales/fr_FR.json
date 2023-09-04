@@ -1123,7 +1123,7 @@
         "Désactiver"
       ],
       "Disable E2EE mail": [
-        "E-mail chiffré (E2EE) OFF"
+        "E-mail non chiffré"
       ],
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
@@ -1132,7 +1132,7 @@
         "Activer"
       ],
       "Enable E2EE mail": [
-        "E-mail chiffré (E2EE) ON"
+        "E-mail chiffré"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -3093,7 +3093,7 @@
         "Mise à jour pour un événement le ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Mise à jour d'un événement commençant le ${ formattedStart }"
+        "Mise à jour d'un événement qui commence ${ formattedStart }"
       ]
     },
     "Email Unsubscribe": {
@@ -5337,10 +5337,10 @@
         "3. Vous gagnez des crédits"
       ],
       "30-day money-back guarantee": [
-        "Remboursement garanti pendant 30 jours"
+        "Garantie satisfait ou remboursé pendant 30 jours"
       ],
       "30-day money-back guarantee.": [
-        "Remboursement garanti pendant 30 jours."
+        "Garantie satisfait ou remboursé pendant 30 jours"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
@@ -7205,6 +7205,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez encore répondre aux invitations pour que l'organisateur puisse voir votre réponse."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Après votre identification, vous serez redirigé vers ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de ${ vpnPlanNameShort }."
@@ -10118,7 +10121,7 @@
         "Passerelles privées"
       ],
       "Require 2FA": [
-        "Nécessite l'authentification à deux facteurs (2FA)"
+        "Demande d'authentification A2F"
       ]
     },
     "Notification": {
@@ -12617,6 +12620,9 @@
       "Encryption and keys": [
         "Chiffrement et clés"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Saisissez les informations de votre compte ${ BRAND_NAME } pour rejoindre le programme bêta de ${ app }."
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -12975,6 +12981,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign in to join the Beta program": [
+        "Connectez-vous pour rejoindre le programme bêta"
       ],
       "Sign in with 2FA": [
         "Se connecter avec l'authentification à deux facteurs (A2F)"
