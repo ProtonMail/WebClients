@@ -3364,6 +3364,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位聯絡人"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
@@ -3375,6 +3378,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
