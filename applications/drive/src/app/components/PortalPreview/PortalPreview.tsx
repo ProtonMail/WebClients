@@ -10,7 +10,7 @@ interface Props {
     shareId: string;
     linkId: string;
     revisionId: string;
-    date: Date | string | number;
+    date?: Date | string | number;
     onDetails?: () => void;
     onRestore?: () => void;
     className?: string;
