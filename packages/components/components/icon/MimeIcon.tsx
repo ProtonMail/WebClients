@@ -1,6 +1,5 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
-import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { IconSize } from './Icon';
@@ -63,9 +62,6 @@ const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(
         const iconAsset = getIconAsset(size);
         const viewBox = `0 0 ${viewboxMap[iconAsset]} ${viewboxMap[iconAsset]}`;
 
-        // Patch broken SVG lookup for Firefox < 55.
-        const href = isFirefoxLessThan55() ? window.location.href.replace(window.location.hash, '') : '';
-
         return (
             <>
                 <svg
@@ -77,7 +73,7 @@ const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(
                     {...rest}
                 >
                     {title && <title>{title}</title>}
-                    <use xlinkHref={`${href}#mime-${iconAsset}-${name}`} />
+                    <use xlinkHref={`#mime-${iconAsset}-${name}`} />
                 </svg>
 
                 {alt ? <span className="sr-only">{alt}</span> : null}
