@@ -158,7 +158,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 onClose={navigateToParent}
                 onDownload={downloadFile}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
-                onDetail={() => showDetailsModal({ shareId, linkId })}
+                onDetails={() => showDetailsModal({ shareId, linkId })}
                 onShare={isLinkLoading || !!link?.trashed ? undefined : () => showLinkSharingModal({ shareId, linkId })}
                 imgThumbnailUrl={link?.cachedThumbnailUrl}
                 ref={rootRef}
