@@ -949,6 +949,9 @@
       "Show preview": [
         "Előnézet megmutatása"
       ],
+      "Show side panel": [
+        "Az oldalsó panel megjelenítése"
+      ],
       "Sign in": [
         "Bejelentkezés"
       ],
@@ -3438,6 +3441,9 @@
       "You did not provide a file.": [
         "Nem adott meg fájlt."
       ],
+      "You have reached the contacts limit for your account": [
+        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
       ],
@@ -4123,6 +4129,9 @@
       "Congratulation, you completed all the steps!": [
         "Gratulálunk, minden lépést befejezett!"
       ],
+      "Congratulation, you finished!": [
+        "Gratulálunk, Ön befejezte a műveletet!"
+      ],
       "Continue setting up your email": [
         "Az e-mail cím beállításának folytatása"
       ],
@@ -4561,6 +4570,10 @@
       "${ contactsCount } contact found": [
         "${ contactsCount } névjegy található",
         "${ contactsCount } névjegy található"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } névjegy",
+        "${ contactsLength } névjegy"
       ],
       "${ count } unread message": [
         "${ count } olvasatlan üzenet",
@@ -5364,6 +5377,9 @@
       ],
       "Saved yesterday": [
         "Tegnap mentve"
+      ],
+      "Saved: ${ dateString }": [
+        "Mentve: ${ dateString }"
       ],
       "Saving draft…": [
         "Piszkozat mentése…"
@@ -6544,6 +6560,9 @@
       ],
       "Street address": [
         "Utca, házszám"
+      ],
+      "Sync with system": [
+        "Szinkronizálás a rendszerrel"
       ],
       "Synchronize with system": [
         "Szinkronizálás a rendszerrel"
@@ -8434,6 +8453,9 @@
       "Addresses": [
         "Címek"
       ],
+      "All settings": [
+        "Minden beállítás"
+      ],
       "Archive": [
         "Archívum"
       ],
@@ -8995,8 +9017,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
+      "Hide side panel": [
+        "Az oldalsó panel elrejtése"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Show side panel": [
+        "Az oldalsó panel megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

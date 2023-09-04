@@ -895,6 +895,9 @@
       "Set": [
         "Establir"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Establir ${ MAIL_APP_NAME } com a aplicació de correu electrònic predeterminada"
+      ],
       "Set as default": [
         "Estableix com a predeterminat"
       ],
@@ -984,6 +987,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Strikethrough": [
+        "Ratllat"
       ],
       "Submit": [
         "Envia"
@@ -4607,6 +4613,10 @@
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacte",
+        "${ contactsLength } contactes"
+      ],
       "${ count } unread message": [
         "${ count } missatge no llegit",
         "${ count } missatges no llegits"
@@ -4675,6 +4685,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacte seleccionat",
+        "${ selectedContactsLength }/${ contactsLength } contactes seleccionats"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -4784,6 +4798,10 @@
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
+        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "S'ha detectat una clau pública desconegut per aquest receptor."
@@ -4960,6 +4978,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
+      ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "No trobeu el que esteu buscant? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
@@ -5141,6 +5162,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Include Spam/Trash in your search results.": [
+        "Inclou Correu brossa/Paperera als resultats de cerca."
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -5682,6 +5706,9 @@
       ],
       "Trackers blocked:": [
         "Rastrejadors bloquejats:"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Desactiveu-ho per a cercar només per data, nom, adreça de correu electrònic o assumpte. Per a desactivar la cerca del contingut dels missatges i eliminar els missatges descarregats, aneu a les preferències."

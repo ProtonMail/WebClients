@@ -3139,6 +3139,12 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } кантакт",
+        "${ contactsLength } кантакты",
+        "${ contactsLength } кантактаў",
+        "${ contactsLength } кантактаў"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершаны",
         "${ doneCount } завершана",
@@ -3198,6 +3204,12 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантакты з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "Выбрана: ${ selectedCount }"
@@ -3970,6 +3982,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Перад пачаткам экспартавання праграме неабходна выканаць лакальную расшыфроўку вашых кантактаў. Пасля завяршэння працэсу будзе згенерыраваны файл VCF, які вы зможаце спампаваць."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
@@ -4077,6 +4092,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Паспрабуйце пошук па назве файла, даце або тыпу."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Збой расшыфроўкі файла або некаторых яго даных."
       ],
       "Unknown error": [
         "Невядомая памылка"

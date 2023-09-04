@@ -1737,6 +1737,9 @@
       "Aruba": [
         "Aruba"
       ],
+      "Ascension Island": [
+        "Tigzirt n Aṣunsyun"
+      ],
       "Australia": [
         "Ustṛalya"
       ],
@@ -1913,6 +1916,9 @@
       ],
       "Ethiopia": [
         "Ityupya"
+      ],
+      "Falkland Islands": [
+        "Tigzirin n Fankland"
       ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
@@ -3368,6 +3374,9 @@
     "Font face option": {
       "System default": [
         "Anagraw amezwar"
+      ],
+      "Theme font": [
+        "Tasefsit n usentel"
       ]
     },
     "Font Size Default": {
@@ -3404,8 +3413,29 @@
       "account logins": [
         "inekcam n umiḍan"
       ],
+      "Auto-forward Gmail": [
+        "Awelleh awurman seg Gmail"
+      ],
+      "auto-forwarding": [
+        "awelleh awurman"
+      ],
+      "Block unsavory senders": [
+        "Weḥlen yir yimazanen"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Beddel ${ strongText } ɣer tansa-k ${ BRAND_NAME }"
+      ],
       "Close": [
         "Mdel"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Snirem amek ${ strongText }-nneɣ yemmestan-ik"
+      ],
+      "Discover privacy features": [
+        "Snirem timahilin n tbaḍnit"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Awi ${ strongText } ɣef Android neɣ iOS"
       ],
       "Get the App": [
         "Awi asnas"
@@ -3415,6 +3445,15 @@
       ],
       "Maybe later": [
         "Ahat ticki"
+      ],
+      "privacy features": [
+        "timahilin n tbaḍnit"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Sesteb ${ strongText } seg Gmail"
+      ],
+      "Update your logins": [
+        "Leqqem inekcam-ik"
       ]
     },
     "Group": {
@@ -3949,6 +3988,9 @@
       ],
       "Copied to clipboard": [
         "Nɣel ɣer tecfawt"
+      ],
+      "Country code": [
+        "Tangalt n tmurt"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
@@ -5806,6 +5848,9 @@
       ],
       "Password has been set successfully": [
         "Awal uffir yettusbadu akken iwata"
+      ],
+      "Senders blocked": [
+        "Ttusweḥlen imazanen"
       ]
     },
     "Onboarding": {
@@ -6318,6 +6363,10 @@
         "${ count } n udiwenni ittwakkes",
         "${ count } n yiznan ttwakksen"
       ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } unermis yettban kifkif.",
+        "${ countMergeableContacts } yinermisen ttbanen kifkif."
+      ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } n udiwenni yettwarna ɣer ${ labelName }.",
         "${ elementsCount } n yidiwenniyen ttwarnan ɣer ${ labelName }."
@@ -6337,6 +6386,10 @@
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } n udiwenni ittwasenkez ɣer ${ folderName }.",
         "${ elementsCount } n yidiwenniyen ttwasnekzen ɣer ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } usqerdec yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
+        "${ elementsCount } n yidiwenniyen muttin ɣer yispamen i yernan yimazanen yettwarnan ɣer tebdart yispamen."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } n udiwenni ittwakkes seg ${ labelName }.",
@@ -6361,6 +6414,10 @@
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } n yizen ittwasenkez ɣer ${ folderName }.",
         "${ elementsCount } n yiznan ttwasnekzen ɣer ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } yizen yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
+        "${ elementsCount } n yiznan muttin ɣer yispamen, ma d imazanen ttwarnan ɣer tebdart yispamen."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } n yizen i yettwakksen seg ${ labelName }.",
@@ -6413,6 +6470,12 @@
       "Conversation removed from ${ labelName }.": [
         "Adiwenni yettwakkes seg ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Idiwenniyen seg ${ sendersList } ad ttwasbezmen am ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Idiwenniyen seg ${ sendersList } ad muttin ɣer ${ folder }"
+      ],
       "Draft deleted": [
         "Arewway yettwakkes"
       ],
@@ -6460,6 +6523,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Izen yettwakkes seg ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Iznan seg ${ sendersList } ttwasbezmen am ${ labelsList }"
       ],
       "Move ${ selectionCount } conversation": [
         "Senkez adiwenni n ${ selectionCount }",

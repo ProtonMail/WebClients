@@ -3533,6 +3533,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan anpassa och ladda ner dina fakturor för bokföringsändamål."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kan omedelbart låsa upp inställningen ovan genom att lägga till ${ specificCountryCount } till antalet IP-adresser för din prenumeration eller kontakta oss för skräddarsydda lösningar."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration."
@@ -3588,6 +3591,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har nått 100 % av din lagringskapacitet. Du kan inte skicka eller ta emot nya e-postmeddelanden. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Du kommer att omdirigeras till ${ destination } när du loggat in."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
@@ -6431,6 +6437,9 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Ange ditt ${ BRAND_NAME } Kontouppgifter för att ansluta till ${ app } Beta-program"
+      ],
       "Enter your password": [
         "Ange ditt lösenord"
       ],
@@ -6611,6 +6620,9 @@
       ],
       "Sign in": [
         "Logga in"
+      ],
+      "Sign in to join the Beta program": [
+        "Logga in för att ansluta till Beta-programmet"
       ],
       "Sign in with 2FA": [
         "Logga in med 2FA"

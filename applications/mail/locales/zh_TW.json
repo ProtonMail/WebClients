@@ -985,6 +985,9 @@
       "Stay": [
         "停留"
       ],
+      "Strikethrough": [
+        "刪除線"
+      ],
       "Submit": [
         "送出"
       ],
@@ -4583,6 +4586,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位聯絡人"
+      ],
       "${ count } unread messages": [
         "${ count } 封未讀郵件"
       ],
@@ -4636,6 +4642,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -5101,6 +5110,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "加入${ PROTON_SENTINEL_NAME }計畫以堤升至最高帳號安全及支援。"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
