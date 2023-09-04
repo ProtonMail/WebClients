@@ -1,8 +1,9 @@
 const ending = '.ltr.css';
 
 const getIsNonEnding = (src: string) => {
-    const url = new URL(src, window.location.origin);
-    return url.origin === window.location.origin && url.pathname.endsWith('.css') && !url.pathname.endsWith(ending);
+    const targetOrigin = window.location.origin;
+    const url = new URL(src, targetOrigin);
+    return url.origin === targetOrigin && url.pathname.endsWith('.css') && !url.pathname.endsWith(ending);
 };
 
 export const queryLocalLinkElements = () => {
