@@ -23,7 +23,6 @@ export interface OpenDrawerArgs {
 }
 
 export interface DrawerLocalStorageValue {
-    userID: string;
     app: DRAWER_APPS;
     url?: string;
 }
