@@ -540,9 +540,6 @@
         "${ count } elementów",
         "${ count } elementów"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania i notatek. Importowanie kart płatniczych, paszportów, załączników itp. nie jest obsługiwane."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } raz",
         "${ revisionNumber } razy",
@@ -668,9 +665,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Jeśli wyłączysz tę opcję, ${ PASS_APP_NAME } nie będzie sugerował utworzenia silnych haseł w formularzach logowania."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Menu automatycznego zapisywania będzie otwierane w polach logowania."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Automatycznie uzupełniaj dane logowania po kliknięciu ikony ${ PASS_APP_NAME }."

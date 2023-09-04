@@ -512,9 +512,6 @@
         "${ count } element",
         "${ count } elements"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } només importarà inicis de sessió i notes. Les targetes de crèdit, els passaports, els fitxers adjunts, etc. no són compatibles en aquest moment."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vegada",
         "${ revisionNumber } vegades"
@@ -632,9 +629,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Si està desactivat, ${ PASS_APP_NAME } no suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Si està habilitat, el menú desplegable de desament automàtic s'obrirà automàticament en el camp enfocat."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Si està habilitat, podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
