@@ -52,6 +52,7 @@ export const props = {
     toggleMaximized: jest.fn(),
     onSubject: jest.fn(),
     isFocused: true,
+    minimizeButtonRef: { current: null },
 };
 
 export const prepareMessage = (messageProp: PartialMessageState) => {
