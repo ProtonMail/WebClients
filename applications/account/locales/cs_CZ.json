@@ -914,6 +914,9 @@
       "Stay": [
         "Zůstat"
       ],
+      "Strikethrough": [
+        "Přeškrtnout"
+      ],
       "Submit": [
         "Odeslat"
       ],
@@ -2836,6 +2839,9 @@
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Pro přístup k těmto funkcím povolte rozšířené logy a ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs to access these features": [
         "Povolením pokročilých logů získáte přístup k těmto funkcím"
@@ -6437,6 +6443,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
+      ],
+      "per month": [
+        "za měsíc"
+      ],
+      "per month, billed every 12 months": [
+        "za měsíc, účtováno kažkých 12 měsíců"
+      ],
+      "per month, billed every 15 months": [
+        "za měsíc, účtováno kažkých 15 měsíců"
+      ],
+      "per month, billed every 24 months": [
+        "za měsíc, účtováno kažkých 24 měsíců"
+      ],
+      "per month, billed every 30 months": [
+        "za měsíc, účtováno kažkých 30 měsíců"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Klienti PGP s větší pravděpodobností automaticky rozpoznají vaše PGP klíče, pokud jsou odchozí zprávy podepsány."
@@ -11355,6 +11376,9 @@
       ],
       "inactive": [
         "neaktivní"
+      ],
+      "pending": [
+        "bez odpovědi"
       ]
     },
     "Settings description": {
@@ -13297,6 +13321,9 @@
       ],
       "Upgrade plan": [
         "Navýšit tarif"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "Nahrejte soubor CSV pro vytvoření více účtů"
       ],
       "Users": [
         "Uživatelé"
