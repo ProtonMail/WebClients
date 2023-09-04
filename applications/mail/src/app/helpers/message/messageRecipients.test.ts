@@ -100,6 +100,11 @@ describe('messageRecipients', () => {
             const result = recipientsToRecipientOrGroup([recipient5], groupMap);
             expect(result).toEqual([{ recipient: recipient5 }]);
         });
+
+        it('should return recipients if we do not want to display groups', () => {
+            const result = recipientsToRecipientOrGroup([recipient3, recipient4, recipient5], groupMap, true);
+            expect(result).toEqual([{ recipient: recipient3 }, { recipient: recipient4 }, { recipient: recipient5 }]);
+        });
     });
 
     describe('getRecipientOrGroupLabel', () => {

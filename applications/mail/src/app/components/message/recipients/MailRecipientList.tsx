@@ -26,7 +26,13 @@ const MailRecipientList = ({
 }: Props) => {
     const { getRecipientsOrGroups } = useRecipientLabel();
 
-    const recipientsOrGroup = getRecipientsOrGroups(list);
+    /* Recipient "item" can be displayed in several ways
+     * - As a contact group: If recipients are included in a contact group (recipient.Group is filled), we display the contact group, and not the recipient
+     * - As a real recipient
+     *      - When contact has no group set
+     *      - In print modal, we want to display recipients, not contact group
+     */
+    const recipientsOrGroup = getRecipientsOrGroups(list, isPrintModal);
 
     return (
         <RecipientsList
