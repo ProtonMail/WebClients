@@ -38,6 +38,9 @@
       "Add phone number": [
         "Rnu uṭṭun n usawal"
       ],
+      "Add public holidays": [
+        "Rnu ismiras izayazen"
+      ],
       "Add to group": [
         "Rnu ɣer ugraw"
       ],
@@ -222,6 +225,9 @@
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
+      ],
+      "Hide affected calendars": [
+        "Ffer iwitayen yerzan"
       ],
       "Hide folders": [
         "Ffer ikaramen"
@@ -426,6 +432,9 @@
       ],
       "Show advanced PGP settings": [
         "Sken iɣewwaren n PGP leqqayen"
+      ],
+      "Show affected calendars": [
+        "Sken iwitayen yerzan"
       ],
       "Show folders": [
         "Sken ikaramen"
@@ -782,6 +791,11 @@
         "Sefrek imttekkiyen"
       ]
     },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Ẓreg (sken, rnu, ẓreg talqayt n tedyant)"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "More options": [
         "Ugar n yiɣewwaren"
@@ -830,6 +844,14 @@
       ],
       "Week": [
         "Dduṛt"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range": [
+        "Senfel azilal"
+      ],
+      "Change time range to": [
+        "Senfel azilal ɣer"
       ]
     },
     "Calendar view; more events collapsed": {
@@ -1025,6 +1047,9 @@
       "Aruba": [
         "Aruba"
       ],
+      "Ascension Island": [
+        "Tigzirt n Aṣunsyun"
+      ],
       "Australia": [
         "Ustṛalya"
       ],
@@ -1201,6 +1226,9 @@
       ],
       "Ethiopia": [
         "Ityupya"
+      ],
+      "Falkland Islands": [
+        "Tigzirin n Fankland"
       ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
@@ -1722,6 +1750,11 @@
         "Tigzirin n Aland"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Almend n iẓḍi-k usrig"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "Seld allus…"
@@ -1873,6 +1906,11 @@
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Rnu awitay"
+      ]
+    },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Sleg tadyant"
       ]
     },
     "Duration": {
@@ -2549,6 +2587,9 @@
     "Font face option": {
       "System default": [
         "Anagraw amezwar"
+      ],
+      "Theme font": [
+        "Tasefsit n usentel"
       ]
     },
     "Font size option": {
@@ -2941,6 +2982,9 @@
       "Close this screen to exit.": [
         "Mdel agdil-agi akken ad teffɣeḍ."
       ],
+      "Country code": [
+        "Tangalt n tmurt"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
         "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
@@ -3282,6 +3326,9 @@
       "Yearly": [
         "S useggas"
       ],
+      "You already joined this calendar": [
+        "Terniḍ yakan ɣer uwitay-a"
+      ],
       "You are about to open another browser tab and visit:": [
         "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
       ],
@@ -3363,6 +3410,9 @@
       ]
     },
     "Input label": {
+      "Access": [
+        "Anekcum"
+      ],
       "Label (optional)": [
         "Tabzimt (d afrayan)"
       ]
@@ -3618,6 +3668,10 @@
       "Organizer": [
         "Amsuddes"
       ],
+      "participant": [
+        "imettekki",
+        "imttekkiyen"
+      ],
       "Participants": [
         "Imttekkiyen"
       ],
@@ -3823,6 +3877,12 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Rnu ismiras izayazen"
+      ],
+      "Cannot add more calendars": [
+        "Ur tezmireḍ ara ad ternuḍ ugar n yiwitayen"
+      ],
       "Edit calendar": [
         "Ẓreg awitay"
       ],
@@ -4037,6 +4097,12 @@
       ],
       "Calendar updated": [
         "Awitay yettwasnifel"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Aɛeggal yettwarna",
+        "Iɛeggalen ttwarnan"
       ]
     },
     "Notification suffix": {
@@ -4256,6 +4322,16 @@
         "Kečč/kemm"
       ]
     },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Fneẓ taddart n yimttekkiyen"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "Wali taddart n yimttekkiyen"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
@@ -4398,6 +4474,11 @@
         "Unṣib"
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Sali tikkelt niḍen tadyant"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Ali"
@@ -4493,6 +4574,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } unermis yettban kifkif.",
+        "${ countMergeableContacts } yinermisen ttbanen kifkif."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Asefsex ad yettwazen i yimttekkiyen yettwakksen i tedyanin akk n uzrar-a."
       ],
