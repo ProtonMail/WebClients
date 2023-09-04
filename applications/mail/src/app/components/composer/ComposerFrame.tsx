@@ -36,6 +36,8 @@ const ComposerFrame = ({
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
+    // Ref to focus minimize button, otherwise focus is still on Composer, and it's still possible to edit fields
+    const minimizeButtonRef = useRef<HTMLButtonElement>(null);
     // Needed for re-renders when window size changes
     const [, windowHeight] = useWindowSize();
 
@@ -118,7 +120,7 @@ const ComposerFrame = ({
         <div
             ref={composerFrameRef}
             className={clsx([
-                `composer rounded flex flex-column outline-none ${customClasses}`,
+                `composer rounded flex flex-nowrap flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',
                 maximized && 'composer--is-maximized',
@@ -138,6 +140,7 @@ const ComposerFrame = ({
                 toggleMaximized={toggleMaximized}
                 onClose={handleClose}
                 handleStartDragging={handleStartDragging}
+                minimizeButtonRef={minimizeButtonRef}
             />
             <ErrorBoundary>
                 <Composer
@@ -150,6 +153,7 @@ const ComposerFrame = ({
                     onSubject={(subject) => setSubject(subject)}
                     isFocused={focus}
                     composerID={composerID}
+                    minimizeButtonRef={minimizeButtonRef}
                 />
             </ErrorBoundary>
         </div>
