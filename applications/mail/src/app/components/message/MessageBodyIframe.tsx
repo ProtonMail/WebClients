@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useSyncIframeStyles } from '@proton/components';
+import { Icon, Tooltip, useSyncIframeStyles, useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
@@ -60,6 +60,7 @@ const MessageBodyIframe = ({
     mailSettings,
     onFocus,
 }: Props) => {
+    const theme = useTheme();
     const hasAttachment = hasAttachments(message.data);
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
@@ -103,7 +104,12 @@ const MessageBodyIframe = ({
         if (iframeRootDivRef.current) {
             iframeRootDivRef.current?.classList[hasDarkStyles ? 'add' : 'remove']('proton-dark-style');
         }
-    }, [hasDarkStyles, iframeRootDivRef.current]);
+    }, [hasDarkStyles]);
+
+    useEffect(() => {
+        /** Add class in case the user theme is dark. Helps fixing issues with dark themes */
+        iframeRootDivRef.current?.classList[theme.information.dark ? 'add' : 'remove']('proton-dark-theme');
+    }, [theme.information.dark]);
 
     return (
         <>
