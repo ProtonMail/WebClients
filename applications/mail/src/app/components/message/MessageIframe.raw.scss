@@ -346,6 +346,13 @@ blockquote.protonmail_quote
 	padding-block-end: 1em;
 	overflow: auto;
 
+	&.proton-plain-text {
+		&,
+		.proton-print {
+			background-color: transparent;
+		}
+	}
+
 	.message-print-subject {
 		font-size: 20px;
 		border-block-end: 1px solid var(--border-norm);
@@ -415,6 +422,11 @@ blockquote.protonmail_quote
 		white-space: pre;
 	}
 
+	&.proton-dark-theme .proton-print-content {
+		// only dark styles
+		color: black;
+	}
+
 	.proton-print-footer {
 		margin-block-start: 1em;
 		border-block-start: 1px solid var(--border-weak);
@@ -479,6 +491,12 @@ blockquote.protonmail_quote
 		visibility: visible;
 		max-block-size: none;
 		display: block;
+	}
+
+	.proton-print .message-print-header,
+	.proton-print .message-print-subject {
+		background-color: white;
+		color: black;
 	}
 
 	body {
