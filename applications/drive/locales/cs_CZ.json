@@ -3970,6 +3970,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Počet stahování zahrnuje jak skutečná stažení, tak případy, kdy jsou soubory zobrazeny v náhledu."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
       ],
@@ -4077,6 +4080,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Zkuste vyhledávat podle názvu souboru, data nebo typu."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
       ],
       "Unknown error": [
         "Neznámá chyba"

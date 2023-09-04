@@ -5951,7 +5951,7 @@
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu, niin vastaamme yhden työpäivän kuluessa."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jos uskot tämän olevan virhe, ota yhteyttä ${ contactLink }."
+        "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jos perut ${ vpnPlanName } -tilauksesi, sitä ei uudisteta kun se ${ expiryDate } päättyy."
@@ -6324,6 +6324,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
+      ],
+      "per month": [
+        "kuukaudessa"
+      ],
+      "per month, billed every 12 months": [
+        "kuukaudessa, laskutus 12 kuukauden välein"
+      ],
+      "per month, billed every 15 months": [
+        "kuukaudessa, laskutus 15 kuukauden välein"
+      ],
+      "per month, billed every 24 months": [
+        "kuukaudessa, laskutus 24 kuukauden välein"
+      ],
+      "per month, billed every 30 months": [
+        "kuukaudessa, laskutus 30 kuukauden välein"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-asiakkaat havaitsevat PGP-avaimesi helpommin automaattisesti, jos lähtevät viestit on allekirjoitettu."

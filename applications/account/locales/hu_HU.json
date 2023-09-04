@@ -3246,6 +3246,9 @@
       "You have no invoices.": [
         "Nincs számlája."
       ],
+      "You have reached the contacts limit for your account": [
+        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
       ],
@@ -7634,6 +7637,10 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
+        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
+      ],
       "Almost there": [
         "Majdnem kész"
       ],
@@ -8158,6 +8165,10 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Protect ${ n } device at a time": [
+        "${ n } eszköz védelme egyidőben",
+        "${ n } eszköz védelme egyidőben"
       ],
       "Router support": [
         "Router támogatás"

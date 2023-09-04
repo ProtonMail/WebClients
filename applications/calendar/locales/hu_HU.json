@@ -491,6 +491,9 @@
       "Show more": [
         "Több megjelenítése"
       ],
+      "Show side panel": [
+        "Az oldalsó panel megjelenítése"
+      ],
       "Show time zones": [
         "Időzónák megjelenítése"
       ],
@@ -2508,6 +2511,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Egyszerre nem küldhet el több mint 10 vCard névjegyfájlt"
       ],
+      "You have reached the contacts limit for your account": [
+        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
       ],
@@ -3394,6 +3400,10 @@
       "${ contactsCount } contact found": [
         "${ contactsCount } névjegy található",
         "${ contactsCount } névjegy található"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } névjegy",
+        "${ contactsLength } névjegy"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
@@ -4438,6 +4448,9 @@
       ],
       "Street address": [
         "Utca, házszám"
+      ],
+      "Sync with system": [
+        "Szinkronizálás a rendszerrel"
       ],
       "System information": [
         "Rendszer információk"
@@ -6005,6 +6018,9 @@
       "Addresses": [
         "Címek"
       ],
+      "All settings": [
+        "Minden beállítás"
+      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -6392,8 +6408,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
+      "Hide side panel": [
+        "Az oldalsó panel elrejtése"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Show side panel": [
+        "Az oldalsó panel megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

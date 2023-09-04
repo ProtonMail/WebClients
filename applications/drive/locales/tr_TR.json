@@ -3073,6 +3073,10 @@
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kişi",
+        "${ contactsLength } kişi"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } tamamlandı",
         "${ doneCount } tamamlandı"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
+        "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } seçilmiş"
@@ -3856,6 +3864,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
       ],
@@ -3961,6 +3972,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
       ],
       "Unknown error": [
         "Bilinmeyen sorun"

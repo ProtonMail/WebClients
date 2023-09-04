@@ -2915,7 +2915,7 @@
         "Pasang konfigurasi Secure Core untuk mendapat manfaat perlindungan tambahan terhadap ancaman titik akhir VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Instal berkas konfigurasi Server untuk dapat tersambung ke server tertentu di negara yang Anda pilih."
+        "Instal berkas konfigurasi Server untuk tersambung ke server tertentu di negara yang Anda pilih."
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -3559,6 +3559,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Anda akan dialihkan ke ${ destination } setelah masuk."
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
       ],
@@ -3928,7 +3931,7 @@
         "Nama di kartu"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Penerusan Porta)"
+        "NAT-PMP (Port Forwarding)"
       ],
       "Navigation": [
         "Navigasi"
@@ -6355,6 +6358,9 @@
       "Email subscriptions": [
         "Email berlangganan"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -6534,6 +6540,9 @@
       ],
       "Sign in": [
         "Masuk"
+      ],
+      "Sign in to join the Beta program": [
+        "Silakan masuk untuk bergabung ke program Beta"
       ],
       "Sign in with 2FA": [
         "Masuk dengan 2FA"

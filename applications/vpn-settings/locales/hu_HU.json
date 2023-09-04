@@ -3525,6 +3525,12 @@
         "Mi ez?"
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
+        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Törlés"
@@ -3769,6 +3775,10 @@
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Protect ${ n } device at a time": [
+        "${ n } eszköz védelme egyidőben",
+        "${ n } eszköz védelme egyidőben"
       ],
       "Router support": [
         "Router támogatás"
