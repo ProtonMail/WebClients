@@ -3073,6 +3073,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed every 12 months": [
+        "por mês com cobrança a cada 12 meses"
+      ],
+      "per month, billed every 15 months": [
+        "por mês com cobrança a cada 15 meses"
+      ],
+      "per month, billed every 24 months": [
+        "por mês com cobrança a cada 24 meses"
+      ],
+      "per month, billed every 30 months": [
+        "por mês com cobrança a cada 30 meses"
+      ],
       "Plan upgrade required": [
         "Upgrade de plano necessário"
       ],
@@ -3586,6 +3601,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Você será redirecionado para ${ destination } depois de iniciar sessão."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Você perderá o acesso aos servidores e recursos do ${ vpnPlanNameShort } nessa data."
@@ -6446,6 +6464,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Entre com sua Conta ${ BRAND_NAME } para participar do programa Beta ${ app }"
+      ],
       "Enter your password": [
         "Digite sua senha"
       ],
@@ -6626,6 +6647,9 @@
       ],
       "Sign in": [
         "Iniciar sessão"
+      ],
+      "Sign in to join the Beta program": [
+        "Faça login para participar do programa Beta"
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"
