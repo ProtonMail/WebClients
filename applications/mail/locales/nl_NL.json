@@ -988,6 +988,9 @@
       "Stay": [
         "Blijf"
       ],
+      "Strikethrough": [
+        "Doorstrepen"
+      ],
       "Submit": [
         "Versturen"
       ],
@@ -4628,6 +4631,10 @@
         "${ contactsCount } contactpersoon gevonden",
         "${ contactsCount } contactpersonen gevonden"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacten"
+      ],
       "${ count } unread message": [
         "${ count } ongelezen bericht",
         "${ count } ongelezen berichten"
@@ -4696,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
+        "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
@@ -5190,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Doe mee aan het ${ PROTON_SENTINEL_NAME } programma voor het hoogste niveau van gebruikersveiligheid en ondersteuning."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
