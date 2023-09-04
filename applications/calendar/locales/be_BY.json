@@ -3493,6 +3493,12 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } кантакт",
+        "${ contactsLength } кантакты",
+        "${ contactsLength } кантактаў",
+        "${ contactsLength } кантактаў"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
@@ -3516,6 +3522,12 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантакты з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",

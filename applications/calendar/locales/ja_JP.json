@@ -3364,6 +3364,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } の連絡先が見つかりました"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 件の連絡先"
+      ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
@@ -3375,6 +3378,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
