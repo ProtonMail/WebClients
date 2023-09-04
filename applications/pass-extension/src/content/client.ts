@@ -19,6 +19,7 @@ import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
 import { uniqueId } from '@proton/pass/utils/string';
+import noop from '@proton/utils/noop';
 
 import type { ContentScriptClientService } from './services';
 import { createContentScriptClient } from './services';
@@ -46,4 +47,4 @@ Promise.resolve(script?.start())
             }
         });
     })
-    .catch((e) => console.warn(e));
+    .catch(noop);

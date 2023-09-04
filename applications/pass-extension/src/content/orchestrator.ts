@@ -76,7 +76,10 @@ const loadCustomElements = async () =>
             resolve();
         });
 
-        script.addEventListener('error', () => reject('Could not load custom elements'));
+        script.addEventListener('error', () => {
+            script.remove();
+            reject('Could not load custom elements');
+        });
 
         (document.head || document.documentElement).appendChild(script);
     });
@@ -90,7 +93,14 @@ const loadCustomElements = async () =>
  * improving performance (ie: run the form detection assessment here) */
 void (async () => {
     try {
+        await new Promise<void>((resolve) => {
+            const { readyState } = document;
+            if (readyState === 'complete' || readyState === 'interactive') return resolve();
+            window.addEventListener('load', () => resolve(), { once: true });
+        });
+
         DOMCleanUp();
+
         await loadCustomElements();
         await unloadClient();
 
