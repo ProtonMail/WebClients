@@ -3,10 +3,12 @@ import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
 import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/vevent';
+import isTruthy from '@proton/utils/isTruthy';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
-import { queryEvents } from '../../api/calendars';
+import { getEvent, queryEventIDs } from '../../api/calendars';
+import { getSilentApi } from '../../api/helpers/customConfig';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
@@ -16,7 +18,6 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     getTimezoneOffset,
 } from '../../date/timezone';
-import { wait } from '../../helpers/promise';
 import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
 import {
@@ -27,7 +28,7 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '../../interfaces/calendar';
-import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
+import { CalendarEventIDsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getIsAutoAddedInvite } from '../apiModels';
@@ -168,6 +169,75 @@ const decryptEvent = async ({
     }
 };
 
+const tryDecryptEvent = async ({
+    calendar,
+    event,
+    calendarSettings,
+    defaultTzid,
+    weekStartsOn,
+    addresses,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    calendar: VisualCalendar;
+    event: CalendarEvent;
+    calendarSettings: CalendarSettings;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
+    weekStartsOn: WeekStartsOn;
+    defaultTzid: string;
+}) => {
+    // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
+    if (!getIsOwnedCalendar(calendar) && getIsAutoAddedInvite(event)) {
+        return null;
+    }
+    return decryptEvent({
+        event,
+        calendarEmail: calendar.Email,
+        calendarSettings,
+        defaultTzid,
+        weekStartsOn,
+        addresses,
+        getAddressKeys,
+        getCalendarKeys,
+    });
+};
+
+const fetchAndTryDecryptEvent = async ({
+    api,
+    eventID,
+    calendar,
+    calendarSettings,
+    defaultTzid,
+    weekStartsOn,
+    addresses,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    api: Api;
+    eventID: string;
+    calendar: VisualCalendar;
+    calendarSettings: CalendarSettings;
+    addresses: Address[];
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
+    weekStartsOn: WeekStartsOn;
+    defaultTzid: string;
+}) => {
+    const { Event: event } = await getSilentApi(api)<{ Event: CalendarEvent }>(getEvent(calendar.ID, eventID));
+    return tryDecryptEvent({
+        event,
+        calendar,
+        calendarSettings,
+        defaultTzid,
+        weekStartsOn,
+        addresses,
+        getAddressKeys,
+        getCalendarKeys,
+    });
+};
+
 interface ProcessData {
     calendar: VisualCalendar;
     addresses: Address[];
@@ -176,7 +246,7 @@ interface ProcessData {
     api: Api;
     signal: AbortSignal;
     onProgress: (
-        calendarEvents: CalendarEvent[],
+        calendarEventIDs: string[],
         veventComponents: VcalVeventComponent[],
         exportErrors: ExportError[]
     ) => void;
@@ -199,8 +269,7 @@ export const processInBatches = async ({
     weekStartsOn,
     defaultTzid,
 }: ProcessData): Promise<[VcalVeventComponent[], ExportError[], number]> => {
-    const PAGE_SIZE = 10;
-    const DELAY = 100;
+    const PAGE_SIZE = 100;
     const batchesLength = Math.ceil(totalToProcess / PAGE_SIZE);
     const processed: VcalVeventComponent[] = [];
     const errors: ExportError[] = [];
@@ -214,43 +283,28 @@ export const processInBatches = async ({
             return [[], [], totalToProcess];
         }
 
-        const params: CalendarExportEventsQuery = {
-            PageSize: PAGE_SIZE,
-            BeginID: lastId,
+        const params: CalendarEventIDsQuery = {
+            Limit: PAGE_SIZE,
+            AfterID: lastId,
         };
 
-        const [{ Events }] = await Promise.all([
-            api<{ Events: CalendarEvent[] }>(queryEvents(calendar.ID, params)),
-            wait(DELAY),
-        ]);
-
-        const exportableEvents = getIsOwnedCalendar(calendar)
-            ? Events
-            : Events.filter((event) => {
-                  // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
-                  return !getIsAutoAddedInvite(event);
-              });
-
-        const eventsLength = exportableEvents.length;
-        if (!eventsLength) {
-            continue;
-        }
+        const IDs = (await api<{ IDs: string[] }>(queryEventIDs(calendar.ID, params))).IDs;
 
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
 
-        onProgress(exportableEvents, [], []);
+        onProgress(IDs, [], []);
 
-        lastId = exportableEvents[eventsLength - 1].ID;
-
-        totalEventsFetched += eventsLength;
+        lastId = IDs[IDs.length - 1];
+        totalEventsFetched += IDs.length;
 
         const promise = Promise.all(
-            exportableEvents.map((event) =>
-                decryptEvent({
-                    event,
-                    calendarEmail: calendar.Email,
+            IDs.map((eventID) =>
+                fetchAndTryDecryptEvent({
+                    api,
+                    eventID,
+                    calendar,
                     calendarSettings,
                     defaultTzid,
                     weekStartsOn,
@@ -261,8 +315,9 @@ export const processInBatches = async ({
             )
         )
             .then((veventsOrErrors) => {
+                const veventsOrErrorsNonNull: (VcalVeventComponent | ExportError)[] = veventsOrErrors.filter(isTruthy);
                 const [veventComponents, exportErrors] = partition<VcalVeventComponent, ExportError>(
-                    veventsOrErrors,
+                    veventsOrErrorsNonNull,
                     (item): item is VcalVeventComponent => !Array.isArray(item)
                 );
 
@@ -271,7 +326,7 @@ export const processInBatches = async ({
                 onProgress([], veventComponents, exportErrors);
             })
             .catch((e) => {
-                const exportErrors: ExportError[] = exportableEvents.map(() => [
+                const exportErrors: ExportError[] = IDs.map(() => [
                     e.message,
                     EXPORT_EVENT_ERROR_TYPES.DECRYPTION_ERROR,
                 ]);
