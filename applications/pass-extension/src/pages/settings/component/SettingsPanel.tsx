@@ -46,7 +46,7 @@ const getSettings = (
             },
             {
                 label: c('Label').t`Automatically open autofill when focusing login fields`,
-                description: c('Info').t`If enabled, the autosave dropdown will automatically open on field focus.`,
+                description: c('Info').t`If enabled, the autofill dropdown will automatically open on field focus.`,
                 checked: settings.autofill.inject && settings.autofill.openOnFocus,
                 disabled: !settings.autofill.inject,
                 onChange: (checked) => onSettingsUpdate({ autofill: { openOnFocus: checked } }),
