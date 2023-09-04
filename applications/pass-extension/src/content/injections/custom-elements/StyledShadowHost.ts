@@ -10,7 +10,7 @@ export class StyledShadowHost extends HTMLElement {
 
         styleElement.setAttribute('rel', 'stylesheet');
         styleElement.setAttribute('href', `${StyledShadowHost.publicPath}${href}`);
-        styleElement.addEventListener('load', () => this.dispatchEvent(readyEvent));
+        styleElement.addEventListener('load', () => this.dispatchEvent(readyEvent), { once: true });
 
         shadowRoot.appendChild(styleElement);
     }

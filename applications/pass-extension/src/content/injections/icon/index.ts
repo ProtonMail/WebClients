@@ -213,7 +213,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     const control = createElement<ProtonPassControl>({ type: 'protonpass-control' });
 
     control.style.display = 'none';
-    control.addEventListener('ready', () => control.style.removeProperty('display'));
+    control.addEventListener('ready', () => control.style.removeProperty('display'), { once: true });
 
     const icon = createElement<HTMLButtonElement>({
         type: 'button',
@@ -231,7 +231,6 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     else input.parentElement!.insertBefore(control, input);
 
     control.shadowRoot?.appendChild(icon);
-    applyInjectionStyles(elements);
 
     return elements;
 };

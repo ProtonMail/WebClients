@@ -1,5 +1,10 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { clearDetectionCache, getDetectedFormParent, getIgnoredParent, resetFormFlags } from '@proton/pass/fathom';
+import {
+    clearDetectionCache,
+    getIgnoredParent,
+    getParentFormPrediction,
+    removeClassifierFlags,
+} from '@proton/pass/fathom';
 import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -55,6 +60,7 @@ export const createFormManager = (options: FormManagerOptions) => {
     const runDetection = debounce(
         withContext<(reason: string) => Promise<boolean>>(async ({ destroy, service }, reason: string) => {
             garbagecollect();
+
             if (await service.detector.shouldRunDetection()) {
                 ctx.detectionRequest = requestIdleCallback(async () => {
                     ctx.busy = true;
@@ -119,15 +125,15 @@ export const createFormManager = (options: FormManagerOptions) => {
      * may change (ie: dynamic form recycling) */
     const onNewField = (field?: HTMLElement) => {
         const ignored = getIgnoredParent(field);
-        if (ignored) resetFormFlags(ignored);
+        if (ignored) removeClassifierFlags(ignored);
     };
 
     /* if a field was deleted from a currently detected form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
     const onDeletedField = (field?: HTMLElement) => {
-        const detected = getDetectedFormParent(field);
-        if (detected) resetFormFlags(detected);
+        const detected = getParentFormPrediction(field);
+        if (detected) removeClassifierFlags(detected);
     };
 
     /**
