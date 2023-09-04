@@ -136,16 +136,17 @@ export const createIFrameApp = <A>({
 
     const close = (options: IFrameCloseOptions = {}) => {
         if (state.visible) {
-            void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
-            const target = options?.event?.target as Maybe<MaybeNull<HTMLElement>>;
+            const target = (options?.event?.target ?? null) as MaybeNull<HTMLElement>;
 
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
-                onClose?.(state, options);
-                iframe.classList.remove('visible');
 
+                iframe.classList.remove('visible');
                 state.visible = false;
                 state.action = null;
+
+                onClose?.(state, options);
+                sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             }
         }
     };
