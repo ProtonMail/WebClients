@@ -11,17 +11,18 @@ function PostCssLogicalWebpackPlugin() {
                 },
                 async (assets) => {
                     const processor = postcss([require('postcss-logical')()]);
+                    const cssRegex = /\.css/;
                     return Promise.all(
                         Object.entries(assets)
-                            .filter(([path]) => path.endsWith('.css'))
-                            .map(async ([pathname, asset]) => {
+                            .filter(([path]) => cssRegex.test(path))
+                            .map(async ([path, asset]) => {
                                 const result = await processor.process(asset.source(), {
                                     map: false,
                                     from: undefined,
                                     to: undefined,
                                 });
                                 compilation.emitAsset(
-                                    `${pathname.replace(/\.css$/, '.ltr.css')}`,
+                                    `${path.replace(cssRegex, '.ltr.css')}`,
                                     new webpack.sources.RawSource(result.css)
                                 );
                             })
