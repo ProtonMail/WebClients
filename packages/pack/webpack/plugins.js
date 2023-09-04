@@ -11,10 +11,9 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
 const SentryCliPlugin = require('@sentry/webpack-plugin');
-const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin');
-
-const WriteWebpackPlugin = require('./write-webpack-plugin');
-const HtmlEditPlugin = require('./html-edit-plugin');
+const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin').default;
+const WriteWebpackPlugin = require('./write-webpack-plugin').default;
+const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
@@ -165,7 +164,7 @@ module.exports = ({
         ...(writeSRI
             ? [
                   new SubresourceIntegrityPlugin(),
-                  new HtmlEditPlugin((tag) => {
+                  new HtmlEditWebpackPlugin((tag) => {
                       const src = tag.attributes.href || tag.attributes.src;
                       // Remove the integrity and crossorigin attributes for these files because we don't
                       // want to validate them since we may override the server response on these assets
@@ -177,11 +176,11 @@ module.exports = ({
                           }
                       }
                       return tag;
-                  }, HtmlWebpackPlugin),
+                  }),
               ]
             : []),
 
-        new HtmlEditPlugin((tag) => {
+        new HtmlEditWebpackPlugin((tag) => {
             // Remove the favicon.ico tag that the FaviconsWebpackPlugin generates because:
             // 1) We want it to be listed before the .svg icon that we manually inject
             // 2) We want it to have the sizes="any" attribute because of this chrome bug
@@ -197,7 +196,7 @@ module.exports = ({
                 tag.attributes.crossorigin = 'use-credentials';
             }
             return tag;
-        }, HtmlWebpackPlugin),
+        }),
 
         new RetryChunkLoadPlugin({
             cacheBust: `function() {
