@@ -56,6 +56,27 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
     };
 });
 
+jest.mock('@proton/components/hooks/useUser', () => ({
+    __esModule: true,
+    default: jest.fn(() => [
+        [
+            {
+                ID: 'id',
+            },
+        ],
+    ]),
+    useGetUser: jest.fn(
+        () => () =>
+            Promise.resolve([
+                [
+                    {
+                        ID: 'id',
+                    },
+                ],
+            ])
+    ),
+}));
+
 const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
@@ -178,7 +199,7 @@ describe('EmailReminderWidget', () => {
         const { skeleton } = renderComponent();
 
         expect(skeleton).toBeInTheDocument();
-        await waitFor(() => expect(screen.queryByText(/Event was canceled/)).toBeInTheDocument());
+        await screen.findByText(/Event was canceled/);
 
         await tick();
 
@@ -204,9 +225,7 @@ describe('EmailReminderWidget', () => {
         const { skeleton } = renderComponent();
 
         expect(skeleton).toBeInTheDocument();
-        await waitFor(() =>
-            expect(screen.queryByText(/Event was updated. This reminder is out-of-date./)).toBeInTheDocument()
-        );
+        await screen.findByText(/Event was updated. This reminder is out-of-date./);
         expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
     });
 
@@ -221,9 +240,7 @@ describe('EmailReminderWidget', () => {
 
         expect(skeleton).toBeInTheDocument();
 
-        await waitFor(() =>
-            expect(screen.queryByText(new RegExp('Event is no longer in your calendar'))).toBeInTheDocument()
-        );
+        await screen.findByText(new RegExp('Event is no longer in your calendar'));
 
         expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
     });
@@ -242,13 +259,7 @@ describe('EmailReminderWidget', () => {
 
                 expect(skeleton).toBeInTheDocument();
 
-                await waitFor(() =>
-                    expect(
-                        screen.queryByText(
-                            /Event details are encrypted. Sign in again to restore Calendar and decrypt your data./
-                        )
-                    ).toBeInTheDocument()
-                );
+                await screen.findByText(/Event details are encrypted. Sign in again to restore Calendar and decrypt your data./);
 
                 expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
                 expect(screen.queryByText(/Learn more/)).toBeInTheDocument();
@@ -301,9 +312,7 @@ describe('EmailReminderWidget', () => {
 
                 expect(skeleton).toBeInTheDocument();
 
-                await waitFor(() =>
-                    expect(screen.queryByText(new RegExp('Event details cannot be decrypted.'))).toBeInTheDocument()
-                );
+                await screen.findByText(new RegExp('Event details cannot be decrypted.'));
                 expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
                 expect(screen.queryByText(new RegExp('Why not?'))).toBeInTheDocument();
             });
@@ -312,7 +321,7 @@ describe('EmailReminderWidget', () => {
 
     async function errorAndNoWidget(skeleton: Nullable<HTMLDivElement>) {
         expect(skeleton).toBeInTheDocument();
-        await waitFor(() => expect(screen.getByText(/Event is no longer in your calendar/)).toBeInTheDocument());
+        await screen.findByText(/Event is no longer in your calendar/);
         expect(screen.queryByText(/DateHeader/)).not.toBeInTheDocument();
     }
 
@@ -469,7 +478,7 @@ describe('EmailReminderWidget', () => {
         const { skeleton } = renderComponent();
 
         expect(skeleton).toBeInTheDocument();
-        await waitFor(() => expect(screen.queryByText(/DateHeader/)).toBeInTheDocument());
+        await screen.findByText(/DateHeader/);
     });
 
     it('displays a generic error when both event API calls fail', async () => {
