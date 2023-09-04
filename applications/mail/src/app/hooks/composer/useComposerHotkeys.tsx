@@ -15,6 +15,7 @@ interface ComposerHotkeysHandlers {
     handlePassword: () => void;
     handleExpiration: () => void;
     editorRef: MutableRefObject<ExternalEditorActions | undefined>;
+    minimizeButtonRef: RefObject<HTMLButtonElement>;
 }
 
 interface QuickReplyHotkeysHandlers {
@@ -83,6 +84,8 @@ export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
                 e.preventDefault();
                 e.stopPropagation();
                 args.toggleMinimized();
+                // Focus minimize button on minimize with shortcut, otherwise focus would still be on Composer, and it's still possible to edit fields
+                args.minimizeButtonRef.current?.focus();
             }
         },
         maximize: (e: KeyboardEvent) => {
