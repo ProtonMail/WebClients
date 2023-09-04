@@ -37,7 +37,7 @@ export const localize = (localeCode: string, data: LocaleData) => {
     ttagUseLocale(localeCode);
 };
 
-export const getPages = (filter: (locale: string) => boolean, req: (path: string) => any) => {
+export const getPages = (req: (path: string) => any) => {
     const pagePaths: string[] = fs.readdirSync('./src/pages').filter((pagePath: string) => {
         return pagePath.endsWith('.ts') && pagePath !== 'interface.ts';
     });
@@ -52,7 +52,7 @@ export const getPages = (filter: (locale: string) => boolean, req: (path: string
 
     const locales = localeFiles
         .filter((localePath) => {
-            return !localePath.includes('en_US') && localePath.endsWith(localeExt) && filter(localePath);
+            return !localePath.includes('en_US') && localePath.endsWith(localeExt);
         })
         .map((localePath: string) => {
             const originalLocale = localePath.replace(localeExt, '');
