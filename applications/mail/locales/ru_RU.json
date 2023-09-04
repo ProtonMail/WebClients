@@ -4661,6 +4661,12 @@
         "${ count } непрочитанных сообщений",
         "${ count } непрочитанных сообщений"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } из ${ totalProgress }",
+        "${ currentProgress } из ${ totalProgress }",
+        "${ currentProgress } из ${ totalProgress }",
+        "${ currentProgress } из ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } встроенное изображение",
         "${ embeddedAttachmentsCount } встроенных изображения",
@@ -4888,6 +4894,12 @@
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Для этого получателя обнаружен неизвестный публичный ключ."
