@@ -108,6 +108,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
             if (typeof item === 'string') {
                 gridItems.push(
                     <PhotosGroup
+                        key={item}
                         style={{
                             position: 'absolute',
                             height: `${itemDimensions.groupHeight}px`,
