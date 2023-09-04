@@ -3106,6 +3106,11 @@
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacte",
+        "${ contactsLength } de contacte"
+      ],
       "${ doneCount } finished": [
         "S-a transferat unul",
         "S-au transferat ${ doneCount }",
@@ -3156,6 +3161,11 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact selectat",
+        "${ selectedContactsLength }/${ contactsLength } contacte selectate",
+        "${ selectedContactsLength }/${ contactsLength } de contacte selectate"
       ],
       "${ selectedCount } selected": [
         "Selectate: ${ selectedCount }"
@@ -3913,6 +3923,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
       ],
@@ -4019,6 +4032,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Puteți căuta după nume fișier, dată sau tip."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Din păcate, se pare că fișierul sau unele dintre datele sale nu pot fi decriptate."
       ],
       "Unknown error": [
         "Eroare necunoscută."
