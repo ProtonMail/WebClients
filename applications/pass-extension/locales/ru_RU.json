@@ -11,6 +11,9 @@
       "Add current url": [
         "Добавить текущий URL"
       ],
+      "Add domain to pause list": [
+        "Добавить домен в список приостановки"
+      ],
       "Add more": [
         "И ещё"
       ],
@@ -362,6 +365,12 @@
       "Invalid password manager": [
         "Неверный менеджер паролей"
       ],
+      "Invalid url": [
+        "Недействительный url"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Содержимое элемента не может превышать 40 Кбайт"
+      ],
       "Item creation failed": [
         "Ошибка при создании элемента"
       ],
@@ -412,6 +421,9 @@
       ],
       "The file you are trying to import is empty": [
         "Файл, который вы пытаетесь импортировать, пуст"
+      ],
+      "The url is in the list": [
+        "Этот url уже в списке"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Слишком много неудачных попыток. Пожалуйста, войдите снова."
@@ -522,9 +534,6 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
-      ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } импортирует только имена и заметки. Кредитные карты, паспорта, прикрепленные файлы и т. д. в данный момент не поддерживаются."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
@@ -651,9 +660,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание надежных паролей в формах регистрации."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Если включено, выпадающий список автосохранения будет автоматически открываться при переключении на соответствующее поле."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Если включено, вы можете быстро заполнять свои учетные данные, щелкнув по иконке ${ PASS_APP_NAME }."
@@ -957,6 +963,9 @@
       "Autofill": [
         "Автозаполнение"
       ],
+      "Autofill 2FA": [
+        "Автозаполнение 2ФА"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Автоматически открывать автозаполнение при установке курсора на поля входа"
       ],
@@ -1013,6 +1022,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Показать иконку ${ PASS_APP_NAME } на полях входа"
+      ],
+      "Domains": [
+        "Домены"
       ],
       "Download logs": [
         "Скачать журналы"
@@ -1125,6 +1137,9 @@
       "Old-New": [
         "Старый-Новый"
       ],
+      "Older than last month": [
+        "Старше последний месяц"
+      ],
       "Oldest to newest": [
         "От старых к новым"
       ],
@@ -1139,6 +1154,9 @@
       ],
       "Passwords": [
         "Пароли"
+      ],
+      "Pause list": [
+        "Список приостановки"
       ],
       "Permanently delete items": [
         "Окончательно удалить элементы"
@@ -1190,6 +1208,9 @@
       ],
       "Settings": [
         "Настройки"
+      ],
+      "Show website favicons": [
+        "Показать значки сайтов"
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
@@ -1406,6 +1427,9 @@
       ],
       "Import - ${ date }": [
         "Импорт - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Импорт в хранилище"
       ],
       "Permanently remove all items ?": [
         "Безвозвратно удалить все элементы?"

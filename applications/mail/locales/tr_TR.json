@@ -988,6 +988,9 @@
       "Stay": [
         "Kal"
       ],
+      "Strikethrough": [
+        "Üstü çizili"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -4628,6 +4631,10 @@
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kişi",
+        "${ contactsLength } kişi"
+      ],
       "${ count } unread message": [
         "${ count } okunmamış ileti",
         "${ count } okunmamış ileti"
@@ -4696,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
+        "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } klasör seçildi",
@@ -5190,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "En yüksek düzeyde hesap güvenliği ve destek için ${ PROTON_SENTINEL_NAME } programına katılın."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."

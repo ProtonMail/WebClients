@@ -540,9 +540,6 @@
         "${ count } элементаў",
         "${ count } элементаў"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу і нататкі. Крэдытныя карткі, пашпарты, файлы з далучэннямі і іншыя спецыфічныя функцыі ў дадзены момант не падтрымліваюцца праграмай."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } разы",
@@ -668,9 +665,6 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Калі адключана, ${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
-      ],
-      "If enabled, the autosave dropdown will automatically open on field focus.": [
-        "Калі ўключана, выпадное меню аўтаматычнага захавання будзе аўтаматычна адкрывацца пры навядзенні на поле."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Калі ўключана, то вы можаце хутка аўтаматычна запаўняць свае ўліковыя даныя, націснуўшы на значок ${ PASS_APP_NAME }."

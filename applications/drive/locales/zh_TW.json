@@ -3040,6 +3040,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位聯絡人"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
       ],
@@ -3072,6 +3075,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
       "${ selectedCount } selected": [
         "已選取 ${ selectedCount } 個"

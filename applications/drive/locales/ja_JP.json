@@ -3040,6 +3040,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } の連絡先が見つかりました"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 件の連絡先"
+      ],
       "${ doneCount } finished": [
         "完了 ${ doneCount } 件"
       ],
@@ -3072,6 +3075,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } 件選択済み"
@@ -3785,10 +3791,10 @@
         "スイスの暗号化ファイルストレージ"
       ],
       "Sync folders from your computer": [
-        "コンピューターのフォルダーと同期する"
+        "コンピューターのフォルダーを同期する"
       ],
       "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "デスクトップアプリを使用して簡単にフォルダを同期し、常に最新のファイルにどこからでもアクセスできるようにします。"
+        "使いやすいデスクトップアプリでフォルダーを同期すれば、最新のファイルにいつでもどこからでもアクセスできます。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"

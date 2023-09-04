@@ -1863,16 +1863,16 @@
         "Crittografato end-to-end. ${ warningsText }"
       ],
       "PGP-encrypted": [
-        "Crittografato PGP"
+        "Crittografato con PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Crittografato PGP al destinatario verificato"
+        "Crittografato con PGP al destinatario verificato"
       ],
       "PGP-encrypted. ${ warningsText }": [
-        "Crittografato PGP. ${ warningsText }"
+        "Crittografato con PGP. ${ warningsText }"
       ],
       "PGP-signed": [
-        "Firmato PGP"
+        "Firmato con PGP"
       ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
@@ -3307,8 +3307,8 @@
         "riattiva la chiave precedente"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Destinatario del duplicato rimosso: ${ recipents }",
-        "Destinatari del duplicato rimossi: ${ recipents }"
+        "Destinatario duplicato rimosso: ${ recipents }",
+        "Destinatari duplicati rimossi: ${ recipents }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -3359,8 +3359,8 @@
         "pagina di stato"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "L'allegato non può essere decifrato.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decifrare il file con un programma come GnuPG.",
-        "Alcuni allegati non possono essere decifrati.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decifrare i file con un programma come GnuPG."
+        "L'allegato non può essere decriptato.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decriptare il file con un programma come GnuPG.",
+        "Alcuni allegati non possono essere decriptati.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decriptare i file con un programma come GnuPG."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -5206,7 +5206,7 @@
         "Partecipa al programma ${ PROTON_SENTINEL_NAME } per ottenere il più elevato livello di sicurezza dell'account e il miglior supporto."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Basta confermare la tua selezione e noi faremo il resto."
+        "Devi solo confermare la tua selezione e noi faremo il resto."
       ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
@@ -5756,7 +5756,7 @@
         "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Aggiorna per aggiungere altri indirizzi al tuo profilo."
+        "Effettua l'upgrade per aggiungere più indirizzi al tuo profilo."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Effettua l'upgrade per eliminare automaticamente gli elementi presenti nelle cartelle Cestino e Spam dopo 30 giorni."
@@ -5774,16 +5774,16 @@
         "Effettua l'upgrade per inviare email dal tuo dominio email personalizzato."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Aggiorna per inviare facilmente email ai gruppi di contatto."
+        "Effettua l'upgrade per inviare facilmente email ai gruppi di contatti."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Aggiorna per supportare un Internet che metta avanti la privacy."
+        "Effettua l'upgrade per supportare un Internet che dia priorità alla privacy."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Aggiorna per supportare la nostra missione della privacy per tutti."
+        "Effettua l'upgrade per supportare la nostra missione della privacy per tutti."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Aggiorna per supportare la privacy e ottenere ulteriori funzionalità."
+        "Effettua l'upgrade per supportare la privacy e ottenere ulteriori funzionalità."
       ],
       "Upgrade to unlock premium features.": [
         "Effettua l'upgrade per sbloccare funzionalità premium."
@@ -7639,19 +7639,19 @@
         "Messaggio crittografato end-to-end dal mittente verificato"
       ],
       "PGP-encrypted and signed message": [
-        "Messaggio crittografato e firmato PGP"
+        "Messaggio crittografato e firmato con PGP"
       ],
       "PGP-encrypted message": [
-        "Messaggio PGP crittografato"
+        "Messaggio crittografato con PGP"
       ],
       "PGP-encrypted message from verified sender": [
-        "Messaggio crittografato PGP dal mittente verificato"
+        "Messaggio crittografato con PGP dal mittente verificato"
       ],
       "PGP-signed message": [
-        "Messaggio firmato PGP"
+        "Messaggio firmato con PGP"
       ],
       "PGP-signed message from verified sender": [
-        "Messaggio firmato PGP dal mittente verificato"
+        "Messaggio firmato con PGP dal mittente verificato"
       ],
       "PGP-signed message. Sender verification failed": [
         "Messaggio firmato con PGP. Verifica del mittente non riuscita"
@@ -7782,15 +7782,15 @@
         "Inviato da ${ MAIL_APP_NAME } con crittografia ad accesso zero"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Inviato da ${ MAIL_APP_NAME } con crittografia zero-access al destinatario verificato",
-        "Inviato da ${ MAIL_APP_NAME } con crittografia ad accesso zero ai destinatari verificati"
+        "Inviato da ${ MAIL_APP_NAME } con la crittografia zero access al destinatario verificato",
+        "Inviato da ${ MAIL_APP_NAME } con la crittografia zero access ai destinatari verificati"
       ],
       "Sent by you with end-to-end encryption": [
         "Inviato da te con crittografia end-to-end"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Inviato da te con crittografia end-to-end al destinatario verificato",
-        "Inviato da te con crittografia end-to-end ai destinatari verificati"
+        "Inviato da te con la crittografia end-to-end al destinatario verificato",
+        "Inviato da te con la crittografia end-to-end ai destinatari verificati"
       ],
       "Stored with zero-access encryption": [
         "Archiviato con crittografia ad accesso zero"
@@ -9144,7 +9144,7 @@
         "Nascondi pannello laterale"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
+        "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo normale"
       ],
       "Show side panel": [
         "Mostra pannello laterale"
@@ -9242,7 +9242,7 @@
         "Se non ricordi la password, è impossibile riattivare la chiave. Possiamo aiutarti a chiudere il banner di avviso, ma nel processo perderai definitivamente l'accesso a tutti i dati crittografati con quella chiave."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
+        "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "Skip verification?": [
         "Saltare la verifica?"

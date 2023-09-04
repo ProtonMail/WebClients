@@ -7106,6 +7106,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kan aktivera autentiseringsloggning för att se när ditt konto används och från vilken IP-adress. Vi kommer att registrera IP-adressen som ansluter till kontot och tidpunkten, såväl som misslyckade försök."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kan omedelbart låsa upp inställningen ovan genom att lägga till ${ specificCountryCount } till antalet IP-adresser för din prenumeration eller kontakta oss för skräddarsydda lösningar."
+      ],
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
       ],
@@ -7198,6 +7201,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du måste fortfarande svara på inbjudningar för att värden ska se ditt svar."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Du kommer att omdirigeras till ${ destination } när du loggat in."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
@@ -12607,6 +12613,9 @@
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Ange ditt ${ BRAND_NAME } Kontouppgifter för att ansluta till ${ app } Beta-program"
+      ],
       "Enter your password": [
         "Ange ditt lösenord"
       ],
@@ -12965,6 +12974,9 @@
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
+      ],
+      "Sign in to join the Beta program": [
+        "Logga in för att ansluta till Beta-programmet"
       ],
       "Sign in with 2FA": [
         "Logga in med 2FA"

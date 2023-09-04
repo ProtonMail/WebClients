@@ -893,7 +893,7 @@
         "設定"
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
-        "${ MAIL_APP_NAME } をデフォルトのメール アプリケーションとして設定します"
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
       ],
       "Set as default": [
         "既定にする"
@@ -4586,6 +4586,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } の連絡先が見つかりました"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 件の連絡先"
+      ],
       "${ count } unread messages": [
         "${ count } 件の未読メッセージ"
       ],
@@ -4639,6 +4642,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -5019,7 +5025,7 @@
         "${ oldestDate } 以降のメッセージ"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "さらに検索結果を表示するには、電子メール メッセージの内容でこのキーワードを検索してみてください。"
+        "さらに検索結果を表示するには、メッセージ内容の検索をお試しください。"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -5104,6 +5110,9 @@
       ],
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "最高水準のアカウントセキュリティとサポートのために ${ PROTON_SENTINEL_NAME } プログラムに参加しましょう。"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -6535,7 +6544,7 @@
         "システムと同期する"
       ],
       "Synchronize with system": [
-        "システムとの同期"
+        "システムと同期する"
       ],
       "System information": [
         "システム情報"
@@ -8998,7 +9007,7 @@
         "安定版"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "このバージョンの Tor Brower はサポートしていません、最新のバージョン ${ stableRelease } にアップグレードしてください"
+        "このバージョンの Tor Brower はサポートしていません。最新の ${ stableRelease } に更新してください。"
       ]
     },
     "Update font modal": {
