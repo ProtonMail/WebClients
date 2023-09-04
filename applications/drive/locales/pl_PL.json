@@ -3205,6 +3205,12 @@
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarzy",
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarzy"
       ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Zaznaczono ${ selectedContactsLength }/${ contactsLength } kontakt",
+        "Zaznaczono ${ selectedContactsLength }/${ contactsLength } kontakty",
+        "Zaznaczono ${ selectedContactsLength }/${ contactsLength } kontaktów",
+        "Zaznaczono ${ selectedContactsLength }/${ contactsLength } kontaktów"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
         "${ selectedFoldersCount } zaznaczone foldery",
