@@ -1,17 +1,13 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { fromUnixTime, isThisYear, isToday } from 'date-fns';
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks/index';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { DeepPartial } from '@proton/shared/lib/interfaces';
 
 import { DecryptedLink, useLink, useLinksListing } from '../_links';
-import { usePhotos as usePhotosProvider } from '../_photos';
-import { Photo } from '../_photos/interface';
-import { usePhotos } from '../_photos/usePhotos';
-import { useDefaultShare } from '../_shares';
+import { usePhotos } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
 export type PhotoLink = DeepPartial<DecryptedLink> & {
@@ -53,14 +49,9 @@ const flattenWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
 };
 
 export const usePhotosView = () => {
-    const { getPhotos } = usePhotos();
     const { getCachedChildren } = useLinksListing();
     const { getLink } = useLink();
-    const { getDefaultShare } = useDefaultShare();
-    const { shareId, linkId, isLoading } = usePhotosProvider();
-
-    const [photos, setPhotos] = useState<Photo[]>([]);
-    const [photosLoading, withPhotosLoading] = useLoading();
+    const { shareId, linkId, isLoading, volumeId, photos, loadPhotos } = usePhotos();
 
     const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
@@ -97,31 +88,12 @@ export const usePhotosView = () => {
     }, [photos, cachedLinks]);
 
     useEffect(() => {
-        if (!shareId && !linkId) {
+        if (!volumeId) {
             return;
         }
-
-        const fetchPhotos = async (lastLinkId?: string) => {
-            const share = await getDefaultShare(abortSignal);
-            const photos = await getPhotos(abortSignal, share.volumeId, lastLinkId);
-
-            return photos;
-        };
-
-        const photoCall = async (lastLinkId?: string) =>
-            fetchPhotos(lastLinkId)
-                .then((data) => {
-                    if (!!data.length) {
-                        setPhotos((prevPhotos) => [...prevPhotos, ...data]);
-                        void photoCall(data[data.length - 1].linkId);
-                    } else {
-                        void Promise.resolve();
-                    }
-                })
-                .catch(() => {});
-
-        void withPhotosLoading(photoCall());
-    }, [shareId, linkId]);
+        const abortSignal = new AbortController().signal;
+        loadPhotos(abortSignal, volumeId);
+    }, [volumeId]);
 
     const getPhotoLink = (abortSignal: AbortSignal, linkId: string) => {
         if (!shareId) {
@@ -133,7 +105,7 @@ export const usePhotosView = () => {
     return {
         photos: photosViewData,
         getPhotoLink,
-        isLoading: photosLoading || isLoading,
-        isLoadingMore: photosLoading && !!photos.length,
+        isLoading,
+        isLoadingMore: isLoading && !!photos.length,
     };
 };
