@@ -1,4 +1,6 @@
+import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
 import { ThumbnailData, ThumbnailGenerator, ThumbnailType } from './interface';
@@ -43,3 +45,30 @@ export const makeThumbnail = async (
                     thumbnailType,
                 }
         );
+
+export const getThumbnailsData = (mimeTypePromise: Promise<string>, file: File, isPhoto: boolean) =>
+    mimeTypePromise.then(async (mimeType) => {
+        const previewThumbnail = await makeThumbnail(mimeType, file).catch((err) => {
+            traceError(err);
+            return undefined;
+        });
+        if (!previewThumbnail) {
+            return undefined;
+        }
+        if (
+            !isPhoto ||
+            (mimeType == SupportedMimeTypes.jpg &&
+                previewThumbnail?.originalWidth &&
+                previewThumbnail?.originalWidth <= HD_THUMBNAIL_MAX_SIDE)
+        ) {
+            return [previewThumbnail];
+        }
+        const photoThumbnail = await makeThumbnail(mimeType, file, ThumbnailType.HD_PREVIEW).catch((err) => {
+            traceError(err);
+            return undefined;
+        });
+        if (photoThumbnail) {
+            return [previewThumbnail, photoThumbnail];
+        }
+        return undefined;
+    });
