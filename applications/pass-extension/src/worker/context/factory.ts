@@ -115,5 +115,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         },
     });
 
+    context.service.onboarding.hydrate();
+
     return context;
 };
