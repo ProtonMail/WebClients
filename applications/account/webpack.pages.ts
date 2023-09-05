@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { LocaleData, addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
+import { Configuration } from 'webpack';
 
 import { Parameters } from './src/pages/interface';
 import { getLangAttribute, getLocaleMap } from './src/static/localeMapping';
@@ -30,14 +31,67 @@ const getRewrite = (file: string, pathname: string) => {
     return { filename, rewrite: { from: new RegExp(`^${pathname.replace('/', '/')}$`), to: `/${filename}` } };
 };
 
-export const localize = (localeCode: string, data: LocaleData) => {
+const getShortLocalizedPathname = (shortLocale: string) => {
+    return shortLocale === 'en' ? '' : `/${shortLocale}`;
+};
+
+export const localize = (localeCode: string, data: LocaleData | null) => {
     if (localeCode !== 'en_US' && data) {
         ttagAddLocale(localeCode, data);
     }
     ttagUseLocale(localeCode);
 };
 
-export const getPages = (req: (path: string) => any) => {
+export interface HrefLang {
+    hreflang: string;
+    pathname: string;
+}
+
+interface Locale {
+    pagePath: string;
+    parameters: Parameters;
+    pathname: string;
+    localeData: LocaleData | null;
+    shortLocale: string;
+    originalLocale: string;
+}
+
+interface LocalizedPage {
+    shortLocalizedPathname: string;
+    filename: string;
+    rewrite: { from: RegExp; to: string };
+    parameters: Parameters & { pathname: string; lang: string };
+}
+
+const getLocalisedPage = ({
+    pagePath,
+    parameters,
+    pathname,
+    localeData,
+    originalLocale,
+    shortLocale,
+}: Locale): LocalizedPage => {
+    localize(originalLocale, localeData);
+    const shortLocalizedPathname = getShortLocalizedPathname(shortLocale);
+    const localisedPathname = `${shortLocalizedPathname}/${pathname}`;
+    const localisedPagePath = shortLocale === 'en' ? pagePath : `${shortLocale}/${pagePath}`;
+
+    const { filename, rewrite } = getRewrite(localisedPagePath, localisedPathname);
+    return {
+        shortLocalizedPathname,
+        filename,
+        rewrite,
+        parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters },
+    };
+};
+
+export const getPages = (mode: Configuration['mode'], req: (path: string) => any) => {
+    if (mode !== 'production') {
+        return {
+            pages: [],
+            hreflangs: [],
+        };
+    }
     const pagePaths: string[] = fs.readdirSync('./src/pages').filter((pagePath: string) => {
         return pagePath.endsWith('.ts') && pagePath !== 'interface.ts';
     });
@@ -64,11 +118,7 @@ export const getPages = (req: (path: string) => any) => {
             };
         });
 
-    const getShortLocalizedPathname = (shortLocale: string) => {
-        return shortLocale === 'en' ? '' : `/${shortLocale}`;
-    };
-
-    const hreflangs = [
+    const hreflangs: HrefLang[] = [
         { hreflang: 'en-US', pathname: '' },
         ...locales.map(({ originalLocale, shortLocale }) => {
             const localisedPathname = getShortLocalizedPathname(shortLocale);
@@ -83,37 +133,26 @@ export const getPages = (req: (path: string) => any) => {
     const pages = pagePaths.flatMap((pagePath) => {
         const enFile = `./src/pages/${pagePath}`;
         const file = req(enFile);
-        const getParameters: () => Parameters = file.default;
+        const parameters: Parameters = file.default;
         const pathname = getPathnameFromFilename(pagePath);
-
-        const getLocalisedPage = ({
-            localeData,
-            originalLocale,
-            shortLocale,
-        }: Pick<(typeof locales)[0], 'localeData' | 'shortLocale' | 'originalLocale'>) => {
-            localize(originalLocale, localeData);
-            const parameters = getParameters();
-
-            const shortLocalizedPathname = getShortLocalizedPathname(shortLocale);
-            const localisedPathname = `${shortLocalizedPathname}/${pathname}`;
-            const localisedPagePath = shortLocale === 'en' ? pagePath : `${shortLocale}/${pagePath}`;
-
-            const { filename, rewrite } = getRewrite(localisedPagePath, localisedPathname);
-            return {
-                shortLocalizedPathname,
-                filename,
-                rewrite,
-                parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters },
-            };
-        };
 
         return [
             getLocalisedPage({
+                pathname,
+                pagePath,
+                parameters,
                 originalLocale: 'en_US',
                 localeData: null,
                 shortLocale: 'en',
             }),
-            ...locales.map(getLocalisedPage),
+            ...locales.map((locale) =>
+                getLocalisedPage({
+                    pathname,
+                    pagePath,
+                    parameters,
+                    ...locale,
+                })
+            ),
         ];
     });
 
