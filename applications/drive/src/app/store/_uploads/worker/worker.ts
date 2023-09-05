@@ -3,7 +3,6 @@ import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 import {
     generateContentKeys,
     generateLookupHash,
@@ -118,18 +117,8 @@ async function start(
 
         const [signature, exifInfo] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
-            isPhoto && !isSVG(mimeType)
-                ? await file.arrayBuffer().then((buffer) => {
-                      // In case of error with return empty exif
-                      try {
-                          return getExifInfo(buffer);
-                      } catch (err) {
-                          return {};
-                      }
-                  })
-                : {},
+            isPhoto ? getExifInfo(file, mimeType) : undefined,
         ]);
-
         const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
 
         const { width, height } = {
@@ -155,7 +144,7 @@ async function start(
                               sha1,
                           }
                         : undefined,
-                    ...getPhotoExtendedAttributes(exifInfo),
+                    ...(exifInfo ? getPhotoExtendedAttributes(exifInfo) : {}),
                 },
                 privateKey,
                 addressPrivateKey
@@ -168,7 +157,7 @@ async function start(
             xattr,
             isPhoto
                 ? {
-                      captureTime: getUnixTime(getCaptureDateTime(file, exifInfo.exif)),
+                      captureTime: getUnixTime(getCaptureDateTime(file, exifInfo?.exif)),
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
                   }
                 : undefined

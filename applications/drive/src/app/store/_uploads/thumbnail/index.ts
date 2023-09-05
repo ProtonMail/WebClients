@@ -1,2 +1,2 @@
 export * from './interface';
-export { makeThumbnail } from './thumbnail';
+export { makeThumbnail, getThumbnailsData } from './thumbnail';
