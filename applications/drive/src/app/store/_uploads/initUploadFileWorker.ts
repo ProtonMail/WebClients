@@ -55,7 +55,7 @@ export function initUploadFileWorker(
             ) {
                 return [previewThumbnail];
             }
-            const photoThumbnail = await makeThumbnail(mimeType, file, ThumbnailType.PHOTO).catch((err) => {
+            const photoThumbnail = await makeThumbnail(mimeType, file, ThumbnailType.HD_PREVIEW).catch((err) => {
                 traceError(err);
                 return undefined;
             });

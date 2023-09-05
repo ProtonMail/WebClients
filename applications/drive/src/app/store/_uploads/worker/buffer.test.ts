@@ -104,7 +104,7 @@ describe('upload worker buffer', () => {
 
     it('creates thumbnails and block links', async () => {
         buffer.thumbnailsEncryptedBlocks.set(0, createThumbnailBlock(0, ThumbnailType.PREVIEW));
-        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.PHOTO));
+        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.HD_PREVIEW));
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
         buffer.runBlockLinksCreation(mockRequestBlockCreation);
@@ -112,7 +112,7 @@ describe('upload worker buffer', () => {
         expect(mockRequestBlockCreation.mock.calls).toMatchObject([
             [
                 [createBlock(1), createBlock(2)],
-                [createThumbnailBlock(0, ThumbnailType.PREVIEW), createThumbnailBlock(1, ThumbnailType.PHOTO)],
+                [createThumbnailBlock(0, ThumbnailType.PREVIEW), createThumbnailBlock(1, ThumbnailType.HD_PREVIEW)],
             ],
         ]);
     });
@@ -142,7 +142,7 @@ describe('upload worker buffer', () => {
 
     it('moves block from encrypted buffer to uploading buffer once link is created', async () => {
         buffer.thumbnailsEncryptedBlocks.set(0, createThumbnailBlock(0, ThumbnailType.PREVIEW));
-        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.PHOTO));
+        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.HD_PREVIEW));
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
 
