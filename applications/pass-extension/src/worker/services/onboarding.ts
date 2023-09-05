@@ -43,6 +43,10 @@ const ONBOARDING_RULES: OnboardingRule[] = [
         when: withContext<OnboardingWhen>((ctx) => !ctx.service.activation.getPermissionsGranted()),
     }),
     createOnboardingRule({
+        message: OnboardingMessage.STORAGE_ISSUE,
+        when: withContext<OnboardingWhen>((ctx) => ctx.service.storage.getState().storageFull),
+    }),
+    createOnboardingRule({
         message: OnboardingMessage.UPDATE_AVAILABLE,
         onAcknowledge: withContext<OnboardingOnAck>((ctx, ack) => {
             /* keep a reference to the current available update so as
