@@ -120,10 +120,10 @@ const UsernameSection = ({ app }: Props) => {
             )}
             <SettingsSection>
                 {sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
-                    <SessionRecoveryInProgressCard className="mb-4" />
+                    <SessionRecoveryInProgressCard className="mb-6" />
                 )}
                 {sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
-                    <PasswordResetAvailableCard className="mb-4" />
+                    <PasswordResetAvailableCard className="mb-6" />
                 )}
                 {user.Type === UserType.EXTERNAL &&
                     primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
