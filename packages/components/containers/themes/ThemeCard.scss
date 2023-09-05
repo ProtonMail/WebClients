@@ -36,7 +36,6 @@
 		position: absolute;
 		inset: -1px;
 		z-index: 1;
-		border-radius: var(--custom-border-radius);
 		border: 1px solid var(--button-default-border-color);
 		pointer-events: none;
 		transition: 0.15s easing(ease-out-quad);

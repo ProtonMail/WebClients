@@ -138,6 +138,8 @@ export const PROTON_THEMES_MAP = {
 
 export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
 
+export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
+
 export const getThemes = () => {
     return [
         ThemeTypes.Duotone,

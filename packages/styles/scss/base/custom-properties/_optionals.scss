@@ -35,7 +35,7 @@
 		navigation-current-item-text-color      : var(--text-norm),
 
 		main-box-shadow  : none,
-		main-border-color: var(--border-weak),
+		main-border-width: 1px,
 
 		navigation-item-count-background-color: var(--primary),
 		navigation-item-count-text-color      : var(--primary-contrast),
@@ -115,7 +115,6 @@
 		promotion-interaction-hover: rgb(109 74 255 / 0.08),
 		promotion-background-start: rgb(109 74 255 / 0.15),
 		promotion-background-end: rgb(70 26 255 / 0.04),
-
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
