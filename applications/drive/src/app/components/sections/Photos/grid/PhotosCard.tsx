@@ -3,9 +3,11 @@ import { CSSProperties, FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
+import clsx from '@proton/utils/clsx';
 
 import { PhotoLink } from '../../../../store/_views/usePhotosView';
 import { usePortalPreview } from '../../../PortalPreview/PortalPreview';
+import { useDetailsModal } from '../../../modals/DetailsModal';
 import { getMimeTypeDescription } from '../../helpers';
 
 type Props = {
@@ -20,6 +22,7 @@ const getAltText = ({ mimeType, name }: PhotoLink) =>
 
 export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
     const [portalPreview, showPortalPreview] = usePortalPreview();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
     useEffect(() => {
         onRender(photo);
     }, [photo]);
@@ -30,12 +33,13 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
     return (
         <>
             {portalPreview}
+            {detailsModal}
             {/*// TODO: Thumbnails on click*/}
             {/*// TODO: Keyboard navigation*/}
             <ButtonLike
                 as="div"
                 style={style}
-                className="photos-card cursor-pointer p-0 border-none"
+                className={clsx('photos-card p-0 border-none', isActive && thumbUrl && 'cursor-pointer ')}
                 onClick={() =>
                     photo.activeRevision?.id &&
                     photo.activeRevision?.photo?.linkId &&
@@ -44,6 +48,12 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
                         linkId: photo.activeRevision?.photo?.linkId,
                         revisionId: photo.activeRevision?.id,
                         date: photo.activeRevision.photo?.captureTime,
+                        onDetails: () =>
+                            photo.activeRevision?.photo?.linkId &&
+                            showDetailsModal({
+                                shareId,
+                                linkId: photo.activeRevision?.photo?.linkId,
+                            }),
                     })
                 }
             >
