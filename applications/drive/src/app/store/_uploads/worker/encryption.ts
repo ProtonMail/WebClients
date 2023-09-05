@@ -70,6 +70,7 @@ async function encryptBlock(
     postNotifySentry: (e: Error) => void
 ): Promise<EncryptedBlock> {
     const tryEncrypt = async (retryCount: number): Promise<EncryptedBlock> => {
+        // Generate the encrypted block
         const { message: encryptedData, signature } = await CryptoProxy.encryptMessage({
             binaryData: chunk,
             sessionKey,
@@ -78,9 +79,23 @@ async function encryptBlock(
             detached: true,
         });
 
-        // Verify the encrypted blocks to try to detect bitflips, etc.
+        // IMPORTANT!
+        // Hashing must happen BEFORE verifying.
+        // If verification is successful, then we know the hash corresponds
+        // to something we can decrypt. If hashing was placed after verification,
+        // the cyphertext could get corrupted after verification succeeds,
+        // which would create an incorrect digest that would look "correct" to the server.
+        const hash = (await generateContentHash(encryptedData)).BlockHash;
+
+        // Attempt to decrypt data block, to try to detect bitflips / bad hardware.
+        //
+        // We don't check the signature as it is an expensive operation,
+        // and we don't need to here as we always have the manifest signature
         try {
-            await attemptDecryptBlock(encryptedData, sessionKey);
+            await CryptoProxy.decryptMessage({
+                binaryMessage: encryptedData,
+                sessionKeys: sessionKey,
+            });
         } catch (e) {
             // Only trace the error to sentry once
             if (retryCount === 0) {
@@ -95,13 +110,12 @@ async function encryptBlock(
             throw new Error(`Failed to verify encrypted block: ${e}`, { cause: { e, retryCount } });
         }
 
-        // Generate the signature and hash only after the block has been verified
+        // Encrypt the block signature after verification
         const { message: encryptedSignature } = await CryptoProxy.encryptMessage({
             binaryData: signature,
             sessionKey,
             encryptionKeys: privateKey,
         });
-        const hash = (await generateContentHash(encryptedData)).BlockHash;
 
         return {
             index,
@@ -113,15 +127,4 @@ async function encryptBlock(
     };
 
     return tryEncrypt(0);
-}
-
-async function attemptDecryptBlock(encryptedData: Uint8Array, sessionKey: SessionKey): Promise<void> {
-    // Attempt to decrypt data block, without checking the signature
-    //
-    // We don't check the signature as it is an expensive operation,
-    // and we don't need to here as we always have the manifest signature
-    await CryptoProxy.decryptMessage({
-        binaryMessage: encryptedData,
-        sessionKeys: sessionKey,
-    });
 }
