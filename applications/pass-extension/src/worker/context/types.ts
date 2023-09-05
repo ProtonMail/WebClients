@@ -14,6 +14,7 @@ import { type LoggerService } from '../services/logger';
 import { type OnboardingService } from '../services/onboarding';
 import { type OTPService } from '../services/otp';
 import { type SettingsService } from '../services/settings';
+import type { StorageService } from '../services/storage';
 import { type StoreService } from '../services/store';
 import { type TelemetryService } from '../services/telemetry';
 
@@ -38,6 +39,7 @@ export interface WorkerContextInterface {
         onboarding: OnboardingService;
         otp: OTPService;
         settings: SettingsService;
+        storage: StorageService;
         store: StoreService;
         telemetry: MaybeNull<TelemetryService>;
     };
