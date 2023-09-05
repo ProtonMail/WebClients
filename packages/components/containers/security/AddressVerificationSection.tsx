@@ -2,16 +2,19 @@ import { c } from 'ttag';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../components';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import useKTActivation from '../keyTransparency/useKTActivation';
 import KTToggle from './KTToggle';
 import PromptPinToggle from './PromptPinToggle';
 
 const AddressVerificationSection = () => {
+    const ktActivation = useKTActivation();
     return (
         <SettingsSection>
             <SettingsLayout>
@@ -29,17 +32,19 @@ const AddressVerificationSection = () => {
                     <PromptPinToggle id="prompt-pin-toggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="trustToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
-                        <Info title={c('Tooltip prompt to trust keys').t`.`} />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
-                    <KTToggle />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+            {ktActivation === KeyTransparencyActivation.DISABLED ? null : (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="trustToggle" className="text-semibold">
+                            <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
+                            <Info title={c('Tooltip prompt to trust keys').t`.`} />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt-2">
+                        <KTToggle />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
         </SettingsSection>
     );
 };
