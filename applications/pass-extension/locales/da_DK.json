@@ -526,6 +526,9 @@
         "${ count } element",
         "${ count } elementer"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } vil kun importere logins og noter. Kreditkort, pas, vedhæftede filer osv er ikke understøttet på nuværende tidspunkt."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } gang",
         "${ revisionNumber } gange"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette stærke adgangskoder på tilmeldingsformularer."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Hvis aktiveret, vil autogem-dropdown automatisk åbne, når feltet er i fokus."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Hvis aktiveret, kan du hurtigt udfylde dine legitimationsoplysninger automatisk ved at klikke på ikonet for ${ PASS_APP_NAME }."

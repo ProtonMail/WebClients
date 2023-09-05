@@ -526,6 +526,9 @@
         "${ count } élément",
         "${ count } éléments"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } importera uniquement les identifiants et les notes. Les passeports, les pièces jointes… ne sont pas encore pris en charge."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } fois",
         "${ revisionNumber } fois"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Quand cette option est désactivée, ${ PASS_APP_NAME } ne propose pas de créer des mots de passe forts dans les formulaires d'inscription."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Quand cette option est activée, la liste déroulante de remplissage automatique s'ouvre automatiquement dès que le champ est sélectionné."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Quand cette option est activée, vous pouvez rapidement remplir automatiquement vos informations d'identification en cliquant sur l'icône ${ PASS_APP_NAME }."
@@ -1109,7 +1115,7 @@
         "Du plus ancien au plus récent"
       ],
       "Older than last month": [
-        "Plus d'un mois"
+        "Il y a plus d'un mois"
       ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
