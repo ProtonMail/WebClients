@@ -8,7 +8,6 @@ import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/
 import type { User as tsUser } from '@proton/shared/lib/interfaces';
 
 import { browserSessionStorage } from '../extension/storage';
-import type { StorageData } from '../extension/storage/types';
 import type { Api } from '../types';
 import type { ExtensionSession } from './session';
 
@@ -22,7 +21,7 @@ export const requestFork = async (host: string, type?: FORK_TYPE) => {
     searchParams.append('independent', '0');
     if (type) searchParams.append('t', type);
 
-    await browserSessionStorage.setItem<StorageData>(`f${state}`, JSON.stringify({}));
+    await browserSessionStorage.setItem(`f${state}`, JSON.stringify({}));
 
     return `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`;
 };
