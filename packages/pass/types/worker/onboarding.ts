@@ -5,6 +5,7 @@ export enum OnboardingMessage {
     UPDATE_AVAILABLE /* update is available - reload required */,
     PERMISSIONS_REQUIRED /* permissions grant is insufficient */,
     USER_RATING /* ask user for a rating */,
+    STORAGE_ISSUE /* low disk space */,
 }
 
 export type OnboardingAcknowledgment = {
