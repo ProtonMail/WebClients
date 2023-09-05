@@ -1,3 +1,14 @@
+# Release 5.0.15.0 - September 5, 2023
+
+## Improved
+
+-   Quick settings and sidebar layout improvements
+-   Drive now uses vertical space more efficiently in file browser views
+-   Various accessibility improvements
+    -   Thank you to our community for bringing these to our attention!
+-   Make "# of downloads" meaning clearer
+-   Signing of files is now more consistent
+
 # Release 5.0.14.0 – July 5, 2023
 
 ## Added
