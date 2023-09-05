@@ -4,7 +4,6 @@ import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
 import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import { EncryptionTag } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -12,16 +11,17 @@ import { objectDelete } from '@proton/pass/utils/object';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { workerReady } from '../../utils/worker';
 import { signout, stateLock } from '../actions';
 import { isCacheTriggeringAction } from '../actions/with-cache-block';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
 
-function* cacheWorker(action: AnyAction, { onCacheRequest, getAuth }: WorkerRootSagaOptions) {
+function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: WorkerRootSagaOptions) {
     yield wait(500);
 
-    if (getAuth().hasSession() && onCacheRequest()) {
+    if (getAuth().hasSession() && workerReady(getWorkerState().status)) {
         try {
             const sessionLockToken = getAuth().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
@@ -49,9 +49,11 @@ function* cacheWorker(action: AnyAction, { onCacheRequest, getAuth }: WorkerRoot
             );
 
             logger.info(`[Saga::Cache] Caching store and crypto state @ action["${action.type}"]`);
-            yield browserLocalStorage.setItem('salt', uint8ArrayToString(cacheSalt));
-            yield browserLocalStorage.setItem('state', uint8ArrayToString(encryptedData));
-            yield browserLocalStorage.setItem('snapshot', uint8ArrayToString(encryptedWorkerSnapshot));
+            yield setCache({
+                salt: uint8ArrayToString(cacheSalt),
+                state: uint8ArrayToString(encryptedData),
+                snapshot: uint8ArrayToString(encryptedWorkerSnapshot),
+            });
         } catch (_) {}
     }
 }

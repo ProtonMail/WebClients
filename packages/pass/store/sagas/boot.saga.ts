@@ -6,17 +6,20 @@ import type { Maybe, RequiredNonNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 
+import type { EncryptedExtensionCache, ExtensionCache } from '../../types/worker/cache';
 import { boot, bootFailure, bootSuccess, stateSync } from '../actions';
 import type { UserState } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
-import getCachedState, { type ExtensionCache } from './workers/cache';
+import { decryptCachedState } from './workers/cache';
 import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
 import { getUserData } from './workers/user';
 
 function* bootWorker(options: WorkerRootSagaOptions) {
     try {
         const sessionLockToken = options.getAuth().getLockToken();
-        const cache: Maybe<ExtensionCache> = yield getCachedState(sessionLockToken);
+        const encryptedCache: Partial<EncryptedExtensionCache> = yield options.getCache();
+        const cache: Maybe<ExtensionCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
+
         const currentState: State = yield select();
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
 
