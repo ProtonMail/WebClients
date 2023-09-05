@@ -72,6 +72,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
                         placeholder={c('Placeholder').t`Gift code`}
                         autoFocus
                         onValue={setCode}
+                        data-testid="gift-code-input"
                         onKeyDown={(event) => {
                             if (event.key === 'Enter') {
                                 event.preventDefault();
@@ -86,6 +87,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
                     loading={loading}
                     disabled={!code}
                     onClick={handleSubmit}
+                    data-testid="apply-gift-code"
                 >{c('Action').t`Apply`}</Button>
             </div>
         );
@@ -93,7 +95,8 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
 
     return (
         <>
-            <UnderlineButton className="mr-2" onClick={toggle}>{c('Link').t`Add a gift code`}</UnderlineButton>
+            <UnderlineButton className="mr-2" onClick={toggle} data-testid="add-gift-code">{c('Link')
+                .t`Add a gift code`}</UnderlineButton>
             <Info
                 title={c('Tooltip')
                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
