@@ -5,6 +5,8 @@ import postcss from 'postcss';
 
 export default class PostCssLogicalWebpackPlugin {
     apply(compiler: Compiler) {
+        const processor = postcss([logical()]);
+
         compiler.hooks.thisCompilation.tap('PostCssLogicalWebpackPlugin', (compilation) => {
             compilation.hooks.processAssets.tapPromise(
                 {
@@ -13,7 +15,6 @@ export default class PostCssLogicalWebpackPlugin {
                     additionalAssets: true,
                 },
                 async (assets) => {
-                    const processor = postcss([logical()]);
                     await Promise.all(
                         Object.entries(assets)
                             .filter(([path]) => {

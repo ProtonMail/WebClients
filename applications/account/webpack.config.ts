@@ -8,7 +8,31 @@ import getConfig, { mergeEntry } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
 
 import { Parameters } from './src/pages/interface';
-import { getPages } from './webpack.pages';
+import { HrefLang, getPages } from './webpack.pages';
+
+const getTemplateParameters = (
+    originalTemplateParameters: any,
+    hreflangs: HrefLang[],
+    shortLocalizedPathname: string,
+    parameters: Parameters & { pathname: string }
+) => {
+    let url = originalTemplateParameters.url;
+    const origin = url.replace(/\/$/, '');
+    if (parameters.pathname) {
+        url = `${origin}${parameters.pathname}`;
+    }
+    return {
+        ...originalTemplateParameters,
+        ...parameters,
+        url,
+        hreflangs: hreflangs.map(({ hreflang, pathname }) => {
+            return {
+                hreflang,
+                href: `${origin}${pathname}${parameters.pathname.replace(shortLocalizedPathname, '')}`,
+            };
+        }),
+    };
+};
 
 const result = (env: any): webpack.Configuration => {
     const config = getConfig(env);
@@ -35,26 +59,7 @@ const result = (env: any): webpack.Configuration => {
 
     const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
 
-    const { pages, hreflangs } = getPages((path) => require(path));
-
-    const getTemplateParameters = (shortLocalizedPathname: string, parameters: Parameters & { pathname: string }) => {
-        let url = originalTemplateParameters.url;
-        const origin = url.replace(/\/$/, '');
-        if (parameters.pathname) {
-            url = `${origin}${parameters.pathname}`;
-        }
-        return {
-            ...originalTemplateParameters,
-            ...parameters,
-            url,
-            hreflangs: hreflangs.map(({ hreflang, pathname }) => {
-                return {
-                    hreflang,
-                    href: `${origin}${pathname}${parameters.pathname.replace(shortLocalizedPathname, '')}`,
-                };
-            }),
-        };
-    };
+    const { pages, hreflangs } = getPages(config.mode, (path) => require(path));
 
     // Replace the old html webpack plugin with this
     plugins.splice(
@@ -117,7 +122,7 @@ const result = (env: any): webpack.Configuration => {
             const index = {
                 name: 'index.html',
                 data: compiled(
-                    getTemplateParameters('', {
+                    getTemplateParameters(originalTemplateParameters, hreflangs, '', {
                         title: originalTemplateParameters.appName,
                         description: originalTemplateParameters.description,
                         pathname: '/',
@@ -128,7 +133,9 @@ const result = (env: any): webpack.Configuration => {
             const rest = pages.map(({ shortLocalizedPathname, filename, parameters }) => {
                 return {
                     name: filename,
-                    data: compiled(getTemplateParameters(shortLocalizedPathname, parameters)),
+                    data: compiled(
+                        getTemplateParameters(originalTemplateParameters, hreflangs, shortLocalizedPathname, parameters)
+                    ),
                 };
             });
             return [index, ...rest];
