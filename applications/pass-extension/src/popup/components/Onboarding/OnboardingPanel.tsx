@@ -7,7 +7,7 @@ import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import type { Maybe, WorkerMessageWithSender } from '@proton/pass/types';
 import { type Callback, OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -126,6 +126,17 @@ export const OnboardingPanel: VFC = () => {
                     label: c('Label').t`Rate us`,
                     type: 'button',
                     onClick: () => window.open(webStoreURL, '_blank'),
+                },
+            },
+            [OnboardingMessage.STORAGE_ISSUE]: {
+                title: c('Title').t`Low disk space`,
+                message: c('Info')
+                    .t`We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${PASS_SHORT_APP_NAME} to work smoothly.`,
+                className: 'ui-red',
+                action: {
+                    label: c('Label').t`Need help ?`,
+                    type: 'button',
+                    onClick: () => openSettings('support'),
                 },
             },
         }),
