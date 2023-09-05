@@ -11,5 +11,5 @@ export interface ThumbnailGenerator {
 
 export enum ThumbnailType {
     PREVIEW = 1,
-    PHOTO = 2,
+    HD_PREVIEW = 2,
 }
