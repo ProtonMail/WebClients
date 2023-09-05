@@ -1,12 +1,36 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import template from 'lodash.template';
 import { Parameters } from 'proton-account/src/pages/interface';
-import { getPages } from 'proton-account/webpack.pages';
+import { HrefLang, getPages } from 'proton-account/webpack.pages';
 import { Configuration } from 'webpack';
 import 'webpack-dev-server';
 
 import getConfig from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
+
+const getTemplateParameters = (
+    originalTemplateParameters: any,
+    hreflangs: HrefLang[],
+    shortLocalizedPathname: string,
+    parameters: Parameters & { pathname: string }
+) => {
+    let url = originalTemplateParameters.url;
+    const origin = url.replace(/\/$/, '');
+    if (parameters.pathname) {
+        url = `${origin}${parameters.pathname}`;
+    }
+    return {
+        ...originalTemplateParameters,
+        ...parameters,
+        url,
+        hreflangs: hreflangs.map(({ hreflang, pathname }) => {
+            return {
+                hreflang,
+                href: `${origin}${pathname}${parameters.pathname.replace(shortLocalizedPathname, '')}`,
+            };
+        }),
+    };
+};
 
 const result = (env: any): Configuration => {
     const config = getConfig(env);
@@ -26,26 +50,7 @@ const result = (env: any): Configuration => {
 
     const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
 
-    const { pages, hreflangs } = getPages((path) => require(path));
-
-    const getTemplateParameters = (shortLocalizedPathname: string, parameters: Parameters & { pathname: string }) => {
-        let url = originalTemplateParameters.url;
-        const origin = url.replace(/\/$/, '');
-        if (parameters.pathname) {
-            url = `${origin}${parameters.pathname}`;
-        }
-        return {
-            ...originalTemplateParameters,
-            ...parameters,
-            url,
-            hreflangs: hreflangs.map(({ hreflang, pathname }) => {
-                return {
-                    hreflang,
-                    href: `${origin}${pathname}${parameters.pathname.replace(shortLocalizedPathname, '')}`,
-                };
-            }),
-        };
-    };
+    const { pages, hreflangs } = getPages(config.mode, (path) => require(path));
 
     pages.forEach(({ rewrite }) => {
         rewrites.push(rewrite);
@@ -68,7 +73,7 @@ const result = (env: any): Configuration => {
             const index = {
                 name: 'index.html',
                 data: compiled(
-                    getTemplateParameters('', {
+                    getTemplateParameters(originalTemplateParameters, hreflangs, '', {
                         title: originalTemplateParameters.appName,
                         description: originalTemplateParameters.description,
                         pathname: '/',
@@ -79,7 +84,9 @@ const result = (env: any): Configuration => {
             const rest = pages.map(({ shortLocalizedPathname, filename, parameters }) => {
                 return {
                     name: filename,
-                    data: compiled(getTemplateParameters(shortLocalizedPathname, parameters)),
+                    data: compiled(
+                        getTemplateParameters(originalTemplateParameters, hreflangs, shortLocalizedPathname, parameters)
+                    ),
                 };
             });
             return [index, ...rest];
