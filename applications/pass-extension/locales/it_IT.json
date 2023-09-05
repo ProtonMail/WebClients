@@ -246,7 +246,7 @@
         "Accedi con ${ BRAND_NAME }"
       ],
       "Sign out": [
-        "Esci"
+        "Disconnetti"
       ],
       "Sort vault items": [
         "Ordina gli elementi della cassaforte"
@@ -526,6 +526,9 @@
         "${ count } elemento",
         "${ count } elementi"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } importerà solamente i login e le note. I passaporti, i file allegati, ecc. non sono al momento supportati."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } volta",
         "${ revisionNumber } volte"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Se disabilitato, ${ PASS_APP_NAME } non ti proporrà più la generazione di password efficaci nei moduli di registrazione."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Se abilitato, il menu di riempimento automatico si aprirà una volta selezionato il campo."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Se abilitato, potrai compilare istantaneamente le tue credenziali cliccando sull'icona di ${ PASS_APP_NAME }."
