@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import useLoading from '@proton/hooks/useLoading';
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
+import { KeyTransparencySetting } from '@proton/shared/lib/interfaces';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -17,7 +18,7 @@ const KTToggle = ({ id }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const [{ KT = 0 } = {}] = useMailSettings();
+    const [{ KT = KeyTransparencySetting.Disabled } = {}] = useMailSettings();
 
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(updateKT(+target.checked));
