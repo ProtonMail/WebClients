@@ -52,17 +52,21 @@ export default class UploadWorkerBuffer {
     ) {
         if (thumbnailsEncryptedBlockGenerator) {
             // We don't need the waitForCondition there as we generate a limited number of thumbnails consisting of one small block we don't count for the limit.
-            for await (const encryptedThumbnailBlock of thumbnailsEncryptedBlockGenerator) {
-                this.thumbnailsEncryptedBlocks.set(encryptedThumbnailBlock.index, encryptedThumbnailBlock);
+            let encryptedThumbnailBlock = await thumbnailsEncryptedBlockGenerator.next();
+            while (!encryptedThumbnailBlock.done) {
+                this.thumbnailsEncryptedBlocks.set(encryptedThumbnailBlock.value.index, encryptedThumbnailBlock.value);
+                encryptedThumbnailBlock = await thumbnailsEncryptedBlockGenerator.next();
             }
         }
-        for await (const encryptedBlock of encryptedBlocksGenerator) {
+        let encryptedBlock = await encryptedBlocksGenerator.next();
+        while (!encryptedBlock.done) {
             await waitForCondition(
                 () =>
                     this.encryptedBlocks.size < MAX_ENCRYPTED_BLOCKS &&
                     this.uploadingBlocks.length < MAX_UPLOADING_BLOCKS
             );
-            this.encryptedBlocks.set(encryptedBlock.index, encryptedBlock);
+            this.encryptedBlocks.set(encryptedBlock.value.index, encryptedBlock.value);
+            encryptedBlock = await encryptedBlocksGenerator.next();
         }
 
         this.encryptionFinished = true;
