@@ -3,11 +3,22 @@ import type { ExifTags, ExpandedTags } from 'exifreader';
 
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
+import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
 import { convertSubjectAreaToSubjectCoordinates, formatExifDateTime } from './utils';
 
-export const getExifInfo = (file: ArrayBuffer | SharedArrayBuffer | Buffer): ExpandedTags => {
-    return ExifReader.load(file, { expanded: true });
+export const getExifInfo = async (file: File, mimeType: string): Promise<ExpandedTags | undefined> => {
+    if (isSVG(mimeType)) {
+        return undefined;
+    }
+    await file.arrayBuffer().then((buffer) => {
+        // In case of error with return empty exif
+        try {
+            return ExifReader.load(buffer, { expanded: true });
+        } catch (err) {
+            return undefined;
+        }
+    });
 };
 
 export async function encryptExifInfo(
