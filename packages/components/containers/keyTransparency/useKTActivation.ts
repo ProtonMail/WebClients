@@ -5,7 +5,7 @@ import { KeyTransparencyActivation, KeyTransparencySetting, MailSettings } from 
 
 import { useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';
-import { KT_FF, isKTActive } from './ktStatus';
+import { KT_FF, KtFeatureEnum, isKTActive } from './ktStatus';
 
 const getKTActivationPromise = async (
     featureFlag: KT_FF,
@@ -18,10 +18,17 @@ const getKTActivationPromise = async (
     if (!(await isKTActive(appName, featureFlag))) {
         return KeyTransparencyActivation.DISABLED;
     }
-    if (mailSettings.KT === KeyTransparencySetting.Disabled) {
+    if (featureFlag == KtFeatureEnum.ENABLE_CORE) {
         return KeyTransparencyActivation.LOG_ONLY;
     }
-    if (mailSettings.KT === KeyTransparencySetting.Enabled) {
+    if (featureFlag == KtFeatureEnum.ENABLE_UI) {
+        if (appName === APPS.PROTONMAIL) {
+            if (mailSettings.KT === KeyTransparencySetting.Enabled) {
+                return KeyTransparencyActivation.SHOW_UI;
+            } else {
+                return KeyTransparencyActivation.LOG_ONLY;
+            }
+        }
         return KeyTransparencyActivation.SHOW_UI;
     }
     return KeyTransparencyActivation.DISABLED;
