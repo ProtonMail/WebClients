@@ -151,7 +151,7 @@ export const getMailAppRoutes = ({
                 icon: 'lock-filled',
                 subsections: [
                     {
-                        text: c('Title').t`Address verification`,
+                        text: c('Title').t`Address and key verification`,
                         id: 'address-verification',
                     },
                     {

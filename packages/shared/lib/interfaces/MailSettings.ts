@@ -88,4 +88,5 @@ export interface MailSettings {
     UnreadFavicon: number;
     RecipientLimit: number;
     AlmostAllMail: number;
+    KT: number;
 }
