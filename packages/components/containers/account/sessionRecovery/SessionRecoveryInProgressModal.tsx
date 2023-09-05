@@ -12,7 +12,11 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
 } from '../../../components';
-import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../hooks';
+import {
+    useHasConfirmedSessionRecoveryInProgress,
+    useSessionRecoveryGracePeriodHoursRemaining,
+    useUser,
+} from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
@@ -26,6 +30,7 @@ enum STEP {
 const SessionRecoveryInProgressModal = ({ ...rest }: ModalProps) => {
     const [user] = useUser();
     const [step, setStep] = useState(STEP.INFO);
+    const { confirmSessionRecoveryInProgress } = useHasConfirmedSessionRecoveryInProgress();
 
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();
 
@@ -100,10 +105,10 @@ const SessionRecoveryInProgressModal = ({ ...rest }: ModalProps) => {
                         </Button>
                         <Button
                             color="norm"
-                            onClick={() =>
-                                // TODO: do not show modal again in this session
-                                setStep(STEP.RESET_CONFIRMED)
-                            }
+                            onClick={() => {
+                                confirmSessionRecoveryInProgress();
+                                setStep(STEP.RESET_CONFIRMED);
+                            }}
                         >
                             {c('Action').t`It was me, continue`}
                         </Button>
