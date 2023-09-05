@@ -1,8 +1,7 @@
-import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
-import {
+import type {
     FileKeys,
     FileRequestBlock,
     Photo,
@@ -12,7 +11,7 @@ import {
     UploadFileProgressCallbacks,
 } from './interface';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { ThumbnailType, makeThumbnail } from './thumbnail';
+import { getThumbnailsData } from './thumbnail';
 import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
@@ -39,31 +38,7 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailsDataPromise = mimeTypePromise.then(async (mimeType) => {
-            const previewThumbnail = await makeThumbnail(mimeType, file).catch((err) => {
-                traceError(err);
-                return undefined;
-            });
-            if (!previewThumbnail) {
-                return undefined;
-            }
-            if (
-                !isPhoto ||
-                (mimeType == SupportedMimeTypes.jpg &&
-                    previewThumbnail?.originalWidth &&
-                    previewThumbnail?.originalWidth <= HD_THUMBNAIL_MAX_SIDE)
-            ) {
-                return [previewThumbnail];
-            }
-            const photoThumbnail = await makeThumbnail(mimeType, file, ThumbnailType.HD_PREVIEW).catch((err) => {
-                traceError(err);
-                return undefined;
-            });
-            if (photoThumbnail) {
-                return [previewThumbnail, photoThumbnail];
-            }
-            return undefined;
-        });
+        const thumbnailsDataPromise = getThumbnailsData(mimeTypePromise, file, isPhoto);
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
