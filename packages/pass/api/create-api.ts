@@ -56,12 +56,13 @@ const createApi = ({ config, auth, onSessionRefresh }: ApiCreateOptions): Api =>
 
     const refreshHandler = createRefreshHandler({
         apiContext: ctx,
-        onRefresh: (result) => {
-            onSessionRefresh?.(result);
+        onRefresh: (result, RefreshTime) => {
+            onSessionRefresh?.(result, RefreshTime);
             ctx.auth = {
                 UID: result.UID,
                 AccessToken: result.AccessToken,
                 RefreshToken: result.RefreshToken,
+                RefreshTime,
             };
         },
     });
