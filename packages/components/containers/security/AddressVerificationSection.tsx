@@ -2,19 +2,21 @@ import { c } from 'ttag';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../components';
+import { useFeature } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import useKTActivation from '../keyTransparency/useKTActivation';
+import { FeatureCode } from '../features';
+import { KtFeatureEnum } from '../keyTransparency/ktStatus';
 import KTToggle from './KTToggle';
 import PromptPinToggle from './PromptPinToggle';
 
 const AddressVerificationSection = () => {
-    const ktActivation = useKTActivation();
+    const { feature } = useFeature(FeatureCode.KeyTransparencyAccount);
+    const showKTSetting = feature?.Value === KtFeatureEnum.ENABLE_UI;
     return (
         <SettingsSection>
             <SettingsLayout>
@@ -32,7 +34,7 @@ const AddressVerificationSection = () => {
                     <PromptPinToggle id="prompt-pin-toggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {ktActivation === KeyTransparencyActivation.DISABLED ? null : (
+            {showKTSetting ? (
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label htmlFor="kt-toggle" className="text-semibold">
@@ -44,7 +46,7 @@ const AddressVerificationSection = () => {
                         <KTToggle id="kt-toggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
-            )}
+            ) : null}
         </SettingsSection>
     );
 };
