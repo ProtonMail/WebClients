@@ -28,6 +28,7 @@ import { createLoggerService } from '../services/logger';
 import { createOnboardingService } from '../services/onboarding';
 import { createOTPService } from '../services/otp';
 import { createSettingsService } from '../services/settings';
+import { createStorageService } from '../services/storage';
 import { createStoreService } from '../services/store';
 import { createTelemetryService } from '../services/telemetry';
 import { WorkerContext, withContext } from './context';
@@ -69,6 +70,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             onboarding: createOnboardingService(),
             otp: createOTPService(),
             settings: createSettingsService(),
+            storage: createStorageService(),
             store: createStoreService(),
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService() : null,
         },
