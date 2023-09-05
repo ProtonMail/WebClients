@@ -81,7 +81,7 @@ describe('block generator', () => {
             },
             {
                 thumbnailData: new Uint8Array([1, 2, 3, 3, 2, 1]),
-                thumbnailType: ThumbnailType.PHOTO,
+                thumbnailType: ThumbnailType.HD_PREVIEW,
             },
         ];
         const { addressPrivateKey, sessionKey } = await setupPromise();

@@ -8,7 +8,7 @@ export function calculateThumbnailSize(
 ): [width: number, height: number] {
     const ratio = Math.min(
         1,
-        thumbnailType === ThumbnailType.PHOTO
+        thumbnailType === ThumbnailType.HD_PREVIEW
             ? HD_THUMBNAIL_MAX_SIDE
             : THUMBNAIL_MAX_SIDE / Math.max(img.width, img.height)
     );
