@@ -37,7 +37,7 @@ const AddressVerificationSection = () => {
                     <SettingsLayoutLeft>
                         <label htmlFor="kt-toggle" className="text-semibold">
                             <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
-                            <Info title={c('Tooltip prompt to trust keys').t`.`} />
+                            <Info title={c('Tooltip prompt to trust keys').t`TODO`} />
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt-2">
