@@ -32,12 +32,7 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
 
     return (
         <>
-            {renderConfirmCancelModal && (
-                <ConfirmSessionRecoveryCancellationModal
-                    onDismiss={() => setConfirmCancelModalOpen(false)}
-                    {...confirmCancelModalProps}
-                />
-            )}
+            {renderConfirmCancelModal && <ConfirmSessionRecoveryCancellationModal {...confirmCancelModalProps} />}
             <div className={clsx('max-w46e rounded-lg border', className)}>
                 <div className="p-6 border-bottom border-weak">
                     <SessionRecoveryStatusTitle status="pending" />
