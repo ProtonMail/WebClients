@@ -35,13 +35,13 @@ const AddressVerificationSection = () => {
             {ktActivation === KeyTransparencyActivation.DISABLED ? null : (
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="trustToggle" className="text-semibold">
+                        <label htmlFor="kt-toggle" className="text-semibold">
                             <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
                             <Info title={c('Tooltip prompt to trust keys').t`.`} />
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt-2">
-                        <KTToggle />
+                        <KTToggle id="kt-toggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
