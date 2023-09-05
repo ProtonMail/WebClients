@@ -45,6 +45,7 @@ import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
 import mailCalendar from './mail-calendar.svg';
+import PasswordResetAvailableCard from './sessionRecovery/statusCards/PasswordResetAvailableCard';
 import SessionRecoveryInProgressCard from './sessionRecovery/statusCards/SessionRecoveryInProgressCard';
 import unverified from './unverified.svg';
 
@@ -120,6 +121,9 @@ const UsernameSection = ({ app }: Props) => {
             <SettingsSection>
                 {sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
                     <SessionRecoveryInProgressCard className="mb-4" />
+                )}
+                {sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
+                    <PasswordResetAvailableCard className="mb-4" />
                 )}
                 {user.Type === UserType.EXTERNAL &&
                     primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
