@@ -1,6 +1,6 @@
 import { VERIFICATION_STATUS } from '@proton/crypto';
 
-import type { Photo } from '../_photos/interface';
+import type { Photo } from '../_photos';
 
 /**
  * Link should not be used directly. It is general set of attributes
