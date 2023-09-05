@@ -4,7 +4,6 @@ import devToolsEnhancer from 'remote-redux-devtools';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
@@ -17,7 +16,6 @@ import {
 } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
-import { workerReady } from '@proton/pass/utils/worker';
 
 import { isPopupPort } from '../../shared/extension/port';
 import WorkerMessageBroker from '../channel';
@@ -44,12 +42,15 @@ const store = configureStore({
 
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
     getAuth: withContext((ctx) => ctx.service.auth.store),
+    getCache: withContext((ctx) => ctx.service.storage.local.get(['state', 'snapshot', 'salt'])),
+    setCache: withContext((ctx, encryptedCache) => ctx.service.storage.local.set(encryptedCache)),
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
     getEventInterval: () =>
         WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
 
+    getWorkerState: withContext((ctx) => ctx.getState()),
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
      * clear */
@@ -59,14 +60,9 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             WorkerMessageBroker.buffer.flush();
         } else {
             ctx.setStatus(WorkerStatus.ERROR);
-            if (result.clearCache) {
-                await browserLocalStorage.removeItems(['salt', 'state', 'snapshot']);
-            }
+            if (result.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
         }
     }),
-
-    /* only trigger cache flow if worker is ready */
-    onCacheRequest: withContext((ctx) => workerReady(ctx.getState().status)),
 
     onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
@@ -81,11 +77,10 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         auth.store.setLockToken(sessionLockToken);
         auth.store.setLockTTL(sessionLockTTL);
         auth.store.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
-        await auth.persist();
+        await auth.persistSession();
     }),
 
-    /* Update the extension's badge count on every
-     * item state change */
+    /* Update the extension's badge count on every item state change */
     onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
 
     onImportProgress: (progress, endpoint) => {
