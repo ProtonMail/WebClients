@@ -60,6 +60,7 @@ const defaultMailSettings: MailSettings = {
     PMSignatureReferralLink: 0,
     DraftMIMEType: MIME_TYPES.PLAINTEXT,
     AutoDeleteSpamAndTrashDays: 0,
+    KT: 0,
 };
 
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {
