@@ -1,5 +1,4 @@
 import createApi, { exposeApi } from '@proton/pass/api';
-import { getPersistedSession, updateInMemorySession, updatePersistedSession } from '@proton/pass/auth';
 import { generateKey } from '@proton/pass/crypto/utils';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
@@ -11,9 +10,9 @@ import noop from '@proton/utils/noop';
 import * as config from '../app/config';
 import { createDevReloader } from '../shared/extension';
 import WorkerMessageBroker from './channel';
-import { createWorkerContext } from './context';
+import { createWorkerContext, withContext } from './context';
 
-if (BUILD_TARGET === 'chrome') {
+if (BUILD_TARGET === 'chrome' && ENV === 'development') {
     /* https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
     const globalScope = self as any as ServiceWorkerGlobalScope;
     globalScope.oninstall = () => globalScope.skipWaiting();
@@ -56,14 +55,9 @@ sentry({
 const api = exposeApi(
     createApi({
         config,
-        onSessionRefresh: async ({ AccessToken, RefreshToken }) => {
-            if (await getPersistedSession()) {
-                await Promise.all([
-                    updatePersistedSession({ AccessToken, RefreshToken }),
-                    updateInMemorySession({ AccessToken, RefreshToken }),
-                ]);
-            }
-        },
+        onSessionRefresh: withContext(async (ctx, { AccessToken, RefreshToken }, RefreshTime) => {
+            await ctx.service.auth.setSessionTokens({ AccessToken, RefreshToken, RefreshTime });
+        }),
     })
 );
 
