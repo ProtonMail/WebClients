@@ -521,6 +521,9 @@
         "${ count } objekt",
         "${ count } objekt"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } kommer endast importera inloggningar och anteckningar. Pass, bifogade filer etc. stöds inte just nu."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } gång",
         "${ revisionNumber } gånger"
