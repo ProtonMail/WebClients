@@ -1,90 +1,21 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    ModalProps,
-    Prompt,
-    SettingsLink,
-    useModalState,
-} from '../../../components';
+import { ModalProps, Prompt, useModalState } from '../../../components';
 import AuthModal from '../../../containers/password/AuthModal';
-import { useEventManager, useUser } from '../../../hooks';
-import sessionRecoveryCancelledIllustration from './session-recovery-cancelled-illustration.svg';
-
-enum STEP {
-    CONFIRM_PROMPT,
-    RESET_CANCELLED,
-}
+import { useEventManager, useNotifications, useUser } from '../../../hooks';
 
 interface Props extends ModalProps {
-    onDismiss: () => void;
+    onBack?: () => void;
 }
 
-const ConfirmSessionRecoveryCancellationModal = ({ onDismiss, ...rest }: Props) => {
-    const [user] = useUser();
+const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: Props) => {
     const { call } = useEventManager();
     const [authModal, setAuthModalOpen, renderAuthModal] = useModalState();
-    const [step, setStep] = useState(STEP.CONFIRM_PROMPT);
-
-    if (step === STEP.RESET_CANCELLED) {
-        const boldEmail = (
-            <b key="bold-user-email" className="text-break">
-                {user.Email}
-            </b>
-        );
-
-        const boldPassword = (
-            <b key="bold-password">{
-                // translator: full sentence "Please secure your account by changing your password and setting up a trusted recovery method."
-                c('Info').t`password`
-            }</b>
-        );
-
-        const boldTrustedRecoveryMethod = (
-            <b key="bold-password">{
-                // translator: full sentence "Please secure your account by changing your password and setting up a trusted recovery method."
-                c('Info').t`trusted recovery method`
-            }</b>
-        );
-
-        return (
-            <Modal {...rest}>
-                <ModalHeader title={c('Title').t`Password reset cancelled`} />
-                <ModalContent>
-                    <div className="flex flex-justify-center">
-                        <img src={sessionRecoveryCancelledIllustration} alt="Session recovery cancelled" />
-                    </div>
-                    <p>{c('Info').jt`The password reset for ${boldEmail} has been cancelled.`}</p>
-                    <p>
-                        {
-                            // translator: full sentence "Please secure your account by changing your password and setting up a trusted recovery method."
-                            c('Info')
-                                .jt`Please secure your account by changing your ${boldPassword} and setting up a ${boldTrustedRecoveryMethod}.`
-                        }
-                    </p>
-                </ModalContent>
-                <ModalFooter>
-                    <Button onClick={rest.onClose}>{c('Action').t`Dismiss`}</Button>
-                    <ButtonLike
-                        color="norm"
-                        as={SettingsLink}
-                        path="/account-password?action=change-password"
-                        onClick={() => rest.onClose}
-                    >
-                        {c('Action').t`Secure my account now`}
-                    </ButtonLike>
-                </ModalFooter>
-            </Modal>
-        );
-    }
+    const { createNotification } = useNotifications();
+    const [user] = useUser();
 
     return (
         <>
@@ -95,22 +26,30 @@ const ConfirmSessionRecoveryCancellationModal = ({ onDismiss, ...rest }: Props) 
                     onCancel={() => setAuthModalOpen(false)}
                     onSuccess={async () => {
                         await call();
-                        setStep(STEP.RESET_CANCELLED);
+                        createNotification({ text: c('Info').t`Password reset cancelled`, showCloseButton: false });
+                        onClose?.();
                     }}
                 />
             )}
             <Prompt
                 title={c('Title').t`Cancel password reset?`}
+                subline={
+                    // translator: variable here is the users email address
+                    c('Title').t`for ${user.Email}`
+                }
                 buttons={[
                     <Button color="danger" onClick={() => setAuthModalOpen(true)}>
                         {c('Action').t`Cancel password reset`}
                     </Button>,
-                    <Button onClick={onDismiss}>{c('Action').t`Dismiss`}</Button>,
+                    onBack ? (
+                        <Button onClick={onBack}>{c('Action').t`Back`}</Button>
+                    ) : (
+                        <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+                    ),
                 ]}
                 {...rest}
             >
-                <p>{c('Info').t`This will cancel the password reset process.`}</p>
-                <p>{c('Info').t`No other changes will take effect.`}</p>
+                <p>{c('Info').t`This will cancel the password reset process. No other changes will take effect.`}</p>
             </Prompt>
         </>
     );
