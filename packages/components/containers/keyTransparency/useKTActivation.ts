@@ -3,9 +3,7 @@ import { useEffect, useState } from 'react';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation, KeyTransparencySetting, MailSettings } from '@proton/shared/lib/interfaces';
 
-import { useGetMailSettings } from '../..';
-import useConfig from '../../hooks/useConfig';
-import useFeature from '../../hooks/useFeature';
+import { useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KT_FF, isKTActive } from './ktStatus';
 
