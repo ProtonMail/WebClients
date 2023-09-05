@@ -1,7 +1,11 @@
+import { useEffect } from 'react';
+
 import { DAY, HOUR } from '@proton/shared/lib/constants';
+import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
 import useAuthentication from './useAuthentication';
+import useLocalState from './useLocalState';
 import useUser from './useUser';
 import useUserSettings from './useUserSettings';
 
@@ -64,6 +68,29 @@ export const useIsSessionRecoveryInitiationAvailable = () => {
     return isSessionRecoveryAvailable && isSessionRecoveryEnabled && !sessionRecoveryInitiated;
 };
 
+export const useHasConfirmedSessionRecoveryInProgress = () => {
+    const authentication = useAuthentication();
+    const confirmedLocalStorageKey = `sr-ip--confirmed:${authentication.getUID()}`;
+
+    const [hasConfirmed, setHasConfirmed] = useLocalState(false, confirmedLocalStorageKey);
+
+    const sessionRecoveryState = useSessionRecoveryState();
+    const isGracePeriod = sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD;
+    useEffect(() => {
+        if (!isGracePeriod) {
+            // Clear up local storage when not in grace period
+            removeItem(confirmedLocalStorageKey);
+        }
+    }, [isGracePeriod]);
+
+    return {
+        hasConfirmedSessionRecoveryInProgress: hasConfirmed,
+        confirmSessionRecoveryInProgress: () => {
+            setHasConfirmed(() => true);
+        },
+    };
+};
+
 /**
  * Determines whether applications should display session recovery in progress "notifications".
  * Notifications here means banners or modals and not the browser notifications.
@@ -72,10 +99,12 @@ export const useShouldNotifySessionRecoveryInProgress = () => {
     const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
     const sessionRecoveryState = useSessionRecoveryState();
     const isSessionRecoveryInitiatedByCurrentSession = useIsSessionRecoveryInitiatedByCurrentSession();
+    const { hasConfirmedSessionRecoveryInProgress } = useHasConfirmedSessionRecoveryInProgress();
 
     return (
         isSessionRecoveryAvailable &&
         sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD &&
+        !hasConfirmedSessionRecoveryInProgress &&
         !isSessionRecoveryInitiatedByCurrentSession
     );
 };
