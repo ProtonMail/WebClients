@@ -12,7 +12,7 @@ interface Props {
     id?: string;
 }
 
-const PromptPinToggle = ({ id }: Props) => {
+const KTToggle = ({ id }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -28,4 +28,4 @@ const PromptPinToggle = ({ id }: Props) => {
     return <Toggle id={id} loading={loading} checked={!!KT} onChange={(e) => withLoading(handleChange(e))} />;
 };
 
-export default PromptPinToggle;
+export default KTToggle;
