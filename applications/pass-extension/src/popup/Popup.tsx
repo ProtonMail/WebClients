@@ -10,7 +10,7 @@ import { App } from './App';
 import { ExtensionError } from './components/ExtensionError';
 import { PopupContextProvider } from './context/popup/PopupContext';
 import { usePopupContext } from './hooks/usePopupContext';
-import { usePopupZoomSurgery } from './hooks/usePopupZoomSurgery';
+import { usePopupSizeSurgery } from './hooks/usePopupSizeSurgery';
 import { Lobby } from './views/Lobby/Lobby';
 
 import './Popup.scss';
@@ -24,7 +24,7 @@ const AppOrLobby = () => {
 };
 
 const Popup = () => {
-    usePopupZoomSurgery();
+    usePopupSizeSurgery();
 
     return (
         <ExtensionWindow endpoint="popup">
