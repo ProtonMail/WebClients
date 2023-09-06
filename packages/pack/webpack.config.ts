@@ -50,7 +50,7 @@ const getConfig = (env: any): Configuration => {
         bail: isProduction,
         devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
         watchOptions: {
-            ignored: /webpack.config.ts|node_modules|(i18n\/*.json)|\*\.(gif|jpeg|jpg|ico|png)/,
+            ignored: /dist|node_modules|locales|\.(gif|jpeg|jpg|ico|png|svg)/,
             aggregateTimeout: 600,
         },
         resolve: {
