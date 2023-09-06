@@ -22,7 +22,6 @@ export interface FormHandle {
     detach: () => void;
 }
 
-export type HTMLElementWithActionTrap = HTMLInputElement & { preventAction?: boolean };
 export interface FieldHandle {
     formType: FormType;
     fieldType: FieldType;
