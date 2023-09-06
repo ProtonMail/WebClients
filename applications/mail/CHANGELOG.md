@@ -1,4 +1,17 @@
-## Release 5.0.28 — Sep 6, 2023
+## Release 5.0.29 — Sep 27, 2023
+
+### Improvements
+
+-   Added strikethrough in the available styles of the composer
+
+### Fixes
+
+-   Fixed keeping changes in the composer when the message is sent offline
+-   Fixed the drag and drop of text in the composer when using rich text
+-   Stopped suggesting to merge contacts that have been imported with unknown contact name 
+-   Fixed automatically turning numbers followed by a dot to an numbered list
+
+## Release 5.0.28 — Sep 13, 2023
 
 ### Improvements
 
