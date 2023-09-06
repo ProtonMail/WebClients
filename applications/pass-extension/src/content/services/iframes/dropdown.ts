@@ -123,7 +123,6 @@ export const createDropdown = (): InjectedDropdown => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
-            iframe.close();
             service.autofill.autofillGeneratedPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
         })
