@@ -23,6 +23,7 @@ import {
     CalendarEventsCache,
     CalendarsEventsCache,
     DecryptedEventTupleResult,
+    EventReadResult,
     SharedVcalVeventComponent,
     getEventStoreRecordHasEventData,
 } from './interface';
@@ -46,13 +47,15 @@ const getEventAndUpsert = async ({
     calendarEventsCache: CalendarEventsCache;
     api: Api;
     getOpenedMailEvents?: () => OpenedMailEvent[];
-}): Promise<void> => {
+}): Promise<CalendarEvent> => {
     try {
         const { Event } = await api<{ Event: CalendarEvent }>({
             ...getEventRoute(calendarID, eventID),
             silence: true,
         });
         upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
+
+        return Event;
     } catch (error: any) {
         throw new Error(GET_EVENT_ERROR_MESSAGE);
     }
@@ -75,14 +78,14 @@ const getDecryptedEvent = ({
 const getRecurringEventAndUpsert = ({
     eventComponent,
     calendarEvent,
-    cacheRef,
+    calendarsEventsCacheRef,
     calendarEventsCache,
     api,
     getOpenedMailEvents,
 }: {
     eventComponent: SharedVcalVeventComponent;
     calendarEvent: CalendarEvent;
-    cacheRef: MutableRefObject<CalendarsEventsCache>;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     calendarEventsCache: CalendarEventsCache;
     api: Api;
     getOpenedMailEvents?: () => OpenedMailEvent[];
@@ -91,7 +94,7 @@ const getRecurringEventAndUpsert = ({
         return;
     }
 
-    const cache = cacheRef.current;
+    const cache = calendarsEventsCacheRef.current;
     const uid = eventComponent.uid.value;
     const calendarID = calendarEvent.CalendarID;
 
@@ -131,18 +134,20 @@ const getRecurringEventAndUpsert = ({
 const setEventRecordPromise = ({
     eventRecord,
     getCalendarEventRaw,
-    cacheRef,
+    calendarsEventsCacheRef,
     calendarEventsCache,
     api,
     getOpenedMailEvents,
+    forceDecryption,
 }: {
     eventRecord: RequireSome<CalendarEventStoreRecord, 'eventData'>;
     getCalendarEventRaw: GetCalendarEventRaw;
-    cacheRef: MutableRefObject<CalendarsEventsCache>;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     calendarEventsCache: CalendarEventsCache;
     api: Api;
     getOpenedMailEvents?: () => OpenedMailEvent[];
-}) => {
+    forceDecryption?: boolean;
+}): Promise<EventReadResult | undefined> => {
     const { eventData: calendarEvent, eventComponent } = eventRecord;
 
     const onError = (error: any) => {
@@ -158,6 +163,8 @@ const setEventRecordPromise = ({
         }
         eventRecord.eventReadResult = { error };
         eventRecord.eventPromise = undefined;
+
+        return { error };
     };
 
     if (!getIsCalendarEvent(calendarEvent)) {
@@ -168,10 +175,25 @@ const setEventRecordPromise = ({
             api,
             getOpenedMailEvents,
         })
-            .then(() => {
+            .then((calendarEvent) => {
                 // getEventAndUpsert is already clearing these. Repeating here for safety
                 eventRecord.eventReadResult = undefined;
                 eventRecord.eventPromise = undefined;
+
+                if (forceDecryption) {
+                    // we go through a second iteration of setEventRecordPromise, but with a calendarEvent in the record
+                    // so that event decryption is forced
+                    return setEventRecordPromise({
+                        eventRecord: { ...eventRecord, eventData: calendarEvent },
+                        getCalendarEventRaw,
+                        calendarsEventsCacheRef,
+                        calendarEventsCache,
+                        api,
+                        getOpenedMailEvents,
+                        forceDecryption: false,
+                    });
+                }
+                return undefined;
             })
             .catch(onError);
         eventRecord.eventPromise = promise;
@@ -187,7 +209,7 @@ const setEventRecordPromise = ({
         getRecurringEventAndUpsert({
             eventComponent: eventComponent,
             calendarEvent,
-            cacheRef,
+            calendarsEventsCacheRef,
             calendarEventsCache,
             api,
         }),
@@ -198,6 +220,8 @@ const setEventRecordPromise = ({
         .then((result) => {
             eventRecord.eventReadResult = { result };
             eventRecord.eventPromise = undefined;
+
+            return { result };
         })
         .catch(onError);
     eventRecord.eventPromise = promise;
@@ -205,13 +229,30 @@ const setEventRecordPromise = ({
     return promise;
 };
 
-const useCalendarsEventsReader = (
-    calendarEvents: CalendarViewEvent[],
-    cacheRef: MutableRefObject<CalendarsEventsCache>,
-    rerender: () => void,
-    getOpenedMailEvents: () => OpenedMailEvent[],
-    metadataOnly: boolean
-) => {
+const useCalendarsEventsReader = ({
+    calendarEvents,
+    calendarsEventsCacheRef,
+    rerender,
+    getOpenedMailEvents,
+    metadataOnly,
+    onEventRead,
+    forceDecryption,
+}: {
+    calendarEvents: CalendarViewEvent[];
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    rerender: () => void;
+    getOpenedMailEvents: () => OpenedMailEvent[];
+    metadataOnly: boolean;
+    onEventRead?: (
+        calendarID: string,
+        eventID: string,
+        {
+            calendarViewEvent,
+            eventReadResult,
+        }: { calendarViewEvent: CalendarViewEvent; eventReadResult: EventReadResult }
+    ) => void;
+    forceDecryption?: boolean;
+}) => {
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const api = useApi();
     const [loading, setLoading] = useState(false);
@@ -254,8 +295,16 @@ const useCalendarsEventsReader = (
             }
 
             const { calendarData, eventData } = calendarViewEvent.data;
-            const calendarEventsCache = cacheRef.current?.calendars[calendarData.ID];
+            const calendarEventsCache = calendarsEventsCacheRef.current?.calendars[calendarData.ID];
             const eventRecord = calendarEventsCache?.events.get(eventData?.ID || 'undefined');
+
+            if (eventRecord?.eventReadResult && eventData && onEventRead) {
+                onEventRead(calendarData.ID, eventData.ID, {
+                    calendarViewEvent,
+                    eventReadResult: eventRecord.eventReadResult,
+                });
+            }
+
             if (!calendarEventsCache || !eventRecord || eventRecord.eventReadResult || seen.has(eventRecord)) {
                 return acc;
             }
@@ -272,10 +321,16 @@ const useCalendarsEventsReader = (
                 setEventRecordPromise({
                     eventRecord,
                     getCalendarEventRaw,
-                    cacheRef,
+                    calendarsEventsCacheRef,
                     calendarEventsCache,
                     api: apiWithAbort,
                     getOpenedMailEvents,
+                    forceDecryption,
+                }).then((eventReadResult) => {
+                    if (eventReadResult && onEventRead) {
+                        const { eventData } = eventRecord;
+                        onEventRead(eventData.CalendarID, eventData.ID, { calendarViewEvent, eventReadResult });
+                    }
                 });
 
             if (!eventRecord.eventReadRetry) {

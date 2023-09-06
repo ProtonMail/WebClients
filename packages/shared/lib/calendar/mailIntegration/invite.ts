@@ -44,9 +44,8 @@ import {
     getAttendeePartstat,
     getAttendeeRole,
     getIsAlarmComponent,
-    getIsAllDay,
     getPropertyTzid,
-    getSequence,
+
 } from '../vcalHelper';
 import {
     getIsEventCancelled,
@@ -54,6 +53,8 @@ import {
     withSummary,
     withoutRedundantDtEnd,
     withoutRedundantRrule,
+    getSequence,
+    getIsAllDay
 } from '../veventHelper';
 
 export const getParticipantHasAddressID = (

@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
+.skeleton-loader {
+	display: inline-block;
+	border-radius: var(--border-radius-sm);
+	background-color: currentcolor;
+	line-height: 1.2;
+	opacity: 0;
+	animation: anime-skeleton-loader 0.5s calc(var(--index, 0) * 40ms) easing(ease-out-sine) infinite alternate both;
+
+	&::before {
+		content: '\00a0';
+	}
+}
+
+@keyframes anime-skeleton-loader {
+	from {
+		opacity: 0.05;
+	}
+
+	to {
+		opacity: 0.15;
+	}
+}

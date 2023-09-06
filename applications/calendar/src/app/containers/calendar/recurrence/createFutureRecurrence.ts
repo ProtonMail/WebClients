@@ -1,5 +1,6 @@
 import { getSupportedUID } from '@proton/shared/lib/calendar/helper';
-import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
+
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

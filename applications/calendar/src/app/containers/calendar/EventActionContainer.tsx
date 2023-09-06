@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from 'react';
+import {Dispatch, SetStateAction, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -23,9 +23,9 @@ interface Props {
     calendars: VisualCalendar[];
     drawerView?: VIEWS;
     tzid: string;
-    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
 }
-const EventActionContainer = ({ tzid, drawerView, addresses, calendars, eventTargetActionRef }: Props) => {
+const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEventTargetAction }: Props) => {
     const { createNotification } = useNotifications();
     const history = useHistory();
     const openEvent = useOpenEvent();
@@ -69,13 +69,13 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, eventTar
                     );
                     const utcDate = propertyToUTCDate(withOccurrenceDtstart);
                     const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
-                    eventTargetActionRef.current = {
+                    setEventTargetAction({
                         id: `${eventData.ID}-${occurrence.occurrenceNumber}`,
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
                         preventPopover: !!drawerView, // If the app is a drawer app, we want to prevent the popover opening
-                    };
+                    });
                     return handleGotoRange(startInTzid);
                 };
 
@@ -84,13 +84,13 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, eventTar
 
                     const utcDate = propertyToUTCDate(eventComponent.dtstart);
                     const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
-                    eventTargetActionRef.current = {
+                    setEventTargetAction({
                         id: eventData.ID,
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
                         preventPopover: !!drawerView, // If the app is a drawer app, we want to prevent the popover opening
-                    };
+                    });
                     return handleGotoRange(startInTzid);
                 };
 
@@ -106,7 +106,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, eventTar
                     recurrenceId,
                     onGoToEvent: handleGotoEvent,
                     onGoToOccurrence: handleGotoOccurrence,
-                    onLinkError: handleLinkError,
+                    onEventNotFoundError: handleLinkError,
                     onOtherError: handleOtherError,
                 });
 

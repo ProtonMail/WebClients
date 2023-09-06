@@ -1,12 +1,20 @@
 import { c } from 'ttag';
 
+import { API_CODES } from '../../constants';
 import { HTTP_ERROR_CODES } from '../../errors';
 
-export const isNotExistError = (error: any) =>
-    error?.data &&
-    (error.data.Code === 2061 || // invalid id
-        error.data.Code === 2501 || // message does not exist
-        error.data.Code === 20052); // conversation does not exist
+export const isNotExistError = (error: any) => {
+    const notExistErrorCodes = [
+        API_CODES.INVALID_ID_ERROR,
+        API_CODES.NOT_FOUND_ERROR,
+        /**
+         * Mail Specific: Conversation does not exists
+         */
+        20052,
+    ];
+
+    return Boolean(notExistErrorCodes.includes(error.data?.Code));
+};
 
 export const getApiError = (e?: any) => {
     if (!e) {

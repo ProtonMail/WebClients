@@ -89,9 +89,9 @@ export interface CalendarEventsQuery extends PaginationParams {
     MetaDataOnly?: 0 | 1; // default is 0
 }
 
-export interface CalendarEventIDsQuery {
-    AfterID?: string;
+export interface CalendarEventsIDsQuery {
     Limit?: number;
+    AfterID?: string;
 }
 
 export interface CalendarExportEventsQuery extends PaginationParams {

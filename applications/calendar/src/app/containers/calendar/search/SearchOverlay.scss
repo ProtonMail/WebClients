@@ -1,0 +1,132 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+$searchoverlay-breakpoint: em(1000, 16);
+
+.overlay {
+	--min-width: 0;
+	--max-width: 100vw;
+	--max-height: 100vh;
+
+	position: fixed;
+	z-index: $layer-modals;
+	transform-origin: top center;
+	color: var(--text-norm);
+	animation: anime-dropdown-in 0.15s easing(ease-out-cubic) both;
+
+	@keyframes anime-dropdown-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	&.is-dropdown-out {
+		animation-name: anime-dropdown-out;
+
+		@keyframes anime-dropdown-out {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	}
+
+	@include media('<=#{$searchoverlay-breakpoint}') {
+		inset: 0;
+		display: flex;
+		padding-block: 15%;
+		padding-inline: 25%;
+		overflow: hidden;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--backdrop-norm);
+	}
+
+	@include media('<=#{em(520, 16)}') {
+		padding: 5%;
+	}
+
+	@include media('>#{$searchoverlay-breakpoint}') {
+		inset-block-start: calc(var(--top) * 1px - 1px + var(--space-2));
+		/* stylelint-disable */
+		inset-inline-start: calc(var(--left) * 1px - 1px);
+		/* stylelint-enable */
+		border-radius: calc(var(--border-radius) * 1px);
+		box-shadow: var(--shadow-lifted);
+		border: 1px solid var(--border-norm);
+		background: var(--background-norm);
+	}
+
+	/* Backdrop button, meant to override 'autoClose' option on mobile */
+	&-backdrop {
+		@include media('<=#{$searchoverlay-breakpoint}') {
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+			display: block;
+			inline-size: 100%;
+			block-size: 100%;
+			margin: 0;
+			padding: 0;
+			border: none;
+			outline: none;
+			background: none;
+		}
+
+		@include media('>#{$searchoverlay-breakpoint}') {
+			display: none;
+		}
+	}
+
+	/* Scrollable insides of the dropdown */
+	&-content {
+		block-size: calc(
+			var(--height) * 1px
+		); // The min size can't be greater than the remaining space when the dropdown is positioned
+
+		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
+		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
+		overflow: auto;
+		border-radius: var(--border-radius-md);
+		background-color: var(--background-norm);
+		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
+			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
+		background-position: 50% 0, 0 100%;
+		background-size: calc(100% - #{rem(20)}) rem(3);
+		background-repeat: no-repeat;
+
+		@include media('<=#{$searchoverlay-breakpoint}') {
+			position: relative;
+			z-index: 1;
+			inline-size: 100%;
+			box-shadow: var(--shadow-lifted);
+			transition: transform 0.1s ease-out;
+		}
+
+		@include media('>#{$searchoverlay-breakpoint}') {
+			inline-size: calc(var(--width) * 1px);
+			max-inline-size: var(--max-width, unset);
+			max-block-size: var(--max-height, unset);
+			min-inline-size: rem(340);
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: relative;
+			z-index: 1;
+			display: block;
+			block-size: rem(3);
+			flex: 0 0 rem(3);
+			background: var(--background-norm);
+		}
+	}
+}

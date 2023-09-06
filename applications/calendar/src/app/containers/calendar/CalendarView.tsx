@@ -1,19 +1,27 @@
-import { Ref, RefObject } from 'react';
+import { MutableRefObject, Ref, RefObject } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import DayGrid from '../../components/calendar/DayGrid';
 import TimeGrid from '../../components/calendar/TimeGrid';
 import { OnMouseDown } from '../../components/calendar/interactions/interface';
-import { SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
+import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import { CalendarsEventsCache } from './eventStore/interface';
+import { InteractiveState, SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
+import CalendarSearchView from './search/CalendarSearchView';
 
-const { DAY, WEEK, MONTH, MAIL, DRIVE } = VIEWS;
+const { DAY, WEEK, MONTH, MAIL, DRIVE, SEARCH } = VIEWS;
 
 interface Props extends SharedViewProps {
+    calendars: VisualCalendar[];
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     isInteractionEnabled?: boolean;
     onMouseDown: OnMouseDown;
     targetEventData?: TargetEventData;
-    targetEventRef: Ref<HTMLDivElement>;
+    setTargetEventRef: (targetEvent: HTMLElement | null) => void;
+    setInteractiveData: (state: InteractiveState) => void;
+    getOpenedMailEvents: () => OpenedMailEvent[];
     targetMoreData?: TargetMoreData;
     targetMoreRef: Ref<HTMLDivElement>;
     isScrollDisabled: boolean;
@@ -25,6 +33,8 @@ interface Props extends SharedViewProps {
     isDrawerApp?: boolean;
 }
 const CalendarView = ({
+    calendars,
+    calendarsEventsCacheRef,
     view,
     isNarrow,
 
@@ -37,9 +47,12 @@ const CalendarView = ({
     secondaryTimezoneOffset,
 
     targetEventData,
-    targetEventRef,
     targetMoreData,
     targetMoreRef,
+
+    setTargetEventRef,
+    setInteractiveData,
+    getOpenedMailEvents,
 
     displayWeekNumbers,
     displaySecondaryTimezone,
@@ -75,7 +88,7 @@ const CalendarView = ({
                 isScrollDisabled={isScrollDisabled}
                 onMouseDown={onMouseDown}
                 targetEventData={targetEventData}
-                targetEventRef={targetEventRef}
+                targetEventRef={setTargetEventRef}
                 targetMoreRef={targetMoreRef}
                 targetMoreData={targetMoreData}
                 displaySecondaryTimezone={displaySecondaryTimezone}
@@ -102,7 +115,7 @@ const CalendarView = ({
                 isInteractionEnabled={isInteractionEnabled}
                 onMouseDown={onMouseDown}
                 targetEventData={targetEventData}
-                targetEventRef={targetEventRef}
+                targetEventRef={setTargetEventRef}
                 targetMoreData={targetMoreData}
                 targetMoreRef={targetMoreRef}
                 displayWeekNumbers={displayWeekNumbers}
@@ -115,6 +128,20 @@ const CalendarView = ({
                 onClickDate={onClickDate}
                 weekdaysLong={weekdays}
                 {...rest}
+            />
+        );
+    }
+    if (view === SEARCH) {
+        return (
+            <CalendarSearchView
+                calendars={calendars}
+                calendarsEventsCacheRef={calendarsEventsCacheRef}
+                tzid={tzid}
+                date={date}
+                now={now}
+                setTargetEventRef={setTargetEventRef}
+                setInteractiveData={setInteractiveData}
+                getOpenedMailEvents={getOpenedMailEvents}
             />
         );
     }

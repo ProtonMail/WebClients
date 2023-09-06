@@ -54,9 +54,14 @@ import {
     getHasAttendee,
     getHasRecurrenceId,
     getIsAlarmComponent,
-    getSequence,
+
 } from '@proton/shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled, toApiNotifications, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import {
+    getIsEventCancelled,
+    getSequence,
+    toApiNotifications,
+    withDtstamp
+} from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';

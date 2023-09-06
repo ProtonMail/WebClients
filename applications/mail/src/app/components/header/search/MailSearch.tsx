@@ -22,7 +22,6 @@ import { isEncryptedSearchAvailable } from '../../../helpers/encryptedSearch/esU
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import { Breakpoints } from '../../../models/utils';
-import useEncryptedSearchToggleState from '../useEncryptedSearchToggleState';
 import AdvancedSearch from './AdvancedSearch';
 import MailSearchInput from './MailSearchInput';
 import MailSearchSpotlight from './MailSearchSpotlight';
@@ -48,9 +47,8 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
-    const { dropdownOpened } = getESDBStatus();
-    const esState = useEncryptedSearchToggleState(isOpen);
+    const { esStatus, cacheIndexedDB, closeDropdown, esIndexingProgressState } = useEncryptedSearchContext();
+    const { dropdownOpened } = esStatus;
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
@@ -124,7 +122,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
                     isNarrow={breakpoints.isNarrow || breakpoints.isTablet}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
-                    esState={esState}
+                    esIndexingProgressState={esIndexingProgressState}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}
                     searchInputValue={searchInputValue}

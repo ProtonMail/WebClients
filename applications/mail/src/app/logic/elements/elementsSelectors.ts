@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { ESDBStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
+import { ESStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -44,8 +44,8 @@ const currentSearch = (_: RootState, { search }: { search: SearchParameters }) =
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: RootState,
-    { esDBStatus }: { esDBStatus: ESDBStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams> }
-) => esDBStatus;
+    { esStatus }: { esStatus: ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams> }
+) => esStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
 export const elements = createSelector(
@@ -167,8 +167,10 @@ export const shouldUpdatePage = createSelector(
 
 export const isES = createSelector(
     [currentESDBStatus, currentSearch],
-    ({ dbExists, esEnabled, isCacheLimited }, search) =>
-        dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited)
+    ({ dbExists, esEnabled, getCacheStatus }, search) => {
+        const { isCacheLimited } = getCacheStatus();
+        return dbExists && esEnabled && isSearch(search) && (!!search.keyword || !isCacheLimited);
+    }
 );
 
 /**
@@ -185,15 +187,17 @@ export const isES = createSelector(
  */
 export const messagesToLoadMoreES = createSelector(
     [currentESDBStatus, isES, pageChanged, total, currentPage],
-    ({ isCacheLimited, isSearchPartial }, useES, pageChanged, total, currentPage) => {
+    ({ getCacheStatus, isSearchPartial }, useES, pageChanged, total, currentPage) => {
+        const { isCacheLimited } = getCacheStatus();
+
         if (
             useES &&
             isCacheLimited &&
             isSearchPartial &&
             pageChanged &&
-            (total || 0) < (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT
+            (total ?? 0) < (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT
         ) {
-            return (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT - (total || 0);
+            return (currentPage + 2) * ES_EXTRA_RESULTS_LIMIT - (total ?? 0);
         }
         return 0;
     }
@@ -257,10 +261,11 @@ export const loadedEmpty = createSelector(
     (beforeFirstLoad, pendingRequest, total) => !beforeFirstLoad && pendingRequest === false && total === 0
 );
 
-export const partialESSearch = createSelector(
-    [isES, currentESDBStatus],
-    (useES, currentESDBStatus) => useES && currentESDBStatus.isCacheLimited && currentESDBStatus.isSearchPartial
-);
+export const partialESSearch = createSelector([isES, currentESDBStatus], (useES, currentESDBStatus) => {
+    const { isCacheLimited } = currentESDBStatus.getCacheStatus();
+
+    return useES && isCacheLimited && currentESDBStatus.isSearchPartial;
+});
 
 export const stateInconsistency = createSelector(
     [beforeFirstLoad, pendingRequest, retry, isES],

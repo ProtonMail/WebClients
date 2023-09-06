@@ -1,4 +1,11 @@
-import { ESEvent, ES_SYNC_ACTIONS, EventsObject } from '@proton/encrypted-search';
+import {
+    ESEvent,
+    ESTimepoint,
+    ES_SYNC_ACTIONS,
+    EventsObject,
+    hasReactivatedKey,
+    openESDB,
+} from '@proton/encrypted-search';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 
@@ -17,22 +24,17 @@ const eventConversionObject = Object.fromEntries([
 ]);
 
 export const convertEventType = (event: Event, numAddresses: number): ESEvent<ESBaseMessage> | undefined => {
-    const { EventID, Refresh, Messages, Addresses } = event;
+    const { EventID, Refresh, Messages: MessageEvents, Addresses: AddressEvents } = event;
 
     if (!EventID) {
         return;
     }
 
-    // Since the event of marking an address as default has the same structure as key reactivation,
-    // we check that all the user's addresses are affected by an update, thus excluding the former event
-    const attemptReDecryption =
-        !!Addresses &&
-        Addresses.filter((AddressEvent) => AddressEvent.Action === EVENT_ACTIONS.UPDATE).length === numAddresses;
+    const attemptReDecryption = hasReactivatedKey({ AddressEvents, numAddresses });
 
-    const Items = !Messages
+    const Items = !MessageEvents
         ? undefined
-        : Messages.map((messageEvent) => {
-              const { ID, Action, Message } = messageEvent;
+        : MessageEvents.map(({ ID, Action, Message }) => {
               return {
                   ID,
                   Action: eventConversionObject[Action],
@@ -49,6 +51,47 @@ export const convertEventType = (event: Event, numAddresses: number): ESEvent<ES
         attemptReDecryption,
         eventsToStore,
     };
+};
+
+/**
+ * Return the IDs in the metadata table that are not in the content table
+ */
+export const findRecoveryPoint = async (userID: string) => {
+    const esDB = await openESDB(userID);
+    if (!esDB) {
+        return;
+    }
+
+    const contentIDs = new Set(await esDB.getAllKeys('content'));
+    const metadataIDs = await esDB.getAllKeysFromIndex('metadata', 'temporal');
+    metadataIDs.reverse();
+
+    const result: {
+        timepoint?: ESTimepoint;
+        contentLen: number;
+        metadataLen: number;
+    } = {
+        contentLen: contentIDs.size,
+        metadataLen: metadataIDs.length,
+    };
+
+    for (let i = 0; i < metadataIDs.length; i++) {
+        if (!contentIDs.has(metadataIDs[i])) {
+            if (i === 0) {
+                return result;
+            }
+            // The recoveryPoint that content indexing expects refers to the last
+            // indexed content, not the first missing one
+            const ciphertext = await esDB.get('metadata', metadataIDs[i - 1]);
+            esDB.close();
+            if (ciphertext) {
+                result.timepoint = ciphertext.timepoint;
+                return result;
+            }
+        }
+    }
+
+    esDB.close();
 };
 
 export const getTotal = (getMessageCounts: () => Promise<LabelCount[]>) => async () => {

@@ -4,7 +4,8 @@ import {
     getDtendProperty,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
-import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
+
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';

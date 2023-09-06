@@ -31,6 +31,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
@@ -60,6 +61,11 @@ interface Props {
     onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
+    onNavigateToEventFromSearch?: (
+        eventData: CalendarEventSharedData,
+        eventComponent: VcalVeventComponent,
+        occurrence?: { localStart: Date; occurrenceNumber: number }
+    ) => void;
     style: any;
     popoverRef: any;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
@@ -78,6 +84,7 @@ const EventPopover = ({
     onChangePartstat,
     onDelete,
     onClose,
+    onNavigateToEventFromSearch,
     style,
     popoverRef,
     event: targetEvent,
@@ -96,13 +103,16 @@ const EventPopover = ({
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
     const targetEventData = targetEvent?.data || {};
-    const { eventReadResult, eventData, calendarData } = targetEventData;
+    const { eventReadResult, eventData, calendarData, eventRecurrence } = targetEventData;
+    const [{ veventComponent }] = eventReadResult?.result || [{}];
     const calendarBootstrap = readCalendarBootstrap(calendarData.ID);
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
     const isOwnedCalendar = getIsOwnedCalendar(calendarData);
     const isUnknownCalendar = getIsUnknownCalendar(calendarData);
     const isCalendarWritable = getIsCalendarWritable(calendarData);
+
+    const isSearchView = view === VIEWS.SEARCH;
 
     const recurrenceDate = toLocalDate(fromUTCDate(start));
     const recurrenceTimestamp = getUnixTime(recurrenceDate);
@@ -181,9 +191,11 @@ const EventPopover = ({
     const deleteText = c('Delete event button tooltip').t`Delete event`;
     const duplicateText = c('Duplicate event button tooltip').t`Duplicate event`;
     const reloadText = c('Reload event button tooltip').t`Reload event`;
-    const viewText = c('View event button tooltip').t`Open in a new tab`;
+    const viewText = isSearchView
+        ? c('View event button tooltip').t`Navigate to event`
+        : c('View event button tooltip').t`Open in a new tab`;
 
-    const editButton = getCanEditEvent({ isUnknownCalendar, isCalendarDisabled }) && (
+    const editButton = !isSearchView && getCanEditEvent({ isUnknownCalendar, isCalendarDisabled }) && (
         <Tooltip title={editText}>
             <ButtonLike
                 data-testid="event-popover:edit"
@@ -197,7 +209,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const deleteButton = getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation }) && (
+    const deleteButton = !isSearchView && getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation }) && (
         <Tooltip title={deleteText}>
             <ButtonLike
                 data-testid="event-popover:delete"
@@ -211,7 +223,8 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const duplicateButton = onDuplicate &&
+    const duplicateButton = !isSearchView &&
+        onDuplicate &&
         getCanDuplicateEvent({
             isUnknownCalendar,
             isSubscribedCalendar,
@@ -233,7 +246,7 @@ const EventPopover = ({
             </Tooltip>
         );
 
-    const reloadButton = (
+    const reloadButton = !isSearchView && (
         <Tooltip title={reloadText}>
             <ButtonLike
                 data-testid="event-popover:refresh"
@@ -246,15 +259,32 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const viewEventButton = isDrawerApp && (
+    const viewEventButton = (isSearchView || isDrawerApp) && (
         <Tooltip title={viewText}>
-            <AppLink
-                to={linkTo || '/'}
-                selfOpening
-                className="mr-2 button button-small button-ghost-weak button-for-icon"
-            >
-                <Icon name="arrow-out-square" size={14} />
-            </AppLink>
+            {isSearchView ? (
+                <ButtonLike
+                    data-test-id="event-popover:open"
+                    shape="ghost"
+                    onClick={() => {
+                        if (!eventData || !veventComponent) {
+                            return;
+                        }
+                        onNavigateToEventFromSearch?.(eventData, veventComponent, eventRecurrence);
+                    }}
+                    icon
+                    size="small"
+                >
+                    <Icon name="arrow-out-square" size={14} />
+                </ButtonLike>
+            ) : (
+                <AppLink
+                    to={linkTo || '/'}
+                    selfOpening
+                    className="mr-2 button button-small button-ghost-weak button-for-icon"
+                >
+                    <Icon name="arrow-out-square" size={14} />
+                </AppLink>
+            )}
         </Tooltip>
     );
 
@@ -269,16 +299,15 @@ const EventPopover = ({
     const containerClassName = 'eventpopover flex flex-column flex-nowrap';
     const mergedStyle = isNarrow ? undefined : style;
     const frequencyString = useMemo(() => {
-        const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
-        if (!eventComponent) {
+        if (!veventComponent) {
             return;
         }
-        return getTimezonedFrequencyString(eventComponent.rrule, eventComponent.dtstart, {
+        return getTimezonedFrequencyString(veventComponent.rrule, veventComponent.dtstart, {
             currentTzid: tzid,
             weekStartsOn,
             locale: dateLocale,
         });
-    }, [eventReadResult, tzid]);
+    }, [veventComponent, tzid]);
 
     const commonContainerProps = {
         style: mergedStyle,
@@ -316,7 +345,9 @@ const EventPopover = ({
     if (isEventReadLoading) {
         return (
             <PopoverContainer {...commonContainerProps} className="eventpopover p-4">
-                <Loader />
+                <PopoverHeader {...commonHeaderProps}>
+                    <Loader />
+                </PopoverHeader>
             </PopoverContainer>
         );
     }
@@ -378,7 +409,7 @@ const EventPopover = ({
                         <CalendarInviteButtons
                             actions={actions}
                             partstat={userPartstat}
-                            disabled={isCalendarDisabled || !isSelfAddressActive}
+                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
                         />
                     </div>
                 </PopoverFooter>

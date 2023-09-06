@@ -1,6 +1,6 @@
-import startOfDay from './startOfDay';
+import { DAY } from '@proton/shared/lib/constants';
 
-const MILLISECONDS_IN_DAY = 86400000;
+import startOfDay from './startOfDay';
 
 const differenceInCalendarDays = (left: Date, right: Date) => {
     const startOfDayLeft = startOfDay(left);
@@ -8,7 +8,7 @@ const differenceInCalendarDays = (left: Date, right: Date) => {
 
     const diff = startOfDayLeft.getTime() - startOfDayRight.getTime();
 
-    return Math.round(diff / MILLISECONDS_IN_DAY);
+    return Math.round(diff / DAY);
 };
 
 export default differenceInCalendarDays;

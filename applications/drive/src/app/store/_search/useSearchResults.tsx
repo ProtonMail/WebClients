@@ -4,8 +4,8 @@ import { ESLink } from './types';
 import useSearchLibrary from './useSearchLibrary';
 
 function useSearchResultsProvider() {
-    const { encryptedSearch, getESDBStatus } = useSearchLibrary();
-    const { dbExists } = getESDBStatus();
+    const { encryptedSearch, esStatus } = useSearchLibrary();
+    const { dbExists } = esStatus;
 
     const [query, setQuery] = useState<string>('');
     const [isSearching, setIsSearching] = useState(false);
