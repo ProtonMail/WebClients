@@ -87,11 +87,11 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactiv
     });
 
     return (
-        <EncryptedSearchLibraryProvider
-            calendarIDs={allCalendarIDs}
-            hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
-        >
-            <ContactEmailsProvider>
+        <ContactEmailsProvider>
+            <EncryptedSearchLibraryProvider
+                calendarIDs={allCalendarIDs}
+                hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
+            >
                 <CalendarStartupModals setStartupModalState={setStartupModalState} />
                 <Switch>
                     <Route path={['/:appName/event', '/event']}>
@@ -139,8 +139,8 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactiv
                     calendarsEventsCacheRef={calendarsEventsCacheRef}
                     calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
                 />
-            </ContactEmailsProvider>
-        </EncryptedSearchLibraryProvider>
+            </EncryptedSearchLibraryProvider>
+        </ContactEmailsProvider>
     );
 };
 
