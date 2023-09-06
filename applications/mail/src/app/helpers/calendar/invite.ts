@@ -28,17 +28,21 @@ import {
     getIcalMethod,
     getIsEventComponent,
     getIsProtonReply,
-    getIsRecurring,
     getIsTimezoneComponent,
     getIsValidMethod,
     getIsXOrIanaComponent,
     getIsYahooEvent,
     getPmSharedEventID,
     getPmSharedSessionKey,
+
+} from '@proton/shared/lib/calendar/vcalHelper';
+import {
+    getIsEventCancelled,
+    getIsRecurring,
     getSequence,
     getUidValue,
-} from '@proton/shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+    withDtstamp
+} from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';

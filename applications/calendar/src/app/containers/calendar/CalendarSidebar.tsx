@@ -53,6 +53,7 @@ export interface CalendarSidebarProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
+    isSearchView: boolean;
     expanded?: boolean;
     isNarrow: boolean;
     logo?: ReactNode;
@@ -66,6 +67,7 @@ const CalendarSidebar = ({
     addresses,
     calendars,
     calendarUserSettings,
+    isSearchView,
     logo,
     expanded = false,
     isNarrow,
@@ -128,6 +130,7 @@ const CalendarSidebar = ({
             default: Date.UTC(2023, 7, 10, 12),
         }
     );
+
     const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
@@ -166,10 +169,12 @@ const CalendarSidebar = ({
     const primaryAction = (
         <SidebarPrimaryButton
             data-testid="calendar-view:new-event-button"
-            disabled={!onCreateEvent}
-            onClick={onCreateEvent}
-            className="no-mobile"
-        >{c('Action').t`New event`}</SidebarPrimaryButton>
+            disabled={isSearchView ? true : !onCreateEvent}
+            onClick={isSearchView ? undefined : onCreateEvent}
+            className="flex flex-align-items-center flex-justify-center flex-nowrap gap-2 no-mobile"
+        >
+            <span className="text-ellipsis">{c('Action').t`New event`}</span>
+        </SidebarPrimaryButton>
     );
 
     const [displayMyCalendars, setDisplayMyCalendars] = useState(true);

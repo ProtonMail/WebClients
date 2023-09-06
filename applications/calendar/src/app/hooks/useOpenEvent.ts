@@ -1,3 +1,4 @@
+import {getRecurrenceIdDate} from '@proton/shared/lib/calendar/veventHelper';
 import { useCallback } from 'react';
 
 import { getUnixTime } from 'date-fns';
@@ -8,7 +9,7 @@ import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constant
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recurrence/getRecurrenceIdValueFromTimestamp';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { getIsPropertyAllDay, getPropertyTzid, getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -31,7 +32,7 @@ interface HandlerProps {
         eventComponent: VcalVeventComponent,
         occurrence: { localStart: Date; occurrenceNumber: number }
     ) => void;
-    onLinkError: () => void;
+    onEventNotFoundError: () => void;
     onOtherError?: () => void;
 }
 
@@ -48,15 +49,15 @@ export const useOpenEvent = () => {
             recurrenceId,
             onGoToEvent,
             onGoToOccurrence,
-            onLinkError,
+            onEventNotFoundError,
             onOtherError,
         }: HandlerProps) => {
             if (!calendarID || !eventID) {
-                return onLinkError();
+                return onEventNotFoundError();
             }
             const calendar = calendars.find(({ ID }) => ID === calendarID);
             if (!calendar) {
-                return onLinkError();
+                return onEventNotFoundError();
             }
             if (!calendar.Display) {
                 const [{ ID: memberID }] = getMemberAndAddress(addresses, calendar.Members);
@@ -84,7 +85,7 @@ export const useOpenEvent = () => {
                 if (!recurrenceId) {
                     const occurrences = getOccurrences({ component: parsedEvent, maxCount: 1 });
                     if (!occurrences.length) {
-                        return onLinkError();
+                        return onEventNotFoundError();
                     }
                     const [firstOccurrence] = occurrences;
                     return onGoToOccurrence(result.Event, parsedEvent, firstOccurrence);
@@ -97,7 +98,7 @@ export const useOpenEvent = () => {
                     parsedRecurrenceID < getUnixTime(MINIMUM_DATE) ||
                     parsedRecurrenceID > getUnixTime(MAXIMUM_DATE)
                 ) {
-                    return onLinkError();
+                    return onEventNotFoundError();
                 }
 
                 const eventsByUID = await getAllEventsByUID(api, calendarID, parsedEvent.uid.value);
@@ -135,7 +136,7 @@ export const useOpenEvent = () => {
                     // Target occurrence could not be found, fall back to the first generated occurrence
                     const initialOccurrences = getOccurrences({ component: parsedEvent, maxCount: 1 });
                     if (!initialOccurrences.length) {
-                        return onLinkError();
+                        return onEventNotFoundError();
                     }
                     const [firstOccurrence] = initialOccurrences;
                     return onGoToOccurrence(result.Event, parsedEvent, firstOccurrence);
@@ -149,7 +150,7 @@ export const useOpenEvent = () => {
                 return onGoToOccurrence(result.Event, parsedEvent, targetOccurrence);
             } catch (e: any) {
                 if (e.status >= 400 && e.status <= 499) {
-                    return onLinkError();
+                    return onEventNotFoundError();
                 }
                 return onOtherError?.();
             }

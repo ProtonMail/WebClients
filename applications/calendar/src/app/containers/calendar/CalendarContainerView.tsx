@@ -1,9 +1,9 @@
-import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react';
+import { ReactNode, Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader, Href } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -23,6 +23,7 @@ import {
     PrivateMainArea,
     QuickSettingsAppButton,
     RebrandingFeedbackModal,
+    ToolbarButton,
     Tooltip,
     TopBanners,
     TopNavbarListItemFeedbackButton,
@@ -39,6 +40,7 @@ import {
     useToggle,
     useWelcomeFlags,
 } from '@proton/components';
+import { Spotlight } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
@@ -55,6 +57,7 @@ import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -73,6 +76,8 @@ import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
 import { toUrlParams } from './getUrlHelper';
+import CalendarSearch from './search/CalendarSearch';
+import { useCalendarSearch } from './search/CalendarSearchProvider';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -81,7 +86,6 @@ const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), dat
 
 interface Props {
     calendars: VisualCalendar[];
-    onCreateCalendarFromSidebar?: (id: string) => void;
     isLoading?: boolean;
     isNarrow?: boolean;
     displayWeekNumbers?: boolean;
@@ -95,12 +99,16 @@ interface Props {
     utcDate: Date;
     utcDateRange: Date[];
     utcDateRangeInTimezone?: Date[];
+    onCreateCalendarFromSidebar: (id: string) => void;
     onCreateEvent?: (attendees?: AttendeeModel[]) => void;
+    onBackFromSearch: () => void;
     onClickToday: () => void;
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
-    containerRef: Ref<HTMLDivElement>;
+    containerRef: HTMLDivElement | null;
+    setContainerRef: Ref<HTMLDivElement>;
+    onSearch: () => void;
     addresses: Address[];
     user: UserModel;
     calendarUserSettings: CalendarUserSettings;
@@ -108,7 +116,6 @@ interface Props {
 
 const CalendarContainerView = ({
     calendars,
-    onCreateCalendarFromSidebar,
     isLoading = false,
     isNarrow = false,
     displayWeekNumbers = false,
@@ -124,7 +131,9 @@ const CalendarContainerView = ({
     utcDateRange,
     utcDateRangeInTimezone,
 
+    onCreateCalendarFromSidebar,
     onCreateEvent,
+    onBackFromSearch,
     onClickToday,
     onChangeView,
     onChangeDate,
@@ -132,6 +141,8 @@ const CalendarContainerView = ({
 
     children,
     containerRef,
+    setContainerRef,
+    onSearch,
 
     addresses,
     user,
@@ -144,6 +155,8 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
+    const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
+    const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
         useModalState();
@@ -152,7 +165,15 @@ const CalendarContainerView = ({
     const { appInView, showDrawerSidebar } = useDrawer();
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
+    const isSearchView = view === VIEWS.SEARCH;
     const defaultView = getDefaultView(calendarUserSettings);
+
+    const { isSearching, setIsSearching } = useCalendarSearch();
+
+    const handleBackFromSearch = () => {
+        setIsSearching(false);
+        onBackFromSearch();
+    };
 
     const toLink = toUrlParams({
         date: utcDate,
@@ -175,11 +196,14 @@ const CalendarContainerView = ({
         return [toLocalDate(fromUTCDate(utcStart)), toLocalDate(fromUTCDate(utcEnd))];
     }, [utcDateRange]);
 
-    const handleSelectDateRange = useCallback(([start, end]: [Date, Date], resetRange?: boolean) => {
-        const numberOfDays = differenceInCalendarDays(end, start);
-        const newDate = localToUtcDate(start);
-        onChangeDateRange(newDate, numberOfDays, resetRange);
-    }, []);
+    const handleSelectDateRange = useCallback(
+        ([start, end]: [Date, Date], resetRange?: boolean) => {
+            const numberOfDays = differenceInCalendarDays(end, start);
+            const newDate = localToUtcDate(start);
+            onChangeDateRange(newDate, numberOfDays, resetRange);
+        },
+        [onChangeDateRange]
+    );
 
     const handleClickLocalDate = useCallback(
         (newDate) => {
@@ -378,7 +402,7 @@ const CalendarContainerView = ({
     const logo = <MainLogo to="/" />;
 
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { show, onDisplayed } = useSpotlightOnFeature(
+    const { show: showSharingSpotlight, onDisplayed: onSharingSpotlightDisplayed } = useSpotlightOnFeature(
         FeatureCode.CalendarSharingSpotlight,
         !isWelcomeFlow && !isDrawerApp && !isNarrow && calendarSharingEnabled && hasPaidMail(user),
         {
@@ -387,7 +411,17 @@ const CalendarContainerView = ({
             default: Date.UTC(2023, 3, 12, 12),
         }
     );
-    const shouldShowCalendarSharingPopup = useSpotlightShow(show);
+    const shouldShowCalendarSharingPopup = useSpotlightShow(showSharingSpotlight);
+    const {
+        show: showSearchSpotlight,
+        onDisplayed: onSearchSpotlightDisplayed,
+        onClose: onCloseSearchSpotlight,
+    } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isNarrow && !isWelcomeFlow, {
+        alpha: Date.UTC(2023, 8, 13, 12),
+        beta: Date.UTC(2023, 8, 20, 12),
+        default: Date.UTC(2023, 8, 27, 12),
+    });
+    const shouldShowCalendarSearchSpotlight = useSpotlightShow(showSearchSpotlight);
 
     useEffect(() => {
         if (shouldShowCalendarSharingPopup) {
@@ -439,14 +473,22 @@ const CalendarContainerView = ({
         targetTzid: calendarUserSettings.PrimaryTimezone,
     });
 
-    const toolbar = (isDrawerApp: boolean) => {
-        return !isDrawerApp ? (
-            <CalendarToolbar
-                date={noonDate}
-                timezone={tzid}
-                setTzid={setTzid}
-                telemetrySource="temporary_timezone"
-                dateCursorButtons={
+    const handleClickSearch = () => {
+        if (shouldShowCalendarSearchSpotlight) {
+            onCloseSearchSpotlight();
+        }
+        setIsSearching(true);
+    };
+
+    const toolbar = (
+        <CalendarToolbar
+            date={noonDate}
+            timezone={tzid}
+            setTzid={setTzid}
+            telemetrySource="temporary_timezone"
+            hideTimeZoneSelector={isSearching}
+            dateCursorButtons={
+                !isSearching && (
                     <DateCursorButtons
                         view={view}
                         currentRange={currentRange}
@@ -455,18 +497,56 @@ const CalendarContainerView = ({
                         onNext={handleClickNext}
                         onPrev={handleClickPrev}
                     />
-                }
-                viewSelector={
+                )
+            }
+            viewSelector={
+                !isSearching && (
                     <ViewSelector
                         data-testid="calendar-view:view-options"
                         view={view}
                         range={range}
                         onChange={onChangeView}
                     />
-                }
-            />
-        ) : undefined;
-    };
+                )
+            }
+            searchButton={
+                isCalendarEncryptedSearchEnabled &&
+                !isSearching && (
+                    <Spotlight
+                        originalPlacement="bottom-start"
+                        show={shouldShowCalendarSearchSpotlight}
+                        onDisplayed={onSearchSpotlightDisplayed}
+                        type="new"
+                        anchorRef={searchSpotlightAnchorRef}
+                        content={
+                            <>
+                                <div className="text-lg text-bold mb-1">{c('Spotlight').t`Search for events`}</div>
+                                <p className="m-0">{c('Spotlight')
+                                    .t`Easily find the event you're looking for with our new search feature.`}</p>
+                                <Href href={getKnowledgeBaseUrl('/calendar-search')}>{c('Link').t`Learn more`}</Href>
+                            </>
+                        }
+                    >
+                        <ToolbarButton
+                            ref={searchSpotlightAnchorRef}
+                            icon={<Icon name="magnifier" />}
+                            title={c('Header').t`Search`}
+                            onClick={handleClickSearch}
+                        />
+                    </Spotlight>
+                )
+            }
+            searchField={
+                isSearching && (
+                    <CalendarSearch
+                        containerRef={containerRef}
+                        onSearch={onSearch}
+                        onBackFromSearch={handleBackFromSearch}
+                    />
+                )
+            }
+        />
+    );
 
     const drawerSettingsButton = (
         <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
@@ -499,14 +579,16 @@ const CalendarContainerView = ({
     ) : (
         <>
             {renderCalendarSharingPopupModal && (
-                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onDisplayed} />
+                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onSharingSpotlightDisplayed} />
             )}
             <PrivateHeader
                 userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}
                 floatingButton={
-                    <FloatingButton onClick={() => onCreateEvent?.()}>
-                        <Icon size={24} name="plus" className="m-auto" />
-                    </FloatingButton>
+                    !isSearchView && (
+                        <FloatingButton onClick={() => onCreateEvent?.()}>
+                            <Icon size={24} name="plus" className="m-auto" />
+                        </FloatingButton>
+                    )
                 }
                 feedbackButton={
                     hasRebrandingFeedback ? (
@@ -517,7 +599,7 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
-                actionArea={toolbar(isDrawerApp)}
+                actionArea={!isDrawerApp ? toolbar : null}
                 hideUpsellButton={isNarrow}
                 settingsButton={drawerSettingsButton}
             />
@@ -541,13 +623,14 @@ const CalendarContainerView = ({
         <CalendarSidebar
             calendars={calendars}
             addresses={addresses}
+            calendarUserSettings={calendarUserSettings}
+            isSearchView={isSearchView}
             logo={logo}
             expanded={expanded}
             isNarrow={isNarrow}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             onCreateCalendar={onCreateCalendarFromSidebar}
-            calendarUserSettings={calendarUserSettings}
             miniCalendar={
                 <LocalizedMiniCalendar
                     min={MINIMUM_DATE}
@@ -564,16 +647,17 @@ const CalendarContainerView = ({
         />
     );
 
-    const loader = isLoading ? (
-        <div className="calendar-loader-container">
-            <div className="notification" role="alert">
-                <span className="notification__content">
-                    <span>{c('Info').t`Loading events`}</span>
-                    <CircleLoader srLabelHidden={true} />
-                </span>
+    const loader =
+        isLoading && !isSearchView ? (
+            <div className="calendar-loader-container">
+                <div className="notification" role="alert">
+                    <span className="notification__content">
+                        <span>{c('Info').t`Loading events`}</span>
+                        <CircleLoader srLabelHidden={true} />
+                    </span>
+                </div>
             </div>
-        </div>
-    ) : null;
+        ) : null;
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
@@ -587,12 +671,13 @@ const CalendarContainerView = ({
             bottom={bottom}
             sidebar={sidebar}
             header={header}
-            containerRef={containerRef}
+            containerRef={setContainerRef}
+            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
             drawerApp={
                 isDrawerApp ? null : (
                     <DrawerApp
                         contactCustomActions={contactCustomActions}
-                        customAppSettings={<CalendarQuickSettings />}
+                        customAppSettings={<CalendarQuickSettings onBackFromSearch={onBackFromSearch} />}
                     />
                 )
             }

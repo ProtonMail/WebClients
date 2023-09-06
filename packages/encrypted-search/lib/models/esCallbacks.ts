@@ -1,5 +1,6 @@
 import { GetItemInfo } from './esFunctions';
-import { CachedItem, ESEvent, EventsObject } from './interfaces';
+import { RecordProgress } from './esIndexing';
+import { CachedItem, ESEvent, ESStatusBooleans, EventsObject } from './interfaces';
 
 /**
  * Interface for all the callbacks that are required to run the basic
@@ -101,7 +102,7 @@ interface RequiredESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
  * functionalities which are not essential for the correct functioning of the ES library.
  * Each callback description details what happens if the callback is not specified
  */
-interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> {
+export interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent> {
     /**
      * Resert the sorting to inverse chronological order, since ES does not support other orders
      * This callback is optional: if not provided, sorting is never reset
@@ -167,6 +168,18 @@ interface OptionalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>
      * @returns A decrypted item, potentially without content, or undefined if something fails and itemMetadata is not provided
      */
     fetchESItemContent?: (itemID: string, signal?: AbortSignal) => Promise<ESItemContent | undefined>;
+
+    /**
+     * Called on key reactivation, attempt to decrypt items stored as undecryptable inside IDB
+     * @returns The count of items that were successfully decrypted
+     */
+    correctDecryptionErrors: (
+        userID: string,
+        indexKey: CryptoKey,
+        abortIndexingRef: React.MutableRefObject<AbortController>,
+        esStatus: ESStatusBooleans,
+        recordProgress: RecordProgress
+    ) => Promise<number>;
 }
 
 export type ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent = void> = RequiredESCallbacks<

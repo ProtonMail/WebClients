@@ -144,13 +144,21 @@ export interface EncryptedSearchDB extends DBSchema {
  * Collection of fields to determine UI elements during indexing (e.g. progress bar, ...)
  */
 export interface ESIndexingState {
+    /**
+     * number of items indexed so far
+     */
     esProgress: number;
+    /**
+     * estimated time (in minutes) expected for indexing to finish
+     */
     estimatedMinutes: number;
-    startTime: number;
-    endTime: number;
-    oldestTime: number;
-    esPrevProgress: number;
+    /**
+     * Total items to index
+     */
     totalIndexingItems: number;
+    /**
+     * progress value in percentage, i.e. number from 0 to 100
+     */
     currentProgressValue: number;
 }
 
@@ -234,30 +242,7 @@ export interface ESEvent<ESItemMetadata> {
 export type ESItem<ESItemMetadata, ESItemContent> = ESItemMetadata & Partial<ESItemContent>;
 
 /**
- * Internal variables on the status of ES
- */
-export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
-    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
-    setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
-    lastTimePoint: ESTimepoint | undefined;
-    previousESSearchParams: ESSearchParameters | undefined;
-    cachedIndexKey: CryptoKey | undefined;
-    dbExists: boolean;
-    isDBLimited: boolean;
-    esEnabled: boolean;
-    esSupported: boolean;
-    isRefreshing: boolean;
-    isSearchPartial: boolean;
-    isSearching: boolean;
-    isFirstSearch: boolean;
-    isEnablingContentSearch: boolean;
-    isEnablingEncryptedSearch: boolean;
-    isPaused: boolean;
-    contentIndexingDone: boolean;
-}
-
-/**
- * Subset of variables from the ES status useful to display correct UI
+ * Boolean variables of the ES status useful to display correct UI
  * @var dbExists whether an instance of IndexedDB exists
  * @var isEnablingContentSearch whether indexing of content is ongoing
  * @var isDBLimited whether IndexedDB has fewer than the total amount of items
@@ -269,22 +254,35 @@ export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
  * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
  * @var isCacheReady whether in-memory cache load is filled
  * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
- * @var isPaused whether content indexing is paused
+ * @var isContentIndexingPaused whether content indexing is paused
+ * @var isMetadataIndexingPaused whether metadata indexing is paused
  * @var contentIndexingDone whether content indexing is finished
  */
-export interface ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
-    extends Pick<
-            ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>,
-            | 'dbExists'
-            | 'isEnablingContentSearch'
-            | 'isDBLimited'
-            | 'esEnabled'
-            | 'esSupported'
-            | 'isRefreshing'
-            | 'isSearchPartial'
-            | 'isSearching'
-            | 'isEnablingEncryptedSearch'
-            | 'isPaused'
-            | 'contentIndexingDone'
-        >,
-        Pick<ESCache<unknown, unknown>, 'isCacheLimited' | 'isCacheReady'> {}
+export interface ESStatusBooleans {
+    dbExists: boolean;
+    isDBLimited: boolean;
+    esEnabled: boolean;
+    esSupported: boolean;
+    isRefreshing: boolean;
+    isSearchPartial: boolean;
+    isSearching: boolean;
+    isFirstSearch: boolean;
+    isEnablingContentSearch: boolean;
+    isContentIndexingPaused: boolean;
+    isMetadataIndexingPaused: boolean;
+    isEnablingEncryptedSearch: boolean;
+    contentIndexingDone: boolean;
+    isConfigFromESDBLoaded: boolean;
+}
+
+/**
+ * Internal variables on the status of ES
+ */
+export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> extends ESStatusBooleans {
+    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
+    setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
+    lastTimePoint: ESTimepoint | undefined;
+    previousESSearchParams: ESSearchParameters | undefined;
+    cachedIndexKey: CryptoKey | undefined;
+    getCacheStatus: () => { isCacheReady: boolean; isCacheLimited: boolean };
+}

@@ -6,21 +6,22 @@ import { Progress } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useSearchLibrary } from '../../../store';
-import useSearchState from '../../../store/_search/useSearchState';
 
 import './SearchDropdown.scss';
 
 export const SearchIndexingProgress = () => {
-    const { getESDBStatus, getProgressRecorderRef } = useSearchLibrary();
-    const { isRefreshing } = getESDBStatus();
-    const { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue } = useSearchState();
+    const { esStatus, progressRecorderRef } = useSearchLibrary();
+    const { isRefreshing } = esStatus;
+    const {
+        esIndexingProgressState: { esProgress, totalIndexingItems, estimatedMinutes, currentProgressValue },
+    } = useSearchLibrary();
     const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
 
-    const progressFromBuildEvent = isRefreshing ? 0 : getProgressRecorderRef().current[0];
+    const progressFromBuildEvent = isRefreshing ? 0 : progressRecorderRef.current[0];
     const progressValue = isEstimating ? progressFromBuildEvent : currentProgressValue;
 
     // Progress indicator
-    const totalProgressToShow = Math.max(esProgress, getProgressRecorderRef().current[1]);
+    const totalProgressToShow = Math.max(esProgress, progressRecorderRef.current[1]);
     let progressStatus: string = '';
     if (isEstimating) {
         progressStatus = c('Info').t`Estimating time remaining...`;

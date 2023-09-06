@@ -2,12 +2,11 @@ import { serverTime } from '@proton/crypto';
 import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
 import { DAY } from '../constants';
-import { fromUTCDate } from '../date/timezone';
+import { fromUTCDate, toUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
 import {
     AttendeeClearPartResult,
     AttendeePart,
-    CalendarEvent,
     CalendarEventData,
     VcalDateOrDateTimeProperty,
     VcalValarmComponent,
@@ -33,15 +32,44 @@ import { withMandatoryPublishFields as withVAlarmMandatoryPublishFields } from '
 import { parse, serialize, toTriggerString } from './vcal';
 import { prodId } from './vcalConfig';
 import { dateTimeToProperty, propertyToUTCDate } from './vcalConverter';
-import { getEventStatus, getIsAllDay, getIsCalendar, getIsEventComponent } from './vcalHelper';
+import { getEventStatus, getIsCalendar, getIsEventComponent, getIsPropertyAllDay } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
+
+export const getIsAllDay = ({ dtstart }: Pick<VcalVeventComponent, 'dtstart'>) => {
+    return getIsPropertyAllDay(dtstart);
+};
+
+export const getUidValue = (component: VcalVeventComponent) => {
+    return component.uid.value;
+};
+
+export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
+    return !!rrule;
+};
+
+export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
+    return recurrenceId;
+};
+
+export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
+    const rawRecurrenceId = getRecurrenceId(component);
+    if (!rawRecurrenceId || !rawRecurrenceId.value) {
+        return;
+    }
+    return toUTCDate(rawRecurrenceId.value);
+};
+
+export const getSequence = (event: VcalVeventComponent) => {
+    const sequence = +(event.sequence?.value || 0);
+    return Math.max(sequence, 0);
+};
 
 export const getReadableCard = (cards: CalendarEventData[]) => {
     return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
 };
 
-export const getIsEventCancelled = (event: CalendarEvent) => {
+export const getIsEventCancelled = <T extends { CalendarEvents: CalendarEventData[] }>(event: T) => {
     const calendarClearTextPart = getReadableCard(event.CalendarEvents);
     if (!calendarClearTextPart) {
         return;
@@ -113,7 +141,6 @@ export const withMandatoryPublishFields = <T>(
 };
 
 type VeventWithRequiredDtStart<T> = RequireOnly<VcalVeventComponent, 'dtstart'> & T;
-
 export const withoutRedundantDtEnd = <T>(
     properties: VeventWithRequiredDtStart<T>
 ): VeventWithRequiredDtStart<T> | Omit<VeventWithRequiredDtStart<T>, 'dtend'> => {

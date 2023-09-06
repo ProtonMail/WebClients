@@ -8,11 +8,13 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: number, total: number) => {
-    const { getESDBStatus } = useEncryptedSearchContext();
+    const { esStatus } = useEncryptedSearchContext();
 
-    const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching, isCacheReady } = getESDBStatus();
+    const { dbExists, esEnabled, isSearchPartial, isSearching, getCacheStatus } = esStatus;
     const [esTimer, setESTimer] = useState<NodeJS.Timeout>(setTimeout(() => {}));
     const [esTimerExpired, setESTimerExpired] = useState<boolean>(false);
+
+    const { isCacheLimited, isCacheReady } = getCacheStatus();
     const [ESCacheReady, setESCacheReady] = useState(isCacheReady);
 
     const isLastPage = page === total;
@@ -55,7 +57,7 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
 
         // If ES is enabled and cache not ready, wait until it becomes ready
         const interval = setInterval(() => {
-            const isCacheReady = getESDBStatus().isCacheReady;
+            const { isCacheReady } = getCacheStatus();
 
             if (isCacheReady) {
                 setESCacheReady(true);

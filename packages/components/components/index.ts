@@ -58,6 +58,7 @@ export * from './select';
 export * from './selectTwo';
 export * from './sidebar';
 export * from './shortcuts';
+export * from './skeletonLoader';
 export * from './spinner';
 export * from './spotlight';
 export * from './stepDot';

@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE } = VIEWS;
+const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE, SEARCH } = VIEWS;
 
 const FORMATS = {
     [DAY]: 'PP',
@@ -14,6 +14,7 @@ const FORMATS = {
     [CUSTOM]: 'PP',
     [MAIL]: 'PP',
     [DRIVE]: 'PP',
+    [SEARCH]: 'PP',
 };
 
 const getDateRangeText = (view: VIEWS, range: number, currentDate: Date, dateRange: Date[]) => {

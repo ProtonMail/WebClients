@@ -1,0 +1,65 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+// hardcoded media queries, need to be checked
+
+.search {
+	&-result-line {
+		border-block-end: 1px solid var(--border-weak);
+
+		@include media('<=#{em(1000, 16)}') {
+			border: 0;
+		}
+	}
+
+	&-day-number {
+		font-variant-numeric: tabular-nums;
+		border: 1px solid transparent;
+
+		[aria-current='date'] & {
+			border-color: var(--primary);
+			color: var(--primary);
+			background-color: var(--interaction-default);
+		}
+	}
+
+	&-calendar-border {
+		inline-size: rem(4);
+		border-radius: rem(4);
+		background-color: var(--calendar-color, transparent);
+		margin-inline-end: rem(8);
+		min-block-size: rem(28);
+
+		&.isUnanswered {
+			background-color: transparent;
+			background-image: repeating-linear-gradient(
+				-45deg,
+				transparent,
+				transparent rem(2),
+				var(--calendar-color, transparent) rem(2),
+				var(--calendar-color, transparent) rem(4)
+			);
+		}
+
+		@include media('<=#{em(1000, 16)}') {
+			min-block-size: rem(44);
+		}
+
+		@include media('<=#{em(870, 16)}') {
+			min-block-size: rem(34);
+		}
+	}
+
+	&-event-time-details {
+		@include media('<=#{em(870, 16)}') {
+			line-height: 1.3;
+		}
+	}
+
+	&-event-time,
+	&-event-summary {
+		@include media('<=#{em(870, 16)}') {
+			font-size: rem(13);
+		}
+	}
+}
