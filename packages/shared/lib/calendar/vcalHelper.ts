@@ -1,4 +1,3 @@
-import { toUTCDate } from '../date/timezone';
 import { normalize } from '../helpers/string';
 import {
     VcalAttendeeProperty,
@@ -42,35 +41,6 @@ export const getPropertyTzid = (property: VcalDateOrDateTimeProperty) => {
         return;
     }
     return property.value.isUTC ? 'UTC' : property.parameters?.tzid;
-};
-
-export const getIsAllDay = ({ dtstart }: Pick<VcalVeventComponent, 'dtstart'>) => {
-    return getIsPropertyAllDay(dtstart);
-};
-
-export const getUidValue = (component: VcalVeventComponent) => {
-    return component.uid.value;
-};
-
-export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
-    return !!rrule;
-};
-
-export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
-    return recurrenceId;
-};
-
-export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
-    const rawRecurrenceId = getRecurrenceId(component);
-    if (!rawRecurrenceId || !rawRecurrenceId.value) {
-        return;
-    }
-    return toUTCDate(rawRecurrenceId.value);
-};
-
-export const getSequence = (event: VcalVeventComponent) => {
-    const sequence = +(event.sequence?.value || 0);
-    return Math.max(sequence, 0);
 };
 
 export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
@@ -217,7 +187,7 @@ export const getIsValidMethod = (method: ICAL_METHOD, isOrganizerMode: boolean) 
     return isOrganizerMode ? ICAL_METHODS_ATTENDEE.includes(method) : ICAL_METHODS_ORGANIZER.includes(method);
 };
 
-export const getEventStatus = ({ status }: VcalVeventComponent) => {
+export const getEventStatus = <T extends { status?: VcalVeventComponent['status'] }>({ status }: T) => {
     if (Object.values(ICAL_EVENT_STATUS).some((icalStatus) => icalStatus === status?.value)) {
         return status?.value as ICAL_EVENT_STATUS;
     }

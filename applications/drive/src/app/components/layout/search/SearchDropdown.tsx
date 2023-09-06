@@ -19,8 +19,8 @@ interface Props {
 }
 
 export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) => {
-    const { getESDBStatus } = useSearchLibrary();
-    const { isRefreshing, dbExists, isEnablingEncryptedSearch } = getESDBStatus();
+    const { esStatus } = useSearchLibrary();
+    const { isRefreshing, dbExists, isEnablingEncryptedSearch } = esStatus;
     const showProgress = isEnablingEncryptedSearch || isRefreshing;
     const isESActive = dbExists && !isEnablingEncryptedSearch;
 

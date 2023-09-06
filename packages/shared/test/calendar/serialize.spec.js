@@ -1,5 +1,6 @@
 import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
-import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
+
+import {getIsAllDay} from "@proton/shared/lib/calendar/veventHelper";
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';

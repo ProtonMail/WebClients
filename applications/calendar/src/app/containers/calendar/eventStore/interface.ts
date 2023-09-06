@@ -44,7 +44,7 @@ export interface CalendarEventStoreRecord {
     eventData?: CalendarEvent | CalendarEventSharedData;
     eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;
     eventReadResult?: EventReadResult;
-    eventPromise?: Promise<void>;
+    eventPromise?: Promise<EventReadResult | undefined>;
     eventReadRetry?: () => Promise<void>;
 }
 

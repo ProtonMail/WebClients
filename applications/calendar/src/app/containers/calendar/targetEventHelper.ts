@@ -1,23 +1,33 @@
-import { MutableRefObject } from 'react';
-
-import { differenceInCalendarDays } from '@proton/shared/lib/date-fns-utc';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { differenceInCalendarDays, differenceInCalendarWeeks } from '@proton/shared/lib/date-fns-utc';
 
 import { TYPE } from '../../components/calendar/interactions/constants';
 import { EventTargetAction } from './interface';
 
 export const getInitialTargetEventData = (
-    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>,
-    dateRange: [Date, Date]
+    eventTargetAction: EventTargetAction | undefined,
+    dateRange: [Date, Date],
+    view: VIEWS
 ) => {
-    const eventTargetAction = eventTargetActionRef.current;
     if (!eventTargetAction) {
         return;
     }
 
     const { id, isAllDay, isAllPartDay, startInTzid, preventPopover } = eventTargetAction;
+    const [startDateRange, endDateRange] = dateRange;
+
+    if (view === VIEWS.MONTH) {
+        return {
+            targetEventData: {
+                id,
+                type: TYPE.DAYGRID,
+                idx: differenceInCalendarWeeks(startInTzid, startDateRange),
+                preventPopover,
+            },
+        };
+    }
 
     const isDayGrid = isAllDay || isAllPartDay;
-    const [startDateRange, endDateRange] = dateRange;
 
     const getTimeGridIdx = () => {
         if (startDateRange > startInTzid || startInTzid > endDateRange) {

@@ -3,6 +3,7 @@ import { findTimeZone, getTimeZoneLinks, getUTCOffset, getZonedTime } from '@pro
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getAllowedTimeZones } from '../api/calendars';
+import { SECOND } from '../constants';
 import { Api } from '../interfaces';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
@@ -342,7 +343,7 @@ export const fromUTCDateToLocalFakeUTCDate = (utcDate: Date, isAllDay: boolean, 
 };
 
 export const convertTimestampToTimezone = (timestamp: number, timezone: string) => {
-    return convertUTCDateTimeToZone(fromUTCDate(new Date(timestamp)), timezone);
+    return convertUTCDateTimeToZone(fromUTCDate(new Date(timestamp * SECOND)), timezone);
 };
 
 /**

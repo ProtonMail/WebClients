@@ -17,7 +17,8 @@ import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './
 import { getDisplayTitle } from './helper';
 import { getMillisecondsFromTriggerString } from './vcal';
 import { propertyToUTCDate } from './vcalConverter';
-import { getIsAllDay } from './vcalHelper';
+
+import {getIsAllDay} from './veventHelper';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,

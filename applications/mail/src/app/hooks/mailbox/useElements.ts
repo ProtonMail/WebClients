@@ -77,9 +77,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const esDBStatus = getESDBStatus();
-    const { esEnabled } = esDBStatus;
+    const { esStatus } = useEncryptedSearchContext();
+    const { esEnabled } = esStatus;
 
     const globalCache = useCache();
 
@@ -92,7 +91,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const elements = useSelector(elementsSelector);
     const elementIDs = useSelector(elementIDsSelector);
     const messagesToLoadMoreES = useSelector((state: RootState) =>
-        messagesToLoadMoreESSelector(state, { page, search, esDBStatus })
+        messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
     const shouldResetCache = useSelector((state: RootState) => shouldResetCacheSelector(state, { page, params }));
     const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
@@ -103,9 +102,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const totalReturned = useSelector((state: RootState) => totalReturnedSelector(state, { counts }));
     const expectingEmpty = useSelector((state: RootState) => expectingEmptySelector(state, { counts }));
     const loadedEmpty = useSelector(loadedEmptySelector);
-    const partialESSearch = useSelector((state: RootState) => partialESSearchSelector(state, { search, esDBStatus }));
+    const partialESSearch = useSelector((state: RootState) => partialESSearchSelector(state, { search, esStatus }));
     const stateInconsistency = useSelector((state: RootState) =>
-        stateInconsistencySelector(state, { search, esDBStatus })
+        stateInconsistencySelector(state, { search, esStatus })
     );
 
     // Remove from cache expired elements

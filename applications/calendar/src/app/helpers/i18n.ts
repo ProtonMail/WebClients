@@ -2,29 +2,48 @@ import { c } from 'ttag';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE } = VIEWS;
+const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE, SEARCH } = VIEWS;
 
 export const getNavigationArrowsText = (view: VIEWS) => {
+    const dayText = {
+        previous: c('Action').t`Previous day`,
+        next: c('Action').t`Next day`,
+    };
+    const weekText = {
+        previous: c('Action').t`Previous week`,
+        next: c('Action').t`Next week`,
+    };
+    const monthText = {
+        previous: c('Action').t`Previous month`,
+        next: c('Action').t`Next month`,
+    };
+    const yearText = {
+        previous: c('Action').t`Previous year`,
+        next: c('Action').t`Next year`,
+    };
+
     const previous = {
-        [DAY]: c('Action').t`Previous day`,
-        [WEEK]: c('Action').t`Previous week`,
-        [MONTH]: c('Action').t`Previous month`,
-        [AGENDA]: c('Action').t`Previous month`,
-        [CUSTOM]: c('Action').t`Previous month`,
-        [YEAR]: c('Action').t`Previous year`,
-        [MAIL]: c('Action').t`Previous week`,
-        [DRIVE]: c('Action').t`Previous week`,
+        [DAY]: dayText.previous,
+        [WEEK]: weekText.previous,
+        [MONTH]: monthText.previous,
+        [AGENDA]: monthText.previous,
+        [CUSTOM]: monthText.previous,
+        [YEAR]: yearText.previous,
+        [MAIL]: weekText.previous,
+        [DRIVE]: weekText.previous,
+        [SEARCH]: weekText.previous,
     };
 
     const next = {
-        [DAY]: c('Action').t`Next day`,
-        [WEEK]: c('Action').t`Next week`,
-        [MONTH]: c('Action').t`Next month`,
-        [AGENDA]: c('Action').t`Next month`,
-        [CUSTOM]: c('Action').t`Next month`,
-        [YEAR]: c('Action').t`Next year`,
-        [MAIL]: c('Action').t`Next week`,
-        [DRIVE]: c('Action').t`Next week`,
+        [DAY]: dayText.next,
+        [WEEK]: weekText.next,
+        [MONTH]: monthText.next,
+        [AGENDA]: monthText.next,
+        [CUSTOM]: monthText.next,
+        [YEAR]: yearText.next,
+        [MAIL]: weekText.next,
+        [DRIVE]: weekText.next,
+        [SEARCH]: weekText.next,
     };
 
     return {

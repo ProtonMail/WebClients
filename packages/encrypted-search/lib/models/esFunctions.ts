@@ -1,6 +1,6 @@
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { ESDBStatus, ESEvent, ESItem, ESItemInfo, ESTimepoint } from './interfaces';
+import { ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
 
 /**
  * Show or update the search results in the UI
@@ -132,20 +132,6 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     esDelete: () => Promise<void>;
 
     /**
-     * @returns an object containing boolean variables descrbing the status of the library,
-     * which is useful to determine specific UI in certain occasions. See the description of
-     * the ESDBStatus interface for more details on the specific variables
-     */
-    getESDBStatus: () => ESDBStatus<ESItemContent, ESItemMetadata, ESSearchParameters>;
-
-    /**
-     * @returns a reference object to two values related to an IndexedDB operation status.
-     * The first number in the returned list is the current number of items processed while
-     * the second is the total number of items to process. It is useful to show a progress bar.
-     */
-    getProgressRecorderRef: () => React.MutableRefObject<ESTimepoint>;
-
-    /**
      * @returns whether some conditions to apply highlighting are met, i.e. whether a search is
      * on and there are keywords. For example in cases where the user only specifies filters
      * and not keywords, this function returns false
@@ -160,9 +146,19 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     initializeES: () => Promise<void>;
 
     /**
-     * Pause the currently ongoing indexing process, if any
+     * Pause the currently ongoing content indexing process, if any
      */
-    pauseIndexing: () => Promise<void>;
+    pauseContentIndexing: () => Promise<void>;
+
+    /**
+     * Pause the currently ongoing metadata indexing process, if any
+     */
+    pauseMetadataIndexing: () => Promise<void>;
+
+    /**
+     * Wrapper around `correctDecryptionErrors` es callback, used to correct previous decryption errors after a key recovery
+     */
+    correctDecryptionErrors: () => Promise<number>;
 
     /**
      * Start the caching routine, i.e. fetching and decrypting as many items from the ES
@@ -181,4 +177,21 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
      * Reset the cache to its default empty state
      */
     resetCache: () => void;
+
+    /**
+     * An object containing the different variables related to Encrypted Search status
+     */
+    esStatus: ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>;
+
+    /**
+     * A reference object to two values related to an IndexedDB operation status.
+     * The first number in the returned list is the current number of items processed while
+     * the second is the total number of items to process. It is useful to show a progress bar.
+     */
+    progressRecorderRef: React.MutableRefObject<ESTimepoint>;
+
+    /**
+     * An object containing variables describing the status of the indexing progress
+     */
+    esIndexingProgressState: ESIndexingState;
 }

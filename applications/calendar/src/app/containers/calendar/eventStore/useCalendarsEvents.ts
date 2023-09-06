@@ -182,7 +182,13 @@ const useCalendarsEvents = (
             .flat();
     }, [rerender, loading, tzid, requestedCalendars, utcDateRange]);
 
-    useCalendarsEventsReader(eventsResults, cacheRef, () => setRerender({}), getOpenedMailEvents, metadataOnly);
+    useCalendarsEventsReader({
+        calendarEvents: eventsResults,
+        calendarsEventsCacheRef: cacheRef,
+        rerender: () => setRerender({}),
+        getOpenedMailEvents,
+        metadataOnly,
+    });
 
     return [eventsResults, loading];
 };

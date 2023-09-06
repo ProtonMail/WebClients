@@ -1,5 +1,6 @@
 import { getUntilProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { VcalRruleProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

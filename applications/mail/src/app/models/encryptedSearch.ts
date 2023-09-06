@@ -1,4 +1,4 @@
-import { ESDBStatus, ESItem, EncryptedSearchFunctions } from '@proton/encrypted-search';
+import { ESItem, ESStatus, EncryptedSearchFunctions } from '@proton/encrypted-search';
 import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { Filter, SearchParameters, Sort } from './tools';
@@ -48,17 +48,19 @@ export interface EncryptedSearchFunctionsMail
         | 'enableContentSearch'
         | 'isSearchResult'
         | 'esDelete'
-        | 'getProgressRecorderRef'
+        | 'progressRecorderRef'
         | 'shouldHighlight'
-        | 'pauseIndexing'
+        | 'pauseContentIndexing'
+        | 'pauseMetadataIndexing'
         | 'cacheIndexedDB'
         | 'toggleEncryptedSearch'
+        | 'esIndexingProgressState'
         | 'resetCache'
     > {
     openDropdown: () => void;
     closeDropdown: () => void;
     setTemporaryToggleOff: () => void;
-    getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
+    esStatus: ESDBStatusMail & ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
 }
 
 export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {

@@ -53,9 +53,9 @@ const ItemColumnLayout = ({
     senders,
 }: Props) => {
     const [userSettings] = useUserSettings();
-    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
-    const { contentIndexingDone } = getESDBStatus();
+    const { contentIndexingDone } = esStatus;
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 

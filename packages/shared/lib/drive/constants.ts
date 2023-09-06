@@ -75,6 +75,9 @@ export enum EXPIRATION_DAYS {
     NINETY = '90',
 }
 
+/**
+ * @deprecated common to different products, should be removed and use `API_CODES` from _/lib/constants.ts_ instead
+ */
 export enum RESPONSE_CODE {
     SUCCESS = 1000,
     NOT_ALLOWED = 2011,
