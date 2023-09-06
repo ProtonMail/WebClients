@@ -1,4 +1,3 @@
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { selectHasRegisteredLock, selectPassPlan } from '@proton/pass/store';
 import type { MaybeNull, TabId } from '@proton/pass/types';
@@ -42,6 +41,10 @@ const ONBOARDING_RULES: OnboardingRule[] = [
     createOnboardingRule({
         message: OnboardingMessage.PERMISSIONS_REQUIRED,
         when: withContext<OnboardingWhen>((ctx) => !ctx.service.activation.getPermissionsGranted()),
+    }),
+    createOnboardingRule({
+        message: OnboardingMessage.STORAGE_ISSUE,
+        when: withContext<OnboardingWhen>((ctx) => ctx.service.storage.getState().storageFull),
     }),
     createOnboardingRule({
         message: OnboardingMessage.UPDATE_AVAILABLE,
@@ -98,10 +101,10 @@ export const createOnboardingService = () => {
 
     /* Every setState call will have the side-effect of
      * updating the locally stored onboarding state  */
-    const setState = (state: Partial<OnboardingState>) => {
+    const setState = withContext<(state: Partial<OnboardingState>) => void>(({ service }, state) => {
         ctx.state = merge(ctx.state, state);
-        void browserLocalStorage.setItem('onboarding', JSON.stringify(ctx.state));
-    };
+        void service.storage.local.set({ onboarding: JSON.stringify(ctx.state) });
+    });
 
     const onInstall = () => setState({ installedOn: getEpoch() });
     const onUpdate = () => setState({ updatedOn: getEpoch() });
@@ -147,7 +150,12 @@ export const createOnboardingService = () => {
 
     /* hydrate the onboarding state value from the storage
      * on service creation. This will noop on first install */
-    void browserLocalStorage.getItem('onboarding').then((data) => data && setState(JSON.parse(data)));
+    const hydrate = withContext(async ({ service }) => {
+        try {
+            const { onboarding } = await service.storage.local.get(['onboarding']);
+            if (onboarding) setState(JSON.parse(onboarding));
+        } catch {}
+    });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, () => getOnboardingMessage());
@@ -170,7 +178,7 @@ export const createOnboardingService = () => {
         tab?.id ? navigateToOnboarding(tab.id) : false
     );
 
-    return { reset, onInstall, onUpdate };
+    return { hydrate, reset, onInstall, onUpdate };
 };
 
 export type OnboardingService = ReturnType<typeof createOnboardingService>;

@@ -1,12 +1,10 @@
 import { decryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
 import { EncryptionTag } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
+import type { EncryptedExtensionCache, ExtensionCache } from '../../../types/worker/cache';
 import type { State } from '../../types';
-
-export type ExtensionCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };
 
 const decrypt = async <T extends object>(options: {
     data: string | null;
@@ -28,16 +26,15 @@ const decrypt = async <T extends object>(options: {
     } catch (_) {}
 };
 
-const getCachedState = async (sessionLockToken: Maybe<string>): Promise<Maybe<ExtensionCache>> => {
-    const encryptedDataString = await browserLocalStorage.getItem('state');
-    const encryptedSnapshot = await browserLocalStorage.getItem('snapshot');
-    const cacheSalt = await browserLocalStorage.getItem('salt');
-
-    if (encryptedDataString && encryptedSnapshot && cacheSalt) {
-        const cacheKey = await getCacheEncryptionKey(stringToUint8Array(cacheSalt), sessionLockToken);
+export const decryptCachedState = async (
+    { state: encryptedState, snapshot: encryptedSnapshot, salt }: Partial<EncryptedExtensionCache>,
+    sessionLockToken: Maybe<string>
+): Promise<Maybe<ExtensionCache>> => {
+    if (encryptedState && encryptedSnapshot && salt) {
+        const cacheKey = await getCacheEncryptionKey(stringToUint8Array(salt), sessionLockToken);
 
         const [state, snapshot] = await Promise.all([
-            decrypt<State>({ data: encryptedDataString, key: cacheKey, useTextDecoder: true }),
+            decrypt<State>({ data: encryptedState, key: cacheKey, useTextDecoder: true }),
             decrypt<SerializedCryptoContext<PassCryptoSnapshot>>({
                 data: encryptedSnapshot,
                 key: cacheKey,
@@ -47,8 +44,4 @@ const getCachedState = async (sessionLockToken: Maybe<string>): Promise<Maybe<Ex
 
         return state !== undefined && snapshot !== undefined ? { state, snapshot } : undefined;
     }
-
-    return;
 };
-
-export default getCachedState;
