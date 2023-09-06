@@ -13,6 +13,7 @@ import {
     workerStatusResolved,
 } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { setPopupIcon } from '../../shared/extension';
 import WorkerMessageBroker from '../channel';
@@ -40,7 +41,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         onAuthorized: withContext((ctx) => {
             ctx.service.activation.boot();
             ctx.service.autofill.updateTabsBadgeCount();
-            void ctx.service.telemetry?.start();
+            ctx.service.telemetry?.start().catch(noop);
             setSentryUID(auth.store.getUID());
         }),
         onUnauthorized: withContext((ctx) => {
@@ -48,6 +49,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             ctx.service.onboarding.reset();
             ctx.service.telemetry?.reset();
             ctx.service.autofill.clearTabsBadgeCount();
+            ctx.service.cacheProxy.clear?.().catch(noop);
             setSentryUID(undefined);
         }),
         onLocked: withContext((ctx) => {
@@ -117,6 +119,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
     });
 
     context.service.onboarding.hydrate();
+    context.service.cacheProxy.clean?.().catch(noop);
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
