@@ -241,7 +241,7 @@ const AttachmentList = ({
                 )}
             </div>
             {expanded && ( // composer-attachments-expand pt-4 pb-2
-                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList gap-2 py-2">
+                <div tabIndex={-1} className="message-attachmentList py-2">
                     {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}
