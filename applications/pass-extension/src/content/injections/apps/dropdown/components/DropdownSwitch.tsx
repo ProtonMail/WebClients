@@ -7,9 +7,11 @@ import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
+import { pipe, tap } from '@proton/pass/utils/fp';
 import { workerBusy } from '@proton/pass/utils/worker';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import type { IFrameCloseOptions, IFrameMessage } from '../../../../../content/types';
 import { DropdownAction, type DropdownActions } from '../../../../../content/types';
@@ -28,13 +30,15 @@ type Props = {
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
     onResize?: () => void;
+    onReset?: () => void;
 };
 
 const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { state, loggedIn, status, visible, onClose, onResize, onMessage },
+    { state, loggedIn, status, visible, onClose, onResize, onReset = noop, onMessage = noop },
     ref
 ) => {
     const accountFork = useAccountFork();
+    const onMessageWithReset = pipe(onMessage, tap(onReset));
 
     return (
         <div
@@ -77,14 +81,14 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                             <ItemsList
                                 items={state.items}
                                 needsUpgrade={state.needsUpgrade}
-                                onMessage={onMessage}
+                                onMessage={onMessageWithReset}
                                 onClose={onClose}
                                 visible={visible}
                             />
                         );
 
                     case DropdownAction.AUTOSUGGEST_PASSWORD:
-                        return <PasswordAutoSuggest onMessage={onMessage} />;
+                        return <PasswordAutoSuggest onMessage={onMessage} onClose={onClose} visible={visible} />;
 
                     case DropdownAction.AUTOSUGGEST_ALIAS:
                         return (
@@ -92,7 +96,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                                 prefix={state.prefix}
                                 domain={state.domain}
                                 onOptions={onResize}
-                                onMessage={onMessage}
+                                onMessage={onMessageWithReset}
                             />
                         );
                 }
