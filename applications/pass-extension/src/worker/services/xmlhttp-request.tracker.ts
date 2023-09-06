@@ -2,8 +2,7 @@ import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/globals/browser';
 import type { TabId } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
-import { isFailedRequest, requestHasBodyFormData } from '@proton/pass/utils/requests';
+import { isFailedRequest } from '@proton/pass/utils/requests';
 import { parseUrl } from '@proton/pass/utils/url';
 
 const filter: WebRequest.RequestFilter = {
@@ -11,23 +10,24 @@ const filter: WebRequest.RequestFilter = {
     types: ['xmlhttprequest'],
 };
 
+type TrackedRequestData = { tabId: TabId; domain: string };
+
 type XMLHTTPRequestTrackerOptions = {
-    shouldTakeRequest: (tabId: TabId, domain: string) => boolean;
-    onFailedRequest: (tabId: TabId, domain: string) => void;
+    acceptRequest: (request: WebRequest.OnBeforeRequestDetailsType) => boolean;
+    onFailedRequest: (data: TrackedRequestData) => void;
 };
 
-export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest }: XMLHTTPRequestTrackerOptions) => {
-    const pendingRequests: Map<string, WebRequest.OnBeforeRequestDetailsType & { domain: string }> = new Map();
+export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: XMLHTTPRequestTrackerOptions) => {
+    const pendingRequests: Map<string, TrackedRequestData> = new Map();
 
     const onBeforeRequest = async (request: WebRequest.OnBeforeRequestDetailsType) => {
         const { tabId, requestId } = request;
-
-        if (tabId >= 0 && requestHasBodyFormData(request)) {
+        if (tabId >= 0 && acceptRequest(request)) {
             try {
                 const tab = await browser.tabs.get(tabId);
                 if (tab.url !== undefined) {
                     const { domain } = parseUrl(tab.url);
-                    if (domain) pendingRequests.set(requestId, merge(request, { domain }));
+                    if (domain) pendingRequests.set(requestId, { tabId, domain });
                 }
             } catch (_) {}
         }
@@ -36,24 +36,21 @@ export const createXMLHTTPRequestTracker = ({ shouldTakeRequest, onFailedRequest
     };
 
     const onCompleted = async (request: WebRequest.OnCompletedDetailsType) => {
-        const { requestId, tabId } = request;
-        const pending = pendingRequests.get(requestId);
+        const { requestId } = request;
+        const trackedRequest = pendingRequests.get(requestId);
 
-        if (pending !== undefined) {
-            if (isFailedRequest(request) && shouldTakeRequest(tabId, pending.domain)) {
-                onFailedRequest(tabId, pending.domain);
-            }
-
+        if (trackedRequest !== undefined) {
+            if (isFailedRequest(request)) onFailedRequest(trackedRequest);
             pendingRequests.delete(requestId);
         }
     };
 
     const onErrorOccured = async (request: WebRequest.OnErrorOccurredDetailsType) => {
-        const { requestId, tabId } = request;
-        const pending = pendingRequests.get(requestId);
+        const { requestId } = request;
+        const trackedRequest = pendingRequests.get(requestId);
 
-        if (pending !== undefined) {
-            onFailedRequest(tabId, pending.domain);
+        if (trackedRequest !== undefined) {
+            onFailedRequest(trackedRequest);
             pendingRequests.delete(requestId);
         }
     };
