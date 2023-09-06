@@ -4,8 +4,9 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { mockUseHistory } from '@proton/testing/index';
 
+import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
 import { VisualSearchItem } from './interface';
-import { DEFAULT_MAX_ITEMS_PER_PAGE, useCalendarSearchPagination } from './useCalendarSearchPagination';
+import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
 const generateTestVisualItem = (index: number, isClosestToDate = false) => {
     return { UID: index.toString(), isClosestToDate } as VisualSearchItem;
