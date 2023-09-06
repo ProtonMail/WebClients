@@ -24,9 +24,10 @@ export type WorkerState = {
     UID: Maybe<string>;
 };
 
-export type ExtensionSessionData = ExtensionSession;
+export type SessionStoreData = ExtensionSession;
+export type SessionStoreKeys = keyof SessionStoreData;
 
-export type ExtensionLocalData = {
+export type LocalStoreData = {
     state: string;
     snapshot: string;
     salt: string;
@@ -35,6 +36,8 @@ export type ExtensionLocalData = {
     telemetry: string;
     settings: string;
 };
+
+export type LocalStoreKeys = keyof LocalStoreData;
 
 export type PopupInitialState = {
     search: MaybeNull<string>;

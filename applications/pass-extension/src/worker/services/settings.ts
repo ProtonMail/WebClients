@@ -1,5 +1,4 @@
 import { backgroundMessage } from '@proton/pass/extension/message';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import { selectProxiedSettings } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -7,6 +6,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import WorkerMessageBroker from '../channel';
+import { withContext } from '../context';
 import store from '../store';
 
 export type SettingsService = ReturnType<typeof createSettingsService>;
@@ -14,16 +14,16 @@ export type SettingsService = ReturnType<typeof createSettingsService>;
 export const createSettingsService = () => {
     /* on extension install : Set the initial proxied
      * locally stored settings with the results */
-    const onInstall = async () => {
+    const onInstall = withContext<() => Promise<void>>(async ({ service }) => {
         const initialSettings = selectProxiedSettings(store.getState());
-        return browserLocalStorage.setItem('settings', JSON.stringify(initialSettings));
-    };
+        return service.storage.local.set({ settings: JSON.stringify(initialSettings) });
+    });
 
     /* We have to proxy the redux store settings in local storage
      * in case the user is logged out (session invalidated, locked etc..)
      * but need to preserve the user settings in the content-script */
-    const sync = async (settings: ProxiedSettings) => {
-        await browserLocalStorage.setItem('settings', JSON.stringify(settings));
+    const sync = withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
+        await service.storage.local.set({ settings: JSON.stringify(settings) });
         logger.info('[Worker::Settings] synced settings');
 
         WorkerMessageBroker.ports.broadcast(
@@ -32,18 +32,18 @@ export const createSettingsService = () => {
                 payload: settings,
             })
         );
-    };
+    });
 
-    const resolve = async (): Promise<ProxiedSettings> => {
+    const resolve = withContext<() => Promise<ProxiedSettings>>(async ({ service }) => {
         try {
-            const settings = await browserLocalStorage.getItem('settings');
+            const { settings } = await service.storage.local.get(['settings']);
             if (!settings) throw new Error();
 
             return JSON.parse(settings);
         } catch (e) {
             return INITIAL_SETTINGS;
         }
-    };
+    });
 
     return { onInstall, sync, resolve };
 };

@@ -1,4 +1,5 @@
 import { backgroundMessage } from '@proton/pass/extension/message';
+import browser from '@proton/pass/globals/browser';
 import type { WorkerStatus } from '@proton/pass/types';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { or, waitUntil } from '@proton/pass/utils/fp';
@@ -28,6 +29,7 @@ import { createLoggerService } from '../services/logger';
 import { createOnboardingService } from '../services/onboarding';
 import { createOTPService } from '../services/otp';
 import { createSettingsService } from '../services/settings';
+import { createStorageService } from '../services/storage';
 import { createStoreService } from '../services/store';
 import { createTelemetryService } from '../services/telemetry';
 import { WorkerContext, withContext } from './context';
@@ -69,6 +71,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             onboarding: createOnboardingService(),
             otp: createOTPService(),
             settings: createSettingsService(),
+            storage: createStorageService(),
             store: createStoreService(),
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService() : null,
         },
@@ -112,6 +115,24 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             return context;
         },
     });
+
+    context.service.onboarding.hydrate();
+
+    if (ENV === 'development') {
+        WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
+            switch (payload.debug) {
+                case 'storage_full':
+                    context.service.storage.getState().storageFull = true;
+                    return true;
+                case 'update_trigger':
+                    const { version } = browser.runtime.getManifest();
+                    context.service.activation.onUpdateAvailable({ version });
+                    return true;
+            }
+
+            return false;
+        });
+    }
 
     return context;
 };

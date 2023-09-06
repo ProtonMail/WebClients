@@ -2,32 +2,36 @@ import { type VFC, useEffect } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import createApi from '@proton/pass/api/create-api';
-import { getPersistedSession, resumeSession, updateInMemorySession, updatePersistedSession } from '@proton/pass/auth';
+import type { ExtensionPersistedSession } from '@proton/pass/auth';
+import { resumeSession } from '@proton/pass/auth';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { browserLocalStorage } from '@proton/pass/extension/storage';
+import type { StorageInterface } from '@proton/pass/extension/storage/types';
 import browser from '@proton/pass/globals/browser';
+import type { LocalStoreData } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import * as config from '../../../app/config';
 
-/**
- * Temporary extension page to resume a session on start-up.
+/* Temporary extension page to resume a session on start-up.
  * In the startup event listener - when the extension's target API
  * is set to staging - there seems to be an error during the initial SSL
  * handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED)
- * Mimics the authService::resumeSession data flow
- */
+ * Mimics the authService::resumeSession data flow */
 const tryResumeSession = async () => {
     const tab = await browser.tabs.getCurrent().catch(noop);
     const tabId = tab?.id;
+    const localStore = browserLocalStorage as StorageInterface<LocalStoreData>;
 
     if (!tab || !tabId) return;
 
     try {
-        const persistedSession = await getPersistedSession();
+        const ps = await localStore.getItem('ps');
 
-        if (persistedSession) {
+        if (ps) {
+            const persistedSession = JSON.parse(ps) as ExtensionPersistedSession;
             const api = createApi({
                 config,
                 auth: {
@@ -35,14 +39,17 @@ const tryResumeSession = async () => {
                     AccessToken: persistedSession.AccessToken,
                     RefreshToken: persistedSession.RefreshToken,
                 },
-                onSessionRefresh: async ({ AccessToken, RefreshToken }) =>
-                    Promise.all([
-                        updatePersistedSession({ AccessToken, RefreshToken }),
-                        updateInMemorySession({ AccessToken, RefreshToken }),
-                    ]),
+                onSessionRefresh: async ({ AccessToken, RefreshToken }, RefreshTime) => {
+                    const updatedPS = { ...persistedSession, AccessToken, RefreshToken, RefreshTime };
+                    await browserLocalStorage.setItem('ps', JSON.stringify(updatedPS));
+                },
             });
 
-            const session = await resumeSession({ api, session: persistedSession });
+            const session = await resumeSession({
+                api,
+                session: persistedSession,
+                onInvalidSession: () => browserLocalStorage.removeItem('ps'),
+            });
 
             if (session !== undefined) {
                 await sendMessage(
