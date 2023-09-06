@@ -3,6 +3,7 @@ import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
+import { requestHasBodyFormData } from '@proton/pass/utils/requests';
 import { parseSender } from '@proton/pass/utils/url';
 
 import { canCommitSubmission, isSubmissionCommitted } from '../../shared/form';
@@ -93,15 +94,13 @@ export const createFormTrackerService = () => {
         onTabError: (tabId, domain) => domain && stash(tabId, domain, 'TAB_ERRORED'),
     });
 
-    /**
-     * TODO: on failed request we should send out
+    /* TODO: on failed request we should send out
      * a message to the content-script : we should stash
      * only if there was a recent form submission - if
-     * we directly stash we might get false positives
-     */
+     * we directly stash we might get false positives  */
     createXMLHTTPRequestTracker({
-        shouldTakeRequest: (tabId, domain) => submissions.has(getFormId(tabId, domain)),
-        onFailedRequest: (tabId, domain) => {
+        acceptRequest: requestHasBodyFormData,
+        onFailedRequest: ({ tabId, domain }) => {
             const submission = get(tabId, domain);
             if (submission && submission.status === FormEntryStatus.STAGING) {
                 stash(tabId, domain, 'XMLHTTP_ERROR_DETECTED');
