@@ -46,17 +46,19 @@ export const PasswordAutoSuggest: VFC<Props> = ({ onMessage, onClose, visible })
     return (
         <>
             <DropdownItem
-                icon={copied ? 'checkmark' : 'key'}
                 subTheme={SubTheme.RED}
-                title={copied ? undefined : c('Title').t`Fill & copy password`}
-                subTitle={
-                    copied ? (
-                        c('Info').t`Password copied`
-                    ) : (
-                        <span className="text-monospace">{getCharsGroupedByColor(password)}</span>
-                    )
-                }
-                onClick={handleClick}
+                {...(copied
+                    ? {
+                          icon: 'checkmark',
+                          subTitle: c('Info').t`Password copied`,
+                          onClick: () => onClose?.(),
+                      }
+                    : {
+                          icon: 'key',
+                          title: c('Title').t`Fill & copy password`,
+                          subTitle: <span className="text-monospace">{getCharsGroupedByColor(password)}</span>,
+                          onClick: handleClick,
+                      })}
             />
             <input ref={inputRef} className="absolute" style={{ top: -9999, left: -9990 }} value={password} readOnly />
         </>
