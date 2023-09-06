@@ -10,8 +10,6 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@protontech/mutex-browser',
     '@protontech/interval-tree',
     '@proton/recovery-kit',
-    '@pdf-lib/standard-fonts',
-    '@pdfme/generator',
     'emoji-mart',
     'idb',
     '@protontech/bip39',
