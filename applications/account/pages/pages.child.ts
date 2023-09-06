@@ -1,8 +1,10 @@
 import fs from 'fs';
+import path from 'path';
 import { LocaleData, addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
-import { Parameters } from './src/pages/interface';
-import { getLangAttribute, getLocaleMap } from './src/static/localeMapping';
+import { Parameters } from '../src/pages/interface';
+import { getLangAttribute, getLocaleMap } from '../src/static/localeMapping';
+import { HrefLang, LocalizedPage } from './interface';
 
 const pageExtensionRegex = /\.ts/;
 
@@ -30,45 +32,78 @@ const getRewrite = (file: string, pathname: string) => {
     return { filename, rewrite: { from: new RegExp(`^${pathname.replace('/', '/')}$`), to: `/${filename}` } };
 };
 
-export const localize = (localeCode: string, data: LocaleData) => {
+const getShortLocalizedPathname = (shortLocale: string) => {
+    return shortLocale === 'en' ? '' : `/${shortLocale}`;
+};
+
+export const localize = (localeCode: string, data: LocaleData | null) => {
     if (localeCode !== 'en_US' && data) {
         ttagAddLocale(localeCode, data);
     }
     ttagUseLocale(localeCode);
 };
 
-export const getPages = (filter: (locale: string) => boolean, req: (path: string) => any) => {
-    const pagePaths: string[] = fs.readdirSync('./src/pages').filter((pagePath: string) => {
+interface Locale {
+    pagePath: string;
+    parameters: () => Parameters;
+    pathname: string;
+    localeData: LocaleData | null;
+    shortLocale: string;
+    originalLocale: string;
+}
+
+const getLocalisedPage = ({
+    pagePath,
+    parameters,
+    pathname,
+    localeData,
+    originalLocale,
+    shortLocale,
+}: Locale): LocalizedPage => {
+    localize(originalLocale, localeData);
+    const shortLocalizedPathname = getShortLocalizedPathname(shortLocale);
+    const localisedPathname = `${shortLocalizedPathname}/${pathname}`;
+    const localisedPagePath = shortLocale === 'en' ? pagePath : `${shortLocale}/${pagePath}`;
+
+    const { filename, rewrite } = getRewrite(localisedPagePath, localisedPathname);
+    return {
+        shortLocalizedPathname,
+        filename,
+        rewrite,
+        parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters() },
+    };
+};
+
+const getPages = () => {
+    const pageDir = path.resolve(process.cwd(), 'src/pages');
+    const pagePaths: string[] = fs.readdirSync(pageDir).filter((pagePath: string) => {
         return pagePath.endsWith('.ts') && pagePath !== 'interface.ts';
     });
 
     // Reverse the pages so that /mail/signup is before /mail
     pagePaths.reverse();
 
-    const localeFiles: string[] = fs.readdirSync('./locales');
+    const localeDir = path.resolve(process.cwd(), 'locales');
+    const localeFiles: string[] = fs.readdirSync(localeDir);
     const localeMap = getLocaleMap(localeFiles);
 
     const localeExt = '.json';
 
     const locales = localeFiles
         .filter((localePath) => {
-            return !localePath.includes('en_US') && localePath.endsWith(localeExt) && filter(localePath);
+            return !localePath.includes('en_US') && localePath.endsWith(localeExt);
         })
         .map((localePath: string) => {
             const originalLocale = localePath.replace(localeExt, '');
             const shortLocale = localeMap[originalLocale];
             return {
-                localeData: req(`./locales/${localePath}`),
+                localeData: require(path.resolve(localeDir, localePath)),
                 originalLocale,
                 shortLocale,
             };
         });
 
-    const getShortLocalizedPathname = (shortLocale: string) => {
-        return shortLocale === 'en' ? '' : `/${shortLocale}`;
-    };
-
-    const hreflangs = [
+    const hreflangs: HrefLang[] = [
         { hreflang: 'en-US', pathname: '' },
         ...locales.map(({ originalLocale, shortLocale }) => {
             const localisedPathname = getShortLocalizedPathname(shortLocale);
@@ -81,39 +116,27 @@ export const getPages = (filter: (locale: string) => boolean, req: (path: string
     ];
 
     const pages = pagePaths.flatMap((pagePath) => {
-        const enFile = `./src/pages/${pagePath}`;
-        const file = req(enFile);
-        const getParameters: () => Parameters = file.default;
+        const file = require(path.resolve(pageDir, pagePath));
+        const parameters: () => Parameters = file.default;
         const pathname = getPathnameFromFilename(pagePath);
-
-        const getLocalisedPage = ({
-            localeData,
-            originalLocale,
-            shortLocale,
-        }: Pick<(typeof locales)[0], 'localeData' | 'shortLocale' | 'originalLocale'>) => {
-            localize(originalLocale, localeData);
-            const parameters = getParameters();
-
-            const shortLocalizedPathname = getShortLocalizedPathname(shortLocale);
-            const localisedPathname = `${shortLocalizedPathname}/${pathname}`;
-            const localisedPagePath = shortLocale === 'en' ? pagePath : `${shortLocale}/${pagePath}`;
-
-            const { filename, rewrite } = getRewrite(localisedPagePath, localisedPathname);
-            return {
-                shortLocalizedPathname,
-                filename,
-                rewrite,
-                parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters },
-            };
-        };
 
         return [
             getLocalisedPage({
+                pathname,
+                pagePath,
+                parameters,
                 originalLocale: 'en_US',
                 localeData: null,
                 shortLocale: 'en',
             }),
-            ...locales.map(getLocalisedPage),
+            ...locales.map((locale) =>
+                getLocalisedPage({
+                    pathname,
+                    pagePath,
+                    parameters,
+                    ...locale,
+                })
+            ),
         ];
     });
 
@@ -122,3 +145,9 @@ export const getPages = (filter: (locale: string) => boolean, req: (path: string
         hreflangs,
     };
 };
+
+const pages = getPages();
+
+if (process.send) {
+    process.send(pages);
+}

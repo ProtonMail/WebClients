@@ -1,19 +1,5 @@
-const os = require('os');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
-/**
- * parallel doesn't work yet for WSL (GNU/Linux on Windows)
- * cf https://github.com/webpack-contrib/terser-webpack-plugin/issues/21
- * https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/302
- * @return {Boolean} true if WSL
- */
-const isWSL = () => {
-    if (process.platform === 'linux' && os.release().includes('Microsoft')) {
-        return true;
-    }
-    return false;
-};
 
 module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({ isProduction }) => ({
     // Needs to be single because we embed two entry points
@@ -22,11 +8,6 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
     minimizer: [
         new TerserPlugin({
             extractComments: false,
-            parallel: !isWSL(),
-            terserOptions: {
-                keep_classnames: isProduction,
-                keep_fnames: isProduction,
-            },
         }),
         new CssMinimizerPlugin({
             minimizerOptions: {
