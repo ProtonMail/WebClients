@@ -13,7 +13,7 @@ interface Props {
 }
 
 const DrawerSidebar = ({ buttons }: Props) => {
-    const { appInView, setDrawerSidebarMounted, showDrawerSidebar } = useDrawer();
+    const { setDrawerSidebarMounted, showDrawerSidebar } = useDrawer();
     const hasSidebar = buttons.length > 0;
     const theme = useTheme();
     const isProminent = theme.information.prominentHeader;
@@ -38,11 +38,7 @@ const DrawerSidebar = ({ buttons }: Props) => {
     return (
         <nav
             aria-label={c('Landmarks').t`Side panel`}
-            className={clsx(
-                'drawer-sidebar no-mobile no-print',
-                appInView && 'drawer-sidebar--hide-on-tablet',
-                isProminent && 'ui-prominent'
-            )}
+            className={clsx('drawer-sidebar no-mobile no-print', isProminent && 'ui-prominent')}
         >
             <span className="flex flex-column flex-align-items-center py-3 h100">
                 <div className="flex flex-column flex-align-items-center gap-5">{clonedButtons}</div>
