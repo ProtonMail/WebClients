@@ -53,7 +53,7 @@ export const usePhotosView = () => {
     const { getLink } = useLink();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos } = usePhotos();
 
-    const abortSignal = useAbortSignal([shareId, linkId]);
+    const abortSignal = useAbortSignal([volumeId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
 
@@ -91,7 +91,6 @@ export const usePhotosView = () => {
         if (!volumeId) {
             return;
         }
-        const abortSignal = new AbortController().signal;
         loadPhotos(abortSignal, volumeId);
     }, [volumeId]);
 
