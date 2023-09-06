@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import * as H from 'history';
@@ -45,22 +45,21 @@ const getPaths = (maybeLocalePrefix: string): Paths => {
     };
 };
 
-interface Props {
+interface InnerPublicAppProps {
     onLogin: ProtonLoginCallback;
-    locales: TtagLocaleMap;
+    loader: ReactNode;
+    location: ReturnType<typeof useLocationWithoutLocale>;
 }
 
-const PublicApp = ({ onLogin, locales }: Props) => {
+const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
     const history = useHistory();
-    const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
 
-    const loader = <AccountLoaderPage />;
     const paths = getPaths(location.localePrefix);
 
     return (
-        <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
+        <>
             <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
                 <FeaturesProvider>
@@ -129,6 +128,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     </ExperimentsProvider>
                 </FeaturesProvider>
             </UnAuthenticatedApiProvider>
+        </>
+    );
+};
+
+interface PublicAppProps {
+    onLogin: ProtonLoginCallback;
+    locales: TtagLocaleMap;
+}
+
+// Wrap public app in VPN public app to ensure that translations are loaded before the inner child is loaded (meta tags)
+const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
+    const location = useLocationWithoutLocale<{ from?: H.Location }>();
+    const loader = <AccountLoaderPage />;
+
+    return (
+        <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
+            <InnerPublicApp onLogin={onLogin} loader={loader} location={location} />
         </VPNPublicApp>
     );
 };

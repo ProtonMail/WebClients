@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 import 'webpack-dev-server';
 // @ts-ignore
 import { parseResource } from 'webpack/lib/util/identifier';
@@ -10,7 +10,7 @@ const getAssetsLoaders = require('./webpack/assets.loader');
 const getPlugins = require('./webpack/plugins');
 const getOptimizations = require('./webpack/optimization');
 
-const getConfig = (env: any): webpack.Configuration => {
+const getConfig = (env: any): Configuration => {
     const isProduction = process.env.NODE_ENV === 'production';
     const isRelease = !!process.env.CI_COMMIT_TAG;
 
@@ -50,7 +50,7 @@ const getConfig = (env: any): webpack.Configuration => {
         bail: isProduction,
         devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
         watchOptions: {
-            ignored: /node_modules|(i18n\/*.json)|\*\.(gif|jpeg|jpg|ico|png)/,
+            ignored: /dist|node_modules|locales|\.(gif|jpeg|jpg|ico|png|svg)/,
             aggregateTimeout: 600,
         },
         resolve: {

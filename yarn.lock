@@ -22289,6 +22289,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash._reinterpolate@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "lodash._reinterpolate@npm:3.0.0"
+  checksum: 06d2d5f33169604fa5e9f27b6067ed9fb85d51a84202a656901e5ffb63b426781a601508466f039c720af111b0c685d12f1a5c14ff8df5d5f27e491e562784b2
+  languageName: node
+  linkType: hard
+
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
@@ -22398,6 +22405,25 @@ fsevents@^1.2.7:
   version: 4.4.0
   resolution: "lodash.startcase@npm:4.4.0"
   checksum: c03a4a784aca653845fe09d0ef67c902b6e49288dc45f542a4ab345a9c406a6dc194c774423fa313ee7b06283950301c1221dd2a1d8ecb2dac8dfbb9ed5606b5
+  languageName: node
+  linkType: hard
+
+"lodash.template@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.template@npm:4.5.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+    lodash.templatesettings: ^4.0.0
+  checksum: ca64e5f07b6646c9d3dbc0fe3aaa995cb227c4918abd1cef7a9024cd9c924f2fa389a0ec4296aa6634667e029bc81d4bbdb8efbfde11df76d66085e6c529b450
+  languageName: node
+  linkType: hard
+
+"lodash.templatesettings@npm:^4.0.0":
+  version: 4.2.0
+  resolution: "lodash.templatesettings@npm:4.2.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+  checksum: 863e025478b092997e11a04e9d9e735875eeff1ffcd6c61742aa8272e3c2cddc89ce795eb9726c4e74cef5991f722897ff37df7738a125895f23fc7d12a7bb59
   languageName: node
   linkType: hard
 
@@ -26729,6 +26755,7 @@ fsevents@^1.2.7:
     jest: ^29.6.4
     jest-environment-jsdom: ^29.6.4
     jest-junit: ^16.0.0
+    lodash.template: ^4.5.0
     prettier: ^2.8.8
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -27086,6 +27113,7 @@ fsevents@^1.2.7:
     "@types/react-router-dom": ^5.3.3
     cross-env: ^7.0.3
     eslint: ^8.48.0
+    lodash.template: ^4.5.0
     prettier: ^2.8.8
     proton-account: "workspace:applications/account"
     react: ^17.0.2
