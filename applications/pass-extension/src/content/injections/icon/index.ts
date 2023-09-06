@@ -106,7 +106,13 @@ const computeIconInjectionStyles = (
         form,
     });
 
-    const overlayWidth = overlayEl?.clientWidth ?? 0;
+    const overlayWidth = (() => {
+        if (!overlayEl) return 0;
+        const { clientWidth, offsetWidth } = overlayEl;
+        if (clientWidth === 0) return offsetWidth; /* support :before pseudo elements */
+        return clientWidth;
+    })();
+
     const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + iconPaddingLeft : 0;
 
     /* Compute the new input padding :
@@ -215,10 +221,7 @@ export const createIcon = (field: FieldHandle): InjectionElements => {
     control.style.display = 'none';
     control.addEventListener('ready', () => control.style.removeProperty('display'), { once: true });
 
-    const icon = createElement<HTMLButtonElement>({
-        type: 'button',
-        classNames: [],
-    });
+    const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
     icon.tabIndex = -1;
     icon.style.zIndex = field.zIndex.toString();
