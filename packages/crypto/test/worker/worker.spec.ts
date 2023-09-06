@@ -159,9 +159,17 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             passphrase: null,
         });
 
+        await expect(
+            CryptoWorker.decryptMessage({
+                armoredMessage: fwdCiphertextArmored,
+                decryptionKeys: fwdRecipientKey,
+            })
+        ).to.be.rejectedWith(/Error decrypting message/); // missing config flag
+
         const { data } = await CryptoWorker.decryptMessage({
             armoredMessage: fwdCiphertextArmored,
             decryptionKeys: fwdRecipientKey,
+            config: { allowForwardedMessages: true },
         });
         expect(data).to.deep.equal('Message for Bob');
     });
