@@ -1,11 +1,7 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
-
-
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-
-
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -13,7 +9,6 @@ import { getEventStatusTraits } from '../../helpers/event';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import getEventInformation from './getEventInformation';
 import useReadEvent from './useReadEvent';
-
 
 interface Props {
     style: CSSProperties;

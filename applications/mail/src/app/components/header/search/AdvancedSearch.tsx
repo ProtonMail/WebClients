@@ -102,7 +102,7 @@ interface Props {
     isNarrow: boolean;
     showEncryptedSearch: boolean;
     onClose: () => void;
-    esState: ESIndexingState;
+    esIndexingProgressState: ESIndexingState;
     showMore: boolean;
     toggleShowMore: () => void;
     searchInputValue: string;
@@ -113,7 +113,7 @@ const AdvancedSearch = ({
     isNarrow,
     showEncryptedSearch,
     onClose,
-    esState,
+    esIndexingProgressState,
     showMore,
     searchInputValue,
     toggleShowMore,
@@ -137,8 +137,8 @@ const AdvancedSearch = ({
     });
 
     const [user] = useUser();
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { isDBLimited, lastContentTime, esEnabled } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { isDBLimited, lastContentTime, esEnabled } = esStatus;
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);
@@ -165,6 +165,28 @@ const AdvancedSearch = ({
         );
 
         onClose();
+    };
+
+    const handleStartDateChange = async (begin: Date | undefined) => {
+        if (begin) {
+            let oldestTime = -1;
+            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(user.ID);
+            if (wasIndexingDone && isDBLimited) {
+                oldestTime = lastContentTime;
+            }
+            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
+                return;
+            }
+        }
+        if (!model.end || isBefore(begin || -Infinity, model.end)) {
+            updateModel({ ...model, begin });
+        }
+    };
+
+    const handleEndDateChange = (end: Date | undefined) => {
+        if (!model.begin || isEqual(model.begin, end || Infinity) || isAfter(end || Infinity, model.begin)) {
+            updateModel({ ...model, end });
+        }
     };
 
     const handleClear = () => {
@@ -210,8 +232,8 @@ const AdvancedSearch = ({
                     esEnabled={esEnabled}
                 />
             </div>
-            <div className={clsx(['pt-4 px-5 pb-0'])}>
-                {showEncryptedSearch && <EncryptedSearchField esState={esState} />}
+            <div className="pt-4 px-5 pb-0">
+                {showEncryptedSearch && <EncryptedSearchField esIndexingProgressState={esIndexingProgressState} />}
                 <div>
                     <LocationField
                         value={model.labelID}
@@ -240,23 +262,7 @@ const AdvancedSearch = ({
                                     id="begin-date"
                                     data-testid="advanced-search:start-date"
                                     value={model.begin}
-                                    onChange={async (begin) => {
-                                        if (begin) {
-                                            let oldestTime = -1;
-                                            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(
-                                                user.ID
-                                            );
-                                            if (wasIndexingDone && isDBLimited) {
-                                                oldestTime = lastContentTime;
-                                            }
-                                            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
-                                                return;
-                                            }
-                                        }
-                                        if (!model.end || isBefore(begin || -Infinity, model.end)) {
-                                            updateModel({ ...model, begin });
-                                        }
-                                    }}
+                                    onChange={handleStartDateChange}
                                 />
                             </div>
                             <div className="flex-item-fluid">
@@ -267,15 +273,7 @@ const AdvancedSearch = ({
                                     id="end-date"
                                     data-testid="advanced-search:end-date"
                                     value={model.end}
-                                    onChange={(end) => {
-                                        if (
-                                            !model.begin ||
-                                            isEqual(model.begin, end || Infinity) ||
-                                            isAfter(end || Infinity, model.begin)
-                                        ) {
-                                            updateModel({ ...model, end });
-                                        }
-                                    }}
+                                    onChange={handleEndDateChange}
                                 />
                             </div>
                         </div>

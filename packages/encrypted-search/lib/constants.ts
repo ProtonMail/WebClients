@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import { ESProgress, EncryptedSearchFunctions } from './models';
+import { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
 
 /**
  * Number of items to add to the search results list during
@@ -144,8 +144,11 @@ export const defaultESStatus = {
     isSearching: false,
     isFirstSearch: true,
     isEnablingEncryptedSearch: false,
-    isPaused: false,
+    isContentIndexingPaused: false,
+    isMetadataIndexingPaused: false,
     contentIndexingDone: false,
+    isConfigFromESDBLoaded: false,
+    getCacheStatus: () => ({ isCacheReady: false, isCacheLimited: false }),
 };
 
 export const defaultESCache = {
@@ -153,6 +156,13 @@ export const defaultESCache = {
     cacheSize: 0,
     isCacheLimited: false,
     isCacheReady: false,
+};
+
+export const defaultESIndexingState: ESIndexingState = {
+    esProgress: 0,
+    estimatedMinutes: 0,
+    totalIndexingItems: 0,
+    currentProgressValue: 0,
 };
 
 export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
@@ -164,38 +174,27 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     handleEvent: async () => {},
     isSearchResult: () => false,
     esDelete: async () => {},
-    getESDBStatus: () => ({
-        ...defaultESStatus,
-        isCacheLimited: defaultESCache.isCacheLimited,
-        isCacheReady: defaultESCache.isCacheReady,
-    }),
-    getProgressRecorderRef: () => ({ current: [0, 0] }),
     shouldHighlight: () => false,
     initializeES: async () => {},
-    pauseIndexing: async () => {},
+    pauseContentIndexing: async () => {},
+    pauseMetadataIndexing: async () => {},
     cacheIndexedDB: async () => {},
     toggleEncryptedSearch: async () => {},
     resetCache: () => {},
+    correctDecryptionErrors: async () => 0,
+    esStatus: defaultESStatus,
+    progressRecorderRef: { current: [0, 0] },
+    esIndexingProgressState: defaultESIndexingState,
 };
 
-export const defaultESIndexingState = {
-    esProgress: 0,
-    estimatedMinutes: 0,
-    startTime: 0,
-    endTime: 0,
-    oldestTime: 0,
-    esPrevProgress: 0,
-    totalIndexingItems: 0,
-    currentProgressValue: 0,
-};
-
-export const defaultESCallbacks = {
+export const defaultESCallbacks: OptionalESCallbacks<any, any, any> = {
     checkIsReverse: () => true,
     shouldOnlySortResults: () => false,
     resetSort: noop,
     getSearchInterval: () => ({ begin: undefined, end: undefined }),
     applyFilters: () => true,
     onContentDeletion: async () => {},
+    correctDecryptionErrors: async () => 0,
 };
 
 export const defaultESProgress: ESProgress = {

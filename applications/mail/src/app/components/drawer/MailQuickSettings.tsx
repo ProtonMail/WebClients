@@ -46,8 +46,8 @@ const MailQuickSettings = () => {
 
     const [{ Density, Checklists }] = useUserSettings();
     const [{ ComposerMode, ViewLayout } = { ComposerMode: 0, ViewLayout: 0 }] = useMailSettings();
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = esStatus;
 
     const keyTransparencyNotification = useKeyTransparencyNotification();
     const { ktActivation } = useKeyTransparencyContext();

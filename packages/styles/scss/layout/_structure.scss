@@ -67,6 +67,7 @@ html,
 	--field-background-color: var(--background-weak);
 	--field-hover-background-color: var(--field-background-color);
 	--field-focus-background-color: var(--search-field-focus-background);
+	--field-disabled-background-color: var(--field-background-color);
 
 	inline-size: clamp(
 		#{rem(340)},
@@ -91,6 +92,8 @@ html,
 		--field-text-color: var(--color-weak);
 
 		border-color: var(--background-weak);
+		block-size: rem(36);
+		line-height: 1;
 	}
 
 	button {

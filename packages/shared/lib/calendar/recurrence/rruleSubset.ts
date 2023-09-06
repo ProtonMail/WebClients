@@ -1,7 +1,8 @@
 import { convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
 import { VcalVeventComponent } from '../../interfaces/calendar';
 import { propertyToUTCDate } from '../vcalConverter';
-import { getIsAllDay, getPropertyTzid } from '../vcalHelper';
+import { getPropertyTzid } from '../vcalHelper';
+import {getIsAllDay} from '../veventHelper';
 import { RecurringResult, getOccurrences, getOccurrencesBetween } from './recurring';
 import { getIsRruleEqual } from './rruleEqual';
 

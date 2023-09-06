@@ -1,18 +1,15 @@
-import { Dispatch, RefObject, SetStateAction, useCallback, useEffect } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { useCalendarModelEventManager, useNotifications } from '@proton/components';
-import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { startOfDay } from '@proton/shared/lib/date-fns-utc';
-import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { TYPE } from '../components/calendar/interactions/constants';
-import { InteractiveState, TimeGridRef } from '../containers/calendar/interface';
+import { EventTargetAction } from '../containers/calendar/interface';
+import useOpenCalendarEvents from './useOpenCalendarEvents';
 import { useOpenEvent } from './useOpenEvent';
 
 interface Props {
@@ -20,82 +17,27 @@ interface Props {
     addresses: Address[];
     onChangeDate: (newDate: Date) => void;
     tzid: string;
-    timeGridViewRef: RefObject<TimeGridRef>;
-    interactiveData?: InteractiveState;
-    setInteractiveData: Dispatch<SetStateAction<InteractiveState | undefined>>;
+    setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
 }
 
-export const useOpenEventsFromMail = ({
-    calendars,
-    addresses,
-    onChangeDate,
-    tzid,
-    timeGridViewRef,
-    interactiveData,
-    setInteractiveData,
-}: Props) => {
+export const useOpenEventsFromMail = ({ calendars, addresses, onChangeDate, tzid, setEventTargetAction }: Props) => {
     const { call } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const openEvent = useOpenEvent();
+    const { goToEvent, goToOccurrence } = useOpenCalendarEvents({
+        onChangeDate,
+        tzid,
+        setEventTargetAction,
+        preventPopover: true,
+    });
 
     const handleLinkError = () => {
         createNotification({
             type: 'error',
-            text: c('Error').t`Invalid link to the event`,
+            // translator: event here is for calendar event
+            text: c('Error').t`Event not found`,
         });
     };
-
-    const goToEvent = useCallback(
-        (utcDate: Date, isAllDay: boolean) => {
-            const fakeUTCDate = fromUTCDateToLocalFakeUTCDate(utcDate, isAllDay, tzid);
-
-            onChangeDate(startOfDay(fakeUTCDate));
-            timeGridViewRef.current?.scrollToTime(fakeUTCDate);
-        },
-        [tzid]
-    );
-
-    const handleGotoOccurrence = useCallback(
-        (
-            eventData: CalendarEvent,
-            eventComponent: VcalVeventComponent,
-            occurrence: { localStart: Date; occurrenceNumber: number }
-        ) => {
-            const withOccurrenceDtstart = getDateOrDateTimeProperty(eventComponent.dtstart, occurrence.localStart);
-
-            const utcDate = propertyToUTCDate(withOccurrenceDtstart);
-
-            setInteractiveData((interactiveData) => ({
-                ...interactiveData,
-                targetEventData: {
-                    id: `${eventData.ID}-${occurrence.occurrenceNumber}`,
-                    type: TYPE.TIMEGRID,
-                    preventPopover: true,
-                },
-            }));
-
-            goToEvent(utcDate, !!eventData.FullDay);
-        },
-        [timeGridViewRef, onChangeDate]
-    );
-
-    const handleGoToEvent = useCallback(
-        (eventData: CalendarEvent, eventComponent: VcalVeventComponent) => {
-            const utcDate = propertyToUTCDate(eventComponent.dtstart);
-
-            setInteractiveData({
-                ...interactiveData,
-                targetEventData: {
-                    id: eventData.ID,
-                    type: TYPE.TIMEGRID,
-                    preventPopover: true,
-                },
-            });
-
-            goToEvent(utcDate, !!eventData.FullDay);
-        },
-        [timeGridViewRef, onChangeDate]
-    );
 
     const handleEvents = useCallback(
         (event: MessageEvent) => {
@@ -114,9 +56,9 @@ export const useOpenEventsFromMail = ({
                             calendarID,
                             eventID,
                             recurrenceId: recurrenceID ? recurrenceID.toString() : null,
-                            onGoToEvent: handleGoToEvent,
-                            onGoToOccurrence: handleGotoOccurrence,
-                            onLinkError: handleLinkError,
+                            onGoToEvent: goToEvent,
+                            onGoToOccurrence: goToOccurrence,
+                            onEventNotFoundError: handleLinkError,
                         });
                     }
                     break;
@@ -136,7 +78,7 @@ export const useOpenEventsFromMail = ({
                     break;
             }
         },
-        [calendars, addresses, handleGoToEvent, handleGotoOccurrence]
+        [calendars, addresses, goToEvent, goToOccurrence]
     );
 
     useEffect(() => {

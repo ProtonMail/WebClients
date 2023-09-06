@@ -29,8 +29,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     );
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
 
-    const { getESDBStatus } = useEncryptedSearchContext();
-    const { isEnablingContentSearch, isPaused, contentIndexingDone, isEnablingEncryptedSearch } = getESDBStatus();
+    const { esStatus } = useEncryptedSearchContext();
+    const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
+        esStatus;
     const [enableESModalProps, setEnableESModalOpen, renderEnableESModal] = useModalState();
 
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
@@ -40,7 +41,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
     const encryptedSearchEnabled =
-        isEnablingContentSearch || isPaused || contentIndexingDone || isEnablingEncryptedSearch;
+        isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone || isEnablingEncryptedSearch;
 
     const onCompose = useOnCompose();
 

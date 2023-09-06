@@ -4,8 +4,8 @@ import { useSearchEnabledFeature, useSearchLibrary } from '../_search';
 
 export default function useSearchControl() {
     const searchEnabled = useSearchEnabledFeature();
-    const { cacheIndexedDB, getESDBStatus, enableEncryptedSearch, esDelete } = useSearchLibrary();
-    const { dbExists, isEnablingEncryptedSearch, esSupported } = getESDBStatus();
+    const { cacheIndexedDB, esStatus, enableEncryptedSearch, esDelete } = useSearchLibrary();
+    const { dbExists, isEnablingEncryptedSearch, esSupported } = esStatus;
 
     /**
      * prepareSearchData starts initial sync to create db.

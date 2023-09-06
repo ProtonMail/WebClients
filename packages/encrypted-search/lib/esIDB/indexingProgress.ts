@@ -3,7 +3,7 @@ import { roundMilliseconds } from '../esHelpers';
 import { ESProgress } from '../models';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
-type IndexedDBRow = 'metadata' | 'content';
+export type IndexedDBRow = 'metadata' | 'content';
 
 /**
  * Read the indexing progress of the given type from the indexingProgress table
@@ -45,7 +45,7 @@ const write = async (userID: string, progress: ESProgress, row: IndexedDBRow) =>
 };
 
 /**
- * Increment by one the number of times the user has paused content indexing
+ * Increment by one the number of times the user has paused indexing
  */
 const incrementNumPauses = async (userID: string, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
@@ -66,7 +66,7 @@ const incrementNumPauses = async (userID: string, row: IndexedDBRow) => {
 };
 
 /**
- * Add a timestamp to the set of indexing timestamps for content indexing
+ * Add a timestamp to the set of indexing timestamps for indexing
  */
 const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMESTAMP_TYPE.STEP, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
@@ -89,7 +89,7 @@ const addTimestamp = async (userID: string, type: TIMESTAMP_TYPE = TIMESTAMP_TYP
 
 /**
  * Set the initial estimate in seconds, but only if it's the first of such predictions,
- * for the content indexing process
+ * for the indexing process
  */
 const setOriginalEstimate = async (userID: string, inputEstimate: number, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
@@ -116,7 +116,7 @@ const setOriginalEstimate = async (userID: string, inputEstimate: number, row: I
 };
 
 /**
- * Overwrite the content indexing process data with the given properties
+ * Overwrite the indexing process data with the given properties
  */
 const set = async (userID: string, newProperties: Partial<ESProgress>, row: IndexedDBRow) => {
     const esDB = await openESDB(userID);
@@ -135,18 +135,42 @@ const set = async (userID: string, newProperties: Partial<ESProgress>, row: Inde
 };
 
 /**
- * Set the recovery point of the content indexing process
+ * Set the recovery point of the indexing process
  */
 const setRecoveryPoint = (userID: string, recoveryPoint: unknown, row: IndexedDBRow) =>
     set(userID, { recoveryPoint }, row);
 
 /**
- * Set the status of the content indexing process
+ * Set the status of the indexing process
  */
 const setStatus = (userID: string, status: INDEXING_STATUS, row: IndexedDBRow) => set(userID, { status }, row);
 
 /**
- * Set the status of the indexing process for content
+ * Checks whether the indexing process is stopped or not
+ */
+const isIndexingPaused = async (userID: string, row: IndexedDBRow) => {
+    const progress = await read(userID, row);
+    if (!progress) {
+        return false;
+    }
+
+    return progress.status === INDEXING_STATUS.PAUSED;
+};
+
+/**
+ * Checks whether the indexing process is done or not
+ */
+const isIndexingDone = async (userID: string, row: IndexedDBRow) => {
+    const progress = await read(userID, row);
+    if (!progress) {
+        return false;
+    }
+
+    return progress.status === INDEXING_STATUS.ACTIVE;
+};
+
+/**
+ * Set the status of the indexing process
  * to ACTIVE, i.e. for when indexing is done, and reset to default
  * all other properties since they are no longer relevant
  */
@@ -169,7 +193,7 @@ const setActiveStatus = async (userID: string, row: IndexedDBRow) => {
     esDB.close();
 };
 
-const getIndexingProgressQueryHelpers = (row: IndexedDBRow) => {
+export const getIndexingProgressQueryHelpers = (row: IndexedDBRow) => {
     return {
         read: (userID: string) => read(userID, row),
         readRecoveryPoint: (userID: string) => readRecoveryPoint(userID, row),
@@ -181,8 +205,8 @@ const getIndexingProgressQueryHelpers = (row: IndexedDBRow) => {
         setRecoveryPoint: (userID: string, recoveryPoint: unknown) => setRecoveryPoint(userID, recoveryPoint, row),
         setStatus: (userID: string, status: INDEXING_STATUS) => setStatus(userID, status, row),
         setActiveStatus: (userID: string) => setActiveStatus(userID, row),
-        isIndexingDone: (userID: string) =>
-            read(userID, row).then((progress) => progress?.status === INDEXING_STATUS.ACTIVE),
+        isIndexingPaused: (userID: string) => isIndexingPaused(userID, row),
+        isIndexingDone: (userID: string) => isIndexingDone(userID, row),
     };
 };
 

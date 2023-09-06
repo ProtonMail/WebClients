@@ -17,6 +17,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
+import EncryptedSearchLibraryProvider from '../EncryptedSearchLibraryProvider';
 import AlarmContainer from '../alarms/AlarmContainer';
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
@@ -29,22 +30,23 @@ import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 import { EventTargetAction } from './interface';
+import CalendarSearchProvider from './search/CalendarSearchProvider';
 
 interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
     drawerView?: VIEWS;
+    hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactivatedCalendarsRef }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
     const { activeCalendars, visibleCalendars, allCalendarIDs } = useMemo(() => {
         return {
-            calendars,
             activeCalendars: getProbablyActiveCalendars(calendars),
             visibleCalendars: calendars.filter(({ Display }) => !!Display),
             allCalendarIDs: calendars.map(({ ID }) => ID),
@@ -60,7 +62,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
     const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
 
-    const eventTargetActionRef = useRef<EventTargetAction>();
+    const [eventTargetAction, setEventTargetAction] = useState<EventTargetAction>();
     const shareCalendarInvitationRef = useRef<{ calendarID: string; invitationID: string }>();
 
     const activeAddresses = useMemo(() => {
@@ -85,52 +87,60 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
     });
 
     return (
-        <ContactEmailsProvider>
-            <CalendarStartupModals setStartupModalState={setStartupModalState} />
-            <Switch>
-                <Route path={['/:appName/event', '/event']}>
-                    <EventActionContainer
-                        drawerView={drawerView}
-                        tzid={tzid}
-                        addresses={addresses}
-                        calendars={calendars}
-                        eventTargetActionRef={eventTargetActionRef}
-                    />
-                </Route>
-                <Route path={'/share'}>
-                    <ShareInvitationContainer shareCalendarInvitationRef={shareCalendarInvitationRef} />
-                </Route>
-                <Route path="/">
-                    <CalendarContainer
-                        tzid={tzid}
-                        setCustomTzid={setCustomTzid}
-                        isNarrow={isNarrow}
-                        drawerView={drawerView}
-                        user={user}
-                        addresses={addresses}
-                        activeAddresses={activeAddresses}
-                        visibleCalendars={visibleCalendars}
-                        activeCalendars={activeCalendars}
-                        calendars={calendars}
-                        createEventCalendar={preferredPersonalActiveCalendar}
-                        calendarsEventsCacheRef={calendarsEventsCacheRef}
-                        calendarUserSettings={calendarUserSettings}
-                        userSettings={userSettings}
-                        eventTargetActionRef={eventTargetActionRef}
-                        shareCalendarInvitationRef={shareCalendarInvitationRef}
-                        startupModalState={startupModalState}
-                        getOpenedMailEvents={getOpenedMailEvents}
-                    />
-                </Route>
-                <Redirect to="/" />
-            </Switch>
-            <AlarmContainer
-                calendars={visibleCalendars}
-                tzid={tzid}
-                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
-            />
-        </ContactEmailsProvider>
+        <EncryptedSearchLibraryProvider
+            calendarIDs={allCalendarIDs}
+            hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
+        >
+            <ContactEmailsProvider>
+                <CalendarStartupModals setStartupModalState={setStartupModalState} />
+                <Switch>
+                    <Route path={['/:appName/event', '/event']}>
+                        <EventActionContainer
+                            drawerView={drawerView}
+                            tzid={tzid}
+                            addresses={addresses}
+                            calendars={calendars}
+                            setEventTargetAction={setEventTargetAction}
+                        />
+                    </Route>
+                    <Route path={'/share'}>
+                        <ShareInvitationContainer shareCalendarInvitationRef={shareCalendarInvitationRef} />
+                    </Route>
+                    <Route path="/">
+                        <CalendarSearchProvider>
+                            <CalendarContainer
+                                tzid={tzid}
+                                setCustomTzid={setCustomTzid}
+                                isNarrow={isNarrow}
+                                drawerView={drawerView}
+                                user={user}
+                                addresses={addresses}
+                                activeAddresses={activeAddresses}
+                                visibleCalendars={visibleCalendars}
+                                activeCalendars={activeCalendars}
+                                calendars={calendars}
+                                createEventCalendar={preferredPersonalActiveCalendar}
+                                calendarsEventsCacheRef={calendarsEventsCacheRef}
+                                calendarUserSettings={calendarUserSettings}
+                                userSettings={userSettings}
+                                eventTargetAction={eventTargetAction}
+                                setEventTargetAction={setEventTargetAction}
+                                shareCalendarInvitationRef={shareCalendarInvitationRef}
+                                startupModalState={startupModalState}
+                                getOpenedMailEvents={getOpenedMailEvents}
+                            />
+                        </CalendarSearchProvider>
+                    </Route>
+                    <Redirect to="/" />
+                </Switch>
+                <AlarmContainer
+                    calendars={visibleCalendars}
+                    tzid={tzid}
+                    calendarsEventsCacheRef={calendarsEventsCacheRef}
+                    calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
+                />
+            </ContactEmailsProvider>
+        </EncryptedSearchLibraryProvider>
     );
 };
 
