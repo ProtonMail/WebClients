@@ -15,12 +15,17 @@
 	&-day-number {
 		font-variant-numeric: tabular-nums;
 		border: 1px solid transparent;
+		min-inline-size: 2rem;
 
 		[aria-current='date'] & {
 			border-color: var(--primary);
 			color: var(--primary);
 			background-color: var(--interaction-default);
 		}
+	}
+
+	&-month-day {
+		margin-block-start: rem(1);
 	}
 
 	&-calendar-border {
