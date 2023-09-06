@@ -1,11 +1,22 @@
-export type StorageData = Record<string, any>;
+import type { MaybeNull } from '../../types';
 
-export interface Storage<Store extends StorageData = StorageData> {
-    getItems: <T extends StorageData = Store, K extends keyof T = keyof T>(keys: K[]) => Promise<Partial<T>>;
-    setItems: <T extends StorageData = Store>(items: Partial<T>) => Promise<void>;
-    getItem: <T extends StorageData = Store, K extends keyof T = keyof T>(key: K) => Promise<T[K] | null>;
-    setItem: <T extends StorageData = Store, K extends keyof T = keyof T>(key: K, value: T[K]) => Promise<void>;
-    removeItems: <T extends StorageData = Store, K extends keyof T = keyof T>(keys: K[]) => Promise<void>;
-    removeItem: <T extends StorageData = Store, K extends keyof T = keyof T>(key: K) => Promise<void>;
+export type Storage = Record<string, any>;
+export type StorageKeys<T> = Extract<keyof T, string>;
+export type StorageQuery<T, K extends StorageKeys<T>[]> = Partial<Pick<T, K[number]>>;
+
+export type GetItem<T = any, K extends StorageKeys<T> = StorageKeys<T>> = (key: K) => Promise<MaybeNull<T[K]>>;
+export type GetItems<T = any, K extends StorageKeys<T>[] = StorageKeys<T>[]> = (keys: K) => Promise<StorageQuery<T, K>>;
+export type SetItem<T = any, K extends StorageKeys<T> = StorageKeys<T>> = (key: K, value: T[K]) => Promise<void>;
+export type SetItems<T = any> = (items: Partial<T>) => Promise<void>;
+export type RemoveItem<T = any, K extends StorageKeys<T> = StorageKeys<T>> = (key: K) => Promise<void>;
+export type RemoveItems<T = any, K extends StorageKeys<T>[] = StorageKeys<T>[]> = (keys: K) => Promise<void>;
+
+export interface StorageInterface<T = any> {
+    getItem: GetItem<T>;
+    getItems: GetItems<T>;
+    setItem: SetItem<T>;
+    setItems: SetItems<T>;
+    removeItem: RemoveItem<T>;
+    removeItems: RemoveItems<T>;
     clear: () => Promise<void>;
 }

@@ -1,5 +1,4 @@
-/**
- * ⚠️ ⚠️ ⚠️
+/* ⚠️ ⚠️ ⚠️
  * This is the only part of the extension codebase
  * still referencing the chrome.runtime API and that
  * is not yet "runtime agnostic" :
@@ -7,65 +6,45 @@
  * chromium - still not supported for Firefox/Safari
  * extensions. Once FF has full MV3 support we can
  * safely port it to webextension-polyfill
- * ⚠️ ⚠️ ⚠️
- */
+ * ⚠️ ⚠️ ⚠️ */
 import { chromeAPI } from '@proton/pass/globals/browser';
 
 import { createMemoryStorage } from './memory';
-import type { Storage, StorageData } from './types';
+import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, StorageInterface } from './types';
 
-const getItems = <T extends StorageData, K = keyof T>(keys: K[]): Promise<Partial<T>> =>
+const getItems: GetItems = (keys) =>
     new Promise((resolve, reject) => {
-        chromeAPI.storage.session.get(keys, (items: any) => {
-            let err = chromeAPI.runtime.lastError;
-            if (err) {
-                reject(err);
-            } else {
-                resolve(items);
-            }
+        chromeAPI.storage.session.get(keys, (items) => {
+            const err = chromeAPI.runtime.lastError;
+            return err ? reject(err) : resolve(items);
         });
     });
 
-export const getItem = async <T extends StorageData, K extends keyof T = keyof T>(key: K): Promise<T[K] | null> => {
-    try {
-        return (await getItems<T>([key]))?.[key] ?? null;
-    } catch (_) {
-        return null;
-    }
-};
+export const getItem: GetItem = async (key) => (await getItems([key]))?.[key] ?? null;
 
-const setItems = <T extends StorageData>(items: Partial<T>): Promise<void> =>
+const setItems: SetItems = (items) =>
     new Promise((resolve, reject) => {
         chromeAPI.storage.session.set(items, () => {
-            let err = chromeAPI.runtime.lastError;
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
+            const err = chromeAPI.runtime.lastError;
+            return err ? reject(err) : resolve();
         });
     });
 
-export const setItem = <T extends StorageData, K extends keyof T = keyof T>(key: K, value: T[K]): Promise<void> =>
-    setItems({ [key]: value });
+export const setItem: SetItem = (key, value) => setItems({ [key]: value });
 
-export const removeItems = <T extends StorageData, K = keyof T>(keys: K[]): Promise<void> =>
+export const removeItems: RemoveItems = (keys) =>
     new Promise((resolve, reject) => {
-        chromeAPI.storage.session.remove(keys as string[], () => {
-            let err = chromeAPI.runtime.lastError;
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
+        chromeAPI.storage.session.remove(keys, () => {
+            const err = chromeAPI.runtime.lastError;
+            return err ? reject(err) : resolve();
         });
     });
 
-const removeItem = <T extends StorageData, K = keyof T>(key: K): Promise<void> => removeItems([key]);
+const removeItem: RemoveItem = (key) => removeItems([key]);
 
 const clear = (): Promise<void> => chromeAPI.storage.session.clear();
 
-const chromeSessionStorage: Storage = {
+const chromeSessionStorage: StorageInterface = {
     getItems,
     getItem,
     setItems,
