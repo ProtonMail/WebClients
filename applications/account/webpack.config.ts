@@ -7,8 +7,9 @@ import 'webpack-dev-server';
 import getConfig, { mergeEntry } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
 
+import { HrefLang } from './pages/interface';
+import { getPages } from './pages/pages';
 import { Parameters } from './src/pages/interface';
-import { HrefLang, getPages } from './webpack.pages';
 
 const getTemplateParameters = (
     originalTemplateParameters: any,
@@ -34,7 +35,9 @@ const getTemplateParameters = (
     };
 };
 
-const result = (env: any): webpack.Configuration => {
+const result = async (env: any): Promise<webpack.Configuration> => {
+    const pagePromise = getPages();
+
     const config = getConfig(env);
 
     const plugins = config.plugins || [];
@@ -58,8 +61,6 @@ const result = (env: any): webpack.Configuration => {
     config.devServer.historyApiFallback.rewrites = rewrites;
 
     const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
-
-    const { pages, hreflangs } = getPages(config.mode, (path) => require(path));
 
     // Replace the old html webpack plugin with this
     plugins.splice(
@@ -100,6 +101,8 @@ const result = (env: any): webpack.Configuration => {
             inject: 'body',
         })
     );
+
+    const { pages, hreflangs } = await pagePromise;
 
     pages.forEach(({ rewrite }) => {
         rewrites.push(rewrite);

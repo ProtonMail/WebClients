@@ -1,7 +1,8 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import template from 'lodash.template';
+import { HrefLang } from 'proton-account/pages/interface';
+import { getPages } from 'proton-account/pages/pages';
 import { Parameters } from 'proton-account/src/pages/interface';
-import { HrefLang, getPages } from 'proton-account/webpack.pages';
 import { Configuration } from 'webpack';
 import 'webpack-dev-server';
 
@@ -32,7 +33,8 @@ const getTemplateParameters = (
     };
 };
 
-const result = (env: any): Configuration => {
+const result = async (env: any): Promise<Configuration> => {
+    const pagesPromise = getPages();
     const config = getConfig(env);
     const plugins = config.plugins || [];
     config.plugins = plugins;
@@ -50,7 +52,7 @@ const result = (env: any): Configuration => {
 
     const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
 
-    const { pages, hreflangs } = getPages(config.mode, (path) => require(path));
+    const { pages, hreflangs } = await pagesPromise;
 
     pages.forEach(({ rewrite }) => {
         rewrites.push(rewrite);
