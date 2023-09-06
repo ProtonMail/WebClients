@@ -1,5 +1,4 @@
 export { default as AutomaticSubscriptionModal } from './AutomaticSubscriptionModal';
-export { default as CancelSubscriptionSection } from './CancelSubscriptionSection';
 export { default as DowngradeSubscriptionSection } from './DowngradeSubscriptionSection';
 export { default as PlanCustomization } from './PlanCustomization';
 export { default as PlanSelection } from './PlanSelection';
@@ -11,4 +10,5 @@ export { default as SubscriptionModalProvider } from './SubscriptionModalProvide
 export { default as UpgradeVpnSection } from './UpgradeVpnSection';
 export { default as YourPlanSection } from './YourPlanSection';
 export { default as CancelB2bSubscriptionSection } from './cancelB2bSubscription/CancelB2bSubscriptionSection';
+export { CancelSubscriptionSection } from './cancelSubscription';
 export * from './constants';
