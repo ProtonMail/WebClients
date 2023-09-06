@@ -4,15 +4,33 @@
 	font-size: rem(14);
 }
 
+.message-attachmentList {
+	display: grid;
+	gap: var(--space-2);
+	grid-template-columns: repeat(auto-fill, minmax(max(#{rem(190)}, 20%), 1fr));
+}
+
+.message-attachmentPrimaryAction {
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
+
+	&::after {
+		border-start-end-radius: var(--border-radius-md) !important;
+		border-end-end-radius: var(--border-radius-md) !important;
+	}
+}
+
 .message-attachmentSecondaryAction {
 	svg[aria-busy='true'] {
 		background-size: 16px;
 	}
 
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
+	background-color: transparent;
+	min-inline-size: rem(36);
 
-	&-size {
-		visibility: visible;
+	&::after {
+		background-color: transparent !important;
 	}
 
 	&-download {
@@ -21,6 +39,8 @@
 		inset-inline-end: 0;
 		inline-size: rem(36);
 		visibility: hidden; // transition to work
+		border-start-end-radius: var(--border-radius-md);
+		border-end-end-radius: var(--border-radius-md);
 	}
 
 	&:hover,
@@ -46,7 +66,13 @@
 }
 
 .message-attachmentList-item-container {
-	max-inline-size: calc(50% - 0.5em); // max 2 per line in case of very long filenames
+	inline-size: 100%;
+
+	&:only-child {
+		grid-column-end: 2 span;
+		inline-size: fit-content;
+		max-inline-size: 100%;
+	}
 }
 
 .message-attachmentList-item {
