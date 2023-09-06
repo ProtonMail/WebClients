@@ -237,6 +237,15 @@ export default function useUploadFile() {
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
+                if (isForPhotos) {
+                    const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentId);
+                    if (!parentHashKey) {
+                        throw Error('Missing hash key on folder link');
+                    }
+                    const hash = await generateLookupHash(file.name, parentHashKey);
+
+                    return createFile(abortSignal, file.name, mimeType, hash, keys);
+                }
                 const {
                     filename: newName,
                     hash,
@@ -255,7 +264,9 @@ export default function useUploadFile() {
                     // with new upload - it needs to be A (2), not just A.
                     return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
                 }
-                if (file.name === newName) {
+
+                // TODO: Remove isForPhotos when we will implement Photos conflict check
+                if (file.name === newName || isForPhotos) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
                 const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
