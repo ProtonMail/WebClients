@@ -157,9 +157,9 @@ const expandSearchItem = (
                 isSingleOccurrence,
             };
         });
-    } catch (e) {
+    } catch (e: any) {
         // ignore events that fail to be expanded
-        console.log(item);
+        console.warn(e);
     }
 };
 
