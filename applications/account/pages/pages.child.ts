@@ -1,9 +1,10 @@
 import fs from 'fs';
+import path from 'path';
 import { LocaleData, addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
-import { Configuration } from 'webpack';
 
-import { Parameters } from './src/pages/interface';
-import { getLangAttribute, getLocaleMap } from './src/static/localeMapping';
+import { Parameters } from '../src/pages/interface';
+import { getLangAttribute, getLocaleMap } from '../src/static/localeMapping';
+import { HrefLang, LocalizedPage } from './interface';
 
 const pageExtensionRegex = /\.ts/;
 
@@ -42,25 +43,13 @@ export const localize = (localeCode: string, data: LocaleData | null) => {
     ttagUseLocale(localeCode);
 };
 
-export interface HrefLang {
-    hreflang: string;
-    pathname: string;
-}
-
 interface Locale {
     pagePath: string;
-    parameters: Parameters;
+    parameters: () => Parameters;
     pathname: string;
     localeData: LocaleData | null;
     shortLocale: string;
     originalLocale: string;
-}
-
-interface LocalizedPage {
-    shortLocalizedPathname: string;
-    filename: string;
-    rewrite: { from: RegExp; to: string };
-    parameters: Parameters & { pathname: string; lang: string };
 }
 
 const getLocalisedPage = ({
@@ -81,25 +70,21 @@ const getLocalisedPage = ({
         shortLocalizedPathname,
         filename,
         rewrite,
-        parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters },
+        parameters: { pathname: localisedPathname, lang: getLangAttribute(originalLocale), ...parameters() },
     };
 };
 
-export const getPages = (mode: Configuration['mode'], req: (path: string) => any) => {
-    if (mode !== 'production') {
-        return {
-            pages: [],
-            hreflangs: [],
-        };
-    }
-    const pagePaths: string[] = fs.readdirSync('./src/pages').filter((pagePath: string) => {
+const getPages = () => {
+    const pageDir = path.resolve(process.cwd(), 'src/pages');
+    const pagePaths: string[] = fs.readdirSync(pageDir).filter((pagePath: string) => {
         return pagePath.endsWith('.ts') && pagePath !== 'interface.ts';
     });
 
     // Reverse the pages so that /mail/signup is before /mail
     pagePaths.reverse();
 
-    const localeFiles: string[] = fs.readdirSync('./locales');
+    const localeDir = path.resolve(process.cwd(), 'locales');
+    const localeFiles: string[] = fs.readdirSync(localeDir);
     const localeMap = getLocaleMap(localeFiles);
 
     const localeExt = '.json';
@@ -112,7 +97,7 @@ export const getPages = (mode: Configuration['mode'], req: (path: string) => any
             const originalLocale = localePath.replace(localeExt, '');
             const shortLocale = localeMap[originalLocale];
             return {
-                localeData: req(`./locales/${localePath}`),
+                localeData: require(path.resolve(localeDir, localePath)),
                 originalLocale,
                 shortLocale,
             };
@@ -131,9 +116,8 @@ export const getPages = (mode: Configuration['mode'], req: (path: string) => any
     ];
 
     const pages = pagePaths.flatMap((pagePath) => {
-        const enFile = `./src/pages/${pagePath}`;
-        const file = req(enFile);
-        const parameters: Parameters = file.default;
+        const file = require(path.resolve(pageDir, pagePath));
+        const parameters: () => Parameters = file.default;
         const pathname = getPathnameFromFilename(pagePath);
 
         return [
@@ -161,3 +145,9 @@ export const getPages = (mode: Configuration['mode'], req: (path: string) => any
         hreflangs,
     };
 };
+
+const pages = getPages();
+
+if (process.send) {
+    process.send(pages);
+}
