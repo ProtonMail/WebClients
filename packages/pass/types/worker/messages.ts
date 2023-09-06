@@ -79,6 +79,7 @@ export enum WorkerMessageType {
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
     IMPORT_PROGRESS = 'IMPORT_PROGRESS',
     ACTIVITY_PROBE = 'ACTIVITY_PROBE',
+    DEBUG = 'DEBUG',
 }
 
 /* messages for communication with account */
@@ -128,6 +129,7 @@ export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDAT
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type ImportProgressMessage = WithPayload<WorkerMessageType.IMPORT_PROGRESS, { progress: number }>;
 export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
+export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 
 export type WorkerMessage =
     | StoreActionMessage
@@ -175,7 +177,8 @@ export type WorkerMessage =
     | SettingsUpdateMessage
     | PermissionsUpdateMessage
     | ImportProgressMessage
-    | ActivityProbeMessage;
+    | ActivityProbeMessage
+    | DebugMessage;
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & { sender: ExtensionEndpoint };
 export type MessageFailure = { type: 'error'; error: string; payload?: string };

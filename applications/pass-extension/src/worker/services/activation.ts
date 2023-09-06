@@ -225,16 +225,6 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
 
-    if (ENV === 'development') {
-        /* there is no way to test the update sequence locally without
-         * creating a custom `update_url` server. In dev mode, trigger
-         * the `handleOnUpdateAvailable` callback from the settings */
-        WorkerMessageBroker.registerMessage(WorkerMessageType.UPDATE_AVAILABLE, () => {
-            handleOnUpdateAvailable({ version: browser.runtime.getManifest().version });
-            return true;
-        });
-    }
-
     void checkAvailableUpdate();
     void checkPermissionsUpdate();
 
