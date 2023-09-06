@@ -1,11 +1,11 @@
 import { getUnixTime } from 'date-fns';
 
 import { serverTime } from '@proton/crypto';
-import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
+import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
+import { generateVeventHashUID, getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -13,7 +13,11 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getSupportedEvent, withSupportedDtstamp } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import {
+    buildPartyCrasherParticipantData,
+    findAttendee,
+    getParticipant,
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { parseWithRecoveryAndMaybeErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
@@ -34,14 +38,13 @@ import {
     getIsYahooEvent,
     getPmSharedEventID,
     getPmSharedSessionKey,
-
 } from '@proton/shared/lib/calendar/vcalHelper';
 import {
     getIsEventCancelled,
     getIsRecurring,
     getSequence,
     getUidValue,
-    withDtstamp
+    withDtstamp,
 } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
@@ -83,6 +86,7 @@ export enum EVENT_TIME_STATUS {
 export interface EventInvitation {
     originalVcalInvitation?: VcalVcalendar;
     originalUniqueIdentifier?: string;
+    originalIcsHasNoOrganizer?: boolean;
     legacyUid?: string;
     fileName?: string;
     vevent: VcalVeventComponent;
@@ -110,6 +114,7 @@ export interface InvitationModel {
     hasMultipleVevents: boolean;
     timeStatus: EVENT_TIME_STATUS;
     isPartyCrasher?: boolean;
+    hasProtonUID: boolean;
     isAddressActive: boolean;
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
@@ -147,19 +152,19 @@ export const getHasInvitationApi = (model: InvitationModel): model is RequireSom
 };
 
 export const getInvitationHasMethod = (
-    invitation: EventInvitation
+    invitation: EventInvitation,
 ): invitation is RequireSome<EventInvitation, 'method'> => {
     return invitation.method !== undefined;
 };
 
 export const getInvitationHasEventID = (
-    invitation: EventInvitation
+    invitation: EventInvitation,
 ): invitation is RequireSome<EventInvitation, 'calendarEvent'> => {
     return invitation.calendarEvent?.ID !== undefined;
 };
 
 export const getInvitationHasAttendee = (
-    invitation: EventInvitation
+    invitation: EventInvitation,
 ): invitation is RequireSome<EventInvitation, 'attendee'> => {
     return invitation.attendee !== undefined;
 };
@@ -332,7 +337,7 @@ export const getIsReinvite = ({
 export const getIsNonSoughtEvent = (
     event: CalendarEvent,
     vevent: VcalVeventComponent,
-    supportedRecurrenceId?: VcalDateOrDateTimeProperty
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty,
 ) => {
     if (!event.RecurrenceID) {
         return false;
@@ -394,14 +399,16 @@ interface ProcessedInvitation<T> {
     isAddressActive: boolean;
     isAddressDisabled: boolean;
     invitation: EventInvitation & T;
+    isPartyCrasher: boolean;
+    originalIcsHasNoOrganizer?: boolean;
 }
 export const processEventInvitation = <T>(
     invitation: EventInvitation & T,
     message: MessageStateWithData,
     contactEmails: ContactEmail[],
-    ownAddresses: Address[]
+    ownAddresses: Address[],
 ): ProcessedInvitation<T> => {
-    const { vevent, calendarEvent, method } = invitation;
+    const { vevent, calendarEvent, method, originalIcsHasNoOrganizer } = invitation;
     const isImport = method === ICAL_METHOD.PUBLISH;
     const timeStatus = getEventTimeStatus(vevent, +serverTime());
     const attendees = vevent.attendee || [];
@@ -414,10 +421,13 @@ export const processEventInvitation = <T>(
         attendees,
         addresses: ownAddresses,
     });
-    const isAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
-    const isAddressDisabled = selfAddress ? getIsAddressDisabled(selfAddress) : false;
+    let isAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
+    let isAddressDisabled = selfAddress ? getIsAddressDisabled(selfAddress) : false;
+    const hasProtonUID = getIsProtonUID(vevent.uid.value);
 
     const processed: EventInvitation & T = { ...invitation };
+
+    let isPartyCrasher = false;
 
     if (attendees) {
         processed.participants = attendees.map((attendee) =>
@@ -427,7 +437,7 @@ export const processEventInvitation = <T>(
                 selfAddress,
                 selfAttendee,
                 emailTo: originalTo,
-            })
+            }),
         );
     }
     if (organizer) {
@@ -450,16 +460,38 @@ export const processEventInvitation = <T>(
                 calendarAttendees: calendarEvent?.Attendees,
                 xYahooUserStatus: vevent['x-yahoo-user-status']?.value,
             });
+        } else {
+            isPartyCrasher = true;
         }
-    } else if (selfAttendee) {
-        processed.attendee = getParticipant({
-            participant: selfAttendee,
-            selfAddress,
-            selfAttendee,
-            contactEmails,
-            emailTo: originalTo,
-            calendarAttendees: calendarEvent?.Attendees,
-        });
+    } else {
+        // Attendee mode
+        if (selfAttendee) {
+            processed.attendee = getParticipant({
+                participant: selfAttendee,
+                selfAddress,
+                selfAttendee,
+                contactEmails,
+                emailTo: originalTo,
+                calendarAttendees: calendarEvent?.Attendees,
+            });
+        } else if (!isImport) {
+            // The user is a party crasher
+            isPartyCrasher = true;
+            if (!hasProtonUID) {
+                // To let the user reply, we fake it being in the attendee list
+                const { participant, selfAttendee, selfAddress } =
+                    buildPartyCrasherParticipantData(originalTo, ownAddresses, contactEmails, attendees) || {};
+
+                if (participant && selfAttendee && selfAddress) {
+                    processed.attendee = participant;
+                    processed.vevent.attendee = [...(processed.vevent.attendee || []), selfAttendee];
+
+                    // Now that the participant has been added to the event invitation, we need to check once again if the address is disabled or not
+                    isAddressActive = getIsAddressActive(selfAddress);
+                    isAddressDisabled = getIsAddressDisabled(selfAddress);
+                }
+            }
+        }
     }
 
     return {
@@ -469,6 +501,8 @@ export const processEventInvitation = <T>(
         isAddressActive,
         isAddressDisabled,
         invitation: processed,
+        isPartyCrasher,
+        originalIcsHasNoOrganizer,
     };
 };
 
@@ -495,6 +529,7 @@ export const getInitialInvitationModel = ({
     const errorModel = {
         isImport: false,
         hasMultipleVevents: false,
+        hasProtonUID: false,
         isOrganizerMode: false,
         isAddressDisabled: false,
         isAddressActive: true,
@@ -509,15 +544,36 @@ export const getInitialInvitationModel = ({
     if (!getInvitationHasMethod(invitationOrError)) {
         throw new Error('Initial invitation lacks ICAL method');
     }
-    const { isOrganizerMode, isImport, timeStatus, isAddressActive, isAddressDisabled, invitation } =
-        processEventInvitation<RequireSome<EventInvitation, 'method'>>(
-            invitationOrError,
-            message,
-            contactEmails,
-            ownAddresses
-        );
+    const {
+        isOrganizerMode,
+        isImport,
+        timeStatus,
+        isAddressActive,
+        isAddressDisabled,
+        invitation,
+        isPartyCrasher,
+        originalIcsHasNoOrganizer,
+    } = processEventInvitation<RequireSome<EventInvitation, 'method'>>(
+        invitationOrError,
+        message,
+        contactEmails,
+        ownAddresses,
+    );
     if (invitation.method === ICAL_METHOD.REPLY && !invitation.attendee) {
         // If we couldn't find the attendee in the REPLY ics, something is wrong in the ics
+        return {
+            ...errorModel,
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                method: invitation.method,
+            }),
+        };
+    }
+    if (isPartyCrasher && originalIcsHasNoOrganizer) {
+        /*
+         If the user is a party crasher, most likely the invitation has been forwarded.
+         Therefore, we cannot assume the sender is the organizer, so in case the original ICS contained no organizer,
+         we have no other option than showing an error.
+         */
         return {
             ...errorModel,
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
@@ -529,6 +585,7 @@ export const getInitialInvitationModel = ({
         isOrganizerMode,
         isImport,
         hasMultipleVevents: !!invitation.hasMultipleVevents,
+        hasProtonUID: getIsProtonUID(invitation.vevent.uid.value),
         timeStatus,
         isAddressActive,
         isAddressDisabled,
@@ -536,7 +593,7 @@ export const getInitialInvitationModel = ({
         maxUserCalendarsDisabled,
         hasNoCalendars,
         invitationIcs: invitation,
-        isPartyCrasher: isOrganizerMode || isImport ? false : !invitation.attendee,
+        isPartyCrasher,
     };
     if (calendar) {
         result.calendarData = {
@@ -611,7 +668,7 @@ export const getSupportedEventInvitation = async ({
     }
     const completeVevent = withOutsideUIDAndSequence(
         withSupportedDtstamp(vevent, message.Time * SECOND),
-        vcalComponent
+        vcalComponent,
     );
     const hasMultipleVevents = getHasMultipleVevents(vcalComponent);
     const isImport = supportedMethod === ICAL_METHOD.PUBLISH;
@@ -621,6 +678,7 @@ export const getSupportedEventInvitation = async ({
     const originalUniqueIdentifier =
         hasMultipleVevents || !originalUID ? await generateVeventHashUID(serialize(vcalComponent)) : originalUID;
     let legacyUid;
+    let originalIcsHasNoOrganizer = false;
     if (isImport) {
         const sha1Uid = await generateVeventHashUID(icsBinaryString, originalUID);
         if (originalUID) {
@@ -633,6 +691,7 @@ export const getSupportedEventInvitation = async ({
         // Invitations without UID should be considered invalid
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     } else if (!completeVevent.organizer) {
+        originalIcsHasNoOrganizer = true;
         // The ORGANIZER field is mandatory in an invitation
         const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
             ? getOriginalTo(message)
@@ -664,6 +723,7 @@ export const getSupportedEventInvitation = async ({
             vevent: supportedEvent,
             vtimezone,
             originalVcalInvitation: vcalComponent,
+            originalIcsHasNoOrganizer,
             originalUniqueIdentifier,
             legacyUid,
             hasMultipleVevents,
@@ -688,6 +748,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
     const {
         isImport,
         hasMultipleVevents,
+        hasProtonUID,
         isOrganizerMode,
         isPartyCrasher,
         invitationIcs: { method, vevent: veventIcs },
@@ -703,12 +764,13 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
     if (isImport && (invitationApi || hasMultipleVevents)) {
         return true;
     }
+
     return (
         method === ICAL_METHOD.CANCEL ||
         !!isOutdated ||
         !isAddressActive ||
         !!calendarData?.isCalendarDisabled ||
-        isPartyCrasher
+        (isPartyCrasher && hasProtonUID)
     );
 };
 
@@ -725,7 +787,7 @@ export const getParticipantsList = (attendees?: Participant[], organizer?: Parti
         // we remove the organizer from the list of participants in case it's duplicated there
         const canonicalOrganizerEmail = canonicalizeEmailByGuess(organizer.emailAddress);
         const organizerIndex = list.findIndex(
-            ({ emailAddress }) => canonicalizeEmailByGuess(emailAddress) === canonicalOrganizerEmail
+            ({ emailAddress }) => canonicalizeEmailByGuess(emailAddress) === canonicalOrganizerEmail,
         );
         if (organizerIndex !== -1) {
             list.splice(organizerIndex, 1);
@@ -733,4 +795,37 @@ export const getParticipantsList = (attendees?: Participant[], organizer?: Parti
         list.unshift(organizer);
     }
     return list;
+};
+
+export const getIsPartyCrasher = async ({
+    isOrganizerMode,
+    invitationApi,
+    calendarEvent,
+    message,
+    isPartyCrasherIcs,
+}: {
+    isOrganizerMode: boolean;
+    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    calendarEvent?: CalendarEvent;
+    message: MessageStateWithData;
+    isPartyCrasherIcs?: boolean;
+}) => {
+    if (isOrganizerMode) {
+        // on organizer mode we can only check party crasher status as long as the event exists in the DB
+        if (invitationApi) {
+            return !invitationApi.attendee;
+        } else if (calendarEvent) {
+            // If we do not have invitationApi, but we have a calendarEvent, it means we could not decrypt calendarEvent.
+            // Assuming the sender is a potential attendee, we can resort to checking attendee tokens in this case, since those are clear text
+            const senderToken = await generateAttendeeToken(
+                canonicalizeEmailByGuess(message.data.Sender.Address),
+                calendarEvent.UID,
+            );
+            return !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
+        }
+        return false;
+    } else {
+        // on attendee mode we fully rely on whether the attendee appears in the ics or not
+        return isPartyCrasherIcs;
+    }
 };

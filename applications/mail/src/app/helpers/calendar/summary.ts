@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getIsVeventCancelled } from '@proton/shared/lib/calendar/vcalHelper';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { InvitationModel, UPDATE_ACTION } from './invite';
 
 const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;
 const { ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
-const { CANCELLED } = ICAL_EVENT_STATUS;
 const { KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
 
 export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
@@ -488,7 +487,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
             return null;
         }
         if (isOutdated) {
-            if (getEventStatus(veventApi) === CANCELLED) {
+            if (getIsVeventCancelled(veventApi)) {
                 return c('Calendar invite info').t`This invitation is out of date. The event has been canceled.`;
             }
 
@@ -524,7 +523,7 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
         }
 
         if (isOutdated) {
-            if (getEventStatus(veventApi) === CANCELLED) {
+            if (getIsVeventCancelled(veventApi)) {
                 return c('Calendar invite info').t`This invitation is out of date. The event has been canceled.`;
             }
 
