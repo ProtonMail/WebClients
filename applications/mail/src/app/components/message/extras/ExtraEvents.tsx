@@ -36,6 +36,8 @@ import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
+import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
+
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import {
     EventInvitation,
@@ -73,7 +75,8 @@ const ExtraEvents = ({ message }: Props) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const getCalendarInfo = useGetCalendarInfo();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const contactsMap = useContactsMap();
+    const getCalendarEventRaw = useGetCalendarEventRaw(contactsMap);
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const [loadingWidget, withLoadingWidget] = useLoading();

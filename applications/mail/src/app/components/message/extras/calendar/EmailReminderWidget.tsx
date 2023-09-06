@@ -44,6 +44,8 @@ import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shar
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
+import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
+
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
 import { MessageErrors } from '../../../../logic/messages/messagesTypes';
@@ -87,7 +89,8 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
     const { createNotification } = useNotifications();
     const api = useApi();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const contactsMap = useContactsMap();
+    const getCalendarEventRaw = useGetCalendarEventRaw(contactsMap);
     const contactEmails = useContactEmails()[0] || [];
     const getCalendars = useGetCalendars();
     const getAddressKeys = useGetAddressKeys();
