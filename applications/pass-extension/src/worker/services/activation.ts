@@ -1,9 +1,7 @@
 import { type Runtime } from 'webextension-polyfill';
 
-import { getPersistedSession } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
-import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import {
     selectItemDraft,
@@ -75,7 +73,7 @@ export const createActivationService = () => {
         const { loggedIn } = (await ctx.init({ force: true })).getState();
 
         if (ENV === 'development' && RESUME_FALLBACK) {
-            if (!loggedIn && (await getPersistedSession())) {
+            if (!loggedIn && (await ctx.service.auth.getPersistedSession())) {
                 const url = browser.runtime.getURL('/onboarding.html#/resume');
                 return browser.windows.create({ url, type: 'popup', height: 600, width: 540 });
             }
@@ -92,7 +90,7 @@ export const createActivationService = () => {
                 /* in production clear the cache on each extension
                  * update in case the state/snapshot data-structure
                  * has changed. FIXME: use version migrations */
-                await browserLocalStorage.removeItems(['salt', 'state', 'snapshot']);
+                await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
             }
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
@@ -103,7 +101,7 @@ export const createActivationService = () => {
 
         if (details.reason === 'install') {
             try {
-                await Promise.all([browserLocalStorage.clear(), browserSessionStorage.clear()]);
+                await Promise.all([ctx.service.storage.local.clear(), ctx.service.storage.session.clear()]);
                 const url = browser.runtime.getURL('/onboarding.html#/success');
                 await browser.tabs.create({ url });
             } catch (error: any) {
@@ -226,16 +224,6 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
-
-    if (ENV === 'development') {
-        /* there is no way to test the update sequence locally without
-         * creating a custom `update_url` server. In dev mode, trigger
-         * the `handleOnUpdateAvailable` callback from the settings */
-        WorkerMessageBroker.registerMessage(WorkerMessageType.UPDATE_AVAILABLE, () => {
-            handleOnUpdateAvailable({ version: browser.runtime.getManifest().version });
-            return true;
-        });
-    }
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();

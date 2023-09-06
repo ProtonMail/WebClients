@@ -2,21 +2,18 @@
 import { captureException as sentryCaptureException } from '@sentry/browser';
 import { c } from 'ttag';
 
-import type { AuthStore, ExtensionSession, SessionLockCheckResult } from '@proton/pass/auth';
+import type { AuthStore, ExtensionPersistedSession, ExtensionSession, SessionLockCheckResult } from '@proton/pass/auth';
 import {
     SESSION_KEYS,
     checkSessionLock,
     consumeFork,
     createAuthStore,
+    encryptPersistedSession,
     exposeAuthStore,
-    getInMemorySession,
-    getPersistedSession,
-    persistSession,
+    isValidSession,
     resumeSession,
-    setInMemorySession,
 } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
-import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import {
     notification,
     selectUser,
@@ -28,7 +25,7 @@ import {
     stateLock,
     syncLock,
 } from '@proton/pass/store';
-import type { Api, WorkerMessageResponse } from '@proton/pass/types';
+import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import type { ForkPayload } from '@proton/pass/types/api/fork';
 import { withPayload } from '@proton/pass/utils/fp';
@@ -52,9 +49,12 @@ export interface AuthService {
     login: (session: ExtensionSession) => Promise<boolean>;
     logout: () => Promise<boolean>;
     /* session */
-    resume: () => Promise<boolean>;
-    consume: (data: ForkPayload) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
-    persist: () => Promise<void>;
+    resumeSession: () => Promise<boolean>;
+    consumeSession: (data: ForkPayload) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
+    persistSession: () => Promise<void>;
+    setSessionTokens: (data: Pick<ExtensionSession, 'AccessToken' | 'RefreshToken' | 'RefreshTime'>) => Promise<void>;
+    getCurrentSession: () => Maybe<ExtensionSession>;
+    getPersistedSession: () => Promise<Maybe<ExtensionPersistedSession>>;
     /* lock */
     lock: () => void;
     unlock: (sessionLockToken: string) => Promise<void>;
@@ -79,19 +79,22 @@ export const createAuthService = ({
     const authService: AuthService = {
         store: authStore,
 
-        init: asyncLock(async () => {
-            logger.info(`[Worker::Auth] Initialization start`);
+        init: asyncLock(
+            withContext<() => Promise<boolean>>(async (ctx) => {
+                logger.info(`[Worker::Auth] Initialization start`);
 
-            const inMemorySession = await getInMemorySession();
-            return inMemorySession ? authService.login(inMemorySession) : authService.resume();
-        }),
+                const inMemorySession = await ctx.service.storage.session.get(SESSION_KEYS);
+                return isValidSession(inMemorySession)
+                    ? authService.login(inMemorySession)
+                    : authService.resumeSession();
+            })
+        ),
 
         login: withContext(async (ctx, session) => {
-            await setInMemorySession(session);
+            await ctx.service.storage.session.set(session);
+            const { UID, UserID, keyPassword, AccessToken, RefreshToken, RefreshTime, sessionLockToken } = session;
 
-            const { UID, UserID, keyPassword, AccessToken, RefreshToken, sessionLockToken } = session;
-
-            api.configure({ UID, AccessToken, RefreshToken });
+            api.configure({ UID, AccessToken, RefreshToken, RefreshTime });
             api.unsubscribe();
 
             authStore.setUID(UID);
@@ -171,8 +174,8 @@ export const createAuthService = ({
 
             store.dispatch(stateDestroy());
 
-            void browserSessionStorage.removeItems(SESSION_KEYS);
-            void browserLocalStorage.clear();
+            void ctx.service.storage.session.clear();
+            void ctx.service.storage.local.clear();
             authStore.clear();
 
             api.unsubscribe();
@@ -183,11 +186,10 @@ export const createAuthService = ({
             return true;
         }),
 
-        resume: withContext(async (ctx) => {
+        resumeSession: withContext(async (ctx) => {
             logger.info(`[Worker::Auth] Trying to resume session`);
             ctx.setStatus(WorkerStatus.RESUMING);
-
-            const persistedSession = await getPersistedSession();
+            const persistedSession = await authService.getPersistedSession();
 
             if (persistedSession) {
                 try {
@@ -202,9 +204,17 @@ export const createAuthService = ({
                         UID: persistedSession.UID,
                         AccessToken: persistedSession.AccessToken,
                         RefreshToken: persistedSession.RefreshToken,
+                        RefreshTime: persistedSession.RefreshTime,
                     });
 
-                    const session = await resumeSession({ session: persistedSession, api });
+                    const session = await resumeSession({
+                        api,
+                        session: persistedSession,
+                        onInvalidSession: async () => {
+                            await ctx.service.storage.local.unset(['ps']);
+                            await ctx.service.storage.session.clear();
+                        },
+                    });
 
                     if (session !== undefined) {
                         logger.info(`[Worker::Auth] Session successfuly resumed`);
@@ -232,7 +242,7 @@ export const createAuthService = ({
         /* Consumes a session fork request and sends response.
          * Reset api in case it was in an invalid session state.
          * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
-        consume: withContext(async (ctx, data) => {
+        consumeSession: withContext(async (ctx, data) => {
             if (ctx.getState().loggedIn) {
                 throw {
                     payload: {
@@ -253,7 +263,7 @@ export const createAuthService = ({
 
                 /* if the session is locked we might not be considered
                  * fully logged in but we can still persist the session */
-                if (loggedIn || workerLocked(ctx.status)) void authService.persist();
+                if (loggedIn || workerLocked(ctx.status)) void authService.persistSession();
 
                 /* if we get a locked session error on user/access we should not
                  * show a login error : user will have to unlock. FIXME: when
@@ -310,20 +320,53 @@ export const createAuthService = ({
             }
         }),
 
-        persist: async () => {
-            logger.info('[Worker::Auth] Persisting session...');
-
-            const session: ExtensionSession = {
-                AccessToken: api.getAuth()!.AccessToken,
-                RefreshToken: api.getAuth()!.RefreshToken,
+        getCurrentSession: () => {
+            const session = {
+                AccessToken: api.getAuth()?.AccessToken,
+                RefreshToken: api.getAuth()?.RefreshToken,
+                RefreshTime: api.getAuth()?.RefreshTime,
                 keyPassword: authStore.getPassword(),
                 sessionLockToken: authStore.getLockToken(),
-                UID: authStore.getUID()!,
-                UserID: authStore.getUserID()!,
+                UID: authStore.getUID(),
+                UserID: authStore.getUserID(),
             };
 
-            await persistSession(api, session);
+            return isValidSession(session) ? session : undefined;
         },
+
+        getPersistedSession: withContext<() => Promise<Maybe<ExtensionPersistedSession>>>(async (ctx) => {
+            const { ps } = await ctx.service.storage.local.get(['ps']);
+
+            if (ps) {
+                try {
+                    const session = JSON.parse(ps) as Partial<ExtensionPersistedSession>;
+                    return {
+                        UserID: session.UserID ?? '',
+                        UID: session.UID ?? '',
+                        AccessToken: session.AccessToken ?? '',
+                        RefreshToken: session.RefreshToken ?? '',
+                        blob: session.blob ?? '',
+                    };
+                } catch {}
+            }
+        }),
+
+        setSessionTokens: withContext(async (ctx, data) => {
+            const ps = await authService.getPersistedSession();
+            if (ps) {
+                await ctx.service.storage.local.set({ ps: JSON.stringify({ ...ps, ...data }) });
+                await ctx.service.storage.session.set(data);
+            }
+        }),
+
+        persistSession: withContext(async (ctx) => {
+            logger.info('[Worker::Auth] Persisting session...');
+            const session = authService.getCurrentSession();
+            if (!session) throw new Error('Trying to persist invalid session');
+
+            await ctx.service.storage.local.set({ ps: await encryptPersistedSession(api, session) });
+            await ctx.service.storage.session.set(session);
+        }),
 
         /* set the lock status before dispatching
          * the `stateLock` so the UI can pick up
@@ -354,7 +397,7 @@ export const createAuthService = ({
             api.configure(api.getAuth()); /* reset API status */
 
             await authService.syncLock();
-            await authService.persist();
+            await authService.persistSession();
         },
 
         syncLock: async () => {
@@ -401,7 +444,7 @@ export const createAuthService = ({
 
     const resolveUserData = () => ({ user: selectUser(store.getState()) });
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consume));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeSession));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);

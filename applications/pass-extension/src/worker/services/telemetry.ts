@@ -1,5 +1,4 @@
 import { api } from '@proton/pass/api';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
 import browser from '@proton/pass/globals/browser';
 import { selectUserTier } from '@proton/pass/store';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
@@ -15,6 +14,7 @@ import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';
+import { withContext } from '../context';
 import store from '../store';
 
 type TelemetryEventBundle = {
@@ -35,28 +35,27 @@ const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 const TELEMETRY_BATCH_SIZE = 100;
 const TELEMETRY_MAX_RETRY = 2;
 
-const withUserTier = (event: TelemetryEvent): TelemetryEvent =>
-    merge(event, { Dimensions: { user_tier: selectUserTier(store.getState()) } });
-
 const getRandomSendTime = (): number => getEpoch() + MIN_DT + Math.floor(Math.random() * (MAX_DT - MIN_DT));
 const shouldSendBundle = ({ sendTime }: TelemetryEventBundle): boolean => sendTime - getEpoch() <= 0;
+
 const createBundle = (): TelemetryEventBundle => ({ sendTime: getRandomSendTime(), events: [], retryCount: 0 });
+const deleteBundle = withContext<() => Promise<void>>((ctx) => ctx.service.storage.local.unset(['telemetry']));
+const saveBundle = withContext<(bundle: TelemetryEventBundle) => Promise<void>>((ctx, bundle) =>
+    ctx.service.storage.local.set({ telemetry: JSON.stringify(bundle) })
+);
 
-/* resolves any currently cached telemetry bundle or creates
- * a new one if non exists */
-const resolveBundle = async (): Promise<TelemetryEventBundle> => {
+/* resolves any currently cached telemetry bundle or creates a new one if non exists */
+const resolveBundle = withContext<() => Promise<TelemetryEventBundle>>(async ({ service }) => {
     try {
-        const cachedBundle = await browserLocalStorage.getItem('telemetry');
-        if (!cachedBundle) throw new Error();
-
-        return JSON.parse(cachedBundle);
+        const { telemetry } = await service.storage.local.get(['telemetry']);
+        if (!telemetry) throw new Error();
+        return JSON.parse(telemetry);
     } catch (_) {
         const bundle = createBundle();
-        await browserLocalStorage.setItem('telemetry', JSON.stringify(bundle));
-
+        await saveBundle(bundle);
         return bundle;
     }
-};
+});
 
 const isTelemetryEnabled = async (): Promise<boolean> => {
     const { UserSettings } = await api<{ UserSettings: UserSettings }>(getSettings());
@@ -126,14 +125,14 @@ export const createTelemetryService = () => {
                 const result = await sendBundle(bundle);
 
                 if (result.ok || !result.retry) {
-                    await browserLocalStorage.removeItem('telemetry');
+                    await deleteBundle();
                     return resolve(undefined);
                 } else bundle.retryCount += 1;
             }
 
             /* if the bundle has not reached its sendTime or if the api
              * call failed : update bundle & set the alarm */
-            await browserLocalStorage.setItem('telemetry', JSON.stringify(bundle));
+            await saveBundle(bundle);
             await setAlarm(bundle);
             return resolve(bundle);
         }).catch(noop);
@@ -143,13 +142,12 @@ export const createTelemetryService = () => {
      * alarms and any locally stored event bundle  */
     const reset = () => {
         logger.info('[Worker::Telemetry] Clearing telemetry service...');
-
-        void browserLocalStorage.removeItem('telemetry');
         browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop);
 
         ctx.buffer.length = 0;
         ctx.job = null;
         ctx.active = false;
+        void deleteBundle();
     };
 
     const start = async () => {
@@ -172,7 +170,13 @@ export const createTelemetryService = () => {
         try {
             if (ctx.active) {
                 logger.info(`[Worker::Telemetry] Adding ${event.Event} to current bundle`);
-                ctx.buffer.push(withUserTier(event));
+                ctx.buffer.push(
+                    merge(event, {
+                        Dimensions: {
+                            user_tier: selectUserTier(store.getState()),
+                        },
+                    })
+                );
                 await consumeBuffer();
                 return true;
             }

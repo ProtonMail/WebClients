@@ -8,7 +8,7 @@ import type { ApiResponse } from './pass';
 export type ApiCreateOptions = {
     config: ProtonConfig;
     auth?: ApiAuthOptions;
-    onSessionRefresh?: (result: RefreshSessionResponse) => void;
+    onSessionRefresh?: (result: RefreshSessionResponse, refreshTime: number) => void;
 };
 
 export type ApiCallFn = (options: ApiOptions) => Promise<Response>;
@@ -17,6 +17,7 @@ export type ApiAuthOptions = {
     UID: string;
     AccessToken: string;
     RefreshToken: string;
+    RefreshTime?: number;
 };
 
 export type ApiStatus = {
