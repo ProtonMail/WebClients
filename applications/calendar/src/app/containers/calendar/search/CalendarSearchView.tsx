@@ -117,7 +117,7 @@ const CalendarSearchView = ({
 
     const visualItems = useMemo(() => {
         return getVisualSearchItems({
-            items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current),
+            items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current, date),
             calendarsMap,
             tzid,
             date,
