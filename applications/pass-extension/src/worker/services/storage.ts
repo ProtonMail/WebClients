@@ -2,7 +2,12 @@ import { noop } from 'lodash';
 
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import type { StorageInterface, StorageQuery } from '@proton/pass/extension/storage/types';
-import type { LocalStoreData, LocalStoreKeys, SessionStoreData, SessionStoreKeys } from '@proton/pass/types';
+import {
+    type LocalStoreData,
+    type LocalStoreKeys,
+    type SessionStoreData,
+    type SessionStoreKeys,
+} from '@proton/pass/types';
 
 type StorageState = { storageFull: boolean };
 
