@@ -71,7 +71,11 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: c('Title').t`Downgrade account`,
                     id: 'downgrade-account',
-                    available: user.isPaid && !hasVpnPlan && !hasVpnB2BPlan,
+                    // The !!subscritpion check is essential here to make sure that all the boolean variables
+                    // that depend on subscription are correctly computed before the first rendering.
+                    // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
+                    // to async calls that started in a rendering cycle.
+                    available: !!subscription && user.isPaid && !hasVpnPlan && !hasVpnB2BPlan,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
