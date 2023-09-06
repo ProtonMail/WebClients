@@ -4,8 +4,9 @@ import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
 import { createAutofill } from '../../../shared/form';
+import { allowActions, preventActions, shouldPreventActions, withActionTrap } from '../../../shared/form/action-trap';
 import { withContext } from '../../context/context';
-import type { FieldHandle, FormHandle, HTMLElementWithActionTrap } from '../../types';
+import type { FieldHandle, FormHandle } from '../../types';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
@@ -23,8 +24,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext(({ service: { iframe }, getSettings, getState }, evt) => {
         const { action, element } = field;
 
-        const inputEl = element as HTMLElementWithActionTrap;
-        if (inputEl.preventAction) return delete inputEl.preventAction;
+        if (shouldPreventActions(element)) return allowActions(element);
         if (!action) return;
 
         requestAnimationFrame(() => {
@@ -52,7 +52,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
  * and update the field's handle tracked value */
 const onInputField = (field: FieldHandle): (() => void) =>
     withContext(({ service: { iframe } }) => {
-        if (iframe.dropdown?.getState().visible) iframe.dropdown?.close();
+        if (iframe.dropdown?.getState().visible && !shouldPreventActions(field.element)) iframe.dropdown?.close();
         field.setValue((field.element as HTMLInputElement).value);
     });
 
@@ -111,7 +111,7 @@ export const createFieldHandles = ({
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
             const isFocusedField = document.activeElement === field.element;
-            (field.element as HTMLElementWithActionTrap).preventAction = options?.preventAction;
+            if (options?.preventAction) preventActions(field.element);
             field.element.focus();
 
             if (isFocusedField) {
@@ -125,7 +125,7 @@ export const createFieldHandles = ({
             }
         },
 
-        autofill: createAutofill(element),
+        autofill: withActionTrap(element, createAutofill(element)),
 
         /* if an icon is already attached recycle it */
         attachIcon: () => (field.icon = field.icon ?? createFieldIconHandle({ field })),
