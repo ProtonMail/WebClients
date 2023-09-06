@@ -28,7 +28,10 @@ import {
     veventBuilder,
 } from '@proton/testing';
 
-import { authentication, tick } from '../../../../helpers/test/render';
+import { refresh } from 'proton-mail/logic/contacts/contactsActions';
+import { store } from 'proton-mail/logic/store';
+
+import { ReduxProviderWrapper, authentication, tick } from '../../../../helpers/test/render';
 import EmailReminderWidget from './EmailReminderWidget';
 
 jest.mock('@proton/components/hooks/useNotifications');
@@ -91,7 +94,9 @@ function renderComponent(overrides?: any) {
             <CacheProvider cache={createCache()}>
                 <FeaturesProvider>
                     <DrawerProvider>
-                        <BrowserRouter>{children}</BrowserRouter>
+                        <ReduxProviderWrapper>
+                            <BrowserRouter>{children}</BrowserRouter>
+                        </ReduxProviderWrapper>
                     </DrawerProvider>
                 </FeaturesProvider>
             </CacheProvider>
@@ -105,7 +110,11 @@ function renderComponent(overrides?: any) {
 }
 
 describe('EmailReminderWidget', () => {
-    beforeAll(() => server.listen());
+    beforeAll(() => {
+        // Initialize contactsMap
+        store.dispatch(refresh({ contacts: [], contactGroups: [] }));
+        server.listen();
+    });
 
     afterAll(() => server.close());
 
@@ -259,7 +268,9 @@ describe('EmailReminderWidget', () => {
 
                 expect(skeleton).toBeInTheDocument();
 
-                await screen.findByText(/Event details are encrypted. Sign in again to restore Calendar and decrypt your data./);
+                await screen.findByText(
+                    /Event details are encrypted. Sign in again to restore Calendar and decrypt your data./
+                );
 
                 expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).not.toBeInTheDocument();
                 expect(screen.queryByText(/Learn more/)).toBeInTheDocument();

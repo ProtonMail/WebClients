@@ -4,6 +4,7 @@ import { differenceInMilliseconds, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useApi, useGetCalendarEventRaw, useHasSuspendedCounter } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';
@@ -42,7 +43,8 @@ interface Props {
 const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => {
     const api = useApi();
     const hasSuspendedCounter = useHasSuspendedCounter({ refreshInterval: MINUTE, tolerance: MINUTE / 2 });
-    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const { contactEmailsMap } = useContactEmailsCache();
+    const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const cacheRef = useRef<Set<string>>();
 
     useEffect(() => {
