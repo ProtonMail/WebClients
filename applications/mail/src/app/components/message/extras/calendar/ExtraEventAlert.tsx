@@ -1,18 +1,13 @@
 import { c } from 'ttag';
 
-
-
 import { Alert, SettingsLink } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-
-
 import { InvitationModel } from '../../../../helpers/calendar/invite';
-
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -24,6 +19,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         hasMultipleVevents,
         isOutdated,
         isPartyCrasher,
+        hasProtonUID,
         invitationIcs: { method, vevent: veventIcs, attendee: attendeeIcs },
         invitationApi,
         calendarData,
@@ -34,6 +30,16 @@ const ExtraEventAlert = ({ model }: Props) => {
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
     const alertClassName = 'my-4 text-break';
+
+    /* Depending on the case, we want to display a different alert message in the ICS widget.
+     * For party crashers, we have two scenarios:
+     * 1- When we have a party crasher invitation from an internal organizer, the condition is blocking.
+     * The party crasher alert message should be more important than other types of messages.
+     * 2- However, since we can accept party crasher invitations from an external organizers,
+     * the alert message will be less important than other messages (address is disabled, calendar limit reached, etc...)
+     */
+    const isPartyCrasherBlocking = isPartyCrasher && hasProtonUID;
+    const isPartyCrasherNonBlocking = isPartyCrasher && !hasProtonUID;
 
     if (isImport && hasMultipleVevents) {
         return null;
@@ -75,11 +81,26 @@ const ExtraEventAlert = ({ model }: Props) => {
 
     /**
      * attendee mode
+     * There are priorities on the message we want to display in attendee mode.
+     * 1- The user is a party crasher of the invitation and that the invitation is internal
+     * 2- Invitation is outdated
+     * 3- For unanswered invitations
+     *   a. Invitation is cancelled
+     *   b. The user address is inactive, and it's not an import
+     *   c. There is no calendar data available
+     *      i. User has no calendars
+     *      ii. User calendars are all using disabled addresses, but has not reached the calendar number limit
+     *      iii. User calendars are all using disabled addresses, but has reached the calendar number limit
+     * 4- The user is a party crasher of the invitation and the invitation is external
      */
-    if (isPartyCrasher) {
+    if (isPartyCrasherBlocking) {
+        // In case the user is a party crasher, we want to display a different message if organizer is internal or external.
+        // If organizer is internal, we cannot accept the event for now.
+        // But we can for external organizers.
         return (
             <Alert className={alertClassName} type="warning">
-                {c('Calendar invite info').t`Your email address is not in the participants list`}
+                {c('Calendar invite info')
+                    .t`You cannot respond to ${BRAND_NAME} invites if you're not on the participants list at the moment.`}
             </Alert>
         );
     }
@@ -139,7 +160,9 @@ const ExtraEventAlert = ({ model }: Props) => {
                 );
             }
         }
-        return null;
+        if (!isPartyCrasherNonBlocking) {
+            return null;
+        }
     }
 
     // for import we do not care about the state of the calendar where the event was saved
@@ -148,7 +171,7 @@ const ExtraEventAlert = ({ model }: Props) => {
     }
 
     // the invitation has been answered
-    if (getIsEventCancelled(invitationApi.calendarEvent)) {
+    if (invitationApi && getIsEventCancelled(invitationApi.calendarEvent)) {
         return null;
     }
 
@@ -182,6 +205,15 @@ const ExtraEventAlert = ({ model }: Props) => {
             </Alert>
         );
     }
+
+    if (isPartyCrasherNonBlocking) {
+        return (
+            <Alert className={alertClassName} type="warning">
+                {c('Calendar invite info').t`Your email address is not in the original participants list.`}
+            </Alert>
+        );
+    }
+
     return null;
 };
 
