@@ -149,10 +149,10 @@ export const OnboardingPanel: VFC = () => {
                 switch (message.type) {
                     case WorkerMessageType.UPDATE_AVAILABLE:
                         setMessage(OnboardingMessage.UPDATE_AVAILABLE);
-                        setOpen(true);
+                        return setOpen(true);
                     case WorkerMessageType.PERMISSIONS_UPDATE:
                         setMessage(OnboardingMessage.PERMISSIONS_REQUIRED);
-                        setOpen(true);
+                        return setOpen(true);
                 }
             }
         };
