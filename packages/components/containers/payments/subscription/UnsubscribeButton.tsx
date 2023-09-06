@@ -35,7 +35,11 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import { getShortPlan } from '../features/plan';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
-import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
+import FeedbackDowngradeModal, {
+    FeedbackDowngradeData,
+    FeedbackDowngradeResult,
+    isKeepSubscription,
+} from './FeedbackDowngradeModal';
 import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
@@ -153,11 +157,14 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        const data = await new Promise<FeedbackDowngradeData>((resolve, reject) => {
-            createModal(<FeedbackDowngradeModal user={user} onSubmit={resolve} onClose={reject} />);
+        const downgradeFeedbackOrKeepSubscription = await new Promise<FeedbackDowngradeResult>((resolve, reject) => {
+            createModal(<FeedbackDowngradeModal user={user} onResolve={resolve} onReject={reject} />);
         });
+        if (isKeepSubscription(downgradeFeedbackOrKeepSubscription)) {
+            return;
+        }
 
-        return handleUnsubscribe(data);
+        return handleUnsubscribe(downgradeFeedbackOrKeepSubscription);
     };
 
     return (
