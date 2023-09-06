@@ -19,11 +19,35 @@ export const Developer: VFC = () => {
                     icon
                     shape="ghost"
                     className="w100 flex flex-align-items-center border-norm"
-                    onClick={() => sendMessage(pageMessage({ type: WorkerMessageType.UPDATE_AVAILABLE }))}
+                    onClick={() =>
+                        sendMessage(
+                            pageMessage({
+                                type: WorkerMessageType.DEBUG,
+                                payload: { debug: 'update_trigger' },
+                            })
+                        )
+                    }
                 >
                     <Icon name="brand-chrome" className="mr-2" />
                     <span className="flex-item-fluid text-left">Trigger update</span>
                     <span className="text-xs color-weak">Triggers a fake update (keep popup opened)</span>
+                </Button>
+                <Button
+                    icon
+                    shape="ghost"
+                    className="w100 flex flex-align-items-center border-norm"
+                    onClick={() =>
+                        sendMessage(
+                            pageMessage({
+                                type: WorkerMessageType.DEBUG,
+                                payload: { debug: 'storage_full' },
+                            })
+                        )
+                    }
+                >
+                    <Icon name="drive" className="mr-2" />
+                    <span className="flex-item-fluid text-left">Trigger full disk</span>
+                    <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>
                 </Button>
             </Card>
 
