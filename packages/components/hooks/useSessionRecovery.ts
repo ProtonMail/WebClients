@@ -149,3 +149,39 @@ export const useSessionRecoveryInsecureTimeRemaining = () => {
         inDays,
     };
 };
+
+export const useHasDismissedSessionRecoveryCancelled = () => {
+    const authentication = useAuthentication();
+    const cancelledLocalStorageKey = `sr-ip--cancelled:${authentication.getUID()}`;
+
+    const [hasDismissed, setHasDismissed] = useLocalState(false, cancelledLocalStorageKey);
+
+    const sessionRecoveryState = useSessionRecoveryState();
+    const isCancelled = sessionRecoveryState === SessionRecoveryState.CANCELLED;
+
+    useEffect(() => {
+        if (!isCancelled) {
+            // Clear up local storage
+            removeItem(cancelledLocalStorageKey);
+        }
+    }, [isCancelled]);
+
+    return {
+        hasDismissedSessionRecoveryCancelled: hasDismissed,
+        dismissSessionRecoveryCancelled: () => {
+            setHasDismissed(true);
+        },
+    };
+};
+
+export const useShouldNotifySessionRecoveryCancelled = () => {
+    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
+    const sessionRecoveryState = useSessionRecoveryState();
+    const { hasDismissedSessionRecoveryCancelled } = useHasDismissedSessionRecoveryCancelled();
+
+    return (
+        isSessionRecoveryAvailable &&
+        sessionRecoveryState === SessionRecoveryState.CANCELLED &&
+        !hasDismissedSessionRecoveryCancelled
+    );
+};
