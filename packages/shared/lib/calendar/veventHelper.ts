@@ -18,7 +18,6 @@ import {
     CALENDAR_CARD_TYPE,
     CALENDAR_ENCRYPTED_FIELDS,
     CALENDAR_SIGNED_FIELDS,
-    ICAL_EVENT_STATUS,
     NOTIFICATION_TYPE_API,
     REQUIRED_SET,
     SHARED_ENCRYPTED_FIELDS,
@@ -32,7 +31,7 @@ import { withMandatoryPublishFields as withVAlarmMandatoryPublishFields } from '
 import { parse, serialize, toTriggerString } from './vcal';
 import { prodId } from './vcalConfig';
 import { dateTimeToProperty, propertyToUTCDate } from './vcalConverter';
-import { getEventStatus, getIsCalendar, getIsEventComponent, getIsPropertyAllDay } from './vcalHelper';
+import { getIsCalendar, getIsEventComponent, getIsPropertyAllDay, getIsVeventCancelled } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
@@ -79,7 +78,7 @@ export const getIsEventCancelled = <T extends { CalendarEvents: CalendarEventDat
     if (!vevent) {
         return;
     }
-    return getEventStatus(vevent) === ICAL_EVENT_STATUS.CANCELLED;
+    return getIsVeventCancelled(vevent);
 };
 
 export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {

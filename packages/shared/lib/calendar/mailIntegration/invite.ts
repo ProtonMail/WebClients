@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getIsAddressExternal } from '@proton/shared/lib/helpers/address';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -7,7 +8,12 @@ import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
-import { canonicalizeEmail, canonicalizeEmailByGuess, canonicalizeInternalEmail } from '../../helpers/email';
+import {
+    buildMailTo,
+    canonicalizeEmail,
+    canonicalizeEmailByGuess,
+    canonicalizeInternalEmail,
+} from '../../helpers/email';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
@@ -40,25 +46,19 @@ import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../recurrence/rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, propertyToUTCDate } from '../vcalConverter';
+import { getAttendeePartstat, getAttendeeRole, getIsAlarmComponent, getPropertyTzid } from '../vcalHelper';
 import {
-    getAttendeePartstat,
-    getAttendeeRole,
-    getIsAlarmComponent,
-    getPropertyTzid,
-
-} from '../vcalHelper';
-import {
+    getIsAllDay,
     getIsEventCancelled,
+    getSequence,
     withDtstamp,
     withSummary,
     withoutRedundantDtEnd,
     withoutRedundantRrule,
-    getSequence,
-    getIsAllDay
 } from '../veventHelper';
 
 export const getParticipantHasAddressID = (
-    participant: Participant
+    participant: Participant,
 ): participant is RequireSome<Participant, 'addressID'> => {
     return !!participant.addressID;
 };
@@ -129,6 +129,56 @@ export const getParticipant = ({
     return result;
 };
 
+/**
+ * Build ad-hoc participant data for a party crasher
+ * (to fake a party crasher actually being in the ICS)
+ */
+export const buildPartyCrasherParticipantData = (
+    originalTo: string,
+    ownAddresses: Address[],
+    contactEmails: ContactEmail[],
+    attendees: VcalAttendeeProperty[],
+): { participant?: Participant; selfAttendee: VcalAttendeeProperty; selfAddress: Address } | undefined => {
+    let isCatchAllPartyCrasher = false;
+    const selfInternalAddresses = ownAddresses.filter((address) => !getIsAddressExternal(address));
+
+    const canonicalizedOriginalTo = canonicalizeInternalEmail(originalTo);
+    let selfAddress = selfInternalAddresses.find(({ Email }) => canonicalizeEmail(Email) === canonicalizedOriginalTo);
+
+    if (!selfAddress) {
+        const catchAllAddress = selfInternalAddresses.find(({ CatchAll }) => CatchAll);
+        if (catchAllAddress) {
+            // if any address is catch-all, that will be detected as party crasher
+            isCatchAllPartyCrasher = true;
+            selfAddress = catchAllAddress;
+        } else {
+            return;
+        }
+    }
+
+    const fakeOriginalTo = isCatchAllPartyCrasher ? selfAddress.Email : originalTo;
+    const selfAttendee: VcalAttendeeProperty = {
+        value: buildMailTo(fakeOriginalTo),
+        parameters: {
+            cn: originalTo,
+            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+        },
+    };
+
+    return {
+        participant: getParticipant({
+            participant: selfAttendee,
+            selfAddress,
+            selfAttendee,
+            contactEmails,
+            index: attendees.length,
+            emailTo: fakeOriginalTo,
+        }),
+        selfAttendee,
+        selfAddress,
+    };
+};
+
 interface CreateInviteVeventParams {
     method: ICAL_METHOD;
     attendeesTo?: VcalAttendeeProperty[];
@@ -178,7 +228,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
                 ...pick(vevent, propertiesToKeep),
                 component: 'vevent',
                 attendee,
-            })
+            }),
         );
 
         return method === ICAL_METHOD.REPLY
@@ -243,7 +293,7 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     // but it's better to have some false positives rather than many false negatives
     const canonicalEmail = canonicalizeInternalEmail(email);
     const index = attendees.findIndex(
-        (attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail
+        (attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail,
     );
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
@@ -336,7 +386,7 @@ export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Ad
 
 export const generateVtimezonesComponents = async (
     { dtstart, dtend, 'recurrence-id': recurrenceId, exdate = [] }: VcalVeventComponent,
-    getVTimezones: GetVTimezonesMap
+    getVTimezones: GetVTimezonesMap,
 ): Promise<VcalVtimezoneComponent[]> => {
     const timezones = [dtstart, dtend, recurrenceId, ...exdate]
         .filter(isTruthy)
@@ -526,7 +576,7 @@ export const getHasUpdatedInviteData = ({
     const hasUpdatedTitleDescriptionOrLocation = keys.some(
         (key) =>
             getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
-            getSupportedStringValue(oldVevent[key] as VcalStringProperty)
+            getSupportedStringValue(oldVevent[key] as VcalStringProperty),
     );
     const hasUpdatedRrule = !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
@@ -535,7 +585,7 @@ export const getHasUpdatedInviteData = ({
 export const getUpdatedInviteVevent = (
     newVevent: VcalVeventComponent,
     oldVevent: VcalVeventComponent,
-    method?: ICAL_METHOD
+    method?: ICAL_METHOD,
 ) => {
     if (method === ICAL_METHOD.REQUEST && getSequence(newVevent) > getSequence(oldVevent)) {
         if (!newVevent.attendee?.length) {
@@ -556,7 +606,7 @@ export const getUpdatedInviteVevent = (
 export const getResetPartstatActions = (
     singleEdits: CalendarEvent[],
     token: string,
-    partstat: ICAL_ATTENDEE_STATUS
+    partstat: ICAL_ATTENDEE_STATUS,
 ) => {
     const updateTime = getCurrentUnixTimestamp();
     const updatePartstatActions = singleEdits
