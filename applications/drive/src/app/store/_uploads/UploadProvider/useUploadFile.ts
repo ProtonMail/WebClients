@@ -305,19 +305,20 @@ export default function useUploadFile() {
                     parentPrivateKey,
                 };
             },
-            getParentHashKey: async (abortSignal: AbortSignal) => {
-                return getLinkHashKey(abortSignal, shareId, parentId);
-            },
             createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
                 createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
-                const createdFileRevision = await createdFileRevisionPromise;
-                const addressKeyInfo = await getShareKeys(abortSignal);
+                const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
+                    createdFileRevisionPromise,
+                    getShareKeys(abortSignal),
+                    getLinkHashKey(abortSignal, shareId, parentId),
+                ]);
                 checkSignal(abortSignal, createdFileRevision.filename);
 
                 return {
                     fileName: createdFileRevision.filename,
                     privateKey: createdFileRevision.privateKey,
                     sessionKey: createdFileRevision.sessionKey,
+                    parentHashKey,
                     address: {
                         privateKey: addressKeyInfo.privateKey,
                         email: addressKeyInfo.address.Email,
