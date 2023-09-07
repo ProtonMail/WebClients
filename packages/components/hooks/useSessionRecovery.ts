@@ -4,6 +4,7 @@ import { DAY, HOUR } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
+import { FeatureFlag, useFlag } from '../containers/unleash';
 import useAuthentication from './useAuthentication';
 import useLocalState from './useLocalState';
 import useUser from './useUser';
@@ -50,10 +51,11 @@ export const useHasRecoveryMethod = () => {
 
 export const useIsSessionRecoveryAvailable = () => {
     const [user] = useUser();
+    const feature = useFlag(FeatureFlag.SignedInAccountRecovery);
 
     const isPrivateUser = user?.isPrivate;
 
-    return isPrivateUser;
+    return feature && isPrivateUser;
 };
 
 export const useIsSessionRecoveryInitiationAvailable = () => {
