@@ -16,7 +16,7 @@ import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
-    isPhoto: boolean,
+    isForPhotos: boolean,
     { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
@@ -30,7 +30,7 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailsDataPromise = getThumbnailsData(mimeTypePromise, file, isPhoto);
+        const thumbnailsDataPromise = getThumbnailsData(mimeTypePromise, file, isForPhotos);
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
@@ -54,7 +54,7 @@ export function initUploadFileWorker(
                                     ]).then(async ([thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
-                                            { mimeType, isPhoto, thumbnailData },
+                                            { mimeType, isForPhotos, thumbnailData },
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,

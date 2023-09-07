@@ -25,7 +25,7 @@ type StartMessage = {
     command: 'start';
     file: File;
     mimeType: string;
-    isPhoto: boolean;
+    isForPhotos: boolean;
     thumbnailData?: ThumbnailData[];
     addressPrivateKey: Uint8Array;
     addressEmail: string;
@@ -71,9 +71,9 @@ interface WorkerHandlers {
         file: File,
         {
             mimeType,
-            isPhoto,
+            isForPhotos,
             thumbnailData,
-        }: { mimeType: string; isPhoto: boolean; thumbnailData: ThumbnailData[] | undefined },
+        }: { mimeType: string; isForPhotos: boolean; thumbnailData: ThumbnailData[] | undefined },
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
@@ -218,7 +218,7 @@ export class UploadWorker {
                             data.file,
                             {
                                 mimeType: data.mimeType,
-                                isPhoto: data.isPhoto,
+                                isForPhotos: data.isForPhotos,
                                 thumbnailData: data.thumbnailData,
                             },
                             addressPrivateKey,
@@ -438,11 +438,11 @@ export class UploadWorkerController {
         file: File,
         {
             mimeType,
-            isPhoto,
+            isForPhotos,
             thumbnailData,
         }: {
             mimeType: string;
-            isPhoto: boolean;
+            isForPhotos: boolean;
             thumbnailData: ThumbnailData[] | undefined;
         },
         addressPrivateKey: PrivateKeyReference,
@@ -456,7 +456,7 @@ export class UploadWorkerController {
             command: 'start',
             file,
             mimeType,
-            isPhoto,
+            isForPhotos: isForPhotos,
             thumbnailData,
             addressPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: addressPrivateKey,

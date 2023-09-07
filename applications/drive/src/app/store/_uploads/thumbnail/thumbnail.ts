@@ -46,7 +46,7 @@ export const makeThumbnail = async (
                 }
         );
 
-export const getThumbnailsData = (mimeTypePromise: Promise<string>, file: File, isPhoto: boolean) =>
+export const getThumbnailsData = (mimeTypePromise: Promise<string>, file: File, isForPhotos: boolean) =>
     mimeTypePromise.then(async (mimeType) => {
         const previewThumbnail = await makeThumbnail(mimeType, file).catch((err) => {
             traceError(err);
@@ -56,7 +56,7 @@ export const getThumbnailsData = (mimeTypePromise: Promise<string>, file: File, 
             return undefined;
         }
         if (
-            !isPhoto ||
+            !isForPhotos ||
             (mimeType == SupportedMimeTypes.jpg &&
                 previewThumbnail?.originalWidth &&
                 previewThumbnail?.originalWidth <= HD_THUMBNAIL_MAX_SIDE)
