@@ -17,15 +17,7 @@ import { UploadWorkerController } from './workerController';
 export function initUploadFileWorker(
     file: File,
     isPhoto: boolean,
-    {
-        initialize,
-        createFileRevision,
-        createBlockLinks,
-        getVerificationData,
-        getParentHashKey,
-        finalize,
-        onError,
-    }: UploadCallbacks
+    { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -57,10 +49,9 @@ export function initUploadFileWorker(
                                     onInit?.(mimeType, fileRevision.fileName);
 
                                     return Promise.all([
-                                        getParentHashKey(abortController.signal),
                                         thumbnailsDataPromise,
                                         getVerificationData(abortController.signal),
-                                    ]).then(async ([parentHashKey, thumbnailData, verificationData]) => {
+                                    ]).then(async ([thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
                                             mimeType,
@@ -70,7 +61,7 @@ export function initUploadFileWorker(
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
                                             fileRevision.sessionKey,
-                                            parentHashKey,
+                                            fileRevision.parentHashKey,
                                             verificationData
                                         );
                                     });
