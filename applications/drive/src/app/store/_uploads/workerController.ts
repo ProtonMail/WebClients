@@ -6,7 +6,7 @@ import type {
     FileKeys,
     FileRequestBlock,
     Link,
-    Photo,
+    PhotoUpload,
     ThumbnailEncryptedBlock,
     ThumbnailRequestBlock,
     VerificationData,
@@ -113,7 +113,7 @@ type DoneMessage = {
     signature: string;
     signatureAddress: string;
     xattr: string;
-    photo?: Photo;
+    photo?: PhotoUpload;
 };
 
 type NetworkErrorMessage = {
@@ -155,7 +155,7 @@ interface WorkerControllerHandlers {
     keysGenerated: (keys: FileKeys) => void;
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => void;
     onProgress: (increment: number) => void;
-    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => void;
+    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => void;
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
@@ -303,7 +303,7 @@ export class UploadWorker {
         } as ProgressMessage);
     }
 
-    postDone(signature: string, signatureAddress: string, xattr: string, photo?: Photo) {
+    postDone(signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) {
         this.worker.postMessage({
             command: 'done',
             signature,
