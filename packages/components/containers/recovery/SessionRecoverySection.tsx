@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Toggle } from '../../components';
+import { Toggle, useModalState } from '../../components';
 import {
     useApi,
     useEventManager,
     useHasRecoveryMethod,
     useIsSessionRecoveryEnabled,
+    useIsSessionRecoveryInitiationAvailable,
     useNotifications,
 } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
@@ -18,6 +19,7 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
+import InitiateSessionRecoveryModal from '../account/sessionRecovery/InitiateSessionRecoveryModal';
 
 const SessionRecoverySection = () => {
     const api = useApi();
@@ -25,8 +27,11 @@ const SessionRecoverySection = () => {
 
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
 
+    const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
+
     const [hasRecoveryMethod, loadingUseHasRecoveryMethod] = useHasRecoveryMethod();
     const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
+    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
     const { createNotification } = useNotifications();
 
@@ -37,6 +42,7 @@ const SessionRecoverySection = () => {
 
     return (
         <>
+            {renderSessionRecoveryModal && <InitiateSessionRecoveryModal confirmedStep {...sessionRecoveryModal} />}
             <SettingsSection>
                 <SettingsParagraph>
                     {c('Info').t`Request a password reset from your Account settings. No recovery method needed.`}
@@ -77,6 +83,12 @@ const SessionRecoverySection = () => {
                                 }}
                             />
                         </div>
+
+                        {isSessionRecoveryInitiationAvailable && (
+                            <Button className="mt-4" color="norm" onClick={() => setSessionRecoveryModalOpen(true)}>
+                                {c('Action').t`Request password reset`}
+                            </Button>
+                        )}
                     </SettingsLayoutRight>
                 </SettingsLayout>
             </SettingsSection>
