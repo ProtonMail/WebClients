@@ -3805,6 +3805,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "下載數量包含實際下載與預覽檔案時的實體。"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
       ],
@@ -3909,6 +3912,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "試著搜尋檔案名稱、日期與類型。"
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "不幸的是，該檔案或其部份資料似乎無法解密。"
       ],
       "Unknown error": [
         "未知錯誤"

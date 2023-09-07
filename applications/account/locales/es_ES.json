@@ -25,7 +25,7 @@
     },
     "account": {
       "Delete forward": [
-        "Cancelar el reenvío"
+        "Eliminar reenvío"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenvío iniciará pronto. Los correos nuevos aparecerán en tu bandeja de entrada."
@@ -37,7 +37,7 @@
         "Reconectar"
       ],
       "Remove forward": [
-        "Eliminar el reenvío"
+        "Eliminar reenvío"
       ],
       "You will stop the mail forwarding.": [
         "Detendrás el reenvío de correos."
@@ -264,7 +264,7 @@
         "Crear enlace"
       ],
       "Create user": [
-        "Crear un usuario"
+        "Crear usuario"
       ],
       "Create users": [
         "Crear usuarios"
@@ -309,7 +309,7 @@
         "Eliminar registro"
       ],
       "Delete user": [
-        "Eliminar un usuario"
+        "Eliminar usuario"
       ],
       "Delete without exporting": [
         "Eliminar sin exportar"
@@ -387,7 +387,7 @@
         "Editar etiqueta"
       ],
       "Edit name": [
-        "Editar el nombre"
+        "Editar nombre"
       ],
       "Edit password": [
         "Editar la contraseña"
@@ -396,7 +396,7 @@
         "Editar número de teléfono"
       ],
       "Edit servers": [
-        "Editar los servidores"
+        "Editar servidores"
       ],
       "Edit sieve": [
         "Editar filtro Sieve"
@@ -408,7 +408,7 @@
         "Editar suscripción"
       ],
       "Edit users": [
-        "Editar los usuarios"
+        "Editar usuarios"
       ],
       "Emoji": [
         "Emoji"
@@ -468,7 +468,7 @@
         "Obtener una nueva dirección de correo cifrada"
       ],
       "Get in touch": [
-        "Contáctanos"
+        "Ponte en contacto"
       ],
       "Get more": [
         "Obtener más"
@@ -1132,7 +1132,7 @@
         "Habilitar"
       ],
       "Enable E2EE mail": [
-        "Habiliar correo E2EE"
+        "Habilitar correo E2EE"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -6325,6 +6325,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed every 12 months": [
+        "al mes, facturado cada 12 meses"
+      ],
+      "per month, billed every 15 months": [
+        "al mes, facturado cada 15 meses"
+      ],
+      "per month, billed every 24 months": [
+        "al mes, facturado cada 24 meses"
+      ],
+      "per month, billed every 30 months": [
+        "al mes, facturado cada 30 meses"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Los clientes PGP tienen más probabilidades de detectar automáticamente las claves PGP si los mensajes de salida son firmados."
       ],
@@ -8939,7 +8954,7 @@
     },
     "Member action": {
       "Change password": [
-        "Cambiar la contraseña"
+        "Cambiar contraseña"
       ],
       "Delete": [
         "Eliminar"
@@ -9068,8 +9083,8 @@
         "Cada ${ interval } meses los ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada mes ${ onDayString } a las ${ timesString } ${ interval }",
-        "Cada ${ interval } meses ${ onDayString } a las ${ timesString }"
+        "Cada mes ${ onDayString }, ${ timesString } ${ interval }",
+        "Cada mes ${ onDayString }, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Cada mes ${ onDayString }, ${ untilString } ${ interval }",
@@ -9266,7 +9281,7 @@
         "Mejorar"
       ],
       "Upgrade now": [
-        "Actualizar el plan ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: action": {
@@ -10097,7 +10112,7 @@
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
-        "Compatible con varias plataformas"
+        "Soporte multiplataforma"
       ],
       "Private gateways": [
         "Puertas de enlace privadas"
@@ -10111,10 +10126,10 @@
         "${ Filter.Name } creado"
       ],
       "${ PROTON_SENTINEL_NAME } has been disabled": [
-        "${ PROTON_SENTINEL_NAME } se ha desactivado"
+        "Se ha desactivado ${ PROTON_SENTINEL_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } has been enabled": [
-        "${ PROTON_SENTINEL_NAME } se ha activado"
+        "Se ha activado ${ PROTON_SENTINEL_NAME }"
       ],
       "A disabled address cannot be default": [
         "Una dirección deshabilitada no puede ser la dirección por defecto."
@@ -11601,7 +11616,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturación anual"
+        "Facturado anualmente"
       ]
     },
     "Subscription attribute": {
@@ -12525,7 +12540,7 @@
         "Eliminar usuario"
       ],
       "Delete user?": [
-        "¿Eliminar el usuario?"
+        "¿Eliminar usuario?"
       ],
       "Delete version history?": [
         "¿Eliminar historial de versiones?"
@@ -12567,7 +12582,7 @@
         "Editar la puerta de enlace ${ currentName }"
       ],
       "Edit servers": [
-        "Editar los servidores"
+        "Editar servidores"
       ],
       "Edit Sieve filter": [
         "Editar filtro Sieve"
@@ -12601,6 +12616,9 @@
       ],
       "Encryption and keys": [
         "Cifrado y claves"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
       ],
       "Enter your password": [
         "Introduce tu contraseña."
@@ -12960,6 +12978,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
+      ],
+      "Sign in to join the Beta program": [
+        "Inicia sesión para unirte al programa Beta"
       ],
       "Sign in with 2FA": [
         "Iniciar sesión con la 2FA"
@@ -13714,8 +13735,8 @@
         "Cada ${ interval } semanas los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada semana los ${ multipleDaysString } a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los ${ multipleDaysString } a las ${ timesString }"
+        "Cada semana los ${ multipleDaysString }, ${ timesString } ${ interval }",
+        "Cada semana los ${ multipleDaysString }, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Cada semana los ${ multipleDaysString }, ${ untilString } ${ interval }",
@@ -13738,8 +13759,8 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada semana los viernes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los viernes a las ${ timesString }"
+        "Cada semana los viernes, ${ timesString } ${ interval }",
+        "Cada semana los viernes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Cada semana los viernes, ${ untilString } ${ interval }",
@@ -13750,8 +13771,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Los lunes de cada ${ interval } semana, a las ${ timesString }",
-        "Los lunes cada ${ interval } semanas, a las ${ timesString }"
+        "Cada semana los lunes, ${ timesString } ${ interval }",
+        "Cada semana los lunes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -13762,8 +13783,8 @@
         "Cada ${ interval } semanas los sábados"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada semana los sábados a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los sábados a las ${ timesString }"
+        "Cada semana los sábados, ${ timesString } ${ interval }",
+        "Cada semana los sábados, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
         "Cada semana los sábados, ${ untilString } ${ interval }",
@@ -13774,8 +13795,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Los domingos de cada ${ interval } semana, a las ${ timesString }",
-        "Los domingos cada ${ interval } semanas, a las ${ timesString }"
+        "Cada semana los domingos, ${ timesString } ${ interval }",
+        "Cada semana los domingos, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",
@@ -13786,8 +13807,8 @@
         "Cada ${ interval } semanas los jueves"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada semana los jueves a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los jueves a las ${ timesString }"
+        "Cada semana los jueves, ${ timesString } ${ interval }",
+        "Cada semana los jueves, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
         "Cada semana los jueves, ${ untilString } ${ interval }",
@@ -13798,8 +13819,8 @@
         "Cada ${ interval } semanas los martes"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada semana los martes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los martes a las ${ timesString }"
+        "Cada semana los martes, ${ timesString } ${ interval }",
+        "Cada semana los martes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
         "Cada semana los martes, ${ untilString } ${ interval }",
@@ -13810,8 +13831,8 @@
         "Cada ${ interval } semanas los miércoles"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada semana los miércoles a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los miércoles a las ${ timesString }"
+        "Cada semana los miércoles, ${ timesString } ${ interval }",
+        "Cada semana los miércoles, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada semana los miércoles, ${ untilString } ${ interval }",
@@ -13928,8 +13949,8 @@
         "Cada ${ interval } años"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Cada año a las ${ timesString } ${ interval }",
-        "Cada ${ interval } años a las ${ timesString }"
+        "Cada año, ${ timesString } ${ interval }",
+        "Cada año, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Cada año, ${ untilString } ${ interval }",

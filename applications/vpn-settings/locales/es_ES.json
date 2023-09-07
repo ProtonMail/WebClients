@@ -105,7 +105,7 @@
         "Crear una puerta de enlace"
       ],
       "Create user": [
-        "Crear un usuario"
+        "Crear usuario"
       ],
       "Create users": [
         "Crear usuarios"
@@ -129,7 +129,7 @@
         "Eliminar la puerta de enlace"
       ],
       "Delete user": [
-        "Eliminar un usuario"
+        "Eliminar usuario"
       ],
       "Delete your account": [
         "Eliminar tu cuenta"
@@ -180,7 +180,7 @@
         "Editar la puerta de enlace"
       ],
       "Edit name": [
-        "Editar el nombre"
+        "Editar nombre"
       ],
       "Edit password": [
         "Editar la contraseña"
@@ -189,7 +189,7 @@
         "Editar número de teléfono"
       ],
       "Edit servers": [
-        "Editar los servidores"
+        "Editar servidores"
       ],
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
@@ -198,7 +198,7 @@
         "Editar suscripción"
       ],
       "Edit users": [
-        "Editar los usuarios"
+        "Editar usuarios"
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
@@ -219,7 +219,7 @@
         "Obtener ${ vpnPlus }"
       ],
       "Get in touch": [
-        "Contáctanos"
+        "Ponte en contacto"
       ],
       "Get more": [
         "Obtener más"
@@ -570,7 +570,7 @@
         "Habilitar"
       ],
       "Enable E2EE mail": [
-        "Habiliar correo E2EE"
+        "Habilitar correo E2EE"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -3070,6 +3070,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed every 12 months": [
+        "al mes, facturado cada 12 meses"
+      ],
+      "per month, billed every 15 months": [
+        "al mes, facturado cada 15 meses"
+      ],
+      "per month, billed every 24 months": [
+        "al mes, facturado cada 24 meses"
+      ],
+      "per month, billed every 30 months": [
+        "al mes, facturado cada 30 meses"
+      ],
       "Plan upgrade required": [
         "Necesitas pasar a un plan superior."
       ],
@@ -4275,7 +4290,7 @@
     },
     "Member action": {
       "Change password": [
-        "Cambiar la contraseña"
+        "Cambiar contraseña"
       ],
       "Delete": [
         "Eliminar"
@@ -4368,7 +4383,7 @@
         "Mejorar"
       ],
       "Upgrade now": [
-        "Actualizar el plan ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: action": {
@@ -5136,7 +5151,7 @@
         "Ubicaciones de servidores dedicados en América del Norte y Europa"
       ],
       "Multi-platform support": [
-        "Compatible con varias plataformas"
+        "Soporte multiplataforma"
       ],
       "Private gateways": [
         "Puertas de enlace privadas"
@@ -5779,7 +5794,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturación anual"
+        "Facturado anualmente"
       ]
     },
     "Subscription attribute": {
@@ -6378,7 +6393,7 @@
         "Eliminar usuario"
       ],
       "Delete user?": [
-        "¿Eliminar el usuario?"
+        "¿Eliminar usuario?"
       ],
       "Device connected!": [
         "¡Dispositivo conectado!"
@@ -6408,7 +6423,7 @@
         "Editar la puerta de enlace ${ currentName }"
       ],
       "Edit servers": [
-        "Editar los servidores"
+        "Editar servidores"
       ],
       "Edit the list of servers of the gateway": [
         "Editar la lista de servidores de la puerta de enlace"
@@ -6427,6 +6442,9 @@
       ],
       "Email subscriptions": [
         "Boletines electrónicos"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
       ],
       "Enter your password": [
         "Introduce tu contraseña."
@@ -6608,6 +6626,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Sign in to join the Beta program": [
+        "Inicia sesión para unirte al programa Beta"
       ],
       "Sign in with 2FA": [
         "Iniciar sesión con la 2FA"

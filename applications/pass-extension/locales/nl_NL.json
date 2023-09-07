@@ -526,6 +526,9 @@
         "${ count } item",
         "${ count } items"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } zal enkel logins en notities importeren. Paspoorten, bijlagen, enz. worden niet ondersteund op dit moment."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } keer",
         "${ revisionNumber } keer"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Indien uitgeschakeld, zal ${ PASS_APP_NAME } niet voorstellen om sterke wachtwoorden te maken op aanmeldingsformulieren."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Indien ingeschakeld, wordt de vervolgkeuzelijst voor automatisch invullen automatisch geopend bij focus op het veld."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Indien ingeschakeld, kunt u uw inloggegevens snel automatisch invullen door op het pictogram ${ PASS_APP_NAME } te klikken."
@@ -1440,9 +1446,6 @@
       ],
       "Use my email": [
         "Gebruik mijn e-mail"
-      ],
-      "Use secure password": [
-        "Gebruik een veilig wachtwoord"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Welkom bij ${ brandNameJSX }"

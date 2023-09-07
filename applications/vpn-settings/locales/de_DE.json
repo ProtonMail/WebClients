@@ -5101,6 +5101,11 @@
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Enthalten mit mehreren Benutzern ${ BRAND_NAME } für Business-Abonnements."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 Support"
@@ -6384,8 +6389,8 @@
         "Konto löschen"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Lösche den Server (Du kannst ihn während ${ days } Tag wiederherstellen)",
-        "Lösche den Server (Du kannst ihn während ${ days } Tagen wiederherstellen)"
+        "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
+        "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
       ],
       "Delete user": [
         "Benutzer löschen"

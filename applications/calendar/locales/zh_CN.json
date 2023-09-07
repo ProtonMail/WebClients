@@ -87,11 +87,20 @@
       "Choose a file or drag it here": [
         "选择文件或将文件拖至此处"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Clear browser data": [
+        "清除浏览器数据"
+      ],
       "Clear data": [
         "清除数据"
       ],
       "Clear query": [
         "清除查询"
+      ],
+      "Clear search": [
+        "清除搜索条件"
       ],
       "Click here.": [
         "点击此处。"
@@ -375,6 +384,9 @@
       "Preview contact": [
         "预览联系人"
       ],
+      "Previous": [
+        "前一页"
+      ],
       "Previous day": [
         "前一天"
       ],
@@ -434,6 +446,9 @@
       ],
       "Save": [
         "保存"
+      ],
+      "Search": [
+        "搜索"
       ],
       "Search countries": [
         "搜索国家"
@@ -2141,6 +2156,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again.": [
+        "出现了问题，请重试。"
+      ],
       "Account does not exist": [
         "账户不存在"
       ],
@@ -2179,6 +2197,9 @@
       ],
       "Contact signature not verified": [
         "未验证联系人签名"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失败：无法解密此日程的内容。"
@@ -2305,6 +2326,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Please activate your search again": [
+        "请重新开启全文搜索"
       ],
       "Please create an address first.": [
         "请先创建地址。"
@@ -3016,6 +3040,9 @@
       ],
       "Name": [
         "名称"
+      ],
+      "Search": [
+        "搜索"
       ]
     },
     "Hint": {
@@ -3424,6 +3451,15 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在检查联系人 ${ progress } / ${ max }..."
       ],
+      "Clear data": [
+        "清除数据"
+      ],
+      "Clear encrypted search data": [
+        "清除加密的搜索数据"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "清除与加密搜索相关的浏览器数据。"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
@@ -3504,6 +3540,15 @@
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+        "预计剩余时间：${ estimatedMinutes } 分钟"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "预计剩余时间：不到一分钟"
+      ],
+      "Estimating time remaining...": [
+        "正在估算剩余时间..."
       ],
       "Existent and added participants will be notified.": [
         "现有和添加的参与者将收到通知"
@@ -3870,6 +3915,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
+      ],
+      "You cannot undo this action.": [
+        "您无法撤销此操作。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新激活密钥，可以解密下列分类中的日程了。"
