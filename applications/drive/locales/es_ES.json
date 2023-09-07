@@ -3073,6 +3073,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } finalizado",
         "${ doneCount } finalizados"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } seleccionados"
@@ -4816,7 +4824,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar el plan ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -6221,7 +6229,7 @@
         "Tipo"
       ],
       "Unlock contacts groups": [
-        "Desbloquear los grupos de contactos"
+        "Desbloquear grupos de contactos"
       ],
       "Uploaded": [
         "Cargado"
