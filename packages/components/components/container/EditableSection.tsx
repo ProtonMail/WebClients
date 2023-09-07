@@ -9,7 +9,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 
 const EditableSection = ({ children, className = '', ...rest }: Props) => {
     return (
-        <div className={clsx(['inline-grid-container on-mobile-w100 editable-section-container', className])} {...rest}>
+        <div className={clsx(['on-mobile-w100 editable-section-container', className])} {...rest}>
             {children}
         </div>
     );
