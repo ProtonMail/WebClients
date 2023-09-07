@@ -101,6 +101,9 @@
       "Block email tracking": [
         "Sewḥel aḍfar n yimaylen"
       ],
+      "Block messages from this sender": [
+        "Sewḥel iznan seg umazan-a"
+      ],
       "Block sender": [
         "Sewḥel amazan"
       ],
@@ -157,6 +160,9 @@
       ],
       "Close": [
         "Mdel"
+      ],
+      "Close & discard": [
+        "Mdel & Sefsex"
       ],
       "Close composer": [
         "Mdel amsuddes"
@@ -364,6 +370,9 @@
       "Filter on...": [
         "Imsizdeg deg..."
       ],
+      "Fit to window": [
+        "Sezg ɣer usfaylu"
+      ],
       "Font": [
         "Tasefsit"
       ],
@@ -400,6 +409,9 @@
       "Got it": [
         "Gziɣ"
       ],
+      "Help": [
+        "Tallalt"
+      ],
       "Hide": [
         "Ffer"
       ],
@@ -420,6 +432,12 @@
       ],
       "Hide messages": [
         "Ffer iznan"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email aliases"
+      ],
+      "Image will be loaded without a proxy": [
+        "Tugna ad d-tettwasuli s war apṛuksi"
       ],
       "Images will be loaded without a proxy": [
         "Tugniwin ad d-tettwasuli s war apṛuksi"
@@ -533,6 +551,9 @@
       "Merge contacts": [
         "Smezdi inermisen"
       ],
+      "Messages from this sender": [
+        "Iznan seg umazan-a"
+      ],
       "Messages to this recipient": [
         "Iznan i uɣerwaḍ-a"
       ],
@@ -625,6 +646,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Ldi ${ CALENDAR_APP_NAME }"
+      ],
+      "Open composer": [
+        "Ldi amsuddes"
       ],
       "Open navigation": [
         "Ldi tunigin"
@@ -743,6 +767,9 @@
       "Reset to default": [
         "Wennez ɣer umezwer"
       ],
+      "Restore": [
+        "Err-d"
+      ],
       "Resume": [
         "Kemmel"
       ],
@@ -769,6 +796,9 @@
       ],
       "Search message content": [
         "Agbur n yizen n unadi"
+      ],
+      "See plan features": [
+        "Wali timahilin n uɣawas"
       ],
       "Select all": [
         "Fren akk"
@@ -812,6 +842,9 @@
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
+      "Settings": [
+        "Iɣewwaren"
+      ],
       "Share via link": [
         "Bḍu s useɣwen"
       ],
@@ -851,6 +884,9 @@
       "Show preview": [
         "Sken taskant"
       ],
+      "Show side panel": [
+        "Sken agalis adisan"
+      ],
       "Sign in": [
         "Qqen"
       ],
@@ -866,6 +902,9 @@
       "Skip": [
         "Zgel"
       ],
+      "Skip verification": [
+        "Zgel asenqed"
+      ],
       "Star": [
         "Rnu ɣer yinurifen"
       ],
@@ -878,14 +917,29 @@
       "Stay": [
         "Qqim"
       ],
+      "Strikethrough": [
+        "Yettuceṭṭeb"
+      ],
       "Submit": [
         "Azen"
+      ],
+      "Switch or add account": [
+        "Beddel neɣ rnu umiḍan"
       ],
       "This message contains embedded images.": [
         "Izen-a yegber tugniwin yeddan."
       ],
       "This message contains remote content.": [
         "Izen-agi yesɛa agbur anmeggag."
+      ],
+      "Toggle Calendar app": [
+        "Sken/Ffer asnas n uwitay"
+      ],
+      "Toggle Contact app": [
+        "Sken/Ffer asnas n yinermisen"
+      ],
+      "Toggle settings": [
+        "Sken/Ffer iɣewwaren"
       ],
       "Tomorrow": [
         "Azekka"
@@ -956,6 +1010,9 @@
       ],
       "Use ${ label } theme": [
         "Seqdec asentel ${ label }"
+      ],
+      "Use authentication code": [
+        "Seqdec tangalt n usesteb"
       ],
       "Use for sending": [
         "Tuzna"
@@ -3763,9 +3820,17 @@
         "${ contactsCount } n unermis yettwafen",
         "${ contactsCount } n yinermisen yettwafen"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } n unermis",
+        "${ contactsLength } inermisen"
+      ],
       "${ count } unread message": [
         "${ count } n yizen ur yettwaɣran ara",
         "${ count } n yiznan yettwaɣran ara"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } ɣef ${ totalProgress }",
+        "${ currentProgress } ɣef ${ totalProgress }"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "Tugna ${ embeddedAttachmentsCount } yettuselɣen",
@@ -3789,6 +3854,10 @@
       "${ numberOfImageTrackers } tracker blocked": [
         "${ numberOfImageTrackers } n uneḍfar iweḥlen",
         "${ numberOfImageTrackers } n yimeḍfaren iweḥlen"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } useɣwen yettwasfeḍ",
+        "${ numberOfUTMTrackers } iseɣwan ttwasefḍen"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } n temseḍriwt i yettwafen",
@@ -5840,6 +5909,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } yettusnulfa-d"
       ],
+      "Block removed": [
+        "Asewḥel yettwakkes"
+      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
@@ -5848,6 +5920,9 @@
       ],
       "Password has been set successfully": [
         "Awal uffir yettusbadu akken iwata"
+      ],
+      "Sender ${ firstSenderAddress } blocked": [
+        "Amazan ${ firstSenderAddress } yettusewḥel"
       ],
       "Senders blocked": [
         "Ttusweḥlen imazanen"
@@ -6115,6 +6190,12 @@
       ],
       "Stored with zero-access encryption": [
         "Yettwaḥrez s uwgelhen ilem n unekcum"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } wass",
+        "${ remainingDays } wussan"
       ]
     },
     "Reply to calendar invitation": {
@@ -7266,6 +7347,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
+      ],
+      "Skip verification?": [
+        "Zgel asenqed?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Kra n yinermisen ara yettumezdin skanen-d tuccḍiwin. Ttxil-k·m senqed yal yiwen weḥd-s"

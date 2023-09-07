@@ -526,6 +526,9 @@
         "${ count } elemento",
         "${ count } elementos"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } importará solo los inicios de sesión y notas. Por el momento no se admiten pasaportes, archivos adjuntos, etc."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
         "${ revisionNumber } veces"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Si se deshabilita, ${ PASS_APP_NAME } no sugerirá crear contraseñas fuertes en formularios de registro."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Si está habilitado, el menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Si está habilitado, puedes rellenar automáticamente tus credenciales al pulsar el icono de ${ PASS_APP_NAME }."
@@ -932,10 +938,10 @@
         "Bloqueo automático después de"
       ],
       "Autofill": [
-        "Autorelleno"
+        "Autorellenado"
       ],
       "Autofill 2FA": [
-        "Relleno automático 2FA"
+        "Autorellenado 2FA"
       ],
       "Automatically open autofill when focusing login fields": [
         "Abrir automáticamente AutoFill al enfocar los campos de inicio de sesión"
@@ -1086,6 +1092,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Need help ?": [
+        "¿Necesitas ayuda?"
       ],
       "New vault": [
         "Nueva bóveda"
@@ -1408,6 +1417,9 @@
       "Import to vault(s)": [
         "Importar a las bóvedas"
       ],
+      "Low disk space": [
+        "Poco espacio en disco"
+      ],
       "Permanently remove all items ?": [
         "¿Eliminar todos los elementos permanentemente?"
       ],
@@ -1440,9 +1452,6 @@
       ],
       "Use my email": [
         "Utilizar mi correo electrónico"
-      ],
-      "Use secure password": [
-        "Utiliza una contraseña segura"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Te damos la bienvenida a ${ brandNameJSX }"

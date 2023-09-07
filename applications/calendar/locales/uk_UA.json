@@ -90,11 +90,20 @@
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
       ],
+      "Clear": [
+        "Очистити"
+      ],
+      "Clear browser data": [
+        "Очистити дані браузера"
+      ],
       "Clear data": [
         "Стерти дані"
       ],
       "Clear query": [
         "Очистити запит"
+      ],
+      "Clear search": [
+        "Очистити пошук"
       ],
       "Click here.": [
         "Клацніть тут."
@@ -387,6 +396,9 @@
       "Preview contact": [
         "Перегляд контакту"
       ],
+      "Previous": [
+        "Попередній"
+      ],
       "Previous day": [
         "Попередній день"
       ],
@@ -446,6 +458,9 @@
       ],
       "Save": [
         "Зберегти"
+      ],
+      "Search": [
+        "Пошук"
       ],
       "Search countries": [
         "Пошук країн"
@@ -2231,6 +2246,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "A problem occurred, please try again.": [
+        "Виникла проблема. Повторіть спробу."
+      ],
       "Account does not exist": [
         "Облікового запису не існує"
       ],
@@ -2269,6 +2287,9 @@
       ],
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Помилка розшифрування: Не вдалося розшифрувати вміст цієї події."
@@ -2416,6 +2437,9 @@
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
+      ],
+      "Please activate your search again": [
+        "Повторно активуйте пошук"
       ],
       "Please create an address first.": [
         "Спочатку створіть адресу."
@@ -3142,6 +3166,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Search": [
+        "Пошук"
       ]
     },
     "Hint": {
@@ -3631,6 +3658,15 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
+      "Clear data": [
+        "Очистити дані"
+      ],
+      "Clear encrypted search data": [
+        "Очистити зашифровані дані пошуку"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Очищає дані браузера, пов'язані з зашифрованим пошуком."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -3717,6 +3753,18 @@
       ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилини",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Приблизний час до завершення: менше хвилини"
+      ],
+      "Estimating time remaining...": [
+        "Приблизний залишок часу..."
       ],
       "Existent and added participants will be notified.": [
         "Наявні та додані учасники отримають сповіщення."
@@ -4095,6 +4143,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
+      ],
+      "You cannot undo this action.": [
+        "Цю дію не можна скасувати."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ви повторно активували свої ключі, тому тепер можна розшифрувати події, пов'язані з указаними календарями."

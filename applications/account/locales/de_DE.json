@@ -10062,6 +10062,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Enthalten in ${ plus }, ${ bundle } und ${ BRAND_NAME } for Business."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Enthalten mit mehreren Benutzern ${ BRAND_NAME } für Business-Abonnements."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -12533,8 +12536,8 @@
         "Protokolle löschen"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Lösche den Server (Du kannst ihn während ${ days } Tag wiederherstellen)",
-        "Lösche den Server (Du kannst ihn während ${ days } Tagen wiederherstellen)"
+        "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
+        "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
       ],
       "Delete user": [
         "Benutzer löschen"
