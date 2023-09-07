@@ -533,6 +533,9 @@
         "${ count } elemente",
         "${ count } de elemente"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } va importa numai autentificări și note. Pașapoartele, fișierele atașate etc. nu sunt acceptate în acest moment."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } dată",
         "de ${ revisionNumber } ori",
@@ -654,6 +657,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Dacă e dezactivată, ${ PASS_APP_NAME } nu va sugera crearea de parole puternice în formularele de înscriere."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Dacă e activată, lista de completare automată se va deschide la accesarea câmpului."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Dacă e activată, puteți completa automat rapid acreditările apăsând pe pictograma ${ PASS_APP_NAME }."
@@ -1457,9 +1463,6 @@
       ],
       "Use my email": [
         "Utilizare e-mail"
-      ],
-      "Use secure password": [
-        "Folosire parolă sigură"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bun venit la ${ brandNameJSX }"

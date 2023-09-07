@@ -6325,6 +6325,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
+      "per month": [
+        "ανά μήνα"
+      ],
+      "per month, billed every 12 months": [
+        "ανά μήνα, χρεώνεται κάθε 12 μήνες"
+      ],
+      "per month, billed every 15 months": [
+        "ανά μήνα, χρεώνεται κάθε 15 μήνες"
+      ],
+      "per month, billed every 24 months": [
+        "ανά μήνα, χρεώνεται κάθε 24 μήνες"
+      ],
+      "per month, billed every 30 months": [
+        "ανά μήνα, χρεώνεται κάθε 30 μήνες"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Οι πελάτες PGP είναι πιο πιθανό να ανιχνεύουν αυτόματα τα κλειδιά PGP εάν έχουν υπογραφεί τα εξερχόμενα μηνύματα."
       ],
@@ -7190,6 +7205,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του ${ vpnPlanNameShort } αυτήν την ημέρα."
@@ -12599,6 +12617,9 @@
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -12957,6 +12978,9 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
+      "Sign in to join the Beta program": [
+        "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
       ],
       "Sign in with 2FA": [
         "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
