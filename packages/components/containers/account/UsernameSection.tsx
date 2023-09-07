@@ -22,13 +22,21 @@ import {
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { Address, AddressConfirmationState, UserType } from '@proton/shared/lib/interfaces';
+import { Address, AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
-import { useAddresses, useApi, useConfig, useNotifications, useSearchParamsEffect, useUser } from '../../hooks';
+import {
+    useAddresses,
+    useApi,
+    useConfig,
+    useNotifications,
+    useSearchParamsEffect,
+    useSessionRecoveryState,
+    useUser,
+} from '../../hooks';
 import PromotionBanner from '../banner/PromotionBanner';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
@@ -37,6 +45,7 @@ import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
 import mailCalendar from './mail-calendar.svg';
+import SessionRecoveryInProgressCard from './sessionRecovery/statusCards/SessionRecoveryInProgressCard';
 import unverified from './unverified.svg';
 
 interface Props {
@@ -54,6 +63,8 @@ const UsernameSection = ({ app }: Props) => {
     const [tmpAddress, setTmpAddress] = useState<Address>();
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [editAddressModalProps, setEditAddressModalOpen, renderEditAddressModal] = useModalState();
+
+    const sessionRecoveryStatus = useSessionRecoveryState();
 
     const primaryAddress = addresses?.find(getIsAddressEnabled);
 
@@ -107,6 +118,9 @@ const UsernameSection = ({ app }: Props) => {
                 <EditExternalAddressModal {...editAddressModalProps} address={tmpAddress} />
             )}
             <SettingsSection>
+                {sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
+                    <SessionRecoveryInProgressCard className="mb-4" />
+                )}
                 {user.Type === UserType.EXTERNAL &&
                     primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
                     APP_NAME === APPS.PROTONACCOUNT && (
