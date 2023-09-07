@@ -2,11 +2,11 @@ import { FC, createContext, useContext, useState } from 'react';
 
 import { useLoading } from '@proton/hooks/index';
 import { queryPhotos } from '@proton/shared/lib/api/drive/photos';
-import { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
 import useSharesState from '../_shares/useSharesState';
-import { Photo } from './interface';
+import type { Photo } from './interface';
 
 export const PhotosContext = createContext<{
     shareId?: string;

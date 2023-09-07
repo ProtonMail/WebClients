@@ -4,7 +4,7 @@ import { TransferCancel } from '../../components/TransferManager/transfer';
 import type {
     FileKeys,
     FileRequestBlock,
-    Photo,
+    PhotoUpload,
     ThumbnailRequestBlock,
     UploadCallbacks,
     UploadFileControls,
@@ -76,7 +76,7 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => {
+                finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
                     onFinalize?.();
                     finalize(signature, signatureAddress, xattr, photo).then(resolve).catch(reject);
                 },

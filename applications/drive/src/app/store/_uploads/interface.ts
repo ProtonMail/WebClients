@@ -46,7 +46,7 @@ export interface UploadCallbacks {
         fileBlocks: FileRequestBlock[],
         thumbnailBlocks?: ThumbnailRequestBlock[]
     ) => Promise<{ fileLinks: Link[]; thumbnailLinks?: Link[] }>;
-    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => Promise<void>;
+    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => Promise<void>;
     onError?: (error: Error) => void;
 }
 
@@ -133,7 +133,7 @@ export type BlockToken = {
     token: string;
 };
 
-export type Photo = {
+export type PhotoUpload = {
     encryptedExif?: string;
     captureTime: number;
     contentHash?: string;
