@@ -836,6 +836,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Nous avons des difficultés à synchroniser les données sur votre espace de stockage local. Assurez-vous que vous disposez de suffisamment d'espace disque pour que ${ PASS_SHORT_APP_NAME } fonctionne correctement."
+      ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
       ],
@@ -1092,6 +1095,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Need help ?": [
+        "Besoin d'aide  ?"
       ],
       "New vault": [
         "Nouveau coffre-fort"
@@ -1414,6 +1420,9 @@
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
       ],
+      "Low disk space": [
+        "Espace de stockage insuffisant"
+      ],
       "Permanently remove all items ?": [
         "Voulez-vous définitivement supprimer tous les éléments ?"
       ],
@@ -1446,9 +1455,6 @@
       ],
       "Use my email": [
         "Utiliser mon e-mail"
-      ],
-      "Use secure password": [
-        "Utilisez un mot de passe sécurisé"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bienvenue dans ${ brandNameJSX }"

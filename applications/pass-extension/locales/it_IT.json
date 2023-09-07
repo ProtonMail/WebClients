@@ -730,6 +730,9 @@
       "Open the Extensions menu": [
         "Apri il menu Estensioni"
       ],
+      "Password copied": [
+        "Password copiata"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
       ],
@@ -835,6 +838,9 @@
       ],
       "Verification code": [
         "Codice di verifica"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Stiamo avendo problemi nel sincronizzare i dati con la tua archiviazione locale. Assicurati di avere abbastanza spazio sul disco per eseguire ${ PASS_SHORT_APP_NAME } correttamente."
       ],
       "You are about to create:": [
         "Stai per creare:"
@@ -1092,6 +1098,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Need help ?": [
+        "Hai bisogno di aiuto ?"
       ],
       "New vault": [
         "Nuova cassaforte"
@@ -1399,6 +1408,9 @@
       "Enter your Pin": [
         "Inserisci il tuo Pin"
       ],
+      "Fill & copy password": [
+        "Riempi e copia la password"
+      ],
       "Get the mobile apps": [
         "Ottieni le app mobili"
       ],
@@ -1413,6 +1425,9 @@
       ],
       "Import to vault(s)": [
         "Importa in una o più casseforti"
+      ],
+      "Low disk space": [
+        "Poco spazio sul disco"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -1446,9 +1461,6 @@
       ],
       "Use my email": [
         "Usa la mia email"
-      ],
-      "Use secure password": [
-        "Usa password sicura"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Ti diamo il benvenuto in ${ brandNameJSX }"

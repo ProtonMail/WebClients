@@ -526,6 +526,9 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις και σημειώσεις. Διαβατήρια, συνημμένα αρχεία κλπ. δεν υποστηρίζονται προς το παρόν."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } φορά",
         "${ revisionNumber } φορές"
@@ -644,6 +647,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα προτείνει τη δημιουργία ισχυρών κωδικών πρόσβασης σε φόρμες εγγραφής."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Εάν ενεργοποιηθεί, το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Εάν είναι ενεργοποιημένη, μπορείτε να συμπληρώσετε αυτόματα τα διαπιστευτήριά σας κάνοντας κλικ στο ${ PASS_APP_NAME } εικονίδιο."
       ],
@@ -723,6 +729,9 @@
       ],
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
+      ],
+      "Password copied": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
@@ -829,6 +838,9 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Αντιμετωπίζουμε προβλήματα συγχρονισμού δεδομένων στον τοπικό σας χώρο αποθήκευσης. Βεβαιωθείτε ότι έχετε αρκετό χώρο στο δίσκο για να λειτουργεί ομαλά το ${ PASS_SHORT_APP_NAME }."
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
@@ -1086,6 +1098,9 @@
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Need help ?": [
+        "Χρειάζεστε βοήθεια;"
       ],
       "New vault": [
         "Νέα κρύπτη"
@@ -1393,6 +1408,9 @@
       "Enter your Pin": [
         "Εισαγάγετε το PIN σας"
       ],
+      "Fill & copy password": [
+        "Συμπλήρωση & αντιγραφή κωδικού πρόσβασης"
+      ],
       "Get the mobile apps": [
         "Αποκτήστε τις εφαρμογές για κινητά"
       ],
@@ -1407,6 +1425,9 @@
       ],
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
+      ],
+      "Low disk space": [
+        "Περιορισμένος χώρος στο δίσκο"
       ],
       "Permanently remove all items ?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
@@ -1440,9 +1461,6 @@
       ],
       "Use my email": [
         "Χρήση του ηλεκτρονικού ταχυδρομείου μου"
-      ],
-      "Use secure password": [
-        "Χρήση ασφαλούς κωδικού πρόσβασης"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Καλώς ήρθατε στο${ brandNameJSX }"
