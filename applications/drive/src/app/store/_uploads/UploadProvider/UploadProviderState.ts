@@ -5,7 +5,7 @@ import { FileUpload, FolderUpload, UpdateFilter } from './interface';
 export interface UploadProviderState {
     uploads: (FileUpload | FolderUpload)[];
     hasUploads: boolean;
-    uploadFiles: (shareId: string, parentId: string, list: UploadFileList, isPhoto?: boolean) => Promise<void>;
+    uploadFiles: (shareId: string, parentId: string, list: UploadFileList, isForPhotos?: boolean) => Promise<void>;
     pauseUploads: (idOrFilter: UpdateFilter) => void;
     resumeUploads: (idOrFilter: UpdateFilter) => void;
     cancelUploads: (idOrFilter: UpdateFilter) => void;
