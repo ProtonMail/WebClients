@@ -39,7 +39,7 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
             <ButtonLike
                 as="div"
                 style={style}
-                className={clsx('photos-card p-0 border-none', isActive && thumbUrl && 'cursor-pointer ')}
+                className={clsx('photos-card p-0 border-none rounded-none', isActive && thumbUrl && 'cursor-pointer ')}
                 onClick={() =>
                     photo.activeRevision?.id &&
                     photo.activeRevision?.photo?.linkId &&
