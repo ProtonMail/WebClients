@@ -722,6 +722,9 @@
       "Open the Extensions menu": [
         "Öppna tilläggsmenyn"
       ],
+      "Password copied": [
+        "Lösenord kopierat"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Lösenord äldre än 1 dag tas automatiskt bort från historik."
       ],
@@ -827,6 +830,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
@@ -1084,6 +1090,9 @@
       ],
       "Name": [
         "Namn"
+      ],
+      "Need help ?": [
+        "Behöver du hjälp ?"
       ],
       "New vault": [
         "Nytt valv"
@@ -1391,6 +1400,9 @@
       "Enter your Pin": [
         "Ange din PIN"
       ],
+      "Fill & copy password": [
+        "Fyll i och kopiera lösenord"
+      ],
       "Get the mobile apps": [
         "Skaffa mobilapparna"
       ],
@@ -1405,6 +1417,9 @@
       ],
       "Import to vault(s)": [
         "Importera till valv"
+      ],
+      "Low disk space": [
+        "Lågt diskutrymme"
       ],
       "Permanently remove all items ?": [
         "Ta bort alla objekt permanent?"
@@ -1438,9 +1453,6 @@
       ],
       "Use my email": [
         "Använd min e-post"
-      ],
-      "Use secure password": [
-        "Använd säkert lösenord"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Välkommen till ${ brandNameJSX }"

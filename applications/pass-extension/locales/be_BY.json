@@ -540,6 +540,9 @@
         "${ count } элементаў",
         "${ count } элементаў"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу і нататкі. Пашпарты, файлы з далучэннямі і іншыя спецыфічныя функцыі імпартавання ў дадзены момант не падтрымліваюцца праграмай."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } разы",
@@ -665,6 +668,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Калі адключана, ${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Калі ўключана, выпадное меню аўтаматычнага запаўнення будзе аўтаматычна адкрывацца пры навядзенні на поле."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Калі ўключана, то вы можаце хутка аўтаматычна запаўняць свае ўліковыя даныя, націснуўшы на значок ${ PASS_APP_NAME }."
@@ -857,6 +863,9 @@
       ],
       "Verification code": [
         "Праверачны код"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Узніклі праблемы сінхранізацыі даных з вашым лакальным сховішчам. Пераканайцеся, што ў вас дастаткова месца на дыску для бесперабойнай працы ${ PASS_SHORT_APP_NAME }."
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
@@ -1120,6 +1129,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Need help ?": [
+        "Патрэбна дапамога?"
       ],
       "New vault": [
         "Новае сховішча"
@@ -1442,6 +1454,9 @@
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
       ],
+      "Low disk space": [
+        "Не хапае месца на дыску"
+      ],
       "Permanently remove all items ?": [
         "Незваротна выдаліць элементы?"
       ],
@@ -1474,9 +1489,6 @@
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
-      ],
-      "Use secure password": [
-        "Стварыць бяспечны пароль"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Вітаем у ${ brandNameJSX }"

@@ -526,6 +526,9 @@
         "${ count } öge",
         "${ count } öge"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } yalnızca oturum açma ve not kayıtlarını içe aktarır. Şu anda pasaportlar ve ek dosyalar desteklenmiyor."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } kez",
         "${ revisionNumber } kez"
@@ -643,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önermez."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Bu seçenek açıldığında, alana gelindiğinde otomatik doldurma kutusu açılır."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Bu seçenek açıldığında, kimlik doğrulama bilgilerinizi kolayca ${ PASS_APP_NAME } simgesine tıklayarak otomatik olarak doldurabilirsiniz."
@@ -1440,9 +1446,6 @@
       ],
       "Use my email": [
         "E-postamı kullan"
-      ],
-      "Use secure password": [
-        "Güvenli parola kullanılsın"
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } uygulamasına hoş geldiniz"
