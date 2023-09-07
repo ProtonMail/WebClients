@@ -1,3 +1,4 @@
+import { HOUR } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
 import useUser from './useUser';
@@ -49,4 +50,16 @@ export const useIsSessionRecoveryInitiationAvailable = () => {
         sessionRecoveryState === SessionRecoveryState.INSECURE;
 
     return isSessionRecoveryAvailable && isSessionRecoveryEnabled && !sessionRecoveryInitiated;
+};
+
+export const useSessionRecoveryGracePeriodHoursRemaining = () => {
+    const [user] = useUser();
+
+    if (user.AccountRecovery === null || user.AccountRecovery.State !== SessionRecoveryState.GRACE_PERIOD) {
+        return null;
+    }
+
+    const msRemaining = user.AccountRecovery.EndTime * 1000 - Date.now();
+
+    return Math.floor(msRemaining / HOUR);
 };
