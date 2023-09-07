@@ -4631,6 +4631,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ count } unread message": [
         "${ count } mensaje sin leer",
         "${ count } mensajes sin leer"
@@ -4699,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -5193,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Únete al programa ${ PROTON_SENTINEL_NAME } para tener el nivel más alto en seguridad de la cuenta y soporte."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -7094,8 +7105,8 @@
         "Cada ${ interval } meses los ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada mes ${ onDayString } a las ${ timesString } ${ interval }",
-        "Cada ${ interval } meses ${ onDayString } a las ${ timesString }"
+        "Cada mes ${ onDayString }, ${ timesString } ${ interval }",
+        "Cada mes ${ onDayString }, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Cada mes ${ onDayString }, ${ untilString } ${ interval }",
@@ -7234,7 +7245,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar el plan ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -9047,7 +9058,7 @@
         "¿Confiar en la clave pública?"
       ],
       "Unlock contacts groups": [
-        "Desbloquear los grupos de contactos"
+        "Desbloquear grupos de contactos"
       ],
       "Unsubscribe": [
         "Cancelar suscripción"
@@ -9283,8 +9294,8 @@
         "Cada ${ interval } semanas los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada semana los ${ multipleDaysString } a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los ${ multipleDaysString } a las ${ timesString }"
+        "Cada semana los ${ multipleDaysString }, ${ timesString } ${ interval }",
+        "Cada semana los ${ multipleDaysString }, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Cada semana los ${ multipleDaysString }, ${ untilString } ${ interval }",
@@ -9307,8 +9318,8 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada semana los viernes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los viernes a las ${ timesString }"
+        "Cada semana los viernes, ${ timesString } ${ interval }",
+        "Cada semana los viernes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Cada semana los viernes, ${ untilString } ${ interval }",
@@ -9319,8 +9330,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Los lunes de cada ${ interval } semana, a las ${ timesString }",
-        "Los lunes cada ${ interval } semanas, a las ${ timesString }"
+        "Cada semana los lunes, ${ timesString } ${ interval }",
+        "Cada semana los lunes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -9331,8 +9342,8 @@
         "Cada ${ interval } semanas los sábados"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada semana los sábados a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los sábados a las ${ timesString }"
+        "Cada semana los sábados, ${ timesString } ${ interval }",
+        "Cada semana los sábados, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
         "Cada semana los sábados, ${ untilString } ${ interval }",
@@ -9343,8 +9354,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Los domingos de cada ${ interval } semana, a las ${ timesString }",
-        "Los domingos cada ${ interval } semanas, a las ${ timesString }"
+        "Cada semana los domingos, ${ timesString } ${ interval }",
+        "Cada semana los domingos, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",
@@ -9355,8 +9366,8 @@
         "Cada ${ interval } semanas los jueves"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada semana los jueves a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los jueves a las ${ timesString }"
+        "Cada semana los jueves, ${ timesString } ${ interval }",
+        "Cada semana los jueves, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
         "Cada semana los jueves, ${ untilString } ${ interval }",
@@ -9367,8 +9378,8 @@
         "Cada ${ interval } semanas los martes"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada semana los martes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los martes a las ${ timesString }"
+        "Cada semana los martes, ${ timesString } ${ interval }",
+        "Cada semana los martes, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
         "Cada semana los martes, ${ untilString } ${ interval }",
@@ -9379,8 +9390,8 @@
         "Cada ${ interval } semanas los miércoles"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada semana los miércoles a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los miércoles a las ${ timesString }"
+        "Cada semana los miércoles, ${ timesString } ${ interval }",
+        "Cada semana los miércoles, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada semana los miércoles, ${ untilString } ${ interval }",
@@ -9497,8 +9508,8 @@
         "Cada ${ interval } años"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Cada año a las ${ timesString } ${ interval }",
-        "Cada ${ interval } años a las ${ timesString }"
+        "Cada año, ${ timesString } ${ interval }",
+        "Cada año, ${ timesString } ${ interval }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Cada año, ${ untilString } ${ interval }",
