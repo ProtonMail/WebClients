@@ -78,9 +78,11 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
  */
 async function start(
     file: File,
-    mimeType: string,
-    isPhoto: boolean,
-    thumbnailData: ThumbnailData[] | undefined,
+    {
+        mimeType,
+        isPhoto,
+        thumbnailData,
+    }: { mimeType: string; isPhoto: boolean; thumbnailData: ThumbnailData[] | undefined },
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
