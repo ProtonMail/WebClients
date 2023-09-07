@@ -4,7 +4,6 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -31,6 +30,8 @@ import {
     useFormErrors,
 } from '../../components';
 import { useApi, useConfig, useErrorHandler, useUser, useUserSettings } from '../../hooks';
+import { useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
+import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
 
@@ -169,9 +170,19 @@ interface Props extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'on
     onCancel: (() => void) | undefined;
     onError?: (error: any) => void;
     prioritised2FAItem?: 'fido2' | 'totp';
+    onSessionRecovery?: () => void;
 }
 
-const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, prioritised2FAItem = 'fido2', ...rest }: Props) => {
+const AuthModal = ({
+    config,
+    onSuccess,
+    onError,
+    onClose,
+    onCancel,
+    prioritised2FAItem = 'fido2',
+    onSessionRecovery,
+    ...rest
+}: Props) => {
     const { APP_NAME } = useConfig();
     const [infoResult, setInfoResult] = useState<InfoAuthedResponse>();
     const api = useApi();
@@ -182,6 +193,7 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, prioritised2
     const hasBeenAutoSubmitted = useRef(false);
     const errorHandler = useErrorHandler();
     const [fidoError, setFidoError] = useState(false);
+    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
@@ -358,6 +370,11 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, prioritised2
                         />
                     );
                 })()}
+                {onSessionRecovery && isSessionRecoveryInitiationAvailable && (
+                    <Button shape="underline" color="norm" onClick={onSessionRecovery}>
+                        {c('Action').t`Don't know your password?`}
+                    </Button>
+                )}
             </ModalContent>
             <ModalFooter>
                 {step === Step.TWO_FA ? (

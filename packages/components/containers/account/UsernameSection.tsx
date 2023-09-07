@@ -282,7 +282,7 @@ const UsernameSection = ({ app }: Props) => {
                                         <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
                                     );
                                 }
-                                
+
                                 return (
                                     <Href
                                         href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
