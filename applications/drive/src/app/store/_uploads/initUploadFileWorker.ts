@@ -54,9 +54,7 @@ export function initUploadFileWorker(
                                     ]).then(async ([thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
-                                            mimeType,
-                                            isPhoto,
-                                            thumbnailData,
+                                            { mimeType, isPhoto, thumbnailData },
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
