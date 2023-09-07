@@ -17,10 +17,17 @@ interface UploadDragDropProps {
     linkId: string;
     className?: string;
     disabled?: boolean;
-    isPhoto?: boolean;
+    isForPhotos?: boolean;
 }
 
-const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhoto = false }: UploadDragDropProps) => {
+const UploadDragDrop = ({
+    children,
+    className,
+    disabled,
+    shareId,
+    linkId,
+    isForPhotos = false,
+}: UploadDragDropProps) => {
     const { createNotification } = useNotifications();
     const { uploadFiles } = useUpload();
 
@@ -66,7 +73,7 @@ const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhot
                             async (file: File) => {
                                 // For photos, we check if the image format is supported
                                 if (
-                                    isPhoto &&
+                                    isForPhotos &&
                                     !(await mimeTypeFromFile(file).then(isImage)) &&
                                     file.name !== DS_STORE
                                 ) {
@@ -92,7 +99,7 @@ const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhot
                     const reader = item.createReader();
 
                     // For photos we don't push folder
-                    if (!isPhoto) {
+                    if (!isForPhotos) {
                         const modificationTime = await new Promise<Date | undefined>((resolve, reject) => {
                             item.getMetadata(resolve, reject);
                         })
@@ -124,7 +131,7 @@ const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhot
                                         entries.forEach((entry) =>
                                             promises.push(
                                                 // For photos we don't push file/folder structure
-                                                traverseDirectories(entry, isPhoto ? [] : [...path, item.name])
+                                                traverseDirectories(entry, isForPhotos ? [] : [...path, item.name])
                                             )
                                         );
                                         resolve(getEntries());
@@ -173,7 +180,7 @@ const UploadDragDrop = ({ children, className, disabled, shareId, linkId, isPhot
                 console.error(errors);
             }
 
-            uploadFiles(shareId, linkId, filesToUpload, isPhoto).catch((err) => {
+            uploadFiles(shareId, linkId, filesToUpload, isForPhotos).catch((err) => {
                 if (!isTransferCancelError(err)) {
                     console.error(err);
                 }

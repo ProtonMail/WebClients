@@ -80,9 +80,9 @@ async function start(
     file: File,
     {
         mimeType,
-        isPhoto,
+        isForPhotos,
         thumbnailData,
-    }: { mimeType: string; isPhoto: boolean; thumbnailData: ThumbnailData[] | undefined },
+    }: { mimeType: string; isForPhotos: boolean; thumbnailData: ThumbnailData[] | undefined },
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
@@ -119,7 +119,7 @@ async function start(
 
         const [signature, exifInfo] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
-            isPhoto ? getExifInfo(file, mimeType) : undefined,
+            isForPhotos ? getExifInfo(file, mimeType) : undefined,
         ]);
         const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
 
@@ -157,7 +157,7 @@ async function start(
             signature,
             addressEmail,
             xattr,
-            isPhoto
+            isForPhotos
                 ? {
                       captureTime: getUnixTime(getCaptureDateTime(file, exifInfo?.exif)),
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
