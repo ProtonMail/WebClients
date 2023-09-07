@@ -1,52 +1,9 @@
 import { useEffect, useMemo } from 'react';
 
-import { fromUnixTime, isThisYear, isToday } from 'date-fns';
-import { c } from 'ttag';
-
-import { dateLocale } from '@proton/shared/lib/i18n';
-import { DeepPartial } from '@proton/shared/lib/interfaces';
-
-import { DecryptedLink, useLink, useLinksListing } from '../_links';
-import { usePhotos } from '../_photos';
+import { useLink, useLinksListing } from '../_links';
+import { PhotoLink, usePhotos } from '../_photos';
+import { flattenWithCategories } from '../_photos/utils/flattenWithCategories';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
-
-export type PhotoLink = DeepPartial<DecryptedLink> & {
-    linkId: string;
-};
-export type PhotoGridItem = PhotoLink | string;
-
-const dateToCategory = (timestamp: number): string => {
-    const date = fromUnixTime(timestamp);
-
-    if (isToday(date)) {
-        return c('Info').t`Today`;
-    } else if (isThisYear(date)) {
-        return new Intl.DateTimeFormat(dateLocale.code, { month: 'long' }).format(date);
-    }
-
-    return new Intl.DateTimeFormat(dateLocale.code, { month: 'long', year: 'numeric' }).format(date);
-};
-
-const flattenWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
-    const result: PhotoGridItem[] = [];
-    let lastGroup = '';
-
-    data.forEach((item) => {
-        if (!item.activeRevision?.photo) {
-            return;
-        }
-
-        const group = dateToCategory(item.activeRevision.photo.captureTime || Date.now());
-        if (group !== lastGroup) {
-            lastGroup = group;
-            result.push(group);
-        }
-
-        result.push(item);
-    });
-
-    return result;
-};
 
 export const usePhotosView = () => {
     const { getCachedChildren } = useLinksListing();
