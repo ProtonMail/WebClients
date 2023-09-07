@@ -11,12 +11,11 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
-    Prompt,
-    SettingsLink,
 } from '../../../components';
 import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
+import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 
 enum STEP {
     INFO,
@@ -39,32 +38,7 @@ const SessionRecoveryInProgressModal = ({ ...rest }: ModalProps) => {
     }
 
     if (step === STEP.RESET_CONFIRMED) {
-        const recoverySectionLink = (
-            <SettingsLink key="recovery-section-link" path="/recovery" onClick={rest.onClose}>{
-                // translator: full sentence "You can check the status of your request at any time in the recovery section of the settings."
-                c('Link').t`recovery section`
-            }</SettingsLink>
-        );
-        return (
-            <Prompt
-                title={c('Title').ngettext(
-                    msgid`You'll be able to reset your password in ${gracePeriodHoursRemaining} hour`,
-                    `You'll be able to reset your password in ${gracePeriodHoursRemaining} hours`,
-                    gracePeriodHoursRemaining
-                )}
-                open={rest.open}
-                buttons={[<Button onClick={rest.onClose}>{c('Action').t`Got it`}</Button>]}
-            >
-                <p>{c('Info').t`We will contact you again when the password reset is available.`}</p>
-                <p>
-                    {
-                        // translator: full sentence "You can check the status of your request at any time in the recovery section of the settings."
-                        c('Info')
-                            .jt`You can check the status of your request at any time in the ${recoverySectionLink} of the settings.`
-                    }
-                </p>
-            </Prompt>
-        );
+        return <SessionRecoveryResetConfirmedPrompt open={rest.open} onClose={rest.onClose} />;
     }
 
     const { title, content, footer }: { title: string; content: ReactNode; footer: ReactNode } = (() => {
