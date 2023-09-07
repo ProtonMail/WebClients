@@ -32,7 +32,7 @@ import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
     FileKeys,
     FileRequestBlock,
-    Photo,
+    PhotoUpload,
     ThumbnailRequestBlock,
     TransferConflictStrategy,
     UploadFileControls,
@@ -404,7 +404,7 @@ export default function useUploadFile() {
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (signature: string, signatureAddress: string, xattr: string, photo?: Photo) => {
+                async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);

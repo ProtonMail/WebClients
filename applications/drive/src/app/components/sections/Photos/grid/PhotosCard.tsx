@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import clsx from '@proton/utils/clsx';
 
-import { PhotoLink } from '../../../../store/_views/usePhotosView';
-import { usePortalPreview } from '../../../PortalPreview/PortalPreview';
+import type { PhotoLink } from '../../../../store/';
+import { usePortalPreview } from '../../../PortalPreview';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { getMimeTypeDescription } from '../../helpers';
 
