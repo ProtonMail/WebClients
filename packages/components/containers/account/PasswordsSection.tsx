@@ -14,6 +14,7 @@ import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
+import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
@@ -21,6 +22,7 @@ const PasswordsSection = () => {
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
+    const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
     const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Login password`;
@@ -57,8 +59,16 @@ const PasswordsSection = () => {
     return (
         <>
             {renderChangePasswordModal && tmpPasswordMode && (
-                <ChangePasswordModal mode={tmpPasswordMode} {...changePasswordModal} />
+                <ChangePasswordModal
+                    mode={tmpPasswordMode}
+                    onSessionRecovery={() => {
+                        changePasswordModal.onClose();
+                        setSessionRecoveryModalOpen(true);
+                    }}
+                    {...changePasswordModal}
+                />
             )}
+            {renderSessionRecoveryModal && <InitiateSessionRecoveryModal {...sessionRecoveryModal} />}
             <SettingsSection>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
