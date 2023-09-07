@@ -523,6 +523,9 @@
         "${ count } Eintrag",
         "${ count } Einträge"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } unterstützt nur den Import von Zugangsdaten und Notizen. Kreditkarten, Pässe, angehängte Dateien usw. werden derzeit nicht unterstützt."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } Mal",
         "${ revisionNumber } Mal"
@@ -640,6 +643,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } nicht vor, sichere Passwörter für Anmeldeformulare zu erstellen."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Wenn diese Funktion aktiviert ist, wird das Dropdown-Menü für das automatische Ausfüllen geöffnet, sobald das Feld den Fokus erhält."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
@@ -1402,6 +1408,9 @@
       "Import - ${ date }": [
         "Import - ${ date }"
       ],
+      "Import to vault(s)": [
+        "In Tresor(e) importieren"
+      ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"
       ],
@@ -1434,9 +1443,6 @@
       ],
       "Use my email": [
         "Meine E-Mail-Adresse verwenden"
-      ],
-      "Use secure password": [
-        "Sicheres Passwort verwenden"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Willkommen bei ${ brandNameJSX }"

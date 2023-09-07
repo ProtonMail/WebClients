@@ -419,6 +419,9 @@
       "Extend": [
         "Asiɣzef"
       ],
+      "Fit to window": [
+        "Sezg ɣer usfaylu"
+      ],
       "Font": [
         "Tasefsit"
       ],
@@ -478,6 +481,9 @@
       ],
       "Got it": [
         "Gziɣ"
+      ],
+      "Help": [
+        "Tallalt"
       ],
       "Hide": [
         "Ffer"
@@ -710,6 +716,9 @@
       "Reset to default": [
         "Wennez ɣer umezwer"
       ],
+      "Restore": [
+        "Err-d"
+      ],
       "Restore administrator privileges": [
         "Err-d izerfan n unedbal"
       ],
@@ -764,6 +773,9 @@
       "Search settings": [
         "Nadi iɣewwaren"
       ],
+      "See plan features": [
+        "Wali timahilin n uɣawas"
+      ],
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
@@ -808,6 +820,9 @@
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
+      ],
+      "Settings": [
+        "Iɣewwaren"
       ],
       "Share": [
         "Bḍu"
@@ -863,6 +878,9 @@
       "Skip": [
         "Zgel"
       ],
+      "Skip verification": [
+        "Zgel asenqed"
+      ],
       "Sort": [
         "Smizzwer"
       ],
@@ -875,6 +893,9 @@
       "Stay": [
         "Qqim"
       ],
+      "Strikethrough": [
+        "Yettuceṭṭeb"
+      ],
       "Submit": [
         "Azen"
       ],
@@ -883,6 +904,9 @@
       ],
       "Switch account": [
         "Beddel amiḍan"
+      ],
+      "Switch or add account": [
+        "Beddel neɣ rnu umiḍan"
       ],
       "Top up": [
         "Afellay alamma"
@@ -946,6 +970,9 @@
       ],
       "Use a different payment method": [
         "Seqdec tarayt-nniḍen n usellek"
+      ],
+      "Use authentication code": [
+        "Seqdec tangalt n usesteb"
       ],
       "Use recovery code": [
         "Seqdec tangalt n tririt"
@@ -2782,6 +2809,15 @@
       "Folder name cannot be empty.": [
         "Isem n ukaram ur ilaq ara ad yili d ilem."
       ],
+      "Impossible to create the gateway": [
+        "D awezɣi ad ternu tqenṭert"
+      ],
+      "Impossible to edit the gateway": [
+        "D awezɣi ad teẓreg tqenṭert"
+      ],
+      "Impossible to rename the gateway": [
+        "D awezɣi ad ibeddel yisem n tqenṭert"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Talɣut n usesteb mačči d tameɣtut. Ɛreḍ tikkelt-nniḍen."
       ],
@@ -4486,6 +4522,9 @@
       "Create in": [
         "Snulfu-d di"
       ],
+      "Create your first Gateway": [
+        "Rnu tiqenṭert-ik tamezwarut"
+      ],
       "Creating your account": [
         "Timerna n umiḍan-ik·im"
       ],
@@ -4896,6 +4935,12 @@
       ],
       "No folder selected": [
         "Ulac akaram yettwafranen"
+      ],
+      "No gateways": [
+        "Ulac tiqentyar"
+      ],
+      "No Gateways yet": [
+        "Ulac tiqenṭyar akka tura"
       ],
       "No imports or forwarding history.": [
         "Ulac aktaren neɣ awelleh n uzray"
@@ -5414,6 +5459,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Yella ${ availableCount } uqeddac yettwamudden.",
+        "Llan ${ availableCount } yiqeddacen yettwamudden."
       ],
       "You have no calendars to export.": [
         "Ur tesɛiḍ ara ula d yiwen uwitay ara tdifḍeḍ."
@@ -9216,6 +9265,12 @@
         "Rnu ${ selectedUserIds.length } useqdac",
         "Rnu ${ selectedUserIds.length } yiseqdacen"
       ],
+      "Create a new Gateway": [
+        "Rnu tanezgert tamaynut"
+      ],
+      "Create a new gateway": [
+        "Rnu tanezgert tamaynut"
+      ],
       "Create Gateway": [
         "Rnu tanezgert"
       ],
@@ -9257,6 +9312,9 @@
       ],
       "Customize calendar import": [
         "Sagen taktert n uwitay"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Sagen uṭṭun n tansiwin IP deg uɣawas-ik"
       ],
       "Customize your mail import": [
         "Sagen tektert n imayl inek•inem"
@@ -9363,11 +9421,17 @@
       "Edit Sieve filter": [
         "Ẓreg imsizdeg Sieve"
       ],
+      "Edit the list of servers of the gateway": [
+        "Ẓreg tabdart n yiqeddacen n tqenṭert"
+      ],
       "Edit user": [
         "Ẓreg aseqdac"
       ],
       "Edit users": [
         "Ẓreg iseqdacen"
+      ],
+      "Edit who can access the gateway": [
+        "Ẓreg d anwa i izemren ɣer tqenṭert"
       ],
       "Email": [
         "Imayl"
@@ -9392,6 +9456,9 @@
       ],
       "Error": [
         "Tuccḍa"
+      ],
+      "Every member of the organization can access": [
+        "Yal aɛeggal n tkebbanit yezmer ad yekcem"
       ],
       "Export": [
         "Sifeḍ"
@@ -10267,6 +10334,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
+      ],
+      "Skip verification?": [
+        "Zgel asenqed?"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem ${ BRAND_NAME }. ttxil fren ayen ara tketreḍ."

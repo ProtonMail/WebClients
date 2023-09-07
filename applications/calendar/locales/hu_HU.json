@@ -90,10 +90,19 @@
       "Choose a file or drag it here": [
         "Válasszon fájlt vagy ejtse ide"
       ],
+      "Clear": [
+        "Törlés"
+      ],
+      "Clear browser data": [
+        "Böngészőadatok törlése"
+      ],
       "Clear data": [
         "Adatok törlése"
       ],
       "Clear query": [
+        "Keresés törlése"
+      ],
+      "Clear search": [
         "Keresés törlése"
       ],
       "Click here.": [
@@ -383,6 +392,9 @@
       "Preview contact": [
         "Névjegy előnézet"
       ],
+      "Previous": [
+        "Előző"
+      ],
       "Previous day": [
         "Előző nap"
       ],
@@ -442,6 +454,9 @@
       ],
       "Save": [
         "Mentés"
+      ],
+      "Search": [
+        "Keresés"
       ],
       "Search countries": [
         "Ország keresése"
@@ -2195,6 +2210,9 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
+      "A problem occurred, please try again.": [
+        "Hiba történt, próbálja meg újra."
+      ],
       "Account does not exist": [
         "Fiók nem létezik"
       ],
@@ -2233,6 +2251,9 @@
       ],
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Hiba: Az esemény tartalmának visszafejtése sikertelen."
@@ -2370,6 +2391,9 @@
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
+      ],
+      "Please activate your search again": [
+        "Aktiválja újra a keresést"
       ],
       "Please create an address first.": [
         "Először létre kell hozni egy címet."
@@ -3078,6 +3102,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Search": [
+        "Keresés"
       ]
     },
     "Hint": {
@@ -3516,6 +3543,15 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
+      "Clear data": [
+        "Adatok törlése"
+      ],
+      "Clear encrypted search data": [
+        "Titkosított keresési adatok törlése"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Törli a böngésző adatait a titkosított keresésre vonatkozólag."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
@@ -3600,6 +3636,16 @@
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc",
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Becsült hátralévő idő: kevesebb mint 1 perc"
+      ],
+      "Estimating time remaining...": [
+        "Hátralévő idő becslése..."
       ],
       "Existent and added participants will be notified.": [
         "A meglévő és a felvett résztvevők is értesítést kapnak."
@@ -3971,6 +4017,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
+      ],
+      "You cannot undo this action.": [
+        "Ez a művelet nem vonható vissza."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
