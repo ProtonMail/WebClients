@@ -3070,6 +3070,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
+      "per month": [
+        "ανά μήνα"
+      ],
+      "per month, billed every 12 months": [
+        "ανά μήνα, χρεώνεται κάθε 12 μήνες"
+      ],
+      "per month, billed every 15 months": [
+        "ανά μήνα, χρεώνεται κάθε 15 μήνες"
+      ],
+      "per month, billed every 24 months": [
+        "ανά μήνα, χρεώνεται κάθε 24 μήνες"
+      ],
+      "per month, billed every 30 months": [
+        "ανά μήνα, χρεώνεται κάθε 30 μήνες"
+      ],
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
       ],
@@ -3580,6 +3595,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του ${ vpnPlanNameShort } αυτήν την ημέρα."
@@ -6425,6 +6443,9 @@
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -6605,6 +6626,9 @@
       ],
       "Sign in": [
         "Είσοδος"
+      ],
+      "Sign in to join the Beta program": [
+        "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
       ],
       "Sign in with 2FA": [
         "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
