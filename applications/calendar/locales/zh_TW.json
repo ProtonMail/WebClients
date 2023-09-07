@@ -90,11 +90,20 @@
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Clear browser data": [
+        "清除瀏覽器資料"
+      ],
       "Clear data": [
         "清除資料"
       ],
       "Clear query": [
         "清除查詢"
+      ],
+      "Clear search": [
+        "清除搜尋"
       ],
       "Click here.": [
         "點擊此處。"
@@ -381,6 +390,9 @@
       "Preview contact": [
         "預覽聯絡人"
       ],
+      "Previous": [
+        "上一步"
+      ],
       "Previous day": [
         "前一天"
       ],
@@ -440,6 +452,9 @@
       ],
       "Save": [
         "儲存"
+      ],
+      "Search": [
+        "搜尋"
       ],
       "Search countries": [
         "搜尋國家與地區"
@@ -2174,6 +2189,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
+      "A problem occurred, please try again.": [
+        "發生問題，請再試一次。"
+      ],
       "Account does not exist": [
         "帳號不存在"
       ],
@@ -2212,6 +2230,9 @@
       ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失敗：此事件內容解密失敗。"
@@ -2338,6 +2359,9 @@
       ],
       "Passwords do not match": [
         "密碼不一致"
+      ],
+      "Please activate your search again": [
+        "請再次啟用搜尋"
       ],
       "Please create an address first.": [
         "請先創建一個位址。"
@@ -3055,6 +3079,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Search": [
+        "搜尋"
       ]
     },
     "Hint": {
@@ -3475,6 +3502,15 @@
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
+      "Clear data": [
+        "清除資料"
+      ],
+      "Clear encrypted search data": [
+        "清除加密搜索的資料"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "清除與加密搜索相關的瀏覽器數據。"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -3558,6 +3594,15 @@
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+        "預計尚餘時間：${ estimatedMinutes } 分鐘"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "預計尚餘時間：少於一分鐘"
+      ],
+      "Estimating time remaining...": [
+        "正在估計尚餘時間..."
       ],
       "Existent and added participants will be notified.": [
         "現有及已加入的參與者將獲通知。"
@@ -3930,6 +3975,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
+      ],
+      "You cannot undo this action.": [
+        "此操作無法復原。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
