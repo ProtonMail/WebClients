@@ -105,3 +105,9 @@ export const getNumberOfMembersText = (groupID: string, groupsWithContactsMap?: 
     // translator: number of members of a contact group, the variable is a positive integer (written in digits) always greater or equal to 0
     return c('Info').ngettext(msgid`(${memberCount} member)`, `(${memberCount} members)`, memberCount);
 };
+
+export const getNumberOfMembersCount = (groupID: string, groupsWithContactsMap?: GroupsWithContactsMap) => {
+    const memberCount = groupsWithContactsMap ? groupsWithContactsMap[groupID]?.contacts.length || 0 : 0;
+
+    return `(${memberCount})`;
+};
