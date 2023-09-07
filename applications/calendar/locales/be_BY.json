@@ -90,11 +90,20 @@
       "Choose a file or drag it here": [
         "Выберыце файл або перацягніце яго сюды"
       ],
+      "Clear": [
+        "Ачысціць"
+      ],
+      "Clear browser data": [
+        "Ачысціць даныя браўзера"
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
       "Clear query": [
         "Ачысціць запыт"
+      ],
+      "Clear search": [
+        "Ачысціць пошук"
       ],
       "Click here.": [
         "Націсніце тут."
@@ -387,6 +396,9 @@
       "Preview contact": [
         "Папярэдні прагляд кантакту"
       ],
+      "Previous": [
+        "Папярэдні"
+      ],
       "Previous day": [
         "Папярэдні дзень"
       ],
@@ -446,6 +458,9 @@
       ],
       "Save": [
         "Захаваць"
+      ],
+      "Search": [
+        "Пошук"
       ],
       "Search countries": [
         "Пошук краін"
@@ -2231,6 +2246,9 @@
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
+      "A problem occurred, please try again.": [
+        "Узнікла праблема. Паспрабуйце яшчэ раз."
+      ],
       "Account does not exist": [
         "Уліковы запіс не існуе"
       ],
@@ -2269,6 +2287,9 @@
       ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
@@ -2416,6 +2437,9 @@
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
+      ],
+      "Please activate your search again": [
+        "Актывуйце пошук яшчэ раз"
       ],
       "Please create an address first.": [
         "Спачатку стварыце адрас."
@@ -3142,6 +3166,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Search": [
+        "Пошук"
       ]
     },
     "Hint": {
@@ -3649,6 +3676,15 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
+      "Clear data": [
+        "Ачысціць даныя"
+      ],
+      "Clear encrypted search data": [
+        "Ачысціць пошук зашыфраваных даных"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
@@ -3735,6 +3771,18 @@
       ],
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Засталося часу: ${ estimatedMinutes } хвіліна",
+        "Засталося часу: ${ estimatedMinutes } хвіліны",
+        "Засталося часу: ${ estimatedMinutes } хвілін",
+        "Засталося часу: ${ estimatedMinutes } хвіліны"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Прыблізна засталося часу: менш за хвіліну"
+      ],
+      "Estimating time remaining...": [
+        "Прыблізна засталося часу..."
       ],
       "Existent and added participants will be notified.": [
         "Існуючыя і дададзеныя ўдзельнікі атрымаюць апавяшчэнні."
@@ -4113,6 +4161,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
+      ],
+      "You cannot undo this action.": [
+        "Гэта дзеянне немагчыма адрабіць."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Вы паўторна актывавалі свае ключы і цяпер можаце расшыфраваць падзеі, якія былі звязаны з наступнымі календарамі."
