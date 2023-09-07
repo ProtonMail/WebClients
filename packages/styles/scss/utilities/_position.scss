@@ -1,19 +1,23 @@
-@include responsive-classes(static) {
-	position: static;
-}
+@include responsive-classes(
+	(
+		static: (
+			position: static,
+		),
 
-@include responsive-classes(relative) {
-	position: relative;
-}
+		relative: (
+			position: relative,
+		),
 
-@include responsive-classes(absolute) {
-	position: absolute;
-	z-index: 1;
-}
+		absolute: (
+			position: absolute,
+			z-index: 1,
+		),
 
-.static {
-	position: static;
-}
+		fixed: (
+			position: fixed,
+		),
+	)
+);
 
 .absolute-center {
 	position: absolute;
@@ -43,10 +47,6 @@
 .absolute-cover {
 	position: absolute;
 	inset: 0;
-}
-
-@include responsive-classes(fixed) {
-	position: fixed;
 }
 
 .sticky {
