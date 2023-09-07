@@ -37,7 +37,7 @@ export const PhotosView: FC<void> = () => {
 
     return (
         <UploadDragDrop
-            isPhoto
+            isForPhotos
             shareId={shareId}
             linkId={linkId}
             className="flex flex-column flex-nowrap flex-item-fluid"

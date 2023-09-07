@@ -70,7 +70,12 @@ export default function useUploadQueue() {
     }, [allUploads, fileUploads, folderUploads]);
 
     const add = useCallback(
-        async (shareId: string, parentId: string, list: UploadFileList, isPhoto: boolean = false): Promise<void> => {
+        async (
+            shareId: string,
+            parentId: string,
+            list: UploadFileList,
+            isForPhotos: boolean = false
+        ): Promise<void> => {
             return new Promise((resolve, reject) => {
                 setQueue((queue) => {
                     const errors: Error[] = [];
@@ -87,7 +92,7 @@ export default function useUploadQueue() {
                             continue;
                         }
                         try {
-                            addItemToQueue(shareId, queueItem, item, isPhoto);
+                            addItemToQueue(shareId, queueItem, item, isForPhotos);
                         } catch (err: any) {
                             if ((err as Error).name === 'UploadConflictError') {
                                 conflictErrors.push(err);
@@ -277,7 +282,7 @@ export function addItemToQueue(
     shareId: string,
     newQueue: UploadQueue,
     item: UploadFileItem | UploadFolderItem,
-    isPhoto: boolean = false
+    isForPhotos: boolean = false
 ) {
     const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
     if (!name) {
@@ -295,7 +300,7 @@ export function addItemToQueue(
         parentId: part.linkId,
         state: part.linkId ? TransferState.Pending : TransferState.Initializing,
         startDate: new Date(),
-        isPhoto,
+        isForPhotos,
     };
     if ((item as UploadFileItem).file) {
         const fileItem = item as UploadFileItem;
