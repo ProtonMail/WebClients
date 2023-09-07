@@ -40,7 +40,6 @@ export interface UploadCallbacks {
         parentPrivateKey: PrivateKeyReference;
     }>;
     getVerificationData: (abortSignal: AbortSignal) => Promise<VerificationData>;
-    getParentHashKey: (abortSignal: AbortSignal) => Promise<Uint8Array>;
     createFileRevision: (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => Promise<InitializedFileMeta>;
     createBlockLinks: (
         abortSignal: AbortSignal,
@@ -69,6 +68,7 @@ export type InitializedFileMeta = {
     fileName: string;
     privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
+    parentHashKey: Uint8Array;
     address: {
         privateKey: PrivateKeyReference;
         email: string;
