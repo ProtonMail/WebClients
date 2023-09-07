@@ -1,0 +1,69 @@
+@include responsive-classes(
+	(
+		block: (
+			display: block,
+		),
+
+		inline: (
+			display: inline,
+		),
+
+		inline-block: (
+			display: inline-block,
+		),
+
+		flex: (
+			display: flex,
+			flex-wrap: wrap,
+		),
+
+		inline-flex: (
+			display: inline-flex,
+			flex-wrap: wrap,
+		),
+
+		hidden: (
+			display: none,
+		),
+	)
+);
+
+.flex,
+.sm\:flex,
+.md\:flex,
+.lg\:flex,
+.xl\:flex {
+	& > * {
+		min-block-size: 0;
+		min-inline-size: 0;
+	}
+}
+
+/* table-design in CSS */
+.row {
+	display: table;
+	table-layout: fixed;
+}
+
+.inline-row {
+	display: inline-table;
+	table-layout: fixed;
+}
+
+.line {
+	display: table-row;
+}
+
+.col {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.col-no-align {
+	display: table-cell;
+}
+
+[hidden],
+.hidden-empty:empty {
+	display: none;
+}
