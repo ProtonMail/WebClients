@@ -836,6 +836,9 @@
       "Verification code": [
         "Bekræftelseskode"
       ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Vi har problemer med at synkronisere data til dit lokale lager. Sørg for, at du har tilstrækkelig diskplads til, at ${ PASS_SHORT_APP_NAME } kan fungere optimalt."
+      ],
       "You are about to create:": [
         "Du er ved at oprette:"
       ],
@@ -1092,6 +1095,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Need help ?": [
+        "Brug for hjælp?"
       ],
       "New vault": [
         "Ny boks"
@@ -1414,6 +1420,9 @@
       "Import to vault(s)": [
         "Importér til boks(e)"
       ],
+      "Low disk space": [
+        "Kun lidt diskplads"
+      ],
       "Permanently remove all items ?": [
         "Fjern alle elementer permanent?"
       ],
@@ -1446,9 +1455,6 @@
       ],
       "Use my email": [
         "Brug min e-mail"
-      ],
-      "Use secure password": [
-        "Brug sikker adgangskode"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Velkommen til ${ brandNameJSX }"

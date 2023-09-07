@@ -519,6 +519,9 @@
       "${ count } items": [
         "${ count } 個項目"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } 只會匯入登入和附註。目前不支援護照、附件與其他。"
+      ],
       "${ revisionNumber } times": [
         "${ revisionNumber }次數"
       ],
@@ -632,6 +635,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "若關閉${ PASS_APP_NAME }將不會於註冊時建議密碼"
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "啟用時，當欄位取得焦點時，自動填入下拉清單將自動開啟。"
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "若啟用，您能透過${ PASS_APP_NAME }圖示自動填入資料。"
@@ -1423,9 +1429,6 @@
       ],
       "Use my email": [
         "使用我的電子郵件"
-      ],
-      "Use secure password": [
-        "使用安全密碼"
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
