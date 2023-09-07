@@ -62,6 +62,7 @@ $queries: (
 								str-replace($value, '[BPN]', if($breakpointname == 'default', '', $breakpointname + '-')),
 								$value
 							);
+
 							#{$property}: #{$value};
 						}
 					}
