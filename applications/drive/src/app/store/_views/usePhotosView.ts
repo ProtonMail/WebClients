@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
 import { useLink, useLinksListing } from '../_links';
-import { PhotoLink, usePhotos } from '../_photos';
-import { flattenWithCategories } from '../_photos/utils/flattenWithCategories';
+import { flattenWithCategories, usePhotos } from '../_photos';
+import type { PhotoLink } from '../_photos/interface';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
 export const usePhotosView = () => {
@@ -59,6 +59,8 @@ export const usePhotosView = () => {
     };
 
     return {
+        shareId,
+        linkId,
         photos: photosViewData,
         getPhotoLink,
         isLoading,

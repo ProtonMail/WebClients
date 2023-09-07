@@ -18,3 +18,4 @@ export * from './_devices/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
 export { usePhotos, usePhotosFeatureFlag } from './_photos';
+export * from './_photos/interface';

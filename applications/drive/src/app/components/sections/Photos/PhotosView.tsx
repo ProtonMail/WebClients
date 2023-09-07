@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import { Loader } from '@proton/components/components';
 
-import { usePhotos as usePhotosProvider, useThumbnailsDownload } from '../../../store';
-import { PhotoLink, usePhotosView } from '../../../store/_views/usePhotosView';
+import { useThumbnailsDownload } from '../../../store';
+import type { PhotoLink } from '../../../store/';
+import { usePhotosView } from '../../../store/_views/usePhotosView';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
@@ -13,8 +14,7 @@ import { PhotosGrid } from './PhotosGrid';
 import { PhotosToolbar } from './toolbar';
 
 export const PhotosView: FC<void> = () => {
-    const { photos, getPhotoLink, isLoading, isLoadingMore } = usePhotosView();
-    const { shareId, linkId } = usePhotosProvider();
+    const { shareId, linkId, photos, isLoading, isLoadingMore } = usePhotosView();
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
 
@@ -52,7 +52,6 @@ export const PhotosView: FC<void> = () => {
             ) : (
                 <PhotosGrid
                     data={photos}
-                    getPhotoLink={getPhotoLink}
                     onItemRender={handleItemRender}
                     shareId={shareId}
                     isLoadingMore={isLoadingMore}

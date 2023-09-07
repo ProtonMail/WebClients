@@ -3,14 +3,13 @@ import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import { PhotoGridItem, PhotoLink, usePhotosView } from '../../../store/_views/usePhotosView';
+import type { PhotoGridItem, PhotoLink } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
 
 import './grid/PhotosGrid.scss';
 
 type Props = {
     data: PhotoGridItem[];
-    getPhotoLink: ReturnType<typeof usePhotosView>['getPhotoLink'];
     onItemRender: (item: PhotoLink) => void;
     shareId: string;
     isLoadingMore: boolean;
