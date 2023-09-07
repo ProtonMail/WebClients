@@ -30,14 +30,20 @@ import {
     useNotifications,
     useUser,
 } from '../../../hooks';
+import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 
 enum STEP {
     PROMPT,
     USERNAME,
+    RESET_CONFIRMED,
 }
 
-const InitiateSessionRecoveryModal = ({ onClose, ...rest }: ModalProps) => {
+interface Props extends ModalProps {
+    confirmedStep?: boolean;
+}
+
+const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest }: Props) => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const api = useApi();
@@ -53,6 +59,10 @@ const InitiateSessionRecoveryModal = ({ onClose, ...rest }: ModalProps) => {
 
     const { validator, onFormSubmit } = useFormErrors();
 
+    if (step === STEP.RESET_CONFIRMED) {
+        return <SessionRecoveryResetConfirmedPrompt open={rest.open} onClose={onClose} />;
+    }
+
     const handleSubmit = () => {
         if (submitting || !onFormSubmit()) {
             return;
@@ -65,7 +75,12 @@ const InitiateSessionRecoveryModal = ({ onClose, ...rest }: ModalProps) => {
                     text: c('Title').t`Password reset confirmed`,
                     showCloseButton: false,
                 });
-                onClose?.();
+
+                if (confirmedStep) {
+                    setStep(STEP.RESET_CONFIRMED);
+                } else {
+                    onClose?.();
+                }
             } catch (error) {
                 errorHandler(error);
             }
