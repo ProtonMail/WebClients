@@ -71,7 +71,7 @@ export default function useUploadFile() {
         parentId: string,
         file: File,
         getFileConflictStrategy: ConflictStrategyHandler,
-        isPhoto: boolean = false
+        isForPhotos: boolean = false
     ): UploadFileControls => {
         let shareKeysCache: Awaited<ReturnType<typeof getShareCreatorKeys>>;
         const getShareKeys = async (abortSignal: AbortSignal) => {
@@ -294,7 +294,7 @@ export default function useUploadFile() {
         // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
-        return initUploadFileWorker(file, isPhoto, {
+        return initUploadFileWorker(file, isForPhotos, {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                     getShareKeys(abortSignal),

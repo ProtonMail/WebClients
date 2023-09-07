@@ -18,7 +18,7 @@ interface Props {
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
-    const isPhotosEnabled = usePhotosFeatureFlag();
+    const isForPhotossEnabled = usePhotosFeatureFlag();
     const { hasPhotosShare } = usePhotos();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
@@ -39,7 +39,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 />
             ))}
             <DriveSidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
-            {isPhotosEnabled && hasPhotosShare && (
+            {isForPhotossEnabled && hasPhotosShare && (
                 <DriveSidebarListItem to="/photos" icon="image" isActive={match.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
