@@ -15,7 +15,7 @@ import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
-    { initialize, createFileRevision, createBlockLinks, finalize, onError }: UploadCallbacks
+    { initialize, createFileRevision, getVerificationData, createBlockLinks, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -49,16 +49,23 @@ export function initUploadFileWorker(
                         .then(async (mimeType) => {
                             return createFileRevision(abortController.signal, mimeType, keys).then(
                                 async (fileRevision) => {
-                                    onInit?.(mimeType, fileRevision.fileName);
-                                    return thumbnailDataPromise.then(async (thumbnailData) => {
-                                        await workerApi.postStart(
-                                            file,
-                                            thumbnailData,
-                                            fileRevision.address.privateKey,
-                                            fileRevision.address.email,
-                                            fileRevision.privateKey,
-                                            fileRevision.sessionKey
-                                        );
+                                    return getVerificationData(
+                                        abortController.signal,
+                                        fileRevision.revisionId,
+                                        keys.privateKey
+                                    ).then((verificationData) => {
+                                        onInit?.(mimeType, fileRevision.fileName);
+                                        return thumbnailDataPromise.then(async (thumbnailData) => {
+                                            await workerApi.postStart(
+                                                file,
+                                                thumbnailData,
+                                                fileRevision.address.privateKey,
+                                                fileRevision.address.email,
+                                                fileRevision.privateKey,
+                                                fileRevision.sessionKey,
+                                                verificationData
+                                            );
+                                        });
                                     });
                                 }
                             );
