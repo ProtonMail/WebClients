@@ -6,8 +6,6 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import type { PhotoGridItem, PhotoLink } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
 
-import './grid/PhotosGrid.scss';
-
 type Props = {
     data: PhotoGridItem[];
     onItemRender: (item: PhotoLink) => void;
