@@ -9,6 +9,12 @@ import {
 import { AddressKey } from './Key';
 import { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
+export enum AddressConfirmationState {
+    CONFIRMATION_NOT_CONFIRMED = 0,
+    CONFIRMATION_CONFIRMED,
+    CONFIRMATION_INVALID,
+}
+
 export interface Address {
     DisplayName: string;
     DomainID: string;
@@ -26,6 +32,7 @@ export interface Address {
     Type: ADDRESS_TYPE;
     Flags?: ADDRESS_FLAGS;
     ProtonMX: boolean;
+    ConfirmationState: AddressConfirmationState;
 }
 
 export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {
