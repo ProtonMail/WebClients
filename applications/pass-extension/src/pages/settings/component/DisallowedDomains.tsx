@@ -44,7 +44,7 @@ export const DisallowedDomains: VFC = () => {
             return createNotification({ text: c('Error').t`The url is in the list`, type: 'error' });
         }
 
-        dispatch(settingEditIntent({ disallowedDomains: merge(disallowedDomains, { [hostname]: 15 }) }));
+        dispatch(settingEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [hostname]: 15 }) }));
         setUrl('');
     };
 
@@ -52,7 +52,7 @@ export const DisallowedDomains: VFC = () => {
         const setting = disallowedDomains[hostname];
 
         dispatch(
-            settingEditIntent({
+            settingEditIntent('pause-list', {
                 disallowedDomains: merge(disallowedDomains, {
                     [hostname]: toggleCriteria(setting, criteria),
                 }),
@@ -64,7 +64,7 @@ export const DisallowedDomains: VFC = () => {
         const update = { ...disallowedDomains };
         delete update[hostname];
 
-        dispatch(settingEditIntent({ disallowedDomains: update }));
+        dispatch(settingEditIntent('pause-list', { disallowedDomains: update }));
     };
 
     return (
