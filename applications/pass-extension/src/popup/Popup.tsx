@@ -1,9 +1,10 @@
+import { useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 
 import { ErrorBoundary } from '@proton/components';
 
-import { ExtensionWindow } from '../shared/components/extension';
+import { ExtensionApp } from '../shared/components/extension';
 import { ExtensionContext } from '../shared/extension';
 import createClientStore from '../shared/store/client-store';
 import { App } from './App';
@@ -25,23 +26,28 @@ const AppOrLobby = () => {
 
 const Popup = () => {
     usePopupSizeSurgery();
+    const store = useRef<ReturnType<typeof createClientStore>>();
 
     return (
-        <ExtensionWindow endpoint="popup">
-            {(ready) =>
+        <ExtensionApp endpoint="popup">
+            {(ready, locale) =>
                 ready && (
-                    <ReduxProvider store={createClientStore('popup', ExtensionContext.get().tabId)}>
+                    <ReduxProvider
+                        store={(() =>
+                            store.current ??
+                            (store.current = createClientStore('popup', ExtensionContext.get().tabId)))()}
+                    >
                         <Router>
                             <ErrorBoundary component={<ExtensionError />}>
                                 <PopupContextProvider>
-                                    <AppOrLobby />
+                                    <AppOrLobby key={locale} />
                                 </PopupContextProvider>
                             </ErrorBoundary>
                         </Router>
                     </ReduxProvider>
                 )
             }
-        </ExtensionWindow>
+        </ExtensionApp>
     );
 };
 

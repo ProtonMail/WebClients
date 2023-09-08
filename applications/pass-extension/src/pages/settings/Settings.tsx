@@ -1,11 +1,11 @@
-import { type ComponentProps, type FC, useCallback, useEffect, useState } from 'react';
+import type { VFC } from 'react';
+import { type ComponentProps, type FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useSelector } from 'react-redux';
 import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { pageMessage } from '@proton/pass/extension/message';
 import { selectPassPlan, selectPlanDisplayName, selectTrialDaysRemaining, selectUser } from '@proton/pass/store';
@@ -14,7 +14,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { APP_VERSION } from '../../app/config';
-import { ExtensionContextProvider, ExtensionWindow } from '../../shared/components/extension';
+import { ExtensionApp, ExtensionContextProvider } from '../../shared/components/extension';
 import { ExtensionHead } from '../../shared/components/page/ExtensionHead';
 import { SessionLockConfirmContextProvider } from '../../shared/components/session-lock/SessionLockConfirmContextProvider';
 import { UpgradeButton } from '../../shared/components/upgrade/UpgradeButton';
@@ -167,36 +167,50 @@ const SettingsApp: FC = () => {
     }, []);
 
     return (
-        <ReduxProvider store={createClientStore('page', ExtensionContext.get().tabId)}>
-            <HashRouter>
-                <ExtensionContextProvider
-                    endpoint="page"
-                    messageFactory={pageMessage}
-                    onWorkerMessage={handleWorkerMessage}
+        <HashRouter>
+            <ExtensionContextProvider
+                endpoint="page"
+                messageFactory={pageMessage}
+                onWorkerMessage={handleWorkerMessage}
+            >
+                <div
+                    className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
+                    style={{ '--min-h-custom': '100vh' }}
                 >
-                    <div
-                        className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
-                        style={{ '--min-h-custom': '100vh' }}
-                    >
-                        <Switch>
-                            <Route
-                                render={({ location: { pathname } }) => (
-                                    <SessionLockConfirmContextProvider>
-                                        <SettingsTabs pathname={pathname} />
-                                    </SessionLockConfirmContextProvider>
-                                )}
-                            />
-                        </Switch>
-                    </div>
-                </ExtensionContextProvider>
-            </HashRouter>
-        </ReduxProvider>
+                    <Switch>
+                        <Route
+                            render={({ location: { pathname } }) => (
+                                <SessionLockConfirmContextProvider>
+                                    <SettingsTabs pathname={pathname} />
+                                </SessionLockConfirmContextProvider>
+                            )}
+                        />
+                    </Switch>
+                </div>
+            </ExtensionContextProvider>
+        </HashRouter>
     );
 };
 
-export const Settings: FC = () => (
-    <>
-        <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-        <ExtensionWindow endpoint="page">{(ready) => (ready ? <SettingsApp /> : <CircleLoader />)}</ExtensionWindow>
-    </>
-);
+export const Settings: VFC = () => {
+    const store = useRef<ReturnType<typeof createClientStore>>();
+
+    return (
+        <>
+            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+            <ExtensionApp endpoint="page">
+                {(ready, locale) =>
+                    ready && (
+                        <ReduxProvider
+                            store={(() =>
+                                store.current ??
+                                (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
+                        >
+                            <SettingsApp key={locale} />
+                        </ReduxProvider>
+                    )
+                }
+            </ExtensionApp>
+        </>
+    );
+};
