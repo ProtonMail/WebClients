@@ -25,7 +25,9 @@ export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => 
         languageCode,
     });
 
-    document.documentElement.lang = getLangAttribute(localeCode);
+    if (typeof document !== 'undefined') {
+        document.documentElement.lang = getLangAttribute(localeCode);
+    }
 };
 
 export const loadDateLocale = async (localeCode: string, browserLocaleCode?: string, options?: Options) => {
