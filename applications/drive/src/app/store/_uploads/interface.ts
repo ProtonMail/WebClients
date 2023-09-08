@@ -37,6 +37,7 @@ export interface UploadCallbacks {
         addressPrivateKey: PrivateKeyReference;
         parentPrivateKey: PrivateKeyReference;
     }>;
+    getVerificationData: (abortSignal: AbortSignal) => Promise<VerificationData>;
     createFileRevision: (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => Promise<InitializedFileMeta>;
     createBlockLinks: (
         abortSignal: AbortSignal,
@@ -77,6 +78,7 @@ export type EncryptedBlock = {
     encryptedData: Uint8Array;
     hash: Uint8Array;
     signature: string;
+    verificationToken: Uint8Array;
 };
 
 export type EncryptedThumbnailBlock = {
@@ -91,11 +93,17 @@ export type FileRequestBlock = {
     signature: string;
     size: number;
     hash: Uint8Array;
+    verificationToken: Uint8Array;
 };
 
 export type ThumbnailRequestBlock = {
     size: number;
     hash: Uint8Array;
+};
+
+export type VerificationData = {
+    verificationCode: Uint8Array;
+    verifierSessionKey: SessionKey;
 };
 
 export type Link = {

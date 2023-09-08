@@ -7,6 +7,7 @@ import {
     FileRequestBlock,
     Link,
     ThumbnailRequestBlock,
+    VerificationData,
 } from './interface';
 import { ThumbnailData } from './thumbnail';
 import { getErrorString } from './utils';
@@ -26,6 +27,7 @@ type StartMessage = {
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
+    verificationData: VerificationData;
 };
 
 type CreatedBlocksMessage = {
@@ -66,7 +68,8 @@ interface WorkerHandlers {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey
+        sessionKey: SessionKey,
+        verificationData: VerificationData
     ) => void;
     createdBlocks: (fileLinks: Link[], thumbnailLink?: Link) => void;
     pause: () => void;
@@ -206,7 +209,8 @@ export class UploadWorker {
                             addressPrivateKey,
                             data.addressEmail,
                             privateKey,
-                            data.sessionKey
+                            data.sessionKey,
+                            data.verificationData
                         );
                     })(data).catch((err) => {
                         this.postError(err);
@@ -261,11 +265,12 @@ export class UploadWorker {
     postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlock?: EncryptedThumbnailBlock) {
         this.worker.postMessage({
             command: 'create_blocks',
-            fileBlocks: fileBlocks.map((block) => ({
+            fileBlocks: fileBlocks.map<FileRequestBlock>((block) => ({
                 index: block.index,
                 signature: block.signature,
                 size: block.encryptedData.byteLength,
                 hash: block.hash,
+                verificationToken: block.verificationToken,
             })),
             thumbnailBlock: !encryptedThumbnailBlock
                 ? undefined
@@ -419,7 +424,8 @@ export class UploadWorkerController {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey
+        sessionKey: SessionKey,
+        verificationData: VerificationData
     ) {
         this.worker.postMessage({
             command: 'start',
@@ -437,7 +443,8 @@ export class UploadWorkerController {
                 format: 'binary',
             }),
             sessionKey,
-        } as StartMessage);
+            verificationData,
+        } satisfies StartMessage);
     }
 
     postCreatedBlocks(fileLinks: Link[], thumbnailLink?: Link) {

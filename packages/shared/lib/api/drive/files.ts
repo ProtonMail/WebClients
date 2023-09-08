@@ -48,8 +48,24 @@ export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revi
     };
 };
 
+export const queryVerificationData = (shareId: string, linkId: string, revisionId: string) => {
+    return {
+        method: 'get',
+        url: `drive/shares/${shareId}/links/${linkId}/revisions/${revisionId}/verification`,
+        silence: true,
+    };
+};
+
 export const queryRequestUpload = (data: {
-    BlockList: { Hash: string; EncSignature: string; Size: number; Index: number }[];
+    BlockList: {
+        Hash: string;
+        EncSignature: string;
+        Size: number;
+        Index: number;
+        Verifier: {
+            Token: string;
+        };
+    }[];
     AddressID: string;
     ShareID: string;
     LinkID: string;
