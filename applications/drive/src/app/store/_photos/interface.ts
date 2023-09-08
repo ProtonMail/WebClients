@@ -13,5 +13,9 @@ export interface Photo {
 
 export type PhotoLink = DeepPartial<DecryptedLink> & {
     linkId: string;
+    // If the link is in photos share it should always have activeRevision
+    activeRevision: DeepPartial<DecryptedLink['activeRevision']> & {
+        photo: Photo;
+    };
 };
 export type PhotoGridItem = PhotoLink | string;

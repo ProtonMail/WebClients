@@ -16,16 +16,15 @@ const dateToCategory = (timestamp: number): string => {
 
     return new Intl.DateTimeFormat(dateLocale.code, { month: 'long', year: 'numeric' }).format(date);
 };
+
 export const flattenWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
     const result: PhotoGridItem[] = [];
     let lastGroup = '';
 
+    // Latest to oldest
+    data.sort((a, b) => b.activeRevision.photo.captureTime - a.activeRevision?.photo?.captureTime);
     data.forEach((item) => {
-        if (!item.activeRevision?.photo) {
-            return;
-        }
-
-        const group = dateToCategory(item.activeRevision.photo.captureTime || Date.now());
+        const group = dateToCategory(item.activeRevision.photo.captureTime);
         if (group !== lastGroup) {
             lastGroup = group;
             result.push(group);
