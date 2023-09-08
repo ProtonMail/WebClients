@@ -18,6 +18,7 @@ import {
 } from '../actions';
 
 export type SettingsState = {
+    locale?: string;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
     autofill: AutoFillSettings;
