@@ -8,6 +8,7 @@ import { Card } from '@proton/atoms/Card';
 import { selectAllVaults, selectPrimaryVault, vaultSetPrimaryIntent } from '@proton/pass/store';
 import type { Maybe } from '@proton/pass/types';
 
+/* TODO: move this to shared components */
 import { Field } from '../../../popup/components/Field/Field';
 import { VaultSelectField } from '../../../popup/components/Field/VaultSelectField';
 
