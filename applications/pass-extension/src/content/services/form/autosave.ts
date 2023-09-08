@@ -1,7 +1,6 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
-import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 
 import { isSubmissionPromptable } from '../../../shared/form';
 import { withContext } from '../../context/context';
@@ -9,11 +8,8 @@ import { NotificationAction } from '../../types';
 
 export const createAutosaveService = () => {
     const promptAutoSave: (submission: FormEntryPrompt) => boolean = withContext(
-        ({ getSettings, service: { iframe } }, submission) => {
-            const match = getSettings().disallowedDomains?.[location.hostname];
-            const shouldPrompt = getSettings().autosave.prompt && !hasCriteria(match, 'Autosave');
-
-            if (shouldPrompt) {
+        ({ getFeatures: getDomainCriterias, service: { iframe } }, submission) => {
+            if (getDomainCriterias().Autosave) {
                 iframe.attachNotification();
                 iframe.notification?.open({
                     action: NotificationAction.AUTOSAVE_PROMPT,
