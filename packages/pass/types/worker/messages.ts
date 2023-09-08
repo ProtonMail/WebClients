@@ -37,6 +37,7 @@ export enum WorkerMessageType {
     ACCOUNT_EXTENSION = 'auth-ext',
     ACCOUNT_PROBE = 'pass-installed',
     ACCOUNT_ONBOARDING = 'pass-onboarding',
+    LOCALE_REQUEST = 'LOCALE_REQUEST',
     SESSION_RESUMED = 'SESSION_RESUMED',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
     WORKER_INIT = 'WORKER_INIT',
@@ -89,6 +90,7 @@ export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
+export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
@@ -134,6 +136,7 @@ export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string 
 export type WorkerMessage =
     | StoreActionMessage
     | NotificationMessage
+    | LocaleRequestMessage
     | AccountForkMessage
     | AccountAuthExtMessage
     | AccountProbeMessage
@@ -187,6 +190,7 @@ export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 export type Outcome<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
+    [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.WORKER_WAKEUP]: WorkerState & { settings: ProxiedSettings };
     [WorkerMessageType.WORKER_INIT]: WorkerState;
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
