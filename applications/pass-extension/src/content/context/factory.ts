@@ -1,5 +1,6 @@
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerStatus } from '@proton/pass/types';
+import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext } from '../../shared/extension';
@@ -37,11 +38,25 @@ export const createContentScriptContext = (options: {
             iframe: createIFrameService(),
             detector: createDetectorService(),
         },
+        getFeatures: () => {
+            const domain = context.getExtensionContext().url.domain ?? '';
+            const mask = settings.disallowedDomains?.[domain];
+            const { autofill, autosuggest, autosave } = settings;
+
+            return {
+                Autofill: autofill.inject && (!mask || !hasCriteria(mask, 'Autofill')),
+                Autofill2FA: !mask || !hasCriteria(mask, 'Autofill2FA'),
+                AutosuggestPassword: autosuggest.password && (!mask || !hasCriteria(mask, 'Autosuggest')),
+                AutosuggestAlias: autosuggest.email && (!mask || !hasCriteria(mask, 'Autosuggest')),
+                Autosave: autosave.prompt && (!mask || !hasCriteria(mask, 'Autosave')),
+            };
+        },
         getExtensionContext: () => ExtensionContext.get(),
         getState: () => state,
         setState: (update) => Object.assign(state, update),
         getSettings: () => settings,
         setSettings: (update) => Object.assign(settings, update),
+
         destroy: options.destroy,
     });
 

@@ -10,7 +10,7 @@ import type { IFrameService } from '../services/iframes/service';
 
 export type WorkerStateChangeHandler = (state: WorkerState) => void;
 export type CSContextState = WorkerState & { active: boolean };
-
+export type CSFeatures = 'Autofill' | 'Autofill2FA' | 'AutosuggestAlias' | 'AutosuggestPassword' | 'Autosave';
 export interface ContentScriptContext {
     scriptId: string;
     mainFrame: boolean;
@@ -21,6 +21,7 @@ export interface ContentScriptContext {
         iframe: IFrameService;
         detector: DetectorService;
     };
+    getFeatures: () => Record<CSFeatures, boolean>;
     getState: () => CSContextState;
     setState: (update: Partial<CSContextState>) => void;
     getSettings: () => ProxiedSettings;
