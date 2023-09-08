@@ -3,12 +3,15 @@ import { CSSProperties, FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
+import { FileIcon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoLink } from '../../../../store/';
 import { usePortalPreview } from '../../../PortalPreview';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { getMimeTypeDescription } from '../../helpers';
+
+import './PhotosCard.scss';
 
 type Props = {
     photo: PhotoLink;
@@ -28,8 +31,9 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
     }, [photo]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
+    const isThumbnailLoading = photo.hasThumbnail === undefined;
+    const isActive = photo.activeRevision.id && photo.activeRevision.photo.linkId;
 
-    const isActive = photo.activeRevision?.id && photo.activeRevision?.photo?.linkId;
     return (
         <>
             {portalPreview}
@@ -39,7 +43,10 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
             <ButtonLike
                 as="div"
                 style={style}
-                className={clsx('photos-card p-0 border-none rounded-none', isActive && thumbUrl && 'cursor-pointer ')}
+                className={clsx(
+                    'photos-card p-0 border-none rounded-none',
+                    isThumbnailLoading && 'photos-card--loading'
+                )}
                 onClick={() =>
                     photo.activeRevision?.id &&
                     photo.activeRevision?.photo?.linkId &&
@@ -57,8 +64,13 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
                     })
                 }
             >
-                {thumbUrl && isActive ? (
-                    <img src={thumbUrl} alt={getAltText(photo)} className="photos-card--thumbnail" />
+                {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
+                    <div className="flex flex-align-items-center flex-justify-center photos-card-thumbnail photos-card-thumbnail--empty">
+                        <FileIcon mimeType={photo.mimeType || ''} size={48} />
+                    </div>
+                )}
+                {!isThumbnailLoading && thumbUrl && isActive ? (
+                    <img src={thumbUrl} alt={getAltText(photo)} className="photos-card-thumbnail" />
                 ) : null}
             </ButtonLike>
         </>
