@@ -18,16 +18,16 @@ import {
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { selectDisallowedDomains, settingEditIntent } from '@proton/pass/store';
-import type { DisallowCritera } from '@proton/pass/types/worker/settings';
-import { DisallowCriteriaMasks } from '@proton/pass/types/worker/settings';
+import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
+import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object';
 import { hasCriteria, toggleCriteria } from '@proton/pass/utils/settings/criteria';
-import { isValidURL } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
-const criterias = Object.keys(DisallowCriteriaMasks) as DisallowCritera[];
+const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
 export const PauseList: VFC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
@@ -37,19 +37,18 @@ export const PauseList: VFC = () => {
     const [url, setUrl] = useState<string>('');
 
     const addDisallowedUrl = (url: string) => {
-        const maybeUrl = isValidURL(url);
-        if (!maybeUrl.valid) return createNotification({ text: c('Error').t`Invalid url`, type: 'error' });
+        const domain = parseUrl(url).domain;
+        if (!domain) return createNotification({ text: c('Error').t`Invalid url`, type: 'error' });
 
-        const { hostname } = new URL(maybeUrl.url);
-        if (disallowedDomains[hostname]) {
+        if (disallowedDomains[domain]) {
             return createNotification({ text: c('Error').t`The url is in the list`, type: 'error' });
         }
 
-        dispatch(settingEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [hostname]: 15 }) }));
+        dispatch(settingEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [domain]: 15 }) }));
         setUrl('');
     };
 
-    const toggleUrlMask = (hostname: string, criteria: DisallowCritera) => {
+    const toggleUrlMask = (hostname: string, criteria: CriteriaMasks) => {
         const setting = disallowedDomains[hostname];
 
         dispatch(
