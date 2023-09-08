@@ -87,10 +87,11 @@ interface ModalProperties {
 
 interface Props extends ModalProps {
     mode: MODES;
-    onSessionRecovery: () => void;
+    onSessionRecovery?: () => void;
+    onSuccess?: () => void;
 }
 
-const ChangePasswordModal = ({ mode, onSessionRecovery, onClose, ...rest }: Props) => {
+const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...rest }: Props) => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
@@ -154,6 +155,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onClose, ...rest }: Prop
 
     const notifySuccess = () => {
         createNotification({ text: c('Success').t`Password updated` });
+        onSuccess?.();
     };
 
     const mutatePassword = async (keyPassword: string) => {
