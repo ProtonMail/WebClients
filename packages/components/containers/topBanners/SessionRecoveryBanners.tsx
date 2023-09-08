@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
@@ -7,7 +5,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { InlineLinkButton, SettingsLink, useModalState } from '../../components';
 import {
     useConfig,
-    useHasDismissedSessionRecoveryCancelled,
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryGracePeriodHoursRemaining,
     useSessionRecoveryInsecureTimeRemaining,
@@ -18,6 +15,7 @@ import {
 } from '../../hooks';
 import { SessionRecoveryInProgressModal } from '../account';
 import PasswordResetAvailableAccountModal from '../account/sessionRecovery/PasswordResetAvailableAccountModal';
+import { useSessionRecoveryLocalStorage } from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import TopBanner from './TopBanner';
 
 const SessionRecoveryInProgressBanner = () => {
@@ -134,12 +132,7 @@ const PasswordResetAvailableBanner = () => {
 
 const SessionRecoveryCancelledBanner = () => {
     const [user] = useUser();
-    const { dismissSessionRecoveryCancelled } = useHasDismissedSessionRecoveryCancelled();
-    const [dismissed, setDismissed] = useState(false);
-
-    if (dismissed) {
-        return null;
-    }
+    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
 
     const changePasswordLink = (
         <SettingsLink key="change-password-link" path="/account-password?action=change-password">
@@ -155,7 +148,6 @@ const SessionRecoveryCancelledBanner = () => {
             <TopBanner
                 className="bg-danger"
                 onClose={() => {
-                    setDismissed(true);
                     dismissSessionRecoveryCancelled();
                 }}
             >

@@ -32,6 +32,7 @@ import {
     useConfig,
     useLoadFeature,
 } from '../../hooks';
+import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { getCryptoWorkerOptions } from '../app/cryptoWorkerOptions';
 import { ContactProvider } from '../contacts';
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
@@ -229,20 +230,22 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
                     <KeyTransparencyManager appName={APP_NAME}>
-                        <EventModelListener models={eventModels} />
-                        <EventNotices />
-                        <ThemeInjector />
-                        <DensityInjector />
-                        {!noModals && <ModalsChildren />}
-                        <KeyBackgroundManager
-                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                            hasMemberKeyMigration={hasMemberKeyMigration}
-                        />
-                        <StorageListener />
-                        <ForceRefreshProvider>
-                            <LoadedApp />
-                        </ForceRefreshProvider>
+                        <SessionRecoveryLocalStorageManager>
+                            <EventModelListener models={eventModels} />
+                            <EventNotices />
+                            <ThemeInjector />
+                            <DensityInjector />
+                            {!noModals && <ModalsChildren />}
+                            <KeyBackgroundManager
+                                hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                                hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                                hasMemberKeyMigration={hasMemberKeyMigration}
+                            />
+                            <StorageListener />
+                            <ForceRefreshProvider>
+                                <LoadedApp />
+                            </ForceRefreshProvider>
+                        </SessionRecoveryLocalStorageManager>
                     </KeyTransparencyManager>
                 </ContactProvider>
             </CalendarModelEventManagerProvider>

@@ -12,13 +12,10 @@ import {
     ModalProps,
     SettingsLink,
 } from '../../../components';
-import {
-    useHasConfirmedSessionRecoveryInProgress,
-    useSessionRecoveryGracePeriodHoursRemaining,
-    useUser,
-} from '../../../hooks';
+import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
+import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 enum STEP {
     INFO,
@@ -28,7 +25,7 @@ enum STEP {
 const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
     const [user] = useUser();
     const [step, setStep] = useState(STEP.INFO);
-    const { confirmSessionRecoveryInProgress } = useHasConfirmedSessionRecoveryInProgress();
+    const { confirmSessionRecoveryInProgress } = useSessionRecoveryLocalStorage();
 
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();
 
