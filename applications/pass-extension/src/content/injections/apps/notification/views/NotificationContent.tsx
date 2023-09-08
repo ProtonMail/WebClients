@@ -9,7 +9,7 @@ import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFram
 import { NotificationSwitch } from '../components/NotificationSwitch';
 
 export const NotificationContent: VFC = () => {
-    const { closeIFrame, postMessage, settings, visible } = useIFrameContext();
+    const { closeIFrame, postMessage, settings, visible, locale } = useIFrameContext();
     const [notificationState, setNotificationState] = useState<MaybeNull<NotificationActions>>(null);
 
     const handleAction = useCallback(
@@ -21,6 +21,7 @@ export const NotificationContent: VFC = () => {
 
     return (
         <NotificationSwitch
+            key={locale}
             state={notificationState}
             visible={visible}
             settings={settings}
