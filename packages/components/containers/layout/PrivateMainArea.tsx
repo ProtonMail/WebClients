@@ -2,6 +2,8 @@ import { HTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
+import { useTheme } from '../themes';
+
 interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children?: ReactNode;
@@ -28,6 +30,8 @@ const PrivateMainAreaBase = (
     ref: Ref<HTMLDivElement>
 ) => {
     const hasDrawerSidebar = !!drawerSidebar && !isDrawerApp;
+    const theme = useTheme();
+    const isProminent = theme.information.prominentHeader;
 
     return (
         <main
@@ -41,12 +45,19 @@ const PrivateMainAreaBase = (
             ref={ref}
             {...rest}
         >
-            <div className={clsx('flex flex-nowrap w100', drawerSidebar ? 'h100 relative overflow-hidden' : undefined)}>
+            <div
+                className={clsx(
+                    'flex flex-nowrap w100',
+                    drawerSidebar ? 'h100 relative overflow-hidden' : undefined,
+                    isProminent ? 'ui-prominent' : undefined
+                )}
+            >
                 <div
                     className={clsx(
                         'flex flex-nowrap w100 h100',
-                        hasDrawerSidebar ? 'main-area-border' : 'scroll-if-needed',
-                        hasDrawerSidebar && mainBordered && 'main-area-rounded'
+                        hasDrawerSidebar ? 'main-area-border overflow-hidden' : 'overflow-auto',
+                        hasDrawerSidebar && mainBordered ? 'main-area-rounded--right' : undefined,
+                        isProminent ? 'ui-standard main-area-rounded--left' : undefined
                     )}
                 >
                     {children}
