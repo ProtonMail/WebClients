@@ -4,7 +4,7 @@ import type {
     AutoFillSettings,
     AutoSaveSettings,
     AutoSuggestSettings,
-    DisallowedDomains,
+    DomainCriterias,
 } from '@proton/pass/types/worker/settings';
 import { partialMerge } from '@proton/pass/utils/object';
 
@@ -25,9 +25,8 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     loadDomainImages: boolean;
-    disallowedDomains: DisallowedDomains;
-    /* explicitly created, not including import */
-    createdItemsCount: number;
+    disallowedDomains: DomainCriterias;
+    createdItemsCount: number /* explicitly created, not including import */;
 };
 
 /* proxied settings will also be copied on local
