@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading } from '@proton/hooks';
 
 import { Alert, ConfirmModal } from '../../components';
 import { useModals } from '../../hooks';
@@ -9,21 +8,17 @@ import { useModals } from '../../hooks';
 interface Props {
     onWipe: () => Promise<void>;
     className?: string;
+    loading?: boolean;
 }
 
-const WipeLogsButton = ({ onWipe, className }: Props) => {
+const WipeLogsButton = ({ onWipe, className, loading }: Props) => {
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
-
-    const handleConfirm = () => {
-        withLoading(onWipe());
-    };
 
     const handleOpenModal = () => {
         createModal(
             <ConfirmModal
                 title={c('Title').t`Delete logs`}
-                onConfirm={handleConfirm}
+                onConfirm={onWipe}
                 confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
             >
                 <Alert className="mb-4" type="error">{c('Info')
