@@ -16,6 +16,7 @@ import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
 import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
+import { useSessionRecoveryLocalStorage } from './sessionRecovery/SessionRecoveryLocalStorageManager';
 
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
@@ -30,6 +31,7 @@ const PasswordsSection = () => {
         renderSessionRecoveryPasswordResetModal,
     ] = useModalState();
 
+    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
     const [skipInfoStep, setSkipInfoStep] = useState(false);
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
@@ -88,6 +90,9 @@ const PasswordsSection = () => {
                     onSessionRecovery={() => {
                         changePasswordModal.onClose();
                         setSessionRecoveryModalOpen(true);
+                    }}
+                    onSuccess={() => {
+                        dismissSessionRecoveryCancelled();
                     }}
                     {...changePasswordModal}
                 />
