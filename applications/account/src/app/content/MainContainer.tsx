@@ -129,8 +129,8 @@ const MainContainer = () => {
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
-    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
-    const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
+    const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
+    const loadingFeatures = featuresFlags.some(({ loading }) => loading);
     const recoveryNotification = useRecoveryNotification(false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
@@ -224,7 +224,13 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (loadingOrganization || loadingFeatures || loadingSubscription) {
+        if (
+            loadingOrganization ||
+            loadingFeatures ||
+            loadingSubscription ||
+            loadingDataRecovery ||
+            loadingIsSessionRecoveryAvailable
+        ) {
             return <PrivateMainAreaLoading />;
         }
 

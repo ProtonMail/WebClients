@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 import { DAY, HOUR } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
+import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 
-import { FeatureFlag, useFlag } from '../containers/unleash';
+import { useFlag } from '../containers/unleash';
+import useAddresses from './useAddresses';
 import useAuthentication from './useAuthentication';
 import useLocalState from './useLocalState';
 import useUser from './useUser';
@@ -51,15 +53,17 @@ export const useHasRecoveryMethod = () => {
 
 export const useIsSessionRecoveryAvailable = () => {
     const [user] = useUser();
-    const feature = useFlag(FeatureFlag.SignedInAccountRecovery);
+    const [addresses = [], loadingAddresses] = useAddresses();
 
+    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
+    const feature = useFlag('SignedInAccountRecovery');
     const isPrivateUser = user?.isPrivate;
 
-    return feature && isPrivateUser;
+    return [!loadingAddresses && hasMigratedKeys && feature && isPrivateUser, loadingAddresses];
 };
 
 export const useIsSessionRecoveryInitiationAvailable = () => {
-    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
+    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
     const sessionRecoveryState = useSessionRecoveryState();
 
@@ -98,7 +102,7 @@ export const useHasConfirmedSessionRecoveryInProgress = () => {
  * Notifications here means banners or modals and not the browser notifications.
  */
 export const useShouldNotifySessionRecoveryInProgress = () => {
-    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
+    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const sessionRecoveryState = useSessionRecoveryState();
     const isSessionRecoveryInitiatedByCurrentSession = useIsSessionRecoveryInitiatedByCurrentSession();
     const { hasConfirmedSessionRecoveryInProgress } = useHasConfirmedSessionRecoveryInProgress();
@@ -116,7 +120,7 @@ export const useShouldNotifySessionRecoveryInProgress = () => {
  * Notifications here means banners or modals and not the browser notifications.
  */
 export const useShouldNotifyPasswordResetAvailable = () => {
-    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
+    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const sessionRecoveryState = useSessionRecoveryState();
 
     return isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.INSECURE;
@@ -177,7 +181,7 @@ export const useHasDismissedSessionRecoveryCancelled = () => {
 };
 
 export const useShouldNotifySessionRecoveryCancelled = () => {
-    const isSessionRecoveryAvailable = useIsSessionRecoveryAvailable();
+    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const sessionRecoveryState = useSessionRecoveryState();
     const { hasDismissedSessionRecoveryCancelled } = useHasDismissedSessionRecoveryCancelled();
 
