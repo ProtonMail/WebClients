@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
 import { Checkbox } from '@proton/components';
 import { selectRequestInFlight, selectSessionLockSettings, sessionLockDisableIntent } from '@proton/pass/store';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
@@ -12,6 +11,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { useSessionLockConfirmContext } from '../../../shared/components/session-lock/SessionLockConfirmContextProvider';
 import { SessionLockCreate } from '../../../shared/components/session-lock/SessionLockCreate';
 import { SessionLockTTLUpdate } from '../../../shared/components/session-lock/SessionLockTTLUpdate';
+import { SettingsPanel } from '../component/SettingsPanel';
 
 export const Security: VFC = () => {
     const dispatch = useDispatch();
@@ -32,11 +32,7 @@ export const Security: VFC = () => {
             : setLockCreationModalOpened(true);
 
     return (
-        <Card rounded className="mb-4 p-3 relative">
-            <strong className="color-norm block">{c('Label').t`Session locking`}</strong>
-
-            <hr className="my-2 border-weak" />
-
+        <SettingsPanel title={c('Label').t`Session locking`}>
             <Checkbox
                 className="mb-4"
                 checked={sessionLockRegistered}
@@ -52,6 +48,6 @@ export const Security: VFC = () => {
 
             <SessionLockCreate opened={lockCreationModalOpened} onClose={() => setLockCreationModalOpened(false)} />
             <SessionLockTTLUpdate ttl={sessionLockTTL} disabled={!sessionLockRegistered || sessionLockLoading} />
-        </Card>
+        </SettingsPanel>
     );
 };
