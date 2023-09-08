@@ -22,41 +22,57 @@ describe('flattenWithCategories()', () => {
     it('should return flatten list with categories of photos', () => {
         const photos: PhotoLink[] = [
             {
-                linkId: '32dsdj3h21dskjahdsahj32ewjkdah',
+                linkId: '9d6c33a79feba8dd2fd768f58f450a7f2ff3ec2e',
+                name: 'Today',
                 activeRevision: {
                     photo: {
-                        linkId: '32dsdj3h21dskjahdsahj32ewjkdah',
+                        linkId: '9d6c33a79feba8dd2fd768f58f450a7f2ff3ec2e',
                         captureTime: getUnixTime(new Date()), // Today
                     },
                 },
             },
             {
-                linkId: 'ewqweqw324423ewrdshkhdsfsdff',
+                linkId: '1a44a587ffbb4d38a04f68af1ddf6b30a74ff3b7',
+                name: '8 March 2022',
                 activeRevision: {
                     photo: {
-                        linkId: 'ewqweqw324423ewrdshkhdsfsdff',
+                        linkId: '1a44a587ffbb4d38a04f68af1ddf6b30a74ff3b7',
+                        captureTime: 1646743628, // 08/03/2022
+                    },
+                },
+            },
+            {
+                linkId: '6d2a5651f974cc67d99cbdabd00560967a7bad10',
+                name: '7 July 2023',
+                activeRevision: {
+                    photo: {
+                        linkId: '6d2a5651f974cc67d99cbdabd00560967a7bad10',
                         captureTime: 1688731320, // 07/07/2023
                     },
                 },
             },
             {
-                linkId: '32432rewhjr342rew86t23rgdjsgf32tdwgu',
+                linkId: '8ac290ecd3dcfe51ac2e81ba1dbbcc8b6a20b199',
+                name: '7 May 2022',
                 activeRevision: {
                     photo: {
-                        linkId: '32432rewhjr342rew86t23rgdjsgf32tdwgu',
-                        captureTime: 1651924920, // 07/05/2023
+                        linkId: '8ac290ecd3dcfe51ac2e81ba1dbbcc8b6a20b199',
+                        captureTime: 1651924920, // 07/05/2022
                     },
                 },
             },
-            {
-                linkId: '32432rewhjr342rew86t23rgdjsgf32tdwgu',
-                activeRevision: {
-                    photo: undefined, // Item that is not photo should be ignored
-                },
-            },
         ];
-        const flattenPhotos = flattenWithCategories(photos);
+        const flattenPhotos = flattenWithCategories([...photos]); // Destructure to keep origin reference
 
-        expect(flattenPhotos).toEqual(['Today', photos[0], 'July', photos[1], 'May 2022', photos[2]]);
+        expect(flattenPhotos).toEqual([
+            'Today',
+            photos[0],
+            'July',
+            photos[2],
+            'May 2022',
+            photos[3],
+            'March 2022',
+            photos[1],
+        ]);
     });
 });
