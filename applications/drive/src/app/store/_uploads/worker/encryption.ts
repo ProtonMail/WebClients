@@ -6,7 +6,7 @@ import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
-import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
+import { EncryptedBlock, EncryptedThumbnailBlock, VerificationData } from '../interface';
 
 /**
  * generateEncryptedBlocks generates blocks for the specified file.
@@ -21,7 +21,8 @@ export default async function* generateEncryptedBlocks(
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     postNotifySentry: (e: Error) => void,
-    hashInstance: Sha1
+    hashInstance: Sha1,
+    verificationData: VerificationData
 ): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
     if (thumbnailData) {
         yield await encryptThumbnail(addressPrivateKey, sessionKey, thumbnailData);
@@ -34,7 +35,15 @@ export default async function* generateEncryptedBlocks(
 
         hashInstance.process(chunk);
 
-        yield await encryptBlock(index++, chunk, addressPrivateKey, privateKey, sessionKey, postNotifySentry);
+        yield await encryptBlock(
+            index++,
+            chunk,
+            addressPrivateKey,
+            privateKey,
+            sessionKey,
+            verificationData,
+            postNotifySentry
+        );
     }
 }
 
@@ -67,6 +76,7 @@ async function encryptBlock(
     addressPrivateKey: PrivateKeyReference,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
+    verificationData: VerificationData,
     postNotifySentry: (e: Error) => void
 ): Promise<EncryptedBlock> {
     const tryEncrypt = async (retryCount: number): Promise<EncryptedBlock> => {
@@ -86,20 +96,14 @@ async function encryptBlock(
         // the cyphertext could get corrupted after verification succeeds,
         // which would create an incorrect digest that would look "correct" to the server.
         const hash = (await generateContentHash(encryptedData)).BlockHash;
+        let verificationToken;
 
-        // Attempt to decrypt data block, to try to detect bitflips / bad hardware.
-        //
-        // We don't check the signature as it is an expensive operation,
-        // and we don't need to here as we always have the manifest signature
         try {
-            await CryptoProxy.decryptMessage({
-                binaryMessage: encryptedData,
-                sessionKeys: sessionKey,
-            });
+            verificationToken = await verifyBlock(encryptedData, verificationData);
         } catch (e) {
             // Only trace the error to sentry once
             if (retryCount === 0) {
-                postNotifySentry(e as Error);
+                postNotifySentry(new Error('Verification failed and retried', { cause: { e } }));
             }
 
             if (retryCount < MAX_BLOCK_VERIFICATION_RETRIES) {
@@ -107,7 +111,7 @@ async function encryptBlock(
             }
 
             // Give up after max retries reached, something's wrong
-            throw new Error(`Failed to verify encrypted block: ${e}`, { cause: { e, retryCount } });
+            throw new Error('Upload failed: Verification of data failed', { cause: { e } });
         }
 
         // Encrypt the block signature after verification
@@ -123,8 +127,27 @@ async function encryptBlock(
             encryptedData,
             hash,
             signature: encryptedSignature,
+            verificationToken,
         };
     };
 
     return tryEncrypt(0);
+}
+
+async function verifyBlock(encryptedData: Uint8Array, { verificationCode, verifierSessionKey }: VerificationData) {
+    // Attempt to decrypt data block, to try to detect bitflips / bad hardware
+    //
+    // We don't check the signature as it is an expensive operation,
+    // and we don't need to here as we always have the manifest signature
+    //
+    // Additionally, we use the key provided by the verification endpoint, to
+    // ensure the correct key was used to encrypt the data
+    await CryptoProxy.decryptMessage({
+        binaryMessage: encryptedData,
+        sessionKeys: verifierSessionKey,
+    });
+
+    // The verifier requires a 0-padded data packet, so we can use .at() which
+    // returns `undefined` in case of out-of-bounds positive indices
+    return verificationCode.map((value, index) => value ^ (encryptedData.at(index) || 0));
 }
