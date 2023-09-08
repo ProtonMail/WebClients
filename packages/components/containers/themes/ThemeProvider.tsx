@@ -21,6 +21,7 @@ import {
     getDarkThemes,
     getDefaultThemeSetting,
     getParsedThemeSetting,
+    getProminentHeaderThemes,
     getThemeType,
     serializeThemeSetting,
 } from '@proton/shared/lib/themes/themes';
@@ -31,6 +32,7 @@ import { classNames, styles } from './properties';
 interface ThemeInformation {
     theme: ThemeTypes;
     dark: boolean;
+    prominentHeader: boolean;
     default: boolean;
     style: string;
     label: string;
@@ -72,6 +74,7 @@ export const ThemeContext = createContext<ThemeContextInterface>({
     information: {
         theme: PROTON_DEFAULT_THEME,
         dark: false,
+        prominentHeader: false,
         default: false,
         style: '',
         label: '',
@@ -140,6 +143,8 @@ const getMotionMode = (matches: boolean): MotionModeSetting => {
 const listeners = createListeners<[ThemeSetting]>();
 
 const darkThemes = getDarkThemes();
+
+const prominentHeaderThemes = getProminentHeaderThemes();
 
 const ThemeProvider = ({ children }: Props) => {
     const [themeSetting, setThemeSettingDefault] = useState(() => {
@@ -239,6 +244,7 @@ const ThemeProvider = ({ children }: Props) => {
     const information: ThemeInformation = {
         theme,
         dark: darkThemes.includes(theme),
+        prominentHeader: prominentHeaderThemes.includes(theme),
         default: PROTON_DEFAULT_THEME === theme,
         style,
         label: PROTON_THEMES_MAP[theme]?.label || '',

@@ -1,11 +1,13 @@
 import { ReactNode } from 'react';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { Hamburger } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import { useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
+import { useTheme } from '../themes';
 
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;
@@ -41,8 +43,11 @@ const PrivateHeader = ({
     useIsPaidUserCookie();
     useIsProtonUserCookie();
 
+    const theme = useTheme();
+    const isProminent = theme.information.prominentHeader;
+
     return (
-        <Header>
+        <Header className={clsx(isProminent && 'ui-prominent')}>
             {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
             {/* Handle actionArea in components itself rather than here */}
             <div className="flex-item-fluid">{actionArea}</div>
