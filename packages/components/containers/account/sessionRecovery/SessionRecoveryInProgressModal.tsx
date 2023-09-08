@@ -34,7 +34,13 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
     }
 
     if (step === STEP.CONFIRM_CANCELLATION) {
-        return <ConfirmSessionRecoveryCancellationModal open={rest.open} onBack={() => setStep(STEP.INFO)} />;
+        return (
+            <ConfirmSessionRecoveryCancellationModal
+                open={rest.open}
+                onClose={onClose}
+                onBack={() => setStep(STEP.INFO)}
+            />
+        );
     }
 
     const { title, content, footer }: { title: string; content: ReactNode; footer: ReactNode } = (() => {
