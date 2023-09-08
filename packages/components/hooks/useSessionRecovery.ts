@@ -66,7 +66,8 @@ export const useIsSessionRecoveryInitiationAvailable = () => {
 
     const sessionRecoveryInitiated =
         sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD ||
-        sessionRecoveryState === SessionRecoveryState.INSECURE;
+        sessionRecoveryState === SessionRecoveryState.INSECURE ||
+        sessionRecoveryState === SessionRecoveryState.CANCELLED;
 
     return isSessionRecoveryAvailable && isSessionRecoveryEnabled && !sessionRecoveryInitiated;
 };
