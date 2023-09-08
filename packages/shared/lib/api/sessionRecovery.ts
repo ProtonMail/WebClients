@@ -9,12 +9,12 @@ export const abortSessionRecovery = () => ({
 });
 
 export const consumeSessionRecovery = (data: {
-    Auth: { ModulusID: string; Version: number; Salt: string; Verifier: string };
     UserKeys: {
         ID: string;
         PrivateKey: string;
     }[];
     KeySalt: string;
+    OrganizationKey?: string;
 }) => ({
     url: 'account/v1/recovery/session/consume',
     method: 'POST',
