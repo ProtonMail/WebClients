@@ -4,7 +4,6 @@ import { Form, FormikProvider } from 'formik';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
 import { useNotifications } from '@proton/components';
 import type { ImportPayload } from '@proton/pass/import';
 import { PROVIDER_INFO_MAP } from '@proton/pass/import';
@@ -21,6 +20,7 @@ import {
     useExtensionContext,
     useImportForm,
 } from '../../../shared/hooks';
+import { SettingsPanel } from '../component/SettingsPanel';
 
 export const Import: VFC = () => {
     const { createNotification } = useNotifications();
@@ -64,15 +64,11 @@ export const Import: VFC = () => {
 
     return (
         <>
-            <Card rounded className="mb-4 p-3 relative">
-                <strong className="color-norm block mb-1">{c('Label').t`Import`}</strong>
-                <em className="block text-sm color-weak mb-2">
-                    {c('Info')
-                        .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
-                </em>
-
-                <hr className="mt-2 mb-4 border-weak" />
-
+            <SettingsPanel
+                title={c('Label').t`Import`}
+                subTitle={c('Info')
+                    .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
+            >
                 <FormikProvider value={form}>
                     <Form className="modal-two-dialog-container">
                         <ImportForm form={form} dropzone={dropzone} busy={busy} />
@@ -101,12 +97,10 @@ export const Import: VFC = () => {
                         }
                     />
                 )}
-            </Card>
+            </SettingsPanel>
 
             {result && (
-                <Card rounded className="mt-4 p-3">
-                    <strong className="color-weak block">{c('Label').t`Latest import`}</strong>
-                    <hr className="mt-2 mb-4 border-weak" />
+                <SettingsPanel title={c('Label').t`Latest import`}>
                     <div className="flex flex-column gap-y-1 text-sm">
                         <div>
                             <span className="color-weak">{c('Label').t`Imported from : `}</span>
@@ -164,7 +158,7 @@ export const Import: VFC = () => {
                             </div>
                         )}
                     </div>
-                </Card>
+                </SettingsPanel>
             )}
         </>
     );
