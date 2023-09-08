@@ -6,7 +6,6 @@ import type { WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array';
-import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -103,17 +102,14 @@ export const createAutofillService = () => {
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
      * the current tab's url & check for any tracked form submissions in order
      * to pick the correct login item from which to derive the OTP code */
-    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getSettings }) => {
+    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getFeatures: getDomainCriterias }) => {
         void getAutofillCandidates();
 
         const otpFieldDetected = service.formManager
             .getTrackedForms()
             .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
-        const match = getSettings().disallowedDomains?.[location.hostname];
-        const disallowedHost = match && hasCriteria(match, 'Autofill2FA');
-
-        if (otpFieldDetected && !disallowedHost) {
+        if (otpFieldDetected && getDomainCriterias().Autofill2FA) {
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     service.iframe.attachNotification();
