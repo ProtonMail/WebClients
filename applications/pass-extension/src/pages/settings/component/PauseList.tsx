@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
 import {
     Checkbox,
     Icon,
@@ -26,9 +25,11 @@ import { hasCriteria, toggleCriteria } from '@proton/pass/utils/settings/criteri
 import { isValidURL } from '@proton/pass/utils/url';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { SettingsPanel } from './SettingsPanel';
+
 const criterias = Object.keys(DisallowCriteriaMasks) as DisallowCritera[];
 
-export const DisallowedDomains: VFC = () => {
+export const PauseList: VFC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -68,12 +69,11 @@ export const DisallowedDomains: VFC = () => {
     };
 
     return (
-        <Card key="settings-section-disallowed" rounded className="mb-4 p-3">
-            <strong className="color-norm block">{c('Label').t`Pause list`}</strong>
-            <hr className="border-weak my-2" />
-            <em className="block text-sm color-weak mb-3 m-1">{c('Description')
-                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.`}</em>
-
+        <SettingsPanel
+            title={c('Label').t`Pause list`}
+            subTitle={c('Description')
+                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.`}
+        >
             {Object.keys(disallowedDomains).length > 0 && (
                 <Table responsive="cards" hasActions>
                     <TableHeader>
@@ -142,6 +142,6 @@ export const DisallowedDomains: VFC = () => {
                     {c('Action').t`Add domain to pause list`}
                 </Button>
             </div>
-        </Card>
+        </SettingsPanel>
     );
 };

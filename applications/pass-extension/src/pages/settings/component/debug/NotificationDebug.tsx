@@ -1,15 +1,15 @@
 import type { ReactNode, VFC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Card } from '@proton/atoms/Card';
 import { FormType } from '@proton/pass/fathom';
 import { selectItemsByType } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AutoSaveType, FormEntryStatus } from '@proton/pass/types';
 
-import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../content/constants';
-import { NotificationSwitch } from '../../../content/injections/apps/notification/components/NotificationSwitch';
-import { NotificationAction } from '../../../content/types';
+import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../../content/constants';
+import { NotificationSwitch } from '../../../../content/injections/apps/notification/components/NotificationSwitch';
+import { NotificationAction } from '../../../../content/types';
+import { SettingsPanel } from '../SettingsPanel';
 
 const MockIFrameContainer: VFC<{ children: ReactNode; height?: number }> = ({
     children,
@@ -36,9 +36,7 @@ export const NotificationDebug: VFC = () => {
     const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri));
 
     return (
-        <Card rounded className="mb-4 p-3 relative">
-            <strong className="color-norm block">Notification</strong>
-            <hr className="mt-2 mb-4 border-weak" />
+        <SettingsPanel title="Notification">
             <div className="gap-4" style={{ columnCount: 2 }}>
                 <MockIFrameContainer>
                     <NotificationSwitch state={null} settings={MockSettings} />
@@ -119,6 +117,6 @@ export const NotificationDebug: VFC = () => {
                     </MockIFrameContainer>
                 )}
             </div>
-        </Card>
+        </SettingsPanel>
     );
 };
