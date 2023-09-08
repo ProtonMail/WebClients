@@ -10,8 +10,12 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
+import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
+import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
+import locales from '../../../../app/locales';
 import { INITIAL_SETTINGS } from '../../../../shared/constants';
 import { useActivityProbe } from '../../../../shared/hooks/useActivityProbe';
 import type {
@@ -31,6 +35,7 @@ type IFrameContextValue = {
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
+    locale: string;
     closeIFrame: (options?: IFrameCloseOptions) => void;
     resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
     postMessage: (message: IFrameMessage) => void;
@@ -46,6 +51,7 @@ const IFrameContext = createContext<IFrameContextValue>({
     settings: INITIAL_SETTINGS,
     userEmail: null,
     visible: false,
+    locale: DEFAULT_LOCALE,
     closeIFrame: noop,
     resizeIFrame: noop,
     postMessage: noop,
@@ -62,6 +68,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
+    const [locale, setLocale] = useState(DEFAULT_LOCALE);
     const activityProbe = useActivityProbe(contentScriptMessage);
 
     const destroyFrame = () => {
@@ -120,6 +127,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     }, [workerState, userEmail]);
 
     useEffect(() => {
+        setTtagLocales(locales);
         window.addEventListener('message', onPostMessageHandler);
         return () => window.removeEventListener('message', onPostMessageHandler);
     }, []);
@@ -215,6 +223,12 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         else activityProbe.cancel();
     }, [visible]);
 
+    useEffect(() => {
+        loadLocale(settings.locale ?? DEFAULT_LOCALE, locales)
+            .then(() => setLocale(settings.locale ?? DEFAULT_LOCALE))
+            .catch(noop);
+    }, [settings.locale]);
+
     const context = useMemo<IFrameContextValue>(
         () => ({
             port,
@@ -223,12 +237,24 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
             settings,
             userEmail,
             visible,
+            locale,
             closeIFrame,
             resizeIFrame,
             postMessage,
             registerHandler,
         }),
-        [port, workerState, settings, userEmail, visible, closeIFrame, resizeIFrame, postMessage, registerHandler]
+        [
+            port,
+            workerState,
+            settings,
+            userEmail,
+            visible,
+            locale,
+            closeIFrame,
+            resizeIFrame,
+            postMessage,
+            registerHandler,
+        ]
     );
 
     return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
