@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 
 import { useLink, useLinksListing } from '../_links';
 import { flattenWithCategories, usePhotos } from '../_photos';
-import type { PhotoLink } from '../_photos/interface';
+import type { PhotoLink } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
 export const usePhotosView = () => {
@@ -30,16 +30,19 @@ export const usePhotosView = () => {
 
         // Add data from cache
         cachedLinks.forEach((link) => {
-            result[link.linkId] = link;
+            if (!link.activeRevision?.photo) {
+                return;
+            }
+            result[link.linkId] = {
+                ...link,
+                activeRevision: {
+                    ...link.activeRevision,
+                    photo: link.activeRevision.photo,
+                },
+            };
         });
 
-        // Sort values by captureTime
         const values = Object.values(result);
-        values.sort(
-            (a, b) =>
-                (b.activeRevision?.photo?.captureTime || Date.now()) -
-                (a.activeRevision?.photo?.captureTime || Date.now())
-        );
 
         return flattenWithCategories(values);
     }, [photos, cachedLinks]);
