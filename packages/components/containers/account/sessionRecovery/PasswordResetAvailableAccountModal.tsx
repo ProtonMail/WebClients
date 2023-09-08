@@ -88,7 +88,13 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     }
 
     if (step === STEP.CONFIRM_CANCELLATION) {
-        return <ConfirmSessionRecoveryCancellationModal open={rest.open} onBack={() => setStep(STEP.INFO)} />;
+        return (
+            <ConfirmSessionRecoveryCancellationModal
+                open={rest.open}
+                onClose={onClose}
+                onBack={() => setStep(STEP.INFO)}
+            />
+        );
     }
 
     const infoSubline =
