@@ -1,0 +1,25 @@
+@keyframes photos-card-loading {
+	from {
+		background-color: var(--background-weak);
+	}
+
+	to {
+		background-color: var(--background-strong);
+	}
+}
+
+.photos-card {
+	&--loading {
+		content: '';
+		background-color: var(--background-weak);
+		animation: photos-card-loading alternate 1s ease-in-out infinite;
+	}
+}
+
+.photos-card-thumbnail {
+	object-fit: cover;
+
+	&--empty {
+		background-color: var(--background-weak);
+	}
+}
