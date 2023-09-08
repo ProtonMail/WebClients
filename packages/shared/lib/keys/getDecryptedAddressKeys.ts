@@ -1,52 +1,10 @@
-import { CryptoProxy } from '@proton/crypto';
+import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/lib/keys/addressKeys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { DecryptedAddressKey, KeyPair, KeysPair, User, AddressKey as tsAddressKey, Key as tsKey } from '../interfaces';
-import { getAddressKeyToken } from './addressKeys';
+import { DecryptedAddressKey, KeyPair, User, AddressKey as tsAddressKey } from '../interfaces';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { splitKeys } from './keys';
-import { decryptMemberToken } from './memberToken';
-
-const getAddressKeyPassword = (
-    { Activation, Token, Signature }: tsKey,
-    userKeys: KeysPair,
-    keyPassword: string,
-    organizationKey?: KeyPair
-) => {
-    // If not decrypting the non-private member keys with the organization key, and
-    // because the activation process is asynchronous in the background, allow the
-    // private key to get decrypted already here so that it can be used
-    if (!organizationKey && Activation) {
-        return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
-    }
-
-    if (Token) {
-        return getAddressKeyToken({
-            Token,
-            Signature,
-            organizationKey,
-            privateKeys: userKeys.privateKeys,
-            publicKeys: userKeys.publicKeys,
-        });
-    }
-
-    return Promise.resolve(keyPassword);
-};
-
-const getDecryptedAddressKey = async ({ ID, PrivateKey, Flags, Primary }: tsAddressKey, addressKeyPassword: string) => {
-    const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: addressKeyPassword });
-    const publicKey = await CryptoProxy.importPublicKey({
-        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
-    });
-    return {
-        ID,
-        Flags,
-        privateKey,
-        publicKey,
-        Primary,
-    };
-};
 
 export const getDecryptedAddressKeys = async (
     addressKeys: tsAddressKey[] = [],
