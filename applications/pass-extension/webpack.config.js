@@ -46,7 +46,14 @@ module.exports = {
         background: {
             import: './src/worker/index.ts',
             filename: 'background.js',
-            chunkLoading: 'import-scripts',
+            /* MV3 implementations of non-persistent background scripts change
+             * depending on the platform. On chromium based browsers, we'll be
+             * in a ServiceWorker environment whereas on FF it'll actually be a
+             * non-persistent event page. One of the quirks of chunk loading in
+             * a service-worker is that you have to register any imported script
+             * during the service worker's oninstall phase (`/worker/index.ts`)
+             * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
+            chunkLoading: BUILD_TARGET === 'chrome' ? 'import-scripts' : 'jsonp',
         },
         client: './src/content/client.ts',
         dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),

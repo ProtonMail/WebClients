@@ -25,6 +25,7 @@ import { createAutoSaveService } from '../services/autosave';
 import { createCacheProxyService } from '../services/cache-proxy';
 import { createExportService } from '../services/export';
 import { createFormTrackerService } from '../services/form.tracker';
+import { createI18nService } from '../services/i18n';
 import { createInjectionService } from '../services/injection';
 import { createLoggerService } from '../services/logger';
 import { createOnboardingService } from '../services/onboarding';
@@ -68,6 +69,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             cacheProxy: createCacheProxyService(),
             export: createExportService(),
             formTracker: createFormTrackerService(),
+            i18n: createI18nService(),
             injection: createInjectionService(),
             logger: createLoggerService(),
             onboarding: createOnboardingService(),
@@ -118,6 +120,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         },
     });
 
+    context.service.i18n.init().catch(noop);
     context.service.onboarding.hydrate();
     context.service.cacheProxy.clean?.().catch(noop);
 
