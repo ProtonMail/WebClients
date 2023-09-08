@@ -9,10 +9,11 @@ import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: VFC = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    const { workerState, visible, locale, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownActions>>(null);
 
     const onReset = () => setDropdownState(null);
+
     const onClose = pipe(closeIFrame, onReset);
     const onResize = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
 
@@ -37,6 +38,7 @@ export const DropdownContent: VFC = () => {
             onResize={onResize}
             onReset={onReset}
             visible={visible}
+            key={locale}
         />
     );
 };
