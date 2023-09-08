@@ -90,6 +90,7 @@ html,
 
 	.input {
 		--field-text-color: var(--color-weak);
+		--field-placeholder-color: var(--text-weak);
 
 		border-color: var(--background-weak);
 		block-size: rem(36);
@@ -199,11 +200,7 @@ html,
 
 .main {
 	overflow: hidden;
-	border: solid var(--main-border-color);
-	border-block-start-width: 0;
-	border-block-end-width: 0;
-	border-inline-start-width: 1px;
-	border-inline-end-width: 0;
+	border-inline-start: var(--main-border-width) solid var(--border-weak);
 	box-shadow: var(--main-box-shadow);
 	background: var(--background-norm);
 
@@ -230,7 +227,14 @@ html,
 		border-block-start: 1px solid var(--border-weak);
 	}
 
-	&-rounded {
+	&-rounded--left {
+		@include media('>small') {
+			border-inline-start: 1px solid var(--border-weak);
+			border-start-start-radius: var(--border-radius-lg);
+		}
+	}
+
+	&-rounded--right {
 		@include media('>small') {
 			border-inline-end: 1px solid var(--border-weak);
 			border-start-end-radius: var(--border-radius-lg);
