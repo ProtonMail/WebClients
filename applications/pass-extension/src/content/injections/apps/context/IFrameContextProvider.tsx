@@ -37,7 +37,7 @@ type IFrameContextValue = {
     visible: boolean;
     locale: string;
     closeIFrame: (options?: IFrameCloseOptions) => void;
-    resizeIFrame: (ref?: MaybeNull<HTMLElement>) => void;
+    resizeIFrame: (height: number) => void;
     postMessage: (message: IFrameMessage) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
 };
@@ -194,13 +194,8 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     const resizeIFrame = useCallback(
-        (el?: MaybeNull<HTMLElement>) => {
-            requestAnimationFrame(() => {
-                if (el) {
-                    const { height } = el.getBoundingClientRect();
-                    postMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
-                }
-            });
+        (height: number) => {
+            if (height > 0) postMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
         },
         [postMessage]
     );
@@ -224,10 +219,13 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     }, [visible]);
 
     useEffect(() => {
-        loadLocale(settings.locale ?? DEFAULT_LOCALE, locales)
-            .then(() => setLocale(settings.locale ?? DEFAULT_LOCALE))
-            .catch(noop);
-    }, [settings.locale]);
+        if (settings?.locale) {
+            const nextLocale = settings.locale ?? DEFAULT_LOCALE;
+            loadLocale(nextLocale, locales)
+                .then(() => setLocale(nextLocale))
+                .catch(noop);
+        }
+    }, [settings?.locale]);
 
     const context = useMemo<IFrameContextValue>(
         () => ({
