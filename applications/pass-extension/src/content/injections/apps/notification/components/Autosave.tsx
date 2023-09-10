@@ -31,8 +31,8 @@ import './Autosave.scss';
 type Props = {
     visible?: boolean;
     submission: FormEntryPrompt;
-    onClose?: (options?: IFrameCloseOptions) => void;
     settings: ProxiedSettings;
+    onClose?: (options?: IFrameCloseOptions) => void;
 };
 type AutosaveFormValues = { name: string; username: string; password: string };
 
