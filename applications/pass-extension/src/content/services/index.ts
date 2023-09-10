@@ -16,7 +16,6 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
-import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
@@ -48,26 +47,27 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         },
     });
 
+    const onChange = () => {
+        context.service.iframe.reset();
+        context.service.formManager.sync();
+
+        const { status, loggedIn } = context.getState();
+
+        if (!loggedIn) context.service.autofill.setAutofillCount(0);
+        else if (workerReady(status)) context.service.autofill.getAutofillCandidates().catch(noop);
+    };
+
     const onWorkerStateChange = (workerState: WorkerState) => {
         if (context.getState().active) {
-            const { loggedIn, UID, status } = workerState;
-            setSentryUID(UID);
-
             context.setState(workerState);
-            context.service.iframe.reset();
-            context.service.formManager.sync();
-
-            if (!loggedIn) context.service.autofill.setAutofillCount(0);
-            if (workerReady(status)) context.service.autofill.getAutofillCandidates().catch(noop);
+            onChange();
         }
     };
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         if (context.getState().active) {
             context.setSettings(settings);
-            context.service.iframe.reset();
-            context.service.formManager.sync();
-            context.service.autofill.getAutofillCandidates().catch(noop);
+            onChange();
         }
     };
 
@@ -95,11 +95,10 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         );
 
         if (res.type === 'success' && context.getState().active) {
-            const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
-
-            onWorkerStateChange(workerState);
-            onSettingsChange(res.settings);
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
+            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
+            context.setSettings(res.settings);
+            onChange();
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
