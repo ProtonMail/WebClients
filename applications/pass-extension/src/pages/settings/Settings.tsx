@@ -157,7 +157,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     );
 };
 
-const SettingsApp: FC = () => {
+const SettingsApp: VFC = () => {
     const { createNotification } = useNotifications();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
@@ -197,7 +197,6 @@ export const Settings: VFC = () => {
 
     return (
         <>
-            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
             <ExtensionApp endpoint="page">
                 {(ready, locale) =>
                     ready && (
@@ -206,6 +205,7 @@ export const Settings: VFC = () => {
                                 store.current ??
                                 (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
                         >
+                            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                             <SettingsApp key={locale} />
                         </ReduxProvider>
                     )
