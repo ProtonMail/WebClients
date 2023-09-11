@@ -49,23 +49,21 @@ export function initUploadFileWorker(
                         .then(async (mimeType) => {
                             return createFileRevision(abortController.signal, mimeType, keys).then(
                                 async (fileRevision) => {
-                                    return getVerificationData(
-                                        abortController.signal,
-                                        fileRevision.revisionId,
-                                        keys.privateKey
-                                    ).then((verificationData) => {
-                                        onInit?.(mimeType, fileRevision.fileName);
-                                        return thumbnailDataPromise.then(async (thumbnailData) => {
-                                            await workerApi.postStart(
-                                                file,
-                                                thumbnailData,
-                                                fileRevision.address.privateKey,
-                                                fileRevision.address.email,
-                                                fileRevision.privateKey,
-                                                fileRevision.sessionKey,
-                                                verificationData
-                                            );
-                                        });
+                                    onInit?.(mimeType, fileRevision.fileName);
+
+                                    return Promise.all([
+                                        thumbnailDataPromise,
+                                        getVerificationData(abortController.signal),
+                                    ]).then(async ([thumbnailData, verificationData]) => {
+                                        await workerApi.postStart(
+                                            file,
+                                            thumbnailData,
+                                            fileRevision.address.privateKey,
+                                            fileRevision.address.email,
+                                            fileRevision.privateKey,
+                                            fileRevision.sessionKey,
+                                            verificationData
+                                        );
                                     });
                                 }
                             );

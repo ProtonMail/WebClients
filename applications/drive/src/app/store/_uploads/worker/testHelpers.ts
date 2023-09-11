@@ -22,12 +22,14 @@ export function waitFor(callback: () => boolean, timeout = 100): Promise<string>
 export function createBlock(index: number): EncryptedBlock {
     const data = Uint8Array.from(Array.from(`data${index}`).map((letter) => letter.charCodeAt(0)));
     const hash = Uint8Array.from(Array.from(`hash${index}`).map((letter) => letter.charCodeAt(0)));
+    const token = Uint8Array.from(Array.from(`token${index}`).map((letter) => letter.charCodeAt(0)));
     return {
         index,
         originalSize: 100 + index,
         encryptedData: data,
         hash,
         signature: `sig${index}`,
+        verificationToken: token,
     };
 }
 

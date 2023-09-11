@@ -308,6 +308,7 @@ export default function useUploadFile() {
                 const createdFileRevision = await createdFileRevisionPromise;
                 const addressKeyInfo = await getShareKeys(abortSignal);
                 checkSignal(abortSignal, createdFileRevision.filename);
+
                 return {
                     fileName: createdFileRevision.filename,
                     privateKey: createdFileRevision.privateKey,
@@ -329,19 +330,25 @@ export default function useUploadFile() {
                     abortSignal
                 );
 
-                const verifierSessionKey = await CryptoProxy.decryptSessionKey({
-                    binaryMessage: base64StringToUint8Array(ContentKeyPacket),
-                    decryptionKeys: createdFileRevision.privateKey,
-                });
+                try {
+                    const verifierSessionKey = await CryptoProxy.decryptSessionKey({
+                        binaryMessage: base64StringToUint8Array(ContentKeyPacket),
+                        decryptionKeys: createdFileRevision.privateKey,
+                    });
 
-                if (!verifierSessionKey) {
-                    throw new Error('Upload failed: Verification of data failed');
+                    if (!verifierSessionKey) {
+                        throw new Error('Verification session key could not be decrypted');
+                    }
+
+                    return {
+                        verificationCode: base64StringToUint8Array(VerificationCode),
+                        verifierSessionKey,
+                    } satisfies VerificationData;
+                } catch (e) {
+                    throw new Error('Upload failed: Verification of data failed', {
+                        cause: e,
+                    });
                 }
-
-                return {
-                    verificationCode: base64StringToUint8Array(VerificationCode),
-                    verifierSessionKey,
-                } satisfies VerificationData;
             },
             createBlockLinks: async (
                 abortSignal: AbortSignal,
