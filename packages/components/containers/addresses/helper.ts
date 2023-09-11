@@ -104,9 +104,12 @@ export const getPermissions = ({
         }
     }
 
+    const canEditPunctuation = Type !== ADDRESS_TYPE.TYPE_EXTERNAL;
+
     return {
         canMakeDefault,
         canGenerate,
+        canEditPunctuation,
         canDisable,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.

@@ -102,13 +102,14 @@ describe('addresses with user', () => {
         return container.querySelector('[title]');
     };
 
-    it('should be able to set an alias as default', () => {
+    it('should be able to set an alias as default', async () => {
         const mockApi = jest.fn();
         mockedUseApi.mockReturnValue(mockApi);
 
-        const { getByText, container } = render(<AddressesWithUser user={user} />);
+        const { getByTestId, getByText, container } = render(<AddressesWithUser user={user} />);
 
         // Assumes that "Make default" is displayed on the address we're interested in
+        fireEvent.click(getByTestId('dropdownActions:dropdown'));
         fireEvent.click(getByText('Set as default'));
         expect(mockApi).toHaveBeenCalledWith(orderAddress(['3', '1', '2', '4']));
         expect(getFirstAddress(container)?.innerHTML).toBe('a1@proton.me');
