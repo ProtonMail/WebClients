@@ -1,0 +1,32 @@
+@import '~@proton/styles/scss/lib';
+
+table {
+	th small {
+		display: block;
+	}
+	@include media('<=medium') {
+		tr {
+			position: relative;
+
+			td {
+				display: flex !important;
+				align-items: center;
+				gap: em(10);
+
+				label {
+					order: -1;
+				}
+
+				&.pass-pause-list--remove button {
+					position: absolute;
+					inset-block-start: em(10);
+					inset-inline-end: em(10);
+				}
+
+				&:first-of-type p {
+					display: none !important;
+				}
+			}
+		}
+	}
+}
