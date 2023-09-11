@@ -269,7 +269,7 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
 
     return (
         <ModalTwo size="medium" data-testid="key-transparency-details:modal" {...props}>
-            <ModalTwoHeader title={c('loc_nightly: Key transparency details').t`Key verification`} />
+            <ModalTwoHeader title={c('loc_nightly: Key transparency details').t`Key verification (Beta)`} />
             <ModalTwoContent>
                 {auditTime && (
                     <div className="bg-weak p-3 rounded color-weak">{
