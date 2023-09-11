@@ -1,6 +1,7 @@
 import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
 import type {
+    InviteCreateRequest,
     ItemCreateRequest,
     ItemKeyResponse,
     ItemMoveSingleToShareRequest,
@@ -11,7 +12,7 @@ import type {
     VaultCreateRequest,
     VaultUpdateRequest,
 } from '../api';
-import type { ShareType } from '../data/shares';
+import type { ShareRole, ShareType } from '../data/shares';
 import type { MaybeNull } from '../utils';
 import type { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
 
@@ -54,6 +55,12 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         lastRevision: number;
     }) => Promise<ItemUpdateRequest>;
     moveItem: (data: { destinationShareId: string; content: Uint8Array }) => Promise<ItemMoveSingleToShareRequest>;
+    createVaultInvite: (data: {
+        shareId: string;
+        email: string;
+        role: ShareRole;
+        inviteePublicKey: string;
+    }) => Promise<InviteCreateRequest>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
@@ -70,6 +77,7 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     setLatestRotation: (rotation: Rotation) => void;
     hasVaultKey: (rotation: Rotation) => boolean;
     getVaultKey: (rotation: Rotation) => VaultKey;
+    getVaultKeys: () => VaultKey[];
     addVaultKey: (vaultKey: VaultKey) => void;
     isActive: (userKeys?: DecryptedKey[]) => boolean;
 }

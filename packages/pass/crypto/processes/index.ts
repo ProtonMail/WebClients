@@ -1,3 +1,4 @@
+export * from './invite/create-vault-invite';
 export * from './item/create-item';
 export * from './item/move-item';
 export * from './item/open-item';
