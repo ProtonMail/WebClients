@@ -13,6 +13,7 @@ import UploadWorkerBuffer from './buffer';
 import generateEncryptedBlocks from './encryption';
 import { Pauser } from './pauser';
 import startUploadJobs from './upload';
+import { createVerifier } from './verifier';
 
 // eslint-disable-next-line no-restricted-globals
 const uploadWorker = new UploadWorker(self as any, { generateKeys, start, createdBlocks, pause, resume });
@@ -73,6 +74,7 @@ async function start(
     verificationData: VerificationData
 ) {
     const hashInstance = new Sha1();
+    const verifier = createVerifier(verificationData);
 
     buffer
         .feedEncryptedBlocks(
@@ -84,7 +86,7 @@ async function start(
                 sessionKey,
                 (e) => uploadWorker.postNotifySentry(e),
                 hashInstance,
-                verificationData
+                verifier
             )
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
