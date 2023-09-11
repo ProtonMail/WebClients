@@ -2,14 +2,19 @@
 
 ### Improvements
 
--   Added strikethrough in the available styles of the composer
+-   Added strikethrough option to the email composer
 
 ### Fixes
 
--   Fixed keeping changes in the composer when the message is sent offline
--   Fixed the drag and drop of text in the composer when using rich text
--   Stopped suggesting to merge contacts that have been imported with unknown contact name 
--   Fixed automatically turning numbers followed by a dot to an numbered list
+-   Fixed an issue where on some rare occasions changes would not be kept in the composer when sending the message while being offline
+-   Fixed an issue where replying to a message and discarding the draft too quickly would result in the draft not being discarded on some occasions
+-   Fixed an issue where a double-click was needed in order to open a draft message
+-   Fixed an issue where sometimes drag&drop inside the composer would not work in the rich text context
+-   Stopped suggesting to merge contacts that have been imported with "Unknown" as a contact name
+-   Fixed an issue where typing any number followed by a full stop would automatically turn into a numbered list in the composer
+-   Fixed an issue where a message sent to a newly created contact group would not print the contact group details fully
+-   Fixed an issue where the "To" field could appear editable in a minimized composer when several composer are minimized at the same time
+-   Fixed an issue where in certain emails, the text would be shown as white on a white background if changing the default colour to Dark in the OS preference on Windows
 
 ## Release 5.0.28 — Sep 13, 2023
 
