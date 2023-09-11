@@ -27,6 +27,8 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
+import './PauseList.scss';
+
 const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
 export const PauseList: VFC = () => {
@@ -77,8 +79,8 @@ export const PauseList: VFC = () => {
                 <Table responsive="cards" hasActions>
                     <TableHeader>
                         <TableRow>
-                            <TableHeaderCell className="w-1/3">
-                                <small>{c('Label').t`Domains`}</small>
+                            <TableHeaderCell className="w-1/4">
+                                <small>{c('Label').t`Domain`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
                                 <small>{c('Label').t`Autofill`}</small>
@@ -101,11 +103,25 @@ export const PauseList: VFC = () => {
                     <TableBody>
                         {Object.entries(disallowedDomains).map(([url, mask], i) => (
                             <TableRow key={`${url}-${i}`}>
-                                <TableCell>
+                                <TableCell label={c('Label').t`Domains`}>
                                     <div className="text-ellipsis">{url}</div>
                                 </TableCell>
                                 {criterias.map((criteria) => (
-                                    <TableCell key={criteria}>
+                                    <TableCell
+                                        key={criteria}
+                                        label={(() => {
+                                            switch (criteria) {
+                                                case 'Autofill':
+                                                    return c('Label').t`Autofill`;
+                                                case 'Autofill2FA':
+                                                    return c('Label').t`Autofill 2FA`;
+                                                case 'Autosuggest':
+                                                    return c('Label').t`Autosuggest`;
+                                                case 'Autosave':
+                                                    return c('Label').t`Autosave`;
+                                            }
+                                        })()}
+                                    >
                                         <Checkbox
                                             checked={hasCriteria(mask, criteria)}
                                             onChange={() => toggleUrlMask(url, criteria)}
@@ -113,7 +129,7 @@ export const PauseList: VFC = () => {
                                     </TableCell>
                                 ))}
 
-                                <TableCell>
+                                <TableCell className="pass-pause-list--remove">
                                     <button
                                         className="button button-pill button-for-icon button-solid-weak"
                                         onClick={() => deleteDisallowedUrl(url)}
