@@ -131,9 +131,10 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     /* reconciliating the form trackers involves syncing
      * the form's trackable fields.*/
-    const reconciliate = withContext(({ getState }) => {
-        const { loggedIn, status } = getState();
+    const reconciliate = withContext<() => Promise<void>>(async ({ getState, service }) => {
+        const { loggedIn } = getState();
         const fieldsToTrack = getTrackableFields();
+        const autofillCount = service.autofill.getState()?.items.length ?? 0;
 
         form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);
@@ -146,8 +147,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!match.attachIcon) return field.detachIcon();
 
             const icon = field.attachIcon();
-            icon.setStatus(status);
-            if (!loggedIn) icon.setCount(0);
+            icon.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
         });
 
         /* trigger auto-focus on current active field if value is empty:
