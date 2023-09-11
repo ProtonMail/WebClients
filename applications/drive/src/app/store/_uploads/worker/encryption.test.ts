@@ -10,6 +10,8 @@ import {
 } from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import generateBlocks from './encryption';
+import { Verifier } from './interface';
+import { createVerifier } from './verifier';
 
 jest.setTimeout(20000);
 
@@ -40,6 +42,11 @@ describe('block generator', () => {
         finish: () => ({ result: new Uint8Array([1, 2, 3, 4]) }),
     };
 
+    // Mock implementation of a verifier that always succeeds
+    const mockVerifier: Verifier = () => {
+        return Promise.resolve(new Uint8Array(Array(32)));
+    };
+
     it('should generate all file blocks', async () => {
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
@@ -53,7 +60,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             noop,
-            mockHasher
+            mockHasher,
+            mockVerifier
         );
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
@@ -77,7 +85,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             noop,
-            mockHasher
+            mockHasher,
+            mockVerifier
         );
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
@@ -102,6 +111,11 @@ describe('block generator', () => {
         });
         const notifySentry = jest.fn();
 
+        const verifier = createVerifier({
+            verificationCode: new Uint8Array([1, 2, 3]),
+            verifierSessionKey: sessionKey,
+        });
+
         const generator = generateBlocks(
             file,
             thumbnailData,
@@ -109,7 +123,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             notifySentry,
-            mockHasher
+            mockHasher,
+            verifier
         );
         const blocks = asyncGeneratorToArray(generator);
 
@@ -143,6 +158,11 @@ describe('block generator', () => {
         });
         const notifySentry = jest.fn();
 
+        const verifier = createVerifier({
+            verificationCode: new Uint8Array([1, 2, 3]),
+            verifierSessionKey: sessionKey,
+        });
+
         const generator = generateBlocks(
             file,
             thumbnailData,
@@ -150,7 +170,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             notifySentry,
-            mockHasher
+            mockHasher,
+            verifier
         );
         const blocks = await asyncGeneratorToArray(generator);
 
@@ -180,7 +201,16 @@ describe('block generator', () => {
         const thumbnailData = undefined;
         const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
-        const generator = generateBlocks(file, thumbnailData, addressPrivateKey, privateKey, sessionKey, noop, hasher);
+        const generator = generateBlocks(
+            file,
+            thumbnailData,
+            addressPrivateKey,
+            privateKey,
+            sessionKey,
+            noop,
+            hasher,
+            mockVerifier
+        );
 
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
@@ -188,5 +218,43 @@ describe('block generator', () => {
         expect(hasher.process).toHaveBeenCalledTimes(3);
         // the finish function is called by the worker at a higher level
         expect(hasher.finish).not.toHaveBeenCalled();
+    });
+
+    describe('verifier usage', () => {
+        [0, 1, 17, 6 * 1024 * 1024].forEach(async (fileSize) => {
+            const blockCount = Math.ceil(fileSize / FILE_CHUNK_SIZE);
+
+            it(`should call the verifier and attach ${blockCount} tokens for ${fileSize} bytes`, async () => {
+                const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
+
+                const file = new File(['a'.repeat(fileSize)], 'foo.txt');
+                const thumbnailData = undefined;
+
+                const verifier = jest.fn(mockVerifier);
+                const generator = generateBlocks(
+                    file,
+                    thumbnailData,
+                    addressPrivateKey,
+                    privateKey,
+                    sessionKey,
+                    noop,
+                    mockHasher,
+                    verifier
+                );
+
+                const blocks = await asyncGeneratorToArray(generator);
+
+                expect(blocks.length).toBe(blockCount);
+                expect(verifier).toHaveBeenCalledTimes(blockCount);
+
+                blocks.forEach((block) => {
+                    if (!('verificationToken' in block)) {
+                        fail('Verification token should be in generated block data');
+                    }
+
+                    expect(block.verificationToken).toStrictEqual(new Uint8Array(new Array(32)));
+                });
+            });
+        });
     });
 });
