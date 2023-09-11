@@ -15,6 +15,7 @@ import {
     GroupsWithContactsMap,
     getContactGroupsAutocompleteItems,
     getContactsAutocompleteItems,
+    getNumberOfMembersCount,
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
 } from '../../addressesAutocomplete/helper';
@@ -236,7 +237,14 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                             <Option
                                 key={option.key}
                                 id={getOptionID(index)}
-                                title={option.label}
+                                title={
+                                    option.type === 'group'
+                                        ? `${option.label} ${getNumberOfMembersText(
+                                              option.value.ID,
+                                              groupsWithContactsMap
+                                          )}`
+                                        : option.label
+                                }
                                 value={option}
                                 disableFocusOnActive
                                 onChange={handleSelect}
@@ -252,7 +260,9 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                                         <span className="mr-2 text-ellipsis">
                                             <Marks chunks={chunks}>{text}</Marks>
                                         </span>
-                                        {getNumberOfMembersText(option.value.ID, groupsWithContactsMap)}
+                                        <span className="color-weak text-no-wrap">
+                                            {getNumberOfMembersCount(option.value.ID, groupsWithContactsMap)}
+                                        </span>
                                     </div>
                                 ) : (
                                     <Marks chunks={chunks}>{text}</Marks>
