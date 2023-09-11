@@ -1,5 +1,7 @@
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { CryptoProxy } from '@proton/crypto';
+import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
+import { authentication } from '../auth/authentication';
 import type {
     PassCryptoManagerContext,
     PassCryptoWorker,
@@ -48,10 +50,9 @@ const createPassCrypto = (): PassCryptoWorker => {
     };
 
     const hasShareManager = (shareId: string): boolean => context.shareManagers.has(shareId);
+
     const getShareManager = (shareId: string): ShareManager => {
-        if (!hasShareManager(shareId)) {
-            throw new PassCryptoShareError(`Unknown shareId : cannot resolve share manager`);
-        }
+        if (!hasShareManager(shareId)) throw new PassCryptoShareError(`Unknown shareId : cannot resolve share manager`);
         return context.shareManagers.get(shareId)!;
     };
 
@@ -62,6 +63,23 @@ const createPassCrypto = (): PassCryptoWorker => {
                 context.shareManagers.delete(shareId);
             }
         });
+    };
+
+    /* Resolves the decrypted address key reference */
+    const getAddressKey = async (addressId: string) => {
+        assertHydrated(context);
+
+        const address = context.addresses.find((address) => address.ID === addressId);
+        if (address === undefined) throw new PassCryptoShareError('Unknown address ID');
+
+        const [primaryAddressKey] = await getDecryptedAddressKeysHelper(
+            address.Keys,
+            context.user,
+            context.userKeys,
+            authentication.getPassword()
+        );
+
+        return primaryAddressKey;
     };
 
     const worker: PassCryptoWorker = {
@@ -185,11 +203,9 @@ const createPassCrypto = (): PassCryptoWorker => {
 
                             const rotation = encryptedShare.ContentKeyRotation!;
                             const vaultKey = vaultKeys.find((key) => key.rotation === rotation);
-
                             if (vaultKey === undefined) {
                                 throw new PassCryptoShareError(`Missing vault key for rotation ${rotation}`);
                             }
-
                             return processes.openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
                         }
 
@@ -272,6 +288,21 @@ const createPassCrypto = (): PassCryptoWorker => {
             const destinationVaultKey = shareManager.getVaultKey(latestRotation);
 
             return processes.moveItem({ destinationShareId, destinationVaultKey, content });
+        },
+
+        async createVaultInvite({ shareId, inviteePublicKey, email, role }) {
+            assertHydrated(context);
+
+            const shareManager = getShareManager(shareId);
+            const share = shareManager.getShare();
+
+            const inviteKeys = await processes.createVaultInvite({
+                vaultKeys: shareManager.getVaultKeys(),
+                inviteePublicKey: await CryptoProxy.importPublicKey({ armoredKey: inviteePublicKey }),
+                inviterPrivateKey: (await getAddressKey(share.addressId)).privateKey,
+            });
+
+            return { Keys: inviteKeys, Email: email, ShareRoleID: role, TargetType: ShareType.Vault };
         },
 
         serialize: () => ({
