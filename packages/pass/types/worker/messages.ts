@@ -14,8 +14,8 @@ import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
+import type { AutofillResult } from './autofill';
 import type { AutosavePayload, WithAutoSavePromptOptions } from './autosave';
-import type { SafeLoginItem } from './data';
 import type { FormEntry, FormEntryPrompt, NewFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
@@ -102,7 +102,7 @@ export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { a
 export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ExtensionSession>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
-export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
+export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
@@ -200,7 +200,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
-    [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
+    [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.ALIAS_CREATE]: Outcome;
