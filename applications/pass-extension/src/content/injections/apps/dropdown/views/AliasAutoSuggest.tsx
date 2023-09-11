@@ -146,9 +146,9 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
                 subTitle={(() => {
                     if (loadingText) {
                         return (
-                            <span className="block flex flex-align-items-center">
+                            <span className="block flex flex-align-items-center flex-nowrap">
                                 <CircleLoader className="mr-1" />
-                                <span>{loadingText}</span>
+                                <span className="block text-ellipsis">{loadingText}</span>
                             </span>
                         );
                     }
