@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Info } from '../../components';
+import { BetaBadge, Info } from '../../components';
 import { useFeature } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
@@ -39,6 +39,7 @@ const AddressVerificationSection = () => {
                     <SettingsLayoutLeft>
                         <label htmlFor="kt-toggle" className="text-semibold">
                             <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
+                            <BetaBadge className="mr-2" />
                             <Info url={getKnowledgeBaseUrl('/key-transparency')} />
                         </label>
                     </SettingsLayoutLeft>
