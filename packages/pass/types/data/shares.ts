@@ -5,6 +5,12 @@ export enum ShareType {
     Item = 2,
 }
 
+export enum ShareRole {
+    Admin = '1',
+    Write = '2',
+    Read = '3',
+}
+
 export type VaultShareContent = {
     name: string;
     description: string;
