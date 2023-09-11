@@ -189,16 +189,6 @@ const UsernameSection = ({ app }: Props) => {
                                                 <span className="color-weak mr-1">
                                                     {c('Info').t`Unverified email address.`}
                                                 </span>
-                                                <InlineLinkButton
-                                                    className="flex flex-no-wrap gap-1"
-                                                    onClick={() => {
-                                                        withLoading(handleSendVerificationEmail());
-                                                    }}
-                                                    aria-label={c('Action').t`Verify email address`}
-                                                >
-                                                    {c('Action').t`Verify now`}
-                                                    {loading && <CircleLoader className="flex-align-self-center" />}
-                                                </InlineLinkButton>
                                             </div>
                                         </>
                                     )}
