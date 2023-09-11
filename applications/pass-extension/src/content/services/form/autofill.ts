@@ -2,24 +2,54 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import { FieldType, FormType } from '@proton/pass/fathom';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
-import type { WorkerMessageResponse } from '@proton/pass/types';
+import type { MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { AutofillResult } from '@proton/pass/types/worker/autofill';
 import { first } from '@proton/pass/utils/array';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import noop from '@proton/utils/noop';
 
 import { withContext } from '../../context/context';
-import { type FormHandle, NotificationAction } from '../../types';
+import { DropdownAction, type FormHandle, NotificationAction } from '../../types';
+
+type AutofillState = { cache: MaybeNull<AutofillResult> };
 
 export const createAutofillService = () => {
-    const setAutofillCount: (count: number) => void = withContext(({ service: { formManager } }, count): void => {
-        const loginForms = formManager.getTrackedForms().filter((form) => form.formType === FormType.LOGIN);
+    const state: AutofillState = { cache: null };
+
+    /* on autofill data change : update tracked login field counts &
+     * trigger a dropdown sync in order to update the autofill data */
+    const onAutofillChange = withContext((ctx) => {
+        const dropdown = ctx.service.iframe.dropdown;
+        const trackedForms = ctx.service.formManager.getTrackedForms();
+        const loginForms = trackedForms.filter((form) => form.formType === FormType.LOGIN);
+        const count = state.cache?.items.length ?? 0;
+
         loginForms.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
+
+        if (dropdown) {
+            const { visible, action } = dropdown.getState();
+            if (visible && action === DropdownAction.AUTOFILL) void dropdown.sync();
+        }
     });
 
-    const getAutofillCandidates = withContext<() => Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>>>(
-        async ({ mainFrame }) => {
+    const sync = (data: AutofillResult): void => {
+        state.cache = data;
+        onAutofillChange();
+    };
+
+    const reset = () => {
+        state.cache = null;
+        onAutofillChange();
+    };
+
+    const query = asyncLock(
+        withContext<() => Promise<WorkerMessageResponse<WorkerMessageType.AUTOFILL_QUERY>>>(async ({ mainFrame }) => {
+            if (state.cache) return state.cache;
+
             const result = await sendMessage.on(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOFILL_QUERY,
@@ -31,11 +61,9 @@ export const createAutofillService = () => {
                         : { items: [], needsUpgrade: false }
             );
 
-            /* FIXME: sync autofill candidates if dropdown is opened */
-            setAutofillCount(result.items.length);
-
+            sync(result);
             return result;
-        }
+        })
     );
 
     const autofillTelemetry = () => {
@@ -103,7 +131,7 @@ export const createAutofillService = () => {
      * the current tab's url & check for any tracked form submissions in order
      * to pick the correct login item from which to derive the OTP code */
     const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getFeatures: getDomainCriterias }) => {
-        void getAutofillCandidates();
+        query().catch(noop);
 
         const otpFieldDetected = service.formManager
             .getTrackedForms()
@@ -127,12 +155,13 @@ export const createAutofillService = () => {
     });
 
     return {
-        reconciliate,
-        setAutofillCount,
-        getAutofillCandidates,
         autofillLogin,
         autofillGeneratedPassword,
         autofillOTP,
+        getState: () => state.cache,
+        reconciliate,
+        reset,
+        sync,
     };
 };
 

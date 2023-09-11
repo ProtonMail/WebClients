@@ -16,7 +16,6 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
-import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -47,27 +46,27 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         },
     });
 
-    const onChange = () => {
+    const reconciliate = async () => {
         context.service.iframe.reset();
         context.service.formManager.sync();
 
         const { status, loggedIn } = context.getState();
 
-        if (!loggedIn) context.service.autofill.setAutofillCount(0);
-        else if (workerReady(status)) context.service.autofill.getAutofillCandidates().catch(noop);
+        if (!loggedIn) context.service.autofill.reset();
+        else if (workerReady(status)) await context.service.autofill.reconciliate();
     };
 
     const onWorkerStateChange = (workerState: WorkerState) => {
         if (context.getState().active) {
             context.setState(workerState);
-            onChange();
+            void reconciliate();
         }
     };
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         if (context.getState().active) {
             context.setSettings(settings);
-            onChange();
+            void reconciliate();
         }
     };
 
@@ -81,7 +80,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.service.autofill.setAutofillCount(message.payload.count);
+                    return context.service.autofill.sync(message.payload);
             }
         }
     };
@@ -98,7 +97,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
             context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
             context.setSettings(res.settings);
-            onChange();
+            await reconciliate();
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
