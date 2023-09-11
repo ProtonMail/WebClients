@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import './PromotionBanner.scss';
 
 interface Props {
+    className?: string;
     rounded?: boolean;
     icon?: ReactNode;
     description?: ReactNode;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 const PromotionBanner = ({
+    className,
     rounded = false,
     loading = false,
     contentCentered = true,
@@ -41,7 +43,8 @@ const PromotionBanner = ({
             className={clsx(
                 'flex flex-nowrap flex-item-noshrink bg-promotion relative',
                 contentCentered && 'text-center on-tablet-text-left p-0-5',
-                rounded && 'rounded'
+                rounded && 'rounded',
+                className
             )}
             data-testid={dataTestId}
         >
