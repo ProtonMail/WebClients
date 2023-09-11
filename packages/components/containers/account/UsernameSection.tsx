@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href } from '@proton/atoms';
 import { getVerificationSentText } from '@proton/components/containers/recovery/email/VerifyRecoveryEmailModal';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -27,12 +28,14 @@ import clsx from '@proton/utils/clsx';
 
 import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
 import { useAddresses, useApi, useConfig, useNotifications, useUser } from '../../hooks';
+import PromotionBanner from '../banner/PromotionBanner';
 import EditAddressModal from './EditAddressModal';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
+import mailCalendar from './mail-calendar.svg';
 import unverified from './unverified.svg';
 
 interface Props {
@@ -85,25 +88,33 @@ const UsernameSection = ({ app }: Props) => {
             <SettingsSection>
                 {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
                     <>
-                        <Card className="mb-8" rounded bordered={false}>
-                            <div className="mb-2">
-                                {c('Info')
-                                    .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
-                                <Href href={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
-                            </div>
-                            <ButtonLike
-                                as={AppLink}
-                                toApp={APPS.PROTONACCOUNT}
-                                to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
-                                color="norm"
-                            >
-                                {c('Info').t`Get my ${BRAND_NAME} address`}
-                            </ButtonLike>
-                        </Card>
+                        <AppLink
+                            toApp={APPS.PROTONACCOUNT}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
+                            className="text-no-decoration"
+                        >
+                            <PromotionBanner
+                                mode="banner"
+                                className="mb-6"
+                                rounded
+                                contentCentered={false}
+                                icon={<img width="40" src={mailCalendar} alt="" className="flex-item-noshrink" />}
+                                description={getBoldFormattedText(
+                                    c('Info')
+                                        .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
+                                )}
+                                cta={
+                                    <div className="mr-4">
+                                        <Icon name="chevron-right" size={16} />
+                                    </div>
+                                }
+                            />
+                        </AppLink>
                         {primaryAddress.ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED && (
                             <Card className="mb-8" rounded bordered={true} background={false}>
-                                <div className="h3 text-bold mb-6">{c('Info')
-                                    .t`Secure your ${BRAND_NAME} Account`}</div>
+                                <div className="h3 text-bold mb-6">
+                                    {c('Info').t`Secure your ${BRAND_NAME} Account`}
+                                </div>
                                 <div className="flex gap-4 flex-nowrap flex-align-items-start">
                                     <img
                                         className="flex-item-noshrink"
@@ -113,8 +124,8 @@ const UsernameSection = ({ app }: Props) => {
                                         alt=""
                                     />
                                     <div>
-                                        <div className="mb-2 text-lg text-semibold">
-                                            <span className="mr-2">{primaryAddress.Email}</span>
+                                        <div className="mb-2 text-lg text-semibold flex">
+                                            <div className="mr-2 text-ellipsis">{primaryAddress.Email}</div>
                                             <Badge type="warning">{c('Info').t`Unverified`}</Badge>
                                         </div>
                                         <div>
