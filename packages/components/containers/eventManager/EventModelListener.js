@@ -19,9 +19,7 @@ import { OrganizationModel } from '@proton/shared/lib/models/organizationModel';
 import { SubscriptionModel } from '@proton/shared/lib/models/subscriptionModel';
 
 import { useCache, useEventManager } from '../../hooks';
-import { KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
-import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
-import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
+import { clearAddressesKeysCache, clearUsersKeysCache } from '../app/clearKeyCache';
 
 const EventModelListener = ({ models }) => {
     const { subscribe } = useEventManager();
@@ -86,14 +84,13 @@ const EventModelListener = ({ models }) => {
                     cache.delete(MembersModel.key);
                 }
                 // Since the keys could have changed, clear the cached keys.
-                cache.delete(USER_KEYS_CACHE_KEY);
+                clearUsersKeysCache(cache);
             }
 
             if (data[AddressesModel.key]) {
                 // TODO: Be smarter and just delete the address keys that changed
                 // Since the keys could have changed, clear the cached keys.
-                cache.delete(ADDRESS_KEYS_CACHE);
-                cache.delete(ADDRESSES_KEYS_CACHE);
+                clearAddressesKeysCache(cache);
             }
 
             // The API sometimes does not send the user model when used space changes...
