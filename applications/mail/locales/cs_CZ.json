@@ -4721,6 +4721,12 @@
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakty",
+        "${ contactsLength } kontaktů",
+        "${ contactsLength } kontaktů"
+      ],
       "${ count } unread message": [
         "${ count } nepřečtená zpráva",
         "${ count } nepřečtené zprávy",
@@ -4819,6 +4825,12 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } vybraný kontakt",
+        "${ selectedContactsLength }/${ contactsLength } vybrané kontakty",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybraná složka",
@@ -5371,6 +5383,9 @@
       ],
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Zapojte se do programu ${ PROTON_SENTINEL_NAME } a získejte nejvyšší úroveň zabezpečení účtu a podpory."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
