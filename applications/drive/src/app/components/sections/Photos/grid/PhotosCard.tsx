@@ -65,12 +65,12 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
                 }
             >
                 {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
-                    <div className="flex flex-align-items-center flex-justify-center photos-card-thumbnail photos-card-thumbnail--empty">
+                    <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
                         <FileIcon mimeType={photo.mimeType || ''} size={48} />
                     </div>
                 )}
                 {!isThumbnailLoading && thumbUrl && isActive ? (
-                    <img src={thumbUrl} alt={getAltText(photo)} className="photos-card-thumbnail" />
+                    <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
                 ) : null}
             </ButtonLike>
         </>
