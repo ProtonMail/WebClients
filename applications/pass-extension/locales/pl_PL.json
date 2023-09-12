@@ -867,6 +867,9 @@
       "Verification code": [
         "Kod weryfikacyjny"
       ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Mamy problem z synchronizacją danych z magazynem lokalnym. Upewnij się, że masz wystarczającą pamięć wewnętrzną do działania aplikacji ${ PASS_SHORT_APP_NAME }."
+      ],
       "You are about to create:": [
         "Utworzysz:"
       ],
@@ -1214,6 +1217,9 @@
       "Select your password manager": [
         "Wybierz menadżer haseł"
       ],
+      "Selected": [
+        "Zaznaczony"
+      ],
       "Session locking": [
         "Blokowanie sesji"
       ],
@@ -1453,6 +1459,9 @@
       ],
       "Import to vault(s)": [
         "Importuj do sejfów"
+      ],
+      "Low disk space": [
+        "Mało miejsca na dysku"
       ],
       "Permanently remove all items ?": [
         "Usunąć trwale wszystkie elementy?"

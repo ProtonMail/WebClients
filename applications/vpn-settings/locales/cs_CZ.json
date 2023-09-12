@@ -464,6 +464,9 @@
       "Upgrade now": [
         "Navýšit nyní"
       ],
+      "Upgrade to Business": [
+        "Upgrade na Business"
+      ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
       ],
@@ -2845,6 +2848,9 @@
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
       ],
+      "Enhance your network security": [
+        "Zlepšení zabezpečení sítě"
+      ],
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
       ],
@@ -3070,6 +3076,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Počet dedikovaných serverů, které se snažíte přiřadit (${ addedCount }), je větší než počet, který je ještě k dispozici ve vašem plánu (${ remainingCount }), protože vlastníte ${ ownedCount } a již používáte ${ usedCount }."
+      ],
       "of": [
         "z"
       ],
@@ -3110,19 +3119,19 @@
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "per month": [
-        "za měsíc"
+        "měsíčně"
       ],
       "per month, billed every 12 months": [
-        "za měsíc, účtováno kažkých 12 měsíců"
+        "za měsíc, účtováno každých 12 měsíců"
       ],
       "per month, billed every 15 months": [
-        "za měsíc, účtováno kažkých 15 měsíců"
+        "za měsíc, účtováno každých 15 měsíců"
       ],
       "per month, billed every 24 months": [
-        "za měsíc, účtováno kažkých 24 měsíců"
+        "za měsíc, účtováno každých 24 měsíců"
       ],
       "per month, billed every 30 months": [
-        "za měsíc, účtováno kažkých 30 měsíců"
+        "za měsíc, účtováno každých 30 měsíců"
       ],
       "Plan upgrade required": [
         "Požadováno předplatné"
@@ -3511,6 +3520,9 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Doporučujeme mít alespoň dva servery, aby byla zajištěna redundance."
       ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Doporučujeme mít více serverů na různých místech, aby byla zajištěna redundance."
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je, aby si v účtech nastavili 2FA."
       ],
@@ -3553,6 +3565,9 @@
       "Why?": [
         "Proč?"
       ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "S plánem Business nebo Enterprise můžete pro svou organizaci zakoupit ${ boldDedicatedServers } a nastavit ${ boldGateways }, abyste mohli řídit, kteří uživatelé k nim mohou přistupovat."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -3568,11 +3583,26 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "V současné době využíváte ${ organization.UsedMembers } ze své ${ organization.MaxMembers } dostupné uživatelské licence.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem plánu nebo nás kontaktujte pro řešení na míru."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
@@ -3639,6 +3669,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste 100 % kapacity vašeho úložiště. Už nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
@@ -5190,6 +5223,11 @@
         "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Zahrnuto s více uživateli ${ BRAND_NAME } pro plány Business."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Podpora 24/7"
@@ -5313,6 +5351,9 @@
       ],
       "Secure Core configs": [
         "Konfigurace Secure Core"
+      ],
+      "Select who can access...": [
+        "Vyberte, kdo má přístup k..."
       ],
       "Standard server configs": [
         "Konfigurace standardního serveru"
@@ -5593,7 +5634,10 @@
         "neaktivní"
       ],
       "pending": [
-        "bez odpovědi"
+        "čeká na vyřízení"
+      ],
+      "to be created": [
+        "které mají být vytvořeny"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6497,6 +6541,9 @@
       "Custom selection of users": [
         "Vlastní výběr uživatelů"
       ],
+      "Customize the number of IP addresses in your plan": [
+        "Přizpůsobení počtu IP adres v plánu"
+      ],
       "Customize your plan": [
         "Přizpůsobte svůj tarif"
       ],
@@ -6557,11 +6604,17 @@
       "Edit servers": [
         "Upravit servery"
       ],
+      "Edit the list of servers of the gateway": [
+        "Úprava seznamu serverů brány"
+      ],
       "Edit user": [
         "Upravit uživatele"
       ],
       "Edit users": [
         "Upravit uživatele"
+      ],
+      "Edit who can access the gateway": [
+        "Upravit, kdo může k bráně přistupovat"
       ],
       "Email": [
         "E-mail"
@@ -6569,11 +6622,17 @@
       "Email subscriptions": [
         "Zasílání pravidelných e-mailů"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
       "Error": [
         "Chyba"
+      ],
+      "Every member of the organization can access": [
+        "Každý člen organizace má přístup k"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelský účet.",
@@ -6743,8 +6802,14 @@
       "Settings": [
         "Nastavení"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Nastavení vyhrazených serverů upgradem na Business"
+      ],
       "Sign in": [
         "Přihlásit se"
+      ],
+      "Sign in to join the Beta program": [
+        "Přihlaste se do programu Beta"
       ],
       "Sign in with 2FA": [
         "Přihlásit se pomocí 2FA"
@@ -6807,7 +6872,7 @@
         "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Nahrejte soubor CSV pro vytvoření více účtů"
+        "Nahrajte soubor CSV pro vytvoření více účtů"
       ],
       "Users": [
         "Uživatelé"
