@@ -2140,7 +2140,7 @@
         "日期：${ formattedStart }"
       ],
       "When: ${ formattedStart } (all day)": [
-        "日期：${ formattedStart }（整天）"
+        "日期 : ${ formattedStart } (全日)"
       ],
       "When: ${ formattedStart } - ${ formattedEnd }": [
         "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
@@ -2269,6 +2269,9 @@
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
+      ],
+      "Event not found": [
+        "未找到活動行程"
       ],
       "Failed to get original occurrence in series": [
         "無法取得系列中原本事件"
@@ -5242,6 +5245,9 @@
       ],
       "Please select a country": [
         "請選擇一個國家"
+      ],
+      "Search events": [
+        "搜尋活動行程"
       ],
       "Search for group name": [
         "搜尋群組名稱"

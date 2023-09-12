@@ -389,6 +389,9 @@
       "Open settings": [
         "Åbn Indstillinger"
       ],
+      "Pause indexing": [
+        "Pause indeksering"
+      ],
       "Preview contact": [
         "Forhåndsvis kontakt"
       ],
@@ -451,6 +454,9 @@
       ],
       "Reset to default": [
         "Nulstil til standard"
+      ],
+      "Resume indexing": [
+        "Genoptag indeksering"
       ],
       "Save": [
         "Gem"
@@ -2063,6 +2069,9 @@
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Dette kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge Kalender som sædvanligt."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
@@ -2298,6 +2307,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Begivenhed ikke fundet"
       ],
       "Failed to get original occurrence in series": [
         "Kunne ikke hente original forekomst i serie"
@@ -2762,6 +2774,14 @@
         "Bedømmelse er påkrævet"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Intet resultat"
+      ],
+      "Results": [
+        "Resultater"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "annulleret"
@@ -2771,6 +2791,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } deltager",
         "${ numberOfAttendees } deltagere"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Hele dagen"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Hele dagen, varer ${ plusDaysToEnd } dag",
+        "Hele dagen, varer ${ plusDaysToEnd } dage"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3467,9 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } og ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
@@ -3554,6 +3586,9 @@
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Kan du ikke finde den begivenhed du leder efter? Nogle begivenheder i skjulte kalendere matcher din forespørgsel. For at se disse resultater, skal du slå synlighed til for ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
@@ -3565,6 +3600,9 @@
       ],
       "Clear encrypted search data": [
         "Ryd krypterede søgedata"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Rydning af browserdata vil rydde søgeindekset på denne enhed. Alle kalenderbegivenheder skal indekseres igen for at bruge søgefunktionen."
       ],
       "Clears browser data related to the encrypted search.": [
         "Rydder browserdata relateret til den krypterede søgning."
@@ -3712,6 +3750,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Indekserer begivenheder: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indeksering sat på pause"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -4121,6 +4165,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Du kan enten opdatere din søgeforespørgsel, eller lukke søgningen for at gå tilbage til kalendervisninger"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Ingen resultater fundet"
       ]
     },
     "Info on errors": {
@@ -5325,6 +5379,9 @@
       "Image URL": [
         "Billed-URL"
       ],
+      "Indexing...": [
+        "Indekserer..."
+      ],
       "Name": [
         "Navn"
       ],
@@ -5339,6 +5396,9 @@
       ],
       "Please select a country": [
         "Vælg venligst et land"
+      ],
+      "Search events": [
+        "Søg efter begivenheder"
       ],
       "Search for group name": [
         "Søg efter gruppenavn"
@@ -5737,6 +5797,9 @@
       "Add your country's public holidays to your calendar.": [
         "Tilføj dit lands nationale helligdage til din kalender."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Find nemt den begivenhed du leder efter, med vores nye søgefunktion."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
       ],
@@ -5745,6 +5808,9 @@
       ],
       "Public holidays are here!": [
         "Nationale helligdage er her!"
+      ],
+      "Search for events": [
+        "Søg efter begivenheder"
       ]
     },
     "Storage": {
@@ -5808,6 +5874,9 @@
       ],
       "Calendar information updated": [
         "Kalenderoplysninger opdateret"
+      ],
+      "Calendar search activated": [
+        "Søgning i kalender aktiveret"
       ],
       "Calendar updated": [
         "Kalender opdateret"
@@ -6413,6 +6482,9 @@
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
       ],
+      "We're setting up Calendar search": [
+        "Vi opretter en kalender-søgning"
+      ],
       "We've locked some calendars to protect your data": [
         "Vi har låst nogle kalendere for at beskytte dine data"
       ],
@@ -6552,6 +6624,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Gå til begivenhed"
+      ],
       "Open in a new tab": [
         "Åbn i en ny fane"
       ]

@@ -2640,15 +2640,15 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "file size format": {
@@ -3863,6 +3863,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "El tamaño de los datos cifrados es ligeramente mayor debido al espacio adicional necesario para cifrado y firmas, los cuales aseguran la seguridad de tus datos."
