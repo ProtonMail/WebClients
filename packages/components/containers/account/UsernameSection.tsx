@@ -11,6 +11,7 @@ import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
+    ADDRESS_TYPE,
     APPS,
     APP_NAMES,
     BRAND_NAME,
@@ -29,8 +30,8 @@ import clsx from '@proton/utils/clsx';
 import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
 import { useAddresses, useApi, useConfig, useNotifications, useSearchParamsEffect, useUser } from '../../hooks';
 import PromotionBanner from '../banner/PromotionBanner';
-import EditAddressModal from './EditAddressModal';
 import EditDisplayNameModal from './EditDisplayNameModal';
+import EditExternalAddressModal from './EditExternalAddressModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
@@ -60,33 +61,28 @@ const UsernameSection = ({ app }: Props) => {
 
     const fromPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
 
-    const handleSendVerificationEmail = async () => {
-        if (!primaryAddress) {
-            throw new Error('Missing primary address');
-        }
+    const handleSendVerificationEmail = async (destination: string) => {
         await wait(500);
-        const destination = primaryAddress.Email;
         await api(
             postVerifySend({
                 Type: 'external_email',
                 Destination: destination,
             })
         );
-
         createNotification({
             type: 'success',
             text: getVerificationSentText(destination),
         });
     };
 
-    const canEditAddress =
+    const canEditExternalAddress =
         user.Type === UserType.EXTERNAL &&
-        primaryAddress &&
+        primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
         primaryAddress.ConfirmationState === AddressConfirmationState.CONFIRMATION_NOT_CONFIRMED;
 
     useSearchParamsEffect(
         (params) => {
-            if (!canEditAddress || !primaryAddress) {
+            if (!canEditExternalAddress || !primaryAddress) {
                 return;
             }
             const actionParam = params.get('action');
@@ -108,133 +104,124 @@ const UsernameSection = ({ app }: Props) => {
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             {renderEditAddressModal && tmpAddress && (
-                <EditAddressModal {...editAddressModalProps} address={tmpAddress} />
+                <EditExternalAddressModal {...editAddressModalProps} address={tmpAddress} />
             )}
             <SettingsSection>
-                {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
-                    <>
-                        <AppLink
-                            toApp={APPS.PROTONACCOUNT}
-                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
-                            className="text-no-decoration"
-                        >
-                            <PromotionBanner
-                                mode="banner"
-                                className="mb-6"
-                                rounded
-                                contentCentered={false}
-                                icon={<img width="40" src={mailCalendar} alt="" className="flex-item-noshrink" />}
-                                description={getBoldFormattedText(
-                                    c('Info')
-                                        .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
-                                )}
-                                cta={
-                                    <div className="mr-4">
-                                        <Icon name="chevron-right" size={16} />
-                                    </div>
-                                }
-                            />
-                        </AppLink>
-                        {primaryAddress.ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED && (
-                            <Card className="mb-8" rounded bordered={true} background={false}>
-                                <div className="h3 text-bold mb-6">
-                                    {c('Info').t`Secure your ${BRAND_NAME} Account`}
-                                </div>
-                                <div className="flex gap-4 flex-nowrap flex-align-items-start">
-                                    <img
-                                        className="flex-item-noshrink"
-                                        width="40"
-                                        height="40"
-                                        src={unverified}
-                                        alt=""
-                                    />
-                                    <div>
-                                        <div className="mb-2 text-lg text-semibold flex">
-                                            <div className="mr-2 text-ellipsis">{primaryAddress.Email}</div>
-                                            <Badge type="warning">{c('Info').t`Unverified`}</Badge>
+                {user.Type === UserType.EXTERNAL &&
+                    primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
+                    APP_NAME === APPS.PROTONACCOUNT && (
+                        <div className="mb-6">
+                            <AppLink
+                                toApp={APPS.PROTONACCOUNT}
+                                to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
+                                className="text-no-decoration"
+                                data-testid="get-proton-address"
+                            >
+                                <PromotionBanner
+                                    mode="banner"
+                                    rounded
+                                    contentCentered={false}
+                                    icon={<img width="40" src={mailCalendar} alt="" className="flex-item-noshrink" />}
+                                    description={getBoldFormattedText(
+                                        c('Info')
+                                            .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
+                                    )}
+                                    cta={
+                                        <div className="mr-4">
+                                            <Icon name="chevron-right" size={16} />
                                         </div>
-                                        <div>
-                                            <div className="mb-2">
-                                                {c('Info')
-                                                    .t`Increase your account security by verifying your email address.`}
-                                            </div>
-                                            <Button
-                                                color="norm"
-                                                loading={loading}
-                                                onClick={() => {
-                                                    withLoading(handleSendVerificationEmail());
-                                                }}
-                                            >
-                                                {c('Info').t`Resend verification email`}
-                                            </Button>
-                                        </div>
-                                    </div>
+                                    }
+                                />
+                            </AppLink>
+                        </div>
+                    )}
+
+                {canEditExternalAddress && (
+                    <Card className="mb-8" rounded bordered={true} background={false}>
+                        <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
+                        <div className="flex gap-4 flex-nowrap flex-align-items-start">
+                            <img className="flex-item-noshrink" width="40" height="40" src={unverified} alt="" />
+                            <div>
+                                <div className="mb-2 text-lg text-semibold flex">
+                                    <div className="mr-2 text-ellipsis">{primaryAddress.Email}</div>
+                                    <Badge type="warning">{c('Info').t`Unverified`}</Badge>
                                 </div>
-                            </Card>
-                        )}
-                    </>
+                                <div>
+                                    <div className="mb-2">
+                                        {c('Info').t`Increase your account security by verifying your email address.`}
+                                    </div>
+                                    <Button
+                                        color="norm"
+                                        loading={loading}
+                                        onClick={() => {
+                                            withLoading(handleSendVerificationEmail(primaryAddress.Email));
+                                        }}
+                                    >
+                                        {c('Info').t`Resend verification email`}
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
                 )}
+
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <div className="text-semibold">{c('Label').t`Username`}</div>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt-2">
-                        {user.Type === UserType.EXTERNAL && primaryAddress ? (
+                        {user.Type === UserType.EXTERNAL && primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? (
                             <div>
-                                <div>
-                                    {primaryAddress.ConfirmationState ===
-                                    AddressConfirmationState.CONFIRMATION_CONFIRMED ? (
-                                        <>
-                                            <div className="flex">
-                                                {primaryAddress.Email}
-                                                <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
-                                                    <Icon
-                                                        name="checkmark-circle-filled"
-                                                        size={16}
-                                                        className="ml-2 color-success flex-align-self-center"
+                                {primaryAddress.ConfirmationState ===
+                                AddressConfirmationState.CONFIRMATION_CONFIRMED ? (
+                                    <div className="flex">
+                                        {primaryAddress.Email}
+                                        <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
+                                            <Icon
+                                                name="checkmark-circle-filled"
+                                                size={16}
+                                                className="ml-2 color-success flex-align-self-center"
+                                            />
+                                        </Tooltip>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div className="flex">
+                                            {!canEditExternalAddress ? (
+                                                primaryAddress.Email
+                                            ) : (
+                                                <>
+                                                    <span className="mr-2">{primaryAddress.Email}</span>
+                                                    <InlineLinkButton
+                                                        className="mr-1"
+                                                        onClick={() => {
+                                                            setTmpAddress(primaryAddress);
+                                                            setEditAddressModalOpen(true);
+                                                        }}
+                                                        aria-label={c('Action').t`Edit email address`}
+                                                    >
+                                                        {c('Action').t`Edit`}
+                                                    </InlineLinkButton>
+                                                    <Info
+                                                        className="flex-align-self-center"
+                                                        title={c('Info')
+                                                            .t`You can edit this once to ensure the correct email address for verification.`}
                                                     />
-                                                </Tooltip>
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <div className="flex">
-                                                {!canEditAddress ? (
-                                                    primaryAddress.Email
-                                                ) : (
-                                                    <>
-                                                        <span className="mr-2">{primaryAddress.Email}</span>
-                                                        <InlineLinkButton
-                                                            className="mr-1"
-                                                            onClick={() => {
-                                                                setTmpAddress(primaryAddress);
-                                                                setEditAddressModalOpen(true);
-                                                            }}
-                                                            aria-label={c('Action').t`Edit email address`}
-                                                        >
-                                                            {c('Action').t`Edit`}
-                                                        </InlineLinkButton>
-                                                        <Info
-                                                            className="flex-align-self-center"
-                                                            title={c('Info')
-                                                                .t`You can edit this once to ensure the correct email address for verification.`}
-                                                        />
-                                                    </>
-                                                )}
-                                            </div>
-                                            <div className="flex">
-                                                <Icon
-                                                    name="exclamation-circle-filled"
-                                                    size={16}
-                                                    className="mr-1 color-danger flex-align-self-center"
-                                                />
-                                                <span className="color-weak mr-1">
-                                                    {c('Info').t`Unverified email address.`}
-                                                </span>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
+                                                </>
+                                            )}
+                                        </div>
+                                        <div className="flex">
+                                            <Icon
+                                                name="exclamation-circle-filled"
+                                                size={16}
+                                                className="mr-1 color-danger flex-align-self-center"
+                                            />
+                                            <span className="color-weak mr-1">
+                                                {c('Info').t`Unverified email address.`}
+                                            </span>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         ) : (
                             user.Name
@@ -281,20 +268,28 @@ const UsernameSection = ({ app }: Props) => {
                             <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt-2">
-                            {loadingAddresses ? (
-                                <div className="flex flex-nowrap">
-                                    <CircleLoader />
-                                </div>
-                            ) : primaryAddress?.Email ? (
-                                <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
-                            ) : (
-                                <Href
-                                    href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
-                                    title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
-                                >
-                                    {c('Link').t`Not activated`}
-                                </Href>
-                            )}
+                            {(() => {
+                                if (loadingAddresses) {
+                                    return (
+                                        <div className="flex flex-nowrap">
+                                            <CircleLoader />
+                                        </div>
+                                    );
+                                }
+                                if (primaryAddress?.Email) {
+                                    return (
+                                        <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
+                                    );
+                                }
+                                return (
+                                    <Href
+                                        href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
+                                        title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
+                                    >
+                                        {c('Link').t`Not activated`}
+                                    </Href>
+                                );
+                            })()}
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 )}

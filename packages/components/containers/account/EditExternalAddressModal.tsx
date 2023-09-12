@@ -25,7 +25,7 @@ interface Props extends ModalProps<'form'> {
     address: Address;
 }
 
-const EditAddressModal = ({ address, ...rest }: Props) => {
+const EditExternalAddressModal = ({ address, ...rest }: Props) => {
     const [initialEmailAddress] = useState(address.Email);
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
@@ -118,4 +118,4 @@ const EditAddressModal = ({ address, ...rest }: Props) => {
     );
 };
 
-export default EditAddressModal;
+export default EditExternalAddressModal;
