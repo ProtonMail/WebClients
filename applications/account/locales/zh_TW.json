@@ -3015,7 +3015,7 @@
         "日期：${ formattedStart }"
       ],
       "When: ${ formattedStart } (all day)": [
-        "日期：${ formattedStart }（整天）"
+        "日期 : ${ formattedStart } (全日)"
       ],
       "When: ${ formattedStart } - ${ formattedEnd }": [
         "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
@@ -6715,7 +6715,7 @@
         "要取消您的訂閱，請聯絡我們。"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "為完成付款，請傳送${ btcAmountBold }至以下地址"
+        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
@@ -7127,6 +7127,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "您仍需回覆邀請以便主辦者了解您的回覆。"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "登入後，您將會被重新導向至 ${ destination }。"
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "您將於此日失去存取${ vpnPlanNameShort }伺服器及功能"
@@ -12464,6 +12467,9 @@
       "Encryption and keys": [
         "加密和金鑰"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版計畫"
+      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -12820,6 +12826,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign in to join the Beta program": [
+        "登入以加入體驗版計畫"
       ],
       "Sign in with 2FA": [
         "使用 2FA 登入"
