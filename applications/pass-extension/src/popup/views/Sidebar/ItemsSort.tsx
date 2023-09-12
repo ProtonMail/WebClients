@@ -13,8 +13,8 @@ interface ItemsSortProps {
     sort: ItemSortFilter;
 }
 
-function getSortOptionDetails(option: ItemSortFilter) {
-    return {
+const getSortOptionDetails = (option: ItemSortFilter) => {
+    const options: Record<string, { label: string; shortLabel: string; icon: IconName }> = {
         createTimeASC: {
             label: c('Label').t`Oldest to newest`,
             shortLabel: c('Label').t`Old-New`,
@@ -27,10 +27,12 @@ function getSortOptionDetails(option: ItemSortFilter) {
         },
         recent: { label: c('Label').t`Most recent`, shortLabel: c('Label').t`Recent`, icon: 'clock' },
         titleASC: { label: c('Label').t`Alphabetical`, shortLabel: c('Label').t`A-Z`, icon: 'arrow-down-arrow-up' },
-    }[option];
-}
+    };
 
-const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
+    return options[option];
+};
+
+const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
 const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
 export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
@@ -61,16 +63,20 @@ export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
                 size={DROPDOWN_SIZE}
             >
                 <DropdownMenu>
-                    {ITEMS_SORT_OPTIONS.map((type) => (
-                        <DropdownMenuButton
-                            key={type}
-                            onClick={() => onSortChange(type)}
-                            isSelected={sort === type}
-                            size="small"
-                        >
-                            {getSortOptionDetails(type).label}
-                        </DropdownMenuButton>
-                    ))}
+                    {ITEMS_SORT_OPTIONS.map((type) => {
+                        const { label, icon } = getSortOptionDetails(type);
+                        return (
+                            <DropdownMenuButton
+                                key={type}
+                                onClick={() => onSortChange(type)}
+                                isSelected={sort === type}
+                                size="small"
+                                label={label}
+                                icon={icon}
+                                ellipsis={false}
+                            />
+                        );
+                    })}
                 </DropdownMenu>
             </Dropdown>
         </>

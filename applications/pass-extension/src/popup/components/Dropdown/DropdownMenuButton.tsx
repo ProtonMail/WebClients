@@ -1,9 +1,10 @@
-import type { FC, MouseEvent, ReactNode } from 'react';
+import type { FC, MouseEvent, ReactElement, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
+import type { IconName } from '@proton/components/components';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
@@ -38,14 +39,51 @@ const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
     );
 };
 
-type Size = 'small' | 'medium';
+type DropdownMenuButtonLabelProps = {
+    label: string;
+    labelClassname?: string;
+    icon?: IconName | ReactElement;
+    extra?: ReactNode;
+    ellipsis?: boolean;
+    danger?: boolean;
+};
 
-interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps {
-    children: ReactNode;
+export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
+    label,
+    labelClassname,
+    icon,
+    extra,
+    ellipsis = true,
+    danger = false,
+}) => {
+    return (
+        <span className="flex flex-align-items-center flex-nowrap gap-1">
+            {typeof icon === 'string' ? (
+                <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink mr-2')} />
+            ) : (
+                icon
+            )}
+            <span
+                className={clsx(
+                    'block text-left',
+                    labelClassname,
+                    ellipsis && 'text-ellipsis',
+                    danger && 'color-danger'
+                )}
+            >
+                {label}
+            </span>
+            {extra && <span className="flex-item-noshrink color-weak">{extra}</span>}
+        </span>
+    );
+};
+
+interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownMenuButtonLabelProps {
+    children?: ReactNode;
     className?: string;
     isSelected?: boolean;
     quickActions?: ReactNode;
-    size?: Size;
+    size?: 'small' | 'medium';
 }
 
 export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
@@ -54,21 +92,30 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     isSelected,
     quickActions,
     size = 'medium',
+    icon,
+    danger,
+    label,
+    labelClassname,
+    extra,
+    ellipsis = true,
     ...rest
 }) => (
     <div className="relative">
         <DropdownMenuButtonCore
-            className={clsx(
-                'flex flex-align-items-center flex-nowrap flex-justify-space-between text-left',
-                size === 'small' && 'text-sm py-2 px-4',
-                className
-            )}
+            className={clsx(size === 'small' && 'text-sm', className)}
             // translator : "Selected" is singular only
             title={isSelected ? c('Label').t`Selected` : undefined}
             {...rest}
         >
-            <div className={clsx('flex flex-align-items-center flex-nowrap', quickActions !== undefined && 'max-w80')}>
-                {children}
+            <div className={clsx('text-left', (quickActions !== undefined || isSelected) && 'max-w80')}>
+                <DropdownMenuButtonLabel
+                    label={label}
+                    labelClassname={labelClassname}
+                    icon={icon}
+                    extra={extra}
+                    ellipsis={ellipsis}
+                    danger={danger}
+                />
             </div>
         </DropdownMenuButtonCore>
 

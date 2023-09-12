@@ -6,9 +6,10 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    DropdownMenuButton,
     Icon,
 } from '@proton/components';
+
+import { DropdownMenuButton, DropdownMenuButtonLabel } from '../Dropdown/DropdownMenuButton';
 
 export type SubmenuLinkItem = {
     url?: string;
@@ -32,21 +33,16 @@ export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkIte
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <span className="flex flex-align-items-center">
-                    <Icon name={submenuIcon} className="mr-3 color-weak" />
-                    {submenuLabel}
-                </span>
+                <DropdownMenuButtonLabel label={submenuLabel} icon={submenuIcon} />
             </CollapsibleHeader>
             <CollapsibleContent as="ul">
                 {linkItems.map((itemLink: SubmenuLinkItem) => (
                     <DropdownMenuButton
-                        className="flex flex-align-items-center py-2 px-4"
                         onClick={itemLink.url ? () => window.open(itemLink.url, '_blank') : itemLink.actionTab}
                         key={itemLink.label}
-                    >
-                        <Icon name={itemLink.icon} className="mr-3 color-weak" />
-                        {itemLink.label}
-                    </DropdownMenuButton>
+                        label={itemLink.label}
+                        icon={itemLink.icon}
+                    />
                 ))}
             </CollapsibleContent>
         </Collapsible>
