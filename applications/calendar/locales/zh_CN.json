@@ -537,6 +537,9 @@
       "Toggle Contact app": [
         "切换至 Contact 应用"
       ],
+      "Toggle settings": [
+        "打开/关闭设置"
+      ],
       "Trust": [
         "信任"
       ],
@@ -3352,6 +3355,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位联系人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位联系人"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 个群组"
       ],
@@ -3363,6 +3369,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
@@ -3837,6 +3846,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
       "Update recurring event": [
         "更新循环周期性日程"
