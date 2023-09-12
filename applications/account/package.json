@@ -41,17 +41,17 @@
         "ttag": "^1.7.24"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.22.11",
+        "@babel/preset-typescript": "^7.22.15",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^12.1.5",
         "@types/jest": "^29.5.4",
-        "babel-jest": "^29.6.4",
+        "babel-jest": "^29.7.0",
         "cross-env": "^7.0.3",
-        "eslint": "^8.48.0",
-        "jest": "^29.6.4",
-        "jest-environment-jsdom": "^29.6.4",
+        "eslint": "^8.49.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "jest-junit": "^16.0.0",
         "prettier": "^2.8.8",
         "typescript": "^5.2.2"
