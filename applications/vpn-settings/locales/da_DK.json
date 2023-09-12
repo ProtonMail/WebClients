@@ -152,6 +152,9 @@
       "Download all configurations": [
         "Download alle opsætninger"
       ],
+      "Download our CSV template": [
+        "Download vores CSV-skabelon"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -205,6 +208,9 @@
       ],
       "Get more addresses": [
         "Få flere adresser"
+      ],
+      "Get more licenses": [
+        "Få flere licenser"
       ],
       "Get more servers": [
         "Få flere servere"
@@ -271,6 +277,9 @@
       ],
       "Pay": [
         "Betal"
+      ],
+      "Pay ${ price }": [
+        "Betal ${ price }"
       ],
       "Pay ${ price } now": [
         "Betal ${ price } nu"
@@ -499,6 +508,15 @@
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerede server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domæne"
+      ],
+      "${ price } per user": [
+        "${ price } per bruger"
       ],
       "${ users } user": [
         "${ users } bruger",
@@ -1555,6 +1573,9 @@
     "Description": {
       "ProtonMail logo and a plus sign": [
         "ProtonMail-logo og et plustegn"
+      ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ]
     },
     "Downgrade account reason": {
@@ -1612,6 +1633,9 @@
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
+      ],
+      "Email address is invalid": [
+        "E-mailadresse er ugyldig"
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
@@ -1866,6 +1890,15 @@
       "Got it": [
         "Forstået"
       ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Inviter en eksisterende ${ BRAND_NAME } bruger"
+      ],
+      "Invite member to your family": [
+        "Inviter medlemmer til din familie"
+      ],
+      "Set up family group": [
+        "Konfigurer familiegruppe"
+      ],
       "Switch plans": [
         "Skift abonnement"
       ],
@@ -1999,6 +2032,9 @@
       ],
       "Access to all countries": [
         "Adgang til alle lande"
+      ],
+      "Add": [
+        "Tilføj"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
@@ -2267,6 +2303,9 @@
         "${ number } server",
         "${ number } servere"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
+      ],
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
@@ -2279,6 +2318,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } påkrævet for at få Secure Core-funktion."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } måned)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
@@ -2353,6 +2395,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Enhver ${ twoFa } metode på in konto vil blive deaktiveret."
@@ -2726,6 +2771,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
+      "per month": [
+        "Pr. måned"
+      ],
+      "per month, billed every 12 months": [
+        "Pr. måned, faktureres hver 12. måned"
+      ],
+      "per month, billed every 15 months": [
+        "Pr. måned, faktureres hver 15. måned"
+      ],
+      "per month, billed every 24 months": [
+        "Pr. måned, faktureres hver 24. måned"
+      ],
+      "per month, billed every 30 months": [
+        "Pr. måned, faktureres hver 30. måned"
+      ],
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
       ],
@@ -2815,6 +2875,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
       ],
+      "Saving your password": [
+        "Gemmer din adgangskode"
+      ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
       ],
@@ -2841,6 +2904,9 @@
       ],
       "Setting up your Drive": [
         "Opsætter dit drev"
+      ],
+      "Setting up your organization": [
+        "Konfigurerer din organisation"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
@@ -2966,6 +3032,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
       ],
+      "to continue to ${ product }": [
+        "for at fortsætte til ${ product }"
+      ],
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
       ],
@@ -3026,6 +3095,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Upload din udfyldte CSV-fil for at oprette konti"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
@@ -3074,6 +3146,9 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
+      "We generated a strong password for you": [
+        "Vi har genereret en stærk adgangskode til dig"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
       ],
@@ -3097,6 +3172,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "Welcome": [
+        "Velkommen"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
@@ -3196,6 +3274,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Du vil blive omdirigeret til ${ destination } efter login."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
@@ -3763,6 +3844,9 @@
     "Link": {
       "Add a gift code": [
         "Tilføj en gavekode"
+      ],
+      "Add gift code": [
+        "Tilføj gavekode"
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
@@ -4666,6 +4750,9 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
+      ],
       "Search": [
         "Søg"
       ],
@@ -4800,6 +4887,14 @@
     "Select file": {
       "Upload CSV file": [
         "Upload en CSV-fil"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktiv"
+      ],
+      "inactive": [
+        "inaktiv"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5927,6 +6022,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Admins kan foretage ændringer i dit abonnement, administrere brugerkonti og adgangskoder og give administratorrettigheder til andre brugere."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
