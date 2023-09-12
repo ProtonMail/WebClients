@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
 import { Toggle, useModalState } from '../../components';
@@ -41,8 +42,19 @@ const SessionRecoverySection = () => {
     const { createNotification } = useNotifications();
 
     const handleEnableSessionRecoveryToggle = async () => {
-        await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
-        await call();
+        try {
+            await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
+            await call();
+            metrics.core_session_recovery_settings_update_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_session_recovery_settings_update_total.increment({
+                    status,
+                })
+            );
+        }
     };
 
     return (

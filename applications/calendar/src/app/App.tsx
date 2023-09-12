@@ -1,5 +1,7 @@
 import { ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import metrics from '@proton/metrics';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
@@ -17,6 +19,8 @@ setupGuestCrossStorage();
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 setVcalProdId(getProdId(config));
+
+metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     return (

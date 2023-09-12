@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -37,27 +38,44 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
     const [submitting, withSubmitting] = useLoading();
     const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
 
+    useEffect(() => {
+        metrics.core_session_recovery_cancellation_modal_load_total.increment({ step: 'confirm' });
+    }, []);
+
     const handleSubmit = () => {
         if (submitting || !onFormSubmit()) {
             return;
         }
 
         const run = async () => {
-            await srpAuth({
-                api,
-                credentials: {
-                    password,
-                },
-                config: abortSessionRecovery(),
-            });
+            try {
+                await srpAuth({
+                    api,
+                    credentials: {
+                        password,
+                    },
+                    config: abortSessionRecovery(),
+                });
 
-            await call();
-            dismissSessionRecoveryCancelled();
-            createNotification({
-                text: c('session_recovery:cancellation:notification').t`Password reset cancelled`,
-                showCloseButton: false,
-            });
-            onClose?.();
+                await call();
+                dismissSessionRecoveryCancelled();
+                createNotification({
+                    text: c('session_recovery:cancellation:notification').t`Password reset cancelled`,
+                    showCloseButton: false,
+                });
+
+                metrics.core_session_recovery_abort_total.increment({
+                    status: 'success',
+                });
+
+                onClose?.();
+            } catch (error) {
+                observeApiError(error, (status) =>
+                    metrics.core_session_recovery_abort_total.increment({
+                        status,
+                    })
+                );
+            }
         };
 
         void withSubmitting(run());
