@@ -8,7 +8,7 @@ const differenceInCalendarWeeks = (left: Date, right: Date) => {
 
     const diff = startOfDayLeft.getTime() - startOfDayRight.getTime();
 
-    return Math.round(diff / WEEK);
+    return Math.floor(diff / WEEK);
 };
 
 export default differenceInCalendarWeeks;
