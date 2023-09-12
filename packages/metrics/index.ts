@@ -6,6 +6,13 @@ import MetricsApi from './lib/MetricsApi';
 import MetricsBase from './lib/MetricsBase';
 import MetricsRequestService from './lib/MetricsRequestService';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
+import { WebCoreSessionRecoveryAbortTotal } from './types/web_core_session_recovery_abort_total_v1.schema';
+import { WebCoreSessionRecoveryCancellationModalLoadTotal } from './types/web_core_session_recovery_cancellation_modal_load_total_v1.schema';
+import { WebCoreSessionRecoveryConsumeTotal } from './types/web_core_session_recovery_consume_total_v1.schema';
+import { WebCoreSessionRecoveryInitiationModalLoadTotal } from './types/web_core_session_recovery_initiation_modal_load_total_v1.schema';
+import { WebCoreSessionRecoveryInitiationTotal } from './types/web_core_session_recovery_initiation_total_v1.schema';
+import { WebCoreSessionRecoveryPasswordResetAvailableAccountModalLoadTotal } from './types/web_core_session_recovery_password_reset_available_account_modal_load_total_v1.schema';
+import { WebCoreSessionRecoverySettingsUpdateTotal } from './types/web_core_session_recovery_settings_update_total_v1.schema';
 import { WebCoreSignupAccountStepAccountCreationTotal } from './types/web_core_signup_accountStep_accountCreation_total_v2.schema.d';
 import { WebCoreSignupBackButtonTotal } from './types/web_core_signup_backButton_total_v1.schema.d';
 import { WebCoreSignupCongratulationsStepDisplayNameChoiceTotal } from './types/web_core_signup_congratulationsStep_displayNameChoice_total_v2.schema.d';
@@ -85,6 +92,20 @@ class Metrics extends MetricsBase {
     public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
 
     public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
+
+    public core_session_recovery_initiation_modal_load_total: Counter<WebCoreSessionRecoveryInitiationModalLoadTotal>;
+
+    public core_session_recovery_initiation_total: Counter<WebCoreSessionRecoveryInitiationTotal>;
+
+    public core_session_recovery_abort_total: Counter<WebCoreSessionRecoveryAbortTotal>;
+
+    public core_session_recovery_cancellation_modal_load_total: Counter<WebCoreSessionRecoveryCancellationModalLoadTotal>;
+
+    public core_session_recovery_consume_total: Counter<WebCoreSessionRecoveryConsumeTotal>;
+
+    public core_session_recovery_password_reset_available_account_modal_load_total: Counter<WebCoreSessionRecoveryPasswordResetAvailableAccountModalLoadTotal>;
+
+    public core_session_recovery_settings_update_total: Counter<WebCoreSessionRecoverySettingsUpdateTotal>;
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
@@ -196,6 +217,37 @@ class Metrics extends MetricsBase {
         );
         this.payments_subscription_total = new Counter<WebPaymentsSubscriptionTotal>(
             { name: 'web_payments_subscription_total', version: 1 },
+            this.requestService
+        );
+        this.core_session_recovery_initiation_modal_load_total =
+            new Counter<WebCoreSessionRecoveryInitiationModalLoadTotal>(
+                { name: 'web_core_session_recovery_initiation_modal_load_total', version: 1 },
+                this.requestService
+            );
+        this.core_session_recovery_initiation_total = new Counter<WebCoreSessionRecoveryInitiationTotal>(
+            { name: 'web_core_session_recovery_initiation_total', version: 1 },
+            this.requestService
+        );
+        this.core_session_recovery_abort_total = new Counter<WebCoreSessionRecoveryAbortTotal>(
+            { name: 'web_core_session_recovery_abort_total', version: 1 },
+            this.requestService
+        );
+        this.core_session_recovery_cancellation_modal_load_total =
+            new Counter<WebCoreSessionRecoveryCancellationModalLoadTotal>(
+                { name: 'web_core_session_recovery_cancellation_modal_load_total', version: 1 },
+                this.requestService
+            );
+        this.core_session_recovery_consume_total = new Counter<WebCoreSessionRecoveryConsumeTotal>(
+            { name: 'web_core_session_recovery_consume_total', version: 1 },
+            this.requestService
+        );
+        this.core_session_recovery_password_reset_available_account_modal_load_total =
+            new Counter<WebCoreSessionRecoveryPasswordResetAvailableAccountModalLoadTotal>(
+                { name: 'web_core_session_recovery_password_reset_available_account_modal_load_total', version: 1 },
+                this.requestService
+            );
+        this.core_session_recovery_settings_update_total = new Counter<WebCoreSessionRecoverySettingsUpdateTotal>(
+            { name: 'web_core_session_recovery_settings_update_total', version: 1 },
             this.requestService
         );
     }
