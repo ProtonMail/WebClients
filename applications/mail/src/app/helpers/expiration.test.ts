@@ -18,19 +18,23 @@ describe('canSetExpiration', () => {
         },
     } as MessageState;
     it('should return false if feature flag is false', () => {
-        expect(canSetExpiration(false, { isFree: false } as UserModel, messageState)).toBe(false);
+        expect(canSetExpiration(false, { hasPaidMail: true } as UserModel, messageState)).toBe(false);
     });
 
     it('should return false if user is free', () => {
         expect(canSetExpiration(true, { isFree: true } as UserModel, messageState)).toBe(false);
     });
 
-    it('should return true if feature flag is true and user is paid', () => {
-        expect(canSetExpiration(true, { isFree: false } as UserModel, messageState)).toBe(true);
+    it('should return false if user is paid but not paid mail', () => {
+        expect(canSetExpiration(true, { isPaid: true, hasPaidMail: false } as UserModel, messageState)).toBe(false);
+    });
+
+    it('should return true if feature flag is true and user is paid mail', () => {
+        expect(canSetExpiration(true, { hasPaidMail: true } as UserModel, messageState)).toBe(true);
     });
 
     it('should return false if labelIDs contains spam or trash', () => {
-        expect(canSetExpiration(true, { isFree: false } as UserModel, incorrectMessageState)).toBe(false);
+        expect(canSetExpiration(true, { hasPaidMail: true } as UserModel, incorrectMessageState)).toBe(false);
     });
 });
 
