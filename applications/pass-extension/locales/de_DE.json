@@ -11,6 +11,9 @@
       "Add current url": [
         "Aktuelle URL hinzufügen"
       ],
+      "Add domain to pause list": [
+        "Domain zur Pausenliste hinzufügen"
+      ],
       "Add more": [
         "Weitere hinzufügen"
       ],
@@ -645,7 +648,7 @@
         "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } nicht vor, sichere Passwörter für Anmeldeformulare zu erstellen."
       ],
       "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Wenn diese Funktion aktiviert ist, wird das Dropdown-Menü für das automatische Ausfüllen geöffnet, sobald das Feld den Fokus erhält."
+        "Wenn diese Funktion aktiviert ist, wird das Dropdown-Menü für das automatische Ausfüllen geöffnet, sobald das Feld im Fokus ist."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
@@ -726,6 +729,9 @@
       ],
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
+      ],
+      "Password copied": [
+        "Passwort kopiert"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
@@ -832,6 +838,9 @@
       ],
       "Verification code": [
         "Verifizierungscode"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Wir haben Probleme bei der Synchronisierung von Daten mit deinem lokalen Speicher. Bitte vergewissere dich, dass du genügend Speicherplatz für ${ PASS_SHORT_APP_NAME } hast, damit die Synchronisation reibungslos funktioniert."
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
@@ -1089,6 +1098,9 @@
       ],
       "Name": [
         "Name"
+      ],
+      "Need help ?": [
+        "Benötigst du Hilfe?"
       ],
       "New vault": [
         "Neuer Tresor"
@@ -1396,6 +1408,9 @@
       "Enter your Pin": [
         "PIN eingeben"
       ],
+      "Fill & copy password": [
+        "Ausfüllen & Passwort kopieren"
+      ],
       "Get the mobile apps": [
         "Apps für Mobilgeräte holen"
       ],
@@ -1410,6 +1425,9 @@
       ],
       "Import to vault(s)": [
         "In Tresor(e) importieren"
+      ],
+      "Low disk space": [
+        "Wenig Speicherplatz auf der Festplatte"
       ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"

@@ -294,7 +294,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de domínios onde determinadas funções automáticas ${ PASS_SHORT_APP_NAME } (Preencher, Sugerir e Salvar automaticamente) não deveriam ser executadas."
+        "Lista de domínios onde determinadas funções automáticas mo ${ PASS_SHORT_APP_NAME } (Preenchimento automático, sugestão automática e salvamento automático) não deveriam ser executadas."
       ]
     },
     "Error": {
@@ -393,7 +393,7 @@
         "Conceda as permissões de extensão necessárias ao ${ PASS_APP_NAME } para continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixe a extensão ou selecione Continuar sem fixar."
+        "Fixe a extensão ou selecione \"Continuar sem fixar\"."
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -526,6 +526,9 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } importará apenas inícios de sessão e notas. Passaporte, arquivos anexados, etc não são suportados no momento"
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
         "${ revisionNumber } vezes"
@@ -644,6 +647,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Se desativado, o ${ PASS_APP_NAME } não irá sugerir a criação de senhas fortes em formulários de cadastro."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Se ativado, o menu suspenso do preenchimento automático abrirá automaticamente quando um campo for selecionado."
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Se ativado, você pode preencher rapidamente suas credenciais clicando no ícone do ${ PASS_APP_NAME }."
       ],
@@ -724,6 +730,9 @@
       "Open the Extensions menu": [
         "Abrir o menu de extensões"
       ],
+      "Password copied": [
+        "Senha copiada"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "As senhas com mais de 1 dia serão automaticamente excluídas do histórico."
       ],
@@ -743,7 +752,7 @@
         "Confirme o seu código PIN para finalizar o registro das suas configurações de bloqueio automático."
       ],
       "Please consider leaving a review.": [
-        "Considere deixar uma avaliaçã"
+        "Considere deixar uma avaliação"
       ],
       "Please enter your current pin code to continue": [
         "Insira o seu código PIN atual para continuar"
@@ -829,6 +838,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Estamos tendo problemas em sincronizar seus dados para o seu armazenamento local. Verifique se você tem espaço livre em seu disco para que o ${ PASS_SHORT_APP_NAME } funcione corretamente."
       ],
       "You are about to create:": [
         "Você está prestes a criar:"
@@ -1087,6 +1099,9 @@
       "Name": [
         "Nome"
       ],
+      "Need help ?": [
+        "Precisa de ajuda ?"
+      ],
       "New vault": [
         "Novo cofre"
       ],
@@ -1121,7 +1136,7 @@
         "Senha"
       ],
       "Password history": [
-        "Histórico das senhas"
+        "Histórico de senhas"
       ],
       "Passwords": [
         "Senhas"
@@ -1393,6 +1408,9 @@
       "Enter your Pin": [
         "Digite seu código PIN"
       ],
+      "Fill & copy password": [
+        "Preencher e copiar senha"
+      ],
       "Get the mobile apps": [
         "Obtenha os aplicativos móveis"
       ],
@@ -1407,6 +1425,9 @@
       ],
       "Import to vault(s)": [
         "Importar para cofre(s)"
+      ],
+      "Low disk space": [
+        "Pouco espaço no disco"
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens ?"
