@@ -985,6 +985,9 @@
       "Stay": [
         "留在此页"
       ],
+      "Strikethrough": [
+        "删除线"
+      ],
       "Submit": [
         "提交"
       ],
@@ -1005,6 +1008,9 @@
       ],
       "Toggle Contact app": [
         "切换至 Contact 应用"
+      ],
+      "Toggle settings": [
+        "打开/关闭设置"
       ],
       "Tomorrow": [
         "明天"
@@ -1646,6 +1652,9 @@
       ],
       "azureish white": [
         "蓝白色"
+      ],
+      "black": [
+        "黑色"
       ],
       "blanched almond": [
         "白杏仁"
@@ -2889,6 +2898,9 @@
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "升级账户即可自由选择发送时间，还有各种高级功能。"
@@ -4148,6 +4160,9 @@
       "Sign in to the mobile app to complete this step": [
         "登录移动应用程序以完成此步骤"
       ],
+      "Storage unlocked": [
+        "存储空间已解锁"
+      ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
       ],
@@ -4529,6 +4544,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位联系人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位联系人"
+      ],
       "${ count } unread messages": [
         "${ count } 封未读邮件"
       ],
@@ -4579,6 +4597,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
@@ -5035,6 +5056,9 @@
       ],
       "Internet connection restored.": [
         "网络连接已恢复。"
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "加入 ${ PROTON_SENTINEL_NAME } 计划，获得最高等级的账户安全保护和客服支持。"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
@@ -5555,6 +5579,9 @@
       "Trackers blocked:": [
         "已屏蔽的跟踪器："
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "关闭则仅搜索邮件主题、日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
       ],
@@ -5641,6 +5668,9 @@
       ],
       "We could not verify the sender's trusted keys.": [
         "我们无法验证发件人的可信密钥。"
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "我们从下列链接中清除了跟踪信息，防止广告商等第三方追踪您的网络轨迹。"
       ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
@@ -8660,6 +8690,9 @@
       ],
       "Previous message": [
         "上一封邮件"
+      ],
+      "Protect yourself from trackers": [
+        "防范跟踪脚本"
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
