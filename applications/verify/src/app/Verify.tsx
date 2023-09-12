@@ -198,6 +198,7 @@ const Verify = () => {
             defaultEmail={defaultEmail}
             defaultPhone={defaultPhone}
             isEmbedded={isEmbedded}
+            verifyApp
         />
     );
 

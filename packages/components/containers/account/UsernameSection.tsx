@@ -27,7 +27,7 @@ import { Address, AddressConfirmationState, UserType } from '@proton/shared/lib/
 import clsx from '@proton/utils/clsx';
 
 import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
-import { useAddresses, useApi, useConfig, useNotifications, useUser } from '../../hooks';
+import { useAddresses, useApi, useConfig, useNotifications, useSearchParamsEffect, useUser } from '../../hooks';
 import PromotionBanner from '../banner/PromotionBanner';
 import EditAddressModal from './EditAddressModal';
 import EditDisplayNameModal from './EditDisplayNameModal';
@@ -78,6 +78,31 @@ const UsernameSection = ({ app }: Props) => {
             text: getVerificationSentText(destination),
         });
     };
+
+    const canEditAddress =
+        user.Type === UserType.EXTERNAL &&
+        primaryAddress &&
+        primaryAddress.ConfirmationState === AddressConfirmationState.CONFIRMATION_NOT_CONFIRMED;
+
+    useSearchParamsEffect(
+        (params) => {
+            if (!canEditAddress || !primaryAddress) {
+                return;
+            }
+            const actionParam = params.get('action');
+            if (!actionParam) {
+                return;
+            }
+
+            if (actionParam === 'edit-email') {
+                params.delete('action');
+                setTmpAddress(primaryAddress);
+                setEditAddressModalOpen(true);
+                return params;
+            }
+        },
+        [primaryAddress]
+    );
 
     return (
         <>
@@ -174,22 +199,28 @@ const UsernameSection = ({ app }: Props) => {
                                     ) : (
                                         <>
                                             <div className="flex">
-                                                <span className="mr-2">{primaryAddress.Email} </span>
-                                                <InlineLinkButton
-                                                    className="mr-1"
-                                                    onClick={() => {
-                                                        setTmpAddress(primaryAddress);
-                                                        setEditAddressModalOpen(true);
-                                                    }}
-                                                    aria-label={c('Action').t`Edit email address`}
-                                                >
-                                                    {c('Action').t`Edit`}
-                                                </InlineLinkButton>
-                                                <Info
-                                                    className="flex-align-self-center"
-                                                    title={c('Info')
-                                                        .t`You can edit this once to ensure the correct email address for verification.`}
-                                                />
+                                                {!canEditAddress ? (
+                                                    primaryAddress.Email
+                                                ) : (
+                                                    <>
+                                                        <span className="mr-2">{primaryAddress.Email}</span>
+                                                        <InlineLinkButton
+                                                            className="mr-1"
+                                                            onClick={() => {
+                                                                setTmpAddress(primaryAddress);
+                                                                setEditAddressModalOpen(true);
+                                                            }}
+                                                            aria-label={c('Action').t`Edit email address`}
+                                                        >
+                                                            {c('Action').t`Edit`}
+                                                        </InlineLinkButton>
+                                                        <Info
+                                                            className="flex-align-self-center"
+                                                            title={c('Info')
+                                                                .t`You can edit this once to ensure the correct email address for verification.`}
+                                                        />
+                                                    </>
+                                                )}
                                             </div>
                                             <div className="flex">
                                                 <Icon
