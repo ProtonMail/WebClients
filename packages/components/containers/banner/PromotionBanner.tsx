@@ -18,6 +18,7 @@ interface Props {
     loading?: boolean;
     hasDismissAction?: boolean;
     contentCentered?: boolean;
+    mode?: 'row' | 'banner';
     onClose?: () => void;
     ['data-testid']?: string;
 }
@@ -27,6 +28,7 @@ const PromotionBanner = ({
     rounded = false,
     loading = false,
     contentCentered = true,
+    mode = 'row',
     description,
     cta,
     icon,
@@ -51,7 +53,17 @@ const PromotionBanner = ({
             <div
                 className={clsx(
                     'inline-flex mx-auto flex-nowrap flex-align-items-center ',
-                    contentCentered ? 'm-0.5 px-2' : 'm-2 pl-4 w100',
+                    (() => {
+                        if (contentCentered) {
+                            return 'm-0.5 px-2';
+                        }
+                        if (mode === 'banner') {
+                            return 'm-3 pl-4 w100';
+                        }
+                        if (mode === 'row') {
+                            return 'm-2 pl-4 w100';
+                        }
+                    })(),
                     loading && 'w33'
                 )}
             >
