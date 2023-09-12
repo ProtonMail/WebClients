@@ -8,7 +8,7 @@ import { PrimaryVault } from '../component/PrimaryVault';
 export const General: VFC = () => {
     return (
         <>
-            <Locale />
+            {ENV === 'development' && <Locale />}
             <PrimaryVault />
             <Behaviors />
             <ApplicationLogs />
