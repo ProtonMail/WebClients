@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Loader } from '@proton/components/components';
 
 import { useThumbnailsDownload } from '../../../store';
-import type { PhotoLink } from '../../../store/';
 import { usePhotosView } from '../../../store/_views/usePhotosView';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
@@ -19,9 +18,9 @@ export const PhotosView: FC<void> = () => {
     const thumbnails = useThumbnailsDownload();
 
     const handleItemRender = useCallback(
-        (item: PhotoLink) => {
+        (itemLinkId: string) => {
             if (shareId) {
-                thumbnails.addToDownloadQueue(shareId, item.linkId);
+                thumbnails.addToDownloadQueue(shareId, itemLinkId);
             }
         },
         [shareId]
