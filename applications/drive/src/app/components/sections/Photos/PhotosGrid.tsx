@@ -3,12 +3,12 @@ import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { PhotoGridItem, PhotoLink } from '../../../store';
+import type { PhotoGridItem } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
     data: PhotoGridItem[];
-    onItemRender: (item: PhotoLink) => void;
+    onItemRender: (linkId: string) => void;
     shareId: string;
     isLoadingMore: boolean;
 };

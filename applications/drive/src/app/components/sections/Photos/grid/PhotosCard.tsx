@@ -15,7 +15,7 @@ import './PhotosCard.scss';
 
 type Props = {
     photo: PhotoLink;
-    onRender: (item: PhotoLink) => void;
+    onRender: (linkId: string) => void;
     style: CSSProperties;
     shareId: string;
 };
@@ -27,8 +27,8 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
     const [portalPreview, showPortalPreview] = usePortalPreview();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     useEffect(() => {
-        onRender(photo);
-    }, [photo]);
+        onRender(photo.linkId);
+    }, [photo.linkId]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
     const isThumbnailLoading = photo.hasThumbnail === undefined;
@@ -38,7 +38,6 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
         <>
             {portalPreview}
             {detailsModal}
-            {/*// TODO: Thumbnails on click*/}
             {/*// TODO: Keyboard navigation*/}
             <ButtonLike
                 as="div"
@@ -76,3 +75,4 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
         </>
     );
 };
+PhotosCard.displayName = 'PhotosCard';
