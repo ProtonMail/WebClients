@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import EditPunctuationAddressModal from '@proton/components/containers/addresses/EditPunctuationAddressModal';
+import EditExternalAddressModal from '@proton/components/containers/account/EditExternalAddressModal';
+import EditInternalAddressModal from '@proton/components/containers/addresses/EditInternalAddressModal';
 import { useLoading } from '@proton/hooks';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
@@ -86,7 +87,8 @@ const AddressActions = ({
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
     const [disableAddressProps, setDisableAddressModalOpen, renderDisableAddress] = useModalState();
-    const [editAddressProps, setChangeAddressModalOpen, renderEditPunctuationModal] = useModalState();
+    const [editInternalAddressProps, setEditInternalAddressOpen, renderEditInternalAddressModal] = useModalState();
+    const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
 
     const handleDelete = async () => {
         if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
@@ -117,9 +119,13 @@ const AddressActions = ({
                       text: c('Address action').t`Generate missing keys`,
                       onClick: () => setMissingKeysAddressModalOpen(true),
                   },
-                  permissions.canEditPunctuation && {
+                  permissions.canEditInternalAddress && {
                       text: c('Address action').t`Edit address`,
-                      onClick: () => setChangeAddressModalOpen(true),
+                      onClick: () => setEditInternalAddressOpen(true),
+                  },
+                  permissions.canEditExternalAddress && {
+                      text: c('Address action').t`Edit address`,
+                      onClick: () => setEditExternalAddressOpen(true),
                   },
                   permissions.canMakeDefault &&
                       onSetDefault && {
@@ -153,7 +159,12 @@ const AddressActions = ({
                     organizationKey={organizationKey}
                 />
             )}
-            {renderEditPunctuationModal && <EditPunctuationAddressModal address={address} {...editAddressProps} />}
+            {renderEditInternalAddressModal && (
+                <EditInternalAddressModal address={address} {...editInternalAddressProps} />
+            )}
+            {renderEditExternalAddressModal && (
+                <EditExternalAddressModal address={address} {...editExternalAddressProps} />
+            )}
             {renderDeleteAddress && (
                 <DeleteAddressModal email={address.Email} onDeleteAddress={handleDelete} {...deleteAddressProps} />
             )}
