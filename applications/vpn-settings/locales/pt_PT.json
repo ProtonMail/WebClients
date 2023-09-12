@@ -2494,6 +2494,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
@@ -2506,6 +2509,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } ou $ obrigatórios para a funcionalidade Secure Core."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /mês)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
@@ -2602,6 +2608,9 @@
       "Attention required": [
         "Atenção Requerida"
       ],
+      "Awaiting transaction": [
+        "A aguardar transação"
+      ],
       "Balance from your previous subscription": [
         "Saldo da sua subscrição anterior"
       ],
@@ -2673,6 +2682,9 @@
       ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -2757,6 +2769,9 @@
       ],
       "expires ${ expirationDate }": [
         "expira em ${ expirationDate }"
+      ],
+      "Fill in user details": [
+        "Preencher dados de utilizador"
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
@@ -2917,6 +2932,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Não é o seu dispositivo? Utilize uma janela de navegação privada para iniciar sessão e feche-a quando terminar. ${ learnMore }"
       ],
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados na organização"
+      ],
       "of": [
         "de"
       ],
@@ -2955,6 +2973,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
+      ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed every 12 months": [
+        "por mês, faturado a cada 12 meses"
+      ],
+      "per month, billed every 15 months": [
+        "por mês, faturado a cada 15 meses"
+      ],
+      "per month, billed every 24 months": [
+        "por mês, faturado a cada 24 meses"
+      ],
+      "per month, billed every 30 months": [
+        "por mês, faturado a cada 30 meses"
       ],
       "Plan upgrade required": [
         "Actualização do plano obrigatória"
@@ -3033,6 +3066,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -3041,6 +3077,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde a sua palavra-passe num lugar seguro. Clique no ícone para confirmar que digitou a sua palavra-passe corretamente."
+      ],
+      "Saving your password": [
+        "A guardar a sua palavra-passe"
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -3068,6 +3107,9 @@
       ],
       "Setting up your Drive": [
         "A configurar o seu Drive"
+      ],
+      "Setting up your organization": [
+        "A configurar a sua organização"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar o seu endereço."
@@ -3181,11 +3223,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Para cancelar a sua subscrição, por favor contacte-nos."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
+      ],
+      "to continue to ${ product }": [
+        "para continuar para ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
@@ -3250,6 +3298,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Carregue o seu ficheiro CSV completado para criar contas"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilize o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -3295,11 +3346,17 @@
       "We couldn’t process your payment.": [
         "Não é possível realizar o pagamento."
       ],
+      "We generated a strong password for you": [
+        "Gerámos-lhe uma palavra-passe forte"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar o seu método de pagamento com o seu banco."
       ],
       "We need to authenticate your payment with your bank.": [
         "Precisamos autenticar o seu pagamento com o seu banco."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Recomendamos ter no mínimo 2 servidores de modo a fornecer redundância."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da organização e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
@@ -3357,6 +3414,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } da licença de utilizador disponível.",
+        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } das licenças de utilizador disponíveis."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Tem sessão iniciada na conta ${ memberAddress }."
@@ -3416,6 +3477,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Irá ser redirecionado para ${ destination } após iniciar sessão."
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Nesta data, perderá o acesso a servidores e funcionalidades ${ vpnPlanNameShort }."
       ],
@@ -3472,6 +3536,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "A sua subscrição irá renovar automaticamente em ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -5760,7 +5827,7 @@
         "O certificado ${ name } foi revogado."
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        "O certificado foi prorrogado até ${ formattedExpirationDate }."
+        "Certificado prolongado até ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
         "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou descarregar esta configuração."
@@ -5769,7 +5836,7 @@
         "Criação de ficheiro de configuração para ${ serverName }"
       ],
       "Preference updated": [
-        "A preferência foi actualizada."
+        "A preferência foi atualizada."
       ]
     },
     "Suffix": {
@@ -6081,6 +6148,10 @@
       ],
       "Delete account": [
         "Eliminar conta"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Eliminar o servidor (ainda terá possibilidade de o recuperar por ${ days } dia)",
+        "Eliminar o servidor (ainda terá possibilidade de o recuperar por ${ days } dias)"
       ],
       "Delete user": [
         "Eliminar utilizador"
@@ -6459,7 +6530,7 @@
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o activem o mais rapidamente possível."
+        "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o ativem o mais rapidamente possível."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"

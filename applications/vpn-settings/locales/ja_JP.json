@@ -3559,6 +3559,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "サインイン後、${ destination } にリダイレクトされます。"
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "この日付になると、${ vpnPlanNameShort } のサーバーと機能へのアクセス権が失われます。"
       ],
@@ -6355,6 +6358,9 @@
       "Email subscriptions": [
         "メーリングリストの購読"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "${ BRAND_NAME } アカウントの詳細を入力して ${ app } ベータ プログラムに参加してください"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -6534,6 +6540,9 @@
       ],
       "Sign in": [
         "サインイン"
+      ],
+      "Sign in to join the Beta program": [
+        "サインインしてベータプログラムに参加する"
       ],
       "Sign in with 2FA": [
         "2FA でサインイン"
