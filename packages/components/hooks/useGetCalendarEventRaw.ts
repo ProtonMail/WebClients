@@ -4,21 +4,23 @@ import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
-import useGetEncryptionPreferences from './useGetEncryptionPreferences';
+import useGetVerificationPreferences from './useGetVerificationPreferences';
 
-const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
+const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetCalendarEventRaw => {
     const getCalendarKeys = useGetCalendarKeys();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
-    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getVerificationPreferences = useGetVerificationPreferences();
 
     return useCallback(
         async (Event: CalendarEvent) => {
@@ -37,7 +39,13 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
 
             const [privateKeys, publicKeysMap, { CalendarSettings: calendarSettings }] = await Promise.all([
                 getCalendarEventDecryptionKeys({ calendarEvent: Event, getAddressKeys, getCalendarKeys }),
-                getAuthorPublicKeysMap({ event: Event, addresses, getAddressKeys, getEncryptionPreferences }),
+                getAuthorPublicKeysMap({
+                    event: Event,
+                    addresses,
+                    getAddressKeys,
+                    getVerificationPreferences,
+                    contactEmailsMap,
+                }),
                 getCalendarBootstrap(CalendarID),
             ]);
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
@@ -62,7 +70,7 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
                 encryptingAddressID,
             });
         },
-        [getAddresses, getAddressKeys, getCalendarKeys]
+        [getAddresses, getAddressKeys, getCalendarKeys, contactEmailsMap]
     );
 };
 

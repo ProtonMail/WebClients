@@ -21,7 +21,7 @@ const getContactEmail = async (
         return contactEmailsMap[canonicalEmail];
     }
     const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
-        queryContactEmails({ Email: canonicalEmail } as any)
+        queryContactEmails({ Email: canonicalEmail })
     );
     return ContactEmails[0];
 };
