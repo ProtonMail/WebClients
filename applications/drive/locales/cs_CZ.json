@@ -3139,6 +3139,12 @@
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakty",
+        "${ contactsLength } kontaktů",
+        "${ contactsLength } kontaktů"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } ukončený",
         "${ doneCount } ukončené",
@@ -3198,6 +3204,12 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } vybraný kontakt",
+        "${ selectedContactsLength }/${ contactsLength } vybrané kontakty",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů"
       ],
       "${ selectedCount } selected": [
         "Vybráno: ${ selectedCount }"
