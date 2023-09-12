@@ -598,6 +598,9 @@
       "Toggle Contact app": [
         "切换至 Contact 应用"
       ],
+      "Toggle settings": [
+        "打开/关闭设置"
+      ],
       "Trust": [
         "信任"
       ],
@@ -2998,6 +3001,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位联系人"
       ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位联系人"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } 项已完成"
       ],
@@ -3030,6 +3036,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
       ],
       "${ selectedCount } selected": [
         "已选择 ${ selectedCount } 项"
@@ -3735,6 +3744,9 @@
       ],
       "Trash": [
         "回收站"
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
       "Try searching by file name, date, or type.": [
         "尝试搜索文件名称、日期或类型。"
