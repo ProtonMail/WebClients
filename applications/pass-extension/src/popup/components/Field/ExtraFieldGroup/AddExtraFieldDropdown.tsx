@@ -48,10 +48,9 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
                             key={type}
                             onClick={() => handleAddClick(type as ExtraFieldType)}
                             size="small"
-                        >
-                            <Icon className="mr-2 color-weak" name={icon} />
-                            {label}
-                        </DropdownMenuButton>
+                            icon={icon}
+                            label={label}
+                        />
                     ))}
                 </DropdownMenu>
             </Dropdown>
