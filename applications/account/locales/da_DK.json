@@ -344,6 +344,9 @@
       "Download ICS": [
         "Download ICS"
       ],
+      "Download our CSV template": [
+        "Download vores CSV-skabelon"
+      ],
       "Download recovery file": [
         "Download gendannelsesfil"
       ],
@@ -457,6 +460,9 @@
       ],
       "Get more labels": [
         "Få flere etiketter"
+      ],
+      "Get more licenses": [
+        "Få flere licenser"
       ],
       "Get more servers": [
         "Få flere servere"
@@ -604,6 +610,9 @@
       ],
       "Pay": [
         "Betal"
+      ],
+      "Pay ${ price }": [
+        "Betal ${ price }"
       ],
       "Pay ${ price } now": [
         "Betal ${ price } nu"
@@ -938,6 +947,9 @@
       "Upgrade now": [
         "Opgradér nu"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
       ],
@@ -1047,6 +1059,15 @@
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per dedikerede server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domæne"
+      ],
+      "${ price } per user": [
+        "${ price } per bruger"
       ],
       "${ users } user": [
         "${ users } bruger",
@@ -2712,6 +2733,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktiver ${ PROTON_SENTINEL_NAME } for at få adgang til disse funktioner"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktiver avancerede logs og ${ PROTON_SENTINEL_NAME }, for at få adgang til disse funktioner"
+      ],
+      "Enable advanced logs to access these features": [
+        "Aktiver avancerede logs, for at få adgang til disse funktioner"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -2724,18 +2754,30 @@
       "ProtonMail logo and a plus sign": [
         "ProtonMail-logo og et plustegn"
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "For at fjerne ${ MAIL_APP_NAME } sidefoden, opgrader og lås op for endnu flere premium-funktioner."
+      ],
       "Track the status and activity of your referrals.": [
         "Følg status og aktivitet for dine henvisninger."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Lås op for kortere e-mailadresser og andre premium-funktioner ved at opgradere."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Lås op for ubegrænsede filter der sorterer din indbakke for dig og flere premium-funktioner når du opgraderer."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Lås op for ubegrænsede mapper, etiketter og flere premium-funktioner når du opgraderer."
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "Mersalgs-ikon med ${ BRAND_NAME }-logo efterfulgt af et plustegn"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
@@ -3007,6 +3049,9 @@
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
+      ],
+      "Email address is invalid": [
+        "E-mailadresse er ugyldig"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -3781,6 +3826,15 @@
       "Got it": [
         "Forstået"
       ],
+      "Invite an existing ${ BRAND_NAME } user": [
+        "Inviter en eksisterende ${ BRAND_NAME } bruger"
+      ],
+      "Invite member to your family": [
+        "Inviter medlemmer til din familie"
+      ],
+      "Set up family group": [
+        "Konfigurer familiegruppe"
+      ],
       "Switch plans": [
         "Skift abonnement"
       ],
@@ -3914,6 +3968,9 @@
       ],
       "Access to all countries": [
         "Adgang til alle lande"
+      ],
+      "Add": [
+        "Tilføj"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
@@ -4809,6 +4866,9 @@
         "${ numberOfNonPrivateKeys } uploadet fil er ikke en gyldig privat nøgle. Kontroller den og prøv igen.",
         "${ numberOfNonPrivateKeys } uploadede filer er ikke gyldige private nøgler. Kontroller dem og prøv igen."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } er et avanceret kontobeskyttelsesprogram, der drives af sofistikerede AI-systemer og specialister, der arbejder døgnet rundt for at beskytte dig mod ondsindede aktører og sikkerhedstrusler."
       ],
@@ -4859,6 +4919,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } måned)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
@@ -5020,6 +5083,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
       ],
       "An error occurred while communicating with the extension": [
         "En fejl opstod under kommunikationen med udvidelsen"
@@ -5815,6 +5881,21 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
       ],
+      "per month": [
+        "Pr. måned"
+      ],
+      "per month, billed every 12 months": [
+        "Pr. måned, faktureres hver 12. måned"
+      ],
+      "per month, billed every 15 months": [
+        "Pr. måned, faktureres hver 15. måned"
+      ],
+      "per month, billed every 24 months": [
+        "Pr. måned, faktureres hver 24. måned"
+      ],
+      "per month, billed every 30 months": [
+        "Pr. måned, faktureres hver 30. måned"
+      ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-klienter er mere tilbøjelige til automatisk at registrere dine PGP-nøgler, hvis udgående beskeder er signerede."
       ],
@@ -5982,6 +6063,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
       ],
+      "Saving your password": [
+        "Gemmer din adgangskode"
+      ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
       ],
@@ -6023,6 +6107,9 @@
       ],
       "Setting up your Drive": [
         "Opsætter dit drev"
+      ],
+      "Setting up your organization": [
+        "Konfigurerer din organisation"
       ],
       "Settings update failed": [
         "Opdatering af indstillinger mislykkedes"
@@ -6256,6 +6343,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
       ],
+      "to continue to ${ product }": [
+        "for at fortsætte til ${ product }"
+      ],
       "to continue to ${ toAppName }": [
         "for at fortsætte til ${ toAppName }"
       ],
@@ -6373,6 +6463,9 @@
       "Upload picture": [
         "Upload billede"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Upload din udfyldte CSV-fil for at oprette konti"
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Uploadet fil er ikke en gyldig privat nøgle. Kontrollér og prøv igen."
       ],
@@ -6436,6 +6529,9 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
+      "We generated a strong password for you": [
+        "Vi har genereret en stærk adgangskode til dig"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
       ],
@@ -6474,6 +6570,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Uge- og månedsvisninger gælder kun på desktop."
+      ],
+      "Welcome": [
+        "Velkommen"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
@@ -6640,6 +6739,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer for at værten kan se dit svar."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Du vil blive omdirigeret til ${ destination } efter login."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
@@ -8176,6 +8278,9 @@
     "Link": {
       "Add a gift code": [
         "Tilføj en gavekode"
+      ],
+      "Add gift code": [
+        "Tilføj gavekode"
       ],
       "Apps and extensions": [
         "Apps og udvidelser"
@@ -10014,6 +10119,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Please select the main reason": [
+        "Vælg venligst hovedårsagen"
+      ],
       "Printer": [
         "Printer"
       ],
@@ -10264,6 +10372,14 @@
       ],
       "No results found": [
         "Ingen resultater fundet"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktiv"
+      ],
+      "inactive": [
+        "inaktiv"
       ]
     },
     "Settings description": {
@@ -12201,6 +12317,12 @@
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Admins kan foretage ændringer i dit abonnement, administrere brugerkonti og adgangskoder og give administratorrettigheder til andre brugere."
+      ],
+      "An approximate location of the IP address": [
+        "En omtrentlig placering af IP-adressen"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
@@ -12212,6 +12334,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Slet papirkurven og spam-beskeder efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato, de blev flyttet dertil."
+      ],
+      "Device information such as operating system": [
+        "Enhedsoplysninger, som f.eks. operativsystem"
       ],
       "Each imported email will have this label": [
         "Hver importeret e-mail vil have denne etiket"
