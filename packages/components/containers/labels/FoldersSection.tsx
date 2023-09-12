@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Scroll } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { orderFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
@@ -17,7 +17,17 @@ import ToggleEnableFolderColor from './ToggleEnableFolderColor';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
 import EditLabelModal from './modals/EditLabelModal';
 
-function LabelsSection() {
+function ScrollWrapper({ children, scroll }: { children: JSX.Element; scroll?: boolean }) {
+    return scroll ? (
+        <Scroll className="overflow-hidden pb-2 h-custom" style={{ '--h-custom': '50rem' }}>
+            {children}
+        </Scroll>
+    ) : (
+        children
+    );
+}
+
+export default function FoldersSection() {
     const [user] = useUser();
     const [folders = [], loadingFolders] = useFolders();
     const [mailSettings] = useMailSettings();
@@ -103,7 +113,12 @@ function LabelsSection() {
                         ) : null}
                     </div>
 
-                    {folders.length ? <FolderTreeViewList items={folders} /> : null}
+                    {folders.length ? (
+                        // 17 is the number of elements before we have more than 50rem, will be replaced soon by a fix in scroll component
+                        <ScrollWrapper scroll={folders.length > 17}>
+                            <FolderTreeViewList items={folders} />
+                        </ScrollWrapper>
+                    ) : null}
 
                     <EditLabelModal {...editLabelProps} type="folder" />
 
@@ -119,5 +134,3 @@ function LabelsSection() {
         </SettingsSection>
     );
 }
-
-export default LabelsSection;
