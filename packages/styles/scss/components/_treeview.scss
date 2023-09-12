@@ -3,6 +3,10 @@
 $treeview-border-width: 1px !default;
 $treeview-indentation-margin: rem(30) !default;
 
+.treeview-container {
+	// padding-block-end: $treeview-border-width;
+}
+
 .treeview-item {
 	border-block-end: $treeview-border-width solid var(--border-norm);
 	margin-block-end: -$treeview-border-width;
