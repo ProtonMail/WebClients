@@ -389,6 +389,9 @@
       "Open settings": [
         "Einstellungen öffnen"
       ],
+      "Pause indexing": [
+        "Indizierung anhalten"
+      ],
       "Preview contact": [
         "Vorschau des Kontakts"
       ],
@@ -451,6 +454,9 @@
       ],
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
+      ],
+      "Resume indexing": [
+        "Indizierung fortsetzten"
       ],
       "Save": [
         "Speichern"
@@ -2063,6 +2069,9 @@
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
         "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Das kann einige Minuten dauern. In der Zwischenzeit kannst du den Kalender wie gewohnt nutzen."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Durch Ziehen kannst du die Zusammenführungspriorität zwischen den Kontakten festlegen. Deaktiviere die Kontakte, die du nicht zusammenführen möchtest."
       ],
@@ -2298,6 +2307,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Termin nicht gefunden"
       ],
       "Failed to get original occurrence in series": [
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
@@ -2762,6 +2774,14 @@
         "Wertung ist erforderlich"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Kein Ergebnis"
+      ],
+      "Results": [
+        "Ergebnisse"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "abgesagt"
@@ -2771,6 +2791,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } Teilnehmer",
         "${ numberOfAttendees } Teilnehmer"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Ganztägig"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Ganztägig, dauert ${ plusDaysToEnd } Tag",
+        "Ganztägig, dauert ${ plusDaysToEnd } Tage"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3467,9 @@
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } und ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
@@ -3554,6 +3586,9 @@
       "Calendar side panel": [
         "Kalender-Seitenleiste"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Du kannst die gesuchten Termine nicht finden? Einige Termine in versteckten Kalendern entsprechen deiner Anfrage. Um diese Ergebnisse zu sehen, schalte die Sichtbarkeit für ${ hiddenWithItemsCalendarList } ein."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
@@ -3565,6 +3600,9 @@
       ],
       "Clear encrypted search data": [
         "Verschlüsselte Suchdaten löschen"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Beim Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Alle Kalendertermine müssen zum Verwenden der Suchfunktion erneut indiziert werden."
       ],
       "Clears browser data related to the encrypted search.": [
         "Löscht die Browserdaten im Zusammenhang mit der verschlüsselten Suche."
@@ -3712,6 +3750,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Indiziere Termine: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indizierung angehalten"
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -4121,6 +4165,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Deine Systemzeitzone scheint sich auf ${ timezone } geändert zu haben. Möchtest du deine Zeitzoneneinstellung aktualisieren?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Du kannst entweder deine Suchanfrage aktualisieren oder die Suche schließen, um zur Kalenderansicht zurückzukehren."
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Keine Ergebnisse gefunden"
       ]
     },
     "Info on errors": {
@@ -5325,6 +5379,9 @@
       "Image URL": [
         "Bild-URL"
       ],
+      "Indexing...": [
+        "Indiziere…"
+      ],
       "Name": [
         "Name"
       ],
@@ -5339,6 +5396,9 @@
       ],
       "Please select a country": [
         "Bitte wähle ein Land"
+      ],
+      "Search events": [
+        "Termine durchsuchen"
       ],
       "Search for group name": [
         "Nach Gruppenname suchen"
@@ -5737,6 +5797,9 @@
       "Add your country's public holidays to your calendar.": [
         "Füge die Feiertage deines Landes zu deinem Kalender hinzu."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Mit unserer neuen Suchfunktion findest du ganz einfach den Termin, den du suchst."
+      ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
       ],
@@ -5745,6 +5808,9 @@
       ],
       "Public holidays are here!": [
         "Die Feiertage sind da!"
+      ],
+      "Search for events": [
+        "Nach Terminen suchen"
       ]
     },
     "Storage": {
@@ -5808,6 +5874,9 @@
       ],
       "Calendar information updated": [
         "Kalenderinformationen aktualisiert"
+      ],
+      "Calendar search activated": [
+        "Kalendersuche aktiviert"
       ],
       "Calendar updated": [
         "Kalender aktualisiert"
@@ -6413,6 +6482,9 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
+      "We're setting up Calendar search": [
+        "Wir richten die Kalendersuche ein"
+      ],
       "We've locked some calendars to protect your data": [
         "Wir haben einige Kalender gesperrt, um deine Daten zu schützen."
       ],
@@ -6552,6 +6624,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Zum Termin gehen"
+      ],
       "Open in a new tab": [
         "In einem neuen Tab öffnen"
       ]

@@ -393,6 +393,9 @@
       "Open settings": [
         "Адкрыць налады"
       ],
+      "Pause indexing": [
+        "Паўза індэксавання"
+      ],
       "Preview contact": [
         "Папярэдні прагляд кантакту"
       ],
@@ -455,6 +458,9 @@
       ],
       "Reset to default": [
         "Скінуць да прадвызначаных"
+      ],
+      "Resume indexing": [
+        "Працягнуць індэксаванне"
       ],
       "Save": [
         "Захаваць"
@@ -2821,6 +2827,14 @@
         "${ numberOfAttendees } удзельнікі"
       ]
     },
+    "Event info in search view; event duration": {
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Кожны дзень цягам ${ plusDaysToEnd } дня",
+        "Кожны дзень цягам ${ plusDaysToEnd } дзён",
+        "Кожны дзень цягам ${ plusDaysToEnd } дзён",
+        "Кожны дзень цягам ${ plusDaysToEnd } дзён"
+      ]
+    },
     "Event info. Organizer name": {
       "You": [
         "Вы"
@@ -3526,6 +3540,9 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } і ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
@@ -3669,6 +3686,9 @@
       ],
       "Calendar side panel": [
         "Бакавая панэль календара"
+      ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Не можаце знайсці падзеі, якія шукаеце? Вашаму пошуку адпавядаюць дзе-якія падзеі са схованых календароў. Каб іх пабачыць, уключыце бачнасць ${ hiddenWithItemsCalendarList }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
@@ -3834,6 +3854,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Індэксаванне падзей: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Індэксаванне прыпынена"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -6654,6 +6680,9 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "We're setting up Calendar search": [
+        "Наладжваем пошук у календары"
       ],
       "We've locked some calendars to protect your data": [
         "Мы заблакіравалі некаторыя календары, каб абараніць вашы даныя"
