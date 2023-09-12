@@ -644,6 +644,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota vahvojen salasanojen luontia rekisteröitymislomakkeissa."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Jos käytössä, automaattitäytön pudotusvalikko aukeaa automaattisesti kentän aktivoituessa."
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Jos käytössä, mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME } -kuvaketta painamalla."
       ],
@@ -723,6 +726,9 @@
       ],
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
+      ],
+      "Password copied": [
+        "Salasana kopioitu"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
@@ -1087,6 +1093,9 @@
       "Name": [
         "Nimi"
       ],
+      "Need help ?": [
+        "Tarvitsetko apua ?"
+      ],
       "New vault": [
         "Uusi holvi"
       ],
@@ -1393,6 +1402,9 @@
       "Enter your Pin": [
         "Syötä PIN-koodisi"
       ],
+      "Fill & copy password": [
+        "Täytä ja kopioi salasana"
+      ],
       "Get the mobile apps": [
         "Hanki mobiilisovellukset"
       ],
@@ -1407,6 +1419,9 @@
       ],
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
+      ],
+      "Low disk space": [
+        "Levytila lopussa"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
