@@ -261,7 +261,7 @@ const CalendarContainer = ({
     }, [nowDate, tzid]);
 
     const utcDefaultDateRef = useRef<{ prev: Date; value: Date }>();
-    // A ref is used to avoid falling on the cache purging of react
+    // A ref is used to avoid falling on the cache purging of React
     if (
         !utcDefaultDateRef.current ||
         (utcDefaultDateRef.current.prev !== utcNowDateInTimezone &&

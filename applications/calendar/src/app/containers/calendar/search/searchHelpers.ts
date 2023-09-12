@@ -2,15 +2,16 @@ import { getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ESItem } from '@proton/encrypted-search/lib';
-import { OccurrenceIterationCache, getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
+import { OccurrenceIterationCache, getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { DAY, SECOND } from '@proton/shared/lib/constants';
 import {
-    addDays,
-    endOfDay,
+    addDays as addUTCDays,
+    addYears as addUTCYears,
+    endOfDay as endOfUTCDay,
     format as formatUTC,
     isSameDay as isSameUTCDay,
-    startOfDay,
+    startOfDay as startOfUTCDay,
 } from '@proton/shared/lib/date-fns-utc';
 import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -26,6 +27,7 @@ import { getCurrentEvent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
 import { CalendarsEventsCache } from '../eventStore/interface';
 import { CalendarViewEvent } from '../interface';
+import { YEARS_TO_EXPAND_AHEAD } from './constants';
 import { VisualSearchItem } from './interface';
 
 /**
@@ -57,7 +59,7 @@ const getVisualSearchItem = ({
     const isAllDay = !!FullDay;
     const fakeUTCStartDate = getFakeUTCDateFromTimestamp(StartTime, isAllDay, tzid);
     const fakeUTCEndDate = getFakeUTCDateFromTimestamp(EndTime, isAllDay, tzid);
-    const plusDaysToEnd = Math.floor((+endOfDay(fakeUTCEndDate) - +endOfDay(fakeUTCStartDate)) / DAY);
+    const plusDaysToEnd = Math.floor((+endOfUTCDay(fakeUTCEndDate) - +endOfUTCDay(fakeUTCStartDate)) / DAY);
 
     return {
         ...item,
@@ -123,18 +125,29 @@ export const getVisualSearchItems = ({
         .filter(isTruthy);
 };
 
-const expandSearchItem = (
-    item: ESItem<ESCalendarMetadata, ESCalendarContent>,
-    cache: Partial<OccurrenceIterationCache> = {},
-    recurrenceIDs?: number[]
-): MaybeArray<ESItem<ESCalendarMetadata, ESCalendarContent> | undefined> => {
+export const expandSearchItem = ({
+    item,
+    date,
+    cache = {},
+    recurrenceIDs,
+}: {
+    item: ESItem<ESCalendarMetadata, ESCalendarContent>;
+    date: Date;
+    cache?: Partial<OccurrenceIterationCache>;
+    recurrenceIDs?: number[];
+}): MaybeArray<ESItem<ESCalendarMetadata, ESCalendarContent> | undefined> => {
     try {
         if (!item.RRule) {
             return item;
         }
         const component = getComponentFromCalendarEventWithoutBlob(item);
 
-        const occurrences = getOccurrences({ component, maxCount: 500, cache });
+        // we expand three years ahead of passed date, unless it's a yearly event, in which case we expand 20 years ahead
+        const yearsToExpand = item.RRule.includes('FREQ=YEARLY')
+            ? YEARS_TO_EXPAND_AHEAD.YEARLY
+            : YEARS_TO_EXPAND_AHEAD.OTHER;
+        const untilDate = addUTCYears(date, yearsToExpand);
+        const occurrences = getOccurrencesBetween(component, item.StartTime * SECOND, +untilDate, cache);
         const isSingleOccurrence = occurrences.length === 1;
 
         return occurrences.map((recurrence) => {
@@ -167,7 +180,8 @@ const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
 
 export const expandAndOrderItems = (
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[],
-    calendarsEventsCache: CalendarsEventsCache
+    calendarsEventsCache: CalendarsEventsCache,
+    date: Date
 ) => {
     const recurrenceIDsMap = items.reduce<SimpleMap<number[]>>((acc, { CalendarID, UID, RecurrenceID }) => {
         if (!RecurrenceID) {
@@ -190,7 +204,7 @@ export const expandAndOrderItems = (
             const { cache } = recurringEvents?.get(UID) || {};
             const recurrenceIDs = recurrenceIDsMap[getEventKey(CalendarID, UID)];
 
-            return expandSearchItem(item, cache, recurrenceIDs);
+            return expandSearchItem({ item, date, cache, recurrenceIDs });
         })
         .flat()
         .filter(isTruthy);
@@ -220,7 +234,7 @@ export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): Calend
     const result: CalendarViewEvent = {
         id: ID,
         start: fakeUTCStartDate,
-        end: isAllDay ? addDays(fakeUTCEndDate, -1) : fakeUTCEndDate,
+        end: isAllDay ? addUTCDays(fakeUTCEndDate, -1) : fakeUTCEndDate,
         isAllDay,
         isAllPartDay: false,
         data: {
@@ -313,9 +327,9 @@ const getEmptyTodayPosition = ({
     nextStartDate?: Date;
 }): number => {
     return +Boolean(
-        isAfter(startOfDay(now), startOfDay(currentStartDate)) &&
+        isAfter(startOfUTCDay(now), startOfUTCDay(currentStartDate)) &&
             nextStartDate &&
-            isBefore(startOfDay(now), startOfDay(nextStartDate))
+            isBefore(startOfUTCDay(now), startOfUTCDay(nextStartDate))
     );
 };
 
