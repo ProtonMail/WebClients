@@ -1,5 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
@@ -7,7 +9,6 @@ import { canonicalizeInternalEmail } from '../helpers/email';
 import { Address } from '../interfaces';
 import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { GetEncryptionPreferences } from '../interfaces/hooks/GetEncryptionPreferences';
 import { SimpleMap } from '../interfaces/utils';
 import { getKeyHasFlagsToVerify } from '../keys';
 import { getActiveKeys } from '../keys/getActiveKeys';
@@ -30,14 +31,16 @@ interface GetAuthorPublicKeysMap {
     event: CalendarEvent;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
-    getEncryptionPreferences: GetEncryptionPreferences;
+    getVerificationPreferences: GetVerificationPreferences;
+    contactEmailsMap: SimpleMap<ContactEmail>;
 }
 
 export const getAuthorPublicKeysMap = async ({
     event,
     addresses,
     getAddressKeys,
-    getEncryptionPreferences,
+    getVerificationPreferences,
+    contactEmailsMap,
 }: GetAuthorPublicKeysMap) => {
     const publicKeysMap: SimpleMap<PublicKeyReference | PublicKeyReference[]> = {};
     const authors = unique(
@@ -72,8 +75,8 @@ export const getAuthorPublicKeysMap = async ({
                 .map((key) => key.publicKey);
         } else {
             try {
-                const { pinnedKeys } = await getEncryptionPreferences(author);
-                publicKeysMap[author] = pinnedKeys;
+                const { verifyingKeys } = await getVerificationPreferences(author, undefined, contactEmailsMap);
+                publicKeysMap[author] = verifyingKeys;
             } catch (error: any) {
                 // We're seeing too many unexpected offline errors in the GET /keys route.
                 // We log them to Sentry and ignore them here (no verification will take place in these cases)

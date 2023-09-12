@@ -71,7 +71,7 @@ interface Props {
     children: ReactNode;
 }
 
-const ReduxProviderWrapper = ({ children }: Props) => {
+export const ReduxProviderWrapper = ({ children }: Props) => {
     useSetReduxThunkExtraArgs();
 
     return <ReduxProvider store={store}>{children}</ReduxProvider>;
