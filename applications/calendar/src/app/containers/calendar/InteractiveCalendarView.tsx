@@ -353,7 +353,7 @@ const InteractiveCalendarView = ({
     const readCalendarBootstrap = useReadCalendarBootstrap();
     const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 

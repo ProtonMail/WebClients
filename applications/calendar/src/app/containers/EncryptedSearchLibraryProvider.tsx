@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
@@ -38,7 +39,8 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
     const api = useApi();
     const history = useHistory();
     const [{ ID: userID }] = useUser();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const { contactEmailsMap } = useContactEmailsCache();
+    const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
