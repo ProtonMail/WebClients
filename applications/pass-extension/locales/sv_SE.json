@@ -292,6 +292,11 @@
         "Expandera"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte bör köras."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
@@ -641,6 +646,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Om det är inaktiverat kommer ${ PASS_APP_NAME } inte att föreslå att du skapar starka lösenord på registreringsformulär."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "En kompletteringsmeny kommer att visas när fältet får fokus, om den är aktiverad i inställningarna."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Om det är aktiverat kan du snabbt fylla i dina autentiseringsuppgifter automatiskt genom att klicka på ${ PASS_APP_NAME }-ikonen."
