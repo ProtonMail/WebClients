@@ -18,9 +18,10 @@ interface Props {
     onNoReceive: () => void;
     verification: VerificationModel;
     description?: ReactNode;
+    footer?: ReactNode;
 }
 
-const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Props) => {
+const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description, footer }: Props) => {
     const [code, setCode] = useState('');
     const [loading, withLoading] = useLoading();
 
@@ -114,6 +115,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
                 }}
                 className="mt-2"
             >{c('Action').t`Resend code`}</Button>
+            {footer}
         </>
     );
 };
