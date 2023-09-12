@@ -39,6 +39,7 @@
 		border: 1px solid var(--button-default-border-color);
 		pointer-events: none;
 		transition: 0.15s easing(ease-out-quad);
+		border-radius: inherit;
 	}
 
 	&.is-active {
