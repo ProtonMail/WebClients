@@ -974,6 +974,9 @@
       "Upgrade now": [
         "Navýšit nyní"
       ],
+      "Upgrade to Business": [
+        "Upgrade na Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Navyšte pro povolení ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5940,6 +5943,9 @@
       "Encryption setting updated": [
         "Nastavení šifrování bylo aktualizováno"
       ],
+      "Enhance your network security": [
+        "Zlepšení zabezpečení sítě"
+      ],
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
       ],
@@ -6375,6 +6381,9 @@
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Počet dedikovaných serverů, které se snažíte přiřadit (${ addedCount }), je větší než počet, který je ještě k dispozici ve vašem plánu (${ remainingCount }), protože vlastníte ${ ownedCount } a již používáte ${ usedCount }."
+      ],
       "of": [
         "z"
       ],
@@ -6445,19 +6454,19 @@
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
       "per month": [
-        "za měsíc"
+        "měsíčně"
       ],
       "per month, billed every 12 months": [
-        "za měsíc, účtováno kažkých 12 měsíců"
+        "za měsíc, účtováno každých 12 měsíců"
       ],
       "per month, billed every 15 months": [
-        "za měsíc, účtováno kažkých 15 měsíců"
+        "za měsíc, účtováno každých 15 měsíců"
       ],
       "per month, billed every 24 months": [
-        "za měsíc, účtováno kažkých 24 měsíců"
+        "za měsíc, účtováno každých 24 měsíců"
       ],
       "per month, billed every 30 months": [
-        "za měsíc, účtováno kažkých 30 měsíců"
+        "za měsíc, účtováno každých 30 měsíců"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Klienti PGP s větší pravděpodobností automaticky rozpoznají vaše PGP klíče, pokud jsou odchozí zprávy podepsány."
@@ -7119,6 +7128,9 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Doporučujeme mít alespoň dva servery, aby byla zajištěna redundance."
       ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Doporučujeme mít více serverů na různých místech, aby byla zajištěna redundance."
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Před vynucením používání 2FA doporučujeme informovat členy organizace a požádat je, aby si v účtech nastavili 2FA."
       ],
@@ -7185,6 +7197,9 @@
       "Why?": [
         "Proč?"
       ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "S plánem Business nebo Enterprise můžete pro svou organizaci zakoupit ${ boldDedicatedServers } a nastavit ${ boldGateways }, abyste mohli řídit, kteří uživatelé k nim mohou přistupovat."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME_TWO }"
       ],
@@ -7212,6 +7227,18 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "V současné době využíváte ${ organization.UsedMembers } ze své ${ organization.MaxMembers } dostupné uživatelské licence.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
@@ -7226,6 +7253,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem plánu nebo nás kontaktujte pro řešení na míru."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -7331,6 +7361,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Aby host viděl vaši odpověď, musíte stále odpovídat na pozvánky."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
@@ -10257,6 +10290,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro Firmy."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Zahrnuto s více uživateli ${ BRAND_NAME } pro plány Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10645,6 +10681,9 @@
       ],
       "Secure Core configs": [
         "Konfigurace Secure Core"
+      ],
+      "Select who can access...": [
+        "Vyberte, kdo má přístup k..."
       ],
       "Standard server configs": [
         "Konfigurace standardního serveru"
@@ -11378,7 +11417,10 @@
         "neaktivní"
       ],
       "pending": [
-        "bez odpovědi"
+        "čeká na vyřízení"
+      ],
+      "to be created": [
+        "které mají být vytvořeny"
       ]
     },
     "Settings description": {
@@ -12740,6 +12782,9 @@
       "Customize calendar import": [
         "Přizpůsobit proces importování kalendáře"
       ],
+      "Customize the number of IP addresses in your plan": [
+        "Přizpůsobení počtu IP adres v plánu"
+      ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
@@ -12851,11 +12896,17 @@
       "Edit Sieve filter": [
         "Upravit filtr Sieve"
       ],
+      "Edit the list of servers of the gateway": [
+        "Úprava seznamu serverů brány"
+      ],
       "Edit user": [
         "Upravit uživatele"
       ],
       "Edit users": [
         "Upravit uživatele"
+      ],
+      "Edit who can access the gateway": [
+        "Upravit, kdo může k bráně přistupovat"
       ],
       "Email": [
         "E-mail"
@@ -12875,11 +12926,17 @@
       "Encryption and keys": [
         "Šifrování a klíče"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
       "Error": [
         "Chyba"
+      ],
+      "Every member of the organization can access": [
+        "Každý člen organizace má přístup k"
       ],
       "Export": [
         "Exportovat"
@@ -13223,6 +13280,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Nastavení vyhrazených serverů upgradem na Business"
+      ],
       "Short domain (@pm.me)": [
         "Zkrácený tvar domény (@pm.me)"
       ],
@@ -13231,6 +13291,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign in to join the Beta program": [
+        "Přihlaste se do programu Beta"
       ],
       "Sign in with 2FA": [
         "Přihlásit se pomocí 2FA"
@@ -13323,7 +13386,7 @@
         "Navýšit tarif"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Nahrejte soubor CSV pro vytvoření více účtů"
+        "Nahrajte soubor CSV pro vytvoření více účtů"
       ],
       "Users": [
         "Uživatelé"
