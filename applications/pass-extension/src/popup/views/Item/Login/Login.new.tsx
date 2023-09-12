@@ -6,7 +6,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
@@ -22,6 +22,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/f
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
 import type { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
+import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../../components/Field/ExtraFieldGroup/ExtraFieldGroup';
@@ -205,7 +206,8 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                             aliasModal.willCreate && (
                                                 <QuickActionsDropdown color="weak" shape="solid" key="edit-alias">
                                                     <DropdownMenuButton
-                                                        className="flex flex-align-items-center text-left"
+                                                        label={c('Action').t`Delete alias`}
+                                                        icon="trash"
                                                         onClick={() =>
                                                             form.setValues((values) =>
                                                                 merge(values, {
@@ -217,10 +219,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                                                 })
                                                             )
                                                         }
-                                                    >
-                                                        <Icon name="trash" className="mr-2" />
-                                                        {c('Action').t`Delete alias`}
-                                                    </DropdownMenuButton>
+                                                    />
                                                 </QuickActionsDropdown>
                                             ),
                                             aliasModal.canCreate && (

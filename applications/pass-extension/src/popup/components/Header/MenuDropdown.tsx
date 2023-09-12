@@ -5,14 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    Icon,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownSizeUnit, Icon, usePopperAnchor } from '@proton/components';
 import {
     emptyTrashIntent,
     restoreTrashIntent,
@@ -34,13 +27,14 @@ import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
+import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
 import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
-    width: `20em`,
+    width: `22.5rem`,
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '380px',
 };
@@ -164,6 +158,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                     originalPlacement="bottom"
                     autoClose={false}
                     size={DROPDOWN_SIZE}
+                    style={{ '--custom-max-width': '22.5rem' }}
                 >
                     <DropdownMenu>
                         <div className="flex flex-align-items-center flex-justify-space-between py-2 px-4">
@@ -208,26 +203,20 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         <DropdownMenuButton
-                            className="flex flex-align-items-center flex-justify-space-between py-2 px-4"
                             onClick={() => openSettings()}
-                        >
-                            <span className="flex flex-align-items-center">
-                                <Icon name="cog-wheel" className="mr-3 color-weak" />
-                                {c('Label').t`Settings`}
-                            </span>
-
-                            <Icon name="arrow-out-square" className="ml-3 color-weak" />
-                        </DropdownMenuButton>
+                            label={c('Label').t`Settings`}
+                            labelClassname="flex-item-fluid"
+                            icon={'cog-wheel'}
+                            extra={<Icon name="arrow-out-square" className="ml-3 color-weak" />}
+                        />
 
                         {canLock && (
                             <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
                                 onClick={withClose(lock)}
                                 disabled={!ready}
-                            >
-                                <Icon name="lock" className="mr-3 color-weak" />
-                                {c('Action').t`Lock extension`}
-                            </DropdownMenuButton>
+                                label={c('Action').t`Lock extension`}
+                                icon="lock"
+                            />
                         )}
 
                         <Submenu
@@ -246,12 +235,10 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                         />
 
                         <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
                             onClick={() => logout({ soft: false })}
-                        >
-                            <Icon name="arrow-out-from-rectangle" className="mr-3 color-weak" />
-                            {c('Action').t`Sign out`}
-                        </DropdownMenuButton>
+                            label={c('Action').t`Sign out`}
+                            icon="arrow-out-from-rectangle"
+                        />
                     </DropdownMenu>
                 </Dropdown>
             </nav>

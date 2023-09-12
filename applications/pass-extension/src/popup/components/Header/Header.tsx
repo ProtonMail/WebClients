@@ -20,13 +20,13 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
-import clsx from '@proton/utils/clsx';
 
 import { itemTypeToIconName } from '../../../shared/items';
 import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
+import { DropdownMenuButtonLabel } from '../Dropdown/DropdownMenuButton';
 import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
 import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { MenuDropdown } from './MenuDropdown';
@@ -122,47 +122,47 @@ export const Header: VFC<{}> = () => {
                         {quickAddActions.map(({ type, label }) => (
                             <DropdownMenuButton
                                 key={`item-type-dropdown-button-${type}`}
-                                className={`${itemTypeToSubThemeClassName[type]} flex flex-align-items-center py-2 px-4`}
+                                className={itemTypeToSubThemeClassName[type]}
                                 onClick={withClose(() => handleNewItemClick(type))}
                                 disabled={isFreePlan && type === 'creditCard'}
                             >
-                                <span
-                                    className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
-                                    style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
-                                >
-                                    <Icon
-                                        name={itemTypeToIconName[type]}
-                                        className="absolute-center"
-                                        color="var(--interaction-norm)"
-                                    />
-                                </span>
-
-                                {label}
-
-                                {
-                                    /* Only show alias count if the user plan
-                                     * has an an alias limit. */
-                                    type === 'alias' && aliasLimited && (
+                                <DropdownMenuButtonLabel
+                                    label={label}
+                                    extra={
+                                        type === 'alias' && aliasLimited ? (
+                                            <span
+                                                className={needsUpgrade ? 'color-danger' : 'color-weak'}
+                                            >{`(${aliasTotalCount}/${aliasLimit})`}</span>
+                                        ) : undefined
+                                    }
+                                    icon={
                                         <span
-                                            className={clsx('ml-1', needsUpgrade ? 'color-danger' : 'color-weak')}
-                                        >{`(${aliasTotalCount}/${aliasLimit})`}</span>
-                                    )
-                                }
+                                            className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon flex-item-noshrink"
+                                            style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
+                                        >
+                                            <Icon
+                                                name={itemTypeToIconName[type]}
+                                                className="absolute-center"
+                                                color="var(--interaction-norm)"
+                                            />
+                                        </span>
+                                    }
+                                />
                             </DropdownMenuButton>
                         ))}
 
-                        <DropdownMenuButton
-                            className="text-left flex flex-align-items-center ui-red"
-                            onClick={withClose(handleNewPasswordClick)}
-                        >
-                            <span
-                                className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon"
-                                style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
-                            >
-                                <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />
-                            </span>
-
-                            {c('Label').t`Password`}
+                        <DropdownMenuButton className="ui-red" onClick={withClose(handleNewPasswordClick)}>
+                            <DropdownMenuButtonLabel
+                                label={c('Label').t`Password`}
+                                icon={
+                                    <span
+                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon flex-item-noshrink"
+                                        style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
+                                    >
+                                        <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />
+                                    </span>
+                                }
+                            />
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </Dropdown>
