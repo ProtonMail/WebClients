@@ -26,7 +26,7 @@ interface Props extends ModalProps<'form'> {
     address: Address;
 }
 
-const EditAddressModal = ({ address, ...rest }: Props) => {
+const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     const [initialEmail] = useState(address.Email);
     const [[initialLocalEmail, domain]] = useState(getEmailParts(initialEmail));
     const [initialDisplayName] = useState(address.DisplayName);
@@ -93,7 +93,7 @@ const EditAddressModal = ({ address, ...rest }: Props) => {
         >
             <ModalHeader title={c('Title').t`Edit email address`} />
             <ModalContent>
-                <div className="color-weak mb-4">{c('Info')
+                <div className="color-weak mb-4">{c('loc_nightly_Info')
                     .t`You can change capitalization or punctuation to edit your email address.`}</div>
                 <InputFieldTwo
                     type="email"
@@ -115,7 +115,7 @@ const EditAddressModal = ({ address, ...rest }: Props) => {
                                 canonicalizeEmail(newEmail, CANONICALIZE_SCHEME.PROTON) !==
                                 canonicalizeEmail(initialEmail, CANONICALIZE_SCHEME.PROTON)
                             ) {
-                                return c('Error')
+                                return c('loc_nightly_Error')
                                     .t`Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address`;
                             }
                             return '';
@@ -138,4 +138,4 @@ const EditAddressModal = ({ address, ...rest }: Props) => {
     );
 };
 
-export default EditAddressModal;
+export default EditInternalAddressModal;
