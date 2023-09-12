@@ -4409,7 +4409,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Adicione um filtro personalizado para executar automaticamente certas acções, como etiquetar ou arquivar mensagens."
+        "Adicione um filtro personalizado para executar automaticamente certas ações, como etiquetar ou arquivar mensagens."
       ],
       "Allow:": [
         "Endereços permitidos:"
@@ -5162,6 +5162,9 @@
         "${ numberOfNonPrivateKeys } ficheiro enviado não é uma chave privada válida.Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } ficheiros enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
       ],
@@ -5212,6 +5215,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /mês)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(filtrar se TODAS as seguintes condições forem cumpridas)"
@@ -5458,6 +5464,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponível em macOS, Windows e Linux."
       ],
+      "Awaiting transaction": [
+        "A aguardar transação"
+      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -5599,6 +5608,9 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -5747,6 +5759,9 @@
       ],
       "Failed to fetch logs.": [
         "Falha na obtenção dos registos."
+      ],
+      "Fill in user details": [
+        "Preencher dados de utilizador"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
@@ -6098,8 +6113,14 @@
       "Not a valid URL": [
         "Não é um URL válido"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Ainda não está disponível na nossa aplicação móvel para Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Não é o seu dispositivo? Utilize uma janela de navegação privada para iniciar sessão e feche-a quando terminar. ${ learnMore }"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Número de servidores dedicados na organização"
       ],
       "of": [
         "de"
@@ -6167,6 +6188,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
+      ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed every 12 months": [
+        "por mês, faturado a cada 12 meses"
+      ],
+      "per month, billed every 15 months": [
+        "por mês, faturado a cada 15 meses"
+      ],
+      "per month, billed every 24 months": [
+        "por mês, faturado a cada 24 meses"
+      ],
+      "per month, billed every 30 months": [
+        "por mês, faturado a cada 30 meses"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "É mais provável que clientes PGP detectem automaticamente as suas chaves PGP se as mensagens de saída forem assinadas."
@@ -6311,6 +6347,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
+      ],
       "Remove one of your calendars to join this one": [
         "Remova um dos seus calendários para se juntar a este"
       ],
@@ -6331,6 +6370,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde a sua palavra-passe num lugar seguro. Clique no ícone para confirmar que digitou a sua palavra-passe corretamente."
+      ],
+      "Saving your password": [
+        "A guardar a sua palavra-passe"
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -6373,6 +6415,9 @@
       ],
       "Setting up your Drive": [
         "A configurar o seu Drive"
+      ],
+      "Setting up your organization": [
+        "A configurar a sua organização"
       ],
       "Settings update failed": [
         "Erro de atualização das definições"
@@ -6594,11 +6639,17 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar a perda de dados, elimine-o apenas se souber o que está a fazer ou se tiver exportado uma cópia."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Para cancelar a sua subscrição, por favor contacte-nos."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, introduza o nome do utilizador que deseja eliminar."
+      ],
+      "to continue to ${ product }": [
+        "para continuar para ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
@@ -6708,6 +6759,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Atualize para o plano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para ter acesso a ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
@@ -6716,6 +6770,9 @@
       ],
       "Upload picture": [
         "Enviar imagem"
+      ],
+      "Upload your completed CSV file to create accounts": [
+        "Carregue o seu ficheiro CSV completado para criar contas"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O ficheiro enviado não é uma chave privada válida. Verifique e tente novamente."
@@ -6777,11 +6834,17 @@
       "We couldn’t process your payment.": [
         "Não é possível realizar o pagamento."
       ],
+      "We generated a strong password for you": [
+        "Gerámos-lhe uma palavra-passe forte"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar o seu método de pagamento com o seu banco."
       ],
       "We need to authenticate your payment with your bank.": [
         "Precisamos autenticar o seu pagamento com o seu banco."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Recomendamos ter no mínimo 2 servidores de modo a fornecer redundância."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomendamos notificar os membros da organização e pedir-lhes que configurem a A2F para as suas contas antes de impor a utilização da A2F."
@@ -6875,6 +6938,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } da licença de utilizador disponível.",
+        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } das licenças de utilizador disponíveis."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Tem sessão iniciada na conta ${ memberAddress }."
@@ -6980,6 +7047,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Ainda precisa de responder aos convites para que o anfitrião veja a sua resposta."
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Irá ser redirecionado para ${ destination } após iniciar sessão."
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Nesta data, perderá o acesso a servidores e funcionalidades ${ vpnPlanNameShort }."
       ],
@@ -7082,6 +7152,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "A sua subscrição irá renovar automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -8730,7 +8803,7 @@
     },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Todas as acções de filtro serão aplicadas a todas as mensagens na sua conta do ${ MAIL_APP_NAME }. Não serão enviados e-mails de resposta automática."
+        "Todas as ações de filtro serão aplicadas a todas as mensagens na sua conta do ${ MAIL_APP_NAME }. Não serão enviados e-mails de resposta automática."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Ligue o seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@asua-empresa.com). O nosso assistente irá guiá-lo ao longo do processo."
@@ -10754,7 +10827,7 @@
         "Deixar o calendário?"
       ],
       "Remove calendar": [
-        "Remover um calendário"
+        "Remover calendário"
       ],
       "Unsubscribe?": [
         "Cancelar subscrição?"
@@ -11614,7 +11687,7 @@
         "O certificado ${ name } foi revogado."
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        "O certificado foi prorrogado até ${ formattedExpirationDate }."
+        "Certificado prolongado até ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
         "A configuração \"${ name }\" foi criada. Note que a chave privada não é armazenada e não será mostrada novamente. Deve copiar ou descarregar esta configuração."
@@ -11626,10 +11699,10 @@
         "Filtro removido"
       ],
       "Preference updated": [
-        "A preferência foi actualizada."
+        "A preferência foi atualizada."
       ],
       "Status updated": [
-        "Estado actualizado"
+        "Estado atualizado"
       ]
     },
     "Suffix": {
@@ -12163,6 +12236,10 @@
       ],
       "Delete logs": [
         "Eliminar diários"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Eliminar o servidor (ainda terá possibilidade de o recuperar por ${ days } dia)",
+        "Eliminar o servidor (ainda terá possibilidade de o recuperar por ${ days } dias)"
       ],
       "Delete user": [
         "Eliminar utilizador"
@@ -12898,7 +12975,7 @@
         "Ativar/desativar notificações no computador e dispositivo móvel"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Ativar diários avançados força o registo de endereços IP para cada evento no diário."
+        "A ativação dos registos avançados regista o endereço IP de cada evento no registo de segurança."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "O Gmail categoriza automaticamente alguns e-mails como Social ou Promoções. Pode selecionar para onde importar estes e-mails."
@@ -12910,7 +12987,7 @@
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o activem o mais rapidamente possível."
+        "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o ativem o mais rapidamente possível."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviado ou Rascunhos continuarão a aparecer nesta pasta, mesmo que as mova para outra pasta."
@@ -12922,13 +12999,13 @@
         "Definia a aparência predefinida da lista de mensagens."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Predefina o tamanho da janela do editor como pequeno ou médio."
+        "Predefina o tamanho da janela do compositor como pequeno ou médio."
       ],
       "Set the default layout for your Inbox.": [
         "Predefina a disposição da sua caixa de entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Define o seguinte rodapé nas mensagens de e-mail que envia: ${ signature }. A ligação aponta para a sua ligação de referência. O rodapé aparecerá por baixo da sua assinatura. Pode personalizar a sua assinatura em qualquer altura nas configurações."
+        "Define o seguinte rodapé nas mensagens de e-mail que envia: ${ signature }. A ligação aponta para a sua ligação de referência. O rodapé aparecerá por baixo da sua assinatura. Pode personalizar a sua assinatura em qualquer altura nas definições."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
@@ -12976,7 +13053,7 @@
         "Utilize as barras de deslocação predefinidas do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Detectámos um problema com sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
+        "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."

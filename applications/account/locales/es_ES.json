@@ -4315,7 +4315,7 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Añadir clave de seguridad"
+        "Añadir llave de seguridad"
       ],
       "Delete key": [
         "Eliminar la llave"
@@ -4343,13 +4343,13 @@
         "¿Estás seguro de querer eliminar la llave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inserta una clave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
+        "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
         "Inserta tu llave de seguridad en el puerto USB."
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ],
       "Security key removed": [
         "Llave de seguridad eliminada"
@@ -4375,7 +4375,7 @@
         "Nombre de la llave"
       ],
       "Security key": [
-        "Clave de seguridad"
+        "Llave de seguridad"
       ]
     },
     "fido2: Title": {
@@ -7205,6 +7205,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Todavía tienes que responder a las invitaciones para que el anfitrión vea tu respuesta."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Te redirigiremos a ${ destination } después de iniciar sesión."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
