@@ -49,7 +49,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, disabled, total }: P
                  */
                 return unique([1, page - 1, page, page + 1, lastPage]);
         }
-    }, [page]);
+    }, [page, total]);
 
     return (
         <div className="flex flex-column flex-align-items-center">
