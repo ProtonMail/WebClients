@@ -1,4 +1,5 @@
-import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo, useRef } from 'react';
+import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
+
 
 import { c, msgid } from 'ttag';
 
@@ -99,7 +100,6 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const listContainerRef = useRef<HTMLDivElement>(null);
     const [mailSettings] = useMailSettings();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
 
@@ -192,7 +192,7 @@ const List = (
                     )}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
-                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100" ref={listContainerRef}>
+                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
                         <div className="flex-item-noshrink">
                             <ListBanners
                                 labelID={labelID}
