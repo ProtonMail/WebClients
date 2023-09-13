@@ -17,7 +17,7 @@ import { ChallengePayload } from '@proton/shared/lib/authentication/interface';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { createPromise, wait } from '@proton/shared/lib/helpers/promise';
 import { setUID } from '@proton/shared/lib/helpers/sentry';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -25,18 +25,6 @@ import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
 const unAuthStorageKey = 'ua_uid';
-
-const createPromise = <T>() => {
-    let resolve!: (value: T | PromiseLike<T>) => void;
-    let reject!: (reason?: any) => void;
-
-    const promise = new Promise<T>((innerResolve, innerReject) => {
-        resolve = innerResolve;
-        reject = innerReject;
-    });
-
-    return { promise, resolve, reject };
-};
 
 const context: {
     UID: string | undefined;

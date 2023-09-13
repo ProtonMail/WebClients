@@ -19,3 +19,15 @@ export const runChunksDelayed = async <T>(
 
     return Promise.all(promises);
 };
+
+export const createPromise = <T>() => {
+    let resolve!: (value: T | PromiseLike<T>) => void;
+    let reject!: (reason?: any) => void;
+
+    const promise = new Promise<T>((innerResolve, innerReject) => {
+        resolve = innerResolve;
+        reject = innerReject;
+    });
+
+    return { promise, resolve, reject };
+};
