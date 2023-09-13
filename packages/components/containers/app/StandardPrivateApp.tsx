@@ -96,7 +96,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
     const getFeature = useLoadFeature();
-    const flagsReady = useFlagsReady();
+    const flagsReadyPromise = useFlagsReady();
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -156,7 +156,14 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
         const cryptoWorkerPromise = loadCryptoWorker(getCryptoWorkerOptions(APP_NAME));
 
         const run = async () => {
-            const promises = [eventManagerPromise, setupPromise, initPromise, cryptoWorkerPromise, appPromise];
+            const promises = [
+                eventManagerPromise,
+                setupPromise,
+                initPromise,
+                cryptoWorkerPromise,
+                appPromise,
+                flagsReadyPromise,
+            ];
             try {
                 await userModelPromise;
                 await Promise.all(promises);
@@ -205,7 +212,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
 
     const LoadedApp = appRef.current;
 
-    if (loading || !eventManagerRef.current || LoadedApp === null || !flagsReady) {
+    if (loading || !eventManagerRef.current || LoadedApp === null) {
         return (
             <>
                 <ModalsChildren />

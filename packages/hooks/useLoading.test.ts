@@ -1,18 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import useLoading, { useLoadingByKey } from '@proton/hooks/useLoading';
-
-const createPromise = () => {
-    let resolve!: (value?: unknown) => void;
-    let reject!: (reason?: any) => void;
-
-    const promise = new Promise((innerResolve, innerReject) => {
-        resolve = innerResolve;
-        reject = innerReject;
-    });
-
-    return { promise, resolve, reject };
-};
+import { createPromise } from '@proton/shared/lib/helpers/promise';
 
 describe('useLoading', () => {
     it('should return loading false by default', () => {
@@ -76,7 +65,7 @@ describe('useLoading', () => {
     it('should render loading state', async () => {
         const { result } = renderHook(() => useLoading());
         const [, withLoading] = result.current;
-        const { promise, resolve } = createPromise();
+        const { promise, resolve } = createPromise<void>();
 
         let wrappedPromise: Promise<unknown>;
         act(() => {
@@ -155,6 +144,7 @@ describe('useLoading', () => {
         async function run(): Promise<string> {
             return 'resolved result';
         }
+
         await act(async () => {
             const resolvedResult = await withLoading(run);
 
@@ -240,7 +230,7 @@ describe('useLoadingByKey', () => {
         it('should render loading state', async () => {
             const { result } = renderHook(() => useLoadingByKey());
             const [, withLoading] = result.current;
-            const { promise, resolve } = createPromise();
+            const { promise, resolve } = createPromise<void>();
 
             let wrappedPromise: Promise<unknown>;
             act(() => {
