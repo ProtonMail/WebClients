@@ -1,10 +1,10 @@
-import { addDays, differenceInMinutes } from 'date-fns';
+import { add, addDays, differenceInMinutes, getUnixTime, sub } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
 import { MessageState } from '../logic/messages/messagesTypes';
-import { canSetExpiration, getExpirationTime, getMinExpirationTime } from './expiration';
+import { canSetExpiration, getExpirationTime, getMinExpirationTime, isExpired } from './expiration';
 
 describe('canSetExpiration', () => {
     const messageState = {
@@ -45,6 +45,38 @@ describe('getExpirationTime', () => {
 
     it('should return a Unix timestamp if days is > 0', () => {
         expect(getExpirationTime(addDays(new Date(), 1))).toBeGreaterThan(0);
+    });
+});
+
+describe('isExpired', () => {
+    it('should return false', () => {
+        expect(isExpired({ ExpirationTime: getUnixTime(add(new Date(), { hours: 1 })) })).toBeFalsy();
+    });
+
+    describe('when message expiration is before now', () => {
+        it('should return true', () => {
+            expect(isExpired({ ExpirationTime: getUnixTime(sub(new Date(), { hours: 1 })) })).toBeTruthy();
+        });
+    });
+
+    describe('when date is provided', () => {
+        const timestamp = getUnixTime(new Date(2023, 7, 27, 0, 0, 0, 0));
+
+        describe('when message expiration is after provided date', () => {
+            it('should return false', () => {
+                expect(
+                    isExpired({ ExpirationTime: getUnixTime(sub(new Date(), { hours: 1 })) }, timestamp)
+                ).toBeFalsy();
+            });
+        });
+
+        describe('when message expiration is before provided date', () => {
+            it('should return true', () => {
+                expect(
+                    isExpired({ ExpirationTime: getUnixTime(sub(new Date(timestamp), { hours: 1 })) }, timestamp)
+                ).toBeTruthy();
+            });
+        });
     });
 });
 
