@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureFlag, useFlag } from '@proton/components/containers';
 import { PageSizeSelector } from '@proton/components/containers/messages/PageSizeSelector';
-import { useFeature, useMailSettings } from '@proton/components/hooks';
+import { useMailSettings } from '@proton/components/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -22,14 +22,14 @@ interface Props {
 }
 
 const ListPagination = ({ onPrevious, onNext, onPage, page, disabled, total }: Props) => {
-    const isPageSizeSettingEnabled = !!useFeature(FeatureCode.WebMailPageSizeSetting).feature?.Value;
+    const isPageSizeSettingEnabled = useFlag(FeatureFlag.WebMailPageSizeSetting);
 
     const [{ ViewMode = VIEW_MODE.GROUP } = {}] = useMailSettings();
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
     const disablePrevious = page === 1;
     const disableNext = page === total;
 
-    const pagesToDisplay: number[] = useMemo(() => {
+    const pageNumbersToDisplay: number[] = useMemo(() => {
         const lastPage = total;
 
         switch (page) {
@@ -67,15 +67,15 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, disabled, total }: P
                         <Icon name="chevron-left" className="block" alt={c('Action').t`Go to previous page`} />
                     </Button>
                 </Tooltip>
-                {pagesToDisplay.reduce((acc: React.JSX.Element[], pageNumber: number, index: number) => {
+                {pageNumbersToDisplay.reduce((acc: React.JSX.Element[], pageNumber: number, index: number) => {
                     const isActive = pageNumber === page;
+                    const needsEllispsis = index > 0 && pageNumber - pageNumbersToDisplay[index - 1] > 1;
+                    const buttonTitle = goToPageTitle(pageNumber);
 
                     return [
                         ...acc,
-                        index > 0 && pageNumber - pagesToDisplay[index - 1] > 1 && (
-                            <div key={`pagination_ellipsis_${pageNumber}`}>...</div>
-                        ),
-                        <Tooltip key={`pagination_${pageNumber}`} title={goToPageTitle(pageNumber)}>
+                        needsEllispsis && <div key={`pagination_ellipsis_${pageNumber}`}>...</div>,
+                        <Tooltip key={`pagination_${pageNumber}`} title={buttonTitle}>
                             <Button
                                 size="small"
                                 aria-current={isActive}
@@ -85,7 +85,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, disabled, total }: P
                                 onClick={() => onPage(pageNumber)}
                                 data-testid={`pagination-row:go-to-page-${pageNumber}`}
                             >
-                                <span className="sr-only">{goToPageTitle(pageNumber)}</span>
+                                <span className="sr-only">{buttonTitle}</span>
                                 <span aria-hidden="true">{pageNumber}</span>
                             </Button>
                         </Tooltip>,

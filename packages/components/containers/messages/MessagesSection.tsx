@@ -16,6 +16,7 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
+import { FeatureFlag, useFlag } from '../unleash';
 import AlmostAllMailToggle from './AlmostAllMailToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
@@ -40,7 +41,7 @@ const MessagesSection = () => {
     const { createNotification } = useNotifications();
 
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
-    const isPageSizeSettingEnabled = !!useFeature(FeatureCode.WebMailPageSizeSetting).feature?.Value;
+    const isPageSizeSettingEnabled = useFlag(FeatureFlag.WebMailPageSizeSetting);
 
     const { call } = useEventManager();
     const api = useApi();
