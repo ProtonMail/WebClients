@@ -1,21 +1,35 @@
-## Release 5.0.14.0 — Aug 23, 2023
+## Release 5.0.15 — Sep 20, 2023
+
+### New features
+
+-   You can now securely search your calendar events (beta users only)
+
+### Improvements
+
+-   Improve the performance when loading the app and exporting calendars
+
+### Fixes
+
+-   Fix incorrect display of event ending on midnight created in time zones with negative offset
+
+## Release 5.0.14 — Aug 23, 2023
 
 ### Improvements
 
 -   The settings button has moved from the top right to the sidebar on the right-hand side
--   Improve the app layout and increased the space for calendar events 
+-   Improve the app layout and increased the space for calendar events
 
-## Release 5.0.13.0 — Aug 9, 2023
+## Release 5.0.13 — Aug 9, 2023
 
 ### Improvements
 
--   Add the ability to easily see the addresses of events' participants, copy them and create or view linked contacts  
+-   Add the ability to easily see the addresses of events' participants, copy them and create or view linked contacts
 
 ### Fixes
 
 -   Small fixes when sending or replying to invitations
 
-## Release 5.0.12.0 — July 12, 2023
+## Release 5.0.12 — July 12, 2023
 
 ### New features
 
@@ -33,7 +47,7 @@
 
 -   Our Terms and Conditions have been updated https://proton.me/legal/terms
 
-## Release 5.0.11.0 — June 14, 2023
+## Release 5.0.11 — June 14, 2023
 
 ### Improvements
 
