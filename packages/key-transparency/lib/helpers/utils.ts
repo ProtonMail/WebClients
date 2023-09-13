@@ -66,7 +66,8 @@ export const ktSentryReport = (errorMessage: string, extra?: { [key: string]: an
 export const ktSentryReportError = (error: any, extra?: { [key: string]: any }) => {
     const errorMessage = error instanceof Error ? `${error.name}: ${error.message}` : 'unknown error';
     const stack = error instanceof Error ? error.stack : undefined;
-    ktSentryReport(errorMessage, { ...extra, stack });
+    const isoServerTime = serverTime().toISOString();
+    ktSentryReport(errorMessage, { ...extra, server_time: isoServerTime, stack });
 };
 
 export class KeyTransparencyError extends Error {}
