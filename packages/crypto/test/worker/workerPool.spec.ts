@@ -147,6 +147,50 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
         });
     });
 
+    it('cloneKeyAndChangeUserIDs - the target key should be updated in all workers', async () => {
+        const sourceKey = await openpgp_readKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
+BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
+zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
+AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
+mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
+nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
+GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
+mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
+ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
+YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
+I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
+Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
+7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
+AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
+=p5Q+
+-----END PGP PRIVATE KEY BLOCK-----`,
+        });
+
+        const sourceKeyRef = await CryptoWorkerPool.importPrivateKey({
+            armoredKey: sourceKey.armor(),
+            passphrase: null,
+        });
+
+        const updateKeyRef = await CryptoWorkerPool.cloneKeyAndChangeUserIDs({
+            privateKey: sourceKeyRef,
+            userIDs: { email: 'updated@worker.com' },
+        });
+
+        const exportedTargetKeys = await Promise.all(
+            new Array(poolSize).fill(null).map(async () =>
+                openpgp_readKey({
+                    armoredKey: await CryptoWorkerPool.exportPublicKey({ key: updateKeyRef }),
+                })
+            )
+        );
+        exportedTargetKeys.forEach((exportedTargetKey) => {
+            expect(exportedTargetKey.getUserIDs()).to.deep.equal(['<updated@worker.com>']);
+        });
+    });
+
     describe('Key management API', () => {
         it('can export a generated key', async () => {
             const privateKeyRef = await CryptoWorkerPool.generateKey({

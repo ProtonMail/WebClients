@@ -89,6 +89,34 @@ export const deleteAddress = (addressID: string) => ({
     method: 'delete',
 });
 
+interface RenamedAddressKey {
+    ID: string;
+    PrivateKey: string;
+}
+
+interface RenameInternalAddressData {
+    Local: string;
+    AddressKeys: RenamedAddressKey[];
+}
+
+export const renameInternalAddress = (addressID: string, data: RenameInternalAddressData) => ({
+    url: `core/v4/addresses/${addressID}/rename/internal`,
+    method: 'put',
+    data,
+});
+
+interface RenameExternalAddressData {
+    Local: string;
+    Domain: string;
+    AddressKeys: RenamedAddressKey[];
+}
+
+export const renameExternalAddress = (addressID: string, data: RenameExternalAddressData) => ({
+    url: `core/v4/addresses/${addressID}/rename/external`,
+    method: 'put',
+    data,
+});
+
 export const addressType = (addressID: string, data: { Type: number; SignedKeyList: SignedKeyList }) => ({
     url: `core/v4/addresses/${addressID}/type`,
     method: 'put',
