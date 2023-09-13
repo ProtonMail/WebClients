@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
 import { useCache, useConversationCounts, useMessageCounts } from '@proton/components';
+import usePrevious from '@proton/hooks/usePrevious';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MailPageSize } from '@proton/shared/lib/interfaces';
@@ -124,6 +125,8 @@ export const useElements: UseElements = ({
         stateInconsistencySelector(state, { search, esStatus })
     );
 
+    const previousPageSize = usePrevious(pageSize) ?? 0;
+
     // Remove from cache expired elements
     useExpirationCheck(Object.values(elementsMap), (element) => {
         dispatch(removeExpired(element));
@@ -137,7 +140,12 @@ export const useElements: UseElements = ({
         if (shouldResetCache) {
             dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
-        if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
+
+        /**
+         * To more load new elements, the user should either have `shouldSendRequest` true, no pending action AND not be in search,
+         * OR change the page size for a bigger one (100 > 200)
+         */
+        if ((shouldSendRequest && pendingActions === 0 && !isSearch(search)) || previousPageSize < pageSize) {
             void dispatch(
                 loadAction({
                     abortController: abortControllerRef.current,
@@ -151,7 +159,7 @@ export const useElements: UseElements = ({
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
-    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search]);
+    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search, pageSize]);
 
     useEffect(() => {
         dispatch(updatePageSize(pageSize));
