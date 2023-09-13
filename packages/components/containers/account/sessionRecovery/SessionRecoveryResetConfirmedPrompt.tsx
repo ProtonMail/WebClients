@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms/Button';
 import { Prompt, useSessionRecoveryGracePeriodHoursRemaining } from '@proton/components';
 import { SettingsLink } from '@proton/components/components';
 
@@ -26,7 +26,11 @@ const SessionRecoveryResetConfirmedPrompt = ({ open, onClose }: { open?: boolean
                 gracePeriodHoursRemaining
             )}
             open={open}
-            buttons={[<Button onClick={onClose}>{c('Action').t`Got it`}</Button>]}
+            buttons={[
+                <ButtonLike as={SettingsLink} path="/account-password" onClick={onClose}>
+                    {c('Action').t`Got it`}
+                </ButtonLike>,
+            ]}
         >
             <p>{c('Info').t`We will contact you again when the password reset is available.`}</p>
             <p>
