@@ -214,23 +214,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 ).then(({ Plans }) => Plans),
             ]);
 
-            const updatedPlans = Plans.map((Plan) => {
-                if (Plan.Name === PLANS.VPN) {
-                    return {
-                        ...Plan,
-                        Pricing: {
-                            ...Plan.Pricing,
-                            [CYCLE.MONTHLY]: 1149,
-                        },
-                    };
-                }
-                return Plan;
-            });
-
             const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles(
-                updatedPlans
+                Plans
             );
-            const plansMap = toMap(updatedPlans, 'Name') as PlansMap;
+            const plansMap = toMap(Plans, 'Name') as PlansMap;
 
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
@@ -246,7 +233,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             setModelDiff({
                 domains,
-                plans: updatedPlans,
+                plans: Plans,
                 plansMap,
                 paymentMethodStatus,
                 subscriptionData,
