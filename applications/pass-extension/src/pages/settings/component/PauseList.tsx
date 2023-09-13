@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
 import {
     Checkbox,
     Icon,
@@ -19,16 +18,20 @@ import {
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { selectDisallowedDomains, settingEditIntent } from '@proton/pass/store';
-import type { DisallowCritera } from '@proton/pass/types/worker/settings';
-import { DisallowCriteriaMasks } from '@proton/pass/types/worker/settings';
+import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
+import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object';
 import { hasCriteria, toggleCriteria } from '@proton/pass/utils/settings/criteria';
-import { isValidURL } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-const criterias = Object.keys(DisallowCriteriaMasks) as DisallowCritera[];
+import { SettingsPanel } from './SettingsPanel';
 
-export const DisallowedDomains: VFC = () => {
+import './PauseList.scss';
+
+const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
+
+export const PauseList: VFC = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -36,23 +39,22 @@ export const DisallowedDomains: VFC = () => {
     const [url, setUrl] = useState<string>('');
 
     const addDisallowedUrl = (url: string) => {
-        const maybeUrl = isValidURL(url);
-        if (!maybeUrl.valid) return createNotification({ text: c('Error').t`Invalid url`, type: 'error' });
+        const domain = parseUrl(url).domain;
+        if (!domain) return createNotification({ text: c('Error').t`Invalid url`, type: 'error' });
 
-        const { hostname } = new URL(maybeUrl.url);
-        if (disallowedDomains[hostname]) {
+        if (disallowedDomains[domain]) {
             return createNotification({ text: c('Error').t`The url is in the list`, type: 'error' });
         }
 
-        dispatch(settingEditIntent({ disallowedDomains: merge(disallowedDomains, { [hostname]: 15 }) }));
+        dispatch(settingEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [domain]: 15 }) }));
         setUrl('');
     };
 
-    const toggleUrlMask = (hostname: string, criteria: DisallowCritera) => {
+    const toggleUrlMask = (hostname: string, criteria: CriteriaMasks) => {
         const setting = disallowedDomains[hostname];
 
         dispatch(
-            settingEditIntent({
+            settingEditIntent('pause-list', {
                 disallowedDomains: merge(disallowedDomains, {
                     [hostname]: toggleCriteria(setting, criteria),
                 }),
@@ -64,22 +66,21 @@ export const DisallowedDomains: VFC = () => {
         const update = { ...disallowedDomains };
         delete update[hostname];
 
-        dispatch(settingEditIntent({ disallowedDomains: update }));
+        dispatch(settingEditIntent('pause-list', { disallowedDomains: update }));
     };
 
     return (
-        <Card key="settings-section-disallowed" rounded className="mb-4 p-3">
-            <strong className="color-norm block">{c('Label').t`Pause list`}</strong>
-            <hr className="border-weak my-2" />
-            <em className="block text-sm color-weak mb-3 m-1">{c('Description')
-                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.`}</em>
-
+        <SettingsPanel
+            title={c('Label').t`Pause list`}
+            subTitle={c('Description')
+                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.`}
+        >
             {Object.keys(disallowedDomains).length > 0 && (
                 <Table responsive="cards" hasActions>
                     <TableHeader>
                         <TableRow>
-                            <TableHeaderCell className="w-1/3">
-                                <small>{c('Label').t`Domains`}</small>
+                            <TableHeaderCell className="w-1/4">
+                                <small>{c('Label').t`Domain`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
                                 <small>{c('Label').t`Autofill`}</small>
@@ -102,11 +103,25 @@ export const DisallowedDomains: VFC = () => {
                     <TableBody>
                         {Object.entries(disallowedDomains).map(([url, mask], i) => (
                             <TableRow key={`${url}-${i}`}>
-                                <TableCell>
+                                <TableCell label={c('Label').t`Domains`}>
                                     <div className="text-ellipsis">{url}</div>
                                 </TableCell>
                                 {criterias.map((criteria) => (
-                                    <TableCell key={criteria}>
+                                    <TableCell
+                                        key={criteria}
+                                        label={(() => {
+                                            switch (criteria) {
+                                                case 'Autofill':
+                                                    return c('Label').t`Autofill`;
+                                                case 'Autofill2FA':
+                                                    return c('Label').t`Autofill 2FA`;
+                                                case 'Autosuggest':
+                                                    return c('Label').t`Autosuggest`;
+                                                case 'Autosave':
+                                                    return c('Label').t`Autosave`;
+                                            }
+                                        })()}
+                                    >
                                         <Checkbox
                                             checked={hasCriteria(mask, criteria)}
                                             onChange={() => toggleUrlMask(url, criteria)}
@@ -114,7 +129,7 @@ export const DisallowedDomains: VFC = () => {
                                     </TableCell>
                                 ))}
 
-                                <TableCell>
+                                <TableCell className="pass-pause-list--remove">
                                     <button
                                         className="button button-pill button-for-icon button-solid-weak"
                                         onClick={() => deleteDisallowedUrl(url)}
@@ -142,6 +157,6 @@ export const DisallowedDomains: VFC = () => {
                     {c('Action').t`Add domain to pause list`}
                 </Button>
             </div>
-        </Card>
+        </SettingsPanel>
     );
 };

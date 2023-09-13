@@ -1,2 +1,2 @@
+export * from './ExtensionApp';
 export * from './ExtensionContext';
-export * from './ExtensionWindow';

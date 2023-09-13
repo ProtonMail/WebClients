@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { DropdownMenuButton, Icon, InlineLinkButton, useNotifications } from '@proton/components';
+import { InlineLinkButton, useNotifications } from '@proton/components';
 import {
     aliasDetailsRequested,
     selectLoginItemByUsername,
@@ -19,6 +19,7 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 import { ConfirmationModal } from '../../../../shared/components/confirmation';
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
+import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -80,12 +81,10 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                       quickActions: [
                           <DropdownMenuButton
                               key="create-login"
-                              className="flex flex-align-items-center text-left"
                               onClick={createLoginFromAlias}
-                          >
-                              <Icon name="user" className="mr-3 color-weak" />
-                              {c('Action').t`Create login`}
-                          </DropdownMenuButton>,
+                              icon="user"
+                              label={c('Action').t`Create login`}
+                          />,
                       ],
                   }
                 : {})}

@@ -1,13 +1,13 @@
 import type { ReactNode, VFC } from 'react';
 
-import { Card } from '@proton/atoms/Card';
 import type { SafeLoginItem } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string';
 
-import { DROPDOWN_WIDTH } from '../../../content/constants';
-import { DropdownSwitch } from '../../../content/injections/apps/dropdown/components/DropdownSwitch';
-import { DropdownAction } from '../../../content/types';
+import { DROPDOWN_WIDTH } from '../../../../content/constants';
+import { DropdownSwitch } from '../../../../content/injections/apps/dropdown/components/DropdownSwitch';
+import { DropdownAction } from '../../../../content/types';
+import { SettingsPanel } from '../SettingsPanel';
 
 const LOGIN_ITEMS: SafeLoginItem[] = [
     {
@@ -43,9 +43,7 @@ const MockIFrameContainer: VFC<{ children: ReactNode }> = ({ children }) => (
 
 export const DropdownDebug: VFC = () => {
     return (
-        <Card rounded className="mb-4 p-3 relative">
-            <strong className="color-norm block">Dropdown</strong>
-            <hr className="mt-2 mb-4 border-weak" />
+        <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>
                 <MockIFrameContainer>
                     <DropdownSwitch loggedIn={false} status={WorkerStatus.IDLE} state={null} />
@@ -127,6 +125,6 @@ export const DropdownDebug: VFC = () => {
                     />
                 </MockIFrameContainer>
             </div>
-        </Card>
+        </SettingsPanel>
     );
 };

@@ -16,10 +16,9 @@ import { useSessionLockPinSubmitEffect } from '../../../../../shared/hooks/useSe
 import { DropdownItemIcon } from './DropdownItemIcon';
 
 export const DropdownPinUnlock: VFC<{
-    onError?: () => void /* notify parent component we need an iframe resize */;
     onUnlock?: () => void;
     visible?: boolean;
-}> = ({ onError, onUnlock, visible }) => {
+}> = ({ onUnlock, visible }) => {
     const ensureMounted = useEnsureMounted();
     const [value, setValue] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
@@ -31,10 +30,8 @@ export const DropdownPinUnlock: VFC<{
             await sendMessage.onSuccess(
                 contentScriptMessage({ type: WorkerMessageType.UNLOCK_REQUEST, payload: { pin: value } }),
                 ensureMounted((res) => {
-                    if (!res.ok) {
-                        setError(res.error);
-                        return onError?.();
-                    } else onUnlock?.();
+                    if (!res.ok) setError(res.error);
+                    else onUnlock?.();
                 })
             );
         } catch {

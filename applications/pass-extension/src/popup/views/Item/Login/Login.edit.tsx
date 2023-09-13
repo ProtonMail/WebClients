@@ -200,7 +200,8 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                             aliasModal.willCreate && (
                                                 <QuickActionsDropdown color="weak" shape="solid" key="edit-alias">
                                                     <DropdownMenuButton
-                                                        className="flex flex-align-items-center text-left"
+                                                        label={c('Action').t`Delete alias`}
+                                                        icon="trash"
                                                         onClick={() =>
                                                             form.setValues((values) =>
                                                                 merge(values, {
@@ -212,10 +213,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                                                 })
                                                             )
                                                         }
-                                                    >
-                                                        <Icon name="trash" className="mr-2" />
-                                                        {c('Action').t`Delete alias`}
-                                                    </DropdownMenuButton>
+                                                    />
                                                 </QuickActionsDropdown>
                                             ),
                                             aliasModal.canCreate && (

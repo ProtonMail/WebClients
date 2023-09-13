@@ -58,22 +58,21 @@ export const createAutoFillService = () => {
                 Promise.all(
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
+                            const state = store.getState();
                             const items = getAutofillCandidates(parseUrl(url));
-                            const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
-                            const { didDowngrade } = selectVaultLimits(store.getState());
+                            const primaryVaultId = selectPrimaryVault(state).shareId;
+                            const { didDowngrade } = selectVaultLimits(state);
 
                             /* if the user has downgraded : we want to keep the tab badge count
                              * with the total items matched, but sync the autofillable candidates
                              * in the content-scripts to be only the ones from the primary vault */
                             const count = items.length;
-                            const safeCount = items.filter(
-                                (item) => !didDowngrade || primaryVaultId === item.shareId
-                            ).length;
+                            const safeItems = items.filter((item) => !didDowngrade || primaryVaultId === item.shareId);
 
                             WorkerMessageBroker.ports.broadcast(
                                 {
                                     type: WorkerMessageType.AUTOFILL_SYNC,
-                                    payload: { count: safeCount },
+                                    payload: { items: safeItems, needsUpgrade: didDowngrade },
                                 },
                                 isContentScriptPort(tabId)
                             );

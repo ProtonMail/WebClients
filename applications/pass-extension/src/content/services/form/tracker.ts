@@ -1,12 +1,10 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { FieldType, FormType } from '@proton/pass/fathom';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
-import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 import { isEmptyString } from '@proton/pass/utils/string';
 import lastItem from '@proton/utils/lastItem';
 
@@ -26,21 +24,18 @@ type FieldsForFormResults = WeakMap<
     }
 >;
 
-const canProcessAction = (action: DropdownAction, settings: ProxiedSettings): boolean => {
-    const match = settings.disallowedDomains?.[location.hostname];
+const canProcessAction = withContext<(action: DropdownAction) => boolean>(({ getFeatures }, action) => {
+    const features = getFeatures();
 
     switch (action) {
         case DropdownAction.AUTOFILL:
-            return settings.autofill.inject && !hasCriteria(match, 'Autofill');
+            return features.Autofill;
         case DropdownAction.AUTOSUGGEST_ALIAS:
-            return settings.autosuggest.email && !hasCriteria(match, 'Autosuggest');
+            return features.AutosuggestAlias;
         case DropdownAction.AUTOSUGGEST_PASSWORD:
-            return settings.autosuggest.password && !hasCriteria(match, 'Autosuggest');
+            return features.AutosuggestPassword;
     }
-};
-
-const withAction = (action: DropdownAction, settings: ProxiedSettings): MaybeNull<DropdownAction> =>
-    canProcessAction(action, settings) ? action : null;
+});
 
 export const createFormTracker = (form: FormHandle): FormTracker => {
     logger.debug(`[FormTracker] Tracking form [${form.formType}:${form.id}]`);
@@ -99,7 +94,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         }
     });
 
-    const getTrackableFields = (settings: ProxiedSettings): FieldsForFormResults => {
+    const getTrackableFields = (): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
         const status = { injections: new Map<FieldType, boolean>(), injected: false };
 
@@ -126,13 +121,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 status.injections.set(type, status.injections.get(type) || attachIcon);
                 status.injected = status.injected || attachIcon;
 
-                const action = fieldAction ? withAction(fieldAction, settings) : null;
-
-                results.set(field, {
-                    field,
-                    action: action ? withAction(action, settings) : null,
-                    attachIcon: action !== null && attachIcon,
-                });
+                const action = fieldAction && canProcessAction(fieldAction) ? fieldAction : null;
+                results.set(field, { field, action, attachIcon: action !== null && attachIcon });
             });
         });
 
@@ -141,10 +131,10 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     /* reconciliating the form trackers involves syncing
      * the form's trackable fields.*/
-    const reconciliate = withContext(({ getState, getSettings }) => {
-        const { loggedIn, status } = getState();
-        const settings = getSettings();
-        const fieldsToTrack = getTrackableFields(settings);
+    const reconciliate = withContext<() => Promise<void>>(async ({ getState, service }) => {
+        const { loggedIn } = getState();
+        const fieldsToTrack = getTrackableFields();
+        const autofillCount = service.autofill.getState()?.items.length ?? 0;
 
         form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);
@@ -157,8 +147,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!match.attachIcon) return field.detachIcon();
 
             const icon = field.attachIcon();
-            icon.setStatus(status);
-            if (!loggedIn) icon.setCount(0);
+            icon.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
         });
 
         /* trigger auto-focus on current active field if value is empty:

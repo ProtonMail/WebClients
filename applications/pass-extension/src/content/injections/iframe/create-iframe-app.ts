@@ -140,12 +140,12 @@ export const createIFrameApp = <A>({
 
             if (!target || !backdropExclude?.().includes(target)) {
                 listeners.removeAll();
+                onClose?.(state, options); /* ⚠️ call before resetting state */
 
                 iframe.classList.remove('visible');
                 state.visible = false;
                 state.action = null;
 
-                onClose?.(state, options);
                 sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
             }
         }

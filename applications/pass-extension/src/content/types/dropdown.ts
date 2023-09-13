@@ -22,4 +22,5 @@ export type DropdownOpenOptions = {
 
 export interface InjectedDropdown extends IFrameAppService<DropdownOpenOptions> {
     getCurrentField: () => MaybeNull<FieldHandle>;
+    sync: () => Promise<void>;
 }

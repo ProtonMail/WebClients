@@ -1,4 +1,4 @@
-import { put, takeLeading } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { api } from '@proton/pass/api';
@@ -48,5 +48,5 @@ function* requestAliasOptions(action: ReturnType<typeof aliasOptionsRequested>) 
 }
 
 export default function* watcher() {
-    yield takeLeading(aliasOptionsRequested.match, requestAliasOptions);
+    yield takeEvery(aliasOptionsRequested.match, requestAliasOptions);
 }

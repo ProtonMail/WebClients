@@ -24,7 +24,6 @@ type Props = {
     prefix: string;
     domain: string;
     onMessage?: (message: IFrameMessage) => void;
-    onOptions?: () => void /* notify parent component if we need an iframe resize */;
 };
 
 const isValidAliasOptions = (options: AliasState['aliasOptions']): options is AliasOptions =>
@@ -32,7 +31,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMessage }) => {
+export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
     const ensureMounted = useEnsureMounted();
     const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
@@ -43,7 +42,6 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
     const requestAliasOptions = useCallback(async () => {
         try {
             setLoadingText(getInitialLoadingText());
-            onOptions?.();
             setError(null);
             await wait(500);
 
@@ -59,7 +57,6 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
         } catch {
         } finally {
             ensureMounted(setLoadingText)(null);
-            onOptions?.();
         }
     }, []);
 
@@ -104,14 +101,13 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
             } catch {
             } finally {
                 ensureMounted(setLoadingText)(null);
-                onOptions?.();
             }
         },
         [domain]
     );
 
     useEffect(() => {
-        wait(500).then(requestAliasOptions).catch(noop);
+        requestAliasOptions().catch(noop);
     }, []);
 
     useEffect(() => {
@@ -150,9 +146,9 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onOptions, onMess
                 subTitle={(() => {
                     if (loadingText) {
                         return (
-                            <span className="block flex flex-align-items-center">
+                            <span className="block flex flex-align-items-center flex-nowrap">
                                 <CircleLoader className="mr-1" />
-                                <span>{loadingText}</span>
+                                <span className="block text-ellipsis">{loadingText}</span>
                             </span>
                         );
                     }

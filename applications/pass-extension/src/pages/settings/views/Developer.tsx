@@ -1,20 +1,18 @@
 import { type VFC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
 import Icon from '@proton/components/components/icon/Icon';
 import { pageMessage, sendMessage } from '@proton/pass/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 
-import { DropdownDebug } from '../component/DropdownDebug';
-import { NotificationDebug } from '../component/NotificationDebug';
+import { SettingsPanel } from '../component/SettingsPanel';
+import { DropdownDebug } from '../component/debug/DropdownDebug';
+import { NotificationDebug } from '../component/debug/NotificationDebug';
 
 export const Developer: VFC = () => {
     return (
         <>
-            <Card rounded className="mb-4 p-3 relative">
-                <strong className="color-norm block">Extension triggers</strong>
-                <hr className="mt-2 mb-4 border-weak" />
+            <SettingsPanel title="Extension triggers">
                 <Button
                     icon
                     shape="ghost"
@@ -49,8 +47,7 @@ export const Developer: VFC = () => {
                     <span className="flex-item-fluid text-left">Trigger full disk</span>
                     <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>
                 </Button>
-            </Card>
-
+            </SettingsPanel>
             <DropdownDebug />
             <NotificationDebug />
         </>
