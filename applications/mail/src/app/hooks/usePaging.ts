@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
 import { MailPageSize } from '@proton/shared/lib/interfaces';
 
@@ -10,17 +10,8 @@ export const usePaging = (
     inputTotal: number | undefined,
     onPage: (page: number) => void
 ) => {
-    const getPage = () => inputPage + 1;
-    const getTotal = () => (inputTotal === undefined ? 0 : pageCount(inputTotal, inputPageSize));
-
-    const [page, setPage] = useState(getPage);
-    const [total, setTotal] = useState(getTotal);
-
-    // Willingly delay updates of page and total values to wait for view content to update alongside
-    useEffect(() => {
-        setPage(getPage);
-        setTotal(getTotal);
-    }, [inputPage, inputTotal]);
+    const total = inputTotal === undefined ? 0 : pageCount(inputTotal, inputPageSize);
+    const page = inputPage + 1;
 
     const handleNext = useCallback(
         () => onPage(inputPage === total - 1 ? total - 1 : inputPage + 1),
