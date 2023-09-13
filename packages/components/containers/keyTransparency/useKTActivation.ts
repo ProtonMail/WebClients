@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { KeyTransparencyActivation, KeyTransparencySetting, MailSettings } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING, KeyTransparencyActivation, MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useAuthentication, useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';
@@ -23,7 +23,7 @@ const getKTActivationPromise = async (
     }
     if (featureFlag == KtFeatureEnum.ENABLE_UI) {
         if (appName === APPS.PROTONMAIL) {
-            if (mailSettings?.KT === KeyTransparencySetting.Enabled) {
+            if (mailSettings?.KT === KEY_TRANSPARENCY_SETTING.ENABLED) {
                 return KeyTransparencyActivation.SHOW_UI;
             } else {
                 return KeyTransparencyActivation.LOG_ONLY;
