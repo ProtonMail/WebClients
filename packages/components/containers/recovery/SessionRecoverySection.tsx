@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Toggle, useModalState } from '../../components';
 import {
@@ -46,15 +45,6 @@ const SessionRecoverySection = () => {
             <SettingsSection>
                 <SettingsParagraph>
                     {c('Info').t`Request a password reset from your Account settings. No recovery method needed.`}
-                    <br />
-                    <Href
-                        href={
-                            // TODO: add knowledge base url
-                            getKnowledgeBaseUrl('/session-recovery')
-                        }
-                    >
-                        {c('Link').t`Learn more`}
-                    </Href>
                 </SettingsParagraph>
 
                 <SettingsLayout>
