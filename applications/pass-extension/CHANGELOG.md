@@ -1,3 +1,25 @@
+## Version 1.6.0
+
+-   Factorize content-script feature resolution
+-   Improve pause-list domain matching
+-   Fine-tune icon positioning upon overlay detection
+-   Copy generated password from autosuggest dropdown to clipboard
+-   Garbage collect stale tracked requests in XMLHttpRequestTracker
+-   Prevent hard references to WebRequest in XMLHttpRequestTracker (potential memory leak)
+-   Enhance cache-proxy for domain image caching
+-   Gracefully handle extension storage errors
+-   Ensure page is loaded or in complete state before registering client
+-   Optimize icon repositioning triggers and injected frame visibility toggles
+-   Refactor autofill data synchronization
+-   Fix multiple iframe initializations triggered during content-script init
+-   Fix and refactor injected dropdown resizing behavior
+-   Remove zoom-factor hack for popup zoom surgery
+-   Fi inconsistencies in pop-ups and injections when users change the browser's default font-size settings
+-   Fix reported copy errors
+-   Improve DOM node flagging and optimize prepass in detectors + retrain
+-   Resolve trickest.io breakage caused by custom-elements registration conflict
+-   Correct detectors' false positives on WYSIWYG editors
+
 ## Version 1.5.3
 
 -   Fix disallowed domains not being cleaned-up in persisted settings when deleting an entry

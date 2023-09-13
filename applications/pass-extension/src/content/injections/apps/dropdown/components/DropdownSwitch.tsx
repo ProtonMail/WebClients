@@ -29,12 +29,11 @@ type Props = {
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
-    onResize?: () => void;
     onReset?: () => void;
 };
 
 const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { state, loggedIn, status, visible, onClose, onResize, onReset = noop, onMessage = noop },
+    { state, loggedIn, status, visible, onClose, onReset = noop, onMessage = noop },
     ref
 ) => {
     const accountFork = useAccountFork();
@@ -52,13 +51,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                 }
 
                 if (status === WorkerStatus.LOCKED) {
-                    return (
-                        <DropdownPinUnlock
-                            onError={onResize}
-                            onUnlock={() => onClose?.({ refocus: true })}
-                            visible={visible}
-                        />
-                    );
+                    return <DropdownPinUnlock onUnlock={() => onClose?.({ refocus: true })} visible={visible} />;
                 }
 
                 if (!loggedIn) {
@@ -95,7 +88,6 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                             <AliasAutoSuggest
                                 prefix={state.prefix}
                                 domain={state.domain}
-                                onOptions={onResize}
                                 onMessage={onMessageWithReset}
                             />
                         );

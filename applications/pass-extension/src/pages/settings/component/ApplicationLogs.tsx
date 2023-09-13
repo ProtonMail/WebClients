@@ -3,11 +3,12 @@ import { type VFC, useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
 import { Icon } from '@proton/components/components';
 import { pageMessage, sendMessage } from '@proton/pass/extension/message';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { SettingsPanel } from './SettingsPanel';
 
 export const ApplicationLogs: VFC = () => {
     const [showLogs, setShowLogs] = useState(false);
@@ -46,11 +47,7 @@ export const ApplicationLogs: VFC = () => {
     }, []);
 
     return (
-        <Card rounded className="mb-4 p-3 relative">
-            <strong className="color-norm block">{c('Label').t`Application logs`}</strong>
-
-            <hr className="my-2 border-weak" />
-
+        <SettingsPanel title={c('Label').t`Application logs`}>
             {showLogs && logs && (
                 <>
                     <Button
@@ -91,6 +88,6 @@ export const ApplicationLogs: VFC = () => {
                 <Icon name="arrow-down-to-square" className="mr-2" />
                 <span className="flex-item-fluid">{c('Label').t`Download logs`}</span>
             </Button>
-        </Card>
+        </SettingsPanel>
     );
 };

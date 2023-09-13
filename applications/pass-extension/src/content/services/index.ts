@@ -16,7 +16,6 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
-import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -47,26 +46,27 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         },
     });
 
+    const reconciliate = async () => {
+        context.service.iframe.reset();
+        context.service.formManager.sync();
+
+        const { status, loggedIn } = context.getState();
+
+        if (!loggedIn) context.service.autofill.reset();
+        else if (workerReady(status)) await context.service.autofill.reconciliate();
+    };
+
     const onWorkerStateChange = (workerState: WorkerState) => {
         if (context.getState().active) {
-            const { loggedIn, UID, status } = workerState;
-            setSentryUID(UID);
-
             context.setState(workerState);
-            context.service.iframe.reset();
-            context.service.formManager.sync();
-
-            if (!loggedIn) context.service.autofill.setAutofillCount(0);
-            if (workerReady(status)) void context.service.autofill.getAutofillCandidates();
+            void reconciliate();
         }
     };
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         if (context.getState().active) {
             context.setSettings(settings);
-            context.service.iframe.reset();
-            context.service.formManager.sync();
-            void context.service.autofill.getAutofillCandidates();
+            void reconciliate();
         }
     };
 
@@ -80,7 +80,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.service.autofill.setAutofillCount(message.payload.count);
+                    return context.service.autofill.sync(message.payload);
             }
         }
     };
@@ -94,17 +94,15 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         );
 
         if (res.type === 'success' && context.getState().active) {
-            /* if the user has disabled every injection setting
-             * we can safely destroy the content-script context */
-            const { autofill, autosuggest, autosave } = res.settings;
-            const enable = autofill.inject || autosuggest.email || autosuggest.password || autosave.prompt;
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
+            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
+            context.setSettings(res.settings);
+            await reconciliate();
+
+            /* if the user has disabled every injection setting or added the current
+             * domain to the pause list we can safely destroy the content-script context */
+            const enable = Object.values(context.getFeatures()).reduce((pass, feat) => pass || feat);
             if (!enable) return context.destroy({ reason: 'injection settings' });
-
-            const workerState = { loggedIn: res.loggedIn, status: res.status, UID: res.UID };
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${workerState.status}"`);
-
-            onWorkerStateChange(workerState);
-            onSettingsChange(res.settings);
 
             /* if we're in an iframe and the initial detection should not
              * be triggered : destroy this content-script service */

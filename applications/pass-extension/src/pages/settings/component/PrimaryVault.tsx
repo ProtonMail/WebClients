@@ -4,18 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
 import { selectAllVaults, selectPrimaryVault, vaultSetPrimaryIntent } from '@proton/pass/store';
 import type { Maybe } from '@proton/pass/types';
 
+/* TODO: move this to shared components */
 import { Field } from '../../../popup/components/Field/Field';
 import { VaultSelectField } from '../../../popup/components/Field/VaultSelectField';
+import { SettingsPanel } from './SettingsPanel';
 
-import './VaultsPanel.scss';
+import './PrimaryVault.scss';
 
 type FormValues = { primaryVaultId: Maybe<string> };
 
-export const VaultsPanel: VFC = () => {
+export const PrimaryVault: VFC = () => {
     const dispatch = useDispatch();
     const allVaults = useSelector(selectAllVaults);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
@@ -33,10 +34,7 @@ export const VaultsPanel: VFC = () => {
     });
 
     return (
-        <Card rounded className="mb-4 p-3">
-            <span className="text-bold block">{c('Label').t`Vaults`}</span>
-
-            <hr className="my-2 border-weak" />
+        <SettingsPanel title={c('Label').t`Vaults`}>
             <FormikProvider value={form}>
                 <Form>
                     <Field
@@ -48,6 +46,6 @@ export const VaultsPanel: VFC = () => {
                     />
                 </Form>
             </FormikProvider>
-        </Card>
+        </SettingsPanel>
     );
 };

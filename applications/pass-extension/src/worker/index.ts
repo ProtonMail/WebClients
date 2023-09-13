@@ -12,10 +12,22 @@ import { createDevReloader } from '../shared/extension';
 import WorkerMessageBroker from './channel';
 import { createWorkerContext, withContext } from './context';
 
-if (BUILD_TARGET === 'chrome' && ENV === 'development') {
-    /* https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
+if (BUILD_TARGET === 'chrome') {
+    /* FIXME: create a custom webpack plugin to automatically register
+     * chunks loaded through `importScripts` for the chromium build
+     * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10*/
     const globalScope = self as any as ServiceWorkerGlobalScope;
-    globalScope.oninstall = () => globalScope.skipWaiting();
+    const getLocaleAsset = (locale: string) => browser.runtime.getURL(`chunk.locales/${locale}-json.js`);
+    const chunks = Object.keys(config.LOCALES).map(getLocaleAsset);
+
+    globalScope.oninstall = async () => {
+        importScripts(...chunks);
+        /* In order to alleviate MV3 service worker potentially ending up
+         * in a broken state after an update or a manual refresh, force the
+         * incoming service worker to skip its waiting state
+         * https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
+        return globalScope.skipWaiting();
+    };
 }
 
 /* The `EXTENSION_KEY` is a random & unique identifier for the current
