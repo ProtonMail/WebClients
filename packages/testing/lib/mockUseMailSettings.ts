@@ -1,6 +1,6 @@
 import * as useMailSettingsModule from '@proton/components/hooks/useMailSettings';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { KeyTransparencySetting, MailPageSize, MailSettings } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING, MailPageSize, MailSettings } from '@proton/shared/lib/interfaces';
 
 const defaultMailSettings: MailSettings = {
     AutoSaveContacts: 1,
@@ -60,7 +60,7 @@ const defaultMailSettings: MailSettings = {
     PMSignatureReferralLink: 0,
     DraftMIMEType: MIME_TYPES.PLAINTEXT,
     AutoDeleteSpamAndTrashDays: 0,
-    KT: KeyTransparencySetting.Disabled,
+    KT: KEY_TRANSPARENCY_SETTING.DISABLED,
 };
 
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {

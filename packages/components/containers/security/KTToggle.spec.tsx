@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
-import { KeyTransparencySetting } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/interfaces';
 import {
     applyHOCs,
     mockUseApi,
@@ -44,7 +44,7 @@ describe('KTToggle', () => {
             const { getByRole } = setup();
             const toggle = getByRole('checkbox');
             fireEvent.click(toggle);
-            expect(mockedApi).toHaveBeenCalledWith(updateKT(KeyTransparencySetting.Enabled));
+            expect(mockedApi).toHaveBeenCalledWith(updateKT(KEY_TRANSPARENCY_SETTING.ENABLED));
         });
     });
 });
