@@ -18,6 +18,16 @@ export const getUTMTrackersFromURL = (originalURL: string) => {
             return undefined;
         }
 
+        /**
+         * Allow amp links. By default, they are being cleaned but too many links were broken.
+         * For example:
+         * - https://something.me/L0/https:%2F%2Fsomething-else.amazonaws.com%randomID
+         * Was cleaned to:
+         * - https://something-else.amazonaws.com/randomID
+         * Which was not working as expected when being opened.
+         */
+        TidyURL.allow_amp = true;
+
         const { url, info } = TidyURL.clean(originalURL);
 
         /*
