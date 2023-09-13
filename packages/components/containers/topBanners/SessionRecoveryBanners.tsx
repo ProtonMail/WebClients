@@ -86,37 +86,20 @@ const PasswordResetAvailableBanner = () => {
             </SettingsLink>
         );
 
-    const message = (() => {
-        if (isSessionRecoveryInitiatedByCurrentSession) {
-            return timeRemaining.inDays === 0
-                ? // translator: Full sentence "Password reset request approved (user@email.com). You have N hours to reset your password."
-                  c('Session recovery').ngettext(
-                      msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hour to reset your password.`,
-                      `Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hours to reset your password.`,
-                      timeRemaining.inHours
-                  )
-                : // translator: Full sentence "Password reset request approved (user@email.com). You have N days to reset your password."
-                  c('Session recovery').ngettext(
-                      msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} day to reset your password.`,
-                      `Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} days to reset your password.`,
-                      timeRemaining.inDays
-                  );
-        }
-
-        return timeRemaining.inDays === 0
-            ? // translator: Full sentence "Password reset request approved (user@email.com). You have N hours to reset your password from the session where the request was initiated."
+    const message =
+        timeRemaining.inDays === 0
+            ? // translator: Full sentence "Password reset request approved (user@email.com). You have N hours to reset your password."
               c('Session recovery').ngettext(
-                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hour to reset your password from the session where the request was initiated.`,
-                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hours to reset your password from the session where the request was initiated.`,
+                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hour to reset your password.`,
+                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hours to reset your password.`,
                   timeRemaining.inHours
               )
             : // translator: Full sentence "Password reset request approved (user@email.com). You have N days to reset your password."
               c('Session recovery').ngettext(
-                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} day to reset your password from the session where the request was initiated.`,
-                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} days to reset your password from the session where the request was initiated.`,
+                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} day to reset your password.`,
+                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} days to reset your password.`,
                   timeRemaining.inDays
               );
-    })();
 
     return (
         <>
