@@ -6,7 +6,7 @@ import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfa
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
-import { getSignedKeyList } from '../signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 
@@ -58,7 +58,11 @@ const importKeysProcessLegacy = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                updatedActiveKeys,
+                address,
+                keyTransparencyVerify
+            );
 
             const { Key } = await api(
                 createAddressKeyRoute({
@@ -68,6 +72,8 @@ const importKeysProcessLegacy = async ({
                     SignedKeyList,
                 })
             );
+            // Only once the SKL is successfully posted we add it to the KT commit state.
+            await onSKLPublishSuccess();
             // Mutably update the key with the latest value from the real ID.
             newActiveKey.ID = Key.ID;
 
