@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { useUnleashClient } from '@unleash/proxy-client-react';
+
+import { createPromise } from '@proton/shared/lib/helpers/promise';
 
 type SimpleFunc = () => void;
 
@@ -9,7 +11,7 @@ const errorCallbackSet: Set<SimpleFunc> = new Set();
 
 // Memoize initial states to keep value consistency between hook instances
 let readyInitialState = false;
-let errorInitialState = false;
+let readyPromise = createPromise<void>();
 
 /**
  * useFlagsReady
@@ -29,27 +31,19 @@ let errorInitialState = false;
  */
 const useFlagsReady = () => {
     const client = useUnleashClient();
-    const [isReady, setReady] = useState(readyInitialState);
-    const [hasError, setError] = useState(errorInitialState);
 
     useEffect(() => {
         const readyListener = () => {
             readyCallbackSet.forEach((callback) => callback());
         };
         const readyCallback: SimpleFunc = () => {
-            setReady(true);
             if (readyInitialState === false) {
+                readyPromise.resolve();
                 readyInitialState = true;
             }
         };
         const errorListener = () => {
             errorCallbackSet.forEach((callback) => callback());
-        };
-        const errorCallback: SimpleFunc = () => {
-            setError(true);
-            if (errorInitialState === false) {
-                errorInitialState = true;
-            }
         };
 
         if (readyCallbackSet.size === 0) {
@@ -58,11 +52,11 @@ const useFlagsReady = () => {
         }
 
         readyCallbackSet.add(readyCallback);
-        errorCallbackSet.add(errorCallback);
+        errorCallbackSet.add(readyCallback);
 
         return () => {
             readyCallbackSet.delete(readyCallback);
-            errorCallbackSet.delete(errorCallback);
+            errorCallbackSet.delete(readyCallback);
             if (readyCallbackSet.size === 0) {
                 client.off('ready', readyListener);
                 client.off('error', errorListener);
@@ -70,7 +64,7 @@ const useFlagsReady = () => {
         };
     }, []);
 
-    return isReady || hasError;
+    return readyPromise.promise;
 };
 
 export default useFlagsReady;
