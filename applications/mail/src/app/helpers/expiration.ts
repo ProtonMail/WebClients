@@ -18,7 +18,7 @@ export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, mes
         return false;
     }
 
-    if (user.isFree) {
+    if (!user.hasPaidMail) {
         return false;
     }
 
