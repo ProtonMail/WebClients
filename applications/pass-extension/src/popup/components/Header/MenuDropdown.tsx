@@ -34,7 +34,7 @@ import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
-    width: `22.5rem`,
+    width: `20em`,
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '380px',
 };
@@ -158,7 +158,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                     originalPlacement="bottom"
                     autoClose={false}
                     size={DROPDOWN_SIZE}
-                    style={{ '--custom-max-width': '22.5rem' }}
                 >
                     <DropdownMenu>
                         <div className="flex flex-align-items-center flex-justify-space-between py-2 px-4">
