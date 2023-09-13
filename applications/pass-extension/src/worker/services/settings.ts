@@ -3,6 +3,7 @@ import { selectProxiedSettings } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import WorkerMessageBroker from '../channel';
@@ -23,7 +24,9 @@ export const createSettingsService = () => {
      * in case the user is logged out (session invalidated, locked etc..)
      * but need to preserve the user settings in the content-script */
     const sync = withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
+        await service.i18n.setLocale(settings.locale).catch(noop);
         await service.storage.local.set({ settings: JSON.stringify(settings) });
+
         logger.info('[Worker::Settings] synced settings');
 
         WorkerMessageBroker.ports.broadcast(

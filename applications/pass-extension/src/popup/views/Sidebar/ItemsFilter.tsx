@@ -15,7 +15,7 @@ interface ItemsFilterProps {
     onChange: (value: ItemTypeFilter) => void;
 }
 
-const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
+const DROPDOWN_SIZE: DropdownProps['size'] = { width: '12rem' };
 
 export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
     '*': {
@@ -86,11 +86,10 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
                             onClick={() => onChange(type)}
                             isSelected={type === value}
                             size="small"
-                        >
-                            <Icon className="mr-2 color-weak" name={icon} />
-                            {label}
-                            <span className="color-weak ml-1">({count})</span>
-                        </DropdownMenuButton>
+                            label={label}
+                            extra={<span className="color-weak">({count})</span>}
+                            icon={icon}
+                        />
                     ))}
                 </DropdownMenu>
             </Dropdown>

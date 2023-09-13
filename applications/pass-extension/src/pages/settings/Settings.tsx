@@ -1,11 +1,11 @@
-import { type ComponentProps, type FC, useCallback, useEffect, useState } from 'react';
+import type { VFC } from 'react';
+import { type ComponentProps, type FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useSelector } from 'react-redux';
 import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { pageMessage } from '@proton/pass/extension/message';
 import { selectPassPlan, selectPlanDisplayName, selectTrialDaysRemaining, selectUser } from '@proton/pass/store';
@@ -14,7 +14,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { APP_VERSION } from '../../app/config';
-import { ExtensionContextProvider, ExtensionWindow } from '../../shared/components/extension';
+import { ExtensionApp, ExtensionContextProvider } from '../../shared/components/extension';
 import { ExtensionHead } from '../../shared/components/page/ExtensionHead';
 import { SessionLockConfirmContextProvider } from '../../shared/components/session-lock/SessionLockConfirmContextProvider';
 import { UpgradeButton } from '../../shared/components/upgrade/UpgradeButton';
@@ -32,41 +32,44 @@ import './Settings.scss';
 
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 
-const SETTINGS_TABS: (Tab & { pathname: string })[] = [
-    {
-        pathname: '/',
-        title: c('Label').t`General`,
-        content: <General />,
-    },
-    {
-        pathname: '/security',
-        title: c('Label').t`Security`,
-        content: <Security />,
-    },
-    {
-        pathname: '/import',
-        title: c('Label').t`Import`,
-        content: <Import />,
-    },
-    {
-        pathname: '/export',
-        title: c('Label').t`Export`,
-        content: <Export />,
-    },
-    {
-        pathname: '/support',
-        title: c('Label').t`Support`,
-        content: <Support />,
-    },
-];
+const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
+    const tabs = [
+        {
+            pathname: '/',
+            title: c('Label').t`General`,
+            content: <General />,
+        },
+        {
+            pathname: '/security',
+            title: c('Label').t`Security`,
+            content: <Security />,
+        },
+        {
+            pathname: '/import',
+            title: c('Label').t`Import`,
+            content: <Import />,
+        },
+        {
+            pathname: '/export',
+            title: c('Label').t`Export`,
+            content: <Export />,
+        },
+        {
+            pathname: '/support',
+            title: c('Label').t`Support`,
+            content: <Support />,
+        },
+    ];
 
-if (ENV === 'development') {
-    SETTINGS_TABS.push({
-        pathname: '/dev',
-        title: 'Developer',
-        content: <Developer />,
-    });
-}
+    if (ENV === 'development') {
+        tabs.push({
+            pathname: '/dev',
+            title: 'Developer',
+            content: <Developer />,
+        });
+    }
+    return tabs;
+};
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionContext();
@@ -74,16 +77,17 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
+    const tabs = useMemo(getSettingsTabs, []);
 
     const pathnameToIndex = (pathname: string) => {
-        const idx = SETTINGS_TABS.findIndex((tab) => tab.pathname === pathname);
+        const idx = tabs.findIndex((tab) => tab.pathname === pathname);
         return idx !== -1 ? idx : 0;
     };
 
     const history = useHistory();
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname));
 
-    const handleOnChange = (nextTab: number) => history.push(SETTINGS_TABS[nextTab].pathname);
+    const handleOnChange = (nextTab: number) => history.push(tabs[nextTab].pathname);
 
     useEffect(() => {
         setActiveTab(pathnameToIndex(pathname));
@@ -129,7 +133,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                     contentClassName="p-0"
                     navContainerClassName="mb-6"
                     onChange={handleOnChange}
-                    tabs={SETTINGS_TABS}
+                    tabs={tabs}
                     value={activeTab}
                 />
 
@@ -157,7 +161,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     );
 };
 
-const SettingsApp: FC = () => {
+const SettingsApp: VFC = () => {
     const { createNotification } = useNotifications();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
@@ -167,36 +171,50 @@ const SettingsApp: FC = () => {
     }, []);
 
     return (
-        <ReduxProvider store={createClientStore('page', ExtensionContext.get().tabId)}>
-            <HashRouter>
-                <ExtensionContextProvider
-                    endpoint="page"
-                    messageFactory={pageMessage}
-                    onWorkerMessage={handleWorkerMessage}
+        <HashRouter>
+            <ExtensionContextProvider
+                endpoint="page"
+                messageFactory={pageMessage}
+                onWorkerMessage={handleWorkerMessage}
+            >
+                <div
+                    className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
+                    style={{ '--min-h-custom': '100vh' }}
                 >
-                    <div
-                        className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
-                        style={{ '--min-h-custom': '100vh' }}
-                    >
-                        <Switch>
-                            <Route
-                                render={({ location: { pathname } }) => (
-                                    <SessionLockConfirmContextProvider>
-                                        <SettingsTabs pathname={pathname} />
-                                    </SessionLockConfirmContextProvider>
-                                )}
-                            />
-                        </Switch>
-                    </div>
-                </ExtensionContextProvider>
-            </HashRouter>
-        </ReduxProvider>
+                    <Switch>
+                        <Route
+                            render={({ location: { pathname } }) => (
+                                <SessionLockConfirmContextProvider>
+                                    <SettingsTabs pathname={pathname} />
+                                </SessionLockConfirmContextProvider>
+                            )}
+                        />
+                    </Switch>
+                </div>
+            </ExtensionContextProvider>
+        </HashRouter>
     );
 };
 
-export const Settings: FC = () => (
-    <>
-        <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-        <ExtensionWindow endpoint="page">{(ready) => (ready ? <SettingsApp /> : <CircleLoader />)}</ExtensionWindow>
-    </>
-);
+export const Settings: VFC = () => {
+    const store = useRef<ReturnType<typeof createClientStore>>();
+
+    return (
+        <>
+            <ExtensionApp endpoint="page">
+                {(ready, locale) =>
+                    ready && (
+                        <ReduxProvider
+                            store={(() =>
+                                store.current ??
+                                (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
+                        >
+                            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+                            <SettingsApp key={locale} />
+                        </ReduxProvider>
+                    )
+                }
+            </ExtensionApp>
+        </>
+    );
+};

@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { type VFC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { type MaybeNull, WorkerStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
@@ -14,17 +14,22 @@ export const DropdownContent: VFC = () => {
 
     const onReset = () => setDropdownState(null);
     const onClose = pipe(closeIFrame, onReset);
-    const onResize = useCallback(() => resizeIFrame(dropdownRef.current), [resizeIFrame]);
+    const onResize = resizeIFrame;
 
     const handleAction = useCallback(
         ({ payload }: IFrameMessage<IFrameMessageType.DROPDOWN_ACTION>) => setDropdownState(payload),
         []
     );
 
-    useLayoutEffect(() => onResize(), [onResize, dropdownState, workerState]);
-
     useRegisterMessageHandler(IFrameMessageType.DROPDOWN_ACTION, handleAction);
-    useRegisterMessageHandler(IFrameMessageType.IFRAME_OPEN, onResize);
+
+    useEffect(() => {
+        if (dropdownRef.current) {
+            const obs = new ResizeObserver(([entry]) => onResize(entry.contentRect.height));
+            obs.observe(dropdownRef.current);
+            return () => obs.disconnect();
+        }
+    });
 
     return (
         <DropdownSwitch
@@ -34,7 +39,6 @@ export const DropdownContent: VFC = () => {
             loggedIn={workerState?.loggedIn ?? false}
             onMessage={postMessage}
             onClose={onClose}
-            onResize={onResize}
             onReset={onReset}
             visible={visible}
         />

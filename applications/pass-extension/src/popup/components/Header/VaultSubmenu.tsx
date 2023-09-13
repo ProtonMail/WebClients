@@ -61,42 +61,39 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
 
     return (
         <DropdownMenuButton
-            className="flex flex-align-items-center py-2 px-4"
             onClick={() => onSelect()}
             isSelected={selected}
+            label={label}
+            extra={`(${count})`}
+            icon={
+                <VaultIcon
+                    className="flex-item-noshrink mr-2"
+                    size="medium"
+                    color={share?.content.display.color}
+                    icon={share?.content.display.icon}
+                />
+            }
             quickActions={
                 withActions && (
                     <>
                         {onEdit && (
                             <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
+                                label={c('Action').t`Edit vault`}
+                                icon="pen"
                                 onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
-                            >
-                                <Icon name="pen" className="mr-3 color-weak" />
-                                {c('Action').t`Edit vault`}
-                            </DropdownMenuButton>
+                            />
                         )}
                         <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
                             disabled={!onDelete}
                             onClick={onDelete ? handleClickEvent(onDelete) : undefined}
-                        >
-                            <Icon name="trash" className="mr-3 color-weak" />
-                            {c('Action').t`Delete vault`}
-                        </DropdownMenuButton>
+                            label={c('Action').t`Delete vault`}
+                            icon="trash"
+                            danger
+                        />
                     </>
                 )
             }
-        >
-            <VaultIcon
-                className="flex-item-noshrink mr-3"
-                size="medium"
-                color={share?.content.display.color}
-                icon={share?.content.display.icon}
-            />
-            <span className="text-ellipsis inline-block max-w100">{label}</span>
-            <span className="color-weak ml-1 inline-block">({count})</span>
-        </DropdownMenuButton>
+        />
     );
 };
 
@@ -111,29 +108,28 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
 
     return (
         <DropdownMenuButton
-            className="flex flex-align-items-center py-2 px-4"
+            label={getVaultOptionInfo('trash').label}
+            icon="trash"
+            extra={<span className="color-weak">({count})</span>}
             isSelected={selected}
             onClick={onSelect}
             quickActions={
                 <>
-                    <DropdownMenuButton className="flex flex-align-items-center py-2 px-4" onClick={handleRestoreTrash}>
-                        <Icon name="arrow-up-and-left" className="mr-1" />
-                        {c('Label').t`Restore all items`}
-                    </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="flex flex-align-items-center py-2 px-4 color-danger"
+                        onClick={handleRestoreTrash}
+                        label={c('Label').t`Restore all items`}
+                        icon="arrow-up-and-left"
+                    />
+
+                    <DropdownMenuButton
                         onClick={handleEmptyTrash}
-                    >
-                        <Icon name="trash-cross" className="mr-1" />
-                        {c('Label').t`Empty trash`}
-                    </DropdownMenuButton>
+                        label={c('Label').t`Empty trash`}
+                        icon="trash-cross"
+                        danger
+                    />
                 </>
             }
-        >
-            <Icon name="trash" className="color-weak mr-3" />
-            {getVaultOptionInfo('trash').label}
-            <span className="color-weak ml-1 inline-block">({count})</span>
-        </DropdownMenuButton>
+        />
     );
 };
 
@@ -180,14 +176,14 @@ export const VaultSubmenu: VFC<{
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <span className="flex flex-align-items-center">
+                <span className="flex flex-align-items-center flex-nowrap gap-1">
                     <VaultIcon
-                        className="mr-3"
+                        className="mr-2"
                         size="medium"
                         color={selectedVaultOption?.color}
                         icon={selectedVaultOption?.icon}
                     />
-                    {selectedVaultOption.label}
+                    <span className="block text-ellipsis">{selectedVaultOption.label}</span>
                 </span>
             </CollapsibleHeader>
             <CollapsibleContent as="ul" className="unstyled">

@@ -3,7 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { Maybe } from '../../types';
-import type { DisallowedDomains } from '../../types/worker/settings';
+import type { DomainCriterias } from '../../types/worker/settings';
 import type { State } from '../types';
 import { selectState } from './utils';
 
@@ -20,4 +20,5 @@ export const selectSessionLockSettings = createSelector(selectState, ({ settings
 
 export const selectHasRegisteredLock = (state: State) => state.settings.sessionLockRegistered;
 export const selectSessionLockTTL = ({ settings }: State): Maybe<number> => settings.sessionLockTTL;
-export const selectDisallowedDomains = ({ settings }: State): DisallowedDomains => settings.disallowedDomains;
+export const selectDisallowedDomains = ({ settings }: State): DomainCriterias => settings.disallowedDomains;
+export const selectLocale = ({ settings }: State) => settings.locale;
