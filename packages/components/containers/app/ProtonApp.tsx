@@ -44,7 +44,7 @@ import NotificationsProvider from '../notifications/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 import ThemeProvider from '../themes/ThemeProvider';
 import Signout from './Signout';
-import clearKeyCache from './clearKeyCache';
+import { clearKeysCache } from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
 import { setTmpEventID } from './loadEventID';
 
@@ -221,7 +221,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
             const oldCache = cacheRef.current;
             if (oldCache) {
-                clearKeyCache(oldCache);
+                clearKeysCache(oldCache);
                 oldCache.clear();
                 oldCache.clearListeners();
             }

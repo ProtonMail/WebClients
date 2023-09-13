@@ -143,6 +143,7 @@ export const CryptoProxy: CryptoProxyInterface = {
     clearKeyStore: () => assertNotNull(endpoint).clearKeyStore(),
     clearKey: async (opts) => assertNotNull(endpoint).clearKey(opts),
     replaceUserIDs: async (opts) => assertNotNull(endpoint).replaceUserIDs(opts),
+    cloneKeyAndChangeUserIDs: async (opts) => assertNotNull(endpoint).cloneKeyAndChangeUserIDs(opts),
     generateE2EEForwardingMaterial: async (opts) => assertNotNull(endpoint).generateE2EEForwardingMaterial(opts),
     doesKeySupportE2EEForwarding: async (opts) => assertNotNull(endpoint).doesKeySupportE2EEForwarding(opts),
 

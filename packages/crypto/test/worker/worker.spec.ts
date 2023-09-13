@@ -903,6 +903,144 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
         );
     });
 
+    it('cloneKeyAndChangeUserIDs - the returned key user IDs are correct', async () => {
+        const sourceKey = await openpgp_readKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
+BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
+zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
+AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
+mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
+nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
+GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
+mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
+ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
+YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
+I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
+Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
+7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
+AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
+=p5Q+
+-----END PGP PRIVATE KEY BLOCK-----`,
+        });
+        const sourceKeyRef = await CryptoWorker.importPrivateKey({ armoredKey: sourceKey.armor(), passphrase: null });
+
+        const updatedKeyRef = await CryptoWorker.cloneKeyAndChangeUserIDs({
+            privateKey: sourceKeyRef,
+            userIDs: [{ email: 'new1@pm.me' }, { email: 'new2@pm.me' }],
+        });
+        expect(updatedKeyRef.getUserIDs()).to.deep.equal(['<new1@pm.me>', '<new2@pm.me>']);
+        expect(updatedKeyRef.getUserIDs()).to.not.deep.equal(sourceKeyRef.getUserIDs());
+        expect(updatedKeyRef.getFingerprint()).to.deep.equal(sourceKeyRef.getFingerprint());
+
+        const exportedSourceKey = await openpgp_readKey({
+            armoredKey: await CryptoWorker.exportPublicKey({ key: sourceKeyRef }),
+        });
+        const exportedUpdatedKey = await openpgp_readKey({
+            armoredKey: await CryptoWorker.exportPublicKey({ key: updatedKeyRef }),
+        });
+
+        // source key users should be unchanged
+        const sourcePrimaryUser = await sourceKey.getPrimaryUser();
+        expect(sourceKey.getUserIDs()).to.deep.equal(exportedSourceKey.getUserIDs());
+        expect(sourcePrimaryUser.user.userID).to.deep.equal((await exportedSourceKey.getPrimaryUser()).user.userID);
+        // target key users should have changed
+        const updatedPrimaryUser = await exportedUpdatedKey.getPrimaryUser();
+        expect(exportedUpdatedKey.getUserIDs()).to.deep.equal(['<new1@pm.me>', '<new2@pm.me>']);
+        expect(sourceKey.getUserIDs()).to.not.deep.equal(exportedUpdatedKey.getUserIDs());
+        expect(sourcePrimaryUser.user.userID).to.not.deep.equal(updatedPrimaryUser.user.userID);
+        expect(updatedPrimaryUser.user.userID?.userID).to.equal('<new1@pm.me>');
+    });
+
+    it('cloneKeyAndChangeUserIDs - the returned key is equivalent to the original one', async () => {
+        const originalKey = await openpgp_readPrivateKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
+BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
+zQ88Y0B3b3JrZXIudGVzdD7CiQQQFgoAGgUCYkMx+QQLCQcIAxUICgQWAAIB
+AhsDAh4BACEJECO0b8qLQMw0FiEEYiHKmAo/cFLglZrtI7RvyotAzDRu6QEA
+mbhLi00tsTr7hmJxIPw4JLHGw8UVvztUfeyFE6ZqAIsBAJtF8P9pcZxHKb58
+nNamH0U5+cC+9hN9uw2pn51NIY8KzQ88YkB3b3JrZXIudGVzdD7CiQQQFgoA
+GgUCYkMx+QQLCQcIAxUICgQWAAIBAhsDAh4BACEJECO0b8qLQMw0FiEEYiHK
+mAo/cFLglZrtI7RvyotAzDSSNwD+JDTJNbf8/0u9QUS3liusBKk5qKUPXG+j
+ezH+Sgw1wagA/36wOxNMHxVUJXBjYiOIrZjcUKwXPR2pjke6zgntRuQOx10E
+YkMx+RIKKwYBBAGXVQEFAQEHQJDjVd81zZuOdxAkjMe6Y+8Bj8gF9PKBkMJ+
+I8Yc2OQKAwEIBwAA/2Ikos/IDw3uCSa6DGRoMDzQzZSwyzIO0XhoP9cgKSb4
+Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
+7SO0b8qLQMw02YoBAOwG3hB8S5NBjdam/kRWvRjS8LMZDsVICPpOrwhQXkRl
+AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
+=p5Q+
+-----END PGP PRIVATE KEY BLOCK-----`,
+        });
+        const originalKeyRef = await CryptoWorker.importPrivateKey({
+            armoredKey: originalKey.armor(),
+            passphrase: null,
+        });
+
+        const updatedKeyRef = await CryptoWorker.cloneKeyAndChangeUserIDs({
+            privateKey: originalKeyRef,
+            userIDs: { email: 'updated@worker.com' },
+        });
+
+        const exportedOriginalKey = await openpgp_readKey({
+            armoredKey: await CryptoWorker.exportPrivateKey({ privateKey: originalKeyRef, passphrase: null }),
+        });
+        const exportedUpdatedKey = await openpgp_readKey({
+            armoredKey: await CryptoWorker.exportPrivateKey({ privateKey: updatedKeyRef, passphrase: null }),
+        });
+
+        // original key should be unchanged
+        expect(originalKey.write()).to.deep.equal(exportedOriginalKey.write());
+        // keys should be identical when ignoring the users
+        exportedOriginalKey.users = [];
+        exportedUpdatedKey.users = [];
+        expect(exportedUpdatedKey.write()).to.deep.equal(exportedOriginalKey.write());
+    });
+
+    it('cloneKeyAndChangeUserIDs - the returned key has a separate key reference', async () => {
+        const passphrase = 'passphrase';
+        const originalKeyRef = await CryptoWorker.importPrivateKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xYYEYjh/NRYJKwYBBAHaRw8BAQdAAJW2i9biFMIXiH15J6vGU1GCAqcp5utw
+C+y+CeZ+h4L+CQMI/K3Ebi8BpsUAzexw43SwgpD0mDGd/d4ORX77AiUoq/rp
+DKjS+0lpIszAa6SVWcA6xQZsz1ztdNBktEg4t/gybivH88kGTIprO/HWetM+
+j80RPHRlc3RAd29ya2VyLmNvbT7CjAQQFgoAHQUCYjh/NQQLCQcIAxUICgQW
+AAIBAhkBAhsDAh4BACEJEFx55sPEaXlKFiEE+PdMNIqw4jCyqqnuXHnmw8Rp
+eUoC8QD+NdQzOAWdIJEp1eMeEa3xx9rkCpD2TXUeV7goHtixyQIBANcgmRTg
+gN0O2hdiL9kjN4MPhbkz3dNTpkiO/K6O8UIDx4sEYjh/NRIKKwYBBAGXVQEF
+AQEHQF3XUaFXbb6O9Qcas72x5nhNupZ3iIrIx8wKeUdgdkBNAwEIB/4JAwjK
+CPlfkyHxBABYJC70HwO36TjRBxROY480CvL40r1bJ3NSLlV4aIZXLP2723PH
+tsnD3fhK5ZbGqC7FCmmDKEh1ibl3Lw6rEoE0Z6Fq72x6wngEGBYIAAkFAmI4
+fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
+9Jb0r5pG7sMbNclmp3s1OIfWG9tJ9RoXSHU/bCFHlgEA/ggjJKzRuja0MWZ6
+8IDTErKCgaYSPES5+mwT27LYvw0=
+=D7EW
+-----END PGP PRIVATE KEY BLOCK-----`,
+            passphrase,
+        });
+
+        const updatedKeyRef = await CryptoWorker.cloneKeyAndChangeUserIDs({
+            privateKey: originalKeyRef,
+            userIDs: { email: 'updated@worker.com' },
+        });
+        expect(updatedKeyRef.getUserIDs()).to.have.length(1);
+        expect(updatedKeyRef.getUserIDs().includes('<updated@worker.com>'));
+        expect(originalKeyRef.getUserIDs()).to.have.length(1);
+        expect(originalKeyRef.getUserIDs()).includes('<test@worker.com>');
+
+        await CryptoWorker.clearKey({ key: originalKeyRef }); // this clears the private params as well
+
+        const armoredKey = await CryptoWorker.exportPrivateKey({ privateKey: updatedKeyRef, passphrase });
+        const decryptedKeyFromArmored = await openpgp_decryptKey({
+            privateKey: await openpgp_readPrivateKey({ armoredKey }),
+            passphrase,
+        });
+        expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
+    });
+
     it('generateE2EEForwardingMaterial - the generated key is encrypted', async () => {
         const bobKey = await CryptoWorker.importPrivateKey({
             armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----

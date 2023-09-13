@@ -6,6 +6,8 @@ import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
 import usePromiseResult from './usePromiseResult';
 import { useUser } from './useUser';
 
+export const KEY = 'ORGANIZATION_KEY';
+
 const useOrganizationKey = (organization?: Organization) => {
     const cache = useCache();
     const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
@@ -19,7 +21,7 @@ const useOrganizationKey = (organization?: Organization) => {
         // is received as the keys are changed. So each time it changes, it will redo this.
         return cachedPromise(
             cache,
-            'ORGANIZATION_KEY',
+            KEY,
             async () => {
                 return getOrganizationKeyRaw();
             },
