@@ -447,6 +447,7 @@ export function useLinkInner(
                           originalSize: undefined,
                           originalDimensions: undefined,
                           digests: undefined,
+                          duration: undefined,
                       }
                     : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
                           .then(async (privateKey) =>
@@ -470,6 +471,7 @@ export function useLinkInner(
                                         height: xattrs.Media.Height,
                                     }
                                   : undefined,
+                              duration: xattrs.Media?.Duration,
                               digests: xattrs.Common?.Digests
                                   ? {
                                         sha1: xattrs.Common.Digests.SHA1,
@@ -498,7 +500,7 @@ export function useLinkInner(
                 if (xattrResult.status === 'rejected') {
                     return generateCorruptDecryptedLink(encryptedLink, name);
                 }
-                const { fileModifyTimeVerified, fileModifyTime, originalSize, originalDimensions, digests } =
+                const { fileModifyTimeVerified, fileModifyTime, originalSize, originalDimensions, digests, duration } =
                     xattrResult.value;
 
                 if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -520,6 +522,7 @@ export function useLinkInner(
                     fileModifyTime: fileModifyTime,
                     originalSize,
                     originalDimensions,
+                    duration,
                     signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
                     digests,
                 };
