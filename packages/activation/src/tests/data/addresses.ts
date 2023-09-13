@@ -1,5 +1,5 @@
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { AddressKey } from '@proton/shared/lib/interfaces';
+import { Address, AddressKey } from '@proton/shared/lib/interfaces';
 
 const activeKey: AddressKey = {
     ID: 'key',
@@ -21,7 +21,7 @@ const disabledKey: AddressKey = {
     Active: 0,
 };
 
-export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRESS_TYPE) => {
+export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRESS_TYPE): Address => {
     return {
         DisplayName: `Testing ${n}`,
         DomainID: 'proton.ch',
@@ -38,6 +38,7 @@ export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRES
         Status: 1,
         Type: type ?? 1,
         ProtonMX: true,
+        ConfirmationState: 1,
     };
 };
 
