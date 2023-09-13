@@ -133,6 +133,8 @@ export interface DecryptedLink extends Link {
         sha1: string;
     };
 
+    duration?: number;
+
     // corruptedLink is set when a link failed to be decrypted.
     // In this case we still want to show it to the user so he can delete it.
     corruptedLink?: boolean;

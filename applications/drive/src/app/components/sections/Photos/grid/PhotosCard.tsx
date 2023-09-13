@@ -1,10 +1,12 @@
 import { CSSProperties, FC, useEffect, useState } from 'react';
 
+import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { FileIcon } from '@proton/components/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -12,6 +14,7 @@ import type { PhotoLink } from '../../../../store/';
 import { usePortalPreview } from '../../../PortalPreview';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { getMimeTypeDescription } from '../../helpers';
+import { formatVideoDuration } from './formatVideoDuration';
 
 import './PhotosCard.scss';
 
@@ -85,7 +88,20 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
                     <div className="w100 h100 relative">
                         <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
                         {photo.mimeType && isVideo(photo.mimeType) && (
-                            <div className="w100 h100 absolute bottom flex flex-justify-end flex-align-items-end px-2 py-2 photos-card-video-info">
+                            <div className="w100 absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
+                                {photo.duration && (
+                                    <time
+                                        className="color-invert text-semibold mr-0.5"
+                                        dateTime={formatDuration(
+                                            { seconds: Math.floor(photo.duration) },
+                                            {
+                                                locale: dateLocale,
+                                            }
+                                        )}
+                                    >
+                                        {formatVideoDuration(photo.duration)}
+                                    </time>
+                                )}
                                 <img src={playCircleFilledIcon} alt="" />
                             </div>
                         )}

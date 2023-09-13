@@ -293,7 +293,7 @@ function parseBlockSizes(xattr: MaybeExtendedAttributes): number[] | undefined {
     return blockSizes as number[];
 }
 
-function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: number } | undefined {
+function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: number; Duration?: number } | undefined {
     const media = xattr?.Media;
     if (media === undefined || media.Width === undefined || media.Height === undefined) {
         return undefined;
@@ -308,9 +308,15 @@ function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: nu
         console.warn(`XAttr media height "${height}" is not valid`);
         return undefined;
     }
+    const duration = media.Duration;
+    if (duration !== undefined && typeof duration !== 'number') {
+        console.warn(`XAttr media duration "${duration}" is not valid`);
+        return undefined;
+    }
     return {
         Width: width,
         Height: height,
+        Duration: duration,
     };
 }
 
