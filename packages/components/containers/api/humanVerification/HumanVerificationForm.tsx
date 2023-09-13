@@ -31,6 +31,7 @@ export interface HumanVerificationFormProps {
     isEmbedded?: boolean;
     onChangeStep: (step: HumanVerificationSteps) => void;
     theme?: CaptchaTheme;
+    verifyApp?: boolean;
 }
 
 type SupportedHumanVerificationMethodType = keyof ReturnType<typeof getAvailableMethods>;
@@ -49,6 +50,7 @@ const HumanVerificationForm = ({
     step,
     isEmbedded,
     onChangeStep,
+    verifyApp,
 }: HumanVerificationFormProps) => {
     const api = useApi();
 
@@ -108,6 +110,7 @@ const HumanVerificationForm = ({
             step={step}
             onChangeStep={onChangeStep}
             onError={onError}
+            verifyApp={verifyApp}
         />
     );
 

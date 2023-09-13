@@ -133,6 +133,15 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         replaceUserIDs: async (opts) => {
             await Promise.all(getAllWorkers().map((worker) => worker.replaceUserIDs(opts)));
         },
+        cloneKeyAndChangeUserIDs: async (opts) => {
+            const [first, ...rest] = getAllWorkers();
+            const keyReference = await first.cloneKeyAndChangeUserIDs(opts);
+            const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
+            await Promise.all(
+                rest.map((worker) => worker.importPrivateKey({ binaryKey: key, passphrase: null }, keyReference._idx))
+            );
+            return keyReference;
+        },
         exportPublicKey: (opts) => getWorker().exportPublicKey(opts),
         exportPrivateKey: (opts) => getWorker().exportPrivateKey(opts),
         clearKeyStore: async () => {

@@ -9,6 +9,10 @@ import { UserSettings } from '@proton/shared/lib/interfaces';
 import { ModalProps, Prompt } from '../../../components';
 import { useApi, useNotifications } from '../../../hooks';
 
+export const getVerificationSentText = (address: string) => {
+    return c('Email verification').t`Verification email sent to ${address}`;
+};
+
 interface Props extends ModalProps {
     email: UserSettings['Email'];
 }
@@ -24,7 +28,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
 
         createNotification({
             type: 'success',
-            text: c('Recovery Email').t`Verification email sent to ${email.Value}`,
+            text: getVerificationSentText(email.Value),
         });
 
         onClose?.();

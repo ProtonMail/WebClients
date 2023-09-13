@@ -7,7 +7,17 @@ import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
-import { Address, AddressKey, DecryptedKey, EncryptionConfig, KeyPair } from '../interfaces';
+import {
+    Address,
+    AddressKey,
+    DecryptedAddressKey,
+    DecryptedKey,
+    EncryptionConfig,
+    KeyPair,
+    KeysPair,
+    AddressKey as tsAddressKey,
+    Key as tsKey,
+} from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 
 interface EncryptAddressKeyTokenArguments {
@@ -135,6 +145,49 @@ export const getAddressKeyToken = ({
     }
     // Old address key format for an admin signed into a non-private user
     return decryptMemberToken(Token, [organizationKey.privateKey], [organizationKey.publicKey]);
+};
+
+export const getAddressKeyPassword = (
+    { Activation, Token, Signature }: tsKey,
+    userKeys: KeysPair,
+    keyPassword: string,
+    organizationKey?: KeyPair
+) => {
+    // If not decrypting the non-private member keys with the organization key, and
+    // because the activation process is asynchronous in the background, allow the
+    // private key to get decrypted already here so that it can be used
+    if (!organizationKey && Activation) {
+        return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
+    }
+
+    if (Token) {
+        return getAddressKeyToken({
+            Token,
+            Signature,
+            organizationKey,
+            privateKeys: userKeys.privateKeys,
+            publicKeys: userKeys.publicKeys,
+        });
+    }
+
+    return Promise.resolve(keyPassword);
+};
+
+export const getDecryptedAddressKey = async (
+    { ID, PrivateKey, Flags, Primary }: tsAddressKey,
+    addressKeyPassword: string
+): Promise<DecryptedAddressKey> => {
+    const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: addressKeyPassword });
+    const publicKey = await CryptoProxy.importPublicKey({
+        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+    });
+    return {
+        ID,
+        Flags,
+        privateKey,
+        publicKey,
+        Primary,
+    };
 };
 
 export interface ReformatAddressKeyArguments {
@@ -272,4 +325,50 @@ export const getReplacedAddressKeyTokens = async ({ addresses, userKeys, private
     return {
         AddressKeyTokens: reEncryptedTokens.flat(),
     };
+};
+
+interface RenameAddressKeysArguments {
+    userKeys: DecryptedKey[];
+    addressKeys: AddressKey[];
+    organizationKey?: KeyPair;
+    email: string;
+}
+
+export const getRenamedAddressKeys = async ({
+    userKeys,
+    addressKeys,
+    organizationKey,
+    email,
+}: RenameAddressKeysArguments) => {
+    const splittedUserKeys = splitKeys(userKeys);
+
+    const cb = async (addressKey: AddressKey) => {
+        try {
+            const addressKeyPassword = await getAddressKeyPassword(
+                addressKey,
+                splittedUserKeys,
+                '', // Not using a key password since this function only works for address key migrated users
+                organizationKey
+            );
+            const { privateKey } = await getDecryptedAddressKey(addressKey, addressKeyPassword);
+            const changedPrivateKey = await CryptoProxy.cloneKeyAndChangeUserIDs({
+                privateKey,
+                userIDs: [{ name: email, email }],
+            });
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey: changedPrivateKey,
+                passphrase: addressKeyPassword,
+            });
+            await CryptoProxy.clearKey({ key: privateKey });
+            return {
+                PrivateKey: privateKeyArmored,
+                ID: addressKey.ID,
+            };
+        } catch (e) {
+            return;
+        }
+    };
+
+    const result = await Promise.all(addressKeys.map(cb));
+    return result.filter(isTruthy);
 };

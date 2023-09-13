@@ -1,3 +1,4 @@
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
@@ -7,6 +8,9 @@ import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/share
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
+import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
+import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
+import { FeatureFlag } from '../../containers/unleash';
 import { useAddressFlags, useApi, useEventManager, useNotifications } from '../../hooks';
 import DeleteAddressModal from './DeleteAddressModal';
 import DisableAddressModal from './DisableAddressModal';
@@ -81,10 +85,13 @@ const AddressActions = ({
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
+    const editEmailAddressEnabled = useFlag(FeatureFlag.EditEmailAddress);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressProps, setDeleteAddressModalOpen, renderDeleteAddress] = useModalState();
     const [disableAddressProps, setDisableAddressModalOpen, renderDisableAddress] = useModalState();
+    const [editInternalAddressProps, setEditInternalAddressOpen, renderEditInternalAddressModal] = useModalState();
+    const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
 
     const handleDelete = async () => {
         if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
@@ -115,6 +122,16 @@ const AddressActions = ({
                       text: c('Address action').t`Generate missing keys`,
                       onClick: () => setMissingKeysAddressModalOpen(true),
                   },
+                  editEmailAddressEnabled &&
+                      permissions.canEditInternalAddress && {
+                          text: c('Address action').t`Edit address`,
+                          onClick: () => setEditInternalAddressOpen(true),
+                      },
+                  editEmailAddressEnabled &&
+                      permissions.canEditExternalAddress && {
+                          text: c('Address action').t`Edit address`,
+                          onClick: () => setEditExternalAddressOpen(true),
+                      },
                   permissions.canMakeDefault &&
                       onSetDefault && {
                           text: c('Address action').t`Set as default`,
@@ -146,6 +163,12 @@ const AddressActions = ({
                     addressesToGenerate={[address]}
                     organizationKey={organizationKey}
                 />
+            )}
+            {renderEditInternalAddressModal && (
+                <EditInternalAddressModal address={address} {...editInternalAddressProps} />
+            )}
+            {renderEditExternalAddressModal && (
+                <EditExternalAddressModal address={address} {...editExternalAddressProps} />
             )}
             {renderDeleteAddress && (
                 <DeleteAddressModal email={address.Email} onDeleteAddress={handleDelete} {...deleteAddressProps} />

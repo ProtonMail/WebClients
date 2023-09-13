@@ -8,7 +8,13 @@ import {
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import {
+    Address,
+    AddressConfirmationState,
+    CachedOrganizationKey,
+    Member,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
@@ -46,7 +52,7 @@ export const getIsNonDefault = (address: Address) => {
 
 export const getPermissions = ({
     member,
-    address: { ID, Status, HasKeys, Type, Priority },
+    address: { ID, Status, HasKeys, Type, Priority, ConfirmationState },
     address,
     addresses,
     user,
@@ -104,9 +110,15 @@ export const getPermissions = ({
         }
     }
 
+    const canEditInternalAddress = Type !== ADDRESS_TYPE.TYPE_EXTERNAL;
+    const canEditExternalAddress =
+        Type === ADDRESS_TYPE.TYPE_EXTERNAL && ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED;
+
     return {
         canMakeDefault,
         canGenerate,
+        canEditInternalAddress,
+        canEditExternalAddress,
         canDisable,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         // Takes into account disabling permissions since it does that automatically. canPay to simulate the "payments" scope for delete route.
