@@ -2,7 +2,7 @@ import { ReactNode, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
@@ -16,7 +16,6 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
@@ -152,12 +151,6 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                             {c('Info')
                                 .t`Please go to the signed-in device (in the session where the request was initiated) to change your password.`}
                         </div>
-                        <Href
-                            href={
-                                // TODO: add knowledge base url
-                                getKnowledgeBaseUrl('/session-recovery')
-                            }
-                        >{c('Link').t`Learn more`}</Href>
                     </>
                 </ModalContent>
                 <ModalFooter>
@@ -201,12 +194,6 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                             {c('Info')
                                 .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
                         </div>
-                        <Href
-                            href={
-                                // TODO: add knowledge base url
-                                getKnowledgeBaseUrl('/session-recovery')
-                            }
-                        >{c('Link').t`Learn more`}</Href>
                     </>
                 ),
                 footer: (
