@@ -1,6 +1,6 @@
 jest.mock('@unleash/proxy-client-react', () => ({
     __esModule: true,
-    useFlag: () => {},
+    useFlag: jest.fn(),
     useFlags: () => {},
     useFlagsStatus: () => {},
 }));

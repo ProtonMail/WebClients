@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef } from 'react';
 
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
+import { useFlag } from '@unleash/proxy-client-react';
 
 import {
     OrderableTable,
@@ -45,6 +46,8 @@ const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVer
 
 jest.mock('@proton/components/hooks/useFeature');
 const mockedUseFeature = useFeature as jest.MockedFunction<any>;
+
+const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
 describe('addresses with user', () => {
     const user = {
@@ -97,6 +100,7 @@ describe('addresses with user', () => {
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseFeature.mockReturnValue({ feature: { Value: { MailForwarding: true } }, loading: false });
+    mockedUseFlag.mockReturnValue(true);
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[title]');
