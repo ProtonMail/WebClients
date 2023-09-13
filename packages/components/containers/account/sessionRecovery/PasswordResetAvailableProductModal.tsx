@@ -2,9 +2,8 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import { useSessionRecoveryInsecureTimeRemaining } from '@proton/components/hooks/useSessionRecovery';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
     ModalTwo as Modal,
@@ -90,12 +89,6 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
                         {c('Info')
                             .jt`You can now change your password for the account ${boldEmail} freely during the next ${boldDaysRemaining}.`}
                     </div>
-                    <Href
-                        href={
-                            // TODO: add knowledge base url
-                            getKnowledgeBaseUrl('/session-recovery')
-                        }
-                    >{c('Link').t`Learn more`}</Href>
                 </>
             </ModalContent>
             <ModalFooter>
