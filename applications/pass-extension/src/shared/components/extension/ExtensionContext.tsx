@@ -16,13 +16,9 @@ import type {
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
-import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
-import locales from '../../../app/locales';
 import { INITIAL_WORKER_STATE } from '../../constants';
 import { ExtensionContext, type ExtensionContextType } from '../../extension';
 import { useActivityProbe } from '../../hooks/useActivityProbe';
@@ -45,15 +41,12 @@ export const ExtensionAppContext = createContext<ExtensionAppContextValue>({
     sync: noop,
 });
 
-const setup = async (options: {
+const setup = (options: {
     tabId: TabId;
     endpoint: ExtensionEndpoint;
     messageFactory: MessageWithSenderFactory;
-}): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> => {
-    setTtagLocales(locales);
-    await loadLocale(DEFAULT_LOCALE, locales);
-
-    return sendMessage.on(
+}): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> =>
+    sendMessage.on(
         options.messageFactory({
             type: WorkerMessageType.WORKER_WAKEUP,
             payload: { tabId: options.tabId },
@@ -63,7 +56,6 @@ const setup = async (options: {
             throw new Error('extension wake-up failure');
         }
     );
-};
 
 type ExtensionContextProviderProps<T extends ExtensionEndpoint> = {
     endpoint: T;

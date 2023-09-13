@@ -1,4 +1,4 @@
-import { type VFC, memo, useEffect } from 'react';
+import { type VFC, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -15,7 +15,7 @@ import { TrashItemsList } from './Sidebar/TrashItemsList';
 
 import './Main.scss';
 
-const MainRaw: VFC = () => {
+export const Main: VFC = () => {
     const { clearNotifications } = useNotifications();
     useEffect(() => () => clearNotifications(), []);
 
@@ -53,5 +53,3 @@ const MainRaw: VFC = () => {
         </FadeIn>
     );
 };
-
-export const Main = memo(MainRaw, () => true);

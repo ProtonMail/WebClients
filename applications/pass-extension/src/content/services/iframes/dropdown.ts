@@ -58,46 +58,58 @@ export const createDropdown = (): InjectedDropdown => {
             set: () => iframe.updatePosition(),
         });
 
+    const getPayloadForAction = withContext<(action: DropdownAction) => Promise<DropdownActions>>(
+        async (ctx, action) => {
+            const { loggedIn } = ctx.getState();
+
+            switch (action) {
+                case DropdownAction.AUTOFILL: {
+                    if (!loggedIn) return { action, items: [], needsUpgrade: false };
+                    const { items, needsUpgrade } = ctx.service.autofill.getState() ?? {};
+                    return { action, items: items ?? [], needsUpgrade: Boolean(needsUpgrade) };
+                }
+                case DropdownAction.AUTOSUGGEST_ALIAS: {
+                    const { domain, subdomain, displayName } = ctx.getExtensionContext().url;
+                    return { action, domain: subdomain ?? domain!, prefix: deriveAliasPrefix(displayName!) };
+                }
+                case DropdownAction.AUTOSUGGEST_PASSWORD: {
+                    return { action };
+                }
+            }
+        }
+    );
+
     /* As we are recyling the dropdown iframe sub-app instead of
      * re-injecting for each field - opening the dropdown involves
      * passing the actual field handle to attach it to
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = withContext<(options: DropdownOpenOptions) => Promise<void>>(
-        async ({ service: { autofill }, getState, getExtensionContext }, { field, action, autofocused }) => {
-            await waitUntil(() => iframe.state.ready, 50);
-            fieldRef.current = field;
+    const open = async ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> => {
+        await waitUntil(() => iframe.state.ready, 50);
+        fieldRef.current = field;
 
-            const { loggedIn } = getState();
+        const payload = await getPayloadForAction(action);
 
-            const payload = await (async (): Promise<DropdownActions> => {
-                switch (action) {
-                    case DropdownAction.AUTOFILL: {
-                        if (!loggedIn) return { action, items: [], needsUpgrade: false };
-                        const { items, needsUpgrade } = await autofill.getAutofillCandidates();
-                        return { action, items, needsUpgrade };
-                    }
-                    case DropdownAction.AUTOSUGGEST_ALIAS: {
-                        const { domain, subdomain, displayName } = getExtensionContext().url;
-                        return { action, domain: subdomain ?? domain!, prefix: deriveAliasPrefix(displayName!) };
-                    }
-                    case DropdownAction.AUTOSUGGEST_PASSWORD: {
-                        return { action };
-                    }
-                }
-            })();
+        /* If the opening action is coming from a focus event for an autofill action and the we
+         * have no login items that match the current domain, avoid auto-opening  the dropdown */
+        if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
 
-            /* If the opening action is coming from a focus event for an autofill action and the we
-             * have no login items that match the current domain, avoid auto-opening  the dropdown */
-            if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
+        iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+        const scrollParent = getScrollParent(field.element);
+        iframe.open(action, scrollParent);
+        updatePosition();
+    };
 
-            iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
-            const scrollParent = getScrollParent(field.element);
-            iframe.open(action, scrollParent);
-            updatePosition();
+    const sync = async () => {
+        const action = fieldRef.current?.action;
+        if (action) {
+            iframe.sendPortMessage({
+                type: IFrameMessageType.DROPDOWN_ACTION,
+                payload: await getPayloadForAction(action),
+            });
         }
-    );
+    };
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the
@@ -149,13 +161,14 @@ export const createDropdown = (): InjectedDropdown => {
     listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {
+        close: pipe(iframe.close, () => dropdown),
+        destroy,
         getState: () => iframe.state,
         getCurrentField: () => fieldRef.current,
-        reset: pipe(iframe.reset, () => dropdown),
-        close: pipe(iframe.close, () => dropdown),
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
-        destroy,
+        reset: pipe(iframe.reset, () => dropdown),
+        sync,
     };
 
     return dropdown;

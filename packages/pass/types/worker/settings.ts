@@ -3,10 +3,10 @@ export type AutoSaveSettings = { prompt: boolean };
 export type AutoSuggestSettings = { password: boolean; email: boolean };
 
 export type CriteriaMask = number;
-export type DisallowCritera = keyof typeof DisallowCriteriaMasks;
-export type DisallowedDomains = Record<string, CriteriaMask>;
+export type CriteriaMasks = keyof typeof CRITERIA_MASKS;
+export type DomainCriterias = Record<string, CriteriaMask>;
 
-export const DisallowCriteriaMasks = {
+export const CRITERIA_MASKS = {
     Autofill: 1 << 0,
     Autofill2FA: 1 << 1,
     Autosuggest: 1 << 2,

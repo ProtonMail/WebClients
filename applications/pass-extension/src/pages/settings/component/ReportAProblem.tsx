@@ -5,7 +5,7 @@ import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
 import { reportProblemIntent, selectRequestInFlight, selectUser } from '@proton/pass/store';
@@ -15,6 +15,7 @@ import { type BugPayload } from '@proton/shared/lib/api/reports';
 
 import { APP_NAME, APP_VERSION, CLIENT_TYPE } from '../../../app/config';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
+import { SettingsPanel } from './SettingsPanel';
 
 type FormValues = { description: string };
 
@@ -31,15 +32,10 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     return errors;
 };
 
-{
-    /* FIXME - add screenshots and test upload to Zendesk */
-}
 export const ReportAProblem: VFC = () => {
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
 
-    // const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
-    // const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
     const requestInFlight = useSelector(selectRequestInFlight(reportProblem));
 
     const form = useFormik<FormValues>({
@@ -49,11 +45,6 @@ export const ReportAProblem: VFC = () => {
         validateOnMount: true,
         validate,
         onSubmit: async ({ description }) => {
-            // const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
-            //     acc[name] = blob;
-            //     return acc;
-            // }, {});
-
             const payload: BugPayload = {
                 ...getReportInfo(),
                 Client: getClientName(APP_NAME),
@@ -70,21 +61,15 @@ export const ReportAProblem: VFC = () => {
     });
 
     useRequestStatusEffect(reportProblem, {
-        onSuccess: () => {
-            form.resetForm();
-            // setScreenshots([]);
-        },
+        onSuccess: () => form.resetForm(),
     });
 
     return (
-        <Card rounded className="mb-4 p-3">
-            <strong className="color-norm block mb-1">{c('Label').t`Report a problem`}</strong>
-            <em className="block text-sm color-weak mb-2">
-                {c('Warning').t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}{' '}
-            </em>
-
-            <hr className="mt-2 mb-4 border-weak" />
-
+        <SettingsPanel
+            title={c('Label').t`Report a problem`}
+            subTitle={c('Warning')
+                .t`Reports are not end-to-end encrypted, please do not send any sensitive information.`}
+        >
             <FormikProvider value={form}>
                 <Form>
                     <TextAreaTwo
@@ -98,15 +83,6 @@ export const ReportAProblem: VFC = () => {
                         disabled={requestInFlight}
                     />
 
-                    {/* <AttachScreenshot
-                        id="attachments"
-                        screenshots={screenshots}
-                        setScreenshots={setScreenshots}
-                        uploading={uploadingScreenshots}
-                        setUploading={setUploadingScreenshots}
-                        disabled={uploadingScreenshots || requestInFlight}
-                    /> */}
-
                     <Button
                         className="mt-4 w100"
                         color="norm"
@@ -119,6 +95,6 @@ export const ReportAProblem: VFC = () => {
                     </Button>
                 </Form>
             </FormikProvider>
-        </Card>
+        </SettingsPanel>
     );
 };

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenuButton, Icon } from '@proton/components';
+import { Icon } from '@proton/components';
 import { selectAllVaults } from '@proton/pass/store';
 import type { ItemType, VaultShare } from '@proton/pass/types';
 
@@ -12,6 +12,7 @@ import type { ItemTypeViewProps } from '../../../shared/items/types';
 import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { QuickActionsDropdown } from '../../components/Dropdown/QuickActionsDropdown';
 import { VAULT_ICON_MAP } from '../../components/Vault/constants';
+import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { PanelHeader } from './Header';
 import { Panel } from './Panel';
 
@@ -80,19 +81,15 @@ export const ItemViewPanel: FC<Props> = ({
                                     disabled={optimistic}
                                 >
                                     <DropdownMenuButton
-                                        className="flex flex-align-items-center text-left"
                                         onClick={handleRestoreClick}
-                                    >
-                                        <Icon name="arrows-rotate" className="mr-2" />
-                                        {c('Action').t`Restore item`}
-                                    </DropdownMenuButton>
+                                        label={c('Action').t`Restore item`}
+                                        icon="arrows-rotate"
+                                    />
                                     <DropdownMenuButton
-                                        className="flex flex-align-items-center text-left"
                                         onClick={handleDeleteClick}
-                                    >
-                                        <Icon name="trash-cross" className="mr-2" />
-                                        {c('Action').t`Delete permanently`}
-                                    </DropdownMenuButton>
+                                        label={c('Action').t`Delete permanently`}
+                                        icon="trash-cross"
+                                    />
                                 </QuickActionsDropdown>,
                             ];
                         }
@@ -121,23 +118,19 @@ export const ItemViewPanel: FC<Props> = ({
                             >
                                 {hasMultipleVaults && (
                                     <DropdownMenuButton
-                                        className="flex flex-align-items-center text-left"
                                         onClick={handleMoveToVaultClick}
-                                    >
-                                        <Icon name="folder-arrow-in" className="mr-3 color-weak" />
-                                        {c('Action').t`Move to another vault`}
-                                    </DropdownMenuButton>
+                                        label={c('Action').t`Move to another vault`}
+                                        icon="folder-arrow-in"
+                                    />
                                 )}
 
                                 {quickActions}
 
                                 <DropdownMenuButton
-                                    className="flex flex-align-items-center text-left"
                                     onClick={handleMoveToTrashClick}
-                                >
-                                    <Icon name="trash" className="mr-3 color-weak" />
-                                    {c('Action').t`Move to Trash`}
-                                </DropdownMenuButton>
+                                    label={c('Action').t`Move to Trash`}
+                                    icon="trash"
+                                />
                             </QuickActionsDropdown>,
                         ];
                     })()}

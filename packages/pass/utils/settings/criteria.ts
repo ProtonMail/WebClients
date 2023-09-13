@@ -1,9 +1,9 @@
 import type { Maybe } from '../../types';
-import type { DisallowCritera } from '../../types/worker/settings';
-import { DisallowCriteriaMasks } from '../../types/worker/settings';
+import type { CriteriaMasks } from '../../types/worker/settings';
+import { CRITERIA_MASKS } from '../../types/worker/settings';
 
-export const toggleCriteria = (setting: number, criteria: DisallowCritera) =>
-    (setting = setting ^ DisallowCriteriaMasks[criteria]);
+export const toggleCriteria = (setting: number, criteria: CriteriaMasks) =>
+    (setting = setting ^ CRITERIA_MASKS[criteria]);
 
-export const hasCriteria = (setting: Maybe<number>, criteria: DisallowCritera) =>
-    ((setting ?? 0) & DisallowCriteriaMasks[criteria]) !== 0;
+export const hasCriteria = (setting: Maybe<number>, criteria: CriteriaMasks) =>
+    ((setting ?? 0) & CRITERIA_MASKS[criteria]) !== 0;
