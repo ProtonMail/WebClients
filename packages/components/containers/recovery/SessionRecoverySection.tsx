@@ -19,6 +19,7 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import InitiateSessionRecoveryModal from '../account/sessionRecovery/InitiateSessionRecoveryModal';
+import ConfirmDisableSessionRecoveryModal from './ConfirmDisableSessionRecoveryModal';
 
 const SessionRecoverySection = () => {
     const api = useApi();
@@ -27,6 +28,11 @@ const SessionRecoverySection = () => {
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
 
     const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
+    const [
+        confirmDisableSessionRecoveryModal,
+        setConfirmDisableSessionRecoveryModalOpen,
+        renderConfirmDisableSessionRecoveryModal,
+    ] = useModalState();
 
     const [hasRecoveryMethod, loadingUseHasRecoveryMethod] = useHasRecoveryMethod();
     const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
@@ -34,14 +40,17 @@ const SessionRecoverySection = () => {
 
     const { createNotification } = useNotifications();
 
-    const handleSessionRecoveryToggle = async (checked: boolean) => {
-        await api(updateSessionAccountRecovery({ SessionAccountRecovery: checked ? 1 : 0 }));
+    const handleEnableSessionRecoveryToggle = async () => {
+        await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
         await call();
     };
 
     return (
         <>
             {renderSessionRecoveryModal && <InitiateSessionRecoveryModal confirmedStep {...sessionRecoveryModal} />}
+            {renderConfirmDisableSessionRecoveryModal && (
+                <ConfirmDisableSessionRecoveryModal {...confirmDisableSessionRecoveryModal} />
+            )}
             <SettingsSection>
                 <SettingsParagraph>
                     {c('Info').t`Request a password reset from your Account settings. No recovery method needed.`}
@@ -69,7 +78,12 @@ const SessionRecoverySection = () => {
                                         return;
                                     }
 
-                                    void withLoadingSessionRecovery(handleSessionRecoveryToggle(checked));
+                                    if (!checked) {
+                                        setConfirmDisableSessionRecoveryModalOpen(true);
+                                        return;
+                                    }
+
+                                    void withLoadingSessionRecovery(handleEnableSessionRecoveryToggle());
                                 }}
                             />
                         </div>
