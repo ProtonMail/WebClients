@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import {
@@ -20,10 +20,11 @@ export const useCalendarSearchPagination = (
     date: Date,
     maxItemsPerPage = DEFAULT_MAX_ITEMS_PER_PAGE
 ) => {
-    const maxPage = Math.floor(items.length / maxItemsPerPage);
-    const [currentPage, setCurrentPage] = useState(getInitialPage(items, maxItemsPerPage));
     const history = useHistory();
+    const isFirstRenderRef = useRef(true);
+    const [currentPage, setCurrentPage] = useState(getInitialPage(items, maxItemsPerPage));
 
+    const maxPage = Math.floor(items.length / maxItemsPerPage);
     const isPreviousEnabled = currentPage > 0;
     const isNextEnabled = currentPage < maxPage;
 
@@ -49,7 +50,27 @@ export const useCalendarSearchPagination = (
     }, [history.location]);
 
     useEffect(() => {
-        // on each new search, or if users change the selecte date, re-compute initial page
+        /**
+         * This useEffect is in charge of setting the page that contains the closest item to the selected date in case
+         * the selected date gets changed.
+         */
+        if (isFirstRenderRef.current) {
+            // no need to do anything
+            isFirstRenderRef.current = false;
+            return;
+        }
+
+        const { keyword, begin, end, page } = extractSearchParameters(history.location);
+        if (page !== undefined) {
+            // If a page was visible, we will remove it because the user is now navigating by selected date (and not by page)
+            history.push(
+                generatePathnameWithSearchParams(history.location, {
+                    keyword,
+                    begin: begin ? String(begin) : undefined,
+                    end: end ? String(end) : undefined,
+                })
+            );
+        }
         setCurrentPage(getInitialPage(items, maxItemsPerPage));
     }, [items, date]);
 
