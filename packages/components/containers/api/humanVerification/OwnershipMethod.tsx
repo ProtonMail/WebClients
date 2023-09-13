@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { isVerifyAddressOwnership } from '@proton/components/containers/api/humanVerification/helper';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -14,7 +15,7 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Loader } from '../../../components';
+import { Loader, SettingsLink } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
@@ -83,6 +84,7 @@ interface Props {
     onChangeStep: (step: HumanVerificationSteps) => void;
     ownershipCacheRef: MutableRefObject<OwnershipCache>;
     onLoaded: () => void;
+    verifyApp?: boolean;
 }
 
 const OwnershipMethod = ({
@@ -96,6 +98,7 @@ const OwnershipMethod = ({
     onSubmit,
     onClose,
     onError,
+    verifyApp,
 }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -186,6 +189,18 @@ const OwnershipMethod = ({
                     <Text className="text-pre-wrap">
                         {formatMessage(verificationModel.description, verificationModel.value)}
                     </Text>
+                }
+                footer={
+                    isVerifyAddressOwnership(verificationModel) && !verifyApp ? (
+                        <div className="mt-2">
+                            <hr />
+                            <div className="text-center mt-5 mb-5">
+                                <SettingsLink key="link" path="/account-password?action=edit-email">
+                                    {c('Info').t`Edit email address`}
+                                </SettingsLink>
+                            </div>
+                        </div>
+                    ) : null
                 }
                 verification={verificationModel}
                 onSubmit={handleCode}

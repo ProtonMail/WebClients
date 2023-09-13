@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef } from 'react';
 
 import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
+import { useFlag } from '@unleash/proxy-client-react';
 
 import {
     OrderableTable,
@@ -45,6 +46,8 @@ const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVer
 
 jest.mock('@proton/components/hooks/useFeature');
 const mockedUseFeature = useFeature as jest.MockedFunction<any>;
+
+const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
 describe('addresses with user', () => {
     const user = {
@@ -97,18 +100,20 @@ describe('addresses with user', () => {
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseFeature.mockReturnValue({ feature: { Value: { MailForwarding: true } }, loading: false });
+    mockedUseFlag.mockReturnValue(true);
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[title]');
     };
 
-    it('should be able to set an alias as default', () => {
+    it('should be able to set an alias as default', async () => {
         const mockApi = jest.fn();
         mockedUseApi.mockReturnValue(mockApi);
 
-        const { getByText, container } = render(<AddressesWithUser user={user} />);
+        const { getByTestId, getByText, container } = render(<AddressesWithUser user={user} />);
 
         // Assumes that "Make default" is displayed on the address we're interested in
+        fireEvent.click(getByTestId('dropdownActions:dropdown'));
         fireEvent.click(getByText('Set as default'));
         expect(mockApi).toHaveBeenCalledWith(orderAddress(['3', '1', '2', '4']));
         expect(getFirstAddress(container)?.innerHTML).toBe('a1@proton.me');

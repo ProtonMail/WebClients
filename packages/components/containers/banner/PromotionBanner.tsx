@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import './PromotionBanner.scss';
 
 interface Props {
+    className?: string;
     rounded?: boolean;
     icon?: ReactNode;
     description?: ReactNode;
@@ -17,14 +18,17 @@ interface Props {
     loading?: boolean;
     hasDismissAction?: boolean;
     contentCentered?: boolean;
+    mode?: 'row' | 'banner';
     onClose?: () => void;
     ['data-testid']?: string;
 }
 
 const PromotionBanner = ({
+    className,
     rounded = false,
     loading = false,
     contentCentered = true,
+    mode = 'row',
     description,
     cta,
     icon,
@@ -41,14 +45,25 @@ const PromotionBanner = ({
             className={clsx(
                 'flex flex-nowrap flex-item-noshrink bg-promotion relative',
                 contentCentered && 'text-center on-tablet-text-left p-0-5',
-                rounded && 'rounded'
+                rounded && 'rounded',
+                className
             )}
             data-testid={dataTestId}
         >
             <div
                 className={clsx(
                     'inline-flex mx-auto flex-nowrap flex-align-items-center ',
-                    contentCentered ? 'm-0.5 px-2' : 'm-2 pl-4 w100',
+                    (() => {
+                        if (contentCentered) {
+                            return 'm-0.5 px-2';
+                        }
+                        if (mode === 'banner') {
+                            return 'm-3 pl-4 w100';
+                        }
+                        if (mode === 'row') {
+                            return 'm-2 pl-4 w100';
+                        }
+                    })(),
                     loading && 'w33'
                 )}
             >

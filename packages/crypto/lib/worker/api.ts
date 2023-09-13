@@ -967,6 +967,48 @@ export class Api extends KeyManagementApi {
             return destUser;
         });
     }
+
+    /**
+     * Return a new key reference with changed userIDs.
+     * Aside from the userIDs, the two keys are identical (e.g. same binding signatures).
+     * The original key is not modified.
+     */
+    async cloneKeyAndChangeUserIDs({
+        privateKey: privateKeyRef,
+        userIDs,
+    }: {
+        privateKey: PrivateKeyReference;
+        userIDs: MaybeArray<UserID>;
+    }) {
+        const originalKey = this.keyStore.get(privateKeyRef._idx) as PrivateKey;
+
+        // @ts-ignore missing clone declaration
+        const updatedKey: PrivateKey = originalKey.clone(true);
+
+        // To preserve the original key signatures that are not involved with userIDs,
+        // we first reformat the key to add & sign the new userIDs, then replace the userIDs of the original key.
+        // To improve reformatting performance, we can drop subkeys beforehand, as they are not needed for the UserID
+        const updatedSubkeys = updatedKey.subkeys;
+        // NB: the private key params of the returned reformatted keys point to the same ones as `updatedKey`.
+        // Hence, they will be cleared once the corresponding ref is cleared by the app -- no need to clear them now.
+        const { publicKey: temporaryKeyWithNewUsers } = await reformatKey({
+            privateKey: updatedKey,
+            userIDs,
+            format: 'object',
+        });
+        updatedKey.subkeys = updatedSubkeys;
+
+        // same process as `updateUserIDs`
+        updatedKey.users = temporaryKeyWithNewUsers.users.map((newUser) => {
+            // @ts-ignore missing .clone() definition
+            const destUser = newUser.clone();
+            destUser.mainKey = updatedKey;
+            return destUser;
+        });
+
+        const keyStoreID = this.keyStore.add(updatedKey);
+        return getPrivateKeyReference(updatedKey, keyStoreID);
+    }
 }
 
 export interface ApiInterface extends Omit<Api, 'keyStore'> {}
