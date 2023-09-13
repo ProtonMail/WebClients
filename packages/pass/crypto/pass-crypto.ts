@@ -305,6 +305,21 @@ const createPassCrypto = (): PassCryptoWorker => {
             return { Keys: inviteKeys, Email: email, ShareRoleID: role, TargetType: ShareType.Vault };
         },
 
+        async acceptVaultInvite({ inviteKeys, inviterPublicKeys }) {
+            assertHydrated(context);
+
+            const vaultKeys = await processes.acceptVaultInvite({
+                userKey: context.primaryUserKey,
+                inviteKeys,
+                inviteePrivateKey: (await getAddressKey(context.primaryAddress.ID)).privateKey,
+                inviterPublicKeys: await Promise.all(
+                    inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
+                ),
+            });
+
+            return { Keys: vaultKeys };
+        },
+
         serialize: () => ({
             shareManagers: [...context.shareManagers.entries()].map(([shareId, shareManager]) => [
                 shareId,
