@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation, KeyTransparencySetting, MailSettings } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useFeature, useGetMailSettings } from '../../hooks';
+import { useAuthentication, useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KT_FF, KtFeatureEnum, isKTActive } from './ktStatus';
 
 const getKTActivationPromise = async (
     featureFlag: KT_FF,
     appName: APP_NAMES,
-    mailSettings: MailSettings
+    mailSettings?: MailSettings
 ): Promise<KeyTransparencyActivation> => {
     if (!featureFlag) {
         return KeyTransparencyActivation.DISABLED;
@@ -23,7 +23,7 @@ const getKTActivationPromise = async (
     }
     if (featureFlag == KtFeatureEnum.ENABLE_UI) {
         if (appName === APPS.PROTONMAIL) {
-            if (mailSettings.KT === KeyTransparencySetting.Enabled) {
+            if (mailSettings?.KT === KeyTransparencySetting.Enabled) {
                 return KeyTransparencyActivation.SHOW_UI;
             } else {
                 return KeyTransparencyActivation.LOG_ONLY;
@@ -49,6 +49,8 @@ const getKTFeatureCode = (appName: APP_NAMES): FeatureCode | undefined => {
 
 const useKTActivation = (): KeyTransparencyActivation => {
     const { APP_NAME: appName } = useConfig();
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID;
     const featureCode = getKTFeatureCode(appName);
     const { feature } = useFeature<KT_FF>(featureCode ?? FeatureCode.KeyTransparencyAccount);
     const featureFlag = featureCode ? feature?.Value : undefined;
@@ -57,12 +59,12 @@ const useKTActivation = (): KeyTransparencyActivation => {
 
     useEffect(() => {
         const run = async () => {
-            const mailSettings = await getMailSettings();
+            const mailSettings = isAuthenticated ? await getMailSettings() : undefined;
             const ktActivation = await getKTActivationPromise(featureFlag, appName, mailSettings);
             setKTActivation(ktActivation);
         };
         void run();
-    }, [featureFlag, appName, getMailSettings]);
+    }, [featureFlag, appName, isAuthenticated, getMailSettings]);
 
     return ktActivation;
 };
