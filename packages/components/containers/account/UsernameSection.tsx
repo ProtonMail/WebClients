@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href } from '@proton/atoms';
-import { getVerificationSentText } from '@proton/components/containers/recovery/email/VerifyRecoveryEmailModal';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -28,6 +27,9 @@ import { Address, AddressConfirmationState, UserType } from '@proton/shared/lib/
 import clsx from '@proton/utils/clsx';
 
 import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
+import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
+import { FeatureFlag } from '../../containers/unleash';
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import { useAddresses, useApi, useConfig, useNotifications, useSearchParamsEffect, useUser } from '../../hooks';
 import PromotionBanner from '../banner/PromotionBanner';
 import EditDisplayNameModal from './EditDisplayNameModal';
@@ -54,6 +56,7 @@ const UsernameSection = ({ app }: Props) => {
     const [tmpAddress, setTmpAddress] = useState<Address>();
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [editAddressModalProps, setEditAddressModalOpen, renderEditAddressModal] = useModalState();
+    const editEmailAddressEnabled = useFlag(FeatureFlag.EditEmailAddress);
 
     const primaryAddress = addresses?.find(getIsAddressEnabled);
 
@@ -76,6 +79,7 @@ const UsernameSection = ({ app }: Props) => {
     };
 
     const canEditExternalAddress =
+        editEmailAddressEnabled &&
         user.Type === UserType.EXTERNAL &&
         primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
         primaryAddress.ConfirmationState === AddressConfirmationState.CONFIRMATION_NOT_CONFIRMED;
