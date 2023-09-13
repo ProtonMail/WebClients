@@ -1,12 +1,14 @@
 import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 
 import type {
+    InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
     ItemKeyResponse,
     ItemMoveSingleToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
+    KeyRotationKeyPair,
     ShareGetResponse,
     ShareKeyResponse,
     VaultCreateRequest,
@@ -61,6 +63,10 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         role: ShareRole;
         inviteePublicKey: string;
     }) => Promise<InviteCreateRequest>;
+    acceptVaultInvite: (data: {
+        inviteKeys: KeyRotationKeyPair[];
+        inviterPublicKeys: string[];
+    }) => Promise<InviteAcceptRequest>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
