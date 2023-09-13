@@ -32,6 +32,7 @@ const address: Address = {
     Status: ADDRESS_STATUS.STATUS_ENABLED,
     Type: ADDRESS_TYPE.TYPE_ORIGINAL,
     ProtonMX: true,
+    ConfirmationState: 1,
 };
 
 const providerLabels = labels.map((label) => {
