@@ -35,9 +35,9 @@ export enum MailPageSize {
     TWO_HUNDRED = 200,
 }
 
-export enum KeyTransparencySetting {
-    Disabled = 0,
-    Enabled = 1,
+export enum KEY_TRANSPARENCY_SETTING {
+    DISABLED = 0,
+    ENABLED = 1,
 }
 
 export interface MailSettings {
@@ -93,5 +93,5 @@ export interface MailSettings {
     UnreadFavicon: number;
     RecipientLimit: number;
     AlmostAllMail: number;
-    KT: KeyTransparencySetting;
+    KT: KEY_TRANSPARENCY_SETTING;
 }
