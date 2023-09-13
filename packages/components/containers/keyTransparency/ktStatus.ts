@@ -14,6 +14,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - the api is not prod's or proton.black's
     //  - safari 11 or ios 11 is used due to issues with the CryptoProxy
     //  - BigInt is not supported (it is needed for VRF verification);
+    //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -27,5 +28,20 @@ export const isKTActive = (feature: KT_FF) => {
         return false;
     }
 
-    return typeof BigInt !== 'undefined';
+    if (typeof BigInt === 'undefined') {
+        return false;
+    }
+
+    try {
+        // Test if the -- operand is supported by BigInt
+        // because it is used by VRF verification.
+        /* eslint-disable */
+        var check = BigInt('0x1');
+        check--;
+        /* eslint-enable */
+    } catch {
+        return false;
+    }
+
+    return true;
 };
