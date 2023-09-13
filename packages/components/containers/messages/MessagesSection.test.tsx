@@ -6,12 +6,14 @@ import {
     mockUseApi,
     mockUseEventManager,
     mockUseFeature,
+    mockUseFlag,
     mockUseMailSettings,
     mockUseNotifications,
     mockUseUser,
 } from '@proton/testing/index';
 
 import { FeatureCode } from '../features';
+import { FeatureFlag } from '../unleash';
 import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {
@@ -27,7 +29,11 @@ describe('MessagesSection', () => {
 
         mockUseMailSettings();
         mockUseNotifications();
-        mockUseFeature();
+
+        mockUseFlag().mockImplementation((code) => {
+            return code === FeatureFlag.WebMailPageSizeSetting;
+        });
+
         mockUseUser();
     });
 
@@ -90,12 +96,15 @@ describe('MessagesSection', () => {
 
     describe('PageSize', () => {
         beforeEach(() => {
+            mockUseFeature({ feature: { Value: true } });
             mockUseMailSettings([{ ViewMode: VIEW_MODE.SINGLE }]);
         });
 
         describe('when PageSize selection is disabled', () => {
             beforeEach(() => {
-                mockUseFeature({ feature: { Value: false } });
+                mockUseFlag().mockImplementation((code) => {
+                    return code !== FeatureFlag.WebMailPageSizeSetting;
+                });
             });
 
             it('should not display selector', () => {
@@ -106,10 +115,6 @@ describe('MessagesSection', () => {
         });
 
         describe('when PageSize selection is enabled', () => {
-            beforeEach(() => {
-                mockUseFeature({ feature: { Value: true } });
-            });
-
             it('should display correct label', () => {
                 render(<MessagesSection />);
                 expect(screen.getByText(/Messages per page/));

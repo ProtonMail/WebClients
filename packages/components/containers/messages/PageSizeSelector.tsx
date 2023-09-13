@@ -26,9 +26,13 @@ export const PageSizeSelector = ({ id, size }: Props) => {
     const { createNotification } = useNotifications();
 
     const handleChange = async (value: MailPageSize) => {
-        await api(updatePageSize(value));
-        await call();
-        createNotification({ text: c('Success').t`Preference saved` });
+        try {
+            await api(updatePageSize(value));
+            await call();
+            createNotification({ text: c('Success').t`Preference saved` });
+        } catch (err) {
+            createNotification({ text: c('Error').t`Could not save preference` });
+        }
     };
 
     return (

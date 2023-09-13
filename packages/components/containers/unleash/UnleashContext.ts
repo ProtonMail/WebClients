@@ -5,4 +5,5 @@
 export enum FeatureFlag {
     EditEmailAddress = 'EditEmailAddress',
     MaintenanceImporter = 'MaintenanceImporter',
+    WebMailPageSizeSetting = 'WebMailPageSizeSetting',
 }
