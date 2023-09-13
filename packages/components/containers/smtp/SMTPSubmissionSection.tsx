@@ -103,7 +103,7 @@ const SMTPSubmissionSection = () => {
         let isEligible = submissionTokenAvailable ?? false; // if null then false
         // if not eligible and b2b then check
         if (!isEligible && isB2BOrganization) {
-            isEligible = (await api(isTokenEligible())).IsEligible;
+            isEligible = (await api({ ...isTokenEligible(), silence: true })).IsEligible;
         }
         setTokenEligible(isEligible);
     };
