@@ -52,21 +52,17 @@ export default class UploadWorkerBuffer {
     ) {
         if (thumbnailsEncryptedBlockGenerator) {
             // We don't need the waitForCondition there as we generate a limited number of thumbnails consisting of one small block we don't count for the limit.
-            let encryptedThumbnailBlock = await thumbnailsEncryptedBlockGenerator.next();
-            while (!encryptedThumbnailBlock.done) {
-                this.thumbnailsEncryptedBlocks.set(encryptedThumbnailBlock.value.index, encryptedThumbnailBlock.value);
-                encryptedThumbnailBlock = await thumbnailsEncryptedBlockGenerator.next();
+            for await (const encryptedThumbnailBlock of thumbnailsEncryptedBlockGenerator) {
+                this.thumbnailsEncryptedBlocks.set(encryptedThumbnailBlock.index, encryptedThumbnailBlock);
             }
         }
-        let encryptedBlock = await encryptedBlocksGenerator.next();
-        while (!encryptedBlock.done) {
+        for await (const encryptedBlock of encryptedBlocksGenerator) {
             await waitForCondition(
                 () =>
                     this.encryptedBlocks.size < MAX_ENCRYPTED_BLOCKS &&
                     this.uploadingBlocks.length < MAX_UPLOADING_BLOCKS
             );
-            this.encryptedBlocks.set(encryptedBlock.value.index, encryptedBlock.value);
-            encryptedBlock = await encryptedBlocksGenerator.next();
+            this.encryptedBlocks.set(encryptedBlock.index, encryptedBlock);
         }
 
         this.encryptionFinished = true;
@@ -76,11 +72,15 @@ export default class UploadWorkerBuffer {
         requestBlockCreation: (blocks: EncryptedBlock[], thumbnailBlocks?: ThumbnailEncryptedBlock[]) => void
     ) {
         const run = async () => {
-            if (this.encryptedBlocks.size >= MAX_ENCRYPTED_BLOCKS || this.uploadingBlocks.length < MAX_UPLOAD_JOBS) {
+            if (
+                this.encryptedBlocks.size >= MAX_ENCRYPTED_BLOCKS ||
+                this.thumbnailsEncryptedBlocks.size >= MAX_ENCRYPTED_BLOCKS ||
+                this.uploadingBlocks.length < MAX_UPLOAD_JOBS
+            ) {
                 const blocks = Array.from(this.encryptedBlocks).map(([, block]) => block);
                 const thumbnailBlocks = Array.from(this.thumbnailsEncryptedBlocks).map(([, block]) => block);
 
-                if (blocks.length > 0) {
+                if (blocks.length > 0 || thumbnailBlocks.length > 0) {
                     this.requestingBlockLinks = true;
                     requestBlockCreation(blocks, thumbnailBlocks);
                     await waitForCondition(() => !this.requestingBlockLinks);
@@ -89,7 +89,12 @@ export default class UploadWorkerBuffer {
             // Even if all blocks are created, it can expire during upload
             // and thus we need to keep checking until the whole upload is
             // completed.
-            if (this.uploadingFinished && this.encryptionFinished && this.encryptedBlocks.size === 0) {
+            if (
+                this.uploadingFinished &&
+                this.encryptionFinished &&
+                this.encryptedBlocks.size === 0 &&
+                this.thumbnailsEncryptedBlocks.size === 0
+            ) {
                 return;
             }
             setTimeout(() => {
@@ -130,6 +135,7 @@ export default class UploadWorkerBuffer {
         while (
             !this.encryptionFinished ||
             this.encryptedBlocks.size > 0 ||
+            this.thumbnailsEncryptedBlocks.size > 0 ||
             this.uploadingBlocks.length > 0 ||
             blocksInProgress > 0
         ) {
