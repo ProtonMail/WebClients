@@ -22,11 +22,11 @@
 		// In this case we want to have background change only on hover.
 
 		color: var(--text-weak);
-		margin-inline-start: rem(-4);
-		margin-inline-end: rem(-4);
+		margin-inline-start: calc(var(--space-1) * -1);
+		margin-inline-end: calc(var(--space-1) * -1);
 
 		&:first-child {
-			margin-inline-start: rem(-8);
+			margin-inline-start: calc(var(--space-2) * -1);
 		}
 
 		&[aria-expanded='true'] {

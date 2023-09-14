@@ -1,9 +1,14 @@
 import { InputHTMLAttributes, LabelHTMLAttributes, Ref, forwardRef, useEffect, useRef } from 'react';
 
+
+
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
+
+
 import Icon from '../icon/Icon';
+
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     /**
