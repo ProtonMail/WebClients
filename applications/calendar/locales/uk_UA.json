@@ -393,6 +393,9 @@
       "Open settings": [
         "Відкрити налаштування"
       ],
+      "Pause indexing": [
+        "Призупинити індексування"
+      ],
       "Preview contact": [
         "Перегляд контакту"
       ],
@@ -455,6 +458,9 @@
       ],
       "Reset to default": [
         "Відновити типові"
+      ],
+      "Resume indexing": [
+        "Продовжити індексування"
       ],
       "Save": [
         "Зберегти"
@@ -2085,6 +2091,9 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Це може зайняти декілька хвилин. Тим часом можете продовжувати користуватися Proton Calendar."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -2332,6 +2341,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Подію не знайдено"
       ],
       "Failed to get original occurrence in series": [
         "Не вдалося отримати оригінальне повторення в серії"
@@ -2808,6 +2820,14 @@
         "Оцінка обов'язкова"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Немає результатів"
+      ],
+      "Results": [
+        "Результати"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "скасовано"
@@ -2819,6 +2839,11 @@
         "${ numberOfAttendees } учасника",
         "${ numberOfAttendees } учасників",
         "${ numberOfAttendees } учасників"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Увесь день"
       ]
     },
     "Event info. Organizer name": {
@@ -3520,6 +3545,15 @@
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакти",
+        "${ contactsLength } контактів",
+        "${ contactsLength } контактів"
+      ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } та ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "Знайдено ${ groupCounts } групу",
         "Знайдено ${ groupCounts } групи",
@@ -3543,6 +3577,12 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } контакту вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
@@ -3616,6 +3656,12 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
+      ],
       "An invitation will be sent to added participants.": [
         "Запрошення буде надіслано доданим учасникам."
       ],
@@ -3652,6 +3698,9 @@
       "Calendar side panel": [
         "Бічна панель календаря"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Не вдалося знайти подію яку ви шукаєте? Деякі події у прихованих календарях збігаються з вашим запитом. Щоб побачити ці результати увімкніть видимість для ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
       ],
@@ -3663,6 +3712,9 @@
       ],
       "Clear encrypted search data": [
         "Очистити зашифровані дані пошуку"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Очищення даних браузера очистить пошуковий індекс на цьому пристрої. Всі календарні події потрібно буде знову проіндексувати, щоб користуватися функцією пошуку."
       ],
       "Clears browser data related to the encrypted search.": [
         "Очищає дані браузера, пов'язані з зашифрованим пошуком."
@@ -3735,6 +3787,9 @@
       ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
+      ],
+      "Edit email address": [
+        "Змінити адресу електронної пошти"
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
@@ -3816,6 +3871,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Індексування подій: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Індексування призупинено"
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -4227,6 +4288,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Ви можете або оновити ваш пошуковий запит, або закрити пошук та перейти назад до перегляду календаря."
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Результатів не знайдено"
       ]
     },
     "Info on errors": {
@@ -5501,6 +5572,9 @@
       "Image URL": [
         "URL-адреса зображення"
       ],
+      "Indexing...": [
+        "Індексування..."
+      ],
       "Name": [
         "Назва"
       ],
@@ -5515,6 +5589,9 @@
       ],
       "Please select a country": [
         "Виберіть країну"
+      ],
+      "Search events": [
+        "Пошук подій"
       ],
       "Search for group name": [
         "Шукати назву групи"
@@ -5933,6 +6010,9 @@
       "Add your country's public holidays to your calendar.": [
         "Додайте державні свята вашої країни до свого календаря."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Легко знаходьте подію яку ви шукаєте з нашою новою функцією пошуку."
+      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
@@ -5941,6 +6021,9 @@
       ],
       "Public holidays are here!": [
         "Державні свята вже тут!"
+      ],
+      "Search for events": [
+        "Пошук подій"
       ]
     },
     "Storage": {
@@ -6006,6 +6089,9 @@
       ],
       "Calendar information updated": [
         "Інформація календаря оновлена"
+      ],
+      "Calendar search activated": [
+        "Активовано пошук за календарем"
       ],
       "Calendar updated": [
         "Календар оновлено"
@@ -6637,6 +6723,9 @@
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
       ],
+      "We're setting up Calendar search": [
+        "Ми налаштовуємо пошук в календарі"
+      ],
       "We've locked some calendars to protect your data": [
         "Ми заблокували деякі календарі для захисту ваших даних"
       ],
@@ -6780,6 +6869,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Перейти до події"
+      ],
       "Open in a new tab": [
         "Відкрити в новій вкладці"
       ]
