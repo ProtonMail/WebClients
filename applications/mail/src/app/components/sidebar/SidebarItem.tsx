@@ -50,7 +50,7 @@ interface Props {
     totalMessagesCount?: number;
     shortcutHandlers?: HotkeyTuple[];
     onFocus?: (id: string) => void;
-    className?: string;
+    isOptionDropdownOpened?: boolean;
     id?: string;
 }
 
@@ -71,7 +71,7 @@ const SidebarItem = ({
     shortcutHandlers = defaultShortcutHandlers,
     onFocus = noop,
     id,
-    className,
+    isOptionDropdownOpened,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -132,11 +132,7 @@ const SidebarItem = ({
 
     return (
         <SidebarListItem
-            className={clsx([
-                dragOver && 'navigation__dragover',
-                'hide-on-hover-container opacity-on-hover-container',
-                className,
-            ])}
+            className={clsx([dragOver && 'navigation__dragover', 'hide-on-hover-container opacity-on-hover-container'])}
         >
             <SidebarListItemLink
                 aria-current={ariaCurrent}
@@ -144,7 +140,6 @@ const SidebarItem = ({
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
-                title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
                 ref={elementRef}
                 data-testid={`navigation-link:${humanID}`}
                 data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
@@ -162,10 +157,16 @@ const SidebarItem = ({
                             shouldDisplayTotal={needsTotalDisplay}
                             hideCountOnHover={hideCountOnHover}
                             itemOptions={itemOptions}
+                            isOptionDropdownOpened={isOptionDropdownOpened}
                         />
                     }
                 >
-                    <span className="text-ellipsis">{content}</span>
+                    <span
+                        className="text-ellipsis"
+                        title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
+                    >
+                        {content}
+                    </span>
                 </SidebarListItemContent>
             </SidebarListItemLink>
             {moveScheduledModal}
