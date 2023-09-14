@@ -200,6 +200,9 @@
       "Got it": [
         "Понятно"
       ],
+      "Help": [
+        "Помощь"
+      ],
       "Hide": [
         "Скрыть"
       ],
@@ -2126,6 +2129,9 @@
       "Access to all countries": [
         "Доступ ко всем странам"
       ],
+      "Add": [
+        "Добавить"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Подключение до ${ plusVpnConnections } устройства",
         "Подключение до ${ plusVpnConnections } устройств",
@@ -2697,12 +2703,6 @@
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Получите адрес ${ BRAND_NAME }, чтобы пользоваться всеми услугами ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Получить свой адрес ${ BRAND_NAME }"
-      ],
       "here": [
         "здесь"
       ],
@@ -3221,6 +3221,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
@@ -5005,9 +5008,6 @@
       ],
       "Email address not yet verified.": [
         "Адрес электронной почты еще не подтвержден."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Электронное письмо с подтверждением отправлено на ${ email.Value }"
       ],
       "Verify now": [
         "Подтвердить сейчас"

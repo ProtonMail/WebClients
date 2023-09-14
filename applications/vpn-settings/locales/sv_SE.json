@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Tillåt ej osignerad e-post"
       ],
+      "Edit address": [
+        "Redigera adress"
+      ],
       "Enable": [
         "Aktivera"
       ],
@@ -1673,6 +1676,11 @@
         "Hjälp oss att förbättra!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "E-postverifiering skickat till ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/månad)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
       ],
@@ -2872,12 +2886,6 @@
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Skaffa en ${ BRAND_NAME }-adress för att använda alla ${ BRAND_NAME_TWO } tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Skaffa min ${ BRAND_NAME }-adress"
-      ],
       "here": [
         "här"
       ],
@@ -2928,6 +2936,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installera en landskonfigurationsfil för att ansluta till en slumpmässig server i det land du väljer."
@@ -3165,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
       ],
+      "Resend verification email": [
+        "Skicka e-postverifiering igen"
+      ],
       "Restore": [
         "Återställ"
       ],
@@ -3182,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skanna denna kod med din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Skydda ditt ${ BRAND_NAME }-konto"
       ],
       "Securing your account": [
         "Säkrar ditt konto"
@@ -3391,6 +3408,12 @@
       "Unsupported file": [
         "Fil stöds inte"
       ],
+      "Unverified": [
+        "Overifierad"
+      ],
+      "Unverified email address.": [
+        "Overifierad e-postadress."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
@@ -3532,6 +3555,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan anpassa och ladda ner dina fakturor för bokföringsändamål."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Du kan omedelbart låsa upp inställningen ovan genom att lägga till ${ specificCountryCount } till antalet IP-adresser för din prenumeration eller kontakta oss för skräddarsydda lösningar."
@@ -3843,6 +3869,9 @@
       "Config to connect to ${ serverName }": [
         "Konfigurera för att ansluta till ${ serverName }"
       ],
+      "Confirm email": [
+        "Bekräfta e-post"
+      ],
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
       ],
@@ -3881,6 +3910,9 @@
       ],
       "Current display name": [
         "Nuvarande visningsnamn"
+      ],
+      "Current email": [
+        "Nuvarande e-post"
       ],
       "Customize invoices": [
         "Anpassa fakturor"
@@ -3974,6 +4006,9 @@
       ],
       "New display name": [
         "Nytt visningsnamn"
+      ],
+      "New email": [
+        "Ny e-post"
       ],
       "New login password": [
         "Nytt inloggningslösenord"
@@ -5388,9 +5423,6 @@
       "Email address not yet verified.": [
         "E-postadress har verifierats än."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "E-postverifiering skickat till ${ email.Value }"
-      ],
       "Verify now": [
         "Verifiera nu"
       ],
@@ -5956,6 +5988,9 @@
       "Email address copied to clipboard": [
         "E-postadress kopierad till urklipp"
       ],
+      "Email address updated": [
+        "E-postadress uppdaterad"
+      ],
       "Email updated": [
         "E-post uppdaterad"
       ],
@@ -6413,6 +6448,9 @@
       "Edit display name": [
         "Redigera visningsnamn"
       ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
       "Edit Gateway ${ currentName }": [
         "Redigera gateway ${ currentName }"
       ],
@@ -6695,6 +6733,9 @@
       "Verifying your payment...": [
         "Verifierar din betalning..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
+      ],
       "What's new": [
         "Vad som är nytt"
       ],
@@ -6803,6 +6844,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
+      ],
+      "Verified email address": [
+        "Verifierad e-postadress"
       ]
     },
     "tooltip": {
