@@ -92,6 +92,9 @@
       "Add label": [
         "Tilføj etiket"
       ],
+      "Add multiple users": [
+        "Tilføj flere brugere"
+      ],
       "Add notification": [
         "Tilføj notifikation"
       ],
@@ -449,6 +452,12 @@
       "Get a new encrypted email address": [
         "Få en ny krypteret e-mailadresse"
       ],
+      "Get in touch": [
+        "Kontakt os"
+      ],
+      "Get more": [
+        "Få mere"
+      ],
       "Get more addresses": [
         "Få flere adresser"
       ],
@@ -544,6 +553,9 @@
       ],
       "Leave": [
         "Forlad"
+      ],
+      "Let's talk": [
+        "Lad os snakke"
       ],
       "Load more": [
         "Indlæs flere"
@@ -3878,6 +3890,9 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
+      "Leave family plan": [
+        "Afmeld familie-abonnementet"
+      ],
       "Manage addresses.": [
         "Administrer adresser."
       ],
@@ -3886,6 +3901,9 @@
       ],
       "Pending": [
         "Afventer"
+      ],
+      "Pending invitation": [
+        "Invitation afventer"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
@@ -5313,6 +5331,9 @@
       "Dedicated servers": [
         "Dedikerede servere"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
@@ -5370,6 +5391,9 @@
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
       ],
       "Edit label": [
         "Redigér etiket"
@@ -5493,12 +5517,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Få en ${ BRAND_NAME }-adresse for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "FÅ min ${ BRAND_NAME }-adresse"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdomæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
@@ -7849,6 +7867,9 @@
       "Organization password": [
         "Oorganisationsadgangskode"
       ],
+      "Organization size": [
+        "Størrelse på organisationen"
+      ],
       "Other amount": [
         "Andet beløb"
       ],
@@ -8097,6 +8118,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Hvad er hovedårsagen til, at du sletter din konto?"
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ],
       "With attachment": [
         "Med vedhæftning"
@@ -9006,9 +9030,15 @@
       "Priority support": [
         "Prioriteret support"
       ],
+      "Priority support & live chat": [
+        "Prioriteret support & live chat"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Router support": [
+        "Router support"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -10235,9 +10265,6 @@
       ],
       "sign in": [
         "log ind"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Bekræftelsesmail sendt til ${ email.Value }"
       ],
       "Verify now": [
         "Bekræft nu"
@@ -12047,6 +12074,9 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
+      ],
+      "Sign in to join the Beta program": [
+        "Log ind for tilmelding til Beta programmet"
       ],
       "Sign in with 2FA": [
         "Log ind med 2FA"
