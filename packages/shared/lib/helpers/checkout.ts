@@ -188,7 +188,15 @@ export const getCheckout = ({
     const withDiscountPerCycle = amount - couponDiscount;
     const withoutDiscountPerMonth = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const plan = plansMap[planName as keyof typeof plansMap];
-        const price = plan?.Pricing?.[CYCLE.MONTHLY] || 0;
+
+        const defaultMonthly = plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
+        const monthly = plan?.Pricing?.[CYCLE.MONTHLY] ?? 0;
+
+        // Offers might affect Pricing both ways, increase and decrease.
+        // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
+        // for discount calculations
+        const price = Math.max(monthly, defaultMonthly);
+
         return acc + price * quantity;
     }, 0);
 
