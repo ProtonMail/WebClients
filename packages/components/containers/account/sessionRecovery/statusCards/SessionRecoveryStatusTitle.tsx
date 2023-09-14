@@ -13,13 +13,13 @@ const SessionRecoveryStatusTitle = ({ status }: Props) => {
     const { statusText, backgroundClass } = (() => {
         if (status === 'pending') {
             return {
-                statusText: c('Info').t`Pending`,
+                statusText: c('session_recovery:status:info').t`Pending`,
                 backgroundClass: 'bg-warning',
             };
         }
 
         return {
-            statusText: c('Info').t`Available`,
+            statusText: c('session_recovery:status:info').t`Available`,
             backgroundClass: 'bg-primary',
         };
     })();
@@ -27,7 +27,7 @@ const SessionRecoveryStatusTitle = ({ status }: Props) => {
     return (
         <>
             <div className="flex flex-nowrap flex-align-items-baseline">
-                <h2 className="h3 text-bold mr-2">{c('Title').t`Password reset request`}</h2>
+                <h2 className="h3 text-bold mr-2">{c('session_recovery:status:title').t`Password reset request`}</h2>
                 <span
                     className={clsx(
                         backgroundClass,
