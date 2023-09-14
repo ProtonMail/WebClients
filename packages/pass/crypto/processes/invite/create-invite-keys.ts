@@ -1,33 +1,34 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { KeyRotationKeyPair, VaultKey } from '@proton/pass/types';
+import type { ItemKey, KeyRotationKeyPair, VaultKey } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-type CreateInviteProcessParams = {
-    vaultKeys: VaultKey[];
+type CreateInviteKeysProcessParams = {
+    targetKeys: (VaultKey | ItemKey)[];
     inviteePublicKey: PublicKeyReference;
     inviterPrivateKey: PrivateKeyReference;
 };
 
-export const createVaultInvite = async ({
-    vaultKeys,
+export const createInviteKeys = async ({
+    targetKeys,
     inviteePublicKey,
     inviterPrivateKey,
-}: CreateInviteProcessParams): Promise<KeyRotationKeyPair[]> =>
-    Promise.all(
-        vaultKeys.map(
-            async (vaultKey): Promise<KeyRotationKeyPair> => ({
+}: CreateInviteKeysProcessParams): Promise<KeyRotationKeyPair[]> => {
+    return Promise.all(
+        targetKeys.map(
+            async ({ raw: binaryData, rotation: KeyRotation }): Promise<KeyRotationKeyPair> => ({
                 Key: uint8ArrayToBase64String(
                     (
                         await CryptoProxy.encryptMessage({
-                            binaryData: vaultKey.raw,
+                            binaryData,
                             encryptionKeys: [inviteePublicKey],
                             signingKeys: [inviterPrivateKey],
                             format: 'binary',
                         })
                     ).message
                 ),
-                KeyRotation: vaultKey.rotation,
+                KeyRotation,
             })
         )
     );
+};

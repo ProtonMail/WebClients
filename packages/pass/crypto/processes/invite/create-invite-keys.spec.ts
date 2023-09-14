@@ -7,43 +7,34 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../utils/testing';
-import { acceptVaultInvite } from './accept-vault-invite';
-import { createVaultInvite } from './create-vault-invite';
+import { createInviteKeys } from './create-invite-keys';
 
-describe('acceptVaultInvite crypto process', () => {
+describe('create invite keys crypto process', () => {
     beforeAll(async () => setupCryptoProxyForTesting());
     afterAll(async () => releaseCryptoProxy());
 
-    test('should decrypt, re-encrypt & sign all vaultKeys with userKey', async () => {
+    test('should re-encrypt & sign all vaultKeys', async () => {
         const vaultKeys = await Promise.all(
             Array.from({ length: 4 }).map((_, rotation) => createRandomVaultKey(rotation))
         );
 
-        const userKey = await createRandomKey();
         const inviteeKey = await createRandomKey();
-        const inviterKeys = await Promise.all(Array.from({ length: 4 }).map(() => createRandomKey()));
+        const inviterKey = await createRandomKey();
 
-        const inviteKeys = await createVaultInvite({
-            vaultKeys,
+        const inviteKeys = await createInviteKeys({
+            targetKeys: vaultKeys,
             inviteePublicKey: inviteeKey.publicKey,
-            inviterPrivateKey: inviterKeys[2].privateKey,
-        });
-
-        const reencryptedKeys = await acceptVaultInvite({
-            inviteKeys,
-            inviteePrivateKey: inviteeKey.privateKey,
-            inviterPublicKeys: inviterKeys.map((key) => key.privateKey),
-            userKey: userKey,
+            inviterPrivateKey: inviterKey.privateKey,
         });
 
         const decryptedKeys = await Promise.all(
-            reencryptedKeys.map(async (vaultKey) => {
+            inviteKeys.map(async (vaultKey) => {
                 const binaryMessage = base64StringToUint8Array(vaultKey.Key);
 
                 return CryptoProxy.decryptMessage({
                     binaryMessage,
-                    decryptionKeys: userKey.privateKey,
-                    verificationKeys: userKey.privateKey,
+                    decryptionKeys: inviteeKey.privateKey,
+                    verificationKeys: inviterKey.publicKey,
                     format: 'binary',
                 });
             })
