@@ -15,14 +15,7 @@ import {
     ModalProps,
     SettingsLink,
 } from '../../../components';
-import {
-    useApi,
-    useErrorHandler,
-    useEventManager,
-    useHasRecoveryMethod,
-    useNotifications,
-    useUser,
-} from '../../../hooks';
+import { useApi, useEventManager, useHasRecoveryMethod, useNotifications, useUser } from '../../../hooks';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 
@@ -40,7 +33,6 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const errorHandler = useErrorHandler();
     const [hasRecoveryMethod] = useHasRecoveryMethod();
 
     const [step, setStep] = useState<STEP>(STEP.PROMPT);
@@ -52,21 +44,17 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
     }
 
     const handleInitiateSessionRecovery = async () => {
-        try {
-            await api(initiateSessionRecovery());
-            await call();
-            createNotification({
-                text: c('Title').t`Password reset confirmed`,
-                showCloseButton: false,
-            });
+        await api(initiateSessionRecovery());
+        await call();
+        createNotification({
+            text: c('Title').t`Password reset confirmed`,
+            showCloseButton: false,
+        });
 
-            if (confirmedStep) {
-                setStep(STEP.RESET_CONFIRMED);
-            } else {
-                onClose?.();
-            }
-        } catch (error) {
-            errorHandler(error);
+        if (confirmedStep) {
+            setStep(STEP.RESET_CONFIRMED);
+        } else {
+            onClose?.();
         }
     };
 
