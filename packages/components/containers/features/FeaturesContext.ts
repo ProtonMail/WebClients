@@ -112,7 +112,6 @@ export enum FeatureCode {
     UnreadFavicon = 'UnreadFavicon',
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
-    VpnB2bPlans = 'VpnB2bPlans',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
 }
 

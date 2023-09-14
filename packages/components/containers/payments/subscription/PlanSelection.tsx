@@ -37,7 +37,6 @@ import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
 import { ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
-import useVpnB2bPlansFeature from '../useVpnB2bPlansFeature';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
@@ -173,7 +172,6 @@ const PlanSelection = ({
     const { APP_NAME } = useConfig();
     const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
-    const [showVpnB2bPlans, featureLoading] = useVpnB2bPlansFeature();
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
@@ -200,12 +198,7 @@ const PlanSelection = ({
      * The check for length of plans is needed for the case if the VPN B2B plans are not available.
      * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
-    const isVpnB2bPlans =
-        isVpnSettingsApp &&
-        vpnB2BPlans.length !== 0 &&
-        isFreeSubscription(subscription) &&
-        showVpnB2bPlans &&
-        !featureLoading;
+    const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0 && isFreeSubscription(subscription);
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
