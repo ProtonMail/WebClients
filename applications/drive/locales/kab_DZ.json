@@ -1542,6 +1542,12 @@
       "Saint Barthélemy": [
         "San Baṛtilimi"
       ],
+      "Saint Helena": [
+        "Sant Ilina"
+      ],
+      "Saint Kitts and Nevis": [
+        "San-Kitt d Nivis"
+      ],
       "Saint Lucia": [
         "Sant Lusi"
       ],
@@ -1581,6 +1587,9 @@
       "Singapore": [
         "Singapur"
       ],
+      "Sint Maarten": [
+        "San Maṛtan"
+      ],
       "Slovakia": [
         "Sluvakya"
       ],
@@ -1602,11 +1611,17 @@
       "South Korea": [
         "Kuriya n Unẓul"
       ],
+      "South Ossetia": [
+        "Usitiya n Unẓul"
+      ],
       "South Sudan": [
         "Sudan n unẓul"
       ],
       "Spain": [
         "Spanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
       ],
       "Sudan": [
         "Sudan"
@@ -2030,11 +2045,20 @@
       "The label name is too long. Please choose a different name.": [
         "Isem n tebzimt ɣezif aṭas. Ttxil-k·m fren isem-nniḍen."
       ],
+      "The new revision of original file is not uploaded yet, please try again later": [
+        "Acegger amaynut n ufaylu agejdan urɛad i d-yulk, ttxil-k ɛreḍ tikkelt niḍen tixki"
+      ],
       "The original file has missing active revision": [
         "Ixuṣṣ ucegger i ufaylu agejdan"
       ],
+      "The original file has missing hash key": [
+        "Txuṣṣ tsarut n udway i ufaylu agejdan"
+      ],
       "The original file has missing session key": [
         "Txuṣṣ tsarut n tiɣimit i ufaylu agejdan"
+      ],
+      "The original file is not uploaded yet, please try again later": [
+        "Afaylu agejdan urɛad i d-yulk, ttxil-k ɛreḍ tikkelt niḍen tixki"
       ],
       "The original folder not found": [
         "Ur yettwaf ara ukaram agejdan"
@@ -2865,11 +2889,17 @@
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
         "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
+      "Also try looking in Trash.": [
+        "Wali daɣen deg tqecwalt."
+      ],
       "An active recovery file": [
         "Afaylu n tririt urmid"
       ],
       "and": [
         "akked"
+      ],
+      "And access it from anywhere": [
+        "Kcem ɣur-s seg wanda i ak-yehwa"
       ],
       "Anyone with this link can access your file.": [
         "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ufaylu-ik•im."
@@ -2984,6 +3014,9 @@
         "Kkes ameɣri isekkren",
         "Kkes imeɣriyen isekkren"
       ],
+      "double your storage": [
+        "sleg aḥraz-ik"
+      ],
       "Download canceled": [
         "Asader yefsex"
       ],
@@ -3054,11 +3087,17 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        "Afaylu \"${ name }\" yettwakkes lawan n usader"
+      ],
       "File will not be updated": [
         "Afaylu ur yettuleqqem ara"
       ],
       "Finalizing": [
         "Akemmel"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "Akaram \"${ link.name }\" yettwakkes lawan n usader"
       ],
       "Folder will not be uploaded": [
         "Akaram ur d-yettali ara"
@@ -3074,6 +3113,9 @@
       ],
       "from the version history?": [
         "seg uzray n lqem?"
+      ],
+      "Go ahead, upload a file": [
+        "Ddu ɣer uqerru, sali afaylu"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ddu ɣer \"Ifuyla-inu\" sakin sili kra n yifuyla."
@@ -3165,6 +3207,9 @@
       ],
       "Loading preview": [
         "Asali n teskant"
+      ],
+      "Makes your account safer": [
+        "Seɣles amiḍan-ik"
       ],
       "Merged": [
         "Ttusmezdin"
@@ -3272,6 +3317,9 @@
       "Restore": [
         "Err-d"
       ],
+      "Restored files ${ formattedDate }": [
+        "Ifuyla ${ formattedDate } i d-yettwarren"
+      ],
       "Search Enabled": [
         "Anadi yettwarmed"
       ],
@@ -3357,11 +3405,26 @@
       "Today": [
         "Ass-a"
       ],
+      "Transfer canceled for file \"${ name }\"": [
+        "Awelleh yettwasefsex i ufaylu \"${ name }\""
+      ],
+      "Transfer canceled for folder \"${ name }\"": [
+        "Awelleh yettwasefsex i ukaram \"${ name }\""
+      ],
+      "Transfer skipped for file \"${ file.name }\"": [
+        "Awelleh yettwazgel i ufaylu \"${ file.name }\""
+      ],
+      "Transfer skipped for folder \"${ folderName }\"": [
+        "Awelleh yettwazgel i ukaram \"${ folderName }\""
+      ],
       "Trash": [
         "Taqecwalt"
       ],
       "Unknown error": [
         "Tuccḍa tarussint"
+      ],
+      "Unlock drive to recover files": [
+        "Kkes asekkeṛ i wakken ad d-terreḍ ifuyla"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
