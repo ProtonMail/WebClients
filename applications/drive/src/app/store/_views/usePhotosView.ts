@@ -33,13 +33,8 @@ export const usePhotosView = () => {
             if (!link.activeRevision?.photo) {
                 return;
             }
-            result[link.linkId] = {
-                ...link,
-                activeRevision: {
-                    ...link.activeRevision,
-                    photo: link.activeRevision.photo,
-                },
-            };
+            // We have issue with typing but we check activeRevision before
+            result[link.linkId] = link as PhotoLink;
         });
 
         const values = Object.values(result);
