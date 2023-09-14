@@ -285,23 +285,31 @@ const AuthModal = ({
             />
             <ModalContent>
                 {step === Step.Password && (
-                    <PasswordForm
-                        key={`${rerender}`}
-                        isSignedInAsAdmin={user?.isSubUser}
-                        defaultPassword={password}
-                        onSubmit={(password) => {
-                            if (isLoadingAuth) {
-                                return;
-                            }
-                            if (authTypes.twoFactor) {
-                                setPassword(password);
-                                setStep(Step.TWO_FA);
-                                return;
-                            }
-                            return withSubmitting(handleSubmit({ password, twoFa: undefined }));
-                        }}
-                        loading={submitting}
-                    />
+                    <>
+                        <PasswordForm
+                            key={`${rerender}`}
+                            isSignedInAsAdmin={user?.isSubUser}
+                            defaultPassword={password}
+                            onSubmit={(password) => {
+                                if (isLoadingAuth) {
+                                    return;
+                                }
+                                if (authTypes.twoFactor) {
+                                    setPassword(password);
+                                    setStep(Step.TWO_FA);
+                                    return;
+                                }
+                                return withSubmitting(handleSubmit({ password, twoFa: undefined }));
+                            }}
+                            loading={submitting}
+                        />
+
+                        {onSessionRecovery && isSessionRecoveryInitiationAvailable && (
+                            <Button shape="underline" color="norm" onClick={onSessionRecovery}>
+                                {c('Action').t`Don't know your password?`}
+                            </Button>
+                        )}
+                    </>
                 )}
                 {(() => {
                     if (step !== Step.TWO_FA) {
@@ -370,11 +378,6 @@ const AuthModal = ({
                         />
                     );
                 })()}
-                {onSessionRecovery && isSessionRecoveryInitiationAvailable && (
-                    <Button shape="underline" color="norm" onClick={onSessionRecovery}>
-                        {c('Action').t`Don't know your password?`}
-                    </Button>
-                )}
             </ModalContent>
             <ModalFooter>
                 {step === Step.TWO_FA ? (
