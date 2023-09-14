@@ -988,6 +988,9 @@
       "Stay": [
         "Ficar"
       ],
+      "Strikethrough": [
+        "Riscado"
+      ],
       "Submit": [
         "Submeter"
       ],
@@ -4077,7 +4080,7 @@
         "Predefinição do sistema"
       ],
       "Theme font": [
-        "Tipo de letra do tema"
+        "Letra de tema"
       ]
     },
     "Font Size Default": {
@@ -4628,6 +4631,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ count } unread message": [
         "${ count } mensagem não lida",
         "${ count } mensagens não lidas"
@@ -4696,6 +4703,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos selecionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -5190,6 +5201,9 @@
       ],
       "Internet connection restored.": [
         "Ligação à Internet reposta."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Aderir ao programa ${ PROTON_SENTINEL_NAME } para o nível mais alto de segurança de conta e apoio ao cliente."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
