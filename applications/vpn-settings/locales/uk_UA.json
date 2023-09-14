@@ -1713,6 +1713,9 @@
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
+      "Email address is invalid": [
+        "Недійсна адреса пошти"
+      ],
       "Email is not valid": [
         "Е-пошта недійсна"
       ],
@@ -2566,6 +2569,9 @@
         "${ number } серверів",
         "${ number } серверів"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } вимагає щонайменше 1 виділений сервер ${ serverPricePerMonth }"
+      ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } сервер все ще налаштовується. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } сервери все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
@@ -2586,6 +2592,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функції Secure Core необхідна передплата ${ vpnPlus }."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/місяць)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
@@ -2830,6 +2839,9 @@
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
       ],
+      "Edit email address": [
+        "Змінити адресу електронної пошти"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
       ],
@@ -2910,12 +2922,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Отримайте адресу ${ BRAND_NAME }, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Отримати свою адресу ${ BRAND_NAME }"
       ],
       "here": [
         "тут"
@@ -3108,6 +3114,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
+      ],
+      "per month": [
+        "на місяць"
+      ],
+      "per month, billed every 12 months": [
+        "на місяць, рахунок виставляється кожні 12 місяців"
+      ],
+      "per month, billed every 15 months": [
+        "на місяць, рахунок виставляється кожні 15 місяців"
+      ],
+      "per month, billed every 24 months": [
+        "на місяць, рахунок виставляється кожні 24 місяців"
+      ],
+      "per month, billed every 30 months": [
+        "на місяць, рахунок виставляється кожні 30 місяців"
       ],
       "Plan upgrade required": [
         "Необхідно передплатити тарифний план"
@@ -3645,6 +3666,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Після входу ви будете перенаправлені на ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
@@ -5196,6 +5220,11 @@
         "Ви можете мати більше одного адміністратора. Усі адміністратори можуть додавати користувачів та керувати ними, однак контролювати платежі може лише головний адміністратор."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Включено з декількома користувачами ${ BRAND_NAME } для бізнес-планів."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "Підтримка 24/7"
@@ -5497,9 +5526,6 @@
       "Email address not yet verified.": [
         "Адресу е-пошти ще не підтверджено."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Лист із підтвердженням надіслано на ${ email.Value }"
-      ],
       "Verify now": [
         "Підтвердити"
       ],
@@ -5600,6 +5626,12 @@
       ],
       "inactive": [
         "неактивний"
+      ],
+      "pending": [
+        "на розгляді"
+      ],
+      "to be created": [
+        "буде створено"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6524,6 +6556,12 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } дня)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)"
+      ],
       "Delete user": [
         "Видалити користувача"
       ],
@@ -6577,6 +6615,9 @@
       ],
       "Email subscriptions": [
         "Підписки електронної пошти"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до бета-програми ${ app }"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -6760,6 +6801,9 @@
       ],
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in to join the Beta program": [
+        "Увійдіть, щоб приєднатися до бета-версії програми"
       ],
       "Sign in with 2FA": [
         "Увійти з двоетапною перевіркою"

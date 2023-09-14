@@ -2596,6 +2596,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } штомесяц)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
       ],
@@ -2839,6 +2842,9 @@
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
@@ -2920,12 +2926,6 @@
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Атрымайце адрас ${ BRAND_NAME }, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Атрымайце свой адрас ${ BRAND_NAME }"
-      ],
       "here": [
         "тут"
       ],
@@ -2976,6 +2976,9 @@
       ],
       "inactive": [
         "неактыўна"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Павялічце бяспеку свайго ўліковага запісу праз пацвярджэнне вашага адрасу электроннай пошты."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
@@ -3217,6 +3220,9 @@
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
+      "Resend verification email": [
+        "Паўторна адправіць ліст з пацвярджэннем"
+      ],
       "Restore": [
         "Аднавіць"
       ],
@@ -3234,6 +3240,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
@@ -3450,6 +3459,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Unverified": [
+        "Неправераны"
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
@@ -4058,6 +4070,9 @@
       ],
       "New display name": [
         "Новае бачнае імя"
+      ],
+      "New email": [
+        "Новы ліст"
       ],
       "New login password": [
         "Новы пароль уваходу"
@@ -5529,9 +5544,6 @@
       "Email address not yet verified.": [
         "Адрас электроннай пошты пакуль не правераны."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Праверачны ліст адпраўлены на ${ email.Value }"
-      ],
       "Verify now": [
         "Праверыць зараз"
       ],
@@ -6137,6 +6149,9 @@
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
       ],
+      "Email address updated": [
+        "Адрас электроннай пошты абноўлены"
+      ],
       "Email updated": [
         "Электронная пошта абноўлена"
       ],
@@ -6597,6 +6612,9 @@
       ],
       "Edit display name": [
         "Рэдагаваць бачнае імя"
+      ],
+      "Edit email address": [
+        "Змяніць адрас электроннай пошты"
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
