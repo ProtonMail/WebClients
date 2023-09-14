@@ -32,6 +32,7 @@ import {
     useAddresses,
     useApi,
     useConfig,
+    useIsSessionRecoveryAvailable,
     useNotifications,
     useSearchParamsEffect,
     useSessionRecoveryState,
@@ -65,6 +66,7 @@ const UsernameSection = ({ app }: Props) => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [editAddressModalProps, setEditAddressModalOpen, renderEditAddressModal] = useModalState();
 
+    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const sessionRecoveryStatus = useSessionRecoveryState();
 
     const primaryAddress = addresses?.find(getIsAddressEnabled);
@@ -119,10 +121,10 @@ const UsernameSection = ({ app }: Props) => {
                 <EditExternalAddressModal {...editAddressModalProps} address={tmpAddress} />
             )}
             <SettingsSection>
-                {sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
+                {isSessionRecoveryAvailable && sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
                     <SessionRecoveryInProgressCard className="mb-6" />
                 )}
-                {sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
+                {isSessionRecoveryAvailable && sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
                     <PasswordResetAvailableCard className="mb-6" />
                 )}
                 {user.Type === UserType.EXTERNAL &&
