@@ -259,6 +259,7 @@ interface PricingForCycles {
 
 export interface AggregatedPricing {
     all: PricingForCycles;
+    defaultMonthlyPrice: number;
     /**
      * That's pricing that counts only aggregate of cost for members. That's useful for rendering of
      * "per user per month" pricing.
@@ -405,9 +406,13 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
                 });
             }
 
+            acc.defaultMonthlyPrice +=
+                quantity * (plan?.DefaultPricing?.[CYCLE.MONTHLY] || plan?.Pricing?.[CYCLE.MONTHLY] || 0);
+
             return acc;
         },
         {
+            defaultMonthlyPrice: 0,
             all: { ...initial },
             members: {
                 ...initial,
@@ -432,7 +437,7 @@ export interface TotalPricing {
 export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): TotalPricing => {
     const total = pricing.all[cycle];
     const totalPerMonth = pricing.all[cycle] / cycle;
-    const totalNoDiscount = pricing.all[CYCLE.MONTHLY] * cycle;
+    const totalNoDiscount = pricing.defaultMonthlyPrice * cycle;
     const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
     const perUserPerMonth = Math.floor(pricing.members[cycle] / cycle / pricing.membersNumber);
 
