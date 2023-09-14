@@ -8,6 +8,7 @@ import { PLANS_MAP } from '@proton/testing/lib/payments';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
+    AggregatedPricing,
     getPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
@@ -244,6 +245,7 @@ describe('getPricingFromPlanIDs', () => {
         };
 
         const expected = {
+            defaultMonthlyPrice: 499,
             all: {
                 '1': 499,
                 '12': 1200,
@@ -280,6 +282,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.MAIL_PRO]);
 
         const expected = {
+            defaultMonthlyPrice: 799,
             all: {
                 '1': 799,
                 '12': 8388,
@@ -317,6 +320,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.MAIL_PRO, ADDON_NAMES.MEMBER_MAIL_PRO]);
 
         const expected = {
+            defaultMonthlyPrice: 6392,
             all: {
                 '1': 6392,
                 '12': 67104,
@@ -354,6 +358,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.BUNDLE_PRO]);
 
         const expected = {
+            defaultMonthlyPrice: 1299,
             all: {
                 '1': 1299,
                 '12': 13188,
@@ -397,6 +402,7 @@ describe('getPricingFromPlanIDs', () => {
         ]);
 
         const expected = {
+            defaultMonthlyPrice: 11742,
             all: {
                 '1': 11742,
                 '12': 120624,
@@ -434,6 +440,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.FAMILY]);
 
         const expected = {
+            defaultMonthlyPrice: 2999,
             all: {
                 '1': 2999,
                 '12': 28788,
@@ -473,6 +480,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_PRO]);
 
         const expected = {
+            defaultMonthlyPrice: 1798,
             all: {
                 '1': 1798,
                 '12': 16776,
@@ -512,6 +520,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
 
         const expected = {
+            defaultMonthlyPrice: 8084,
             all: {
                 '1': 8084,
                 '12': 75492,
@@ -553,6 +562,7 @@ describe('getPricingFromPlanIDs', () => {
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected = {
+            defaultMonthlyPrice: 7397,
             all: {
                 '1': 7397,
                 '12': 71964,
@@ -600,6 +610,7 @@ describe('getPricingFromPlanIDs', () => {
         // yearly: (2*9.99 + 39.99) * 12
         // 2 years: (2*8.99 + 35.99) * 24
         const expected = {
+            defaultMonthlyPrice: 30787,
             all: {
                 '1': 30787,
                 '12': 299844,
@@ -633,7 +644,8 @@ describe('getPricingFromPlanIDs', () => {
 
 describe('getTotalFromPricing', () => {
     it('should calculate the prices correctly', () => {
-        const pricing = {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 8596,
             all: {
                 '1': 8596,
                 '12': 83952,
@@ -683,6 +695,61 @@ describe('getTotalFromPricing', () => {
             totalPerMonth: 6296,
             totalNoDiscountPerMonth: 8596,
             perUserPerMonth: 899,
+        });
+    });
+
+    it('should calculate the prices correctly from a different monthly price', () => {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 999,
+            all: {
+                '1': 899,
+                '12': 7188,
+                '15': 14985,
+                '24': 11976,
+                '30': 29970,
+            },
+            members: {
+                '1': 899,
+                '12': 7188,
+                '15': 14985,
+                '24': 11976,
+                '30': 29970,
+            },
+            plans: {
+                '1': 899,
+                '12': 7188,
+                '15': 14985,
+                '24': 11976,
+                '30': 29970,
+            },
+            membersNumber: 1,
+        };
+
+        expect(getTotalFromPricing(pricing, 1)).toEqual({
+            discount: 0,
+            discountPercentage: 0,
+            total: 899,
+            totalPerMonth: 899,
+            totalNoDiscountPerMonth: 999,
+            perUserPerMonth: 899,
+        });
+
+        expect(getTotalFromPricing(pricing, 12)).toEqual({
+            discount: 4800,
+            discountPercentage: 40,
+            total: 7188,
+            totalPerMonth: 599,
+            totalNoDiscountPerMonth: 999,
+            perUserPerMonth: 599,
+        });
+
+        expect(getTotalFromPricing(pricing, 24)).toEqual({
+            discount: 12000,
+            discountPercentage: 50,
+            total: 11976,
+            totalPerMonth: 499,
+            totalNoDiscountPerMonth: 999,
+            perUserPerMonth: 499,
         });
     });
 });

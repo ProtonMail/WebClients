@@ -21,6 +21,13 @@ const vpnPlan: Partial<Plan> = {
         [CYCLE.TWO_YEARS]: 11976,
         [CYCLE.THIRTY]: 29970,
     },
+    DefaultPricing: {
+        [CYCLE.MONTHLY]: 999,
+        [CYCLE.YEARLY]: 7188,
+        [CYCLE.FIFTEEN]: 14985,
+        [CYCLE.TWO_YEARS]: 11976,
+        [CYCLE.THIRTY]: 29970,
+    },
 };
 
 const visionaryPlan: Partial<Plan> = {
@@ -28,6 +35,11 @@ const visionaryPlan: Partial<Plan> = {
     Title: 'VIS',
     MaxMembers: 6,
     Pricing: {
+        [CYCLE.MONTHLY]: 2999,
+        [CYCLE.YEARLY]: 28788,
+        [CYCLE.TWO_YEARS]: 47976,
+    },
+    DefaultPricing: {
         [CYCLE.MONTHLY]: 2999,
         [CYCLE.YEARLY]: 28788,
         [CYCLE.TWO_YEARS]: 47976,
@@ -43,6 +55,11 @@ const bundleProPlan: Partial<Plan> = {
         [CYCLE.YEARLY]: 13188,
         [CYCLE.TWO_YEARS]: 23976,
     },
+    DefaultPricing: {
+        [CYCLE.MONTHLY]: 1299,
+        [CYCLE.YEARLY]: 13188,
+        [CYCLE.TWO_YEARS]: 23976,
+    },
 };
 
 const bundleProMember: Partial<Plan> = {
@@ -53,12 +70,22 @@ const bundleProMember: Partial<Plan> = {
         [CYCLE.YEARLY]: 13188,
         [CYCLE.TWO_YEARS]: 23976,
     },
+    DefaultPricing: {
+        [CYCLE.MONTHLY]: 1299,
+        [CYCLE.YEARLY]: 13188,
+        [CYCLE.TWO_YEARS]: 23976,
+    },
 };
 
 const bundleProDomain: Partial<Plan> = {
     Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO,
     MaxDomains: 1,
     Pricing: {
+        [CYCLE.MONTHLY]: 150,
+        [CYCLE.YEARLY]: 1680,
+        [CYCLE.TWO_YEARS]: 3120,
+    },
+    DefaultPricing: {
         [CYCLE.MONTHLY]: 150,
         [CYCLE.YEARLY]: 1680,
         [CYCLE.TWO_YEARS]: 3120,
@@ -102,6 +129,108 @@ describe('should get checkout result', () => {
             discountPerCycle: 0,
             discountPercent: 0,
             membersPerMonth: 999,
+            addonsPerMonth: 0,
+        });
+    });
+
+    it('should correctly handle the price increases', () => {
+        expect(
+            getCheckout({
+                planIDs: {
+                    [PLANS.VPN]: 1,
+                },
+                checkResult: {
+                    Amount: 1199,
+                    AmountDue: 1199,
+                    Cycle: CYCLE.MONTHLY,
+                    Coupon: null,
+                },
+                plansMap: {
+                    [PLANS.VPN]: {
+                        ...getPlan(vpnPlan),
+                        Pricing: {
+                            // It's possible to create an offer that would INCREASE the price
+                            [CYCLE.MONTHLY]: 1199,
+                            [CYCLE.YEARLY]: 7188,
+                            [CYCLE.FIFTEEN]: 14985,
+                            [CYCLE.TWO_YEARS]: 11976,
+                            [CYCLE.THIRTY]: 29970,
+                        },
+                        DefaultPricing: {
+                            // And then the default price would be lower than the current price
+                            [CYCLE.MONTHLY]: 999,
+                            [CYCLE.YEARLY]: 7188,
+                            [CYCLE.FIFTEEN]: 14985,
+                            [CYCLE.TWO_YEARS]: 11976,
+                            [CYCLE.THIRTY]: 29970,
+                        },
+                    },
+                },
+            })
+        ).toEqual({
+            planTitle: 'VPN',
+            planName: PLANS.VPN,
+            usersTitle: '1 user',
+            users: 1,
+            addons: [],
+            // We don't want to show the price increase to the user, so we use the maximum of Pricing and
+            // DefaultPricing as basis for the calculation. We go with Pricing in this case.
+            withDiscountPerCycle: 1199,
+            withDiscountPerMonth: 1199,
+            withoutDiscountPerMonth: 1199,
+            discountPerCycle: 0,
+            discountPercent: 0,
+            membersPerMonth: 1199,
+            addonsPerMonth: 0,
+        });
+    });
+
+    it('should correctly handle the price decrease', () => {
+        expect(
+            getCheckout({
+                planIDs: {
+                    [PLANS.VPN]: 1,
+                },
+                checkResult: {
+                    Amount: 799,
+                    AmountDue: 799,
+                    Cycle: CYCLE.MONTHLY,
+                    Coupon: null,
+                },
+                plansMap: {
+                    [PLANS.VPN]: {
+                        ...getPlan(vpnPlan),
+                        Pricing: {
+                            // It's possible to create an offer that would decrease the price
+                            [CYCLE.MONTHLY]: 799,
+                            [CYCLE.YEARLY]: 7188,
+                            [CYCLE.FIFTEEN]: 14985,
+                            [CYCLE.TWO_YEARS]: 11976,
+                            [CYCLE.THIRTY]: 29970,
+                        },
+                        DefaultPricing: {
+                            // And then the default price would be higher than the current price
+                            [CYCLE.MONTHLY]: 999,
+                            [CYCLE.YEARLY]: 7188,
+                            [CYCLE.FIFTEEN]: 14985,
+                            [CYCLE.TWO_YEARS]: 11976,
+                            [CYCLE.THIRTY]: 29970,
+                        },
+                    },
+                },
+            })
+        ).toEqual({
+            planTitle: 'VPN',
+            planName: PLANS.VPN,
+            usersTitle: '1 user',
+            users: 1,
+            addons: [],
+            withDiscountPerCycle: 799,
+            withDiscountPerMonth: 799,
+            withoutDiscountPerMonth: 999,
+            discountPerCycle: 200,
+            discountPercent: 20,
+            membersPerMonth: 799,
             addonsPerMonth: 0,
         });
     });
