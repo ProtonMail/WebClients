@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Να μην επιτρέπεται η ανυπόγραφη αλληλογραφία"
       ],
+      "Edit address": [
+        "Επεξεργασία διεύθυνσης"
+      ],
       "Enable": [
         "Ενεργοποίηση"
       ],
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } και ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Στάλθηκε μήνυμα επαλήθευσης στο ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5317,6 +5325,9 @@
       "* No credit card required.": [
         "* Δεν απαιτείται πιστωτική κάρτα."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
@@ -5785,6 +5796,9 @@
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
       ],
@@ -5914,12 +5928,6 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Αποκτήστε μία ${ BRAND_NAME } διεύθυνση για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Λήψη της ${ BRAND_NAME } διεύθυνσής μου"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου με αυτό το διακριτικό."
       ],
@@ -6043,6 +6051,9 @@
       ],
       "inactive": [
         "ανενεργό"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -6492,6 +6503,9 @@
       "Report link expired": [
         "Ο σύνδεσμος αναφοράς έληξε"
       ],
+      "Resend verification email": [
+        "Επανάληψη αποστολής μηνύματος επαλήθευσης"
+      ],
       "Restore": [
         "Επαναφορά"
       ],
@@ -6515,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Σαρώστε αυτόν τον κωδικό με τη συσκευή ελέγχου ταυτότητας δύο παραγόντων για να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
@@ -6886,6 +6903,12 @@
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
+      "Unverified": [
+        "Ανεπιβεβαίωτος"
+      ],
+      "Unverified email address.": [
+        "Μην επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
@@ -7106,6 +7129,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε τη σύνδεση ελέγχου ταυτότητας για να δείτε πότε γίνεται πρόσβαση στον λογαριασμό σας και από ποια IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
@@ -7936,6 +7962,9 @@
       "Config to connect to ${ serverName }": [
         "Διαμόρφωση για σύνδεση σε ${ serverName }"
       ],
+      "Confirm email": [
+        "Επιβεβαίωση διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Confirm link URLs": [
         "Επιβεβαίωση διευθύνσεων συνδέσμων"
       ],
@@ -7986,6 +8015,9 @@
       ],
       "Current display name": [
         "Τρέχον εμφανιζόμενο όνομα"
+      ],
+      "Current email": [
+        "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Customize invoices": [
         "Προσαρμογή τιμολογίων"
@@ -8271,6 +8303,9 @@
       ],
       "New display name": [
         "Νέο εμφανιζόμενο όνομα"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "New login password": [
         "Νέος κωδικός σύνδεσης"
@@ -11012,9 +11047,6 @@
       "sign in": [
         "είσοδος"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Στάλθηκε μήνυμα επαλήθευσης στο ${ email.Value }"
-      ],
       "Verify now": [
         "Επαλήθευση τώρα"
       ],
@@ -11826,6 +11858,9 @@
       "Email address copied to clipboard": [
         "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
       ],
+      "Email address updated": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ενημερώθηκε"
+      ],
       "Email updated": [
         "Το E-mail ενημερώθηκε"
       ],
@@ -12575,6 +12610,9 @@
       "Edit domain": [
         "Επεξεργασία domain"
       ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Edit filter": [
         "Επεξεργασία φίλτρου"
       ],
@@ -13104,6 +13142,9 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
+      ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
       ],
@@ -13388,6 +13429,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Χρησιμοποιήστε τις προεπιλεγμένες γραμμές κύλισης του προγράμματος περιήγησής σας. Αυτές είναι συνήθως μεγαλύτερες και ευκολότερες στη χρήση"
+      ],
+      "Verified email address": [
+        "Επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί να υφίσταται, θα πρέπει να αλλάξουμε την υπογραφή DKIM."

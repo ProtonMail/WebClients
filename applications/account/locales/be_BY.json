@@ -5415,6 +5415,9 @@
       "* No credit card required.": [
         "* Крэдытная картка не патрабуецца."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
       ],
@@ -5907,6 +5910,9 @@
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
+      ],
       "Edit label": [
         "Рэдагаванне меткі"
       ],
@@ -6036,12 +6042,6 @@
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Атрымайце адрас ${ BRAND_NAME }, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Атрымайце свой адрас ${ BRAND_NAME }"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
       ],
@@ -6167,6 +6167,9 @@
       ],
       "inactive": [
         "неактыўна"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Павялічце бяспеку свайго ўліковага запісу праз пацвярджэнне вашага адрасу электроннай пошты."
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -6624,6 +6627,9 @@
       "Report link expired": [
         "Тэрмін дзеяння спасылкі на справаздачу пратэрмінаваны"
       ],
+      "Resend verification email": [
+        "Паўторна адправіць ліст з пацвярджэннем"
+      ],
       "Restore": [
         "Аднавіць"
       ],
@@ -6647,6 +6653,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
@@ -7025,6 +7034,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Unverified": [
+        "Неправераны"
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
@@ -8437,6 +8449,9 @@
       ],
       "New display name": [
         "Новае бачнае імя"
+      ],
+      "New email": [
+        "Новы ліст"
       ],
       "New login password": [
         "Новы пароль уваходу"
@@ -11260,9 +11275,6 @@
       "sign in": [
         "увайсці"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Праверачны ліст адпраўлены на ${ email.Value }"
-      ],
       "Verify now": [
         "Праверыць зараз"
       ],
@@ -12116,6 +12128,9 @@
       "Email address copied to clipboard": [
         "Адрас электроннай пошты скапіяваны ў буфер абмену"
       ],
+      "Email address updated": [
+        "Адрас электроннай пошты абноўлены"
+      ],
       "Email updated": [
         "Электронная пошта абноўлена"
       ],
@@ -12883,6 +12898,9 @@
       ],
       "Edit domain": [
         "Рэдагаваць дамен"
+      ],
+      "Edit email address": [
+        "Змяніць адрас электроннай пошты"
       ],
       "Edit filter": [
         "Рэдагаванне фільтра"

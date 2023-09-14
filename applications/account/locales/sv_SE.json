@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Tillåt ej osignerad e-post"
       ],
+      "Edit address": [
+        "Redigera adress"
+      ],
       "Enable": [
         "Aktivera"
       ],
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } och ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "E-postverifiering skickat till ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5317,6 +5325,9 @@
       "* No credit card required.": [
         "* Inget kreditkort krävs."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -5785,6 +5796,9 @@
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
       "Edit label": [
         "Redigera etikett"
       ],
@@ -5914,12 +5928,6 @@
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Skaffa en ${ BRAND_NAME }-adress för att använda alla ${ BRAND_NAME_TWO } tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Skaffa min ${ BRAND_NAME }-adress"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ge detta token ett beskrivande namn, tex. vilken tjänst du avser att använda det med och välj en av dina aktiva anpassade domänadresser. Endast denna adress kan skicka e-post med denna token."
       ],
@@ -6043,6 +6051,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -6492,6 +6503,9 @@
       "Report link expired": [
         "Rapportlänk löpt ut"
       ],
+      "Resend verification email": [
+        "Skicka e-postverifiering igen"
+      ],
       "Restore": [
         "Återställ"
       ],
@@ -6515,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skanna denna kod med din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Skydda ditt ${ BRAND_NAME }-konto"
       ],
       "Securing your account": [
         "Säkrar ditt konto"
@@ -6886,6 +6903,12 @@
       "Unsupported file": [
         "Fil stöds inte"
       ],
+      "Unverified": [
+        "Overifierad"
+      ],
+      "Unverified email address.": [
+        "Overifierad e-postadress."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
@@ -7102,6 +7125,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan anpassa och ladda ner dina fakturor för bokföringsändamål."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kan aktivera autentiseringsloggning för att se när ditt konto används och från vilken IP-adress. Vi kommer att registrera IP-adressen som ansluter till kontot och tidpunkten, såväl som misslyckade försök."
@@ -7932,6 +7958,9 @@
       "Config to connect to ${ serverName }": [
         "Konfigurera för att ansluta till ${ serverName }"
       ],
+      "Confirm email": [
+        "Bekräfta e-post"
+      ],
       "Confirm link URLs": [
         "Bekräfta länk-URL:er"
       ],
@@ -7982,6 +8011,9 @@
       ],
       "Current display name": [
         "Nuvarande visningsnamn"
+      ],
+      "Current email": [
+        "Nuvarande e-post"
       ],
       "Customize invoices": [
         "Anpassa fakturor"
@@ -8267,6 +8299,9 @@
       ],
       "New display name": [
         "Nytt visningsnamn"
+      ],
+      "New email": [
+        "Ny e-post"
       ],
       "New login password": [
         "Nytt inloggningslösenord"
@@ -11005,9 +11040,6 @@
       "sign in": [
         "logga in"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "E-postverifiering skickat till ${ email.Value }"
-      ],
       "Verify now": [
         "Verifiera nu"
       ],
@@ -11819,6 +11851,9 @@
       "Email address copied to clipboard": [
         "E-postadress kopierad till urklipp"
       ],
+      "Email address updated": [
+        "E-postadress uppdaterad"
+      ],
       "Email updated": [
         "E-post uppdaterad"
       ],
@@ -12571,6 +12606,9 @@
       "Edit domain": [
         "Redigera domän"
       ],
+      "Edit email address": [
+        "Redigera e-postadress"
+      ],
       "Edit filter": [
         "Redigera filter"
       ],
@@ -13100,6 +13138,9 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
+      ],
       "What would you like to import?": [
         "Vad vill du importera?"
       ],
@@ -13384,6 +13425,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Använd din webbläsares standardrullningslister. Dessa är vanligtvis större och enklare att använda"
+      ],
+      "Verified email address": [
+        "Verifierad e-postadress"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi upptäckte ett problem med din DNS-konfiguration. Se till att dina poster matchar instruktionerna nedan. Om problemet kvarstår måste vi stänga av DKIM-signering."

@@ -2791,6 +2791,9 @@
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
       ],
+      "Edit email address": [
+        "Muokkaa sähköpostiosoitetta"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Sisältää sähköpostin isännöinnin 10 omalla verkkotunnuksella veloituksetta. Lisää verkkotunnuksia voidaan lisätä ${ price } kappalehintaan."
       ],
@@ -2871,12 +2874,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Hanki ${ BRAND_NAME }-osoite käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME }a ja ${ CALENDAR_SHORT_APP_NAME }a."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Hanki oma ${ BRAND_NAME }-osoite"
       ],
       "here": [
         "tässä"
@@ -5393,9 +5390,6 @@
       ],
       "Email address not yet verified.": [
         "Sähköpostiosoitetta ei ole vielä vahvistettu."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Vahvistusviesti lähetettiin osoitteeseen ${ email.Value }"
       ],
       "Verify now": [
         "Vahvista nyt"

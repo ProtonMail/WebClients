@@ -389,6 +389,9 @@
       "Open settings": [
         "Ayarları aç"
       ],
+      "Pause indexing": [
+        "Dizine eklemeyi duraklat"
+      ],
       "Preview contact": [
         "Kişiyi ön izle"
       ],
@@ -451,6 +454,9 @@
       ],
       "Reset to default": [
         "Varsayılana sıfırla"
+      ],
+      "Resume indexing": [
+        "Dizine eklemeyi sürdür"
       ],
       "Save": [
         "Kaydet"
@@ -2063,6 +2069,9 @@
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Bu işlem birkaç dakika sürebilir. Bu arada takvimi her zamanki gibi kullanmayı sürdürebilirsiniz."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -2298,6 +2307,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Etkinlik bulunamadı"
       ],
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
@@ -2762,6 +2774,14 @@
         "Puan zorunludur"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
+      "Results": [
+        "Sonuçlar"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "iptal edildi"
@@ -2771,6 +2791,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } katılımcı",
         "${ numberOfAttendees } katılımcı"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Tüm gün"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Tüm gün, ${ plusDaysToEnd } gün sürecek",
+        "Tüm gün, ${ plusDaysToEnd } gün sürecek"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3467,9 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } ve ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -3554,6 +3586,9 @@
       "Calendar side panel": [
         "Takvim yan panosu"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Aradığınız etkinlikleri bulamıyor musunuz? Gizli takvimlerdeki bazı etkinlikler sorgunuzla eşleşiyor. Bu sonuçları görmek için ${ hiddenWithItemsCalendarList } görünürlüğünü açın."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
@@ -3565,6 +3600,9 @@
       ],
       "Clear encrypted search data": [
         "Şifrelenmiş arama verilerini temizle"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Tarayıcı verilerinin temizlenmesi bu aygıttaki arama dizinini de siler. Arama özelliğini kullanabilmek için tüm takvim etkinlikleri yeniden dizine eklenmelidir."
       ],
       "Clears browser data related to the encrypted search.": [
         "Şifrelenmiş arama ile ilişkili tarayıcı verilerini temizler."
@@ -3635,6 +3673,9 @@
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
@@ -3712,6 +3753,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Etkinlikler dizine ekleniyor: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Dizine ekleme duraklatıldı"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -4121,6 +4168,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Takvim görünümlerine geri dönmek için arama sorgunuzu güncelleyebilir ya da aramayı kapatabilirsiniz."
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
       ]
     },
     "Info on errors": {
@@ -5325,6 +5382,9 @@
       "Image URL": [
         "Görsel adresi"
       ],
+      "Indexing...": [
+        "Dizine ekleniyor..."
+      ],
       "Name": [
         "Ad"
       ],
@@ -5339,6 +5399,9 @@
       ],
       "Please select a country": [
         "Lütfen bir ülke seçin"
+      ],
+      "Search events": [
+        "Etkinlik ara"
       ],
       "Search for group name": [
         "Grup adı ile arayın"
@@ -5737,6 +5800,9 @@
       "Add your country's public holidays to your calendar.": [
         "Ülkenizin resmi tatillerini takviminize ekleyin."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Yeni arama özelliğimizle aradığınız etkinliği kolayca bulabilirsiniz."
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
@@ -5745,6 +5811,9 @@
       ],
       "Public holidays are here!": [
         "Resmi tatiller burada!"
+      ],
+      "Search for events": [
+        "Etkinlik ara"
       ]
     },
     "Storage": {
@@ -5808,6 +5877,9 @@
       ],
       "Calendar information updated": [
         "Takvim bilgileri güncellendi"
+      ],
+      "Calendar search activated": [
+        "Takvimde arama özelliği açıldı"
       ],
       "Calendar updated": [
         "Takvim güncellendi"
@@ -6413,6 +6485,9 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
+      "We're setting up Calendar search": [
+        "Takvim aranmaya hazırlanıyor"
+      ],
       "We've locked some calendars to protect your data": [
         "Verilerinizi korumak için bazı takvimleri kilitledik"
       ],
@@ -6552,6 +6627,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Etkinliğe git"
+      ],
       "Open in a new tab": [
         "Yeni sekmede aç"
       ]

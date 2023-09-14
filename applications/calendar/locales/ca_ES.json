@@ -2299,6 +2299,9 @@
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
+      "Event not found": [
+        "No s'ha trobat l'esdeveniment."
+      ],
       "Failed to get original occurrence in series": [
         "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie."
       ],
@@ -2756,6 +2759,14 @@
         "Es requereix la valoració"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Sense resultats"
+      ],
+      "Results": [
+        "Resultats"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "cancel·lat"
@@ -2765,6 +2776,11 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } participant",
         "${ numberOfAttendees } participants"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Tot el dia"
       ]
     },
     "Event info. Organizer name": {
@@ -3707,6 +3723,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Indexing paused": [
+        "Indexació pausada"
+      ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
       ],
@@ -4115,6 +4134,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "No s'ha trobat cap resultat."
       ]
     },
     "Info on errors": {

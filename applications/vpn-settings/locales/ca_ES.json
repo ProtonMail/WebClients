@@ -2787,12 +2787,6 @@
       "Get ${ upsellPlanName }": [
         "Obtén ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obteniu una adreça de ${ BRAND_NAME } per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obté la meva adreça ${ BRAND_NAME }"
-      ],
       "here": [
         "aquí"
       ],
@@ -2910,6 +2904,9 @@
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
+      "No gateways": [
+        "Sense passarel·les"
+      ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
@@ -2954,6 +2951,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed every 12 months": [
+        "al mes amb facturació cada 12 mesos"
+      ],
+      "per month, billed every 15 months": [
+        "al mes amb facturació cada 15 mesos"
+      ],
+      "per month, billed every 24 months": [
+        "al mes amb facturació cada 24 mesos"
+      ],
+      "per month, billed every 30 months": [
+        "al mes amb facturació cada 30 mesos"
       ],
       "Plan upgrade required": [
         "Es requereix una millora del pla"
@@ -3188,6 +3200,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
+      ],
+      "to continue to ${ product }": [
+        "per continuar a ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "per continuar a ${ toAppName }"
@@ -5121,9 +5136,6 @@
       ],
       "Email address not yet verified.": [
         "L'adreça de correu electrònic encara no s'ha verificat."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "S'ha enviat un correu electrònic de verificació a ${ email.Value }"
       ],
       "Verify now": [
         "Verifica ara"
