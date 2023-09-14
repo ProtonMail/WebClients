@@ -58,7 +58,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                 <b key="bold-time-left">
                     {
                         // translator: Full sentence is "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in XX more hours."
-                        c('Info').ngettext(
+                        c('session_recovery:in_progress:info').ngettext(
                             msgid`${gracePeriodHoursRemaining} more hour`,
                             `${gracePeriodHoursRemaining} more hours`,
                             gracePeriodHoursRemaining
@@ -69,12 +69,12 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
 
             const viewRequest = (
                 <SettingsLink key="view-request-link" path="/account-password" onClick={onClose}>
-                    {c('Link').t`View request`}
+                    {c('session_recovery:in_progress:link').t`View request`}
                 </SettingsLink>
             );
 
             return {
-                title: c('Title').t`Password reset requested`,
+                title: c('session_recovery:in_progress:title').t`Password reset requested`,
                 content: (
                     <>
                         <div className="flex flex-justify-center">
@@ -83,18 +83,20 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                         <p>
                             {
                                 // translator: Full sentence is "We received a password reset request for account@proton.me."
-                                c('Info').jt`We received a password reset request for ${boldEmail}.`
+                                c('session_recovery:in_progress:info')
+                                    .jt`We received a password reset request for ${boldEmail}.`
                             }
                             <br />
                         </p>
                         <p>
                             {
                                 // translator: Full sentence is "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in XX more hours."
-                                c('Info')
+                                c('session_recovery:in_progress:info')
                                     .jt`To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${boldTimeLeft}. ${viewRequest}`
                             }
                         </p>
-                        <p>{c('Info').t`If you didn’t ask to reset your password, cancel this request now.`}</p>
+                        <p>{c('session_recovery:in_progress:info')
+                            .t`If you didn’t ask to reset your password, cancel this request now.`}</p>
                     </>
                 ),
                 footer: (
@@ -102,7 +104,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                         <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>
                             {
                                 // translator: The request here refers to a password reset request. So clicking this button will cancel the password reset request.
-                                c('Action').t`Cancel request`
+                                c('session_recovery:in_progress:action').t`Cancel request`
                             }
                         </Button>
                         <Button
@@ -112,7 +114,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                                 onClose?.();
                             }}
                         >
-                            {c('Action').t`Got it`}
+                            {c('session_recovery:in_progress:action').t`Got it`}
                         </Button>
                     </>
                 ),

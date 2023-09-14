@@ -33,7 +33,7 @@ const SessionRecoveryInProgressBanner = () => {
 
     const readMore = (
         <InlineLinkButton key="read-more" onClick={() => setSessionRecoveryInProgressModalOpen(true)}>
-            {c('Action').t`Learn more`}
+            {c('session_recovery:in_progress:action').t`Learn more`}
         </InlineLinkButton>
     );
 
@@ -45,7 +45,7 @@ const SessionRecoveryInProgressBanner = () => {
             <TopBanner className="bg-warning">
                 {
                     // translator: Full sentence "Password reset requested (user@email.com). You can change your password in 72 hours."
-                    c('Session recovery').ngettext(
+                    c('session_recovery:in_progress:info').ngettext(
                         msgid`Password reset requested (${user.Email}). You can change your password in ${hoursRemaining} hour.`,
                         `Password reset requested (${user.Email}). You can change your password in ${hoursRemaining} hours.`,
                         hoursRemaining
@@ -75,27 +75,29 @@ const PasswordResetAvailableBanner = () => {
     const cta =
         APP_NAME === APPS.PROTONACCOUNT ? (
             <InlineLinkButton key="reset-password" onClick={() => setPasswordResetAvailableAccountModalOpen(true)}>
-                {isSessionRecoveryInitiatedByCurrentSession ? c('Action').t`Reset password` : c('Action').t`See how`}
+                {isSessionRecoveryInitiatedByCurrentSession
+                    ? c('session_recovery:available:action').t`Reset password`
+                    : c('Action').t`See how`}
             </InlineLinkButton>
         ) : (
             <SettingsLink
                 key="reset-password"
                 path="/account-password?action=session-recovery-password-reset-available"
             >
-                {c('Action').t`See how`}
+                {c('session_recovery:available:link').t`See how`}
             </SettingsLink>
         );
 
     const message =
         timeRemaining.inDays === 0
             ? // translator: Full sentence "Password reset request approved (user@email.com). You have N hours to reset your password."
-              c('Session recovery').ngettext(
+              c('session_recovery:available:info').ngettext(
                   msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hour to reset your password.`,
                   `Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hours to reset your password.`,
                   timeRemaining.inHours
               )
             : // translator: Full sentence "Password reset request approved (user@email.com). You have N days to reset your password."
-              c('Session recovery').ngettext(
+              c('session_recovery:available:info').ngettext(
                   msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} day to reset your password.`,
                   `Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} days to reset your password.`,
                   timeRemaining.inDays
@@ -121,7 +123,7 @@ const SessionRecoveryCancelledBanner = () => {
         <SettingsLink key="change-password-link" path="/account-password?action=change-password">
             {
                 // translator: Full sentence "Password reset request cancelled (user@email.com). If you didn’t make this request, change your password now."
-                c('Action').t`change your password now`
+                c('session_recovery:cancelled:link').t`change your password now`
             }
         </SettingsLink>
     );
@@ -136,7 +138,7 @@ const SessionRecoveryCancelledBanner = () => {
             >
                 {
                     // translator: Full sentence "Password reset request cancelled (user@email.com). If you didn’t make this request, change your password now."
-                    c('Session recovery')
+                    c('session_recovery:cancelled:info')
                         .jt`Password reset request cancelled (${user.Email}). If you didn’t make this request, ${changePasswordLink}.`
                 }
             </TopBanner>

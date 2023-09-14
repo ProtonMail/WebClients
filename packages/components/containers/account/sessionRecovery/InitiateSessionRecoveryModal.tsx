@@ -47,7 +47,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
         await api(initiateSessionRecovery());
         await call();
         createNotification({
-            text: c('Title').t`Password reset confirmed`,
+            text: c('session_recovery:initiation:notification').t`Password reset confirmed`,
             showCloseButton: false,
         });
 
@@ -61,7 +61,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
     const boldHours = (
         <b key="session-recovery-hours">{
             // translator: Full sentence "For security reasons, you’ll have to wait 72 hours before you can change your password."
-            c('Info').t`72 hours`
+            c('session_recovery:initiation:info').t`72 hours`
         }</b>
     );
 
@@ -69,7 +69,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
         <b key="bold-recovery-method">
             {
                 // translator: Full sentence "If you have a recovery method set up, try account recovery instead. This will allow you to change your password straight away."
-                c('Info').t`recovery method`
+                c('session_recovery:initiation:info').t`recovery method`
             }
         </b>
     );
@@ -78,7 +78,10 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
 
     return (
         <Modal onClose={handleClose} {...rest}>
-            <ModalHeader title={c('Title').t`Request password reset?`} subline={user.Email} />
+            <ModalHeader
+                title={c('session_recovery:initiation:title').t`Request password reset?`}
+                subline={user.Email}
+            />
             <ModalContent>
                 <div className="flex flex-justify-center">
                     <img src={sessionRecoveryIllustration} alt="" />
@@ -87,7 +90,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                 <p>
                     {
                         // translator: Full sentence "For security reasons, you’ll have to wait 72 hours before you can change your password."
-                        c('Info')
+                        c('session_recovery:initiation:info')
                             .jt`For security reasons, you’ll have to wait ${boldHours} before you can change your password.`
                     }
                 </p>
@@ -95,7 +98,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                     <p>
                         {
                             // translator: Full sentence "If you have a recovery method set up, try account recovery instead. This will allow you to change your password straight away."
-                            c('Info')
+                            c('session_recovery:initiation:info')
                                 .jt`If you have a ${boldRecoveryMethod} set up, try account recovery instead. This will allow you to change your password straight away.`
                         }
                     </p>
@@ -104,7 +107,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
             <ModalFooter>
                 {hasRecoveryMethod ? (
                     <ButtonLike as={SettingsLink} path={`/recovery`} onClick={onClose} disabled={submitting}>
-                        {c('Action').t`Use recovery method`}
+                        {c('session_recovery:initiation:action').t`Use recovery method`}
                     </ButtonLike>
                 ) : (
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
@@ -114,7 +117,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                     loading={submitting}
                     color="danger"
                 >
-                    {c('Action').t`Request password reset`}
+                    {c('session_recovery:initiation:action').t`Request password reset`}
                 </Button>
             </ModalFooter>
         </Modal>

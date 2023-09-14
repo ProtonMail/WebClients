@@ -53,7 +53,10 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
 
             await call();
             dismissSessionRecoveryCancelled();
-            createNotification({ text: c('Info').t`Password reset cancelled`, showCloseButton: false });
+            createNotification({
+                text: c('session_recovery:cancellation:notification').t`Password reset cancelled`,
+                showCloseButton: false,
+            });
             onClose?.();
         };
 
@@ -71,10 +74,14 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
             size="small"
             {...rest}
         >
-            <ModalHeader title={c('Title').t`Cancel password reset?`} subline={user.Email} hasClose={!onBack} />
+            <ModalHeader
+                title={c('session_recovery:cancellation:title').t`Cancel password reset?`}
+                subline={user.Email}
+                hasClose={!onBack}
+            />
 
             <ModalContent>
-                <p>{c('Info')
+                <p>{c('session_recovery:cancellation:info')
                     .t`Enter your current password to cancel the password reset process. No other changes will take effect.`}</p>
 
                 <InputFieldTwo
@@ -97,7 +104,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
                     <Button onClick={onClose} disabled={submitting}>{c('Action').t`Close`}</Button>
                 )}
                 <Button color="danger" type="submit" loading={submitting}>
-                    {c('Action').t`Cancel password reset`}
+                    {c('session_recovery:cancellation:action').t`Cancel password reset`}
                 </Button>
             </ModalFooter>
         </Modal>
