@@ -108,7 +108,7 @@ export const useShouldNotifyPasswordResetAvailable = () => {
 export const useSessionRecoveryGracePeriodHoursRemaining = () => {
     const [user] = useUser();
 
-    if (user.AccountRecovery === null || user.AccountRecovery.State !== SessionRecoveryState.GRACE_PERIOD) {
+    if (!user.AccountRecovery || user.AccountRecovery.State !== SessionRecoveryState.GRACE_PERIOD) {
         return null;
     }
 
@@ -120,7 +120,7 @@ export const useSessionRecoveryGracePeriodHoursRemaining = () => {
 export const useSessionRecoveryInsecureTimeRemaining = () => {
     const [user] = useUser();
 
-    if (user.AccountRecovery === null || user.AccountRecovery.State !== SessionRecoveryState.INSECURE) {
+    if (!user.AccountRecovery || user.AccountRecovery.State !== SessionRecoveryState.INSECURE) {
         return null;
     }
 

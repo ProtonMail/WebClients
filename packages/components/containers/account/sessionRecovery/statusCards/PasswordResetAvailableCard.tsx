@@ -26,7 +26,7 @@ const PasswordResetAvailableCard = ({ className }: Props) => {
     ] = useModalState();
     const [confirmCancelModalProps, setConfirmCancelModalOpen, renderConfirmCancelModal] = useModalState();
 
-    if (user.AccountRecovery === null) {
+    if (!user.AccountRecovery) {
         return null;
     }
 
