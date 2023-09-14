@@ -17,7 +17,7 @@ import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { runParallelUndoableChunkedActions } from 'proton-mail/helpers/chunk';
+import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 
 import { isConversation } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
@@ -173,32 +173,27 @@ export const usePermanentDelete = (labelID: string) => {
 
     const handleSubmit = async () => {
         deleteModalProps.onClose();
-        let rollback = () => {};
 
         try {
             dispatch(backendActionStarted());
-            rollback = optimisticDelete(elements, labelID);
 
-            const results = await Promise.all(
-                await runParallelUndoableChunkedActions({
-                    api,
-                    items: selectedIDs,
-                    chunkSize: mailActionsChunkSize,
-                    action: (chunk) => (conversationMode ? deleteConversations(chunk, labelID) : deleteMessages(chunk)),
-                    canUndo: false,
-                })
-            );
-
-            results.forEach((res) => {
-                if (res.status === 'rejected') {
-                    throw new Error();
-                }
+            await runParallelChunkedActions({
+                api,
+                items: elements,
+                chunkSize: mailActionsChunkSize,
+                action: (chunk) => (conversationMode ? deleteConversations(chunk, labelID) : deleteMessages(chunk)),
+                canUndo: false,
+                // In permanent delete, we have no UndoToken. So if a chunk fails, we want to undo the part which failed only
+                optimisticAction: (items) => optimisticDelete(items, labelID),
             });
 
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
-        } catch {
-            rollback();
+        } catch (error: any) {
+            createNotification({
+                text: c('Error').t`Something went wrong. Please try again.`,
+                type: 'error',
+            });
         } finally {
             dispatch(backendActionFinished());
         }

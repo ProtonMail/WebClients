@@ -2,6 +2,8 @@ import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { useApi, useEventManager, useFolders, useLabels, useNotifications, useFeature, FeatureCode } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
@@ -30,7 +32,7 @@ import {
 } from '../../helpers/moveToFolder';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import useMailModel from '../../hooks/useMailModel';
-import { getFilteredUndoTokens, runParallelUndoableChunkedActions } from '../../helpers/chunk';
+import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/chunk';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import { useAppDispatch } from '../../logic/store';
@@ -146,6 +148,25 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             let rollback = () => {};
 
+            const handleUndo = async (tokens: PromiseSettledResult<string | undefined>[]) => {
+                try {
+                    undoing = true;
+
+                    // Stop the event manager to prevent race conditions
+                    stop();
+                    rollback();
+                    const filteredTokens = getFilteredUndoTokens(tokens);
+
+                    await Promise.all([
+                        ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
+                        createFilters ? undoCreateFilters() : undefined,
+                    ]);
+                } finally {
+                    start();
+                    await call();
+                }
+            };
+
             const handleDo = async () => {
                 let tokens: PromiseSettledResult<string | undefined>[] = [];
                 try {
@@ -161,7 +182,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     );
 
                     [tokens] = await Promise.all([
-                        await runParallelUndoableChunkedActions({
+                        await runParallelChunkedActions({
                             api,
                             items: elementIDs,
                             chunkSize: mailActionsChunkSize,
@@ -170,7 +191,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                         createFilters ? doCreateFilters(elements, [folderID], true) : undefined,
                     ]);
                 } catch (error: any) {
-                    rollback();
+                    createNotification({
+                        text: c('Error').t`Something went wrong. Please try again.`,
+                        type: 'error',
+                    });
+
+                    await handleUndo(error.data);
                 } finally {
                     dispatch(backendActionFinished());
                     if (!undoing) {
@@ -194,25 +220,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     destinationLabelID
                 );
 
-                const handleUndo = async () => {
-                    try {
-                        undoing = true;
-                        const tokens = await promise;
-                        // Stop the event manager to prevent race conditions
-                        stop();
-                        rollback();
-                        const filteredTokens = getFilteredUndoTokens(tokens);
-
-                        await Promise.allSettled([
-                            Promise.allSettled(filteredTokens.map((token) => api(undoActions(token)))),
-                            createFilters ? undoCreateFilters() : undefined,
-                        ]);
-                    } finally {
-                        start();
-                        await call();
-                    }
-                };
-
                 const suggestMoveAll =
                     elements.length === pageSize &&
                     MOVE_ALL_FOLDERS.includes(folderID as MAILBOX_LABEL_IDS) &&
@@ -231,7 +238,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
                 createNotification({
                     text: (
-                        <UndoActionNotification onUndo={canUndo ? handleUndo : undefined}>
+                        <UndoActionNotification onUndo={canUndo ? async () => handleUndo(await promise) : undefined}>
                             <span className="text-left">
                                 {notificationText}
                                 {moveAllButton}

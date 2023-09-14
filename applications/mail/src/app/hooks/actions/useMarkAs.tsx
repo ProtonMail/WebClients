@@ -8,7 +8,7 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { getFilteredUndoTokens, runParallelUndoableChunkedActions } from 'proton-mail/helpers/chunk';
+import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -80,6 +80,20 @@ export const useMarkAs = () => {
 
         let rollback: (() => void) | undefined = () => {};
 
+        const handleUndo = async (tokens: PromiseSettledResult<string | undefined>[]) => {
+            try {
+                // Stop the event manager to prevent race conditions
+                stop();
+                rollback?.();
+                const filteredTokens = getFilteredUndoTokens(tokens);
+
+                await Promise.all(filteredTokens.map((token) => api({ ...undoActions(token), silence: true })));
+            } finally {
+                start();
+                await call();
+            }
+        };
+
         const request = async () => {
             let tokens = [];
             try {
@@ -91,7 +105,7 @@ export const useMarkAs = () => {
                     displaySnoozedReminder,
                 });
 
-                tokens = await runParallelUndoableChunkedActions({
+                tokens = await runParallelChunkedActions({
                     api,
                     items: elements,
                     chunkSize: mailActionsChunkSize,
@@ -102,7 +116,12 @@ export const useMarkAs = () => {
                         ),
                 });
             } catch (error: any) {
-                rollback?.();
+                createNotification({
+                    text: c('Error').t`Something went wrong. Please try again.`,
+                    type: 'error',
+                });
+
+                await handleUndo(error.data);
                 throw error;
             } finally {
                 dispatch(backendActionFinished());
@@ -118,23 +137,12 @@ export const useMarkAs = () => {
         if (!silent) {
             const notificationText = getNotificationTextMarked(isMessage, elements.length, status);
 
-            const handleUndo = async () => {
-                try {
-                    // Stop the event manager to prevent race conditions
-                    stop();
-                    rollback?.();
-                    const tokens = await promise;
-                    const filteredTokens = getFilteredUndoTokens(tokens);
-
-                    await Promise.allSettled(filteredTokens.map((token) => api(undoActions(token))));
-                } finally {
-                    start();
-                    await call();
-                }
-            };
-
             createNotification({
-                text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
+                text: (
+                    <UndoActionNotification onUndo={async () => handleUndo(await promise)}>
+                        {notificationText}
+                    </UndoActionNotification>
+                ),
                 expiration: SUCCESS_NOTIFICATION_EXPIRATION,
             });
         }
