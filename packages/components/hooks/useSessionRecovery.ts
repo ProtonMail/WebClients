@@ -1,4 +1,4 @@
-import { DAY, HOUR } from '@proton/shared/lib/constants';
+import { APPS, DAY, HOUR } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 
@@ -6,6 +6,7 @@ import { useSessionRecoveryLocalStorage } from '../containers/account/sessionRec
 import { useFlag } from '../containers/unleash';
 import useAddresses from './useAddresses';
 import useAuthentication from './useAuthentication';
+import useConfig from './useConfig';
 import useUser from './useUser';
 import useUserSettings from './useUserSettings';
 
@@ -51,12 +52,16 @@ export const useHasRecoveryMethod = () => {
 export const useIsSessionRecoveryAvailable = () => {
     const [user] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
+    const { APP_NAME } = useConfig();
 
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
     const feature = useFlag('SignedInAccountRecovery');
     const isPrivateUser = user?.isPrivate;
 
-    return [!loadingAddresses && hasMigratedKeys && feature && isPrivateUser, loadingAddresses];
+    return [
+        APP_NAME !== APPS.PROTONVPN_SETTINGS && !loadingAddresses && hasMigratedKeys && feature && isPrivateUser,
+        loadingAddresses,
+    ];
 };
 
 export const useIsSessionRecoveryInitiationAvailable = () => {
