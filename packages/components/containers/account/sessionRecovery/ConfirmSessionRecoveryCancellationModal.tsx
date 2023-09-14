@@ -87,6 +87,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
                     autoComplete="current-password"
                     value={password}
                     onValue={setPassword}
+                    autoFocus
                 />
             </ModalContent>
             <ModalFooter>
