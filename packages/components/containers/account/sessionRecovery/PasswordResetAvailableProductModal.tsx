@@ -44,12 +44,12 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
 
     const infoSubline =
         timeRemaining.inDays === 0
-            ? c('Info').ngettext(
+            ? c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inHours} hour`,
                   `This permission expires in ${timeRemaining.inHours} hours`,
                   timeRemaining.inHours
               )
-            : c('Info').ngettext(
+            : c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inDays} day`,
                   `This permission expires in ${timeRemaining.inDays} days`,
                   timeRemaining.inDays
@@ -64,12 +64,12 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
     const boldDaysRemaining = (
         <b key="bold-days-remaining">
             {timeRemaining.inDays === 0
-                ? c('Info').ngettext(
+                ? c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inHours} hour`,
                       `${timeRemaining.inHours} hours`,
                       timeRemaining.inHours
                   )
-                : c('Info').ngettext(
+                : c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inDays} day`,
                       `${timeRemaining.inDays} days`,
                       timeRemaining.inDays
@@ -79,26 +79,27 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
 
     return (
         <Modal {...rest}>
-            <ModalHeader title={c('Title').t`Reset your password`} subline={infoSubline} />
+            <ModalHeader title={c('session_recovery:available:title').t`Reset your password`} subline={infoSubline} />
             <ModalContent>
                 <>
                     <div className="flex flex-justify-center">
                         <img src={passwordResetIllustration} alt="" />
                     </div>
                     <div>
-                        {c('Info')
+                        {c('session_recovery:available:info')
                             .jt`You can now change your password for the account ${boldEmail} freely during the next ${boldDaysRemaining}.`}
                     </div>
                 </>
             </ModalContent>
             <ModalFooter>
-                <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('Action').t`Cancel reset`}</Button>
+                <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('session_recovery:available:action')
+                    .t`Cancel reset`}</Button>
                 <ButtonLike
                     as={SettingsLink}
                     path="/account-password?action=session-recovery-reset-password"
                     color="norm"
                 >
-                    {c('Action').t`Set new password`}
+                    {c('session_recovery:available:action').t`Set new password`}
                 </ButtonLike>
             </ModalFooter>
         </Modal>

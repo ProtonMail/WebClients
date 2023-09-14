@@ -31,7 +31,7 @@ const ConfirmDisableSessionRecoveryModal = ({ open, onClose }: Props) => {
         <Prompt
             open={open}
             onClose={handleClose}
-            title={c('Title').t`Disable password reset?`}
+            title={c('session_recovery:disable:title').t`Disable password reset?`}
             buttons={[
                 <Button
                     color="danger"
@@ -40,13 +40,16 @@ const ConfirmDisableSessionRecoveryModal = ({ open, onClose }: Props) => {
                         void withSubmitting(handleDisableSessionRecoveryToggle());
                     }}
                 >
-                    {c('Action').t`Disable password reset`}
+                    {c('session_recovery:disable:action').t`Disable password reset`}
                 </Button>,
                 <Button onClick={onClose} disabled={submitting}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
-            <p>{c('Info').t`You will no longer be able to request a password reset from your account settings.`}</p>
-            <p>{c('Info').t`Make sure you have access to a recovery method.`}</p>
+            <p>
+                {c('session_recovery:disable:info')
+                    .t`You will no longer be able to request a password reset from your account settings.`}
+            </p>
+            <p>{c('session_recovery:disable:info').t`Make sure you have access to a recovery method.`}</p>
         </Prompt>
     );
 };
