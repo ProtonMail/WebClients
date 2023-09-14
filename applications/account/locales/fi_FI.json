@@ -5785,6 +5785,9 @@
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
       ],
+      "Edit email address": [
+        "Muokkaa sähköpostiosoitetta"
+      ],
       "Edit label": [
         "Muokkaa tunnistetta"
       ],
@@ -5913,12 +5916,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Hanki ${ BRAND_NAME }-osoite käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME }a ja ${ CALENDAR_SHORT_APP_NAME }a."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Hanki oma ${ BRAND_NAME }-osoite"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Anna tunnisteelle kuvaava nimi, kuten sen kanssa käyttämäsi palvelun nimi ja valitse jokin aktiivisista omaa verkkotunnustasi käyttävistä osoitteista. Vain tästä osoitteesta voidaan lähettää viestejä tällä tunnisteella."
@@ -11008,9 +11005,6 @@
       ],
       "sign in": [
         "kirjautumiseen"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Vahvistusviesti lähetettiin osoitteeseen ${ email.Value }"
       ],
       "Verify now": [
         "Vahvista nyt"

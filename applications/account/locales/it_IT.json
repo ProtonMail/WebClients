@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Non consentire la posta non firmata"
       ],
+      "Edit address": [
+        "Modifica indirizzo"
+      ],
       "Enable": [
         "Abilita"
       ],
@@ -2930,10 +2933,10 @@
         "Spostamento di ${ name } nella lista consentiti fallito"
       ],
       "${ name } failed to move to block list": [
-        "Spostamento di ${ name } nella lista bloccati fallito"
+        "Spostamento di ${ name } nella lista bloccati non riuscito"
       ],
       "${ name } failed to move to spam list": [
-        "Spostamento di ${ name } nella lista di mittenti spam fallito"
+        "Spostamento di ${ name } nella lista spam non riuscito"
       ],
       "${ name } moved to allow list": [
         "${ name } spostato nella lista consentiti"
@@ -3055,13 +3058,13 @@
         "eliminazione di ${ name } non riuscita"
       ],
       "${ name } failed to move to allow list": [
-        "Spostamento di ${ name } nella lista consentiti fallito"
+        "Spostamento di ${ name } nella lista consentiti non riuscito"
       ],
       "${ name } failed to move to block list": [
-        "Spostamento di ${ name } nella lista bloccati fallito"
+        "Spostamento di ${ name } nella lista bloccati non riuscito"
       ],
       "${ name } failed to move to spam list": [
-        "Spostamento di ${ name } nella lista di mittenti spam fallito"
+        "Spostamento di ${ name } nella lista spam non riuscito"
       ],
       "${ name } moved to allow list": [
         "${ name } spostato nella lista consentiti"
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Email di verifica inviata a ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -3550,7 +3558,7 @@
         "Verifica non riuscita, riprova tra un'ora."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Abbiamo interrotto la firma DKIM a causa di problemi con i tuoi DNS. Per favore segui le istruzioni di seguito per riprendere la firma."
+        "Abbiamo interrotto la firma DKIM a causa di problemi con la tua configurazione DNS. Segui le istruzioni di seguito per riprendere la firma."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase di recupero sbagliata. Riprova o usa un altro metodo di ripristino."
@@ -5317,6 +5325,9 @@
       "* No credit card required.": [
         "* Nessuna carta di credito richiesta."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Ottieni un indirizzo ${ BRAND_NAME }** per usare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
       ],
@@ -5785,6 +5796,9 @@
       "Each code can only be used once": [
         "Ogni codice può essere utilizzato una sola volta"
       ],
+      "Edit email address": [
+        "Modifica indirizzo email"
+      ],
       "Edit label": [
         "Modifica etichetta"
       ],
@@ -5914,12 +5928,6 @@
       "Get ${ upsellPlanName }": [
         "Scegli ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Ottieni un indirizzo ${ BRAND_NAME } per utilizzare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Ottieni un indirizzo ${ BRAND_NAME }"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Assegna al token un nome descrittivo, ad esempio il servizio con cui prevedi di utilizzarlo, e seleziona uno dei tuoi indirizzi di dominio personalizzati attivi. Solo questo indirizzo potrà inviare email con questo token."
       ],
@@ -6043,6 +6051,9 @@
       ],
       "inactive": [
         "non attivo"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella superiore"
@@ -6492,6 +6503,9 @@
       "Report link expired": [
         "Link di segnalazione scaduto"
       ],
+      "Resend verification email": [
+        "Reinvia l'email di verifica"
+      ],
       "Restore": [
         "Ripristina"
       ],
@@ -6515,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scansiona questo codice con il tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Proteggi il tuo account ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Protezione del tuo account"
@@ -6556,7 +6573,7 @@
         "Configurazione della tua organizzazione in corso..."
       ],
       "Settings update failed": [
-        "Aggiornamento impostazioni fallito"
+        "Aggiornamento impostazioni non riuscito"
       ],
       "Settings updated": [
         "Impostazioni aggiornate"
@@ -6886,6 +6903,12 @@
       "Unsupported file": [
         "File non supportato"
       ],
+      "Unverified": [
+        "Non verificato"
+      ],
+      "Unverified email address.": [
+        "Indirizzo email non verificato."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
@@ -7107,8 +7130,11 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
+      ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Puoi abilitare l'autenticazione per vedere quando si accede al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e l'ora, nonché i tentativi falliti."
+        "Puoi abilitare i log di autenticazione per vedere quando viene effettuato l'accesso al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e l'ora, così come i tentativi falliti."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puoi sbloccare immediatamente la configurazione di cui sopra aggiungendo ${ specificCountryCount } al numero se gli indirizzi IP nel tuo piano o contattarci per soluzioni su misura."
@@ -7234,7 +7260,7 @@
         "Il tuo Account ${ BRAND_NAME } è associato a ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
@@ -7936,6 +7962,9 @@
       "Config to connect to ${ serverName }": [
         "Configurazione per connettersi a ${ serverName }"
       ],
+      "Confirm email": [
+        "Conferma l'email"
+      ],
       "Confirm link URLs": [
         "Conferma gli URL di collegamento"
       ],
@@ -7986,6 +8015,9 @@
       ],
       "Current display name": [
         "Nome utilizzato attualmente"
+      ],
+      "Current email": [
+        "Email attuale"
       ],
       "Customize invoices": [
         "Personalizza le fatture"
@@ -8271,6 +8303,9 @@
       ],
       "New display name": [
         "Aggiungi nuovo nome"
+      ],
+      "New email": [
+        "Nuova email"
       ],
       "New login password": [
         "Nuova password d'accesso"
@@ -11015,9 +11050,6 @@
       "sign in": [
         "accedi"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Email di verifica inviata a ${ email.Value }"
-      ],
       "Verify now": [
         "Verifica ora"
       ],
@@ -11829,6 +11861,9 @@
       "Email address copied to clipboard": [
         "Indirizzo email copiato negli appunti"
       ],
+      "Email address updated": [
+        "Indirizzo email aggiornato"
+      ],
       "Email updated": [
         "Email aggiornata"
       ],
@@ -12581,6 +12616,9 @@
       "Edit domain": [
         "Modifica dominio"
       ],
+      "Edit email address": [
+        "Modifica indirizzo email"
+      ],
       "Edit filter": [
         "Modifica filtro"
       ],
@@ -12842,7 +12880,7 @@
         "Verifica pagamento"
       ],
       "PayPal verification failed": [
-        "Verifica PayPal fallita"
+        "Verifica PayPal non riuscita"
       ],
       "Personalise your e-mail footer": [
         "Personalizza il piè di pagina della tua email"
@@ -13109,6 +13147,9 @@
       ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
@@ -13395,11 +13436,14 @@
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Usa le barre di scorrimento predefinite del tuo browser. Sono di solito più grandi e più facili da vedere"
       ],
+      "Verified email address": [
+        "Indirizzo email verificato"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Abbiamo rilevato un problema con la tua configurazione DNS. Assicurati che i tuoi record corrispondano alle istruzioni qui sotto. Se il problema persiste, dovremo cambiare la firma della DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Abbiamo interrotto la firma DKIM a causa di problemi con i tuoi DNS. Per favore segui le istruzioni di seguito per riprendere la firma."
+        "Abbiamo interrotto la firma DKIM a causa di problemi con la tua configurazione DNS. Segui le istruzioni di seguito per riprendere la firma."
       ],
       "When enabled, animations and transitions will not show": [
         "Se abilitato, le animazioni e le transizioni non verranno visualizzate"
@@ -13423,7 +13467,7 @@
         "La tua firma DKIM sta funzionando."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
-        "Il tuo profilo esterno potrebbe aver raggiunto il suo limite di larghezza di banda di 24 ore. ${ BRAND_NAME } proverà a riprendere l'importazione appena possibile."
+        "Il tuo account esterno potrebbe aver raggiunto il suo limite di larghezza di banda di 24 ore. ${ BRAND_NAME } proverà a riprendere l'importazione appena possibile."
       ]
     },
     "tooltip": {
