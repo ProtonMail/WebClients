@@ -5853,12 +5853,6 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用するには、${ BRAND_NAME } アドレスを取得します。"
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } アドレスを入手"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "トークンを使用する予定のサービスなどのわかりやすい名前を付け、有効な独自ドメインアドレスを選択します。 このトークンでメールを送信できるのは、このアドレスだけです。"
       ],
@@ -10887,9 +10881,6 @@
       ],
       "sign in": [
         "サインイン"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "${ email.Value } 宛てに確認メールが送信されました"
       ],
       "Verify now": [
         "今すぐ検証"

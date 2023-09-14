@@ -5206,9 +5206,6 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
       ],
-      "Get my ${ BRAND_NAME } address": [
-        "अपना ${ BRAND_NAME } पता लें"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "टोकन को उसके बारे में बताने वाला नाम दें, जैसे की सेवा जिसके साथ आप उसे इस्तेमाल करना चाहते है, और अपना एक स्क्रीय कस्टम डोमेन पता चुनें। सिर्फ ये पता इस टोकन के साथ ईमेल भेज पाएगा।"
       ],
@@ -9392,9 +9389,6 @@
       ],
       "sign in": [
         "साइन इन करें"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "सत्यापन ईमेल ${ email.Value } पर भेजा गया"
       ],
       "Verify now": [
         "अभी सत्यापित करें"
