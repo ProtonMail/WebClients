@@ -1,6 +1,12 @@
 import { c } from 'ttag';
 
-import { Icon, LabelsUpsellModal, SidebarListItemHeaderLink, useModalState } from '@proton/components/components';
+import {
+    Icon,
+    LabelsUpsellModal,
+    SidebarListItemHeaderLink,
+    Tooltip,
+    useModalState,
+} from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -39,28 +45,29 @@ const MailSidebarListActions = ({ type, items }: Props) => {
 
     return (
         <div className="flex flex-align-items-center">
-            <button
-                type="button"
-                className="flex navigation-link-header-group-control flex-item-noshrink"
-                onClick={handleCreate}
-                title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
-                data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
-            >
-                <Icon
-                    name="plus"
-                    alt={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
+            <Tooltip title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}>
+                <button
+                    type="button"
+                    className="flex navigation-link-header-group-control flex-item-noshrink"
+                    onClick={handleCreate}
+                    data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
+                >
+                    <Icon
+                        name="plus"
+                        alt={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
+                    />
+                </button>
+            </Tooltip>
+            <Tooltip title={type === 'label' ? c('Info').t`Manage your labels` : c('Info').t`Manage your folders`}>
+                <SidebarListItemHeaderLink
+                    to="/mail/folders-labels"
+                    toApp={APPS.PROTONACCOUNT}
+                    icon="cog-wheel"
+                    alt={type === 'label' ? c('Info').t`Manage your labels` : c('Link').t`Manage your folders`}
+                    target="_self"
+                    data-testid="navigation-link:labels-settings"
                 />
-            </button>
-            <SidebarListItemHeaderLink
-                to="/mail/folders-labels"
-                toApp={APPS.PROTONACCOUNT}
-                icon="cog-wheel"
-                title={type === 'label' ? c('Info').t`Manage your labels` : c('Info').t`Manage your folders`}
-                info={type === 'label' ? c('Info').t`Manage your labels` : c('Link').t`Manage your folders`}
-                target="_self"
-                data-testid="navigation-link:labels-settings"
-            />
-
+            </Tooltip>
             {renderUpsellModal && (
                 <LabelsUpsellModal
                     modalProps={upsellModalProps}
