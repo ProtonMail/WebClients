@@ -994,6 +994,9 @@
       "Stay": [
         "Залишитися"
       ],
+      "Strikethrough": [
+        "Закреслення"
+      ],
       "Submit": [
         "Відправити"
       ],
@@ -4718,6 +4721,12 @@
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакти",
+        "${ contactsLength } контактів",
+        "${ contactsLength } контактів"
+      ],
       "${ count } unread message": [
         "${ count } непрочитане повідомлення",
         "${ count } непрочитані повідомлення",
@@ -4816,6 +4825,12 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } контакту вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
+        "${ selectedContactsLength }/${ contactsLength } контактів вибрано"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
@@ -4957,6 +4972,12 @@
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Для цього отримувача було виявлено невідомий відкритий ключ."
@@ -5174,6 +5195,9 @@
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
       ],
+      "Edit email address": [
+        "Змінити адресу електронної пошти"
+      ],
       "Edit encryption": [
         "Редагувати шифрування"
       ],
@@ -5362,6 +5386,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Приєднуйтесь до програми ${ PROTON_SENTINEL_NAME } для отримання найвищого рівня безпеки та підтримки облікових записів."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."

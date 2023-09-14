@@ -2848,12 +2848,6 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用するには、${ BRAND_NAME } アドレスを取得します。"
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } アドレスを入手"
-      ],
       "here": [
         "こちら"
       ],
@@ -5330,9 +5324,6 @@
       ],
       "Email address not yet verified.": [
         "メールアドレスが検証されていません。"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "${ email.Value } 宛てに確認メールが送信されました"
       ],
       "Verify now": [
         "今すぐ検証"

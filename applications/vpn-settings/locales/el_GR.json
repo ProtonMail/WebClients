@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Να μην επιτρέπεται η ανυπόγραφη αλληλογραφία"
       ],
+      "Edit address": [
+        "Επεξεργασία διεύθυνσης"
+      ],
       "Enable": [
         "Ενεργοποίηση"
       ],
@@ -1673,6 +1676,11 @@
         "Βοηθήστε μας να βελτιωθούμε!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Στάλθηκε μήνυμα επαλήθευσης στο ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /μήνα)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
@@ -2872,12 +2886,6 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Αποκτήστε μία ${ BRAND_NAME } διεύθυνση για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένου του ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Λήψη της ${ BRAND_NAME } διεύθυνσής μου"
-      ],
       "here": [
         "εδώ"
       ],
@@ -2928,6 +2936,9 @@
       ],
       "inactive": [
         "ανενεργό"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
@@ -3165,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
       ],
+      "Resend verification email": [
+        "Επανάληψη αποστολής μηνύματος επαλήθευσης"
+      ],
       "Restore": [
         "Επαναφορά"
       ],
@@ -3182,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Σαρώστε αυτόν τον κωδικό με τη συσκευή ελέγχου ταυτότητας δύο παραγόντων για να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
@@ -3391,6 +3408,12 @@
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
+      "Unverified": [
+        "Ανεπιβεβαίωτος"
+      ],
+      "Unverified email address.": [
+        "Μην επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
@@ -3536,6 +3559,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Μπορείτε να ξεκλειδώσετε αμέσως την παραπάνω ρύθμιση προσθέτοντας ${ specificCountryCount } στον αριθμό διευθύνσεων IP στο πλάνο σας ή να επικοινωνήσετε μαζί μας για εξατομικευμένες λύσεις."
@@ -3847,6 +3873,9 @@
       "Config to connect to ${ serverName }": [
         "Διαμόρφωση για σύνδεση σε ${ serverName }"
       ],
+      "Confirm email": [
+        "Επιβεβαίωση διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
@@ -3885,6 +3914,9 @@
       ],
       "Current display name": [
         "Τρέχον εμφανιζόμενο όνομα"
+      ],
+      "Current email": [
+        "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Customize invoices": [
         "Προσαρμογή τιμολογίων"
@@ -3978,6 +4010,9 @@
       ],
       "New display name": [
         "Νέο εμφανιζόμενο όνομα"
+      ],
+      "New email": [
+        "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "New login password": [
         "Νέος κωδικός σύνδεσης"
@@ -5397,9 +5432,6 @@
       "Email address not yet verified.": [
         "Η ηλ. διεύθυνση δεν έχει επαληθευθεί ακόμα."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Στάλθηκε μήνυμα επαλήθευσης στο ${ email.Value }"
-      ],
       "Verify now": [
         "Επαλήθευση τώρα"
       ],
@@ -5965,6 +5997,9 @@
       "Email address copied to clipboard": [
         "Η διεύθυνση Email αντιγράφηκε στο πρόχειρο"
       ],
+      "Email address updated": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ενημερώθηκε"
+      ],
       "Email updated": [
         "Το E-mail ενημερώθηκε"
       ],
@@ -6419,6 +6454,9 @@
       "Edit display name": [
         "Επεξεργασία εμφανιζόμενου ονόματος"
       ],
+      "Edit email address": [
+        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
       "Edit Gateway ${ currentName }": [
         "Επεξεργασία Πύλης ${ currentName }"
       ],
@@ -6701,6 +6739,9 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
+      ],
       "What's new": [
         "Τι νέο υπάρχει"
       ],
@@ -6809,6 +6850,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
+      ],
+      "Verified email address": [
+        "Επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "tooltip": {

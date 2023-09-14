@@ -2088,7 +2088,7 @@
         "Timeout della richiesta"
       ],
       "Search failed": [
-        "Ricerca fallita"
+        "Ricerca non riuscita"
       ],
       "Signature not verified": [
         "Firma non verificata"
@@ -3244,7 +3244,7 @@
         "Impossibile caricare il collegamento"
       ],
       "Cannot load links": [
-        "Caricamento fallito dei collegamenti"
+        "Impossibile caricare i link"
       ],
       "Cannot load shared link": [
         "Impossibile caricare il collegamento condiviso"
@@ -3379,6 +3379,9 @@
       ],
       "Each code can only be used once": [
         "Ogni codice può essere utilizzato una sola volta"
+      ],
+      "Edit email address": [
+        "Modifica indirizzo email"
       ],
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
@@ -4100,7 +4103,7 @@
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
@@ -5813,15 +5816,15 @@
         "${ emailsCount } indirizzi email"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } scaricamento fallito",
+        "${ numberOfFailedTransfer.total } scaricamento non riuscito",
         "${ numberOfFailedTransfer.total } scaricamenti falliti"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } trasferimento fallito",
+        "${ numberOfFailedTransfer.total } trasferimento non riuscito",
         "${ numberOfFailedTransfer.total } trasferimenti falliti"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } caricamento fallito",
+        "${ numberOfFailedTransfer.total } caricamento non riuscito",
         "${ numberOfFailedTransfer.total } caricamenti falliti"
       ],
       "Account suspended": [
@@ -5987,7 +5990,7 @@
         "Esportazione contatti"
       ],
       "Failed": [
-        "Fallito"
+        "Non riuscito"
       ],
       "Feedback": [
         "Suggerimenti"

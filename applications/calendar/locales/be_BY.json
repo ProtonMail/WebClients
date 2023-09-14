@@ -394,7 +394,7 @@
         "Адкрыць налады"
       ],
       "Pause indexing": [
-        "Паўза індэксавання"
+        "Прыпыніць індэксаванне"
       ],
       "Preview contact": [
         "Папярэдні прагляд кантакту"
@@ -2091,6 +2091,9 @@
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантактаў. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца Proton Calendar."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
       ],
@@ -2338,6 +2341,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Падзея не знойдзена"
       ],
       "Failed to get original occurrence in series": [
         "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
@@ -2814,6 +2820,14 @@
         "Ацэнка з'яўляецца абавязковай"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Няма вынікаў"
+      ],
+      "Results": [
+        "Вынікі"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "скасавана"
@@ -2828,11 +2842,14 @@
       ]
     },
     "Event info in search view; event duration": {
+      "All day": [
+        "Увесь дзень"
+      ],
       "All day, lasts ${ plusDaysToEnd } day": [
-        "Кожны дзень цягам ${ plusDaysToEnd } дня",
-        "Кожны дзень цягам ${ plusDaysToEnd } дзён",
-        "Кожны дзень цягам ${ plusDaysToEnd } дзён",
-        "Кожны дзень цягам ${ plusDaysToEnd } дзён"
+        "Увесь дзень, цягам ${ plusDaysToEnd } дня",
+        "Увесь дзень, цягам ${ plusDaysToEnd } дзён",
+        "Увесь дзень, цягам ${ plusDaysToEnd } дзён",
+        "Увесь дзень, цягам ${ plusDaysToEnd } дзён"
       ]
     },
     "Event info. Organizer name": {
@@ -3688,7 +3705,7 @@
         "Бакавая панэль календара"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "Не можаце знайсці падзеі, якія шукаеце? Вашаму пошуку адпавядаюць дзе-якія падзеі са схованых календароў. Каб іх пабачыць, уключыце бачнасць ${ hiddenWithItemsCalendarList }"
+        "Не можаце знайсці падзеі, якія шукаеце? Некаторыя падзеі ў схаваных календарах адпавядаюць вашаму пошуку. Уключыце бачнасць для ${ hiddenWithItemsCalendarList }, каб убачыць гэтыя вынікі."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
@@ -3701,6 +3718,9 @@
       ],
       "Clear encrypted search data": [
         "Ачысціць пошук зашыфраваных даных"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Каб зноў ужываць функцыю пошуку, вам спатрэбіцца паўторна праіндэксаваць усе падзеі календара."
       ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
@@ -3773,6 +3793,9 @@
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
@@ -4271,6 +4294,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Вы можаце або абнавіць ваш пошукавы запыт, або закрыць пошук і вярнуцца да прагляду календара."
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Вынікі не знойдзены"
       ]
     },
     "Info on errors": {
@@ -5545,6 +5578,9 @@
       "Image URL": [
         "URL-адрас відарыса"
       ],
+      "Indexing...": [
+        "Індэксаванне..."
+      ],
       "Name": [
         "Назва"
       ],
@@ -5559,6 +5595,9 @@
       ],
       "Please select a country": [
         "Выберыце краіну"
+      ],
+      "Search events": [
+        "Пошук падзей"
       ],
       "Search for group name": [
         "Шукаць па назве групы"
@@ -5977,6 +6016,9 @@
       "Add your country's public holidays to your calendar.": [
         "Дадайце дзяржаўныя святы вашай краіны ў свой каляндар."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Лёгка знаходзьце падзею, якую шукаеце з нашай новай функцыяй пошуку."
+      ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
       ],
@@ -5985,6 +6027,9 @@
       ],
       "Public holidays are here!": [
         "Дзяржаўныя святы знаходзяцца тут!"
+      ],
+      "Search for events": [
+        "Пошук падзей"
       ]
     },
     "Storage": {
@@ -6050,6 +6095,9 @@
       ],
       "Calendar information updated": [
         "Інфармацыя календара абноўлена"
+      ],
+      "Calendar search activated": [
+        "Пошук у календары актываваны"
       ],
       "Calendar updated": [
         "Каляндар абноўлены"
@@ -6682,7 +6730,7 @@
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
       "We're setting up Calendar search": [
-        "Наладжваем пошук у календары"
+        "Наладжванне пошуку ў календары"
       ],
       "We've locked some calendars to protect your data": [
         "Мы заблакіравалі некаторыя календары, каб абараніць вашы даныя"
@@ -6827,6 +6875,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Перайсці да падзеі"
+      ],
       "Open in a new tab": [
         "Адкрыць у новай укладцы"
       ]

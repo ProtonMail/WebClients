@@ -5785,6 +5785,9 @@
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
       ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
       "Edit label": [
         "Kategorie bearbeiten"
       ],
@@ -5913,12 +5916,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } holen"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Hol dir eine ${ BRAND_NAME }-Adresse, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Meine ${ BRAND_NAME }-Adresse erhalten"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gib dem Token einen beschreibenden Namen, z. B. den Dienst, für den du es verwenden möchtest und wähle eine deiner aktiven eigenen Domain-Adressen. Nur diese Adresse ist in der Lage, E-Mails mit diesem Token zu senden."
@@ -11011,9 +11008,6 @@
       ],
       "sign in": [
         "Anmeldung"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Verifizierungs-E-Mail wurde an ${ email.Value } gesendet."
       ],
       "Verify now": [
         "Jetzt verifizieren"

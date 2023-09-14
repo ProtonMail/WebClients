@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
       ],
+      "Edit address": [
+        "Editar dirección"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -1673,6 +1676,11 @@
         "¡Ayúdenos a mejorar!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Correo de verificación enviado a ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mes)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenga una dirección de ${ BRAND_NAME }** para usar todos los servicios de ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
       ],
+      "Edit email address": [
+        "Editar dirección de correo"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se pueden añadir dominios adicionales por ${ price }."
       ],
@@ -2872,12 +2886,6 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenga una dirección de ${ BRAND_NAME } para usar todos los servicios de ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obtener mi dirección de ${ BRAND_NAME }"
-      ],
       "here": [
         "aquí"
       ],
@@ -2928,6 +2936,9 @@
       ],
       "inactive": [
         "inactiva"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Aumente la seguridad de su cuenta al verificar su dirección de correo."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale un archivo de configuración de País para conectarse a un servidor aleatorio en el país de su elección."
@@ -3165,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Recuerde compartir los detalles de inicio de sesión con el usuario."
       ],
+      "Resend verification email": [
+        "Reenviar correo de verificación"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -3182,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanee este código con su dispositivo de autenticación de dos factores para configurar su cuenta. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Asegure su cuenta de ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Asegurando su cuenta"
@@ -3391,6 +3408,12 @@
       "Unsupported file": [
         "Archivo no soportado"
       ],
+      "Unverified": [
+        "No verificado"
+      ],
+      "Unverified email address.": [
+        "Dirección de correo no verificada."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
@@ -3536,6 +3559,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puede personalizar y descargar sus facturas con fines contables."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Puede editar esto una vez para asegurarse de la dirección de correo correcta para verificar."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puede desbloquear inmediatamente la configuración anterior añadiendo ${ specificCountryCount } al número de direcciones IP en su plan o comuníquese con nosotros para obtener soluciones personalizadas."
@@ -3847,6 +3873,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectarse a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar correo"
+      ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
@@ -3885,6 +3914,9 @@
       ],
       "Current display name": [
         "Nombre a mostrar actual"
+      ],
+      "Current email": [
+        "Correo electrónico actual"
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -3978,6 +4010,9 @@
       ],
       "New display name": [
         "Nombre a mostrar nuevo"
+      ],
+      "New email": [
+        "Correo nuevo"
       ],
       "New login password": [
         "Contraseña nueva de inicio de sesión"
@@ -5397,9 +5432,6 @@
       "Email address not yet verified.": [
         "Dirección de correo aún no verificada."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Correo de verificación enviado a ${ email.Value }"
-      ],
       "Verify now": [
         "Verificar ahora"
       ],
@@ -5968,6 +6000,9 @@
       "Email address copied to clipboard": [
         "Dirección de correo copiada al portapapeles"
       ],
+      "Email address updated": [
+        "Correo electrónico actualizado"
+      ],
       "Email updated": [
         "Correo actualizado"
       ],
@@ -6425,6 +6460,9 @@
       "Edit display name": [
         "Editar nombre a mostrar"
       ],
+      "Edit email address": [
+        "Editar dirección de correo"
+      ],
       "Edit Gateway ${ currentName }": [
         "Editar puerta de enlace ${ currentName }"
       ],
@@ -6707,6 +6745,9 @@
       "Verifying your payment...": [
         "Verificando su pago..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviaremos un correo a su dirección nueva con instrucciones para completar el cambio."
+      ],
       "What's new": [
         "Novedades"
       ],
@@ -6815,6 +6856,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando su sistema esté en \"modo claro\""
+      ],
+      "Verified email address": [
+        "Correo electrónico verificado"
       ]
     },
     "tooltip": {

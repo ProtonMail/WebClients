@@ -5853,12 +5853,6 @@
       "Get ${ upsellPlanName }": [
         "取得 ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "取得一個 ${ BRAND_NAME } 位址並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "獲取我的 ${ BRAND_NAME } 電郵位址"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "為通證取一個顧名思義的名稱，譬如說會用於甚麼服務，並選取您其一使用中的自訂網域電子郵件位址。僅此電子郵件位址將能夠以此通證傳送電子郵件。"
       ],
@@ -10887,9 +10881,6 @@
       ],
       "sign in": [
         "登入"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "驗證電郵已傳送至 ${ email.Value }"
       ],
       "Verify now": [
         "立刻驗證"
