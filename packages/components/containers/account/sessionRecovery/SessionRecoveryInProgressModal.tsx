@@ -29,7 +29,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
 
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();
 
-    if (user.AccountRecovery === null || gracePeriodHoursRemaining === null) {
+    if (!user.AccountRecovery || gracePeriodHoursRemaining === null) {
         return null;
     }
 
