@@ -13,6 +13,7 @@ interface Props {
     shouldDisplayTotal: boolean;
     hideCountOnHover: boolean;
     onRefresh?: () => void;
+    isOptionDropdownOpened?: boolean;
 }
 
 const { GROUP } = VIEW_MODE;
@@ -27,6 +28,7 @@ const LocationAside = ({
     shouldDisplayTotal,
     hideCountOnHover,
     itemOptions,
+    isOptionDropdownOpened,
 }: Props) => {
     const [mailSettings] = useMailSettings();
 
@@ -66,6 +68,7 @@ const LocationAside = ({
                         'navigation-counter-item px-1 flex-item-noshrink',
                         hideCountOnHover && 'hide-on-hover',
                         weak && 'navigation-counter-item--weak pl-0',
+                        isOptionDropdownOpened && 'hidden',
                     ])}
                     title={getUnreadTitle()}
                     aria-label={getUnreadTitle()}
@@ -76,7 +79,13 @@ const LocationAside = ({
                 </span>
             ) : null}
             {itemOptions && (
-                <span className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink no-mobile">
+                <span
+                    className={clsx(
+                        'opacity-on-hover opacity-on-hover-no-width flex-item-noshrink no-mobile mr-custom right-custom',
+                        isOptionDropdownOpened && 'is-active'
+                    )}
+                    style={{ '--mr-custom': 'calc(var(--space-1) * -1)', '--right-custom': 'var(--space-2)' }}
+                >
                     {itemOptions}
                 </span>
             )}

@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+
+
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
@@ -69,7 +71,11 @@ const CalendarSidebarListItem = ({
         </div>
     ) : (
         <Checkbox
-            className="flex-item-noshrink"
+            className="flex-item-noshrink ml-custom"
+            labelProps={{
+                'data-testid': `calendar-checkbox-${ID}`,
+                style: { '--ml-custom': 'calc(var(--space-1) * -1)' },
+            }}
             color={COLORS.WHITE}
             backgroundColor={Display ? Color : 'transparent'}
             borderColor={Color}
@@ -89,15 +95,15 @@ const CalendarSidebarListItem = ({
         <SidebarListItem key={ID}>
             <SidebarListItemLabel
                 htmlFor={`calendar-${ID}`}
-                className="calendar-sidebar-list-item opacity-on-hover-container py-1 pr-2"
+                className="calendar-sidebar-list-item opacity-on-hover-container"
             >
                 <SidebarListItemContent
                     data-testid="calendar-sidebar:user-calendars"
                     left={leftNode}
                     className={clsx(['flex w100 gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                 >
-                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
-                        <div className="flex flex-nowrap mr-2">
+                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100 relative">
+                        <div className="flex flex-nowrap">
                             <div className="text-ellipsis" title={Name}>
                                 {Name}
                             </div>
@@ -123,7 +129,8 @@ const CalendarSidebarListItem = ({
                                 hasCaret={false}
                                 shape="ghost"
                                 size="small"
-                                className="calendar-sidebar-list-item-action opacity-on-hover flex-item-noshrink no-mobile"
+                                className="calendar-sidebar-list-item-action opacity-on-hover opacity-on-hover-no-width ml-2 mr-custom right-0 rounded-sm flex-item-noshrink no-mobile"
+                                style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                 content={<Icon name="three-dots-horizontal" />}
                             >

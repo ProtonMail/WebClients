@@ -187,7 +187,7 @@ const CalendarSidebar = ({
                 to={getCalendarsSettingsPath({ fullPath: true })}
                 target="_self"
                 icon="cog-wheel"
-                info={c('Link').t`Calendars`}
+                alt={c('Link').t`Calendars`}
             />
         </Tooltip>
     );
