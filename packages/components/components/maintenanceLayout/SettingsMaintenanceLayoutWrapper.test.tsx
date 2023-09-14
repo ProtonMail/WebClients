@@ -25,23 +25,59 @@ describe('SettingsMaintenanceLayoutWrapper', () => {
     it('should handle is in Maintenance', () => {
         mockUseFlag.mockReturnValue(true);
 
-        const { getByText } = render(
+        const { getByText, queryByText } = render(
             <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
 
+        expect(queryByText(config.text)).toBeTruthy();
         expect(getByText('This feature is temporarily unavailable')).toBeInTheDocument();
     });
     it('should handle is not in maintenance', () => {
         mockUseFlag.mockReturnValue(false);
 
-        const { getByText } = render(
+        const { getByText, queryByText } = render(
             <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
 
+        expect(queryByText(config.text)).toBeNull();
+        expect(getByText('children')).toBeInTheDocument();
+    });
+
+    it('should handle is in maintenance and is subsection', () => {
+        mockUseFlag.mockReturnValue(true);
+
+        const { getByText, queryByText } = render(
+            <SettingsMaintenanceLayoutWrapper
+                config={config}
+                maintenanceFlag={FeatureFlag.MaintenanceImporter}
+                isSubsection
+            >
+                <div>children</div>
+            </SettingsMaintenanceLayoutWrapper>
+        );
+
+        expect(queryByText(config.text)).toBeNull();
+        expect(getByText('This feature is temporarily unavailable')).toBeInTheDocument();
+    });
+
+    it('should handle is not in maintenance and is subsection', () => {
+        mockUseFlag.mockReturnValue(false);
+
+        const { getByText, queryByText } = render(
+            <SettingsMaintenanceLayoutWrapper
+                config={config}
+                maintenanceFlag={FeatureFlag.MaintenanceImporter}
+                isSubsection
+            >
+                <div>children</div>
+            </SettingsMaintenanceLayoutWrapper>
+        );
+
+        expect(queryByText(config.text)).toBeNull();
         expect(getByText('children')).toBeInTheDocument();
     });
 });
