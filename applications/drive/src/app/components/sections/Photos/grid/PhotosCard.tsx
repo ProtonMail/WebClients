@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect } from 'react';
+import { CSSProperties, FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,13 +26,24 @@ const getAltText = ({ mimeType, name }: PhotoLink) =>
 export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
     const [portalPreview, showPortalPreview] = usePortalPreview();
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [imageReady, setImageReady] = useState(false);
     useEffect(() => {
         onRender(photo.linkId);
     }, [photo.linkId]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
-    const isThumbnailLoading = photo.hasThumbnail === undefined;
+    const isThumbnailLoading = thumbUrl === undefined || (thumbUrl && !imageReady);
     const isActive = photo.activeRevision.id && photo.activeRevision.photo.linkId;
+
+    useEffect(() => {
+        if (thumbUrl) {
+            const image = new Image();
+            image.src = thumbUrl;
+            image.onload = () => {
+                setImageReady(true);
+            };
+        }
+    }, [thumbUrl]);
 
     return (
         <>
