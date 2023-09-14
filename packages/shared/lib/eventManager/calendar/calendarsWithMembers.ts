@@ -29,9 +29,16 @@ export const updateCalendarsWithMembers = (
         return;
     }
 
+    const updateCalendars = !!Calendars.length;
+    const updateMembers = !!CalendarMembers.length;
+
+    if (!updateCalendars && !updateMembers) {
+        return;
+    }
+
     const newCalendarsWithMembers: CalendarWithOwnMembers[] = [...oldCalendarsWithMembers];
 
-    if (Calendars.length) {
+    if (updateCalendars) {
         for (const event of Calendars) {
             if (getIsCalendarEventManagerDelete(event)) {
                 const index = newCalendarsWithMembers.findIndex(({ ID }) => ID === event.ID);
@@ -59,7 +66,7 @@ export const updateCalendarsWithMembers = (
         }
     }
 
-    if (CalendarMembers.length) {
+    if (updateMembers) {
         for (const event of CalendarMembers) {
             if (getIsCalendarMemberEventManagerDelete(event)) {
                 const [calendarIndex, memberIndex] = findMemberIndices(event.ID, newCalendarsWithMembers);
