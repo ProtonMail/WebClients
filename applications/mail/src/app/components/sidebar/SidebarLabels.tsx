@@ -22,7 +22,7 @@ const SidebarLabel = ({ currentLabelID, counterMap, label, updateFocusItem }: La
         <SidebarItem
             currentLabelID={currentLabelID}
             labelID={label.ID}
-            className={isOptionDropdownOpened ? 'navigation-item-dropdown-opened' : undefined}
+            isOptionDropdownOpened={isOptionDropdownOpened}
             icon="circle-filled"
             iconSize={16}
             text={label.Name}

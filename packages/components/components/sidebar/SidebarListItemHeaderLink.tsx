@@ -5,9 +5,9 @@ import AppLink, { AppLinkProps } from '../link/AppLink';
 
 interface Props extends AppLinkProps {
     icon: IconName;
-    info: string;
+    alt: string;
 }
-export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
+export const SidebarListItemHeaderLinkButton = ({ alt, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
     return (
         <AppLink
             className="flex navigation-link-header-group-control flex-item-noshrink"
@@ -15,8 +15,7 @@ export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, 
             ref={ref}
             {...rest}
         >
-            <Icon name={icon} className="navigation-icon" />
-            <span className="sr-only">{info}</span>
+            <Icon name={icon} className="navigation-icon" alt={alt} />
         </AppLink>
     );
 };
