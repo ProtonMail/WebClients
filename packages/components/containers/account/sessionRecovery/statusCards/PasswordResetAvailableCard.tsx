@@ -48,24 +48,28 @@ const PasswordResetAvailableCard = ({ className }: Props) => {
                 <div className="p-6 border-bottom border-weak sm:flex flex-align-items-start flex-nowrap">
                     <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={lockIcon} alt="" />
                     <div>
-                        <h3 className="mb-1 text-bold text-lg">{c('Info').t`You can now reset your password`}</h3>
-                        <div>{c('Info').jt`You can reset your password until ${boldDate}.`}</div>
+                        <h3 className="mb-1 text-bold text-lg">{c('session_recovery:available:info')
+                            .t`You can now reset your password`}</h3>
+                        <div>{c('session_recovery:available:info')
+                            .jt`You can reset your password until ${boldDate}.`}</div>
                         <Button
                             className="mt-4 w-full sm:w-auto"
                             onClick={() => setSessionRecoveryPasswordResetModalOpen(true)}
                             color="norm"
                             shape="outline"
                         >
-                            {c('Action').t`Reset password`}
+                            {c('session_recovery:available:action').t`Reset password`}
                         </Button>
                     </div>
                 </div>
                 <div className="p-6 sm:flex flex-align-items-start flex-nowrap">
                     <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={handWarningIcon} alt="" />
                     <div>
-                        <h3 className="mb-1 text-bold text-lg">{c('Info').t`Didn’t make this request?`}</h3>
+                        <h3 className="mb-1 text-bold text-lg">{c('session_recovery:available:info')
+                            .t`Didn’t make this request?`}</h3>
                         <div className="mb-4">
-                            {c('Info').t`If you didn’t ask to reset your password, cancel the request now.`}
+                            {c('session_recovery:available:info')
+                                .t`If you didn’t ask to reset your password, cancel the request now.`}
                         </div>
                         <Button
                             className="w-full sm:w-auto"
@@ -73,7 +77,7 @@ const PasswordResetAvailableCard = ({ className }: Props) => {
                             color="danger"
                             shape="outline"
                         >
-                            {c('Action').t`Cancel password reset`}
+                            {c('session_recovery:available:action').t`Cancel password reset`}
                         </Button>
                     </div>
                 </div>

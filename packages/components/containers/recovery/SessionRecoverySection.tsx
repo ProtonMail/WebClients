@@ -53,13 +53,15 @@ const SessionRecoverySection = () => {
             )}
             <SettingsSection>
                 <SettingsParagraph>
-                    {c('Info').t`Request a password reset from your Account settings. No recovery method needed.`}
+                    {c('session_recovery:settings:action')
+                        .t`Request a password reset from your Account settings. No recovery method needed.`}
                 </SettingsParagraph>
 
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="signedInReset">
-                            <span className="mr-2">{c('label').t`Allow password reset from settings`}</span>
+                            <span className="mr-2">{c('session_recovery:settings:action')
+                                .t`Allow password reset from settings`}</span>
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid pt-2">
@@ -72,7 +74,7 @@ const SessionRecoverySection = () => {
                                 onChange={({ target: { checked } }) => {
                                     if (!hasRecoveryMethod && !checked) {
                                         createNotification({
-                                            text: c('Title')
+                                            text: c('session_recovery:settings:action')
                                                 .t`To disallow password reset, you must have a recovery method set up.`,
                                         });
                                         return;
@@ -90,7 +92,7 @@ const SessionRecoverySection = () => {
 
                         {isSessionRecoveryInitiationAvailable && (
                             <Button className="mt-4" color="norm" onClick={() => setSessionRecoveryModalOpen(true)}>
-                                {c('Action').t`Request password reset`}
+                                {c('session_recovery:settings:action').t`Request password reset`}
                             </Button>
                         )}
                     </SettingsLayoutRight>

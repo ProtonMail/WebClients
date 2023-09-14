@@ -14,13 +14,13 @@ const SessionRecoveryResetConfirmedPrompt = ({ open, onClose }: { open?: boolean
     const accountAndPasswordSectionLink = (
         <SettingsLink key="account-and-password-section-link" path="/account-password" onClick={onClose}>{
             // translator: full sentence "You can check the status of your request at any time in the account and password section of the settings."
-            c('Link').t`account and password section`
+            c('session_recovery:initiation:link').t`account and password section`
         }</SettingsLink>
     );
 
     return (
         <Prompt
-            title={c('Title').ngettext(
+            title={c('session_recovery:initiation:title').ngettext(
                 msgid`You'll be able to reset your password in ${gracePeriodHoursRemaining} hour`,
                 `You'll be able to reset your password in ${gracePeriodHoursRemaining} hours`,
                 gracePeriodHoursRemaining
@@ -28,15 +28,16 @@ const SessionRecoveryResetConfirmedPrompt = ({ open, onClose }: { open?: boolean
             open={open}
             buttons={[
                 <ButtonLike as={SettingsLink} path="/account-password" onClick={onClose}>
-                    {c('Action').t`Got it`}
+                    {c('session_recovery:initiation:action').t`Got it`}
                 </ButtonLike>,
             ]}
         >
-            <p>{c('Info').t`We will contact you again when the password reset is available.`}</p>
+            <p>{c('session_recovery:initiation:info')
+                .t`We will contact you again when the password reset is available.`}</p>
             <p>
                 {
                     // translator: full sentence "You can check the status of your request at any time in the account and password section of the settings."
-                    c('Info')
+                    c('session_recovery:initiation:info')
                         .jt`You can check the status of your request at any time in the ${accountAndPasswordSectionLink} of the settings.`
                 }
             </p>

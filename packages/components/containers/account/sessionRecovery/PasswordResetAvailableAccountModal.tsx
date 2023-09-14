@@ -98,12 +98,12 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
 
     const infoSubline =
         timeRemaining.inDays === 0
-            ? c('Info').ngettext(
+            ? c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inHours} hour`,
                   `This permission expires in ${timeRemaining.inHours} hours`,
                   timeRemaining.inHours
               )
-            : c('Info').ngettext(
+            : c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inDays} day`,
                   `This permission expires in ${timeRemaining.inDays} days`,
                   timeRemaining.inDays
@@ -118,12 +118,12 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     const boldDaysRemaining = (
         <b key="bold-days-remaining">
             {timeRemaining.inDays === 0
-                ? c('Info').ngettext(
+                ? c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inHours} hour`,
                       `${timeRemaining.inHours} hours`,
                       timeRemaining.inHours
                   )
-                : c('Info').ngettext(
+                : c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inDays} day`,
                       `${timeRemaining.inDays} days`,
                       timeRemaining.inDays
@@ -134,24 +134,28 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     if (!isSessionRecoveryInitiatedByCurrentSession) {
         return (
             <Modal onClose={onClose} {...rest}>
-                <ModalHeader title={c('Title').t`Reset your password`} subline={infoSubline} />
+                <ModalHeader
+                    title={c('session_recovery:available:title').t`Reset your password`}
+                    subline={infoSubline}
+                />
                 <ModalContent>
                     <>
                         <div className="flex flex-justify-center">
                             <img src={passwordResetIllustration} alt="" />
                         </div>
                         <div>
-                            {c('Info')
+                            {c('session_recovery:available:info')
                                 .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
                         </div>
                         <div>
-                            {c('Info')
+                            {c('session_recovery:available:info')
                                 .t`Please go to the signed-in device (in the session where the request was initiated) to change your password.`}
                         </div>
                     </>
                 </ModalContent>
                 <ModalFooter>
-                    <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('Action').t`Cancel reset`}</Button>
+                    <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>{c('session_recovery:available:action')
+                        .t`Cancel reset`}</Button>
                     <Button color="norm" onClick={onClose}>
                         {c('Action').t`Ok`}
                     </Button>
@@ -177,7 +181,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     } = (() => {
         if (step === STEP.INFO) {
             return {
-                title: c('Title').t`Reset your password`,
+                title: c('session_recovery:available:title').t`Reset your password`,
                 subline: infoSubline,
                 content: (
                     <>
@@ -185,7 +189,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                             <img src={passwordResetIllustration} alt="" />
                         </div>
                         <div>
-                            {c('Info')
+                            {c('session_recovery:available:info')
                                 .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
                         </div>
                     </>
@@ -193,10 +197,10 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                 footer: (
                     <>
                         <Button onClick={() => setStep(STEP.CONFIRM_CANCELLATION)}>
-                            {c('Action').t`Cancel reset`}
+                            {c('session_recovery:available:action').t`Cancel reset`}
                         </Button>
                         <Button color="norm" onClick={() => setStep(STEP.PASSWORD)}>
-                            {c('Action').t`Reset password`}
+                            {c('session_recovery:available:action').t`Reset password`}
                         </Button>
                     </>
                 ),
@@ -226,12 +230,18 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                      * It's not handled better because it's a rare case.
                      */
                     if (userKeysList.length === 0) {
-                        throw new Error(c('Error').t`Please generate keys before you try to change your password`);
+                        throw new Error(
+                            c('session_recovery:available:error')
+                                .t`Please generate keys before you try to change your password`
+                        );
                     }
 
                     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
                     if (!hasMigratedAddressKeys) {
-                        throw new Error(c('Error').t`Account recovery not available for legacy address keys`);
+                        throw new Error(
+                            c('session_recovery:available:error')
+                                .t`Account recovery not available for legacy address keys`
+                        );
                     }
 
                     const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
@@ -269,7 +279,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                     await call();
 
                     createNotification({
-                        text: c('Notification').t`Password saved`,
+                        text: c('session_recovery:available:notification').t`Password saved`,
                         showCloseButton: false,
                     });
 

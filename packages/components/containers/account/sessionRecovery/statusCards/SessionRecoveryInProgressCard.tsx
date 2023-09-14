@@ -41,14 +41,14 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
                     <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={lockIcon} alt="" />
                     <div>
                         <h3 className="text-bold text-lg">
-                            {c('Info').ngettext(
+                            {c('session_recovery:in_progress:info').ngettext(
                                 msgid`You can change your password in ${gracePeriodHoursRemaining} hour`,
                                 `You can change your password in ${gracePeriodHoursRemaining} hours`,
                                 gracePeriodHoursRemaining
                             )}
                         </h3>
                         <div>
-                            {c('Info')
+                            {c('session_recovery:in_progress:info')
                                 .jt`Password reset available from ${boldDate}. This gives you time to cancel any fraudulent requests.`}
                         </div>
                     </div>
@@ -56,9 +56,11 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
                 <div className="p-6 sm:flex flex-align-items-start flex-nowrap">
                     <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={handWarningIcon} alt="" />
                     <div>
-                        <h3 className="text-bold text-lg">{c('Info').t`Didn’t make this request?`}</h3>
+                        <h3 className="text-bold text-lg">{c('session_recovery:in_progress:info')
+                            .t`Didn’t make this request?`}</h3>
                         <div className="mb-4">
-                            {c('Info').t`If you didn’t ask to reset your password, cancel the request now.`}
+                            {c('session_recovery:in_progress:info')
+                                .t`If you didn’t ask to reset your password, cancel the request now.`}
                         </div>
                         <Button
                             className="w-full sm:w-auto"
@@ -66,7 +68,7 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
                             color="danger"
                             shape="outline"
                         >
-                            {c('Action').t`Cancel password reset`}
+                            {c('session_recovery:in_progress:action').t`Cancel password reset`}
                         </Button>
                     </div>
                 </div>

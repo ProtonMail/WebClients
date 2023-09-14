@@ -16,7 +16,7 @@ const GracePeriodText = () => {
         <b key="bold-time-left">
             {
                 // translator: Full sentence is "You will be able to reset your password in XX hours."
-                c('Info').ngettext(
+                c('session_recovery:sign_out:info').ngettext(
                     msgid`${gracePeriodHoursRemaining} hour`,
                     `${gracePeriodHoursRemaining} hours`,
                     gracePeriodHoursRemaining
@@ -29,10 +29,11 @@ const GracePeriodText = () => {
             <p>
                 {
                     // translator: Full sentence is "You will be able to reset your password in XX hours."
-                    c('Info').jt`You will be able to reset your password in ${boldTimeLeft}.`
+                    c('session_recovery:sign_out:info').jt`You will be able to reset your password in ${boldTimeLeft}.`
                 }
             </p>
-            <p>{c('Info').t`If you sign out before you reset your password, you could lose access to your account.`}</p>
+            <p>{c('session_recovery:sign_out:info')
+                .t`If you sign out before you reset your password, you could lose access to your account.`}</p>
         </>
     );
 };
@@ -50,7 +51,7 @@ const SessionRecoverySignOutConfirmPrompt = ({ onClose, onSignOut, open }: Props
         <SettingsLink key="password-reset-link" path="/account-password" onClick={onClose}>
             {
                 // translator: Full sentence "Password reset is now available."
-                c('Link').t`Password reset`
+                c('session_recovery:sign_out:link').t`Password reset`
             }
         </SettingsLink>
     );
@@ -59,7 +60,7 @@ const SessionRecoverySignOutConfirmPrompt = ({ onClose, onSignOut, open }: Props
         <Prompt
             open={open}
             onClose={onClose}
-            title={c('Title').t`Sign out without password reset?`}
+            title={c('session_recovery:sign_out:title').t`Sign out without password reset?`}
             buttons={[
                 <Button
                     color="danger"
@@ -68,9 +69,9 @@ const SessionRecoverySignOutConfirmPrompt = ({ onClose, onSignOut, open }: Props
                         onSignOut();
                     }}
                 >
-                    {c('Action').t`Sign out`}
+                    {c('session_recovery:sign_out:action').t`Sign out`}
                 </Button>,
-                <Button onClick={onClose}>{c('Action').t`Stay signed in`}</Button>,
+                <Button onClick={onClose}>{c('session_recovery:sign_out:action').t`Stay signed in`}</Button>,
             ]}
         >
             {sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD && <GracePeriodText />}
@@ -79,11 +80,11 @@ const SessionRecoverySignOutConfirmPrompt = ({ onClose, onSignOut, open }: Props
                     <p>
                         {
                             // translator: Full sentence "Password reset is now available."
-                            c('Info').jt`${passwordReset} is now available.`
+                            c('session_recovery:sign_out:info').jt`${passwordReset} is now available.`
                         }
                     </p>
                     <p>
-                        {c('Info')
+                        {c('session_recovery:sign_out:info')
                             .t`If you sign out without resetting your password, you could lose access to your account.`}
                     </p>
                 </>
