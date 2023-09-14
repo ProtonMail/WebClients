@@ -5788,12 +5788,6 @@
       "Get ${ upsellPlanName }": [
         "Obtén ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obteniu una adreça de ${ BRAND_NAME } per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obté la meva adreça ${ BRAND_NAME }"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Doneu al token un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest token."
       ],
@@ -6081,6 +6075,9 @@
       "No folder selected": [
         "No hi ha carpetes seleccionades"
       ],
+      "No gateways": [
+        "Sense passarel·les"
+      ],
       "No imports or forwarding history.": [
         "No hi ha historial d'importacions o reenviaments."
       ],
@@ -6165,6 +6162,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed every 12 months": [
+        "al mes amb facturació cada 12 mesos"
+      ],
+      "per month, billed every 15 months": [
+        "al mes amb facturació cada 15 mesos"
+      ],
+      "per month, billed every 24 months": [
+        "al mes amb facturació cada 24 mesos"
+      ],
+      "per month, billed every 30 months": [
+        "al mes amb facturació cada 30 mesos"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Els clients de PGP tenen més probabilitats de detectar automàticament les claus PGP si els missatges de sortida són signats."
@@ -6600,6 +6612,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
+      ],
+      "to continue to ${ product }": [
+        "per continuar a ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "per continuar a ${ toAppName }"
@@ -10685,9 +10700,6 @@
       ],
       "sign in": [
         "iniciar la sessió"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "S'ha enviat un correu electrònic de verificació a ${ email.Value }"
       ],
       "Verify now": [
         "Verifica ara"
