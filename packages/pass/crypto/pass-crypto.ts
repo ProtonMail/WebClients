@@ -296,8 +296,8 @@ const createPassCrypto = (): PassCryptoWorker => {
             const shareManager = getShareManager(shareId);
             const share = shareManager.getShare();
 
-            const inviteKeys = await processes.createVaultInvite({
-                vaultKeys: shareManager.getVaultKeys(),
+            const inviteKeys = await processes.createInviteKeys({
+                targetKeys: shareManager.getVaultKeys(),
                 inviteePublicKey: await CryptoProxy.importPublicKey({ armoredKey: inviteePublicKey }),
                 inviterPrivateKey: (await getAddressKey(share.addressId)).privateKey,
             });
@@ -308,7 +308,7 @@ const createPassCrypto = (): PassCryptoWorker => {
         async acceptVaultInvite({ inviteKeys, inviterPublicKeys }) {
             assertHydrated(context);
 
-            const vaultKeys = await processes.acceptVaultInvite({
+            const vaultKeys = await processes.reencryptInviteKeys({
                 userKey: context.primaryUserKey,
                 inviteKeys,
                 inviteePrivateKey: (await getAddressKey(context.primaryAddress.ID)).privateKey,
@@ -318,6 +318,19 @@ const createPassCrypto = (): PassCryptoWorker => {
             });
 
             return { Keys: vaultKeys };
+        },
+
+        async readVaultInvite({ inviteKey, encryptedVaultContent, inviterPublicKeys }) {
+            assertHydrated(context);
+
+            return processes.readVaultInviteContent({
+                inviteKey,
+                encryptedVaultContent,
+                inviteePrivateKey: (await getAddressKey(context.primaryAddress.ID)).privateKey,
+                inviterPublicKeys: await Promise.all(
+                    inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
+                ),
+            });
         },
 
         serialize: () => ({
