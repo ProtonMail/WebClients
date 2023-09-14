@@ -873,7 +873,7 @@
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Somente você pode ver a etiqueta."
+        "Apenas você consegue ver a etiqueta"
       ]
     },
     "Calendar permissions hint": {
@@ -902,7 +902,7 @@
         "Não é possível criar mais ligações ao calendário."
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "Não é possível de partilharestecalendário com mais utilizadores do ${ BRAND_NAME }"
+        "Não é possível partilhar este calendário com mais utilizadores ${ BRAND_NAME }"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "Atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membro para este calendário.\nPara partilhar este calendário com mais contas do ${ BRAND_NAME }, remova alguns membros.",
@@ -947,7 +947,7 @@
         "Não foi possível desencriptar o calendário."
       ],
       "Calendar is syncing": [
-        "O calendário está a sincronizar."
+        "Calendário a sincronizar"
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "O calendário está a sincronizar: a exibição de todos os eventos, poderá demorar vários minutos."
@@ -965,7 +965,7 @@
         "Erro ao sincronizar o calendário"
       ],
       "More than 12 hours passed since last update": [
-        "Mais de 12 horas passaram desde a última actualização."
+        "Passaram mais de 12 horas desde a última atualização"
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
@@ -979,7 +979,7 @@
         "A hiperligação do calendário está temporariamente inacessível. Verifique se a hiperligação do provedor do calendário ainda é válido."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Mais de 12 horas se passaram desde a última actualização — O ${ CALENDAR_APP_NAME } vai tentar actualizar o calendário em algumas horas."
+        "Passaram mais de 12 horas desde a última atualização — ${ CALENDAR_APP_NAME } irá tentar atualizar o calendário dentro de algumas horas."
       ]
     },
     "Calendar view": {
@@ -2744,7 +2744,7 @@
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
       ],
       "You need an active personal calendar to import events": [
-        "É necessário um calendário pessoal ativo para importar o seus eventos."
+        "É necessário um calendário pessoal ativo para importar eventos"
       ]
     },
     "Error notification": {
@@ -3065,7 +3065,7 @@
         "Predefinição do sistema"
       ],
       "Theme font": [
-        "Tipo de letra do tema"
+        "Letra de tema"
       ]
     },
     "Font size option": {
@@ -3434,6 +3434,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -3449,6 +3453,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos selecionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -4991,7 +4999,7 @@
         "O calendário foi adicionado."
       ],
       "Calendar updated": [
-        "O calendário foi actualizado."
+        "Calendário atualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -5438,7 +5446,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Erro ao actualizar as definições"
+        "Falha na atualização de definições"
       ]
     },
     "Share calendar assistive text": {
@@ -5755,7 +5763,7 @@
         "URL do calendário"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Para subscrever um calendário externo ou público e as suas actualizações, introduza o URL. Uma versão somente leitura do calendário será adicionada a seus outros calendários.\n${ kbLink }"
+        "Para subscrever um calendário externo ou público e as suas atualizações, introduza o URL. Uma versão do calendário apenas de leitura irá ser adicionada aos seus Outros calendários.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5778,7 +5786,7 @@
         "Todos os eventos eliminados"
       ],
       "All events updated": [
-        "Todos os eventos actualizados"
+        "Todos os eventos atualizados"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "Será enviado um convite aos participantes adicionados para todos os eventos desta série."
@@ -5846,7 +5854,7 @@
         "Evento eliminado"
       ],
       "Event updated": [
-        "Evento actualizado"
+        "Evento atualizado"
       ],
       "Events created": [
         "Eventos criados"
@@ -5858,13 +5866,13 @@
         "Eventos futuros eliminados"
       ],
       "Future events updated": [
-        "Eventos futuros actualizados"
+        "Eventos futuros atualizados"
       ],
       "Import record deleted": [
         "Registo de importação eliminado"
       ],
       "Invitation sent and all events updated": [
-        "Convite enviado e eventos actualizados"
+        "Convite enviado e todos os eventos atualizados"
       ],
       "Invitation sent and event created": [
         "Convite enviado e evento criado"
@@ -5879,19 +5887,19 @@
         "Convite enviado e participantes adicionados a todos os eventos"
       ],
       "Participants notified and all events updated": [
-        "Participantes notificados e eventos actualizados"
+        "Participantes notificados e todos os eventos atualizados"
       ],
       "Participants notified and changes saved": [
         "Participantes notificados e alterações guardadas"
       ],
       "Participants notified and event updated": [
-        "Participantes notificados e evento actualizado"
+        "Participantes notificados e evento atualizado"
       ],
       "Participation status updated": [
         "Estado da participação atualizado"
       ],
       "Participation status updated for all events": [
-        "Estado da participação actualizado para todos os eventos"
+        "Estado de participação atualizado para todos os eventos"
       ],
       "Phone number copied to clipboard": [
         "Número de telefone copiado para a área de transferência"
@@ -6620,7 +6628,7 @@
     },
     "Warning in modal to accept calendar invitation; Description": {
       "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
-        "Para aceder aestecalendáriopartilhado, ativeesteendereço ou pergunte ao ${ boldCalendarOwnerEmail } para enviar um convite para um endereço ativo."
+        "Para aceder a este calendário partilhado, ative este endereço, ou pergunte a ${ boldCalendarOwnerEmail } para enviar um convite para um endereço ativo."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
         "Não pode aderir a este calendário porque o seu endereço de e-mail convidado (${ boldInvitedAddress }) está desativado."

@@ -391,6 +391,9 @@
       "Open settings": [
         "Deschidere setări"
       ],
+      "Pause indexing": [
+        "Pauză indexare"
+      ],
       "Preview contact": [
         "Examinare contact"
       ],
@@ -453,6 +456,9 @@
       ],
       "Reset to default": [
         "Revenire la setări inițiale"
+      ],
+      "Resume indexing": [
+        "Reluare indexare"
       ],
       "Save": [
         "Salvare"
@@ -2074,6 +2080,9 @@
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Aceasta ar putea dura câteva minute. Între timp puteți continua să folosiți calendarul."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
@@ -2315,6 +2324,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Evenimentul nu a fost găsit."
       ],
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
@@ -2785,6 +2797,14 @@
         "Scorul este obligatoriu"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Nu există rezultate"
+      ],
+      "Results": [
+        "Rezultate"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "anulat"
@@ -2795,6 +2815,16 @@
         "${ numberOfAttendees } participant",
         "${ numberOfAttendees } participanți",
         "${ numberOfAttendees } de participanți"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Toată ziua"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Toată ziua, durează ${ plusDaysToEnd } zi",
+        "Toată ziua, durează ${ plusDaysToEnd } zile",
+        "Toată ziua, durează ${ plusDaysToEnd } de zile"
       ]
     },
     "Event info. Organizer name": {
@@ -3482,6 +3512,9 @@
         "${ contactsLength } contacte",
         "${ contactsLength } de contacte"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } și ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
@@ -3612,6 +3645,9 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Nu găsiți evenimentele căutate? Unele evenimente din calendarele ascunse se potrivesc cu textul căutat. Pentru a vedea aceste rezultate, activați vizibilitatea pentru ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
@@ -3623,6 +3659,9 @@
       ],
       "Clear encrypted search data": [
         "Ștergere date de căutare criptate."
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Ștergerea datelor din navigator va șterge indexul de căutare de pe acest dispozitiv. Toate evenimentele din calendar vor trebui reindexate pentru a folosi funcția de căutare."
       ],
       "Clears browser data related to the encrypted search.": [
         "Se șterg datele din navigator legate de căutarea criptată."
@@ -3694,6 +3733,9 @@
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Edit email address": [
+        "Editare adresă de e-mail"
       ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
@@ -3773,6 +3815,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Se indexează evenimentele: ${ current } / ${ total }"
+      ],
+      "Indexing paused": [
+        "Indexare întreruptă."
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -4183,6 +4231,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Puteți modifica textul căutat sau să închideți căutarea și să reveniți la afișarea calendarului."
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Nu s-au găsit rezultate."
       ]
     },
     "Info on errors": {
@@ -5422,6 +5480,9 @@
       "Image URL": [
         "URL imagine"
       ],
+      "Indexing...": [
+        "Se indexează..."
+      ],
       "Name": [
         "Nume"
       ],
@@ -5436,6 +5497,9 @@
       ],
       "Please select a country": [
         "Selectați o țară"
+      ],
+      "Search events": [
+        "Căutare evenimente"
       ],
       "Search for group name": [
         "Căutare nume grup"
@@ -5844,6 +5908,9 @@
       "Add your country's public holidays to your calendar.": [
         "Adăugați sărbătorile publice ale propriei țări în calendarul personal."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Căutați ușor evenimentul dorit cu noua funcție de căutare."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
@@ -5852,6 +5919,9 @@
       ],
       "Public holidays are here!": [
         "Sărbătorile publice sunt aici!"
+      ],
+      "Search for events": [
+        "Căutare evenimente"
       ]
     },
     "Storage": {
@@ -5916,6 +5986,9 @@
       ],
       "Calendar information updated": [
         "Informațiile calendarului s-au actualizat."
+      ],
+      "Calendar search activated": [
+        "Căutare în calendar activată"
       ],
       "Calendar updated": [
         "Calendar actualizat"
@@ -6534,6 +6607,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We're setting up Calendar search": [
+        "Se setează căutarea calendarului"
+      ],
       "We've locked some calendars to protect your data": [
         "Vi s-au blocat câteva calendare pentru a vă proteja datele"
       ],
@@ -6675,6 +6751,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Deplasare la eveniment."
+      ],
       "Open in a new tab": [
         "Deschidere in filă nouă"
       ]
