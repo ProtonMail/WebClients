@@ -117,7 +117,7 @@ const UsersOnboardingChecklist = ({
                         </li>
                         <li>
                             <CheckListGmailForward
-                                disabled={isImporterInMaintenance}
+                                isInMaintenance={isImporterInMaintenance}
                                 smallVariant={smallVariant}
                                 onClick={() => setGmailForwardOpen(true)}
                                 done={items.has(ChecklistKey.Import)}
