@@ -72,23 +72,28 @@
 /*
  * Placements
  */
-.top {
+.top,
+.top-0 {
 	inset-block-start: 0;
 }
 
-.right {
+.right,
+.right-0 {
 	inset-inline-end: 0;
 }
 
-.bottom {
+.bottom,
+.bottom-0 {
 	inset-block-end: 0;
 }
 
-.left {
+.left,
+.left-0 {
 	inset-inline-start: 0;
 }
 
-.inset {
+.inset,
+.inset-0 {
 	inset: 0;
 }
 

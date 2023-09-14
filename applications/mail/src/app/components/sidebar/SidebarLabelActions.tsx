@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components';
+import { DropdownMenuButton, Icon, SimpleDropdown, Tooltip } from '@proton/components/components';
 import { Label } from '@proton/shared/lib/interfaces';
 
 import { useLabelActionsContext } from './EditLabelContext';
@@ -25,34 +25,37 @@ const SidebarLabelActions = ({ type, element, onToggleDropdown }: Props) => {
             onFocus={(e) => {
                 e.stopPropagation();
             }}
+            className="block"
         >
-            <SimpleDropdown
-                as={Button}
-                icon
-                hasCaret={false}
-                shape="ghost"
-                size="small"
-                content={<Icon name="three-dots-horizontal" />}
-                title={type === 'folder' ? c('Title').t`Folder options` : c('Title').t`Label options`}
-                onToggle={onToggleDropdown}
-            >
-                <DropdownMenuButton
-                    className="text-left"
-                    onClick={() => {
-                        editLabel(type, element);
-                    }}
+            <Tooltip title={type === 'folder' ? c('Title').t`Folder options` : c('Title').t`Label options`}>
+                <SimpleDropdown
+                    as={Button}
+                    className="rounded-sm"
+                    icon
+                    hasCaret={false}
+                    shape="ghost"
+                    size="small"
+                    content={<Icon name="three-dots-horizontal" />}
+                    onToggle={onToggleDropdown}
                 >
-                    {type === 'folder' ? c('Action').t`Edit folder` : c('Action').t`Edit label`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                    className="text-left color-danger"
-                    onClick={() => {
-                        deleteLabel(type, element);
-                    }}
-                >
-                    {type === 'folder' ? c('Action').t`Delete folder` : c('Action').t`Delete label`}
-                </DropdownMenuButton>
-            </SimpleDropdown>
+                    <DropdownMenuButton
+                        className="text-left"
+                        onClick={() => {
+                            editLabel(type, element);
+                        }}
+                    >
+                        {type === 'folder' ? c('Action').t`Edit folder` : c('Action').t`Edit label`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        className="text-left color-danger"
+                        onClick={() => {
+                            deleteLabel(type, element);
+                        }}
+                    >
+                        {type === 'folder' ? c('Action').t`Delete folder` : c('Action').t`Delete label`}
+                    </DropdownMenuButton>
+                </SimpleDropdown>
+            </Tooltip>
         </span>
     );
 };

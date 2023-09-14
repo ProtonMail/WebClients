@@ -169,10 +169,8 @@
 
 // Make hover-only interaction focusable with keyboard
 .opacity-on-hover {
-	opacity: 0; // Do not use visibility to keep it focusable even when invisible
-
-	&-no-width {
-		inline-size: 0;
+	&:not([aria-expanded='true'], .is-active) {
+		opacity: 0; // Do not use visibility to keep it focusable even when invisible
 	}
 
 	// Need a container to manage with focus-within
@@ -181,27 +179,21 @@
 		opacity: 1;
 	}
 
-	&-container:focus-within &-no-width {
-		inline-size: auto;
-	}
-
 	@include media('mouse') {
+		&-container:not(:hover, :focus, :focus-within) &-no-width:not([aria-expanded='true'], .is-active) {
+			position: absolute;
+			transition: none;
+			pointer-events: none;
+		}
+
 		&-container:hover &,
 		&-container:hover &-only-desktop {
 			opacity: 1;
 		}
 
-		&-container:hover &-no-width {
-			inline-size: auto;
-		}
-
 		&-only-desktop {
 			opacity: 0;
 		}
-	}
-
-	.navigation-item-dropdown-opened & {
-		opacity: 1;
 	}
 }
 
