@@ -83,7 +83,7 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
             <ModalContent>
                 <>
                     <div className="flex flex-justify-center">
-                        <img src={passwordResetIllustration} alt={c('Session recovery').t`Password reset available`} />
+                        <img src={passwordResetIllustration} alt="" />
                     </div>
                     <div>
                         {c('Info')
