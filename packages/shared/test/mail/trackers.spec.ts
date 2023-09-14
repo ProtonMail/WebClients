@@ -48,5 +48,14 @@ describe('trackers', () => {
                 undefined
             );
         });
+
+        it('should not clean amp links', () => {
+            const originalURL = 'https://something.me/L0/https:%2F%2Fsomething-else.amazonaws.com%randomID';
+
+            const result = getUTMTrackersFromURL(originalURL);
+
+            expect(result!.url).toEqual(originalURL);
+            expect(result!.utmTracker).toEqual(undefined);
+        });
     });
 });
