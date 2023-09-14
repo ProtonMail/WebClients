@@ -42,10 +42,11 @@ const LogsSection = () => {
     const [loading, withLoading] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const [loadingDownload, withLoadingDownload] = useLoading();
+    const [loadingWipe, withLoadingWipe] = useLoading();
     const [error, setError] = useState(false);
 
     const handleWipe = async () => {
-        await api(clearLogs());
+        await withLoadingWipe(api(clearLogs()));
         setState(INITIAL_STATE);
     };
 
@@ -128,6 +129,11 @@ const LogsSection = () => {
         }
     };
 
+    const handleWipeWithReload = async () => {
+        await withLoadingWipe(handleWipe());
+        await withLoadingRefresh(fetchAndSetState);
+    };
+
     useEffect(() => {
         withLoading(fetchAndSetState());
     }, [page, protonSentinel]);
@@ -190,7 +196,9 @@ const LogsSection = () => {
                             <span>{c('Action').t`Reload`}</span>
                         </Button>
 
-                        {state.logs.length ? <WipeLogsButton className="mr-4" onWipe={handleWipe} /> : null}
+                        {state.logs.length ? (
+                            <WipeLogsButton className="mr-4" onWipe={handleWipeWithReload} loading={loadingWipe} />
+                        ) : null}
                         {state.logs.length ? (
                             <Button
                                 shape="outline"
@@ -218,7 +226,7 @@ const LogsSection = () => {
                 logs={state.logs}
                 logAuth={logAuth}
                 protonSentinel={protonSentinel}
-                loading={loading}
+                loading={loading || loadingRefresh}
                 error={error}
             />
         </SettingsSectionWide>
