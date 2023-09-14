@@ -188,7 +188,7 @@ export const getCheckout = ({
     const withDiscountPerCycle = amount - couponDiscount;
     const withoutDiscountPerMonth = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const plan = plansMap[planName as keyof typeof plansMap];
-        const price = plan?.Pricing?.[CYCLE.MONTHLY] || 0;
+        const price = plan?.DefaultPricing?.[CYCLE.MONTHLY] || plan?.Pricing?.[CYCLE.MONTHLY] || 0;
         return acc + price * quantity;
     }, 0);
 
