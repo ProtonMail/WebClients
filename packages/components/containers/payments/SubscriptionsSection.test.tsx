@@ -240,4 +240,11 @@ describe('SubscriptionsSection', () => {
         expect(container).toHaveTextContent('119.88');
         expect(container).not.toHaveTextContent('155.88'); // 12 month price from the Plan
     });
+
+    it('should not display upcoming subscription if renew is disabled', () => {
+        subscription.Renew = Renew.Disabled;
+        subscription.UpcomingSubscription = upcoming;
+        const { container } = render(<ContextSubscriptionSection />);
+        expect(container).not.toHaveTextContent('Upcoming');
+    });
 });
