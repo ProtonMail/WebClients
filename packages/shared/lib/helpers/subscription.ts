@@ -406,8 +406,15 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
                 });
             }
 
-            acc.defaultMonthlyPrice +=
-                quantity * (plan?.DefaultPricing?.[CYCLE.MONTHLY] || plan?.Pricing?.[CYCLE.MONTHLY] || 0);
+            const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
+            const monthly = plan.Pricing?.[CYCLE.MONTHLY] ?? 0;
+
+            // Offers might affect Pricing both ways, increase and decrease.
+            // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
+            // for discount calculations
+            const price = Math.max(defaultMonthly, monthly);
+
+            acc.defaultMonthlyPrice += quantity * price;
 
             return acc;
         },
