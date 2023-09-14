@@ -81,10 +81,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
             <ModalHeader title={c('Title').t`Request password reset?`} subline={user.Email} />
             <ModalContent>
                 <div className="flex flex-justify-center">
-                    <img
-                        src={sessionRecoveryIllustration}
-                        alt={c('Session recovery').t`Reset your password in 72 hours`}
-                    />
+                    <img src={sessionRecoveryIllustration} alt="" />
                 </div>
 
                 <p>
