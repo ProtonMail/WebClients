@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Nie zezwalaj na niepodpisane wiadomości"
       ],
+      "Edit address": [
+        "Edytuj adres"
+      ],
       "Enable": [
         "Włącz"
       ],
@@ -2596,6 +2599,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } / miesiąc)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
       ],
@@ -2839,6 +2845,9 @@
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
+      "Edit email address": [
+        "Edytuj adres e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
@@ -2920,12 +2929,6 @@
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Uzyskaj adres ${ BRAND_NAME }, aby używać go do wszystkich usług ${ BRAND_NAME_TWO }, w tym poczty ${ MAIL_SHORT_APP_NAME } i kalendarza ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Uzyskaj adres ${ BRAND_NAME }"
-      ],
       "here": [
         "tutaj"
       ],
@@ -2976,6 +2979,9 @@
       ],
       "inactive": [
         "nieaktywna"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Zainstaluj plik konfiguracyjny kraju, aby połączyć się z losowym serwerem w wybranym przez Ciebie kraju."
@@ -3217,6 +3223,9 @@
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
+      "Resend verification email": [
+        "Wyślij ponownie wiadomość weryfikacyjną"
+      ],
       "Restore": [
         "Przywróć"
       ],
@@ -3234,6 +3243,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Zabezpiecz konto ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Zabezpieczenie konta"
@@ -3451,6 +3463,12 @@
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
+      "Unverified": [
+        "Niezweryfikowany"
+      ],
+      "Unverified email address.": [
+        "Adres e-mail jest niezweryfikowany."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
@@ -3600,6 +3618,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Możesz dostosować i pobrać swoje faktury do celów księgowych."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Możesz natychmiast odblokować powyższą konfigurację, dodając dodatkowe adresy IP (${ specificCountryCount }) do swojego planu. Opcjonalnie skontaktuj się z nami w sprawie indywidualnej oferty."
@@ -3927,6 +3948,9 @@
       "Config to connect to ${ serverName }": [
         "Konfiguracja połączenia ${ serverName }"
       ],
+      "Confirm email": [
+        "Potwierdź adres"
+      ],
       "Confirm login password": [
         "Potwierdź hasło logowania"
       ],
@@ -3965,6 +3989,9 @@
       ],
       "Current display name": [
         "Obecna nazwa wyświetlana"
+      ],
+      "Current email": [
+        "Obecny adres"
       ],
       "Customize invoices": [
         "Dostosuj faktury"
@@ -4058,6 +4085,9 @@
       ],
       "New display name": [
         "Nowa nazwa wyświetlana"
+      ],
+      "New email": [
+        "Nowy adres"
       ],
       "New login password": [
         "Nowe hasło logowania"
@@ -5529,9 +5559,6 @@
       "Email address not yet verified.": [
         "Adres e-mail nie został zweryfikowany."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Wiadomość weryfikacyjna została wysłana do ${ email.Value }"
-      ],
       "Verify now": [
         "Zweryfikuj"
       ],
@@ -6140,6 +6167,9 @@
       "Email address copied to clipboard": [
         "Adres e-mail został skopiowany do schowka"
       ],
+      "Email address updated": [
+        "Adres e-mail został zaktualizowany"
+      ],
       "Email updated": [
         "Adres e-mail został zaktualizowany"
       ],
@@ -6601,6 +6631,9 @@
       "Edit display name": [
         "Edytuj nazwę wyświetlaną"
       ],
+      "Edit email address": [
+        "Edytuj adres e-mail"
+      ],
       "Edit Gateway ${ currentName }": [
         "Edytuj bramę ${ currentName }"
       ],
@@ -6997,6 +7030,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
+      ],
+      "Verified email address": [
+        "Adres e-mail został zweryfikowany"
       ]
     },
     "tooltip": {

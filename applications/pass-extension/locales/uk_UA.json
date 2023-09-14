@@ -11,6 +11,9 @@
       "Add current url": [
         "Додати поточний url"
       ],
+      "Add domain to pause list": [
+        "Додати домен у список призупинення"
+      ],
       "Add more": [
         "Додати ще"
       ],
@@ -289,6 +292,11 @@
         "Розгорнути"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Список доменів де деякий автофункціонал у ${ PASS_SHORT_APP_NAME } (автозаповнення, автопропозиція, автозбереження) не зможуть виконуватися."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не вдалося проаналізувати файл ${ provider }. ${ errorDetail }"
@@ -362,6 +370,9 @@
       "Invalid password manager": [
         "Недійсний менеджер паролів"
       ],
+      "Invalid url": [
+        "Хибна URL-адреса"
+      ],
       "Item content cannot exceed 40KB": [
         "Вміст елемента не може перевищувати 40 Кб"
       ],
@@ -415,6 +426,9 @@
       ],
       "The file you are trying to import is empty": [
         "Ви намагаєтеся імпортувати порожній файл"
+      ],
+      "The url is in the list": [
+        "URL-адреса уже у списку"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Занадто багато невдалих спроб. Будь ласка, увійдіть ще раз."
@@ -525,6 +539,9 @@
         "${ count } елементи",
         "${ count } елементів",
         "${ count } елементів"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } імпортуватиме лише логіни та нотатки. Паспорти, вкладені файли, тощо зараз не підтримуються."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
@@ -652,6 +669,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Якщо вимкнено, ${ PASS_APP_NAME } не пропонуватиме створювати надійні паролі у реєстраційних формах."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Якщо ввімкнено, спадне меню автозаповнення автоматично відкриється після наведення на поле."
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Якщо ввімкнено, ви можете швидко автоматично заповнити свої облікові дані, натиснувши піктограму ${ PASS_APP_NAME }."
       ],
@@ -735,6 +755,9 @@
       ],
       "Open the Extensions menu": [
         "Відкрити меню розширень"
+      ],
+      "Password copied": [
+        "Пароль скопійовано"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі давніші 1 дня автоматично видаляються з історії."
@@ -843,6 +866,9 @@
       ],
       "Verification code": [
         "Код підтвердження"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "У нас виникли труднощі синхронізації даних з вашим локальним сховком. Будь ласка, впевніться що ви мажте достатньо дискового простору для коректної роботи ${ PASS_SHORT_APP_NAME }."
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
@@ -954,6 +980,9 @@
       "Autofill": [
         "Автозаповнення"
       ],
+      "Autofill 2FA": [
+        "Автозаповнення 2FA"
+      ],
       "Automatically open autofill when focusing login fields": [
         "Автоматично відкривати автозаповнення під час фокусування на полях для входу"
       ],
@@ -1010,6 +1039,12 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Показувати піктограму ${ PASS_APP_NAME } у полях для входу"
+      ],
+      "Domain": [
+        "Домен"
+      ],
+      "Domains": [
+        "Домени"
       ],
       "Download logs": [
         "Завантажити журнали"
@@ -1101,6 +1136,9 @@
       "Name": [
         "Назва"
       ],
+      "Need help ?": [
+        "Потрібна допомога ?"
+      ],
       "New vault": [
         "Нове сховище"
       ],
@@ -1139,6 +1177,9 @@
       ],
       "Passwords": [
         "Паролі"
+      ],
+      "Pause list": [
+        "Список призупинення"
       ],
       "Permanently delete items": [
         "Остаточно видалити елементи"
@@ -1404,6 +1445,9 @@
       "Enter your Pin": [
         "Введіть PIN-код"
       ],
+      "Fill & copy password": [
+        "Заповнення та копіювання паролю"
+      ],
       "Get the mobile apps": [
         "Отримати програму для мобільного пристрою"
       ],
@@ -1418,6 +1462,9 @@
       ],
       "Import to vault(s)": [
         "Імпорт до сховища(ів)"
+      ],
+      "Low disk space": [
+        "Бракує місця на диску"
       ],
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"

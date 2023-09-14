@@ -914,6 +914,9 @@
       "Stay": [
         "Залишитися"
       ],
+      "Strikethrough": [
+        "Закреслення"
+      ],
       "Submit": [
         "Відправити"
       ],
@@ -3210,6 +3213,9 @@
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
+      "Email address is invalid": [
+        "Недійсна адреса пошти"
+      ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
       ],
@@ -5319,6 +5325,9 @@
         "${ numberOfNonPrivateKeys } вивантажених файлів не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу."
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } вимагає щонайменше 1 виділений сервер ${ serverPricePerMonth }"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } це вдосконалена програма захисту облікових записів, яка працює завдяки складним системам штучного інтелекту та фахівцям, які цілодобово захищають вас від зловмисників і загроз безпеці."
       ],
@@ -5393,6 +5402,9 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/місяць)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
@@ -5552,6 +5564,12 @@
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
       ],
       "Allocated": [
         "Розподілено"
@@ -5889,6 +5907,9 @@
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
       ],
+      "Edit email address": [
+        "Змінити адресу електронної пошти"
+      ],
       "Edit label": [
         "Редагувати мітку"
       ],
@@ -6017,12 +6038,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Отримайте адресу ${ BRAND_NAME }, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Отримати свою адресу ${ BRAND_NAME }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайте токену описову назву, наприклад, службу, з якою ви плануєте його використовувати, і виберіть одну з ваших активних власних доменних адрес. Лише на цю адресу можна буде надсилати електронні листи з цим токеном."
@@ -6434,6 +6449,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
+      ],
+      "per month": [
+        "на місяць"
+      ],
+      "per month, billed every 12 months": [
+        "на місяць, рахунок виставляється кожні 12 місяців"
+      ],
+      "per month, billed every 15 months": [
+        "на місяць, рахунок виставляється кожні 15 місяців"
+      ],
+      "per month, billed every 24 months": [
+        "на місяць, рахунок виставляється кожні 24 місяців"
+      ],
+      "per month, billed every 30 months": [
+        "на місяць, рахунок виставляється кожні 30 місяців"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP клієнти швидше за все автоматично виявляють ваші PGP ключі, якщо вихідні повідомлення підписані."
@@ -7328,6 +7358,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Вам усе одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Після входу ви будете перенаправлені на ${ destination }."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
@@ -10254,6 +10287,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Включено до ${ plus }, ${ bundle } та ${ BRAND_NAME } для бізнесу."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Включено з декількома користувачами ${ BRAND_NAME } для бізнес-планів."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11221,9 +11257,6 @@
       "sign in": [
         "увійти"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Лист із підтвердженням надіслано на ${ email.Value }"
-      ],
       "Verify now": [
         "Підтвердити"
       ],
@@ -11376,6 +11409,12 @@
       ],
       "inactive": [
         "неактивний"
+      ],
+      "pending": [
+        "на розгляді"
+      ],
+      "to be created": [
+        "буде створено"
       ]
     },
     "Settings description": {
@@ -12794,6 +12833,12 @@
       "Delete logs": [
         "Вилучити записи журналу"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } дня)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
+        "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)"
+      ],
       "Delete user": [
         "Видалити користувача"
       ],
@@ -12874,6 +12919,9 @@
       ],
       "Encryption and keys": [
         "Шифрування та ключі"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до бета-програми ${ app }"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -13237,6 +13285,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in to join the Beta program": [
+        "Увійдіть, щоб приєднатися до бета-версії програми"
       ],
       "Sign in with 2FA": [
         "Увійти з двоетапною перевіркою"

@@ -5317,6 +5317,9 @@
       "* No credit card required.": [
         "*Aucune carte bancaire n'est nécessaire"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
       ],
@@ -5785,6 +5788,9 @@
       "Each code can only be used once": [
         "Chaque code ne peut être utilisé qu'une seule fois."
       ],
+      "Edit email address": [
+        "Modifier l'adresse e-mail"
+      ],
       "Edit label": [
         "Modifier le label"
       ],
@@ -5913,12 +5919,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obtenir mon adresse ${ BRAND_NAME }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Donnez un nom descriptif au jeton, comme le service avec lequel vous prévoyez de l'utiliser, et sélectionnez une de vos adresses de domaine personnalisées actives. Seule cette adresse pourra envoyer des messages avec ce jeton."
@@ -11011,9 +11011,6 @@
       ],
       "sign in": [
         "se connecter"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Le message de vérification a été envoyé à ${ email.Value }."
       ],
       "Verify now": [
         "Vérifier maintenant"

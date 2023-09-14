@@ -461,6 +461,9 @@
       "Got it": [
         "Понятно"
       ],
+      "Help": [
+        "Помощь"
+      ],
       "Hide": [
         "Скрыть"
       ],
@@ -4109,6 +4112,9 @@
       "Access to all countries": [
         "Доступ ко всем странам"
       ],
+      "Add": [
+        "Добавить"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Подключение до ${ plusVpnConnections } устройства",
         "Подключение до ${ plusVpnConnections } устройств",
@@ -5679,12 +5685,6 @@
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Получите адрес ${ BRAND_NAME }, чтобы пользоваться всеми услугами ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Получить свой адрес ${ BRAND_NAME }"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайте токену описательное имя, например, название службы, с которой вы планируете его использовать, и выберите один из своих активных пользовательских доменных адресов. Только этот адрес сможет отправлять электронные письма с этим токеном."
       ],
@@ -6698,6 +6698,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Отображение недели и месяца применяется только для рабочего стола."
+      ],
+      "Welcome": [
+        "Добро пожаловать"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
@@ -10559,9 +10562,6 @@
       ],
       "sign in": [
         "войти в систему"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Электронное письмо с подтверждением отправлено на ${ email.Value }"
       ],
       "Verify now": [
         "Подтвердить сейчас"

@@ -401,6 +401,12 @@
       "Get more addresses": [
         "获取更多邮箱地址"
       ],
+      "Get more folders": [
+        "解锁更多文件夹"
+      ],
+      "Get more labels": [
+        "解锁更多标签"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -845,6 +851,9 @@
       "Upgrade now": [
         "立即升级账户"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -976,6 +985,20 @@
       ],
       "By leaving now, some events may not be imported": [
         "如果现在退出，某些日程可能无法导入"
+      ]
+    },
+    "Alias promotion": {
+      "Get 10 aliases for free!": [
+        "免费获得 10 个邮箱别名！"
+      ],
+      "Get unlimited aliases!": [
+        "获取无限量邮箱别名！"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "体验 ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "您可以使用 ${ PASS_APP_NAME } 在注册每个网站时生成不同的邮箱别名，使邮件经过中转再到达真实邮箱，从而保护您的身份信息。"
       ]
     },
     "Alter": {
@@ -2565,6 +2588,15 @@
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜您已满额获得 ${ rewardsLimit } 个月的 ${ plusPlanName } 免费体验期."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
+      ],
+      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "开启高级日志和 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
+      ],
+      "Enable advanced logs to access these features": [
+        "开启高级日志即可使用这些功能"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
@@ -2621,8 +2653,20 @@
       "${ name } deletion failed": [
         "${ name } 删除失败"
       ],
+      "${ name } failed to move to allow list": [
+        "将 ${ name } 移入白名单失败"
+      ],
+      "${ name } failed to move to block list": [
+        "将 ${ name } 移入黑名单失败"
+      ],
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } 已移至黑名单"
+      ],
+      "${ name } moved to block list": [
+        "${ name } 已移至黑名单"
       ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
@@ -2726,8 +2770,20 @@
       "${ name } deletion failed": [
         "${ name } 删除失败"
       ],
+      "${ name } failed to move to allow list": [
+        "将 ${ name } 移入白名单失败"
+      ],
+      "${ name } failed to move to block list": [
+        "将 ${ name } 移入黑名单失败"
+      ],
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } 已移至黑名单"
+      ],
+      "${ name } moved to block list": [
+        "${ name } 已移至黑名单"
       ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
@@ -3995,6 +4051,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "auto-forwarding": [
+        "自动转发"
+      ],
       "Set up ${ strongText } from Gmail": [
         "设置${ strongText } Gmail 邮件"
       ]
@@ -4056,6 +4115,9 @@
       "Create your account": [
         "创建您的账户"
       ],
+      "Device": [
+        "设备"
+      ],
       "Event": [
         "事件"
       ],
@@ -4068,6 +4130,9 @@
       "Label": [
         "标签"
       ],
+      "Location": [
+        "地理位置"
+      ],
       "Name": [
         "名称"
       ],
@@ -4079,6 +4144,9 @@
       ],
       "Permissions": [
         "权限"
+      ],
+      "Protection": [
+        "防护措施"
       ],
       "Select your pricing plan": [
         "选择适合您的账户等级"
@@ -4548,6 +4616,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } 是一项高等级账户保护计划，由精密的人工智能系统和资深专家组成，为您全方位抵御恶意攻击和安全威胁。"
+      ],
       "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
@@ -4962,6 +5033,9 @@
       "Each code can only be used once": [
         "每条恢复码只能使用一次"
       ],
+      "Edit email address": [
+        "编辑邮箱地址"
+      ],
       "Edit label": [
         "更改标签"
       ],
@@ -5081,9 +5155,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "注册 ${ BRAND_NAME } 地址"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "为专用密码设置一个清晰的名称，以便说明其用途；然后选择一个自有域名地址，只有所选地址能够使用该专用密码发送邮件。"
@@ -5278,7 +5349,7 @@
         "链接类型"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "开启追踪防护后，图像将通过我们的代理服务器加载，安全性更高。"
+        "如果同时开启追踪防护，图像将通过我们的代理服务器加载，安全性更高。"
       ],
       "Loading": [
         "加载中"
@@ -5492,6 +5563,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "如果您是公众人物、记者、政企高层等网络攻击的常见对象，强烈建议您启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Public link invite": [
         "公开链接邀请"
@@ -5817,6 +5891,9 @@
       "Two-factor authentication enabled": [
         "双重验证已开启"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "双密码模式下登录账户和解密邮箱需要分别设置密码。（高级功能）"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
       ],
@@ -5843,6 +5920,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "开通 ${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -6588,6 +6668,9 @@
       "All-day event notifications": [
         "全天事件通知"
       ],
+      "Allow": [
+        "白名单"
+      ],
       "Allow notifications by email": [
         "允许邮件通知"
       ],
@@ -6659,6 +6742,9 @@
       ],
       "Billing cycle": [
         "计费周期"
+      ],
+      "Block": [
+        "黑名单"
       ],
       "Block email tracking": [
         "阻止电子邮件追踪"
@@ -7644,6 +7730,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "启用 ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "开启详细日志"
       ],
@@ -7875,6 +7964,9 @@
       "All": [
         "全部"
       ],
+      "Allow": [
+        "白名单"
+      ],
       "Back": [
         "后退"
       ],
@@ -7886,6 +7978,9 @@
       ],
       "Back to inbox": [
         "回到收件箱"
+      ],
+      "Block": [
+        "黑名单"
       ],
       "Calendar": [
         "日历"
@@ -8516,6 +8611,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } 已停用"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } 已启用"
+      ],
       "A disabled address cannot be default": [
         "已停用的地址不能作为首选地址"
       ],
@@ -8898,6 +8999,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "继续使用您的 ${ BRAND_NAME } 账户"
       ],
+      "Recommended": [
+        "推荐"
+      ],
       "Select your plan": [
         "选择账户等级"
       ],
@@ -9124,9 +9228,6 @@
       ],
       "sign in": [
         "登录"
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "验证邮件已发至 ${ email.Value }"
       ],
       "Verify now": [
         "立即验证"
@@ -10786,10 +10887,10 @@
         "已登录成员账户"
       ],
       "Sort folders alphabetically": [
-        "按字母顺序排列文件夹"
+        "按名称排列文件夹"
       ],
       "Sort labels alphabetically": [
-        "按字母顺序排列标签"
+        "按名称排列标签"
       ],
       "Spam, block, and allow lists": [
         "垃圾邮件与黑白名单"
@@ -11002,6 +11103,12 @@
       "Account is disconnected": [
         "账户已断开连接"
       ],
+      "An approximate location of the IP address": [
+        "IP 地址所处的大致地理位置"
+      ],
+      "Any protection applied to suspicious activity": [
+        "对于可疑操作所采取的所有防护措施"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
       ],
@@ -11013,6 +11120,9 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "垃圾邮件与废件箱中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
+      ],
+      "Device information such as operating system": [
+        "操作系统等设备信息"
       ],
       "Each imported email will have this label": [
         "每一封导入的邮件都会有这个标签"
@@ -11067,6 +11177,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IP 地址所属的运营商"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新的计费周期将从 ${ formattedTime } 开始"
@@ -11174,6 +11287,11 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升级到 ${ planName } ，即可立即将最多 ${ n } 台设备连接到VPN"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "推荐"
       ]
     },
     "User referee invited via email": {

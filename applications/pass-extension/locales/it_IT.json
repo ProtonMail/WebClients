@@ -335,7 +335,7 @@
         "Eliminazione dell'elemento non riuscita"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Eliminazione della cassaforte \"${ payload.content.name }\" fallita"
+        "Eliminazione della cassaforte \"${ payload.content.name }\" non riuscita"
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } riga csv corrotta trovata",
@@ -360,7 +360,7 @@
         "Impossibile analizzare il file"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Importazione fallita per la cassaforte \"${ vaultData.name }\": ${ description }"
+        "Importazione per la cassaforte \"${ vaultData.name }\" non riuscita: ${ description }"
       ],
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
@@ -411,7 +411,7 @@
         "Impostazione di \"${ payload.name }\" come cassaforte principale non riuscita"
       ],
       "Settings update failed": [
-        "Aggiornamento impostazioni fallito"
+        "Aggiornamento impostazioni non riuscito"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Alcune casseforti non sono più accessibili in seguito alla reimpostazione della password. Riattiva le chiavi del tuo account per ottenere nuovamente l'accesso. ${ reactivateLink }"
@@ -453,10 +453,10 @@
         "Formato del file 1Password non supportato"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Aggiornamento della cassaforte \"${ payload.content.name }\" fallito"
+        "Aggiornamento della cassaforte \"${ payload.content.name }\" non riuscito"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Creazione della cassaforte \"${ payload.content.name }\" fallita"
+        "Creazione della cassaforte \"${ payload.content.name }\" non riuscita"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
         "La cassaforte \"${ vaultData.name }\" non può essere creata"
@@ -1005,6 +1005,9 @@
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
         "Mostra l'icona di ${ PASS_APP_NAME } nei campi di login"
+      ],
+      "Domain": [
+        "Dominio"
       ],
       "Domains": [
         "Domini"
