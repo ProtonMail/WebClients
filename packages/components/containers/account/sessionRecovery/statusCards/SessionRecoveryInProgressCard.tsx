@@ -21,7 +21,7 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();
     const [confirmCancelModalProps, setConfirmCancelModalOpen, renderConfirmCancelModal] = useModalState();
 
-    if (user.AccountRecovery === null || gracePeriodHoursRemaining === null) {
+    if (!user.AccountRecovery || gracePeriodHoursRemaining === null) {
         return null;
     }
 
