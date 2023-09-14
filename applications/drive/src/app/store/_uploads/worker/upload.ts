@@ -243,6 +243,8 @@ async function uploadBlockData(
 
         xhr.open('POST', url);
         xhr.setRequestHeader('pm-storage-token', token);
+        xhr.setRequestHeader('Cache-Control', 'no-cache, no-store, max-age=0');
+
         const appVersionHeaders = getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION);
         Object.keys(appVersionHeaders).forEach((header) => {
             xhr.setRequestHeader(header, appVersionHeaders[header as keyof typeof appVersionHeaders]);
