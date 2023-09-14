@@ -66,7 +66,7 @@ const SidebarFolder = ({
             shortcutHandlers={shortcutHandlers}
             id={id}
             onFocus={onFocus}
-            className={isOptionDropdownOpened ? 'navigation-item-dropdown-opened' : undefined}
+            isOptionDropdownOpened={isOptionDropdownOpened}
             content={
                 <div className="flex flex-nowrap flex-align-items-center gap-2" data-level={level}>
                     {folder.subfolders?.length ? (

@@ -449,10 +449,9 @@ const CalendarContainerView = ({
                     <Tooltip key="createEvent" title={createEventText}>
                         <Button
                             icon
-                            className="mr-2 inline-flex py-2"
+                            className="inline-flex"
                             onClick={onClick}
                             disabled={noSelection || !onCreateEvent}
-                            title={createEventText}
                         >
                             <Icon name="calendar-grid" alt={createEventText} />
                         </Button>
