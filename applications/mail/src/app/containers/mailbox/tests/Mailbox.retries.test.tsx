@@ -111,7 +111,7 @@ describe('Mailbox retries and waitings', () => {
 
         // We are moving 100 elements to trash, and then we fake undoing all requests.
         // Because we batch requests to 25 elements, we need to resolve the request 4 times
-        expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
+        expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
         expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, true);
 
         await act(async () => {
