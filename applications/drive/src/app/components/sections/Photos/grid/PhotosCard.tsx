@@ -104,7 +104,12 @@ export const PhotosCard: FC<Props> = ({
                             <FileIcon mimeType={photo.mimeType || ''} size={48} />
                         </div>
                     ) : (
-                        <img src={thumbUrl} alt={getAltText(photo)} className="w-full h-full photos-card-thumbnail" />
+                        <img
+                            data-testid="photo-card"
+                            src={thumbUrl}
+                            alt={getAltText(photo)}
+                            className="w-full h-full photos-card-thumbnail"
+                        />
                     )}
                     {(photo.signatureIssues || photo.isShared) && (
                         <div className="absolute top right mr-2 mt-2 flex flex-align-items-center gap-1">
