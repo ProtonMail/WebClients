@@ -1,8 +1,10 @@
 import { ReactNode, useEffect, useState } from 'react';
 
+import { wait } from '@testing-library/user-event/dist/utils';
+
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation, KeyTransparencyState } from '@proton/shared/lib/interfaces';
 
 import { useOnline } from '../../hooks';
@@ -45,7 +47,8 @@ const KeyTransparencyManager = ({ children }: Props) => {
     };
 
     useEffect(() => {
-        runSelfAuditPeriodically();
+        // Delay the first self audit to wait for the app to get properly loaded
+        wait(10 * SECOND).then(runSelfAuditPeriodically);
     }, [ktActivation, offline, onlineStatus]);
 
     const ktFunctions: KTContext = {
