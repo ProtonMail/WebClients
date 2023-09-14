@@ -2562,6 +2562,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mois)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
       ],
@@ -2791,6 +2794,9 @@
       "Each code can only be used once": [
         "Chaque code ne peut être utilisé qu'une seule fois."
       ],
+      "Edit email address": [
+        "Modifier l'adresse e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
@@ -2871,12 +2877,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obtenir mon adresse ${ BRAND_NAME }"
       ],
       "here": [
         "ici"
@@ -5396,9 +5396,6 @@
       ],
       "Email address not yet verified.": [
         "L'adresse e-mail n'est pas vérifiée."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Le message de vérification a été envoyé à ${ email.Value }."
       ],
       "Verify now": [
         "Vérifier maintenant"

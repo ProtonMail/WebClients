@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Edit address": [
+        "Editar endereço"
+      ],
       "Enable": [
         "Ativar"
       ],
@@ -1673,6 +1676,11 @@
         "Ajude-nos a melhorar!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "O e-mail de verificação foi enviado para ${ address }."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -1830,7 +1838,7 @@
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "status page": [
-        "Página de status"
+        "página de status"
       ],
       "Tab closed": [
         "Guia fechada"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /mês)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenha um endereço da ${ BRAND_NAME }** para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
@@ -2871,12 +2885,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenha um endereço da ${ BRAND_NAME } para usar todos os serviços da ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obter meu endereço da ${ BRAND_NAME }"
       ],
       "here": [
         "aqui"
@@ -3014,7 +3022,7 @@
         "Sem gateways"
       ],
       "No Gateways yet": [
-        "Sem Gateways ainda"
+        "Sem gateways ainda"
       ],
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
@@ -3167,6 +3175,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de login do usuário com ele."
+      ],
+      "Resend verification email": [
+        "Re-enviar e-mail para verificação"
       ],
       "Restore": [
         "Restaurar"
@@ -3396,6 +3407,12 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Unverified": [
+        "Não verificado"
+      ],
+      "Unverified email address.": [
+        "Endereço de e-mail não verificado."
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Até ${ FAMILY_MAX_USERS } usuários"
@@ -3853,6 +3870,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectar a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar e-mail"
+      ],
       "Confirm login password": [
         "Confirmar nova senha"
       ],
@@ -3891,6 +3911,9 @@
       ],
       "Current display name": [
         "Nome de exibição atual"
+      ],
+      "Current email": [
+        "E-mail atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -3984,6 +4007,9 @@
       ],
       "New display name": [
         "Novo nome de exibição"
+      ],
+      "New email": [
+        "Novo e-mail"
       ],
       "New login password": [
         "Nova senha"
@@ -5412,9 +5438,6 @@
       "Email address not yet verified.": [
         "Endereço de e-mail ainda não verificado."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "O e-mail de verificação foi enviado para ${ email.Value }."
-      ],
       "Verify now": [
         "Verificar agora"
       ],
@@ -5983,6 +6006,9 @@
       "Email address copied to clipboard": [
         "Endereço de e-mail copiado para a área de transferência"
       ],
+      "Email address updated": [
+        "Endereço de e-mail atualizado"
+      ],
       "Email updated": [
         "E-mail atualizado"
       ],
@@ -6440,6 +6466,9 @@
       "Edit display name": [
         "Editar nome de exibição"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Edit Gateway ${ currentName }": [
         "Editar gateway ${ currentName }"
       ],
@@ -6830,6 +6859,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
+      ],
+      "Verified email address": [
+        "Endereço de e-mail verificado"
       ]
     },
     "tooltip": {

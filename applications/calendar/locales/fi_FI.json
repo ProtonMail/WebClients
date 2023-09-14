@@ -389,6 +389,9 @@
       "Open settings": [
         "Avaa asetukset"
       ],
+      "Pause indexing": [
+        "Pysäytä indeksointi"
+      ],
       "Preview contact": [
         "Esikatsele yhteystietoa"
       ],
@@ -451,6 +454,9 @@
       ],
       "Reset to default": [
         "Palauta oletukset"
+      ],
+      "Resume indexing": [
+        "Jatka indeksointia"
       ],
       "Save": [
         "Tallenna"
@@ -2063,6 +2069,9 @@
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Tämä voi kestää muutaman minuutin. Sillä aikaa voit käyttää Calendaria normaalisti."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
@@ -2298,6 +2307,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Tapahtumaa ei löydy"
       ],
       "Failed to get original occurrence in series": [
         "Ketjun alkuperäisen tapahtuman nouto epäonnistui"
@@ -2762,6 +2774,14 @@
         "Pisteytys vaaditaan"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Ei tuloksia"
+      ],
+      "Results": [
+        "Tulokset"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "peruttu"
@@ -2771,6 +2791,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } osallistuja",
         "${ numberOfAttendees } osallistujaa"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Koko päivä"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Koko päivä, kestää ${ plusDaysToEnd } päivän",
+        "Koko päivä, kestää ${ plusDaysToEnd } päivää"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3467,9 @@
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystiedot"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } ja ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
@@ -3554,6 +3586,9 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Etkö löydä etsimiäsi tapahtumia? Jotkin tapahtumat piilotetuissa kalentereissa vastaavat hakuasi. Jos haluat nähdä nämä tulokset, ota näkyvyys käyttöön arvolle ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
@@ -3565,6 +3600,9 @@
       ],
       "Clear encrypted search data": [
         "Tyhjennä salatun haun tiedot"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Selaimen tietojen tyhjentäminen tyhjentää tämän laitteen hakuindeksin. Kaikki kalenteritapahtumat on indeksoitava uudelleen hakutoiminnan käyttämiseksi."
       ],
       "Clears browser data related to the encrypted search.": [
         "Tyhjentää salattuun hakuun liittyvät tiedot selaimen välimuistista."
@@ -3635,6 +3673,9 @@
       ],
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
+      ],
+      "Edit email address": [
+        "Muokkaa sähköpostiosoitetta"
       ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
@@ -3712,6 +3753,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ importedEmailAddress } tilille ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Indeksoidaan tapahtumia: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indeksointi on pysäytetty"
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
@@ -4121,6 +4168,16 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Järjestelmäsi aikavyöhykkeeksi näyttää vaihtuneen ${ timezone }. Haluatko päivittää aikavyöhykeasetuksesi?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Voit joko päivittää hakutermejäsi tai sulkea haun palataksesi takaisin kalenterinäkymiin"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Tuloksia ei löytynyt"
       ]
     },
     "Info on errors": {
@@ -5325,6 +5382,9 @@
       "Image URL": [
         "Kuvan URL"
       ],
+      "Indexing...": [
+        "Indeksoidaan..."
+      ],
       "Name": [
         "Nimi"
       ],
@@ -5339,6 +5399,9 @@
       ],
       "Please select a country": [
         "Valitse maa"
+      ],
+      "Search events": [
+        "Etsi tapahtumia"
       ],
       "Search for group name": [
         "Etsi ryhmän nimellä"
@@ -5737,6 +5800,9 @@
       "Add your country's public holidays to your calendar.": [
         "Lisää oman maasi yleiset vapaapäivät kalenteriisi."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Löydä etsimäsi tapahtuma helposti uudella hakutoiminnollamme."
+      ],
       "Get up to ${ credits } in credits.": [
         "Ansaitse jopa ${ credits } krediittiä."
       ],
@@ -5745,6 +5811,9 @@
       ],
       "Public holidays are here!": [
         "Yleiset vapaapäivät ovat täällä!"
+      ],
+      "Search for events": [
+        "Etsi tapahtumia"
       ]
     },
     "Storage": {
@@ -5808,6 +5877,9 @@
       ],
       "Calendar information updated": [
         "Kalenterin tiedot päivitettiin"
+      ],
+      "Calendar search activated": [
+        "Kalenterihaku on aktivoitu"
       ],
       "Calendar updated": [
         "Kalenteri päivitettiin"
@@ -6413,6 +6485,9 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
+      "We're setting up Calendar search": [
+        "Määritämme kalenterihakua"
+      ],
       "We've locked some calendars to protect your data": [
         "Osa kalentereista on lukittu tietojesi suojaamiseksi"
       ],
@@ -6552,6 +6627,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Siirry tapahtumaan"
+      ],
       "Open in a new tab": [
         "Avaa uudessa välilehdessä"
       ]

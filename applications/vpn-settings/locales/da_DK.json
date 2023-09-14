@@ -26,6 +26,9 @@
       "Add domain": [
         "Tilføj domæne"
       ],
+      "Add multiple users": [
+        "Tilføj flere brugere"
+      ],
       "Add PayPal": [
         "Tilføj PayPal"
       ],
@@ -206,6 +209,12 @@
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
       ],
+      "Get in touch": [
+        "Kontakt os"
+      ],
+      "Get more": [
+        "Få mere"
+      ],
       "Get more addresses": [
         "Få flere adresser"
       ],
@@ -244,6 +253,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "Behold mit ${ vpnPlanNameShort } abonnement"
+      ],
+      "Let's talk": [
+        "Lad os snakke"
       ],
       "Load more": [
         "Indlæs flere"
@@ -1951,6 +1963,9 @@
       "Pending": [
         "Afventer"
       ],
+      "Pending invitation": [
+        "Invitation afventer"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Beklager, du kan i øjeblikket ikke ændre abonnement."
       ],
@@ -2492,6 +2507,9 @@
       "dedicated servers": [
         "dedikerede servere"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
+        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -2521,6 +2539,9 @@
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
+      ],
+      "Edit email address": [
+        "Rediger e-mailadresse"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
@@ -2596,12 +2617,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Få en ${ BRAND_NAME }-adresse for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "FÅ min ${ BRAND_NAME }-adresse"
       ],
       "here": [
         "hér"
@@ -3689,6 +3704,9 @@
       "Organization password": [
         "Oorganisationsadgangskode"
       ],
+      "Organization size": [
+        "Størrelse på organisationen"
+      ],
       "Other amount": [
         "Andet beløb"
       ],
@@ -3784,6 +3802,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Hvad er hovedårsagen til, at du sletter din konto?"
+      ],
+      "Why would you like to cancel?": [
+        "Hvorfor ønsker du at opsige?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
@@ -4268,9 +4289,15 @@
       "Priority support": [
         "Prioriteret support"
       ],
+      "Priority support & live chat": [
+        "Prioriteret support & live chat"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Router support": [
+        "Router support"
       ],
       "Schedule messages at any time": [
         "Planlæg beskeder til ethvert tidspunkt"
@@ -4802,9 +4829,6 @@
       ],
       "Email address not yet verified.": [
         "E-mailadressen er endnu ikke bekræftet."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Bekræftelsesmail sendt til ${ email.Value }"
       ],
       "Verify now": [
         "Bekræft nu"
@@ -5883,6 +5907,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in to join the Beta program": [
+        "Log ind for tilmelding til Beta programmet"
       ],
       "Sign in with 2FA": [
         "Log ind med 2FA"

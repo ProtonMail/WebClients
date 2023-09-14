@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
       ],
+      "Edit address": [
+        "Editar dirección"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } y ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Correo de verificación enviado a ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5317,6 +5325,9 @@
       "* No credit card required.": [
         "* No se requiere tarjeta de crédito."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenga una dirección de ${ BRAND_NAME }** para usar todos los servicios de ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
       ],
@@ -5785,6 +5796,9 @@
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
       ],
+      "Edit email address": [
+        "Editar dirección de correo"
+      ],
       "Edit label": [
         "Editar etiqueta"
       ],
@@ -5914,12 +5928,6 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obtenga una dirección de ${ BRAND_NAME } para usar todos los servicios de ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obtener mi dirección de ${ BRAND_NAME }"
-      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dé un nombre descriptivo al token, como el servicio con el que planea usarlo y seleccione una de sus direcciones de dominio personalizado activa. Solo esta dirección podrá enviar correos electrónicos con este token."
       ],
@@ -6043,6 +6051,9 @@
       ],
       "inactive": [
         "inactiva"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Aumente la seguridad de su cuenta al verificar su dirección de correo."
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -6492,6 +6503,9 @@
       "Report link expired": [
         "Reportar enlace expirado"
       ],
+      "Resend verification email": [
+        "Reenviar correo de verificación"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -6515,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanee este código con su dispositivo de autenticación de dos factores para configurar su cuenta. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Asegure su cuenta de ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Asegurando su cuenta"
@@ -6674,7 +6691,7 @@
         "El formato de su archivo CSV es incorrecto."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "La app Import-Export le permite exportar mensajes a respaldos locales y restaurar respaldos anteriores a su cuenta."
+        "La app Import-Export le permite exportar mensajes para copias de seguridad locales y restaurar copias de seguridad anteriores en su cuenta."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "El enlace para notificar que no configuró una cuenta de ${ BRAND_NAME } ha expirado. Póngase en contacto con nuestro equipo de soporte para resolver este problema."
@@ -6885,6 +6902,12 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
+      ],
+      "Unverified": [
+        "No verificado"
+      ],
+      "Unverified email address.": [
+        "Dirección de correo no verificada."
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Hasta ${ FAMILY_MAX_USERS } usuarios"
@@ -7106,6 +7129,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puede personalizar y descargar sus facturas con fines contables."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Puede editar esto una vez para asegurarse de la dirección de correo correcta para verificar."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puede habilitar el registro de autenticación para ver cuándo se accede a su cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos que no funcionaron."
@@ -7936,6 +7962,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectarse a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar correo"
+      ],
       "Confirm link URLs": [
         "Confirmar enlaces URL"
       ],
@@ -7986,6 +8015,9 @@
       ],
       "Current display name": [
         "Nombre a mostrar actual"
+      ],
+      "Current email": [
+        "Correo electrónico actual"
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -8271,6 +8303,9 @@
       ],
       "New display name": [
         "Nombre a mostrar nuevo"
+      ],
+      "New email": [
+        "Correo nuevo"
       ],
       "New login password": [
         "Contraseña nueva de inicio de sesión"
@@ -11012,9 +11047,6 @@
       "sign in": [
         "iniciar sesión"
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Correo de verificación enviado a ${ email.Value }"
-      ],
       "Verify now": [
         "Verificar ahora"
       ],
@@ -11829,6 +11861,9 @@
       "Email address copied to clipboard": [
         "Dirección de correo copiada al portapapeles"
       ],
+      "Email address updated": [
+        "Correo electrónico actualizado"
+      ],
       "Email updated": [
         "Correo actualizado"
       ],
@@ -12343,7 +12378,7 @@
         "¿Firmar automáticamente los mensajes salientes?"
       ],
       "Backup and export": [
-        "Respaldar y exportar"
+        "Hacer copias de seguridad y exportar"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -12580,6 +12615,9 @@
       ],
       "Edit domain": [
         "Editar dominio"
+      ],
+      "Edit email address": [
+        "Editar dirección de correo"
       ],
       "Edit filter": [
         "Editar filtro"
@@ -13110,6 +13148,9 @@
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviaremos un correo a su dirección nueva con instrucciones para completar el cambio."
+      ],
       "What would you like to import?": [
         "¿Qué desea importar?"
       ],
@@ -13394,6 +13435,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Use las barras de desplazamiento del navegador por defecto. Son más grandes y fáciles de usar en general."
+      ],
+      "Verified email address": [
+        "Correo electrónico verificado"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos un problema con su configuración DNS. Asegúrese de que sus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."

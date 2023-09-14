@@ -2694,7 +2694,7 @@
         "Predefinição do sistema"
       ],
       "Theme font": [
-        "Tipo de letra do tema"
+        "Letra de tema"
       ]
     },
     "Font size option": {
@@ -3073,6 +3073,10 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } terminado",
         "${ doneCount } terminados"
@@ -3114,6 +3118,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos selecionados"
       ],
       "${ selectedCount } selected": [
         "Seleção: ${ selectedCount }"
@@ -3842,7 +3850,7 @@
         "Armazenamento de ficheiros encriptados na Suíça"
       ],
       "Sync folders from your computer": [
-        "Sincronizar as pasta do seu computador"
+        "Sincronizar pastas do computador"
       ],
       "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
         "Sincronize as pastas com facilidade utilizando a nossa aplicação para computador, garantindo que os seus ficheiros estão sempre atualizados e acessíveis a partir de qualquer lugar."
@@ -3855,6 +3863,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Temos de desencriptar localmente os seus contactos antes que os possa exportar. No final do processo, será gerado um ficheiro VCF e poderá transferi-lo."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
@@ -3961,6 +3972,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Tente pesquisar por nome de ficheiro, data ou tipo."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Infelizmente, parece que o ficheiro ou alguns dos seus dados não podem ser desencriptados."
       ],
       "Unknown error": [
         "Erro desconhecido"

@@ -2815,6 +2815,9 @@
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
       ],
+      "Edit email address": [
+        "Editare adresă de e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Gazduirea de e-mail pentru 10 nume de domeniu de e-mail personale este inclusă gratuit. Domenii suplimentare pot fi adăugate pentru ${ price }."
       ],
@@ -2895,12 +2898,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Obțineți o adresă ${ BRAND_NAME } pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Vreau adresa mea ${ BRAND_NAME }"
       ],
       "here": [
         "aici"
@@ -5087,7 +5084,7 @@
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Protejați fiecare dispozitiv conectat la rețeaua WiFi. De asemenea, este util dacă aveți dispozitive care nu acceptă direct setări VPN."
+        "Protejați fiecare dispozitiv conectat la rețeaua Wi-Fi. De asemenea, este util dacă aveți dispozitive care nu acceptă direct setări VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protejați-vă familia de site-urile web dăunătoare și accesați serverele noastre VPN de mare viteză pentru a vă transmite conținutul preferat"
@@ -5462,9 +5459,6 @@
       ],
       "Email address not yet verified.": [
         "Adresa de e-mail nu este verificată."
-      ],
-      "Verification email sent to ${ email.Value }": [
-        "Mesajul de verificare a fost trimis la ${ email.Value }"
       ],
       "Verify now": [
         "Verificare acum"
