@@ -24,11 +24,12 @@ import {
     useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
+import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -49,8 +50,11 @@ const SMTPSubmissionSection = () => {
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [organization, loadingOrganization] = useOrganization();
+    const isB2BOrganization = isOrganizationB2B(organization);
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
     const [loadingTokens, withLoadingTokens] = useLoading();
+    const [loadingTokenEligible, withloadingTokenEligible] = useLoading();
+    const [tokenEligible, setTokenEligible] = useState<boolean>(false);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
@@ -95,19 +99,29 @@ const SMTPSubmissionSection = () => {
         createNotification({ text: c('Success').t`SMTP token deleted` });
     };
 
+    const getSmtpTokenEligible = async () => {
+        let isEligible = submissionTokenAvailable ?? false; // if null then false
+        // if not eligible and b2b then check
+        if (!isEligible && isB2BOrganization) {
+            isEligible = (await api({ ...isTokenEligible(), silence: true })).IsEligible;
+        }
+        setTokenEligible(isEligible);
+    };
+
     const fetchTokens = async () => {
         const { SmtpTokens } = await api(getTokens());
         setTokens(SmtpTokens);
     };
 
     useEffect(() => {
-        if (!submissionTokenAvailable) {
+        if (!tokenEligible) {
+            void withloadingTokenEligible(getSmtpTokenEligible());
             return;
         }
         void withLoadingTokens(fetchTokens());
-    }, [submissionTokenAvailable]);
+    }, [submissionTokenAvailable, tokenEligible]);
 
-    if (loadingOrganization) {
+    if (loadingOrganization || loadingTokenEligible) {
         return (
             <SettingsSection>
                 <Loader />
@@ -115,7 +129,7 @@ const SMTPSubmissionSection = () => {
         );
     }
 
-    if (!submissionTokenAvailable) {
+    if (!tokenEligible) {
         const params = {
             topic: 'email delivery and spam',
             username: user.Email,
