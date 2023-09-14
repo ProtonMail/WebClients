@@ -1,6 +1,15 @@
-import { CheckListGmailForward, GmailSyncModal, useModalState, useUser } from '@proton/components';
+import {
+    CheckListGmailForward,
+    FeatureFlag,
+    GmailSyncModal,
+    useFlag,
+    useModalState,
+    useUser,
+} from '@proton/components';
 
 const GmailForwarding = () => {
+    const isInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
+
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
 
     const [user, loadingUser] = useUser();
@@ -19,6 +28,7 @@ const GmailForwarding = () => {
                     onClick={() => setSyncModalProps(true)}
                     disabled={disabled}
                     data-testid="ProviderCard:googleCardForward"
+                    isInMaintenance={isInMaintenance}
                 />
             </div>
             {renderSyncModal && <GmailSyncModal noSkip onSyncCallback={handleModalClose} {...syncModalProps} />}
