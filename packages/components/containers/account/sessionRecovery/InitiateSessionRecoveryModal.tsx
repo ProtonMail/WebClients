@@ -106,7 +106,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
             </ModalContent>
             <ModalFooter>
                 {hasRecoveryMethod ? (
-                    <ButtonLike as={SettingsLink} path={`/recovery`} onClick={onClose} disabled={submitting}>
+                    <ButtonLike as={SettingsLink} path="/recovery" onClick={onClose} disabled={submitting}>
                         {c('session_recovery:initiation:action').t`Use recovery method`}
                     </ButtonLike>
                 ) : (
