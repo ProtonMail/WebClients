@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Non permitir correos sin firma"
       ],
+      "Edit address": [
+        "Editar dirección"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -1673,6 +1676,11 @@
         "¡Ayúdanos a mejorar!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "El correo electrónico de verificación fue enviado a ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mes)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Consigue una dirección de ${ BRAND_NAME }** para utilizar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de almacenamiento adicional"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Cada código puede utilizarse solo una vez."
       ],
+      "Edit email address": [
+        "Editar dirección de correo electrónico"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
@@ -2871,12 +2885,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Consigue una dirección de ${ BRAND_NAME } para utilizar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Get my ${ BRAND_NAME } address": [
-        "Obtener mi dirección ${ BRAND_NAME }"
       ],
       "here": [
         "aquí"
@@ -3164,6 +3172,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
+      ],
+      "Resend verification email": [
+        "Reenviar el correo electrónico de verificación"
       ],
       "Restore": [
         "Restaurar"
@@ -3847,6 +3858,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectarse a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar correo electrónico"
+      ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
@@ -3885,6 +3899,9 @@
       ],
       "Current display name": [
         "Nombre para mostrar actual"
+      ],
+      "Current email": [
+        "Correo electrónico actual"
       ],
       "Customize invoices": [
         "Personalizar las facturas"
@@ -3978,6 +3995,9 @@
       ],
       "New display name": [
         "Nuevo nombre para mostrar"
+      ],
+      "New email": [
+        "Nuevo correo electrónico"
       ],
       "New login password": [
         "Nueva contraseña de inicio de sesión"
@@ -5397,9 +5417,6 @@
       "Email address not yet verified.": [
         "No has aún verificado la dirección de correo electrónico."
       ],
-      "Verification email sent to ${ email.Value }": [
-        "Correo electrónico de verificación enviado a ${ email.Value }"
-      ],
       "Verify now": [
         "Verificar ahora"
       ],
@@ -5965,6 +5982,9 @@
       "Email address copied to clipboard": [
         "Dirección de correo electrónico copiada al portapapeles"
       ],
+      "Email address updated": [
+        "Correo electrónico actualizado"
+      ],
       "Email updated": [
         "Correo electrónico actualizado"
       ],
@@ -6422,6 +6442,9 @@
       "Edit display name": [
         "Editar nombre para mostrar"
       ],
+      "Edit email address": [
+        "Editar dirección de correo electrónico"
+      ],
       "Edit Gateway ${ currentName }": [
         "Editar la puerta de enlace ${ currentName }"
       ],
@@ -6812,6 +6835,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
+      ],
+      "Verified email address": [
+        "Correo electrónico verificado"
       ]
     },
     "tooltip": {
