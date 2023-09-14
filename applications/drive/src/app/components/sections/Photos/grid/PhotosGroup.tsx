@@ -15,6 +15,7 @@ export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelec
     return (
         <div
             style={style}
+            data-testid="month-text"
             className="text-semibold text-no-wrap text-capitalize py-3 flex flex-align-items-center flex-nowrap"
         >
             <Checkbox
