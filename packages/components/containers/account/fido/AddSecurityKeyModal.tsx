@@ -14,7 +14,9 @@ import { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
 import {
+    Checkbox,
     Form,
+    Info,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -56,12 +58,13 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const [name, setName] = useState('');
     const [fidoError, setFidoError] = useState(false);
     const registrationPayloadRef = useRef<RegisterCredentialsPayload>();
+    const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
 
     const getRegistrationPayload = () => {
         const run = async () => {
             let response: RegisterCredentials;
             try {
-                response = await silentApi<RegisterCredentials>(getSecurityKeyChallenge());
+                response = await silentApi<RegisterCredentials>(getSecurityKeyChallenge(!allowPlatformKeys));
             } catch (e) {
                 errorHandler(e);
                 return;
@@ -159,7 +162,27 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 })()}
             />
             <ModalContent>
-                {step === Steps.Tutorial && <RegisterSecurityKeyContent error={fidoError} />}
+                {step === Steps.Tutorial && (
+                    <RegisterSecurityKeyContent
+                        error={fidoError}
+                        checkbox={
+                            <>
+                                <Checkbox
+                                    id="allow-platform-keys"
+                                    checked={allowPlatformKeys}
+                                    onChange={(e) => setAllowPlatformKeys(e.target.checked)}
+                                >
+                                    {c('fido2: Info').t`Allow platform keys`}
+                                </Checkbox>
+                                <Info
+                                    className="ml-1"
+                                    title={c('fido2: Info')
+                                        .t`If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys`}
+                                />
+                            </>
+                        }
+                    />
+                )}
                 {step === Steps.Name && (
                     <>
                         <InputFieldTwo
