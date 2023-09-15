@@ -307,7 +307,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                             }
                         </div>
                         <InputFieldTwo
-                            id="password"
+                            id="newPassword"
                             label={c('Label').t`New password`}
                             error={validator([requiredValidator(newPassword), passwordLengthValidator(newPassword)])}
                             as={PasswordInputTwo}
