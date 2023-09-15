@@ -47,6 +47,7 @@ describe('upload worker buffer', () => {
         buffer.encryptionFinished = true;
         buffer.uploadingFinished = true;
         buffer.encryptedBlocks.clear();
+        buffer.thumbnailsEncryptedBlocks.clear();
         // To stop wait in generateUploadingBlocks.
         buffer.uploadingBlocks = [createUploadingBlock(1)];
     });
