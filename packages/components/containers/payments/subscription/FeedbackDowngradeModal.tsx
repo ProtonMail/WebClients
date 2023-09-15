@@ -3,6 +3,7 @@ import { Fragment, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
 import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -52,12 +53,29 @@ export interface FeedbackDowngradeData {
     Context?: 'vpn' | 'mail';
 }
 
-interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onSubmit: (model: FeedbackDowngradeData) => void;
-    user: UserModel;
+export type KeepSubscription = {
+    status: 'kept';
+};
+
+export function isKeepSubscription(data: FeedbackDowngradeResult): data is KeepSubscription {
+    return (data as KeepSubscription)?.status === 'kept';
 }
 
-const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => {
+export type FeedbackDowngradeResult = FeedbackDowngradeData | KeepSubscription;
+
+export type FeedbackDowngradeModalProps = Omit<ModalProps, 'onSubmit'> & {
+    user: UserModel;
+};
+
+type PromiseHandlers = ModalTwoPromiseHandlers<FeedbackDowngradeResult>;
+
+const FeedbackDowngradeModal = ({
+    onResolve,
+    onClose,
+    user,
+    onReject,
+    ...rest
+}: FeedbackDowngradeModalProps & PromiseHandlers) => {
     const { APP_NAME } = useConfig();
 
     const { isPaid } = user;
@@ -194,12 +212,22 @@ const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => 
 
         const shouldSendReasonDetails = reasonDetails.some(({ forReason }) => model.Reason === forReason);
 
-        onSubmit({ ...model, ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '' });
+        const data: FeedbackDowngradeData = {
+            ...model,
+            ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '',
+        };
+
+        onResolve(data);
+        onClose?.();
+    };
+
+    const handleKeepSubscription = () => {
+        onResolve({ status: 'kept' });
         onClose?.();
     };
 
     return (
-        <Modal as={Form} onClose={onClose} onSubmit={handleSubmit} {...rest}>
+        <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} {...rest}>
             <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve!`} />
             <ModalContent>
                 <InputFieldTwo
@@ -235,8 +263,8 @@ const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => 
                 />
             </ModalContent>
             <ModalFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <Button type="submit" color="norm">
+                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>{c('Action').t`Cancel`}</Button>
+                <Button data-testid="submitFeedback" type="submit" color="norm">
                     {c('Action').t`Submit`}
                 </Button>
             </ModalFooter>
