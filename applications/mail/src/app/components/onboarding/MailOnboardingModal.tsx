@@ -14,6 +14,7 @@ import {
     OnboardingStep,
     OnboardingStepRenderCallback,
     useActiveBreakpoint,
+    useFlag,
 } from '@proton/components';
 import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';
 import SignInWithGoogle from '@proton/components/containers/gmailSyncModal/SignInWithGoogle';
@@ -36,6 +37,8 @@ interface Props {
 const MailOnboardingModal = (props: Props) => {
     const { markItemsAsDone } = useGetStartedChecklist();
     const { isNarrow } = useActiveBreakpoint();
+
+    const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     const dispatch = useEasySwitchDispatch();
     const syncState = useEasySwitchSelector(selectCreateSyncState);
@@ -154,8 +157,9 @@ const MailOnboardingModal = (props: Props) => {
         ),
     ];
 
-    const extraSteps = [
-        ({ onNext }: OnboardingStepRenderCallback) => (
+    const extraSteps = [];
+    if (!isImporterInMaintenance) {
+        extraSteps.push(({ onNext }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent
                     title={c('Onboarding modal').t`Automatically forward emails`}
@@ -182,8 +186,8 @@ const MailOnboardingModal = (props: Props) => {
                     </Button>
                 </footer>
             </OnboardingStep>
-        ),
-    ];
+        ));
+    }
 
     return (
         <OnboardingModal
