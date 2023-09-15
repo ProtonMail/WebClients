@@ -3,6 +3,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
+import { isExpired } from '../expiration';
 
 /**
  * Remove wildcard, normalise keyword and recipients
@@ -50,6 +51,7 @@ export const testMetadata = (
     if (
         !LabelIDs.includes(labelID) ||
         (address && AddressID !== address) ||
+        isExpired(messageToSearch) ||
         (begin && Time < begin) ||
         (end && Time > end) ||
         (from && !sender.some((string) => string.includes(from))) ||
