@@ -1,22 +1,36 @@
-import { pixelParser } from '@proton/pass/utils/dom';
+import { useEffect } from 'react';
 
-/* Adjusts the size of the popup element to account for inconsistent izing behavior
+import { pixelParser } from '@proton/pass/utils/dom';
+import noop from '@proton/utils/noop';
+
+import { isVivaldiBrowser } from '../../shared/extension/vivaldi';
+
+/* Adjusts the size of the popup element to account for inconsistent sizing behavior
  * when the user changes the default page zoom in their browser settings. */
 export const usePopupSizeSurgery = () => {
-    if (BUILD_TARGET === 'chrome') {
-        const rootStyles = getComputedStyle(document.documentElement);
-        const popupWidth = pixelParser(rootStyles.getPropertyValue('--popup-width'));
+    useEffect(() => {
+        if (BUILD_TARGET === 'chrome') {
+            const rootStyles = getComputedStyle(document.documentElement);
+            const popupWidth = pixelParser(rootStyles.getPropertyValue('--popup-width'));
 
-        const onResize = () => {
-            const { clientWidth, clientHeight } = document.documentElement;
-            if (clientWidth !== popupWidth) {
-                document.documentElement.style.setProperty('--popup-width', `${clientWidth}px`);
-                document.documentElement.style.setProperty('--popup-height', `${clientHeight}px`);
-            }
-        };
+            const onResize = () => {
+                const { clientWidth, clientHeight } = document.documentElement;
+                if (clientWidth !== popupWidth) {
+                    document.documentElement.style.setProperty('--popup-width', `${clientWidth}px`);
+                    document.documentElement.style.setProperty('--popup-height', `${clientHeight}px`);
+                }
+            };
 
-        onResize();
-        window.addEventListener('resize', onResize);
-        return () => window.removeEventListener('resize', onResize);
-    }
+            isVivaldiBrowser()
+                .then((isVivaldi) => {
+                    if (!isVivaldi) {
+                        onResize();
+                        window.addEventListener('resize', onResize);
+                    }
+                })
+                .catch(noop);
+
+            return () => window.removeEventListener('resize', onResize);
+        }
+    }, []);
 };
