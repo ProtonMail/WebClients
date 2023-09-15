@@ -29,7 +29,11 @@ import {
     VerifiedEpoch,
 } from '../../interfaces';
 import { checkKeysInSKL, verifySKLSignature } from '../verifyKeys';
-import { verifyProofOfAbsenceForRevision } from '../verifyProofs';
+import {
+    verifyProofOfAbsenceForAllRevision,
+    verifyProofOfAbsenceForRevision,
+    verifyProofOfObsolescence,
+} from '../verifyProofs';
 import { SKLAuditResult, SKLAuditStatus, auditSKL } from './sklAudit';
 
 const millisecondsToSeconds = (milliseconds: number) => Math.floor(milliseconds / 1000);
@@ -165,6 +169,49 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
     return throwKTError('Input SKL signature was not verified', { email: Email, inputSKL: SignedKeyList });
 };
 
+/**
+ * An admin can create an address with no keys that cannot be audited
+ * we verify the absence or obsolescence proof, and will warn the user in
+ * in the UI.
+ */
+const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, saveSKLToLS: SaveSKLToLS) => {
+    const inputSKL = address.SignedKeyList;
+    const revisionToCheck = inputSKL?.Revision ?? 1;
+    const proof = await fetchProof(epoch.EpochID, address.Email, revisionToCheck, api);
+    if (!inputSKL) {
+        await verifyProofOfAbsenceForAllRevision(proof, address.Email, epoch.TreeHash);
+        return;
+    }
+    if (!inputSKL.ObsolescenceToken) {
+        return throwKTError('Expected an obsolescence token for an address without keys', {
+            inputSKL,
+        });
+    }
+    // If MinEpochID is not set, the SKL is not yet included in KT.
+    if (!inputSKL.MinEpochID) {
+        if (!inputSKL.Revision || !inputSKL.ExpectedMinEpochID) {
+            return throwKTError('Expected an ExpectedMinEpochID and Revision', {
+                inputSKL,
+            });
+        }
+        await saveSKLToLS(
+            address.Email,
+            inputSKL.ObsolescenceToken!,
+            inputSKL.Revision!,
+            inputSKL.ExpectedMinEpochID!,
+            address.ID,
+            false
+        );
+        return;
+    }
+    // Check that proof is a valid obsolescence proof.
+    await verifyProofOfObsolescence(proof, address.Email, epoch.TreeHash, inputSKL);
+
+    // The proof of the next revision must be an absence proof.
+    const absenceProof = await fetchProof(epoch.EpochID, address.Email, revisionToCheck + 1, api);
+    await verifyProofOfAbsenceForRevision(absenceProof, address.Email, epoch.TreeHash, revisionToCheck + 1);
+};
+
 const auditAddressImplementation = async (
     address: Address,
     userKeys: DecryptedKey[],
@@ -176,6 +223,16 @@ const auditAddressImplementation = async (
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
+    if (address.Keys.length === 0) {
+        await checkAddressWithNoKeys(epoch, address, api, saveSKLToLS);
+        return {
+            email,
+            status: AddressAuditStatus.Warning,
+            warningDetails: {
+                reason: AddressAuditWarningReason.AddressWithNoKeys,
+            },
+        };
+    }
     if (inputSKL === null) {
         await uploadMissingSKL(address, epoch, saveSKLToLS);
         return {
