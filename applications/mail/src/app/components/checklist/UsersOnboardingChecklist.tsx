@@ -12,7 +12,7 @@ import {
     CheckListProtectInbox,
     useModalState,
 } from '@proton/components/components';
-import { GmailSyncModal } from '@proton/components/containers';
+import { FeatureFlag, GmailSyncModal, useFlag } from '@proton/components/containers';
 import { useActiveBreakpoint, useLocalState, useMailSettings, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -43,6 +43,8 @@ const UsersOnboardingChecklist = ({
     const [mailSettings] = useMailSettings();
     const { isNarrow } = useActiveBreakpoint();
     const [user] = useUser();
+
+    const isImporterInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
 
     const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
 
@@ -115,6 +117,7 @@ const UsersOnboardingChecklist = ({
                         </li>
                         <li>
                             <CheckListGmailForward
+                                isInMaintenance={isImporterInMaintenance}
                                 smallVariant={smallVariant}
                                 onClick={() => setGmailForwardOpen(true)}
                                 done={items.has(ChecklistKey.Import)}

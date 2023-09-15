@@ -16,6 +16,7 @@ import {
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     FamilyPlanSection,
+    FeatureFlag,
     GiftCodeSection,
     InvoicesSection,
     LanguageAndTimeSection,
@@ -29,6 +30,7 @@ import {
     PrivateMainSettingsArea,
     SentinelSection,
     SessionsSection,
+    SettingsMaintenanceLayoutWrapper,
     SettingsPageTitle,
     SettingsSectionWide,
     SubscriptionModalProvider,
@@ -152,7 +154,9 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, easySwitch)}>
-                <EasySwitchSettingsArea config={easySwitch} />
+                <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
+                    <EasySwitchSettingsArea config={easySwitch} />
+                </SettingsMaintenanceLayoutWrapper>
             </Route>
             {redirect}
         </Switch>
