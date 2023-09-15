@@ -73,6 +73,12 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                             .t`${appName} could not verify some changes made to this address' keys in the past. This might be due to a recent key deletion or a password reset.`}</span>
                     );
                 }
+            case AddressAuditWarningReason.AddressWithNoKeys: {
+                return (
+                    <span>{c('loc_nightly: Key transparency details')
+                        .t`${appName} detected that this address has no encryption keys. Please re-login to generate keys for this address.`}</span>
+                );
+            }
         }
     };
 
