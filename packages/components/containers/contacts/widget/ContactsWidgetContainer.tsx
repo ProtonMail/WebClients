@@ -3,12 +3,14 @@ import { RefObject, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { SearchInput } from '@proton/components';
+import { SearchInput, useMailSettings } from '@proton/components';
 import { useApi, useNotifications, useUser, useUserKeys } from '@proton/components/hooks';
+import { MAX_RECIPIENTS } from '@proton/shared/lib/contacts/constants';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ContactEditProps } from '../edit/ContactEditModal';
@@ -63,6 +65,7 @@ const ContactsWidgetContainer = ({
     isDrawer = false,
     searchInputRef,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [user, loadingUser] = useUser();
     const [userKeys] = useUserKeys();
     const { createNotification } = useNotifications();
@@ -103,10 +106,16 @@ const ContactsWidgetContainer = ({
     };
 
     const handleCompose = () => {
-        if (selectedIDs.length > 100) {
+        const maxContacts = mailSettings?.RecipientLimit || MAX_RECIPIENTS;
+
+        if (selectedIDs.length > maxContacts) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send a mail to more than 100 recipients`,
+                text: c('Error').ngettext(
+                    msgid`You can't send a mail to more than ${maxContacts} recipient`,
+                    `You can't send a mail to more than ${maxContacts} recipients`,
+                    maxContacts
+                ),
             });
             return;
         }
@@ -144,10 +153,16 @@ const ContactsWidgetContainer = ({
     };
 
     const handleForward = async () => {
-        if (selectedIDs.length > 100) {
+        // We cannot attach more than 100 files to a message
+        const maxAttachments = ATTACHMENT_MAX_COUNT;
+        if (selectedIDs.length > maxAttachments) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send vCard files of more than 10 contacts`,
+                text: c('Action').ngettext(
+                    msgid`You can't send vCard files of more than ${maxAttachments} contacts`,
+                    `You can't send vCard files of more than ${maxAttachments} contacts`,
+                    maxAttachments
+                ),
             });
             return;
         }
