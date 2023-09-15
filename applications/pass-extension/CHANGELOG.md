@@ -1,3 +1,9 @@
+## Version 1.6.1
+
+-   Fix browser alarm creation in request tracker
+-   Clean-up alarms on extension update
+-   Improve vivaldi browser support (fix badge & sizing issues)
+
 ## Version 1.6.0
 
 -   Factorize content-script feature resolution

@@ -66,6 +66,14 @@ export const createActivationService = () => {
         }
     };
 
+    /* throttle update checks for updates every hour */
+    const setupUpdateAlarm = async () => {
+        try {
+            const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
+            if (!alarmRegistered) browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
+        } catch {}
+    };
+
     /* Try recovering the session when browser starts up
      * if any session was locally persisted
      * if not in production - use sync.html session to workaround the
@@ -86,6 +94,9 @@ export const createActivationService = () => {
      * - Re-inject content-scripts to avoid stale extension contexts
      *   only on Chrome as Firefox handles content-script re-injection */
     const handleInstall = withContext(async (ctx, details: Runtime.OnInstalledDetailsType) => {
+        await browser.alarms.clearAll();
+        void setupUpdateAlarm();
+
         if (details.reason === 'update') {
             if (ENV === 'production') {
                 /* in production clear the cache on each extension
@@ -223,11 +234,9 @@ export const createActivationService = () => {
         };
     });
 
-    /* throttle update checks for updates every hour */
-    browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
-    browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
+    browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleWorkerInit);
