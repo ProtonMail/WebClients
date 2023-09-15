@@ -1,4 +1,5 @@
 import { addMinutes, differenceInMinutes, getUnixTime, isToday } from 'date-fns';
+import { serverTime } from 'pmcrypto';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
@@ -31,6 +32,11 @@ export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, mes
 
 export const getExpirationTime = (date?: Date) => {
     return date ? getUnixTime(date) : null;
+};
+
+export const isExpired = <T extends { ExpirationTime?: number }>(element: T, timestamp?: number) => {
+    const { ExpirationTime } = element;
+    return Boolean(ExpirationTime && ExpirationTime < (timestamp ?? getUnixTime(+serverTime())));
 };
 
 // Return the correct min interval to display in the time input for expiration (self-destruct)

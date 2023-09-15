@@ -1,20 +1,19 @@
-import { fromUnixTime, isAfter } from 'date-fns';
+import { serverTime } from 'pmcrypto';
 
 import { useInterval } from '@proton/components';
+
+import { isExpired } from 'proton-mail/helpers/expiration';
 
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 import { Element } from '../models/element';
 
 export const useExpirationCheck = (elements: Element[], expiredCallback: (element: Element) => void) => {
     useInterval(EXPIRATION_CHECK_FREQUENCY, () => {
-        const nowDate = new Date();
+        const nowTimestamp = +serverTime();
+
         elements.forEach((element) => {
-            const { ExpirationTime } = element;
-            if (ExpirationTime) {
-                const expirationDate = fromUnixTime(ExpirationTime);
-                if (isAfter(nowDate, expirationDate)) {
-                    expiredCallback(element);
-                }
+            if (isExpired(element, nowTimestamp)) {
+                expiredCallback(element);
             }
         });
     });
