@@ -20,7 +20,11 @@ const SubscriptionEndsBanner = () => {
         return null;
     }
 
-    const byDate = <Time format="PP">{subscription.PeriodEnd}</Time>;
+    const byDate = (
+        <Time format="PP" key="subscription-end">
+            {subscription.PeriodEnd}
+        </Time>
+    );
 
     const reactivateLink = (
         <SettingsLink
