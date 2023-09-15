@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { AddressesAutocompleteTwo, Alert, Details, Summary } from '@proton/components';
+import { AddressesAutocompleteTwo, Alert, Details, Summary, useMailSettings } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
@@ -49,6 +49,7 @@ const ParticipantsInput = ({
     setParticipantError,
     collapsible = true,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
     const numberOfAttendees = value.length;
 
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
@@ -64,7 +65,11 @@ const ParticipantsInput = ({
 
     const recipientsSet = new Set(recipients.map(({ Address }) => canonicalizeEmail(Address)));
 
-    const error = getParticipantsError({ isOwnedCalendar, numberOfAttendees });
+    const error = getParticipantsError({
+        isOwnedCalendar,
+        numberOfAttendees,
+        maxAttendees: mailSettings?.RecipientLimit,
+    });
 
     const handleAddRecipients = (recipients: Recipient[]) => {
         setParticipantError?.(false);
