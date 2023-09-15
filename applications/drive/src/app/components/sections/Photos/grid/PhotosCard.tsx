@@ -23,21 +23,21 @@ type Props = {
     onRender: (linkId: string) => void;
     style: CSSProperties;
     shareId: string;
+    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
+    showPortalPreview: ReturnType<typeof usePortalPreview>[1];
 };
 
 const getAltText = ({ mimeType, name }: PhotoLink) =>
     `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
-    const [portalPreview, showPortalPreview] = usePortalPreview();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
+export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPortalPreview, showDetailsModal }) => {
     const [imageReady, setImageReady] = useState(false);
     useEffect(() => {
         onRender(photo.linkId);
     }, [photo.linkId]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
-    const isThumbnailLoading = thumbUrl === undefined || (thumbUrl && !imageReady);
+    const isThumbnailLoading = thumbUrl === undefined || (!!thumbUrl && !imageReady);
     const isActive = photo.activeRevision.id && photo.activeRevision.photo.linkId;
 
     useEffect(() => {
@@ -50,65 +50,58 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo }) => {
         }
     }, [thumbUrl]);
 
+    /*// TODO: Keyboard navigation*/
     return (
-        <>
-            {portalPreview}
-            {detailsModal}
-            {/*// TODO: Keyboard navigation*/}
-            <ButtonLike
-                as="div"
-                style={style}
-                className={clsx(
-                    'photos-card p-0 border-none rounded-none',
-                    isThumbnailLoading && 'photos-card--loading'
-                )}
-                onClick={() =>
-                    photo.activeRevision?.id &&
-                    photo.activeRevision?.photo?.linkId &&
-                    showPortalPreview({
-                        shareId,
-                        linkId: photo.activeRevision?.photo?.linkId,
-                        revisionId: photo.activeRevision?.id,
-                        date: photo.activeRevision.photo?.captureTime,
-                        onDetails: () =>
-                            photo.activeRevision?.photo?.linkId &&
-                            showDetailsModal({
-                                shareId,
-                                linkId: photo.activeRevision?.photo?.linkId,
-                            }),
-                    })
-                }
-            >
-                {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
-                    <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
-                        <FileIcon mimeType={photo.mimeType || ''} size={48} />
-                    </div>
-                )}
-                {!isThumbnailLoading && thumbUrl && isActive ? (
-                    <div className="w100 h100 relative">
-                        <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
-                        {photo.mimeType && isVideo(photo.mimeType) && (
-                            <div className="w100 absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
-                                {photo.duration && (
-                                    <time
-                                        className="color-invert text-semibold mr-0.5"
-                                        dateTime={formatDuration(
-                                            { seconds: Math.floor(photo.duration) },
-                                            {
-                                                locale: dateLocale,
-                                            }
-                                        )}
-                                    >
-                                        {formatVideoDuration(photo.duration)}
-                                    </time>
-                                )}
-                                <img src={playCircleFilledIcon} alt="" />
-                            </div>
-                        )}
-                    </div>
-                ) : null}
-            </ButtonLike>
-        </>
+        <ButtonLike
+            as="div"
+            style={style}
+            disabled={isThumbnailLoading}
+            className={clsx('photos-card p-0 border-none rounded-none', isThumbnailLoading && 'photos-card--loading')}
+            onClick={() =>
+                photo.activeRevision?.id &&
+                photo.activeRevision?.photo?.linkId &&
+                showPortalPreview({
+                    shareId,
+                    linkId: photo.activeRevision?.photo?.linkId,
+                    revisionId: photo.activeRevision?.id,
+                    date: photo.activeRevision.photo?.captureTime,
+                    onDetails: () =>
+                        photo.activeRevision?.photo?.linkId &&
+                        showDetailsModal({
+                            shareId,
+                            linkId: photo.activeRevision?.photo?.linkId,
+                        }),
+                })
+            }
+        >
+            {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
+                <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
+                    <FileIcon mimeType={photo.mimeType || ''} size={48} />
+                </div>
+            )}
+            {!isThumbnailLoading && thumbUrl && isActive ? (
+                <div className="w100 h100 relative">
+                    <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
+                    {photo.mimeType && isVideo(photo.mimeType) && (
+                        <div className="w100 absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
+                            {photo.duration && (
+                                <time
+                                    className="color-invert text-semibold mr-0.5"
+                                    dateTime={formatDuration(
+                                        { seconds: Math.floor(photo.duration) },
+                                        {
+                                            locale: dateLocale,
+                                        }
+                                    )}
+                                >
+                                    {formatVideoDuration(photo.duration)}
+                                </time>
+                            )}
+                            <img src={playCircleFilledIcon} alt="" />
+                        </div>
+                    )}
+                </div>
+            ) : null}
+        </ButtonLike>
     );
 };
-PhotosCard.displayName = 'PhotosCard';
