@@ -265,7 +265,7 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
         : undefined;
 
     const introductionText = c('loc_nightly: Key transparency details')
-        .t`${BRAND_NAME} automatically verifies you and your contacts’ encryption keys to ensure their authenticity. This prevents you from emailing someone you didn’t intend to.`;
+        .t`${BRAND_NAME} automatically verifies your and your contacts’ encryption keys to ensure their authenticity. This prevents you from emailing someone you didn’t intend to.`;
 
     return (
         <ModalTwo size="medium" data-testid="key-transparency-details:modal" {...props}>
