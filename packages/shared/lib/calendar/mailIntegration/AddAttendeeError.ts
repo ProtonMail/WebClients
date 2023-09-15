@@ -6,12 +6,12 @@ export enum ADD_EVENT_ERROR_TYPE {
     TOO_MANY_PARTICIPANTS,
 }
 
-const getErrorMessage = (errorType: ADD_EVENT_ERROR_TYPE) => {
+const getErrorMessage = (errorType: ADD_EVENT_ERROR_TYPE, maxAttendees = MAX_ATTENDEES) => {
     if (errorType === ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS) {
         return c('Error adding participants to a calendar event').ngettext(
-            msgid`At most ${MAX_ATTENDEES} participant is allowed per invitation`,
-            `At most ${MAX_ATTENDEES} participants are allowed per invitation`,
-            MAX_ATTENDEES
+            msgid`At most ${maxAttendees} participant is allowed per invitation`,
+            `At most ${maxAttendees} participants are allowed per invitation`,
+            maxAttendees
         );
     }
     return '';
@@ -22,8 +22,8 @@ export class AddAttendeeError extends Error {
 
     externalError?: Error;
 
-    constructor(errorType: ADD_EVENT_ERROR_TYPE, externalError?: Error) {
-        super(getErrorMessage(errorType));
+    constructor(errorType: ADD_EVENT_ERROR_TYPE, externalError?: Error, maxAttendees?: number) {
+        super(getErrorMessage(errorType, maxAttendees));
         this.type = errorType;
         this.externalError = externalError;
         Object.setPrototypeOf(this, AddAttendeeError.prototype);

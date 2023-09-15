@@ -525,9 +525,6 @@ export const getSupportedEvent = ({
             }
 
             if (attendee) {
-                if (attendee.length > 100) {
-                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
-                }
                 const attendeeEmails = attendee.map((att) => getAttendeeEmail(att));
                 if (unique(attendeeEmails).length !== attendeeEmails.length) {
                     // Do not accept invitations with repeated emails as they will cause problems.

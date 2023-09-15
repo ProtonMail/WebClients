@@ -5,9 +5,11 @@ import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 export const getParticipantsError = ({
     isOwnedCalendar,
     numberOfAttendees,
+    maxAttendees = MAX_ATTENDEES,
 }: {
     isOwnedCalendar: boolean;
     numberOfAttendees: number;
+    maxAttendees?: number;
 }) => {
     if (!isOwnedCalendar) {
         if (numberOfAttendees > 0) {
@@ -16,11 +18,11 @@ export const getParticipantsError = ({
         }
         return;
     }
-    if (numberOfAttendees > MAX_ATTENDEES) {
+    if (numberOfAttendees > maxAttendees) {
         return c('Information about why calendar event cannot be saved').ngettext(
-            msgid`At most ${MAX_ATTENDEES} participant is allowed per invitation`,
-            `At most ${MAX_ATTENDEES} participants are allowed per invitation`,
-            MAX_ATTENDEES
+            msgid`At most ${maxAttendees} participant is allowed per invitation`,
+            `At most ${maxAttendees} participants are allowed per invitation`,
+            maxAttendees
         );
     }
 };
