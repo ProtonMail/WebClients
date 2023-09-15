@@ -4,11 +4,12 @@ import { useApi, useAuthentication, useHandler, useNotifications } from '@proton
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { ATTACHMENT_MAX_COUNT, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import {
     ATTACHMENT_ACTION,
     UploadResult,
