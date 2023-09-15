@@ -4,6 +4,11 @@ import noop from '@proton/utils/noop';
 
 import useModalState from './useModalState';
 
+export interface ModalTwoPromiseHandlers<Value> {
+    onResolve: (value: Value) => void;
+    onReject: (reason?: any) => void;
+}
+
 export const useModalTwo = function <OwnProps, Value>(
     Modal: ComponentType<any>,
     usePromise = true
@@ -43,7 +48,9 @@ export const useModalTwo = function <OwnProps, Value>(
         props.onClose();
     };
 
-    const promiseHandlers = usePromise ? { onResolve: handleResolve, onReject: handleReject } : {};
+    const promiseHandlers: Partial<ModalTwoPromiseHandlers<Value>> = usePromise
+        ? { onResolve: handleResolve, onReject: handleReject }
+        : {};
 
     const modal = render ? <Modal {...props} {...ownProps} {...promiseHandlers} /> : null;
 

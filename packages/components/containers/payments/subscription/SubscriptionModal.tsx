@@ -65,7 +65,6 @@ import {
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
-import CancelSubscriptionModal from '../CancelSubscriptionModal';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
@@ -77,6 +76,7 @@ import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarnin
 import PlanSelection from './PlanSelection';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
+import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
@@ -170,6 +170,10 @@ const SubscriptionModal = ({
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
+        subscription,
+        user,
+    });
     const [plans = []] = usePlans();
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
@@ -235,16 +239,12 @@ const SubscriptionModal = ({
 
     const handleUnsubscribe = async () => {
         if (hasVPN(subscription)) {
-            if (subscription.Renew === Renew.Enabled) {
-                await new Promise<void>((resolve, reject) => {
-                    createModal(
-                        <CancelSubscriptionModal onClose={reject} onConfirm={resolve} subscription={subscription} />
-                    );
-                });
-
-                createNotification({ text: c('Success').t`You have successfully cancelled your subscription.` });
+            if (subscription.Renew === Renew.Disabled) {
+                onClose?.();
+                return;
             }
 
+            await cancelSubscription();
             onClose?.();
             return;
         }
@@ -555,411 +555,415 @@ const SubscriptionModal = ({
     };
 
     return (
-        <ModalTwo
-            className={clsx([
-                subscriptionModalClassName,
-                [
-                    SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                    SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                    SUBSCRIPTION_STEPS.CHECKOUT,
-                    SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
-                ].includes(model.step) && 'subscription-modal--fixed-height',
-                [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step) && 'subscription-modal--large-width',
-                [
-                    SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                    SUBSCRIPTION_STEPS.CHECKOUT,
-                    SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
-                ].includes(model.step) && 'subscription-modal--medium-width',
-            ])}
-            onSubmit={(e: FormEvent) => {
-                e.preventDefault();
+        <>
+            {cancelSubscriptionModals}
+            <ModalTwo
+                className={clsx([
+                    subscriptionModalClassName,
+                    [
+                        SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                        SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                        SUBSCRIPTION_STEPS.CHECKOUT,
+                        SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                    ].includes(model.step) && 'subscription-modal--fixed-height',
+                    [SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step) && 'subscription-modal--large-width',
+                    [
+                        SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                        SUBSCRIPTION_STEPS.CHECKOUT,
+                        SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
+                    ].includes(model.step) && 'subscription-modal--medium-width',
+                ])}
+                onSubmit={(e: FormEvent) => {
+                    e.preventDefault();
 
-                if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
-                    return;
-                }
+                    if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
+                        return;
+                    }
 
-                if (loadingCheck || loadingGift) {
-                    return;
-                }
-                if (!handleCardSubmit()) {
-                    creditCardTopRef.current?.scrollIntoView();
-                    return;
-                }
-                void withLoading(handleCheckout());
-            }}
-            onClose={onClose}
-            data-testid="plansModal"
-            {...rest}
-            as="form"
-            size="large"
-        >
-            <ModalTwoHeader title={TITLE[model.step]} />
-            <ModalTwoContent>
-                <div ref={topRef} />
-                {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
-                {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
-                    <PlanSelection
-                        loading={loadingCheck}
-                        plans={plans}
-                        plansMap={plansMap}
-                        vpnServers={vpnServers}
-                        currency={model.currency}
-                        cycle={model.cycle}
-                        planIDs={model.planIDs}
-                        mode="modal"
-                        subscription={subscription}
-                        onChangePlanIDs={(planIDs) =>
-                            withLoadingCheck(
-                                check({
-                                    ...model,
-                                    planIDs,
-                                    step:
-                                        !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]
-                                            ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-                                            : SUBSCRIPTION_STEPS.CUSTOMIZATION,
-                                })
-                            )
-                        }
-                        onChangeCycle={handleChangeCycle}
-                        onChangeCurrency={handleChangeCurrency}
-                        onChangeAudience={setAudience}
-                        audience={audience}
-                        selectedProductPlans={selectedProductPlans}
-                        onChangeSelectedProductPlans={setSelectedProductPlans}
-                        organization={organization}
-                        calendarSharingEnabled={calendarSharingEnabled}
-                    />
-                )}
-                {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
-                    <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <div className="max-w50e">
+                    if (loadingCheck || loadingGift) {
+                        return;
+                    }
+                    if (!handleCardSubmit()) {
+                        creditCardTopRef.current?.scrollIntoView();
+                        return;
+                    }
+                    void withLoading(handleCheckout());
+                }}
+                onClose={onClose}
+                data-testid="plansModal"
+                {...rest}
+                as="form"
+                size="large"
+            >
+                <ModalTwoHeader title={TITLE[model.step]} />
+                <ModalTwoContent>
+                    <div ref={topRef} />
+                    {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
+                    {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
+                        <PlanSelection
+                            loading={loadingCheck}
+                            plans={plans}
+                            plansMap={plansMap}
+                            vpnServers={vpnServers}
+                            currency={model.currency}
+                            cycle={model.cycle}
+                            planIDs={model.planIDs}
+                            mode="modal"
+                            subscription={subscription}
+                            onChangePlanIDs={(planIDs) =>
+                                withLoadingCheck(
+                                    check({
+                                        ...model,
+                                        planIDs,
+                                        step:
+                                            !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS]
+                                                ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+                                                : SUBSCRIPTION_STEPS.CUSTOMIZATION,
+                                    })
+                                )
+                            }
+                            onChangeCycle={handleChangeCycle}
+                            onChangeCurrency={handleChangeCurrency}
+                            onChangeAudience={setAudience}
+                            audience={audience}
+                            selectedProductPlans={selectedProductPlans}
+                            onChangeSelectedProductPlans={setSelectedProductPlans}
+                            organization={organization}
+                            calendarSharingEnabled={calendarSharingEnabled}
+                        />
+                    )}
+                    {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
+                        <div className="subscriptionCheckout-top-container">
+                            <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                                <div className="max-w50e">
+                                    <PlanCustomization
+                                        loading={loadingCheck}
+                                        currency={model.currency}
+                                        cycle={model.cycle}
+                                        plansMap={plansMap}
+                                        planIDs={model.planIDs}
+                                        organization={organization}
+                                        onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
+                                        currentSubscription={subscription}
+                                        className="pb-7 mb-8"
+                                    />
+                                </div>
+                            </div>
+                            <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                                <div
+                                    className="subscriptionCheckout-container sticky-top"
+                                    data-testid="subscription-checkout"
+                                >
+                                    <SubscriptionCheckout
+                                        submit={
+                                            <Button
+                                                color="norm"
+                                                loading={loading}
+                                                onClick={handleCustomizationSubmit}
+                                                fullWidth
+                                                data-testid="continue-to-review"
+                                            >
+                                                {c('new_plans: action').t`Continue to review`}
+                                            </Button>
+                                        }
+                                        checkResult={getOptimisticCheckResult({
+                                            cycle: model.cycle,
+                                            planIDs: model.planIDs,
+                                            plansMap,
+                                        })}
+                                        plansMap={plansMap}
+                                        vpnServers={vpnServers}
+                                        isOptimistic={true}
+                                        loading={loadingCheck}
+                                        currency={model.currency}
+                                        cycle={model.cycle}
+                                        planIDs={model.planIDs}
+                                        onChangeCurrency={handleChangeCurrency}
+                                        {...checkoutModifiers}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
+                        <div className="subscriptionCheckout-top-container">
+                            <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                                <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                                    {!disableCycleSelector && (
+                                        <>
+                                            <h2 className="text-2xl text-bold mb-4">{c('Label')
+                                                .t`Subscription options`}</h2>
+                                            <div className="mb-8">
+                                                <SubscriptionCycleSelector
+                                                    mode="buttons"
+                                                    plansMap={plansMap}
+                                                    planIDs={model.planIDs}
+                                                    cycle={model.cycle}
+                                                    currency={model.currency}
+                                                    onChangeCycle={handleChangeCycle}
+                                                    disabled={loadingCheck}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                    {/* avoid mounting/unmounting the component which re-triggers the hook */}
+                                    <div className={amountDue ? undefined : 'hidden'}>
+                                        <Payment
+                                            api={api}
+                                            type="subscription"
+                                            paypal={paypal}
+                                            paypalCredit={paypalCredit}
+                                            method={method}
+                                            amount={amountDue}
+                                            currency={checkResult?.Currency}
+                                            coupon={couponCode}
+                                            card={card}
+                                            onMethod={setMethod}
+                                            onCard={setCard}
+                                            cardErrors={cardErrors}
+                                            creditCardTopRef={creditCardTopRef}
+                                            onBitcoinTokenValidated={async (data) => {
+                                                setBitcoinValidated(true);
+                                                await handleSubscribe({
+                                                    ...data,
+                                                    Amount: amountDue,
+                                                    Currency: checkResult?.Currency as Currency,
+                                                });
+                                            }}
+                                            onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                        />
+                                    </div>
+                                    <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                        <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
+                                        <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
+                                        {checkResult?.Credit && creditsRemaining ? (
+                                            <div className="mb-4">{c('Info')
+                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                                        ) : null}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                                <div
+                                    className="subscriptionCheckout-container sticky-top"
+                                    data-testid="subscription-checkout"
+                                >
+                                    <SubscriptionCheckout
+                                        submit={
+                                            <SubscriptionSubmitButton
+                                                currency={model.currency}
+                                                onClose={onClose}
+                                                paypal={paypal}
+                                                step={model.step}
+                                                loading={loading || bitcoinLoading}
+                                                method={method}
+                                                checkResult={checkResult}
+                                                className="w100"
+                                                disabled={isFreeUserWithFreePlanSelected || !canPay}
+                                            />
+                                        }
+                                        plansMap={plansMap}
+                                        checkResult={checkResult}
+                                        vpnServers={vpnServers}
+                                        loading={loadingCheck}
+                                        currency={model.currency}
+                                        cycle={model.cycle}
+                                        planIDs={model.planIDs}
+                                        gift={
+                                            <>
+                                                {couponCode && (
+                                                    <div className="flex flex-align-items-center mb-1">
+                                                        <Icon name="gift" className="mr-2 mb-1" />
+                                                        <Tooltip title={couponDescription}>
+                                                            <code>{couponCode.toUpperCase()}</code>
+                                                        </Tooltip>
+                                                    </div>
+                                                )}
+                                                <PaymentGiftCode
+                                                    giftCodeRef={giftCodeRef}
+                                                    key={
+                                                        /* Reset the toggle state when a coupon code gets applied */
+                                                        couponCode
+                                                    }
+                                                    giftCode={model.gift}
+                                                    onApply={handleGift}
+                                                    loading={loadingGift}
+                                                />
+                                            </>
+                                        }
+                                        onChangeCurrency={handleChangeCurrency}
+                                        nextSubscriptionStart={subscription.PeriodEnd}
+                                        {...checkoutModifiers}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
+                        <div className="subscriptionCheckout-top-container">
+                            <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                                <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
                                 <PlanCustomization
-                                    loading={loadingCheck}
+                                    loading={blockAccountSizeSelector}
                                     currency={model.currency}
                                     cycle={model.cycle}
                                     plansMap={plansMap}
                                     planIDs={model.planIDs}
                                     organization={organization}
-                                    onChangePlanIDs={(planIDs) => setModel({ ...model, planIDs })}
+                                    onChangePlanIDs={debounce((planIDs) => {
+                                        const newModel = { ...model, planIDs };
+                                        setModel(newModel);
+                                        const checkPromise = check(newModel);
+                                        void withLoadingCheck(checkPromise);
+                                        void withBlockCycleSelector(checkPromise);
+                                    }, 300)}
+                                    forceHideDescriptions
+                                    showUsersTooltip={false}
                                     currentSubscription={subscription}
-                                    className="pb-7 mb-8"
+                                    className="mb-8"
                                 />
-                            </div>
-                        </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div
-                                className="subscriptionCheckout-container sticky-top"
-                                data-testid="subscription-checkout"
-                            >
-                                <SubscriptionCheckout
-                                    submit={
-                                        <Button
-                                            color="norm"
-                                            loading={loading}
-                                            onClick={handleCustomizationSubmit}
-                                            fullWidth
-                                            data-testid="continue-to-review"
-                                        >
-                                            {c('new_plans: action').t`Continue to review`}
-                                        </Button>
-                                    }
-                                    checkResult={getOptimisticCheckResult({
-                                        cycle: model.cycle,
-                                        planIDs: model.planIDs,
-                                        plansMap,
-                                    })}
-                                    plansMap={plansMap}
-                                    vpnServers={vpnServers}
-                                    isOptimistic={true}
-                                    loading={loadingCheck}
-                                    currency={model.currency}
-                                    cycle={model.cycle}
-                                    planIDs={model.planIDs}
-                                    onChangeCurrency={handleChangeCurrency}
-                                    {...checkoutModifiers}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
-                {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                    <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
-                                {!disableCycleSelector && (
-                                    <>
-                                        <h2 className="text-2xl text-bold mb-4">{c('Label')
-                                            .t`Subscription options`}</h2>
-                                        <div className="mb-8">
-                                            <SubscriptionCycleSelector
-                                                mode="buttons"
-                                                plansMap={plansMap}
-                                                planIDs={model.planIDs}
-                                                cycle={model.cycle}
-                                                currency={model.currency}
-                                                onChangeCycle={handleChangeCycle}
-                                                disabled={loadingCheck}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                                {/* avoid mounting/unmounting the component which re-triggers the hook */}
-                                <div className={amountDue ? undefined : 'hidden'}>
-                                    <Payment
-                                        api={api}
-                                        type="subscription"
-                                        paypal={paypal}
-                                        paypalCredit={paypalCredit}
-                                        method={method}
-                                        amount={amountDue}
-                                        currency={checkResult?.Currency}
-                                        coupon={couponCode}
-                                        card={card}
-                                        onMethod={setMethod}
-                                        onCard={setCard}
-                                        cardErrors={cardErrors}
-                                        creditCardTopRef={creditCardTopRef}
-                                        onBitcoinTokenValidated={async (data) => {
-                                            setBitcoinValidated(true);
-                                            await handleSubscribe({
-                                                ...data,
-                                                Amount: amountDue,
-                                                Currency: checkResult?.Currency as Currency,
-                                            });
-                                        }}
-                                        onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
-                                    />
-                                </div>
-                                <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                <div className="mx-auto max-w37e subscriptionCheckout-options">
+                                    {!disableCycleSelector && (
+                                        <>
+                                            <h2 className="text-2xl text-bold mb-6">{c('Label')
+                                                .t`Select your plan`}</h2>
+                                            <div className="mb-8">
+                                                <SubscriptionCycleSelector
+                                                    mode="buttons"
+                                                    plansMap={plansMap}
+                                                    planIDs={model.planIDs}
+                                                    cycle={model.cycle}
+                                                    currency={model.currency}
+                                                    onChangeCycle={handleChangeCycle}
+                                                    disabled={loadingCheck}
+                                                    faded={blockCycleSelector}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
                                     <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                                    {checkResult?.Credit && creditsRemaining ? (
-                                        <div className="mb-4">{c('Info')
-                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                    ) : null}
+                                    {/* avoid mounting/unmounting the component which re-triggers the hook */}
+                                    <div className={amountDue ? undefined : 'hidden'}>
+                                        <Payment
+                                            api={api}
+                                            type="subscription"
+                                            paypal={paypal}
+                                            paypalCredit={paypalCredit}
+                                            method={method}
+                                            amount={amountDue}
+                                            currency={checkResult?.Currency}
+                                            coupon={couponCode}
+                                            card={card}
+                                            onMethod={setMethod}
+                                            onCard={setCard}
+                                            cardErrors={cardErrors}
+                                            creditCardTopRef={creditCardTopRef}
+                                            onBitcoinTokenValidated={async (data) => {
+                                                setBitcoinValidated(true);
+                                                await handleSubscribe({
+                                                    ...data,
+                                                    Amount: amountDue,
+                                                    Currency: checkResult?.Currency as Currency,
+                                                });
+                                            }}
+                                            onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                            hideFirstLabel={true}
+                                        />
+                                    </div>
+                                    <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                        <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
+                                        {checkResult?.Credit && creditsRemaining ? (
+                                            <div className="mb-4">{c('Info')
+                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                                        ) : null}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div
-                                className="subscriptionCheckout-container sticky-top"
-                                data-testid="subscription-checkout"
-                            >
-                                <SubscriptionCheckout
-                                    submit={
-                                        <SubscriptionSubmitButton
-                                            currency={model.currency}
-                                            onClose={onClose}
-                                            paypal={paypal}
-                                            step={model.step}
-                                            loading={loading || bitcoinLoading}
-                                            method={method}
-                                            checkResult={checkResult}
-                                            className="w100"
-                                            disabled={isFreeUserWithFreePlanSelected || !canPay}
-                                        />
-                                    }
-                                    plansMap={plansMap}
-                                    checkResult={checkResult}
-                                    vpnServers={vpnServers}
-                                    loading={loadingCheck}
-                                    currency={model.currency}
-                                    cycle={model.cycle}
-                                    planIDs={model.planIDs}
-                                    gift={
-                                        <>
-                                            {couponCode && (
-                                                <div className="flex flex-align-items-center mb-1">
-                                                    <Icon name="gift" className="mr-2 mb-1" />
-                                                    <Tooltip title={couponDescription}>
-                                                        <code>{couponCode.toUpperCase()}</code>
-                                                    </Tooltip>
-                                                </div>
-                                            )}
-                                            <PaymentGiftCode
-                                                giftCodeRef={giftCodeRef}
-                                                key={
-                                                    /* Reset the toggle state when a coupon code gets applied */
-                                                    couponCode
-                                                }
-                                                giftCode={model.gift}
-                                                onApply={handleGift}
-                                                loading={loadingGift}
-                                            />
-                                        </>
-                                    }
-                                    onChangeCurrency={handleChangeCurrency}
-                                    nextSubscriptionStart={subscription.PeriodEnd}
-                                    {...checkoutModifiers}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
-                {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
-                    <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
-                            <PlanCustomization
-                                loading={blockAccountSizeSelector}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                plansMap={plansMap}
-                                planIDs={model.planIDs}
-                                organization={organization}
-                                onChangePlanIDs={debounce((planIDs) => {
-                                    const newModel = { ...model, planIDs };
-                                    setModel(newModel);
-                                    const checkPromise = check(newModel);
-                                    void withLoadingCheck(checkPromise);
-                                    void withBlockCycleSelector(checkPromise);
-                                }, 300)}
-                                forceHideDescriptions
-                                showUsersTooltip={false}
-                                currentSubscription={subscription}
-                                className="mb-8"
-                            />
-                            <div className="mx-auto max-w37e subscriptionCheckout-options">
-                                {!disableCycleSelector && (
-                                    <>
-                                        <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
-                                        <div className="mb-8">
-                                            <SubscriptionCycleSelector
-                                                mode="buttons"
-                                                plansMap={plansMap}
-                                                planIDs={model.planIDs}
-                                                cycle={model.cycle}
+                            <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                                <div
+                                    className="subscriptionCheckout-container sticky-top"
+                                    data-testid="subscription-checkout"
+                                >
+                                    <SubscriptionCheckout
+                                        submit={
+                                            <SubscriptionSubmitButton
                                                 currency={model.currency}
-                                                onChangeCycle={handleChangeCycle}
-                                                disabled={loadingCheck}
-                                                faded={blockCycleSelector}
+                                                onClose={onClose}
+                                                paypal={paypal}
+                                                step={model.step}
+                                                loading={loading || bitcoinLoading}
+                                                method={method}
+                                                checkResult={checkResult}
+                                                className="w100"
+                                                disabled={isFreeUserWithFreePlanSelected || !canPay}
                                             />
-                                        </div>
-                                    </>
-                                )}
-                                <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                                {/* avoid mounting/unmounting the component which re-triggers the hook */}
-                                <div className={amountDue ? undefined : 'hidden'}>
-                                    <Payment
-                                        api={api}
-                                        type="subscription"
-                                        paypal={paypal}
-                                        paypalCredit={paypalCredit}
-                                        method={method}
-                                        amount={amountDue}
-                                        currency={checkResult?.Currency}
-                                        coupon={couponCode}
-                                        card={card}
-                                        onMethod={setMethod}
-                                        onCard={setCard}
-                                        cardErrors={cardErrors}
-                                        creditCardTopRef={creditCardTopRef}
-                                        onBitcoinTokenValidated={async (data) => {
-                                            setBitcoinValidated(true);
-                                            await handleSubscribe({
-                                                ...data,
-                                                Amount: amountDue,
-                                                Currency: checkResult?.Currency as Currency,
-                                            });
-                                        }}
-                                        onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
-                                        hideFirstLabel={true}
+                                        }
+                                        plansMap={plansMap}
+                                        checkResult={checkResult}
+                                        vpnServers={vpnServers}
+                                        loading={loadingCheck}
+                                        currency={model.currency}
+                                        cycle={model.cycle}
+                                        planIDs={model.planIDs}
+                                        gift={
+                                            <>
+                                                {couponCode && (
+                                                    <div className="flex flex-align-items-center mb-1">
+                                                        <Icon name="gift" className="mr-2 mb-1" />
+                                                        <Tooltip title={couponDescription}>
+                                                            <code>{couponCode.toUpperCase()}</code>
+                                                        </Tooltip>
+                                                    </div>
+                                                )}
+                                                <PaymentGiftCode
+                                                    giftCodeRef={giftCodeRef}
+                                                    key={
+                                                        /* Reset the toggle state when a coupon code gets applied */
+                                                        couponCode
+                                                    }
+                                                    giftCode={model.gift}
+                                                    onApply={handleGift}
+                                                    loading={loadingGift}
+                                                />
+                                            </>
+                                        }
+                                        onChangeCurrency={handleChangeCurrency}
+                                        nextSubscriptionStart={subscription.PeriodEnd}
+                                        showDiscount={false}
+                                        enableDetailedAddons={true}
+                                        showPlanDescription={false}
+                                        {...checkoutModifiers}
                                     />
                                 </div>
-                                <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                                    {checkResult?.Credit && creditsRemaining ? (
-                                        <div className="mb-4">{c('Info')
-                                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                    ) : null}
-                                </div>
                             </div>
                         </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                            <div
-                                className="subscriptionCheckout-container sticky-top"
-                                data-testid="subscription-checkout"
-                            >
-                                <SubscriptionCheckout
-                                    submit={
-                                        <SubscriptionSubmitButton
-                                            currency={model.currency}
-                                            onClose={onClose}
-                                            paypal={paypal}
-                                            step={model.step}
-                                            loading={loading || bitcoinLoading}
-                                            method={method}
-                                            checkResult={checkResult}
-                                            className="w100"
-                                            disabled={isFreeUserWithFreePlanSelected || !canPay}
-                                        />
-                                    }
-                                    plansMap={plansMap}
-                                    checkResult={checkResult}
-                                    vpnServers={vpnServers}
-                                    loading={loadingCheck}
-                                    currency={model.currency}
-                                    cycle={model.cycle}
-                                    planIDs={model.planIDs}
-                                    gift={
-                                        <>
-                                            {couponCode && (
-                                                <div className="flex flex-align-items-center mb-1">
-                                                    <Icon name="gift" className="mr-2 mb-1" />
-                                                    <Tooltip title={couponDescription}>
-                                                        <code>{couponCode.toUpperCase()}</code>
-                                                    </Tooltip>
-                                                </div>
-                                            )}
-                                            <PaymentGiftCode
-                                                giftCodeRef={giftCodeRef}
-                                                key={
-                                                    /* Reset the toggle state when a coupon code gets applied */
-                                                    couponCode
-                                                }
-                                                giftCode={model.gift}
-                                                onApply={handleGift}
-                                                loading={loadingGift}
-                                            />
-                                        </>
-                                    }
-                                    onChangeCurrency={handleChangeCurrency}
-                                    nextSubscriptionStart={subscription.PeriodEnd}
-                                    showDiscount={false}
-                                    enableDetailedAddons={true}
-                                    showPlanDescription={false}
-                                    {...checkoutModifiers}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    )}
+                    {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
+                        <SubscriptionThanks showDownloads={!isVpnB2bPlan} loading={true} method={method} />
+                    )}
+                    {model.step === SUBSCRIPTION_STEPS.THANKS && (
+                        <SubscriptionThanks
+                            showDownloads={!isVpnB2bPlan}
+                            method={method}
+                            onClose={() => {
+                                onSuccess?.();
+                                onClose?.();
+                            }}
+                        />
+                    )}
+                </ModalTwoContent>
+                {(disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
+                backStep === undefined ? null : (
+                    <ModalTwoFooter>
+                        <Button
+                            onClick={() => {
+                                setModel({ ...model, step: backStep });
+                            }}
+                        >{c('Action').t`Back`}</Button>
+                    </ModalTwoFooter>
                 )}
-                {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
-                    <SubscriptionThanks showDownloads={!isVpnB2bPlan} loading={true} method={method} />
-                )}
-                {model.step === SUBSCRIPTION_STEPS.THANKS && (
-                    <SubscriptionThanks
-                        showDownloads={!isVpnB2bPlan}
-                        method={method}
-                        onClose={() => {
-                            onSuccess?.();
-                            onClose?.();
-                        }}
-                    />
-                )}
-            </ModalTwoContent>
-            {(disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
-            backStep === undefined ? null : (
-                <ModalTwoFooter>
-                    <Button
-                        onClick={() => {
-                            setModel({ ...model, step: backStep });
-                        }}
-                    >{c('Action').t`Back`}</Button>
-                </ModalTwoFooter>
-            )}
-        </ModalTwo>
+            </ModalTwo>
+        </>
     );
 };
 
