@@ -214,9 +214,14 @@ export const getLastCancelledSubscription = () => ({
     method: 'get',
 });
 
-export interface RenewalStateData {
-    RenewalState: Renew;
-}
+export type RenewalStateData =
+    | {
+          RenewalState: Renew.Enabled;
+      }
+    | {
+          RenewalState: Renew.Disabled;
+          CancellationFeedback: FeedbackDowngradeData;
+      };
 
 export const changeRenewState = (data: RenewalStateData) => ({
     url: 'payments/v4/subscription/renew',

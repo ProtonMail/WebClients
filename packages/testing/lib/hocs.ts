@@ -8,12 +8,11 @@ interface HOC<T> {
 
 const reduceHOCs = <T>(hocs: HOC<T>[]): HOC<T> => hocs.reduce((reduced, next) => (c) => next(reduced(c)));
 
+/**
+ * A helper function to apply multiple higher order components to a component.
+ * It's useful to mock context providers.
+ */
 export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) => {
-    /**
-     * That's a small helper that ensures that in the following code withFeatures() can use API inside it:
-     *
-     * applyHOCs(withApi(), withFeatures())(MyComponent);
-     */
     const reversedHocs = [...hocs].reverse();
     const reducedHoc = reduceHOCs(reversedHocs);
 
@@ -28,4 +27,10 @@ export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) 
 
 export const hookWrapper = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]): WrapperComponent<T> => {
     return reduceHOCs(hocs)(({ children }) => React.createElement('', { children }));
+};
+
+export const componentWrapper = <T extends JSX.IntrinsicAttributes>(
+    ...hocs: HOC<T>[]
+): React.JSXElementConstructor<{ children: React.ReactElement }> => {
+    return reduceHOCs(hocs)((props) => props.children as any) as any;
 };
