@@ -114,6 +114,14 @@ a:active {
 	text-decoration: none;
 }
 
+/** Links without href attributes */
+a:not([href]) {
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
+	pointer-events: none;
+}
+
 /**
  * Avoid overflow management on #proton-root.
  * Better to handle it in body because risk of wrong height calculation
