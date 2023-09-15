@@ -16,9 +16,5 @@ export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): P
 
 /* this function should gracefully fail if the tabId
  * does not exist or has been discarded when calling it*/
-export const setPopupIconBadge = async (tabId: number, count: number): Promise<void> => {
-    await Promise.all([
-        browser.action.setBadgeBackgroundColor({ tabId, color: '#fff' }).catch(noop),
-        browser.action.setBadgeText({ tabId, text: count === 0 ? '' : String(count) }).catch(noop),
-    ]);
-};
+export const setPopupIconBadge = (tabId: number, count: number): Promise<void> =>
+    browser.action.setBadgeText({ tabId, text: count === 0 ? '' : String(count) }).catch(noop);
