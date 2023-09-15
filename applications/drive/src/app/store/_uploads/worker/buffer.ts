@@ -40,6 +40,8 @@ export default class UploadWorkerBuffer {
 
     blockHashes: BlockHash[] = [];
 
+    thumbnailBlockHashes: BlockHash[] = [];
+
     requestingBlockLinks = false;
 
     encryptionFinished = false;
@@ -117,6 +119,7 @@ export default class UploadWorkerBuffer {
                 uploadLink: link.url,
                 uploadToken: link.token,
                 isTokenExpired: () => Date.now() - createTime > TOKEN_EXPIRATION_TIME,
+                isThumbnail: !!block.thumbnailType,
             });
             encryptedBlocks.delete(link.index);
         });
@@ -142,7 +145,7 @@ export default class UploadWorkerBuffer {
             await waitForCondition(() => this.encryptionFinished || this.uploadingBlocks.length > 0);
             const uploadingBlock = this.uploadingBlocks.shift();
             if (uploadingBlock) {
-                const { block, uploadLink, uploadToken, isTokenExpired } = uploadingBlock;
+                const { block, uploadLink, uploadToken, isTokenExpired, isThumbnail } = uploadingBlock;
                 blocksInProgress++;
                 yield {
                     ...block,
@@ -152,10 +155,17 @@ export default class UploadWorkerBuffer {
                     // eslint-disable-next-line @typescript-eslint/no-loop-func
                     finish: () => {
                         blocksInProgress--;
-                        this.blockHashes.push({
-                            index: block.index,
-                            hash: block.hash,
-                        });
+                        if (isThumbnail) {
+                            this.thumbnailBlockHashes.push({
+                                index: block.index,
+                                hash: block.hash,
+                            });
+                        } else {
+                            this.blockHashes.push({
+                                index: block.index,
+                                hash: block.hash,
+                            });
+                        }
                     },
                     // eslint-disable-next-line @typescript-eslint/no-loop-func
                     onTokenExpiration: () => {
@@ -176,8 +186,12 @@ export default class UploadWorkerBuffer {
     }
 
     get hash(): Uint8Array {
+        this.thumbnailBlockHashes.sort((a, b) => a.index - b.index);
         this.blockHashes.sort((a, b) => a.index - b.index);
-        const hashes = this.blockHashes.map(({ hash }) => hash);
+        const hashes = [
+            ...this.thumbnailBlockHashes.map(({ hash }) => hash),
+            ...this.blockHashes.map(({ hash }) => hash),
+        ];
         return mergeUint8Arrays(hashes);
     }
 }

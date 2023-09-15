@@ -10,6 +10,7 @@ export type UploadingBlock = {
     uploadLink: string;
     uploadToken: string;
     isTokenExpired: () => boolean;
+    isThumbnail?: boolean;
 };
 
 export type UploadingBlockControl = {
