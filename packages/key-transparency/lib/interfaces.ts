@@ -68,6 +68,7 @@ export enum AddressAuditStatus {
 
 export enum AddressAuditWarningReason {
     UnverifiableHistory,
+    AddressWithNoKeys,
 }
 
 export interface AddressAuditWarningDetails {
