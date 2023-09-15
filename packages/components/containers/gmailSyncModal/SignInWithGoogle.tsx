@@ -28,7 +28,7 @@ const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight 
             loading={loading}
             fullWidth={fullWidth}
             disabled={loading || disabled}
-            className="flex flex-align-items-center p-1 rounded h-custom google-button"
+            className="flex flex-align-items-center p-1 rounded google-button"
             style={{ '--h-custom': buttonHeight }}
         >
             <span
