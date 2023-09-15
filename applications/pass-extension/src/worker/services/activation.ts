@@ -20,6 +20,7 @@ import { workerCanBoot } from '@proton/pass/utils/worker';
 
 import { checkExtensionPermissions } from '../../shared/extension/permissions';
 import { isPopupPort } from '../../shared/extension/port';
+import { isVivaldiBrowser } from '../../shared/extension/vivaldi';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -150,6 +151,15 @@ export const createActivationService = () => {
         );
     };
 
+    /* Vivaldi browser does not support setting the extension badge text
+     * color and does not infer it correctly through background color.
+     * On vivaldi, fallback to the default badge theme */
+    const setupExtensionBadge = async () => {
+        if (!(await isVivaldiBrowser())) {
+            return browser.action.setBadgeBackgroundColor({ color: '#FFFFFF' });
+        }
+    };
+
     /* When waking up from the pop-up (or page) we need to trigger the background wakeup
      * saga while immediately resolving the worker state so the UI can respond to state
      * changes as soon as possible. Regarding the content-script, we simply wait for a
@@ -227,6 +237,7 @@ export const createActivationService = () => {
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();
+    void setupExtensionBadge();
 
     return {
         boot: handleBoot,
