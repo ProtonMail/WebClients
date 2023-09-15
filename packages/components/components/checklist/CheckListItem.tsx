@@ -45,7 +45,8 @@ const CheckListItem = ({
             className={clsx(
                 'flex flex-nowrap flex-align-items-center text-left checkList-item border-none',
                 onClick !== undefined && !disabled ? 'cursor-pointer' : 'cursor-default',
-                smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 w-full' : 'px-4 py-3 rounded-lg gap-3'
+                smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 w-full' : 'px-4 py-3 rounded-lg gap-3',
+                disabled && 'opacity-50'
             )}
             style={{
                 ...style,

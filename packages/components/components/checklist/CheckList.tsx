@@ -12,6 +12,7 @@ import gmailForward from '@proton/styles/assets/img/illustrations/checklist-gmai
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
 import protectInbox from '@proton/styles/assets/img/illustrations/checklist-protect-inbox.svg';
 
+import { Tooltip } from '../tooltip';
 import CheckListItem from './CheckListItem';
 
 interface CheckListItemProps {
@@ -59,14 +60,15 @@ export const CheckListGmailForward = ({
     style,
     disabled = false,
     'data-testid': dataTestId,
-}: CheckListItemProps) => {
+    isInMaintenance,
+}: CheckListItemProps & { isInMaintenance: boolean }) => {
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
     const strongText = <strong>{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
     // translator: The whole sentence is "Set up auto-forwarding from Gmail" with "auto-forwarding" in bold
     const text = c('Get started checklist instructions').jt`Set up ${strongText} from Gmail`;
     const smallText = c('Get started checklist instructions').t`Auto-forward Gmail`;
 
-    return (
+    const item = (
         <CheckListItem
             largeIcon={gmailForward}
             smallIcon={gmailForwardSmall}
@@ -75,10 +77,20 @@ export const CheckListGmailForward = ({
             smallVariant={smallVariant}
             style={style}
             done={done}
-            disabled={disabled}
+            disabled={disabled || isInMaintenance}
             data-testid={dataTestId}
         />
     );
+
+    if (isInMaintenance) {
+        return (
+            <Tooltip title={c('Get started checklist instructions').t`This feature is currently unavailable`}>
+                <div>{item}</div>
+            </Tooltip>
+        );
+    }
+
+    return item;
 };
 
 export const CheckListAccountLogin = ({
