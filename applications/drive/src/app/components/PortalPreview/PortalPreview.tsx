@@ -25,12 +25,13 @@ const PortalPreview = ({
     className,
     ...modalProps
 }: Props & ModalStateProps) => {
-    const { contents, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
+    const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
         shareId,
         linkId,
         false,
         revisionId
     );
+
     if (!modalProps.open) {
         return null;
     }
@@ -38,11 +39,12 @@ const PortalPreview = ({
         <Portal>
             <div className={className}>
                 <FilePreview
+                    imgThumbnailUrl={link?.cachedThumbnailUrl}
                     isMetaLoading={isLinkLoading}
                     isLoading={isContentLoading}
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
                     fileName={link?.name}
-                    mimeType={link?.mimeType}
+                    mimeType={contentsMimeType}
                     fileSize={link?.size}
                     contents={contents}
                     onClose={() => {
