@@ -4,6 +4,8 @@ import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { PhotoGridItem } from '../../../store';
+import { usePortalPreview } from '../../PortalPreview';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
@@ -22,6 +24,9 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
     const [scrollPosition, setScrollPosition] = useState(0);
     const [posX, setPosX] = useState<number[]>([]);
     const [posY, setPosY] = useState<number[]>([]);
+
+    const [portalPreview, showPortalPreview] = usePortalPreview();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
 
     const itemDimensions = useMemo(() => {
         const emRatio = rootFontSize();
@@ -122,6 +127,8 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
                         key={item.linkId}
                         photo={item}
                         onRender={onItemRender}
+                        showPortalPreview={showPortalPreview}
+                        showDetailsModal={showDetailsModal}
                         style={{
                             position: 'absolute',
                             width: itemWidth,
@@ -139,24 +146,28 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
     }
 
     return (
-        <div
-            className="p-4 overflow-auto"
-            onScroll={(event) => {
-                setScrollPosition(event.currentTarget.scrollTop);
-                setContainerHeight(event.currentTarget.clientHeight);
-            }}
-            onLoad={(event) => {
-                setContainerHeight(event.currentTarget.clientHeight);
-            }}
-        >
+        <>
+            {detailsModal}
+            {portalPreview}
             <div
-                className="relative w-full"
-                style={{ height: `${posY[posY.length - 1] + itemHeight}px` }}
-                ref={containerRef}
+                className="p-4 overflow-auto"
+                onScroll={(event) => {
+                    setScrollPosition(event.currentTarget.scrollTop);
+                    setContainerHeight(event.currentTarget.clientHeight);
+                }}
+                onLoad={(event) => {
+                    setContainerHeight(event.currentTarget.clientHeight);
+                }}
             >
-                {gridItems}
+                <div
+                    className="relative w-full"
+                    style={{ height: `${posY[posY.length - 1] + itemHeight}px` }}
+                    ref={containerRef}
+                >
+                    {gridItems}
+                </div>
+                {isLoadingMore && <Loader />}
             </div>
-            {isLoadingMore && <Loader />}
-        </div>
+        </>
     );
 };
