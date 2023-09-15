@@ -38,8 +38,8 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPor
     }, [photo.linkId]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
-    const isThumbnailLoading = thumbUrl === undefined || (!!thumbUrl && !imageReady);
-    const isActive = photo.activeRevision.id && photo.activeRevision.photo.linkId;
+    const isThumbnailLoading = photo.hasThumbnail === undefined || (photo.hasThumbnail && !imageReady);
+    const isActive = !!photo.activeRevision.id && !!photo.activeRevision.photo.linkId;
 
     useEffect(() => {
         if (thumbUrl) {
