@@ -256,5 +256,28 @@ describe('block generator', () => {
                 });
             });
         });
+
+        it(`should throw if the verifier throws`, async () => {
+            const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
+
+            const file = new File(['a'.repeat(32)], 'foo.txt');
+            const thumbnailData = undefined;
+
+            const verifier = jest.fn(() => Promise.reject(new Error('oh no')));
+            const generator = generateBlocks(
+                file,
+                thumbnailData,
+                addressPrivateKey,
+                privateKey,
+                sessionKey,
+                noop,
+                mockHasher,
+                verifier
+            );
+
+            const blocks = asyncGeneratorToArray(generator);
+
+            await expect(blocks).rejects.toThrow();
+        });
     });
 });
