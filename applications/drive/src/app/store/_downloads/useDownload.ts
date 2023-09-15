@@ -1,12 +1,18 @@
+import { c } from 'ttag';
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
-import { DriveFileBlock, DriveFileRevisionResult } from '@proton/shared/lib/interfaces/drive/file';
+import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import {
+    DriveFileBlock,
+    DriveFileRevisionResult,
+    DriveFileRevisionThumbnailResult,
+} from '@proton/shared/lib/interfaces/drive/file';
 
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../_links';
+import { ThumbnailType } from '../_uploads/thumbnail';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -202,10 +208,37 @@ export default function useDownload() {
         });
     };
 
+    const getPreviewThumbnail = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const { activeRevision } = await getLink(abortSignal, shareId, linkId);
+        if (!activeRevision?.id) {
+            throw new Error(c('Error').t`The original file has missing active revision`);
+        }
+        const res = (await debouncedRequest(
+            queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.HD_PREVIEW),
+            abortSignal
+        ).catch((err) => {
+            if (err.data.Code === 2501) {
+                return debouncedRequest(
+                    queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.PREVIEW)
+                );
+            }
+            return err;
+        })) as DriveFileRevisionThumbnailResult;
+        const thumbnail = await downloadThumbnail(
+            abortSignal,
+            shareId,
+            linkId,
+            res.ThumbnailBareURL,
+            res.ThumbnailToken
+        );
+        return thumbnail;
+    };
+
     return {
         initDownload,
         downloadStream,
         downloadThumbnail,
+        getPreviewThumbnail,
         checkFirstBlockSignature,
     };
 }
