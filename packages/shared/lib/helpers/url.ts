@@ -309,6 +309,13 @@ export const getTermsURL = (app?: APP_NAMES) => {
     return getStaticURL('/legal/terms');
 };
 
+export const getBlackFriday2023URL = (app?: APP_NAMES) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return 'https://protonvpn.com/support/black-friday-2023';
+    }
+    return getKnowledgeBaseUrl('/black-friday-2023');
+};
+
 export const getAbuseURL = () => {
     return getStaticURL('/support/abuse');
 };
