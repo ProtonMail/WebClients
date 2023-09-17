@@ -21,7 +21,13 @@ import { getRenewalNoticeText } from '@proton/components/containers/payments/Ren
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
-import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
+import {
+    get2FAAuthenticator,
+    getHideMyEmailAliases,
+    getItems,
+    getLoginsAndNotes,
+    getPassAppFeature,
+} from '@proton/components/containers/payments/features/pass';
 import {
     getAdvancedVPNCustomizations,
     getAllPlatforms,
@@ -37,6 +43,7 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
+import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { useActiveBreakpoint, useApi, useConfig } from '@proton/components/hooks';
 import {
@@ -57,30 +64,36 @@ import {
     ADDON_NAMES,
     APPS,
     BRAND_NAME,
+    COUPON_CODES,
     CYCLE,
+    PASS_APP_NAME,
     PLANS,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
-import { getSubscriptionPrices } from '../signup/helper';
+import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
 import { PlanIDs, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import AccountStepDetails, { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import FreeLogo from '../single-signup-v2/FreeLogo';
+import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
 import bundle from '../single-signup-v2/bundle.svg';
 import { getFreeSubscriptionData, getFreeTitle } from '../single-signup-v2/helper';
-import { OptimisticOptions, SignupModelV2 } from '../single-signup-v2/interface';
+import { OptimisticOptions, SignupModelV2, SubscriptionDataCycleMapping } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import AddonSummary from './AddonSummary';
@@ -88,11 +101,12 @@ import Box from './Box';
 import CycleSelector from './CycleSelector';
 import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
-import Layout from './Layout';
+import Layout, { Background } from './Layout';
 import RightPlanSummary from './RightPlanSummary';
 import SaveLabel2 from './SaveLabel2';
 import StepLabel from './StepLabel';
 import UpsellModal from './UpsellModal';
+import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import VpnProLogo from './VpnProLogo';
 import swissFlag from './flag.svg';
 import { getBillingCycleText, getOffText, getUpsellShortPlan } from './helper';
@@ -149,8 +163,40 @@ const getPlanInformation = (
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
-                getVPNAppFeature(),
+                getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
+            ],
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.VPN_PASS_BUNDLE) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundleVpnPass} width={iconSize} height={iconSize} alt={selectedPlan.Title} />
+                </div>
+            ),
+            title: selectedPlan.Title,
+            features: [],
+            bundle: [
+                {
+                    title: `${VPN_APP_NAME} Plus`,
+                    features: [
+                        getVPNSpeed('highest'),
+                        getProtectDevices(VPN_CONNECTIONS),
+                        getNetShield(true),
+                        getAdvancedVPNCustomizations(true),
+                    ],
+                },
+                {
+                    title: `${PASS_APP_NAME} Plus`,
+                    features: [
+                        getLoginsAndNotes(),
+                        getHideMyEmailAliases('unlimited'),
+                        get2FAAuthenticator(true),
+                        getItems(),
+                    ],
+                },
             ],
         };
     }
@@ -277,7 +323,7 @@ const Step1 = ({
     mode,
     selectedPlan,
     isB2bPlan,
-    isDarkBg,
+    background,
     onComplete,
     model,
     setModel,
@@ -295,7 +341,7 @@ const Step1 = ({
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
     isB2bPlan: boolean;
-    isDarkBg: boolean;
+    background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     vpnServersCountData: VPNServersCountData;
     onComplete: (data: {
@@ -323,7 +369,6 @@ const Step1 = ({
     const createPaymentToken = usePaymentToken();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
-    const [checkingSubscription, setCheckingSubscription] = useState(false);
 
     const createFlow = useFlowRef();
 
@@ -381,23 +426,29 @@ const Step1 = ({
         }));
     };
 
-    const getCouponForCurrentCycle = (cycle?: Cycle) => {
-        return couponCode ?? model.subscriptionDataCycleMapping[cycle ?? options.cycle]?.checkResult.Coupon?.Code;
+    const getCouponForCurrentCycle = (planIDs: PlanIDs, cycle: Cycle) => {
+        const subscriptionMapping = model.subscriptionDataCycleMapping.find((cycleMapping) =>
+            isDeepEqual(planIDs, cycleMapping.planIDs)
+        );
+        return couponCode ?? subscriptionMapping?.mapping[cycle]?.checkResult.Coupon?.Code;
     };
 
-    const showLifetimeDeal = !isB2bPlan && !getCouponForCurrentCycle();
+    const showLifetimeDeal = !isB2bPlan && !getCouponForCurrentCycle(options.planIDs, options.cycle);
 
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
-        setCheckingSubscription(true);
-
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
+        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs) || FREE_PLAN;
 
         // Try a pre-saved check first. If it's not available, then use the default optimistic one.
         // With the regular cycles, it should be available.
+        const subscriptionMapping = model.subscriptionDataCycleMapping.find(({ planIDs }) =>
+            isDeepEqual(newPlanIDs, planIDs)
+        );
+
         const optimisticCheckResult =
-            model.subscriptionDataCycleMapping[newCycle]?.checkResult ??
+            subscriptionMapping?.mapping[newCycle]?.checkResult ??
             getOptimisticCheckResult({
                 plansMap: model.plansMap,
                 planIDs: newPlanIDs,
@@ -406,20 +457,16 @@ const Step1 = ({
 
         const newOptimistic = {
             ...optimistic,
+            plan: newPlan,
             checkResult: optimisticCheckResult,
         };
-
-        const resetOptimistic = Object.keys(newOptimistic).reduce<Partial<OptimisticOptions>>((acc, key) => {
-            acc[key as keyof typeof acc] = undefined;
-            return acc;
-        }, {});
 
         try {
             const validateFlow = createFlow();
 
             setOptimisticDiff(newOptimistic);
 
-            const coupon = getCouponForCurrentCycle(newCycle);
+            const coupon = getCouponForCurrentCycle(newPlanIDs, newCycle);
             const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, coupon);
 
             if (!validateFlow()) {
@@ -435,10 +482,7 @@ const Step1 = ({
                     planIDs: newPlanIDs,
                     checkResult,
                 },
-                optimistic: {
-                    ...old.optimistic,
-                    ...resetOptimistic,
-                },
+                optimistic: {},
             }));
         } catch (e) {
             // Reset any optimistic state on failures
@@ -446,8 +490,6 @@ const Step1 = ({
                 ...old,
                 optimistic: {},
             }));
-        } finally {
-            setCheckingSubscription(false);
         }
     };
 
@@ -544,7 +586,7 @@ const Step1 = ({
         paymentMethodStatus?.Paypal && PAYMENT_METHOD_TYPES.PAYPAL,
     ].filter(isTruthy);
 
-    const hasGuarantee = options.plan.Name === PLANS.VPN || isB2bPlan;
+    const hasGuarantee = [PLANS.VPN, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -651,30 +693,63 @@ const Step1 = ({
 
     const totals = getTotalFromPricing(pricing, options.cycle);
 
-    const getCheckoutForCycle = (cycle: Cycle) => {
-        // This is an assumption that this page always uses so-called regular cycles:
-        // monthly, yearly and two-yearly. 15 and 30 were temporary promotions.
-        // If this react component must handle other cycles, then this code should be changed.
-        const regularCycle = cycle as CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS;
+    const getSubscriptionMapping = (planIDs: PlanIDs) => {
+        return model.subscriptionDataCycleMapping.find((subscriptionMapping) =>
+            isDeepEqual(planIDs, subscriptionMapping.planIDs)
+        );
+    };
 
+    const getCheckoutForCycle = (subscriptionMapping: SubscriptionDataCycleMapping, cycle: Cycle) => {
+        const checkResult = subscriptionMapping?.mapping[cycle]?.checkResult;
+        if (!checkResult) {
+            return;
+        }
         return getCheckout({
             planIDs: options.planIDs,
             plansMap,
-            checkResult: model.subscriptionDataCycleMapping[regularCycle].checkResult,
+            checkResult,
         });
     };
 
-    const checkoutMapping: CycleMapping<SubscriptionCheckoutData> = {
-        [CYCLE.MONTHLY]: getCheckoutForCycle(CYCLE.MONTHLY),
-        [CYCLE.YEARLY]: getCheckoutForCycle(CYCLE.YEARLY),
-        [CYCLE.TWO_YEARS]: getCheckoutForCycle(CYCLE.TWO_YEARS),
-    };
+    const checkoutMapping = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+        const subscriptionMapping = getSubscriptionMapping(options.planIDs);
+        if (!subscriptionMapping) {
+            return;
+        }
+        return {
+            [CYCLE.MONTHLY]: getCheckoutForCycle(subscriptionMapping, CYCLE.MONTHLY),
+            [CYCLE.YEARLY]: getCheckoutForCycle(subscriptionMapping, CYCLE.YEARLY),
+            [CYCLE.TWO_YEARS]: getCheckoutForCycle(subscriptionMapping, CYCLE.TWO_YEARS),
+            [CYCLE.FIFTEEN]: getCheckoutForCycle(subscriptionMapping, CYCLE.FIFTEEN),
+            [CYCLE.THIRTY]: getCheckoutForCycle(subscriptionMapping, CYCLE.THIRTY),
+        };
+    })();
 
-    const selectedCycleCheckout = checkoutMapping[options.cycle] as SubscriptionCheckoutData;
+    const actualCheckout = getCheckout({
+        planIDs: options.planIDs,
+        plansMap,
+        checkResult: options.checkResult,
+    });
 
-    const cycles = isDesktop
-        ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
-        : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
+    const { cycles, upsellCycle } = (() => {
+        const hasFifteen = model.subscriptionDataCycleMapping.find((subscriptionMapping) => {
+            return !!subscriptionMapping.mapping[CYCLE.FIFTEEN];
+        });
+        if (hasFifteen) {
+            return {
+                cycles: isDesktop
+                    ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
+                    : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
+                upsellCycle: CYCLE.THIRTY,
+            };
+        }
+        return {
+            upsellCycle: CYCLE.TWO_YEARS,
+            cycles: isDesktop
+                ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
+                : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
+        };
+    })();
 
     const features = [
         {
@@ -713,13 +788,28 @@ const Step1 = ({
     const planInformation = getPlanInformation(options.plan, vpnServersCountData, mode);
 
     const upsellToCycle = (() => {
+        if (options.plan.Name === PLANS.BUNDLE && options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023) {
+            return;
+        }
         if (options.cycle === CYCLE.MONTHLY) {
+            if (cycles.includes(CYCLE.FIFTEEN)) {
+                return CYCLE.FIFTEEN;
+            }
             return CYCLE.YEARLY;
         }
         if (options.cycle === CYCLE.YEARLY) {
             return CYCLE.TWO_YEARS;
         }
+        if (options.cycle === CYCLE.FIFTEEN) {
+            return CYCLE.THIRTY;
+        }
     })();
+
+    const upsellToVPNPassBundle = canUpsellToVPNPassBundle(
+        options.planIDs,
+        options.cycle,
+        options.checkResult.Coupon?.Code
+    );
 
     const addonsPricing = getAddonsPricing({
         currentPlan: options.plan,
@@ -745,12 +835,56 @@ const Step1 = ({
         };
     })();
 
+    const handleUpsellVPNPassBundle = () => {
+        if (loadingSignup || loadingPaymentDetails) {
+            return;
+        }
+        if (!options.planIDs[PLANS.VPN_PASS_BUNDLE]) {
+            const cycleChange = ![CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle)
+                ? { cycle: CYCLE.FIFTEEN }
+                : undefined;
+
+            if (cycleChange) {
+                setToggleUpsell({
+                    from: options.cycle,
+                    to: CYCLE.FIFTEEN,
+                });
+            }
+
+            return withLoadingPaymentDetails(
+                handleOptimistic({
+                    planIDs: {
+                        [PLANS.VPN_PASS_BUNDLE]: 1,
+                    },
+                    ...cycleChange,
+                })
+            ).catch(noop);
+        } else {
+            const cycleChange = toggleUpsell?.from === CYCLE.MONTHLY ? { cycle: CYCLE.MONTHLY } : undefined;
+
+            if (cycleChange) {
+                setToggleUpsell(undefined);
+            }
+
+            return withLoadingPaymentDetails(
+                handleOptimistic({
+                    planIDs: {
+                        [PLANS.VPN]: 1,
+                    },
+                    ...cycleChange,
+                })
+            ).catch(noop);
+        }
+    };
+
     return (
         <Layout
             hasDecoration
             className={className}
-            bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg && !isTinyMobile} />}
-            isDarkBg={isDarkBg}
+            bottomRight={
+                <SignupSupportDropdown isDarkBg={['dark', 'bf2023'].includes(background as any) && !isTinyMobile} />
+            }
+            background={background}
             isB2bPlan={isB2bPlan}
         >
             <div className="flex flex-align-items-center flex-column">
@@ -769,7 +903,7 @@ const Step1 = ({
                         })()}
                     </h1>
                 </div>
-                {mode === 'pricing' && !isB2bPlan && (
+                {mode === 'pricing' && !isB2bPlan && background !== 'bf2023' && (
                     <div className="flex flex-nowrap md:gap-8 gap-3">
                         {features.map(({ left, text }, i, arr) => {
                             return (
@@ -783,7 +917,7 @@ const Step1 = ({
                         })}
                     </div>
                 )}
-                {!hasSelectedFree && mode === 'pricing' && (
+                {!hasSelectedFree && mode === 'pricing' && checkoutMapping && (
                     <Box className={`mt-8 w100 ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
@@ -792,7 +926,9 @@ const Step1 = ({
                                 <CurrencySelector
                                     mode="select-two"
                                     currency={options.currency}
-                                    onSelect={(currency) => withLoadingPaymentDetails(handleChangeCurrency(currency))}
+                                    onSelect={(currency) =>
+                                        withLoadingPaymentDetails(handleChangeCurrency(currency)).catch(noop)
+                                    }
                                 />
                             }
                         />
@@ -805,6 +941,7 @@ const Step1 = ({
                                         withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
                                         accountDetailsRef.current?.scrollInto('email');
                                     }}
+                                    upsellCycle={upsellCycle}
                                     cycle={options.cycle}
                                     currency={options.currency}
                                     cycles={cycles}
@@ -881,6 +1018,7 @@ const Step1 = ({
                                                         plan: options.plan.Name,
                                                         cycle: `${options.cycle}`,
                                                         currency: options.currency,
+                                                        coupon: options.checkResult.Coupon?.Code,
                                                     },
                                                     '?'
                                                 )}`,
@@ -961,7 +1099,30 @@ const Step1 = ({
                                     <RightPlanSummary
                                         {...planInformation}
                                         title={getPlanTitle(planInformation.title)}
+                                        removeBundle={
+                                            options.planIDs[PLANS.VPN_PASS_BUNDLE] && (
+                                                <Button
+                                                    className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                    color="weak"
+                                                    shape="outline"
+                                                    size="small"
+                                                    onClick={handleUpsellVPNPassBundle}
+                                                >
+                                                    <Icon name="trash" size={14} />
+                                                    <span className="ml-2">{c('bf2023: Action').t`Remove`}</span>
+                                                </Button>
+                                            )
+                                        }
                                     />
+                                    {upsellToVPNPassBundle && (
+                                        <VPNPassPromotionButton
+                                            currency={options.currency}
+                                            cycle={options.cycle}
+                                            onClick={() => {
+                                                handleUpsellVPNPassBundle();
+                                            }}
+                                        />
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -1038,13 +1199,15 @@ const Step1 = ({
                                         {isB2bPlan && (
                                             <>
                                                 <PlanCustomizer
-                                                    currency={model.subscriptionData.currency}
-                                                    cycle={model.subscriptionData.cycle}
+                                                    currency={options.currency}
+                                                    cycle={options.cycle}
                                                     plansMap={model.plansMap}
-                                                    planIDs={model.subscriptionData.planIDs}
+                                                    planIDs={options.planIDs}
                                                     currentPlan={selectedPlan}
                                                     onChangePlanIDs={(planIDs: PlanIDs) =>
-                                                        handleOptimistic({ planIDs })
+                                                        withLoadingPaymentDetails(handleOptimistic({ planIDs })).catch(
+                                                            noop
+                                                        )
                                                     }
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
@@ -1114,7 +1277,10 @@ const Step1 = ({
                                                         type="submit"
                                                         size="large"
                                                         loading={loadingSignup}
-                                                        disabled={checkingSubscription}
+                                                        disabled={
+                                                            Object.keys(model.optimistic).length > 0 ||
+                                                            loadingPaymentDetails
+                                                        }
                                                         color="norm"
                                                         fullWidth
                                                     >
@@ -1154,7 +1320,7 @@ const Step1 = ({
 
                                                 const pricePerMonth = getSimplePriceString(
                                                     options.currency,
-                                                    selectedCycleCheckout.withDiscountPerMonth,
+                                                    actualCheckout.withDiscountPerMonth,
                                                     ''
                                                 );
 
@@ -1165,11 +1331,100 @@ const Step1 = ({
                                                 );
                                                 const free = hasSelectedFree;
 
+                                                const hasUpsellVPNPassBundleToggle =
+                                                    upsellToVPNPassBundle || options.planIDs[PLANS.VPN_PASS_BUNDLE];
+
+                                                const getToggle = () => {
+                                                    if (hasUpsellVPNPassBundleToggle) {
+                                                        return (
+                                                            <VPNPassUpsellToggle
+                                                                checked={!!options.planIDs[PLANS.VPN_PASS_BUNDLE]}
+                                                                currency={options.currency}
+                                                                cycle={toggleUpsell?.from || options.cycle}
+                                                                onChange={() => {
+                                                                    handleUpsellVPNPassBundle();
+                                                                }}
+                                                            />
+                                                        );
+                                                    }
+
+                                                    if (
+                                                        options.checkResult.Coupon?.Code ===
+                                                            COUPON_CODES.BLACK_FRIDAY_2023 &&
+                                                        options.cycle === CYCLE.MONTHLY
+                                                    ) {
+                                                        return null;
+                                                    }
+                                                    const toCycle = toggleUpsell?.to || upsellToCycle;
+                                                    if (!toCycle) {
+                                                        return null;
+                                                    }
+                                                    const subscriptionMapping = getSubscriptionMapping(options.planIDs);
+                                                    if (!subscriptionMapping) {
+                                                        return null;
+                                                    }
+                                                    const toCycleCheckout = getCheckoutForCycle(
+                                                        subscriptionMapping,
+                                                        toCycle
+                                                    );
+                                                    if (!toCycleCheckout) {
+                                                        return null;
+                                                    }
+                                                    const billingCycle = getBillingCycleText(toCycle);
+                                                    if (!billingCycle) {
+                                                        return null;
+                                                    }
+                                                    const label = getOffText(
+                                                        `${toCycleCheckout.discountPercent}%`,
+                                                        billingCycle
+                                                    );
+
+                                                    return (
+                                                        <>
+                                                            <Toggle
+                                                                checked={!!toggleUpsell}
+                                                                id="toggle-upsell-plan"
+                                                                className="mx-1"
+                                                                onChange={(event) => {
+                                                                    if (loadingSignup || loadingPaymentDetails) {
+                                                                        return;
+                                                                    }
+                                                                    if (event.target.checked && upsellToCycle) {
+                                                                        setToggleUpsell({
+                                                                            from: options.cycle,
+                                                                            to: upsellToCycle,
+                                                                        });
+                                                                        withLoadingPaymentDetails(
+                                                                            handleChangeCycle(upsellToCycle, 'upsell')
+                                                                        ).catch(noop);
+                                                                    } else if (toggleUpsell) {
+                                                                        withLoadingPaymentDetails(
+                                                                            handleChangeCycle(
+                                                                                toggleUpsell.from,
+                                                                                'upsell'
+                                                                            )
+                                                                        ).catch(noop);
+                                                                        setToggleUpsell(undefined);
+                                                                    }
+                                                                }}
+                                                            />
+                                                            <label
+                                                                htmlFor="toggle-upsell-plan"
+                                                                className="flex-item-fluid text-sm"
+                                                            >
+                                                                {label}
+                                                            </label>
+                                                        </>
+                                                    );
+                                                };
+
+                                                const upsell = getToggle();
+
                                                 return (
                                                     <div
                                                         className={clsx(
                                                             'rounded-xl flex flex-column gap-1',
-                                                            upsellToCycle || toggleUpsell ? 'border border-weak' : ''
+                                                            upsell ? 'border border-weak' : ''
                                                         )}
                                                     >
                                                         <div className="p-2 flex gap-2">
@@ -1197,12 +1452,11 @@ const Step1 = ({
                                                                         <span className="color-weak mr-1">
                                                                             {getBilledText(options.cycle)}
                                                                         </span>
-                                                                        {selectedCycleCheckout.discountPercent > 0 && (
+                                                                        {actualCheckout.discountPercent > 0 && (
                                                                             <SaveLabel2
+                                                                                className="inline-block"
                                                                                 highlightPrice={true}
-                                                                                percent={
-                                                                                    selectedCycleCheckout.discountPercent
-                                                                                }
+                                                                                percent={actualCheckout.discountPercent}
                                                                             />
                                                                         )}
                                                                     </div>
@@ -1214,7 +1468,7 @@ const Step1 = ({
                                                                     )}
 
                                                                     {!isB2bPlan &&
-                                                                        selectedCycleCheckout.discountPercent > 0 && (
+                                                                        actualCheckout.discountPercent > 0 && (
                                                                             <span className="inline-flex">
                                                                                 <span className="text-sm color-weak text-strike text-ellipsis">
                                                                                     {regularPrice}
@@ -1233,67 +1487,11 @@ const Step1 = ({
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        {(upsellToCycle || toggleUpsell) && (
+                                                        {upsell && (
                                                             <>
                                                                 <div className="border-top border-weak" />
                                                                 <div className="p-2 flex gap-1 flex-align-items-center">
-                                                                    <Toggle
-                                                                        checked={!!toggleUpsell}
-                                                                        id="toggle-upsell-plan"
-                                                                        className="mx-1"
-                                                                        onChange={(event) => {
-                                                                            if (
-                                                                                loadingSignup ||
-                                                                                loadingPaymentDetails
-                                                                            ) {
-                                                                                return;
-                                                                            }
-                                                                            if (event.target.checked && upsellToCycle) {
-                                                                                setToggleUpsell({
-                                                                                    from: options.cycle,
-                                                                                    to: upsellToCycle,
-                                                                                });
-                                                                                withLoadingPaymentDetails(
-                                                                                    handleChangeCycle(
-                                                                                        upsellToCycle,
-                                                                                        'upsell'
-                                                                                    )
-                                                                                ).catch(noop);
-                                                                            } else if (toggleUpsell) {
-                                                                                withLoadingPaymentDetails(
-                                                                                    handleChangeCycle(
-                                                                                        toggleUpsell.from,
-                                                                                        'upsell'
-                                                                                    )
-                                                                                ).catch(noop);
-                                                                                setToggleUpsell(undefined);
-                                                                            }
-                                                                        }}
-                                                                    ></Toggle>
-                                                                    <label
-                                                                        htmlFor="toggle-upsell-plan"
-                                                                        className="flex-item-fluid text-sm"
-                                                                    >
-                                                                        {(() => {
-                                                                            const toCycle =
-                                                                                toggleUpsell?.to || upsellToCycle;
-                                                                            if (!toCycle) {
-                                                                                return null;
-                                                                            }
-
-                                                                            const toCycleCheckout =
-                                                                                getCheckoutForCycle(toCycle);
-
-                                                                            const discount = `${toCycleCheckout.discountPercent}%`;
-                                                                            const billingCycle =
-                                                                                getBillingCycleText(toCycle);
-                                                                            if (!billingCycle) {
-                                                                                return null;
-                                                                            }
-                                                                            // translator: full sentence is "Get 33% off with a 2-year subscription"
-                                                                            return getOffText(discount, billingCycle);
-                                                                        })()}
-                                                                    </label>
+                                                                    {upsell}
                                                                 </div>
                                                             </>
                                                         )}
@@ -1352,13 +1550,9 @@ const Step1 = ({
                                                     <div className="mx-3 text-bold flex flex-justify-space-between text-rg gap-2">
                                                         <span>{getTotalBillingText(options.cycle)}</span>
                                                         <span>
-                                                            {loadingPaymentDetails ? (
-                                                                <CircleLoader />
-                                                            ) : (
-                                                                <Price currency={options.currency}>
-                                                                    {options.checkResult.Amount}
-                                                                </Price>
-                                                            )}
+                                                            <Price currency={options.currency}>
+                                                                {options.checkResult.Amount}
+                                                            </Price>
                                                         </span>
                                                     </div>
                                                     <div className="mx-3 border-bottom border-weak" />
@@ -1418,13 +1612,13 @@ const Step1 = ({
                                             )}
 
                                             <div className="mx-3 flex flex-column gap-2">
-                                                {showLifetimeDeal && selectedCycleCheckout.discountPercent > 0 && (
+                                                {showLifetimeDeal && actualCheckout.discountPercent > 0 && (
                                                     <div className={clsx('flex flex-justify-space-between text-rg')}>
                                                         <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
                                                         <span>
                                                             <span className="color-success">
                                                                 {(() => {
-                                                                    const discountPercentage = `−${selectedCycleCheckout.discountPercent}%`;
+                                                                    const discountPercentage = `−${actualCheckout.discountPercent}%`;
                                                                     return c('Info').t`${discountPercentage} forever`;
                                                                 })()}
                                                             </span>
@@ -1454,7 +1648,12 @@ const Step1 = ({
                                                     </span>
                                                 </div>
                                                 <div className="text-sm color-weak">
-                                                    <span>{getRenewalNoticeText({ renewCycle: options.cycle })}</span>
+                                                    <span>
+                                                        {getRenewalNoticeText({
+                                                            renewCycle: options.cycle,
+                                                            coupon: options.checkResult.Coupon?.Code,
+                                                        })}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

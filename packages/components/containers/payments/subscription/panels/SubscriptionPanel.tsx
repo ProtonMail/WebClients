@@ -136,11 +136,12 @@ const ActionButtons = ({
             disablePlanSelection: true,
             metrics,
         });
-    const handleExplorePlans = () =>
+    const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
         });
+    };
     const handleEditPayment = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,

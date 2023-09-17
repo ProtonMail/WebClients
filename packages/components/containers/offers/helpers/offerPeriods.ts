@@ -1,10 +1,10 @@
 import { isWithinInterval } from 'date-fns';
 
-export const CYBER_WEEK_START = new Date(2022, 10, 28, 6, 0, 0);
-export const CYBER_WEEK_END = new Date(2022, 11, 5, 6, 0, 0);
+export const CYBER_WEEK_START = new Date(2023, 10, 28, 6, 0, 0); // November 28 06:00:00 UTC
+export const CYBER_WEEK_END = new Date(2023, 11, 5, 6, 0, 0); // December 5 06:00:00 UTC
 export const END_OF_THE_YEAR_START = new Date(2022, 11, 5, 6, 0, 0);
 export const END_OF_THE_YEAR_END = new Date(2022, 11, 31, 6, 0, 0);
-export const FREE_DOWNGRADER_LIMIT = new Date(2022, 9, 1, 0, 0, 0); // October 1 2022 00:00:00 UTC
+export const FREE_DOWNGRADER_LIMIT = new Date(2023, 9, 1, 0, 0, 0); // October 1 2023 00:00:00 UTC
 
 /**
  * After Nov 28 2022 6:00 AM UTC and before Dec 5 2022 6:00 AM UTC

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 
-import { getMailPlusFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
+import { getMailPlusInboxFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import bannerImage from './bf-mail-40-landscape.jpg';
@@ -26,7 +26,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.YEARLY,
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
-            features: getMailPlusFeatures,
+            features: getMailPlusInboxFeatures,
             star: '1',
         },
         {
@@ -37,7 +37,7 @@ const config: OfferConfig = {
             },
             cycle: CYCLE.TWO_YEARS,
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
-            popular: true,
+            popular: 1,
             header: () => c('specialoffer: Label').t`Most popular`,
             features: getUnlimitedFeatures,
             star: '2',

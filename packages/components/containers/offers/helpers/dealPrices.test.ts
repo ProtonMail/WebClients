@@ -1,5 +1,4 @@
 import { CYCLE } from '@proton/shared/lib/constants';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 
 import { DealWithPrices } from '../interface';
 import { getDiscount, getDiscountWithCoupon } from './dealPrices';
@@ -20,27 +19,27 @@ describe('getDiscountWithCoupon', () => {
     it('should return custom discount for 15 months', () => {
         expect(
             getDiscountWithCoupon({
-                cycle: getNormalCycleFromCustomCycle(CYCLE.FIFTEEN),
+                cycle: CYCLE.FIFTEEN,
                 prices: {
                     withCoupon: 7188,
                     withoutCoupon: 14985,
                     withoutCouponMonthly: 999,
                 },
             } as DealWithPrices)
-        ).toBe(40);
+        ).toBe(52);
     });
 
     it('should return custom discount for 30 months', () => {
         expect(
             getDiscountWithCoupon({
-                cycle: getNormalCycleFromCustomCycle(CYCLE.THIRTY),
+                cycle: CYCLE.THIRTY,
                 prices: {
                     withCoupon: 11976,
                     withoutCoupon: 29970,
                     withoutCouponMonthly: 999,
                 },
             } as DealWithPrices)
-        ).toBe(50);
+        ).toBe(60);
     });
 });
 
