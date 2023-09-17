@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { OfferProps } from '../../../interface';
 import Deal from './Deal';
@@ -10,10 +12,23 @@ import DealPriceInfos from './DealPriceInfos';
 import DealTitle from './DealTitle';
 
 const Deals = (props: OfferProps) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const { deals } = props.offer;
+    const [isExpanded, setIsExpanded] = useState(true);
+    const { isNarrow, isMediumDesktop } = useActiveBreakpoint();
+
+    useEffect(() => {
+        if (isNarrow) {
+            setIsExpanded(false);
+        }
+
+        if (isMediumDesktop && deals.length > 3) {
+            setIsExpanded(false);
+        }
+    }, [isNarrow, isMediumDesktop]);
+
     return (
         <div className="offer-wrapper gap-4 flex flex-nowrap flex-justify-center on-mobile-flex-column mt-11">
-            {props.offer.deals.map((deal) => (
+            {deals.map((deal) => (
                 <Deal key={deal.ref} {...props} deal={deal}>
                     <DealMostPopular />
                     <DealTitle />

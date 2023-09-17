@@ -39,9 +39,10 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Cycle, HumanVerificationMethodType, Plan } from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
@@ -296,6 +297,7 @@ const SignupContainer = ({
             setModelDiff({
                 domains,
                 plans: Plans,
+                plansMap: toMap(model.plans, 'Name') as PlansMap,
                 paymentMethodStatus,
                 referralData,
                 subscriptionData,
@@ -416,7 +418,7 @@ const SignupContainer = ({
         }
     };
 
-    const plan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs);
+    const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
     const planName = plan?.Title;
     const verificationModel = cache?.humanVerificationResult?.verificationModel;
 

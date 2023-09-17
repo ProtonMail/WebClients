@@ -29,5 +29,6 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     },
     inviteData: undefined,
     plans: [],
+    plansMap: {},
     referralData: undefined,
 };

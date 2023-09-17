@@ -2,8 +2,6 @@ import { ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { CYCLE } from '@proton/shared/lib/constants';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import clsx from '@proton/utils/clsx';
 
 import { getDiscountWithCoupon } from '../../../helpers/dealPrices';
@@ -16,8 +14,11 @@ interface Props extends OfferProps {
 }
 
 const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, ref) => {
-    const { popular, cycle } = props.deal;
-    const discount = getDiscountWithCoupon({ ...props.deal, cycle: getNormalCycleFromCustomCycle(cycle) as CYCLE });
+    const { popular } = props.deal;
+    const discount = getDiscountWithCoupon(props.deal);
+    const isMostPopular = popular === 1;
+    const isSecondMostPopular = popular === 2;
+    const isThirdMostPopular = popular === 3;
 
     return (
         <DealProvider {...props}>
@@ -25,14 +26,16 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 ref={ref}
                 className={clsx([
                     'relative flex flex-item-fluid offer-plan-container mt-4 md:mt-0',
-                    popular && 'offer-plan-container--mostPopular',
+                    isMostPopular && 'offer-plan-container--mostPopular',
+                    isSecondMostPopular && 'offer-plan-container--secondMostPopular',
+                    isThirdMostPopular && 'offer-plan-container--thirdMostPopular',
                 ])}
             >
                 {discount ? (
                     <span
                         className={clsx([
                             'text-semibold absolute text-center offer-percentage py-1 px-4',
-                            popular ? 'bg-primary' : 'bg-weak color-weak border border-norm',
+                            isMostPopular ? 'bg-primary' : 'bg-weak color-weak border border-norm',
                         ])}
                     >
                         {c('specialoffer: Offers').t`Save ${discount}%`}
@@ -41,7 +44,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 <div
                     className={clsx([
                         'offer-plan w100 border rounded p-4 mb-4 flex flex-column flex-align-items-center flex-justify-end',
-                        popular && 'border-primary is-focused',
+                        isMostPopular && 'border-primary is-focused',
                     ])}
                 >
                     {children}

@@ -25,6 +25,7 @@ import {
     hasMailPro,
     hasPassPlus,
     hasVPN,
+    hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
     isTrial,
@@ -117,6 +118,7 @@ export interface Upsell {
      */
     ignoreDefaultCta?: boolean;
 }
+
 type MaybeUpsell = Upsell | null;
 
 type GetUpsellArgs = {
@@ -125,6 +127,7 @@ type GetUpsellArgs = {
     currency: Currency;
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
+    serversCount: VPNServersCountData;
 } & Partial<Upsell>;
 
 type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
@@ -133,9 +136,9 @@ type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'
     openSubscriptionModal: OpenSubscriptionModalCallback;
 };
 
-const getUpsell = ({ plan, plansMap, currency, upsellPath, app, ...upsellFields }: GetUpsellArgs) => {
+const getUpsell = ({ plan, plansMap, serversCount, currency, upsellPath, app, ...upsellFields }: GetUpsellArgs) => {
     const fullPlan = plansMap[plan];
-    const shortPlan = getShortPlan(plan, plansMap);
+    const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount });
 
     if (!shortPlan) {
         return null;
@@ -301,6 +304,7 @@ const getFamilyUpsell = ({
     openSubscriptionModal,
     currency,
     app,
+    serversCount,
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const familyPlan = plansMap[PLANS.FAMILY];
     if (!familyPlan) {
@@ -321,6 +325,7 @@ const getFamilyUpsell = ({
         plan: PLANS.FAMILY,
         plansMap,
         currency,
+        serversCount,
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.FAMILY,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
@@ -410,7 +415,13 @@ const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): Upsell => {
 };
 
 const hasOnePlusSubscription = (subscription: Subscription) => {
-    return hasMail(subscription) || hasDrive(subscription) || hasPassPlus(subscription) || hasVPN(subscription);
+    return (
+        hasMail(subscription) ||
+        hasDrive(subscription) ||
+        hasPassPlus(subscription) ||
+        hasVPN(subscription) ||
+        hasVPNPassBundle(subscription)
+    );
 };
 
 export const resolveUpsellsToDisplay = ({
@@ -441,6 +452,7 @@ export const resolveUpsellsToDisplay = ({
             app,
             plansMap: toMap(plans, 'Name'),
             hasVPN: hasVPN(subscription),
+            serversCount,
             ...rest,
         };
 

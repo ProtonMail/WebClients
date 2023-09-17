@@ -461,7 +461,12 @@ const AccountStepPayment = ({
                                     </>
                                 )}
                                 <div className="text-sm color-weak">
-                                    <span>{getRenewalNoticeText({ renewCycle: options.cycle })}</span>
+                                    <span>
+                                        {getRenewalNoticeText({
+                                            renewCycle: options.cycle,
+                                            coupon: options.checkResult.Coupon?.Code,
+                                        })}
+                                    </span>
                                 </div>
                             </div>
                         </RightPlanSummary>

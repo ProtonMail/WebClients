@@ -79,7 +79,7 @@ export const getFreePlan = (): ShortPlan => {
     };
 };
 
-export const getBundlePlan = (plan: Plan): ShortPlan => {
+export const getBundlePlan = (plan: Plan, vpnServersCountData: VPNServersCountData): ShortPlan => {
     return {
         plan: PLANS.BUNDLE,
         title: plan.Title,
@@ -96,7 +96,7 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
             getSupport('priority'),
             getCalendarAppFeature(),
             getDriveAppFeature(),
-            getVPNAppFeature(),
+            getVPNAppFeature({ serversCount: vpnServersCountData }),
             getPassAppFeature(),
         ],
     };
@@ -283,7 +283,7 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getFamilyPlan = (plan: Plan): ShortPlan => {
+export const getFamilyPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
     return {
         plan: PLANS.FAMILY,
         title: plan.Title,
@@ -299,7 +299,10 @@ export const getFamilyPlan = (plan: Plan): ShortPlan => {
             getNDomainsFeature({ n: plan.MaxDomains }),
             getCalendarAppFeature({ family: true }),
             getDriveAppFeature({ family: true }),
-            getVPNAppFeature({ family: true }),
+            getVPNAppFeature({
+                family: true,
+                serversCount,
+            }),
             getPassAppFeature(),
             getSupport('priority'),
         ],
@@ -395,8 +398,8 @@ export const getShortPlan = (
     plansMap: PlansMap,
     options: {
         boldStorageSize?: boolean;
-        vpnServers?: VPNServersCountData;
-    } = {}
+        vpnServers: VPNServersCountData;
+    }
 ) => {
     if (plan === PLANS.FREE) {
         return getFreePlan();
@@ -413,7 +416,7 @@ export const getShortPlan = (
         case PLANS.MAIL:
             return getMailPlan(planData);
         case PLANS.VPN:
-            return vpnServers && getVPNPlan(planData, vpnServers);
+            return getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:
@@ -421,13 +424,13 @@ export const getShortPlan = (
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
-            return getBundlePlan(planData);
+            return getBundlePlan(planData, vpnServers);
         case PLANS.BUNDLE_PRO:
             return getBundleProPlan(planData);
         case PLANS.NEW_VISIONARY:
             return getNewVisionaryPlan(planData);
         case PLANS.FAMILY:
-            return getFamilyPlan(planData);
+            return getFamilyPlan(planData, vpnServers);
         case PLANS.VPN_PRO:
             return getVPNProPlan(planData, vpnServers);
         case PLANS.VPN_BUSINESS:
