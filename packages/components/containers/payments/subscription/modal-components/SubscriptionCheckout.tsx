@@ -13,7 +13,7 @@ import {
 } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import {
     Badge,
@@ -27,6 +27,7 @@ import {
 } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
+import RenewalNotice from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
 import { CheckoutModifiers } from '../useCheckoutModifiers';
@@ -84,9 +85,9 @@ const BilledText = ({ cycle }: { cycle: Cycle }) => {
             case CYCLE.MONTHLY:
                 return c('Subscription').t`Billed monthly`;
             case CYCLE.FIFTEEN:
-                return c('Subscription').t`Billed every 15 months`;
+                return c('Subscription').t`Billed for 15 months`;
             case CYCLE.THIRTY:
-                return c('Subscription').t`Billed every 30 months`;
+                return c('Subscription').t`Billed for 30 months`;
         }
     }, [cycle]);
 
@@ -134,6 +135,7 @@ interface BaseProps {
     showDiscount?: boolean;
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
+    subscription?: Subscription;
 }
 
 type Props = BaseProps & CheckoutModifiers;
@@ -150,6 +152,7 @@ const SubscriptionCheckout = ({
     planIDs,
     checkResult,
     loading,
+    subscription,
     nextSubscriptionStart,
     showDiscount = true,
     enableDetailedAddons = false,
@@ -180,7 +183,11 @@ const SubscriptionCheckout = ({
     }
 
     const isFreePlanSelected = !hasPlanIDs(planIDs);
-    const isVPNPlanSelected = !!planIDs?.[PLANS.VPN] || !!planIDs?.[PLANS.VPN_PRO] || !!planIDs?.[PLANS.VPN_BUSINESS];
+    const hasGuarantee =
+        !!planIDs?.[PLANS.VPN] ||
+        !!planIDs?.[PLANS.VPN_PRO] ||
+        !!planIDs?.[PLANS.VPN_BUSINESS] ||
+        !!planIDs?.[PLANS.VPN_PASS_BUNDLE];
 
     const proration = checkResult.Proration ?? 0;
     const credit = checkResult.Credit ?? 0;
@@ -205,9 +212,18 @@ const SubscriptionCheckout = ({
             currency={currency}
             onChangeCurrency={onChangeCurrency}
             loading={loading}
-            hasGuarantee={isVPNPlanSelected}
+            hasGuarantee={hasGuarantee}
             hasPayments={!isOptimistic}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
+            renewNotice={
+                <RenewalNotice
+                    renewCycle={cycle}
+                    isCustomBilling={isCustomBilling}
+                    isScheduledSubscription={isScheduledSubscription}
+                    subscription={subscription}
+                    coupon={checkResult.Coupon?.Code}
+                />
+            }
         >
             <div className="mb-4 flex flex-column">
                 <strong className="mb-1">{planTitle}</strong>

@@ -10,13 +10,16 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 
 import {
     ADDON_NAMES,
-    BRAND_NAME,
     CYCLE,
     DEFAULT_CYCLE,
     FAMILY_MAX_USERS,
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
+    MAIL_SHORT_APP_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
 } from '../constants';
 import {
     Plan,
@@ -31,7 +34,7 @@ import {
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
 import { getPlanFromCheckout } from './planIDs';
-import { INCLUDED_IP_PRICING, customCycles, getNormalCycleFromCustomCycle, getPricingPerMember } from './subscription';
+import { INCLUDED_IP_PRICING, customCycles, getPricingPerMember } from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -200,7 +203,7 @@ export const getCheckout = ({
     }, 0);
 
     const withoutDiscountPerCycle = withoutDiscountPerMonth * cycle;
-    const withoutDiscountPerNormalCycle = withoutDiscountPerMonth * getNormalCycleFromCustomCycle(cycle);
+    const withoutDiscountPerNormalCycle = withoutDiscountPerMonth * cycle;
     const discountPerCycle = Math.min(withoutDiscountPerCycle - withDiscountPerCycle, withoutDiscountPerCycle);
     const discountPerNormalCycle = Math.min(
         withoutDiscountPerNormalCycle - withDiscountPerCycle,
@@ -255,6 +258,47 @@ export const getWhatsIncluded = ({
     plansMap: PlansMap;
     vpnServers: VPNServersCountData;
 }): Included[] => {
+    const vpnPassBundle = planIDs[PLANS.VPN_PASS_BUNDLE];
+    if (vpnPassBundle) {
+        return [
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium Password Manager`,
+            },
+        ];
+    }
+    const unlimited = planIDs[PLANS.BUNDLE];
+    const unlimitedPlan = plansMap[PLANS.BUNDLE];
+    if (unlimited && unlimitedPlan) {
+        const storage = humanSize(unlimitedPlan.MaxSpace, undefined, undefined, 0);
+        return [
+            {
+                type: 'text',
+                text: storage,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium Password Manager`,
+            },
+        ];
+    }
+
     const vpn = planIDs[PLANS.VPN];
     if (vpn !== undefined && vpn > 0) {
         return [
@@ -329,7 +373,19 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('Info').t`All ${BRAND_NAME} apps and their premium features`,
+                text: c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+            },
+            {
+                type: 'text',
+                text: c('bf2023: Deal details').t`Premium Password Manager`,
             },
         ];
     }

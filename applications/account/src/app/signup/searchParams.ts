@@ -79,7 +79,7 @@ export const getSignupSearchParams = (
 
     const referrer = searchParams.get('referrer') || undefined; // referral ID
     const invite = searchParams.get('invite') || undefined;
-    const coupon = searchParams.get('coupon') || undefined;
+    const coupon = searchParams.get('coupon')?.toUpperCase() || undefined;
     const type = searchParams.get('type') || undefined;
     const hideFreePlan = searchParams.get('hfp') || undefined;
     const email = searchParams.get('email') || undefined;

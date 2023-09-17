@@ -2,15 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Badge,
-    Icon,
-    Info,
-    InlineLinkButton,
-    StripedItem,
-    StripedList,
-    useActiveBreakpoint,
-} from '@proton/components/';
+import { Badge, Icon, Info, InlineLinkButton, StripedItem, StripedList } from '@proton/components/';
 import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from './DealContext';
@@ -22,7 +14,6 @@ interface Props {
 
 const DealFeatures = ({ isExpanded, expand }: Props) => {
     const { deal } = useDealContext();
-    const { isNarrow } = useActiveBreakpoint();
     const features = useMemo(() => deal.features?.(), [deal.features]);
 
     if (!features?.length) {
@@ -31,7 +22,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
 
     return (
         <div className="flex-item-fluid-auto w100">
-            {(!isNarrow || isExpanded) && (
+            {isExpanded && (
                 <StripedList alternate="odd">
                     {features.map((feature) => (
                         <StripedItem
@@ -48,12 +39,12 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                             <span className={clsx(['text-left', feature.disabled && 'color-disabled'])}>
                                 {feature.name}
                             </span>
-                            {!!feature.tooltip && <Info buttonClass="ml-2" title={feature.tooltip} />}
+                            {!!feature.tooltip && <Info buttonClass="ml-1" title={feature.tooltip} />}
                         </StripedItem>
                     ))}
                 </StripedList>
             )}
-            {isNarrow && !isExpanded && (
+            {!isExpanded && (
                 <div className="w100 text-center flex">
                     <InlineLinkButton className="mx-auto" onClick={() => expand()}>
                         <span>{c('Action').t`See plan features`}</span>

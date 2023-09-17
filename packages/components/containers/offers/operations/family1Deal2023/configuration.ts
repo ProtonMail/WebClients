@@ -23,7 +23,7 @@ const config: OfferConfig = {
                 [PLANS.FAMILY]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
-            popular: true,
+            popular: 1,
             features: getFamilyFeatures,
             getCTAContent: () => c('familyOffer_2023:Get Proton Family').t`Get ${planName}`,
             star: '*',

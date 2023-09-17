@@ -28,7 +28,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
             features: getUnlimitedDealFeatures,
             star: '1',
-            popular: true,
+            popular: 1,
             header: () => c('specialoffer: Label').t`Offer ends soon`,
         },
     ],
