@@ -9,21 +9,21 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
-import Layout from './Layout';
+import Layout, { Background } from './Layout';
 
 const Step2 = ({
     onSetup,
     product,
     img,
     isB2bPlan,
-    isDarkBg,
+    background,
     hasPayment,
 }: {
     onSetup: () => Promise<void>;
     product: string;
     img: ReactNode;
     isB2bPlan: boolean;
-    isDarkBg: boolean;
+    background?: Background;
     hasPayment: boolean;
 }) => {
     const steps: string[] = [
@@ -44,7 +44,7 @@ const Step2 = ({
     }, []);
 
     return (
-        <Layout hasDecoration={false} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
+        <Layout hasDecoration={false} isB2bPlan={isB2bPlan} background={background}>
             <Main>
                 <Content>
                     <div className="text-center pt-6" role="alert">

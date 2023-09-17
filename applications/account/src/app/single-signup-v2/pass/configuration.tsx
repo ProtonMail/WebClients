@@ -11,6 +11,7 @@ import {
 } from '@proton/components/containers/payments/features/pass';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { APPS, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -80,7 +81,13 @@ export const getCustomPassFeatures = () => {
     ];
 };
 
-export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
+export const getPassConfiguration = ({
+    isDesktop,
+    vpnServersCountData,
+}: {
+    isDesktop: boolean;
+    vpnServersCountData: VPNServersCountData;
+}) => {
     const logo = <PassLogo />;
 
     const title = <>{c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`}</>;
@@ -119,7 +126,7 @@ export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
         },
         {
             plan: PLANS.BUNDLE,
-            subsection: <BundlePlanSubSection />,
+            subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
             type: 'standard',
             guarantee: true,
         },

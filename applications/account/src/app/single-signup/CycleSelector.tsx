@@ -24,9 +24,9 @@ export const getBilledText = (cycle: CYCLE): string | null => {
         case CYCLE.TWO_YEARS:
             return c('Info').t`per month, billed every 24 months`;
         case CYCLE.FIFTEEN:
-            return c('Info').t`per month, billed every 15 months`;
+            return c('Info').t`per month`;
         case CYCLE.THIRTY:
-            return c('Info').t`per month, billed every 30 months`;
+            return c('Info').t`per month`;
         default:
             return null;
     }
@@ -160,22 +160,28 @@ const CycleSelector = ({
     currency,
     onGetTheDeal,
     checkoutMapping,
+    upsellCycle = CYCLE.TWO_YEARS,
 }: {
     onGetTheDeal: (cycle: CYCLE) => void;
     cycle: CYCLE;
     currency: Currency;
     cycles: CYCLE[];
+    upsellCycle?: CYCLE;
     onChangeCycle: (cycle: CYCLE, upsellFrom?: CYCLE) => void;
     checkoutMapping: CycleMapping<SubscriptionCheckoutData>;
 }) => {
     return (
         <>
             {cycles.map((cycleItem) => {
-                const upsellCycle = CYCLE.TWO_YEARS;
-                const discount24months = checkoutMapping[upsellCycle].discountPercent;
+                const upsellMapping = checkoutMapping[upsellCycle];
+                const cycleMapping = checkoutMapping[cycleItem];
+                if (!upsellMapping || !cycleMapping) {
+                    return null;
+                }
+                const discount24months = upsellMapping.discountPercent;
                 const discountPercentage = `${discount24months}%`;
                 const offText = getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '');
-                const currentCheckout = checkoutMapping[cycleItem] as SubscriptionCheckoutData;
+                const currentCheckout = cycleMapping;
                 return (
                     <CycleItemView
                         cycle={cycleItem}

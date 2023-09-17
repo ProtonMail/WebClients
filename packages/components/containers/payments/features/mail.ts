@@ -12,7 +12,8 @@ export const getMailAppFeature = (): PlanCardFeatureDefinition => {
         text: MAIL_APP_NAME,
         included: true,
         icon: 'brand-proton-mail',
-        tooltip: c('new_plans: tooltip').t`${MAIL_APP_NAME}: end-to-end encrypted email`,
+        tooltip: c('new_plans: tooltip')
+            .t`${MAIL_APP_NAME}: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.`,
     };
 };
 

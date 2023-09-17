@@ -77,13 +77,22 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getVPNAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
+export const getVPNAppFeature = ({
+    serversCount,
+    family,
+}: {
+    serversCount: VPNServersCountData;
+    family?: boolean;
+}): PlanCardFeatureDefinition => {
+    const serversAndCountries = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
     return {
         text: VPN_APP_NAME,
-        tooltip: options?.family
+        tooltip: family
             ? c('new_plans: tooltip')
                   .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`
-            : c('new_plans: tooltip').t`${VPN_APP_NAME}: unblock content, browse privately`,
+            : // translator: Includes [X+ servers across Y+ countries], ...
+              c('new_plans: tooltip')
+                  .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
         included: true,
         icon: 'brand-proton-vpn',
     };
@@ -152,7 +161,7 @@ export const getDoubleHop = (included: boolean, highlight?: boolean): PlanCardFe
 
 export const getNetShield = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Ad-blocker & malware protection`,
+        text: c('new_plans: feature').t`Ad-blocker and malware protection`,
         tooltip: c('new_plans: tooltip')
             .t`Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware`,
         included,

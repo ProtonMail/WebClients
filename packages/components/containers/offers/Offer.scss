@@ -1,12 +1,17 @@
 @import '~@proton/styles/scss/lib';
 
-$amount-size: 36;
+$amount-size: 34; // should be 36, but don't increase more than 34, otherwise we'll have some display issues.
 
 .offer {
 	&-modal {
 		&.modal-two-dialog--large {
 			// only increasing size for large case = when 3 plans
-			--size: #{em(992)}; // to define - header image is 992px wide
+			--size: #{em(1050)}; // 992 before, but increase to have feature copy on one line...
+		}
+
+		&.offer-modal--four-deals {
+			// larger case = when 4 plans
+			--size: #{em(1200)};
 		}
 
 		&.offer-modal--one-deal {
@@ -104,6 +109,37 @@ $amount-size: 36;
 		}
 	}
 
+	// special 2x2 stacking for four plan case
+	&-main-wrapper--four-plans &-wrapper {
+		/* @include media('<=#{em(1000, 16)}') {
+
+		} */
+
+		@include media('<=#{em(1200, 16)}') {
+			flex-wrap: wrap;
+
+			.offer-plan-container {
+				min-inline-size: calc(50% - 2em);
+
+				&--mostPopular {
+					order: -4;
+				}
+
+				&--secondMostPopular {
+					order: -3;
+				}
+
+				&--thirdMostPopular {
+					order: -2;
+				}
+
+				&:not(:first-child) {
+					margin-inline-start: 0;
+				}
+			}
+		}
+	}
+
 	// contents of offers
 	&-countdown {
 		&-number {
@@ -133,7 +169,7 @@ $amount-size: 36;
 	}
 
 	&-plan {
-		padding-inline: em(24);
+		padding-inline: em(20);
 		@include media('<=#{em(850, 16)}') {
 			padding-inline: em(18);
 		}
@@ -194,8 +230,15 @@ $amount-size: 36;
 		.currency {
 			font-size: em($amount-size);
 			font-weight: var(--font-weight-bold);
-			@include media('<=#{em(1020, 16)}') {
+			@include media('<=#{em(1050, 16)}') {
 				font-size: em(28);
+			}
+			@include media('<=#{em(770, 16)}') {
+				// fix for medium viewports
+				font-size: em(24);
+			}
+			@include media('<=small') {
+				font-size: em($amount-size);
 			}
 		}
 
@@ -205,7 +248,7 @@ $amount-size: 36;
 			display: inline-block;
 
 			.offer-modal:not(.offer-modal--one-deal) & {
-				@include media('<=#{em(900, 16)}') {
+				@include media('<=#{em(960, 16)}') {
 					min-inline-size: 100%;
 					position: relative;
 					inset-block-start: -0.5em;
@@ -224,5 +267,12 @@ $amount-size: 36;
 
 	&-features:empty {
 		display: none;
+	}
+
+	&-features {
+		.info-button {
+			position: relative;
+			inset-block-start: em(-2);
+		}
 	}
 }
