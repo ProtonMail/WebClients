@@ -22,7 +22,9 @@ const parseNotification = (notification: NotificationOptions): Notification => {
             return notification;
         case 'error': {
             const errorMessage =
-                notification.error instanceof Error ? getApiErrorMessage(notification.error) : undefined;
+                notification.error instanceof Error
+                    ? getApiErrorMessage(notification.error) ?? notification.error.message
+                    : undefined;
             const serializedNotification: Notification = {
                 ...notification,
                 text: errorMessage ? `${notification.text} (${errorMessage})` : notification.text,
