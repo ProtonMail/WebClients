@@ -49,9 +49,6 @@
       "Apply": [
         "Toepassen"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Ten hoogste 100 contacten zijn toegelaten per contactgroep"
-      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -2192,12 +2189,6 @@
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
-      ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
       ],
@@ -3379,6 +3370,9 @@
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
+      ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
       ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
@@ -4700,9 +4694,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows-app"
-      ],
       "clearing your browser cache": [
         "browsercache legen"
       ],
@@ -4717,9 +4708,6 @@
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synchroniseer naadloos bestanden en mappen tussen uw computer en ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Gedeeld"

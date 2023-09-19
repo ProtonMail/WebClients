@@ -94,8 +94,9 @@
       "As Scheduled": [
         "Όπως έχει προγραμματιστεί"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Επιτρέπονται το πολύ 100 επαφές ανά ομάδα επαφών"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
+        "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -1141,6 +1142,10 @@
       ],
       "Yes, I'll attend": [
         "Ναι, θα παρευρεθώ"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ],
       "Zoom in": [
         "Μεγέθυνση"
@@ -3440,11 +3445,9 @@
       "Wrong mailbox password": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από 10 επαφές"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
@@ -3476,9 +3479,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Το πολύ ${ maxAttendees } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ maxAttendees } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4230,6 +4233,9 @@
       ],
       "Storage unlocked": [
         "Χώρος αποθήκευσης ξεκλειδώθηκε"
+      ],
+      "This feature is currently unavailable": [
+        "Αυτή η δυνατότητα δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
       "Update your logins": [
         "Ενημερώστε τα στοιχεία σύνδεσής σας"

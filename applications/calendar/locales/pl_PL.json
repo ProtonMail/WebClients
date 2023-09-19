@@ -63,9 +63,6 @@
       "Apply": [
         "Zastosuj"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Grupa kontaktów może zawierać maksymalnie 100 kontaktów"
-      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -2591,11 +2588,11 @@
       "You already added this holidays calendar": [
         "Posiadasz już kalendarz świąt"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "W pliku vCard możesz wysłać maksymalnie 10 kontaktów"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców"
       ],
       "You have reached the contacts limit for your account": [
         "Osiągnięto limit kontaktów na koncie"
@@ -4350,12 +4347,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestnika",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Tworzenie zaproszeń w udostępnionym kalendarzu nie jest dozwolone"
       ]
@@ -6020,7 +6011,7 @@
         "Dodaj święta do kalendarza."
       ],
       "Easily find the event you're looking for with our new search feature.": [
-        "Łatwo znajdź wydarzenie, którego szukasz, dzięki naszej nowej funkcji wyszukiwania."
+        "Znajdź łatwo wydarzenie za pomocą naszej nowej wyszukiwarki."
       ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."

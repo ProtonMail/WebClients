@@ -94,9 +94,6 @@
       "As Scheduled": [
         "按原定时间"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "每个群组最多只能有 100 位联系人"
-      ],
       "Attach screenshot(s)": [
         "添加截图"
       ],
@@ -3419,12 +3416,6 @@
       "Wrong mailbox password": [
         "邮箱密码错误"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "收件人不能超过 100 个"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "您不能发送超过 10 个联系人的 vCard 文件"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
       ],
@@ -3451,11 +3442,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "每次最多可邀请 ${ MAX_ATTENDEES } 人参与"
       ]
     },
     "Error display when performing invalid move on message": {

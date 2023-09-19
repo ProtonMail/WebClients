@@ -9,6 +9,11 @@
         "Taskant taččurant (wali meṛṛa talqayt n tedyant)"
       ]
     },
+    "account": {
+      "Mail forward stopped": [
+        "Awelleh n yimayl yeḥbes"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
@@ -54,6 +59,9 @@
       ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(tuṭṭfiwin) n ugdil"
+      ],
+      "Attention required": [
+        "Yesra leḥdar"
       ],
       "Authenticate": [
         "Asesteb"
@@ -254,6 +262,9 @@
       ],
       "Hide time zones": [
         "Ffer timnaḍin tikudanin"
+      ],
+      "Image could not be loaded with tracker protection.": [
+        "Tugna ulamek ara d-tali s ummesten n yineḍfaren."
       ],
       "Image will be loaded without a proxy": [
         "Tugna ad d-tettwasuli s war apṛuksi"
@@ -701,6 +712,9 @@
       "Invalid method": [
         "Yir tarrayt"
       ],
+      "Unsupported calendar component": [
+        "Asuddes n uwitay ur yettusefrak ara"
+      ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
       ]
@@ -857,6 +871,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Ẓreg (sken, rnu, ẓreg talqayt n tedyant)"
+      ],
+      "View (see all event details)": [
+        "Taskant (wali meṛṛa talqayt n tedyant)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -967,6 +984,9 @@
       "olive": [
         "azemmur"
       ],
+      "pacific": [
+        "amelwi"
+      ],
       "pine": [
         "azumba"
       ],
@@ -978,6 +998,9 @@
       ],
       "purple": [
         "akeẓẓal"
+      ],
+      "reef": [
+        "lmerǧan"
       ],
       "sahara": [
         "sseḥra"
@@ -1764,6 +1787,9 @@
       "Trinidad and Tobago": [
         "Ṭrindad d Ṭubagu"
       ],
+      "Tristan da Cunha": [
+        "Tigzirin n Tristan Dakunha"
+      ],
       "Tunisia": [
         "Tunes"
       ],
@@ -2156,6 +2182,9 @@
       "Email address disabled": [
         "Tansa imayl tensa"
       ],
+      "Email address is required": [
+        "Tansa imayl mačči yettwasra"
+      ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
       ],
@@ -2173,6 +2202,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Ulac tadyant"
       ],
       "Failed to get original occurrence in series": [
         "Yecceḍ wawway n tummant taneẓlit deg umazrar"
@@ -2257,11 +2289,20 @@
         "Yiwen seg yigrawen ulac ɣur-s inermisen: ${ noContactGroupList }",
         "Kra n yigrawen ulac ɣur-s inermisen: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Awal uffir yettwasra"
+      ],
       "Passwords do not match": [
         "Awalen uffiren ur menṭaḍen ara"
       ],
+      "Please activate your search again": [
+        "Ttxil-k·m rmed anadi-k·m i tikkelt niḍen"
+      ],
       "Please create an address first.": [
         "Ma ulac aɣilif di tazwara snulfu-d tansa."
+      ],
+      "Port is required": [
+        "Tawwurt tettwasra"
       ],
       "Primary address key is not decrypted": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara"
@@ -2369,12 +2410,6 @@
       "Validation error": [
         "Tuccḍa n usentem"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Ur tezmireḍ ara ad tazneḍ ifuhla vCard i wugar n 10 n yinermisen"
-      ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
       ],
@@ -2388,6 +2423,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Tella tuccḍa deg tɣuri n ufaylu-inek·inem ${ formattedFilename }. Afaylu ur yesɛi ara amasal i ilaqen."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2575,6 +2613,14 @@
         "Agmuḍ yettwasra"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Ulac agmuḍ"
+      ],
+      "Results": [
+        "Igmaḍ"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "yettwasefsex"
@@ -2584,6 +2630,11 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } yimettekki",
         "${ numberOfAttendees } yimettekkiyen"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Akk ass"
       ]
     },
     "Event info. Organizer name": {
@@ -2710,6 +2761,9 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Tallunt n uḥraz i ak-yettwamudden: ${ assignedStorage }"
       ],
+      "You are invited to join ${ invite.OrganizationName }": [
+        "Tettwaɛerḍeḍ ad ternuḍ ɣer ${ invite.OrganizationName }"
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Tettwanecdeḍ ad ternuḍ i${ bannerOrganization }. ${ viewInviteButton }"
       ]
@@ -2720,6 +2774,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users ": [
+        "Swel amiḍan-ik n twacult, tnecdeḍ-s iseqdacen "
+      ],
       "Set up your family": [
         "Sbadu tawacult-ik"
       ],
@@ -2779,6 +2836,9 @@
     "Font size option": {
       "Large": [
         "Meqqer"
+      ],
+      "Medium (recommended)": [
+        "Alemmas (yettuwelleh)"
       ],
       "Small": [
         "Wezzil"
@@ -2872,6 +2932,11 @@
     "Import calendar warning": {
       "vCard versions < 3.0": [
         "lqem vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "This file contains some data that we cannot import:": [
+        "Afaylu-a yegber kra n yisef ur tezmireḍ ad tketreḍ:"
       ]
     },
     "Import contact": {
@@ -3075,9 +3140,16 @@
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } unermis yegber aṭas n tansiwin yimayl.",
+        "${ contactCount } yinermisen gebren aṭas n tansiwin yimayl."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } n uɛeggal",
         "${ contactEmailsLength } n yiɛeggalen"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } yegber aṭas n tansiwin yimayl."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } n unermis yettwafen",
@@ -3086,6 +3158,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } n unermis",
         "${ contactsLength } inermisen"
+      ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } d ${ lastItem }"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
@@ -3136,6 +3211,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Imayl n usefsex ad yettwazen i yimettekkiyen n uneḍru. Tebɣiḍ ad tesfesxeḍ aneḍru-agi?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Uṭṭun n tiliɣri yezmer ad yettuseqdec i usenqed yiwen kan n umiḍan ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tella talast n unekcum acku llant tfaturin ur nettaxelles ara. Ttxil-k nermes anedbal-ik."
       ],
@@ -3178,6 +3256,9 @@
       "Are you sure you want to discard your import?": [
         "D tidet tebɣiḍ ad tesfesxeḍ taktert-ik m?"
       ],
+      "Attention required": [
+        "Yesra leḥdar"
+      ],
       "Based on your time zone": [
         "Almend n iẓḍi-k usrig"
       ],
@@ -3186,6 +3267,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "S beṭṭu n telqayt tummidt n tedyant n uwitay-a, ad tqebleḍ ad tmuddeḍ i ${ BRAND_NAME } anekcum ɣer talɣut-a yettwawgelhen n uwitay."
+      ],
+      "Calendar side panel": [
+        "Agalis adisan n uwitay"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
@@ -3204,6 +3288,12 @@
       ],
       "Close this screen to exit.": [
         "Mdel agdil-agi akken ad teffɣeḍ."
+      ],
+      "Contact assigned to group ${ contactGroupName }": [
+        "Anermis yettwarna ɣer ugraw ${ contactGroupName }"
+      ],
+      "Contact unassigned to group ${ contactGroupName }": [
+        "Anermis ur yettwarna ara ɣer ugraw ${ contactGroupName }"
       ],
       "Country code": [
         "Tangalt n tmurt"
@@ -3257,11 +3347,23 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
+      "Edit email address": [
+        "Ẓreg tansa n yimayl"
+      ],
+      "Emails are automatically signed": [
+        "Imaylen ttwazemlen s wudem awurman"
+      ],
+      "Enter the code from your authenticator app": [
+        "Sekcem tangalt seg usnas-ik n usesteb"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
@@ -3321,6 +3423,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
+      ],
+      "Indexing paused": [
+        "Teḥbes tmerna ɣer umatar"
       ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
@@ -3415,11 +3520,21 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ttxil-k•m ẓer belli ayagi yezmer ad yeṭṭef kra n wakud i lmend n tiddi n udlis n tansiwin."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Ttxil-k mudd isem akked tansa n yimayl i tmerna n ugraw."
+      ],
       "Please remove the duplicates and try again.": [
         "Ttxil kkes usligen tɛerḍeḍ tikkelt-nniḍen."
       ],
       "Please select the folders you would like to import:": [
         "Ttxil-k·m fren ikaramen i tebɣiḍ ad tketreḍ:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } ugraw.",
+        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } yigrawen."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Ttxil rǧu simmal ad nmuqel inermisen izemren ad ttuzemlen tikkelt-nniḍen s tsarut n uwgelhen tagejdant."
@@ -3432,6 +3547,9 @@
       ],
       "Primary": [
         "Agejdan"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Talɣut n tririt ad teqqim ɣef yibenk-a alamma tferneḍ ad tt-tekkseḍ."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
@@ -3502,20 +3620,35 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Tadyant-a tettuleqqem. Amsuddes n tedyant-a ur yettaṭṭaf ara ulɣu belli tugiḍ tinubga imi ur tezmireḍ ara ad tazneḍ imaylen seg tansa yettunecden. Tebɣiḍ ad tekkseḍ tadyant-a akken yebɣu yili?"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Aseɣwen-a yettawi ɣer usmel web i yettaɛraḍen ahat ad yaker talɣut-ik, am wawalen uffiren d telqayt n tkarḍa n usmad."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yiminig Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig niḍen i twaledyawt-is."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "I uktar n tedyanin, deg tazwara rnu awitay deg ${ CALENDAR_APP_NAME }. Dagi ara d-banent tedyanin seld aktar."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Akken ad tzemleḍ tikkelt-nniḍen inermisen-inek•m, nesra ad nsenqed yal anermis s tebdart n tsura n uwgelhen iwejden deg umiḍan-inek•m. Ma ur nufi ara ula d yiwet n tenmeɣrut, amiḍan-inek•m ad ittuzmel tikkelt-nniḍen s tsarut n uqgelhen tagejdant."
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "Akken ad d-terreḍ isefka-inek•, tesriḍ ad tremdeḍ tikkelt niḍen tasarut n umiḍan i yettwasqedcen mi d-nulfan yisefka i tikkelt tamezwarut. Ilaq ad d-tmektiḍ awal uffir i tesqedceḍ mi d-tnulfa tsarut."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
       ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Salu tura aɣawas-ik i wakken ad tesɛuḍ timahilin, ifarisen d uḥraz premium s ssuma igerrzen"
       ],
       "We'll notify you when the import is done.": [
         "Ad k•m-nazen talɣut mi ara temmed tektert."
@@ -3616,6 +3749,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Ad tleqqemeḍ akk ineḍruyen deg umazrar-agi. Imttekkiyen yettwakksen ad ṭṭfen talɣut."
       ],
+      "You've reached the maximum number of addresses in the contact group.": [
+        "Tessawḍeḍ amḍan afellay n tansiwin deg ugraw n yinermisen."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
@@ -3624,6 +3760,9 @@
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Tansa-inek•m tensa. Imayl n usefsex ulamek ara yettwazen ɣer yimettekkiyen n uneḍru. Tebɣiḍ ad tsefsxeḍ aneḍru-agi akken yebɣu?"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Isefka-k wejden i uktar seg ${ importedEmailAddressStrong } ɣer umiḍan-ik ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -3642,6 +3781,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Izḍi usrid n unagraw-inek·inem yettban yettusenfel ɣer ${ timezone }. Tebɣiḍ ad tleqqmeḍ asmenyif-inek·inem n yizḍi usrid?"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Ulac igmaḍ"
       ]
     },
     "Info on errors": {
@@ -3724,6 +3868,9 @@
       "Awful": [
         "Yessewḥac"
       ],
+      "Bad": [
+        "Diri-t"
+      ],
       "Beta Access": [
         "Anekcum Biṭa"
       ],
@@ -3771,6 +3918,9 @@
       ],
       "Delete": [
         "Kkes"
+      ],
+      "Delete recovery-related information.": [
+        "Kkes talɣut icudden ɣer tririt."
       ],
       "Description": [
         "Aglam"
@@ -3985,6 +4135,9 @@
       ],
       "Street address": [
         "Tansa n uxxam"
+      ],
+      "Sync with system": [
+        "Mtawi akked unagraw"
       ],
       "System information": [
         "Talɣut n unagraw"
@@ -4376,6 +4529,9 @@
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
       ],
+      "Schedule messages at any time": [
+        "Sɣawes akud n tuzna n yizen melmi i tebɣiḍ"
+      ],
       "Search message content": [
         "Agbur n yizen n unadi"
       ],
@@ -4387,6 +4543,14 @@
       ],
       "Up to 3 TB of storage": [
         "Alamma d 3 ṬAṬ n uḥraz"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Awi aliases war tilas s SimpleLogin s ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } d ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -4653,6 +4817,11 @@
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
       ]
     },
+    "PGP Key info": {
+      "We recommend that you \"untrust\" this key.": [
+        "Ad ak-nɛeggen \"ur ttamen ara\" tsarut-a."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
@@ -4706,6 +4875,9 @@
       ],
       "Please select a country": [
         "Ttxil-k·m fren tamurt"
+      ],
+      "Search events": [
+        "Nadi tidyanin"
       ],
       "Search for group name": [
         "Nadi isem n ugraw"
@@ -4813,6 +4985,11 @@
         "Yecceḍ uleqqem n yiɣewwaren"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Sekcem tansa n yimayl neɣ isem n ugraw"
+      ]
+    },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Bḍu akked yiseqdacen n ${ BRAND_NAME }"
@@ -4894,11 +5071,17 @@
       "64 countries": [
         "64 n Tmura"
       ],
+      "All paid Mail and Calendar features": [
+        "Akk timahilin n lexlaṣ i Mail d Calender"
+      ],
       "High speed VPN": [
         "VPN arurad ɛlayen"
       ],
       "Highest VPN speed": [
         "Arured afellay maḍi VPN"
+      ],
+      "Premium early access": [
+        "Anekcum Premium uzwir"
       ],
       "Premium Mail and Calendar": [
         "Imayl d uwitay premium"
@@ -4958,9 +5141,49 @@
         "Sekles ${ discount }%"
       ]
     },
+    "specialoffer: Title": {
+      "Black Friday Sale": [
+        "Asenzi n Black Friday"
+      ],
+      "Cyber Week Sale": [
+        "Asenzi n Cyber Week"
+      ],
+      "End of year offer": [
+        "Asenzi n taggara n useggas"
+      ],
+      "End of Year Sale": [
+        "Asenzi n taggara n useggas"
+      ],
+      "Get our premium bundle and save more": [
+        "Awi taggayt-nneɣ premium, tḥerzeḍ ugar"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Amultaɣ-nneɣ Visionary yuɣal-d, i kra kan n wakud"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Ḥrez ugar s 2 yiseggasen n ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Sali, tḥerzeḍ ugar s 2 yiseggasen n ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, d ${ DRIVE_APP_NAME }."
+      ]
+    },
     "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Ṭṭef alamma d ${ credits } deg yiselmadan."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Nced-d imeddukkal ɣer ${ BRAND_NAME }"
+      ],
       "Public holidays are here!": [
         "Ismiras izayazen, dagi!"
+      ],
+      "Search for events": [
+        "Nadi ɣef tedyanin"
       ]
     },
     "Storage": {
@@ -5016,6 +5239,9 @@
       ],
       "Calendar information updated": [
         "Talɣut n uwitay tettwaleqqem"
+      ],
+      "Calendar search activated": [
+        "Anadi deg uwitay yettwarmed"
       ],
       "Calendar updated": [
         "Awitay yettwasnifel"
@@ -5287,6 +5513,9 @@
       "Calendar alarm": [
         "Alɣu n uwitay"
       ],
+      "Cannot add more addresses": [
+        "Ur yezmir ara ad yernu ugar n tansiwin"
+      ],
       "Change my answer": [
         "Beddel tiririt-iw"
       ],
@@ -5431,6 +5660,9 @@
       "Merging contacts": [
         "Azday inermisen"
       ],
+      "Minicalendar": [
+        "Awitay ameẓẓyan"
+      ],
       "Night theme": [
         "Asentel n yiḍ"
       ],
@@ -5560,6 +5792,9 @@
       "Start import process": [
         "Bdu akala n uktar"
       ],
+      "Unlock contacts groups": [
+        "Kkes asekkeṛ i yigrawen n yinermisen"
+      ],
       "Update event": [
         "Leqqem tadyant"
       ],
@@ -5583,6 +5818,9 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Aneɛruḍ n baṭel n Mail Plus ad ifekk deg ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5650,6 +5888,9 @@
       ],
       "The image could not be loaded": [
         "Tugna ulamek ara d-tali"
+      ],
+      "The image could not be loaded using proxy": [
+        "Tugna ulamek ara d-tali s useqdec n upṛuksi"
       ],
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
@@ -5739,8 +5980,14 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ad nesḥisef imi ur neqqin ara akka tura. Ma ulac uɣilif semmed tiferkit-agi ukessar akken ad gelmeḍ ugur-inek•inem, akken ad t-nmuqel sakin ad k•m-nenermes ticki ara neqqen."
       ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Ur nezmir ara ad nsenqed aqeddac n yimayl. Ma yella tumneḍ-t, tzemreḍ ad tzegleḍ asenqed-a."
+      ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "Aneɛruḍ-ik n baṭel ad ifakk deg ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {
