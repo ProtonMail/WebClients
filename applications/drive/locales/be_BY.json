@@ -49,8 +49,11 @@
       "Apply": [
         "Ужыць"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "У групу кантактаў можа ўваходзіць не больш за 100 кантактаў"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакта",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -717,6 +720,12 @@
       ],
       "View invoice": [
         "Паглядзець рахунак"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантакту",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
       ],
       "Your 500 MB bonus": [
         "Ваш бонус у 500 МБ"
@@ -2210,11 +2219,11 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Вы не можаце адправіць ліст больш чым 100 атрымальнікам"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
@@ -3371,7 +3380,7 @@
         "Ачысціць пошук зашыфраваных даных"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Ачыстка даных браўзера таксама ачысціць індэксаваны пошук на гэтай прыладзе. Неабходна будзе зрабіць паўторную індэксацыю ўсіх файлаў выкарыстоўваючы функцыянальнасць пошуку."
+        "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Неабходна будзе зрабіць паўторную індэксацыю ўсіх файлаў выкарыстоўваючы функцыянальнасць пошуку."
       ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
@@ -4829,9 +4838,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Праграма для Windows ${ DRIVE_APP_NAME }"
-      ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
@@ -4846,9 +4852,6 @@
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Бесперабойная сінхранізацыя файлаў і папак паміж вашым камп'ютарам і ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Абагулены"
