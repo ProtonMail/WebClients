@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Unsignierte E-Mails blockieren"
       ],
+      "Edit address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
       "Enable": [
         "Aktivieren"
       ],
@@ -1673,6 +1676,11 @@
         "Hilf uns, besser zu werden!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Verifizierungs-E-Mail wurde an ${ address } gesendet."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/Monat)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Hol dir eine ${ BRAND_NAME }-Adresse**, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
       ],
@@ -2926,6 +2937,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Erhöhe die Sicherheit deines Kontos, indem du deine E-Mail-Adresse verifizierst"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installiere eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land deiner Wahl herzustellen."
       ],
@@ -3162,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
+      "Resend verification email": [
+        "Verifizierungs-E-Mail erneut senden"
+      ],
       "Restore": [
         "Wiederherstellen"
       ],
@@ -3179,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Schütze dein ${ BRAND_NAME }-Konto"
       ],
       "Securing your account": [
         "Dein Konto wird abgesichert"
@@ -3388,6 +3408,12 @@
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
+      "Unverified": [
+        "Nicht verifiziert"
+      ],
+      "Unverified email address.": [
+        "Unbestätigte E-Mail-Adresse"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
@@ -3533,6 +3559,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
@@ -3844,6 +3873,9 @@
       "Config to connect to ${ serverName }": [
         "Konfiguration zur Verbindung mit ${ serverName }"
       ],
+      "Confirm email": [
+        "E-Mail-Adresse bestätigen"
+      ],
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
       ],
@@ -3882,6 +3914,9 @@
       ],
       "Current display name": [
         "Aktueller Anzeigename"
+      ],
+      "Current email": [
+        "Aktuelle E-Mail-Adresse"
       ],
       "Customize invoices": [
         "Rechnungen anpassen"
@@ -3975,6 +4010,9 @@
       ],
       "New display name": [
         "Neuer Anzeigename"
+      ],
+      "New email": [
+        "Neue E-Mail-Adresse"
       ],
       "New login password": [
         "Neues Anmeldepasswort"
@@ -5762,6 +5800,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Abonnement wird abgebrochen, bitte warten"
+      ],
       "Downgrading your account, please wait": [
         "Ihr Konto wird zurückgestuft, bitte warten …"
       ]
@@ -5958,6 +5999,9 @@
       ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
+      ],
+      "Email address updated": [
+        "E-Mail-Adresse aktualisiert"
       ],
       "Email updated": [
         "E‐Mail aktualisiert"
@@ -6416,6 +6460,9 @@
       "Edit display name": [
         "Anzeigename bearbeiten"
       ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } bearbeiten"
       ],
@@ -6698,6 +6745,9 @@
       "Verifying your payment...": [
         "Deine Zahlung wird verifiziert..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
+      ],
       "What's new": [
         "Neuigkeiten"
       ],
@@ -6806,6 +6856,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
+      ],
+      "Verified email address": [
+        "E-Mail-Adresse bestätigt"
       ]
     },
     "tooltip": {
