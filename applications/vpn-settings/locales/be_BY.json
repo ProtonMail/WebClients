@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Забар. непадпіс. пошту"
       ],
+      "Edit address": [
+        "Рэдагаваць адрас"
+      ],
       "Enable": [
         "Уключыць"
       ],
@@ -1681,6 +1684,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Дапамажыце нам палепшыць наш сэрвіс!"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Праверачны ліст адпраўлены на ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -3463,6 +3471,9 @@
       "Unverified": [
         "Неправераны"
       ],
+      "Unverified email address.": [
+        "Не пацверджаны адрас электроннай пошты"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
@@ -3612,6 +3623,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Вы можаце наладжваць і спампоўваць свае рахункі, каб весці ўлік выдаткаў."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Вы зможаце адразу разблакіраваць налады вышэй дадаўшы ${ specificCountryCount } да нумара IP-адрасоў у вашым тарыфным плане, або звязацца з намі для атрымання індывідуальнага рашэння."
@@ -3939,6 +3953,9 @@
       "Config to connect to ${ serverName }": [
         "Канфігурацыя для падключэння да ${ serverName }"
       ],
+      "Confirm email": [
+        "Пацвердзіць адрас электроннай пошты"
+      ],
       "Confirm login password": [
         "Пацвердзіць пароль уваходу"
       ],
@@ -3977,6 +3994,9 @@
       ],
       "Current display name": [
         "Бягучае бачнае імя"
+      ],
+      "Current email": [
+        "Бягучая электронная пошта"
       ],
       "Customize invoices": [
         "Наладжванне рахункаў"
@@ -5924,6 +5944,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Скасаванне вашай падпіскі. Пачакайце..."
+      ],
       "Downgrading your account, please wait": [
         "Паніжэнне вашага ўліковага запісу. Пачакайце..."
       ]
@@ -6213,7 +6236,7 @@
         "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [
-        "Вы паспяхова адпісаліся"
+        "Вы паспяхова скасавалі падпіску"
       ]
     },
     "Success message": {
@@ -6904,6 +6927,9 @@
       "Verifying your payment...": [
         "Праверка вашага плацяжу..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
+      ],
       "What's new": [
         "Што новага"
       ],
@@ -7012,6 +7038,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
+      ],
+      "Verified email address": [
+        "Адрас электроннай пошты правераны"
       ]
     },
     "tooltip": {
