@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Unsignierte E-Mails blockieren"
       ],
+      "Edit address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
       "Enable": [
         "Aktivieren"
       ],
@@ -3115,6 +3118,11 @@
         "${ allCategoryTitlesExceptTheLastOne } und ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Verifizierungs-E-Mail wurde an ${ address } gesendet."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4625,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Richte die ${ strongText } von Gmail ein"
       ],
+      "This feature is currently unavailable": [
+        "Diese Funktion steht momentan nicht zur Verfügung."
+      ],
       "Update your logins": [
         "Aktualisiere deine Zugangsdaten"
       ]
@@ -5316,6 +5327,9 @@
       ],
       "* No credit card required.": [
         "* Keine Kreditkarte erforderlich."
+      ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Hol dir eine ${ BRAND_NAME }-Adresse**, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
@@ -6041,6 +6055,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Erhöhe die Sicherheit deines Kontos, indem du deine E-Mail-Adresse verifizierst"
+      ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
       ],
@@ -6489,6 +6506,9 @@
       "Report link expired": [
         "Meldelink abgelaufen"
       ],
+      "Resend verification email": [
+        "Verifizierungs-E-Mail erneut senden"
+      ],
       "Restore": [
         "Wiederherstellen"
       ],
@@ -6512,6 +6532,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Schütze dein ${ BRAND_NAME }-Konto"
       ],
       "Securing your account": [
         "Dein Konto wird abgesichert"
@@ -6883,6 +6906,12 @@
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
+      "Unverified": [
+        "Nicht verifiziert"
+      ],
+      "Unverified email address.": [
+        "Unbestätigte E-Mail-Adresse"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
@@ -7103,6 +7132,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kannst die Protokollierung von Authentifizierungen aktivieren, um zu sehen, wann von welcher IP-Adresse auf dein Konto zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen aufzeichnen."
@@ -7933,6 +7965,9 @@
       "Config to connect to ${ serverName }": [
         "Konfiguration zur Verbindung mit ${ serverName }"
       ],
+      "Confirm email": [
+        "E-Mail-Adresse bestätigen"
+      ],
       "Confirm link URLs": [
         "Bestätige die Link-URLs"
       ],
@@ -7983,6 +8018,9 @@
       ],
       "Current display name": [
         "Aktueller Anzeigename"
+      ],
+      "Current email": [
+        "Aktuelle E-Mail-Adresse"
       ],
       "Customize invoices": [
         "Rechnungen anpassen"
@@ -8268,6 +8306,9 @@
       ],
       "New display name": [
         "Neuer Anzeigename"
+      ],
+      "New email": [
+        "Neue E-Mail-Adresse"
       ],
       "New login password": [
         "Neues Anmeldepasswort"
@@ -8938,6 +8979,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Bitte versuche es in ein paar Minuten erneut."
+      ],
+      "This feature is temporarily unavailable": [
+        "Diese Funktion ist vorübergehend nicht verfügbar."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11549,6 +11598,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Abonnement wird abgebrochen, bitte warten"
+      ],
       "Downgrading your account, please wait": [
         "Ihr Konto wird zurückgestuft, bitte warten …"
       ]
@@ -11819,6 +11871,9 @@
       ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
+      ],
+      "Email address updated": [
+        "E-Mail-Adresse aktualisiert"
       ],
       "Email updated": [
         "E‐Mail aktualisiert"
@@ -12572,6 +12627,9 @@
       "Edit domain": [
         "Domain bearbeiten"
       ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
       "Edit filter": [
         "Filter bearbeiten"
       ],
@@ -13101,6 +13159,9 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
+      ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
       ],
@@ -13385,6 +13446,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Verwende die standardmäßigen Bildlaufleisten deines Browsers. Diese sind normalerweise größer und leichter zu bedienen."
+      ],
+      "Verified email address": [
+        "E-Mail-Adresse bestätigt"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
