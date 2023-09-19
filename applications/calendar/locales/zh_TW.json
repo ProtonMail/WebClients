@@ -63,9 +63,6 @@
       "Apply": [
         "套用"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "每個聯絡人群組至多允許 100 個聯絡人"
-      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -387,6 +384,9 @@
       "Open settings": [
         "開啟設定"
       ],
+      "Pause indexing": [
+        "暫停索引"
+      ],
       "Preview contact": [
         "預覽聯絡人"
       ],
@@ -449,6 +449,9 @@
       ],
       "Reset to default": [
         "還原成預設值"
+      ],
+      "Resume indexing": [
+        "重新製作索引"
       ],
       "Save": [
         "儲存"
@@ -2052,6 +2055,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "這可能需要幾分鐘的時間。同時，您可以像往常一樣繼續使用行事曆。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
@@ -2516,12 +2522,6 @@
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "您無法將電郵傳送給超過100位收件人"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
-      ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
@@ -2742,6 +2742,14 @@
         "郵件信譽評分為必要項目"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "沒有結果"
+      ],
+      "Results": [
+        "結果"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "已取消"
@@ -2750,6 +2758,14 @@
     "Event form": {
       "${ numberOfAttendees } participants": [
         "${ numberOfAttendees } 個參與者"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "全天"
+      ],
+      "All day, lasts ${ plusDaysToEnd } days": [
+        "全天，持續${ plusDaysToEnd }天"
       ]
     },
     "Event info. Organizer name": {
@@ -3397,6 +3413,9 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } 位聯絡人"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } 與 ${ lastItem }"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
@@ -3499,6 +3518,9 @@
       "Calendar side panel": [
         "行事曆側面板"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "找不到您要找的行程嗎？隱藏的行事曆中的部份行程符合您的查詢。要檢視那些結果，請開啟 ${ hiddenWithItemsCalendarList } 的能見度。"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
@@ -3510,6 +3532,9 @@
       ],
       "Clear encrypted search data": [
         "清除加密搜索的資料"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "清除瀏覽器資料將會清除此裝置上的搜尋索引。要使用搜尋功能時，將需要對所有行事曆行程重新索引。"
       ],
       "Clears browser data related to the encrypted search.": [
         "清除與加密搜索相關的瀏覽器數據。"
@@ -3579,6 +3604,9 @@
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
+      ],
+      "Edit email address": [
+        "編輯電子郵件地址"
       ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
@@ -3654,6 +3682,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "正在索引行程：${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "索引已暫停"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -4064,6 +4098,16 @@
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "您可以更新搜尋查詢或關閉搜尋以回到行事曆檢視"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "未找到任何結果"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "點擊以查看詳細資料"
@@ -4108,9 +4152,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "不允許在分享的行事曆中建立邀請"
       ]
@@ -5231,6 +5272,9 @@
       "Image URL": [
         "圖像網址"
       ],
+      "Indexing...": [
+        "正在製作索引……"
+      ],
       "Name": [
         "名稱"
       ],
@@ -5636,6 +5680,9 @@
       "Add your country's public holidays to your calendar.": [
         "新增您所在國家的公眾假期至您的行事曆中。"
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "使用我們新的搜尋功能輕鬆找到您正在尋找的行程。"
+      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
@@ -5644,6 +5691,9 @@
       ],
       "Public holidays are here!": [
         "公眾假期登場！"
+      ],
+      "Search for events": [
+        "搜尋行程"
       ]
     },
     "Storage": {
@@ -5706,6 +5756,9 @@
       ],
       "Calendar information updated": [
         "行事曆資訊已更新"
+      ],
+      "Calendar search activated": [
+        "已啟用行事曆搜尋"
       ],
       "Calendar updated": [
         "行事曆已更新"
@@ -6295,6 +6348,9 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We're setting up Calendar search": [
+        "我們正在設定行事曆搜尋"
+      ],
       "We've locked some calendars to protect your data": [
         "我們已鎖定部份行事曆以保護您的資料"
       ],
@@ -6432,6 +6488,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "導航至行程"
+      ],
       "Open in a new tab": [
         "開啟新分頁"
       ]

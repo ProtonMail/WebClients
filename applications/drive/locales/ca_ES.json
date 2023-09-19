@@ -49,9 +49,6 @@
       "Apply": [
         "Aplica"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "El nombre màxim de contactes per grup de contactes és de 100."
-      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -2192,12 +2189,6 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "No podeu enviar un correu a més de 100 destinataris"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "No podeu enviar fitxers vCard de més de 10 contactes"
-      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
@@ -2247,6 +2238,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "No s'ha pogut xifrar."
+      ],
+      "Missing FN property": [
+        "Falta la propietat FN."
       ],
       "vCard versions < 3.0 not supported": [
         "Les versions de vCard < 3.0 no són compatibles"
@@ -4688,9 +4682,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "aplicació ${ DRIVE_APP_NAME } per a Windows"
-      ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
@@ -4705,9 +4696,6 @@
       ],
       "Request an invite": [
         "Demana una invitació"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Sincronitzeu fàcilment fitxers i carpetes entre el vostre ordinador i ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Compartit"

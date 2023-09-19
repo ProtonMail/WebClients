@@ -94,9 +94,6 @@
       "As Scheduled": [
         "予定通り"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "一つの連絡先グループに追加できる連絡先は最大 100 件です"
-      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -3419,12 +3416,6 @@
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "10 件以上の連絡先の vCard ファイルを送信することはできません"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
       ],
@@ -3451,11 +3442,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
       ]
     },
     "Error display when performing invalid move on message": {

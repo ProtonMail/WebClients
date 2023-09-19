@@ -63,9 +63,6 @@
       "Apply": [
         "Alkalmazás"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Maximum 100 névjegy lehet egy névjegy csoportban"
-      ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
@@ -992,7 +989,7 @@
     },
     "Calendar view selector": {
       "Change time range": [
-        "Időtartomány megváltoztatása"
+        "Intervallum megváltoztatása"
       ],
       "Change time range to": [
         "Időintervallum átállítása:"
@@ -2529,14 +2526,8 @@
       "You already added this holidays calendar": [
         "Már hozzáadta ezt a munkaszüneti naptárat"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nem küldhet üzenetet több mint 100 címzettnek"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Egyszerre nem küldhet el több mint 10 vCard névjegyfájlt"
-      ],
       "You have reached the contacts limit for your account": [
-        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
@@ -2591,7 +2582,7 @@
         "Titkosítás sikertelen"
       ],
       "Missing FN property": [
-        "FN tulajdon hiányzik"
+        "FN tulajdonság hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -4147,10 +4138,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
-        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Megosztott naptárakban nem engedélyezett a meghívók létrehozása"
       ]

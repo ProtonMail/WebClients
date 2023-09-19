@@ -63,9 +63,6 @@
       "Apply": [
         "Toepassen"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Ten hoogste 100 contacten zijn toegelaten per contactgroep"
-      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -389,6 +386,9 @@
       "Open settings": [
         "Instellingen openen"
       ],
+      "Pause indexing": [
+        "Pauzeer indexeren"
+      ],
       "Preview contact": [
         "Contact tonen"
       ],
@@ -451,6 +451,9 @@
       ],
       "Reset to default": [
         "Terugzetten naar standaard"
+      ],
+      "Resume indexing": [
+        "Hervat indexeren"
       ],
       "Save": [
         "Opslaan"
@@ -2063,6 +2066,9 @@
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Dit kan enkele minuten duren. U kan ondertussen uw Proton Calender gebruik zoals gewoonlijk."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -2298,6 +2304,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Afspraak niet gevonden"
       ],
       "Failed to get original occurrence in series": [
         "Oorspronkelijke herhalingen uit reeks ophalen mislukt"
@@ -2535,12 +2544,6 @@
       "You already added this holidays calendar": [
         "U hebt deze feestdagenkalender al toegevoegd"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
-      ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
       ],
@@ -2762,6 +2765,14 @@
         "Score is vereist"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Geen resultaat"
+      ],
+      "Results": [
+        "Resultaten"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "geannuleerd"
@@ -2771,6 +2782,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } deelnemer",
         "${ numberOfAttendees } deelnemers"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Hele dag"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Hele dag, duurt ${ plusDaysToEnd } dag",
+        "Hele dag, duurt ${ plusDaysToEnd } dagen"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3458,9 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } en ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
@@ -3636,6 +3659,9 @@
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
       ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
@@ -3712,6 +3738,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Afspraken indexeren: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indexeren gepauzeerd"
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
@@ -4123,6 +4155,11 @@
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
       ]
     },
+    "Info message": {
+      "No results found": [
+        "Geen resultaten gevonden"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klik voor details"
@@ -4167,10 +4204,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Maximaal ${ MAX_ATTENDEES } deelnemer toegelaten per uitnodiging",
-        "Maximaal ${ MAX_ATTENDEES } deelnemers toegelaten per uitnodiging"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Uitnodigingen maken in een gedeelde agenda is niet toegestaan"
       ]
@@ -5325,6 +5358,9 @@
       "Image URL": [
         "Afbeeldings-URL"
       ],
+      "Indexing...": [
+        "Indexeren..."
+      ],
       "Name": [
         "Naam"
       ],
@@ -5339,6 +5375,9 @@
       ],
       "Please select a country": [
         "Kies een land"
+      ],
+      "Search events": [
+        "Afspraken zoeken"
       ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
@@ -5737,6 +5776,9 @@
       "Add your country's public holidays to your calendar.": [
         "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Vind eenvoudig de afspraken waar u naar zoekt met onze nieuwe zoekfunctie."
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -5745,6 +5787,9 @@
       ],
       "Public holidays are here!": [
         "Wettelijke feestdagen zijn hier!"
+      ],
+      "Search for events": [
+        "Zoek naar afspraken"
       ]
     },
     "Storage": {
@@ -5808,6 +5853,9 @@
       ],
       "Calendar information updated": [
         "Agenda-informate bijgewerkt"
+      ],
+      "Calendar search activated": [
+        "Agenda's doorzoeken geactiveerd"
       ],
       "Calendar updated": [
         "Agenda bijgewerkt"
@@ -6552,6 +6600,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Navigeren naar afspraak"
+      ],
       "Open in a new tab": [
         "Openen in een nieuw tabblad"
       ]

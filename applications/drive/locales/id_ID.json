@@ -49,9 +49,6 @@
       "Apply": [
         "Terapkan"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Masing-masing grup kontak hanya dapat menampung hingga 100 kontak"
-      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -711,6 +708,9 @@
       ],
       "View invoice": [
         "Lihat tagihan"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB Anda"
@@ -2183,12 +2183,6 @@
       "Username must end with a letter or digit": [
         "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
-      ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
@@ -3324,6 +3318,9 @@
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Edit email address": [
+        "Sunting alamat surel"
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -4637,9 +4634,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Aplikasi Windows ${ DRIVE_APP_NAME }"
-      ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
       ],
@@ -4654,9 +4648,6 @@
       ],
       "Request an invite": [
         "Minta undangan"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Sinkronkan berkas dan folder antara komputer Anda dan ${ DRIVE_APP_NAME } secara terpadu."
       ],
       "Shared": [
         "Dibagikan"

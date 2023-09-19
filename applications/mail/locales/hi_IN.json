@@ -3356,12 +3356,6 @@
       "Wrong mailbox password": [
         "गलत मेलबॉक्स पासवर्ड"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "आप 100 से अधिक प्राप्तकर्ताओं को मेल नहीं भेज सकते"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "आप 10 से अधिक संपर्को के vCard नहीं भेज सकते"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं",
         "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं"
@@ -3386,12 +3380,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "आपकी खोज का मिलान बहुत अधिक परिणामों से हुआ. कृपया अपनी खोज सीमित करें और पुन: प्रयास करें।"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ MAX_ATTENDEES } प्रतिभागी के होने की अनुमति है",
-        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ MAX_ATTENDEES } प्रतिभागीयों के होने की अनुमति है"
       ]
     },
     "Error display when performing invalid move on message": {
