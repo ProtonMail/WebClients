@@ -526,6 +526,9 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } apenas irá importar inícios de sessão e notas. Passaportes, ficheiros anexados, etc. não são suportados de momento."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez.",
         "${ revisionNumber } vezes."
@@ -644,6 +647,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Se estiver desativado, ${ PASS_APP_NAME } não irá sugerir a criação de palavras-passe fortes nos formulários de registo."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Se estiver ativado, a lista de preenchimento automático irá abrir automaticamente no campo destacado"
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Se estiver ativado, pode preencher automaticamente as suas credenciais clicando no ícone ${ PASS_APP_NAME }."
       ],
@@ -723,6 +729,9 @@
       ],
       "Open the Extensions menu": [
         "Abrir o menu Extensões"
+      ],
+      "Password copied": [
+        "Palavra-passe copiada"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "As palavras-passe geradas com mais de 1 dia serão automaticamente eliminadas do histórico."
@@ -829,6 +838,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Estamos a ter problemas em sincronizar os dados para o seu armazenamento local. Por favor, assegure-se que tem espaço suficiente no disco para a ${ PASS_SHORT_APP_NAME } funcionar corretamente."
       ],
       "You are about to create:": [
         "Está prestes a criar:"
@@ -1089,6 +1101,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Need help ?": [
+        "Precisa de ajuda?"
       ],
       "New vault": [
         "Novo cofre"
@@ -1396,6 +1411,9 @@
       "Enter your Pin": [
         "Introduza o seu PIN"
       ],
+      "Fill & copy password": [
+        "Preencher & copiar a palavra-passe"
+      ],
       "Get the mobile apps": [
         "Obtenha as aplicações móveis"
       ],
@@ -1410,6 +1428,9 @@
       ],
       "Import to vault(s)": [
         "Importar para o(s) cofre(s)"
+      ],
+      "Low disk space": [
+        "Pouco espaço em disco"
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens?"

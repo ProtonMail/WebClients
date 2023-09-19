@@ -98,6 +98,9 @@
       "Add label": [
         "Afegeix etiqueta"
       ],
+      "Add multiple users": [
+        "Afegeix diversos usuaris"
+      ],
       "Add notification": [
         "Afegeix una notificació"
       ],
@@ -478,6 +481,12 @@
       ],
       "Get more labels": [
         "Obtén més etiquetes"
+      ],
+      "Get more licenses": [
+        "Obteniu més llicències"
+      ],
+      "Get more servers": [
+        "Obtén més servidors"
       ],
       "Get the deal": [
         "Obteniu l’oferta"
@@ -1160,6 +1169,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Si sortiu ara, és possible que alguns esdeveniments no s'importin"
+      ]
+    },
+    "Alias promotion": {
+      "Try ${ PASS_APP_NAME }": [
+        "Proveu ${ PASS_APP_NAME }"
       ]
     },
     "Alter": {
@@ -3136,6 +3150,9 @@
       "Email address disabled": [
         "Correu electrònic deshabilitada"
       ],
+      "Email address is invalid": [
+        "L'adreça de correu electrònic no és vàlida."
+      ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
       ],
@@ -3572,6 +3589,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "No s'ha pogut xifrar."
+      ],
+      "Missing FN property": [
+        "Falta la propietat FN."
       ],
       "vCard versions < 3.0 not supported": [
         "Les versions de vCard < 3.0 no són compatibles"
@@ -5468,6 +5488,9 @@
       "Available on macOS, Windows, and Linux.": [
         "Disponible per macOS, Windows i Linux."
       ],
+      "Awaiting transaction": [
+        "En espera de transacció"
+      ],
       "Background color": [
         "Color de fons"
       ],
@@ -5603,6 +5626,9 @@
       ],
       "Data locked": [
         "Dades bloquejades"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers": [
         "Servidors dedicats"
@@ -5754,6 +5780,9 @@
       ],
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
+      ],
+      "Fill in user details": [
+        "Ompli els detalls de l'usuari"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
@@ -6078,6 +6107,9 @@
       "No gateways": [
         "Sense passarel·les"
       ],
+      "No Gateways yet": [
+        "Encara no hi ha passarel·les."
+      ],
       "No imports or forwarding history.": [
         "No hi ha historial d'importacions o reenviaments."
       ],
@@ -6098,6 +6130,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Nombre de servidors dedicats a l'organització"
       ],
       "of": [
         "de"
@@ -6538,6 +6573,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Això pot trigar uns segons o minuts depenent del vostre dispositiu"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Això és una frase de 12 paraules que se't va demanar definir."
       ],
@@ -6603,6 +6641,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Aquest assistent habilitarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
+      ],
+      "to ${ product } Business": [
+        "en ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-ho només si sabeu el que esteu fent o n'heu exportat una còpia."
@@ -6709,6 +6750,9 @@
       "Unsupported file": [
         "Fitxer no compatible"
       ],
+      "Unverified": [
+        "Sense verificar"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
@@ -6795,6 +6839,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el banc."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Recomanem tenir com a mínim 2 servidors per assegurar redundància."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
@@ -7089,6 +7136,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ]
     },
     "info": {
@@ -8044,6 +8094,9 @@
       "New display name": [
         "Nom nou que es mostra"
       ],
+      "New email": [
+        "Nou correu electrònic"
+      ],
       "New login password": [
         "Nova contrasenya d'inici de sessió"
       ],
@@ -8764,6 +8817,9 @@
       "${ appName }: Sign-up": [
         "${ appName }: Registre"
       ],
+      "${ BRAND_NAME } Account": [
+        "Compte de ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Creeu un compte ${ BRAND_NAME } per a utilitzar tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més, amb només un inici de sessió. Obteniu un compte ${ BRAND_NAME } gratuït."
       ],
@@ -9224,6 +9280,9 @@
       "Data breach monitoring (coming soon)": [
         "Monitoratge de filtracions de dades (pròximament)"
       ],
+      "Dedicated servers and IP": [
+        "Servidor i IP dedicats"
+      ],
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
@@ -9550,6 +9609,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Fent clic a \"Pagar\", accepteu els nostres ${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Quan creeu un compte de ${ BRAND_NAME }, accepteu els nostres ${ terms }."
       ],
@@ -9792,6 +9854,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inclòs en ${ plus }, ${ bundle } i ${ BRAND_NAME } per a empreses."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inclòs amb diversos usuaris en els plans ${ BRAND_NAME } for Business"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9815,6 +9880,9 @@
       ],
       "Browser extension": [
         "Extensió del navegador"
+      ],
+      "Censorship circumvention": [
+        "Contorn de la censura"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
@@ -10856,6 +10924,9 @@
       ],
       "pending": [
         "pendent"
+      ],
+      "to be created": [
+        "per crear"
       ]
     },
     "Settings description": {
@@ -11976,6 +12047,9 @@
       ],
       "Add to spam list": [
         "Afegeix a la llista de correu brossa"
+      ],
+      "Add user accounts": [
+        "Afegeix comptes d'usuari"
       ],
       "Add users": [
         "Afegeix usuaris"

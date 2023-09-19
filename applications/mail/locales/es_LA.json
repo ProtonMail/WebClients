@@ -94,8 +94,9 @@
       "As Scheduled": [
         "Como lo programado"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Se permiten como máximo 100 contactos por grupo de contactos"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
+        "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -1141,6 +1142,10 @@
       ],
       "Yes, I'll attend": [
         "Sí, asistiré"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contactos."
       ],
       "Zoom in": [
         "Acercar"
@@ -3440,11 +3445,9 @@
       "Wrong mailbox password": [
         "Contraseña del buzón incorrecta"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "No puede enviar un correo a más de 100 destinatarios"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "No puede enviar archivos vCards de más de 10 contactos"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No puede enviar un correo a más de ${ maxContacts } destinatario.",
+        "No puede enviar un correo a más de ${ maxContacts } destinatarios."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "No puede abrir más de ${ maxActiveComposer } ventana de compositor a la vez",
@@ -3476,9 +3479,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Se permite hasta ${ MAX_ATTENDEES } participante por invitación",
-        "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Se permite hasta ${ maxAttendees } participante por invitación.",
+        "Se permiten hasta ${ maxAttendees } participantes por invitación."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4230,6 +4233,9 @@
       ],
       "Storage unlocked": [
         "Almacenamiento desbloqueado"
+      ],
+      "This feature is currently unavailable": [
+        "Esta función no está actualmente disponible."
       ],
       "Update your logins": [
         "Actualice sus inicios de sesión"

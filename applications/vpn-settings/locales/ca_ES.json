@@ -26,6 +26,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add multiple users": [
+        "Afegeix diversos usuaris"
+      ],
       "Add PayPal": [
         "Afegir PayPal"
       ],
@@ -220,6 +223,12 @@
       ],
       "Get more addresses": [
         "Obteniu més adreces"
+      ],
+      "Get more licenses": [
+        "Obteniu més llicències"
+      ],
+      "Get more servers": [
+        "Obtén més servidors"
       ],
       "Get the deal": [
         "Obteniu l’oferta"
@@ -1685,6 +1694,9 @@
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
+      "Email address is invalid": [
+        "L'adreça de correu electrònic no és vàlida."
+      ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
@@ -2613,6 +2625,9 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Awaiting transaction": [
+        "En espera de transacció"
+      ],
       "Balance from your previous subscription": [
         "Saldo de la vostra subscripció anterior"
       ],
@@ -2681,6 +2696,9 @@
       ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
@@ -2765,6 +2783,9 @@
       ],
       "expires ${ expirationDate }": [
         "caduca el ${ expirationDate }"
+      ],
+      "Fill in user details": [
+        "Ompli els detalls de l'usuari"
       ],
       "for choosing ${ product }": [
         "per escollir ${ product }"
@@ -2907,6 +2928,9 @@
       "No gateways": [
         "Sense passarel·les"
       ],
+      "No Gateways yet": [
+        "Encara no hi ha passarel·les."
+      ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
@@ -2915,6 +2939,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Nombre de servidors dedicats a l'organització"
       ],
       "of": [
         "de"
@@ -3168,6 +3195,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Això pot trigar uns segons o minuts depenent del vostre dispositiu"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
       ],
@@ -3194,6 +3224,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Aquest assistent habilitarà l'autenticació de dos factors (A2F) al vostre compte de ${ BRAND_NAME }. L’autenticació de dos factors farà que el vostre compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
+      ],
+      "to ${ product } Business": [
+        "en ${ product } Business"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
@@ -3258,6 +3291,9 @@
       "Unsupported file": [
         "Fitxer no compatible"
       ],
+      "Unverified": [
+        "Sense verificar"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
@@ -3314,6 +3350,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Hem d'autenticar el vostre pagament amb el banc."
+      ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Recomanem tenir com a mínim 2 servidors per assegurar redundància."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Recomanem que notifiqueu als membres de l'organització i els demaneu que estableixin l'autenticació de dos factors (A2F) per als seus comptes abans de fer-ne complir l'ús."
@@ -3480,6 +3519,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3800,6 +3842,9 @@
       ],
       "New display name": [
         "Nom nou que es mostra"
+      ],
+      "New email": [
+        "Nou correu electrònic"
       ],
       "New login password": [
         "Nova contrasenya d'inici de sessió"
@@ -4367,6 +4412,9 @@
       "Data breach monitoring (coming soon)": [
         "Monitoratge de filtracions de dades (pròximament)"
       ],
+      "Dedicated servers and IP": [
+        "Servidor i IP dedicats"
+      ],
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
@@ -4672,6 +4720,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Fent clic a \"Pagar\", accepteu els nostres ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "termes i condicions"
       ]
@@ -4884,6 +4935,11 @@
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador principal té control sobre la facturació."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inclòs amb diversos usuaris en els plans ${ BRAND_NAME } for Business"
+      ]
+    },
     "new_plans: Upsell attribute": {
       "Access advanced VPN features": [
         "Accedir a funcionalitats de VPN avançades"
@@ -4905,6 +4961,9 @@
       ],
       "Browser extension": [
         "Extensió del navegador"
+      ],
+      "Censorship circumvention": [
+        "Contorn de la censura"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
@@ -5240,6 +5299,9 @@
       ],
       "pending": [
         "pendent"
+      ],
+      "to be created": [
+        "per crear"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5994,6 +6056,9 @@
       ],
       "Add servers": [
         "Afegeix servidors"
+      ],
+      "Add user accounts": [
+        "Afegeix comptes d'usuari"
       ],
       "Add users": [
         "Afegeix usuaris"

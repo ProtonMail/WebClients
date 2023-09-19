@@ -299,7 +299,7 @@
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider } o arquivo não pôde ser analisado ${ errorDetail }"
+        "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."

@@ -63,9 +63,6 @@
       "Apply": [
         "Aplicar"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "São permitidos, no máximo, 100 contactos por grupo de contactos"
-      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
@@ -389,6 +386,9 @@
       "Open settings": [
         "Abrir as definições"
       ],
+      "Pause indexing": [
+        "Pausar indexação"
+      ],
       "Preview contact": [
         "Antever contacto"
       ],
@@ -451,6 +451,9 @@
       ],
       "Reset to default": [
         "Reposição predefinida"
+      ],
+      "Resume indexing": [
+        "Retomar indexação"
       ],
       "Save": [
         "Guardar"
@@ -2063,6 +2066,9 @@
         "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro é maior, divida-o em ficheiros mais pequenos.",
         "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro é maior, divida-o em ficheiros mais pequenos."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Isso pode levar alguns minutos. Entretanto, pode continuar a usar o calendário normalmente."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
@@ -2298,6 +2304,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Evento não encontrado"
       ],
       "Failed to get original occurrence in series": [
         "Erro ao obter a ocorrência original na série"
@@ -2535,12 +2544,6 @@
       "You already added this holidays calendar": [
         "Já adicionou este calendário de férias."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Não pode enviar um e-mail para mais de 100 destinatários."
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Não pode enviar ficheiros vCard de mais de 10 contactos."
-      ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
       ],
@@ -2762,6 +2765,14 @@
         "Avaliação necessária"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Sem resultados"
+      ],
+      "Results": [
+        "Resultados"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "cancelado"
@@ -2771,6 +2782,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } participante",
         "${ numberOfAttendees } participantes"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Todo o dia"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Todo o dia, resta ${ plusDaysToEnd } dia",
+        "Todo o dia, restam ${ plusDaysToEnd } dias"
       ]
     },
     "Event info. Organizer name": {
@@ -3438,6 +3458,9 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } e ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -3554,6 +3577,9 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Não consegue encontrar os eventos que procura? Alguns eventos em calendários ocultos correspondem à sua consulta. Para ver esses resultados, ative a visibilidade para ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
       ],
@@ -3565,6 +3591,9 @@
       ],
       "Clear encrypted search data": [
         "Limpar os dados de pesquisa encriptada"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "A limpeza dos dados do navegador limpará o índice de pesquisa neste dispositivo. Todos os eventos do calendário terão de ser novamente indexados ao utilizar a funcionalidade de pesquisa."
       ],
       "Clears browser data related to the encrypted search.": [
         "Limpa os dados do navegador relacionados com a pesquisa encriptada."
@@ -3712,6 +3741,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "A indexar eventos: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indexação em pausa"
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
@@ -4123,6 +4158,16 @@
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja atualizar a sua preferência de fuso horário?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Pode atualizar a sua pesquisa ou fechá-la para voltar às visualizações da agenda"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clique para detalhes"
@@ -4167,10 +4212,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "É permitido no máximo ${ MAX_ATTENDEES } participante por convite.",
-        "São permitidos no máximo ${ MAX_ATTENDEES } participantes por convite."
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Não é permitido criar convites num calendário partilhado."
       ]
@@ -5325,6 +5366,9 @@
       "Image URL": [
         "URL da imagem"
       ],
+      "Indexing...": [
+        "A indexar..."
+      ],
       "Name": [
         "Nome"
       ],
@@ -5339,6 +5383,9 @@
       ],
       "Please select a country": [
         "Selecione um país"
+      ],
+      "Search events": [
+        "Procurar eventos"
       ],
       "Search for group name": [
         "Pesquisar grupo pelo nome"
@@ -5737,6 +5784,9 @@
       "Add your country's public holidays to your calendar.": [
         "Adicione o seus feriados públicos do seu país ao seu calendário."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Encontre facilmente o evento que procura com a nossa nova funcionalidade de pesquisa."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obtenha até ${ credits } em créditos."
       ],
@@ -5745,6 +5795,9 @@
       ],
       "Public holidays are here!": [
         "Os feriados públicos estão aqui!"
+      ],
+      "Search for events": [
+        "Pesquisar por eventos."
       ]
     },
     "Storage": {
@@ -5808,6 +5861,9 @@
       ],
       "Calendar information updated": [
         "As informações do calendário foram atualizadas."
+      ],
+      "Calendar search activated": [
+        "Pesquisa de calendário ativada"
       ],
       "Calendar updated": [
         "Calendário atualizado"
@@ -6413,6 +6469,9 @@
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
       ],
+      "We're setting up Calendar search": [
+        "Estamos a configurar a pesquisa do calendário"
+      ],
       "We've locked some calendars to protect your data": [
         "Bloqueámos alguns calendários para proteger os seus dados."
       ],
@@ -6552,6 +6611,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Navegue até o evento"
+      ],
       "Open in a new tab": [
         "Abrir num novo separador"
       ]
