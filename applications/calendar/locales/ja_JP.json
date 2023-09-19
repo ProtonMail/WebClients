@@ -63,9 +63,6 @@
       "Apply": [
         "適用"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "一つの連絡先グループに追加できる連絡先は最大 100 件です"
-      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -2513,12 +2510,6 @@
       "You already added this holidays calendar": [
         "この祝日カレンダーはすでに追加されています"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "10 件以上の連絡先の vCard ファイルを送信することはできません"
-      ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
       ],
@@ -2747,6 +2738,11 @@
     "Event form": {
       "${ numberOfAttendees } participants": [
         "${ numberOfAttendees }人の参加者"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "終日"
       ]
     },
     "Event info. Organizer name": {
@@ -4105,9 +4101,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "共有カレンダーで招待を作成することはできません"
       ]
