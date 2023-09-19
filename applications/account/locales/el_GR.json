@@ -4633,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Ρύθμιση ${ strongText } από το Gmail"
       ],
+      "This feature is currently unavailable": [
+        "Αυτή η δυνατότητα δεν είναι διαθέσιμη αυτήν τη στιγμή"
+      ],
       "Update your logins": [
         "Ενημερώστε τα στοιχεία σύνδεσής σας"
       ]
@@ -8978,6 +8981,14 @@
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
       ]
     },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+      ],
+      "This feature is temporarily unavailable": [
+        "Αυτή η δυνατότητα δεν είναι διαθέσιμη προσωρινά"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Μπορείτε να δημιουργήσετε μόνο ${ MAX_LINKS_PER_CALENDAR } σύνδεσμο ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε τον παρακάτω.",
@@ -11587,6 +11598,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
+      ],
       "Downgrading your account, please wait": [
         "Γίνεται υποβάθμιση του λογαριασμού σας, παρακαλώ περιμένετε"
       ]

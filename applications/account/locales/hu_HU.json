@@ -186,7 +186,7 @@
         "Kapcsolatfelvétel"
       ],
       "Contact us": [
-        "Lépj velünk kapcsolatba"
+        "Kapcsolatfelvétel"
       ],
       "Continue": [
         "Tovább"
@@ -3247,7 +3247,7 @@
         "Nincs számlája."
       ],
       "You have reached the contacts limit for your account": [
-        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
@@ -3315,7 +3315,7 @@
         "Titkosítás sikertelen"
       ],
       "Missing FN property": [
-        "FN tulajdon hiányzik"
+        "FN tulajdonság hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -7632,8 +7632,8 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
-        "Az Ön szervezetében ${ members.length } tag közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
+        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
+        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
       ],
       "Almost there": [
         "Majdnem kész"
