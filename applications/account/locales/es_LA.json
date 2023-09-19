@@ -4633,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Configure el ${ strongText } desde Gmail"
       ],
+      "This feature is currently unavailable": [
+        "Esta función no está actualmente disponible."
+      ],
       "Update your logins": [
         "Actualice sus inicios de sesión"
       ]
@@ -8978,6 +8981,14 @@
         "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas y etiquetarlos como"
       ]
     },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Inténtelo nuevamente en unos minutos."
+      ],
+      "This feature is temporarily unavailable": [
+        "Esta función no está disponible temporalmente."
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puede crear hasta ${ MAX_LINKS_PER_CALENDAR } enlace por calendario. Para crear un enlace nuevo a este calendario, elimine uno de la lista de abajo.",
@@ -11590,6 +11601,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Estamos cancelando su suscripción. Espere."
+      ],
       "Downgrading your account, please wait": [
         "Espere, estamos modificando su cuenta."
       ]
