@@ -14,6 +14,7 @@ import {
     resumeSession,
 } from '@proton/pass/auth';
 import type { MessageHandlerCallback } from '@proton/pass/extension/message';
+import browser from '@proton/pass/globals/browser';
 import {
     notification,
     selectUser,
@@ -384,6 +385,7 @@ export const createAuthService = ({
             if (shouldLockState) {
                 logger.info(`[Worker::Auth] Locking state`);
                 store.dispatch(stateLock());
+                browser.runtime.reload();
             }
 
             onLocked?.();
