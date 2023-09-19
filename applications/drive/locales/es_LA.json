@@ -49,8 +49,9 @@
       "Apply": [
         "Aplicar"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Se permiten como máximo 100 contactos por grupo de contactos"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
+        "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
@@ -713,6 +714,10 @@
       ],
       "View invoice": [
         "Ver factura"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contactos."
       ],
       "Your 500 MB bonus": [
         "Su bono de 500 MB"
@@ -2192,11 +2197,9 @@
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "No puede enviar un correo a más de 100 destinatarios"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "No puede enviar archivos vCards de más de 10 contactos"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No puede enviar un correo a más de ${ maxContacts } destinatario.",
+        "No puede enviar un correo a más de ${ maxContacts } destinatarios."
       ],
       "You have reached the contacts limit for your account": [
         "Ha alcanzado el límite de contactos para su cuenta"
@@ -4703,9 +4706,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "App de ${ DRIVE_APP_NAME } para Windows"
-      ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
@@ -4720,9 +4720,6 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Sincronice fácilmente archivos y carpetas entre su computadora y ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Compartido"

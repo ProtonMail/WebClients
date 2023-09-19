@@ -4633,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Ställ in ${ strongText } från Gmail"
       ],
+      "This feature is currently unavailable": [
+        "Denna funktion är för närvarande inte tillgänglig"
+      ],
       "Update your logins": [
         "Uppdatera dina inloggningar"
       ]
@@ -8974,6 +8977,14 @@
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
       ]
     },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Kom tillbaka om några minuter."
+      ],
+      "This feature is temporarily unavailable": [
+        "Denna funktion är tillfälligt otillgänglig"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Du kan skapa upp till ${ MAX_LINKS_PER_CALENDAR } länk per kalender. För att skapa en ny länk till denna kalender, ta bort en från listan nedan.",
@@ -10093,6 +10104,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11580,6 +11594,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Avbryter din prenumeration, vänta"
+      ],
       "Downgrading your account, please wait": [
         "Nedgraderar ditt konto, vänta"
       ]

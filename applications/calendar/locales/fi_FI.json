@@ -63,9 +63,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Yhdessä yhteystietoryhmässä sallitaan enintään 100 yhteystietoa"
-      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -2547,12 +2544,6 @@
       "You already added this holidays calendar": [
         "Olet jo lisännyt nämä yleiset vapaapäivät"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Voit lähettää viestin enintään 100 vastaanottajalle"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Voit lähettää kerrallaan enintään 10 yhteystiedon vCard-tiedostot"
-      ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
       ],
@@ -4224,10 +4215,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
-        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Kutsujen luontia ei sallita jaetussa kalenterissa"
       ]

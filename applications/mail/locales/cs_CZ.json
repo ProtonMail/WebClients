@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Dle plánu"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Na jednu skupinu kontaktů je povoleno maximálně 100 kontaktů"
-      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -3482,12 +3479,6 @@
       "Wrong mailbox password": [
         "Chybné heslo e-mailové schránky"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nemůžete odeslat mail více než 100 příjemcům najednou"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Není možné odeslat soubory vCard více než 10 kontaktů"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nelze otevřít více než ${ maxActiveComposer } okno editoru",
         "Nelze otevřít více než ${ maxActiveComposer } okna editoru",
@@ -3517,14 +3508,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Na jednu pozvánku je povolen nejvýše ${ MAX_ATTENDEES } účastník",
-        "Na jednu pozvánku jsou povoleni nejvýše ${ MAX_ATTENDEES } účastníci",
-        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků",
-        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5195,6 +5178,9 @@
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
       ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
+      ],
       "Edit encryption": [
         "Upravit šifrování"
       ],
@@ -5919,7 +5905,7 @@
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
       "Trackers blocked:": [
-        "Blokováno sled. prvků:"
+        "Zablokováno sledovacích prvků:"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"

@@ -49,9 +49,6 @@
       "Apply": [
         "Zastosuj"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Grupa kontaktów może zawierać maksymalnie 100 kontaktów"
-      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -2210,11 +2207,11 @@
       "Username must end with a letter or digit": [
         "Nazwa użytkownika musi kończyć się literą lub cyfrą"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "W pliku vCard możesz wysłać maksymalnie 10 kontaktów"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
+        "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców"
       ],
       "You have reached the contacts limit for your account": [
         "Osiągnięto limit kontaktów na koncie"
@@ -4826,9 +4823,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Aplikacja ${ DRIVE_APP_NAME } na Windowsa"
-      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
@@ -4843,9 +4837,6 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synchronizuj pliki oraz foldery między urządzeniem i ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Udostępnione"

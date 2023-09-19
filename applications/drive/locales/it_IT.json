@@ -49,8 +49,9 @@
       "Apply": [
         "Applica"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Sono ammessi al massimo 100 contatti per ogni gruppo di contatti."
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
+        "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -713,6 +714,10 @@
       ],
       "View invoice": [
         "Visualizza fattura"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
+        "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
       ],
       "Your 500 MB bonus": [
         "Il tuo bonus di 500 MB"
@@ -2192,11 +2197,9 @@
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Non puoi inviare una mail a più di 100 destinatari"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Non puoi inviare file vCard di più di 10 contatti"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
+        "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
       ],
       "You have reached the contacts limit for your account": [
         "Hai raggiunto il limite di contatti per il tuo account"
@@ -2541,7 +2544,7 @@
         "Gestisci gli indirizzi."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "I titolari di un piano dotato di membri non possono entrare a far parte di un piano collettivo."
+        "I proprietari di un piano con membri non possono unirsi a un piano di gruppo."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
@@ -2553,7 +2556,7 @@
         "Il costo dell'abbonamento è addebitato all'amministratore principale del piano Visionary o del piano famiglia."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Con i piani Visionary e i piani famiglia per ora non è possibile usare gli account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
+        "I piani Visionary e i piani famiglia attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "I piani Visionary e i piani famiglia per ora non supportano gli account a vita."
@@ -2580,7 +2583,7 @@
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Il tuo piano attuale non si può associare a un piano Visionary o a un piano famiglia."
+        "Il tuo piano attuale non può essere associato a un piano Visionary o a un piano famiglia."
       ]
     },
     "familyOffer_2023:Footer": {
@@ -3059,15 +3062,15 @@
         "${ canceledCount } annullati"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "il contatto ${ contactCount } contiene più indirizzi e-mail.",
-        "i contatti ${ contactCount } contengono più indirizzi e-mail."
+        "${ contactCount } contatto contiene più indirizzi email.",
+        "${ contactCount } contatti contengono più indirizzi email."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membro",
         "${ contactEmailsLength } Membri"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } contiene più indirizzi e-mail."
+        "${ contactName } contiene più indirizzi email."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contatto trovato",
@@ -3724,7 +3727,7 @@
         "Selezionare l'indirizzo o gli indirizzi email da aggiungere ai gruppi ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
+        "Seleziona l'indirizzo o gli indirizzi email da aggiungere a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -4327,7 +4330,7 @@
         "Eliminare spazi?"
       ],
       "Delete recovery-related information.": [
-        "Elimina le informazioni di ripristino."
+        "Elimina le informazioni di recupero."
       ],
       "Deleted": [
         "Eliminato"
@@ -4360,7 +4363,7 @@
         "Formato email"
       ],
       "Email or username": [
-        "Email o username"
+        "Email o nome utente"
       ],
       "Emails": [
         "Email"
@@ -4703,9 +4706,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } app Windows"
-      ],
       "clearing your browser cache": [
         "pulendo la cache del browser"
       ],
@@ -4720,9 +4720,6 @@
       ],
       "Request an invite": [
         "Richiedi un invito"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Sincronizza facilmente file e cartelle tra il tuo computer e ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Condivisi"
@@ -5453,7 +5450,7 @@
         "Vai ai piani di abbonamento"
       ],
       "Upgrade": [
-        "Aggiorna"
+        "Effettua l'upgrade"
       ]
     },
     "specialoffer: Offers": {
