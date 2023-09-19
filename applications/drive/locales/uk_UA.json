@@ -49,9 +49,6 @@
       "Apply": [
         "Застосувати"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "До групи контактів можна додати не більше ніж 100 контактів"
-      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -2210,12 +2207,6 @@
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Ви не можете надіслати лист понад 100 отримувачам"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Ви не можете надіслати файли vCard для понад 10 контактів"
-      ],
       "You have reached the contacts limit for your account": [
         "Ви досягли максимальної кількості контактів для Вашого облікового запису"
       ],
@@ -3971,7 +3962,7 @@
         "Швейцарське зашифроване сховище файлів"
       ],
       "Sync folders from your computer": [
-        "Синхронізація тек з комп’ютера"
+        "Синхронізуйте свої теки з комп'ютера"
       ],
       "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
         "Легко синхронізуйте теки за допомогою нашої комп'ютерної програми, щоб ваші файли завжди були актуальними та доступними звідусіль."
@@ -4829,9 +4820,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Програма ${ DRIVE_APP_NAME } для Windows"
-      ],
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
@@ -4846,9 +4834,6 @@
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Безперебійна синхронізація файлів і тек між комп'ютером і ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Спільний доступ"
