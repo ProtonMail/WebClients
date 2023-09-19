@@ -3593,6 +3593,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Olet käyttänyt 100 % tallennuskapasiteetistasi. Et voi lähettää tai vastaanottaa uusia viestejä. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
+      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
       ],
@@ -5759,6 +5762,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Tilaustasi peruutetaan, odota"
+      ],
       "Downgrading your account, please wait": [
         "Tiliäsi alennetaan, odota"
       ]
