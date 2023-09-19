@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Terv szerint"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Maximum 100 névjegy lehet egy névjegy csoportban"
-      ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
@@ -3428,12 +3425,6 @@
       "Wrong mailbox password": [
         "Hibás e-mail titkosítási jelszó"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nem küldhet üzenetet több mint 100 címzettnek"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Egyszerre nem küldhet el több mint 10 vCard névjegyfájlt"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg",
         "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg"
@@ -3442,7 +3433,7 @@
         "Nem adott meg fájlt."
       ],
       "You have reached the contacts limit for your account": [
-        "Ön elérte az előfizetéséhez tartozó maximális kapcsolatok számát"
+        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
@@ -3461,12 +3452,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
-        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3524,7 +3509,7 @@
         "Titkosítás sikertelen"
       ],
       "Missing FN property": [
-        "FN tulajdon hiányzik"
+        "FN tulajdonság hiányzik"
       ],
       "vCard versions < 3.0 not supported": [
         "A 3.0-nál régebbi vCard verziók nem támogatottak"
@@ -4130,7 +4115,7 @@
         "Gratulálunk, minden lépést befejezett!"
       ],
       "Congratulation, you finished!": [
-        "Gratulálunk, Ön befejezte a műveletet!"
+        "Gratulálunk, a végére ért!"
       ],
       "Continue setting up your email": [
         "Az e-mail cím beállításának folytatása"

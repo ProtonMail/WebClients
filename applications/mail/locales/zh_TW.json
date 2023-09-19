@@ -94,9 +94,6 @@
       "As Scheduled": [
         "按排程"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "每個聯絡人群組至多允許 100 個聯絡人"
-      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -3419,12 +3416,6 @@
       "Wrong mailbox password": [
         "密碼錯誤"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "您無法將電郵傳送給超過100位收件人"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您無法在同一時間開啟超過 ${ maxActiveComposer } 個撰寫新郵件視窗"
       ],
@@ -3451,11 +3442,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4942,6 +4928,9 @@
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
+      ],
+      "Edit email address": [
+        "編輯電子郵件地址"
       ],
       "Edit encryption": [
         "編譯加密"
