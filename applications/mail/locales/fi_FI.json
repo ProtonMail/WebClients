@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Kuten ajoitettu"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Yhdessä yhteystietoryhmässä sallitaan enintään 100 yhteystietoa"
-      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -3440,12 +3437,6 @@
       "Wrong mailbox password": [
         "Väärä postilaatikon salasana"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Voit lähettää viestin enintään 100 vastaanottajalle"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Voit lähettää kerrallaan enintään 10 yhteystiedon vCard-tiedostot"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä",
         "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä"
@@ -3473,12 +3464,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistuja",
-        "Kutsua kohden sallitaan enintään ${ MAX_ATTENDEES } osallistujaa"
       ]
     },
     "Error display when performing invalid move on message": {

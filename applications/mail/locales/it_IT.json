@@ -94,8 +94,9 @@
       "As Scheduled": [
         "Come Programmato"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Sono ammessi al massimo 100 contatti per ogni gruppo di contatti."
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
+        "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -1141,6 +1142,10 @@
       ],
       "Yes, I'll attend": [
         "Sì, parteciperò"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
+        "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
       ],
       "Zoom in": [
         "Zoom avanti"
@@ -2887,11 +2892,11 @@
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Le nuove e-mail da ${ senderEmailAddress } e ${ otherSendersCount } non saranno consegnate e verranno eliminate definitivamente.",
-        "Le nuove e-mail da ${ senderEmailAddress } e altri ${ otherSendersCount } non saranno consegnate e verranno eliminate definitivamente."
+        "Nuove email da ${ senderEmailAddress } e ${ otherSendersCount } altro non saranno consegnate e verranno eliminate definitivamente.",
+        "Nuove email da ${ senderEmailAddress } e altri ${ otherSendersCount } non saranno consegnate e verranno eliminate definitivamente."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "Le nuove e-mail da ${ senderEmailAddress } non saranno consegnate e verranno eliminate definitivamente."
+        "Nuove email da ${ senderEmailAddress } non saranno consegnate e verranno eliminate definitivamente."
       ],
       "No folders": [
         "Nessuna cartella"
@@ -3440,11 +3445,9 @@
       "Wrong mailbox password": [
         "Password della casella email sbagliata"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Non puoi inviare una mail a più di 100 destinatari"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Non puoi inviare file vCard di più di 10 contatti"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
+        "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Non puoi aprire più di ${ maxActiveComposer } finestra del compositore per volta",
@@ -3476,9 +3479,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Per ogni invito, è ammesso ${ MAX_ATTENDEES } solo partecipante",
-        "Per ogni invito, sono ammessi un massimo di ${ MAX_ATTENDEES } partecipanti"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "È consentito al massimo ${ maxAttendees } partecipante per invito",
+        "Sono consentiti al massimo ${ maxAttendees } partecipanti per invito"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3824,7 +3827,7 @@
         "Gestisci gli indirizzi."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "I titolari di un piano dotato di membri non possono entrare a far parte di un piano collettivo."
+        "I proprietari di un piano con membri non possono unirsi a un piano di gruppo."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ci spiace, ma non è possibile cambiare piano al momento."
@@ -3836,7 +3839,7 @@
         "Il costo dell'abbonamento è addebitato all'amministratore principale del piano Visionary o del piano famiglia."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Con i piani Visionary e i piani famiglia per ora non è possibile usare gli account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
+        "I piani Visionary e i piani famiglia attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "I piani Visionary e i piani famiglia per ora non supportano gli account a vita."
@@ -3863,7 +3866,7 @@
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Il tuo piano attuale non si può associare a un piano Visionary o a un piano famiglia."
+        "Il tuo piano attuale non può essere associato a un piano Visionary o a un piano famiglia."
       ]
     },
     "familyOffer_2023:Footer": {
@@ -4130,7 +4133,7 @@
         "${ MAIL_APP_NAME } su Play Store"
       ],
       "account logins": [
-        "login account"
+        "login degli account"
       ],
       "Auto-forward Gmail": [
         "Inoltro automatico di Gmail"
@@ -4148,7 +4151,7 @@
         "Complimenti per aver reso la tua email ancora più sicura, economica e pertinente! Abbiamo aumentato il tuo spazio di archiviazione gratuito a un totale di 1 GB."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Cambia ${ strongText } con il tuo indirizzo ${ BRAND_NAME }"
+        "Cambia i ${ strongText } con il tuo indirizzo ${ BRAND_NAME }"
       ],
       "Changed accounts": [
         "Account cambiati"
@@ -4178,7 +4181,7 @@
         "Raddoppia lo spazio di archiviazione gratuito a 1 GB completando quanto segue:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "Crittografia così forte, che solo tu e i destinatari previsti potete visualizzare le tue e-mail."
+        "Una crittografia così resistente che solo tu e i destinatari previsti potete visualizzare le email."
       ],
       "For your eyes only": [
         "Solo per i tuoi occhi"
@@ -4196,7 +4199,7 @@
         "Continua a utilizzare ${ MAIL_APP_NAME } per scoprire altri modi in cui ${ BRAND_NAME } protegge la tua privacy e semplifica l'invio di email."
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Maybe later": [
         "Forse più tardi"
@@ -4230,6 +4233,9 @@
       ],
       "Storage unlocked": [
         "Archiviazione sbloccata"
+      ],
+      "This feature is currently unavailable": [
+        "Questa funzionalità non è attualmente disponibile"
       ],
       "Update your logins": [
         "Aggiorna i tuoi login"
@@ -4613,8 +4619,8 @@
         "${ calendarsToBeMergedCount } calendari uniti"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "il contatto ${ contactCount } contiene più indirizzi e-mail.",
-        "i contatti ${ contactCount } contengono più indirizzi e-mail."
+        "${ contactCount } contatto contiene più indirizzi email.",
+        "${ contactCount } contatti contengono più indirizzi email."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membro",
@@ -4625,7 +4631,7 @@
         "${ contactGroupName } (membri ${ numberOfSelectedContacts }/${ numberOfContactsInGroup })"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } contiene più indirizzi e-mail."
+        "${ contactName } contiene più indirizzi email."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contatto trovato",
@@ -5408,7 +5414,7 @@
         "Selezionare l'indirizzo o gli indirizzi email da aggiungere ai gruppi ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
+        "Seleziona l'indirizzo o gli indirizzi email da aggiungere a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -6387,7 +6393,7 @@
         "Elimina"
       ],
       "Delete recovery-related information.": [
-        "Elimina le informazioni di ripristino."
+        "Elimina le informazioni di recupero."
       ],
       "Density": [
         "Densità"
@@ -6408,7 +6414,7 @@
         "Formato email"
       ],
       "Email or username": [
-        "Email o username"
+        "Email o nome utente"
       ],
       "Emails": [
         "Email"
@@ -7955,7 +7961,7 @@
         "Vai ai piani di abbonamento"
       ],
       "Upgrade": [
-        "Aggiorna"
+        "Effettua l'upgrade"
       ]
     },
     "specialoffer: Offers": {
@@ -8093,7 +8099,7 @@
         "La ricerca è diventata più intelligente e veloce."
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Le email di Spam e Cestino verranno automaticamente escluse da Tutti i messaggi. ${ settingsLink }"
+        "Le email di spam e quelle nel cestino da ora vengono escluse automaticamente da Tutte le email. ${ settingsLink }"
       ],
       "Try it today.": [
         "Provala oggi."

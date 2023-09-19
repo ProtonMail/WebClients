@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Como Agendado"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "São permitidos, no máximo, 100 contactos por grupo de contactos"
-      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
       ],
@@ -3440,12 +3437,6 @@
       "Wrong mailbox password": [
         "Palavra-passe da caixa de correio errada"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Não pode enviar um e-mail para mais de 100 destinatários."
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Não pode enviar ficheiros vCard de mais de 10 contactos."
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Não pode abrir mais de ${ maxActiveComposer } janela de composição de cada vez.",
         "Não pode abrir mais de ${ maxActiveComposer } janelas de composição de cada vez."
@@ -3473,12 +3464,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve demasiadas correspondências. Limite a pesquisa e tente novamente."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "No máximo ${ MAX_ATTENDEES } participante é permitido por convite",
-        "Apenas ${ MAX_ATTENDEES } participantes são permitidos por convite"
       ]
     },
     "Error display when performing invalid move on message": {

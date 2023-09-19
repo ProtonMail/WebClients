@@ -94,8 +94,9 @@
       "As Scheduled": [
         "Enligt schema"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Högst 100 kontakter är tillåtna per kontaktgrupp"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
+        "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -1141,6 +1142,10 @@
       ],
       "Yes, I'll attend": [
         "Ja, jag ska delta"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
+        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
       ],
       "Zoom in": [
         "Zooma in"
@@ -3440,11 +3445,9 @@
       "Wrong mailbox password": [
         "Fel lösenord för brevlåda"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan inte skicka ett e-postmeddelande till fler än 100 mottagare"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Du kan inte skicka vCard-filer med fler än 10 kontakter"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
+        "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Du kan inte öppna fler än ${ maxActiveComposer } redigeringsfönster samtidigt",
@@ -3476,9 +3479,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Högst ${ MAX_ATTENDEES } deltagare tillåts per inbjudan",
-        "Högst ${ MAX_ATTENDEES } deltagare tillåts per inbjudan"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Högst ${ maxAttendees } deltagare tillåts per inbjudan",
+        "Högst ${ maxAttendees } deltagare tillåts per inbjudan"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4230,6 +4233,9 @@
       ],
       "Storage unlocked": [
         "Lagringsutrymme Upplåst"
+      ],
+      "This feature is currently unavailable": [
+        "Denna funktion är för närvarande inte tillgänglig"
       ],
       "Update your logins": [
         "Uppdatera dina inloggningar"
