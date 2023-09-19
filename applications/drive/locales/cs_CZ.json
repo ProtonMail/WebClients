@@ -49,9 +49,6 @@
       "Apply": [
         "Použít"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Na jednu skupinu kontaktů je povoleno maximálně 100 kontaktů"
-      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -2210,12 +2207,6 @@
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nemůžete odeslat mail více než 100 příjemcům najednou"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Není možné odeslat soubory vCard více než 10 kontaktů"
-      ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
@@ -3489,6 +3480,9 @@
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
+      ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -4826,9 +4820,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Windows aplikace ${ DRIVE_APP_NAME }"
-      ],
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
       ],
@@ -4843,9 +4834,6 @@
       ],
       "Request an invite": [
         "Požádat o pozvánku"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Bezproblémová synchronizace souborů a složek mezi počítačem a ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Sdílené"

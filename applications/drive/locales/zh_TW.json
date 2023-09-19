@@ -49,9 +49,6 @@
       "Apply": [
         "套用"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "每個聯絡人群組至多允許 100 個聯絡人"
-      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -2183,12 +2180,6 @@
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "您無法將電郵傳送給超過100位收件人"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
-      ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
@@ -3324,6 +3315,9 @@
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
+      ],
+      "Edit email address": [
+        "編輯電子郵件地址"
       ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
@@ -4637,9 +4631,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows 應用程式"
-      ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
@@ -4654,9 +4645,6 @@
       ],
       "Request an invite": [
         "請求邀請"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "完美無縫地同步檔案和資料夾，可真正實現在您的電腦與 ${ DRIVE_APP_NAME }。"
       ],
       "Shared": [
         "已分享"

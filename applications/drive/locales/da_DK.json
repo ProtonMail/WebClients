@@ -49,8 +49,9 @@
       "Apply": [
         "Anvend"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Højst 100 kontakter er tilladt pr. kontaktgruppe"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
+        "Højst ${ maxContacts } kontakter er tilladt pr. kontaktgruppe"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -713,6 +714,10 @@
       ],
       "View invoice": [
         "Vis faktura"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
       ],
       "Your 500 MB bonus": [
         "Din 500 MB bonus"
@@ -2192,11 +2197,9 @@
       "Username must end with a letter or digit": [
         "Brugernavn skal ende på et bogstav eller ciffer"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan ikke sende en mail til mere end 100 modtagere"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
       "You have reached the contacts limit for your account": [
         "Du har nået det maksimale antal kontakter for din konto"
@@ -4703,9 +4706,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows app"
-      ],
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
@@ -4720,9 +4720,6 @@
       ],
       "Request an invite": [
         "Anmod om invitation"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synkroniser filer og mapper problemfrit mellem din computer og ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Delt"

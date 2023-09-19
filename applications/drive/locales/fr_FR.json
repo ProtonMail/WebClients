@@ -49,8 +49,9 @@
       "Apply": [
         "Appliquer"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "100 contacts maximum sont autorisés par groupe de contacts."
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "${ maxContacts } contact est autorisé par groupe de contacts.",
+        "Un maximum de ${ maxContacts } contacts est autorisé par groupe de contacts."
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
@@ -713,6 +714,10 @@
       ],
       "View invoice": [
         "Voir la facture"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
+        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
       ],
       "Your 500 MB bonus": [
         "Votre bonus de 500 Mo"
@@ -2192,11 +2197,9 @@
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
+        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
       ],
       "You have reached the contacts limit for your account": [
         "Vous avez atteint la limite de contacts pour vote compte."
@@ -4703,9 +4706,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Application ${ DRIVE_APP_NAME } pour Windows"
-      ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
       ],
@@ -4720,9 +4720,6 @@
       ],
       "Request an invite": [
         "Demander une invitation"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synchronisez facilement des fichiers et des dossiers entre votre ordinateur et ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Partagé"
