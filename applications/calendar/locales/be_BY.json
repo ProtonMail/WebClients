@@ -63,8 +63,11 @@
       "Apply": [
         "Ужыць"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "У групу кантактаў можа ўваходзіць не больш за 100 кантактаў"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакта",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -626,6 +629,12 @@
       ],
       "Yes, I'll attend": [
         "Так, я далучуся"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантакту",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
       ]
     },
     "Action subline": {
@@ -2591,11 +2600,11 @@
       "You already added this holidays calendar": [
         "Вы ўжо дадавалі гэтыя святы ў каляндар"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Вы не можаце адправіць ліст больш чым 100 атрымальнікам"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
@@ -2846,10 +2855,10 @@
         "Увесь дзень"
       ],
       "All day, lasts ${ plusDaysToEnd } day": [
-        "Увесь дзень, цягам ${ plusDaysToEnd } дня",
-        "Увесь дзень, цягам ${ plusDaysToEnd } дзён",
-        "Увесь дзень, цягам ${ plusDaysToEnd } дзён",
-        "Увесь дзень, цягам ${ plusDaysToEnd } дзён"
+        "Увесь дзень на працягу ${ plusDaysToEnd } дня",
+        "Увесь дзень на працягу ${ plusDaysToEnd } дзён",
+        "Увесь дзень на працягу ${ plusDaysToEnd } дзён",
+        "Увесь дзень на працягу ${ plusDaysToEnd } дзён"
       ]
     },
     "Event info. Organizer name": {
@@ -3720,7 +3729,7 @@
         "Ачысціць пошук зашыфраваных даных"
       ],
       "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
-        "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Каб зноў ужываць функцыю пошуку, вам спатрэбіцца паўторна праіндэксаваць усе падзеі календара."
+        "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Вам спатрэбіцца паўторна праіндэксаваць усе падзеі календара, каб зноў ужываць функцыю пошуку."
       ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
@@ -4350,11 +4359,11 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельніка",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікаў",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Не дазваляецца стварэнне запрашэнняў у абагуленым календары"

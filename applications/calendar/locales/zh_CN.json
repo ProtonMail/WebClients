@@ -60,9 +60,6 @@
       "Apply": [
         "应用"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "每个群组最多只能有 100 位联系人"
-      ],
       "Attach screenshot(s)": [
         "添加截图"
       ],
@@ -2480,12 +2477,6 @@
       "Validation error": [
         "验证失败"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "收件人不能超过 100 个"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "您不能发送超过 10 个联系人的 vCard 文件"
-      ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
       ],
@@ -4055,9 +4046,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "每次最多可邀请 ${ MAX_ATTENDEES } 人"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "无法在已共享的日历中创建邀请"
       ]

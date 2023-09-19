@@ -2493,12 +2493,6 @@
       "You already added this holidays calendar": [
         "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "आप 100 से अधिक प्राप्तकर्ताओं को मेल नहीं भेज सकते"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "आप 10 से अधिक संपर्को के vCard नहीं भेज सकते"
-      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "आप कैलेंडर की ऊपरी सीमा पे पहुंच गए है। कुछ कैलेंडर आयात नहीं किए जा सके।"
       ],
@@ -3982,10 +3976,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ MAX_ATTENDEES } प्रतिभागी के होने की अनुमति है",
-        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ MAX_ATTENDEES } प्रतिभागीयों के होने की अनुमति है"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "शेयर किए कैलेंडर में न्योता बनाने की अनुमति नहीं"
       ]

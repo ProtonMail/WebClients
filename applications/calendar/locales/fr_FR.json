@@ -63,8 +63,9 @@
       "Apply": [
         "Appliquer"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "100 contacts maximum sont autorisés par groupe de contacts."
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "${ maxContacts } contact est autorisé par groupe de contacts.",
+        "Un maximum de ${ maxContacts } contacts est autorisé par groupe de contacts."
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
@@ -622,6 +623,10 @@
       ],
       "Yes, I'll attend": [
         "Oui, je participerai"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
+        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
       ]
     },
     "Action subline": {
@@ -2547,11 +2552,9 @@
       "You already added this holidays calendar": [
         "Vous avez déjà ajouté ce calendrier de jours fériés."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
+        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
       ],
       "You have reached the contacts limit for your account": [
         "Vous avez atteint la limite de contacts pour vote compte."
@@ -4224,9 +4227,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "${ MAX_ATTENDEES } seul participant est autorisé par invitation.",
-        "Jusqu'à ${ MAX_ATTENDEES } participants sont autorisés par invitation."
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "${ maxAttendees } participant est autorisé par invitation.",
+        "Un maximum de ${ maxAttendees } participants est autorisé par invitation."
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Il n'est pas permis de créer des invitations dans un calendrier partagé."

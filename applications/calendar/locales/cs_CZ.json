@@ -63,9 +63,6 @@
       "Apply": [
         "Použít"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Na jednu skupinu kontaktů je povoleno maximálně 100 kontaktů"
-      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -393,6 +390,9 @@
       "Open settings": [
         "Otevřít nastavení"
       ],
+      "Pause indexing": [
+        "Pozastavit indexování"
+      ],
       "Preview contact": [
         "Náhled kontaktu"
       ],
@@ -455,6 +455,9 @@
       ],
       "Reset to default": [
         "Obnovit výchozí nastavení"
+      ],
+      "Resume indexing": [
+        "Obnovit indexování"
       ],
       "Save": [
         "Uložit"
@@ -2085,6 +2088,9 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Může to trvat několik minut. Mezitím můžete Kalendář používat jako obvykle."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -2333,6 +2339,9 @@
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
+      "Event not found": [
+        "Událost nebyla nalezena"
+      ],
       "Failed to get original occurrence in series": [
         "Nepodařilo se získat původní výskyt v sérii"
       ],
@@ -2579,12 +2588,6 @@
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nemůžete odeslat mail více než 100 příjemcům najednou"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Není možné odeslat soubory vCard více než 10 kontaktů"
-      ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
@@ -2808,6 +2811,14 @@
         "Skóre je potřeba vyplnit"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Žádný výsledek"
+      ],
+      "Results": [
+        "Výsledky"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "zrušeno"
@@ -2819,6 +2830,11 @@
         "${ numberOfAttendees } účastníci",
         "${ numberOfAttendees } účastníků",
         "${ numberOfAttendees } účastníků"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Celý den"
       ]
     },
     "Event info. Organizer name": {
@@ -3526,6 +3542,9 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } a ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
@@ -3670,6 +3689,9 @@
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Nemůžete najít události, které hledáte? Některé události ve skrytých kalendářích odpovídají vašemu dotazu. Chcete-li tyto výsledky zobrazit, zapněte viditelnost pro ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
@@ -3681,6 +3703,9 @@
       ],
       "Clear encrypted search data": [
         "Vymazat šifrovaná data vyhledávání"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Vyčištění dat prohlížeče vyčistí index vyhledávání v tomto zařízení. Všechny události v kalendáři bude nutné znovu indexovat, aby bylo možné používat funkci vyhledávání."
       ],
       "Clears browser data related to the encrypted search.": [
         "Vymaže data prohlížeče související se šifrovaným vyhledáváním."
@@ -3753,6 +3778,9 @@
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
+      ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -3834,6 +3862,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Indexování událostí: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Indexování pozastaveno"
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -4247,6 +4281,16 @@
         "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Můžete buď aktualizovat vyhledávací dotaz, nebo zavřít vyhledávání a vrátit se do zobrazení kalendáře"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klikněte pro podrobnosti"
@@ -4291,12 +4335,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Na jednu pozvánku je povolen nejvýše ${ MAX_ATTENDEES } účastník",
-        "Na jednu pozvánku jsou povoleni nejvýše ${ MAX_ATTENDEES } účastníci",
-        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků",
-        "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Vytváření pozvánek ve sdíleném kalendáři není povoleno"
       ]
@@ -5519,6 +5557,9 @@
       "Image URL": [
         "URL adresa obrázku"
       ],
+      "Indexing...": [
+        "Indexování..."
+      ],
       "Name": [
         "Jméno"
       ],
@@ -5533,6 +5574,9 @@
       ],
       "Please select a country": [
         "Vyberte prosím zemi"
+      ],
+      "Search events": [
+        "Hledat události"
       ],
       "Search for group name": [
         "Vyhledat název skupiny"
@@ -5951,6 +5995,9 @@
       "Add your country's public holidays to your calendar.": [
         "Přidejte si do kalendáře státní svátky ve své zemi."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Pomocí naší nové funkce vyhledávání snadno najdete událost, kterou hledáte."
+      ],
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
       ],
@@ -5959,6 +6006,9 @@
       ],
       "Public holidays are here!": [
         "Státní svátky jsou tady!"
+      ],
+      "Search for events": [
+        "Vyhledat události"
       ]
     },
     "Storage": {
@@ -6024,6 +6074,9 @@
       ],
       "Calendar information updated": [
         "Informace kalendáře aktualizovány"
+      ],
+      "Calendar search activated": [
+        "Vyhledávání v kalendáři aktivováno"
       ],
       "Calendar updated": [
         "Kalendář aktualizován"
@@ -6798,6 +6851,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Navigovat na událost"
+      ],
       "Open in a new tab": [
         "Otevřít na nové kartě"
       ]

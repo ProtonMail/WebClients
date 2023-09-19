@@ -63,8 +63,9 @@
       "Apply": [
         "Anvend"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Højst 100 kontakter er tilladt pr. kontaktgruppe"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
+        "Højst ${ maxContacts } kontakter er tilladt pr. kontaktgruppe"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -622,6 +623,10 @@
       ],
       "Yes, I'll attend": [
         "Ja, jeg deltager"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
       ]
     },
     "Action subline": {
@@ -2547,11 +2552,9 @@
       "You already added this holidays calendar": [
         "Du har allerede tilføjet denne helligdagskalender"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan ikke sende en mail til mere end 100 modtagere"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
       "You have reached the contacts limit for your account": [
         "Du har nået det maksimale antal kontakter for din konto"
@@ -4224,9 +4227,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
-        "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Højst ${ maxAttendees } deltager er tilladt pr. invitation",
+        "Højst ${ maxAttendees } deltagere er tilladt pr. invitation"
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Det er ikke tilladt at oprette invitationer i en delt kalender"
