@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
       ],
+      "Edit address": [
+        "Modifier l'adresse"
+      ],
       "Enable": [
         "Activer"
       ],
@@ -1671,6 +1674,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Aidez-nous à nous améliorer."
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Le message de vérification a été envoyé à ${ address }."
       ]
     },
     "Enabled 2FA": {
@@ -2929,6 +2937,9 @@
       "inactive": [
         "inactive"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installez un fichier de configuration de pays pour vous connecter à un serveur aléatoire dans le pays de votre choix."
       ],
@@ -3165,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
+      "Resend verification email": [
+        "Envoyer à nouveau le message de vérification"
+      ],
       "Restore": [
         "Restauration"
       ],
@@ -3182,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scannez ce code en utilisant votre application d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Sécurisez votre compte ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Sécurisation de votre compte"
@@ -3391,6 +3408,12 @@
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
       ],
+      "Unverified": [
+        "Non vérifiée"
+      ],
+      "Unverified email address.": [
+        "L'adresse e-mail n'a pas été vérifiée."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
@@ -3536,6 +3559,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Vous pouvez personnaliser et télécharger vos factures à des fins comptables."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
@@ -3847,6 +3873,9 @@
       "Config to connect to ${ serverName }": [
         "Configuration pour se connecter à ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmer l'adresse e-mail"
+      ],
       "Confirm login password": [
         "Confirmer le mot de passe de connexion"
       ],
@@ -3885,6 +3914,9 @@
       ],
       "Current display name": [
         "Nom d'affichage actuel"
+      ],
+      "Current email": [
+        "Adresse e-mail actuelle"
       ],
       "Customize invoices": [
         "Personnaliser les factures"
@@ -3978,6 +4010,9 @@
       ],
       "New display name": [
         "Nouveau nom d'affichage"
+      ],
+      "New email": [
+        "Nouvelle adresse e-mail"
       ],
       "New login password": [
         "Nouveau mot de passe de connexion"
@@ -5765,6 +5800,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "L'annulation de votre abonnement est en cours, veuillez patienter."
+      ],
       "Downgrading your account, please wait": [
         "Votre compte est en cours de modification, veuillez patienter."
       ]
@@ -5961,6 +5999,9 @@
       ],
       "Email address copied to clipboard": [
         "L'adresse e-mail a été copiée dans le presse-papiers."
+      ],
+      "Email address updated": [
+        "L'adresse e-mail a été mise à jour."
       ],
       "Email updated": [
         "L'adresse a été mise à jour."
@@ -6419,6 +6460,9 @@
       "Edit display name": [
         "Modifier le nom d’affichage"
       ],
+      "Edit email address": [
+        "Modifier l'adresse e-mail"
+      ],
       "Edit Gateway ${ currentName }": [
         "Modifier la Passerelle ${ currentName }"
       ],
@@ -6701,6 +6745,9 @@
       "Verifying your payment...": [
         "Vérification de votre paiement en cours"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Nous vous enverrons un message à votre nouvelle adresse e-mail avec des instructions pour effectuer la modification."
+      ],
       "What's new": [
         "Nouveautés"
       ],
@@ -6809,6 +6856,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
+      ],
+      "Verified email address": [
+        "Adresse e-mail vérifiée"
       ]
     },
     "tooltip": {
