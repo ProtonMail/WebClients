@@ -151,9 +151,12 @@ export const registerSecurityKey = (data: {
     data,
 });
 
-export const getSecurityKeyChallenge = () => ({
+export const getSecurityKeyChallenge = (crossPlatform: boolean) => ({
     url: 'core/v4/settings/2fa/register',
     method: 'get',
+    params: {
+        CrossPlatform: +crossPlatform,
+    },
 });
 
 export const removeSecurityKey = (credentialID: string) => ({
