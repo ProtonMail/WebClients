@@ -49,8 +49,9 @@
       "Apply": [
         "Übernehmen"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Pro Kontaktgruppe sind maximal 100 Kontakte erlaubt."
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
+        "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -713,6 +714,10 @@
       ],
       "View invoice": [
         "Rechnung anzeigen"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakt enthalten.",
+        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
       ],
       "Your 500 MB bonus": [
         "Dein 500 MB Bonus."
@@ -2192,11 +2197,9 @@
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Du kannst nur vCard-Dateien versenden, die höchstens 10 Kontakte enthalten."
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
+        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
       ],
       "You have reached the contacts limit for your account": [
         "Du hast das Kontaktlimit für dein Konto erreicht."
@@ -4703,9 +4706,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows-App"
-      ],
       "clearing your browser cache": [
         "Leeren des Browser-Cache"
       ],
@@ -4720,9 +4720,6 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Nahtlose Synchronisation der Dateien und Ordner zwischen deinem Computer und ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Geteilt"
