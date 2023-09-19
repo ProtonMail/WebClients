@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
@@ -8,9 +10,10 @@ import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner
 interface Props {
     loading?: boolean;
     error?: boolean;
+    checkbox: ReactNode;
 }
 
-const RegisterSecurityKeyContent = ({ loading, error }: Props) => {
+const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
     return (
         <>
             <div className="flex flex-justify-center mt-4 mb-6 relative">
@@ -26,6 +29,7 @@ const RegisterSecurityKeyContent = ({ loading, error }: Props) => {
                 />
             </div>
             <div>{c('fido2: Info').t`Insert your security key into your device's USB port.`}</div>
+            {checkbox && <div className="mt-2">{checkbox}</div>}
             {error && (
                 <div className="mt-4">
                     <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.WEAK}>
