@@ -3138,6 +3138,11 @@
         "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Wiadomość weryfikacyjna została wysłana do ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Uwierzytelnianie dwustopniowe"
@@ -9149,6 +9154,14 @@
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Spróbuj ponownie za kilka minut."
+      ],
+      "This feature is temporarily unavailable": [
+        "Funkcja jest tymczasowo niedostępna"
       ]
     },
     "Maximum calendar links reached warning": {

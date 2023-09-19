@@ -957,7 +957,7 @@
         "Неўпарадкаваны спіс"
       ],
       "Unsubscribe": [
-        "Адпісацца"
+        "Скасаваць падпіску"
       ],
       "Update": [
         "Абнавіць"
@@ -1133,6 +1133,9 @@
       ],
       "Disallow unsigned mail": [
         "Забар. непадпіс. пошту"
+      ],
+      "Edit address": [
+        "Рэдагаваць адрас"
       ],
       "Enable": [
         "Уключыць"
@@ -3127,12 +3130,17 @@
         "Вы зноў падпісаліся на лісты ${ categoriesJsx }."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Вы адпісаліся ад лістоў ${ categoriesJsx }."
+        "Вы скасавалі падпіску на лісты ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } і ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Праверачны ліст адпраўлены на ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -3874,7 +3882,7 @@
         "увайсці"
       ],
       "There was a problem unsubscribing you.": [
-        "Узнікла праблема пры адмове ад падпіскі."
+        "Узнікла праблема пры скасаванні падпіскі."
       ]
     },
     "Error notification": {
@@ -4674,6 +4682,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Наладзьце ${ strongText } з Gmail"
+      ],
+      "This feature is currently unavailable": [
+        "Гэта функцыя зараз недаступная"
       ],
       "Update your logins": [
         "Абнавіце вашы запісы ўваходу"
@@ -7038,6 +7049,9 @@
       "Unverified": [
         "Неправераны"
       ],
+      "Unverified email address.": [
+        "Не пацверджаны адрас электроннай пошты"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
@@ -7262,6 +7276,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Вы можаце наладжваць і спампоўваць свае рахункі, каб весці ўлік выдаткаў."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можаце ўключыць журнал аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
@@ -8022,7 +8039,7 @@
         "Аўтаматычны адказ"
       ],
       "Auto-unsubscribe": [
-        "Аўтаматычная адпіска"
+        "Аўтаматычнае скасаванне падпіскі"
       ],
       "Awarded": [
         "Узнагароджаны"
@@ -8114,6 +8131,9 @@
       "Config to connect to ${ serverName }": [
         "Канфігурацыя для падключэння да ${ serverName }"
       ],
+      "Confirm email": [
+        "Пацвердзіць адрас электроннай пошты"
+      ],
       "Confirm link URLs": [
         "Пацвердзіць спасылку URL-адраса"
       ],
@@ -8164,6 +8184,9 @@
       ],
       "Current display name": [
         "Бягучае бачнае імя"
+      ],
+      "Current email": [
+        "Бягучая электронная пошта"
       ],
       "Customize invoices": [
         "Наладжванне рахункаў"
@@ -9134,6 +9157,14 @@
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Паспрабуйце пераправерыць праз некалькі хвілін."
+      ],
+      "This feature is temporarily unavailable": [
+        "Гэта функцыя часова недаступная"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11366,7 +11397,7 @@
         "Выдаліць каляндар"
       ],
       "Unsubscribe?": [
-        "Адпісацца?"
+        "Скасаваць падпіску?"
       ]
     },
     "Restore administrator panel": {
@@ -11829,6 +11860,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Скасаванне вашай падпіскі. Пачакайце..."
+      ],
       "Downgrading your account, please wait": [
         "Паніжэнне вашага ўліковага запісу. Пачакайце..."
       ]
@@ -12234,7 +12268,7 @@
         "Вы паспяхова скасавалі сваю падпіску."
       ],
       "You have successfully unsubscribed": [
-        "Вы паспяхова адпісаліся"
+        "Вы паспяхова скасавалі падпіску"
       ]
     },
     "Success message": {
@@ -12768,7 +12802,7 @@
         "Стварыць уліковыя запісы карыстальніка"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Стварыць свой уліковы запіс ${ BRAND_NAME }"
+        "Стварыце свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Стварыць свой адрас ${ BRAND_NAME }"
@@ -13439,6 +13473,9 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Мы адправілі ліст з інструкцыямі пра завяршэнне змены на ваш новы адрас."
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
@@ -13724,6 +13761,9 @@
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Выкарыстоўвайце стандартную паласу прагорткі свайго браўзера. Звычайна яна больш і ёй прасцей карыстацца."
       ],
+      "Verified email address": [
+        "Адрас электроннай пошты правераны"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
       ],
@@ -13740,7 +13780,7 @@
         "Калі вы націсніце на спасылку, функцыя антыфішынгавай абароны папросіць вас пацвердзіць URL-адрас вэб-старонкі."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Калі вы перамясціце ліст у спам, вы аўтаматычна будзеце адпісаны ад спіса рассылкі адпраўніка."
+        "Калі вы перамясціце ліст у спам, ваша падпіска будзе скасавана аўтаматычна ў спісе рассылкі адпраўніка."
       ],
       "You have locally decrypted this key": [
         "Вы расшыфравалі гэты ключ лакальна"

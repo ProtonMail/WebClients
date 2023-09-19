@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
       ],
+      "Edit address": [
+        "Modifier l'adresse"
+      ],
       "Enable": [
         "Activer"
       ],
@@ -3115,6 +3118,11 @@
         "${ allCategoryTitlesExceptTheLastOne } et ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Le message de vérification a été envoyé à ${ address }."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -4625,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Configurer ${ strongText } depuis Gmail"
       ],
+      "This feature is currently unavailable": [
+        "Cette fonctionnalité n'est pas disponible pour le moment."
+      ],
       "Update your logins": [
         "Mettez à jour vos identifiants"
       ]
@@ -6044,6 +6055,9 @@
       "inactive": [
         "inactive"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
+      ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé."
       ],
@@ -6492,6 +6506,9 @@
       "Report link expired": [
         "Le lien a expiré"
       ],
+      "Resend verification email": [
+        "Envoyer à nouveau le message de vérification"
+      ],
       "Restore": [
         "Restauration"
       ],
@@ -6515,6 +6532,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scannez ce code en utilisant votre application d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Sécurisez votre compte ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Sécurisation de votre compte"
@@ -6886,6 +6906,12 @@
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
       ],
+      "Unverified": [
+        "Non vérifiée"
+      ],
+      "Unverified email address.": [
+        "L'adresse e-mail n'a pas été vérifiée."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
@@ -7106,6 +7132,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Vous pouvez personnaliser et télécharger vos factures à des fins comptables."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Vous pouvez activer la journalisation des connexions pour savoir quand votre compte est utilisé et à partir de quelle adresse IP. Nous enregistrerons l'adresse IP qui accède au compte et l'heure, ainsi que les tentatives qui ont échoué."
@@ -7936,6 +7965,9 @@
       "Config to connect to ${ serverName }": [
         "Configuration pour se connecter à ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmer l'adresse e-mail"
+      ],
       "Confirm link URLs": [
         "Confirmer les liens URL"
       ],
@@ -7986,6 +8018,9 @@
       ],
       "Current display name": [
         "Nom d'affichage actuel"
+      ],
+      "Current email": [
+        "Adresse e-mail actuelle"
       ],
       "Customize invoices": [
         "Personnaliser les factures"
@@ -8271,6 +8306,9 @@
       ],
       "New display name": [
         "Nouveau nom d'affichage"
+      ],
+      "New email": [
+        "Nouvelle adresse e-mail"
       ],
       "New login password": [
         "Nouveau mot de passe de connexion"
@@ -8941,6 +8979,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
         "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Nous vous invitons à vérifier quelques minutes."
+      ],
+      "This feature is temporarily unavailable": [
+        "Cette fonctionnalité n'est pas disponible temporairement."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11552,6 +11598,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "L'annulation de votre abonnement est en cours, veuillez patienter."
+      ],
       "Downgrading your account, please wait": [
         "Votre compte est en cours de modification, veuillez patienter."
       ]
@@ -11822,6 +11871,9 @@
       ],
       "Email address copied to clipboard": [
         "L'adresse e-mail a été copiée dans le presse-papiers."
+      ],
+      "Email address updated": [
+        "L'adresse e-mail a été mise à jour."
       ],
       "Email updated": [
         "L'adresse a été mise à jour."
@@ -12575,6 +12627,9 @@
       "Edit domain": [
         "Modifier le domaine"
       ],
+      "Edit email address": [
+        "Modifier l'adresse e-mail"
+      ],
       "Edit filter": [
         "Modifier le filtre"
       ],
@@ -13104,6 +13159,9 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Nous vous enverrons un message à votre nouvelle adresse e-mail avec des instructions pour effectuer la modification."
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
@@ -13388,6 +13446,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilisez les barres de défilement par défaut de votre navigateur. Elles sont généralement plus grandes et plus faciles à utiliser."
+      ],
+      "Verified email address": [
+        "Adresse e-mail vérifiée"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nous avons détecté un problème avec votre configuration DNS. Nous vous invitons à vérifier que vos enregistrements correspondent aux instructions ci-dessous. Si le problème persiste, nous devrons annuler la signature DKIM."

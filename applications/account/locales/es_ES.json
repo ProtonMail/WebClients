@@ -4633,6 +4633,9 @@
       "Set up ${ strongText } from Gmail": [
         "Configura ${ strongText } desde Gmail"
       ],
+      "This feature is currently unavailable": [
+        "Esta función no está actualmente disponible."
+      ],
       "Update your logins": [
         "Actualiza tus inicios de sesión"
       ]
@@ -6052,6 +6055,9 @@
       "inactive": [
         "inactiva"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Aumenta la seguridad de tu cuenta al verificar tu dirección de correo."
+      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
@@ -6527,6 +6533,9 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escanea este código con tu dispositivo de autenticación de doble factor para configurar tu cuenta. ${ switchButton }."
       ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Asegura tu cuenta de ${ BRAND_NAME }"
+      ],
       "Securing your account": [
         "Protegiendo tu cuenta"
       ],
@@ -6897,6 +6906,12 @@
       "Unsupported file": [
         "Archivo no admitido"
       ],
+      "Unverified": [
+        "No verificado"
+      ],
+      "Unverified email address.": [
+        "Dirección de correo no verificada."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
@@ -7117,6 +7132,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puedes personalizar y descargar tus facturas para tu contabilidad."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Puedes editar esto una vez para asegurarte de la dirección de correo correcta para verificar."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puedes habilitar el registro de inicio de sesión para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP y la hora a la que se accede a la cuenta, así como los intentos fallidos."
@@ -8961,6 +8979,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como",
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Inténtalo nuevamente en unos minutos."
+      ],
+      "This feature is temporarily unavailable": [
+        "Esta función no está disponible temporalmente."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11572,6 +11598,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Estamos cancelando tu suscripción. Espera."
+      ],
       "Downgrading your account, please wait": [
         "Espera. Estamos modificando tu cuenta."
       ]
@@ -13129,6 +13158,9 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviaremos un correo a su dirección nueva con instrucciones para finalizar el cambio."
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"

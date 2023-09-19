@@ -4083,7 +4083,7 @@
         "Sono ammessi solo 10 inviti accettati nell'arco di 6 mesi."
       ],
       "Owners of a plan with members cannot join another group plan.": [
-        "I titolari di un piano dotato di membri non possono entrare a far parte di un piano collettivo."
+        "I proprietari di un piano con membri non possono unirsi a un piano di gruppo."
       ],
       "Pending": [
         "In attesa"
@@ -4107,7 +4107,7 @@
         "Per agevolare la transizione, ti offriamo una prova gratuita di ${ BRAND_NAME } Unlimited della durata di 30 giorni.*"
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Con i piani Visionary e i piani famiglia per ora non è possibile usare gli account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
+        "I piani Visionary e i piani famiglia attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "I piani Visionary e i piani famiglia per ora non supportano gli account a vita."
@@ -4152,7 +4152,7 @@
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
-        "Il tuo piano attuale non si può associare a un piano Visionary o a un piano famiglia."
+        "Il tuo piano attuale non può essere associato a un piano Visionary o a un piano famiglia."
       ]
     },
     "familyOffer_2023:Footer": {
@@ -4185,7 +4185,7 @@
         "Privacy online, per tutta la famiglia"
       ],
       "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "L'invito verrà annullato e l'utente non potrà entrare a far parte di ${ organization.Name }."
+        "L'invito verrà annullato e l'utente non potrà unirsi a ${ organization.Name }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "L'account dell'utente verrà trasferito su un piano ${ BRAND_NAME } Unlimited per una prova gratuita di 30 giorni.*"
@@ -4604,7 +4604,7 @@
         "App ${ MAIL_APP_NAME }"
       ],
       "account logins": [
-        "login account"
+        "login degli account"
       ],
       "Auto-forward Gmail": [
         "Inoltro automatico di Gmail"
@@ -4613,7 +4613,7 @@
         "inoltro automatico"
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Cambia ${ strongText } con il tuo indirizzo ${ BRAND_NAME }"
+        "Cambia i ${ strongText } con il tuo indirizzo ${ BRAND_NAME }"
       ],
       "Discover how our ${ strongText } protect you": [
         "Scopri come la nostra ${ strongText } ti protegge"
@@ -4632,6 +4632,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Configurare ${ strongText } da Gmail"
+      ],
+      "This feature is currently unavailable": [
+        "Questa funzionalità non è attualmente disponibile"
       ],
       "Update your logins": [
         "Aggiorna i tuoi login"
@@ -5348,7 +5351,7 @@
         "3. Guadagni crediti"
       ],
       "30-day money-back guarantee": [
-        "Rimborso garantito durante 30 giorni"
+        "Garanzia di rimborso entro 30 giorni"
       ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
@@ -5824,7 +5827,7 @@
         "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora essere trovate nella rispettiva cartella."
       ],
       "Enable this address to join this calendar": [
-        "Abilita questo indirizzo per aggiungere questo calendario"
+        "Abilita questo indirizzo per aderire a questo calendario"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Abilita TLS o SSL sul servizio esterno se è supportato."
@@ -6498,7 +6501,7 @@
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
       ],
       "Remove one of your calendars to join this one": [
-        "Per aggiungere questo calendario devi prima rimuovere uno dei tuoi calendari"
+        "Per aderire a questo calendario devi prima rimuovere uno dei tuoi calendari"
       ],
       "Report link expired": [
         "Link di segnalazione scaduto"
@@ -6667,7 +6670,7 @@
         "Il calendario verrà rimosso dal tuo account."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "Il link di verifica dell'e-mail è scaduto. Effettua il login per re inviare un link di verifica."
+        "Il link di verifica dell'email è scaduto. Effettua il login per reinviare un link di verifica."
       ],
       "The following address is available:": [
         "Il seguente indirizzo email è disponibile:"
@@ -6877,7 +6880,7 @@
         "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decriptare la tua casella di posta. (Avanzato)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per il login e la decriptazione della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
+        "La modalità a doppia password utilizza due password separate per l'accesso e la decriptazione della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Impossibile verificare la firma del file di ripristino. Si prega di contattare l'assistenza."
@@ -6970,7 +6973,7 @@
         "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Verifica la tua identità con una password temporanea usa e getta dall'app di autenticazione"
+        "Verifica la tua identità con una password temporanea usa e getta da un'app di autenticazione"
       ],
       "Verifying your payment": [
         "Verifica del pagamento"
@@ -7057,7 +7060,7 @@
         "Invieremo un codice di ripristino al numero di telefono fornito per il recupero dell'account."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai modificarlo. Ti invieremo un'e-mail non appena sarà terminato."
+        "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai cambiarlo. Ti invieremo un'email non appena verrà terminato."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Se disabilitato, questo impedirà ai file di immagini il caricamento sul dispositivo senza che tu ne sia informato."
@@ -8053,7 +8056,7 @@
         "Elimina"
       ],
       "Delete recovery-related information.": [
-        "Elimina le informazioni di ripristino."
+        "Elimina le informazioni di recupero."
       ],
       "Density": [
         "Densità"
@@ -8098,7 +8101,7 @@
         "Indirizzo email"
       ],
       "Email or username": [
-        "Email o username"
+        "Email o nome utente"
       ],
       "Emails": [
         "Email"
@@ -8308,7 +8311,7 @@
         "Nuova email"
       ],
       "New login password": [
-        "Nuova password d'accesso"
+        "Nuova password di accesso"
       ],
       "New mailbox password": [
         "Nuova password della casella di posta"
@@ -8569,7 +8572,7 @@
         "Nome token"
       ],
       "Two-password mode": [
-        "Modalità a due password"
+        "Modalità a doppia password"
       ],
       "Undo send": [
         "Annulla invio"
@@ -8978,6 +8981,14 @@
         "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come"
       ]
     },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Ricontrolla tra qualche minuto."
+      ],
+      "This feature is temporarily unavailable": [
+        "Questa funzionalità non è disponibile temporaneamente"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto.",
@@ -9046,7 +9057,7 @@
         "Crea un nuovo account ${ appName }"
       ],
       "Find ${ BRAND_NAME } Account username": [
-        "Trova lo username del tuo account ${ BRAND_NAME }"
+        "Trova il nome utente del tuo account ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Hai dimenticato la password del tuo account ${ BRAND_NAME }? Reimpostala qui utilizzando un codice di recupero, un'email o un SMS e ottieni nuovamente l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e altro ancora."
@@ -10076,7 +10087,7 @@
         "Supporto per protocolli di condivisione dei file come BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin da ${ BRAND_NAME }."
+        "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin di ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
@@ -10234,7 +10245,7 @@
         "Invito al calendario rifiutato"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Ti sei unito al calendario ${ calendarName } (${ senderEmail })"
+        "Hai aderito al calendario ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification success": {
@@ -11124,7 +11135,7 @@
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Se abbandoni questo calendario dovrai richiedere al proprietario di partecipare nuovamente."
+        "Se abbandoni questo calendario sarà necessario chiedere al proprietario per partecipare nuovamente."
       ],
       "This calendar will be removed from your account.": [
         "Questo calendario sarà rimosso dal tuo account."
@@ -11463,7 +11474,7 @@
         "Vai ai piani di abbonamento"
       ],
       "Upgrade": [
-        "Aggiorna"
+        "Effettua l'upgrade"
       ]
     },
     "specialoffer: Offers": {
@@ -11590,6 +11601,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Annullamento dell'abbonamento. Per favore attendi"
+      ],
       "Downgrading your account, please wait": [
         "Downgrade del tuo account, attendere"
       ]
@@ -12405,7 +12419,7 @@
         "Indirizzi Catch-all"
       ],
       "Change login password": [
-        "Cambia la password di login"
+        "Cambia la password di accesso"
       ],
       "Change mailbox password": [
         "Cambia la password della casella email"
