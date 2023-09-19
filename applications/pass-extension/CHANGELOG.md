@@ -1,3 +1,7 @@
+## Version 1.6.2
+
+-   Force runtime reload on manual user lock or detected API lock
+
 ## Version 1.6.1
 
 -   Fix browser alarm creation in request tracker
