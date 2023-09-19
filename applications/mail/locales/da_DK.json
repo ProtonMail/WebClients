@@ -94,8 +94,9 @@
       "As Scheduled": [
         "Som Planlagt"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Højst 100 kontakter er tilladt pr. kontaktgruppe"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
+        "Højst ${ maxContacts } kontakter er tilladt pr. kontaktgruppe"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -1141,6 +1142,10 @@
       ],
       "Yes, I'll attend": [
         "Ja, jeg deltager"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktperson",
+        "Du kan ikke sende vCard filer på flere end ${ maxAttachments } kontaktpersoner"
       ],
       "Zoom in": [
         "Zoom ind"
@@ -3440,11 +3445,9 @@
       "Wrong mailbox password": [
         "Forkert postkasseadgangskode"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Du kan ikke sende en mail til mere end 100 modtagere"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
+        "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Du kan ikke åbne mere end ${ maxActiveComposer } skrivervindue ad gangen",
@@ -3476,9 +3479,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
-        "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Højst ${ maxAttendees } deltager er tilladt pr. invitation",
+        "Højst ${ maxAttendees } deltagere er tilladt pr. invitation"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4120,6 +4123,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } app"
+      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } i App Store"
       ],
@@ -4159,6 +4165,9 @@
       "Continue setting up your email": [
         "Fortsæt konfigurationen af din e-mail"
       ],
+      "Discover how our ${ strongText } protect you": [
+        "Se, hvordan vores ${ strongText } beskytter dig"
+      ],
       "Double your free storage to 1 GB when you complete the following:": [
         "Fordobl din gratis lagerplads til 1 GB når du gennemfører følgende:"
       ],
@@ -4170,6 +4179,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hent mobilappen til ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Få ${ strongText } til Android eller iOS"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Bliv ved med at bruge ${ MAIL_APP_NAME } for at opdage flere måder, hvorpå ${ BRAND_NAME } beskytter dit privatliv og forenkler e-mailing."
@@ -4209,6 +4221,9 @@
       ],
       "Storage unlocked": [
         "Lager låst op"
+      ],
+      "This feature is currently unavailable": [
+        "Denne funktion er ikke tilgængelig i øjeblikket"
       ],
       "Update your logins": [
         "Opdatér dine logins"

@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Ca programare"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Sunt permise maxim 100 de contacte întru-un grup."
-      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -3461,12 +3458,6 @@
       "Wrong mailbox password": [
         "Parolă mesaje greșită."
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Nu puteți trimite fișiere vCard pentru mai mult de 10 contacte."
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nu puteți deschide mai mult de o fereastră de compunere.",
         "Nu puteți deschide mai mult de ${ maxActiveComposer } ferestre de compunere deodată.",
@@ -3495,13 +3486,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Este permis cel mult un participant per invitație.",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație.",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație."
       ]
     },
     "Error display when performing invalid move on message": {

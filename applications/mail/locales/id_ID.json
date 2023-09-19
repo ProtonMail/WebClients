@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Sebagaimana Terjadwal"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Masing-masing grup kontak hanya dapat menampung hingga 100 kontak"
-      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -1137,6 +1134,9 @@
       ],
       "Yes, I'll attend": [
         "Ya, saya akan hadir"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
       ],
       "Zoom in": [
         "Perbesar"
@@ -3419,12 +3419,6 @@
       "Wrong mailbox password": [
         "Kata sandi kotak surat salah"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer dalam satu waktu"
       ],
@@ -3451,11 +3445,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Harap persempit kriteria pencarian Anda dan coba lagi."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "Hanya ${ MAX_ATTENDEES } peserta yang dapat diundang per undangannya"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4202,6 +4191,9 @@
       "Storage unlocked": [
         "Penyimpanan dibuka"
       ],
+      "This feature is currently unavailable": [
+        "Fitur belum tersedia"
+      ],
       "Update your logins": [
         "Perbarui login Anda"
       ],
@@ -4942,6 +4934,9 @@
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Edit email address": [
+        "Sunting alamat surel"
       ],
       "Edit encryption": [
         "Sunting enkripsi"

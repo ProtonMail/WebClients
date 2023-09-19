@@ -94,9 +94,6 @@
       "As Scheduled": [
         "Zamanlandığı gibi"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Bir kişi grubunda en fazla 100 kişi bulunabilir"
-      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -3440,12 +3437,6 @@
       "Wrong mailbox password": [
         "Posta kutusu parolası yanlış"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz",
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz"
@@ -3473,12 +3464,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir",
-        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3683,7 +3668,7 @@
         "Bir şeyler ters gitti"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyin"
@@ -5780,7 +5765,7 @@
         "Kişi gruplarına kolayca e-posta göndermek için tarifenizi yükseltin."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Gizliğe öncelik veren interneti desteklemek için tarifenizi yükseltin."
+        "Gizliğe öncelik veren İnternet fikrini desteklemek için tarifenizi yükseltin."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Herkes için gizlilik sağlama amacımızı desteklemek için tarifenizi yükseltin."
