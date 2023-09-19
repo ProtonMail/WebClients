@@ -63,9 +63,6 @@
       "Apply": [
         "Terapkan"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Masing-masing grup kontak hanya dapat menampung hingga 100 kontak"
-      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -387,6 +384,9 @@
       "Open settings": [
         "Buka pengaturan"
       ],
+      "Pause indexing": [
+        "Jeda pengindeksan"
+      ],
       "Preview contact": [
         "Pratinjau kontak"
       ],
@@ -449,6 +449,9 @@
       ],
       "Reset to default": [
         "Atur ulang ke awal"
+      ],
+      "Resume indexing": [
+        "Lanjutkan pengindeksan"
       ],
       "Save": [
         "Simpan"
@@ -614,6 +617,9 @@
       ],
       "Yes, I'll attend": [
         "Ya, saya akan hadir"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
       ]
     },
     "Action subline": {
@@ -2052,6 +2058,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Ini dapat berlangsung selama beberapa menit. Selagi menunggu, Anda juga dapat menggunakan Proton Calendar seperti biasanya."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
@@ -2269,6 +2278,9 @@
       ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
+      ],
+      "Event not found": [
+        "Acara tidak ditemukan"
       ],
       "Failed to get original occurrence in series": [
         "Gagal mendapatkan rangkaian kejadian asli"
@@ -2513,12 +2525,6 @@
       "You already added this holidays calendar": [
         "Anda sudah menambahkan kalender liburan ini"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
-      ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
@@ -2739,6 +2745,14 @@
         "Nilai diperlukan"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Tidak ada hasil"
+      ],
+      "Results": [
+        "Hasil"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "dibatalkan"
@@ -2747,6 +2761,14 @@
     "Event form": {
       "${ numberOfAttendees } participants": [
         "${ numberOfAttendees } peserta"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Seharian"
+      ],
+      "All day, lasts ${ plusDaysToEnd } days": [
+        "Seharian, berlaku ${ plusDaysToEnd } hari"
       ]
     },
     "Event info. Organizer name": {
@@ -3394,6 +3416,9 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } kontak"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } dan ${ lastItem }"
+      ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
@@ -3496,6 +3521,9 @@
       "Calendar side panel": [
         "Panel samping kalender"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Tidak dapat menemukan acara yang Anda cari? Beberapa acara dalam kalender tersembunyi cocok dengan kueri Anda. Untuk melihat hasilnya, aktifkan keterlihatan untuk ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
       ],
@@ -3507,6 +3535,9 @@
       ],
       "Clear encrypted search data": [
         "Hapus data pencarian terenkripsi"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Menghapus data peramban akan membersihkan indeks pencarian di perangkat ini. Semua acara kalender harus diindeks lagi supaya fungsi pencarian dapat digunakan."
       ],
       "Clears browser data related to the encrypted search.": [
         "Menghapus data browser yang berhubungan dengan pencarian terenkripsi."
@@ -3576,6 +3607,9 @@
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Edit email address": [
+        "Sunting alamat surel"
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -3651,6 +3685,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Mengindeks acara: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Pengindeksan dijeda"
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -4061,6 +4101,16 @@
         "Zona waktu sistem Anda sepertinya berubah menjadi ${ timezone }. Anda ingin memperbarui preferensi zona waktu?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Anda dapat memperbarui kueri pencarian Anda atau tutup pencarian untuk kembali ke tampilan kalender"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
@@ -4105,9 +4155,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "Hanya ${ MAX_ATTENDEES } peserta yang dapat diundang per undangan"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Pembuatan alamat pada kalender bersama tidak diperkenankan"
       ]
@@ -5228,6 +5275,9 @@
       "Image URL": [
         "URL gambar"
       ],
+      "Indexing...": [
+        "Mengindeks..."
+      ],
       "Name": [
         "Nama"
       ],
@@ -5242,6 +5292,9 @@
       ],
       "Please select a country": [
         "Silakan pilih negara"
+      ],
+      "Search events": [
+        "Cari acara"
       ],
       "Search for group name": [
         "Cari nama grup"
@@ -5630,6 +5683,9 @@
       "Add your country's public holidays to your calendar.": [
         "Tambahkan liburan umum negara Anda ke kalender Anda."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Cari acara dengan mudah dengan fitur pencarian kami yang baru."
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
@@ -5638,6 +5694,9 @@
       ],
       "Public holidays are here!": [
         "Liburan umum telah hadir!"
+      ],
+      "Search for events": [
+        "Cari acara"
       ]
     },
     "Storage": {
@@ -5700,6 +5759,9 @@
       ],
       "Calendar information updated": [
         "Informasi kalender diperbarui"
+      ],
+      "Calendar search activated": [
+        "Pencarian kalender diaktifkan"
       ],
       "Calendar updated": [
         "Kalender berhasil diperbarui"
@@ -6289,6 +6351,9 @@
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
       ],
+      "We're setting up Calendar search": [
+        "Kami menyiapkan pencarian kalender"
+      ],
       "We've locked some calendars to protect your data": [
         "Kami telah mengunci sebagian kalender yang ada untuk melindungi data Anda"
       ],
@@ -6426,6 +6491,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Navigasi ke acara"
+      ],
       "Open in a new tab": [
         "Buka di tab baru"
       ]

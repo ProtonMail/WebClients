@@ -63,8 +63,9 @@
       "Apply": [
         "Εφαρμογή"
       ],
-      "At most 100 contacts are allowed per contact group": [
-        "Επιτρέπονται το πολύ 100 επαφές ανά ομάδα επαφών"
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
+        "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -622,6 +623,10 @@
       ],
       "Yes, I'll attend": [
         "Ναι, θα παρευρεθώ"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ]
     },
     "Action subline": {
@@ -2547,11 +2552,9 @@
       "You already added this holidays calendar": [
         "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
       ],
-      "You can't send a mail to more than 100 recipients": [
-        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
-      ],
-      "You can't send vCard files of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από 10 επαφές"
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
       ],
       "You have reached the contacts limit for your account": [
         "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
@@ -4224,9 +4227,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Το πολύ ${ maxAttendees } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ maxAttendees } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Δεν επιτρέπεται η δημιουργία προσκλήσεων σε κοινόχρηστο ημερολόγιο"
