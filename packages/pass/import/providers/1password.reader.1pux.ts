@@ -1,7 +1,7 @@
 import jszip from 'jszip';
 import { c } from 'ttag';
 
-import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { extractFirst } from '@proton/pass/utils/array';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -77,7 +77,7 @@ const extractURLs = ({ overview }: OnePassItem): string[] => [
     ...(overview.urls ?? []).map(({ url }) => url),
 ];
 
-const extractExtraFields = (item: OnePassItem): ItemExtraField[] => {
+const extractExtraFields = (item: OnePassItem): UnsafeItemExtraField[] => {
     const { sections = [] } = item.details;
     if (!sections) return [];
 
@@ -85,7 +85,7 @@ const extractExtraFields = (item: OnePassItem): ItemExtraField[] => {
         sections
             /* check that field value key is supported and remove any credit card fields */
             .flatMap(({ fields }) => fields.filter((field) => isSupportedField(field) && !isCreditCardField(field)))
-            .map<ItemExtraField>(({ title, value }) => {
+            .map<UnsafeItemExtraField>(({ title, value }) => {
                 const valueKey = Object.keys(value)[0] as OnePassFieldKey;
                 switch (valueKey) {
                     case OnePassFieldKey.MONTH_YEAR:
@@ -140,7 +140,7 @@ const processLoginItem = (
 ): ItemImportIntent<'login'> => {
     const [totp, extraFields] = extractFirst(
         extractExtraFields(item),
-        (extraField): extraField is ItemExtraField<'totp'> => extraField.type === 'totp'
+        (extraField): extraField is UnsafeItemExtraField<'totp'> => extraField.type === 'totp'
     );
 
     return importLoginItem({

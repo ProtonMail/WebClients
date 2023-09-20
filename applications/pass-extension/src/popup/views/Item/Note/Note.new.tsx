@@ -5,6 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { selectVaultLimits } from '@proton/pass/store';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -37,7 +38,7 @@ export const NoteNew: VFC<ItemNewProps<'note'>> = ({ shareId, onSubmit, onCancel
                 optimisticId,
                 shareId: shareId,
                 createTime: getEpoch(),
-                metadata: { name, note, itemUuid: optimisticId },
+                metadata: { name, note: obfuscate(note), itemUuid: optimisticId },
                 content: {},
                 extraFields: [],
             });

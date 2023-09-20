@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { selectVaultLimits } from '@proton/pass/store';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -54,10 +55,13 @@ export const CreditCardNew: VFC<ItemNewProps<'creditCard'>> = ({ shareId, onSubm
                 optimisticId: id,
                 shareId,
                 createTime: getEpoch(),
-                metadata: { name, note, itemUuid: id },
+                metadata: { name, note: obfuscate(note), itemUuid: id },
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
+                    number: obfuscate(creditCardValues.number),
+                    verificationNumber: obfuscate(creditCardValues.verificationNumber),
+                    pin: obfuscate(creditCardValues.pin),
                 },
                 extraData: {},
                 extraFields: [],

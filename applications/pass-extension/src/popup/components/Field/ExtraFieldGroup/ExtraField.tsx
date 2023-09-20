@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import type { ExtraFieldType, ItemExtraField } from '@proton/pass/types';
+import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object';
 import clsx from '@proton/utils/clsx';
 
@@ -23,12 +23,12 @@ type ExtraFieldOption = {
     placeholder: string;
 };
 
-type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<ItemExtraField<T>>;
+type ExtraFieldError<T extends ExtraFieldType> = FormikErrors<UnsafeItemExtraField<T>>;
 
 export type ExtraFieldProps = FieldBoxProps &
     Omit<BaseTextFieldProps & BaseTextAreaFieldProps, 'field' | 'placeholder' | 'error'> & {
         type: ExtraFieldType;
-        field: FieldInputProps<ItemExtraField>;
+        field: FieldInputProps<UnsafeItemExtraField>;
         error?: ExtraFieldError<ExtraFieldType>;
         touched?: boolean;
         autoFocus?: boolean;
@@ -67,9 +67,9 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
     const { icon, placeholder } = getExtraFieldOption(type);
 
     const onChangeHandler =
-        (merge: (evt: ChangeEvent<HTMLInputElement>, field: ItemExtraField) => ItemExtraField) =>
+        (merge: (evt: ChangeEvent<HTMLInputElement>, field: UnsafeItemExtraField) => UnsafeItemExtraField) =>
         (evt: ChangeEvent<HTMLInputElement>) => {
-            props.form.setFieldValue(field.name, merge(evt, props.field.value));
+            void props.form.setFieldValue(field.name, merge(evt, props.field.value));
         };
 
     const fieldValueEmpty = Object.values(field.value.data).every((value) => !value);

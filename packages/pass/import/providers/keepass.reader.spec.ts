@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { deobfuscateItem } from '@proton/pass/utils/pass/items';
 import { getEpoch } from '@proton/pass/utils/time';
 
 import type { ImportPayload, ImportVault } from '../types';
@@ -39,7 +40,8 @@ describe('Import KeePass xml', () => {
         const groupA = payload.vaults[0];
         expect(groupA.items.length).toEqual(1);
 
-        const loginItem = groupA.items[0] as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(groupA.items[0] as any) as unknown as ItemImportIntent<'login'>;
+
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Login item with note');
         expect(loginItem.metadata.note).toEqual('Login item');
@@ -81,7 +83,7 @@ describe('Import KeePass xml', () => {
         const groupB = payload.vaults[1];
         expect(groupB.items.length).toEqual(1);
 
-        const loginItem = groupB.items[0] as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(groupB.items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Broken URL');
         expect(loginItem.metadata.note).toEqual('');
@@ -99,7 +101,7 @@ describe('Import KeePass xml', () => {
         const groupC = payload.vaults[2];
         expect(groupC.items.length).toEqual(1);
 
-        const loginItem = groupC.items[0] as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(groupC.items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Login item');
         expect(loginItem.metadata.note).toEqual('');
@@ -114,10 +116,10 @@ describe('Import KeePass xml', () => {
     });
 
     it('should extract items from `Group D`', () => {
-        const groupC = payload.vaults[3];
-        expect(groupC.items.length).toEqual(2);
+        const groupD = payload.vaults[3];
+        expect(groupD.items.length).toEqual(2);
 
-        const loginItem1 = groupC.items[0] as ItemImportIntent<'login'>;
+        const loginItem1 = deobfuscateItem(groupD.items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('Login item');
         expect(loginItem1.metadata.note).toEqual('some note');
@@ -130,7 +132,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.platformSpecific).toBeUndefined();
         expect(loginItem1.trashed).toEqual(false);
 
-        const loginItem2 = groupC.items[1] as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(groupD.items[1] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Broken URL');
         expect(loginItem2.metadata.note).toEqual('');
@@ -164,7 +166,7 @@ describe('Import KeePass xml', () => {
         });
 
         it('should extract modern TOTP definition', () => {
-            const item = group.items[0] as ItemImportIntent<'login'>;
+            const item = deobfuscateItem(group.items[0] as any) as unknown as ItemImportIntent<'login'>;
             expect(item.metadata.name).toEqual('Modern TOTP definition');
             expect(item.content.totpUri).toEqual(
                 'otpauth://totp/Modern%20TOTP%20definition:none?issuer=Modern%20TOTP%20definition&secret=5KO67YMS2FHKA627&algorithm=SHA1&digits=8&period=42'
@@ -172,7 +174,7 @@ describe('Import KeePass xml', () => {
         });
 
         it('should extract legacy TOTP definition', () => {
-            const item = group.items[1] as ItemImportIntent<'login'>;
+            const item = deobfuscateItem(group.items[1] as any) as unknown as ItemImportIntent<'login'>;
             expect(item.metadata.name).toEqual('Legacy TOTP definition');
             expect(item.content.totpUri).toEqual(
                 'otpauth://totp/Legacy%20TOTP%20definition:none?issuer=Legacy%20TOTP%20definition&secret=AU2HMGCJYPNI2WZT&algorithm=SHA1&digits=8&period=42'
