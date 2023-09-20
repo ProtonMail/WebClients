@@ -1,4 +1,4 @@
-import type { AliasMailbox, ItemExtraField } from '@proton/pass/types';
+import type { AliasMailbox, UnsafeItemExtraField } from '@proton/pass/types';
 
 export type BaseItemValues = { name: string; note: string };
 
@@ -42,4 +42,5 @@ export type EditAliasFormValues = Pick<AliasFormValues, 'mailboxes'> & {
 
 export type UrlItem = { url: string; id: string };
 export type UrlGroupValues = { url: string; urls: UrlItem[] };
-export type ExtraFieldGroupValues = { extraFields: ItemExtraField[] };
+
+export type ExtraFieldGroupValues = { extraFields: UnsafeItemExtraField[] };

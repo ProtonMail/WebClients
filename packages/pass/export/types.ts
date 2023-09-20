@@ -1,7 +1,7 @@
-import type { ItemRevision, ItemType, VaultShareContent } from '../types';
+import type { ItemType, UnsafeItemRevision, VaultShareContent } from '../types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
-    ItemRevision<T>,
+    UnsafeItemRevision<T>,
     'revision' | 'revisionTime' | 'lastUseTime'
 >;
 

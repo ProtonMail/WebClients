@@ -3,9 +3,12 @@ import type { VFC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+
 import type { NoteFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateNoteForm } from '../../../../shared/form/validator/validate-note';
+import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import type { ItemEditProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
 import { BaseTextAreaField } from '../../../components/Field/TextareaField';
@@ -18,7 +21,8 @@ const FORM_ID = 'edit-note';
 export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revision, onSubmit, onCancel }) => {
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, extraFields } = item;
-    const { name, note, itemUuid } = metadata;
+    const { name, itemUuid } = metadata;
+    const note = useDeobfuscatedValue(metadata.note);
 
     const form = useFormik<NoteFormValues>({
         initialValues: { name, note, shareId },
@@ -28,7 +32,7 @@ export const NoteEdit: VFC<ItemEditProps<'note'>> = ({ vault: { shareId }, revis
                 itemId,
                 shareId,
                 lastRevision,
-                metadata: { note, name, itemUuid },
+                metadata: { note: obfuscate(note), name, itemUuid },
                 content: {},
                 extraFields,
             });
