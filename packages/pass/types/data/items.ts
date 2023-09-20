@@ -1,3 +1,5 @@
+import { type XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+
 import type { OpenedItem } from '../crypto';
 import type { ExtraFieldContentMap, ExtraFieldType, ItemContentMap, ItemType, Metadata } from '../protobuf';
 import type { PlatformSpecific } from '../protobuf/item-v1';
@@ -24,11 +26,18 @@ export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
 export type Item<T extends ItemType = ItemType, ExtraData extends { [K in T]?: any } = never> = {
     [Key in T]: {
         type: Key;
-        content: ItemContentMap[Key];
+        content: ObfuscatedContent<Key>;
         platformSpecific?: PlatformSpecific;
         extraFields: ItemExtraField[];
         metadata: Metadata;
     } & (ExtraData[Key] extends never ? {} : { extraData: ExtraData[Key] });
+}[T];
+
+type ObfuscatedContent<T extends ItemType> = {
+    alias: ItemContentMap[T];
+    note: ItemContentMap[T];
+    login: Omit<ItemContentMap[T], 'password'> & { password: XorObfuscation };
+    creditCard: ItemContentMap[T];
 }[T];
 
 export enum ItemState {

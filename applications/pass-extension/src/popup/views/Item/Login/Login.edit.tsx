@@ -9,6 +9,7 @@ import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { prop } from '@proton/pass/utils/fp';
+import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
@@ -56,7 +57,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     const initialValues: EditLoginItemFormValues = {
         name,
         username,
-        password,
+        password: deobfuscate(password),
         note,
         shareId,
         totpUri: getSecretOrUri(totpUri),
@@ -120,7 +121,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                 metadata: { name, note, itemUuid },
                 content: {
                     username,
-                    password,
+                    password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: normalizedOtpUri,
                 },
