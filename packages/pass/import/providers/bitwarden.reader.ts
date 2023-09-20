@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url';
@@ -41,7 +41,7 @@ const extractUrls = (item: BitwardenLoginItem) =>
 const extractExtraFields = (item: BitwardenLoginItem) => {
     return item.fields
         ?.filter((field) => Object.values(BitwardenCustomFieldType).includes(field.type))
-        .map<ItemExtraField>(({ name, type, value }) => {
+        .map<UnsafeItemExtraField>(({ name, type, value }) => {
             switch (type) {
                 case BitwardenCustomFieldType.TEXT:
                     return {

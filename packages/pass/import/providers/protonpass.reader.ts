@@ -7,6 +7,7 @@ import { type ItemImportIntent, ItemState, WorkerMessageType } from '@proton/pas
 import { partition } from '@proton/pass/utils/array';
 import { prop } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
+import { obfuscateItem } from '@proton/pass/utils/pass/items';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -74,10 +75,12 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
                         items: itemsToImport.map(
                             (item) =>
                                 ({
-                                    ...item.data,
-                                    ...(item.data.type === 'alias'
-                                        ? { extraData: { aliasEmail: item.aliasEmail! } }
-                                        : {}),
+                                    ...obfuscateItem({
+                                        ...item.data,
+                                        ...(item.data.type === 'alias'
+                                            ? { extraData: { aliasEmail: item.aliasEmail! } }
+                                            : {}),
+                                    }),
                                     trashed: item.state === ItemState.Trashed,
                                     createTime: item.createTime,
                                     modifyTime: item.modifyTime,

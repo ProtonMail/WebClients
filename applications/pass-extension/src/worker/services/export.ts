@@ -3,6 +3,7 @@ import type { ExportPayload } from '@proton/pass/export/types';
 import { selectShareOrThrow, selectUser } from '@proton/pass/store';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { type VaultShareContent, WorkerMessageType } from '@proton/pass/types';
+import { deobfuscateItem } from '@proton/pass/utils/pass/items';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import * as config from '../../app/config';
@@ -27,7 +28,7 @@ export const createExportService = () => {
                         items: Object.values(itemsById).map((item) => ({
                             itemId: item.itemId,
                             shareId: item.shareId,
-                            data: item.data,
+                            data: deobfuscateItem(item.data),
                             state: item.state,
                             aliasEmail: item.aliasEmail,
                             contentFormatVersion: item.contentFormatVersion,

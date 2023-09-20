@@ -3,7 +3,7 @@ import { CryptoProxy } from '@proton/crypto';
 import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { createVault } from '../processes/vault/create-vault';
 
@@ -43,6 +43,7 @@ export const createRandomKey = async (): Promise<DecryptedKey> => {
 
 export function randomAddress(): Address {
     return {
+        ConfirmationState: AddressConfirmationState.CONFIRMATION_CONFIRMED,
         DisplayName: '',
         DomainID: '',
         Email: '',

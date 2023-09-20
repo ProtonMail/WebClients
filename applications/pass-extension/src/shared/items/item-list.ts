@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { ItemRevision, ItemType } from '@proton/pass/types';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import { cardNumberHiddenValue } from '../../popup/components/Field/masks/credit-card';
@@ -11,11 +12,11 @@ type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => Pr
 const itemListPresenter: ItemListPresenterMap = {
     note: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: isEmptyString(data.metadata.note) ? c('Warning').t`Empty note` : data.metadata.note,
+        subheading: isEmptyString(data.metadata.note.v) ? c('Warning').t`Empty note` : deobfuscate(data.metadata.note),
     }),
     login: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: data.content.username,
+        subheading: deobfuscate(data.content.username),
     }),
     alias: ({ data, aliasEmail }) => ({
         heading: data.metadata.name,
@@ -23,7 +24,7 @@ const itemListPresenter: ItemListPresenterMap = {
     }),
     creditCard: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: cardNumberHiddenValue(data.content.number),
+        subheading: cardNumberHiddenValue(deobfuscate(data.content.number)),
     }),
 };
 

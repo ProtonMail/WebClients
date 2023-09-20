@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import groupWith from '@proton/utils/groupWith';
@@ -20,8 +20,8 @@ const extractTOTP = (item: KeeperItem): string => {
     return indexBeforeTOTP > 0 ? item[indexBeforeTOTP + 1] : '';
 };
 
-const extractExtraFields = (item: KeeperItem): ItemExtraField[] => {
-    const customFields: ItemExtraField[] = [];
+const extractExtraFields = (item: KeeperItem): UnsafeItemExtraField[] => {
+    const customFields: UnsafeItemExtraField[] = [];
     if (item.length > 7) {
         for (let i = 7; i < item.length; i += 2) {
             /* skip totp field because it was already added in extractTOTP above */

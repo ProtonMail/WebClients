@@ -6,6 +6,7 @@ import type { OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { getEpoch } from '@proton/pass/utils/time';
 import type { ParsedSender } from '@proton/pass/utils/url';
@@ -46,7 +47,7 @@ export const createOTPService = () => {
                         ? item?.data.content.totpUri
                         : extraField?.type === 'totp' && extraField.data.totpUri;
 
-                if (totpUri) return generateTOTPCode(parseOTPValue(totpUri));
+                if (totpUri) return generateTOTPCode(parseOTPValue(deobfuscate(totpUri)));
             }
 
             throw new Error('Cannot generate an OTP code from such item');
@@ -68,7 +69,7 @@ export const createOTPService = () => {
         const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri));
 
         const match = submission
-            ? otpItems.find((item) => item.data.content.username === submission.data.username)
+            ? otpItems.find((item) => deobfuscate(item.data.content.username) === submission.data.username)
             : otpItems[0];
 
         if (match) {
