@@ -9,6 +9,7 @@ import type {
     UniqueItem,
 } from '@proton/pass/types';
 import { invert, pipe, prop } from '@proton/pass/utils/fp';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { flattenItemsByShareId, isLoginItem } from '@proton/pass/utils/pass/items';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import type {
@@ -143,7 +144,7 @@ export const selectItemsByType =
 
 const loginItemByUsernameSelector = createSelector(
     [selectItemsByType('login'), (_: State, username?: MaybeNull<string>) => username],
-    (loginItems, _username) => loginItems.find((item) => item.data.content.username === _username)
+    (loginItems, _username) => loginItems.find((item) => deobfuscate(item.data.content.username) === _username)
 );
 
 export const selectLoginItemByUsername = (username?: MaybeNull<string>) => (state: State) =>
@@ -254,7 +255,7 @@ const autosaveCandidateSelector = createSelector(
             })(state),
         (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
     ],
-    (items, username) => items.filter(({ data }) => data.content.username === username)
+    (items, username) => items.filter(({ data }) => deobfuscate(data.content.username) === username)
 );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>

@@ -84,7 +84,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                     ? partialMerge(submission.autosave.data.item.data, {
                           metadata: { name },
                           content: {
-                              username,
+                              username: obfuscate(username),
                               password: obfuscate(password),
                               urls: Array.from(
                                   new Set(submission.autosave.data.item.data.content.urls.concat(valid ? [url] : []))
@@ -96,10 +96,15 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                           metadata: {
                               name,
                               // translator: full sentence is: Autosaved on account.proton.me
-                              note: c('Info').t`Autosaved on ${submissionURL}`,
+                              note: obfuscate(c('Info').t`Autosaved on ${submissionURL}`),
                               itemUuid: uniqueId(),
                           },
-                          content: { username, password: obfuscate(password), urls: valid ? [url] : [], totpUri: '' },
+                          content: {
+                              username: obfuscate(username),
+                              password: obfuscate(password),
+                              urls: valid ? [url] : [],
+                              totpUri: obfuscate(''),
+                          },
                           extraFields: [],
                       };
 

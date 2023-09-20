@@ -25,7 +25,7 @@ export const createAutoFillService = () => {
     const getAutofillCandidates = (options: SelectAutofillCandidatesOptions): SafeLoginItem[] =>
         selectAutofillCandidates(options)(store.getState()).map((item) => ({
             name: item.data.metadata.name,
-            username: item.data.content.username,
+            username: deobfuscate(item.data.content.username),
             itemId: item.itemId,
             shareId: item.shareId,
             url: item.data.content.urls?.[0],
@@ -44,7 +44,7 @@ export const createAutoFillService = () => {
         if (item !== undefined && item.data.type === 'login') {
             store.dispatch(itemAutofillIntent({ shareId, itemId }));
             return {
-                username: item.data.content.username,
+                username: deobfuscate(item.data.content.username),
                 password: deobfuscate(item.data.content.password),
             };
         }

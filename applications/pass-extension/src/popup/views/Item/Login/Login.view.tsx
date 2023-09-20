@@ -5,11 +5,11 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
+import { useDeobfuscatedItem } from '../../../../shared/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '../../../../shared/hooks/usePasswordGenerator';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
@@ -21,10 +21,11 @@ import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
-    const { metadata, content, extraFields } = item;
-    const { name, note } = metadata;
-    const { username, totpUri, urls } = content;
-    const password = deobfuscate(content.password);
+    const {
+        metadata: { name, note },
+        content: { username, password, urls, totpUri },
+        extraFields,
+    } = useDeobfuscatedItem(item);
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);

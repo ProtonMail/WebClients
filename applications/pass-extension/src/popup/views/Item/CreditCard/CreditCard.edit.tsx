@@ -4,12 +4,14 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import {
     type CreditCardItemFormValues,
     validateCreditCardForm,
 } from '../../../../shared/form/validator/validate-creditCard';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
+import { useDeobfuscatedItem } from '../../../../shared/hooks/useDeobfuscatedItem';
 import type { ItemEditProps } from '../../../../shared/items';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
@@ -26,17 +28,13 @@ const FORM_ID = 'edit-creditCard';
 export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revision, onSubmit, onCancel }) => {
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
+
     const {
         metadata: { name, note, itemUuid },
         content,
-    } = item;
+    } = useDeobfuscatedItem(item);
 
-    const initialValues: CreditCardItemFormValues = {
-        shareId,
-        name,
-        note,
-        ...content,
-    };
+    const initialValues: CreditCardItemFormValues = { ...content, shareId, name, note };
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
@@ -47,10 +45,13 @@ export const CreditCardEdit: VFC<ItemEditProps<'creditCard'>> = ({ vault, revisi
                 shareId,
                 itemId,
                 lastRevision,
-                metadata: { name, note, itemUuid },
+                metadata: { name, note: obfuscate(note), itemUuid },
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
+                    number: obfuscate(creditCardValues.number),
+                    verificationNumber: obfuscate(creditCardValues.verificationNumber),
+                    pin: obfuscate(creditCardValues.pin),
                 },
                 extraData: {},
                 extraFields: [],

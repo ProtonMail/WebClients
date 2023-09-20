@@ -2,7 +2,7 @@ import { type VFC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectExtraFieldLimits } from '@proton/pass/store';
-import type { ItemExtraField } from '@proton/pass/types';
+import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
@@ -13,7 +13,7 @@ import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
 
 type ExtraFieldsControlProps = {
-    extraFields: ItemExtraField[];
+    extraFields: UnsafeItemExtraField[];
     itemId: string;
     shareId: string;
 };
@@ -22,7 +22,7 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(
-        ({ fieldName, type, data }: ItemExtraField, index: number) => {
+        ({ fieldName, type, data }: UnsafeItemExtraField, index: number) => {
             const { icon } = getExtraFieldOption(type);
             const key = `${index}-${fieldName}`;
 

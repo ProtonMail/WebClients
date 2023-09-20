@@ -10,6 +10,7 @@ import {
 } from '@proton/pass/store';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -53,7 +54,7 @@ export const createAliasService = () => {
             createTime: getEpoch(),
             metadata: {
                 name: url,
-                note: c('Placeholder').t`Used on ${url}`,
+                note: obfuscate(c('Placeholder').t`Used on ${url}`),
                 itemUuid: optimisticId,
             },
             content: {},

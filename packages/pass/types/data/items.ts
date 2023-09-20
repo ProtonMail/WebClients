@@ -1,17 +1,47 @@
 import { type XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
 import type { OpenedItem } from '../crypto';
-import type { ExtraFieldContentMap, ExtraFieldType, ItemContentMap, ItemType, Metadata } from '../protobuf';
-import type { PlatformSpecific } from '../protobuf/item-v1';
+import type {
+    ExtraFieldType,
+    ItemType,
+    Metadata,
+    ProtobufItemAlias,
+    ProtobufItemCreditCard,
+    ProtobufItemLogin,
+    ProtobufItemNote,
+} from '../protobuf';
+import type { ExtraHiddenField, ExtraTotp, PlatformSpecific } from '../protobuf/item-v1';
 import type { MaybeNull } from '../utils';
+
+type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
+type Deobfuscate<T> = {
+    [K in keyof T]: T[K] extends XorObfuscation ? string : T[K] extends {} ? Deobfuscate<T[K]> : T[K];
+};
+
+type ExtraFieldContent<T extends ExtraFieldType> = {
+    totp: Obfuscate<ExtraTotp, 'totpUri'>;
+    text: Obfuscate<ExtraHiddenField, 'content'>;
+    hidden: Obfuscate<ExtraHiddenField, 'content'>;
+}[T];
+
+export type ItemContent<T extends ItemType> = {
+    alias: ProtobufItemAlias;
+    note: ProtobufItemNote;
+    login: Obfuscate<ProtobufItemLogin, 'username' | 'password' | 'totpUri'>;
+    creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
+}[T];
+
+export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;
 
 export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
     [Key in T]: {
         fieldName: string;
         type: Key;
-        data: ExtraFieldContentMap[Key];
+        data: ExtraFieldContent<Key>;
     };
 }[T];
+
+export type UnsafeItemExtraField<T extends ExtraFieldType = ExtraFieldType> = Deobfuscate<ItemExtraField<T>>;
 
 /**
  * Derives a generic "distributive object type" over all possible
@@ -26,19 +56,14 @@ export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
 export type Item<T extends ItemType = ItemType, ExtraData extends { [K in T]?: any } = never> = {
     [Key in T]: {
         type: Key;
-        content: ObfuscatedContent<Key>;
+        content: ItemContent<Key>;
         platformSpecific?: PlatformSpecific;
         extraFields: ItemExtraField[];
-        metadata: Metadata;
+        metadata: Obfuscate<Metadata, 'note'>;
     } & (ExtraData[Key] extends never ? {} : { extraData: ExtraData[Key] });
 }[T];
 
-type ObfuscatedContent<T extends ItemType> = {
-    alias: ItemContentMap[T];
-    note: ItemContentMap[T];
-    login: Omit<ItemContentMap[T], 'password'> & { password: XorObfuscation };
-    creditCard: ItemContentMap[T];
-}[T];
+export type UnsafeItem<T extends ItemType = ItemType> = Deobfuscate<Item<T>>;
 
 export enum ItemState {
     Active = 1,
@@ -49,6 +74,8 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
     data: Item<T>;
     shareId: string;
 };
+
+export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
 
 /**
  * Adds an optimistic & failed property to
@@ -63,9 +90,7 @@ export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevi
  * Generic utility type to construct
  * item key mappers over the different item types
  */
-export type ItemMap<T> = {
-    [type in ItemType]: T;
-};
+export type ItemMap<T> = { [type in ItemType]: T };
 
 export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedItem = UniqueItem;
