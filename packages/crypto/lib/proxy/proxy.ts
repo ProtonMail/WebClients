@@ -146,6 +146,7 @@ export const CryptoProxy: CryptoProxyInterface = {
     cloneKeyAndChangeUserIDs: async (opts) => assertNotNull(endpoint).cloneKeyAndChangeUserIDs(opts),
     generateE2EEForwardingMaterial: async (opts) => assertNotNull(endpoint).generateE2EEForwardingMaterial(opts),
     doesKeySupportE2EEForwarding: async (opts) => assertNotNull(endpoint).doesKeySupportE2EEForwarding(opts),
+    isE2EEForwardingKey: async (opts) => assertNotNull(endpoint).isE2EEForwardingKey(opts),
 
     isRevokedKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isRevokedKey({ ...opts, date }),
     isExpiredKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isExpiredKey({ ...opts, date }),
