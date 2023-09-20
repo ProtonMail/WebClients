@@ -388,7 +388,6 @@ export const createAuthService = ({
             if (shouldLockState) {
                 logger.info(`[Worker::Auth] Locking state`);
                 store.dispatch(stateLock());
-                browser.runtime.reload();
             }
 
             onLocked?.();
