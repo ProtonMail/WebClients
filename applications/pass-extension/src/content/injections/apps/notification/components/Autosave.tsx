@@ -12,6 +12,7 @@ import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type FormEntryPrompt, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
 import { isValidURL } from '@proton/pass/utils/url';
@@ -84,7 +85,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                           metadata: { name },
                           content: {
                               username,
-                              password,
+                              password: obfuscate(password),
                               urls: Array.from(
                                   new Set(submission.autosave.data.item.data.content.urls.concat(valid ? [url] : []))
                               ),
@@ -98,7 +99,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                               note: c('Info').t`Autosaved on ${submissionURL}`,
                               itemUuid: uniqueId(),
                           },
-                          content: { username, password, urls: valid ? [url] : [], totpUri: '' },
+                          content: { username, password: obfuscate(password), urls: valid ? [url] : [], totpUri: '' },
                           extraFields: [],
                       };
 

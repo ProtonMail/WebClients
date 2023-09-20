@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
@@ -22,7 +23,9 @@ export const LoginView: VFC<ItemTypeViewProps<'login'>> = ({ vault, revision, ..
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
     const { metadata, content, extraFields } = item;
     const { name, note } = metadata;
-    const { username, password, totpUri, urls } = content;
+    const { username, totpUri, urls } = content;
+    const password = deobfuscate(content.password);
+
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
 

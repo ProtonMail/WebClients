@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { ItemExtraField, ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop, truthy } from '@proton/pass/utils/fp';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
@@ -53,7 +54,7 @@ export const importLoginItem = (options: {
         },
         content: {
             username: options.username || '',
-            password: options.password || '',
+            password: obfuscate(options.password || ''),
             urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
             totpUri: getTOTPvalue(options.totp),
         },
