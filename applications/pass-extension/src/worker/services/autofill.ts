@@ -9,6 +9,7 @@ import {
 } from '@proton/pass/store';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/utils/search';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -44,7 +45,7 @@ export const createAutoFillService = () => {
             store.dispatch(itemAutofillIntent({ shareId, itemId }));
             return {
                 username: item.data.content.username,
-                password: item.data.content.password,
+                password: deobfuscate(item.data.content.password),
             };
         }
     };

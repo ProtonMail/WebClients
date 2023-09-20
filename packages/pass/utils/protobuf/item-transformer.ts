@@ -10,6 +10,8 @@ import { ProtobufItem } from '@proton/pass/types';
 import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { deobfuscate, obfuscate } from '../obfuscate/xor';
+
 const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): ItemExtraField => {
     switch (field.content.oneofKind) {
         case 'text':
@@ -40,7 +42,7 @@ const protobufToItem = (item: SafeProtobufItem): Item => {
 
     switch (data.oneofKind) {
         case 'login':
-            return { ...base, type: 'login', content: data.login };
+            return { ...base, type: 'login', content: { ...data.login, password: obfuscate(data.login.password) } };
         case 'note':
             return { ...base, type: 'note', content: data.note };
         case 'alias':
@@ -84,7 +86,18 @@ const itemToProtobuf = (item: Item): SafeProtobufItem => {
 
     switch (item.type) {
         case 'login':
-            return { ...base, content: { content: { oneofKind: 'login', login: item.content } } };
+            return {
+                ...base,
+                content: {
+                    content: {
+                        oneofKind: 'login',
+                        login: {
+                            ...item.content,
+                            password: deobfuscate(item.content.password),
+                        },
+                    },
+                },
+            };
         case 'note':
             return { ...base, content: { content: { oneofKind: 'note', note: item.content } } };
         case 'alias':
