@@ -24,6 +24,7 @@ import {
     getSHA256Fingerprints,
     init as initPmcrypto,
     isExpiredKey,
+    isForwardingKey,
     isRevokedKey,
     processMIME,
     readCleartextMessage,
@@ -298,48 +299,6 @@ class KeyManagementApi {
         const keyStoreID = this.keyStore.add(privateKey);
 
         return getPrivateKeyReference(privateKey, keyStoreID);
-    }
-
-    /**
-     * Generate forwardee key and proxy parameter needed to setup end-to-end encrypted forwarding for the given
-     * privateKey.
-     * @param options.forwarderPrivateKey - private key of original recipient, initiating the forwarding
-     * @param options.userIDsForForwardeeKey - userIDs to attach to forwardee key
-     * @param options.passphrase - passphrase to encrypt the generated forwardee key with
-     */
-    async generateE2EEForwardingMaterial({
-        forwarderKey,
-        userIDsForForwardeeKey,
-        passphrase,
-    }: {
-        forwarderKey: PrivateKeyReference;
-        userIDsForForwardeeKey: MaybeArray<UserID>;
-        passphrase: string | null;
-    }) {
-        const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
-
-        const { proxyInstances, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
-
-        const maybeEncryptedKey = passphrase
-            ? await encryptKey({ privateKey: forwardeeKey, passphrase })
-            : forwardeeKey;
-
-        return {
-            forwardeeKey: maybeEncryptedKey.armor(),
-            proxyInstances,
-        };
-    }
-
-    /**
-     * Check whether a key can be used as input to `generateE2EEForwardingMaterial` to setup E2EE forwarding.
-     */
-    async doesKeySupportE2EEForwarding({ forwarderKey: keyReference }: { forwarderKey: PrivateKeyReference }) {
-        const key = this.keyStore.get(keyReference._idx);
-        if (!key.isPrivate()) {
-            return false;
-        }
-        const supportsForwarding = await doesKeySupportForwarding(key);
-        return supportsForwarding;
     }
 
     /**
@@ -708,6 +667,61 @@ export class Api extends KeyManagementApi {
             signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
         };
         return serialisedResult;
+    }
+
+    /**
+     * Generate forwardee key and proxy parameter needed to setup end-to-end encrypted forwarding for the given
+     * privateKey.
+     * @param options.forwarderPrivateKey - private key of original recipient, initiating the forwarding
+     * @param options.userIDsForForwardeeKey - userIDs to attach to forwardee key
+     * @param options.passphrase - passphrase to encrypt the generated forwardee key with
+     */
+    async generateE2EEForwardingMaterial({
+        forwarderKey,
+        userIDsForForwardeeKey,
+        passphrase,
+    }: {
+        forwarderKey: PrivateKeyReference;
+        userIDsForForwardeeKey: MaybeArray<UserID>;
+        passphrase: string | null;
+    }) {
+        const originalKey = this.keyStore.get(forwarderKey._idx) as PrivateKey;
+
+        const { proxyInstances, forwardeeKey } = await generateForwardingMaterial(originalKey, userIDsForForwardeeKey);
+
+        const maybeEncryptedKey = passphrase
+            ? await encryptKey({ privateKey: forwardeeKey, passphrase })
+            : forwardeeKey;
+
+        return {
+            forwardeeKey: maybeEncryptedKey.armor(),
+            proxyInstances,
+        };
+    }
+
+    /**
+     * Check whether a key can be used as input to `generateE2EEForwardingMaterial` to setup E2EE forwarding.
+     */
+    async doesKeySupportE2EEForwarding({ forwarderKey: keyReference }: { forwarderKey: PrivateKeyReference }) {
+        const key = this.keyStore.get(keyReference._idx);
+        if (!key.isPrivate()) {
+            return false;
+        }
+        const supportsForwarding = await doesKeySupportForwarding(key);
+        return supportsForwarding;
+    }
+
+    /**
+     * Whether a key is a E2EE forwarding recipient key, where all its encryption-capable (sub)keys are setup
+     * for forwarding
+     */
+    async isE2EEForwardingKey({ key: keyReference }: { key: PrivateKeyReference }) {
+        const key = this.keyStore.get(keyReference._idx);
+        if (!key.isPrivate()) {
+            return false;
+        }
+        const forForwarding = await isForwardingKey(key);
+        return forForwarding;
     }
 
     /**
