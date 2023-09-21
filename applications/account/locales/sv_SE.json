@@ -4347,6 +4347,9 @@
       "Add a name to identify your security key with.": [
         "Lägg till ett namn att identifiera din säkerhetsnyckel med."
       ],
+      "Allow platform keys": [
+        "Tillåt plattformsnycklar"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
@@ -5728,11 +5731,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."

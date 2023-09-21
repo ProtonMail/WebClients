@@ -294,7 +294,7 @@
         "Elimina"
       ],
       "Delete and confirm": [
-        "Conferma ed elimina"
+        "Elimina e conferma"
       ],
       "Delete Gateway": [
         "Elimina gateway"
@@ -606,7 +606,7 @@
         "Informazioni aggiuntive: scorciatoie da tastiera"
       ],
       "move emails to": [
-        "sposta l'email in"
+        "sposta le email in"
       ],
       "Need help?": [
         "Hai bisogno di aiuto?"
@@ -1456,12 +1456,12 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Puoi modificare o rimuovere i permessi in qualsiasi momento."
+        "Puoi cambiare o rimuovere le autorizzazioni in qualsiasi momento."
       ]
     },
     "Calendar permissions label": {
       "Permissions": [
-        "Permessi"
+        "Autorizzazioni"
       ]
     },
     "Calendar self sharing error": {
@@ -1476,7 +1476,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Condividi il tuo calendario con altri utenti ${ BRAND_NAME }. Abilita la collaborazione permettendo loro di aggiungere e modificare eventi al tuo calendario. Potrai modificare i permessi degli utenti in qualsiasi momento."
+        "Condividi il tuo calendario con altri utenti ${ BRAND_NAME }. Abilita la collaborazione permettendo loro di aggiungere e modificare eventi al tuo calendario. Potrai modificare le autorizzazioni degli utenti in qualsiasi momento."
       ]
     },
     "Calendar settings section title": {
@@ -1543,7 +1543,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Impossibile decifrare il calendario"
+        "Impossibile decriptare il calendario"
       ],
       "Calendar is syncing": [
         "Il calendario si sta sincronizzando"
@@ -3876,7 +3876,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Il file ICS allegato non può essere decifrato"
+        "Il file ICS allegato non può essere decriptato"
       ],
       "Attached ICS file could not be read": [
         "Impossibile leggere il file ICS allegato"
@@ -4286,7 +4286,7 @@
         "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Feature": {
@@ -4347,8 +4347,14 @@
       "Add a name to identify your security key with.": [
         "Aggiungi un nome con cui identificare la tua chiave di sicurezza."
       ],
+      "Allow platform keys": [
+        "Consenti chiavi della piattaforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Se abilitato, consente di registrare dispositivi integrati (come Windows Hello, TouchID, FaceID o TPM interni) oltre alle chiavi di sicurezza hardware esterne"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
@@ -4737,7 +4743,7 @@
         "Impronta digitale della chiave dell'organizzazione"
       ],
       "Permissions": [
-        "Permessi"
+        "Autorizzazioni"
       ],
       "Protection": [
         "Protezione"
@@ -4853,7 +4859,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento cifrato e aggiunto al tuo calendario",
+        "${ totalImported }/${ totalToImport } evento crittografato e aggiunto al tuo calendario",
         "${ totalImported }/${ totalToImport } eventi cifrati e aggiunti al tuo calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
@@ -4867,10 +4873,10 @@
         "Si è verificato un errore durante la crittografia e l'aggiunta degli eventi. Non è stato possibile importare alcun evento."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Cifratura ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
+        "Crittografia ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Cifratura ed aggiunta degli eventi: ${ totalImported }/${ totalToImport }"
+        "Crittografia ed aggiunta degli eventi: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Evento importato con successo. L'evento importato apparirà ora nel tuo calendario."
@@ -4908,8 +4914,8 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contatto cifrato e aggiunto alla tua lista contatti",
-        "${ totalImported }/${ totalToImport } contatti cifrati e aggiunti alla tua lista contatti"
+        "${ totalImported }/${ totalToImport } contatto crittografato e aggiunto alla tua lista contatti",
+        "${ totalImported }/${ totalToImport } contatti crittografati e aggiunti alla tua lista contatti"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta del contatto. Non è stato possibile importare alcun contatto."
@@ -5028,7 +5034,7 @@
         "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "Vai a ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }."
+        "Vai alle ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }."
       ],
       "Go to ${ boldAccountSecurity }.": [
         "Vai a ${ boldAccountSecurity }."
@@ -5181,7 +5187,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
+        "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
@@ -5354,7 +5360,7 @@
         "Garanzia di rimborso entro 30 giorni"
       ],
       "30-day money-back guarantee.": [
-        "Rimborso garantito in 30 giorni."
+        "Garanzia di rimborso entro 30 giorni"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
@@ -5658,7 +5664,7 @@
         "Copia la password suggerita negli appunti"
       ],
       "Copy your referral link": [
-        "Copia il tuo referral link"
+        "Copia il tuo link di riferimento"
       ],
       "Country code": [
         "Codice nazione"
@@ -5728,11 +5734,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -6099,7 +6105,7 @@
         "è obbligatorio"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Sto usando @ProtonMail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con Il mio link di riferimento per ottenere 1 mese di funzioni premium gratis: ${ referrerLink }"
+        "Sto usando @ProtonMail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Registrati con il mio link di riferimento per ottenere 1 mese di funzionalità premium gratuitamente: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
@@ -6129,7 +6135,7 @@
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "learn more about Sieve programming language": [
         "scopri di più sul linguaggio di programmazione Sieve"
@@ -6285,7 +6291,7 @@
         "Un account per tutti i servizi ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Cambia queste impostazioni solo se stai usando PGP con destinatari non-${ BRAND_NAME }."
+        "Cambia queste impostazioni solo se stai usando PGP con destinatari che non utilizzano ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Solo tu puoi vedere le etichette."
@@ -6922,7 +6928,7 @@
         "Aggiorna frase di recupero"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+        "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Effettua l'upgrade al piano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -7609,16 +7615,16 @@
         "Sposta a destra / espandi"
       ],
       "Move to Archive": [
-        "Sposta in Archivio"
+        "Sposta in archivio"
       ],
       "Move to Inbox": [
-        "Sposta in Posta in arrivo"
+        "Sposta nella posta in arrivo"
       ],
       "Move to Spam": [
-        "Sposta in Spam"
+        "Sposta in spam"
       ],
       "Move to Trash": [
-        "Sposta nel Cestino"
+        "Sposta nel cestino"
       ],
       "Move to...": [
         "Sposta in..."
@@ -7741,7 +7747,7 @@
         "Ecco come"
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ]
     },
     "Label": {
@@ -7975,7 +7981,7 @@
         "Conferma password di accesso"
       ],
       "Confirm mailbox password": [
-        "Conferma la password della casella postale"
+        "Conferma password della casella di posta"
       ],
       "Confirm new password": [
         "Conferma la nuova password"
@@ -8287,10 +8293,10 @@
         "Sposta in"
       ],
       "Move to Archive": [
-        "Sposta in Archivio"
+        "Sposta in archivio"
       ],
       "Move to Inbox": [
-        "Sposta in Posta in arrivo"
+        "Sposta nella posta in arrivo"
       ],
       "Name": [
         "Nome"
@@ -8861,7 +8867,7 @@
         "Importa/esporta"
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Learn more about data recovery": [
         "Ulteriori informazioni sul recupero dei dati"
@@ -8954,7 +8960,7 @@
     },
     "Log preference": {
       "Enable ${ PROTON_SENTINEL_NAME }": [
-        "Attiva ${ PROTON_SENTINEL_NAME }"
+        "Abilita ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs": [
         "Abilita log avanzati"
@@ -9538,10 +9544,10 @@
         "Permette la conformità all'HIPAA"
       ],
       "Encrypted contact details": [
-        "Dettagli di contatto cifrati"
+        "Dettagli di contatto crittografati"
       ],
       "Encrypted VPN servers": [
-        "Server VPN cifrati"
+        "Server VPN crittografati"
       ],
       "End-to-end encryption": [
         "Crittografia end-to-end"
@@ -10018,7 +10024,7 @@
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Gli hard disk dei nostri server sono completamente cifrati con più livelli di password, così i tuoi dati sono protetti anche se il nostro hardware è compromesso"
+        "Gli hard disk dei nostri server sono completamente crittografati con più livelli di password, in tal modo i tuoi dati rimarrebbero protetti anche se il nostro hardware dovesse essere compromesso"
       ],
       "Password management and identity protection": [
         "Gestione password e protezione dell'identità"
@@ -10099,7 +10105,7 @@
         "Ci impegniamo ad aiutare i clienti soggetti alle normative HIPAA/HITECH a salvaguardare i dati sanitari protetti (PHI). I BAA firmati sono disponibili per tutti i clienti ${ BRAND_NAME } per le aziende."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
+        "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN crittografato, migliorando la tua privacy e la tua sicurezza online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti che non utilizzano ${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
@@ -11279,7 +11285,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per invitare un utente non ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
+        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
       ]
     },
     "Share calendar max shares reached error": {
@@ -11586,7 +11592,7 @@
         "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio d'archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
@@ -12664,7 +12670,7 @@
         "Compositore email"
       ],
       "Email encryption keys": [
-        "Chiavi di cifratura dell'email"
+        "Chiavi di crittografia dell'email"
       ],
       "Email privacy": [
         "Privacy email"
@@ -13472,7 +13478,7 @@
         "Quando sposti un'email nello spam, verrà automaticamente annulata l'iscrizione alle mailing list del mittente."
       ],
       "You have locally decrypted this key": [
-        "Hai decifrato localmente questa chiave"
+        "Hai decriptato localmente questa chiave"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "La tua casella di posta ${ MAIL_APP_NAME } è quasi piena"
@@ -13491,12 +13497,12 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Aggiunge automaticamente la tua chiave pubblica ad ogni messaggio che invii. I tuoi destinatari possono usarla per verificare l'autenticità dei tuoi messaggi e spedirti messaggi criptati."
+        "Aggiunge automaticamente la tua chiave pubblica ad ogni messaggio che invii. I tuoi destinatari possono usarla per verificare l'autenticità dei tuoi messaggi e inviarti messaggi crittografati."
       ]
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selezionare le impostazioni PGP predefinite utilizzate per firmare o cifrare i messaggi con utenti PGP non ${ BRAND_NAME }. Nota che PGP inline forza i messaggi di testo semplici. Per saperne di più"
+        "Seleziona le impostazioni PGP predefinite utilizzate per firmare o crittografare i messaggi con utenti PGP che non utilizzano ${ BRAND_NAME }. Nota che PGP/Inline forza i messaggi in testo normale. Scopri di più"
       ]
     },
     "Tooltip prompt to trust keys": {

@@ -1125,6 +1125,9 @@
       "Disallow unsigned mail": [
         "禁止未經數位簽章的郵件"
       ],
+      "Edit address": [
+        "編輯位址"
+      ],
       "Enable": [
         "啟用"
       ],
@@ -3103,6 +3106,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne }和${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "驗證電子郵件已傳送至 ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5268,6 +5276,9 @@
       "* No credit card required.": [
         "* 無需信用卡。"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**取得一個 ${ BRAND_NAME } 位址**並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -5655,10 +5666,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -5978,6 +5989,9 @@
       ],
       "inactive": [
         "未使用"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "透過驗證您的電子郵件地址來增加您帳號的安全性。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -6423,6 +6437,9 @@
       "Report link expired": [
         "回報逾期連結"
       ],
+      "Resend verification email": [
+        "重新傳送驗證電子郵件"
+      ],
       "Restore": [
         "還原"
       ],
@@ -6446,6 +6463,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "請使用您的兩步驟驗證裝置掃描此代碼，以便設定您的帳號。又或者，${ switchButton }。"
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "保護您的 ${ BRAND_NAME } 帳號"
       ],
       "Securing your account": [
         "保護您的帳號"
@@ -6813,6 +6833,12 @@
       "Unsupported file": [
         "不支援的檔案"
       ],
+      "Unverified": [
+        "未驗證"
+      ],
+      "Unverified email address.": [
+        "未經驗證的電子郵件位址。"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
@@ -7031,6 +7057,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "您可自訂並下載您的繳款單作記帳用途。"
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可啟用認證登入以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址和時間，以及失敗的登入嘗試。"
@@ -7850,6 +7879,9 @@
       "Config to connect to ${ serverName }": [
         "架構組態以連接 ${ serverName }"
       ],
+      "Confirm email": [
+        "確認電子郵件"
+      ],
       "Confirm link URLs": [
         "確認連結網址"
       ],
@@ -7900,6 +7932,9 @@
       ],
       "Current display name": [
         "目前顯示名稱"
+      ],
+      "Current email": [
+        "目前的電子郵件"
       ],
       "Customize invoices": [
         "自訂繳款單"
@@ -8185,6 +8220,9 @@
       ],
       "New display name": [
         "新的顯示名稱"
+      ],
+      "New email": [
+        "新電子郵件"
       ],
       "New login password": [
         "新的登入密碼"
@@ -8849,6 +8887,14 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
         "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "請過幾分鐘後再回來檢查。"
+      ],
+      "This feature is temporarily unavailable": [
+        "此功能暫時不可用"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11675,6 +11721,9 @@
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
       ],
+      "Email address updated": [
+        "電子郵件位址已更新"
+      ],
       "Email updated": [
         "電郵已更新"
       ],
@@ -12419,6 +12468,9 @@
       "Edit domain": [
         "編輯網域"
       ],
+      "Edit email address": [
+        "編輯電子郵件位址"
+      ],
       "Edit filter": [
         "編輯篩選器"
       ],
@@ -12944,6 +12996,9 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "我們將向您的新位址寄送一封電子郵件，其中包含如何完成變更的說明。"
+      ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
@@ -13228,6 +13283,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "使用瀏覽器預設的滾動拉桿。此會更明顯、容易使用"
+      ],
+      "Verified email address": [
+        "已驗證的電子郵件位址"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
