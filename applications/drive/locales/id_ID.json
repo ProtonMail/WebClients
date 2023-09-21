@@ -49,6 +49,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "At most ${ maxContacts } contacts are allowed per contact group": [
+        "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -2182,6 +2185,9 @@
       ],
       "Username must end with a letter or digit": [
         "Nama pengguna harus diakhiri dengan huruf atau angka"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
       ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"

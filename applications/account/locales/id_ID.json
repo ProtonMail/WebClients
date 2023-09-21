@@ -1125,6 +1125,9 @@
       "Disallow unsigned mail": [
         "Larang email tanpa Ttd."
       ],
+      "Edit address": [
+        "Sunting alamat"
+      ],
       "Enable": [
         "Aktifkan"
       ],
@@ -3105,6 +3108,11 @@
         "${ allCategoryTitlesExceptTheLastOne } dan ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Email verifikasi dikirim ke ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4319,8 +4327,14 @@
       "Add a name to identify your security key with.": [
         "Beri nama kunci keamanan Anda agar lebih mudah untuk dikenali."
       ],
+      "Allow platform keys": [
+        "Izinkan kunci platform"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Apabila diaktifkan, opsi ini akan memungkinkan perangkat lunak yang tersedia secara built-in (seperti Windows Hello, TouchID, FaceID, atau TPM internal lainnya) untuk didaftarkan di samping kunci keamanan perangkat keras eksternal"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
@@ -5271,6 +5285,9 @@
       "* No credit card required.": [
         "* Tanpa perlu kartu kredit."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Dapatkan alamat ${ BRAND_NAME }** untuk menggunakan seluruh layanan ${ BRAND_NAME_TWO } yang meliputi ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } kuota penyimpanan tambahan"
       ],
@@ -5658,11 +5675,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -5981,6 +5998,9 @@
       ],
       "inactive": [
         "tidak aktif"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Tingkatkan keamanan akun Anda dengan memverifikasi alamat email Anda."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -6426,6 +6446,9 @@
       "Report link expired": [
         "Tautan laporan kedaluwarsa"
       ],
+      "Resend verification email": [
+        "Kirim ulang email verifikasi"
+      ],
       "Restore": [
         "Pulihkan"
       ],
@@ -6449,6 +6472,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Pindai kode berikut dengan perangkat autentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Amankan akun ${ BRAND_NAME } Anda"
       ],
       "Securing your account": [
         "Mengamankan akun Anda"
@@ -6819,6 +6845,9 @@
       "Unverified": [
         "Tidak terverifikasi"
       ],
+      "Unverified email address.": [
+        "Alamat email belum diverifikasi."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
@@ -7037,6 +7066,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat email yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Anda dapat mengaktifkan login autentikasi untuk melihat kapan saja dan oleh alamat IP mana saja akun Anda diakses. Kami akan mencatat alamat IP yang mengakses akun Anda dan waktunya, beserta dengan seluruh upaya akses yang gagal."
@@ -7856,6 +7888,9 @@
       "Config to connect to ${ serverName }": [
         "Konfigurasi untuk tersambung ke ${ serverName }"
       ],
+      "Confirm email": [
+        "Konfirmasi email"
+      ],
       "Confirm link URLs": [
         "Konfirmasi URL tautan"
       ],
@@ -7908,7 +7943,7 @@
         "Nama tampilan saat ini"
       ],
       "Current email": [
-        "Email Sekarang"
+        "Email saat ini"
       ],
       "Customize invoices": [
         "Sesuaikan faktur"
@@ -8194,6 +8229,9 @@
       ],
       "New display name": [
         "Nama tampilan baru"
+      ],
+      "New email": [
+        "Email baru"
       ],
       "New login password": [
         "Kata sandi masuk baru"
@@ -8858,6 +8896,14 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
         "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan berikan label sebagai"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Silakan periksa kembali dalam beberapa menit."
+      ],
+      "This feature is temporarily unavailable": [
+        "Fitur ini untuk sementara tidak tersedia."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -12434,6 +12480,9 @@
       "Edit domain": [
         "Ubah domain"
       ],
+      "Edit email address": [
+        "Sunting alamat email"
+      ],
       "Edit filter": [
         "Sunting filter"
       ],
@@ -12959,6 +13008,9 @@
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."
+      ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
@@ -13243,6 +13295,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gunakan scrollbar bawaan milik browser Anda. Scrollbar ini pada umumnya lebih besar dan lebih mudah untuk digunakan"
+      ],
+      "Verified email address": [
+        "Alamat email terverifikasi"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."

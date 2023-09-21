@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Kiellä allekirjoittamaton posti"
       ],
+      "Edit address": [
+        "Muokkaa osoitetta"
+      ],
       "Enable": [
         "Ota käyttöön"
       ],
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } ja ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5714,11 +5722,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "kohdistettuja palvelimia"
-      ],
       "Dedicated servers": [
         "Kohdistetut palvelimet"
+      ],
+      "dedicated servers": [
+        "kohdistettuja palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -6040,6 +6048,9 @@
       ],
       "inactive": [
         "ei käytössä"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Paranna tilisi turvallisuutta vahvistamalla sähköpostiosoitteesi."
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
@@ -6489,6 +6500,9 @@
       "Report link expired": [
         "Raporttilinkki vanhentunut"
       ],
+      "Resend verification email": [
+        "Lähetä vahvistussähköposti uudelleen"
+      ],
       "Restore": [
         "Palauta"
       ],
@@ -6512,6 +6526,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skannaa tämä koodi todennuslaitteellasi tilisi määrittämiseksi. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Turvaa ${ BRAND_NAME }-tilisi"
       ],
       "Securing your account": [
         "Suojataan tiliä"
@@ -6883,6 +6900,12 @@
       "Unsupported file": [
         "Tiedostoa ei tueta"
       ],
+      "Unverified": [
+        "Vahvistamaton"
+      ],
+      "Unverified email address.": [
+        "Vahvistamaton sähköpostiosoite."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
@@ -7103,6 +7126,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Voit mukauttaa ja ladata laskujasi kirjanpitoa varten."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Voit ottaa todennuslokin käyttöön nähdäksesi, milloin ja mistä IP-osoitteista tiliäsi on käytetty. Tallennamme tilin käytön IP-osoitteen, ajan sekä epäonnistuneet yritykset."
@@ -7933,6 +7959,9 @@
       "Config to connect to ${ serverName }": [
         "Yhteysmääritys palvelimelle ${ serverName }"
       ],
+      "Confirm email": [
+        "Vahvista sähköpostiosoite"
+      ],
       "Confirm link URLs": [
         "Vahvista linkkien URL-osoitteet"
       ],
@@ -7983,6 +8012,9 @@
       ],
       "Current display name": [
         "Nykyinen näyttönimi"
+      ],
+      "Current email": [
+        "Nykyinen sähköpostiosoite"
       ],
       "Customize invoices": [
         "Mukauta laskuja"
@@ -8268,6 +8300,9 @@
       ],
       "New display name": [
         "Uusi näyttönimi"
+      ],
+      "New email": [
+        "Uusi sähköpostiosoite"
       ],
       "New login password": [
         "Uusi kirjautumisen salasana"
@@ -8938,6 +8973,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Yritä muutaman minuutin kuluttua uudelleen."
+      ],
+      "This feature is temporarily unavailable": [
+        "Tämä toiminto on tilapäisesti poissa käytöstä"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11823,6 +11866,9 @@
       "Email address copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
       ],
+      "Email address updated": [
+        "Sähköpostiosoite päivitetty"
+      ],
       "Email updated": [
         "Sähköpostiosoite vaihdettiin"
       ],
@@ -12575,6 +12621,9 @@
       "Edit domain": [
         "Muokkaa verkkotunnusta"
       ],
+      "Edit email address": [
+        "Muokkaa sähköpostiosoitetta"
+      ],
       "Edit filter": [
         "Muokkaa suodatinta"
       ],
@@ -13104,6 +13153,9 @@
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
+      ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
       ],
@@ -13388,6 +13440,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Käytä selaimesi oletusarvoisia vierityspalkkeja, jotka ovat yleensä suurempia ja helpompia käyttää"
+      ],
+      "Verified email address": [
+        "Vahvistettu sähköpostiosoite"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
