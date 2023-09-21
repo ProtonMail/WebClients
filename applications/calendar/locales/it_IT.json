@@ -889,12 +889,12 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Puoi modificare o rimuovere i permessi in qualsiasi momento."
+        "Puoi cambiare o rimuovere le autorizzazioni in qualsiasi momento."
       ]
     },
     "Calendar permissions label": {
       "Permissions": [
-        "Permessi"
+        "Autorizzazioni"
       ]
     },
     "Calendar self sharing error": {
@@ -955,7 +955,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Impossibile decifrare il calendario"
+        "Impossibile decriptare il calendario"
       ],
       "Calendar is syncing": [
         "Il calendario si sta sincronizzando"
@@ -2050,7 +2050,7 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decodifica dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decriptazione dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -2812,7 +2812,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Il file ICS allegato non può essere decifrato"
+        "Il file ICS allegato non può essere decriptato"
       ],
       "Attached ICS file could not be read": [
         "Impossibile leggere il file ICS allegato"
@@ -3028,7 +3028,7 @@
         "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Feedback Modal Title": {
@@ -3167,7 +3167,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento cifrato e aggiunto al tuo calendario",
+        "${ totalImported }/${ totalToImport } evento crittografato e aggiunto al tuo calendario",
         "${ totalImported }/${ totalToImport } eventi cifrati e aggiunti al tuo calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
@@ -3181,10 +3181,10 @@
         "Si è verificato un errore durante la crittografia e l'aggiunta degli eventi. Non è stato possibile importare alcun evento."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Cifratura ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
+        "Crittografia ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Cifratura ed aggiunta degli eventi: ${ totalImported }/${ totalToImport }"
+        "Crittografia ed aggiunta degli eventi: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Evento importato con successo. L'evento importato apparirà ora nel tuo calendario."
@@ -3222,8 +3222,8 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contatto cifrato e aggiunto alla tua lista contatti",
-        "${ totalImported }/${ totalToImport } contatti cifrati e aggiunti alla tua lista contatti"
+        "${ totalImported }/${ totalToImport } contatto crittografato e aggiunto alla tua lista contatti",
+        "${ totalImported }/${ totalToImport } contatti crittografati e aggiunti alla tua lista contatti"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta del contatto. Non è stato possibile importare alcun contatto."
@@ -3337,7 +3337,7 @@
         "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "Vai a ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }."
+        "Vai alle ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }."
       ],
       "Go to ${ boldAccountSecurity }.": [
         "Vai a ${ boldAccountSecurity }."
@@ -3441,7 +3441,7 @@
         "${ addressCount } indirizzi email"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
+        "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
@@ -3791,7 +3791,7 @@
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -3842,7 +3842,7 @@
         "Nessuno dei partecipanti può essere avvisato delle tue modifiche:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Nessuna delle chiavi caricate è valida per la crittografia. Per abilitare l'invio di messaggi a questo indirizzo, caricare cortesemente una chiave valida oppure disabilitare \"Email criptate\"."
+        "Nessuna delle chiavi caricate è valida per la crittografia. Per inviare messaggi a questo indirizzo, carica una chiave valida o disabilita \"Email crittografate\"."
       ],
       "Not a valid URL": [
         "URL non valido"
@@ -3860,7 +3860,7 @@
         "PGP/Inline è compatibile solo con il formato Testo."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente di composizione."
+        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità attuale di composizione."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
@@ -3921,7 +3921,7 @@
         "Sessione scaduta"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "L'impostazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
+        "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
@@ -3936,7 +3936,7 @@
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decifrare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decriptare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
       ],
       "The following participants cannot be notified about your changes:": [
         "I seguenti partecipanti non possono essere avvisati delle tue modifiche:"
@@ -4005,7 +4005,7 @@
         "Per recuperare i dati, è necessario riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
+        "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
@@ -4014,7 +4014,7 @@
         "Aggiorna l'evento ricorrente"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+        "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
       "We'll notify you when the import is done.": [
         "Ti avviseremo quando l'importazione sarà completata."
@@ -4092,7 +4092,7 @@
         "Non puoi annullare questa azione."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decifrati."
+        "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decriptati."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Hai precedentemente rifiutato quest'invito. Chiedi al proprietario un nuovo invito"
@@ -4398,7 +4398,7 @@
         "Email (ultimo mese)"
       ],
       "Encrypt emails": [
-        "Email criptate"
+        "Email crittografate"
       ],
       "Ends": [
         "Termina"
@@ -4488,10 +4488,10 @@
         "Gestione delle categorie"
       ],
       "Move to Archive": [
-        "Sposta in Archivio"
+        "Sposta in archivio"
       ],
       "Move to Inbox": [
-        "Sposta in Posta in arrivo"
+        "Sposta nella posta in arrivo"
       ],
       "Name": [
         "Nome"
@@ -4677,7 +4677,7 @@
         "pulendo la cache del browser"
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "My calendars": [
         "Miei calendari"
@@ -5517,7 +5517,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per invitare un utente non ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
+        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5793,7 +5793,7 @@
         "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio d'archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
@@ -6567,7 +6567,7 @@
         "La crittografia email impone la firma email per autenticare i messaggi inviati"
       ],
       "Encrypted data": [
-        "Dati criptati"
+        "Dati crittografati"
       ],
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
@@ -6683,7 +6683,7 @@
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Decifratura del contenuto cifrato non riuscita."
+        "Decriptazione del contenuto crittografato non riuscita."
       ],
       "The verification of the contact details' signature failed.": [
         "La verifica della firma dei dati del contatto non è riuscita."
