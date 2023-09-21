@@ -535,6 +535,9 @@
         "${ count } элементов",
         "${ count } элементов"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } импортирует только имена и заметки. Паспорта, прикрепленные файлы и т. д. в данный момент не поддерживаются."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } раза",
@@ -744,6 +747,9 @@
       ],
       "Open the Extensions menu": [
         "Откройте меню Расширения"
+      ],
+      "Password copied": [
+        "Пароль скопирован"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
@@ -1118,6 +1124,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "Need help ?": [
+        "Нужна помощь ?"
       ],
       "New vault": [
         "Новое хранилище"
