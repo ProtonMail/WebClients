@@ -1131,6 +1131,9 @@
       "Disallow unsigned mail": [
         "Refuzare mesaje nesemnate"
       ],
+      "Edit address": [
+        "Editare adresă"
+      ],
       "Enable": [
         "Activare"
       ],
@@ -3123,6 +3126,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } și ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Mesajul de verificare a fost trimis la ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5366,6 +5374,9 @@
       "* No credit card required.": [
         "* Nu trebuie card de credit."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -5773,11 +5784,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -6102,6 +6113,9 @@
       ],
       "inactive": [
         "inactivă"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -6555,6 +6569,9 @@
       "Report link expired": [
         "Legătură de raportare expirată."
       ],
+      "Resend verification email": [
+        "Retrimitere e-mail de verificare"
+      ],
       "Restore": [
         "Restaurare"
       ],
@@ -6578,6 +6595,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scanați acest cod cu dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Asigurați-vă contul ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Securizare cont"
@@ -6953,6 +6973,12 @@
       "Unsupported file": [
         "Fişier nesuportat"
       ],
+      "Unverified": [
+        "Neverificat"
+      ],
+      "Unverified email address.": [
+        "Adresă de e-mail neverificată."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
@@ -7175,6 +7201,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Vă puteți personaliza și descărca facturile pentru contabilitate."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Vom înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
@@ -8016,6 +8045,9 @@
       "Config to connect to ${ serverName }": [
         "Configurare pentru conectare la ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmare e-mail"
+      ],
       "Confirm link URLs": [
         "Confirmare adrese URL legături"
       ],
@@ -8066,6 +8098,9 @@
       ],
       "Current display name": [
         "Nume actual afișat"
+      ],
+      "Current email": [
+        "E-mail actual"
       ],
       "Customize invoices": [
         "Personalizare facturi"
@@ -8351,6 +8386,9 @@
       ],
       "New display name": [
         "Nume nou afișat"
+      ],
+      "New email": [
+        "E-mail nou"
       ],
       "New login password": [
         "Parola nouă de conectare"
@@ -9027,6 +9065,14 @@
         "Importare toate mesajele dintr-o etichetă și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Reveniți peste câteva minute."
+      ],
+      "This feature is temporarily unavailable": [
+        "Această funcție nu este disponibilă momentan."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11968,6 +12014,9 @@
       "Email address copied to clipboard": [
         "Adresa de e-mail a fost copiată în memorie"
       ],
+      "Email address updated": [
+        "Adresa de e-mail a fost actualizată."
+      ],
       "Email updated": [
         "E-mail actualizat"
       ],
@@ -12728,6 +12777,9 @@
       "Edit domain": [
         "Editare domeniu"
       ],
+      "Edit email address": [
+        "Editare adresă de e-mail"
+      ],
       "Edit filter": [
         "Editare filtru"
       ],
@@ -13261,6 +13313,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
+      ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
@@ -13545,6 +13600,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Folosire bare de derulare implicite din navigator. De obicei sunt mai mari și mai ușor de folosit."
+      ],
+      "Verified email address": [
+        "Adresă de e-mail verificată."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."

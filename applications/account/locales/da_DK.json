@@ -5423,11 +5423,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -6194,6 +6194,9 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Beskyt din ${ BRAND_NAME }-konto"
+      ],
       "Securing your account": [
         "Sikrer din konto"
       ],
@@ -6777,6 +6780,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan tilpasse og downloade dine fakturaer til bogholderiformål."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kan aktivere godkendelseslogin for at se, hvornår din konto tilgås, og fra hvilken IP-adresse. Vi registrerer den IP-adresse, der tilgår kontoen, og tidspunktet, samt mislykkede forsøg."
@@ -9036,6 +9042,9 @@
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } med ubegrænsede hide-my-email aliasser"
+      ],
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
@@ -9116,6 +9125,12 @@
       ],
       "DNS leak prevention": [
         "Forebyggelse af DNS-lækage"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Dokumentredaktører (dokumenter, ark, dias)"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch importassistent"
       ],
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
@@ -12418,6 +12433,9 @@
       "Upgrade plan": [
         "Opgradér abonnement"
       ],
+      "Upload CSV file to create multiple accounts": [
+        "Upload CSV-fil for at oprette flere konti"
+      ],
       "Users and addresses": [
         "Brugere og adresser"
       ],
@@ -12447,6 +12465,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."
       ],
       "What would you like to import?": [
         "Hvad ønsker du at importere?"
