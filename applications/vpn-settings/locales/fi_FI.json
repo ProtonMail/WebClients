@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Kiellä allekirjoittamaton posti"
       ],
+      "Edit address": [
+        "Muokkaa osoitetta"
+      ],
       "Enable": [
         "Ota käyttöön"
       ],
@@ -1671,6 +1674,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Auta meitä parantamaan!"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -2926,6 +2934,9 @@
       "inactive": [
         "ei käytössä"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Paranna tilisi turvallisuutta vahvistamalla sähköpostiosoitteesi."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Asenna maakohtainen määritystiedosto yhdistääksesi satunnaiseen palvelimeen valitsemassasi maassa."
       ],
@@ -3162,6 +3173,9 @@
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
+      "Resend verification email": [
+        "Lähetä vahvistussähköposti uudelleen"
+      ],
       "Restore": [
         "Palauta"
       ],
@@ -3179,6 +3193,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skannaa tämä koodi todennuslaitteellasi tilisi määrittämiseksi. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Turvaa ${ BRAND_NAME }-tilisi"
       ],
       "Securing your account": [
         "Suojataan tiliä"
@@ -3388,6 +3405,12 @@
       "Unsupported file": [
         "Tiedostoa ei tueta"
       ],
+      "Unverified": [
+        "Vahvistamaton"
+      ],
+      "Unverified email address.": [
+        "Vahvistamaton sähköpostiosoite."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
@@ -3533,6 +3556,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Voit mukauttaa ja ladata laskujasi kirjanpitoa varten."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Voi vapauttaa yllä olevan määrityksen välittömästi korottamalla tilaukseesi sisältyvää IP-osoitemäärää ${ specificCountryCount } osoitteella tai ottaa yhteyttä asiakaspalveluumme räätälöityjä ratkaisuja varten."
@@ -3844,6 +3870,9 @@
       "Config to connect to ${ serverName }": [
         "Yhteysmääritys palvelimelle ${ serverName }"
       ],
+      "Confirm email": [
+        "Vahvista sähköpostiosoite"
+      ],
       "Confirm login password": [
         "Vahvista kirjautumisen salasana"
       ],
@@ -3882,6 +3911,9 @@
       ],
       "Current display name": [
         "Nykyinen näyttönimi"
+      ],
+      "Current email": [
+        "Nykyinen sähköpostiosoite"
       ],
       "Customize invoices": [
         "Mukauta laskuja"
@@ -3975,6 +4007,9 @@
       ],
       "New display name": [
         "Uusi näyttönimi"
+      ],
+      "New email": [
+        "Uusi sähköpostiosoite"
       ],
       "New login password": [
         "Uusi kirjautumisen salasana"
@@ -5962,6 +5997,9 @@
       "Email address copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
       ],
+      "Email address updated": [
+        "Sähköpostiosoite päivitetty"
+      ],
       "Email updated": [
         "Sähköpostiosoite vaihdettiin"
       ],
@@ -6419,6 +6457,9 @@
       "Edit display name": [
         "Muokkaa näyttönimeä"
       ],
+      "Edit email address": [
+        "Muokkaa sähköpostiosoitetta"
+      ],
       "Edit Gateway ${ currentName }": [
         "Muokkaa yhdyskäytävää ${ currentName }"
       ],
@@ -6701,6 +6742,9 @@
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
+      ],
       "What's new": [
         "Mitä uutta"
       ],
@@ -6809,6 +6853,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
+      ],
+      "Verified email address": [
+        "Vahvistettu sähköpostiosoite"
       ]
     },
     "tooltip": {

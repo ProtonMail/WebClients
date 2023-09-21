@@ -2290,8 +2290,14 @@
       "Add a name to identify your security key with.": [
         "Añade un nombre para identificar tu llave de seguridad."
       ],
+      "Allow platform keys": [
+        "Permitir las claves de plataforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿Estás seguro de querer eliminar la llave de seguridad ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Si esta opción está activada, permite registrar funciones y componentes integrados (como Windows Hello, TouchID, FaceID o TPM internos) además de claves de seguridad de hardware externas."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
