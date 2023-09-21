@@ -1,9 +1,11 @@
 import { decryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
 import { EncryptionTag } from '@proton/pass/types';
+import { deobfuscateItem, obfuscateItem } from '@proton/pass/utils/pass/items';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import type { EncryptedExtensionCache, ExtensionCache } from '../../../types/worker/cache';
+import type { ItemsByShareId } from '../../reducers';
 import type { State } from '../../types';
 
 const decrypt = async <T extends object>(options: {
@@ -42,6 +44,20 @@ export const decryptCachedState = async (
             }),
         ]);
 
-        return state !== undefined && snapshot !== undefined ? { state, snapshot } : undefined;
+        if (state !== undefined && snapshot !== undefined) {
+            /* reobfuscate each cached item with a new mask */
+            for (const [shareId, items] of Object.entries(state.items.byShareId as ItemsByShareId)) {
+                for (const item of Object.values(items)) {
+                    if ('itemId' in item) {
+                        state.items.byShareId[shareId][item.itemId] = {
+                            ...item,
+                            data: obfuscateItem(deobfuscateItem(item.data)),
+                        };
+                    }
+                }
+            }
+
+            return { state, snapshot };
+        }
     }
 };
