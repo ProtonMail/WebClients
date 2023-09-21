@@ -1134,6 +1134,9 @@
       "Disallow unsigned mail": [
         "Заборонити непідписані листи"
       ],
+      "Edit address": [
+        "Редагувати адресу"
+      ],
       "Enable": [
         "Увімкнути"
       ],
@@ -3133,6 +3136,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } та ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Лист із підтвердженням надіслано на ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -5415,6 +5423,9 @@
       "* No credit card required.": [
         "* Кредитна картка не потрібна."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Отримайте адресу ${ BRAND_NAME }**, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -5832,11 +5843,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
@@ -6164,6 +6175,9 @@
       ],
       "inactive": [
         "неактивний"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -6621,6 +6635,9 @@
       "Report link expired": [
         "Термін дії посилання на звіт закінчився"
       ],
+      "Resend verification email": [
+        "Повторно надіслати лист з підтвердженням"
+      ],
       "Restore": [
         "Відновити"
       ],
@@ -6644,6 +6661,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Захистіть обліковий запис ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Захист вашого облікового запису"
@@ -7023,6 +7043,12 @@
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
+      "Unverified": [
+        "Непідтверджений"
+      ],
+      "Unverified email address.": [
+        "Непідтверджена адреса електронної пошти."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "До ${ FAMILY_MAX_USERS } користувачів"
       ],
@@ -7247,6 +7273,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, щоб бачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час отримання доступу, а також невдалі спроби."
@@ -8099,6 +8128,9 @@
       "Config to connect to ${ serverName }": [
         "Конфігурація для з'єднання з ${ serverName }"
       ],
+      "Confirm email": [
+        "Підтвердіть е-пошту"
+      ],
       "Confirm link URLs": [
         "Підтвердити URL-адреси посилань"
       ],
@@ -8149,6 +8181,9 @@
       ],
       "Current display name": [
         "Поточне ім'я"
+      ],
+      "Current email": [
+        "Поточна адреса електронної пошти"
       ],
       "Customize invoices": [
         "Налаштування рахунків"
@@ -8434,6 +8469,9 @@
       ],
       "New display name": [
         "Нове ім'я"
+      ],
+      "New email": [
+        "Нова адреса е-пошти"
       ],
       "New login password": [
         "Новий пароль входу"
@@ -9116,6 +9154,14 @@
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Будь ласка, спробуйте знову за кілька хвилин."
+      ],
+      "This feature is temporarily unavailable": [
+        "Ця функція тимчасово недоступна"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11811,6 +11857,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Скасування вашої підписки, будь ласка, зачекайте..."
+      ],
       "Downgrading your account, please wait": [
         "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
@@ -12109,6 +12158,9 @@
       ],
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
+      ],
+      "Email address updated": [
+        "Адресу електронної пошти оновлено"
       ],
       "Email updated": [
         "Електронну пошту оновлено"
@@ -13418,6 +13470,9 @@
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Ми відправили лист на вашу нову адресу з інструкцією для завершення зміни."
+      ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
       ],
@@ -13702,6 +13757,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Використовуйте стандартні смуги прокручування вашого браузера. Зазвичай вони більші та простіші для користування"
+      ],
+      "Verified email address": [
+        "Підтверджена адреса електронної пошти"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
