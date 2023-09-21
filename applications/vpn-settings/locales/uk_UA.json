@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Заборонити непідписані листи"
       ],
+      "Edit address": [
+        "Редагувати адресу"
+      ],
       "Enable": [
         "Увімкнути"
       ],
@@ -1683,6 +1686,11 @@
         "Допоможіть нам вдосконалитися!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Лист із підтвердженням надіслано на ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Двоетапна перевірка (2FA)"
@@ -2596,6 +2604,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/місяць)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Отримайте адресу ${ BRAND_NAME }**, щоб користуватися всіма службами ${ BRAND_NAME_TWO }, включно з ${ MAIL_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -2974,6 +2985,9 @@
       "inactive": [
         "неактивний"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установіть файл конфігурації країни для під'єднання до випадкового сервера у вибраній країні."
       ],
@@ -3214,6 +3228,9 @@
       "Remember to share the user's sign in details with them.": [
         "Не забудьте повідомити дані для входу користувача."
       ],
+      "Resend verification email": [
+        "Повторно надіслати лист з підтвердженням"
+      ],
       "Restore": [
         "Відновити"
       ],
@@ -3231,6 +3248,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Захистіть обліковий запис ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Захист вашого облікового запису"
@@ -3448,6 +3468,12 @@
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
+      "Unverified": [
+        "Непідтверджений"
+      ],
+      "Unverified email address.": [
+        "Непідтверджена адреса електронної пошти."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "До ${ FAMILY_MAX_USERS } користувачів"
       ],
@@ -3597,6 +3623,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Ви можете відразу розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до номера IP-адреси у вашому тарифному плані, або звернутися до нас за індивідуальними рішеннями."
@@ -3924,6 +3953,9 @@
       "Config to connect to ${ serverName }": [
         "Конфігурація для з'єднання з ${ serverName }"
       ],
+      "Confirm email": [
+        "Підтвердіть е-пошту"
+      ],
       "Confirm login password": [
         "Підтвердити пароль входу"
       ],
@@ -3962,6 +3994,9 @@
       ],
       "Current display name": [
         "Поточне ім'я"
+      ],
+      "Current email": [
+        "Поточна адреса електронної пошти"
       ],
       "Customize invoices": [
         "Налаштування рахунків"
@@ -4055,6 +4090,9 @@
       ],
       "New display name": [
         "Нове ім'я"
+      ],
+      "New email": [
+        "Нова адреса е-пошти"
       ],
       "New login password": [
         "Новий пароль входу"
@@ -5906,6 +5944,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Скасування вашої підписки, будь ласка, зачекайте..."
+      ],
       "Downgrading your account, please wait": [
         "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
       ]
@@ -6130,6 +6171,9 @@
       ],
       "Email address copied to clipboard": [
         "Адресу е-пошти скопійовано до буфера обміну"
+      ],
+      "Email address updated": [
+        "Адресу електронної пошти оновлено"
       ],
       "Email updated": [
         "Електронну пошту оновлено"
@@ -6883,6 +6927,9 @@
       "Verifying your payment...": [
         "Триває перевірка платежу..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Ми відправили лист на вашу нову адресу з інструкцією для завершення зміни."
+      ],
       "What's new": [
         "Що нового"
       ],
@@ -6991,6 +7038,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
+      ],
+      "Verified email address": [
+        "Підтверджена адреса електронної пошти"
       ]
     },
     "tooltip": {
