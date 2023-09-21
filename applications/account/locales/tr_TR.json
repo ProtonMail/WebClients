@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "İmzasız e-posta kullanma"
       ],
+      "Edit address": [
+        "Adresi düzenle"
+      ],
       "Enable": [
         "Kullanıma al"
       ],
@@ -3113,6 +3116,11 @@
     "Email Unsubscribe Categories": {
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } ve ${ lastCategoryTitle }"
+      ]
+    },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Doğrulama e-postası ${ address } alıcısına gönderildi"
       ]
     },
     "Enabled 2FA": {
@@ -5317,6 +5325,9 @@
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -5714,11 +5725,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -6040,6 +6051,9 @@
       ],
       "inactive": [
         "etkin değil"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -6489,6 +6503,9 @@
       "Report link expired": [
         "Bildirim bağlantısının süresi geçmiş"
       ],
+      "Resend verification email": [
+        "Doğrulama e-postasını yeniden gönder"
+      ],
       "Restore": [
         "Geri yükle"
       ],
@@ -6512,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Hesabınızı kurmak için bu kodu iki adımlı doğrulama aygıtınızla tarayın. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } hesabınızın güvenliğini sağlayın"
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
@@ -6883,6 +6903,12 @@
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
+      "Unverified": [
+        "Doğrulanmamış"
+      ],
+      "Unverified email address.": [
+        "E-posta adresi doğrulanmamış."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
@@ -7103,6 +7129,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Faturalarınızı muhasebe kullanımı için özelleştirebilir ve indirebilirsiniz."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
@@ -7933,6 +7962,9 @@
       "Config to connect to ${ serverName }": [
         "${ serverName } bağlantısı kurmak için yapılandır"
       ],
+      "Confirm email": [
+        "E-posta adresi onayı"
+      ],
       "Confirm link URLs": [
         "Bağlantı adreslerini onaylayın"
       ],
@@ -7983,6 +8015,9 @@
       ],
       "Current display name": [
         "Geçerli görüntülenecek ad"
+      ],
+      "Current email": [
+        "Geçerli e-posta"
       ],
       "Customize invoices": [
         "Faturaları özelleştir"
@@ -8268,6 +8303,9 @@
       ],
       "New display name": [
         "Yeni görüntülenecek ad"
+      ],
+      "New email": [
+        "Yeni e-posta"
       ],
       "New login password": [
         "Yeni oturum açma parolası"
@@ -8938,6 +8976,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Lütfen birkaç dakika sonra yeniden bakın."
+      ],
+      "This feature is temporarily unavailable": [
+        "Bu özellik geçici olarak kullanılamıyor"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11823,6 +11869,9 @@
       "Email address copied to clipboard": [
         "E-posta adresi panoya kopyalandı"
       ],
+      "Email address updated": [
+        "E-posta adresi güncellendi"
+      ],
       "Email updated": [
         "E-posta adresi güncellendi"
       ],
@@ -12575,6 +12624,9 @@
       "Edit domain": [
         "Etki alanını düzenle"
       ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
       "Edit filter": [
         "Süzgeci düzenle"
       ],
@@ -13104,6 +13156,9 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Değişikliği tamamlamak için yapmanız gereken işlemler e-postasını yeni adresinize göndereeceğiz."
+      ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
       ],
@@ -13388,6 +13443,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Tarayıcınızın varsayılan kaydırma çubuklarını kullanın. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
+      ],
+      "Verified email address": [
+        "E-posta adresi doğrulanmış"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
