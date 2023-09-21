@@ -4347,8 +4347,14 @@
       "Add a name to identify your security key with.": [
         "Añada un nombre para identificar su llave de seguridad."
       ],
+      "Allow platform keys": [
+        "Permitir las claves de plataforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿En verdad desea eliminar la llave de seguridad ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Si está habilitado, permite registrar funciones y componentes integrados (como Windows Hello, TouchID, FaceID o TPM internos) además de claves de seguridad de hardware externas."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
@@ -5728,11 +5734,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para habilitar un control de acceso más preciso."

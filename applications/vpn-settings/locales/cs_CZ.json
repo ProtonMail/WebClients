@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Zakázat nepodepsanou poštu"
       ],
+      "Edit address": [
+        "Upravit adresu"
+      ],
       "Enable": [
         "Zapnout"
       ],
@@ -1683,6 +1686,11 @@
         "Pomozte nám se zlepšit!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Ověřovací email byl odeslán na ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2596,6 +2604,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /měsíc)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Získejte adresu ${ BRAND_NAME }** a používejte všechny služby ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
       ],
@@ -2974,6 +2985,9 @@
       "inactive": [
         "neaktivní"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Zvyšte zabezpečení svého účtu ověřením Vaší e-mailové adresy."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Nainstalujte konfigurační soubor země a připojte se k náhodnému serveru v zemi podle vašeho výběru."
       ],
@@ -3214,6 +3228,9 @@
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
       ],
+      "Resend verification email": [
+        "Znovu zaslat ověřovací e-mail"
+      ],
       "Restore": [
         "Obnovit"
       ],
@@ -3231,6 +3248,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Zabezpečte svůj účet ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Zabezpečení vašeho účtu"
@@ -3448,6 +3468,12 @@
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
+      "Unverified": [
+        "Neověřený"
+      ],
+      "Unverified email address.": [
+        "Neověřená e-mailová adresa."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
@@ -3597,6 +3623,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem plánu nebo nás kontaktujte pro řešení na míru."
@@ -3924,6 +3953,9 @@
       "Config to connect to ${ serverName }": [
         "Nastavení pro připojení k ${ serverName }"
       ],
+      "Confirm email": [
+        "Potvrdit e-mail"
+      ],
       "Confirm login password": [
         "Potvrdit nové přihlašovací heslo"
       ],
@@ -3962,6 +3994,9 @@
       ],
       "Current display name": [
         "Aktuální zobrazované jméno"
+      ],
+      "Current email": [
+        "Stávající e-mail"
       ],
       "Customize invoices": [
         "Přizpůsobení faktur"
@@ -4055,6 +4090,9 @@
       ],
       "New display name": [
         "Nové zobrazované jméno"
+      ],
+      "New email": [
+        "Nový e-mail"
       ],
       "New login password": [
         "Nové přihlašovací heslo"
@@ -6134,6 +6172,9 @@
       "Email address copied to clipboard": [
         "E-mailová adresa zkopírována do schránky"
       ],
+      "Email address updated": [
+        "E-mailová adresa aktualizována"
+      ],
       "Email updated": [
         "E-mail byl aktualizován"
       ],
@@ -6595,6 +6636,9 @@
       "Edit display name": [
         "Upravit zobrazované jméno"
       ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
+      ],
       "Edit Gateway ${ currentName }": [
         "Upravit bránu ${ currentName }"
       ],
@@ -6883,6 +6927,9 @@
       "Verifying your payment...": [
         "Ověřování vaší platby..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Pošleme e-mail na Vaší novou e-mailovou adresu s instrukcemi k dokončení změny."
+      ],
       "What's new": [
         "Co je nového"
       ],
@@ -6991,6 +7038,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
+      ],
+      "Verified email address": [
+        "Ověřená e-mailová adresa"
       ]
     },
     "tooltip": {
