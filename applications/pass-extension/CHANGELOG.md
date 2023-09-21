@@ -1,3 +1,8 @@
+## Version 1.7.0
+
+-   Setup alarm based session locking
+-   Obfuscate sensitive fields in in-memory state
+
 ## Version 1.6.2
 
 -   Force runtime reload on manual user lock or detected API lock
