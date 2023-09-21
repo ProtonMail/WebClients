@@ -4347,8 +4347,14 @@
       "Add a name to identify your security key with.": [
         "Προσθέστε ένα όνομα με το οποίο θα προσδιορίζετε το κλειδί ασφαλείας σας."
       ],
+      "Allow platform keys": [
+        "Να επιτρέπονται τα κλειδιά πλατφόρμας"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Εάν είναι ενεργοποιημένο, επιτρέπει την καταχώρηση ενσωματωμένων συσκευών (όπως Windows Hello, TouchID, FaceID ή εσωτερικών TPM) επιπρόσθετα στα εξωτερικά κλειδιά ασφαλείας υλικού"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
@@ -5728,11 +5734,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -5800,7 +5806,7 @@
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
       "Edit email address": [
-        "Επεξεργασία διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+        "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
@@ -8983,10 +8989,10 @@
     },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
-        "Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+        "Παρακαλούμε επανελέγξτε σε λίγα λεπτά."
       ],
       "This feature is temporarily unavailable": [
-        "Αυτή η δυνατότητα δεν είναι διαθέσιμη προσωρινά"
+        "Αυτή η δυνατότητα είναι προσωρινά μη διαθέσιμη"
       ]
     },
     "Maximum calendar links reached warning": {

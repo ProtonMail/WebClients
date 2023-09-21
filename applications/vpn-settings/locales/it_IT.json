@@ -2229,7 +2229,7 @@
         "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Feature": {
@@ -2290,8 +2290,14 @@
       "Add a name to identify your security key with.": [
         "Aggiungi un nome con cui identificare la tua chiave di sicurezza."
       ],
+      "Allow platform keys": [
+        "Consenti chiavi della piattaforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Se abilitato, consente di registrare dispositivi integrati (come Windows Hello, TouchID, FaceID o TPM interni) oltre alle chiavi di sicurezza hardware esterne"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
@@ -2519,7 +2525,7 @@
     },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } ha bisogno del tuo permesso per ${ enableDesktopNotifications }."
+        "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
@@ -2584,7 +2590,7 @@
         "Garanzia di rimborso entro 30 giorni"
       ],
       "30-day money-back guarantee.": [
-        "Rimborso garantito in 30 giorni."
+        "Garanzia di rimborso entro 30 giorni"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
@@ -2968,7 +2974,7 @@
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -3418,7 +3424,7 @@
         "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+        "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
       "Upload your completed CSV file to create accounts": [
         "Carica il tuo file CSV completato per creare gli account"
@@ -3880,7 +3886,7 @@
         "Conferma password di accesso"
       ],
       "Confirm mailbox password": [
-        "Conferma la password della casella postale"
+        "Conferma password della casella di posta"
       ],
       "Confirm new password": [
         "Conferma la nuova password"
@@ -4252,7 +4258,7 @@
         "Come pagare con Bitcoin?"
       ],
       "Learn more": [
-        "Per saperne di più"
+        "Scopri di più"
       ],
       "Need help?": [
         "Hai bisogno di aiuto?"
@@ -4617,10 +4623,10 @@
         "Permette la conformità all'HIPAA"
       ],
       "Encrypted contact details": [
-        "Dettagli di contatto cifrati"
+        "Dettagli di contatto crittografati"
       ],
       "Encrypted VPN servers": [
-        "Server VPN cifrati"
+        "Server VPN crittografati"
       ],
       "End-to-end encryption": [
         "Crittografia end-to-end"
@@ -5049,7 +5055,7 @@
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Gli hard disk dei nostri server sono completamente cifrati con più livelli di password, così i tuoi dati sono protetti anche se il nostro hardware è compromesso"
+        "Gli hard disk dei nostri server sono completamente crittografati con più livelli di password, in tal modo i tuoi dati rimarrebbero protetti anche se il nostro hardware dovesse essere compromesso"
       ],
       "Password management and identity protection": [
         "Gestione password e protezione dell'identità"
@@ -5130,7 +5136,7 @@
         "Ci impegniamo ad aiutare i clienti soggetti alle normative HIPAA/HITECH a salvaguardare i dati sanitari protetti (PHI). I BAA firmati sono disponibili per tutti i clienti ${ BRAND_NAME } per le aziende."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN cifrato, migliorando la tua privacy e sicurezza online"
+        "Quando sei connesso alla nostra VPN, il tuo DNS effettua query attraverso il nostro tunnel VPN crittografato, migliorando la tua privacy e la tua sicurezza online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Quando si invia ad altri utenti ${ MAIL_APP_NAME }, la crittografia è automatica. L'invio a utenti che non utilizzano ${ MAIL_APP_NAME_TWO } richiede l'impostazione di una password prima dell'invio."
@@ -5788,7 +5794,7 @@
         "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud cifrata. Include la sincronizzazione automatica, la condivisione cifrata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio d'archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."

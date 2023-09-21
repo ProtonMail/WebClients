@@ -1134,6 +1134,9 @@
       "Disallow unsigned mail": [
         "Zakázat nepodepsanou poštu"
       ],
+      "Edit address": [
+        "Upravit adresu"
+      ],
       "Enable": [
         "Zapnout"
       ],
@@ -3135,6 +3138,11 @@
         "${ allCategoryTitlesExceptTheLastOne } a ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Ověřovací email byl odeslán na ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4675,6 +4683,9 @@
       "Set up ${ strongText } from Gmail": [
         "Nastavit ${ strongText } z Gmailu"
       ],
+      "This feature is currently unavailable": [
+        "Tato funkce je momentálně nedostupná"
+      ],
       "Update your logins": [
         "Aktualizace přihlašovacích údajů"
       ]
@@ -5415,6 +5426,9 @@
       "* No credit card required.": [
         "* Platební karta není vyžadována."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Získejte adresu ${ BRAND_NAME }** a používejte všechny služby ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
       ],
@@ -5832,11 +5846,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K privátním branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -6164,6 +6178,9 @@
       ],
       "inactive": [
         "neaktivní"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Zvyšte zabezpečení svého účtu ověřením Vaší e-mailové adresy."
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -6621,6 +6638,9 @@
       "Report link expired": [
         "Odkaz na hlášení vypršel"
       ],
+      "Resend verification email": [
+        "Znovu zaslat ověřovací e-mail"
+      ],
       "Restore": [
         "Obnovit"
       ],
@@ -6644,6 +6664,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Zabezpečte svůj účet ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Zabezpečení vašeho účtu"
@@ -7023,6 +7046,12 @@
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
+      "Unverified": [
+        "Neověřený"
+      ],
+      "Unverified email address.": [
+        "Neověřená e-mailová adresa."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
@@ -7247,6 +7276,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
@@ -8099,6 +8131,9 @@
       "Config to connect to ${ serverName }": [
         "Nastavení pro připojení k ${ serverName }"
       ],
+      "Confirm email": [
+        "Potvrdit e-mail"
+      ],
       "Confirm link URLs": [
         "Potvrzení URL odkazů"
       ],
@@ -8149,6 +8184,9 @@
       ],
       "Current display name": [
         "Aktuální zobrazované jméno"
+      ],
+      "Current email": [
+        "Stávající e-mail"
       ],
       "Customize invoices": [
         "Přizpůsobení faktur"
@@ -8434,6 +8472,9 @@
       ],
       "New display name": [
         "Nové zobrazované jméno"
+      ],
+      "New email": [
+        "Nový e-mail"
       ],
       "New login password": [
         "Nové přihlašovací heslo"
@@ -9116,6 +9157,14 @@
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Zkontrolujte to prosím za několik minut."
+      ],
+      "This feature is temporarily unavailable": [
+        "Tato funkce je dočasně nedostupná"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -12113,6 +12162,9 @@
       "Email address copied to clipboard": [
         "E-mailová adresa zkopírována do schránky"
       ],
+      "Email address updated": [
+        "E-mailová adresa aktualizována"
+      ],
       "Email updated": [
         "E-mail byl aktualizován"
       ],
@@ -12881,6 +12933,9 @@
       "Edit domain": [
         "Upravit doménu"
       ],
+      "Edit email address": [
+        "Upravit e-mailovou adresu"
+      ],
       "Edit filter": [
         "Upravit filtr"
       ],
@@ -13418,6 +13473,9 @@
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Pošleme e-mail na Vaší novou e-mailovou adresu s instrukcemi k dokončení změny."
+      ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
       ],
@@ -13702,6 +13760,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použijte výchozí posuvníky prohlížeče. Ty jsou obvykle větší a snadněji se používají"
+      ],
+      "Verified email address": [
+        "Ověřená e-mailová adresa"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
