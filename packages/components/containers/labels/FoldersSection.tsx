@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { orderFolders } from '@proton/shared/lib/api/labels';
-import { MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
 import { Info, LabelsUpsellModal, Loader, MailUpsellButton, useModalState } from '../../components';
@@ -31,15 +31,29 @@ function LabelsSection() {
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const handleSortFolders = async () => {
-        const rootFolders = folders.filter(({ ParentID = ROOT_FOLDER }) => ParentID === ROOT_FOLDER);
+    function removeDuplicates(arr: Iterable<unknown> | null | undefined) {
+        let outputArray = Array.from(new Set(arr));
+        return outputArray;
+    }
 
-        const LabelIDs = [...rootFolders]
-            .sort((a, b) => a.Name.localeCompare(b.Name, undefined, { numeric: true }))
-            .map(({ ID }) => ID);
-        await api(orderFolders({ LabelIDs }));
+    const handleSortFolders = async () => {
+        const parentIDs = removeDuplicates(folders.filter((f) => f.hasOwnProperty('ParentID')).map((f) => f.ParentID));
+
+        parentIDs.forEach(async (parentID) => {
+            const subFoldersByParentID = folders.filter((subfolder) => subfolder.ParentID === parentID);
+
+            const LabelIDs = [...subFoldersByParentID]
+                .sort((a, b) => a.Name.localeCompare(b.Name, undefined, { numeric: true }))
+                .map(({ ID }) => ID);
+
+            console.log(LabelIDs);
+            await api(orderFolders({ LabelIDs }));
+        });
         await call();
-        createNotification({ text: c('Success message after sorting folders').t`Folders sorted` });
+
+        createNotification({
+            text: c('Success message after sorting folders').t`All Folders and subfolders are sorted`,
+        });
     };
 
     return (
