@@ -1,4 +1,4 @@
-## Release 5.0.15 — Sep 20, 2023
+## Release 5.0.15 — Sep 26, 2023
 
 ### New features
 
