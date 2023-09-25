@@ -5004,7 +5004,7 @@ __metadata:
     roosterjs: 8.47.0
     tabbable: ^6.2.0
     tinycolor2: ^1.6.0
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     typescript: ^5.2.2
     unleash-proxy-client: ^2.5.0
   peerDependencies:
@@ -5245,7 +5245,7 @@ __metadata:
     sass: ^1.66.1
     sass-loader: ^13.3.2
     terser-webpack-plugin: ^5.3.9
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     ttag-cli: ^1.10.5
     webpack: ^5.88.2
     webpack-cli: ^5.1.4
@@ -5360,7 +5360,7 @@ __metadata:
     prettier: ^2.8.8
     push.js: ^1.0.12
     ts-loader: ^9.4.4
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     typescript: ^5.2.2
     ua-parser-js: ^1.0.36
     web-streams-polyfill: ^3.2.1
@@ -26897,7 +26897,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-router-dom: ^5.3.4
     react-window: ^1.8.9
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     typescript: ^5.2.2
     web-streams-polyfill: ^3.2.1
     webpack: ^5.88.2
@@ -26975,7 +26975,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-redux: ^8.1.2
     react-router-dom: ^5.3.4
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     turndown: ^7.1.2
     typescript: ^5.2.2
     workbox-cacheable-response: ^7.0.0
@@ -27016,7 +27016,7 @@ fsevents@^1.2.7:
     redux-saga: ^1.2.3
     remote-redux-devtools: ^0.5.16
     tldts: ^6.0.14
-    ttag: ^1.7.24
+    ttag: ^1.7.25
     typescript: ^5.2.2
     webextension-polyfill: ^0.10.0
     webpack: ^5.88.2
@@ -32167,13 +32167,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ttag@npm:@protontech/ttag@~1.7.25":
+"ttag@npm:^1.7.24, ttag@npm:^1.7.25":
   version: 1.7.25
-  resolution: "@protontech/ttag@npm:1.7.25"
+  resolution: "ttag@npm:1.7.25"
   dependencies:
     dedent: ^0.7.0
     plural-forms: ^0.5.3
-  checksum: 21aaf9f16ed08a0278194077d816e4c85586323d8d3e0f27db9f198f3d1c83154e651ae21c3dc1960a5c397f3ee2a86d5699d7b4043f8acf99bc6d958a603a92
+  checksum: 871783757dcc479bd96f4a55af543e4cdc6021d3b00539cc938629dbd9d39951daf72e38c852df1f2fcdc40e8e6a05979b0428d9987fadc160351fd948206113
   languageName: node
   linkType: hard
 
