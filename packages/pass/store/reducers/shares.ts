@@ -22,6 +22,7 @@ import {
     vaultEditFailure,
     vaultEditIntent,
     vaultEditSuccess,
+    vaultInviteCreationSuccess,
     vaultSetPrimaryFailure,
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
@@ -30,7 +31,12 @@ import {
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
 
-export type SharesState = { [shareId: string]: Share & { invites?: PendingInvite[]; members?: ShareMember[] } };
+export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
+    invites?: PendingInvite[];
+    members?: ShareMember[];
+};
+
+export type SharesState = { [shareId: string]: ShareItem };
 
 /**
  * Share actions are optimistic but do not allow retries
@@ -122,6 +128,11 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
         if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {
             return objectMap(state!)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
+        }
+
+        if (vaultInviteCreationSuccess.match(action)) {
+            const { shareId, invites } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, shared: true } });
         }
 
         return state;
