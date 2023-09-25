@@ -1,7 +1,7 @@
 import type { FieldType, FormType } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
 
-import type { AutofillOptions } from '../../shared/form';
+import { type AutofillOptions } from '../utils/autofill';
 import type { DropdownAction } from './dropdown';
 import type { FieldIconHandle } from './icon';
 

@@ -6,7 +6,7 @@ import { merge } from '@proton/pass/utils/object';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
 import { parseSender } from '@proton/pass/utils/url';
 
-import { canCommitSubmission, isSubmissionCommitted } from '../../shared/form';
+import { isFormEntryCommittable, isFormEntryCommitted } from '../../shared/form/form-entry';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import { createMainFrameRequestTracker } from './main-frame.tracker';
@@ -75,7 +75,7 @@ export const createFormTrackerService = () => {
             logger.info(`[FormTracker::Commit] on tab ${tabId} for domain "${domain}" {${reason}}`);
             const commit = merge(pending, { status: FormEntryStatus.COMMITTED });
 
-            if (canCommitSubmission(commit)) {
+            if (isFormEntryCommittable(commit)) {
                 submissions.set(formId, commit);
                 return commit;
             }
@@ -185,7 +185,7 @@ export const createFormTrackerService = () => {
 
                 if (url.domain) {
                     const submission = get(tabId, url.domain);
-                    const isCommitted = submission !== undefined && isSubmissionCommitted(submission);
+                    const isCommitted = submission !== undefined && isFormEntryCommitted(submission);
 
                     return {
                         submission:

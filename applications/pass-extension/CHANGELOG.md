@@ -1,7 +1,8 @@
 ## Version 1.7.0
 
 -   Setup alarm based session locking
--   Obfuscate sensitive fields in in-memory state
+-   Obfuscate sensitive fields in in-memory store
+-   Fix settings wiped on extension update
 
 ## Version 1.6.2
 
