@@ -17,6 +17,7 @@ export const epochChainVersion = 1;
 export enum KT_DOMAINS {
     PROD = 'keytransparency.ch',
     ATLAS_DEV = 'dev.proton.wtf',
+    DEV_POSTFIX = '.proton.wtf',
     UNKNOWN = 'unknown',
 }
 
