@@ -8,6 +8,7 @@ import { getImageTrackersFromMessage, getUTMTrackersFromMessage } from './tracke
 const tracker1Url = 'http://tracker.com';
 const tracker2Url = 'http://tracking.com';
 const tracker3Url = 'http://trackerInBlockQuote.com';
+const tracker4Url = 'http://Tracker.com';
 
 const utmTracker1 = 'http://tracker.com?utm_source=tracker';
 const utmTracker2 = 'http://tracking.com?utm_source=tracking&utm_content=tracking';
@@ -19,6 +20,7 @@ const document = `
         <img src="${tracker1Url}" alt="" data-proton-remote="1"/>
         <img src="${tracker1Url}" alt="" data-proton-remote="2"/>
         <img src="${tracker2Url}" alt="" data-proton-remote="3"/>
+        <img src="${tracker4Url}" alt="" data-proton-remote="5"/>
     </div>
 
     <blockquote class="protonmail_quote" type="cite">
