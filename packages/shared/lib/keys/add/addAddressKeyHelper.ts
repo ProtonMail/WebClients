@@ -6,7 +6,7 @@ import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 import { ActiveKey, Address, Api, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
-import { getSignedKeyList } from '../signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
     api: Api;
@@ -46,8 +46,11 @@ export const createAddressKeyLegacy = async ({
         flags: getDefaultKeyFlags(address),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
-
+    const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        address,
+        keyTransparencyVerify
+    );
     const { Key } = await api(
         createAddressKeyRoute({
             AddressID: address.ID,
@@ -56,6 +59,7 @@ export const createAddressKeyLegacy = async ({
             SignedKeyList,
         })
     );
+    await onSKLPublishSuccess();
     newActiveKey.ID = Key.ID;
 
     return [newActiveKey, updatedActiveKeys] as const;
@@ -90,8 +94,11 @@ export const createAddressKeyV2 = async ({
         flags: getDefaultKeyFlags(address),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
-
+    const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        address,
+        keyTransparencyVerify
+    );
     const { Key } = await api(
         createAddressKeyRouteV2({
             AddressID: address.ID,
@@ -102,6 +109,8 @@ export const createAddressKeyV2 = async ({
             Token: encryptedToken,
         })
     );
+    // Only once the SKL is successfully posted we add it to the KT commit state.
+    await onSKLPublishSuccess();
     newActiveKey.ID = Key.ID;
 
     return [newActiveKey, updatedActiveKeys] as const;
