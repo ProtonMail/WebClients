@@ -5056,7 +5056,7 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.2.0
     playwright: ^1.37.1
-    pmcrypto: "npm:@protontech/pmcrypto@^7.12.0"
+    pmcrypto: "npm:@protontech/pmcrypto@^7.13.0"
     prettier: ^2.8.8
     ts-loader: ^9.4.4
     typescript: ^5.2.2
@@ -24759,21 +24759,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~5.9.0":
-  version: 5.9.0
-  resolution: "@protontech/openpgp@npm:5.9.0"
+"openpgp@npm:@protontech/openpgp@^5.9.0, openpgp@npm:@protontech/openpgp@~5.10.2":
+  version: 5.10.2
+  resolution: "@protontech/openpgp@npm:5.10.2"
   dependencies:
     asn1.js: ^5.0.0
-  checksum: a0f30a48ad3d20db9d6b69de6835cde73c1084e3a50b54f8063a6aba4bc8c256617dc1ee405fd91f4eb519c1b1a640145155f75367a750654225967755b2db3e
-  languageName: node
-  linkType: hard
-
-"openpgp@npm:@protontech/openpgp@~5.9.1-1":
-  version: 5.9.1-1
-  resolution: "@protontech/openpgp@npm:5.9.1-1"
-  dependencies:
-    asn1.js: ^5.0.0
-  checksum: 75b9f2f5f07877e65de028a8210e187a2face6519a6e2cb6047934154272d55f552250afcebf5eca2ed92652bab175aa33bd065ee52780b9f937ef2f953f4b9a
+  checksum: 14fd59a68e40e05c8ef64599cc15ae6eb89c084e7edc98811f5dd80169c5a39349ef4e3f4ddf599dd7e28f1862ea14f7ac893bea9e8e82331bf61c7c4ff37d49
   languageName: node
   linkType: hard
 
@@ -25805,17 +25796,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^7.12.0":
-  version: 7.12.0
-  resolution: "@protontech/pmcrypto@npm:7.12.0"
+"pmcrypto@npm:@protontech/pmcrypto@^7.13.0":
+  version: 7.13.0
+  resolution: "@protontech/pmcrypto@npm:7.13.0"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/noble-hashes": ^1.3.2-1
     "@openpgp/tweetnacl": ^1.0.3
     "@openpgp/web-stream-tools": ^0.0.13
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.1"
-    openpgp: "npm:@protontech/openpgp@~5.9.1-1"
-  checksum: 700e65cf500f298fdfcc9651bcea96b4980a94d77a386b092b60debe218b5ee0d83f143ebba306419e582696401f399ced132dfdd7f42c495213a0cac1a67b58
+    openpgp: "npm:@protontech/openpgp@~5.10.2"
+  checksum: 333a57250d062d54c66c424a7b558d1dcee1ee8125e5b4fd8c4901dad1be64396d5f48589f2fab27a2fcce2f6913e3779abfef422cdc122659b761b87b349a57
   languageName: node
   linkType: hard
 
@@ -26926,7 +26917,7 @@ fsevents@^1.2.7:
     eslint: ^8.49.0
     mailosaur: ^8.6.1
     node-fetch: ^3.3.2
-    openpgp: "npm:@protontech/openpgp@~5.9.0"
+    openpgp: "npm:@protontech/openpgp@^5.9.0"
     pdf-parse: ^1.1.1
     proxy-agent: ^6.3.1
     totp-generator: ^0.0.14
