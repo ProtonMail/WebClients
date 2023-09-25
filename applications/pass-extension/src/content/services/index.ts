@@ -16,6 +16,7 @@ import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } fro
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
+import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';
 import { CSContext } from '../context/context';
@@ -111,8 +112,11 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             port.onMessage.addListener(onPortMessage);
             context.service.formManager.observe();
 
-            const didDetect = await context.service.formManager.detect({ reason: 'InitialLoad', flush: true });
-            if (!didDetect) await context.service.autosave.reconciliate();
+            const didDetect = await context.service.formManager
+                .detect({ reason: 'InitialLoad', flush: true })
+                .catch(() => false);
+
+            if (!didDetect) await context.service.autosave.reconciliate().catch(noop);
         }
     };
 
