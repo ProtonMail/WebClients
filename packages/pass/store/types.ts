@@ -15,6 +15,7 @@ export interface WorkerRootSagaOptions {
     getCache: () => Promise<Partial<EncryptedExtensionCache>>;
     setCache: (encrypted: EncryptedExtensionCache) => Promise<void>;
     getEventInterval: () => number;
+    getLocalSettings: () => Promise<ProxiedSettings>;
     getWorkerState: () => WorkerState;
 
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
