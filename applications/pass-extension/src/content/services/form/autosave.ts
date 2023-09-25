@@ -2,7 +2,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 
-import { isSubmissionPromptable } from '../../../shared/form';
+import { isFormEntryPromptable } from '../../../shared/form/form-entry';
 import { withContext } from '../../context/context';
 import { NotificationAction } from '../../types';
 
@@ -56,7 +56,7 @@ export const createAutosaveService = () => {
                     );
                 }
 
-                if (isSubmissionPromptable(submission) && formTypeChangeOrRemoved) return promptAutoSave(submission);
+                if (isFormEntryPromptable(submission) && formTypeChangeOrRemoved) return promptAutoSave(submission);
 
                 /* if the form type is still detected on the current page :
                  * only stash the form submission if it is not "partial". This
