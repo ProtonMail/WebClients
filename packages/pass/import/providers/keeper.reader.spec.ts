@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { deobfuscateItem } from '@proton/pass/utils/pass/items';
 
 import type { ImportPayload } from '../types';
 import { readKeeperData } from './keeper.reader';
@@ -35,7 +36,7 @@ describe('Import Keeper CSV', () => {
         const { items } = firstVault;
 
         /* login with 2FA */
-        const loginItem2FA = items[0] as ItemImportIntent<'login'>;
+        const loginItem2FA = deobfuscateItem(items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2FA.type).toEqual('login');
         expect(loginItem2FA.createTime).toBeUndefined();
         expect(loginItem2FA.modifyTime).toBeUndefined();
@@ -53,7 +54,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItem2FA.extraFields).toEqual([]);
 
         /* login with broken url */
-        const loginItemBrokenUrl = items[1] as ItemImportIntent<'login'>;
+        const loginItemBrokenUrl = deobfuscateItem(items[1] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemBrokenUrl.type).toEqual('login');
         expect(loginItemBrokenUrl.createTime).toBeUndefined();
         expect(loginItemBrokenUrl.modifyTime).toBeUndefined();
@@ -70,7 +71,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
 
         /* login with comma, quotes */
-        const loginItemCommaQuotes = items[2] as ItemImportIntent<'login'>;
+        const loginItemCommaQuotes = deobfuscateItem(items[2] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCommaQuotes.type).toEqual('login');
         expect(loginItemCommaQuotes.createTime).toBeUndefined();
         expect(loginItemCommaQuotes.modifyTime).toBeUndefined();
@@ -87,7 +88,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
 
         /* login with custom fields */
-        const loginItemCustomFields = items[3] as ItemImportIntent<'login'>;
+        const loginItemCustomFields = deobfuscateItem(items[3] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemCustomFields.type).toEqual('login');
         expect(loginItemCustomFields.createTime).toBeUndefined();
         expect(loginItemCustomFields.modifyTime).toBeUndefined();
@@ -140,7 +141,7 @@ describe('Import Keeper CSV', () => {
         ]);
 
         /* login with multiple lines */
-        const loginItemMultipleLines = items[4] as ItemImportIntent<'login'>;
+        const loginItemMultipleLines = deobfuscateItem(items[4] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleLines.type).toEqual('login');
         expect(loginItemMultipleLines.createTime).toBeUndefined();
         expect(loginItemMultipleLines.modifyTime).toBeUndefined();
@@ -157,7 +158,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleLines.extraFields).toEqual([]);
 
         /* login with multiple urls */
-        const loginItemMultipleUrls = items[5] as ItemImportIntent<'login'>;
+        const loginItemMultipleUrls = deobfuscateItem(items[5] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemMultipleUrls.type).toEqual('login');
         expect(loginItemMultipleUrls.createTime).toBeUndefined();
         expect(loginItemMultipleUrls.modifyTime).toBeUndefined();
@@ -189,7 +190,7 @@ describe('Import Keeper CSV', () => {
         ]);
 
         /* login payment card */
-        const loginItemPaymentCard = items[6] as ItemImportIntent<'login'>;
+        const loginItemPaymentCard = deobfuscateItem(items[6] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemPaymentCard.type).toEqual('login');
         expect(loginItemPaymentCard.createTime).toBeUndefined();
         expect(loginItemPaymentCard.modifyTime).toBeUndefined();
@@ -221,7 +222,7 @@ describe('Import Keeper CSV', () => {
         ]);
 
         /* login secure note */
-        const loginItemSecureNote = items[7] as ItemImportIntent<'note'>;
+        const loginItemSecureNote = deobfuscateItem(items[7] as any) as unknown as ItemImportIntent<'note'>;
         expect(loginItemSecureNote.type).toEqual('note');
         expect(loginItemSecureNote.createTime).toBeUndefined();
         expect(loginItemSecureNote.modifyTime).toBeUndefined();
@@ -233,7 +234,7 @@ describe('Import Keeper CSV', () => {
         expect(loginItemSecureNote.extraFields).toEqual([]);
 
         /* login ssh key */
-        const loginItemSshKey = items[8] as ItemImportIntent<'login'>;
+        const loginItemSshKey = deobfuscateItem(items[8] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemSshKey.type).toEqual('login');
         expect(loginItemSshKey.createTime).toBeUndefined();
         expect(loginItemSshKey.modifyTime).toBeUndefined();
@@ -263,7 +264,7 @@ describe('Import Keeper CSV', () => {
         expect(secondVault.items.length).toEqual(1);
         const { items } = secondVault;
 
-        const loginItemSecondVault = items[0] as ItemImportIntent<'login'>;
+        const loginItemSecondVault = deobfuscateItem(items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemSecondVault.type).toEqual('login');
         expect(loginItemSecondVault.createTime).toBeUndefined();
         expect(loginItemSecondVault.modifyTime).toBeUndefined();
@@ -285,7 +286,7 @@ describe('Import Keeper CSV', () => {
         expect(thirdVault.items.length).toEqual(1);
         const { items } = thirdVault;
 
-        const loginItemSecondVault = items[0] as ItemImportIntent<'login'>;
+        const loginItemSecondVault = deobfuscateItem(items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItemSecondVault.type).toEqual('login');
         expect(loginItemSecondVault.createTime).toBeUndefined();
         expect(loginItemSecondVault.modifyTime).toBeUndefined();

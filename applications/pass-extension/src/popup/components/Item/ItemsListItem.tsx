@@ -70,7 +70,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                     <div
                         className={clsx([
                             'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
-                            item.data.type === 'note' && isEmptyString(item.data.metadata.note) && 'text-italic',
+                            item.data.type === 'note' && isEmptyString(item.data.metadata.note.v) && 'text-italic',
                         ])}
                     >
                         <Marks chunks={getItemNameSearchChunks(subheading, search)}>{subheading}</Marks>

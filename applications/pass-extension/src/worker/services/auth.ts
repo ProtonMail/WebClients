@@ -37,6 +37,7 @@ import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
+import noop from '@proton/utils/noop';
 
 import { SSO_URL } from '../../app/config';
 import WorkerMessageBroker from '../channel';
@@ -68,6 +69,8 @@ type CreateAuthServiceOptions = {
     onUnauthorized?: () => void;
     onLocked?: () => void;
 };
+
+const SESSION_LOCK_ALARM = 'alarm::session-lock';
 
 export const createAuthService = ({
     api,
@@ -385,7 +388,6 @@ export const createAuthService = ({
             if (shouldLockState) {
                 logger.info(`[Worker::Auth] Locking state`);
                 store.dispatch(stateLock());
-                browser.runtime.reload();
             }
 
             onLocked?.();
@@ -402,12 +404,19 @@ export const createAuthService = ({
             await authService.persistSession();
         },
 
+        /* Calling this function when a lock is registered and active
+         * will extend the lock by resetting the ttl server-side */
         syncLock: async () => {
+            await browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
             const lock = await checkSessionLock();
 
             authStore.setLockStatus(lock.status);
             authStore.setLockTTL(lock.ttl);
             authStore.setLockLastExtendTime(getEpoch());
+
+            if (lock.status === SessionLockStatus.REGISTERED && lock.ttl) {
+                browser.alarms.create(SESSION_LOCK_ALARM, { when: (getEpoch() + lock.ttl) * 1_000 });
+            }
 
             store.dispatch(syncLock(lock));
             return lock;
@@ -451,6 +460,8 @@ export const createAuthService = ({
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);
+
+    browser.alarms.onAlarm.addListener((alarm) => alarm.name === SESSION_LOCK_ALARM && authService.lock());
 
     return authService;
 };

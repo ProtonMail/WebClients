@@ -18,6 +18,7 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { ConfirmationModal } from '../../../../shared/components/confirmation';
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
+import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '../../../components/Dropdown/MoreInfoDropdown';
@@ -27,10 +28,11 @@ import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item, itemId, aliasEmail, createTime, modifyTime, revision: revisionNumber } = revision;
-    const { name, note } = item.metadata;
+    const { name } = item.metadata;
     const { optimistic, trashed } = itemViewProps;
     const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
+    const note = useDeobfuscatedValue(item.metadata.note);
 
     const dispatch = useDispatch();
     const history = useHistory();
