@@ -29,14 +29,15 @@ export const getUTMTrackersFromURL = (originalURL: string) => {
         TidyURL.allow_amp = true;
 
         const { url, info } = TidyURL.clean(originalURL);
-
         /*
          If we found removed elements or there is a difference between original link and cleaned link,
-         we have a tracker that we need to display in the privacy dropdown
+         we have a tracker that we need to display in the privacy dropdown.
+         The original URL might also contain uppercase letters in the first part of the URL that will be updated by the library
+         e.g. https://Proton.me would become https://proton.me, and we don't want it to be detected as a tracker
          */
-        if (originalURL !== url) {
+        if (originalURL.toLowerCase() !== url.toLowerCase()) {
             const utmTracker: MessageUTMTracker = {
-                originalURL: info.original,
+                originalURL,
                 cleanedURL: url,
                 removed: info.removed,
             };
