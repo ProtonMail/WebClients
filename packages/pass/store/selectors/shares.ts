@@ -1,11 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Maybe, MaybeNull, Share, ShareType } from '@proton/pass/types';
+import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp';
 import { isVaultShare } from '@proton/pass/utils/pass/share';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
+import { type ShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
@@ -38,11 +39,11 @@ export const selectPrimaryVault = createSelector([selectAllVaults], (vaults) => 
 export const selectShare =
     <T extends ShareType = ShareType>(shareId?: MaybeNull<string>) =>
     ({ shares }: State) =>
-        (shareId ? shares?.[shareId] : undefined) as Maybe<Share<T>>;
+        (shareId ? shares?.[shareId] : undefined) as Maybe<ShareItem<T>>;
 
 export const selectShareOrThrow =
     <T extends ShareType = ShareType>(shareId: string) =>
-    (state: State): Share<T> => {
+    (state: State): ShareItem<T> => {
         const share = selectShare<T>(shareId)(state);
 
         if (!share) {
@@ -51,3 +52,13 @@ export const selectShareOrThrow =
 
         return share;
     };
+
+export const selectVaultWithItemsCount = (shareId: string) =>
+    createSelector(
+        selectShareOrThrow<ShareType.Vault>(shareId),
+        selectItems,
+        (share, itemsByShareId): ShareItem<ShareType.Vault> & { count: number } => ({
+            ...share,
+            count: Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length,
+        })
+    );

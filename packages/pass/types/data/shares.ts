@@ -20,6 +20,12 @@ export type VaultShareContent = {
     };
 };
 
+export type VaultInviteCreateRequest = {
+    shareId: string;
+    email: string;
+    role: ShareRole;
+};
+
 export type ItemShareContent = {};
 
 export type ShareContent<T extends ShareType = ShareType> = T extends ShareType.Vault
