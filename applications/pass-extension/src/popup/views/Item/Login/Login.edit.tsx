@@ -9,8 +9,10 @@ import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { prop } from '@proton/pass/utils/fp';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { obfuscateExtraFields } from '@proton/pass/utils/pass/items';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';
@@ -19,6 +21,7 @@ import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButt
 import type { EditLoginItemFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
+import { useDeobfuscatedItem } from '../../../../shared/hooks/useDeobfuscatedItem';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
@@ -41,17 +44,17 @@ import { AliasModal } from '../Alias/Alias.modal';
 const FORM_ID = 'edit-login';
 
 export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubmit, onCancel }) => {
+    const dispatch = useDispatch();
+    const { needsUpgrade } = useSelector(selectTOTPLimits);
     const { domain, subdomain } = usePopupContext().url;
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
+
     const {
         metadata: { name, note, itemUuid },
-        content: { username, password, totpUri, urls },
+        content: { username, password, urls, totpUri },
         extraFields,
-    } = item;
-
-    const dispatch = useDispatch();
-    const { needsUpgrade } = useSelector(selectTOTPLimits);
+    } = useDeobfuscatedItem(item);
 
     const initialValues: EditLoginItemFormValues = {
         name,
@@ -97,7 +100,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                         createTime: mutationTime - 1 /* alias will be created before login in saga */,
                         metadata: {
                             name: `Alias for ${name}`,
-                            note: '',
+                            note: obfuscate(''),
                             itemUuid: aliasOptimisticId,
                         },
                         content: {},
@@ -117,25 +120,28 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                 itemId,
                 shareId,
                 lastRevision,
-                metadata: { name, note, itemUuid },
+                metadata: { name, note: obfuscate(note), itemUuid },
                 content: {
-                    username,
-                    password,
+                    username: obfuscate(username),
+                    password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    totpUri: normalizedOtpUri,
+                    totpUri: obfuscate(normalizedOtpUri),
                 },
-                extraFields: extraFields.map((field) => {
-                    if (field.type === 'totp') {
-                        return {
-                            ...field,
-                            value: parseOTPValue(field.data.totpUri, {
-                                label: username || undefined,
-                                issuer: name || undefined,
-                            }),
-                        };
-                    }
-                    return field;
-                }),
+                extraFields: obfuscateExtraFields(
+                    extraFields.map((field) =>
+                        field.type === 'totp'
+                            ? {
+                                  ...field,
+                                  data: {
+                                      totpUri: parseOTPValue(field.data.totpUri, {
+                                          label: username || undefined,
+                                          issuer: name || undefined,
+                                      }),
+                                  },
+                              }
+                            : field
+                    )
+                ),
             });
         },
         validate: validateLoginForm,

@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { deobfuscateItem } from '@proton/pass/utils/pass/items';
 
 import type { ImportPayload } from '../types';
 import { readDashlaneData } from './dashlane.reader';
@@ -28,7 +29,7 @@ describe('Import Dashlane ZIP', () => {
         const { items } = vaultData;
 
         /* Login item with otp */
-        const loginItem1 = items[0] as ItemImportIntent<'login'>;
+        const loginItem1 = deobfuscateItem(items[0] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem1.metadata.note).toEqual('');
@@ -51,7 +52,7 @@ describe('Import Dashlane ZIP', () => {
         ]);
 
         /* Login item with multiple lines */
-        const loginItem2 = items[1] as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(items[1] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem2.metadata.name).toEqual('login with multiple lines');
@@ -64,7 +65,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem2.extraFields).toEqual([]);
 
         /* Login item with commas */
-        const loginItem3 = items[2] as ItemImportIntent<'login'>;
+        const loginItem3 = deobfuscateItem(items[2] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem3.metadata.note).toEqual('comma 1, comma 2,');
@@ -77,7 +78,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem3.extraFields).toEqual([]);
 
         /* Login item with quote in name/note */
-        const loginItem4 = items[3] as ItemImportIntent<'login'>;
+        const loginItem4 = deobfuscateItem(items[3] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem4.metadata.note).toEqual('note with "quote"');
@@ -90,7 +91,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem4.extraFields).toEqual([]);
 
         /* Login item with url */
-        const loginItem5 = items[4] as ItemImportIntent<'login'>;
+        const loginItem5 = deobfuscateItem(items[4] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem5.type).toEqual('login');
         expect(loginItem5.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem5.metadata.note).toEqual('');
@@ -104,7 +105,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem5.extraFields).toEqual([]);
 
         /* Login item with weird URL */
-        const loginItem6 = items[5] as ItemImportIntent<'login'>;
+        const loginItem6 = deobfuscateItem(items[5] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem6.type).toEqual('login');
         expect(loginItem6.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem6.metadata.note).toEqual('');
@@ -118,7 +119,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem6.extraFields).toEqual([]);
 
         /* Login item with weird password */
-        const loginItem7 = items[6] as ItemImportIntent<'login'>;
+        const loginItem7 = deobfuscateItem(items[6] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem7.type).toEqual('login');
         expect(loginItem7.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem7.metadata.note).toEqual('');
@@ -132,7 +133,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem7.extraFields).toEqual([]);
 
         /* Login item with 2FA */
-        const loginItem8 = items[7] as ItemImportIntent<'login'>;
+        const loginItem8 = deobfuscateItem(items[7] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem8.type).toEqual('login');
         expect(loginItem8.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem8.metadata.note).toEqual('');
@@ -147,7 +148,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem8.extraFields).toEqual([]);
 
         /* Note item with quotes */
-        const noteItem1 = items[8] as ItemImportIntent<'note'>;
+        const noteItem1 = deobfuscateItem(items[8] as any) as unknown as ItemImportIntent<'note'>;
         expect(noteItem1.type).toEqual('note');
         expect(noteItem1.metadata.itemUuid).not.toBeUndefined();
         expect(noteItem1.metadata.name).toEqual('notes with quotes "');
@@ -156,7 +157,7 @@ describe('Import Dashlane ZIP', () => {
         expect(noteItem1.extraFields).toEqual([]);
 
         /* Note item with commas */
-        const noteItem2 = items[9] as ItemImportIntent<'note'>;
+        const noteItem2 = deobfuscateItem(items[9] as any) as unknown as ItemImportIntent<'note'>;
         expect(noteItem2.type).toEqual('note');
         expect(noteItem2.metadata.itemUuid).not.toBeUndefined();
         expect(noteItem2.metadata.name).toEqual('notes with commas ,');
@@ -165,7 +166,7 @@ describe('Import Dashlane ZIP', () => {
         expect(noteItem2.extraFields).toEqual([]);
 
         /* Note item with commas */
-        const noteItem3 = items[10] as ItemImportIntent<'note'>;
+        const noteItem3 = deobfuscateItem(items[10] as any) as unknown as ItemImportIntent<'note'>;
         expect(noteItem3.type).toEqual('note');
         expect(noteItem3.metadata.itemUuid).not.toBeUndefined();
         expect(noteItem3.metadata.name).toEqual('notes with multiple lines');
