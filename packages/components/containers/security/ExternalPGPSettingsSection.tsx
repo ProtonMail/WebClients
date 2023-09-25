@@ -155,7 +155,7 @@ const ExternalPGPSettingsSection = () => {
                         <Info
                             url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline')}
                             title={c('Tooltip default pgp scheme')
-                                .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages. Learn more`}
+                                .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
