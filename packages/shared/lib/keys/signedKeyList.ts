@@ -26,14 +26,18 @@ export const getSignedKeyListSignature = async (data: string, signingKey: Privat
     return signature;
 };
 
+type OnSKLPublishSuccess = () => Promise<void>;
+
 /**
- * Generate the signed key list data and verify it for later commit to Key Transparency
+ * Generate the signed key list data and verify it for later commit to Key Transparency.
+ * The SKL is only considered in the later commit call if the returned OnSKLPublishSuccess closure
+ * has been called beforehand.
  */
-export const getSignedKeyList = async (
+export const getSignedKeyListWithDeferredPublish = async (
     keys: ActiveKey[],
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
-): Promise<SignedKeyList> => {
+): Promise<[SignedKeyList, OnSKLPublishSuccess]> => {
     const transformedKeys = await Promise.all(
         keys.map(async ({ flags, primary, sha256Fingerprints, fingerprint }) => ({
             Primary: primary,
@@ -54,11 +58,28 @@ export const getSignedKeyList = async (
         Data: data,
         Signature: await getSignedKeyListSignature(data, signingKey),
     };
+    const onSKLPublish = async () => {
+        if (!getIsAddressDisabled(address)) {
+            await keyTransparencyVerify(address, signedKeyList, publicKeys);
+        }
+    };
+    return [signedKeyList, onSKLPublish];
+};
 
-    if (!getIsAddressDisabled(address)) {
-        await keyTransparencyVerify(address, signedKeyList, publicKeys);
-    }
-
+/**
+ * Generate the signed key list data and verify it for later commit to Key Transparency
+ */
+export const getSignedKeyList = async (
+    keys: ActiveKey[],
+    address: Address,
+    keyTransparencyVerify: KeyTransparencyVerify
+): Promise<SignedKeyList> => {
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        keys,
+        address,
+        keyTransparencyVerify
+    );
+    await onSKLPublishSuccess();
     return signedKeyList;
 };
 

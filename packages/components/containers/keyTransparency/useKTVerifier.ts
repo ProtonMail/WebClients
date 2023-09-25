@@ -39,7 +39,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     }
     const createdSKLs = useRef<CreatedSKL[]>([]);
 
-    const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList) => {
+    const keyTransparencyVerify: KeyTransparencyVerify = async (address: Address, signedKeyList: SignedKeyList) => {
         if (ktActivation === KeyTransparencyActivation.DISABLED) {
             return;
         }
