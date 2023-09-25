@@ -6,12 +6,14 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
+import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 
 export const NoteView: VFC<ItemTypeViewProps<'note'>> = ({ vault, revision, ...itemViewProps }) => {
-    const { note, name } = revision.data.metadata;
+    const { name } = revision.data.metadata;
+    const note = useDeobfuscatedValue(revision.data.metadata.note);
     const copyToClipboard = useCopyToClipboard();
 
     return (

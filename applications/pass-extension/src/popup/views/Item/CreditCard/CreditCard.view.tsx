@@ -7,6 +7,7 @@ import { selectPassPlan } from '@proton/pass/store';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
+import { useDeobfuscatedItem } from '../../../../shared/hooks/useDeobfuscatedItem';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { MaskedValueControl } from '../../../components/Field/Control/MaskedValueControl';
 import { UpgradeControl } from '../../../components/Field/Control/UpgradeControl';
@@ -17,10 +18,11 @@ import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const CreditCardView: VFC<ItemTypeViewProps<'creditCard'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item } = revision;
+
     const {
         metadata: { name, note },
-        content: { cardholderName, number, expirationDate, verificationNumber, pin },
-    } = item;
+        content: { cardholderName, expirationDate, number, verificationNumber, pin },
+    } = useDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 

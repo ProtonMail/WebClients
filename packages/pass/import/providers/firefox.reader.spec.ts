@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { ImportPayload } from '../types';
 import { readFirefoxData } from './firefox.reader';
@@ -32,13 +33,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItem.modifyTime).toEqual(1679064121);
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem.metadata.name).toEqual('account.proton.me');
-        expect(loginItem.metadata.note).toEqual('');
-        expect(loginItem.content).toEqual({
-            username: 'nobody@example.com',
-            password: 'proton123',
-            urls: ['https://account.proton.me/'],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItem.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItem.content.username)).toEqual('nobody@example.com');
+        expect(deobfuscate(loginItem.content.password)).toEqual('proton123');
+        expect(deobfuscate(loginItem.content.totpUri)).toEqual('');
+        expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem.trashed).toEqual(false);
         expect(loginItem.extraFields).toEqual([]);
 
@@ -49,13 +48,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItemMissingUrl.modifyTime).toEqual(1679064140);
         expect(loginItemMissingUrl.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemMissingUrl.metadata.name).toEqual('Unnamed item');
-        expect(loginItemMissingUrl.metadata.note).toEqual('');
-        expect(loginItemMissingUrl.content).toEqual({
-            username: 'missingurl@example.com',
-            password: 'proton123',
-            urls: [],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItemMissingUrl.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItemMissingUrl.content.username)).toEqual('missingurl@example.com');
+        expect(deobfuscate(loginItemMissingUrl.content.password)).toEqual('proton123');
+        expect(deobfuscate(loginItemMissingUrl.content.totpUri)).toEqual('');
+        expect(loginItemMissingUrl.content.urls).toEqual([]);
         expect(loginItemMissingUrl.trashed).toEqual(false);
         expect(loginItemMissingUrl.extraFields).toEqual([]);
 
@@ -66,13 +63,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItemMissingPassword.modifyTime).toEqual(1679064121);
         expect(loginItemMissingPassword.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemMissingPassword.metadata.name).toEqual('account.proton.me');
-        expect(loginItemMissingPassword.metadata.note).toEqual('');
-        expect(loginItemMissingPassword.content).toEqual({
-            username: 'missingpw@example.com',
-            password: '',
-            urls: ['https://account.proton.me/'],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItemMissingPassword.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItemMissingPassword.content.username)).toEqual('missingpw@example.com');
+        expect(deobfuscate(loginItemMissingPassword.content.password)).toEqual('');
+        expect(deobfuscate(loginItemMissingPassword.content.totpUri)).toEqual('');
+        expect(loginItemMissingPassword.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItemMissingPassword.trashed).toEqual(false);
         expect(loginItemMissingPassword.extraFields).toEqual([]);
 
@@ -83,13 +78,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItemBrokedUrl.modifyTime).toEqual(1679080973);
         expect(loginItemBrokedUrl.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemBrokedUrl.metadata.name).toEqual('Unnamed item');
-        expect(loginItemBrokedUrl.metadata.note).toEqual('');
-        expect(loginItemBrokedUrl.content).toEqual({
-            username: 'brokenurl@example.com',
-            password: '',
-            urls: [],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItemBrokedUrl.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItemBrokedUrl.content.username)).toEqual('brokenurl@example.com');
+        expect(deobfuscate(loginItemBrokedUrl.content.password)).toEqual('');
+        expect(deobfuscate(loginItemBrokedUrl.content.totpUri)).toEqual('');
+        expect(loginItemBrokedUrl.content.urls).toEqual([]);
         expect(loginItemBrokedUrl.trashed).toEqual(false);
         expect(loginItemBrokedUrl.extraFields).toEqual([]);
 
@@ -100,13 +93,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItemLocalhost.modifyTime).toEqual(1679406099);
         expect(loginItemLocalhost.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemLocalhost.metadata.name).toEqual('localhost');
-        expect(loginItemLocalhost.metadata.note).toEqual('');
-        expect(loginItemLocalhost.content).toEqual({
-            username: 'winston@example.com',
-            password: 'password',
-            urls: ['http://localhost:1234/'],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItemLocalhost.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItemLocalhost.content.username)).toEqual('winston@example.com');
+        expect(deobfuscate(loginItemLocalhost.content.password)).toEqual('password');
+        expect(deobfuscate(loginItemLocalhost.content.totpUri)).toEqual('');
+        expect(loginItemLocalhost.content.urls).toEqual(['http://localhost:1234/']);
         expect(loginItemLocalhost.trashed).toEqual(false);
         expect(loginItemLocalhost.extraFields).toEqual([]);
 
@@ -117,13 +108,11 @@ describe('Import Firefox CSV', () => {
         expect(loginItemCommaQuote.modifyTime).toEqual(1684922497);
         expect(loginItemCommaQuote.metadata.itemUuid).not.toBeUndefined();
         expect(loginItemCommaQuote.metadata.name).toEqual('account.example.com');
-        expect(loginItemCommaQuote.metadata.note).toEqual('');
-        expect(loginItemCommaQuote.content).toEqual({
-            username: 'username with comma, quotes "',
-            password: 'password with comma, quotes "',
-            urls: ['https://account.example.com/'],
-            totpUri: '',
-        });
+        expect(deobfuscate(loginItemCommaQuote.metadata.note)).toEqual('');
+        expect(deobfuscate(loginItemCommaQuote.content.username)).toEqual('username with comma, quotes "');
+        expect(deobfuscate(loginItemCommaQuote.content.password)).toEqual('password with comma, quotes "');
+        expect(deobfuscate(loginItemCommaQuote.content.totpUri)).toEqual('');
+        expect(loginItemCommaQuote.content.urls).toEqual(['https://account.example.com/']);
         expect(loginItemCommaQuote.trashed).toEqual(false);
         expect(loginItemCommaQuote.extraFields).toEqual([]);
 

@@ -1,3 +1,4 @@
+import { PassCrypto } from '@proton/pass/crypto';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import type { WorkerStatus } from '@proton/pass/types';
@@ -52,9 +53,11 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
             ctx.service.autofill.clearTabsBadgeCount();
             ctx.service.cacheProxy.clear?.().catch(noop);
             setSentryUID(undefined);
+            PassCrypto.clear();
         }),
         onLocked: withContext((ctx) => {
             ctx.service.autofill.clearTabsBadgeCount();
+            PassCrypto.clear();
         }),
     });
 

@@ -9,6 +9,7 @@ import {
 } from '@proton/pass/store';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/utils/search';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -24,7 +25,7 @@ export const createAutoFillService = () => {
     const getAutofillCandidates = (options: SelectAutofillCandidatesOptions): SafeLoginItem[] =>
         selectAutofillCandidates(options)(store.getState()).map((item) => ({
             name: item.data.metadata.name,
-            username: item.data.content.username,
+            username: deobfuscate(item.data.content.username),
             itemId: item.itemId,
             shareId: item.shareId,
             url: item.data.content.urls?.[0],
@@ -43,8 +44,8 @@ export const createAutoFillService = () => {
         if (item !== undefined && item.data.type === 'login') {
             store.dispatch(itemAutofillIntent({ shareId, itemId }));
             return {
-                username: item.data.content.username,
-                password: item.data.content.password,
+                username: deobfuscate(item.data.content.username),
+                password: deobfuscate(item.data.content.password),
             };
         }
     };

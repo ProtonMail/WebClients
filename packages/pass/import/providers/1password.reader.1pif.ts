@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -53,7 +53,7 @@ const extractExtraFields = (item: OnePassLegacyItem) => {
         .flatMap(({ fields }) =>
             (fields as OnePassLegacySectionField[])
                 .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<ItemExtraField>(({ k, t, v, n }) => {
+                .map<UnsafeItemExtraField>(({ k, t, v, n }) => {
                     switch (k) {
                         case OnePassLegacySectionFieldKey.STRING:
                         case OnePassLegacySectionFieldKey.URL:

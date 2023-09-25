@@ -5,7 +5,7 @@ import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
 import { selectExtraFieldLimits } from '@proton/pass/store';
-import type { ExtraFieldType, ItemExtraField } from '@proton/pass/types';
+import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
 
 import type { ExtraFieldGroupValues } from '../../../../shared/form/types';
 import { Field } from '../Field';
@@ -15,7 +15,7 @@ import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
-const getNewField = <T extends ExtraFieldType>(type: T): ItemExtraField => {
+const getNewField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
     switch (type) {
         case 'text':
         case 'hidden':
@@ -53,7 +53,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                                         type={type}
                                         /* Formik TS type are wrong for FormikTouched */
                                         touched={(form.touched.extraFields as unknown as boolean[])?.[index]}
-                                        error={form.errors.extraFields?.[index] as FormikErrors<ItemExtraField>}
+                                        error={form.errors.extraFields?.[index] as FormikErrors<UnsafeItemExtraField>}
                                         autoFocus={autofocusIndex === index} /* focus on add only */
                                     />
                                 ))}
