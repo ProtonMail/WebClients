@@ -66,7 +66,7 @@ export const createOTPService = () => {
     >(({ service: { formTracker } }, { tabId, url }) => {
         const submission = formTracker.get(tabId, url.domain ?? '');
         const candidates = selectAutofillCandidates(url)(store.getState());
-        const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri));
+        const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri.v));
 
         const match = submission
             ? otpItems.find((item) => deobfuscate(item.data.content.username) === submission.data.username)
