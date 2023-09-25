@@ -12,6 +12,7 @@ export const vaultCreate = (shareId: string) => `vault-create-request-${shareId}
 export const vaultEdit = (shareId: string) => `vault-edit-request-${shareId}`;
 export const vaultDelete = (shareId: string) => `vault-delete-request-${shareId}`;
 export const vaultSetPrimary = (shareId: string) => `vault-set-primary-request-${shareId}`;
+export const vaultInvite = withRequestNamespace('vault-invite');
 
 export const items = () => 'items';
 export const importItems = () => `import-items`;
