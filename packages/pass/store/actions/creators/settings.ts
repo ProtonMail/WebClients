@@ -34,3 +34,5 @@ export const settingEditSuccess = createAction(
             withRequest({ type: 'success', id: settingsEdit(ns) })
         )({ payload })
 );
+
+export const syncLocalSettings = createAction<RecursivePartial<ProxiedSettings>>('sync local settings');
