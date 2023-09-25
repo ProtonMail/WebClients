@@ -3,10 +3,10 @@ import { FieldType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 
-import { createAutofill } from '../../../shared/form';
-import { allowActions, preventActions, shouldPreventActions, withActionTrap } from '../../../shared/form/action-trap';
 import { withContext } from '../../context/context';
 import type { FieldHandle, FormHandle } from '../../types';
+import { allowActions, preventActions, shouldPreventActions, withActionTrap } from '../../utils/action-trap';
+import { createAutofill } from '../../utils/autofill';
 import { createFieldIconHandle } from './icon';
 
 type CreateFieldHandlesOptions = {
