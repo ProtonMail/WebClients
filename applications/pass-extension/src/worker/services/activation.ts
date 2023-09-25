@@ -106,8 +106,8 @@ export const createActivationService = () => {
             }
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
-
             ctx.service.onboarding.onUpdate();
+
             return ctx.init({ force: true });
         }
 

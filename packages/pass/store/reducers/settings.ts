@@ -14,6 +14,7 @@ import {
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
     settingEditSuccess,
+    syncLocalSettings,
     syncLock,
 } from '../actions';
 
@@ -69,11 +70,15 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
 
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
-        return partialMerge<SettingsState>(update, action.payload);
+        return partialMerge(update, action.payload);
     }
 
     if (itemCreationSuccess.match(action)) {
         return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    }
+
+    if (syncLocalSettings.match(action)) {
+        return partialMerge(state, action.payload);
     }
 
     return state;

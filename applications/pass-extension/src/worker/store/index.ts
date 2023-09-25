@@ -45,6 +45,8 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     getCache: withContext((ctx) => ctx.service.storage.local.get(['state', 'snapshot', 'salt'])),
     setCache: withContext((ctx, encryptedCache) => ctx.service.storage.local.set(encryptedCache)),
 
+    getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
+
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
     getEventInterval: () =>
