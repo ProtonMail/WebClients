@@ -6,9 +6,9 @@ export enum ShareType {
 }
 
 export enum ShareRole {
-    Admin = '1',
-    Write = '2',
-    Read = '3',
+    ADMIN = '1',
+    WRITE = '2',
+    READ = '3',
 }
 
 export type VaultShareContent = {

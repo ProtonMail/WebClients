@@ -30,6 +30,9 @@ type OpenedShareBase = {
     permission: number;
     expireTime?: MaybeNull<number>;
     createTime: number;
+    owner: boolean;
+    shared: boolean;
+    targetMembers: number;
 };
 
 export type OpenedShare = OpenedShareBase &
