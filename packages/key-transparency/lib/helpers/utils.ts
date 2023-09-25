@@ -92,19 +92,29 @@ export const getBaseDomain = (sendReport: boolean = true) => {
         return KT_DOMAINS.PROD;
     }
 
-    // Dev env, i.e. proton.black -> ATLAS_DEV
-    if (currentDomain === 'proton.black') {
-        return KT_DOMAINS.ATLAS_DEV;
-    }
-
+    // Development or test environments
     const domainParts = currentDomain.split('.');
-
-    // Atlas env over production, i.e. {env}.proton.pink -> PROD
-    if (domainParts[domainParts.length - 2] === 'proton' && domainParts[domainParts.length - 1] === 'pink') {
-        return KT_DOMAINS.PROD;
+    if (domainParts.length > 1 && domainParts[domainParts.length - 2] === 'proton') {
+        const postfix = domainParts[domainParts.length - 1];
+        switch (postfix) {
+            case 'pink':
+                // {env}.proton.pink -> prod
+                return KT_DOMAINS.PROD;
+            case 'black':
+                if (domainParts.length < 3) {
+                    // proton.black -> ATLAS_DEV
+                    return KT_DOMAINS.ATLAS_DEV;
+                } else {
+                    // {env}.proton.black -> {env} + DEV_POSTFIX
+                    return domainParts[domainParts.length - 3] + KT_DOMAINS.DEV_POSTFIX;
+                }
+            case 'local':
+                // proton.local -> ATLAS_DEV
+                return KT_DOMAINS.ATLAS_DEV;
+        }
     }
 
-    // Any other domain (including atlas env over dev, i.e. {env}.proton.black) -> no certificates are released.
+    // Any other domain.
     // Since this function is also used to test whether to use KT at all, we don't want to spam sentry with
     // attempts to figure this out, in which case sendReport should be false
     if (sendReport) {
