@@ -2,6 +2,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
+import noop from '@proton/utils/noop';
 
 import {
     NOTIFICATION_HEIGHT,
@@ -47,7 +48,9 @@ export const createNotification = (): InjectedNotification => {
                                 flagAsIgnored(element);
                             });
                     }
-                    return service.autosave.reconciliate();
+
+                    /* handle OTP -> AutoSave sequence */
+                    return service.autosave.reconciliate().catch(noop);
             }
         }),
         position: () => ({ top: 15, right: 15 }),
