@@ -13,13 +13,6 @@ import store from '../store';
 export type SettingsService = ReturnType<typeof createSettingsService>;
 
 export const createSettingsService = () => {
-    /* on extension install : Set the initial proxied
-     * locally stored settings with the results */
-    const onInstall = withContext<() => Promise<void>>(async ({ service }) => {
-        const initialSettings = selectProxiedSettings(store.getState());
-        return service.storage.local.set({ settings: JSON.stringify(initialSettings) });
-    });
-
     /* We have to proxy the redux store settings in local storage
      * in case the user is logged out (session invalidated, locked etc..)
      * but need to preserve the user settings in the content-script */
@@ -46,6 +39,13 @@ export const createSettingsService = () => {
         } catch (e) {
             return INITIAL_SETTINGS;
         }
+    });
+
+    /* on extension install : Set the initial proxied
+     * locally stored settings with the results */
+    const onInstall = withContext<() => Promise<void>>(async ({ service }) => {
+        const initialSettings = selectProxiedSettings(store.getState());
+        return service.storage.local.set({ settings: JSON.stringify(initialSettings) });
     });
 
     return { onInstall, sync, resolve };

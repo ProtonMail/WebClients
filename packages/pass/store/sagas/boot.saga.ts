@@ -7,7 +7,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object';
 
 import type { EncryptedExtensionCache, ExtensionCache } from '../../types/worker/cache';
-import { boot, bootFailure, bootSuccess, stateSync } from '../actions';
+import { boot, bootFailure, bootSuccess, stateSync, syncLocalSettings } from '../actions';
 import type { UserState } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
 import { decryptCachedState } from './workers/cache';
@@ -35,6 +35,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         /* hydrate the background store from cache - see `reducers/index.ts` */
         yield put(stateSync(state, { endpoint: 'background' }));
+        yield put(syncLocalSettings(yield options.getLocalSettings()));
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, options)) as SynchronizationResult;
