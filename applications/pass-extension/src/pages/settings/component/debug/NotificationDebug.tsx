@@ -33,7 +33,7 @@ const MockIFrameContainer: VFC<{ children: ReactNode; height?: number }> = ({
 const MockSettings = { loadDomainImages: true } as ProxiedSettings;
 
 export const NotificationDebug: VFC = () => {
-    const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri));
+    const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri.v));
 
     return (
         <SettingsPanel title="Notification">

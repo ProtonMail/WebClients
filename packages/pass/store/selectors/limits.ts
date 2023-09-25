@@ -37,7 +37,7 @@ export const selectTOTPLimits = createSelector([selectItemsByType('login'), sele
     let totpAllowed: (itemId: string) => boolean = () => true;
 
     if (typeof totpLimit === 'number') {
-        const totpItems = loginItems.filter((item) => Boolean(item.data.content.totpUri));
+        const totpItems = loginItems.filter((item) => Boolean(item.data.content.totpUri.v));
         const totpTotalCount = totpItems.length;
 
         needsUpgrade = totpTotalCount >= totpLimit;
