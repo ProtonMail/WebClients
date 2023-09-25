@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
-import type { ItemExtraField, ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
+import type { Item, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop, truthy } from '@proton/pass/utils/fp';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { obfuscateItem } from '@proton/pass/utils/pass/items';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
@@ -25,7 +27,7 @@ export const importLoginItem = (options: {
     password?: MaybeNull<string>;
     urls?: Maybe<string>[];
     totp?: MaybeNull<string>;
-    extraFields?: ItemExtraField[];
+    extraFields?: UnsafeItemExtraField[];
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
@@ -45,42 +47,34 @@ export const importLoginItem = (options: {
     };
 
     return {
-        type: 'login',
-        metadata: {
-            name,
-            note: options.note || '',
-            itemUuid: uniqueId(),
-        },
-        content: {
-            username: options.username || '',
-            password: options.password || '',
-            urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
-            totpUri: getTOTPvalue(options.totp),
-        },
-        extraFields:
-            options.extraFields?.map((field) => {
-                if (field.type === 'totp') {
-                    return {
-                        ...field,
-                        data: { totpUri: getTOTPvalue(field.data.totpUri) },
-                    };
-                }
-                return field;
-            }) ?? [],
+        ...(obfuscateItem({
+            type: 'login',
+            metadata: { name, note: options.note || '', itemUuid: uniqueId() },
+            content: {
+                username: options.username || '',
+                password: options.password || '',
+                urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
+                totpUri: getTOTPvalue(options.totp),
+            },
+            extraFields:
+                options.extraFields?.map((field) =>
+                    field.type === 'totp' ? { ...field, data: { totpUri: getTOTPvalue(field.data.totpUri) } } : field
+                ) ?? [],
+            platformSpecific: options.appIds
+                ? {
+                      android: {
+                          allowedApps: options.appIds.map((appId) => ({
+                              packageName: appId,
+                              appName: appId,
+                              hashes: [appId],
+                          })),
+                      },
+                  }
+                : undefined,
+        }) as Item<'login'>),
         trashed: options.trashed ?? false,
         createTime: options.createTime,
         modifyTime: options.modifyTime,
-        platformSpecific: options.appIds
-            ? {
-                  android: {
-                      allowedApps: options.appIds.map((appId) => ({
-                          packageName: appId,
-                          appName: appId,
-                          hashes: [appId],
-                      })),
-                  },
-              }
-            : undefined,
     };
 };
 
@@ -95,7 +89,7 @@ export const importNoteItem = (options: {
         type: 'note',
         metadata: {
             name: options.name || c('Label').t`Unnamed note`,
-            note: options.note || '',
+            note: obfuscate(options.note || ''),
             itemUuid: uniqueId(),
         },
         content: {},
@@ -119,22 +113,25 @@ export const importCreditCardItem = (options: {
     modifyTime?: number;
 }): ItemImportIntent<'creditCard'> => {
     return {
-        type: 'creditCard',
-        metadata: {
-            name: options.name || c('Label').t`Unnamed Credit Card`,
-            note: options.note || '',
-            itemUuid: uniqueId(),
-        },
-        content: {
-            cardType: CardType.Unspecified,
-            cardholderName: options.cardholderName || '',
-            number: options.number || '',
-            verificationNumber: options.verificationNumber || '',
-            expirationDate: options.expirationDate || '',
-            pin: options.pin || '',
-        },
+        ...(obfuscateItem({
+            type: 'creditCard',
+            metadata: {
+                name: options.name || c('Label').t`Unnamed Credit Card`,
+                note: options.note || '',
+                itemUuid: uniqueId(),
+            },
+            content: {
+                cardType: CardType.Unspecified,
+                cardholderName: options.cardholderName || '',
+                number: options.number || '',
+                verificationNumber: options.verificationNumber || '',
+                expirationDate: options.expirationDate || '',
+                pin: options.pin || '',
+            },
+
+            extraFields: [],
+        }) as Item<'creditCard'>),
         extraData: [],
-        extraFields: [],
         trashed: options.trashed ?? false,
         createTime: options.createTime,
         modifyTime: options.modifyTime,

@@ -2,7 +2,7 @@ import type { FormikErrors } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
-import type { ItemExtraField } from '@proton/pass/types';
+import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
@@ -10,7 +10,7 @@ import type { ExtraFieldGroupValues } from '../types';
 
 export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) => {
     const errors = values.extraFields.map((field) => {
-        const fieldErrors: FormikErrors<ItemExtraField> = {};
+        const fieldErrors: FormikErrors<UnsafeItemExtraField> = {};
 
         if (isEmptyString(field.fieldName)) fieldErrors.fieldName = c('Validation').t`Label is required`;
 

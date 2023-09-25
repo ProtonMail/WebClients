@@ -9,6 +9,7 @@ import {
 import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 
@@ -29,7 +30,7 @@ export const createAutoSaveService = () => {
 
         /* If we cannot find an entry which also matches the current submission's
          * password then we should prompt for update */
-        const match = candidates.filter((item) => item.data.content.password === submission.data.password);
+        const match = candidates.filter((item) => deobfuscate(item.data.content.password) === submission.data.password);
 
         return match.length > 0
             ? { shouldPrompt: false }

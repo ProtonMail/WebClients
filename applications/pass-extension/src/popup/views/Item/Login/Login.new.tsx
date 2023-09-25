@@ -10,8 +10,10 @@ import { Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { obfuscateExtraFields } from '@proton/pass/utils/pass/items';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL, parseUrl } from '@proton/pass/utils/url';
@@ -95,7 +97,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                           createTime,
                           metadata: {
                               name: `Alias for ${name}`,
-                              note: '',
+                              note: obfuscate(''),
                               itemUuid: `${optimisticId}-alias`,
                           },
                           content: {},
@@ -122,27 +124,30 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                 createTime,
                 metadata: {
                     name,
-                    note,
+                    note: obfuscate(note),
                     itemUuid: optimisticId,
                 },
                 content: {
-                    username,
-                    password,
+                    username: obfuscate(username),
+                    password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    totpUri: normalizedOtpUri,
+                    totpUri: obfuscate(normalizedOtpUri),
                 },
-                extraFields: extraFields.map((field) => {
-                    if (field.type === 'totp') {
-                        return {
-                            ...field,
-                            value: parseOTPValue(field.data.totpUri, {
-                                label: username || undefined,
-                                issuer: name || undefined,
-                            }),
-                        };
-                    }
-                    return field;
-                }),
+                extraFields: obfuscateExtraFields(
+                    extraFields.map((field) =>
+                        field.type === 'totp'
+                            ? {
+                                  ...field,
+                                  data: {
+                                      totpUri: parseOTPValue(field.data.totpUri, {
+                                          label: username || undefined,
+                                          issuer: name || undefined,
+                                      }),
+                                  },
+                              }
+                            : field
+                    )
+                ),
                 extraData,
             });
         },

@@ -1,7 +1,9 @@
 import { createMessageBroker } from '@proton/pass/extension/message';
 import { stateCache } from '@proton/pass/store';
-import { WorkerMessageType } from '@proton/pass/types';
+import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
+import { withContext } from './context';
 import store from './store';
 
 /* For security reasons : limit the type of messages that
@@ -32,7 +34,15 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.SESSION_RESUMED,
         WorkerMessageType.UNLOCK_REQUEST,
     ],
-    onDisconnect: (portName) => portName.startsWith('popup') && store.dispatch(stateCache()),
+    onDisconnect: withContext((ctx, portName) => {
+        const isPopup = portName.startsWith('popup');
+        const hasRegisteredLock = ctx.service.auth.store.getLockStatus() === SessionLockStatus.REGISTERED;
+
+        if (isPopup) {
+            store.dispatch(stateCache());
+            if (hasRegisteredLock) ctx.service.auth.syncLock().catch(noop);
+        }
+    }),
 });
 
 export default WorkerMessageBroker;

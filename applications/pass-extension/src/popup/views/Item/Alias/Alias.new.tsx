@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import noop from '@proton/utils/noop';
@@ -78,7 +79,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                     createTime: getEpoch(),
                     metadata: {
                         name,
-                        note,
+                        note: obfuscate(note),
                         itemUuid: optimisticId,
                     },
                     content: {},

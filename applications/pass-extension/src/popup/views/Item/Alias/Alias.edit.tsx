@@ -8,11 +8,13 @@ import { Option } from '@proton/components';
 import { selectMailboxesForAlias } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { EditAliasFormValues } from '../../../../shared/form/types';
 import { validateEditAliasForm } from '../../../../shared/form/validator/validate-alias';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { useAliasOptions } from '../../../../shared/hooks';
+import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import { type ItemEditProps } from '../../../../shared/items';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
 import { Field } from '../../../components/Field/Field';
@@ -28,11 +30,12 @@ const FORM_ID = 'edit-alias';
 export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
     const { data: item, itemId, aliasEmail, revision: lastRevision } = revision;
     const { metadata, ...uneditable } = item;
-    const { name, note, itemUuid } = metadata;
+    const { name, itemUuid } = metadata;
 
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
 
     const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
+    const note = useDeobfuscatedValue(metadata.note);
     const initialValues: EditAliasFormValues = { name, note, mailboxes: [] };
 
     const form = useFormik<EditAliasFormValues>({
@@ -46,7 +49,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                 lastRevision,
                 metadata: {
                     name,
-                    note,
+                    note: obfuscate(note),
                     itemUuid,
                 },
                 extraData: {
