@@ -4,6 +4,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { ShareType } from '../_shares';
 import { useLinkInner } from './useLink';
 
 jest.mock('@proton/shared/lib/keys/driveKeys');
@@ -46,6 +47,7 @@ describe('useLink', () => {
     };
     const mockGetVerificationKey = jest.fn();
     const mockGetSharePrivateKey = jest.fn();
+    const mockGetShare = jest.fn();
     const mockDecryptPrivateKey = jest.fn();
 
     const abortSignal = new AbortController().signal;
@@ -88,6 +90,7 @@ describe('useLink', () => {
                 mockLinksState,
                 mockGetVerificationKey,
                 mockGetSharePrivateKey,
+                mockGetShare,
                 mockDecryptPrivateKey
             )
         );
@@ -130,12 +133,11 @@ describe('useLink', () => {
                 nodePassphrase: `nodePassphrase ${id}`,
             };
         };
-        const links = {
+        const links: Record<string, ReturnType<typeof generateLink>> = {
             root: generateLink('root'),
             parent: generateLink('parent', 'root'),
             link: generateLink('link', 'parent'),
         };
-        // @ts-ignore
         mockLinksState.getLink.mockImplementation((_, linkId) => ({ encrypted: links[linkId] }));
 
         await act(async () => {
@@ -169,6 +171,42 @@ describe('useLink', () => {
             // @ts-ignore
             decryptSigned.mock.calls.map(([{ privateKey, armoredMessage }]) => [privateKey, armoredMessage])
         ).toMatchObject([['privateKey:nodeKey parent', 'name link']]);
+    });
+
+    describe('root name', () => {
+        const LINK_NAME = 'LINK_NAME';
+
+        const tests = [
+            { type: ShareType.standart, name: `dec:${LINK_NAME}` },
+
+            { type: ShareType.default, name: 'My files' },
+            { type: ShareType.photos, name: 'Photos' },
+        ];
+
+        tests.forEach(({ type, name }) => {
+            it(`detects type ${type} as "${name}"`, async () => {
+                const link = {
+                    linkId: `root`,
+                    name: LINK_NAME,
+                    nodeKey: `nodeKey root`,
+                    nodePassphrase: `nodePassphrase root`,
+                };
+                mockLinksState.getLink.mockImplementation(() => ({ encrypted: link }));
+                mockGetShare.mockImplementation((_, shareId) => ({
+                    shareId,
+                    rootLinkId: link.linkId,
+                    type,
+                }));
+
+                await act(async () => {
+                    const link = hook.current.getLink(abortSignal, 'shareId', 'root');
+                    await expect(link).resolves.toMatchObject({
+                        linkId: 'root',
+                        name,
+                    });
+                });
+            });
+        });
     });
 
     it('fetches link from API and decrypts when missing in the cache', async () => {
@@ -353,12 +391,11 @@ describe('useLink', () => {
                     nodePassphrase: `nodePassphrase ${id}`,
                 };
             };
-            const links = {
+            const links: Record<string, ReturnType<typeof generateLink>> = {
                 root: generateLink('root'),
                 parent: generateLink('parent', 'root'),
                 link: generateLink('link', 'parent'),
             };
-            // @ts-ignore
             mockLinksState.getLink.mockImplementation((_, linkId) => ({ encrypted: links[linkId] }));
         });
 
