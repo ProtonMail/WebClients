@@ -1,7 +1,8 @@
 import type { AnyAction } from 'redux';
 
 import type { Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { ShareRole, ShareType } from '@proton/pass/types';
+import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp';
 import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
 
@@ -29,7 +30,7 @@ import {
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
 
-export type SharesState = { [shareId: string]: Share };
+export type SharesState = { [shareId: string]: Share & { invites?: PendingInvite[]; members?: ShareMember[] } };
 
 /**
  * Share actions are optimistic but do not allow retries
@@ -88,6 +89,10 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     targetType: ShareType.Vault,
                     primary: false,
                     eventId: '',
+                    targetMembers: 1,
+                    owner: true,
+                    shareRoleId: ShareRole.ADMIN,
+                    shared: false,
                 },
             });
         }
