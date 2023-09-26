@@ -20,7 +20,7 @@ import './PhotosCard.scss';
 
 type Props = {
     photo: PhotoLink;
-    onRender: (linkId: string, domRef: React.MutableRefObject<any>) => void;
+    onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     shareId: string;
     showDetailsModal: ReturnType<typeof useDetailsModal>[1];
