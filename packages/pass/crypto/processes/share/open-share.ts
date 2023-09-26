@@ -1,4 +1,4 @@
-import type { OpenedShare, ShareGetResponse, VaultKey } from '@proton/pass/types';
+import type { OpenedShare, ShareGetResponse, ShareRole, VaultKey } from '@proton/pass/types';
 import { EncryptionTag, ShareType } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -22,6 +22,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         owner: encryptedShare.Owner,
         shared: encryptedShare.Shared,
         targetMembers: encryptedShare.TargetMembers,
+        shareRoleId: encryptedShare.ShareRoleID! as ShareRole, // fixme : check optionality
     };
 
     switch (options.type) {
