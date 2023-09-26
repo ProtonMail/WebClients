@@ -5675,11 +5675,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -13338,11 +13338,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Ini akan menambahkan kunci publik Anda pada setiap pesan terkirim. Penerima dapat menggunakannya untuk memverifikasi keaslian pesan dan mengirim pesan terenkripsi kepada Anda."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Pilih pengaturan PGP default yang akan digunakan untuk menandatangani atau mengenkripsi pesan yang diperuntukkan bagi para pengguna non-${ BRAND_NAME }. Mohon diperhatikan bahwa pengaturan PGP Inline akan mengubah pesan yang akan dikirim ke dalam format plain text secara paksa. Pelajari lebih lanjut"
       ]
     },
     "Tooltip prompt to trust keys": {
