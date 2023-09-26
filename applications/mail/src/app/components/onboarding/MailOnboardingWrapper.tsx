@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { EasySwitchProvider } from '@proton/activation/index';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { FeatureFlag, useFlag } from '@proton/components/containers';
+import { useFlag } from '@proton/components/containers';
 import { GmailSyncModal } from '@proton/components/containers/gmailSyncModal';
 import { useApi, useUserSettings } from '@proton/components/hooks';
 import useWelcomeFlags from '@proton/components/hooks/useWelcomeFlags';
@@ -20,7 +20,7 @@ const MailOnboardingWrapper = () => {
     const [openStartupModal, setOpenStartupModal] = useState(false);
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
 
-    const isImporterInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
+    const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     useEffect(() => {
         // Show the onboarding modal if easy switch importer are disabled for maintenance

@@ -16,7 +16,6 @@ import {
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     FamilyPlanSection,
-    FeatureFlag,
     GiftCodeSection,
     InvoicesSection,
     LanguageAndTimeSection,
@@ -154,7 +153,7 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, easySwitch)}>
-                <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
+                <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag="MaintenanceImporter">
                     <EasySwitchSettingsArea config={easySwitch} />
                 </SettingsMaintenanceLayoutWrapper>
             </Route>

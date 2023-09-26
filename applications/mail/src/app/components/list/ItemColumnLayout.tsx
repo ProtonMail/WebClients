@@ -2,7 +2,6 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { FeatureFlag } from '@proton/components';
 import { useFlag } from '@proton/components/containers/unleash';
 import { useUserSettings } from '@proton/components/hooks/';
 import { DENSITY } from '@proton/shared/lib/constants';
@@ -61,7 +60,7 @@ const ItemColumnLayout = ({
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const canSeeThumbnailsFeature = useFlag(FeatureFlag.AttachmentThumbnails);
+    const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
