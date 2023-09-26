@@ -23,7 +23,7 @@ describe('flattenWithCategories()', () => {
         const photos: PhotoLink[] = [
             {
                 linkId: '9d6c33a79feba8dd2fd768f58f450a7f2ff3ec2e',
-                name: 'Today',
+                name: 'This month',
                 activeRevision: {
                     photo: {
                         linkId: '9d6c33a79feba8dd2fd768f58f450a7f2ff3ec2e',
@@ -65,7 +65,7 @@ describe('flattenWithCategories()', () => {
         const flattenPhotos = flattenWithCategories([...photos]); // Destructure to keep origin reference
 
         expect(flattenPhotos).toEqual([
-            'Today',
+            'This month',
             photos[0],
             'July',
             photos[2],
