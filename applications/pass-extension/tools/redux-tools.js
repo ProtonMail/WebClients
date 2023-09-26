@@ -1,22 +1,22 @@
-/* not importing @redux-devtools/cli as its breaking the CI installation phase */
-/* eslint-disable-next-line import/no-unresolved */
 const exec = require('child_process');
-const path = require('path');
 
-const npmRoot = exec.execSync('npm root -g').toString();
-const reduxDevToolsPath = path.resolve(npmRoot.trim(), '@redux-devtools/cli');
-const reduxDevTools = require(reduxDevToolsPath).default;
+/* Use global @redux-devtools/cli to avoid adding it as
+ * a dependency to the monorepo : it includes way too many
+ * useless dependencies slowing down installation phase and
+ * breaks CI runners (electron sub dependency) */
+const createReduxDevTools = async ({ port }) => {
+    const cmd = exec.spawn(`redux-devtools`, ['--hostname=localhost', `--port=${port}`]);
 
-const createReduxDevTools = async ({ key, cert, port }) => {
-    const reduxTools = await reduxDevTools({
-        hostname: 'localhost',
-        protocol: 'https',
-        port,
-        key,
-        cert,
+    cmd.stdout.on('data', (buff) => console.info(buff.toString()));
+    cmd.stderr.on('data', (buff) => console.error(buff.toString()));
+
+    cmd.on('error', (buff) => {
+        console.error(buff.toString());
+        console.warn('Run `yarn workspace @proton/pass install:additional-tools`');
+        process.exit(0);
     });
 
-    await new Promise((resolve) => reduxTools.on('ready', resolve));
+    return cmd;
 };
 
 module.exports = createReduxDevTools;
