@@ -1739,10 +1739,10 @@
         "Impossibile rinominare il gateway"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Si prega di riprovare."
+        "Credenziali di accesso non valide. Per favore riprova."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Si prega di riprovare."
+        "Password della casella di posta non corretta. Per favore riprova."
       ],
       "Incorrect password": [
         "Password errata"
@@ -1935,7 +1935,7 @@
         "Ops, si è verificato un errore"
       ],
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -2280,7 +2280,7 @@
         "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Qualcosa è andato storto registrando la tua chiave di sicurezza. Sei pregato di riprovare."
+        "Qualcosa è andato storto durante la registrazione della tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
@@ -2797,7 +2797,7 @@
         "Fatto! Abbiamo inviato un codice a ${ destination }."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "La finestra non si apre? Ricorda di disabilitare il blocco dei pop-up."
+        "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ${ VPN_APP_NAME } a pagamento."
@@ -3106,12 +3106,12 @@
         "Upgrade del piano necessario"
       ],
       "Please add a password for the user on row": [
-        "Si prega di aggiungere una password per l'utente sulla riga",
-        "Si prega di aggiungere le password per gli utenti nelle righe"
+        "Aggiungi una password per l'utente nella riga",
+        "Aggiungi le password per gli utenti nelle righe"
       ],
       "Please add an email address for the user on row": [
-        "Si prega di aggiungere un indirizzo email per l'utente sulla riga",
-        "Si prega di aggiungere gli indirizzi email per gli utenti nelle righe"
+        "Si prega di aggiungere un indirizzo email per l'utente nella riga",
+        "Aggiungi gli indirizzi email per gli utenti nelle righe"
       ],
       "Please authenticate your card in the verification tab.": [
         "Verifica la carta nella scheda di verifica."
@@ -3153,7 +3153,7 @@
         "Abbonamento Plus o Visionary richiesto"
       ],
       "Preview failed to be loaded": [
-        "Impossibile caricare l'anteprima"
+        "Caricamento dell'anteprima non riuscito"
       ],
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
@@ -3298,7 +3298,7 @@
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Il processo di verifica aprirà una nuova finestra del browser. È necessario disabilitare il blocco dei pop-up."
+        "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Questi file di configurazione ti permettono di scegliere a quale server ${ VPN_APP_NAME } ti connetti quando utilizzi un’app VPN di terze parti o se configuri una connessione VPN su un router."
@@ -3328,7 +3328,7 @@
         "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento a ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi alcun blocco popup, sei pregato di disabilitarlo per continuare."
+        "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi un qualsiasi blocco pop-up, disabilitalo per continuare."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Questo eliminerà definitivamente i dati e tutti gli indirizzi email associati a questo utente."
@@ -3364,7 +3364,7 @@
         "continua su ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+        "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per rimanere informato degli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre liste email e ${ blogLink } di tanto in tanto."
@@ -3448,7 +3448,7 @@
         "La verifica potrebbe richiedere qualche minuto."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
+        "La verifica aprirà una nuova scheda, disabilita qualsiasi blocco pop-up. Non ti verrà addebitato nulla. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica la tua identità con una password temporanea usa e getta da un'app di autenticazione"
@@ -3514,10 +3514,10 @@
         "Ti diamo il benvenuto"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
+        "Invieremo un codice di recupero all'indirizzo email fornito per il recupero dell'account."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Invieremo un codice di ripristino al numero di telefono fornito per il recupero dell'account."
+        "Invieremo un codice di recupero al numero di telefono fornito per il recupero dell'account."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai cambiarlo. Ti invieremo un'email non appena verrà terminato."
@@ -3641,10 +3641,10 @@
         "Rimarrai connesso anche dopo aver chiuso il browser."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } password": [
         "La tua password di ${ BRAND_NAME }"
@@ -4231,7 +4231,7 @@
         "Aggiungi codice regalo"
       ],
       "clearing your browser cache": [
-        "pulendo la cache del browser"
+        "cancellando la cache del browser"
       ],
       "click here": [
         "clicca qui"
@@ -5130,7 +5130,7 @@
         "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Non teniamo log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
+        "Non conserviamo alcun log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Ci impegniamo ad aiutare i clienti soggetti alle normative HIPAA/HITECH a salvaguardare i dati sanitari protetti (PHI). I BAA firmati sono disponibili per tutti i clienti ${ BRAND_NAME } per le aziende."
@@ -5170,7 +5170,7 @@
         "Aumenta il tuo spazio di archiviazione a ${ bundleStorage } per utente"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Incrementa il tuo spazio di archiviazione a un totale di ${ bundleStorage }"
+        "Aumenta il tuo spazio di archiviazione a un totale di ${ bundleStorage }"
       ],
       "Browser extension": [
         "Estensione per il browser"
@@ -5366,7 +5366,7 @@
         "Indirizzo email"
       ],
       "Feedback": [
-        "Suggerimento"
+        "Feedback"
       ],
       "Gift code": [
         "Codice regalo"
@@ -5922,7 +5922,7 @@
         "Accedi al tuo account Apple nell'App Store e premi ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Accedi al tuo account Play Store e premi ${ subscriptions }."
+        "Accedi al tuo account Play Store e clicca ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestisci il tuo abbonamento su ${ subscriptionManager }"
@@ -6567,7 +6567,7 @@
         "Nessun metodo di recupero"
       ],
       "Open actions dropdown": [
-        "Apri menu a discesa delle azioni"
+        "Apri menu delle azioni"
       ],
       "Open pagination": [
         "Apri paginazione"
@@ -6880,7 +6880,7 @@
         "versione stabile"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Questa versione di Tor Browser non è supportata. Si prega di aggiornare all'ultima ${ stableRelease }"
+        "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "upsell panel": {
@@ -7032,7 +7032,7 @@
         "Disabilitando questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } ad esso collegati saranno disabilitati. Sei sicuro di voler disabilitare questo indirizzo?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
+        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."

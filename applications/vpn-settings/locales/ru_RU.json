@@ -356,6 +356,9 @@
       "Set new password": [
         "Задать новый пароль"
       ],
+      "Settings": [
+        "Настройки"
+      ],
       "Share via link": [
         "Поделиться по ссылке"
       ],
@@ -391,6 +394,9 @@
       ],
       "Switch account": [
         "Сменить аккаунт"
+      ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
       ],
       "Top up": [
         "Пополнить"
@@ -471,6 +477,17 @@
       ],
       "Reactivate": [
         "Возобновить"
+      ]
+    },
+    "Addon": {
+      "${ price } per dedicated server": [
+        "${ price } за выделенный сервер"
+      ],
+      "${ price } per domain": [
+        "${ price } за домен"
+      ],
+      "${ price } per user": [
+        "${ price } за пользователя"
       ]
     },
     "Address action": {
@@ -1580,6 +1597,11 @@
         "Помогите нам совершенствоваться!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Электронное письмо с подтверждением отправлено на ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Двухфакторная аутентификация"
@@ -1609,6 +1631,9 @@
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
+      ],
+      "Email address is invalid": [
+        "Недопустимый адрес электронной почты"
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -2355,6 +2380,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Checkout": [
+        "Оформление покупки"
+      ],
       "Create your account": [
         "Создать аккаунт"
       ],
@@ -2403,6 +2431,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } навсегда"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
       ],
@@ -2424,6 +2455,9 @@
         "${ number } серверов",
         "${ number } серверов"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
+      ],
       "${ storage } storage": [
         "${ storage } хранилища"
       ],
@@ -2438,6 +2472,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функции Secure Core требуется ${ vpnPlus }."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /месяц)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -2535,6 +2572,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Awaiting transaction": [
+        "В ожидании транзакции"
+      ],
       "Balance from your previous subscription": [
         "Баланс с прошлой подписки"
       ],
@@ -2601,6 +2641,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
+      "Dedicated servers": [
+        "Выделенные серверы"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
@@ -2633,6 +2676,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
@@ -2687,6 +2733,12 @@
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
+      ],
+      "Fill in user details": [
+        "Заполните данные пользователя"
+      ],
+      "for choosing ${ product }": [
+        "за выбор ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard и Discover - 3 цифры на обратной стороне вашей карты. Для American Express - 4 цифры на лицевой стороне вашей карты."
@@ -2826,6 +2878,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
+      "Number of dedicated servers in the organization": [
+        "Количество выделенных серверов в организации"
+      ],
       "of": [
         "из"
       ],
@@ -2858,6 +2913,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
+      ],
+      "per month": [
+        "в месяц"
+      ],
+      "per month, billed every 12 months": [
+        "в месяц, оплачивается каждые 12 месяцев"
+      ],
+      "per month, billed every 15 months": [
+        "в месяц, оплачивается каждые 15 месяцев"
+      ],
+      "per month, billed every 24 months": [
+        "в месяц, оплачивается каждые 24 месяца"
+      ],
+      "per month, billed every 30 months": [
+        "в месяц, оплачивается каждые 30 месяцев"
       ],
       "Plan upgrade required": [
         "Требуется улучшение тарифа"
@@ -2940,6 +3010,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Resend verification email": [
+        "Отправить письмо с подтверждением еще раз"
+      ],
       "Restore": [
         "Восстановить"
       ],
@@ -2948,6 +3021,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
+      ],
+      "Saving your password": [
+        "Сохранение вашего пароля"
       ],
       "Scan QR code instead": [
         "Вместо этого отсканируйте QR-код"
@@ -3093,11 +3169,17 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME_TWO } более безопасным, поэтому мы рекомендуем включить ее."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Чтобы отменить вашу подписку, пожалуйста, свяжитесь с нами."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
+      ],
+      "to continue to ${ product }": [
+        "чтобы продолжить в ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
@@ -3153,6 +3235,12 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
+      "Unverified": [
+        "Не подтвержденный"
+      ],
+      "Unverified email address.": [
+        "Неподтверждённый адрес эл. почты."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "До ${ FAMILY_MAX_USERS } пользователей"
       ],
@@ -3167,6 +3255,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные при подключении к серверам ${ VPN_APP_NAME } без приложения. Примеры использования включают: Tunnelblick на macOS, OpenVPN на GNU/Linux."
+      ],
+      "Users": [
+        "Пользователи"
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -3201,6 +3292,9 @@
       "We couldn’t process your payment.": [
         "Нам не удалось обработать ваш платёж."
       ],
+      "We generated a strong password for you": [
+        "Мы сгенерировали для вас надежный пароль"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
@@ -3218,6 +3312,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
+      ],
+      "We'll get back to you shortly.": [
+        "Мы свяжемся с Вами в ближайшее время."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
@@ -3380,6 +3477,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Ваша подписка будет автоматически продлена ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3395,6 +3495,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Добавить ваше имя (или название компании) и адрес в ваши счета."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Вы можете предотвратить истечение срока действия, повторно активировав подписку"
       ]
     },
     "Info when deleting payment method": {
@@ -4076,6 +4181,9 @@
       ],
       "Keep my ${ currentPlanName } account": [
         "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -4797,6 +4905,9 @@
       "An external address cannot be default": [
         "Внешний адрес не может быть адресом по умолчанию"
       ],
+      "Invalid code": [
+        "Недействительный код"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учетные данные OpenVPN / IKEv2 обновлены"
       ],
@@ -5092,6 +5203,20 @@
         "Загрузить файл CSV"
       ]
     },
+    "Server-Info": {
+      "active": [
+        "активно"
+      ],
+      "inactive": [
+        "неактивно"
+      ],
+      "pending": [
+        "в ожидании"
+      ],
+      "to be created": [
+        "будет создан"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Доступ предоставил ${ ownerName }"
@@ -5380,6 +5505,23 @@
       ],
       "Your current storage:": [
         "Текущее хранилище:"
+      ]
+    },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Оплата каждые 15 месяцев"
+      ],
+      "Billed every 2 years": [
+        "Оплата каждые 2 года"
+      ],
+      "Billed every 30 months": [
+        "Оплата каждые 30 месяцев"
+      ],
+      "Billed monthly": [
+        "Ежемесячная оплата"
+      ],
+      "Billed yearly": [
+        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
@@ -5841,8 +5983,14 @@
       "Add invoice details": [
         "Добавить сведения к счёту"
       ],
+      "Add new user": [
+        "Добавить нового пользователя"
+      ],
       "Add PayPal payment method": [
         "Добавить способ оплаты PayPal"
+      ],
+      "Add user accounts": [
+        "Добавить учётную запись пользователя"
       ],
       "Allocate storage": [
         "Выделение объёма в хранилище"
@@ -5955,6 +6103,9 @@
       "Delete user": [
         "Удалить пользователя"
       ],
+      "Delete user?": [
+        "Удалить пользователя?"
+      ],
       "Device connected!": [
         "Устройство подключено!"
       ],
@@ -5979,6 +6130,9 @@
       "Edit display name": [
         "Редактировать отображаемое имя"
       ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
       "Edit user": [
         "Изменение пользователя"
       ],
@@ -5987,6 +6141,9 @@
       ],
       "Email subscriptions": [
         "Подписки на рассылки"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -6114,6 +6271,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Request sent": [
+        "Запрос отправлен"
+      ],
       "Reset organization keys": [
         "Сбросить ключи организации"
       ],
@@ -6156,6 +6316,9 @@
       "Sign in": [
         "Войти"
       ],
+      "Sign in to join the Beta program": [
+        "Войдите, чтобы присоединиться к программе \"Бета\""
+      ],
       "Sign in with 2FA": [
         "Войти с помощью двухфакторной аутентификации"
       ],
@@ -6182,6 +6345,9 @@
         "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта",
         "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов",
         "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов"
+      ],
+      "Summary": [
+        "Сводка"
       ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
@@ -6213,6 +6379,9 @@
       "Upgrade your network protection with dedicated servers": [
         "Улучшить защиту вашей сети с помощью выделенных серверов"
       ],
+      "Upload CSV file to create multiple accounts": [
+        "Загрузите файл CSV, чтобы создать множество пользователей"
+      ],
       "Verification failed": [
         "Проверка не удалась"
       ],
@@ -6221,6 +6390,9 @@
       ],
       "Verifying your payment...": [
         "Проверяем ваш платёж..."
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Мы отправим электронное письмо на ваш новый адрес с инструкцией для завершения изменения."
       ],
       "What's new": [
         "Что нового"
@@ -6286,6 +6458,9 @@
       ],
       "Plan": [
         "Тариф"
+      ],
+      "Servers": [
+        "Серверы"
       ],
       "Start date": [
         "Дата начала"
@@ -6359,6 +6534,20 @@
         "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
         "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
         "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я нашел другой сервис, который мне больше нравится"
+      ],
+      "It’s missing a key feature": [
+        "Отсутствует ключевая функция"
+      ],
+      "It’s too expensive": [
+        "Слишком дорого"
+      ],
+      "Other": [
+        "Другое"
       ]
     },
     "VPN info": {
