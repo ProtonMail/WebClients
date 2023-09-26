@@ -99,7 +99,7 @@
         "Scegli un file o trascinalo qui"
       ],
       "Clear": [
-        "Elimina"
+        "Cancella"
       ],
       "Clear browser data": [
         "Cancella i dati del browser"
@@ -203,7 +203,7 @@
         "Elimina gruppo di contatti"
       ],
       "Delete permanently": [
-        "Elimina permanentemente"
+        "Elimina definitivamente"
       ],
       "Delete this version": [
         "Elimina questa versione"
@@ -377,7 +377,7 @@
         "Gestisci link"
       ],
       "Mark for deletion": [
-        "Seleziona per la cancellazione"
+        "Seleziona per l'eliminazione"
       ],
       "Maximize transfers": [
         "Massimizza i trasferimenti"
@@ -449,7 +449,7 @@
         "Chiudi"
       ],
       "Re-sign": [
-        "Ri-firma"
+        "Firma di nuovo"
       ],
       "Reconnect": [
         "Riconnetti"
@@ -659,7 +659,7 @@
         "Sblocca dati"
       ],
       "Unmark for deletion": [
-        "Deseleziona per la cancellazione"
+        "Deseleziona per l'eliminazione"
       ],
       "Untrust": [
         "Non ritenere attendibile"
@@ -1931,7 +1931,7 @@
         "Esiste già un gruppo con questo nome"
       ],
       "A problem occurred, please try again.": [
-        "Si è verificato un problema, si prega di riprovare."
+        "Si è verificato un problema. Per favore riprova."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -2008,10 +2008,10 @@
         "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Si prega di riprovare."
+        "Credenziali di accesso non valide. Per favore riprova."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Si prega di riprovare."
+        "Password della casella di posta non corretta. Per favore riprova."
       ],
       "Incorrect password. Please try again.": [
         "Password errata. Per favore riprova."
@@ -2071,7 +2071,7 @@
         "Le password non corrispondono"
       ],
       "Please activate your search again": [
-        "Si prega di attivare nuovamente la ricerca"
+        "Attiva nuovamente la tua ricerca"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -2087,7 +2087,7 @@
         "Chiave dell'indirizzo principale non decriptata."
       ],
       "Report failed to be sent": [
-        "Impossibile inviare la segnalazione"
+        "Invio della segnalazione non riuscito"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -2114,7 +2114,7 @@
         "Alcuni nomi delle cartelle superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alcuni nomi delle tue etichette sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
+        "Alcuni dei nomi delle tue etichette sono riservati. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -2132,13 +2132,13 @@
         "Gli indirizzi email non corrispondono."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
+        "Il nome della cartella non è valido. Scegli un nome differente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Il nome dell'etichetta non è valido. Si prega di scegliere un altro nome."
+        "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
@@ -2402,7 +2402,7 @@
         "Ops, si è verificato un errore"
       ],
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -2997,7 +2997,7 @@
         "Vai al ${ calendarViewLink } in Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Passa il mouse sul calendario che desideri importare e apri il menu a discesa."
+        "Muovi il mouse sul calendario che desideri importare e apri il menu a tendina."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
@@ -3190,7 +3190,7 @@
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
-        "Prova anche a cercare nel Cestino."
+        "Prova a cercare anche nel cestino."
       ],
       "An active recovery file": [
         "Un file di ripristino attivo"
@@ -3217,7 +3217,7 @@
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
       ],
       "Are you sure you want to permanently delete": [
-        "Sei sicuro di voler eliminare permanentemente"
+        "Sei sicuro di voler eliminare definitivamente"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Sei sicuro di voler eliminare definitivamente \"${ itemName }\" dal cestino?"
@@ -3244,13 +3244,13 @@
         "Annullato"
       ],
       "Cannot load link": [
-        "Impossibile caricare il collegamento"
+        "Impossibile caricare il link"
       ],
       "Cannot load links": [
         "Impossibile caricare i link"
       ],
       "Cannot load shared link": [
-        "Impossibile caricare il collegamento condiviso"
+        "Impossibile caricare il link condiviso"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -3265,10 +3265,10 @@
         "Cancella dati"
       ],
       "Clear encrypted search data": [
-        "Cancella i dati di ricerca crittografata"
+        "Cancella i dati della ricerca crittografata"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "La cancellazione dei dati del browser cancellerà l'indice di ricerca su questo dispositivo. Tutti i file dovrebbero essere reindicizzati di nuovo durante l'utilizzo della funzionalità di ricerca."
+        "La cancellazione dei dati del browser cancellerà l'indice di ricerca su questo dispositivo. Tutti i file dovranno essere nuovamente indicizzati durante l'utilizzo della funzionalità di ricerca."
       ],
       "Clears browser data related to the encrypted search.": [
         "Cancella i dati del browser relativi alla ricerca crittografata."
@@ -3320,13 +3320,13 @@
         "Creazione"
       ],
       "Creating link to file": [
-        "Creazione collegamento al file"
+        "Creazione del link al file"
       ],
       "Creating link to folder": [
-        "Creazione del collegamento alla cartella"
+        "Creazione del link alla cartella"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
+        "Sono supportati i file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app, così come i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
       "Current version": [
         "Versione attuale"
@@ -3436,13 +3436,13 @@
         "Errore"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Impossibile generare un collegamento sicuro. Il motivo è: ${ error }"
+        "Generazione di un link sicuro non riuscita. Il motivo è: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Impossibile generare un collegamento sicuro. Riprova più tardi."
+        "Generazione di un link sicuro non riuscita. Riprova più tardi."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Impossibile aprire un collegamento sicuro. Il motivo è: ${ error }"
+        "Apertura di un link sicuro non riuscita. Il motivo è: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Il file \"${ name }\" è stato eliminato durante il download"
@@ -3593,7 +3593,7 @@
         "Link copiato negli appunti"
       ],
       "Link owner has the password": [
-        "Il proprietario del collegamento ha la password"
+        "Il proprietario del link ha la password"
       ],
       "Loading": [
         "Caricamento"
@@ -3602,10 +3602,10 @@
         "Caricamento di ${ appName }"
       ],
       "Loading link": [
-        "Caricando il collegamento"
+        "Caricamento del link"
       ],
       "Loading links": [
-        "Caricando i collegamenti"
+        "Caricamento dei link"
       ],
       "Loading preview": [
         "Caricamento anteprima"
@@ -3693,7 +3693,7 @@
         "Solo le persone con il link e la password possono accedere a questo file."
       ],
       "Only the people with the link and the password can access this folder.": [
-        "Solo le persone con il collegamento e la password possono accedere a questa cartella."
+        "Solamente le persone con il link e la password possono accedere a questa cartella."
       ],
       "Paused": [
         "In pausa"
@@ -3720,7 +3720,7 @@
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
       "Please select the folders you would like to import:": [
-        "Si prega di selezionare le cartelle che si desidera importare:"
+        "Seleziona le cartelle che vuoi importare:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selezionare l'indirizzo o gli indirizzi email da aggiungere al gruppo ${ groupCount }.",
@@ -3733,19 +3733,19 @@
         "Attendi che le tue modifiche siano sincronizzate con il server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
+        "Attendi mentre cerchiamo i contatti che possono essere firmati nuovamente con la chiave di crittografia primaria."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
       ],
       "Preparing link to file": [
-        "Preparazione del collegamento al file"
+        "Preparazione del link al file"
       ],
       "Preparing link to folder": [
-        "Preparazione del collegamento alla cartella"
+        "Preparazione del link alla cartella"
       ],
       "Preview failed to be loaded": [
-        "Impossibile caricare l'anteprima"
+        "Caricamento dell'anteprima non riuscito"
       ],
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
@@ -3898,7 +3898,7 @@
         "Questo file potrebbe essere stato eliminato, spostato o reso non disponibile. Prova a contattare il proprietario del file."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
+        "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -3910,14 +3910,14 @@
         "Questo link è stato creato con una vecchia versione di Drive e non può essere modificato. Eliminare questo link e crearne uno nuovo per modificare le impostazioni."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Questo link sarà permanentemente disabilitato. Nessuno con questo link sarà in grado di accedere al file. Per ricondividere il file, avrai bisogno di un nuovo link."
+        "Questo collegamento verrà disabilitato definitivamente. Nessuno con questo link potrà accedere al tuo file. Per condividere nuovamente il file, avrai bisogno di un nuovo link."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Questo collegamento verrà disattivato in modo permanente. Nessuno con questo link potrà accedere alla tua cartella. Per ricondividere la cartella, avrai bisogno di un nuovo collegamento."
+        "Questo link verrà disabilitato definitivamente. Nessuno con questo link potrà accedere alla tua cartella. Per condividere nuovamente la cartella, avrai bisogno di un nuovo link."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Questo eliminerà il collegamento e rimuoverà l'accesso al file o alla cartella per chiunque abbia il collegamento.",
-        "Questo eliminerà i collegamenti e rimuoverà l'accesso ai tuoi file o cartelle per chiunque abbia i collegamenti."
+        "Questo eliminerà il link e rimuoverà l'accesso al file o alla cartella per chiunque abbia il link.",
+        "Questo eliminerà i link e rimuoverà l'accesso ai file o alle cartelle per chiunque abbia i link."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Questo rimuoverà il dispositivo sincronizzato ${ deviceName } da ${ DRIVE_APP_NAME } e interromperà la sincronizzazione delle cartelle che hai aggiunto a Computer."
@@ -3941,7 +3941,7 @@
         "Per abilitare la ricerca veramente privata, dobbiamo indicizzare i tuoi file localmente. Puoi comunque utilizzare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere al termine dell'indicizzazione."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+        "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -3950,7 +3950,7 @@
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperare i dati, è necessario riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
+        "Per recuperare tuoi i dati, devi riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai dunque ricordare la password utilizzata quando è stata generata la chiave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
@@ -4106,10 +4106,10 @@
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -4130,7 +4130,7 @@
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "I tuoi file non sono più accessibili a causa di un reset della password. Ricarica la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
+        "I tuoi file non sono più accessibili a causa di una reimpostazione della password. Carica nuovamente la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -4317,7 +4317,7 @@
         "Crea un account ${ BRAND_NAME }"
       ],
       "Create a share link": [
-        "Creare un collegamento di condivisione"
+        "Crea un link di condivisione"
       ],
       "Created": [
         "Creato"
@@ -4531,7 +4531,7 @@
         "Numero di telefono"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Si prega di fornire tutti i dettagli per aiutarci a prendere le misure appropriate"
+        "Fornisci tutti i dettagli per aiutarci a intervenire nel modo più appropriato."
       ],
       "Port": [
         "Porta"
@@ -4707,7 +4707,7 @@
     },
     "Link": {
       "clearing your browser cache": [
-        "pulendo la cache del browser"
+        "cancellando la cache del browser"
       ],
       "Learn more": [
         "Scopri di più"
@@ -4888,22 +4888,22 @@
         "\"${ name }\" eliminato definitivamente dal cestino"
       ],
       "\"${ name }\" failed to be created": [
-        "Impossibile creare \"${ name }\""
+        "Creazione di \"${ name }\" non riuscita"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" non è stato eliminato definitivamente dal cestino"
       ],
       "\"${ name }\" failed to be moved": [
-        "\"${ name }\" non è stato spostato"
+        "Spostamento di \"${ name }\" non riuscito"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" non è stato spostato nel cestino"
+        "Spostamento di \"${ name }\" nel cestino non riuscito"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "Impossibile ripristinare \"${ name }\" dal cestino"
+        "Ripristino di \"${ name }\" dal cestino non riuscito"
       ],
       "\"${ name }\" failed to be saved": [
-        "\"${ name }\" non salvato"
+        "Salvataggio di \"${ name }\" non riuscito"
       ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" spostato nel cestino"
@@ -4924,28 +4924,28 @@
         "\"${ newName }\" è stato rinominato correttamente"
       ],
       "${ count } item failed to be decrypted": [
-        "${ count } elemento non è stato decriptato",
-        "${ count } elementi non sono stati decriptati"
+        "Decriptazione di ${ count } elemento non riuscita",
+        "Decriptazione di ${ count } elementi non riuscita"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
         "${ numberOfItems } elementi eliminati definitivamente dal cestino"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Impossibile eliminare definitivamente l'elemento ${ numberOfItems } dal cestino",
-        "Gli elementi di ${ numberOfItems } non sono stati eliminati definitivamente dal cestino"
+        "Eliminazione definitiva di ${ numberOfItems } elemento dal cestino non riuscita",
+        "Eliminazione definitiva di ${ numberOfItems } elementi dal cestino non riuscita"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } oggetto non può essere spostato",
-        "${ numberOfItems } elementi non possono essere spostati"
+        "Spostamento di ${ numberOfItems } elemento non riuscito",
+        "Spostamento di ${ numberOfItems } elementi non riuscito"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "Impossibile spostare l'elemento ${ numberOfItems } nel cestino",
-        "Gli elementi di ${ numberOfItems } non sono stati spostati nel cestino"
+        "Spostamento di ${ numberOfItems } elemento nel cestino non riuscito",
+        "Spostamento di ${ numberOfItems } elementi nel cestino non riuscito"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "Impossibile ripristinare l'elemento ${ numberOfItems } dal cestino",
-        "Impossibile ripristinare gli elementi ${ numberOfItems } dal cestino"
+        "Ripristino di ${ numberOfItems } elemento dal cestino non riuscito",
+        "Ripristino di ${ numberOfItems } elementi dal cestino non riuscito"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } oggetto spostato nel cestino",
@@ -4960,18 +4960,18 @@
         "${ numberOfItems } elementi spostati con successo"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "Impossibile eliminare il collegamento ${ numberOfItems } al tuo articolo",
-        "${ numberOfItems } i link ai tuoi articoli non sono stati eliminati"
+        "Eliminazione di ${ numberOfItems } link al tuo elemento non riuscita",
+        "Eliminazione di ${ numberOfItems } link ai tuoi elementi non riuscita"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link al tuo articolo è stato eliminato",
-        "${ numberOfItems } link ai tuoi articoli sono stati eliminati"
+        "${ numberOfItems } link al tuo elemento è stato eliminato",
+        "${ numberOfItems } link ai tuoi elementi sono stati eliminati"
       ],
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
       ],
       "Cannot load link": [
-        "Impossibile caricare il collegamento"
+        "Impossibile caricare il link"
       ],
       "Cannot load next page": [
         "Impossibile caricare la pagina successiva"
@@ -5044,22 +5044,22 @@
         "Spazio insufficiente per caricare ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        "Impossibile caricare la cartella principale"
+        "Caricamento della cartella principale non riuscito"
       ],
       "Subfolder failed to be loaded": [
-        "Impossibile caricare la sottocartella"
+        "Caricamento della sottocartella non riuscito"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "Impossibile eliminare il collegamento a \"${ name }\""
+        "Eliminazione del link a \"${ name }\" non riuscita"
       ],
       "The link to \"${ name }\" was deleted": [
-        "Il collegamento a \"${ name }\" è stato eliminato"
+        "Il link a \"${ name }\" è stato eliminato"
       ],
       "The link to your item failed to be deleted": [
-        "Impossibile eliminare il collegamento al tuo articolo"
+        "Eliminazione del link al tuo elemento non riuscita"
       ],
       "The link to your item was deleted": [
-        "Il collegamento al tuo articolo è stato eliminato"
+        "Il link al tuo elemento è stato eliminato"
       ],
       "Trash failed to be emptied": [
         "Il cestino non è stato svuotato"
@@ -5068,7 +5068,7 @@
         "I tuoi vecchi file verranno eliminati entro 72 ore"
       ],
       "Your settings failed to be saved": [
-        "Impossibile salvare le impostazioni"
+        "Salvataggio delle impostazioni non riuscito"
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
@@ -5099,7 +5099,7 @@
     },
     "Onboarding Info": {
       "Create a share link": [
-        "Creare un collegamento di condivisione"
+        "Crea un link di condivisione"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
         "Inizia ad utilizzare ${ DRIVE_APP_NAME } e raddoppieremo il tuo spazio di archiviazione gratuito ad 1GB!"
@@ -5813,8 +5813,8 @@
         "${ emailsCount } indirizzi email"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } scaricamento non riuscito",
-        "${ numberOfFailedTransfer.total } scaricamenti falliti"
+        "${ numberOfFailedTransfer.total } scaricamento fallito",
+        "${ numberOfFailedTransfer.total } scaricamenti non riusciti"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } trasferimento non riuscito",
@@ -5862,7 +5862,7 @@
         "Impossibile aggiungere più indirizzi"
       ],
       "Cannot load link": [
-        "Impossibile caricare il collegamento"
+        "Impossibile caricare il link"
       ],
       "Change layout": [
         "Cambia layout"
@@ -6088,7 +6088,7 @@
         "Numero di elementi"
       ],
       "Open actions dropdown": [
-        "Apri menu a discesa delle azioni"
+        "Apri menu delle azioni"
       ],
       "Original size": [
         "Dimensione originale"
@@ -6112,10 +6112,10 @@
         "Impostazioni privacy"
       ],
       "Re-sign all contacts": [
-        "Ri-firma tutti i contatti"
+        "Firma nuovamente tutti i contatti"
       ],
       "Re-signing contacts": [
-        "Ri-firma contatti"
+        "Nuova firma dei contatti"
       ],
       "Reconnect your account": [
         "Riconnetti il tuo account"
@@ -6220,7 +6220,7 @@
         "Questa cartella ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."
       ],
       "This link is password protected": [
-        "Questo collegamento è protetto da password"
+        "Questo link è protetto con password"
       ],
       "Total size": [
         "Dimensione totale"
@@ -6429,7 +6429,7 @@
         "Saltare la verifica?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Alcuni dei contatti da unire presentano errori. Si prega di rivederli singolarmente"
+        "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "I dati del contatto sono danneggiati e non possono essere visualizzati."
