@@ -2,6 +2,7 @@ import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from
 
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import throttle from '@proton/utils/throttle';
 
 import type { PhotoGridItem } from '../../../store';
 import { usePortalPreview } from '../../PortalPreview';
@@ -22,22 +23,21 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
     const [itemScaling, setItemScaling] = useState(0);
     const [containerHeight, setContainerHeight] = useState(0);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [posX, setPosX] = useState<number[]>([]);
     const [posY, setPosY] = useState<number[]>([]);
+    const [styleCache, setStyleCache] = useState<React.CSSProperties[]>([]);
 
     const [portalPreview, showPortalPreview] = usePortalPreview();
     const [detailsModal, showDetailsModal] = useDetailsModal();
 
+    const emRatio = rootFontSize();
     const itemDimensions = useMemo(() => {
-        const emRatio = rootFontSize();
-
         return {
             width: 10 * emRatio,
             height: 13.75 * emRatio,
             gap: 0.25 * emRatio,
             groupHeight: 2.75 * emRatio,
         };
-    }, []);
+    }, [emRatio]);
 
     useLayoutEffect(() => {
         if (!containerRect) {
@@ -57,32 +57,52 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
 
     const itemHeight = itemDimensions.height * itemScaling;
     const itemWidth = itemDimensions.width * itemScaling;
-    const safetyMargin = itemHeight * 3;
+    const safetyMargin = (itemHeight + itemDimensions.gap) * 2;
 
     useEffect(() => {
         if (!itemDimensions) {
             return;
         }
 
-        const posX = [];
         const posY = [];
+        const styleCache = [];
 
         let currentX = 0;
         let currentY = 0;
         for (let item of data) {
+            const i: number = styleCache.length;
+
             if (typeof item === 'string') {
                 if (currentX != 0) {
                     currentY += itemHeight + itemDimensions.gap;
                 }
                 currentX = 0;
 
-                posX.push(currentX);
-                posY.push(currentY);
+                const y = currentY;
+
+                posY.push(y);
+                styleCache.push({
+                    position: 'absolute',
+                    height: `${itemDimensions.groupHeight}px`,
+                    width: '100%',
+                    top: `${y}px`,
+                });
 
                 currentY += itemDimensions.groupHeight + itemDimensions.gap;
             } else {
-                posX.push(currentX * (itemWidth + itemDimensions.gap));
-                posY.push(currentY);
+                const x = currentX * (itemWidth + itemDimensions.gap);
+                const y = currentY;
+
+                posY.push(y);
+                styleCache.push({
+                    position: 'absolute',
+                    width: itemWidth,
+                    height: itemHeight,
+                    top: `${y}px`,
+                    left: `${x}px`,
+                    // This makes the loading animation more dynamic (7 is arbitrary)
+                    animationDelay: `${(i % 7) / 3.5}s`,
+                });
 
                 currentX++;
                 if (currentX >= itemsPerLine) {
@@ -92,8 +112,8 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
             }
         }
 
-        setPosX(posX);
         setPosY(posY);
+        setStyleCache(styleCache);
     }, [data, itemDimensions, itemScaling, itemsPerLine]);
 
     const gridItems = [];
@@ -104,23 +124,10 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
     if (startIndex >= 0 && endIndex >= 0) {
         for (let i = startIndex; i <= endIndex; i++) {
             const item = data[i];
-            const x = posX[i];
-            const y = posY[i];
+            const style = styleCache[i];
 
             if (typeof item === 'string') {
-                gridItems.push(
-                    <PhotosGroup
-                        key={item}
-                        style={{
-                            position: 'absolute',
-                            height: `${itemDimensions.groupHeight}px`,
-                            width: '100%',
-                            top: `${y}px`,
-                        }}
-                        text={item}
-                        showSeparatorLine={i !== 0}
-                    />
-                );
+                gridItems.push(<PhotosGroup key={item} style={style} text={item} showSeparatorLine={i !== 0} />);
             } else {
                 gridItems.push(
                     <PhotosCard
@@ -129,15 +136,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
                         onRender={onItemRender}
                         showPortalPreview={showPortalPreview}
                         showDetailsModal={showDetailsModal}
-                        style={{
-                            position: 'absolute',
-                            width: itemWidth,
-                            height: itemHeight,
-                            top: `${y}px`,
-                            left: `${x}px`,
-                            // This makes the loading animation more dynamic (7 is arbitrary)
-                            animationDelay: `${(i % 7) / 3.5}s`,
-                        }}
+                        style={style}
                         shareId={shareId}
                     />
                 );
@@ -151,10 +150,10 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
             {portalPreview}
             <div
                 className="p-4 overflow-auto"
-                onScroll={(event) => {
+                onScroll={throttle((event) => {
                     setScrollPosition(event.currentTarget.scrollTop);
                     setContainerHeight(event.currentTarget.clientHeight);
-                }}
+                }, 100)}
                 onLoad={(event) => {
                     setContainerHeight(event.currentTarget.clientHeight);
                 }}
