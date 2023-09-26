@@ -1,3 +1,4 @@
+import { type PrepareAction } from '@reduxjs/toolkit';
 import type { AnyAction } from 'redux';
 
 import { merge } from '@proton/pass/utils/object';
@@ -26,3 +27,14 @@ const withRequest =
         merge(action, { meta: { request } });
 
 export default withRequest;
+
+/* action preparators for request types */
+const withRequestStatus =
+    (type: RequestType) =>
+    <PA extends PrepareAction<any>>(prepare: PA) =>
+    (requestId: string, ...args: Parameters<PA>) =>
+        withRequest({ id: requestId, type })(prepare(...args) as ReturnType<PA>);
+
+export const withRequestStart = withRequestStatus('start');
+export const withRequestFailure = withRequestStatus('failure');
+export const withRequestSuccess = withRequestStatus('success');
