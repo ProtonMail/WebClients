@@ -15,7 +15,7 @@ import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/ke
 
 import { linkMetaToEncryptedLink, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
-import { useShare } from '../_shares';
+import { ShareType, useShare } from '../_shares';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
@@ -58,7 +58,7 @@ export default function useLink() {
     const linksKeys = useLinksKeys();
     const linksState = useLinksState();
     const { getVerificationKey } = useDriveCrypto();
-    const { getSharePrivateKey } = useShare();
+    const { getSharePrivateKey, getShare } = useShare();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -84,6 +84,7 @@ export default function useLink() {
         linksState,
         getVerificationKey,
         getSharePrivateKey,
+        getShare,
         CryptoProxy.importPrivateKey
     );
 }
@@ -106,6 +107,7 @@ export function useLinkInner(
     linksState: Pick<ReturnType<typeof useLinksState>, 'getLink' | 'setLinks' | 'setCachedThumbnail'>,
     getVerificationKey: ReturnType<typeof useDriveCrypto>['getVerificationKey'],
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
+    getShare: ReturnType<typeof useShare>['getShare'],
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
@@ -507,18 +509,20 @@ export function useLinkInner(
                     signatureIssues.xattrs = fileModifyTimeVerified;
                 }
 
+                // Share will already be in cache due to getSharePrivateKey above
+                const share = !encryptedLink.parentLinkId ? await getShare(abortSignal, shareId) : undefined;
+
+                let displayName = name;
+                if (share?.type === ShareType.default) {
+                    displayName = c('Title').t`My files`;
+                } else if (share?.type === ShareType.photos) {
+                    displayName = c('Title').t`Photos`;
+                }
+
                 return {
                     ...encryptedLink,
                     encryptedName: encryptedLink.name,
-                    // Private app doesn't show root anywhere besides few
-                    // places like move files dialog. When folder is shared
-                    // though, the public app should display the real name
-                    // provided by user.
-                    // This is not an ideal solution as folder named "root"
-                    // by user would be translated to My files, but that's
-                    // minor issue. In the future this would be better solved
-                    // by detecting if share or token is used.
-                    name: name === 'root' && !encryptedLink.parentLinkId ? c('Title').t`My files` : name,
+                    name: displayName,
                     fileModifyTime: fileModifyTime,
                     originalSize,
                     originalDimensions,
