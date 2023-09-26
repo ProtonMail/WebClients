@@ -624,7 +624,7 @@
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "Avaa ${ CALENDAR_APP_NAME } -asetukset"
+        "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -1555,10 +1555,10 @@
         "Kalenteri on liian suuri"
       ],
       "Calendar link is not accessible": [
-        "Kalenterilinkkiä ei tavoiteta"
+        "Kalenterikytköstä ei tavoiteta"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Kalenterilinkki on tilapäisesti tavoittamattomissa"
+        "Kalenterikytkös on tilapäisesti tavoittamattomissa"
       ],
       "Failed to sync calendar": [
         "Kalenterin synkronointi epäonnistui"
@@ -1572,10 +1572,10 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenterilinkki ei toimi kalenterin toimittajan käyttöympäristön ulkopuolelta."
+        "Kytketty kalenteri ei ole käytettävissä sen toimittajan käyttöympäristön ulkopuolelta."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenterilinkki on tilapäisesti tavoittamattomissa. Varmista, että kalenterin toimittajan linkki on edelleen voimassa."
+        "Kalenterikytkös on tilapäisesti tavoittamattomissa. Varmista, että sen toimittajan linkki on edelleen voimassa."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Edellisestä päivityksestä on kulunut yli 12 tuntia — ${ CALENDAR_APP_NAME } pyrkii päivittämään kalenterin muutaman tunnin kuluttua."
@@ -2974,7 +2974,7 @@
         "Vaihdan toiseen palveluntarjoajaan"
       ],
       "Temporary need, may come back in the future": [
-        "Tarve on väliaikainen, palaan todennäköisesti takaisin"
+        "Tilapäinen tarve, palaan luultavasti takaisin"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3172,7 +3172,7 @@
         "Kalenterien enimmäismäärä on saavutettu"
       ],
       "Checkout expired, please try again": [
-        "Maksutapahtuma erääntyi, yritä uudelleen"
+        "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
       "Condition incomplete": [
         "Puutteellinen ehto"
@@ -3222,7 +3222,7 @@
         "Jossakin ehdossa on virhe"
       ],
       "Expired": [
-        "Erääntynyt"
+        "Vanhentunut"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktiivisten istuntojen nouto epäonnistui. ${ refresh } tai yritä myöhemmin uudelleen."
@@ -3270,7 +3270,7 @@
         "Virheellinen sähköpostiosoite"
       ],
       "Invalid expiration date": [
-        "Virheellinen erääntymisaika"
+        "Virheellinen voimassaolon päättymisaika"
       ],
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
@@ -3501,7 +3501,7 @@
         "Lähetysavain ei kelpaa"
       ],
       "The session has expired. Please sign in again.": [
-        "Istunto on päättynyt. Kirjaudu sisään uudelleen."
+        "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
@@ -4224,7 +4224,7 @@
         "Tämä poistaa kaikki organisaatioosi liittyvät alikäyttäjät, tilit ja tiedot pysyvästi."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Tämä poistaa kaikki ${ BRAND_NAME } premium -ominaisuudet kaikilta perheenjäseniltä."
+        "Tämä poistaa kaikki ${ BRAND_NAME }in premium-ominaisuudet kaikilta perheenjäseniltä."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -4251,10 +4251,10 @@
         "Muuta perheen nimeä"
       ],
       "Delete family group?": [
-        "Poista perheryhmä?"
+        "Poistetaanko perheryhmä?"
       ],
       "Delete organization?": [
-        "Poista organisaatio?"
+        "Poistetaanko organisaatio?"
       ],
       "Edit user storage": [
         "Muokkaa käyttäjän tallennustilaa"
@@ -4347,8 +4347,14 @@
       "Add a name to identify your security key with.": [
         "Lisää todennuslaitteellesi tunnistettava nimi."
       ],
+      "Allow platform keys": [
+        "Salli alustojen avaimet"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Sallii laitteiden sisäänrakennetut todennusratkaisut (kuten Windows Hello, Touch ID, Face ID tai sisäinen TPM) ulkoisten todennuslaitteiden lisäksi."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
@@ -4632,6 +4638,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Määritä ${ strongText } Gmailista"
+      ],
+      "This feature is currently unavailable": [
+        "Ominaisuus ei ole tällä hetkellä käytettävissä"
       ],
       "Update your logins": [
         "Päivitä kirjautumistietosi"
@@ -5314,7 +5323,7 @@
         "(${ memberCount } jäsentä)"
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice } /kuukausi)"
+        "(${ serverPrice }/kuukausi)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(suodata, jos KAIKKI seuraavat ehdot täyttyvät)"
@@ -5324,6 +5333,9 @@
       ],
       "* No credit card required.": [
         "* Maksukorttia ei vaadita."
+      ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME }a ja ${ CALENDAR_SHORT_APP_NAME }a."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
@@ -5722,11 +5734,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Kohdistetut palvelimet"
-      ],
       "dedicated servers": [
         "kohdistettuja palvelimia"
+      ],
+      "Dedicated servers": [
+        "Kohdistetut palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Kohdistetut palvelimet kohdistetuilla IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -5751,7 +5763,7 @@
         "ÄLÄ unohda tätä salasanaa. Jos unohdat sen, et voi kirjautua sisään tai purkaa viestiesi salausta."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Älä kirjaudu ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-kirjautumistiedoilla. ${ learnMore }"
+        "Älä kirjaudu ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintaan OpenVPN-/IKEv2-tunnistetiedoilla. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Haluatko mitätöidä kaikki istunnot nykyistä lukuun ottamatta?"
@@ -5881,7 +5893,7 @@
         "Tapahtumakutsut ja osanottovahvistukset lähetetään tällä kielellä."
       ],
       "Expired": [
-        "Erääntynyt"
+        "Voimassaolo päättynyt"
       ],
       "expires ${ expirationDate }": [
         "erääntyy ${ expirationDate }"
@@ -5989,7 +6001,7 @@
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } -ominaisuuksien, kuten suuremman tallennuskapasiteetin ja suodattimien käyttöoikeuden."
+        "Jos jatkat alennusta, menetät maksullisten suuremman tallennuskapasiteetin ja suodattimien kaltaisten maksullisten ${ MAIL_APP_NAME }-ominaisuuksien käyttöoikeuden."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -6362,8 +6374,8 @@
         "Lisää salasanat rivien käyttäjille"
       ],
       "Please add an email address for the user on row": [
-        "Lisää sähköpostiosoite rivin käyttäjälle",
-        "Lisää sähköpostiosoitteet rivien käyttäjille"
+        "Lisää sähköpostiosoite rivillä olevalle käyttäjälle",
+        "Lisää sähköpostiosoitteet riveillä oleville käyttäjille"
       ],
       "Please authenticate your card in the verification tab.": [
         "Todenna korttisi vahvistusvälilehdellä."
@@ -6498,7 +6510,7 @@
         "Poista jokin kalentereistasi liittyäksesi tähän kalenteriin"
       ],
       "Report link expired": [
-        "Raporttilinkki vanhentunut"
+        "Ilmoituslinkki on vanhentunut"
       ],
       "Resend verification email": [
         "Lähetä vahvistussähköposti uudelleen"
@@ -6664,7 +6676,7 @@
         "Kalenteri poistetaan tililtäsi."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "Sähköpostivahvistuksen linkki on erääntynyt. Kirjaudu sisään ja lähetä uusi linkki."
+        "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
       ],
       "The following address is available:": [
         "Seuraava osoite on saatavilla:"
@@ -6691,7 +6703,7 @@
         "Import-Export-sovellus mahdollistaa viestiesi viennin paikallista varmuuskopiointia varten ja aiempien varmistuksien palautuksen tilillesi."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Linkki, jolla ilmoitetaan, ettet ole määrittänyt ${ BRAND_NAME } -tiliä on vanhentunut. Ota yhteyttä tukitiimiimme ongelman ratkaisemiseksi."
+        "Linkki, jolla ilmoitetaan, ettet määrittänyt ${ BRAND_NAME }-tiliä on vanhentunut. Ota yhteyttä asiakaspalveluun ongelman ratkaisemiseksi."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
@@ -6703,7 +6715,7 @@
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Näiden määritystiedostojen avulla voit valita mihin ${ VPN_APP_NAME } -palvelimeen yhteys muodostetaan kun käytetään ulkopuolista VPN-sovellusta tai määritetään reitittimen VPN-asetuksia."
+        "Näiden määritystiedostojen avulla voit valita mihin ${ VPN_APP_NAME } -palvelimeen yhteys muodostetaan kun käytetään muiden tahojen VPN-sovelluksia tai määritetään reitittimen VPN-asetuksia."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Nämä määritykset on tarkoitettu käytettäväksi WireGuard-reitittimissä ja virallisissa päätteissä."
@@ -6748,7 +6760,7 @@
         "Tunniste ei ole ikkunan sulkeuduttua käytettävissä, eikä sitä tulisi jakaa kenellekään."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Tilauksen peruutuslinkki on erääntynyt. Avaa uudempi viesti tältä postituslistalta."
+        "Tilauksen peruutuslinkki on vanhentunut. Avaa uudempi viesti tältä postituslistalta."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
@@ -6946,7 +6958,7 @@
         "Käytä erilaisia ${ BRAND_NAME }in tarjoamia sähköpostiosoitteita ja aliaksia."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ilman sovellusta. Esimerkkitapauksia: Tunnelblick macOS- ja OpenVPN GNU/Linux-alustalla."
+        "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ilman sovellusta. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Käytä valittua sähköpostiosoitetta ulkoisen palvelun SMTP-palvelimen käyttäjätunnuksena ja salasanana luotua tunnistetta."
@@ -6958,7 +6970,7 @@
         "Vahvistus saattaa kestää muutamia minuutteja."
       ],
       "Verification link expired": [
-        "Varmennuslinkki vanhentunut"
+        "Vahvistuslinkki on vanhentunut"
       ],
       "Verification may take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
@@ -7140,11 +7152,11 @@
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
@@ -7168,7 +7180,7 @@
         "Voit käyttää ${ MAIL_APP_NAME }ia millä tahansa IMAP- ja SMTP-protokollaa tukevalla sähköpostisovelluksella, kuten Outlookilla, Apple Maililla ja Thunderbirdilla."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ulkopuolisten tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla, kuten Tunnelblickillä macOS:lle tai OpenVPN:llä GNU/Linuxille."
+        "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin muiden tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Voit lähettää seuraavaan 24 tuntiin enintään ${ emailSendLimitNumber } sähköpostikutsun",
@@ -7181,7 +7193,7 @@
         "Et voi kumota toimintoa."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Et voi kirjautua ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-kirjautumistiedoilla. ${ learnMore }"
+        "Et voi kirjautua ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-tunnistetiedoilla. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
@@ -7206,7 +7218,7 @@
         "Sinun on aktivoitava organisaation yksityinen avain ylläpitäjän ilmoittamalla organisaation vara-avaimen salasanalla."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Sinun on poistettava käytöstä tai poistettava ennen tilauksesi alennusta laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset."
+        "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili, jotta voit lisätä sen maksutavaksi."
@@ -7516,7 +7528,7 @@
         "Lisää salaus"
       ],
       "Add expiration time": [
-        "Lisää erääntymisaika"
+        "Lisää tuhoutumisaika"
       ],
       "Apply / open": [
         "Käytä/avaa"
@@ -8140,10 +8152,10 @@
         "Älä sisällytä roskapostia ja roskakoria kaikkiin viesteihin"
       ],
       "Expiration (${ patternExpiration })": [
-        "Voimassaoloaika (${ patternExpiration })"
+        "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
       "Expiration date": [
-        "Erääntymisaika"
+        "Voimassaolo päättyy"
       ],
       "Expires": [
         "Erääntyy"
@@ -9783,7 +9795,7 @@
         "Jos poistat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos luot uuden tilin."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Jos alennat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä niitä ole enää saatavilla, jos tilaat uudelleen."
+        "Jos alennat tilisi, menetät kaikki ${ visionary }-tilauksen edut, eikä sitä ole enää saatavilla, jos joskus palaat tilaajaksi."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Jos vaihdat eri tilaukseen, menetät kaikki ${ visionary }-tilauksen edut, etkä voi enää vaihtaa takaisin ${ visionary }-tilaukseen."
@@ -9831,7 +9843,7 @@
         "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos poistat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos alennat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
+        "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
     "new_plans: Label": {
@@ -9921,7 +9933,7 @@
         "${ MAIL_APP_NAME }: päästä päähän -salattu sähköposti"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: sisällön estojen poistaminen, yksityinen selailu"
+        "${ VPN_APP_NAME }: käytä estettyä sisältöä, selaa yksityisesti"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
@@ -10898,7 +10910,7 @@
         "esimerkki@verkkotunnus.fi"
       ],
       "Feedback": [
-        "Palaute"
+        "Palautteesi"
       ],
       "Gift code": [
         "Lahjakoodi"
@@ -12392,7 +12404,7 @@
         "Bridge ${ platform }-alustalle"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Peruuta ${ MAIL_SHORT_APP_NAME } -tilaus"
+        "Peru ${ MAIL_SHORT_APP_NAME }-tilaus"
       ],
       "Cancel subscription": [
         "Peru tilaus"
@@ -13483,11 +13495,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Tämä lisää jokaiseen lähettämääsi viestiin julkisen avaimen automaattisesti. Vastaanottajat voivat käyttää tätä viestiesi aitouden varmistukseen ja salattujen viestien lähetykseen sinulle."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Valitse oletusarvoiset PGP-asetukset, joita käytetään${ BRAND_NAME }n ulkopuolisille PGP-käytäjille lähetettävien viestien allekirjoitukseen tai salaukseen. Huomioi, että upotettu PGP pakottaa viesteille pelkkä teksti -muodon. Lue lisää"
       ]
     },
     "Tooltip prompt to trust keys": {

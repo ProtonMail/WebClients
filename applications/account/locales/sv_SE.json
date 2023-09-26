@@ -5731,11 +5731,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -13488,11 +13488,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Detta lägger automatiskt till din publika nyckel till varje skickat meddelande. Mottagare kan använda denna för att verifiera äktheten på dina meddelanden och skicka krypterade meddelanden till dig."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Välj standardinställningar för PGP som används för att signera eller kryptera meddelanden med icke-${ BRAND_NAME } PGP-användare. Notera att Inline PGP automatiskt blir oformaterad text. Läs mer"
       ]
     },
     "Tooltip prompt to trust keys": {

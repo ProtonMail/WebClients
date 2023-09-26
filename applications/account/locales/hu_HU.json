@@ -38,6 +38,12 @@
       "activate": [
         "aktiválás"
       ],
+      "Activate ${ Name }@pm.me": [
+        "${ Name }@pm.me aktiválása"
+      ],
+      "Activate ${ user.Name }@pm.me": [
+        "${ user.Name }@pm.me aktiválása"
+      ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
@@ -55,6 +61,9 @@
       ],
       "Add address or domain": [
         "Adjon hozzá címet vagy tartományt"
+      ],
+      "Add calendar from URL": [
+        "Naptár hozzáadása URL címről"
       ],
       "Add condition": [
         "Új feltétel"
@@ -416,8 +425,17 @@
       "Get a new encrypted email address": [
         "Szerezzen egy új, titkosított email címet"
       ],
+      "Get in touch": [
+        "Lépjen velünk kapcsolatba"
+      ],
+      "Get more": [
+        "Továbbiak beszerzése"
+      ],
       "Get more addresses": [
         "Több cím megszerzése"
+      ],
+      "Get more filters": [
+        "Több szűrő megszerzése"
       ],
       "Get more folders": [
         "Több mappa megszerzése"
@@ -448,6 +466,9 @@
       ],
       "Hide labels": [
         "Címkék elrejtése"
+      ],
+      "Hide plan features": [
+        "Csomag részleteinek elrejtése"
       ],
       "Import": [
         "Importálás"
@@ -746,6 +767,9 @@
       "Send email reminder": [
         "E-mail emlékeztető beállítása"
       ],
+      "Send messages with @pm.me": [
+        "Üzenetek küldése @pm.me címmel"
+      ],
       "Send my username": [
         "Felhasználónevem elküldése"
       ],
@@ -976,6 +1000,20 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Elutasítás"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } saját domain név",
+        "${ domains } saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Address action": {
@@ -4555,6 +4593,9 @@
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra.",
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "A ${ PROTON_SENTINEL_NAME } egy komplex MI rendszerekkel vezérelt, fejlett fiókvédelmi program, amely szakemberek folyamatos támogatásával védi a támadóktól és biztonsági fenyegetésekről."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
         "${ providerFoldersNumLocalized } mappa található"
@@ -5207,6 +5248,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
+      "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
+        "Javítsa a ${ BRAND_NAME } használatának élményét az alkalmazás saját igényekhez való igazításával."
+      ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
       ],
@@ -5345,6 +5389,9 @@
       ],
       "New": [
         "Új"
+      ],
+      "No account keys exist": [
+        "Nincsenek kulcsok a fiókhoz"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Nincs beállítva fiók helyreállítási módszer; megvan a veszélye, hogy elveszti fiókja elérését"
@@ -5516,6 +5563,9 @@
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
+      ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Közszereplőknek, újságíróknak, vezető beosztásban dolgozóknak és másoknak akik kibertámadások célpontjai lehetnek, kifejezetten ajánlott a ${ PROTON_SENTINEL_NAME } bekapcsolása."
       ],
       "Public link invite": [
         "Nyilvános meghívási hivatkozás"
@@ -5884,6 +5934,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Váltson a ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } vagy ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } csomagra, hogy elérhesse a ${ PROTON_SENTINEL_NAME } szolgáltatást."
+      ],
       "Upgrade to unlock": [
         "A feloldáshoz váltson nagyobb csomagra"
       ],
@@ -5898,6 +5951,9 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
+      ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Használjon különböző típusú e-mail címeket és álneveket a ${ BRAND_NAME } segítségével."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
@@ -6022,6 +6078,10 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből.",
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
       ],
@@ -6039,6 +6099,22 @@
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
       ],
       "You can now access and manage the account as an administrator.": [
         "Most adminisztrátorként érheti el és kezelheti a fiókot."
@@ -6112,6 +6188,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "NEM fogja tudni visszaejteni az ezzel a kulccsal titkosított üzeneteket, fájlokat és egyéb adatokat. A ${ BRAND_NAME } alkalmazások által nem lesz ellenőrizhető az ezzel a kulccsal aláírt adatok hitelessége."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -8040,6 +8119,10 @@
         "${ n } mappa és címke",
         "${ n } mappa és címke"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
       "${ n } label": [
         "${ n } címke",
         "${ n } címke"
@@ -8059,6 +8142,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN kapcsolat felhasználónként",
         "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
       ],
       "${ size } attachment size": [
         "${ size } melléklet méret"
@@ -8175,6 +8262,10 @@
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban",
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban"
       ],
       "Share calendar via link": [
         "Naptár megosztása hivatkozással"
@@ -8427,6 +8518,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -8553,6 +8648,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
+      ],
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -9655,6 +9754,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikált szerver",
+        "${ ipAddresses } dedikált szerver"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } nagysebességű VPN kapcsolat",
         "${ maxVpn } nagysebességű VPN kapcsolat"
@@ -10122,6 +10225,9 @@
       "4. Select a server to connect to": [
         "4. Válassza ki, melyik szerverhez szeretne kapcsolódni"
       ],
+      "Accessibility": [
+        "Kisegítő lehetőségek"
+      ],
       "Account and password": [
         "Fiók és jelszó"
       ],
@@ -10170,14 +10276,26 @@
       "Add invoice details": [
         "Számlázási adatok megadása"
       ],
+      "Add new user": [
+        "Új felhasználó hozzáadása"
+      ],
       "Add PayPal payment method": [
         "PayPal hozzáadása"
       ],
       "Add Sieve filter": [
         "Új Sieve szűrő"
       ],
+      "Add to allow list": [
+        "Hozzáadás az engedélyezett listához"
+      ],
+      "Add to block list": [
+        "Hozzáadás a tiltólistához"
+      ],
       "Add to spam list": [
         "Hozzáadás a levélszemét listához"
+      ],
+      "Add user accounts": [
+        "Felhasználói fiókok hozzáadása"
       ],
       "Address verification": [
         "Cím ellenőrzése"
@@ -10209,6 +10327,9 @@
       "Are you sure you want to close?": [
         "Biztosan bezárja?"
       ],
+      "Authentication security": [
+        "Hitelesítés biztonsága"
+      ],
       "Auto-reply": [
         "Automatikus válasz"
       ],
@@ -10226,6 +10347,12 @@
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
+      ],
+      "Cancel subscription": [
+        "Előfizetés lemondása"
+      ],
+      "Cancel subscription?": [
+        "Előfizetés lemondása?"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
@@ -10286,6 +10413,9 @@
       ],
       "Connect ${ name }": [
         "${ name } kapcsolása"
+      ],
+      "Contact us": [
+        "Kapcsolatfelvétel"
       ],
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
@@ -10372,6 +10502,9 @@
       "Delete ${ label.Name } label": [
         "${ label.Name } címke törlése"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "${ tokenNameToRemove } törlése?"
+      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -10384,8 +10517,15 @@
       "Delete logs": [
         "Naplók törlése"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)",
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)"
+      ],
       "Delete user": [
         "Felhasználó törlése"
+      ],
+      "Delete user?": [
+        "Felhasználó törlése?"
       ],
       "Delete version history?": [
         "Változatelőzmények törlése?"
@@ -10420,6 +10560,9 @@
       "Edit domain": [
         "Domain szerkesztése"
       ],
+      "Edit email address": [
+        "E-mail cím szerkesztése"
+      ],
       "Edit filter": [
         "Szűrő szerkesztése"
       ],
@@ -10446,6 +10589,9 @@
       ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -10551,6 +10697,9 @@
       "Import-Export app": [
         "Import-Export alkalmazás"
       ],
+      "Increase your privacy with more addresses": [
+        "Növelje adatai védelmét további e-mail címek használatával"
+      ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
@@ -10574,6 +10723,9 @@
       ],
       "Layout": [
         "Elrendezés"
+      ],
+      "Leave ${ organisationName }?": [
+        "Elhagyja a(z) ${ organisationName } szervezetet?"
       ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
@@ -10629,6 +10781,9 @@
       "Other calendars": [
         "Más naptárak"
       ],
+      "Other preferences": [
+        "Egyéb beállítások"
+      ],
       "Password": [
         "Jelszó"
       ],
@@ -10649,6 +10804,9 @@
       ],
       "PayPal verification failed": [
         "A PayPal ellenőrzés sikertelen"
+      ],
+      "Personalise your e-mail footer": [
+        "E-mail lábléc testreszabása"
       ],
       "Phone": [
         "Telefonszám"
@@ -10694,6 +10852,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Request sent": [
+        "Kérés elküldve"
       ],
       "Reset organization keys": [
         "Szervezeti kulcsok visszaállítása"
@@ -10743,6 +10904,9 @@
       "Select when you want this notification to be sent": [
         "Válassza ki az emlékeztető elküldésének időpontját"
       ],
+      "Send email reminders?": [
+        "Szeretne e-mail emlékeztetőket?"
+      ],
       "Session management": [
         "Munkamenet-kezelés"
       ],
@@ -10776,6 +10940,9 @@
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
+      "Sign in to join the Beta program": [
+        "Jelentkezzen be a Béta programhoz való csatlakozáshoz"
+      ],
       "Sign in with 2FA": [
         "Bejelentkezés kétlépcsős hitelesítéssel"
       ],
@@ -10788,11 +10955,17 @@
       "Signed in to member account": [
         "Bejelentkezve egy tagsági fiókba"
       ],
+      "SMTP submission": [
+        "SMTP beküldés"
+      ],
       "Sort folders alphabetically": [
         "Mappák rendezése betűrendbe"
       ],
       "Sort labels alphabetically": [
         "Címkék rendezése betűrendbe"
+      ],
+      "Spam, block, and allow lists": [
+        "Levélszemét, tiltó- és engedélyező listák"
       ],
       "Start a new import": [
         "Új importálás indítása"
@@ -10813,6 +10986,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
+      ],
+      "Summary": [
+        "Összegzés"
       ],
       "Switch to one-password mode": [
         "Egyjelszavas módra váltás"
@@ -10835,6 +11011,12 @@
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
+      "Two-factor authentication enforcement": [
+        "Kétlépcsős hitelesítés megkövetelése"
+      ],
+      "Two-factor authentication reminders": [
+        "Kétlépcsős hitelesítés emlékeztetők"
+      ],
       "Type": [
         "Típus"
       ],
@@ -10846,6 +11028,9 @@
       ],
       "Upgrade plan": [
         "Váltás nagyobb csomagra"
+      ],
+      "Upload CSV file to create multiple accounts": [
+        "CSV fájl feltöltése több fiók létrehozásához"
       ],
       "Users and addresses": [
         "Felhasználók és címek"
@@ -10876,6 +11061,9 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "E-mailt küldünk az új címére a megváltoztatás befejezéséhez szükséges útmutatóval."
       ],
       "What would you like to import?": [
         "Mit szeretne importálni?"
@@ -11122,11 +11310,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Bekapcsolásakor a nyilvános kulcs automatikusan csatolásra kerül minden kimenő üzenethez. A címzettek ezt használhatják a levél hitelességének ellenőrzésére és titkosított üzenetek küldésére önnek."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Válassza ki a nem ${ BRAND_NAME } PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik. További információk"
       ]
     },
     "Tooltip prompt to trust keys": {

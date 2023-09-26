@@ -11384,11 +11384,6 @@
         "यह आपके द्वारा भेजे जाने वाले प्रत्येक संदेश में स्वचालित रूप से आपकी सार्वजनिक कुंजी जोड़ता है। प्राप्तकर्ता इसका उपयोग आपके संदेशों की प्रामाणिकता को सत्यापित करने और आपको एन्क्रिप्टेड संदेश भेजने के लिए कर सकते हैं।"
       ]
     },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "डिफॉल्ट PGP सेटिंग चुने जिसका इस्तेमाल गैर-${ BRAND_NAME } PGP यूज़र के लिए संदेश पे हस्ताक्षर और एन्क्रिप्शन के लिए किया जाएगा। ध्यान रखे की इंलाइन PGP सादे टेक्सट के संदेश बलपूर्वक इस्तेमाल करता है। और जाने\n"
-      ]
-    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "किसी दूसरे ${ MAIL_APP_NAME } यूज़र से ईमेल लेते समय जिनके पास आपके संपर्को में विश्वास करी हुई चाबी नहीं है, एक बैनर पूछेगा कि अगर आप विश्वास करी हुई चाबी सक्षम करना चाहते हो।"
