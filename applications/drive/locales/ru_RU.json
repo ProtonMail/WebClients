@@ -559,6 +559,9 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
+      "Settings": [
+        "Настройки"
+      ],
       "Share file": [
         "Поделиться файлом"
       ],
@@ -582,6 +585,9 @@
       ],
       "Show preview": [
         "Показать предпросмотр"
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "Sign in": [
         "Войти"
@@ -622,11 +628,17 @@
       "Submit report": [
         "Отправить отчет"
       ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
+      ],
       "Toggle Calendar app": [
         "Переключить на приложение Календарь"
       ],
       "Toggle Contact app": [
         "Переключить на приложение Контакты"
+      ],
+      "Toggle settings": [
+        "Включить/выключить настройки"
       ],
       "Trust": [
         "Доверять"
@@ -2195,6 +2207,9 @@
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
       ],
+      "You have reached the contacts limit for your account": [
+        "Вы достигли лимита контактов для вашего аккаунта."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
       ],
@@ -3112,6 +3127,12 @@
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакта",
+        "${ contactsLength } контактов",
+        "${ contactsLength } контакта"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершен",
         "${ doneCount } завершены",
@@ -3171,6 +3192,12 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбран ${ selectedContactsLength } контакт из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контактов из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "Выбрано: ${ selectedCount }"
@@ -3273,6 +3300,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Вы уверены, что хотите сбросить импорт?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
@@ -3447,6 +3477,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
@@ -4042,6 +4075,9 @@
       "Trash": [
         "Корзина"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
+      ],
       "Try searching by file name, date, or type.": [
         "Попробуйте выполнить поиск по имени файла, дате или типу."
       ],
@@ -4331,6 +4367,9 @@
       ],
       "Bad": [
         "Плохо"
+      ],
+      "Beta Access": [
+        "Бета доступ"
       ],
       "Browser": [
         "Браузер"
@@ -4662,11 +4701,17 @@
       "Street address": [
         "Адрес"
       ],
+      "Sync with system": [
+        "Синхронизировать с системой"
+      ],
       "System information": [
         "Сведения о системе"
       ],
       "Text": [
         "Текст"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "This will permanently delete all files in your locked drive.": [
         "Это окончательно удалит все ваши файлы в вашем закрытом хранилище."
@@ -6000,6 +6045,9 @@
       "All": [
         "Все"
       ],
+      "All settings": [
+        "Все настройки"
+      ],
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
       ],
@@ -6487,8 +6535,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

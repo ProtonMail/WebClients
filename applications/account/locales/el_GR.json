@@ -5734,11 +5734,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -13495,8 +13495,8 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP που χρησιμοποιούνται στην υπογραφή και κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ${ BRAND_NAME }. Σημειώστε ότι το Ενσωματωμένο PGP επιβάλλει μηνύματα σκέτου κειμένου. Μάθετε περισσότερα"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Επιλέξτε τις προεπιλεγμένες ρυθμίσεις PGP που χρησιμοποιούνται στην υπογραφή και κρυπτογράφηση μηνυμάτων με χρήστες PGP εκτός ${ BRAND_NAME }. Σημειώστε ότι το Ενσωματωμένο PGP επιβάλλει μηνύματα σκέτου κειμένου."
       ]
     },
     "Tooltip prompt to trust keys": {

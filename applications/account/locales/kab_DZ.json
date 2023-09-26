@@ -4601,6 +4601,9 @@
         "${ userFound } useqdac yettwafen",
         "${ userFound } yiseqdacen yettwafen"
       ],
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } yesra tamahilt Secure Core."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
@@ -4905,11 +4908,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "Dedicated servers": [
-        "Iqeddacen yettwagen"
-      ],
       "dedicated servers": [
         "iqeddacen yettwagen"
+      ],
+      "Dedicated servers": [
+        "Iqeddacen yettwagen"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
@@ -5727,6 +5730,9 @@
       ],
       "URL link": [
         "Aseɣwen URL"
+      ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Seqdec inekcam-agi mi ara ad teqqneḍ ɣer yiqeddacen ${ VPN_APP_NAME } s war asnas. Kra n yimedyaten n useqdec: Tunnelblick di MacOS neɣ OpenVPN di GNU/Linux."
       ],
       "Users": [
         "Iseqdacen"
@@ -9075,6 +9081,12 @@
         "Tibzimin"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } uɛeggal i uwitay",
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen i uwitay"
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Sekcem tansa n yimayl neɣ isem n ugraw"
@@ -10189,6 +10201,9 @@
       "Edit domain": [
         "Beddel taɣult"
       ],
+      "Edit email address": [
+        "Ẓreg tansa n yimayl"
+      ],
       "Edit filter": [
         "Ẓreg amsizdeg"
       ],
@@ -10361,6 +10376,9 @@
       ],
       "Layout": [
         "Taneɣruft"
+      ],
+      "Leave ${ organisationName }?": [
+        "Eǧǧ ${ organisationName }?"
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
@@ -10717,6 +10735,9 @@
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Tettwanecdeḍ ad tɛerḍeḍ ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10941,11 +10962,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Ayagi ad yernu s wudem awurman tasarut tazayezt ɣer yiznan i tettazneḍ. Iɣerwaḍen zemren ad tt-sqedcen iwakken ad selknen asesteb n yiznan-inek yerna ad k-d-aznen iznan iwgelhanen."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Fren iɣewwaren PGP imezwer yettusqedcen i usezmel neɣ i uwgelhen n yiznan akked yiseqdacen PGP ur nseqdac ara ${ BRAND_NAME }. Ẓer belli Inline PGP yettḥettim iznan s uḍris aččuran. Issin ugar"
       ]
     },
     "Tooltip prompt to trust keys": {

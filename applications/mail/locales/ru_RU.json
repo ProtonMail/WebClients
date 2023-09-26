@@ -847,6 +847,9 @@
       "Search": [
         "Поиск"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Search in ${ option.text }": [
         "Искать в ${ option.text }"
       ],
@@ -895,6 +898,9 @@
       "Set": [
         "Задать"
       ],
+      "Set ${ MAIL_APP_NAME } as default email application": [
+        "Установите ${ MAIL_APP_NAME } в качестве приложения по умолчанию для электронной почты"
+      ],
       "Set as default": [
         "Установить по умолчанию"
       ],
@@ -906,6 +912,9 @@
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
+      ],
+      "Settings": [
+        "Настройки"
       ],
       "Share via link": [
         "Поделиться по ссылке"
@@ -946,6 +955,9 @@
       "Show preview": [
         "Показать предпросмотр"
       ],
+      "Show side panel": [
+        "Показать боковую панель"
+      ],
       "Sign in": [
         "Войти"
       ],
@@ -979,8 +991,14 @@
       "Stay": [
         "Остаться"
       ],
+      "Strikethrough": [
+        "Зачеркивание"
+      ],
       "Submit": [
         "Отправить"
+      ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
       ],
       "This message contains embedded images.": [
         "В этом сообщении есть встроенные изображения."
@@ -996,6 +1014,9 @@
       ],
       "Toggle Contact app": [
         "Переключить на приложение Контакты"
+      ],
+      "Toggle settings": [
+        "Включить/выключить настройки"
       ],
       "Tomorrow": [
         "Завтра"
@@ -1641,6 +1662,9 @@
       "azureish white": [
         "лазурно-белый"
       ],
+      "black": [
+        "черный"
+      ],
       "blanched almond": [
         "бланшированный миндаль"
       ],
@@ -1990,6 +2014,773 @@
       ],
       "Work": [
         "Рабочий"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазия"
+      ],
+      "Afghanistan": [
+        "Афганистан"
+      ],
+      "Albania": [
+        "Албания"
+      ],
+      "Algeria": [
+        "Алжир"
+      ],
+      "American Samoa": [
+        "Американское Самоа"
+      ],
+      "Andorra": [
+        "Андорра"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангилья"
+      ],
+      "Antarctica": [
+        "Антарктида"
+      ],
+      "Antigua and Barbuda": [
+        "Антигуа и Барбуда"
+      ],
+      "Argentina": [
+        "Аргентина"
+      ],
+      "Armenia": [
+        "Армения"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Остров Вознесения"
+      ],
+      "Australia": [
+        "Австралия"
+      ],
+      "Austria": [
+        "Австрия"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамские острова"
+      ],
+      "Bahrain": [
+        "Бахрейн"
+      ],
+      "Bangladesh": [
+        "Бангладеш"
+      ],
+      "Barbados": [
+        "Барбадос"
+      ],
+      "Belarus": [
+        "Белоруссия"
+      ],
+      "Belgium": [
+        "Бельгия"
+      ],
+      "Belize": [
+        "Белиз"
+      ],
+      "Benin": [
+        "Бенин"
+      ],
+      "Bermuda": [
+        "Бермуды"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Боливия"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Бонайре, Синт-Эстатиус и Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Босния и Герцеговина"
+      ],
+      "Botswana": [
+        "Ботсвана"
+      ],
+      "Bouvet Island": [
+        "Остров Буве"
+      ],
+      "Brazil": [
+        "Бразилия"
+      ],
+      "British Indian Ocean Territory": [
+        "Британская территория в Индийском океане"
+      ],
+      "Brunei Darussalam": [
+        "Бруней-Даруссалам"
+      ],
+      "Bulgaria": [
+        "Болгария"
+      ],
+      "Burkina Faso": [
+        "Буркина-Фасо"
+      ],
+      "Burundi": [
+        "Бурунди"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Острова Зеленого Мыса"
+      ],
+      "Cayman Islands": [
+        "Каймановы острова"
+      ],
+      "Central African Republic": [
+        "Центральноафриканская Республика"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чили"
+      ],
+      "China": [
+        "Китай"
+      ],
+      "Christmas Island": [
+        "Остров Рождества"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Кокосовые (Килинговые) острова"
+      ],
+      "Colombia": [
+        "Колумбия"
+      ],
+      "Comoros": [
+        "Коморские острова"
+      ],
+      "Congo": [
+        "Конго"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Демократическая Республика Конго"
+      ],
+      "Cook Islands": [
+        "Острова Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рика"
+      ],
+      "Croatia": [
+        "Хорватия"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасао"
+      ],
+      "Cyprus": [
+        "Кипр"
+      ],
+      "Czech Republic": [
+        "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Берег Слоновой Кости"
+      ],
+      "Denmark": [
+        "Дания"
+      ],
+      "Djibouti": [
+        "Джибути"
+      ],
+      "Dominica": [
+        "Доминика"
+      ],
+      "Dominican Republic": [
+        "Доминиканская Республика"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Египет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экваториальная Гвинея"
+      ],
+      "Eritrea": [
+        "Эритрея"
+      ],
+      "Estonia": [
+        "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
+      ],
+      "Ethiopia": [
+        "Эфиопия"
+      ],
+      "Falkland Islands": [
+        "Фолклендские острова"
+      ],
+      "Faroe Islands": [
+        "Фарерские острова"
+      ],
+      "Federated States of Micronesia": [
+        "Федеративные Штаты Микронезии"
+      ],
+      "Fiji": [
+        "Фиджи"
+      ],
+      "Finland": [
+        "Финляндия"
+      ],
+      "France": [
+        "Франция"
+      ],
+      "French Guiana": [
+        "Французская Гвиана"
+      ],
+      "French Polynesia": [
+        "Французская Полинезия"
+      ],
+      "French Southern Territories": [
+        "Французские Южные территории"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбия"
+      ],
+      "Georgia": [
+        "Грузия"
+      ],
+      "Germany": [
+        "Германия"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гибралтар"
+      ],
+      "Greece": [
+        "Греция"
+      ],
+      "Greenland": [
+        "Гренландия"
+      ],
+      "Grenada": [
+        "Гренада"
+      ],
+      "Guadeloupe": [
+        "Гваделупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватемала"
+      ],
+      "Guernsey": [
+        "Гернси"
+      ],
+      "Guinea": [
+        "Гвинея"
+      ],
+      "Guinea-Bissau": [
+        "Гвинея-Бисау"
+      ],
+      "Guyana": [
+        "Гайана"
+      ],
+      "Haiti": [
+        "Гаити"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Остров Херд и острова Макдональд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святой Престол (Государство-Город Ватикан)"
+      ],
+      "Honduras": [
+        "Гондурас"
+      ],
+      "Hong Kong": [
+        "Гонконг"
+      ],
+      "Hungary": [
+        "Венгрия"
+      ],
+      "Iceland": [
+        "Исландия"
+      ],
+      "India": [
+        "Индия"
+      ],
+      "Indonesia": [
+        "Индонезия"
+      ],
+      "International": [
+        "Международный"
+      ],
+      "Iran": [
+        "Иран"
+      ],
+      "Iraq": [
+        "Ирак"
+      ],
+      "Ireland": [
+        "Ирландия"
+      ],
+      "Isle of Man": [
+        "Остров Мэн"
+      ],
+      "Israel": [
+        "Израиль"
+      ],
+      "Italy": [
+        "Италия"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Япония"
+      ],
+      "Jersey": [
+        "Джерси"
+      ],
+      "Jordan": [
+        "Иордания"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кения"
+      ],
+      "Kiribati": [
+        "Кирибати"
+      ],
+      "Kosovo": [
+        "Косово"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвия"
+      ],
+      "Lebanon": [
+        "Ливан"
+      ],
+      "Lesotho": [
+        "Лесото"
+      ],
+      "Liberia": [
+        "Либерия"
+      ],
+      "Libya": [
+        "Ливия"
+      ],
+      "Liechtenstein": [
+        "Лихтенштейн"
+      ],
+      "Lithuania": [
+        "Литва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макао"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малави"
+      ],
+      "Malaysia": [
+        "Малайзия"
+      ],
+      "Maldives": [
+        "Мальдивы"
+      ],
+      "Mali": [
+        "Мали"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалловы Острова"
+      ],
+      "Martinique": [
+        "Мартиника"
+      ],
+      "Mauritania": [
+        "Мавритания"
+      ],
+      "Mauritius": [
+        "Маврикий"
+      ],
+      "Mayotte": [
+        "Майотта"
+      ],
+      "Mexico": [
+        "Мексика"
+      ],
+      "Moldova": [
+        "Молдавия"
+      ],
+      "Monaco": [
+        "Монако"
+      ],
+      "Mongolia": [
+        "Монголия"
+      ],
+      "Montenegro": [
+        "Черногория"
+      ],
+      "Montserrat": [
+        "Монтсеррат"
+      ],
+      "Morocco": [
+        "Марокко"
+      ],
+      "Mozambique": [
+        "Мозамбик"
+      ],
+      "Myanmar": [
+        "Мьянма"
+      ],
+      "Namibia": [
+        "Намибия"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нидерланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледония"
+      ],
+      "New Zealand": [
+        "Новая Зеландия"
+      ],
+      "Nicaragua": [
+        "Никарагуа"
+      ],
+      "Niger": [
+        "Нигер"
+      ],
+      "Nigeria": [
+        "Нигерия"
+      ],
+      "Niue": [
+        "Ниуэ"
+      ],
+      "Norfolk Island": [
+        "Остров Норфолк"
+      ],
+      "North Korea": [
+        "Северная Корея"
+      ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
+      "Northern Mariana Islands": [
+        "Северные Марианские Острова"
+      ],
+      "Norway": [
+        "Норвегия"
+      ],
+      "Oman": [
+        "Оман"
+      ],
+      "Pakistan": [
+        "Пакистан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палестина"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвинея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Филиппины"
+      ],
+      "Pitcairn": [
+        "Питкэрн"
+      ],
+      "Poland": [
+        "Польша"
+      ],
+      "Portugal": [
+        "Португалия"
+      ],
+      "Puerto Rico": [
+        "Пуэрто-Рико"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Реюньон"
+      ],
+      "Romania": [
+        "Румыния"
+      ],
+      "Russia": [
+        "Россия"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартельми"
+      ],
+      "Saint Helena": [
+        "Остров Святой Елены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сент-Китс и Невис"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсия"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартен (французская часть)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-Пьер и Микелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Винсент и Гренадины"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марино"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Томе и Принсипи"
+      ],
+      "Saudi Arabia": [
+        "Саудовская Аравия"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербия"
+      ],
+      "Seychelles": [
+        "Сейшелы"
+      ],
+      "Sierra Leone": [
+        "Сьерра-Леоне"
+      ],
+      "Singapore": [
+        "Сингапур"
+      ],
+      "Sint Maarten": [
+        "Сен-Мартен"
+      ],
+      "Slovakia": [
+        "Словакия"
+      ],
+      "Slovenia": [
+        "Словения"
+      ],
+      "Solomon Islands": [
+        "Соломоновы Острова"
+      ],
+      "Somalia": [
+        "Сомали"
+      ],
+      "South Africa": [
+        "Южная Африка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Южная Георгия и Южные Сандвичевы острова"
+      ],
+      "South Korea": [
+        "Южная Корея"
+      ],
+      "South Ossetia": [
+        "Южная Осетия"
+      ],
+      "South Sudan": [
+        "Южный Судан"
+      ],
+      "Spain": [
+        "Испания"
+      ],
+      "Sri Lanka": [
+        "Шри-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Суринам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпицберген и Ян-Майен"
+      ],
+      "Sweden": [
+        "Швеция"
+      ],
+      "Switzerland": [
+        "Швейцария"
+      ],
+      "Syria": [
+        "Сирия"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджикистан"
+      ],
+      "Tanzania": [
+        "Танзания"
+      ],
+      "Thailand": [
+        "Таиланд"
+      ],
+      "Timor-Leste": [
+        "Восточный Тимор"
+      ],
+      "Togo": [
+        "Того"
+      ],
+      "Tokelau": [
+        "Токелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Тринидад и Тобаго"
+      ],
+      "Tristan da Cunha": [
+        "Тристан да Кунья"
+      ],
+      "Tunisia": [
+        "Тунис"
+      ],
+      "Turkey": [
+        "Турция"
+      ],
+      "Turkmenistan": [
+        "Туркменистан"
+      ],
+      "Turks and Caicos Islands": [
+        "Острова Теркс и Кайкос"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украина"
+      ],
+      "United Arab Emirates": [
+        "Объединённые Арабские Эмираты"
+      ],
+      "United Kingdom": [
+        "Великобритания"
+      ],
+      "United States": [
+        "Соединенные Штаты Америки"
+      ],
+      "United States Minor Outlying Islands": [
+        "Внешние малые острова США"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекистан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "Вьетнам"
+      ],
+      "Virgin Islands, British": [
+        "Британские Виргинские острова"
+      ],
+      "Virgin Islands, U.S.": [
+        "Американские Виргинские острова"
+      ],
+      "Wallis and Futuna": [
+        "Уоллис и Футуна"
+      ],
+      "Western Sahara": [
+        "Западная Сахара"
+      ],
+      "Yemen": [
+        "Йемен"
+      ],
+      "Zambia": [
+        "Замбия"
+      ],
+      "Zimbabwe": [
+        "Зимбабве"
+      ],
+      "Åland Islands": [
+        "Аландские острова"
       ]
     },
     "CustomFilter": {
@@ -2697,6 +3488,9 @@
       "You did not provide a file.": [
         "Вы не предоставили файл."
       ],
+      "You have reached the contacts limit for your account": [
+        "Вы достигли лимита контактов для вашего аккаунта."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
       ],
@@ -3382,6 +4176,9 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Молодец, что делаешь свою электронную почту еще более безопасной, удобной и актуальной! Мы увеличили емкость бесплатного хранилища до общего объема в 1 ГБ."
       ],
+      "Changed accounts": [
+        "Измененные аккаунты"
+      ],
       "Checklist complete": [
         "Контрольный список завершен"
       ],
@@ -3390,6 +4187,9 @@
       ],
       "Congratulation, you completed all the steps!": [
         "Поздравления, вы завершили все шаги!"
+      ],
+      "Congratulation, you finished!": [
+        "Поздравляем, вы закончили!"
       ],
       "Continue setting up your email": [
         "Продолжить настройку вашей электронной почты"
@@ -3424,6 +4224,9 @@
       "Open checklist": [
         "Открыть чеклист"
       ],
+      "Open checklist and get free storage": [
+        "Откройте контрольный список и получите бесплатное хранилище"
+      ],
       "Popular online services": [
         "Популярные сервисы в сети"
       ],
@@ -3438,6 +4241,9 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Войдите в мобильное приложение, чтобы выполнить это действие"
+      ],
+      "Storage unlocked": [
+        "Хранилище разблокировано"
       ],
       "Update your logins": [
         "Обновите ваше имя пользователя"
@@ -3871,6 +4677,12 @@
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакта",
+        "${ contactsLength } контактов",
+        "${ contactsLength } контакта"
+      ],
       "${ count } unread message": [
         "${ count } непрочитанное сообщение",
         "${ count } непрочитанных сообщения",
@@ -3969,6 +4781,12 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбран ${ selectedContactsLength } контакт из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контактов из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
@@ -4138,6 +4956,9 @@
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Вы уверены, что хотите сбросить импорт?"
+      ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Вы уверены, что хотите переместить все сообщения из этого места в Архив?"
       ],
@@ -4237,6 +5058,9 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Country code": [
+        "Код страны"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Создать ${ calendarsToBeCreatedCount } новый календарь",
         "Создать ${ calendarsToBeCreatedCount } новых календаря",
@@ -4297,6 +5121,9 @@
       "Do you want to re-sign the contact details?": [
         "Вы хотите повторно подписать контакт?"
       ],
+      "Don't find what you are looking for? ${ displayAllMailButton }": [
+        "Не нашли то, что искали? ${ displayAllMailButton }"
+      ],
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
@@ -4323,6 +5150,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
       ],
       "Edit encryption": [
         "Изменить шифрование"
@@ -4492,6 +5322,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Включите спам и корзину в результаты поиска."
+      ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
       ],
@@ -4509,6 +5342,9 @@
       ],
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Присоединяйтесь к программе ${ PROTON_SENTINEL_NAME }, чтобы получить высочайший уровень безопасности аккаунта и поддержки."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -4566,6 +5402,9 @@
       ],
       "Merged": [
         "Объединённые"
+      ],
+      "Message download status:": [
+        "Статус загрузки сообщения:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Истечение срока действия сообщения работает по умолчанию при отправке писем другим пользователям ${ MAIL_APP_NAME }. Чтобы отправлять письма с истекающим сроком действия пользователям, вне ${ BRAND_NAME }, пожалуйста, отмените и добавьте защиту паролем к своей электронной почте."
@@ -4659,6 +5498,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
+      ],
+      "Open shortcut cheat sheet": [
+        "Открыть шпаргалку сочетаний клавиш"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, является ли оно подлинным."
@@ -4761,6 +5603,9 @@
       ],
       "Saved yesterday": [
         "Сохранено вчера"
+      ],
+      "Saved: ${ dateString }": [
+        "Сохранено: ${ dateString }"
       ],
       "Saving draft…": [
         "Сохранение черновика…"
@@ -5035,6 +5880,9 @@
       "Trackers blocked:": [
         "Заблокировано трекеров:"
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
+      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Выключите, чтобы искать только по дате, имени, адресу электронной почты или теме. Чтобы выключить поиск по содержимому сообщений и удалить загруженную копию сообщений перейдите в настройки."
       ],
@@ -5181,6 +6029,9 @@
       ],
       "You can either update your search query or ${ button }": [
         "Вы можете изменить ваш поисковый запрос или ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Вы можете либо изменить свой поисковый запрос, либо очистить его"
       ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
@@ -5642,6 +6493,9 @@
       "BCC": [
         "Cкрытая копия"
       ],
+      "Beta Access": [
+        "Бета доступ"
+      ],
       "Blind Carbon Copy": [
         "Скрытая копия"
       ],
@@ -5828,6 +6682,9 @@
       "Last month only": [
         "Только за последний месяц"
       ],
+      "Layout": [
+        "Разметка"
+      ],
       "Location": [
         "Место"
       ],
@@ -5963,6 +6820,9 @@
       "Street address": [
         "Адрес"
       ],
+      "Sync with system": [
+        "Синхронизировать с системой"
+      ],
       "Synchronize with system": [
         "Синхронизировать с системой"
       ],
@@ -5980,6 +6840,9 @@
       ],
       "the email was sent ${ label }": [
         "письмо было отправлено ${ label }"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Then": [
         "Затем"
@@ -7429,6 +8292,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "Изменить настройку"
+      ],
       "Email tracking protection": [
         "Защита от отслеживания электронной почты"
       ],
@@ -7993,6 +8859,9 @@
       ],
       "Addresses": [
         "Адреса"
+      ],
+      "All settings": [
+        "Все настройки"
       ],
       "Archive": [
         "Архив"
@@ -8571,8 +9440,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

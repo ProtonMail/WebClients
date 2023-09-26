@@ -5423,11 +5423,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -12776,11 +12776,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med brugere, som ikke benytter ${ BRAND_NAME }. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder. Læs mere"
       ]
     },
     "Tooltip prompt to trust keys": {

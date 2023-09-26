@@ -49,6 +49,10 @@
       "Apply": [
         "Toteuta"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -710,6 +714,10 @@
       ],
       "View invoice": [
         "Näytä lasku"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
       ],
       "Your 500 MB bonus": [
         "500 Mt bonuksesi"
@@ -2188,6 +2196,10 @@
       ],
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
       ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
@@ -6196,10 +6208,10 @@
         "Pysäytetäänkö siirrot?"
       ],
       "The link either does not exist or has expired": [
-        "Linkkiä ei ole olemassa tai se on erääntynyt"
+        "Linkkiä ei ole olemassa tai se on vanhentunut"
       ],
       "The link expired": [
-        "Linkki on erääntynyt"
+        "Linkki on vanhentunut"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tiedostolta puuttuu allekirjoitus tai se on virheellinen. Katso tietoja valitsemalla Valikko (⋮) → Tietoja."

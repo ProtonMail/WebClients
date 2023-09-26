@@ -11250,11 +11250,6 @@
         "发送邮件时自动附上您的公钥，以便收件人验证邮件真实性并向您回复加密邮件。"
       ]
     },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "选择面向非 ${ BRAND_NAME } 用户加密与数字签名的 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
-      ]
-    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "收到其他 ${ MAIL_APP_NAME } 用户的电子邮件，该用户在您的联系人中没有可信密钥时，将会有一个是否要启用可信密钥的横幅请求。"

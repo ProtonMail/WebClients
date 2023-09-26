@@ -797,6 +797,9 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
+      "Settings": [
+        "Настройки"
+      ],
       "Share": [
         "Поделиться"
       ],
@@ -866,6 +869,9 @@
       "Stay": [
         "Остаться"
       ],
+      "Strikethrough": [
+        "Зачеркивание"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -874,6 +880,9 @@
       ],
       "Switch account": [
         "Сменить аккаунт"
+      ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
       ],
       "Top up": [
         "Пополнить"
@@ -1027,6 +1036,17 @@
     "Action; decline invitation to share calendar": {
       "Decline": [
         "Отклонить"
+      ]
+    },
+    "Addon": {
+      "${ price } per dedicated server": [
+        "${ price } за выделенный сервер"
+      ],
+      "${ price } per domain": [
+        "${ price } за домен"
+      ],
+      "${ price } per user": [
+        "${ price } за пользователя"
       ]
     },
     "Address action": {
@@ -1516,6 +1536,9 @@
       ],
       "azureish white": [
         "лазурно-белый"
+      ],
+      "black": [
+        "черный"
       ],
       "blanched almond": [
         "бланшированный миндаль"
@@ -2945,6 +2968,11 @@
         "Вы отписались от ${ categoriesJsx }."
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Электронное письмо с подтверждением отправлено на ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Двухфакторная аутентификация"
@@ -3022,6 +3050,9 @@
       ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
+      ],
+      "Email address is invalid": [
+        "Недопустимый адрес электронной почты"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -3394,6 +3425,9 @@
       ],
       "You have no invoices.": [
         "У вас нет счетов."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Вы достигли лимита контактов для вашего аккаунта."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
@@ -4487,6 +4521,9 @@
       "Best deal": [
         "Лучшее предложение"
       ],
+      "Checkout": [
+        "Оформление покупки"
+      ],
       "Create your account": [
         "Создать аккаунт"
       ],
@@ -4504,6 +4541,9 @@
       ],
       "Label": [
         "Ярлык"
+      ],
+      "Location": [
+        "Расположение"
       ],
       "Name": [
         "Название"
@@ -5001,6 +5041,9 @@
       "${ current } of ${ total }": [
         "${ current } из ${ total }"
       ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } навсегда"
+      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } больше не будет сохранять предыдущие версии ваших файлов."
       ],
@@ -5048,6 +5091,9 @@
         "${ numberOfNonPrivateKeys } загруженных файла не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
+      ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } - это продвинутая программа для защиты аккаунта, которая защищает вас от злоумышленников и угроз безопасности при помощи мощных ИИ и круглосуточно работающих специалистов."
@@ -5117,6 +5163,9 @@
         "(${ memberCount } участника)",
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /месяц)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фильтровать, если ВСЕ из следующих условий выполнены)"
@@ -5340,6 +5389,9 @@
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Вы уверены, что хотите сбросить импорт?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы уверены, что хотите безвозвратно удалить все журналы доступа?"
       ],
@@ -5366,6 +5418,9 @@
       ],
       "Available on macOS, Windows, and Linux.": [
         "Доступно на macOS, Windows и Linux."
+      ],
+      "Awaiting transaction": [
+        "В ожидании транзакции"
       ],
       "Background color": [
         "Цвет фона"
@@ -5505,6 +5560,9 @@
       "Data locked": [
         "Данные заблокированы"
       ],
+      "Dedicated servers": [
+        "Выделенные серверы"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
@@ -5567,6 +5625,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -5658,8 +5719,14 @@
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
       ],
+      "Fill in user details": [
+        "Заполните данные пользователя"
+      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
+      ],
+      "for choosing ${ product }": [
+        "за выбор ${ product }"
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard и Discover - 3 цифры на обратной стороне вашей карты. Для American Express - 4 цифры на лицевой стороне вашей карты."
@@ -5991,8 +6058,14 @@
       "Not a valid URL": [
         "Недействительный URL"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Пока ещё не доступно в нашем мобильном приложении для Android."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Количество выделенных серверов в организации"
       ],
       "of": [
         "из"
@@ -6056,6 +6129,21 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
+      ],
+      "per month": [
+        "в месяц"
+      ],
+      "per month, billed every 12 months": [
+        "в месяц, оплачивается каждые 12 месяцев"
+      ],
+      "per month, billed every 15 months": [
+        "в месяц, оплачивается каждые 15 месяцев"
+      ],
+      "per month, billed every 24 months": [
+        "в месяц, оплачивается каждые 24 месяца"
+      ],
+      "per month, billed every 30 months": [
+        "в месяц, оплачивается каждые 30 месяцев"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Клиенты с поддержкой PGP, скорее всего, смогут автоматически определять ваши PGP-ключи, если исходящие сообщения будут подписаны."
@@ -6210,6 +6298,9 @@
       "Report link expired": [
         "Ссылка на отчет устарела"
       ],
+      "Resend verification email": [
+        "Отправить письмо с подтверждением еще раз"
+      ],
       "Restore": [
         "Восстановить"
       ],
@@ -6224,6 +6315,9 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
+      ],
+      "Saving your password": [
+        "Сохранение вашего пароля"
       ],
       "Scan QR code instead": [
         "Вместо этого отсканируйте QR-код"
@@ -6486,11 +6580,17 @@
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Чтобы избежать потери данных, удаляйте его только в том случае, если вы знаете, что делаете, или экспортировали копию."
       ],
+      "To cancel your subscription, please reach out to us.": [
+        "Чтобы отменить вашу подписку, пожалуйста, свяжитесь с нами."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
+      ],
+      "to continue to ${ product }": [
+        "чтобы продолжить в ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
@@ -6585,6 +6685,12 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
+      "Unverified": [
+        "Не подтвержденный"
+      ],
+      "Unverified email address.": [
+        "Неподтверждённый адрес эл. почты."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "До ${ FAMILY_MAX_USERS } пользователей"
       ],
@@ -6623,6 +6729,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Используйте выбранный адрес электронной почты в качестве имени пользователя SMTP во внешней службе и сгенерированный токен в качестве пароля SMTP."
+      ],
+      "Users": [
+        "Пользователи"
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -6663,6 +6772,9 @@
       "We couldn’t process your payment.": [
         "Нам не удалось обработать ваш платёж."
       ],
+      "We generated a strong password for you": [
+        "Мы сгенерировали для вас надежный пароль"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
@@ -6683,6 +6795,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
+      ],
+      "We'll get back to you shortly.": [
+        "Мы свяжемся с Вами в ближайшее время."
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -6974,6 +7089,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ],
+      "Your subscription will renew automatically on ${ renewalTime }.": [
+        "Ваша подписка будет автоматически продлена ${ renewalTime }."
       ]
     },
     "info": {
@@ -7018,6 +7136,11 @@
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Вы можете предотвратить истечение срока действия, повторно активировав подписку"
       ]
     },
     "Info when deleting payment method": {
@@ -8922,6 +9045,9 @@
       "Keep my ${ currentPlanName } account": [
         "Сохранить мой аккаунт ${ currentPlanName }"
       ],
+      "Upgrade": [
+        "Улучшить"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -9716,6 +9842,9 @@
       "An external address cannot be default": [
         "Внешний адрес не может быть адресом по умолчанию"
       ],
+      "Invalid code": [
+        "Недействительный код"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ с цифровым отпечатком ${ fp } удалён."
       ],
@@ -10209,11 +10338,20 @@
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "${ PASS_APP_NAME } защищает ваши пароли и личные данные с помощью строгого сквозного шифрования."
       ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } обеспечивает безопасность ваших паролей и личных данных с помощью сквозного шифрования. Чтобы добавить платные функции ${ PASS_APP_NAME_2 } к вашей текущей подписке, рекомендуем улучшить тариф до ${ upsellPlanName }."
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } хранит ваши пароли и личные данные в безопасности с помощью сквозного шифрования. Ваш текущий тариф уже предоставляет вам доступ к платным функциям ${ PASS_APP_NAME_2 } — нет необходимости покупать их снова."
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } в месяц"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Все премиальные сервисы ${ BRAND_NAME }."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Но вы можете разблокировать **${ unlockPlanTitle }** и все премиальные услуги ${ BRAND_NAME }, улучшив тариф до **${ upsellPlanTitle }** — это добавит лишь ${ relativePrice } в месяц."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Продолжая, вы соглашаетесь с нашими ${ termsAndConditions }"
@@ -10706,6 +10844,20 @@
         "Результаты не найдены"
       ]
     },
+    "Server-Info": {
+      "active": [
+        "активно"
+      ],
+      "inactive": [
+        "неактивно"
+      ],
+      "pending": [
+        "в ожидании"
+      ],
+      "to be created": [
+        "будет создан"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Завершите переход к конфиденциальности с нашими безопасными инструментами импорта и пересылки."
@@ -11151,6 +11303,23 @@
       ],
       "Add public, external, or shared calendars.": [
         "Добавьте публичные, внешние или общие календари."
+      ]
+    },
+    "Subscription": {
+      "Billed every 15 months": [
+        "Оплата каждые 15 месяцев"
+      ],
+      "Billed every 2 years": [
+        "Оплата каждые 2 года"
+      ],
+      "Billed every 30 months": [
+        "Оплата каждые 30 месяцев"
+      ],
+      "Billed monthly": [
+        "Ежемесячная оплата"
+      ],
+      "Billed yearly": [
+        "Ежегодная оплата"
       ]
     },
     "Subscription attribute": {
@@ -11820,6 +11989,9 @@
       "Add invoice details": [
         "Добавить сведения к счёту"
       ],
+      "Add new user": [
+        "Добавить нового пользователя"
+      ],
       "Add PayPal payment method": [
         "Добавить способ оплаты PayPal"
       ],
@@ -11834,6 +12006,9 @@
       ],
       "Add to spam list": [
         "Добавить в список спама"
+      ],
+      "Add user accounts": [
+        "Добавить учётную запись пользователя"
       ],
       "Address verification": [
         "Проверка адреса"
@@ -12060,6 +12235,9 @@
       "Delete user": [
         "Удалить пользователя"
       ],
+      "Delete user?": [
+        "Удалить пользователя?"
+      ],
       "Delete version history?": [
         "Очистить историю версий?"
       ],
@@ -12093,6 +12271,9 @@
       "Edit domain": [
         "Изменить домен"
       ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
       "Edit filter": [
         "Изменение фильтра"
       ],
@@ -12119,6 +12300,9 @@
       ],
       "Encryption and keys": [
         "Шифрование и ключи"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -12384,6 +12568,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Request sent": [
+        "Запрос отправлен"
+      ],
       "Reset organization keys": [
         "Сбросить ключи организации"
       ],
@@ -12468,6 +12655,9 @@
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
+      "Sign in to join the Beta program": [
+        "Войдите, чтобы присоединиться к программе \"Бета\""
+      ],
       "Sign in with 2FA": [
         "Войти с помощью двухфакторной аутентификации"
       ],
@@ -12516,6 +12706,9 @@
         "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов",
         "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов"
       ],
+      "Summary": [
+        "Сводка"
+      ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
       ],
@@ -12555,6 +12748,9 @@
       "Upgrade plan": [
         "Улучшить план"
       ],
+      "Upload CSV file to create multiple accounts": [
+        "Загрузите файл CSV, чтобы создать множество пользователей"
+      ],
       "Users and addresses": [
         "Пользователи и адреса"
       ],
@@ -12584,6 +12780,9 @@
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Мы отправим электронное письмо на ваш новый адрес с инструкцией для завершения изменения."
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
@@ -12708,6 +12907,9 @@
       ],
       "Plan": [
         "Тариф"
+      ],
+      "Servers": [
+        "Серверы"
       ],
       "Start date": [
         "Дата начала"
@@ -12882,11 +13084,6 @@
         "Таким способом можно автоматически добавлять ваш открытый ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
       ]
     },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Выберите настройки PGP по умолчанию, используемые для подписания или шифрования сообщений не пользователям ${ BRAND_NAME } PGP. Обратите внимание, что при использовании Встроенного PGP в сообщениях используется простой текст. Подробнее"
-      ]
-    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "При получении электронного письма от другого пользователя ${ MAIL_APP_NAME }, у которого в контактах нет доверенных ключей, появится баннер с вопросом, хотите ли вы включить доверенные ключи."
@@ -12986,6 +13183,20 @@
       ],
       "Replay video": [
         "Воспроизвести видео"
+      ]
+    },
+    "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Я нашел другой сервис, который мне больше нравится"
+      ],
+      "It’s missing a key feature": [
+        "Отсутствует ключевая функция"
+      ],
+      "It’s too expensive": [
+        "Слишком дорого"
+      ],
+      "Other": [
+        "Другое"
       ]
     },
     "VPN info": {

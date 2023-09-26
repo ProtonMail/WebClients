@@ -5846,11 +5846,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K privátním branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -13803,11 +13803,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Vyberte výchozí PGP nastavení pro podpis nebo šifrování zpráv s klienty, kteří nejsou uživateli ${ BRAND_NAME } PGP. Všiměte si, že Inline PGP kódování vynutí prostý text zprávy. Zjistěte více"
       ]
     },
     "Tooltip prompt to trust keys": {
