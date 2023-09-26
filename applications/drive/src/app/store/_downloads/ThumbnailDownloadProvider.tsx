@@ -13,7 +13,7 @@ interface DownloadProviderState {
         shareId: string,
         linkId: string,
         activeRevisionId?: string,
-        domRef?: React.MutableRefObject<any>
+        domRef?: React.MutableRefObject<unknown>
     ) => void;
 }
 
@@ -99,7 +99,7 @@ export const ThumbnailsDownloadProvider = ({
         shareId: string,
         linkId: string,
         activeRevisionId?: string,
-        domRef?: React.MutableRefObject<any>
+        domRef?: React.MutableRefObject<unknown>
     ) => {
         const downloadIdString = getDownloadIdString({
             shareId,
