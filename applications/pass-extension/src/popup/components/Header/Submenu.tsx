@@ -15,7 +15,7 @@ export type SubmenuLinkItem = {
     url?: string;
     icon: IconName;
     label: string;
-    actionTab?: () => void;
+    actionTab?: (...args: any[]) => any;
 };
 
 export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: SubmenuLinkItem[] }> = ({

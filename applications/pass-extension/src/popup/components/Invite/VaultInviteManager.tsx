@@ -4,26 +4,24 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, type ModalProps } from '@proton/components/components';
-import { selectUser, selectVaultWithItemsCount } from '@proton/pass/store';
-import { ShareRole } from '@proton/pass/types';
+import { Icon } from '@proton/components/components';
+import { selectVaultWithItemsCount } from '@proton/pass/store';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
+import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
 import { ShareMember } from '../Share/ShareMember';
 import { SharedVaultItem } from '../Vault/SharedVaultItem';
 
-type Props = ModalProps & { shareId: string };
+type Props = { shareId: string };
 
-export const VaultInviteManager: FC<Props> = ({ shareId, onClose, ...props }) => {
+export const VaultInviteManager: FC<Props> = ({ shareId }) => {
+    const { invite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const user = useSelector(selectUser);
-
-    const handleInviteClick = () => {};
 
     return (
-        <SidebarModal {...props} onClose={onClose}>
+        <SidebarModal onClose={close} open>
             <Panel
                 header={
                     <PanelHeader
@@ -34,12 +32,12 @@ export const VaultInviteManager: FC<Props> = ({ shareId, onClose, ...props }) =>
                                 icon
                                 pill
                                 shape="solid"
-                                onClick={onClose}
+                                onClick={close}
                             >
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            <Button key="modal-invite-button" color="norm" pill onClick={handleInviteClick}>
+                            <Button key="modal-invite-button" color="norm" pill onClick={() => invite(shareId)}>
                                 {c('Action').t`Invite people`}
                             </Button>,
                         ]}
@@ -47,30 +45,22 @@ export const VaultInviteManager: FC<Props> = ({ shareId, onClose, ...props }) =>
                 }
             >
                 <SharedVaultItem vault={vault} className="mt-3 mb-6" />
-                <ShareMember
-                    email={user?.Email}
-                    displayName={user?.DisplayName}
-                    role={ShareRole.ADMIN}
-                    className="mb-3"
-                    owner
-                    pending={false}
-                />
-                <ShareMember
-                    email={'editor@example.com'}
-                    displayName={'Editor'}
-                    role={ShareRole.WRITE}
-                    className="mb-3"
-                    owner={false}
-                    pending={false}
-                />
-                <ShareMember
-                    email={'the.tester@example.com'}
-                    displayName={'The Tester'}
-                    role={ShareRole.READ}
-                    className="mb-3"
-                    owner={false}
-                    pending
-                />
+
+                <div className="flex gap-y-3">
+                    {vault.invites?.map((pending) => (
+                        <ShareMember key={pending.inviteId} email={pending.invitedEmail} pending />
+                    ))}
+
+                    {vault.members?.map((member) => (
+                        <ShareMember
+                            key={member.email}
+                            email={member.email}
+                            pending={false}
+                            role={member.shareRoleId}
+                            owner={member.owner}
+                        />
+                    ))}
+                </div>
             </Panel>
         </SidebarModal>
     );

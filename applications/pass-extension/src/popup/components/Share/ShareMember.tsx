@@ -6,9 +6,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import type { Maybe } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
@@ -17,30 +15,15 @@ import { getShareRoleDefinition } from './ShareRoleOptions';
 import './ShareMember.scss';
 
 export type ShareMemberProps = {
-    email: Maybe<string>;
-    displayName: Maybe<string>;
-    role: ShareRole;
-    owner: boolean;
-    pending: boolean;
-    className?: string;
-};
+    email: string;
+    owner?: boolean;
+} & ({ role: ShareRole; pending: false } | { role?: never; pending: true });
 
-export const ShareMember: VFC<ShareMemberProps> = ({
-    email,
-    displayName,
-    role,
-    owner,
-    pending,
-    className,
-}: ShareMemberProps) => {
+export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false, pending }: ShareMemberProps) => {
     const [confirmTransfer, setConfirmTransfer] = useState(false);
-
     const canTransferOwnership = true;
 
-    const displayNameInitials = displayName
-        ?.split(' ')
-        .map((name) => name?.[0].toUpperCase())
-        .join('');
+    const initials = email.toUpperCase().slice(0, 2) ?? '';
 
     const { title, description } = useMemo(() => {
         if (owner) {
@@ -60,8 +43,8 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     }, [role, owner, pending]);
 
     return (
-        <div className={clsx(['flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3', className])}>
-            <Avatar className="mr-4 rounded-lg pass-member--avatar">{displayNameInitials}</Avatar>
+        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
+            <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex flex-align-items-center gap-1">

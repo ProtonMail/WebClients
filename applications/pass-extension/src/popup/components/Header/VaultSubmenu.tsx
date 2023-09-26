@@ -50,13 +50,14 @@ type VaultItemProps = {
     onSelect: () => void;
     onEdit?: () => void;
     onDelete?: () => void;
-    onShare?: () => void;
+    onInvite?: () => void;
+    onManage?: () => void;
 };
 
-const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
+const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
     evt.preventDefault();
     evt.stopPropagation();
-    handler();
+    handler?.();
 };
 
 export const VaultItem: VFC<VaultItemProps> = ({
@@ -67,10 +68,11 @@ export const VaultItem: VFC<VaultItemProps> = ({
     onSelect,
     onDelete,
     onEdit,
-    onShare,
+    onInvite,
+    onManage,
 }) => {
-    const withActions = onEdit || onDelete || onShare;
-    const showSharing = useFeatureFlag(PassFeature.PassSharingV1);
+    const withActions = onEdit || onDelete || onInvite || onManage;
+    const showSharing = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
 
     return (
         <DropdownMenuButton
@@ -93,22 +95,31 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             <DropdownMenuButton
                                 label={c('Action').t`Edit vault`}
                                 icon="pen"
-                                onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
+                                onClick={handleClickEvent(onEdit)}
                             />
                         )}
 
-                        {showSharing && (
+                        {showSharing && share.shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
-                                onClick={onShare ? (evt) => handleClickEvent(onShare)(evt) : undefined}
+                                onClick={handleClickEvent(onManage)}
+                                icon="users"
+                                label={c('Action').t`Manage access`}
+                            />
+                        )}
+
+                        {showSharing && !share.shared && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={handleClickEvent(onInvite)}
                                 icon="user-plus"
-                                label={c('Action').t`Share vault`}
+                                label={c('Action').t`Share`}
                             />
                         )}
 
                         <DropdownMenuButton
                             disabled={!onDelete}
-                            onClick={onDelete ? handleClickEvent(onDelete) : undefined}
+                            onClick={handleClickEvent(onDelete)}
                             label={c('Action').t`Delete vault`}
                             icon="trash"
                             danger
@@ -163,7 +174,8 @@ export const VaultSubmenu: VFC<{
     handleVaultDeleteClick: (vault: VaultShare) => void;
     handleVaultEditClick: (vault: VaultShare) => void;
     handleVaultCreateClick: () => void;
-    handleVaultShareClick: (vault: VaultShare) => void;
+    handleVaultInviteClick: (vault: VaultShare) => void;
+    handleVaultManageClick: (vault: VaultShare) => void;
     handleRestoreTrash: () => void;
     handleEmptyTrash: () => void;
 }> = ({
@@ -173,7 +185,8 @@ export const VaultSubmenu: VFC<{
     handleVaultDeleteClick,
     handleVaultEditClick,
     handleVaultCreateClick,
-    handleVaultShareClick,
+    handleVaultInviteClick,
+    handleVaultManageClick,
     handleRestoreTrash,
     handleEmptyTrash,
 }) => {
@@ -233,7 +246,8 @@ export const VaultSubmenu: VFC<{
                             onSelect={() => handleSelect(vault)}
                             onDelete={!isPrimary ? () => handleVaultDeleteClick(vault) : undefined}
                             onEdit={() => handleVaultEditClick(vault)}
-                            onShare={() => handleVaultShareClick(vault)}
+                            onInvite={() => handleVaultInviteClick(vault)}
+                            onManage={() => handleVaultManageClick(vault)}
                         />
                     );
                 })}
