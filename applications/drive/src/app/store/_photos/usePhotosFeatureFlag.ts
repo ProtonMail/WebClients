@@ -1,3 +1,3 @@
-import { FeatureCode, useFeature } from '@proton/components';
+import { useFlag } from '@proton/components';
 
-export const usePhotosFeatureFlag = () => useFeature(FeatureCode.DrivePhotos)?.feature?.Value;
+export const usePhotosFeatureFlag = () => useFlag('DrivePhotos');
