@@ -2296,6 +2296,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Se ativado, permite registrar dispositivos integrados (como Windows Hello, TouchID, FaceID, ou TPMs Internos) além de chaves de segurança de hardware externo"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
@@ -6765,6 +6768,9 @@
       ],
       "Verifying your payment...": [
         "Verificando seu pagamento..."
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
       ],
       "What's new": [
         "Novidades"

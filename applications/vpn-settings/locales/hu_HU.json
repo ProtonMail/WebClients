@@ -188,6 +188,12 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } választása"
       ],
+      "Get in touch": [
+        "Lépjen velünk kapcsolatba"
+      ],
+      "Get more": [
+        "Továbbiak beszerzése"
+      ],
       "Get more addresses": [
         "Több cím megszerzése"
       ],
@@ -205,6 +211,9 @@
       ],
       "Hide": [
         "Elrejtés"
+      ],
+      "Hide plan features": [
+        "Csomag részleteinek elrejtése"
       ],
       "Increase": [
         "Növel"
@@ -460,6 +469,20 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } saját domain név",
+        "${ domains } saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Address action": {
@@ -2827,6 +2850,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
       ],
+      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
+        "Használjon különböző típusú e-mail címeket és álneveket a ${ BRAND_NAME } segítségével."
+      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
       ],
@@ -2911,11 +2937,31 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből.",
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Könyveléshez személyre szabhatja és letöltheti számláit."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
       ],
       "You can now access and manage the account as an administrator.": [
         "Most adminisztrátorként érheti el és kezelheti a fiókot."
@@ -3650,6 +3696,10 @@
         "${ n } mappa és címke",
         "${ n } mappa és címke"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
       "${ n } label": [
         "${ n } címke",
         "${ n } címke"
@@ -3669,6 +3719,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN kapcsolat felhasználónként",
         "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
       ],
       "${ size } attachment size": [
         "${ size } melléklet méret"
@@ -3785,6 +3839,10 @@
       ],
       "Secure Core servers": [
         "Secure Core szerverek"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban",
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban"
       ],
       "Share calendar via link": [
         "Naptár megosztása hivatkozással"
@@ -3992,6 +4050,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
@@ -4113,6 +4175,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
+      ],
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -4623,6 +4689,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikált szerver",
+        "${ ipAddresses } dedikált szerver"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } nagysebességű VPN kapcsolat",
         "${ maxVpn } nagysebességű VPN kapcsolat"
@@ -4965,8 +5035,14 @@
       "Add invoice details": [
         "Számlázási adatok megadása"
       ],
+      "Add new user": [
+        "Új felhasználó hozzáadása"
+      ],
       "Add PayPal payment method": [
         "PayPal hozzáadása"
+      ],
+      "Add user accounts": [
+        "Felhasználói fiókok hozzáadása"
       ],
       "Allocate storage": [
         "Tárhely lefoglalása"
@@ -4983,11 +5059,20 @@
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
       ],
+      "Authentication security": [
+        "Hitelesítés biztonsága"
+      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
+      ],
+      "Cancel subscription": [
+        "Előfizetés lemondása"
+      ],
+      "Cancel subscription?": [
+        "Előfizetés lemondása?"
       ],
       "Card verification": [
         "Bankkártya ellenőrzése"
@@ -5021,6 +5106,9 @@
       ],
       "Confirm phone number": [
         "Telefonszám megerősítése"
+      ],
+      "Contact us": [
+        "Kapcsolatfelvétel"
       ],
       "Couldn’t create accounts": [
         "Fiókok létrehozása nem sikerült"
@@ -5062,8 +5150,15 @@
       "Delete account": [
         "Fiók törlése"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)",
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)"
+      ],
       "Delete user": [
         "Felhasználó törlése"
+      ],
+      "Delete user?": [
+        "Felhasználó törlése?"
       ],
       "Device connected!": [
         "Eszköz csatlakoztatva!"
@@ -5089,6 +5184,9 @@
       "Edit display name": [
         "Megjelenített név szerkesztése"
       ],
+      "Edit email address": [
+        "E-mail cím szerkesztése"
+      ],
       "Edit user": [
         "Felhasználó szerkesztése"
       ],
@@ -5097,6 +5195,9 @@
       ],
       "Email subscriptions": [
         "E-mail feliratkozás"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -5128,6 +5229,9 @@
       ],
       "Human verification": [
         "Robot ellenőrzés"
+      ],
+      "Increase your privacy with more addresses": [
+        "Növelje adatai védelmét további e-mail címek használatával"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -5219,6 +5323,9 @@
       "Request new code": [
         "Új kód kérése"
       ],
+      "Request sent": [
+        "Kérés elküldve"
+      ],
       "Reset organization keys": [
         "Szervezeti kulcsok visszaállítása"
       ],
@@ -5236,6 +5343,9 @@
       ],
       "Select a plan": [
         "Csomag kiválasztása"
+      ],
+      "Send email reminders?": [
+        "Szeretne e-mail emlékeztetőket?"
       ],
       "Set new password": [
         "Új jelszó beállítása"
@@ -5258,6 +5368,9 @@
       "Sign in": [
         "Bejelentkezés"
       ],
+      "Sign in to join the Beta program": [
+        "Jelentkezzen be a Béta programhoz való csatlakozáshoz"
+      ],
       "Sign in with 2FA": [
         "Bejelentkezés kétlépcsős hitelesítéssel"
       ],
@@ -5278,6 +5391,9 @@
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
+      "Summary": [
+        "Összegzés"
+      ],
       "Switch to one-password mode": [
         "Egyjelszavas módra váltás"
       ],
@@ -5286,6 +5402,12 @@
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
+      ],
+      "Two-factor authentication enforcement": [
+        "Kétlépcsős hitelesítés megkövetelése"
+      ],
+      "Two-factor authentication reminders": [
+        "Kétlépcsős hitelesítés emlékeztetők"
       ],
       "Type": [
         "Típus"
@@ -5296,6 +5418,9 @@
       "Unsupported browser": [
         "Nem támogatott böngésző"
       ],
+      "Upload CSV file to create multiple accounts": [
+        "CSV fájl feltöltése több fiók létrehozásához"
+      ],
       "Verification failed": [
         "Az ellenőrzés sikertelen"
       ],
@@ -5304,6 +5429,9 @@
       ],
       "Verifying your payment...": [
         "Fizetés ellenőrzése..."
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "E-mailt küldünk az új címére a megváltoztatás befejezéséhez szükséges útmutatóval."
       ],
       "What's new": [
         "Újdonságok"
