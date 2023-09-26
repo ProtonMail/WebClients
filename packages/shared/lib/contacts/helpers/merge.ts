@@ -157,7 +157,7 @@ export const extractNewValue = (
     mergedValues: any[] = []
 ): { isNewValue: boolean; newValue: any | undefined } => {
     //  the fields n and adr have to be treated separately since they are array-valued
-    if (['n', 'org'].includes(field)) {
+    if (['org'].includes(field)) {
         // value is an array in this case, whose elements can be strings or arrays of strings
 
         // compare with merged values. Normalize all strings
@@ -298,21 +298,6 @@ export const merge = (contacts: VCardContact[] = []): VCardContact => {
                 for (const property of contactProperties) {
                     const { field, group, value, params } = property;
                     const newGroup = group ? changeGroup[group] : group;
-
-                    // Manage first and last name merge
-                    if (field === 'n') {
-                        const mergedContactNFieldIndex = mergedContact.findIndex(({ field }) => field === 'n');
-                        const mergedValues = mergedContact.find(({ field }) => field === 'n');
-                        const [newLast, newFirst] = value;
-                        const [oldLast, oldFirst] = mergedValues?.value;
-
-                        if (mergedContactNFieldIndex && newLast && newLast !== oldLast) {
-                            mergedContact[mergedContactNFieldIndex].value[0] = newLast;
-                        }
-                        if (mergedContactNFieldIndex && newFirst && newFirst !== oldFirst) {
-                            mergedContact[mergedContactNFieldIndex].value[1] = newFirst;
-                        }
-                    }
 
                     if (!mergedProperties[field]) {
                         // an unseen property is directly merged
