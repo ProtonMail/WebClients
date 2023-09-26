@@ -4387,6 +4387,9 @@
       "Add a name to identify your security key with.": [
         "Дадайце назву для ідэнтыфікацыі вашага ключа бяспекі."
       ],
+      "Allow platform keys": [
+        "Дазволіць ключы платформы"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
       ],
@@ -5846,11 +5849,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8648,7 +8651,7 @@
         "Паказаць дадатковы часавы пояс"
       ],
       "Show sender images": [
-        "Паказаць відарысы адпраўніка"
+        "Паказваць відарысы адпраўніка"
       ],
       "Show unread count in Favicon": [
         "Паказваць колькасць непрачытаных у піктаграме сайта"
@@ -13803,11 +13806,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Аўтаматычна дадае ваш публічны ключ да кожнага адпраўленага паведамлення. Атрымальнікі могуць выкарыстоўваць яго, каб правяраць сапраўднасць вашых паведамленняў і адпраўляць вам зашыфраваныя паведамленні."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Выберыце прадвызначаныя налады PGP, якія будуць выкарыстоўвацца для падпісання або шыфравання паведамленняў карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME } PGP. Звярніце ўвагу, што ўбудаваны PGP прымусова адпраўляе паведамленні як звычайны тэкст. Даведацца больш"
       ]
     },
     "Tooltip prompt to trust keys": {

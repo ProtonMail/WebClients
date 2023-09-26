@@ -94,6 +94,10 @@
       "As Scheduled": [
         "Kuten ajoitettu"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -373,7 +377,7 @@
         "Laajenna URL"
       ],
       "Expiration time": [
-        "Erääntymisaika"
+        "Tuhoutumisaika"
       ],
       "Export": [
         "Vie"
@@ -779,10 +783,10 @@
         "Poista salaus"
       ],
       "Remove expiration time": [
-        "Poista erääntymisaika"
+        "Poista tuhoutumisaika"
       ],
       "Remove self-destruction": [
-        "Peru erääntyminen"
+        "Poista tuhoutuminen"
       ],
       "Remove this label": [
         "Poista tunniste"
@@ -841,6 +845,9 @@
       "Search": [
         "Hae"
       ],
+      "Search countries": [
+        "Etsi maista"
+      ],
       "Search in ${ option.text }": [
         "Etsi kohteesta ${ option.text }"
       ],
@@ -863,13 +870,13 @@
         "Valitse kaikki viestit"
       ],
       "Self-destruct in 7 days": [
-        "Eräänny seitsemän päivän kuluttua"
+        "Tuhoudu seitsemän päivän kuluttua"
       ],
       "Self-destruct message": [
-        "Aseta"
+        "Aseta tuhoutuminen"
       ],
       "Self-destruct on ...": [
-        "Erääntymisaika"
+        "Tuhoutumisaika"
       ],
       "Send": [
         "Lähetä"
@@ -899,7 +906,7 @@
         "Lisää salaus"
       ],
       "Set expiration time": [
-        "Aseta erääntymisaika"
+        "Aseta tuhoutumisaika"
       ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
@@ -1136,6 +1143,10 @@
       "Yes, I'll attend": [
         "Kyllä, osallistun"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
+      ],
       "Zoom in": [
         "Lähennä"
       ],
@@ -1178,7 +1189,7 @@
     },
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
-        "Erääntyvä viesti"
+        "Tuhoutuva viesti"
       ]
     },
     "Alert": {
@@ -1633,7 +1644,7 @@
         "Peru"
       ],
       "Cancel expiration": [
-        "Peru erääntyminen"
+        "Peru tuhoutuminen"
       ]
     },
     "Collapsible tooltip": {
@@ -2003,6 +2014,773 @@
       ],
       "Work": [
         "Työ"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abhasia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Amerikan Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua ja Barbuda"
+      ],
+      "Argentina": [
+        "Argentiina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Itävalta"
+      ],
+      "Azerbaijan": [
+        "Azerbaidžan"
+      ],
+      "Bahamas": [
+        "Bahama"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Valko-Venäjä"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius ja Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia ja Hertsegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetin saari"
+      ],
+      "Brazil": [
+        "Brasilia"
+      ],
+      "British Indian Ocean Territory": [
+        "Brittiläinen Intian valtameren alue"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodža"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Kap Verde"
+      ],
+      "Cayman Islands": [
+        "Caymansaaret"
+      ],
+      "Central African Republic": [
+        "Keski-Afrikan tasavalta"
+      ],
+      "Chad": [
+        "Tšad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Kiina"
+      ],
+      "Christmas Island": [
+        "Joulusaari"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kookossaaret (Keeling)"
+      ],
+      "Colombia": [
+        "Kolumbia"
+      ],
+      "Comoros": [
+        "Komorit"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongon demokraattinen tasavalta"
+      ],
+      "Cook Islands": [
+        "Cookinsaaret"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Kroatia"
+      ],
+      "Cuba": [
+        "Kuuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kypros"
+      ],
+      "Czech Republic": [
+        "Tšekin tasavalta"
+      ],
+      "Côte d'Ivoire": [
+        "Norsunluurannikko"
+      ],
+      "Denmark": [
+        "Tanska"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Dominikaaninen tasavalta"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypti"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Päiväntasaajan Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Viro"
+      ],
+      "Eswatini": [
+        "Swazimaa"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Falklandinsaaret"
+      ],
+      "Faroe Islands": [
+        "Färsaaret"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronesian liittovaltio"
+      ],
+      "Fiji": [
+        "Fidži"
+      ],
+      "Finland": [
+        "Suomi"
+      ],
+      "France": [
+        "Ranska"
+      ],
+      "French Guiana": [
+        "Ranskan Guayana"
+      ],
+      "French Polynesia": [
+        "Ranskan Polynesia"
+      ],
+      "French Southern Territories": [
+        "Ranskan eteläiset alueet"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Saksa"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Kreikka"
+      ],
+      "Greenland": [
+        "Grönlanti"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard ja McDonaldinsaaret"
+      ],
+      "Holy See (Vatican City State)": [
+        "Pyhä istuin (Vatikaanivaltio)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Unkari"
+      ],
+      "Iceland": [
+        "Islanti"
+      ],
+      "India": [
+        "Intia"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Kansainvälinen"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlanti"
+      ],
+      "Isle of Man": [
+        "Mansaari"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japani"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordania"
+      ],
+      "Kazakhstan": [
+        "Kazakstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisia"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Liettua"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malesia"
+      ],
+      "Maldives": [
+        "Malediivit"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshallinsaaret"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksiko"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mosambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Alankomaat"
+      ],
+      "New Caledonia": [
+        "Uusi-Kaledonia"
+      ],
+      "New Zealand": [
+        "Uusi-Seelanti"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolkinsaari"
+      ],
+      "North Korea": [
+        "Pohjois-Korea"
+      ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
+      ],
+      "Northern Mariana Islands": [
+        "Pohjois-Mariaanit"
+      ],
+      "Norway": [
+        "Norja"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestiina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua-Uusi-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filippiinit"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Puola"
+      ],
+      "Portugal": [
+        "Portugali"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Venäjä"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint-Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts ja Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint-Martin (Ranska)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre ja Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent ja Grenadiinit"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome ja Principe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabia"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychellit"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Salomonsaaret"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Etelä-Afrikka"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Etelä-Georgia ja eteläiset Sandwich-Saaret"
+      ],
+      "South Korea": [
+        "Etelä-Korea"
+      ],
+      "South Ossetia": [
+        "Etelä-Ossetia"
+      ],
+      "South Sudan": [
+        "Etelä-Sudan"
+      ],
+      "Spain": [
+        "Espanja"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Huippuvuoret ja Jan Mayen"
+      ],
+      "Sweden": [
+        "Ruotsi"
+      ],
+      "Switzerland": [
+        "Sveitsi"
+      ],
+      "Syria": [
+        "Syyria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadžikistan"
+      ],
+      "Tanzania": [
+        "Tansania"
+      ],
+      "Thailand": [
+        "Thaimaa"
+      ],
+      "Timor-Leste": [
+        "Itä-Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad ja Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turkki"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- ja Caicossaaret"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Arabiemiirikunnat"
+      ],
+      "United Kingdom": [
+        "Yhdistynyt kuningaskunta"
+      ],
+      "United States": [
+        "Yhdysvallat"
+      ],
+      "United States Minor Outlying Islands": [
+        "Yhdysvaltain pienet erillissaaret"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britannian Neitsytsaaret"
+      ],
+      "Virgin Islands, U.S.": [
+        "Yhdysvaltain Neitsytsaaret"
+      ],
+      "Wallis and Futuna": [
+        "Wallis ja Futuna"
+      ],
+      "Western Sahara": [
+        "Länsi-Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Sambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Ahvenanmaa"
       ]
     },
     "CustomFilter": {
@@ -2434,7 +3212,7 @@
         "Virheellinen sähköpostiosoite"
       ],
       "Invalid expiration time": [
-        "Virheellinen erääntymisaika"
+        "Virheellinen tuhoutumisaika"
       ],
       "Invalid name": [
         "Virheellinen nimi"
@@ -2608,7 +3386,7 @@
         "Tunnisteen nimi on liian pitkä. Valitse eri nimi."
       ],
       "The maximum expiration is 4 weeks": [
-        "Pisin mahdollinen erääntymisaika on 4 viikkoa"
+        "Pisin mahdollinen tuhoutumisaika on neljä viikkoa"
       ],
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
@@ -2667,6 +3445,10 @@
       "Wrong mailbox password": [
         "Väärä postilaatikon salasana"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä",
         "Voit samanaikaisesti kirjoittaa enintään ${ maxActiveComposer } viestiä"
@@ -2694,6 +3476,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistujaa"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3446,6 +4234,9 @@
       "Storage unlocked": [
         "Tallennustila avattu"
       ],
+      "This feature is currently unavailable": [
+        "Ominaisuus ei ole tällä hetkellä käytettävissä"
+      ],
       "Update your logins": [
         "Päivitä kirjautumistietosi"
       ],
@@ -4153,6 +4944,9 @@
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
       ],
+      "Country code": [
+        "Maakoodi"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
         "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -4246,7 +5040,7 @@
         "Muokkaa salausta"
       ],
       "Edit expiration time": [
-        "Muokkaa erääntymisaikaa"
+        "Muokkaa tuhoutumisaikaa"
       ],
       "Edit link": [
         "Muokkaa linkkiä"
@@ -4302,18 +5096,18 @@
         "Arvioidaan jäljellä olevaa aikaa..."
       ],
       "Expiration time": [
-        "Erääntymisaika"
+        "Tuhoutumisaika"
       ],
       "Expires in ${ formattedDate }": [
-        "Erääntyy ${ formattedDate } kuluttua"
+        "Tuhoutuu ${ formattedDate } kuluttua"
       ],
       "Expires in ${ minutesDiff } minute": [
-        "Erääntyy ${ minutesDiff } minuutin kuluttua",
-        "Erääntyy ${ minutesDiff } minuutin kuluttua"
+        "Tuhoutuu ${ minutesDiff } minuutin kuluttua",
+        "Tuhoutuu ${ minutesDiff } minuutin kuluttua"
       ],
       "Expires in less than ${ hoursDiff } hour": [
-        "Erääntyy vajaan ${ hoursDiff } tunnin kuluttua",
-        "Erääntyy vajaan ${ hoursDiff } tunnin kuluttua"
+        "Tuhoutuu vajaan ${ hoursDiff } tunnin kuluttua",
+        "Tuhoutuu vajaan ${ hoursDiff } tunnin kuluttua"
       ],
       "file attached": [
         "liitetiedosto",
@@ -4481,7 +5275,7 @@
         "Viestin lataustila:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Viestin erääntyminen toimii heti lähetettäessä viestejä muille ${ MAIL_APP_NAME } -käyttäjille. Lähettääksesi erääntyviä viestejä ${ BRAND_NAME }in ulkopuolisille käyttäjille, peru lähetys ja suojaa viesti salasanalla."
+        "Viestin tuhoutuminen toimii heti lähetettäessä viestejä muille ${ MAIL_APP_NAME } -käyttäjille. Lähettääksesi tuhoutuvia viestejä ${ BRAND_NAME }in ulkopuolisille käyttäjille, peru lähetys ja suojaa viesti salasanalla."
       ],
       "Message headers": [
         "Viestin otsakkeet"
@@ -4749,7 +5543,7 @@
         "SimpleLogin tarjoaa yksinkertaisen tavan käyttäjätunnusten luontiin epäluotettaviin verkkopalveluihin, joille et halua paljastaa todellista sähköpostiosoitettasi."
       ],
       "Sorry, this message does not exist or has already expired.": [
-        "Valitettavasti viestiä ei ole olemassa tai se on jo erääntynyt."
+        "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
       ],
       "Subject": [
         "Aihe"
@@ -4791,7 +5585,7 @@
         "Paikallista tietokantaa valmistellaan"
       ],
       "The message has expired": [
-        "Viesti on erääntynyt"
+        "Viesti on tuhoutunut"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Alkuperäistä viestiä, jota/johon olet välittämässä/vastaamassa, lähetetään. Jos jatkat, et voi enää kumota alkuperäisen viestin lähetystä."
@@ -4834,7 +5628,7 @@
         "Keskustelu sisältää viestejä, jotka eivät ole roskakorissa."
       ],
       "This conversation contains one or more expiring messages": [
-        "Tämä keskustelu sisältää yhden tai useamman vanhentuvan viestin"
+        "Tämä keskustelu sisältää ainakin yhden tuhoutuvan viestin"
       ],
       "This conversation contains trashed messages.": [
         "Keskustelu sisältää roskakorissa olevia viestejä."
@@ -4874,10 +5668,10 @@
         "Tämä viesti on allekirjoitettu liitetyllä avaimella, johon ei ole vielä luotettu."
       ],
       "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Viesti poistetaan automaattisesti ${ longDateMEssage }"
+        "Viesti tuhoutuu automaattisesti ${ longDateMEssage }"
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Viesti poistetaan automaattisesti klo ${ shortDateMessage }"
+        "Viesti tuhoutuu automaattisesti klo ${ shortDateMessage }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Viesti merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?",
@@ -4902,16 +5696,16 @@
         "Viesti lähetetään huomenna klo ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
-        "Viesti erääntyy ${ formattedDate }"
+        "Viesti tuhoutuu ${ formattedDate }"
       ],
       "This message will expire on ${ longDateMEssage }": [
-        "Viesti erääntyy ${ longDateMEssage }"
+        "Viesti tuhoutuu ${ longDateMEssage }"
       ],
       "This message will expire today at ${ shortDateMessage }": [
-        "Viesti erääntyy tänään klo ${ shortDateMessage }"
+        "Viesti tuhoutuu tänään klo ${ shortDateMessage }"
       ],
       "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Viesti erääntyy huomenna klo ${ shortDateMessage }"
+        "Viesti tuhoutuu huomenna klo ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
@@ -5052,13 +5846,13 @@
         "Viikko"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Milloin haluat viestisi poistuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
+        "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
       ],
       "When do you want your message to be sent?": [
         "Milloin haluat viestin lähtevän?"
       ],
       "When do you want your message to self-destruct?": [
-        "Milloin haluat viestisi poistuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
+        "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Kun jaat sähköpostiosoitteesi, käytä todellisen osoitteesi sijaan yksilöllistä, hävitettävää Hide-my-email-aliasta."
@@ -5207,14 +6001,14 @@
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "Viestisi erääntyy ${ numberOfDays } päivän kuluttua.",
-        "Viestisi erääntyy ${ numberOfDays } päivän kuluttua."
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua.",
+        "Viestisi tuhoutuu ${ numberOfDays } päivän kuluttua."
       ],
       "Your message will expire today.": [
-        "Viestisi erääntyy tänään."
+        "Viestisi tuhoutuu tänään."
       ],
       "Your message will expire tomorrow.": [
-        "Viestisi erääntyy huomenna."
+        "Viestisi tuhoutuu huomenna."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -5280,7 +6074,7 @@
         "Lisää salaus"
       ],
       "Add expiration time": [
-        "Lisää erääntymisaika"
+        "Lisää tuhoutumisaika"
       ],
       "Apply / open": [
         "Käytä/avaa"
@@ -6948,8 +7742,8 @@
         "Haluatko silti lähettää viestin?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Jos päätät silti lähettää viestin, lähetetään se seuraavalle vastaanottajalle ilman erääntymisaikaa:",
-        "Jos päätät silti lähettää viestin, lähetetään se seuraaville vastaanottajille ilman erääntymisaikaa:"
+        "Jos päätät silti lähettää viestin, lähetetään se seuraavalle vastaanottajalle ilman tuhoutumista:",
+        "Jos päätät silti lähettää viestin, lähetetään se seuraaville vastaanottajille ilman tuhoutumista:"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Seuraava osoite on virheellinen: ${ invalidAddresses }",
@@ -7524,7 +8318,7 @@
         "Viesti poistettiin"
       ],
       "Message expiration cancelled": [
-        "Viestin erääntyminen peruttiin"
+        "Viestin tuhoutuminen on peruttu"
       ],
       "Message marked as legitimate": [
         "Viesti merkittiin kelvolliseksi"
@@ -7586,10 +8380,10 @@
         "Lukukuittaus lähetettiin"
       ],
       "Self-destruction removed": [
-        "Erääntyminen peruttiin"
+        "Tuhoutuminen on peruttu"
       ],
       "Self-destruction set": [
-        "Erääntyminen asetettiin"
+        "Tuhoutuminen on asetettu"
       ],
       "Undo in progress": [
         "Kumotaan"
@@ -8062,7 +8856,7 @@
         "Viestilista"
       ],
       "Message will expire": [
-        "Viesti erääntyy"
+        "Viesti tuhoutuu"
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
@@ -8194,7 +8988,7 @@
         "Valitse yhteystietoryhmä"
       ],
       "Self-destruct message": [
-        "Erääntyvä viesti"
+        "Viestin tuhoutuminen"
       ],
       "Send email": [
         "Lähetä viesti"
@@ -8206,7 +9000,7 @@
         "Lähetetäänkö muuttuneilla asetuksilla?"
       ],
       "Send without expiration?": [
-        "Lähetetäänkö ilman erääntymistä?"
+        "Lähetetäänkö ilman tuhoutumista?"
       ],
       "Sender": [
         "Lähettäjä"

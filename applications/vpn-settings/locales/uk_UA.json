@@ -3304,7 +3304,7 @@
         "Сховище, використане цим користувачем"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Надішліть депозит за наступною адресою або відскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
+        "Надішліть депозит за наступною адресою або проскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -3370,7 +3370,7 @@
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Це може зайняти деякий час. Будь ласка, не закривайте цю сторінку і не від'єднуйтесь від Інтернету."
+        "Це може тривати деякий час. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
@@ -3954,7 +3954,7 @@
         "Конфігурація для з'єднання з ${ serverName }"
       ],
       "Confirm email": [
-        "Підтвердіть е-пошту"
+        "Підтвердьте е-пошту"
       ],
       "Confirm login password": [
         "Підтвердити пароль входу"
@@ -4978,7 +4978,7 @@
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Безпечний доступ до Інтернету з будь-якого місця з необхідним спостереженням мережі"
+        "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
@@ -5108,7 +5108,7 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в Інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
+        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу"
@@ -5527,7 +5527,7 @@
     },
     "plan customizer, ips": {
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
-        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка,${ contactHref } з нашим відділом продажів."
+        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка, ${ contactHref } з нашим відділом продажів."
       ]
     },
     "plan customizer, users": {
