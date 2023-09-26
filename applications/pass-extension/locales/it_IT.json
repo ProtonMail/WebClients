@@ -42,7 +42,7 @@
         "Scegli un file o trascinalo qui"
       ],
       "Clear": [
-        "Elimina"
+        "Cancella"
       ],
       "Clear search": [
         "Cancella ricerca"
@@ -108,7 +108,7 @@
         "Cancella la password"
       ],
       "Delete permanently": [
-        "Elimina permanentemente"
+        "Elimina definitivamente"
       ],
       "Delete vault": [
         "Elimina cassaforte"
@@ -132,7 +132,7 @@
         "Esporta"
       ],
       "Feedback": [
-        "Suggerimento"
+        "Feedback"
       ],
       "Fill password": [
         "Inserisci password"
@@ -294,7 +294,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Elenco di domini in cui alcune funzioni automatiche in ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non devono essere eseguite."
+        "Elenco di domini in cui alcune funzioni automatiche in ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non dovrebbero essere eseguite."
       ]
     },
     "Error": {
@@ -420,7 +420,7 @@
         "Qualcosa è andato storto"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Qualcosa è andato storto. Ricarica l'estensione di ${ PASS_APP_NAME }. Questa problematica è stata registrata"
+        "Qualcosa è andato storto. Ricarica l'estensione di ${ PASS_APP_NAME }. Questa problema è stato registrato"
       ],
       "The file you are trying to import is empty": [
         "Il file che stai tentando di importare è vuoto"
@@ -470,7 +470,7 @@
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -642,13 +642,13 @@
         "Se disabilitato, ${ PASS_APP_NAME } non ti chiederà più di salvare o aggiornare le tue credenziali."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non ti proporrà più la creazione di un alias email nei moduli di registrazione."
+        "Se disabilitato, ${ PASS_APP_NAME } non ti suggerirà la creazione di un alias email nei moduli di registrazione."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non ti proporrà più la generazione di password efficaci nei moduli di registrazione."
+        "Se disabilitato, ${ PASS_APP_NAME } non ti suggerirà la generazione di password sicure nei moduli di registrazione."
       ],
       "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Se abilitato, il menu di riempimento automatico si aprirà una volta selezionato il campo."
+        "Se abilitato, il menu di compilazione automatica si aprirà una volta selezionato il campo."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Se abilitato, potrai compilare istantaneamente le tue credenziali cliccando sull'icona di ${ PASS_APP_NAME }."
@@ -935,7 +935,7 @@
         "Alfabetico"
       ],
       "Application logs": [
-        "Registri dell'applicazione"
+        "Log dell'applicazione"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Blocco automatico di ${ PASS_APP_NAME }"
@@ -944,7 +944,7 @@
         "Blocca automaticamente dopo"
       ],
       "Autofill": [
-        "Riempimento automatico"
+        "Compilazione automatica"
       ],
       "Autofill 2FA": [
         "Compilazione automatica 2FA"
@@ -1070,7 +1070,7 @@
         "Ultime 2 settimane"
       ],
       "Last autofill": [
-        "Ultimo riempimento automatico"
+        "Ultima compilazione automatica"
       ],
       "Last month": [
         "Mese precedente"
@@ -1362,7 +1362,7 @@
         "Cerca in tutte le casseforti"
       ],
       "Search in Trash": [
-        "Cerca nel Cestino"
+        "Cerca nel cestino"
       ],
       "Select a suffix": [
         "Seleziona un suffisso"
@@ -1412,7 +1412,7 @@
         "Inserisci il tuo Pin"
       ],
       "Fill & copy password": [
-        "Riempi e copia la password"
+        "Compila e copia la password"
       ],
       "Get the mobile apps": [
         "Ottieni le app mobili"

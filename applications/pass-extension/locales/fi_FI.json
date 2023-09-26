@@ -526,6 +526,9 @@
         "${ count } kohde",
         "${ count } kohdetta"
       ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } tuo vain kirjautumistiedot ja muistiinpanot. Passeja, liitetiedostoja ja muita tietoja ei tällä hetkellä tueta."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } kerran",
         "${ revisionNumber } kertaa"
@@ -728,7 +731,7 @@
         "Avaa laajennusvalikko"
       ],
       "Password copied": [
-        "Salasana kopioitu"
+        "Salasana kopioitiin"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
@@ -749,7 +752,7 @@
         "Viimeistele automaattilukituksen asetus vahvistamalla PIN-koodisi."
       ],
       "Please consider leaving a review.": [
-        "Harkitse arvostelun kirjoitusta."
+        "Harkitse arvostelun kirjoittamista."
       ],
       "Please enter your current pin code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"
@@ -835,6 +838,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
       ],
       "You are about to create:": [
         "Luot aliasta:"
@@ -1019,7 +1025,7 @@
         "Salaa ${ PASS_APP_NAME } -tietojesi vientitiedosto"
       ],
       "Expires on": [
-        "Erääntyy"
+        "Voimassaolo päättyy"
       ],
       "Export": [
         "Vienti"
@@ -1424,7 +1430,7 @@
         "Tuo holviin/holveihin"
       ],
       "Low disk space": [
-        "Levytila lopussa"
+        "Vapaa levytila vähissä"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
@@ -1521,7 +1527,7 @@
         "Tyhjä muistiinpano"
       ],
       "Expiration Date is incomplete": [
-        "Erääntymisaika on puutteellinen"
+        "Voimassaolon päättymisaika on puutteellinen"
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
