@@ -128,8 +128,11 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
             <div className="searchbox flex-item-centered-vert">
                 <Input
                     {...inputProps}
-                    placeholder={c('Placeholder').t`Search settings`}
-                    prefix={<Icon name="magnifier" alt={c('Action').t`Search settings`} />}
+                    placeholder={
+                        /** Translator: Translate as the action to search in the settings */
+                        c('Action').t`Search settings`
+                    }
+                    prefix={<Icon name="magnifier" />}
                     className="pl-0"
                     ref={inputRef}
                     containerRef={containerRef}
