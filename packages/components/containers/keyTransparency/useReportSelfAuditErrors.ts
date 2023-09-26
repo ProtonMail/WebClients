@@ -36,7 +36,7 @@ const useReportSelfAuditErrors = () => {
         const tooManyRetries = selfAuditResult.error?.tooManyRetries;
 
         if (
-            failedAddressAudits.filter(({ status }) => status === AddressAuditStatus.Failure) ||
+            failedAddressAudits.filter(({ status }) => status === AddressAuditStatus.Failure).length ||
             failedLSAuditsOwn.length ||
             failedLSAuditsOther.length ||
             tooManyRetries
