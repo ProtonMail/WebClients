@@ -6,8 +6,6 @@ export const boot = () => 'boot';
 export const syncing = () => 'syncing';
 export const wakeup = (endpoint: ExtensionEndpoint, tabId: TabId) => `wakeup-${endpoint}-${tabId}`;
 
-export const workerReady = (endpoint: ExtensionEndpoint, tabId: TabId) => `wakeup-${endpoint}-${tabId}`;
-
 export const vaultCreate = (shareId: string) => `vault-create-request-${shareId}`;
 export const vaultEdit = (shareId: string) => `vault-edit-request-${shareId}`;
 export const vaultDelete = (shareId: string) => `vault-delete-request-${shareId}`;

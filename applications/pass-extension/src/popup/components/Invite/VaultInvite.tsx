@@ -1,5 +1,5 @@
-import { type FC, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -8,12 +8,11 @@ import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { selectVaultWithItemsCount, vaultInviteCreationIntent } from '@proton/pass/store';
 import { ShareRole } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import type { InviteFormValues } from '../../../shared/form/types';
 import { validateShareInviteValues } from '../../../shared/form/validator/validate-vaultInvite';
-import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
@@ -25,11 +24,8 @@ type Props = { shareId: string };
 export const VaultInvite: FC<Props> = ({ shareId }) => {
     const { close, manage } = useInviteContext();
 
-    const dispatch = useDispatch();
-
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const inviteId = useMemo(() => uniqueId(), []);
-    const [loading, setLoading] = useState(false);
+    const createInvite = useActionWithRequest(vaultInviteCreationIntent, { onSuccess: () => manage(shareId) });
 
     const form = useFormik<InviteFormValues>({
         initialValues: { step: 'email', email: '', role: ShareRole.READ },
@@ -40,18 +36,9 @@ export const VaultInvite: FC<Props> = ({ shareId }) => {
                 case 'email':
                     return setFieldValue('step', 'permissions');
                 case 'permissions':
-                    dispatch(vaultInviteCreationIntent(inviteId, { email, role, shareId }));
+                    createInvite.dispatch({ email, role, shareId });
                     break;
             }
-        },
-    });
-
-    useRequestStatusEffect(inviteId, {
-        onStart: () => setLoading(true),
-        onFailure: () => setLoading(false),
-        onSuccess: () => {
-            setLoading(false);
-            manage(shareId);
         },
     });
 
@@ -77,7 +64,7 @@ export const VaultInvite: FC<Props> = ({ shareId }) => {
                                 type="submit"
                                 color="norm"
                                 pill
-                                disabled={loading || !form.isValid || !form.dirty}
+                                disabled={createInvite.loading || !form.isValid || !form.dirty}
                                 form={FORM_ID}
                             >
                                 {form.values.step === 'email' ? c('Action').t`Continue` : c('Action').t`Send invite`}
