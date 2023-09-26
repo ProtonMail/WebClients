@@ -64,7 +64,7 @@ export const VaultInviteForm: FC<Props> = ({ vault, form }) => {
                     </button>
                     <div className="border border-norm rounded pl-4 py-3">
                         <Field
-                            name="permission"
+                            name="role"
                             className="flex flex-nowrap gap-2 mr-0"
                             component={RadioGroupField}
                             options={shareRoleOptions()}
