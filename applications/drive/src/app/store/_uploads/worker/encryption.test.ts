@@ -257,20 +257,21 @@ describe('block generator', () => {
             });
         });
 
-        it(`should throw if the verifier throws`, async () => {
+        it(`should throw if the verifier throws and notify sentry`, async () => {
             const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
 
             const file = new File(['a'.repeat(32)], 'foo.txt');
             const thumbnailData = undefined;
 
             const verifier = jest.fn(() => Promise.reject(new Error('oh no')));
+            const notifySentry = jest.fn();
             const generator = generateBlocks(
                 file,
                 thumbnailData,
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
-                noop,
+                notifySentry,
                 mockHasher,
                 verifier
             );
@@ -278,6 +279,7 @@ describe('block generator', () => {
             const blocks = asyncGeneratorToArray(generator);
 
             await expect(blocks).rejects.toThrow();
+            expect(notifySentry).toBeCalled();
         });
     });
 });
