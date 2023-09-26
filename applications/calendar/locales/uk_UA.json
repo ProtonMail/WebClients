@@ -2835,6 +2835,12 @@
     "Event info in search view; event duration": {
       "All day": [
         "Увесь день"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Увесь день, протягом ${ plusDaysToEnd } дня",
+        "Увесь день, протягом ${ plusDaysToEnd } днів",
+        "Увесь день, протягом ${ plusDaysToEnd } днів",
+        "Увесь день, протягом ${ plusDaysToEnd } днів"
       ]
     },
     "Event info. Organizer name": {
