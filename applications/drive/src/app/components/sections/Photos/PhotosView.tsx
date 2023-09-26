@@ -18,7 +18,7 @@ export const PhotosView: FC<void> = () => {
     const thumbnails = useThumbnailsDownload();
 
     const handleItemRender = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<any>) => {
+        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
             if (shareId) {
                 thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
             }
