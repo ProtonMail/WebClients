@@ -5717,11 +5717,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -13422,11 +13422,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Dit voert automatisch uw openbare sleutel toe aan ieder bericht dat u verzendt. Geadresseerden kunnen de authenticiteit van uw berichten verifiëren en versleutelde berichten aan u versturen."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selecteer de standaard PGP-instellingen die worden gebruikt voor het ondertekenen of versleutelen van berichten met niet-${ BRAND_NAME }-gebruikers. Merk op dat Inline PGP-gebruikers berichten zonder opmaak weergeven. Meer informatie"
       ]
     },
     "Tooltip prompt to trust keys": {
