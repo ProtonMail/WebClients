@@ -1,9 +1,8 @@
 import { fromUnixTime, isThisYear, isToday } from 'date-fns';
 import { c } from 'ttag';
 
-import { dateLocale } from '@proton/shared/lib/i18n';
-
 import type { PhotoGridItem, PhotoLink } from '../interface';
+import { getMonthFormatter, getMonthYearFormatter } from './dateFormatter';
 
 const dateToCategory = (timestamp: number): string => {
     const date = fromUnixTime(timestamp);
@@ -11,10 +10,10 @@ const dateToCategory = (timestamp: number): string => {
     if (isToday(date)) {
         return c('Info').t`Today`;
     } else if (isThisYear(date)) {
-        return new Intl.DateTimeFormat(dateLocale.code, { month: 'long' }).format(date);
+        return getMonthFormatter().format(date);
     }
 
-    return new Intl.DateTimeFormat(dateLocale.code, { month: 'long', year: 'numeric' }).format(date);
+    return getMonthYearFormatter().format(date);
 };
 
 export const flattenWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
