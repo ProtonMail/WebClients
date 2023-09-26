@@ -5734,11 +5734,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -13495,11 +13495,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Esto añade automáticamente tu clave pública a cada mensaje que envíes. Los destinatarios pueden utilizar esto para verificar la autenticidad de tus mensajes y enviarte mensajes cifrados."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selecciona la configuración PGP por defecto que se utiliza para firmar o cifrar mensajes con usuarios PGP que no sean de ${ BRAND_NAME }. Ten en cuenta que la función Inline/PGP fuerza los mensajes en texto plano. Más información"
       ]
     },
     "Tooltip prompt to trust keys": {

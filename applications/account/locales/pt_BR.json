@@ -4353,6 +4353,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Se ativado, permite registrar dispositivos integrados (como Windows Hello, TouchID, FaceID, ou TPMs Internos) além de chaves de segurança de hardware externo"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
@@ -5734,11 +5737,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -13183,6 +13186,9 @@
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
+      ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
@@ -13510,11 +13516,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Isso adiciona automaticamente sua chave pública a cada mensagem que você enviar. Os destinatários podem usar isso para verificar a autenticidade de suas mensagens e enviar mensagens criptografadas para você."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selecione as configurações PGP básicas usadas para assinar ou criptografar mensagens com não usuários ${ BRAND_NAME } ou PGP. Observe que o Inline PGP força mensagens em texto simples. Leia mais"
       ]
     },
     "Tooltip prompt to trust keys": {

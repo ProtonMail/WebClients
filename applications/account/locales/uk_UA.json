@@ -4684,7 +4684,7 @@
         "Налаштуйте ${ strongText } із Gmail"
       ],
       "Update your logins": [
-        "Оновіть свої логіни"
+        "Оновіть свої записи входу"
       ]
     },
     "Gmail forwarding": {
@@ -5843,11 +5843,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
@@ -6762,7 +6762,7 @@
         "Зберігайте цей пароль і файл у надійному місці. Вам потрібно буде знову імпортувати ваш ключ."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Надішліть депозит за наступною адресою або відскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
+        "Надішліть депозит за наступною адресою або проскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -6864,7 +6864,7 @@
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Це може зайняти деякий час. Будь ласка, не закривайте цю сторінку і не від'єднуйтесь від Інтернету."
+        "Це може тривати деякий час. Не закривайте цю сторінку та не від'єднуйтесь від інтернету."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
@@ -8129,7 +8129,7 @@
         "Конфігурація для з'єднання з ${ serverName }"
       ],
       "Confirm email": [
-        "Підтвердіть е-пошту"
+        "Підтвердьте е-пошту"
       ],
       "Confirm link URLs": [
         "Підтвердити URL-адреси посилань"
@@ -10031,7 +10031,7 @@
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Безпечний доступ до Інтернету з будь-якого місця з необхідним спостереженням мережі"
+        "Безпечний доступ до інтернету де завгодно з обов'язковим моніторингом мережі"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
@@ -10180,7 +10180,7 @@
         "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в Інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
+        "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу"
@@ -10868,7 +10868,7 @@
         "Почніть використовувати ${ appName } зараз"
       ],
       "Upgrade for only ${ relativePrice } extra per month": [
-        "Поліпшіть тарифний план лише за ${ relativePrice } на місяць"
+        "Покращте тарифний план лише за ${ relativePrice } на місяць"
       ],
       "Upgrade my plan": [
         "Поліпшити тарифний план"
@@ -10928,7 +10928,7 @@
         "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню. Щоб додати преміум функції ${ PASS_APP_NAME_2 } до поточної підписки, радимо перейти на тарифний план ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню. Ваш поточний тарифний план вже надає вам доступ до преміум функцій ${ PASS_APP_NAME_2 } — не потрібно купувати знову."
+        "${ PASS_APP_NAME } зберігає ваші паролі та особисті дані в безпеці завдяки суворому наскрізному шифруванню. Ваш поточний тарифний план вже надає вам доступ до преміальних функцій ${ PASS_APP_NAME_2 } — не потрібно купувати знову."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } на місяць"
@@ -10997,7 +10997,7 @@
         "Це єдиний спосіб повністю відновити свій обліковий запис, тому переконайтеся, що ви зберігаєте цей ** комплект відновлення ** десь у безпеці."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб залишатися в безпеці в Інтернеті"
+        "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб бути в безпеці онлайн"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
@@ -11060,13 +11060,13 @@
         "Працює на всіх пристроях"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
-        "Ви вже маєте доступ до преміум функцій ${ appName } — не потрібно купувати знову."
+        "Ви вже маєте доступ до преміальних функцій ${ appName } — не потрібно купувати знову."
       ],
       "You currently have": [
         "Наразі у вас є"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Ваша організація має доступ до ${ free }. Якщо ви хочете отримати доступ до преміум функцій ${ appName }, попросіть адміністратора вашої організації поліпшити підписку."
+        "Ваша організація має доступ до ${ free }. Якщо ви хочете отримати доступ до преміальних функцій ${ appName }, попросіть адміністратора вашої організації поліпшити підписку."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -11217,7 +11217,7 @@
     },
     "plan customizer, ips": {
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
-        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка,${ contactHref } з нашим відділом продажів."
+        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка, ${ contactHref } з нашим відділом продажів."
       ]
     },
     "plan customizer, users": {
@@ -13723,7 +13723,7 @@
         "Імпортування розпочнеться з найновіших повідомлень."
       ],
       "The Internet Service Provider of the IP address": [
-        "Інтернет-провайдер IP-адреси"
+        "Інтернет-провайдер цієї IP-адреси"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
@@ -13800,11 +13800,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Це автоматично додає ваш відкритий ключ до кожного повідомлення, яке ви надсилаєте. Отримувачі можуть використовувати його для перевірки надійності ваших повідомлень і надсилання вам зашифрованих повідомлень."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ${ BRAND_NAME }. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту. Докладніше"
       ]
     },
     "Tooltip prompt to trust keys": {
