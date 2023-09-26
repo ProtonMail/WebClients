@@ -45,15 +45,15 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
             : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
               c('Title').ngettext(msgid`Delete ${count} contact group`, `Delete ${count} contact groups`, count);
 
-    const alertText =
-        count === 1
-            ? c('Warning').t`Are you sure you want to permanently delete this contact group?`
-            : // tranlator: the variable is a positive integer (written in digits) always greater than 1
-              c('Warning').ngettext(
-                  msgid`Are you sure you want to permanently delete ${count} contact group?`,
-                  `Are you sure you want to permanently delete ${count} contact groups?`,
-                  count
-              );
+    let alertText = c('Warning').t`Are you sure you want to permanently delete this contact group?`;
+    if (count > 1) {
+        alertText = c('Warning').t`Are you sure you want to permanently delete these contact groups?`;
+    }
+
+    let infoMessage = c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`;
+    if (count > 1) {
+        infoMessage = c('Info').t`Please note that addresses assigned to these groups will NOT be deleted.`;
+    }
 
     return (
         <Prompt
@@ -72,7 +72,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
             {...rest}
         >
             <Alert className="mb-4" type="info">
-                {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
+                {infoMessage}
             </Alert>
             <Alert className="mb-4" type="error">
                 {alertText}
