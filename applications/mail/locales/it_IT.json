@@ -156,7 +156,7 @@
         "Scegli un file o trascinalo qui"
       ],
       "Clear": [
-        "Elimina"
+        "Cancella"
       ],
       "Clear all formatting": [
         "Cancella tutta la formattazione"
@@ -296,7 +296,7 @@
         "Elimina etichetta"
       ],
       "Delete permanently": [
-        "Elimina permanentemente"
+        "Elimina definitivamente"
       ],
       "Deselect": [
         "Deseleziona"
@@ -567,7 +567,7 @@
         "segna l'email come"
       ],
       "Mark for deletion": [
-        "Seleziona per la cancellazione"
+        "Seleziona per l'eliminazione"
       ],
       "Mark legitimate": [
         "Segna come legittimo"
@@ -747,7 +747,7 @@
         "Cita"
       ],
       "Re-sign": [
-        "Ri-firma"
+        "Firma di nuovo"
       ],
       "Read message": [
         "Leggi messaggio"
@@ -844,6 +844,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search countries": [
+        "Cerca tra i paesi"
       ],
       "Search in ${ option.text }": [
         "Cerca in ${ option.text }"
@@ -1048,7 +1051,7 @@
         "Sblocca dati"
       ],
       "Unmark for deletion": [
-        "Deseleziona per la cancellazione"
+        "Deseleziona per l'eliminazione"
       ],
       "Unordered list": [
         "Lista non ordinata"
@@ -1839,13 +1842,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Vai a Spam"
+        "Vai a spam"
       ],
       "Go to Starred": [
         "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Vai al Cestino"
+        "Vai al cestino"
       ],
       "New message": [
         "Nuovo messaggio"
@@ -2011,6 +2014,773 @@
       ],
       "Work": [
         "Lavoro"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abcasia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algeria"
+      ],
+      "American Samoa": [
+        "Samoa Americane"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antartide"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua e Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Isola dell'Ascensione"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaigian"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrein"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bielorussia"
+      ],
+      "Belgium": [
+        "Belgio"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius e Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia ed Erzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Isola di Bouvet"
+      ],
+      "Brazil": [
+        "Brasile"
+      ],
+      "British Indian Ocean Territory": [
+        "Territori Britannici dell'Oceano Indiano"
+      ],
+      "Brunei Darussalam": [
+        "Sultanato del Brunei"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambogia"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Capo Verde"
+      ],
+      "Cayman Islands": [
+        "Isole Caiman"
+      ],
+      "Central African Republic": [
+        "Repubblica Centrafricana"
+      ],
+      "Chad": [
+        "Ciad"
+      ],
+      "Chile": [
+        "Cile"
+      ],
+      "China": [
+        "Cina"
+      ],
+      "Christmas Island": [
+        "Isola di Natale"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Isole Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Comore"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Repubblica democratica del Congo"
+      ],
+      "Cook Islands": [
+        "Isole Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croazia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipro"
+      ],
+      "Czech Republic": [
+        "Repubblica Ceca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Avorio"
+      ],
+      "Denmark": [
+        "Danimarca"
+      ],
+      "Djibouti": [
+        "Gibuti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Repubblica Dominicana"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egitto"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Equatoriale"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "eSwatini"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Isole Falkland"
+      ],
+      "Faroe Islands": [
+        "Isole Faroe"
+      ],
+      "Federated States of Micronesia": [
+        "Stati Federati di Micronesia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Francia"
+      ],
+      "French Guiana": [
+        "Guyana Francese"
+      ],
+      "French Polynesia": [
+        "Polinesia Francese"
+      ],
+      "French Southern Territories": [
+        "Territori australi francesi"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Germania"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibilterra"
+      ],
+      "Greece": [
+        "Grecia"
+      ],
+      "Greenland": [
+        "Groenlandia"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Isola Heard e Isole McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Città del Vaticano"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungheria"
+      ],
+      "Iceland": [
+        "Islanda"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Internazionale"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Isola di Man"
+      ],
+      "Israel": [
+        "Israele"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Giamaica"
+      ],
+      "Japan": [
+        "Giappone"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Giordania"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirghizistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lettonia"
+      ],
+      "Lebanon": [
+        "Libano"
+      ],
+      "Lesotho": [
+        "Lesoto"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituania"
+      ],
+      "Luxembourg": [
+        "Lussemburgo"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malesia"
+      ],
+      "Maldives": [
+        "Maldive"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Isole Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Messico"
+      ],
+      "Moldova": [
+        "Moldavia"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrato"
+      ],
+      "Morocco": [
+        "Marocco"
+      ],
+      "Mozambique": [
+        "Mozambico"
+      ],
+      "Myanmar": [
+        "Birmania"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Paesi Bassi"
+      ],
+      "New Caledonia": [
+        "Nuova Caledonia"
+      ],
+      "New Zealand": [
+        "Nuova Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Isola Norfolk"
+      ],
+      "North Korea": [
+        "Corea del Nord"
+      ],
+      "North Macedonia": [
+        "Macedonia del Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Isole Marianne Settentrionali"
+      ],
+      "Norway": [
+        "Norvegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nuova Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Perù"
+      ],
+      "Philippines": [
+        "Filippine"
+      ],
+      "Pitcairn": [
+        "Isole Pitcairn"
+      ],
+      "Poland": [
+        "Polonia"
+      ],
+      "Portugal": [
+        "Portogallo"
+      ],
+      "Puerto Rico": [
+        "Porto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Riunione"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Russia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Sant'Elena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts e Nevis"
+      ],
+      "Saint Lucia": [
+        "Santa Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (parte francese)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre e Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent e Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé e Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Arabia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovacchia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Isole Salomone"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sudafrica"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia del Sud e Isole Sandwich Australi"
+      ],
+      "South Korea": [
+        "Corea del Sud"
+      ],
+      "South Ossetia": [
+        "Ossezia del Sud"
+      ],
+      "South Sudan": [
+        "Sudan Del Sud"
+      ],
+      "Spain": [
+        "Spagna"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard e Jan Mayen"
+      ],
+      "Sweden": [
+        "Svezia"
+      ],
+      "Switzerland": [
+        "Svizzera"
+      ],
+      "Syria": [
+        "Siria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tagikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailandia"
+      ],
+      "Timor-Leste": [
+        "Timor Est"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad e Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristano da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turchia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Isole Turks e Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraina"
+      ],
+      "United Arab Emirates": [
+        "Emirati Arabi Uniti"
+      ],
+      "United Kingdom": [
+        "Regno Unito"
+      ],
+      "United States": [
+        "Stati Uniti"
+      ],
+      "United States Minor Outlying Islands": [
+        "Isole minori esterne degli Stati Uniti d'America"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Isole Vergini Britanniche"
+      ],
+      "Virgin Islands, U.S.": [
+        "Isole Vergini Americane."
+      ],
+      "Wallis and Futuna": [
+        "Wallis e Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara Occidentale"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Isole Aland"
       ]
     },
     "CustomFilter": {
@@ -2318,7 +3088,7 @@
         "Esiste già un gruppo con questo nome"
       ],
       "A problem occurred, please try again.": [
-        "Si è verificato un problema, si prega di riprovare."
+        "Si è verificato un problema. Per favore riprova."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -2433,10 +3203,10 @@
         "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Si prega di riprovare."
+        "Credenziali di accesso non valide. Per favore riprova."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Si prega di riprovare."
+        "Password della casella di posta non corretta. Per favore riprova."
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
@@ -2514,7 +3284,7 @@
         "Le password non corrispondono"
       ],
       "Please activate your search again": [
-        "Si prega di attivare nuovamente la ricerca"
+        "Attiva nuovamente la tua ricerca"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -2576,7 +3346,7 @@
         "Alcuni nomi delle cartelle superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alcuni nomi delle tue etichette sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
+        "Alcuni dei nomi delle tue etichette sono riservati. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -2601,7 +3371,7 @@
         "Gli indirizzi email non corrispondono."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
+        "Il nome della cartella non è valido. Scegli un nome differente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
@@ -2610,7 +3380,7 @@
         "Le proprietà della chiave per ${ emailAddress } non possono essere estratte"
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Il nome dell'etichetta non è valido. Si prega di scegliere un altro nome."
+        "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
@@ -2705,7 +3475,7 @@
         "La tua importazione non verrà elaborata."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Abbiamo trovato troppi risultati. Si prega di limitare la ricerca e riprovare."
+        "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -2910,7 +3680,7 @@
         "Ops, si è verificato un errore"
       ],
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -3800,7 +4570,7 @@
         "Vai al ${ calendarViewLink } in Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Passa il mouse sul calendario che desideri importare e apri il menu a discesa."
+        "Muovi il mouse sul calendario che desideri importare e apri il menu a tendina."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
@@ -4042,10 +4812,10 @@
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        "Tutti i messaggi memorizzati in questa cartella saranno eliminati permanentemente."
+        "Tutti i messaggi memorizzati in questa cartella verranno eliminati definitivamente."
       ],
       "All messages stored with this label will be permanently deleted.": [
-        "Tutti i messaggi memorizzati con quest'etichetta saranno eliminati permanentemente."
+        "Tutti i messaggi memorizzati con quest'etichetta verranno eliminati definitivamente"
       ],
       "All your calendars are disabled.": [
         "Tutti i tuoi calendari sono disabilitati."
@@ -4085,7 +4855,7 @@
         "Sei sicuro di voler spostare tutti i messaggi in questa posizione nell'Archivio?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
-        "Sei sicuro di voler spostare tutti i messaggi in questa posizione nel Cestino?"
+        "Sei sicuro di voler spostare tutti i messaggi in questa posizione nel cestino?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } conversazione?",
@@ -4100,7 +4870,7 @@
         "Sei sicuro di voler eliminare definitivamente ${ count } messaggi?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Sei sicuro di voler cancellare permanentemente questa conversazione?"
+        "Sei sicuro di voler eliminare definitivamente questa conversazione?"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "Sei sicuro di voler eliminare definitivamente questa bozza?"
@@ -4174,6 +4944,9 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
+      "Country code": [
+        "Codice nazione"
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
         "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
@@ -4191,7 +4964,7 @@
         "Crea in"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
+        "Sono supportati i file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app, così come i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
       "Custom": [
         "Personalizzato"
@@ -4598,10 +5371,10 @@
         "Apri le istruzioni per le scorciatoie"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Sei pregato di verificare che sia legittimo."
+        "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Verifica che sia legittimo."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Il nostro sistema ha contrassegnato questo messaggio come email sospetta. Si prega di verificare che sia legittimo prima di cliccare su qualsiasi link o allegato."
+        "Il nostro sistema ha contrassegnato questo messaggio come un'email sospetta. Verifica che sia legittimo prima di cliccare su qualsiasi link o allegato."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline è compatibile solo con il formato Testo."
@@ -4631,7 +5404,7 @@
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
       "Please select the folders you would like to import:": [
-        "Si prega di selezionare le cartelle che si desidera importare:"
+        "Seleziona le cartelle che vuoi importare:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleziona il tipo di link che vuoi inserire e compila tutti i campi."
@@ -4647,13 +5420,13 @@
         "Attendi che le tue modifiche siano sincronizzate con il server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
+        "Attendi mentre cerchiamo i contatti che possono essere firmati nuovamente con la chiave di crittografia primaria."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
       ],
       "Preview failed to be loaded": [
-        "Impossibile caricare l'anteprima"
+        "Caricamento dell'anteprima non riuscito"
       ],
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
@@ -4755,7 +5528,7 @@
         "Sessione scaduta"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Imposta ${ MAIL_APP_NAME } come applicazione di posta elettronica predefinita per questo browser. ${ MAIL_APP_NAME } si aprirà automaticamente quando fai clic su un collegamento email."
+        "Imposta ${ MAIL_APP_NAME } come applicazione di posta elettronica predefinita per questo browser. ${ MAIL_APP_NAME } si aprirà automaticamente quando clicchi un link email."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configurazione di PGP consente di inviare email crittografate end-to-end con un utente non-${ BRAND_NAME } che utilizza un servizio compatibile PGP."
@@ -4824,11 +5597,11 @@
         "Il mittente ha richiesto una conferma di lettura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "La verifica di ${ contactName } non è riuscita: il contatto non è firmato correttamente.\nQuesto potrebbe essere causato da un reset della password.\nÈ necessario firmare nuovamente il contatto per inviare un messaggio a ${ contactAddress } o modificare il contatto."
+        "La verifica di ${ contactName } non è riuscita: il contatto non è firmato correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password.\nDevi firmare nuovamente il contatto per poter inviare un messaggio a ${ contactAddress } o modificare il contatto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "La verifica di ${ contactNames } non è riuscita: il contatto non è firmato correttamente.\nQuesto potrebbe essere causato da un reset della password.\nÈ necessario firmare nuovamente il contatto per inviare un messaggio a ${ contactAddresses } o modificare il contatto.",
-        "La verifica di ${ contactNames } non è riuscita: i contatti non sono firmati correttamente.\nQuesto potrebbe essere causato da un reset della password.\nÈ necessario firmare nuovamente i contatti per inviare un messaggio a ${ contactAddresses } o modificare i contatti."
+        "La verifica di ${ contactNames } non è riuscita: il contatto non è firmato correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password. Devi firmare nuovamente il contatto per poter inviare un messaggio a ${ contactAddresses } o modificare il contatto.",
+        "La verifica di ${ contactNames } non è riuscita: i contatti non sono firmati correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password.\nDevi firmare nuovamente i contatti per poter inviare un messaggio a ${ contactAddresses } o modificare i contatti."
       ],
       "Themes can give your inbox a new look.": [
         "I temi possono dare alla tua casella un nuovo aspetto."
@@ -4871,7 +5644,7 @@
         "Questo invito è salvato in un calendario disabilitato."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
+        "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -4941,7 +5714,7 @@
         "La chiave pubblica di questo mittente non è ancora stata considerata attendibile."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+        "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -4950,7 +5723,7 @@
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperare i dati, è necessario riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
+        "Per recuperare tuoi i dati, devi riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai dunque ricordare la password utilizzata quando è stata generata la chiave."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Per disiscriverti da questa mailing list, sarà inviata un'email da ${ boldFrom } con i seguenti dettagli come definito dal mittente della newsletter:"
@@ -4962,7 +5735,7 @@
         "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Troppi messaggi sono in attesa di essere inviati. Per poter pianificare un altro messaggio, si prega di attendere finché un altro non verrà inviato."
+        "Troppi messaggi sono in attesa di essere inviati. Per pianificare questo messaggio, attendi finché un altro non verrà inviato."
       ],
       "Trackers blocked:": [
         "Tracker bloccati:"
@@ -5201,10 +5974,10 @@
         "Il tuo account ${ BRAND_NAME } include SimpleLogin. Installa l'estensione del browser con un clic per iniziare."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -5343,13 +6116,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Vai a Spam"
+        "Vai a spam"
       ],
       "Go to Starred": [
         "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Vai al Cestino"
+        "Vai al cestino"
       ],
       "Insert link": [
         "Inserisci link"
@@ -6041,13 +6814,13 @@
         "${ DRIVE_APP_NAME } app Windows"
       ],
       "All mail": [
-        "Tutte le mail"
+        "Tutte le email"
       ],
       "Archive": [
         "Archivio"
       ],
       "clearing your browser cache": [
-        "pulendo la cache del browser"
+        "cancellando la cache del browser"
       ],
       "Create a calendar linked to an active email address.": [
         "Crea un calendario collegato a un indirizzo email attivo."
@@ -6122,10 +6895,10 @@
         "Informativa sulla privacy"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Riabilita l'indirizzo collegato a questo calendario per gestire il tuo invito."
+        "Abilita nuovamente l'indirizzo collegato a questo calendario per gestire il tuo invito."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Riabilita l'indirizzo collegato a questo calendario per aggiornare il tuo invito."
+        "Abilita nuovamente l'indirizzo collegato a questo calendario per aggiornare il tuo invito."
       ],
       "Reactivate now": [
         "Riattiva"
@@ -6754,7 +7527,7 @@
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
       ],
       "Please insert link first": [
-        "Inserisci prima il collegamento"
+        "Inserisci prima il link"
       ],
       "Search date, name, email address, or subject line": [
         "Ricerca per data, nome, indirizzo email od oggetto del messaggio"
@@ -7852,7 +8625,7 @@
         "Modifica la mia risposta"
       ],
       "Clear out the junk": [
-        "Ripulisci la posta indesiderata"
+        "Cancella i messaggi indesiderati"
       ],
       "Clearing data": [
         "Cancellazione dati"
@@ -8104,7 +8877,7 @@
         "Sposta tutti i messaggi nell'Archivio"
       ],
       "Move all messages to Trash": [
-        "Sposta tutti i messaggi nel Cestino"
+        "Sposta tutti i messaggi nel cestino"
       ],
       "Move to": [
         "Sposta in"
@@ -8143,7 +8916,7 @@
         "Nessun tracker trovato"
       ],
       "Open actions dropdown": [
-        "Apri menu a discesa delle azioni"
+        "Apri menu delle azioni"
       ],
       "Other information": [
         "Altre informazioni"
@@ -8167,13 +8940,13 @@
         "Proteggiti dai tracker"
       ],
       "Re-sign all contacts": [
-        "Ri-firma tutti i contatti"
+        "Firma nuovamente tutti i contatti"
       ],
       "Re-sign contact": [
-        "Ri-firma contatto"
+        "Firma nuovamente il contatto"
       ],
       "Re-signing contacts": [
-        "Ri-firma contatti"
+        "Nuova firma dei contatti"
       ],
       "Recipient missing": [
         "Destinatario mancante"
@@ -8418,7 +9191,7 @@
         "versione stabile"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Questa versione di Tor Browser non è supportata. Si prega di aggiornare all'ultima ${ stableRelease }"
+        "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -8484,7 +9257,7 @@
         "Saltare la verifica?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Alcuni dei contatti da unire presentano errori. Si prega di rivederli singolarmente"
+        "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Verifica della firma dell'allegato non riuscita.\nPuoi ancora scaricare questo allegato ma potrebbe essere stato manomesso.",
