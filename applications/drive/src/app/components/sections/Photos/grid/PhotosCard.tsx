@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useState } from 'react';
+import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
@@ -20,7 +20,7 @@ import './PhotosCard.scss';
 
 type Props = {
     photo: PhotoLink;
-    onRender: (linkId: string) => void;
+    onRender: (linkId: string, domRef: React.MutableRefObject<any>) => void;
     style: CSSProperties;
     shareId: string;
     showDetailsModal: ReturnType<typeof useDetailsModal>[1];
@@ -32,8 +32,9 @@ const getAltText = ({ mimeType, name }: PhotoLink) =>
 
 export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPortalPreview, showDetailsModal }) => {
     const [imageReady, setImageReady] = useState(false);
+    const ref = useRef(null);
     useEffect(() => {
-        onRender(photo.linkId);
+        onRender(photo.linkId, ref);
     }, [photo.linkId]);
 
     const thumbUrl = photo.cachedThumbnailUrl;
@@ -54,6 +55,7 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPor
     return (
         <ButtonLike
             as="div"
+            ref={ref}
             style={style}
             disabled={isThumbnailLoading}
             className={clsx('photos-card p-0 border-none rounded-none', isThumbnailLoading && 'photos-card--loading')}

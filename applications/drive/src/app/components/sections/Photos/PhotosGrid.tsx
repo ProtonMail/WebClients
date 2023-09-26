@@ -10,7 +10,7 @@ import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
     data: PhotoGridItem[];
-    onItemRender: (linkId: string) => void;
+    onItemRender: (linkId: string, domRef: React.MutableRefObject<any>) => void;
     shareId: string;
     isLoadingMore: boolean;
 };

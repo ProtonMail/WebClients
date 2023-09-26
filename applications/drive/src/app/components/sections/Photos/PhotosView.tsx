@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,9 +18,9 @@ export const PhotosView: FC<void> = () => {
     const thumbnails = useThumbnailsDownload();
 
     const handleItemRender = useCallback(
-        (itemLinkId: string) => {
+        (itemLinkId: string, domRef: React.MutableRefObject<any>) => {
             if (shareId) {
-                thumbnails.addToDownloadQueue(shareId, itemLinkId);
+                thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
             }
         },
         [shareId]
