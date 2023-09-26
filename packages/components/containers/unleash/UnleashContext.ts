@@ -2,8 +2,15 @@
  * Feature flag list from Unleash
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
-export enum FeatureFlag {
+enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
-    MaintenanceImporter = 'MaintenanceImporter',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
 }
+
+enum AccountFlag {
+    MaintenanceImporter = 'MaintenanceImporter',
+}
+
+enum DriveFeatureFlag {}
+
+export type FeatureFlag = `${MailFeatureFlag}` | `${DriveFeatureFlag}` | `${AccountFlag}`;

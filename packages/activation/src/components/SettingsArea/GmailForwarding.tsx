@@ -1,14 +1,7 @@
-import {
-    CheckListGmailForward,
-    FeatureFlag,
-    GmailSyncModal,
-    useFlag,
-    useModalState,
-    useUser,
-} from '@proton/components';
+import { CheckListGmailForward, GmailSyncModal, useFlag, useModalState, useUser } from '@proton/components';
 
 const GmailForwarding = () => {
-    const isInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
+    const isInMaintenance = useFlag('MaintenanceImporter');
 
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
 
