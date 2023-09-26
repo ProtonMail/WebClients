@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { FeatureFlag, SettingsAreaConfig, useFlag } from '../..';
+import { SettingsAreaConfig, useFlag } from '../..';
 import SettingsMaintenanceLayoutWrapper from './SettingsMaintenanceLayoutWrapper';
 
 const config: SettingsAreaConfig = {
@@ -26,7 +26,7 @@ describe('SettingsMaintenanceLayoutWrapper', () => {
         mockUseFlag.mockReturnValue(true);
 
         const { getByText, queryByText } = render(
-            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
+            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag="MaintenanceImporter">
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
@@ -38,7 +38,7 @@ describe('SettingsMaintenanceLayoutWrapper', () => {
         mockUseFlag.mockReturnValue(false);
 
         const { getByText, queryByText } = render(
-            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag={FeatureFlag.MaintenanceImporter}>
+            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag="MaintenanceImporter">
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
@@ -51,11 +51,7 @@ describe('SettingsMaintenanceLayoutWrapper', () => {
         mockUseFlag.mockReturnValue(true);
 
         const { getByText, queryByText } = render(
-            <SettingsMaintenanceLayoutWrapper
-                config={config}
-                maintenanceFlag={FeatureFlag.MaintenanceImporter}
-                isSubsection
-            >
+            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag="MaintenanceImporter" isSubsection>
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
@@ -68,11 +64,7 @@ describe('SettingsMaintenanceLayoutWrapper', () => {
         mockUseFlag.mockReturnValue(false);
 
         const { getByText, queryByText } = render(
-            <SettingsMaintenanceLayoutWrapper
-                config={config}
-                maintenanceFlag={FeatureFlag.MaintenanceImporter}
-                isSubsection
-            >
+            <SettingsMaintenanceLayoutWrapper config={config} maintenanceFlag="MaintenanceImporter" isSubsection>
                 <div>children</div>
             </SettingsMaintenanceLayoutWrapper>
         );
