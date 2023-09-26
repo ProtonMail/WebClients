@@ -48,6 +48,10 @@ export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revi
     };
 };
 
+/**
+ * This route should never be called without also instanciating a verifier.
+ * See the file uploader in the Drive app.
+ */
 export const queryVerificationData = (shareId: string, linkId: string, revisionId: string) => {
     return {
         method: 'get',
