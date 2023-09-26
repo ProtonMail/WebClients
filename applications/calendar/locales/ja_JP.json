@@ -4152,6 +4152,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participants are allowed per invitation": [
+        "招待状ごとに最大 ${ maxAttendees } 人の参加者が許可されます"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "共有カレンダーで招待を作成することはできません"
       ]

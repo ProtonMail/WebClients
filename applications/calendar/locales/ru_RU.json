@@ -483,6 +483,9 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
+      "Settings": [
+        "Настройки"
+      ],
       "Share": [
         "Поделиться"
       ],
@@ -503,6 +506,9 @@
       ],
       "Show more": [
         "Показать больше"
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "Show time zones": [
         "Показать часовые пояса"
@@ -534,11 +540,17 @@
       "Submit": [
         "Отправить"
       ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
+      ],
       "Today": [
         "Сегодня"
       ],
       "Toggle Contact app": [
         "Переключить на приложение Контакты"
+      ],
+      "Toggle settings": [
+        "Включить/выключить настройки"
       ],
       "Trust": [
         "Доверять"
@@ -2558,6 +2570,9 @@
       "You already added this holidays calendar": [
         "Вы уже добавили календарь этих праздников"
       ],
+      "You have reached the contacts limit for your account": [
+        "Вы достигли лимита контактов для вашего аккаунта."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
       ],
@@ -3487,6 +3502,12 @@
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакта",
+        "${ contactsLength } контактов",
+        "${ contactsLength } контакта"
+      ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
         "Найдено ${ groupCounts } группы",
@@ -3510,6 +3531,12 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбран ${ selectedContactsLength } контакт из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контактов из ${ contactsLength }",
+        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
@@ -3603,6 +3630,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
+      ],
+      "Are you sure you want to discard your import?": [
+        "Вы уверены, что хотите сбросить импорт?"
       ],
       "Attention required": [
         "Требуется внимание"
@@ -3705,6 +3735,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
@@ -4033,6 +4066,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
+      ],
       "Update recurring event": [
         "Обновить повторяющееся событие"
       ],
@@ -4322,6 +4358,9 @@
       "Bad": [
         "Плохо"
       ],
+      "Beta Access": [
+        "Бета доступ"
+      ],
       "Browser": [
         "Браузер"
       ],
@@ -4577,8 +4616,14 @@
       "Street address": [
         "Адрес"
       ],
+      "Sync with system": [
+        "Синхронизировать с системой"
+      ],
       "System information": [
         "Сведения о системе"
+      ],
+      "Theme": [
+        "Тема"
       ],
       "Time zone": [
         "Часовой пояс"
@@ -6265,6 +6310,9 @@
       "Addresses": [
         "Адреса"
       ],
+      "All settings": [
+        "Все настройки"
+      ],
       "Billing cycle": [
         "Период оплаты"
       ],
@@ -6658,8 +6706,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
