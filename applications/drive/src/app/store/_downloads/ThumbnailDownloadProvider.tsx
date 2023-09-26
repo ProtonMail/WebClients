@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
@@ -9,7 +9,12 @@ import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
 
 interface DownloadProviderState {
-    addToDownloadQueue: (shareId: string, linkId: string, activeRevisionId?: string) => void;
+    addToDownloadQueue: (
+        shareId: string,
+        linkId: string,
+        activeRevisionId?: string,
+        domRef?: React.MutableRefObject<any>
+    ) => void;
 }
 
 const ThumbnailsDownloadContext = createContext<DownloadProviderState | null>(null);
@@ -90,18 +95,29 @@ export const ThumbnailsDownloadProvider = ({
             });
     };
 
-    const addToDownloadQueue = async (shareId: string, linkId: string, activeRevisionId?: string) => {
+    const addToDownloadQueue = (
+        shareId: string,
+        linkId: string,
+        activeRevisionId?: string,
+        domRef?: React.MutableRefObject<any>
+    ) => {
         const downloadIdString = getDownloadIdString({
             shareId,
             linkId,
             activeRevisionId,
         });
 
-        if (queueLinkCache.current.has(downloadIdString)) {
+        if (queueLinkCache.current.has(downloadIdString) || (domRef && !domRef.current)) {
             return;
         }
         queueLinkCache.current.add(downloadIdString);
+
         asyncQueue.addToQueue(() => {
+            if (domRef && !domRef.current) {
+                // No download was initiated, so removed it from the cache
+                queueLinkCache.current.delete(downloadIdString);
+                return Promise.resolve();
+            }
             return handleThumbnailDownload(shareId, linkId, downloadIdString);
         });
     };
