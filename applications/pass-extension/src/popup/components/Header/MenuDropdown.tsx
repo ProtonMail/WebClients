@@ -13,6 +13,7 @@ import {
     selectPassPlan,
     selectPlanDisplayName,
     selectShare,
+    selectUser,
     vaultDeleteIntent,
 } from '@proton/pass/store';
 import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
@@ -50,6 +51,8 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
+
+    const user = useSelector(selectUser);
 
     const openSettings = useOpenSettingsTab();
 
@@ -178,7 +181,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             >
                                 <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
                                 <span className="text-left">
-                                    <div className="text-sm">{c('Label').t`Current plan`}</div>
+                                    <div className="text-sm">{user?.Email}</div>
                                     <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
                                         {planDisplayName}
                                     </div>
