@@ -853,6 +853,9 @@
       "Search": [
         "Пошук"
       ],
+      "Search countries": [
+        "Пошук краін"
+      ],
       "Search in ${ option.text }": [
         "Шукаць у ${ option.text }"
       ],
@@ -2025,6 +2028,773 @@
         "Працоўны"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазія"
+      ],
+      "Afghanistan": [
+        "Афганістан"
+      ],
+      "Albania": [
+        "Албанія"
+      ],
+      "Algeria": [
+        "Алжыр"
+      ],
+      "American Samoa": [
+        "Амерыканскае Самоа"
+      ],
+      "Andorra": [
+        "Андора"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангілья"
+      ],
+      "Antarctica": [
+        "Антарктыда"
+      ],
+      "Antigua and Barbuda": [
+        "Антыгуа і Барбуда"
+      ],
+      "Argentina": [
+        "Аргенціна"
+      ],
+      "Armenia": [
+        "Арменія"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Востраў Узнясення"
+      ],
+      "Australia": [
+        "Аўстралія"
+      ],
+      "Austria": [
+        "Аўстрыя"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамскія астравы"
+      ],
+      "Bahrain": [
+        "Бахрэйн"
+      ],
+      "Bangladesh": [
+        "Бангладэш"
+      ],
+      "Barbados": [
+        "Барбадас"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгія"
+      ],
+      "Belize": [
+        "Беліз"
+      ],
+      "Benin": [
+        "Бенін"
+      ],
+      "Bermuda": [
+        "Бермудскія астравы"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Балівія"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Банайрэ, Сінт-Эстатыус і Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Боснія і Герцагавіна"
+      ],
+      "Botswana": [
+        "Батсвана"
+      ],
+      "Bouvet Island": [
+        "Востраў Буве"
+      ],
+      "Brazil": [
+        "Бразілія"
+      ],
+      "British Indian Ocean Territory": [
+        "Брытанская тэрыторыя ў Індыйскім акіяне"
+      ],
+      "Brunei Darussalam": [
+        "Брунэй-Дарусалам"
+      ],
+      "Bulgaria": [
+        "Балгарыя"
+      ],
+      "Burkina Faso": [
+        "Буркіна-Фасо"
+      ],
+      "Burundi": [
+        "Бурундзі"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Каба-Вердэ"
+      ],
+      "Cayman Islands": [
+        "Кайманавы астравы"
+      ],
+      "Central African Republic": [
+        "Цэнтральна-Афрыканская Рэспубліка"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чылі"
+      ],
+      "China": [
+        "Кітай"
+      ],
+      "Christmas Island": [
+        "Востраў Каляд"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Какосавыя астравы (Кілінг)"
+      ],
+      "Colombia": [
+        "Калумбія"
+      ],
+      "Comoros": [
+        "Каморскія астравы"
+      ],
+      "Congo": [
+        "Конга"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Дэмакратычная Рэспубліка Конга"
+      ],
+      "Cook Islands": [
+        "Астравы Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рыка"
+      ],
+      "Croatia": [
+        "Харватыя"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасаа"
+      ],
+      "Cyprus": [
+        "Кіпр"
+      ],
+      "Czech Republic": [
+        "Рэспубліка Чэхія"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д’Івуар"
+      ],
+      "Denmark": [
+        "Данія"
+      ],
+      "Djibouti": [
+        "Джыбуці"
+      ],
+      "Dominica": [
+        "Дамініка"
+      ],
+      "Dominican Republic": [
+        "Дамініканская Рэспубліка"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Егіпет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экватарыяльная Гвінея"
+      ],
+      "Eritrea": [
+        "Эрытрэя"
+      ],
+      "Estonia": [
+        "Эстонія"
+      ],
+      "Eswatini": [
+        "Эсваціні"
+      ],
+      "Ethiopia": [
+        "Эфіопія"
+      ],
+      "Falkland Islands": [
+        "Фалклендскія астравы"
+      ],
+      "Faroe Islands": [
+        "Фарэрскія астравы"
+      ],
+      "Federated States of Micronesia": [
+        "Федэратыўныя Штаты Мікранезіі"
+      ],
+      "Fiji": [
+        "Фіджы"
+      ],
+      "Finland": [
+        "Фінляндыя"
+      ],
+      "France": [
+        "Францыя"
+      ],
+      "French Guiana": [
+        "Французская Гвіяна"
+      ],
+      "French Polynesia": [
+        "Французская Палінезія"
+      ],
+      "French Southern Territories": [
+        "Французскія Паўднёвыя тэрыторыі"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбія"
+      ],
+      "Georgia": [
+        "Грузія"
+      ],
+      "Germany": [
+        "Германія"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гібралтар"
+      ],
+      "Greece": [
+        "Грэцыя"
+      ],
+      "Greenland": [
+        "Грэнландыя"
+      ],
+      "Grenada": [
+        "Грэнада"
+      ],
+      "Guadeloupe": [
+        "Гвадэлупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватэмала"
+      ],
+      "Guernsey": [
+        "Гернсі"
+      ],
+      "Guinea": [
+        "Гвінея"
+      ],
+      "Guinea-Bissau": [
+        "Гвінея-Бісау"
+      ],
+      "Guyana": [
+        "Гаяна"
+      ],
+      "Haiti": [
+        "Гаіці"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Востраў Херд і Астравы Мак-Доналд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святы Прастол (Горад-дзяржава Ватыкан)"
+      ],
+      "Honduras": [
+        "Гандурас"
+      ],
+      "Hong Kong": [
+        "Ганконг"
+      ],
+      "Hungary": [
+        "Венгрыя"
+      ],
+      "Iceland": [
+        "Ісландыя"
+      ],
+      "India": [
+        "Індыя"
+      ],
+      "Indonesia": [
+        "Інданезія"
+      ],
+      "International": [
+        "Міжнародная"
+      ],
+      "Iran": [
+        "Іран"
+      ],
+      "Iraq": [
+        "Ірак"
+      ],
+      "Ireland": [
+        "Ірландыя"
+      ],
+      "Isle of Man": [
+        "Востраў Мэн"
+      ],
+      "Israel": [
+        "Ізраіль"
+      ],
+      "Italy": [
+        "Італія"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Японія"
+      ],
+      "Jersey": [
+        "Джэрсі"
+      ],
+      "Jordan": [
+        "Іарданія"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кенія"
+      ],
+      "Kiribati": [
+        "Кірыбаці"
+      ],
+      "Kosovo": [
+        "Косава"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвія"
+      ],
+      "Lebanon": [
+        "Ліван"
+      ],
+      "Lesotho": [
+        "Лесота"
+      ],
+      "Liberia": [
+        "Ліберыя"
+      ],
+      "Libya": [
+        "Лівія"
+      ],
+      "Liechtenstein": [
+        "Ліхтэнштэйн"
+      ],
+      "Lithuania": [
+        "Літва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макаа"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малаві"
+      ],
+      "Malaysia": [
+        "Малайзія"
+      ],
+      "Maldives": [
+        "Мальдывы"
+      ],
+      "Mali": [
+        "Малі"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалавы астравы"
+      ],
+      "Martinique": [
+        "Марцініка"
+      ],
+      "Mauritania": [
+        "Маўрытанія"
+      ],
+      "Mauritius": [
+        "Маўрыкій"
+      ],
+      "Mayotte": [
+        "Маёта"
+      ],
+      "Mexico": [
+        "Мексіка"
+      ],
+      "Moldova": [
+        "Малдова"
+      ],
+      "Monaco": [
+        "Манака"
+      ],
+      "Mongolia": [
+        "Манголія"
+      ],
+      "Montenegro": [
+        "Чарнагорыя"
+      ],
+      "Montserrat": [
+        "Мантсерат"
+      ],
+      "Morocco": [
+        "Марока"
+      ],
+      "Mozambique": [
+        "Мазамбік"
+      ],
+      "Myanmar": [
+        "М’янма"
+      ],
+      "Namibia": [
+        "Намібія"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нідэрланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледонія"
+      ],
+      "New Zealand": [
+        "Новая Зеландыя"
+      ],
+      "Nicaragua": [
+        "Нікарагуа"
+      ],
+      "Niger": [
+        "Нігер"
+      ],
+      "Nigeria": [
+        "Нігерыя"
+      ],
+      "Niue": [
+        "Ніуэ"
+      ],
+      "Norfolk Island": [
+        "Востраў Норфалк"
+      ],
+      "North Korea": [
+        "Паўночная Карэя"
+      ],
+      "North Macedonia": [
+        "Паўночная Македонія"
+      ],
+      "Northern Mariana Islands": [
+        "Паўночныя Марыянскія астравы"
+      ],
+      "Norway": [
+        "Нарвегія"
+      ],
+      "Oman": [
+        "Аман"
+      ],
+      "Pakistan": [
+        "Пакістан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палесціна"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвінея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Філіпіны"
+      ],
+      "Pitcairn": [
+        "Астравы Піткэрн"
+      ],
+      "Poland": [
+        "Польшча"
+      ],
+      "Portugal": [
+        "Партугалія"
+      ],
+      "Puerto Rico": [
+        "Пуэрта-Рыка"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Рэюньён"
+      ],
+      "Romania": [
+        "Румынія"
+      ],
+      "Russia": [
+        "Расія"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартэльмі"
+      ],
+      "Saint Helena": [
+        "Востраў Святой Алены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сэнт-Кітс і Нэвіс"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсія"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартэн (французская частка)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-П’ер і Мікелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Вінсент і Грэнадзіны"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марына"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Тамэ і Прынсіпі"
+      ],
+      "Saudi Arabia": [
+        "Саудаўская Аравія"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербія"
+      ],
+      "Seychelles": [
+        "Сейшэльскія астравы"
+      ],
+      "Sierra Leone": [
+        "Сьера-Леонэ"
+      ],
+      "Singapore": [
+        "Сінгапур"
+      ],
+      "Sint Maarten": [
+        "Сінт-Мартэн"
+      ],
+      "Slovakia": [
+        "Славакія"
+      ],
+      "Slovenia": [
+        "Славенія"
+      ],
+      "Solomon Islands": [
+        "Саламонавы астравы"
+      ],
+      "Somalia": [
+        "Самалі"
+      ],
+      "South Africa": [
+        "Паўднёва-Афрыканская Рэспубліка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Паўднёвая Джорджыя і Паўднёвыя Сандвічавы астравы"
+      ],
+      "South Korea": [
+        "Паўднёвая Карэя"
+      ],
+      "South Ossetia": [
+        "Паўднёвая Асеція"
+      ],
+      "South Sudan": [
+        "Паўднёвы Судан"
+      ],
+      "Spain": [
+        "Іспанія"
+      ],
+      "Sri Lanka": [
+        "Шры-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Сурынам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпіцберген і Ян-Маен"
+      ],
+      "Sweden": [
+        "Швецыя"
+      ],
+      "Switzerland": [
+        "Швейцарыя"
+      ],
+      "Syria": [
+        "Сірыя"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджыкістан"
+      ],
+      "Tanzania": [
+        "Танзанія"
+      ],
+      "Thailand": [
+        "Тайланд"
+      ],
+      "Timor-Leste": [
+        "Тымор-Лешці"
+      ],
+      "Togo": [
+        "Тога"
+      ],
+      "Tokelau": [
+        "Такелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Трынідад і Табага"
+      ],
+      "Tristan da Cunha": [
+        "Трыстан-да-Кунья"
+      ],
+      "Tunisia": [
+        "Туніс"
+      ],
+      "Turkey": [
+        "Турцыя"
+      ],
+      "Turkmenistan": [
+        "Туркменістан"
+      ],
+      "Turks and Caicos Islands": [
+        "Астравы Цёркс і Кайкас"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украіна"
+      ],
+      "United Arab Emirates": [
+        "Аб’яднаныя Арабскія Эміраты"
+      ],
+      "United Kingdom": [
+        "Вялікабрытанія"
+      ],
+      "United States": [
+        "ЗША"
+      ],
+      "United States Minor Outlying Islands": [
+        "Знешнія малыя астравы ЗША"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекістан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "В’етнам"
+      ],
+      "Virgin Islands, British": [
+        "Брытанскія Віргінскія астравы"
+      ],
+      "Virgin Islands, U.S.": [
+        "Амерыканскія Віргінскія астравы"
+      ],
+      "Wallis and Futuna": [
+        "Уоліс і Футуна"
+      ],
+      "Western Sahara": [
+        "Заходняя Сахара"
+      ],
+      "Yemen": [
+        "Емен"
+      ],
+      "Zambia": [
+        "Замбія"
+      ],
+      "Zimbabwe": [
+        "Зімбабвэ"
+      ],
+      "Åland Islands": [
+        "Аландскія астравы"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Далучэнне"
@@ -2116,7 +2886,7 @@
         "Камфортная"
       ],
       "Compact": [
-        "Кампактны"
+        "Кампактная"
       ]
     },
     "Description": {
@@ -4343,6 +5113,9 @@
       ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
+      ],
+      "Country code": [
+        "Код краіны"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",

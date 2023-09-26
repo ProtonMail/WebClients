@@ -820,6 +820,9 @@
       "Search": [
         "खोजें"
       ],
+      "Search countries": [
+        "देश खोजें"
+      ],
       "Search in ${ option.text }": [
         "${ option.text } में खोजें"
       ],
@@ -1943,6 +1946,773 @@
       ],
       "Work": [
         "दफ्तर"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "अब्खाज़िया"
+      ],
+      "Afghanistan": [
+        "अफगानिस्तान"
+      ],
+      "Albania": [
+        "अल्बानिया"
+      ],
+      "Algeria": [
+        "अल्जीरिया"
+      ],
+      "American Samoa": [
+        "अमेरिकी समोआ"
+      ],
+      "Andorra": [
+        "अंडोरा"
+      ],
+      "Angola": [
+        "अंगोला"
+      ],
+      "Anguilla": [
+        "एंगुइला"
+      ],
+      "Antarctica": [
+        "अंटार्कटिका"
+      ],
+      "Antigua and Barbuda": [
+        "एंटिगुआ और बरबुडा"
+      ],
+      "Argentina": [
+        "अर्जेंटीना"
+      ],
+      "Armenia": [
+        "आर्मीनिया"
+      ],
+      "Aruba": [
+        "अरूबा"
+      ],
+      "Ascension Island": [
+        "असेंशन द्वीप"
+      ],
+      "Australia": [
+        "ऑस्ट्रेलिया"
+      ],
+      "Austria": [
+        "ऑस्ट्रिया"
+      ],
+      "Azerbaijan": [
+        "अज़रबैजान"
+      ],
+      "Bahamas": [
+        "बहामास"
+      ],
+      "Bahrain": [
+        "बहरीन"
+      ],
+      "Bangladesh": [
+        "बांग्लादेश"
+      ],
+      "Barbados": [
+        "बारबाडोस"
+      ],
+      "Belarus": [
+        "बेलारूस"
+      ],
+      "Belgium": [
+        "बेल्जियम"
+      ],
+      "Belize": [
+        "बेलीज़"
+      ],
+      "Benin": [
+        "बेनिन"
+      ],
+      "Bermuda": [
+        "बरमूडा"
+      ],
+      "Bhutan": [
+        "भूटान"
+      ],
+      "Bolivia": [
+        "बोलीविया"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "बोनेयर, सिंट युसटेशियस और सबा"
+      ],
+      "Bosnia and Herzegovina": [
+        "बोस्निया और हर्जेगोविना"
+      ],
+      "Botswana": [
+        "बोत्सवाना"
+      ],
+      "Bouvet Island": [
+        "बुवेत आइलैंड"
+      ],
+      "Brazil": [
+        "ब्राज़ील"
+      ],
+      "British Indian Ocean Territory": [
+        "ब्रिटिश हिंद महासागरीय क्षेत्र"
+      ],
+      "Brunei Darussalam": [
+        "ब्रुनेई दारुस्सलाम"
+      ],
+      "Bulgaria": [
+        "बल्गारिया"
+      ],
+      "Burkina Faso": [
+        "बुर्किना फासो"
+      ],
+      "Burundi": [
+        "बुरुंडी"
+      ],
+      "Cambodia": [
+        "कंबोडिया"
+      ],
+      "Cameroon": [
+        "कैमरून"
+      ],
+      "Canada": [
+        "कनाडा"
+      ],
+      "Cape Verde": [
+        "केप वर्दे"
+      ],
+      "Cayman Islands": [
+        "कैमेन द्वीपसमूह"
+      ],
+      "Central African Republic": [
+        "मध्य अफ्रीकी गणराज्य"
+      ],
+      "Chad": [
+        "चाड"
+      ],
+      "Chile": [
+        "चिली"
+      ],
+      "China": [
+        "चीन"
+      ],
+      "Christmas Island": [
+        "क्रिसमस द्वीप"
+      ],
+      "Cocos (Keeling) Islands": [
+        "कोकोस (कीलिंग) द्वीप समूह"
+      ],
+      "Colombia": [
+        "कोलंबिया"
+      ],
+      "Comoros": [
+        "कोमोरोस"
+      ],
+      "Congo": [
+        "कांगो"
+      ],
+      "Congo, Democratic Republic of the": [
+        "कांगो, लोकतांत्रिक गणराज्य"
+      ],
+      "Cook Islands": [
+        "कुक द्वीपसमूह"
+      ],
+      "Costa Rica": [
+        "कोस्टा रिका"
+      ],
+      "Croatia": [
+        "क्रोएशिया"
+      ],
+      "Cuba": [
+        "क्यूबा"
+      ],
+      "Curaçao": [
+        "क्यूरासाओ"
+      ],
+      "Cyprus": [
+        "साइप्रस"
+      ],
+      "Czech Republic": [
+        "चेक रिपब्लिक"
+      ],
+      "Côte d'Ivoire": [
+        "कोटे डी आइवर\""
+      ],
+      "Denmark": [
+        "डेनमार्क"
+      ],
+      "Djibouti": [
+        "जिबूती"
+      ],
+      "Dominica": [
+        "डोमिनिका"
+      ],
+      "Dominican Republic": [
+        "डॉमिनिकन गणराज्य"
+      ],
+      "Ecuador": [
+        "इक्वाडोर"
+      ],
+      "Egypt": [
+        "मिस्त्र"
+      ],
+      "El Salvador": [
+        "एल साल्वाडोर"
+      ],
+      "Equatorial Guinea": [
+        "इक्वेटोरियल गिनी"
+      ],
+      "Eritrea": [
+        "इरीट्रिया"
+      ],
+      "Estonia": [
+        "एस्टोनिया"
+      ],
+      "Eswatini": [
+        "इस्वातिनि"
+      ],
+      "Ethiopia": [
+        "इथियोपिया"
+      ],
+      "Falkland Islands": [
+        "फ़ॉकलैंड आइलैंड"
+      ],
+      "Faroe Islands": [
+        "फ़ेरो द्वीपसमूह"
+      ],
+      "Federated States of Micronesia": [
+        "माइक्रोनेशिया के संघीय राज्य"
+      ],
+      "Fiji": [
+        "फिजी"
+      ],
+      "Finland": [
+        "फ़िनलैंड"
+      ],
+      "France": [
+        "फ्रांस"
+      ],
+      "French Guiana": [
+        "फ्रेंच गयाना"
+      ],
+      "French Polynesia": [
+        "फ़्रेंच पोलिनेशिया"
+      ],
+      "French Southern Territories": [
+        "फ़्रांसीसी दक्षिणी क्षेत्र"
+      ],
+      "Gabon": [
+        "गैबॉन"
+      ],
+      "Gambia": [
+        "गाम्बिया"
+      ],
+      "Georgia": [
+        "जॉर्जिया"
+      ],
+      "Germany": [
+        "जर्मनी"
+      ],
+      "Ghana": [
+        "घाना"
+      ],
+      "Gibraltar": [
+        "जिब्राल्टर"
+      ],
+      "Greece": [
+        "यूनान"
+      ],
+      "Greenland": [
+        "ग्रीनलैंड"
+      ],
+      "Grenada": [
+        "ग्रेनाडा"
+      ],
+      "Guadeloupe": [
+        "ग्वाडेलोप"
+      ],
+      "Guam": [
+        "गुआम"
+      ],
+      "Guatemala": [
+        "ग्वाटेमाला"
+      ],
+      "Guernsey": [
+        "ग्वेर्नसे"
+      ],
+      "Guinea": [
+        "गिनी"
+      ],
+      "Guinea-Bissau": [
+        "गिनी-बिसाऊ"
+      ],
+      "Guyana": [
+        "गुयाना"
+      ],
+      "Haiti": [
+        "हैती"
+      ],
+      "Heard Island and McDonald Islands": [
+        "हर्ड आइलैंड और मैकडोनाल्ड आइलैंड्स"
+      ],
+      "Holy See (Vatican City State)": [
+        "होली सी (वेटिकन सिटी स्टेट)"
+      ],
+      "Honduras": [
+        "होंडुरस"
+      ],
+      "Hong Kong": [
+        "हाँग काँग"
+      ],
+      "Hungary": [
+        "हंगरी"
+      ],
+      "Iceland": [
+        "आइसलैंड"
+      ],
+      "India": [
+        "भारत"
+      ],
+      "Indonesia": [
+        "इंडोनेशिया"
+      ],
+      "International": [
+        "अंतरराष्ट्रीय"
+      ],
+      "Iran": [
+        "ईरान"
+      ],
+      "Iraq": [
+        "इराक"
+      ],
+      "Ireland": [
+        "आयरलैंड"
+      ],
+      "Isle of Man": [
+        "आइल ऑफ मैन"
+      ],
+      "Israel": [
+        "इजराइल"
+      ],
+      "Italy": [
+        "इटली"
+      ],
+      "Jamaica": [
+        "जमैका"
+      ],
+      "Japan": [
+        "जापान"
+      ],
+      "Jersey": [
+        "जर्सी"
+      ],
+      "Jordan": [
+        "जॉर्डन"
+      ],
+      "Kazakhstan": [
+        "कज़ाकिस्तान"
+      ],
+      "Kenya": [
+        "केन्या"
+      ],
+      "Kiribati": [
+        "किरिबाती"
+      ],
+      "Kosovo": [
+        "कोसोवो"
+      ],
+      "Kuwait": [
+        "कुवैत"
+      ],
+      "Kyrgyzstan": [
+        "किरगिज़स्तान"
+      ],
+      "Laos": [
+        "लाओस"
+      ],
+      "Latvia": [
+        "लाटविया"
+      ],
+      "Lebanon": [
+        "लेबनान"
+      ],
+      "Lesotho": [
+        "लेसोथो"
+      ],
+      "Liberia": [
+        "लाइबेरिया"
+      ],
+      "Libya": [
+        "लीबिया"
+      ],
+      "Liechtenstein": [
+        "लिचेंस्टीन"
+      ],
+      "Lithuania": [
+        "लिथुआनिया"
+      ],
+      "Luxembourg": [
+        "लक्समबर्ग"
+      ],
+      "Macao": [
+        "मकाओ"
+      ],
+      "Madagascar": [
+        "मेडागास्कर"
+      ],
+      "Malawi": [
+        "मलावी"
+      ],
+      "Malaysia": [
+        "मलेशिया"
+      ],
+      "Maldives": [
+        "मालदीव"
+      ],
+      "Mali": [
+        "माली"
+      ],
+      "Malta": [
+        "माल्टा"
+      ],
+      "Marshall Islands": [
+        "मार्शल द्वीप समूह"
+      ],
+      "Martinique": [
+        "मार्टिनिक"
+      ],
+      "Mauritania": [
+        "मॉरिटानिया"
+      ],
+      "Mauritius": [
+        "मॉरीशस"
+      ],
+      "Mayotte": [
+        "मैयट"
+      ],
+      "Mexico": [
+        "मेक्सिको"
+      ],
+      "Moldova": [
+        "माल्डोवा"
+      ],
+      "Monaco": [
+        "मोनाको"
+      ],
+      "Mongolia": [
+        "मंगोलिया"
+      ],
+      "Montenegro": [
+        "मोंटेनेग्रो"
+      ],
+      "Montserrat": [
+        "मॉन्टसेराट"
+      ],
+      "Morocco": [
+        "मोरक्को"
+      ],
+      "Mozambique": [
+        "मोज़ांबिक"
+      ],
+      "Myanmar": [
+        "म्यांमार"
+      ],
+      "Namibia": [
+        "नामीबिया"
+      ],
+      "Nauru": [
+        "नाउरू"
+      ],
+      "Nepal": [
+        "नेपाल"
+      ],
+      "Netherlands": [
+        "नेदरलैंड"
+      ],
+      "New Caledonia": [
+        "न्यू कैलेडोनिया"
+      ],
+      "New Zealand": [
+        "न्यूज़ीलैंड"
+      ],
+      "Nicaragua": [
+        "निकारागुआ"
+      ],
+      "Niger": [
+        "नाइजर"
+      ],
+      "Nigeria": [
+        "नाइजीरिया"
+      ],
+      "Niue": [
+        "नियू"
+      ],
+      "Norfolk Island": [
+        "नॉरफोक आइलैंड"
+      ],
+      "North Korea": [
+        "उत्तर कोरिया"
+      ],
+      "North Macedonia": [
+        "उत्तर मैसिडोनिया"
+      ],
+      "Northern Mariana Islands": [
+        "उत्तरी मारियाना द्वीपसमूह"
+      ],
+      "Norway": [
+        "नॉर्वे"
+      ],
+      "Oman": [
+        "ओमान"
+      ],
+      "Pakistan": [
+        "पाकिस्तान"
+      ],
+      "Palau": [
+        "पलाऊ"
+      ],
+      "Palestine": [
+        "फिलिस्तीन"
+      ],
+      "Panama": [
+        "पनामा"
+      ],
+      "Papua New Guinea": [
+        "पापुआ न्यू गिनी"
+      ],
+      "Paraguay": [
+        "पैराग्वे"
+      ],
+      "Peru": [
+        "पेरू"
+      ],
+      "Philippines": [
+        "फिलीपींस"
+      ],
+      "Pitcairn": [
+        "पिटकेर्न"
+      ],
+      "Poland": [
+        "पोलैंड"
+      ],
+      "Portugal": [
+        "पुर्तगाल"
+      ],
+      "Puerto Rico": [
+        "पर्टो रिको"
+      ],
+      "Qatar": [
+        "कतर"
+      ],
+      "Reunion": [
+        "रीयूनियन"
+      ],
+      "Romania": [
+        "रोमानिया"
+      ],
+      "Russia": [
+        "रूस"
+      ],
+      "Rwanda": [
+        "रवांडा"
+      ],
+      "Saint Barthélemy": [
+        "सेंट बार्थेलेमी"
+      ],
+      "Saint Helena": [
+        "सेंट हेलेना"
+      ],
+      "Saint Kitts and Nevis": [
+        "सेंट किट्स और नेविस"
+      ],
+      "Saint Lucia": [
+        "सेंट लूसिया"
+      ],
+      "Saint Martin (French Part)": [
+        "सेंट मार्टिन (फ्रांसीसी भाग)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "सेंट पियरे और मिकेलॉन"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "संत विन्सेंट और ग्रेनेजियन्स"
+      ],
+      "Samoa": [
+        "समोआ"
+      ],
+      "San Marino": [
+        "सैन मैरीनो"
+      ],
+      "Sao Tome and Principe": [
+        "साओ टोमे और प्रिंसिपे"
+      ],
+      "Saudi Arabia": [
+        "सऊदी अरब"
+      ],
+      "Senegal": [
+        "सेनेगल"
+      ],
+      "Serbia": [
+        "सर्बिया"
+      ],
+      "Seychelles": [
+        "सेशेल्स"
+      ],
+      "Sierra Leone": [
+        "सिएरा लियोन"
+      ],
+      "Singapore": [
+        "सिंगापुर"
+      ],
+      "Sint Maarten": [
+        "सेंट मार्टिन"
+      ],
+      "Slovakia": [
+        "स्लोवाकिया"
+      ],
+      "Slovenia": [
+        "स्लोवेनिया"
+      ],
+      "Solomon Islands": [
+        "सोलोमन द्वीप समूह"
+      ],
+      "Somalia": [
+        "सोमालिया"
+      ],
+      "South Africa": [
+        "दक्षिण अफ़्रीका"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "दक्षिण जॉर्जिया और दक्षिण सैंडविच आइलैंड"
+      ],
+      "South Korea": [
+        "दक्षिण कोरिया"
+      ],
+      "South Ossetia": [
+        "दक्षिण ओसेशिया"
+      ],
+      "South Sudan": [
+        "दक्षिण सूडान"
+      ],
+      "Spain": [
+        "स्पेन"
+      ],
+      "Sri Lanka": [
+        "श्री लंका"
+      ],
+      "Sudan": [
+        "सूडान"
+      ],
+      "Suriname": [
+        "सूरीनाम"
+      ],
+      "Svalbard and Jan Mayen": [
+        "स्वालबार्ड और जान मायेन"
+      ],
+      "Sweden": [
+        "स्वीडन"
+      ],
+      "Switzerland": [
+        "स्विट्ज़रलैंड"
+      ],
+      "Syria": [
+        "सिरिया"
+      ],
+      "Taiwan": [
+        "ताइवान"
+      ],
+      "Tajikistan": [
+        "तजाकिस्तान"
+      ],
+      "Tanzania": [
+        "तंज़ानिया"
+      ],
+      "Thailand": [
+        "थाईलैंड"
+      ],
+      "Timor-Leste": [
+        "तिमोर-लेस्ते"
+      ],
+      "Togo": [
+        "टोगो"
+      ],
+      "Tokelau": [
+        "टोकेलाऊ"
+      ],
+      "Tonga": [
+        "टोंगा"
+      ],
+      "Trinidad and Tobago": [
+        "त्रिनिदाद और टोबैगो"
+      ],
+      "Tristan da Cunha": [
+        "ट्रिस्टन दा कुन्हा"
+      ],
+      "Tunisia": [
+        "ट्यूनीशिया"
+      ],
+      "Turkey": [
+        "तुर्की"
+      ],
+      "Turkmenistan": [
+        "तुर्कमेनिस्तान"
+      ],
+      "Turks and Caicos Islands": [
+        "तुर्क्स और कैकोज़ द्वीपसमूह"
+      ],
+      "Tuvalu": [
+        "तुवालु"
+      ],
+      "Uganda": [
+        "यूगांडा"
+      ],
+      "Ukraine": [
+        "यूक्रेन"
+      ],
+      "United Arab Emirates": [
+        "संयुक्त अरब अमीरात"
+      ],
+      "United Kingdom": [
+        "युनाइटेड किंगडम"
+      ],
+      "United States": [
+        "अमरीका"
+      ],
+      "United States Minor Outlying Islands": [
+        "युनाइटेड स्टेट्स माइनर आउटलाइंग द्वीप"
+      ],
+      "Uruguay": [
+        "उरुग्वे"
+      ],
+      "Uzbekistan": [
+        "उज़्बेकिस्तान"
+      ],
+      "Vanuatu": [
+        "वानुअतु"
+      ],
+      "Venezuela": [
+        "वेनेज़ुएला"
+      ],
+      "Vietnam": [
+        "वियतनाम"
+      ],
+      "Virgin Islands, British": [
+        "वर्जिन द्वीप समूह, ब्रिटिश"
+      ],
+      "Virgin Islands, U.S.": [
+        "वर्जिन आइलैंड्स, यू.एस."
+      ],
+      "Wallis and Futuna": [
+        "वालीस और फ्युटुना"
+      ],
+      "Western Sahara": [
+        "पश्चिमी सहारा"
+      ],
+      "Yemen": [
+        "यमन"
+      ],
+      "Zambia": [
+        "जाम्बिया"
+      ],
+      "Zimbabwe": [
+        "ज़िम्बाब्वे"
+      ],
+      "Åland Islands": [
+        "एलैंड आइलैंड"
       ]
     },
     "CustomFilter": {
@@ -3800,6 +4570,9 @@
       ],
       "Copied to clipboard": [
         "क्लिपबोर्ड पर प्रतिलिपि बनाई गई"
+      ],
+      "Country code": [
+        "देश कोड"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
