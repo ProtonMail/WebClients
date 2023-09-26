@@ -1,20 +1,17 @@
-const https = require('https');
+const http = require('http');
 const ws = require('ws');
 const noop = () => {};
 
 /**
- * Creates a WS server over HTTPS (Firefox
- * automatically upgrades all ws:// to wss://
- * by default) which the extension will connect
- * to in dev mode : this allows triggering runtime
+ * this allows triggering runtime
  * reloads when webpack's HMR server emits new data
  */
-const createReloadRuntimeServer = ({ cert, key, port = 9090 }) => {
-    const httpsServer = https.createServer({ cert, key });
+const createReloadRuntimeServer = ({ port }) => {
+    const httpServer = http.createServer({});
 
     console.info('[ProtonPassExtensionReloader] - Setting runtime reloader server');
 
-    const server = new ws.Server({ server: httpsServer, pingTimeout: 10000 });
+    const server = new ws.Server({ server: httpServer, pingTimeout: 10000 });
     server.on('pong', noop);
 
     const reloadClients = () => {
@@ -25,7 +22,7 @@ const createReloadRuntimeServer = ({ cert, key, port = 9090 }) => {
     };
 
     process.on('beforeExit', () => server.close());
-    httpsServer.listen(port);
+    httpServer.listen(port);
 
     return { reload: reloadClients };
 };
