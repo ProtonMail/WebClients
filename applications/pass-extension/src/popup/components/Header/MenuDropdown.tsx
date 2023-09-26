@@ -16,7 +16,7 @@ import {
     selectUser,
     vaultDeleteIntent,
 } from '@proton/pass/store';
-import { type MaybeNull, ShareType, type VaultShare } from '@proton/pass/types';
+import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
@@ -65,7 +65,8 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const withClose = <F extends (...args: any[]) => any>(cb: F) => pipe(cb, tap(close));
+    const withClose = <P extends any[], R extends any>(cb: (...args: P) => R): ((...args: P) => R) =>
+        pipe(cb, tap(close));
 
     const handleVaultDelete = (destinationShareId: MaybeNull<string>) => {
         if (deleteVault !== null) {
@@ -196,24 +197,23 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
                         <VaultSubmenu
                             selectedShareId={shareId}
+                            inTrash={inTrash}
+                            handleRestoreTrash={handleRestoreTrash}
+                            handleEmptyTrash={() => setDeleteAllConfirm(true)}
+                            handleVaultDeleteClick={setDeleteVault}
                             handleVaultSelectClick={withClose((vaultShareId) => {
                                 unselectItem();
                                 setShareId(vaultShareId);
                                 setSearch('');
                             })}
-                            handleVaultDeleteClick={setDeleteVault}
                             handleVaultEditClick={withClose((vault: VaultShare) =>
                                 setVaultModalProps({ open: true, payload: { type: 'edit', vault } })
                             )}
                             handleVaultCreateClick={withClose(() =>
                                 setVaultModalProps({ open: true, payload: { type: 'new' } })
                             )}
-                            handleVaultShareClick={withClose((vault: VaultShare) =>
-                                inviteContext.invite(vault.shareId, ShareType.Vault)
-                            )}
-                            inTrash={inTrash}
-                            handleRestoreTrash={handleRestoreTrash}
-                            handleEmptyTrash={() => setDeleteAllConfirm(true)}
+                            handleVaultInviteClick={withClose(({ shareId }) => inviteContext.invite(shareId))}
+                            handleVaultManageClick={withClose(({ shareId }) => inviteContext.manage(shareId))}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
