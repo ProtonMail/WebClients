@@ -76,6 +76,10 @@ const onShareEvent = (shareId: string) =>
                             targetType: share.targetType,
                             content: decodeVaultContent(share.content),
                             primary: Boolean(UpdatedShare.Primary),
+                            shared: share.shared,
+                            owner: share.owner,
+                            targetMembers: share.targetMembers,
+                            shareRoleId: share.shareRoleId,
                             eventId: LatestEventID,
                         },
                     })
