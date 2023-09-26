@@ -1,4 +1,4 @@
-import { fromUnixTime, isThisYear, isToday } from 'date-fns';
+import { fromUnixTime, isThisMonth, isThisYear } from 'date-fns';
 import { c } from 'ttag';
 
 import type { PhotoGridItem, PhotoLink } from '../interface';
@@ -7,8 +7,8 @@ import { getMonthFormatter, getMonthYearFormatter } from './dateFormatter';
 const dateToCategory = (timestamp: number): string => {
     const date = fromUnixTime(timestamp);
 
-    if (isToday(date)) {
-        return c('Info').t`Today`;
+    if (isThisMonth(date)) {
+        return c('Info').t`This month`;
     } else if (isThisYear(date)) {
         return getMonthFormatter().format(date);
     }
