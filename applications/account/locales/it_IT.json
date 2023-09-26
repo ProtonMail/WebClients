@@ -300,10 +300,10 @@
         "Elimina gateway"
       ],
       "Delete link": [
-        "Elimina collegamento"
+        "Elimina link"
       ],
       "Delete permanently": [
-        "Elimina permanentemente"
+        "Elimina definitivamente"
       ],
       "Delete record": [
         "Elimina record"
@@ -1575,7 +1575,7 @@
         "Il link al calendario non è accessibile al di fuori dell'ecosistema del fornitore del calendario."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Il collegamento al calendario temporaneamente non è accessibile. Si prega di verificare che il link dato dal fornitore del calendario sia ancora valido."
+        "Il link al calendario non è temporaneamente accessibile. Verifica che il link dato dal fornitore del calendario sia ancora valido."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento — ${ CALENDAR_APP_NAME } proverà ad aggiornare il calendario tra alcune ore."
@@ -3246,10 +3246,10 @@
         "Impossibile rinominare il gateway"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Si prega di riprovare."
+        "Credenziali di accesso non valide. Per favore riprova."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Si prega di riprovare."
+        "Password della casella di posta non corretta. Per favore riprova."
       ],
       "Incorrect password": [
         "Password errata"
@@ -3438,7 +3438,7 @@
         "Alcuni nomi delle cartelle superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alcuni nomi delle tue etichette sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
+        "Alcuni dei nomi delle tue etichette sono riservati. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -3465,7 +3465,7 @@
         "Gli indirizzi email non corrispondono."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
+        "Il nome della cartella non è valido. Scegli un nome differente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
@@ -3477,7 +3477,7 @@
         "Le chiavi nei file di ripristino non possono essere convalidate. Si prega di caricare singolarmente per ulteriori informazioni."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Il nome dell'etichetta non è valido. Si prega di scegliere un altro nome."
+        "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
@@ -3805,13 +3805,13 @@
         "Ops, si è verificato un errore"
       ],
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
+        "Troppe sessioni per bambini, cancella i tuoi cookie e accedi nuovamente."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
@@ -4337,7 +4337,7 @@
         "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Qualcosa è andato storto registrando la tua chiave di sicurezza. Sei pregato di riprovare."
+        "Qualcosa è andato storto durante la registrazione della tua chiave di sicurezza. Per favore riprova."
       ]
     },
     "fido2: Info": {
@@ -5100,7 +5100,7 @@
         "Vai al ${ calendarViewLink } in Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Passa il mouse sul calendario che desideri importare e apri il menu a discesa."
+        "Muovi il mouse sul calendario che desideri importare e apri il menu a tendina."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
@@ -5243,7 +5243,7 @@
         "${ MAIL_APP_NAME } può anche essere usato con una sola password, la quale sostituisce sia la password d'accesso che quella della casella di posta. Per passare alla modalità ad una password, inserisci la password desiderata e fai clic su Salva."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } supporta la firma DKIM i domini personalizzati. Per utilizzare l'autenticazione DKIM, si prega di aggiungere il seguente record CNAME nelle impostazioni DNS per questo dominio. Questo in genere può essere fatto nel pannello di controllo del registrar del tuo dominio."
+        "${ MAIL_APP_NAME } supporta la firma DKIM per i domini personalizzati. Per utilizzare l'autenticazione DKIM, aggiungi il seguente record CNAME nelle impostazioni DNS per questo dominio. Questo solitamente può essere fatto nel pannello di controllo del registrar del tuo dominio."
       ],
       "${ n } address": [
         "${ n } indirizzo",
@@ -5261,7 +5261,7 @@
         "${ number } server"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } file caricato non è una chiave privata valida. Si prega di verificare e riprovare.",
+        "${ numberOfNonPrivateKeys } file caricato non è una chiave privata valida. Verifica e riprova.",
         "${ numberOfNonPrivateKeys } file caricati non sono chiavi private valide. Si prega di verificare e riprovare."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
@@ -5535,7 +5535,7 @@
         "Sei sicuro di voler eliminare questo calendario? Tutti gli eventi in esso contenuti verranno eliminati."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Sei sicuro di voler eliminare permanentemente questo calendario? È possibile aggiungere nuovamente il calendario dei giorni festivi più tardi."
+        "Sei sicuro di voler eliminare definitivamente questo calendario? Puoi aggiungere nuovamente il calendario dei giorni festivi più tardi."
       ],
       "Are you sure you want to delete this domain?": [
         "Sei sicuro di voler eliminare questo dominio?"
@@ -5619,7 +5619,7 @@
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Prima di poter ricevere messaggi di posta per i tuoi domini personalizzati su ${ MAIL_APP_NAME }, devi aggiungere il seguente record MX sul tuo DNS. Questo può essere generalmente fatto dal pannello di controllo del registrar del tuo dominio."
+        "Prima di poter ricevere email per i tuoi domini personalizzati su ${ MAIL_APP_NAME }, devi aggiungere i seguenti record MX sul tuo DNS. Questo solitamente può essere fatto dal pannello di controllo del registrar del tuo dominio."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Prima di iniziare a inviare e ricevere email dai tuoi nuovi indirizzi devi creare le loro chiavi di crittografia."
@@ -5734,11 +5734,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -5747,7 +5747,7 @@
         "Cancelli ogni altro record MX oppure si assicuri che la priorità di ${ MAIL_APP_NAME } sia il numero minimo."
       ],
       "Delete link?": [
-        "Eliminare il collegamento?"
+        "Eliminare il link?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminazione di ${ deletedServerCount } server gateway",
@@ -5779,7 +5779,7 @@
         "Fatto! Abbiamo inviato un codice a ${ destination }."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "La finestra non si apre? Ricorda di disabilitare il blocco dei pop-up."
+        "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ${ VPN_APP_NAME } a pagamento."
@@ -6010,7 +6010,7 @@
         "Se di recente hai reimpostato la tua password, puoi usare un metodo di recupero dati per sbloccare i tuoi dati"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Se vuoi mantenere una registrazione SPF esistente, ti basta aggiungere ${ spf } a questo dopo il ${ spfValue }. Non creare registrazioni SPF multiple."
+        "Se vuoi mantenere un record SPF già esistente, ti basta aggiungere ${ spf } a questo dopo il ${ spfValue }. Non creare multipli record SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se desideri combinare questo account con un altro, NON eliminarlo."
@@ -6044,7 +6044,7 @@
         "Importante: per favore, assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account qualora perdessi il tuo dispositivo per l'autenticazione a 2 fattori."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANTE: Alcuni servizi di registrazione non accettano i valori CNAME con un punto alla fine (mentre altri lo richiedono). Se il tuo servizio di registrazione non accetta i tuoi record CNAM, cancellare il punto alla fine di ogni valore CNAME e riprovare."
+        "IMPORTANTE: Alcuni registrar non accettano i valori CNAME con un punto alla fine (mentre altri lo richiedono). Se il tuo registrar non accetta i tuoi record CNAM, cancella il punto alla fine di ogni valore CNAME e riprova."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
@@ -6150,7 +6150,7 @@
         "Link copiato negli appunti"
       ],
       "Link created": [
-        "Collegamento creato"
+        "Link creato"
       ],
       "Link deleted": [
         "Link eliminato"
@@ -6370,12 +6370,12 @@
         "Upgrade del piano necessario"
       ],
       "Please add a password for the user on row": [
-        "Si prega di aggiungere una password per l'utente sulla riga",
-        "Si prega di aggiungere le password per gli utenti nelle righe"
+        "Aggiungi una password per l'utente nella riga",
+        "Aggiungi le password per gli utenti nelle righe"
       ],
       "Please add an email address for the user on row": [
-        "Si prega di aggiungere un indirizzo email per l'utente sulla riga",
-        "Si prega di aggiungere gli indirizzi email per gli utenti nelle righe"
+        "Si prega di aggiungere un indirizzo email per l'utente nella riga",
+        "Aggiungi gli indirizzi email per gli utenti nelle righe"
       ],
       "Please authenticate your card in the verification tab.": [
         "Verifica la carta nella scheda di verifica."
@@ -6417,7 +6417,7 @@
         "Per favore fornisci un indirizzo email nel caso in cui dovessimo contattarti."
       ],
       "Please select the folders you would like to import:": [
-        "Si prega di selezionare le cartelle che si desidera importare:"
+        "Seleziona le cartelle che vuoi importare:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleziona il tipo di link che vuoi inserire e compila tutti i campi."
@@ -6438,7 +6438,7 @@
         "Abbonamento Plus o Visionary richiesto"
       ],
       "Preview failed to be loaded": [
-        "Impossibile caricare l'anteprima"
+        "Caricamento dell'anteprima non riuscito"
       ],
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
@@ -6612,7 +6612,7 @@
         "Alcuni dei tuoi server disponibili possono essere utilizzati solo in determinati paesi a causa di rimozioni recenti"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF viene utilizzato per specificare a chi è consentito inviare email per il dominio quindi è consigliabile includere ${ MAIL_APP_NAME } nel suo record SPF. Per favore aggiunga il seguente record TXT nel DNS. Questo in genere può essere fatto nel pannello di controllo del registrar del suo dominio."
+        "SPF viene utilizzato per specificare a chi è consentito inviare email per il dominio quindi è consigliabile includere ${ MAIL_APP_NAME } nel suo record SPF. Aggiungi il seguente record TXT sul tuo DNS. Questo solitamente può essere fatto nel pannello di controllo del registrar del suo dominio."
       ],
       "Step ${ step }": [
         "Passaggio ${ step }",
@@ -6712,7 +6712,7 @@
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Il processo di verifica aprirà una nuova finestra del browser. È necessario disabilitare il blocco dei pop-up."
+        "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Questi file di configurazione ti permettono di scegliere a quale server ${ VPN_APP_NAME } ti connetti quando utilizzi un’app VPN di terze parti o se configuri una connessione VPN su un router."
@@ -6748,7 +6748,7 @@
         "Questa è la password che hai usato prima della reimpostazione della password."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
+        "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -6784,7 +6784,7 @@
         "Questo scaricherà un file contenente la tua chiave privata. Proteggi questo file crittografandolo con una password."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento a ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi alcun blocco popup, sei pregato di disabilitarlo per continuare."
+        "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi un qualsiasi blocco pop-up, disabilitalo per continuare."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Questo eliminerà definitivamente i dati e tutti gli indirizzi email associati a questo utente."
@@ -6835,7 +6835,7 @@
         "Per garantire che tu non perda dati importanti, ${ DRIVE_APP_NAME } salva vecchie versioni dei tuoi file mentre tu e i tuoi collaboratori effettuate modifiche. Seleziona per quanto tempo ${ BRAND_NAME } deve mantenere versioni precedenti."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+        "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -6889,7 +6889,7 @@
         "La modalità a doppia password utilizza due password separate per l'accesso e la decriptazione della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Impossibile verificare la firma del file di ripristino. Si prega di contattare l'assistenza."
+        "Impossibile verificare la firma del file di recupero. Contatta l'assistenza."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
@@ -6976,7 +6976,7 @@
         "La verifica potrebbe richiedere qualche minuto."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
+        "La verifica aprirà una nuova scheda, disabilita qualsiasi blocco pop-up. Non ti verrà addebitato nulla. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica la tua identità con una password temporanea usa e getta da un'app di autenticazione"
@@ -7060,10 +7060,10 @@
         "Ti diamo il benvenuto"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
+        "Invieremo un codice di recupero all'indirizzo email fornito per il recupero dell'account."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "Invieremo un codice di ripristino al numero di telefono fornito per il recupero dell'account."
+        "Invieremo un codice di recupero al numero di telefono fornito per il recupero dell'account."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai cambiarlo. Ti invieremo un'email non appena verrà terminato."
@@ -7269,10 +7269,10 @@
         "Il tuo Account ${ BRAND_NAME } è associato a ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } password": [
         "La tua password di ${ BRAND_NAME }"
@@ -7570,13 +7570,13 @@
         "Vai alla posta inviata"
       ],
       "Go to Spam": [
-        "Vai a Spam"
+        "Vai a spam"
       ],
       "Go to Starred": [
         "Vai ai Preferiti"
       ],
       "Go to Trash": [
-        "Vai al Cestino"
+        "Vai al cestino"
       ],
       "Insert link": [
         "Inserisci link"
@@ -7975,7 +7975,7 @@
         "Conferma l'email"
       ],
       "Confirm link URLs": [
-        "Conferma gli URL di collegamento"
+        "Conferma gli URL dei link"
       ],
       "Confirm login password": [
         "Conferma password di accesso"
@@ -8825,7 +8825,7 @@
         "Calendari"
       ],
       "clearing your browser cache": [
-        "pulendo la cache del browser"
+        "cancellando la cache del browser"
       ],
       "click here": [
         "clicca qui"
@@ -10099,7 +10099,7 @@
         "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Non teniamo log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
+        "Non conserviamo alcun log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Ci impegniamo ad aiutare i clienti soggetti alle normative HIPAA/HITECH a salvaguardare i dati sanitari protetti (PHI). I BAA firmati sono disponibili per tutti i clienti ${ BRAND_NAME } per le aziende."
@@ -10142,7 +10142,7 @@
         "Aumenta il tuo spazio di archiviazione a ${ bundleStorage } per utente"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Incrementa il tuo spazio di archiviazione a un totale di ${ bundleStorage }"
+        "Aumenta il tuo spazio di archiviazione a un totale di ${ bundleStorage }"
       ],
       "Browser extension": [
         "Estensione per il browser"
@@ -10901,7 +10901,7 @@
         "Conferma"
       ],
       "domain.com": [
-        "domain.com"
+        "dominio.it"
       ],
       "E.g., ": [
         "Ad es "
@@ -10910,10 +10910,10 @@
         "Indirizzo email"
       ],
       "example@domain.com": [
-        "esempio@dominio.com"
+        "esempio@dominio.it"
       ],
       "Feedback": [
-        "Suggerimento"
+        "Feedback"
       ],
       "Gift code": [
         "Codice regalo"
@@ -10937,7 +10937,7 @@
         "Per favore descrivi il problema e includi eventuali messaggi di errore"
       ],
       "Please insert link first": [
-        "Inserisci prima il collegamento"
+        "Inserisci prima il link"
       ],
       "Please select a country": [
         "Seleziona un paese"
@@ -11285,7 +11285,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
+        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un link."
       ]
     },
     "Share calendar max shares reached error": {
@@ -11752,10 +11752,10 @@
         "Ho capito"
       ],
       "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Accedi al tuo account Apple nell'App Store e premi ${ subscriptions }."
+        "Accedi al tuo account Apple nell'App Store e clicca ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
-        "Accedi al tuo account Play Store e premi ${ subscriptions }."
+        "Accedi al tuo account Play Store e clicca ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Gestisci il tuo abbonamento su ${ subscriptionManager }"
@@ -12449,10 +12449,10 @@
         "Scegli un account"
       ],
       "Clear": [
-        "Elimina"
+        "Cancella"
       ],
       "Clear out the junk": [
-        "Ripulisci la posta indesiderata"
+        "Cancella i messaggi indesiderati"
       ],
       "Composing": [
         "Comporre"
@@ -12501,7 +12501,7 @@
         "Crea account utente multipli"
       ],
       "Create public link": [
-        "Crea un collegamento pubblico"
+        "Crea un link pubblico"
       ],
       "Create user accounts": [
         "Crea gli account utente"
@@ -12588,7 +12588,7 @@
         "Elimina calendario"
       ],
       "Delete key permanently?": [
-        "Eliminare la chiave in modo permanente?"
+        "Eliminare definitivamente la chiave?"
       ],
       "Delete logs": [
         "Cancella i registi"
@@ -12861,7 +12861,7 @@
         "Nessun metodo di recupero"
       ],
       "Open actions dropdown": [
-        "Apri menu a discesa delle azioni"
+        "Apri menu delle azioni"
       ],
       "Open pagination": [
         "Apri paginazione"
@@ -12984,7 +12984,7 @@
         "Sicurezza e privacy"
       ],
       "Security logs": [
-        "Registro di sicurezza"
+        "Log di sicurezza"
       ],
       "Select a plan": [
         "Seleziona un piano"
@@ -13376,7 +13376,7 @@
         "Attiva/disattiva le notifiche desktop e mobile"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "L'abilitazione di registri avanzati registra l'indirizzo IP per ogni evento nel registro di sicurezza."
+        "Abilitando i log avanzati registrerai l'indirizzo IP di ogni evento nei log di sicurezza."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
@@ -13400,7 +13400,7 @@
         "Seleziona come far apparire il tuo elenco di messaggi per impostazione predefinita."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Imposta la dimensione predefinita del popup del Compositore come piccolo o a schermo intero."
+        "Imposta la dimensione predefinita del pop-up del Compositore come piccolo o a schermo intero."
       ],
       "Set the default layout for your Inbox.": [
         "Imposta il layout predefinito per la tua Posta in arrivo."
@@ -13501,8 +13501,8 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Seleziona le impostazioni PGP predefinite utilizzate per firmare o crittografare i messaggi con utenti PGP che non utilizzano ${ BRAND_NAME }. Nota che PGP/Inline forza i messaggi in testo normale. Scopri di più"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Seleziona le impostazioni PGP predefinite utilizzate per firmare o crittografare i messaggi con utenti PGP che non utilizzano ${ BRAND_NAME }. Tieni presente che PGP/Inline forza la formattazione dei messaggi in testo normale."
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -13528,7 +13528,7 @@
         "versione stabile"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Questa versione di Tor Browser non è supportata. Si prega di aggiornare all'ultima ${ stableRelease }"
+        "Questa versione di Tor Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13726,7 +13726,7 @@
         "Eliminando questo numero di telefono, non sarai più in grado di recuperare il tuo account."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Disabilitando i log, si cancellerà anche l'intera cronologia dei log stessi. Sei sicuro di voler disabilitare i log?"
+        "Disabilitando i log, ne cancellerai anche l'intera cronologia. Sei sicuro di voler disabilitare i log?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "Disabilitando questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } ad esso collegati saranno disabilitati. Sei sicuro di voler disabilitare questo indirizzo?"
@@ -13738,7 +13738,7 @@
         "Inserisci almeno un destinatario."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
+        "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."

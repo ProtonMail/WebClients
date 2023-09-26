@@ -4387,8 +4387,14 @@
       "Add a name to identify your security key with.": [
         "Dodaj nazwę klucza bezpieczeństwa."
       ],
+      "Allow platform keys": [
+        "Zezwalaj na klucze platformy"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Jeśli jest włączona, umożliwia rejestrację wbudowanych urządzeń (takich jak Windows Hello, TouchID, FaceID lub wewnętrzne TPM) oprócz zewnętrznych sprzętowych kluczy bezpieczeństwa"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
@@ -4682,6 +4688,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Ustaw ${ strongText } z Gmaila"
+      ],
+      "This feature is currently unavailable": [
+        "Funkcja jest obecnie niedostępna"
       ],
       "Update your logins": [
         "Zaktualizuj dane logowania"
@@ -5843,11 +5852,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -11860,6 +11869,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Anulowanie subskrypcji. Poczekaj chwilę"
+      ],
       "Downgrading your account, please wait": [
         "Trwa obniżanie planu. Poczekaj chwilę"
       ]
@@ -13470,6 +13482,9 @@
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Wyślemy na nowy adres wiadomość z instrukcjami zmiany adresu."
+      ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
       ],
@@ -13797,11 +13812,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Automatycznie dodaj swój klucz publiczny do każdej wysyłanej wiadomości. Dzięki temu odbiorcy mogą zweryfikować jej autentyczność i wysyłać do Ciebie zaszyfrowane wiadomości."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Wybierz ustawienia domyślne PGP, które będą używane do podpisywania i szyfrowania wiadomości dla użytkowników PGP spoza ${ BRAND_NAME }. Pamiętaj, że schemat PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu."
       ]
     },
     "Tooltip prompt to trust keys": {

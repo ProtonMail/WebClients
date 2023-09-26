@@ -49,6 +49,12 @@
       "Apply": [
         "Zastosuj"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakt",
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontakty",
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów",
+        "Grupa kontaktów może zawierać maksymalnie ${ maxContacts } kontaktów"
+      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -714,6 +720,12 @@
       ],
       "View invoice": [
         "Pokaż fakturę"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów",
+        "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
       ],
       "Your 500 MB bonus": [
         "Twój bonus 500 MB"
