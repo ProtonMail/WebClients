@@ -92,7 +92,7 @@
         "Scegli un file o trascinalo qui"
       ],
       "Clear": [
-        "Elimina"
+        "Cancella"
       ],
       "Clear browser data": [
         "Cancella i dati del browser"
@@ -331,7 +331,7 @@
         "Gestisci etichette"
       ],
       "Mark for deletion": [
-        "Seleziona per la cancellazione"
+        "Seleziona per l'eliminazione"
       ],
       "Maybe": [
         "Forse"
@@ -415,7 +415,7 @@
         "Chiudi"
       ],
       "Re-sign": [
-        "Ri-firma"
+        "Firma di nuovo"
       ],
       "Reconnect": [
         "Riconnetti"
@@ -568,7 +568,7 @@
         "Sblocca dati"
       ],
       "Unmark for deletion": [
-        "Deseleziona per la cancellazione"
+        "Deseleziona per l'eliminazione"
       ],
       "Untrust": [
         "Non ritenere attendibile"
@@ -987,7 +987,7 @@
         "Il link al calendario non è accessibile al di fuori dell'ecosistema del fornitore del calendario."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Il collegamento al calendario temporaneamente non è accessibile. Si prega di verificare che il link dato dal fornitore del calendario sia ancora valido."
+        "Il link al calendario non è temporaneamente accessibile. Verifica che il link dato dal fornitore del calendario sia ancora valido."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Sono passate più di 12 ore dall'ultimo aggiornamento — ${ CALENDAR_APP_NAME } proverà ad aggiornare il calendario tra alcune ore."
@@ -2231,7 +2231,7 @@
         "Esiste già un gruppo con questo nome"
       ],
       "A problem occurred, please try again.": [
-        "Si è verificato un problema, si prega di riprovare."
+        "Si è verificato un problema. Per favore riprova."
       ],
       "Account does not exist": [
         "L'account non esiste"
@@ -2243,7 +2243,7 @@
         "L'utente è già membro del calendario"
       ],
       "Answer failed to be sent": [
-        "La risposta non è stata inviata"
+        "Invio della risposta non riuscito"
       ],
       "Authentication canceled.": [
         "Autenticazione annullata."
@@ -2255,7 +2255,7 @@
         "Limite calendario raggiunto"
       ],
       "Cancellation failed to be sent": [
-        "Annullamento non inviato"
+        "Invio dell'annullamento non riuscito"
       ],
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
@@ -2329,10 +2329,10 @@
         "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Si prega di riprovare."
+        "Credenziali di accesso non valide. Per favore riprova."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Si prega di riprovare."
+        "Password della casella di posta non corretta. Per favore riprova."
       ],
       "Interval cannot be empty": [
         "L'intervallo non può essere vuoto"
@@ -2353,7 +2353,7 @@
         "Codice di verifica non valido"
       ],
       "Invitation failed to be sent": [
-        "Invito non riuscito"
+        "Invio dell'invito non riuscito"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "È possibile creare eventi solo tra ${ minDateString } - ${ maxDateString }"
@@ -2416,7 +2416,7 @@
         "Le password non corrispondono"
       ],
       "Please activate your search again": [
-        "Si prega di attivare nuovamente la ricerca"
+        "Attiva nuovamente la tua ricerca"
       ],
       "Please create an address first.": [
         "Per favore prima crea un indirizzo."
@@ -2469,7 +2469,7 @@
         "Alcuni nomi delle cartelle superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Alcuni nomi delle tue etichette sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
+        "Alcuni dei nomi delle tue etichette sono riservati. Personalizza l'importazione per modificare questi nomi."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue etichette non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -2493,13 +2493,13 @@
         "Gli indirizzi email non corrispondono."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
+        "Il nome della cartella non è valido. Scegli un nome differente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Il nome dell'etichetta non è valido. Si prega di scegliere un altro nome."
+        "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
@@ -2750,7 +2750,7 @@
         "Ops, si è verificato un errore"
       ],
       "Please refresh the page or try again later.": [
-        "Si prega di aggiornare la pagina o di riprovare più tardi."
+        "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -3403,7 +3403,7 @@
         "Vai al ${ calendarViewLink } in Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Passa il mouse sul calendario che desideri importare e apri il menu a discesa."
+        "Muovi il mouse sul calendario che desideri importare e apri il menu a tendina."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
@@ -3602,7 +3602,7 @@
         "Cancella dati"
       ],
       "Clear encrypted search data": [
-        "Cancella i dati di ricerca crittografata"
+        "Cancella i dati della ricerca crittografata"
       ],
       "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
         "La cancellazione dei dati del browser cancellerà l'indice di ricerca su questo dispositivo. Tutti gli eventi del calendario dovranno essere nuovamente indicizzati per utilizzare la funzionalità di ricerca."
@@ -3642,7 +3642,7 @@
         "Crea in"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
+        "Sono supportati i file CSV da Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alcune altre app, così come i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
       "Custom": [
         "Personalizzato"
@@ -3797,7 +3797,7 @@
         "Link copiato negli appunti"
       ],
       "Link created": [
-        "Collegamento creato"
+        "Link creato"
       ],
       "Loading": [
         "Caricamento"
@@ -3875,7 +3875,7 @@
         "Rimuovi i duplicati e riprova."
       ],
       "Please select the folders you would like to import:": [
-        "Si prega di selezionare le cartelle che si desidera importare:"
+        "Seleziona le cartelle che vuoi importare:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selezionare l'indirizzo o gli indirizzi email da aggiungere al gruppo ${ groupCount }.",
@@ -3885,7 +3885,7 @@
         "Seleziona l'indirizzo o gli indirizzi email da aggiungere a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
+        "Attendi mentre cerchiamo i contatti che possono essere firmati nuovamente con la chiave di crittografia primaria."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
@@ -3984,7 +3984,7 @@
         "Questo evento è stato aggiornato. L'organizzatore non sarà avvisato del rifiuto dell'invito in quanto non è possibile inviare email dall'indirizzo invitato. Vuoi comunque eliminare questo evento?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
+        "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -3993,7 +3993,7 @@
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, si prega di verificare di essere umano."
+        "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -4002,7 +4002,7 @@
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per recuperare i dati, è necessario riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai ricordare la password utilizzata quando è stata generata la chiave."
+        "Per recuperare tuoi i dati, devi riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai dunque ricordare la password utilizzata quando è stata generata la chiave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
@@ -4131,10 +4131,10 @@
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -4674,7 +4674,7 @@
         "Calendari"
       ],
       "clearing your browser cache": [
-        "pulendo la cache del browser"
+        "cancellando la cache del browser"
       ],
       "Learn more": [
         "Scopri di più"
@@ -5517,7 +5517,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
+        "Per invitare un utente che non utilizza ${ BRAND_NAME }, condividi il tuo calendario con un link."
       ]
     },
     "Share calendar max shares reached error": {
@@ -6228,7 +6228,7 @@
         "Crea nuovo gruppo"
       ],
       "Create public link": [
-        "Crea un collegamento pubblico"
+        "Crea un link pubblico"
       ],
       "Currency": [
         "Valuta"
@@ -6348,7 +6348,7 @@
         "Tema notte"
       ],
       "Open actions dropdown": [
-        "Apri menu a discesa delle azioni"
+        "Apri menu delle azioni"
       ],
       "Organizer cannot be notified": [
         "L'organizzatore non può essere notificato"
@@ -6366,10 +6366,10 @@
         "Numeri di telefono"
       ],
       "Re-sign all contacts": [
-        "Ri-firma tutti i contatti"
+        "Firma nuovamente tutti i contatti"
       ],
       "Re-signing contacts": [
-        "Ri-firma contatti"
+        "Nuova firma dei contatti"
       ],
       "Reactivate calendar keys": [
         "Riattiva le chiavi del calendario"
@@ -6671,7 +6671,7 @@
         "Saltare la verifica?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Alcuni dei contatti da unire presentano errori. Si prega di rivederli singolarmente"
+        "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "I dati del contatto sono danneggiati e non possono essere visualizzati."

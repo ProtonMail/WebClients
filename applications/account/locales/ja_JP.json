@@ -1125,6 +1125,9 @@
       "Disallow unsigned mail": [
         "署名のないメールを拒否する"
       ],
+      "Edit address": [
+        "アドレスを編集"
+      ],
       "Enable": [
         "有効化"
       ],
@@ -5655,10 +5658,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6816,6 +6819,9 @@
       "Unverified": [
         "未検証"
       ],
+      "Unverified email address.": [
+        "未検証のメールアドレス"
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
@@ -7904,6 +7910,9 @@
       "Current display name": [
         "現在の表示名"
       ],
+      "Current email": [
+        "現在のメール"
+      ],
       "Customize invoices": [
         "請求書のカスタマイズ"
       ],
@@ -8188,6 +8197,9 @@
       ],
       "New display name": [
         "新しい表示名"
+      ],
+      "New email": [
+        "新しいメール"
       ],
       "New login password": [
         "新しいログインパスワード"
@@ -8852,6 +8864,11 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
+      ]
+    },
+    "Maintenance mode": {
+      "This feature is temporarily unavailable": [
+        "この機能は一時的に利用できません。"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -11681,6 +11698,9 @@
       "Email address copied to clipboard": [
         "メールアドレスがクリップボードにコピーされました"
       ],
+      "Email address updated": [
+        "メールアドレスが更新されました"
+      ],
       "Email updated": [
         "メールアドレスが更新されました"
       ],
@@ -13241,6 +13261,9 @@
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "ブラウザのデフォルトのスクロールバーを使用します。これは通常、大きくて使いやすいです。"
       ],
+      "Verified email address": [
+        "検証済みのメールアドレス"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
       ],
@@ -13280,11 +13303,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "この設定を有効にすると、あなたが送信する各メッセージに公開鍵が自動的に追加されます。受信者はこれを使用して、メッセージの信頼性を検証し、あなたに暗号化されたメッセージを送信できます。"
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "${ BRAND_NAME } 以外の PGP ユーザーによるメッセージの署名または暗号化に使用するデフォルトの PGP 設定を選択します。 インライン PGP ではプレーン テキスト メッセージが強制されることに注意してください。 もっと詳しく知る"
       ]
     },
     "Tooltip prompt to trust keys": {

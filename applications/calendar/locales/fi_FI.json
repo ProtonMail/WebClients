@@ -63,6 +63,10 @@
       "Apply": [
         "Toteuta"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -619,6 +623,10 @@
       ],
       "Yes, I'll attend": [
         "Kyllä, osallistun"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
       ]
     },
     "Action subline": {
@@ -902,7 +910,7 @@
         "Hallitse jäseniä"
       ],
       "Unable to create more calendar links": [
-        "Enempää kalenterilinkkejä ei voida luoda"
+        "Kalenterikytköksiä ei voida luoda enempää"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Kalenteria ei voida jakaa nykyistä useammalle ${ BRAND_NAME }-käyttäjälle"
@@ -959,10 +967,10 @@
         "Kalenteri on liian suuri"
       ],
       "Calendar link is not accessible": [
-        "Kalenterilinkkiä ei tavoiteta"
+        "Kalenterikytköstä ei tavoiteta"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Kalenterilinkki on tilapäisesti tavoittamattomissa"
+        "Kalenterikytkös on tilapäisesti tavoittamattomissa"
       ],
       "Failed to sync calendar": [
         "Kalenterin synkronointi epäonnistui"
@@ -976,10 +984,10 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenterilinkki ei toimi kalenterin toimittajan käyttöympäristön ulkopuolelta."
+        "Kytketty kalenteri ei ole käytettävissä sen toimittajan käyttöympäristön ulkopuolelta."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenterilinkki on tilapäisesti tavoittamattomissa. Varmista, että kalenterin toimittajan linkki on edelleen voimassa."
+        "Kalenterikytkös on tilapäisesti tavoittamattomissa. Varmista, että sen toimittajan linkki on edelleen voimassa."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Edellisestä päivityksestä on kulunut yli 12 tuntia — ${ CALENDAR_APP_NAME } pyrkii päivittämään kalenterin muutaman tunnin kuluttua."
@@ -2543,6 +2551,10 @@
       ],
       "You already added this holidays calendar": [
         "Olet jo lisännyt nämä yleiset vapaapäivät"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
       ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
@@ -4215,6 +4227,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistujaa"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Kutsujen luontia ei sallita jaetussa kalenterissa"
       ]

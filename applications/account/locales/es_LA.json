@@ -5734,11 +5734,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para habilitar un control de acceso más preciso."
@@ -13501,8 +13501,8 @@
       ]
     },
     "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Seleccione la configuración por defecto de PGP usada para firmar o cifrar mensajes con usuarios de PGP que no sean de ${ BRAND_NAME }. Tome en cuenta que Inline PGP fuerza los mensajes de texto sin formato. Más información"
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Seleccione la configuración por defecto de PGP usada para firmar o cifrar mensajes con usuarios de PGP que no sean de ${ BRAND_NAME }. Tome en cuenta que Inline PGP fuerza los mensajes de texto sin formato."
       ]
     },
     "Tooltip prompt to trust keys": {

@@ -866,6 +866,10 @@
       ],
       "Manage members": [
         "Sefrek imttekkiyen"
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Tessawḍeḍ talast n d ${ MAX_LINKS_PER_CALENDAR } useɣwen i uwitay-a. \nAkken ad ternuḍ aseɣwen amaynut ɣer-s, kkes yiwen seg wid yellan.",
+        "Tessawḍeḍ talast n d ${ MAX_LINKS_PER_CALENDAR } yiseɣwan i uwitay-a. \nAkken ad ternuḍ aseɣwen amaynut ɣer uwitay-a, kkes yiwen seg wid yellan."
       ]
     },
     "Calendar sharing access option label": {
@@ -2635,6 +2639,10 @@
     "Event info in search view; event duration": {
       "All day": [
         "Akk ass"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Ɣef teɣzi n wass, ad yeqqim azal n ${ plusDaysToEnd } wass",
+        "Ɣef teɣzi n wass, ad yeqqim azal n ${ plusDaysToEnd } wussan"
       ]
     },
     "Event info. Organizer name": {
@@ -4983,6 +4991,12 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Yecceḍ uleqqem n yiɣewwaren"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } uɛeggal i uwitay",
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen i uwitay"
       ]
     },
     "Share calendar modal input placeholder": {

@@ -2835,6 +2835,12 @@
     "Event info in search view; event duration": {
       "All day": [
         "Celý den"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Celý den, trvá ${ plusDaysToEnd } den",
+        "Celý den, trvá ${ plusDaysToEnd } dny",
+        "Celý den, trvá ${ plusDaysToEnd } dnů",
+        "Celý den, trvá ${ plusDaysToEnd } dnů"
       ]
     },
     "Event info. Organizer name": {
