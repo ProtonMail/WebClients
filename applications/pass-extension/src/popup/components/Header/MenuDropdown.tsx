@@ -12,9 +12,10 @@ import {
     selectHasRegisteredLock,
     selectPassPlan,
     selectPlanDisplayName,
+    selectShare,
     vaultDeleteIntent,
 } from '@proton/pass/store';
-import type { MaybeNull, VaultShare } from '@proton/pass/types';
+import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import clsx from '@proton/utils/clsx';
@@ -30,6 +31,7 @@ import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vau
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
+import { VaultIcon } from '../Vault/VaultIcon';
 import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
@@ -43,6 +45,8 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const { sync, lock, logout, ready } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
+
+    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
 
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
@@ -148,7 +152,12 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                     size="small"
                     title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
                 >
-                    <Icon name="hamburger" />
+                    <VaultIcon
+                        className="flex-item-noshrink"
+                        size="medium"
+                        color={vault?.content.display.color}
+                        icon={vault?.content.display.icon}
+                    />
                 </Button>
 
                 <Dropdown
