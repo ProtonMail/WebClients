@@ -1,3 +1,5 @@
+import noop from '@proton/utils/noop';
+
 import { getEvents } from '../api/events';
 import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
 import createListeners, { Listener } from '../helpers/listeners';
@@ -163,7 +165,7 @@ const eventManager = ({
                     throw error;
                 }
 
-                await Promise.all(listeners.notify(result));
+                await Promise.all(listeners.notify(result)).catch(noop);
 
                 const { More, [eventIDKey]: nextEventID } = result;
                 setEventID(nextEventID);
