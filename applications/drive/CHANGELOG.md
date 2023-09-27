@@ -1,3 +1,13 @@
+# Release 5.0.16.0 - October 11, 2023
+
+## Improved
+
+-   More thorough block verification for new uploads
+
+## Fixed
+
+-   Video thumbnails generation on Firefox
+
 # Release 5.0.15.0 - September 5, 2023
 
 ## Improved
