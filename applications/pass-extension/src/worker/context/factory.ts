@@ -1,6 +1,5 @@
 import { PassCrypto } from '@proton/pass/crypto';
 import { backgroundMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
 import type { WorkerStatus } from '@proton/pass/types';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
 import { or, waitUntil } from '@proton/pass/utils/fp';
@@ -17,6 +16,7 @@ import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { setPopupIcon } from '../../shared/extension';
+import { getExtensionVersion } from '../../shared/extension/version';
 import WorkerMessageBroker from '../channel';
 import { createActivationService } from '../services/activation';
 import { createAliasService } from '../services/alias';
@@ -134,8 +134,7 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
                     context.service.storage.getState().storageFull = true;
                     return true;
                 case 'update_trigger':
-                    const { version } = browser.runtime.getManifest();
-                    context.service.activation.onUpdateAvailable({ version });
+                    context.service.activation.onUpdateAvailable({ version: getExtensionVersion() });
                     return true;
             }
 
