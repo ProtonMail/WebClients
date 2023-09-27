@@ -1,3 +1,8 @@
+## Version 1.7.1
+
+-   Hotfix: add cache versioning in order to alleviate update sequence cache resets
+-   Show selected vault icon & email address in hamburger menu
+
 ## Version 1.7.0
 
 -   Setup alarm based session locking
