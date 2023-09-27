@@ -15,7 +15,7 @@ import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
-    { initialize, createFileRevision, createBlockLinks, finalize, onError }: UploadCallbacks
+    { initialize, createFileRevision, getVerificationData, createBlockLinks, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -50,14 +50,19 @@ export function initUploadFileWorker(
                             return createFileRevision(abortController.signal, mimeType, keys).then(
                                 async (fileRevision) => {
                                     onInit?.(mimeType, fileRevision.fileName);
-                                    return thumbnailDataPromise.then(async (thumbnailData) => {
+
+                                    return Promise.all([
+                                        thumbnailDataPromise,
+                                        getVerificationData(abortController.signal),
+                                    ]).then(async ([thumbnailData, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
                                             thumbnailData,
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
-                                            fileRevision.sessionKey
+                                            fileRevision.sessionKey,
+                                            verificationData
                                         );
                                     });
                                 }
