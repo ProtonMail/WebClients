@@ -12,6 +12,8 @@ import {
     shareEditSync,
     shareEvent,
     sharesSync,
+    syncShareInvites,
+    syncShareMembers,
     syncSuccess,
     vaultCreationFailure,
     vaultCreationIntent,
@@ -133,6 +135,16 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         if (vaultInviteCreationSuccess.match(action)) {
             const { shareId, invites } = action.payload;
             return partialMerge(state, { [shareId]: { invites, shared: true } });
+        }
+
+        if (syncShareInvites.match(action)) {
+            const { shareId, invites } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, shared: true } });
+        }
+
+        if (syncShareMembers.match(action)) {
+            const { shareId, members } = action.payload;
+            return partialMerge(state, { [shareId]: { members, shared: true } });
         }
 
         return state;
