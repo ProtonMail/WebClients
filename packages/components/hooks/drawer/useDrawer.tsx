@@ -223,7 +223,10 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
 
                             const res = await api({
                                 ...updatedArgs,
-                                headers: { ...updatedArgs.headers, 'x-pm-source': 'drawer' },
+                                headers: {
+                                    ...updatedArgs.headers,
+                                    'x-pm-source': 'drawer',
+                                },
                             });
 
                             // Once the request is finished, remove the controller from the array
