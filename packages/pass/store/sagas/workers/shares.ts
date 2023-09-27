@@ -1,6 +1,7 @@
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
-import { type Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { type Maybe, type Share, type ShareGetResponse, type ShareRole, ShareType } from '@proton/pass/types';
+import { type ShareMember } from '@proton/pass/types/data/invites';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 
 import { getAllShareKeys } from './vaults';
@@ -57,4 +58,22 @@ export const loadShare = async <T extends ShareType>(shareId: string, targetType
         default:
             throw new Error(`Unsupported share type ${ShareType[targetType]}`);
     }
+};
+
+export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> => {
+    const { Shares: members } = await api({
+        url: `pass/v1/share/${shareId}/user`,
+        method: 'get',
+    });
+
+    return members.map((member) => ({
+        name: member.UserName,
+        email: member.UserEmail,
+        owner: member.Owner,
+        targetType: member.TargetType,
+        targetId: member.TargetID,
+        shareRoleId: member.ShareRoleID as ShareRole,
+        expireTime: member.ExpireTime,
+        createTime: member.CreateTime,
+    }));
 };

@@ -1,3 +1,4 @@
+import { type MaybeNull } from '../utils';
 import type { ShareRole, ShareType } from './shares';
 
 export type PendingInvite = {
@@ -17,8 +18,7 @@ export type ShareMember = {
     owner: boolean;
     targetType: ShareType;
     targetId: string;
-    permission: number;
     shareRoleId: ShareRole;
-    expireTime: number;
+    expireTime?: MaybeNull<number>;
     createTime: number;
 };
