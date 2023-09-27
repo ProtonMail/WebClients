@@ -124,7 +124,7 @@ const AddressActions = ({
                   },
                   editEmailAddressEnabled &&
                       permissions.canEditInternalAddress && {
-                          text: c('Address action').t`Edit address`,
+                          text: c('Address action').t`Edit`,
                           onClick: () => setEditInternalAddressOpen(true),
                       },
                   editEmailAddressEnabled &&
