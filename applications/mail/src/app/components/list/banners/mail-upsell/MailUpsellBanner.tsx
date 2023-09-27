@@ -16,7 +16,7 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../constants';
+import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../../../constants';
 
 const { plansSelection, vpn, protonBusiness, drive, securityAndPrivacy } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 

@@ -4,7 +4,7 @@ import { useUser } from '@proton/components/hooks';
 import { DAY, MAILBOX_LABEL_IDS, MONTH } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-const useShowUpsellBanner = (labelID: string, otherBannerDisplayed: boolean) => {
+const useShowUpsellBanner = (labelID: string) => {
     const [user] = useUser();
     // Ref that we set to false on the upsell banner unmount so that we can display the banner only the first time
     const needToShowUpsellBanner = useRef<boolean>(true);
@@ -38,7 +38,6 @@ const useShowUpsellBanner = (labelID: string, otherBannerDisplayed: boolean) => 
         Date.now() > threeDaysAfterCreationDate &&
         isInbox &&
         needToShowUpsellBanner.current &&
-        !otherBannerDisplayed &&
         showAgain;
 
     const handleDismissBanner = () => {
