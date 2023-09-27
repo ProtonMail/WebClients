@@ -23,7 +23,7 @@ const RenewalNotice = ({ renewCycle, isCustomBilling, subscription, className }:
     }
 
     const renewalTime = (
-        <Time format="dd/MM/yyyy" key="auto-renewal-time">
+        <Time format="P" key="auto-renewal-time">
             {unixRenewalTime}
         </Time>
     );
