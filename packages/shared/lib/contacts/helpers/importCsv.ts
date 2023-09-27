@@ -11,9 +11,9 @@ const modifyPreVcardField = (preVcard: PreVcardProperty, newField: string) => {
     const types = getTypeValues();
 
     let newType: VCardKey | undefined = undefined;
-    if (types[newField].includes(preVcard.type || '')) {
+    if (types[newField]?.includes(preVcard.type || '')) {
         newType = preVcard.type;
-    } else if (types[newField].length) {
+    } else if (types[newField]?.length) {
         newType = types[newField][0] as VCardKey;
     }
 
