@@ -207,6 +207,8 @@ const SubscriptionsSection = () => {
     const servers = getHasVpnB2BPlan(current) ? getVPNDedicatedIPs(current) : undefined;
     const serversUpcoming = getHasVpnB2BPlan(upcoming) ? getVPNDedicatedIPs(upcoming) : undefined;
 
+    const showUpcoming = !!upcoming && renewEnabled;
+
     return (
         <SettingsSectionWide>
             <div style={{ overflow: 'auto' }}>
@@ -247,7 +249,7 @@ const SubscriptionsSection = () => {
                             showPeriodEndWarning={subscriptionExpiresSoon}
                             servers={servers}
                         ></SubscriptionRow>
-                        {upcoming && (
+                        {showUpcoming && (
                             <SubscriptionRow
                                 {...upcomingCheckout}
                                 {...upcoming}
