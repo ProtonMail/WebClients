@@ -1,17 +1,19 @@
 import { c } from 'ttag';
 
-import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import {
     queryCreateFile,
     queryCreateFileRevision,
     queryDeleteFileRevision,
     queryRequestUpload,
     queryUpdateFileRevision,
+    queryVerificationData,
 } from '@proton/shared/lib/api/drive/files';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     CreateFileResult,
     CreateFileRevisionResult,
+    GetVerificationDataResult,
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
@@ -33,6 +35,7 @@ import {
     ThumbnailRequestBlock,
     TransferConflictStrategy,
     UploadFileControls,
+    VerificationData,
 } from '../interface';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import { generateClientUid } from './uploadClientUid';
@@ -305,6 +308,7 @@ export default function useUploadFile() {
                 const createdFileRevision = await createdFileRevisionPromise;
                 const addressKeyInfo = await getShareKeys(abortSignal);
                 checkSignal(abortSignal, createdFileRevision.filename);
+
                 return {
                     fileName: createdFileRevision.filename,
                     privateKey: createdFileRevision.privateKey,
@@ -314,6 +318,37 @@ export default function useUploadFile() {
                         email: addressKeyInfo.address.Email,
                     },
                 };
+            },
+            getVerificationData: async (abortSignal: AbortSignal) => {
+                const createdFileRevision = await createdFileRevisionPromise;
+                if (!createdFileRevision) {
+                    throw new Error(`Draft for "${file.name}" hasn't been created prior to verifying`);
+                }
+
+                const { VerificationCode, ContentKeyPacket } = await debouncedRequest<GetVerificationDataResult>(
+                    queryVerificationData(shareId, createdFileRevision.fileID, createdFileRevision.revisionID),
+                    abortSignal
+                );
+
+                try {
+                    const verifierSessionKey = await CryptoProxy.decryptSessionKey({
+                        binaryMessage: base64StringToUint8Array(ContentKeyPacket),
+                        decryptionKeys: createdFileRevision.privateKey,
+                    });
+
+                    if (!verifierSessionKey) {
+                        throw new Error('Verification session key could not be decrypted');
+                    }
+
+                    return {
+                        verificationCode: base64StringToUint8Array(VerificationCode),
+                        verifierSessionKey,
+                    } satisfies VerificationData;
+                } catch (e) {
+                    throw new Error('Upload failed: Verification of data failed', {
+                        cause: e,
+                    });
+                }
             },
             createBlockLinks: async (
                 abortSignal: AbortSignal,
@@ -339,6 +374,9 @@ export default function useUploadFile() {
                             Hash: uint8ArrayToBase64String(block.hash),
                             EncSignature: block.signature,
                             Size: block.size,
+                            Verifier: {
+                                Token: uint8ArrayToBase64String(block.verificationToken),
+                            },
                         })),
                         AddressID: addressKeyInfo.address.ID,
                         LinkID: createdFileRevision.fileID,

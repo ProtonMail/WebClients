@@ -22,3 +22,5 @@ export type UploadingBlockControl = {
     finish: () => void;
     onTokenExpiration: () => void;
 };
+
+export type Verifier = (encryptedBlock: Uint8Array) => Promise<Uint8Array>;
