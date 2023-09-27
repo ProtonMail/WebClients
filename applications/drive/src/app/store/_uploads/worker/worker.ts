@@ -5,7 +5,7 @@ import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { encryptFileExtendedAttributes } from '../../_links';
-import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
+import { EncryptedBlock, EncryptedThumbnailBlock, Link, VerificationData } from '../interface';
 import { ThumbnailData } from '../thumbnail';
 import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
@@ -13,6 +13,7 @@ import UploadWorkerBuffer from './buffer';
 import generateEncryptedBlocks from './encryption';
 import { Pauser } from './pauser';
 import startUploadJobs from './upload';
+import { createVerifier } from './verifier';
 
 // eslint-disable-next-line no-restricted-globals
 const uploadWorker = new UploadWorker(self as any, { generateKeys, start, createdBlocks, pause, resume });
@@ -69,9 +70,11 @@ async function start(
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
-    sessionKey: SessionKey
+    sessionKey: SessionKey,
+    verificationData: VerificationData
 ) {
     const hashInstance = new Sha1();
+    const verifier = createVerifier(verificationData);
 
     buffer
         .feedEncryptedBlocks(
@@ -82,7 +85,8 @@ async function start(
                 privateKey,
                 sessionKey,
                 (e) => uploadWorker.postNotifySentry(e),
-                hashInstance
+                hashInstance,
+                verifier
             )
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));

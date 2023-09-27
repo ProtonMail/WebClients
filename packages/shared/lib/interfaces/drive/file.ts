@@ -92,3 +92,8 @@ export interface DriveFileRevisionThumbnailResult {
     ThumbnailBareURL: string;
     ThumbnailToken: string;
 }
+
+export interface GetVerificationDataResult {
+    VerificationCode: string;
+    ContentKeyPacket: string;
+}
