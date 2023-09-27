@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
-import { isImage } from '@proton/shared/lib/helpers/mimetype';
+import { isImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { UploadFileList, mimeTypeFromFile, useUpload } from '../../../store';
@@ -74,7 +74,7 @@ const UploadDragDrop = ({
                                 // For photos, we check if the image format is supported
                                 if (
                                     isForPhotos &&
-                                    !(await mimeTypeFromFile(file).then(isImage)) &&
+                                    !(await mimeTypeFromFile(file).then((mime) => isImage(mime) || isVideo(mime))) &&
                                     file.name !== DS_STORE
                                 ) {
                                     unSupportedFiles = true;
