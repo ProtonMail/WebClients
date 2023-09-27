@@ -24,7 +24,7 @@ describe('<RenewalNotice />', () => {
         jest.setSystemTime(mockedDate);
 
         const renewCycle = 12;
-        const expectedDateString = '01/11/2024'; // because months are 0-indexed ¯\_(ツ)_/¯
+        const expectedDateString = '11/01/2024'; // because months are 0-indexed ¯\_(ツ)_/¯
 
         const { container } = render(
             <RenewalNotice renewCycle={renewCycle} isCustomBilling={false} subscription={undefined} />
@@ -37,7 +37,7 @@ describe('<RenewalNotice />', () => {
         jest.setSystemTime(mockedDate);
 
         const renewCycle = 12;
-        const expectedDateString = '08/08/2025'; // because months are 0-indexed ¯\_(ツ)_/¯
+        const expectedDateString = '08/11/2025'; // because months are 0-indexed ¯\_(ツ)_/¯
 
         const { container } = render(
             <RenewalNotice
@@ -45,7 +45,7 @@ describe('<RenewalNotice />', () => {
                 isCustomBilling={true}
                 subscription={
                     {
-                        PeriodEnd: +new Date(2025, 7, 8) / 1000,
+                        PeriodEnd: +new Date(2025, 7, 11) / 1000,
                     } as any
                 }
             />
