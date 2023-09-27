@@ -77,7 +77,7 @@ export interface MailSettings {
     SpamAction: SpamAction | null;
     BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null;
     HideSenderImages: number;
-    AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting;
+    AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting | null;
     UnreadFavicon: number;
     RecipientLimit: number;
     AlmostAllMail: number;

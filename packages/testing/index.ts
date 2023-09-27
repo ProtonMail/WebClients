@@ -16,6 +16,7 @@ export * from './lib/mockUseLabels';
 export * from './lib/mockUseLocation';
 export * from './lib/mockUseNotifications';
 export * from './lib/mockNotifications';
+export * from './lib/mockUseSelector';
 export * from './lib/event-manager';
 export * from './lib/mockRandomValues';
 export * from './lib/mockUseConfig';

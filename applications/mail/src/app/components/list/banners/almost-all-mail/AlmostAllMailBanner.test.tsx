@@ -27,12 +27,6 @@ describe('AlmostAllMailBanner', () => {
             mockedPush = jest.fn();
             mockUseHistory({
                 push: mockedPush,
-                location: {
-                    pathname: `/${getHumanLabelID(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)}`,
-                    search: '',
-                    state: {},
-                    hash: '',
-                },
             });
         });
 
@@ -60,17 +54,6 @@ describe('AlmostAllMailBanner', () => {
 
                 expect(mockedPush).toHaveBeenCalledWith('/all-mail');
             });
-        });
-    });
-
-    describe('when user is not in AlmostAllMail location', () => {
-        it('should render nothing', () => {
-            render(<AlmostAllMailBanner />);
-
-            expect(screen.queryByRole("Don't find what you are looking for?")).not.toBeInTheDocument();
-            expect(
-                screen.queryByRole('button', { name: /Include Spam\/Trash in your search results/ })
-            ).not.toBeInTheDocument();
         });
     });
 });

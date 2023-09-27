@@ -1,5 +1,4 @@
 import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -21,20 +20,14 @@ import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
-import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
-import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
-import AlmostAllMailBanner from './AlmostAllMailBanner';
-import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
-import MailUpsellBanner from './MailUpsellBanner';
+import ListBanners from './ListBanners';
 import { ResizeHandle } from './ResizeHandle';
-import TaskRunningBanner from './TaskRunningBanner';
-import AutoDeleteBanner from './auto-delete/AutoDeleteBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
 
@@ -127,15 +120,8 @@ const List = (
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
-    const showTaskRunningBanner = useSelector(showLabelTaskRunningBanner);
-
     const [messageCounts] = useMessageCounts();
     const [conversationCounts] = useConversationCounts();
-
-    const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(
-        labelID,
-        showTaskRunningBanner
-    );
 
     // Reduce the checklist if there are more than 4 elements in the view
     useEffect(() => {
@@ -148,8 +134,6 @@ const List = (
     // enable/disable UI elements for incremental partial searches
     const { isESLoading, showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } =
         useEncryptedSearchList(isSearch, loading, page, total);
-
-    const canDisplayAlmostAllMailBanner = !isESLoading && isSearch;
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -207,20 +191,11 @@ const List = (
                     <div className="flex-item-noshrink">{toolbar}</div>
                     <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
                         <div className="flex-item-noshrink">
-                            {showESSlowToolbar && <ESSlowToolbar />}
-                            {canDisplayAlmostAllMailBanner && <AlmostAllMailBanner />}
-                            {canDisplayUpsellBanner && (
-                                <MailUpsellBanner
-                                    needToShowUpsellBanner={needToShowUpsellBanner}
-                                    columnMode={columnLayout}
-                                    onClose={handleDismissBanner}
-                                />
-                            )}
-                            {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt-4'} />}
-                            <AutoDeleteBanner
+                            <ListBanners
                                 labelID={labelID}
                                 columnLayout={columnLayout}
-                                isCompactView={isCompactView}
+                                userSettings={userSettings}
+                                esState={{ isESLoading, isSearch, showESSlowToolbar }}
                             />
                         </div>
                         {elements.length === 0 && displayState !== FULL && (
