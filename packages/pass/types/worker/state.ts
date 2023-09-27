@@ -28,6 +28,7 @@ export type SessionStoreData = ExtensionSession;
 export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
+    version: string;
     state: string;
     snapshot: string;
     salt: string;

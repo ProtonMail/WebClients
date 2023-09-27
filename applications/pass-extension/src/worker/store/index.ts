@@ -18,6 +18,7 @@ import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 
 import { isPopupPort } from '../../shared/extension/port';
+import { getExtensionVersion } from '../../shared/extension/version';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import { workerMiddleware } from './worker.middleware';
@@ -42,8 +43,19 @@ const store = configureStore({
 
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
     getAuth: withContext((ctx) => ctx.service.auth.store),
-    getCache: withContext((ctx) => ctx.service.storage.local.get(['state', 'snapshot', 'salt'])),
-    setCache: withContext((ctx, encryptedCache) => ctx.service.storage.local.set(encryptedCache)),
+
+    getCache: withContext(async (ctx) => {
+        /* cache is considered valid if versions match */
+        const cache = await ctx.service.storage.local.get(['state', 'snapshot', 'salt', 'version']);
+        return cache.version === getExtensionVersion() ? cache : {};
+    }),
+
+    setCache: withContext((ctx, encryptedCache) =>
+        ctx.service.storage.local.set({
+            ...encryptedCache,
+            version: getExtensionVersion(),
+        })
+    ),
 
     getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
 
