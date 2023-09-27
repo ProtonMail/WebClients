@@ -19,7 +19,6 @@ import useOnEditorChange from './hooks/useOnEditorChange';
 import './RoosterEditor.scss';
 
 interface Props {
-    placeholder?: string;
     onChange?: (value: string) => void;
     showBlockquoteToggle?: boolean;
     onBlockquoteToggleClick?: () => void;
@@ -36,7 +35,6 @@ interface Props {
 }
 
 const RoosterEditor = ({
-    placeholder,
     onChange,
     onReady,
     showBlockquoteToggle,
@@ -54,14 +52,13 @@ const RoosterEditor = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
     const onEditorChangeCallback = useOnEditorChange({
-        placeholder,
         setToolbarConfig,
         onChange,
     });
 
     useInitRooster({
         iframeRef,
-        initialContent: placeholder,
+        initialContent: '',
         onReady,
         onEditorChange: onEditorChangeCallback,
         showModalLink,
