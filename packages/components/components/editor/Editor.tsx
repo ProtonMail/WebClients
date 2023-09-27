@@ -20,7 +20,6 @@ interface Props {
     className?: string;
     editorToolbarClassname?: string;
     editorClassname?: string;
-    placeholder?: string;
     metadata?: Partial<EditorMetadata>;
     onChange: (value: string) => void;
     showBlockquoteToggle?: boolean;
@@ -57,7 +56,6 @@ const Editor = ({
     className,
     editorClassname,
     editorToolbarClassname,
-    placeholder,
     metadata: metadataProp,
     onChange = noop,
     simple,
@@ -93,9 +91,7 @@ const Editor = ({
         [onAddAttachments, metadata.supportImages]
     );
 
-    const plaintextEditor = (
-        <PlainTextEditor onChange={onChange} placeholder={placeholder} onReady={onReady} onFocus={onFocus} />
-    );
+    const plaintextEditor = <PlainTextEditor onChange={onChange} onReady={onReady} onFocus={onFocus} />;
 
     return (
         <>
@@ -122,7 +118,6 @@ const Editor = ({
                         )
                     ) : (
                         <RoosterEditor
-                            placeholder={placeholder}
                             onChange={onChange}
                             onReady={onReady}
                             showBlockquoteToggle={showBlockquoteToggle}
