@@ -178,7 +178,6 @@ const eventManager = ({
             delete STATE.abortController;
             start();
         } catch (error: any) {
-            listeners.notify({ error } as any);
             delete STATE.abortController;
             increaseRetryIndex();
             start();
