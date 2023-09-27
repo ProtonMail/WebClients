@@ -12,7 +12,7 @@ import {
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
 import { getStringContactValue } from '../properties';
-import { icalValueToInternalAddress } from '../vcard';
+import { icalValueToInternalAddress, icalValueToNValue } from '../vcard';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact
 
@@ -363,13 +363,13 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
     }
     if (['last name', 'family name'].includes(property)) {
         return (value: ContactValue) => [
-            templates.n({ header, value, index: 1 }), //N field value
+            templates.n({ header, value, index: 0 }), //N field value
             templates.fn({ header, value, index: 3 }), //FN field value
         ];
     }
     if (['first name', 'given name'].includes(property)) {
         return (value: ContactValue) => [
-            templates.n({ header, value, index: 0 }), //N field value
+            templates.n({ header, value, index: 1 }), //N field value
             templates.fn({ header, value, index: 1 }), //FN field value
         ];
     }
@@ -624,11 +624,8 @@ export const combine: Combine = {
     },
     // N field follow the following format lastName;firstName;additionalName;prefix;suffix
     n(preVcards: PreVcardsProperty) {
-        const nField = preVcards
-            .map((item) => (item.checked ? item.value : false))
-            .filter(Boolean)
-            .join(';');
-        return `${nField};;;`;
+        const nField = preVcards.map((item) => (item.checked ? item.value : false)).filter(Boolean) as string[];
+        return icalValueToNValue(nField);
     },
     adr(preVcards: PreVcardsProperty) {
         // To avoid unintended CRLF sequences inside the values of vCard address fields (those are interpreted as field separators unless followed by a space), we sanitize string values

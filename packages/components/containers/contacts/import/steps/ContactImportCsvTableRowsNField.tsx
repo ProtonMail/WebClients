@@ -30,7 +30,7 @@ const RowDisplay = ({
             <td>{header}</td>
             <td>
                 <div className="flex">
-                    <ContactImportCsvSelectField value={selectValue} disabled />
+                    <ContactImportCsvSelectField value={selectValue} disabled avoidFiltering />
                 </div>
             </td>
             <td className="text-ellipsis" title={value.toString()}>
