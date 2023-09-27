@@ -4,7 +4,6 @@
  */
 export enum FeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
-    EditEmailAddress = 'EditEmailAddress',
     MaintenanceImporter = 'MaintenanceImporter',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
 }
