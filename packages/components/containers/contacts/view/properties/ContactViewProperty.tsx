@@ -35,7 +35,6 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                 <span
                     className={clsx([
                         'contact-view-row-content mr-2 flex-item-fluid pt-2 pl-0 md:pl-7',
-                        !['note'].includes(field) && 'text-ellipsis',
                         ['note'].includes(field) && 'text-pre-wrap',
                     ])}
                 >
