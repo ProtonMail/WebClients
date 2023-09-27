@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type VaultInviteCreateRequest } from '@proton/pass/types';
-import { type PendingInvite } from '@proton/pass/types/data/invites';
+import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { pipe } from '@proton/pass/utils/fp';
 
 import withCacheBlock from '../with-cache-block';
@@ -32,3 +32,14 @@ export const vaultInviteCreationFailure = createAction(
         )({ payload: {} })
     )
 );
+
+export const syncShareInvites = createAction(
+    'share::invites::pending',
+    (shareId: string, invites: PendingInvite[]) => ({
+        payload: { shareId, invites },
+    })
+);
+
+export const syncShareMembers = createAction('share::members', (shareId: string, members: ShareMember[]) => ({
+    payload: { shareId, members },
+}));
