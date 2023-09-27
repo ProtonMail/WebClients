@@ -3,6 +3,7 @@ import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import type { Api, Maybe, Share, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
+import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -11,12 +12,19 @@ import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import type { EventManagerEvent } from '../../../events/manager';
-import { sharesSync, vaultCreationSuccess, vaultSetPrimarySync } from '../../actions';
+import {
+    sharesSync,
+    syncShareInvites,
+    syncShareMembers,
+    vaultCreationSuccess,
+    vaultSetPrimarySync,
+} from '../../actions';
 import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
+import { loadPendingShareInvites } from '../workers/invite';
 import { requestItemsForShareId } from '../workers/items';
-import { loadShare } from '../workers/shares';
+import { loadShare, loadShareMembers } from '../workers/shares';
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
@@ -39,6 +47,20 @@ function* onSharesEvent(
 
     const remoteShares = event.Shares;
     const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
+
+    // DO NOT MERGE THIS : TMP FOR DEVELOPMENT
+    yield fork(function* () {
+        for (const share of remoteShares) {
+            yield put(syncShareMembers(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
+
+            if (share.Owner) {
+                yield put(
+                    syncShareInvites(share.ShareID, (yield loadPendingShareInvites(share.ShareID)) as PendingInvite[])
+                );
+            }
+        }
+    });
+
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
 
