@@ -8,16 +8,9 @@ import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 
 import { getHumanLabelID } from 'proton-mail/helpers/labels';
 
-const ALMOST_ALL_MAIL_PATHNAME = `/${getHumanLabelID(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)}`;
-
 const AlmostAllMailBanner = () => {
     const history = useHistory();
-
     const { push, location } = history;
-
-    if (!location.pathname.startsWith(ALMOST_ALL_MAIL_PATHNAME)) {
-        return null;
-    }
 
     const displayAllMailButton = (
         <InlineLinkButton

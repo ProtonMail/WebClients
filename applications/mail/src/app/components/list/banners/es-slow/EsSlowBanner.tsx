@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Icon, InlineLinkButton, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 
-const ESSlowToolbar = () => {
+const EsSlowBanner = () => {
     const [{ ID: userID }] = useUser();
     const { openDropdown, setTemporaryToggleOff } = useEncryptedSearchContext();
 
@@ -48,4 +48,4 @@ const ESSlowToolbar = () => {
     );
 };
 
-export default memo(ESSlowToolbar);
+export default memo(EsSlowBanner);

@@ -4,8 +4,10 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
+
+import { Icon } from '../../components';
 
 import './PromotionBanner.scss';
 
@@ -84,7 +86,7 @@ const PromotionBanner = ({
                     </>
                 )}
             </div>
-            {hasDismissAction && !loading && (
+            {isTruthy(hasDismissAction && !loading) && (
                 <Button
                     onClick={handleClose}
                     icon
