@@ -46,7 +46,7 @@ export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
                 type: 'loadedmetadata',
                 listener: () => {
                     // Seeking in the video happens asynchronously, we will need another event handler
-                    video.currentTime = Math.max(VIDEO_THUMBNAIL_MAX_TIME_LOCATION, video.duration / 10);
+                    video.currentTime = Math.min(VIDEO_THUMBNAIL_MAX_TIME_LOCATION, video.duration / 10);
                 },
             },
             {
