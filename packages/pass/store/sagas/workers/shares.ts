@@ -67,6 +67,7 @@ export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> 
     });
 
     return members.map((member) => ({
+        shareId: member.ShareID,
         name: member.UserName,
         email: member.UserEmail,
         owner: member.Owner,
