@@ -3118,6 +3118,11 @@
         "${ allCategoryTitlesExceptTheLastOne } en ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Verificatiemail verzonden naar ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -5320,6 +5325,9 @@
       "* No credit card required.": [
         "* Green kredietkaart vereist."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Kies een ${ BRAND_NAME } e-mailadres** om gebruik te maken van alle ${ BRAND_NAME_TWO } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -6044,6 +6052,9 @@
       "inactive": [
         "inactief"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Verhoog de beveiliging van uw account door uw e-mail adres te verifiëren."
+      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -6492,6 +6503,9 @@
       "Report link expired": [
         "Rapportlink verstreken"
       ],
+      "Resend verification email": [
+        "Verificatie e-mail opnieuw versturen"
+      ],
       "Restore": [
         "Herstel"
       ],
@@ -6515,6 +6529,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Beveilig uw ${ BRAND_NAME }-account"
       ],
       "Securing your account": [
         "Beveiliging van uw account"
@@ -6886,6 +6903,12 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Unverified": [
+        "Niet geverifieerde"
+      ],
+      "Unverified email address.": [
+        "Niet-geverifieerd e-mail adres."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
@@ -7107,6 +7130,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
+      ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
       ],
@@ -7205,6 +7231,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "U moet nog steeds reageren op uitnodigingen om de organisator uw reactie te laten zien."
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
@@ -7933,6 +7962,9 @@
       "Config to connect to ${ serverName }": [
         "Configureer om te verbinden met ${ serverName }"
       ],
+      "Confirm email": [
+        "E-mail bevestigen"
+      ],
       "Confirm link URLs": [
         "Bevestig link URL's"
       ],
@@ -7983,6 +8015,9 @@
       ],
       "Current display name": [
         "Huidige weergavenaam"
+      ],
+      "Current email": [
+        "Huidige e-mail"
       ],
       "Customize invoices": [
         "Facturen aanpassen"
@@ -8943,6 +8978,14 @@
         "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Probeer het over een paar minuten opnieuw."
+      ],
+      "This feature is temporarily unavailable": [
+        "Deze functie is tijdelijk niet beschikbaar"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "U kunt maximaal ${ MAX_LINKS_PER_CALENDAR } koppeling per agenda maken. Als u een nieuwe koppeling naar deze agenda wilt maken, verwijder een bestaande uit de onderstaande lijst.",
@@ -9694,17 +9737,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -9792,6 +9824,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10899,9 +10942,6 @@
       "Search for a user or address": [
         "Naar gebruiker of adres zoeken"
       ],
-      "Search settings": [
-        "Zoekinstellingen"
-      ],
       "Search users": [
         "Zoek gebruikers"
       ],
@@ -11552,6 +11592,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
+      ],
       "Downgrading your account, please wait": [
         "Account downgraden, even geduld"
       ]
@@ -11822,6 +11865,9 @@
       ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
+      ],
+      "Email address updated": [
+        "E-mailadres aangepast"
       ],
       "Email updated": [
         "E-mail bijgewerkt"
@@ -12575,6 +12621,9 @@
       "Edit domain": [
         "Domein bewerken"
       ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
       "Edit filter": [
         "Filter bewerken"
       ],
@@ -12616,6 +12665,9 @@
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Vul uw ${ BRAND_NAME } Account gegevens in om deel te nemen aan het ${ app } Beta programma"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -12976,6 +13028,9 @@
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
+      "Sign in to join the Beta program": [
+        "Log in om deel te nemen aan het Beta programma"
+      ],
       "Sign in with 2FA": [
         "Inloggen met 2FA"
       ],
@@ -13097,6 +13152,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "We zullen een e-mail naar uw nieuwe e-mail adres sturen met instructies voor het voltooien van de wijziging."
       ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
@@ -13382,6 +13440,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Gebruik de standaard schuifbalken van uw browser. Deze zijn meestal groter en gemakkelijker te gebruiken"
+      ],
+      "Verified email address": [
+        "Geverifieerd e-mail adres"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."

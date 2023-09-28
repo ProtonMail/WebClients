@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Να μην επιτρέπεται η ανυπόγραφη αλληλογραφία"
       ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
       "Edit address": [
         "Επεξεργασία διεύθυνσης"
       ],
@@ -1575,7 +1578,7 @@
         "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
+        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχό ημερολογίου εξακολουθεί να ισχύει."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
@@ -1724,7 +1727,7 @@
         "μεσοαστρικό"
       ],
       "pacific": [
-        "Ειρηνικός"
+        "ειρηνικός"
       ],
       "palatinate blue": [
         "βασιλικό μπλε"
@@ -2891,7 +2894,7 @@
         "Πίσω στη ${ signIn }."
       ],
       "Didn't create an account?": [
-        "Δεν δημιουργήσατε λογαριασμό;"
+        "Δε δημιουργήσατε λογαριασμό;"
       ],
       "I didn't create this account": [
         "Δε δημιούργησα αυτόν τον λογαριασμό"
@@ -3636,7 +3639,7 @@
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει καμία εκδηλώση για εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -4047,7 +4050,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } groups"
+        "${ BRAND_NAME } ομάδες"
       ],
       "*Only one free trial per customer.": [
         "*Μόνο μία δωρεάν δοκιμή ανά πελάτη."
@@ -4280,7 +4283,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασια κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
+        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 90 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
@@ -4450,7 +4453,7 @@
         "Αρχειοθετημένα"
       ],
       "Do not move": [
-        "Μην μετακινείστε"
+        "Μη μετακινείστε"
       ],
       "Inbox": [
         "Εισερχόμενα"
@@ -4707,7 +4710,7 @@
         "Χώρα"
       ],
       "Create your account": [
-        "Δημιουργήστε το λογαριασμό σας."
+        "Δημιουργήστε τον λογαριασμό σας."
       ],
       "Device": [
         "Συσκευή"
@@ -5025,7 +5028,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Ανάλογα με τον πάροχο υπηρεσιών ηλεκτρονικού ταχυδρομείου σας, ίσως χρειαστεί να δημιουργήσετε πρώτα ένα ${ knowledgeBaseLink } για να μπορέσετε να κάνετε εισαγωγή στο ${ BRAND_NAME }."
+        "Ανάλογα με τον παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου σας, ίσως χρειαστεί να δημιουργήσετε πρώτα ένα ${ knowledgeBaseLink } για να μπορέσετε να κάνετε εισαγωγή στο ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
@@ -9746,17 +9749,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -9844,6 +9836,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10951,9 +10954,6 @@
       "Search for a user or address": [
         "Αναζήτηση χρήστη ή διεύθυνσης"
       ],
-      "Search settings": [
-        "Ρυθμίσεις αναζήτησης"
-      ],
       "Search users": [
         "Αναζήτηση χρηστών"
       ],
@@ -11371,7 +11371,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Αναβαθμήστε σε Απεριόριστο"
+        "Αναβαθμίστε σε Απεριόριστο"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -13415,7 +13415,7 @@
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
       ],
       "The Internet Service Provider of the IP address": [
-        "Ο πάροχος υπηρεσιών διαδικτύου της διεύθυνσης IP"
+        "Ο παροχός υπηρεσιών διαδικτύου της διεύθυνσης IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
