@@ -414,7 +414,7 @@
         "Эмодзі"
       ],
       "enable desktop notifications": [
-        "уключэнне апавяшчэнняў на працоўным стале"
+        "ўключэнне апавяшчэнняў на працоўным стале"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -4393,6 +4393,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя ў прыладу дадатковыя знешнія апаратныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
       ],
@@ -6183,7 +6186,7 @@
         "неактыўна"
       ],
       "Increase your account security by verifying your email address.": [
-        "Павялічце бяспеку свайго ўліковага запісу праз пацвярджэнне вашага адрасу электроннай пошты."
+        "Павялічце бяспеку свайго ўліковага запісу з дапамогай праверкі адраса электроннай пошты."
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -9967,17 +9970,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -10065,6 +10057,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11193,9 +11196,6 @@
       ],
       "Search for a user or address": [
         "Пошук карыстальніка або адраса"
-      ],
-      "Search settings": [
-        "Налады пошуку"
       ],
       "Search users": [
         "Пошук карыстальнікаў"
@@ -13806,6 +13806,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Аўтаматычна дадае ваш публічны ключ да кожнага адпраўленага паведамлення. Атрымальнікі могуць выкарыстоўваць яго, каб правяраць сапраўднасць вашых паведамленняў і адпраўляць вам зашыфраваныя паведамленні."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Выберыце прадвызначаныя налады PGP, якія будуць выкарыстоўвацца для падпісання або шыфравання паведамленняў карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME } PGP. Звярніце ўвагу, што ўбудаваны PGP прымусова адпраўляе паведамленні як звычайны тэкст."
       ]
     },
     "Tooltip prompt to trust keys": {
