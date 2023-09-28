@@ -48,13 +48,15 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
 
                 <div className="flex gap-y-3">
                     {vault.invites?.map((pending) => (
-                        <ShareMember key={pending.inviteId} email={pending.invitedEmail} pending />
+                        <ShareMember shareId={shareId} key={pending.inviteId} email={pending.invitedEmail} pending />
                     ))}
 
                     {vault.members?.map((member) => (
                         <ShareMember
                             key={member.email}
                             email={member.email}
+                            shareId={shareId}
+                            userShareId={member.shareId}
                             pending={false}
                             role={member.shareRoleId}
                             owner={member.owner}
