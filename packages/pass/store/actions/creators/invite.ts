@@ -1,9 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { VaultInviteResendRequest } from '@proton/pass/types';
-import { type VaultInviteCreateRequest } from '@proton/pass/types';
-import type { PendingInvite, ShareMember, VaultRemoveAccessRequest } from '@proton/pass/types/data/invites';
+import type { PendingInvite } from '@proton/pass/types/data/invites';
+import type { InviteCreateIntent, InviteResendIntent } from '@proton/pass/types/data/invites.dto';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { InviteState } from '../../reducers/invites';
@@ -13,18 +12,18 @@ import { withRequestFailure, withRequestStart, withRequestSuccess } from '../wit
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 
-export const vaultInviteCreationIntent = createAction(
-    'vault::invite::intent',
-    withRequestStart((payload: VaultInviteCreateRequest) => withCacheBlock({ payload }))
+export const inviteCreationIntent = createAction(
+    'invite::create::intent',
+    withRequestStart((payload: InviteCreateIntent) => withCacheBlock({ payload }))
 );
 
-export const vaultInviteCreationSuccess = createAction(
-    'vault::invite::success',
+export const inviteCreationSuccess = createAction(
+    'invite::create::success',
     withRequestSuccess((shareId: string, invites: PendingInvite[]) => ({ payload: { shareId, invites } }))
 );
 
-export const vaultInviteCreationFailure = createAction(
-    'vault::invite::failure',
+export const inviteCreationFailure = createAction(
+    'invite::create::failure',
     withRequestFailure((error: unknown) =>
         pipe(
             withCacheBlock,
@@ -37,64 +36,29 @@ export const vaultInviteCreationFailure = createAction(
     )
 );
 
-export const vaultInviteResendIntent = createAction(
-    'vault::inviteResend::intent',
-    withRequestStart((payload: VaultInviteResendRequest) => withCacheBlock({ payload }))
+export const inviteResendIntent = createAction(
+    'invite::resend::intent',
+    withRequestStart((payload: InviteResendIntent) => withCacheBlock({ payload }))
 );
 
-export const vaultInviteResendSuccess = createAction(
-    'vault::inviteResend::success',
-    withRequestSuccess((shareId: string, inviteId: string) => ({ payload: { shareId, inviteId } }))
-);
-
-export const vaultInviteResendFailure = createAction(
-    'vault::inviteResend::failure',
-    withRequestFailure((error: unknown) =>
-        pipe(
-            withCacheBlock,
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Invite resend failed.`,
-                error,
-            })
-        )({ payload: {} })
-    )
-);
-
-export const syncShareInvites = createAction(
-    'share::invites::pending',
-    (shareId: string, invites: PendingInvite[]) => ({
-        payload: { shareId, invites },
-    })
-);
-
-export const syncShareMembers = createAction('share::members', (shareId: string, members: ShareMember[]) => ({
-    payload: { shareId, members },
-}));
-
-export const vaultRemoveAccessIntent = createAction(
-    'vault::remove-access::intent',
-    withRequestStart((payload: VaultRemoveAccessRequest) => withCacheBlock({ payload }))
-);
-
-export const vaultRemoveAccessSuccess = createAction(
-    'vault::remove-access::success',
-    withRequestSuccess((shareId: string, userShareId: string) =>
+export const inviteResendSuccess = createAction(
+    'invite::resend::success',
+    withRequestSuccess((shareId: string, inviteId: string) =>
         withNotification({
             type: 'info',
-            text: c('info').t`User's access removed`,
-        })({ payload: { shareId, userShareId } })
+            text: c('Info').t`Invite successfully resent`,
+        })({ payload: { shareId, inviteId } })
     )
 );
 
-export const vaultRemoveAccessFailure = createAction(
-    'vault::remove-access::failure',
+export const inviteResendFailure = createAction(
+    'invite::resend::failure',
     withRequestFailure((error: unknown) =>
         pipe(
             withCacheBlock,
             withNotification({
                 type: 'error',
-                text: c('Error').t`Failed to remove user's access.`,
+                text: c('Error').t`Failed resending invite.`,
                 error,
             })
         )({ payload: {} })
