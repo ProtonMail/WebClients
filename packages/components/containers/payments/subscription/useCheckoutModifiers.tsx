@@ -39,7 +39,7 @@ export const useCheckoutModifiers = (
         );
     }, [subscription, model, checkResult]);
 
-    const isCustomBilling = checkResult?.UnusedCredit !== 0;
+    const isCustomBilling = checkResult ? checkResult.UnusedCredit !== 0 : false;
 
     const isScheduledSubscription = !isProration && !isCustomBilling;
 
