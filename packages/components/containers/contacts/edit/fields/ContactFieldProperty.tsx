@@ -15,7 +15,6 @@ import ContactFieldString from './ContactFieldString';
 import ContactFieldTel from './ContactFieldTel';
 
 interface Props {
-    contactID?: string;
     vCardContact: VCardContact;
     vCardProperty: VCardProperty<any>;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
@@ -24,7 +23,7 @@ interface Props {
 }
 
 const ContactFieldProperty = (
-    { contactID, vCardContact, vCardProperty, onChangeVCard, onSelectImage, isSubmitted = false, ...rest }: Props,
+    { vCardContact, vCardProperty, onChangeVCard, onSelectImage, isSubmitted = false, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const { field } = vCardProperty;
@@ -64,7 +63,6 @@ const ContactFieldProperty = (
         return (
             <ContactFieldFn
                 ref={ref}
-                contactID={contactID}
                 vCardProperty={vCardProperty}
                 vCardContact={vCardContact}
                 onChange={onChangeVCard}

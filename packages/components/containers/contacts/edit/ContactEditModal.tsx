@@ -311,7 +311,6 @@ const ContactEditModal = ({
                     <div className="mb-4">
                         <ContactEditProperty
                             ref={firstNameFieldRef}
-                            contactID={contactID}
                             vCardContact={vCardContact}
                             isSubmitted={isSubmitted}
                             onRemove={handleRemove}
@@ -324,7 +323,6 @@ const ContactEditModal = ({
                         />
                         <ContactEditProperty
                             ref={displayNameFieldRef}
-                            contactID={contactID}
                             vCardContact={vCardContact}
                             isSubmitted={isSubmitted}
                             onRemove={handleRemove}
@@ -337,7 +335,6 @@ const ContactEditModal = ({
                         />
 
                         <ContactEditProperty
-                            contactID={contactID}
                             vCardContact={vCardContact}
                             isSubmitted={isSubmitted}
                             onRemove={handleRemove}
@@ -352,7 +349,6 @@ const ContactEditModal = ({
                     </div>
                     <ContactEditProperties
                         field="fn"
-                        contactID={contactID}
                         isSignatureVerified
                         isSubmitted={isSubmitted}
                         onRemove={handleRemove}
@@ -364,7 +360,6 @@ const ContactEditModal = ({
                     />
                     <ContactEditProperties
                         field="email"
-                        contactID={contactID}
                         isSignatureVerified
                         isSubmitted={isSubmitted}
                         onRemove={handleRemove}
@@ -382,7 +377,6 @@ const ContactEditModal = ({
                     {['tel', 'adr', 'bday', 'note'].map((item) => (
                         <ContactEditProperties
                             key={item}
-                            contactID={contactID}
                             field={item}
                             isSignatureVerified
                             isSubmitted={isSubmitted}
@@ -398,7 +392,6 @@ const ContactEditModal = ({
                     ))}
                     <ContactEditProperties
                         isSubmitted={isSubmitted}
-                        contactID={contactID}
                         isSignatureVerified
                         onRemove={handleRemove}
                         onAdd={handleAdd()}

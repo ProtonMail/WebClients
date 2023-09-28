@@ -35,14 +35,6 @@ describe('ContactEditModal', () => {
         onLimitReached: jest.fn(),
     };
 
-    const propsNoContactID: ContactEditProps & ContactEditModalProps = {
-        vCardContact: { fn: [] },
-        onUpgrade: jest.fn(),
-        onSelectImage: jest.fn(),
-        onGroupEdit: jest.fn(),
-        onLimitReached: jest.fn(),
-    };
-
     beforeAll(() => {
         CryptoProxy.setEndpoint(mockedCryptoApi);
     });
@@ -227,11 +219,11 @@ END:VCARD`.replaceAll('\n', '\r\n');
 
         expect(signedCardContent).toContain('FN;PREF=1:New name');
         expect(signedCardContent).toContain('ITEM1.EMAIL;PREF=1:new@email.com');
-        expect(encryptedCardContent).toContain('N:Mars;Bruno');
+        expect(encryptedCardContent).toContain('N:Mars;Bruno;;;');
     });
 
     it('should trigger an error if display name is empty when creating a contact', async () => {
-        const { getByText } = render(<ContactEditModal open={true} {...propsNoContactID} />);
+        const { getByText } = render(<ContactEditModal open={true} {...props} />);
 
         const saveButton = getByText('Save');
         fireEvent.click(saveButton);
@@ -241,7 +233,15 @@ END:VCARD`.replaceAll('\n', '\r\n');
     });
 
     it('should trigger an error if display name is empty when editing a contact', async () => {
-        const { getByText } = render(<ContactEditModal open={true} {...props} />);
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+EMAIL:jdoe@example.com
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard);
+
+        const { getByText } = render(<ContactEditModal open={true} {...props} vCardContact={vCardContact} />);
 
         const saveButton = getByText('Save');
         fireEvent.click(saveButton);
