@@ -13,6 +13,7 @@ export type PendingInvite = {
 };
 
 export type ShareMember = {
+    shareId: string;
     name: string;
     email: string;
     owner: boolean;
