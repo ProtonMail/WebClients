@@ -10,15 +10,19 @@ const getOptimizations = require('@proton/pack/webpack/optimization');
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('@proton/pack/webpack/helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pack/webpack/constants');
 const fs = require('fs');
-const parseEnvVar = require('./tools/env-var.parser');
+
+const {
+    ENV,
+    BUILD_TARGET,
+    HOT_MANIFEST_UPDATE,
+    RESUME_FALLBACK,
+    RUNTIME_RELOAD,
+    RUNTIME_RELOAD_PORT,
+    REDUX_DEVTOOLS_PORT,
+    WEBPACK_DEV_PORT,
+} = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox'];
-
-const ENV = parseEnvVar('NODE_ENV', 'development', String);
-const BUILD_TARGET = parseEnvVar('BUILD_TARGET', SUPPORTED_TARGETS[0], String);
-const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, Boolean);
-const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, Boolean);
-const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, Boolean);
 
 if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
@@ -28,9 +32,16 @@ const config = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(expo
 
 console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
-console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
-console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
-console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
+
+if (ENV !== 'production') {
+    console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
+    console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
+    console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
+    console.log(`RUNTIME_RELOAD_PORT = ${RUNTIME_RELOAD_PORT}`);
+    console.log(`REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
+    console.log(`WEBPACK_DEV_PORT = ${WEBPACK_DEV_PORT}`);
+}
+
 console.log(config);
 
 const production = ENV === 'production';
@@ -128,6 +139,8 @@ module.exports = {
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
             RUNTIME_RELOAD: RUNTIME_RELOAD,
             RESUME_FALLBACK: RESUME_FALLBACK,
+            REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
+            RUNTIME_RELOAD_PORT: RUNTIME_RELOAD_PORT,
         }),
         new ESLintPlugin({
             extensions: ['js', 'ts'],
@@ -137,7 +150,29 @@ module.exports = {
             filename: 'styles/[name].css',
         }),
         new CopyPlugin({
-            patterns: [{ from: 'public' }, { from: `manifest-${BUILD_TARGET}.json`, to: 'manifest.json' }],
+            patterns: [
+                { from: 'public' },
+                {
+                    from: `manifest-${BUILD_TARGET}.json`,
+                    to: 'manifest.json',
+                    transform(content) {
+                        const data = content.toString('utf-8');
+                        const manifest = JSON.parse(data);
+
+                        /* add the appropriate CSP policies for the development build to connect
+                         * to unsecure ws:// protocols without firefox trying to upgrade it to
+                         * wss:// - currently the redux cli tools do not support https */
+                        if (ENV !== 'production' && BUILD_TARGET === 'firefox') {
+                            manifest.content_security_policy = {
+                                extension_pages:
+                                    "connect-src 'self' https: ws:; script-src 'self'; object-src 'self'; ",
+                            };
+                        }
+
+                        return Buffer.from(JSON.stringify(manifest, null, 2), 'utf-8');
+                    },
+                },
+            ],
         }),
     ],
 };
