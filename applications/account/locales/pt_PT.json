@@ -5410,7 +5410,7 @@
       ],
       "Add server (${ availableAddedCount } available)": [
         "Adicionar servidor (${ availableAddedCount } disponível)",
-        "Adicionar servidor (${ availableAddedCount } disponível)"
+        "Adicionar servidor (${ availableAddedCount } disponíveis)"
       ],
       "Adding ${ addedServerCount } gateway server": [
         "A adicionar ${ addedServerCount } servidor gateway",
@@ -7061,7 +7061,7 @@
         "Por quê?"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Com um plano de negócios ou empresarial, pode obter ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar que utilizadores lhes podem aceder."
+        "Com um plano Business ou Enterprise, pode obter ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar que utilizadores lhes podem aceder."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Com um endereço da ${ BRAND_NAME } encriptado, pode utilizar todos os serviços da ${ BRAND_NAME_TWO }"
@@ -9693,17 +9693,6 @@
         "Gestão de equipa"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9791,6 +9780,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10906,9 +10906,6 @@
       ],
       "Search for a user or address": [
         "Pesquisar por um utilizador ou endereço"
-      ],
-      "Search settings": [
-        "Pesquisar definições"
       ],
       "Search users": [
         "Pesquisar utilizadores"

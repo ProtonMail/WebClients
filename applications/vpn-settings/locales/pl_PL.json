@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Nie zezwalaj na niepodpisane wiadomości"
       ],
+      "Edit": [
+        "Edytuj"
+      ],
       "Edit address": [
         "Edytuj adres"
       ],
@@ -2313,7 +2316,7 @@
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
       ],
       "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Jeśli jest włączona, umożliwia rejestrację wbudowanych urządzeń (takich jak Windows Hello, TouchID, FaceID lub wewnętrzne TPM) oprócz zewnętrznych sprzętowych kluczy bezpieczeństwa"
+        "Zezwala na rejestrację wbudowanych urządzeń (takich jak Windows Hello, Touch ID, Face ID lub wewnętrzne moduły TPM) oprócz zewnętrznych kluczy bezpieczeństwa"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."

@@ -1676,6 +1676,11 @@
         "Help ons verbeteren!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Verificatiemail verzonden naar ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -2565,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /maand)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Kies een ${ BRAND_NAME } e-mailadres** om gebruik te maken van alle ${ BRAND_NAME_TWO } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -2929,6 +2937,9 @@
       "inactive": [
         "inactief"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Verhoog de beveiliging van uw account door uw e-mail adres te verifiëren."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
       ],
@@ -3165,6 +3176,9 @@
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
       ],
+      "Resend verification email": [
+        "Verificatie e-mail opnieuw versturen"
+      ],
       "Restore": [
         "Herstel"
       ],
@@ -3182,6 +3196,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Beveilig uw ${ BRAND_NAME }-account"
       ],
       "Securing your account": [
         "Beveiliging van uw account"
@@ -3391,6 +3408,12 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Unverified": [
+        "Niet geverifieerde"
+      ],
+      "Unverified email address.": [
+        "Niet-geverifieerd e-mail adres."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
@@ -3537,6 +3560,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
       ],
@@ -3595,6 +3621,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
@@ -3844,6 +3873,9 @@
       "Config to connect to ${ serverName }": [
         "Configureer om te verbinden met ${ serverName }"
       ],
+      "Confirm email": [
+        "E-mail bevestigen"
+      ],
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
       ],
@@ -3882,6 +3914,9 @@
       ],
       "Current display name": [
         "Huidige weergavenaam"
+      ],
+      "Current email": [
+        "Huidige e-mail"
       ],
       "Customize invoices": [
         "Facturen aanpassen"
@@ -5765,6 +5800,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
+      ],
       "Downgrading your account, please wait": [
         "Account downgraden, even geduld"
       ]
@@ -5961,6 +5999,9 @@
       ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
+      ],
+      "Email address updated": [
+        "E-mailadres aangepast"
       ],
       "Email updated": [
         "E-mail bijgewerkt"
@@ -6419,6 +6460,9 @@
       "Edit display name": [
         "Wijzig weergavenaam"
       ],
+      "Edit email address": [
+        "Wijzig e-mailadres"
+      ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
       ],
@@ -6442,6 +6486,9 @@
       ],
       "Email subscriptions": [
         "Nieuwsbrieven"
+      ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Vul uw ${ BRAND_NAME } Account gegevens in om deel te nemen aan het ${ app } Beta programma"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -6624,6 +6671,9 @@
       "Sign in": [
         "Inloggen"
       ],
+      "Sign in to join the Beta program": [
+        "Log in om deel te nemen aan het Beta programma"
+      ],
       "Sign in with 2FA": [
         "Inloggen met 2FA"
       ],
@@ -6694,6 +6744,9 @@
       ],
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "We zullen een e-mail naar uw nieuwe e-mail adres sturen met instructies voor het voltooien van de wijziging."
       ],
       "What's new": [
         "Wat is er nieuw"
@@ -6803,6 +6856,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
+      ],
+      "Verified email address": [
+        "Geverifieerd e-mail adres"
       ]
     },
     "tooltip": {

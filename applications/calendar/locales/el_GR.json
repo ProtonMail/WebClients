@@ -987,7 +987,7 @@
         "Η σύνδεση ημερολογίου δεν είναι προσβάσιμη εκτός του οικοσυστήματος της υπηρεσίας παροχής ημερολογίου."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχο ημερολογίου εξακολουθεί να ισχύει."
+        "Η σύνδεση ημερολογίου δεν είναι προσωρινά προσβάσιμη. Βεβαιωθείτε ότι ο σύνδεσμος από τον πάροχό ημερολογίου εξακολουθεί να ισχύει."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Έχουν περάσει περισσότερες από 12 ώρες από την τελευταία ενημέρωση — ${ CALENDAR_APP_NAME } θα προσπαθήσει να ενημερώσει το ημερολόγιο σε λίγες ώρες."
@@ -1063,7 +1063,7 @@
         "λαδί"
       ],
       "pacific": [
-        "Ειρηνικός"
+        "ειρηνικός"
       ],
       "pickle": [
         "τουρσί"
@@ -2598,7 +2598,7 @@
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Το αρχείο σας ${ formattedFilename } δεν έχει καμία εκδηλώση για εισαγωγή."
+        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
@@ -2926,7 +2926,7 @@
     },
     "familyOffer_2023:Family plan": {
       "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } groups"
+        "${ BRAND_NAME } ομάδες"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
         "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε οραματικό ή οικογενειακό πρόγραμμα."
@@ -3022,7 +3022,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασια κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
+        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 90 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
@@ -3328,7 +3328,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Ανάλογα με τον πάροχο υπηρεσιών ηλεκτρονικού ταχυδρομείου σας, ίσως χρειαστεί να δημιουργήσετε πρώτα ένα ${ knowledgeBaseLink } για να μπορέσετε να κάνετε εισαγωγή στο ${ BRAND_NAME }."
+        "Ανάλογα με τον παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου σας, ίσως χρειαστεί να δημιουργήσετε πρώτα ένα ${ knowledgeBaseLink } για να μπορέσετε να κάνετε εισαγωγή στο ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
@@ -3861,6 +3861,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME στέλνει αυτόματα το μήνυμα με την παρούσα λειτουργία συνθέτη."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Παρακαλούμε λάβετε υπόψη ότι οι διευθύνσεις που έχουν εκχωρηθεί σε αυτές τις ομάδες ΔΕΝ θα διαγραφούν."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
@@ -5446,7 +5449,7 @@
         "Δεν εξήχθησαν επαφές."
       ],
       "No contacts merged.": [
-        "Δεν συγχωνεύτηκαν επαφές."
+        "Δε συγχωνεύτηκαν επαφές."
       ],
       "Progress: ${ combinedProgress }%": [
         "Πρόοδος: ${ combinedProgress }%"
@@ -5580,7 +5583,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Αναβαθμήστε σε Απεριόριστο"
+        "Αναβαθμίστε σε Απεριόριστο"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -6644,13 +6647,12 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",
-        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτές τις ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτήν την ομάδα επαφών;"
