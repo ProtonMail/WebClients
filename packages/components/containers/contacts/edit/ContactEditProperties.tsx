@@ -35,7 +35,6 @@ const ICONS: { [key: string]: IconName } = {
 };
 
 interface Props {
-    contactID?: string;
     field?: string;
     isSignatureVerified: boolean;
     sortable?: boolean;
@@ -54,7 +53,6 @@ interface Props {
 
 const ContactEditProperties = (
     {
-        contactID,
         isSignatureVerified,
         field,
         sortable: inputSortable = false,
@@ -114,7 +112,6 @@ const ContactEditProperties = (
         return properties.map((property) => (
             <ContactEditProperty
                 key={property.uid}
-                contactID={contactID}
                 vCardContact={vCardContact}
                 ref={ref}
                 isSubmitted={isSubmitted}
