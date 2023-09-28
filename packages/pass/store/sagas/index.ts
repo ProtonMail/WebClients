@@ -24,6 +24,7 @@ import sessionLockEnable from './session-lock-enable.saga';
 import sessionLockImmediate from './session-lock-immediate.saga';
 import sessionUnlock from './session-unlock.saga';
 import settings from './settings.saga';
+import shareManagePermission from './share-manage-permission.saga';
 import signout from './signout.saga';
 import sync from './sync.saga';
 import trashDelete from './trash-delete.saga';
@@ -58,6 +59,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             itemUsed,
             notification,
             reportProblem,
+            shareManagePermission,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
