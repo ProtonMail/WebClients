@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type { Api, Maybe, Share, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
@@ -8,10 +9,9 @@ import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
-import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import type { EventManagerEvent } from '../../../events/manager';
+import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
 import {
     sharesSync,
     syncShareInvites,
@@ -49,6 +49,7 @@ function* onSharesEvent(
     const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
 
     // DO NOT MERGE THIS : TMP FOR DEVELOPMENT
+    // only do this if share has changed
     yield fork(function* () {
         for (const share of remoteShares) {
             yield put(syncShareMembers(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
@@ -92,8 +93,6 @@ function* onSharesEvent(
     }
 }
 
-const NOOP_EVENT = '*';
-
 /* The event-manager can be used to implement
  * a polling mechanism if we conform to the data
  * structure it is expecting. In order to poll for
@@ -102,7 +101,7 @@ const NOOP_EVENT = '*';
 export const createSharesChannel = (api: Api) =>
     eventChannelFactory<SharesGetResponse>({
         api,
-        interval: INTERVAL_EVENT_TIMER,
+        interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         onClose: () => logger.info(`[Saga::SharesChannel] closing channel`),

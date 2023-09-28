@@ -21,12 +21,13 @@ import {
     syncSuccess,
 } from '../actions';
 import type { WorkerRootSagaOptions } from '../types';
+import { invitesChannel } from './events/channel.invites';
 import { shareChannels } from './events/channel.share';
 import { sharesChannel } from './events/channel.shares';
 import { userChannel } from './events/channel.user';
 
 function* eventsWorker(options: WorkerRootSagaOptions): Generator {
-    yield all([userChannel, shareChannels, sharesChannel].map((effect) => fork(effect, api, options)));
+    yield all([userChannel, shareChannels, sharesChannel, invitesChannel].map((effect) => fork(effect, api, options)));
 }
 
 const startPollingActions = or(
