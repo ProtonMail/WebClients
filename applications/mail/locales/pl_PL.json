@@ -5582,6 +5582,9 @@
       "Please fill out this field.": [
         "Wypełnij pole."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Pamiętaj, że adresy przypisane do tych grup NIE zostaną usunięte."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tej grupy NIE zostaną usunięte."
       ],
@@ -7800,9 +7803,6 @@
       ],
       "Type text or keyword": [
         "Wpisz tekst lub słowo kluczowe"
-      ],
-      "Write your message": [
-        "Napisz wiadomość"
       ]
     },
     "Placeholder for contact group name": {
@@ -9587,17 +9587,14 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Czy na pewno chcesz trwale usunąć grupę kontaktów?",
-        "Czy na pewno chcesz trwale usunąć ${ count } grupy kontaktów?",
-        "Czy na pewno chcesz trwale usunąć ${ count } grup kontaktów?",
-        "Czy na pewno chcesz trwale usunąć ${ count } grupy kontaktów?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontakty?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontaktów?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontaktów?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Czy na pewno chcesz trwale usunąć te grupy kontaktów?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Czy na pewno chcesz trwale usunąć tę grupę kontaktów?"
