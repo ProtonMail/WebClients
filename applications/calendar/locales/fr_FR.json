@@ -3590,7 +3590,7 @@
         "Panneau latéral du calendrier"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "Vous ne trouvez pas ce que vous cherchez·? Certains événements dans des calendriers masqués correspondent à votre recherche. Pour voir ces résultats, activez la visibilité pour ${ hiddenWithItemsCalendarList }."
+        "Vous ne trouvez pas ce que vous cherchez ? Certains événements dans vos calendriers masqués correspondent à votre recherche. Pour y accéder, activez la visibilité de ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -3861,6 +3861,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -6644,13 +6647,12 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",
-        "Voulez-vous vraiment supprimer définitivement ${ count } groupes de contacts ?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Êtes-vous sûr de vouloir supprimer définitivement ce groupe de contacts ?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
