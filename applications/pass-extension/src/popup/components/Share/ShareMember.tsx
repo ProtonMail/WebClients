@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import { vaultRemoveAccessIntent } from '@proton/pass/store';
+import { vaultInviteResendIntent, vaultRemoveAccessIntent } from '@proton/pass/store';
 import { ShareRole } from '@proton/pass/types';
 
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
@@ -20,6 +20,7 @@ export type ShareMemberProps = {
     shareId: string;
     email: string;
     owner?: boolean;
+    inviteId?: string;
 } & ({ role: ShareRole; userShareId: string; pending: false } | { role?: never; userShareId?: never; pending: true });
 
 export const ShareMember: VFC<ShareMemberProps> = ({
@@ -29,6 +30,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     userShareId,
     owner = false,
     pending,
+    inviteId,
 }: ShareMemberProps) => {
     const [confirmTransfer, setConfirmTransfer] = useState(false);
     const canTransferOwnership = true;
@@ -61,6 +63,15 @@ export const ShareMember: VFC<ShareMemberProps> = ({
         removeAccess.dispatch({ shareId, userShareId });
     };
 
+    const resendInvite = useActionWithRequest(vaultInviteResendIntent, { onSuccess: () => {} });
+
+    const handleRsendAccess = () => {
+        if (!shareId || !inviteId) {
+            return;
+        }
+        resendInvite.dispatch({ shareId, inviteId });
+    };
+
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
             <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
@@ -84,7 +95,13 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                     label={c('Action').t`Can manage`}
                     icon={role !== ShareRole.ADMIN ? 'checkmark-circle' : 'circle'}
                 />
-                {pending && <DropdownMenuButton label={c('Action').t`Resend invitation`} icon={'paper-plane'} />}
+                {pending && (
+                    <DropdownMenuButton
+                        label={c('Action').t`Resend invitation`}
+                        icon={'paper-plane'}
+                        onClick={handleRsendAccess}
+                    />
+                )}
                 {canTransferOwnership && (
                     <DropdownMenuButton
                         label={c('Action').t`Transfer ownership`}

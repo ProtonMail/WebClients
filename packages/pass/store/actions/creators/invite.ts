@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { VaultInviteResendRequest } from '@proton/pass/types';
 import { type VaultInviteCreateRequest } from '@proton/pass/types';
 import type { PendingInvite, ShareMember, VaultRemoveAccessRequest } from '@proton/pass/types/data/invites';
 import { pipe } from '@proton/pass/utils/fp';
@@ -30,6 +31,30 @@ export const vaultInviteCreationFailure = createAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Invite creation failed.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
+
+export const vaultInviteResendIntent = createAction(
+    'vault::inviteResend::intent',
+    withRequestStart((payload: VaultInviteResendRequest) => withCacheBlock({ payload }))
+);
+
+export const vaultInviteResendSuccess = createAction(
+    'vault::inviteResend::success',
+    withRequestSuccess((shareId: string, inviteId: string) => ({ payload: { shareId, inviteId } }))
+);
+
+export const vaultInviteResendFailure = createAction(
+    'vault::inviteResend::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invite resend failed.`,
                 error,
             })
         )({ payload: {} })
