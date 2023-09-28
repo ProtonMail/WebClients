@@ -8,6 +8,7 @@ import { isStateResetAction } from '../actions/utils';
 import type { State } from '../types';
 import alias from './alias';
 import importReducer from './import';
+import invites from './invites';
 import items from './items';
 import popup from './popup';
 import pwHistory from './pw-history';
@@ -18,6 +19,7 @@ import user from './user';
 
 export * from './alias';
 export * from './import';
+export * from './invites';
 export * from './items';
 export * from './popup';
 export * from './pw-history';
@@ -27,8 +29,9 @@ export * from './user';
 
 export const reducerMap = {
     alias,
-    items,
     import: importReducer,
+    invites,
+    items,
     popup,
     pwHistory,
     request,
