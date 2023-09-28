@@ -1,26 +1,26 @@
 import { useCallback } from 'react';
 
-import { FeatureCode, useApi, useFeature } from '@proton/components';
+import { FeatureCode, useApi, useFeature } from '@proton/components/index';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
-import ConfirmDownloadAttachments from '../components/attachment/modals/ConfirmDownloadAttachments';
+import ConfirmDownloadAttachments from '../../components/attachment/modals/ConfirmDownloadAttachments';
 import {
     Download,
     formatDownload,
     formatDownloadAll,
     generateDownload,
     generateDownloadAll,
-} from '../helpers/attachment/attachmentDownloader';
-import { getAttachmentCounts } from '../helpers/message/messages';
-import { updateAttachment } from '../logic/attachments/attachmentsActions';
-import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
-import { useAppDispatch } from '../logic/store';
-import { useGetMessageKeys } from './message/useGetMessageKeys';
-import { useGetMessage } from './message/useMessage';
+} from '../../helpers/attachment/attachmentDownloader';
+import { getAttachmentCounts } from '../../helpers/message/messages';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { MessageKeys, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from './useAttachment';
 
 /**

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { EditorActions, EditorMetadata, EditorTextDirection } from '@proton/components/components';
 import { useAddresses, useHandler, useMailSettings, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
@@ -17,7 +18,6 @@ import { ExternalEditorActions } from '../../components/composer/editor/EditorWr
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
-import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import { getDate } from '../../helpers/elements';
 import { getContent, getContentWithBlockquotes, setContent } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
@@ -486,7 +486,7 @@ export const useComposerContent = (args: EditorArgs) => {
                 const files = syncedMessage.draftFlags?.initialAttachments;
                 dispatch(removeInitialAttachments(messageID));
                 await saveNow(syncedMessage);
-                await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+                await handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
             };
             void uploadInitialAttachments();
         }
