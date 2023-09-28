@@ -28,7 +28,11 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
     const endDate = new Date(user.AccountRecovery.EndTime * 1000);
     const formattedDate = format(endDate, 'PP', { locale: dateLocale });
 
-    const boldDate = <b key="bold-date">{formattedDate}</b>;
+    const boldDate = (
+        <b key="bold-date" data-testid="session_recovery:from_date">
+            {formattedDate}
+        </b>
+    );
 
     return (
         <>
