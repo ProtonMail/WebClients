@@ -174,3 +174,6 @@ export const EO_MAX_REPLIES_NUMBER = 5;
 export const EO_TOKEN_KEY = 'proton:eo_token';
 export const EO_DECRYPTED_TOKEN_KEY = 'proton:eo_decrypted_token';
 export const EO_PASSWORD_KEY = 'proton:eo_password';
+
+export const MAX_ROW_ATTACHMENT_THUMBNAILS = 3;
+export const MAX_COLUMN_ATTACHMENT_THUMBNAILS = 2;

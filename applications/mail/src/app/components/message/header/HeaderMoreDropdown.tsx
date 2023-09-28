@@ -41,7 +41,7 @@ import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/actions/useMarkAs';
 import { useMoveToFolder } from '../../../hooks/actions/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { useGetAttachment } from '../../../hooks/useAttachment';
+import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';

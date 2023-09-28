@@ -82,6 +82,7 @@ export const loadFulfilled = (
         result: { Total, Elements },
         taskRunning,
     } = action.payload;
+
     if (hasSameMode(state, action.meta.arg)) {
         Object.assign(state, {
             beforeFirstLoad: false,

@@ -1,13 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     files: File[];
-    onSelect: (action: ATTACHMENT_ACTION) => void;
+    onSelect: (action: ATTACHMENT_DISPOSITION) => void;
     onClose: () => void;
 }
 
@@ -17,7 +17,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose }: Props) => {
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}
+                onClick={() => onSelect(ATTACHMENT_DISPOSITION.ATTACHMENT)}
                 data-testid="composer:insert-image-attachment"
                 autoFocus
             >
@@ -26,7 +26,7 @@ const ComposerInsertImageModal = ({ files, onSelect, onClose }: Props) => {
             <Button
                 color="norm"
                 fullWidth
-                onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}
+                onClick={() => onSelect(ATTACHMENT_DISPOSITION.INLINE)}
                 data-testid="composer:insert-image-inline"
             >{c('Action').t`Inline`}</Button>
         </>
