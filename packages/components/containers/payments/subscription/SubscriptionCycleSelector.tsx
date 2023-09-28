@@ -36,6 +36,7 @@ export interface Props {
     disabled?: boolean;
     faded?: boolean;
     isCustomBilling?: boolean;
+    isScheduledSubscription?: boolean;
     subscription?: SubscriptionModel;
 }
 
@@ -193,6 +194,7 @@ const SubscriptionCycleSelector = ({
     plansMap,
     faded,
     isCustomBilling = false,
+    isScheduledSubscription = false,
     subscription,
 }: Props) => {
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
@@ -221,6 +223,7 @@ const SubscriptionCycleSelector = ({
                 <RenewalNotice
                     renewCycle={cycleSelected}
                     isCustomBilling={isCustomBilling}
+                    isScheduledSubscription={isScheduledSubscription}
                     subscription={subscription}
                 />
             </>
@@ -263,6 +266,7 @@ const SubscriptionCycleSelector = ({
                 <RenewalNotice
                     renewCycle={cycleSelected}
                     isCustomBilling={isCustomBilling}
+                    isScheduledSubscription={isScheduledSubscription}
                     subscription={subscription}
                     className="mt-2"
                 />
@@ -312,7 +316,12 @@ const SubscriptionCycleSelector = ({
                     );
                 })}
             </ul>
-            <RenewalNotice renewCycle={cycleSelected} isCustomBilling={isCustomBilling} subscription={subscription} />
+            <RenewalNotice
+                renewCycle={cycleSelected}
+                isCustomBilling={isCustomBilling}
+                isScheduledSubscription={isScheduledSubscription}
+                subscription={subscription}
+            />
         </>
     );
 };
