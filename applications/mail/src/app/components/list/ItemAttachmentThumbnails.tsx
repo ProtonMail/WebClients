@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 
+import { Tooltip } from '@proton/components/components';
 import Portal from '@proton/components/components/portal/Portal';
 import { FilePreview, NavigationControl } from '@proton/components/containers';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -8,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import AttachmentThumbnail from 'proton-mail/components/list/AttachmentThumbnail';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
+import { getOtherAttachmentsTitle } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import { useAttachmentThumbnailDownload } from 'proton-mail/hooks/attachments/useAttachmentThumbnailDownload';
 
 interface Preview {
@@ -82,6 +84,8 @@ const ItemAttachmentThumbnails = ({
         });
     };
 
+    const otherAttachmentsTitle = getOtherAttachmentsTitle(attachmentsMetadata, maxAttachment);
+
     const current = attachmentsMetadata.findIndex(
         (attachmentMetadata) => attachmentMetadata.ID === previewing?.attachment.ID
     );
@@ -116,7 +120,9 @@ const ItemAttachmentThumbnails = ({
                         className="rounded text-sm flex flex-item-noshrink flex-align-items-center flex-nowrap attachment-thumbnail attachment-thumbnail--number"
                         data-testid="attachment-thumbnails:other-attachment-number"
                     >
-                        <span className="lh100">+{otherAttachmentNumber}</span>
+                        <Tooltip title={otherAttachmentsTitle} originalPlacement="bottom">
+                            <span className="lh100">+{otherAttachmentNumber}</span>
+                        </Tooltip>
                     </span>
                 )}
             </div>
