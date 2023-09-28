@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { selectVaultWithItemsCount, vaultInviteCreationIntent } from '@proton/pass/store';
+import { inviteCreationIntent, selectVaultWithItemsCount } from '@proton/pass/store';
 import { ShareRole } from '@proton/pass/types';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
@@ -25,7 +25,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
     const { close, manageAccess } = useInviteContext();
 
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const createInvite = useActionWithRequest(vaultInviteCreationIntent, { onSuccess: () => manageAccess(shareId) });
+    const createInvite = useActionWithRequest(inviteCreationIntent, { onSuccess: () => manageAccess(shareId) });
 
     const form = useFormik<InviteFormValues>({
         initialValues: { step: 'email', email: '', role: ShareRole.READ },
