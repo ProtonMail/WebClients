@@ -1,5 +1,5 @@
 import { ThemeColor } from '@proton/colors/types';
-import { AddressAuditStatus, SelfAuditResult } from '@proton/key-transparency/lib';
+import { AddressAuditStatus, AddressAuditWarningReason, SelfAuditResult } from '@proton/key-transparency/lib';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useKeyTransparencyContext } from '../containers';
@@ -24,7 +24,12 @@ const getHasSelfAuditWarning = (selfAuditResult: SelfAuditResult) => {
         return true;
     }
     const addressAuditWarning = selfAuditResult.addressAuditResults.some(
-        ({ status }) => status === AddressAuditStatus.Warning
+        ({ status, warningDetails }) =>
+            status === AddressAuditStatus.Warning &&
+            !(
+                warningDetails?.reason === AddressAuditWarningReason.UnverifiableHistory &&
+                !warningDetails.addressWasDisabled
+            )
     );
     if (addressAuditWarning) {
         return true;
