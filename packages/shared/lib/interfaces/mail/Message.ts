@@ -1,9 +1,35 @@
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+
 import { MIME_TYPES } from '../../constants';
 import { Recipient } from '../Address';
 
 export interface AttachmentInfo {
     inline?: number;
     attachment: number;
+}
+
+// Attachment metadata that we get in the element list
+export interface AttachmentsMetadata {
+    ID: string;
+    Disposition: ATTACHMENT_DISPOSITION;
+    Name: string;
+    MIMEType: string;
+    Size: number;
+}
+
+export interface AttachmentFullMetadata {
+    ID: string;
+    Name?: string;
+    Size: number;
+    MIMEType: string;
+    Disposition: ATTACHMENT_DISPOSITION;
+    Sender?: Recipient;
+    KeyPackets?: string;
+    Signature?: string;
+    EncSignature?: string;
+    AddressID: string;
+    MessageID: string;
+    ConversationID: string;
 }
 
 export interface Attachment {
@@ -61,6 +87,7 @@ export interface MessageMetadata {
     NumAttachments: number;
     Flags: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+    AttachmentsMetadata?: AttachmentsMetadata[];
 }
 
 export interface Message extends MessageMetadata {

@@ -1,8 +1,9 @@
 import { CryptoProxy } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
-import { ATTACHMENT_ACTION, upload } from '../attachment/attachmentUploader';
+import { upload } from '../attachment/attachmentUploader';
 
 interface KeyInfoForFile {
     fingerprint: string;
@@ -50,7 +51,7 @@ export const attachPublicKey = async (message: MessageStateWithData, messageKeys
         return undefined;
     }
 
-    const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.ATTACHMENT, uid);
+    const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_DISPOSITION.ATTACHMENT, uid);
     const uploadResult = await uploadInfo.resultPromise;
     return uploadResult.attachment;
 };

@@ -4,6 +4,7 @@ import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
@@ -46,7 +47,8 @@ const buildAttachments = (attachments: Download[]) =>
         const headers = attachment.Headers || {};
         const contentTypeValue =
             extractContentValue(headers['content-type']) || attachment.MIMEType || 'application/octet-stream';
-        const contentDispositionValue = extractContentValue(headers['content-disposition']) || 'attachment';
+        const contentDispositionValue =
+            extractContentValue(headers['content-disposition']) || ATTACHMENT_DISPOSITION.ATTACHMENT;
         const entity = mimemessage.factory({
             contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
             contentTransferEncoding: 'base64',

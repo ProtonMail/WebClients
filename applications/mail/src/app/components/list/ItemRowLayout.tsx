@@ -2,9 +2,15 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { FeatureFlag } from '@proton/components';
+import { useFlag } from '@proton/components/containers/unleash';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import ItemAttachmentThumbnails from 'proton-mail/components/list/ItemAttachmentThumbnails';
+import { MAX_ROW_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
+import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
@@ -49,6 +55,7 @@ const ItemRowLayout = ({
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
+    const canSeeThumbnailsFeature = useFlag(FeatureFlag.AttachmentThumbnails);
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
@@ -73,99 +80,123 @@ const ItemRowLayout = ({
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
+    const showThumbnails = canShowAttachmentThumbnails(
+        isCompactView,
+        conversationMode,
+        element,
+        canSeeThumbnailsFeature
+    );
+
     return (
-        <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="my-auto flex w2e" data-testid={unread}>
-                <ItemStar element={element} />
-            </div>
-            <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
-                <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
-                <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
-                <span
-                    className="max-w100 text-ellipsis flex flex-align-items-center"
-                    data-testid="message-row:sender-address"
-                >
-                    {senders}
-                </span>
-            </div>
-
-            <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
-                <div className="flex flex-column inline-block">
-                    <span
-                        role="heading"
-                        aria-level={2}
-                        className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
-                        title={Subject}
-                        data-testid="message-row:subject"
-                    >
-                        {showIcon && (
-                            <span className="mr-1 inline-flex flex-item-noshrink align-bottom">
-                                <ItemLocation element={element} labelID={labelID} />
-                            </span>
-                        )}
-                        {conversationMode && (
-                            <NumMessages
-                                className={clsx(['mr-1 flex-item-noshrink', unread && 'text-bold'])}
-                                conversation={element}
-                            />
-                        )}
-                        {subjectContent}
-                    </span>
-
-                    {!!resultJSX && highlightData && (
-                        <>
-                            <span
-                                className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
-                                title={bodyTitle}
-                                aria-hidden="true"
-                            >
-                                {resultJSX}
-                            </span>
-                            <span className="sr-only">{bodyTitle}</span>
-                        </>
-                    )}
+        <div className="flex-nowrap flex-column w100">
+            <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
+                <div className="my-auto flex w2e" data-testid={unread}>
+                    <ItemStar element={element} />
                 </div>
-            </div>
+                <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
+                    <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
+                    <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
+                    <span
+                        className="max-w100 text-ellipsis flex flex-align-items-center"
+                        data-testid="message-row:sender-address"
+                    >
+                        {senders}
+                    </span>
+                </div>
 
-            <ItemLabels
-                labels={labels}
-                element={element}
-                labelID={labelID}
-                maxNumber={1}
-                className="flex-item-noshrink ml-auto"
-                showDropdown={false}
-                isCollapsed={false}
-            />
+                <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
+                    <div className="flex flex-column inline-block w100">
+                        <span
+                            role="heading"
+                            aria-level={2}
+                            className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
+                            title={Subject}
+                            data-testid="message-row:subject"
+                        >
+                            {showIcon && (
+                                <span className="mr-1 inline-flex flex-item-noshrink align-bottom">
+                                    <ItemLocation element={element} labelID={labelID} />
+                                </span>
+                            )}
+                            {conversationMode && (
+                                <NumMessages
+                                    className={clsx(['mr-1 flex-item-noshrink', unread && 'text-bold'])}
+                                    conversation={element}
+                                />
+                            )}
+                            {subjectContent}
+                        </span>
 
-            <span className="flex flex-nowrap w5e ml-2 text-center flex-justify-end">
-                {hasExpiration && (
-                    <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
-                )}
-                <ItemAttachmentIcon
-                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                    element={element}
-                    className="flex-item-noshrink ml-2"
-                />
-            </span>
+                        {!!resultJSX && highlightData && (
+                            <>
+                                <span
+                                    className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
+                                    title={bodyTitle}
+                                    aria-hidden="true"
+                                >
+                                    {resultJSX}
+                                </span>
+                                <span className="sr-only">{bodyTitle}</span>
+                            </>
+                        )}
+                    </div>
+                </div>
 
-            <span className="ml-4 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
-                <ItemHoverButtons
+                <ItemLabels
+                    labels={labels}
                     element={element}
                     labelID={labelID}
-                    elementID={elementID}
-                    onBack={onBack}
-                    hasStar={false}
-                    size={isCompactView ? 'small' : 'medium'}
+                    maxNumber={1}
+                    className="flex-item-noshrink ml-auto"
+                    showDropdown={false}
+                    isCollapsed={false}
                 />
-                <span className="item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
-                    <ItemDate
+
+                <span className="flex flex-nowrap w5e ml-2 text-center flex-justify-end">
+                    {hasExpiration && (
+                        <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
+                    )}
+                    {!showThumbnails && (
+                        <ItemAttachmentIcon
+                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                            element={element}
+                            className="flex-item-noshrink ml-2"
+                        />
+                    )}
+                </span>
+
+                <span className="ml-4 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
+                    <ItemHoverButtons
                         element={element}
                         labelID={labelID}
-                        className={unread ? 'text-bold' : undefined}
-                        useTooltip
+                        elementID={elementID}
+                        onBack={onBack}
+                        hasStar={false}
+                        size={isCompactView ? 'small' : 'medium'}
                     />
+                    <span className="item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
+                        <ItemDate
+                            element={element}
+                            labelID={labelID}
+                            className={unread ? 'text-bold' : undefined}
+                            useTooltip
+                        />
+                    </span>
                 </span>
-            </span>
+            </div>
+            <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row">
+                <div className="my-auto flex w2e"></div>
+                <div className={clsx(['item-senders flex pr-4'])}></div>
+
+                {showThumbnails && (
+                    <ItemAttachmentThumbnails
+                        attachmentsMetadata={element.AttachmentsMetadata}
+                        maxAttachment={MAX_ROW_ATTACHMENT_THUMBNAILS}
+                        numAttachments={element.NumAttachments}
+                        className="flex-item-fluid attachment-thumbnail-row"
+                    />
+                )}
+            </div>
         </div>
     );
 };

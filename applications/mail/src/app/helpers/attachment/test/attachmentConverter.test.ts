@@ -1,6 +1,7 @@
 import { MIMEAttachment, WorkerDecryptionResult } from '@proton/crypto';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ENCRYPTED_STATUS } from '../../../constants';
 import { ID_PREFIX, convert, convertSingle, convertToFile, getHeaders, getId } from '../attachmentConverter';
@@ -8,7 +9,7 @@ import { ID_PREFIX, convert, convertSingle, convertToFile, getHeaders, getId } f
 const fileName = 'fileName';
 const messageID = 'messageID';
 const contentID = 'contentID';
-const contentDisposition = 'inline';
+const contentDisposition = ATTACHMENT_DISPOSITION.INLINE;
 
 const message = { ID: messageID } as Message;
 

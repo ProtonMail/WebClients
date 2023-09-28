@@ -45,3 +45,8 @@ export enum BLOCK_SENDER_CONFIRMATION {
 }
 
 export const ATTACHMENT_MAX_COUNT = 100;
+
+export enum ATTACHMENT_DISPOSITION {
+    ATTACHMENT = 'attachment',
+    INLINE = 'inline',
+}
