@@ -6,7 +6,7 @@
 
 export const createDevReloader = (cb: () => void, description: string) => {
     if (RUNTIME_RELOAD) {
-        const socket = new WebSocket(`wss://localhost:9090`);
+        const socket = new WebSocket(`ws://localhost:${RUNTIME_RELOAD_PORT}`);
 
         socket.addEventListener('message', ({ data }: MessageEvent) => {
             const message = JSON.parse(data);

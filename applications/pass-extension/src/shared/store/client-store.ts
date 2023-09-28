@@ -1,5 +1,5 @@
+import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
-import devToolsEnhancer from 'remote-redux-devtools';
 
 import reducer from '@proton/pass/store/reducers';
 import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
@@ -15,9 +15,8 @@ const createClientStore = (endpoint: ExtensionEndpoint, tabId: TabId) => {
                 ? [
                       devToolsEnhancer({
                           name: `${endpoint}-${tabId}`,
-                          port: 8000,
                           realtime: true,
-                          secure: true,
+                          port: REDUX_DEVTOOLS_PORT,
                       }),
                   ]
                 : [],
