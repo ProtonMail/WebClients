@@ -15,7 +15,6 @@ import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 
 interface Props {
-    contactID?: string;
     vCardProperty: VCardProperty;
     vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
@@ -36,7 +35,6 @@ interface Props {
 
 const ContactEditProperty = (
     {
-        contactID,
         vCardProperty,
         vCardContact,
         onChangeVCard,
@@ -127,7 +125,6 @@ const ContactEditProperty = (
                             onChangeVCard={onChangeVCard}
                             isSubmitted={isSubmitted}
                             onSelectImage={onSelectImage}
-                            contactID={contactID}
                         />
                     </span>
                     {actionRow && (
