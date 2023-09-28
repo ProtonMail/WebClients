@@ -204,7 +204,7 @@ const AutoReplySection = () => {
         <SettingsSectionWide className="no-scroll">
             <SettingsParagraph className="mt-0 mb-4">
                 {c('new_plans: info')
-                    .t`Set automatic replies to inform contacts you are out of the office or unable to respond.`}
+                    .t`Set automatic replies to inform senders you are out of the office or unable to respond.`}
             </SettingsParagraph>
 
             <SettingsLayout>
