@@ -2,15 +2,19 @@ import type { FC } from 'react';
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import type { MaybeNull } from '@proton/pass/types';
+import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
 
-import { VaultInvite } from '../../components/Invite/VaultInvite';
+import { VaultInviteAccept } from '../../components/Invite/VaultInviteAccept';
+import { VaultInviteCreate } from '../../components/Invite/VaultInviteCreate';
 import { VaultInviteManager } from '../../components/Invite/VaultInviteManager';
 
 export type InviteContextValue = {
     shareId: MaybeNull<string>;
-    invite: (shareId: string) => void;
-    manage: (shareId: string) => void;
+    createInvite: (shareId: string) => void;
+    acceptInvite: (invite: Invite) => void;
+    rejectInvite: (invite: Invite) => void;
+    manageAccess: (shareId: string) => void;
     close: () => void;
 };
 
@@ -18,21 +22,31 @@ export type InviteView = 'invite' | 'manage';
 
 const InviteContext = createContext<InviteContextValue>({
     shareId: null,
-    invite: noop,
-    manage: noop,
+    createInvite: noop,
+    acceptInvite: noop,
+    rejectInvite: noop,
+    manageAccess: noop,
     close: noop,
 });
 
 export const InviteContextProvider: FC = ({ children }) => {
     const [shareId, setShareId] = useState<MaybeNull<string>>(null);
     const [view, setView] = useState<MaybeNull<InviteView>>(null);
+    const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
 
-    const invite = useCallback(async (shareId: string) => {
+    const createInvite = useCallback(async (shareId: string) => {
         setShareId(shareId);
         setView('invite');
     }, []);
 
-    const manage = useCallback((shareId: string) => {
+    const acceptInvite = useCallback(async (invite: Invite) => setInvite(invite), []);
+
+    const rejectInvite = useCallback(async () => {
+        /* reject flow */
+        setInvite(null);
+    }, []);
+
+    const manageAccess = useCallback((shareId: string) => {
         setShareId(shareId);
         setView('manage');
     }, []);
@@ -42,7 +56,10 @@ export const InviteContextProvider: FC = ({ children }) => {
         setView(null);
     }, []);
 
-    const contextValue = useMemo<InviteContextValue>(() => ({ shareId, invite, manage, close }), [shareId]);
+    const contextValue = useMemo<InviteContextValue>(
+        () => ({ shareId, createInvite, acceptInvite, rejectInvite, manageAccess, close }),
+        [shareId]
+    );
 
     return (
         <InviteContext.Provider value={contextValue}>
@@ -50,12 +67,13 @@ export const InviteContextProvider: FC = ({ children }) => {
                 (() => {
                     switch (view) {
                         case 'invite':
-                            return <VaultInvite shareId={shareId} />;
+                            return <VaultInviteCreate shareId={shareId} />;
                         case 'manage':
                             return <VaultInviteManager shareId={shareId} />;
                     }
                 })()}
 
+            {invite && <VaultInviteAccept {...invite} />}
             {children}
         </InviteContext.Provider>
     );

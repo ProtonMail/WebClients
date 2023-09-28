@@ -17,7 +17,7 @@ import { SharedVaultItem } from '../Vault/SharedVaultItem';
 type Props = { shareId: string };
 
 export const VaultInviteManager: FC<Props> = ({ shareId }) => {
-    const { invite, close } = useInviteContext();
+    const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
 
     return (
@@ -37,7 +37,7 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            <Button key="modal-invite-button" color="norm" pill onClick={() => invite(shareId)}>
+                            <Button key="modal-invite-button" color="norm" pill onClick={() => createInvite(shareId)}>
                                 {c('Action').t`Invite people`}
                             </Button>,
                         ]}
