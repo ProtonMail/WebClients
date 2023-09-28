@@ -1,7 +1,7 @@
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
 import { type Maybe, type Share, type ShareGetResponse, type ShareRole, ShareType } from '@proton/pass/types';
-import { type ShareMember } from '@proton/pass/types/data/invites';
+import { VaultRemoveAccessRequest, type ShareMember } from '@proton/pass/types/data/invites';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 
 import { getAllShareKeys } from './vaults';
@@ -78,3 +78,9 @@ export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> 
         createTime: member.CreateTime,
     }));
 };
+
+export const removeUserAccess = async ({ shareId, userShareId }: VaultRemoveAccessRequest) =>
+    api({
+        url: `pass/v1/share/${shareId}/user/${userShareId}`,
+        method: 'delete',
+    });

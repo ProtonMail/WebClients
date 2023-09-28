@@ -43,3 +43,26 @@ export const syncShareInvites = createAction(
 export const syncShareMembers = createAction('share::members', (shareId: string, members: ShareMember[]) => ({
     payload: { shareId, members },
 }));
+
+export const vaultRemoveAccessIntent = createAction(
+    'vault::remove-access::intent',
+    withRequestStart((payload: { shareId: string; userShareId: string }) => ({ payload }))
+);
+
+export const vaultRemoveAccessSuccess = createAction(
+    'vault::remove-access::success',
+    withRequestSuccess(() => ({ payload: {} }))
+);
+
+export const vaultRemoveAccessFailure = createAction(
+    'vault::remove-access::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to remove user's access.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
