@@ -21,11 +21,11 @@ import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 type Props = { shareId: string };
 
-export const VaultInvite: FC<Props> = ({ shareId }) => {
-    const { close, manage } = useInviteContext();
+export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
+    const { close, manageAccess } = useInviteContext();
 
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const createInvite = useActionWithRequest(vaultInviteCreationIntent, { onSuccess: () => manage(shareId) });
+    const createInvite = useActionWithRequest(vaultInviteCreationIntent, { onSuccess: () => manageAccess(shareId) });
 
     const form = useFormik<InviteFormValues>({
         initialValues: { step: 'email', email: '', role: ShareRole.READ },
