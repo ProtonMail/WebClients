@@ -26,6 +26,11 @@ export type VaultInviteCreateRequest = {
     role: ShareRole;
 };
 
+export type VaultInviteResendRequest = {
+    shareId: string;
+    inviteId: string;
+};
+
 export type ItemShareContent = {};
 
 export type ShareContent<T extends ShareType = ShareType> = T extends ShareType.Vault
