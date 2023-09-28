@@ -212,8 +212,8 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             handleVaultCreateClick={withClose(() =>
                                 setVaultModalProps({ open: true, payload: { type: 'new' } })
                             )}
-                            handleVaultInviteClick={withClose(({ shareId }) => inviteContext.invite(shareId))}
-                            handleVaultManageClick={withClose(({ shareId }) => inviteContext.manage(shareId))}
+                            handleVaultInviteClick={withClose(({ shareId }) => inviteContext.createInvite(shareId))}
+                            handleVaultManageClick={withClose(({ shareId }) => inviteContext.manageAccess(shareId))}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
