@@ -3710,6 +3710,9 @@
       "Please enter the password to decrypt and view content.": [
         "Saisissez le mot de passe pour déchiffrer et voir le contenu."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
@@ -6402,13 +6405,12 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",
-        "Voulez-vous vraiment supprimer définitivement ${ count } groupes de contacts ?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Êtes-vous sûr de vouloir supprimer définitivement ce groupe de contacts ?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
