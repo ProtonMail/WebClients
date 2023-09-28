@@ -23,3 +23,8 @@ export type ShareMember = {
     expireTime?: MaybeNull<number>;
     createTime: number;
 };
+
+export type VaultRemoveAccessRequest = {
+    shareId: string;
+    userShareId: string;
+};
