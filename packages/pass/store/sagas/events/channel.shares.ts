@@ -13,9 +13,9 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
 import {
+    shareInvitesSync,
+    shareMembersSync,
     sharesSync,
-    syncShareInvites,
-    syncShareMembers,
     vaultCreationSuccess,
     vaultSetPrimarySync,
 } from '../../actions';
@@ -52,11 +52,11 @@ function* onSharesEvent(
     // only do this if share has changed
     yield fork(function* () {
         for (const share of remoteShares) {
-            yield put(syncShareMembers(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
+            yield put(shareMembersSync(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
 
             if (share.Owner) {
                 yield put(
-                    syncShareInvites(share.ShareID, (yield loadPendingShareInvites(share.ShareID)) as PendingInvite[])
+                    shareInvitesSync(share.ShareID, (yield loadPendingShareInvites(share.ShareID)) as PendingInvite[])
                 );
             }
         }

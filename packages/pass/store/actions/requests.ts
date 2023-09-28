@@ -17,8 +17,9 @@ export const importItems = () => `import-items`;
 
 export const aliasOptions = () => `alias-options`;
 export const aliasDetails = (aliasEmail: string) => `alias-details-${aliasEmail}`;
-
 export const unlockSession = `unlock-session`;
 export const settingsEdit = withRequestNamespace(`settings-edit`);
-
 export const reportProblem = `report-problem-request`;
+
+export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
+export const inviteResendRequest = (inviteId: string) => `share::members::remove::${inviteId}`;

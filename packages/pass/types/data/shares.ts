@@ -14,21 +14,7 @@ export enum ShareRole {
 export type VaultShareContent = {
     name: string;
     description: string;
-    display: {
-        icon?: VaultIcon;
-        color?: VaultColor;
-    };
-};
-
-export type VaultInviteCreateRequest = {
-    shareId: string;
-    email: string;
-    role: ShareRole;
-};
-
-export type VaultInviteResendRequest = {
-    shareId: string;
-    inviteId: string;
+    display: { icon?: VaultIcon; color?: VaultColor };
 };
 
 export type ItemShareContent = {};
@@ -53,6 +39,5 @@ export type ShareBase<T extends ShareType = ShareType> = {
 };
 
 export type WithEventId<T> = T & { eventId: string };
-
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
 export type VaultShare = Share<ShareType.Vault>;
