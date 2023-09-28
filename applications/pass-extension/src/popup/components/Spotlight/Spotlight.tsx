@@ -16,9 +16,12 @@ import { InviteIcon } from './SpotlightIcon';
 
 import './Spotlight.scss';
 
+type SpotlightState = { open: boolean; message: MaybeNull<SpotlightMessageDefinition> };
+
 export const Spotlight: VFC = () => {
     const timer = useRef<NodeJS.Timeout>();
-    const [open, setOpen] = useState(false);
+    const [state, setState] = useState<SpotlightState>({ open: false, message: null });
+
     const { acceptInvite } = useInviteContext();
 
     const latestInvite = useSelector(selectMostRecentInvite);
@@ -47,28 +50,29 @@ export const Spotlight: VFC = () => {
         [latestInvite, acceptInvite]
     );
 
-    const [message, setMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
-
     useEffect(() => {
-        clearTimeout(timer.current);
-        const nextMessage = inviteMessage ?? onboarding.message;
+        const prev = state.message;
+        const next = inviteMessage ?? onboarding.message;
 
-        setOpen(false);
+        if (prev?.id !== next?.id) {
+            setState((curr) => ({ ...curr, open: false }));
+            timer.current = setTimeout(
+                () =>
+                    setState({
+                        message: next,
+                        open: next !== null,
+                    }),
+                500
+            );
+        }
+    }, [state.message?.id, inviteMessage?.id, onboarding.message?.id]);
 
-        if (nextMessage) {
-            timer.current = setTimeout(() => {
-                setOpen(true);
-                setMessage(nextMessage);
-            }, 250);
-        } else setMessage(null);
-
-        return () => clearTimeout(timer.current);
-    }, [message, inviteMessage?.id, onboarding.message?.id]);
+    useEffect(() => () => clearTimeout(timer.current), []);
 
     return (
         <>
-            <div className={clsx('pass-spotlight-panel', !open && 'pass-spotlight-panel--hidden')}>
-                {message && <SpotlightContent {...message} />}
+            <div className={clsx('pass-spotlight-panel', !state.open && 'pass-spotlight-panel--hidden')}>
+                {state.message && <SpotlightContent {...state.message} />}
             </div>
             <FreeTrialModal open={onboarding.trial} onClose={() => onboarding.message?.onClose?.()} />
         </>
