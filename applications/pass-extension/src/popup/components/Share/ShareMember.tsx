@@ -13,6 +13,8 @@ import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { getShareRoleDefinition } from './ShareRoleOptions';
 
 import './ShareMember.scss';
+import { useActionWithRequest } from 'applications/pass-extension/src/shared/hooks/useRequestStatusEffect';
+import { vaultRemoveAccessIntent } from '@proton/pass/store';
 
 export type ShareMemberProps = {
     email: string;
@@ -42,8 +44,14 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false,
         return getShareRoleDefinition()[role];
     }, [role, owner, pending]);
 
+    const removeAccess = useActionWithRequest(vaultRemoveAccessIntent, { onSuccess: () => { } });
+
+    const handleRemoveAccess = () => {
+
+    }
+
     return (
-        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
+        <div className="flex flex-item-fluid flex-nowrap flex-align-items-center border rounded-xl px-4 py-3">
             <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
@@ -73,7 +81,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false,
                         onClick={() => setConfirmTransfer(true)}
                     />
                 )}
-                <DropdownMenuButton label={c('Action').t`Remove access`} icon="circle-slash" danger />
+                <DropdownMenuButton label={c('Action').t`Remove access`} icon="circle-slash" danger onClick={handleRemoveAccess} />
             </QuickActionsDropdown>
 
             <Prompt
