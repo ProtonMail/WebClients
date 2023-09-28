@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit address": [
         "Editar endereço"
       ],
@@ -5998,7 +6001,7 @@
         "Se você perder sua senha e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um ${ boldAccountAndRecovery } definidos. Caso contrário, você pode ficar se acesso aos seus e-mails, contatos ou arquivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
+        "Se você perder seu dispositivo ativado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -6135,7 +6138,7 @@
         "Saiba mais sobre gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -6270,7 +6273,7 @@
         "Não é uma URL válida"
       ],
       "Not yet available in our Android mobile app.": [
-        "Ainda não está disponível em nosso aplicativo móvel Android."
+        "Ainda não está disponível em nosso aplicativo móvel para Android."
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Não é o seu dispositivo? Use uma janela de navegação privada para fazer login e fechá-la quando terminar. ${ learnMore }"
@@ -6739,7 +6742,7 @@
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Isso pode levar algum tempo. Por favor, não feche esta página ou desconecte-se da internet."
+        "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi solicitado definir."
@@ -6940,7 +6943,7 @@
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para um plano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para ter acesso a ${ PROTON_SENTINEL_NAME }"
+        "Faça upgrade para um plano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para ter acesso a ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -6952,7 +6955,7 @@
         "Carregar imagem"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Faça o upload do seu arquivo CSV completo para criar contas"
+        "Envie o seu arquivo CSV completo para criar contas"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "O arquivo enviado não é uma chave privada válida. Verifique e tente novamente."
@@ -6964,7 +6967,7 @@
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use as diferentes categorias de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
+        "Use as diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -9342,7 +9345,7 @@
         "Manter minha conta do ${ currentPlanName }"
       ],
       "Upgrade": [
-        "Melhorar"
+        "Fazer upgrade"
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
@@ -9664,7 +9667,7 @@
         "Comece a proteger sua organização"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Comece a se proteger online em 2 passos fáceis"
+        "Comece a se proteger on-line em 2 passos fáceis"
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
@@ -9755,17 +9758,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -9853,6 +9845,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10968,9 +10971,6 @@
       ],
       "Search for a user or address": [
         "Pesquisar por um usuário ou endereço"
-      ],
-      "Search settings": [
-        "Pesquisar configurações"
       ],
       "Search users": [
         "Pesquisar usuários"
@@ -13062,7 +13062,7 @@
         "Iniciar sessão e conceder acesso"
       ],
       "Sign in to join the Beta program": [
-        "Faça login para participar do programa Beta"
+        "Inicie sessão para participar do programa Beta"
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"
@@ -13518,6 +13518,11 @@
         "Isso adiciona automaticamente sua chave pública a cada mensagem que você enviar. Os destinatários podem usar isso para verificar a autenticidade de suas mensagens e enviar mensagens criptografadas para você."
       ]
     },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Selecione as configurações PGP padrão usadas para assinar ou criptografar mensagens com usuários PGP que não utilizam ${ BRAND_NAME }. Observe que o PGP Inline força mensagens em texto simples."
+      ]
+    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "Ao receber um e-mail de outro usuário do ${ MAIL_APP_NAME } que não tem chaves de confiança em seus contatos, um banner perguntará se você deseja habilitar as chaves de confiança."
@@ -13566,7 +13571,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Faça upgrade para um plano pago ${ MAIL_SHORT_APP_NAME } para compartilhar seu calendário."
+        "Faça upgrade para um plano pago do ${ MAIL_SHORT_APP_NAME } para compartilhar seu calendário."
       ]
     },
     "upsell panel": {
@@ -13753,7 +13758,7 @@
         "Se você cancelar esta importação, você não poderá retomá-la. A ${ BRAND_NAME } salvou todo o progresso na sua conta. Deseja cancelar mesmo assim?"
       ],
       "Please add at least one recipient.": [
-        "Insira pelo menos um destinatário."
+        "Adicione ao menos um destinatário."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
