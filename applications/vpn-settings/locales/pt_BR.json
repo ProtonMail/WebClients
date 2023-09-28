@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Edit address": [
         "Editar endereço"
       ],
@@ -2920,7 +2923,7 @@
         "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos você ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
+        "Se você perder seu dispositivo ativado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2971,7 +2974,7 @@
         "Saiba mais sobre gateways"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -3319,7 +3322,7 @@
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Isso pode levar algum tempo. Por favor, não feche esta página ou desconecte-se da internet."
+        "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
@@ -3433,13 +3436,13 @@
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Faça o upload do seu arquivo CSV completo para criar contas"
+        "Envie o seu arquivo CSV completo para criar contas"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use as diferentes categorias de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
+        "Use as diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -4430,7 +4433,7 @@
         "Manter minha conta do ${ currentPlanName }"
       ],
       "Upgrade": [
-        "Melhorar"
+        "Fazer upgrade"
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
@@ -4740,7 +4743,7 @@
         "Comece a proteger sua organização"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Comece a se proteger online em 2 passos fáceis"
+        "Comece a se proteger on-line em 2 passos fáceis"
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
@@ -6696,7 +6699,7 @@
         "Iniciar sessão"
       ],
       "Sign in to join the Beta program": [
-        "Faça login para participar do programa Beta"
+        "Inicie sessão para participar do programa Beta"
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"

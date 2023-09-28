@@ -3862,6 +3862,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME invia automaticamente il messaggio utilizzando la modalità attuale di composizione."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Tieni presente che gli indirizzi assegnati a questi gruppi NON verranno eliminati."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
       ],
@@ -6644,13 +6647,12 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
       ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sei sicuro di voler eliminare definitivamente ${ count } gruppo di contatti?",
-        "Sei sicuro di voler eliminare definitivamente ${ count } gruppi di contatti?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",
         "Sei sicuro di voler eliminare definitivamente ${ count } contatti?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Sei sicuro di voler eliminare definitivamente questi gruppi di contatti?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Sei sicuro di voler eliminare definitivamente questo gruppo di contatto?"
