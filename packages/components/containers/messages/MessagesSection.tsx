@@ -16,9 +16,11 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
+import { FeatureFlag, useFlag } from '../unleash';
 import AlmostAllMailToggle from './AlmostAllMailToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
+import { PageSizeSelector } from './PageSizeSelector';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
@@ -39,6 +41,8 @@ const MessagesSection = () => {
     const { createNotification } = useNotifications();
 
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
+    const isPageSizeSettingEnabled = useFlag(FeatureFlag.WebMailPageSizeSetting);
+
     const { call } = useEventManager();
     const api = useApi();
 
@@ -201,6 +205,23 @@ const MessagesSection = () => {
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
+
+            {isPageSizeSettingEnabled && (
+                <SettingsLayout className="flex-align-items-center">
+                    <SettingsLayoutLeft>
+                        <label htmlFor="pageSizeSelector">
+                            <span className="text-semibold mr-2">
+                                {ViewMode === VIEW_MODE.GROUP
+                                    ? c('Label').t`Conversations per page`
+                                    : c('Label').t`Messages per page`}
+                            </span>
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt-2">
+                        <PageSizeSelector id="pageSizeSelector" />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
         </>
     );
 };

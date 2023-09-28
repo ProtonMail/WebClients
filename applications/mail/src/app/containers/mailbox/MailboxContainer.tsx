@@ -22,7 +22,7 @@ import { useCalendarsInfoCoreListener } from '@proton/components/containers/even
 import { MAILBOX_LABEL_IDS, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { MailPageSize, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -166,6 +166,7 @@ const MailboxContainer = ({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
+        pageSize: mailSettings?.PageSize ?? MailPageSize.FIFTY,
         sort,
         filter,
         search: searchParameters,
@@ -173,6 +174,7 @@ const MailboxContainer = ({
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
+
     const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
