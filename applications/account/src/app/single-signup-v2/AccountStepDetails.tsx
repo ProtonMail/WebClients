@@ -17,7 +17,6 @@ import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PLANS } from '@proton/shared/lib/constants';
 import {
-    confirmEmailValidator,
     confirmPasswordValidator,
     emailValidator,
     getMinPasswordLengthMessage,
@@ -56,35 +55,30 @@ interface InputState {
 
 interface AccountDetailsInputState {
     email: Partial<InputState>;
-    emailConfirm: Partial<InputState>;
     password: Partial<InputState>;
     passwordConfirm: Partial<InputState>;
 }
 
 interface AccountDetails {
     email: string;
-    emailConfirm: string;
     password: string;
     passwordConfirm: string;
 }
 
 export interface ErrorDetails {
     email: string | undefined;
-    emailConfirm: string | undefined;
     password: string | undefined;
     passwordConfirm: string | undefined;
 }
 
 const getDefaultInputs = ({ defaultEmail = '' }: { defaultEmail?: string } = {}) => ({
     email: defaultEmail,
-    emailConfirm: '',
     password: '',
     passwordConfirm: '',
 });
 
-const getDefaultInputStates = ({ email, emailConfirm, password, passwordConfirm }: AccountDetails) => ({
+const getDefaultInputStates = ({ email, password, passwordConfirm }: AccountDetails) => ({
     email: !!email ? { interactive: true, focus: true } : {},
-    emailConfirm: !!emailConfirm ? { interactive: true, focus: true } : {},
     password: !!password ? { interactive: true, focus: true } : {},
     passwordConfirm: !!passwordConfirm ? { interactive: true, focus: true } : {},
 });
@@ -92,7 +86,7 @@ const getDefaultInputStates = ({ email, emailConfirm, password, passwordConfirm 
 export interface AccountStepDetailsRef {
     validate: () => boolean;
     data: () => Promise<AccountData>;
-    scrollInto: (target: 'email' | 'emailConfirm' | 'password' | 'passwordConfirm') => void;
+    scrollInto: (target: 'email' | 'password' | 'passwordConfirm') => void;
 }
 
 const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
@@ -102,9 +96,6 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
             const field: InteractFields | undefined = (() => {
                 if (key === 'email') {
                     return 'email';
-                }
-                if (key === 'emailConfirm') {
-                    return 'email_confirm';
                 }
                 if (key === 'password') {
                     return 'pwd';
@@ -126,27 +117,20 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
 const getErrorDetails = ({
     emailValidationState,
     email = '',
-    emailConfirm = '',
     password = '',
     passwordConfirm = '',
 }: {
     emailValidationState?: EmailValidationState;
     email?: string;
-    emailConfirm?: string;
     password?: string;
     passwordConfirm?: string;
 }): ErrorDetails => {
     const trimmedEmail = email.trim();
-    const trimmedEmailConfirm = emailConfirm.trim();
     return {
         email: first([
             trimmedEmail === emailValidationState?.email ? emailValidationState?.message : '',
             requiredValidator(trimmedEmail),
             emailValidator(trimmedEmail),
-        ]),
-        emailConfirm: first([
-            requiredValidator(trimmedEmailConfirm),
-            confirmEmailValidator(trimmedEmail, trimmedEmailConfirm),
         ]),
         password: first([requiredValidator(password), passwordLengthValidator(password)]),
         passwordConfirm: first([
@@ -187,7 +171,7 @@ const AccountStepDetails = ({
 }: Props) => {
     const challengeRefEmail = useRef<ChallengeRef>();
     const formInputRef = useRef<HTMLFormElement>(null);
-    const inputValuesRef = useRef({ email: false, emailConfirm: false });
+    const inputValuesRef = useRef({ email: false });
 
     const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({ defaultEmail }));
     const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
@@ -197,7 +181,6 @@ const AccountStepDetails = ({
     const [emailValidationState, setEmailValidationState] = useState<EmailValidationState>(defaultEmailValidationState);
 
     const emailRef = useRef<HTMLInputElement>(null);
-    const emailConfirmRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const passwordConfirmRef = useRef<HTMLInputElement>(null);
 
@@ -242,8 +225,8 @@ const AccountStepDetails = ({
         });
     }, []);
 
-    const scrollInto = (target: 'email' | 'emailConfirm' | 'password' | 'passwordConfirm') => {
-        if (target === 'email' || target === 'emailConfirm') {
+    const scrollInto = (target: 'email' | 'password' | 'passwordConfirm') => {
+        if (target === 'email') {
             formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             const focusChallenge = (id: string) => {
@@ -259,9 +242,6 @@ const AccountStepDetails = ({
             };
             if (target === 'email') {
                 focusChallenge('#email');
-            }
-            if (target === 'emailConfirm') {
-                focusChallenge('#email-confirm');
             }
             return;
         }
@@ -284,7 +264,6 @@ const AccountStepDetails = ({
     const errorDetails = getErrorDetails({
         emailValidationState,
         email: trimmedEmail,
-        emailConfirm: details.emailConfirm,
         password: details.password,
         passwordConfirm: details.passwordConfirm,
     });
@@ -298,7 +277,6 @@ const AccountStepDetails = ({
                 [
                     !hasValidAsyncEmailState ? 'email' : undefined,
                     errorDetails.email ? 'email' : undefined,
-                    errorDetails.emailConfirm ? 'emailConfirm' : undefined,
                     passwordFields && errorDetails.password ? 'password' : undefined,
                     passwordFields && errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
                 ] as const
@@ -339,7 +317,7 @@ const AccountStepDetails = ({
         const handleFocus = () => {
             // This a hack to get the email input state to be true since onBlur event isn't triggered.
             // Basically any time something else gets focus on the page and the email input has gotten values.
-            const keys = ['email', 'emailConfirm'] as const;
+            const keys = ['email'] as const;
             keys.forEach((key) => {
                 if (inputValuesRef.current[key]) {
                     setInputsStateDiff({ [key]: { focus: true } });
@@ -358,8 +336,6 @@ const AccountStepDetails = ({
     }, []);
 
     const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
-    const emailConfirmError =
-        states.emailConfirm.interactive && states.emailConfirm.focus ? errorDetails.emailConfirm : undefined;
     const passwordError = states.password.interactive && states.password.focus ? errorDetails.password : undefined;
     const passwordConfirmError =
         states.passwordConfirm.interactive && states.passwordConfirm.focus ? errorDetails.passwordConfirm : undefined;
@@ -448,11 +424,10 @@ const AccountStepDetails = ({
                                     const email = value.trim();
                                     const errors = getErrorDetails({
                                         email,
-                                        emailConfirm: details.emailConfirm.trim(),
                                     });
                                     validator.trigger({
                                         api,
-                                        error: !!(errors.email || errors.emailConfirm),
+                                        error: !!errors.email,
                                         email,
                                         set: setEmailValidationState,
                                         measure,
@@ -461,11 +436,6 @@ const AccountStepDetails = ({
                                 onBlur={() => {
                                     // Doesn't work because it's in the challenge
                                     setInputsStateDiff({ email: { focus: true } });
-                                }}
-                                onClick={() => {
-                                    if (inputValuesRef.current.emailConfirm) {
-                                        setInputsStateDiff({ emailConfirm: { focus: true } });
-                                    }
                                 }}
                                 onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                     if (event.key === 'Enter') {
@@ -476,54 +446,6 @@ const AccountStepDetails = ({
                                     }
                                 }}
                             />
-
-                            {states.email.interactive && (
-                                <InputFieldTwo
-                                    ref={emailConfirmRef}
-                                    id="email-confirm"
-                                    placeholder={c('Signup label').t`Confirm email address`}
-                                    inputClassName="email-input-field"
-                                    error={emailConfirmError}
-                                    dense={!emailConfirmError}
-                                    rootClassName={clsx(!emailConfirmError && 'pb-2', emailError && 'pt-2')}
-                                    disableChange={disableChange}
-                                    value={details.emailConfirm}
-                                    onValue={(value: string) => {
-                                        inputValuesRef.current.emailConfirm = true;
-                                        setInputsDiff({ emailConfirm: value });
-                                        setInputsStateDiff({ emailConfirm: { interactive: true } });
-                                        const email = details.email.trim();
-                                        const errors = getErrorDetails({
-                                            email,
-                                            emailConfirm: value.trim(),
-                                        });
-                                        validator.trigger({
-                                            api,
-                                            error: !!(errors.email || errors.emailConfirm),
-                                            email,
-                                            set: setEmailValidationState,
-                                            measure,
-                                        });
-                                    }}
-                                    onBlur={() => {
-                                        // Doesn't work because it's in the challenge
-                                        setInputsStateDiff({ emailConfirm: { focus: true } });
-                                    }}
-                                    onClick={() => {
-                                        if (inputValuesRef.current.email) {
-                                            setInputsStateDiff({ email: { focus: true } });
-                                        }
-                                    }}
-                                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-                                        if (event.key === 'Enter') {
-                                            onSubmit?.();
-                                        }
-                                        if (event.key === 'Tab') {
-                                            setInputsStateDiff({ emailConfirm: { focus: true } });
-                                        }
-                                    }}
-                                />
-                            )}
                         </div>
                     </Challenge>
 
