@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { Device } from './interface';
 import { useDevicesListingProvider } from './useDevicesListing';
@@ -38,14 +39,17 @@ const DEVICE_2: Device = {
 
 const mockDevicesPayload = [DEVICE_0, DEVICE_1];
 
-jest.mock('@proton/shared/lib/api/drive/devices', () => {
+jest.mock('../../utils/errorHandling');
+const mockedSendErrorReport = jest.mocked(sendErrorReport);
+
+const mockedCreateNotification = jest.fn();
+jest.mock('@proton/components/hooks', () => {
     return {
-        fetchDevicesMock: async () => mockDevicesPayload,
+        useNotifications: jest.fn(() => ({ createNotification: mockedCreateNotification })),
     };
 });
 
 const mockedLoadDevices = jest.fn().mockResolvedValue(mockDevicesPayload);
-
 jest.mock('./useDevicesApi', () => {
     const useDeviceApi = () => {
         return {
@@ -74,6 +78,10 @@ describe('useLinksState', () => {
             <VolumesStateProvider>{children}</VolumesStateProvider>
         );
 
+        mockedCreateNotification.mockClear();
+        mockedGetLink.mockClear();
+        mockedSendErrorReport.mockClear();
+
         const { result } = renderHook(() => useDevicesListingProvider(), { wrapper });
         hook = result;
     });
@@ -96,17 +104,35 @@ describe('useLinksState', () => {
         });
     });
 
-    it('getLink should be call to get root link', async () => {
+    it('should call getLink to get root link', async () => {
         mockedLoadDevices.mockResolvedValue([DEVICE_2]);
         await act(async () => {
             const name = 'rootName';
-            mockedGetLink.mockReturnValue({ name });
+            mockedGetLink.mockResolvedValue({ name });
             await hook.current.loadDevices(new AbortController().signal);
             const cachedDevices = hook.current.cachedDevices;
 
             const targetList = [{ ...DEVICE_2, name }];
             expect(cachedDevices).toEqual(targetList);
             expect(mockedGetLink).toHaveBeenCalled();
+            expect(mockedCreateNotification).not.toHaveBeenCalled();
+            expect(mockedSendErrorReport).not.toHaveBeenCalled();
+        });
+    });
+
+    it('should notify the user if there is a failure loading a link', async () => {
+        mockedLoadDevices.mockResolvedValue([DEVICE_2]);
+        await act(async () => {
+            mockedGetLink.mockRejectedValue('error');
+
+            await hook.current.loadDevices(new AbortController().signal);
+            const cachedDevices = hook.current.cachedDevices;
+
+            const targetList: Device[] = [];
+            expect(cachedDevices).toEqual(targetList);
+            expect(mockedGetLink).toHaveBeenCalled();
+            expect(mockedCreateNotification).toHaveBeenCalled();
+            expect(mockedSendErrorReport).toHaveBeenCalled();
         });
     });
 });
