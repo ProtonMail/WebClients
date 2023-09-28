@@ -6,22 +6,30 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
+import { vaultRemoveAccessIntent } from '@proton/pass/store';
 import { ShareRole } from '@proton/pass/types';
 
+import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { getShareRoleDefinition } from './ShareRoleOptions';
 
 import './ShareMember.scss';
-import { useActionWithRequest } from 'applications/pass-extension/src/shared/hooks/useRequestStatusEffect';
-import { vaultRemoveAccessIntent } from '@proton/pass/store';
 
 export type ShareMemberProps = {
+    shareId: string;
     email: string;
     owner?: boolean;
-} & ({ role: ShareRole; pending: false } | { role?: never; pending: true });
+} & ({ role: ShareRole; userShareId: string; pending: false } | { role?: never; userShareId?: never; pending: true });
 
-export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false, pending }: ShareMemberProps) => {
+export const ShareMember: VFC<ShareMemberProps> = ({
+    email,
+    role,
+    shareId,
+    userShareId,
+    owner = false,
+    pending,
+}: ShareMemberProps) => {
     const [confirmTransfer, setConfirmTransfer] = useState(false);
     const canTransferOwnership = true;
 
@@ -44,14 +52,17 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false,
         return getShareRoleDefinition()[role];
     }, [role, owner, pending]);
 
-    const removeAccess = useActionWithRequest(vaultRemoveAccessIntent, { onSuccess: () => { } });
+    const removeAccess = useActionWithRequest(vaultRemoveAccessIntent, { onSuccess: () => {} });
 
     const handleRemoveAccess = () => {
-
-    }
+        if (!userShareId) {
+            return;
+        }
+        removeAccess.dispatch({ shareId, userShareId });
+    };
 
     return (
-        <div className="flex flex-item-fluid flex-nowrap flex-align-items-center border rounded-xl px-4 py-3">
+        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
             <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
@@ -81,7 +92,12 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, role, owner = false,
                         onClick={() => setConfirmTransfer(true)}
                     />
                 )}
-                <DropdownMenuButton label={c('Action').t`Remove access`} icon="circle-slash" danger onClick={handleRemoveAccess} />
+                <DropdownMenuButton
+                    label={c('Action').t`Remove access`}
+                    icon="circle-slash"
+                    danger
+                    onClick={handleRemoveAccess}
+                />
             </QuickActionsDropdown>
 
             <Prompt
