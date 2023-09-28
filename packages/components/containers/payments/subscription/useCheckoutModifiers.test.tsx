@@ -189,6 +189,11 @@ describe('useCheckoutModifiers', () => {
         expect(result.current.isProration).toEqual(false);
     });
 
+    it('should return isScheduledSubscription === false if checkResult is undefined', () => {
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
+        expect(result.current.isScheduledSubscription).toEqual(false);
+    });
+
     describe('custom billings', () => {
         it('should return isScheduledSubscription === false if UnusedCredit !== 0', () => {
             checkResult.Proration = 0;
@@ -222,6 +227,11 @@ describe('useCheckoutModifiers', () => {
             checkResult.Proration = 0;
             checkResult.UnusedCredit = 0;
             const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isCustomBilling).toEqual(false);
+        });
+
+        it('should return isCustomBilling === false if checkResult is undefined', () => {
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
             expect(result.current.isCustomBilling).toEqual(false);
         });
     });
