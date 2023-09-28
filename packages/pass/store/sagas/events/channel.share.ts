@@ -3,6 +3,7 @@ import type { AnyAction } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type {
     Api,
     ItemRevision,
@@ -16,7 +17,6 @@ import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 
 import type { EventManagerEvent } from '../../../events/manager';
 import {
@@ -143,7 +143,7 @@ const onShareDeleted = (shareId: string) =>
 export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
     eventChannelFactory<ShareEventResponse>({
         api,
-        interval: INTERVAL_EVENT_TIMER,
+        interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: eventId,
         query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
