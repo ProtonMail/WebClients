@@ -1,5 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -14,6 +17,7 @@ export function useDevicesListingProvider() {
     const volumesState = useVolumesState();
     const [state, setState] = useState<Map<string, Device>>(new Map());
     const [isLoading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
 
     const loadDevices = (abortSignal: AbortSignal) =>
         withLoading(async () => {
@@ -21,15 +25,37 @@ export function useDevicesListingProvider() {
 
             if (devices) {
                 const devicesMap = new Map();
+                let hasError = false;
+
                 for (const key in devices) {
                     const { volumeId, shareId, linkId, name } = devices[key];
-                    volumesState.setVolumeShareIds(volumeId, [shareId]);
-                    devices[key] = {
-                        ...devices[key],
-                        name: name || (await getLink(abortSignal, shareId, linkId)).name,
-                    };
-                    devicesMap.set(key, devices[key]);
+
+                    try {
+                        volumesState.setVolumeShareIds(volumeId, [shareId]);
+
+                        devices[key] = {
+                            ...devices[key],
+                            name: name || (await getLink(abortSignal, shareId, linkId)).name,
+                        };
+
+                        devicesMap.set(key, devices[key]);
+                    } catch (e) {
+                        hasError = true;
+
+                        // Send an error report for this
+                        sendErrorReport(
+                            new Error('Decrypting device failed', { cause: { e, volumeId, shareId, linkId } })
+                        );
+                    }
                 }
+
+                if (hasError) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Error decrypting a computer`,
+                    });
+                }
+
                 setState(devicesMap);
             }
         });
