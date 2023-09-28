@@ -1,6 +1,6 @@
+import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import devToolsEnhancer from 'remote-redux-devtools';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
@@ -33,9 +33,8 @@ const store = configureStore({
             ? [
                   devToolsEnhancer({
                       name: 'background',
-                      port: 8000,
+                      port: REDUX_DEVTOOLS_PORT,
                       realtime: true,
-                      secure: true,
                   }),
               ]
             : [],
