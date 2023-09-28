@@ -2066,9 +2066,6 @@
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
-      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Dit kan enkele minuten duren. U kan ondertussen uw Proton Calender gebruik zoals gewoonlijk."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -3577,6 +3574,9 @@
       "Calendar side panel": [
         "Agenda zijpaneel"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Kunt u de evenementen die u zoekt niet vinden? Sommige evenementen in verborgen agenda's komen overeen met uw zoekopdracht. Om die resultaten te zien, schakel de zichtbaarheid in voor ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
@@ -3588,6 +3588,9 @@
       ],
       "Clear encrypted search data": [
         "Versleutelde zoekgegevens wissen"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Browsergegevens wissen, zal de zoekindex op dit apparaat wissen. Alle agendagebeurtenissen zullen opnieuw geïndexeerd moeten worden om de zoekfunctie te gebruiken."
       ],
       "Clears browser data related to the encrypted search.": [
         "Wist browsergegevens gerelateerd aan het versleuteld zoeken."
@@ -4153,6 +4156,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "U kunt uw zoekopdracht bijwerken of de zoekopdracht sluiten om terug te keren naar de kalenderweergaven"
       ]
     },
     "Info message": {
@@ -6461,6 +6469,9 @@
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
       ],
+      "We're setting up Calendar search": [
+        "We stellen de kalenderzoekfunctie in."
+      ],
       "We've locked some calendars to protect your data": [
         "We hebben sommige agenda's vergrendeld om uw data te beschermen"
       ],
@@ -6613,10 +6624,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ count } contactgroepen permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
