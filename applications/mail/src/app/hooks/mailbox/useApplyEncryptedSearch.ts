@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useMailSettings, useNotifications } from '@proton/components';
+import { MailPageSize } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
@@ -45,6 +46,7 @@ export const useApplyEncryptedSearch = ({
     onPage,
 }: EncryptedSearchParams) => {
     const history = useHistory();
+    const [{ PageSize: pageSize = MailPageSize.FIFTY } = { PageSize: MailPageSize.FIFTY }] = useMailSettings();
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
 
@@ -82,7 +84,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
                 } else {
-                    void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
+                    void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
                 }
             }
         } catch (error: any) {
@@ -90,7 +92,7 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
+            void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
         }
     };
 
