@@ -390,6 +390,9 @@
       "Open settings": [
         "Открыть настройки"
       ],
+      "Pause indexing": [
+        "Приостановить индексирование"
+      ],
       "Preview contact": [
         "Предпросмотр контакта"
       ],
@@ -452,6 +455,9 @@
       ],
       "Reset to default": [
         "Сбросить к умолчанию"
+      ],
+      "Resume indexing": [
+        "Продолжить индексирование"
       ],
       "Save": [
         "Сохранить"
@@ -988,6 +994,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Своё значение"
+      ],
       "Day": [
         "День"
       ],
@@ -999,6 +1008,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "Изменить временной диапазон"
+      ],
       "Change time range to": [
         "Изменить временной диапазон на"
       ]
@@ -2324,6 +2336,9 @@
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
+      "Event not found": [
+        "Событие не найдено"
+      ],
       "Failed to get original occurrence in series": [
         "Не удалось загрузить начальное вхождение серии событий"
       ],
@@ -2790,6 +2805,14 @@
         "Оценка обязательна"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Нет результата"
+      ],
+      "Results": [
+        "Результаты"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "отменено"
@@ -2801,6 +2824,17 @@
         "${ numberOfAttendees } участника",
         "${ numberOfAttendees } участников",
         "${ numberOfAttendees } участников"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Весь день"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Весь день, длится ${ plusDaysToEnd } день",
+        "Весь день, длится ${ plusDaysToEnd } дня",
+        "Весь день, длится ${ plusDaysToEnd } дней",
+        "Весь день, длится ${ plusDaysToEnd } дня"
       ]
     },
     "Event info. Organizer name": {
@@ -3508,6 +3542,9 @@
         "${ contactsLength } контактов",
         "${ contactsLength } контакта"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } и ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
         "Найдено ${ groupCounts } группы",
@@ -3652,6 +3689,9 @@
       "Calendar side panel": [
         "Боковая панель календаря"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Не можете найти события, которые вы ищете? Некоторые события в скрытых календарях соответствуют вашему запросу. Чтобы увидеть эти результаты, включите видимость для ${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
@@ -3663,6 +3703,9 @@
       ],
       "Clear encrypted search data": [
         "Очистить зашифрованные данные поиска"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "Очистка данных браузера приведет к удалению поискового индекса на этом устройстве. Все события в календаре будут необходимо переиндексировать для функции поиска."
       ],
       "Clears browser data related to the encrypted search.": [
         "Очищает данные браузера, связанные с зашифрованным поиском."
@@ -3819,6 +3862,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Индексирование событий: ${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "Индексирование приостановлено"
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
@@ -4232,6 +4281,16 @@
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Вы можете либо обновить свой запрос, либо закрыть поиск, чтобы вернуться к просмотру календаря"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Результаты не найдены"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
@@ -4592,6 +4651,9 @@
       "Postal code": [
         "Почтовый индекс"
       ],
+      "Primary": [
+        "Основной"
+      ],
       "Public keys": [
         "Открытые ключи"
       ],
@@ -4606,6 +4668,12 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Secondary": [
+        "Дополнительный"
+      ],
+      "Secondary time zone": [
+        "Дополнительный часовой пояс"
       ],
       "Show week numbers": [
         "Отображать номера недель"
@@ -5347,6 +5415,9 @@
       "All events": [
         "Все события"
       ],
+      "Auto": [
+        "Авто"
+      ],
       "Automatic (${ defaultDay })": [
         "Автоматический (${ defaultDay })"
       ],
@@ -5486,6 +5557,9 @@
       "Image URL": [
         "URL изображения"
       ],
+      "Indexing...": [
+        "Индексирование..."
+      ],
       "Name": [
         "Название"
       ],
@@ -5500,6 +5574,9 @@
       ],
       "Please select a country": [
         "Пожалуйста, выберите страну"
+      ],
+      "Search events": [
+        "Поиск событий"
       ],
       "Search for group name": [
         "Поиск по названию группы"
@@ -5918,6 +5995,9 @@
       "Add your country's public holidays to your calendar.": [
         "Добавить государственные праздники вашей страны в календарь."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "С легкостью находите события, которое вы ищете, с нашей новой функции поиска."
+      ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
@@ -5926,6 +6006,9 @@
       ],
       "Public holidays are here!": [
         "Государственные праздники"
+      ],
+      "Search for events": [
+        "Поиск событий"
       ]
     },
     "Storage": {
@@ -5991,6 +6074,9 @@
       ],
       "Calendar information updated": [
         "Сведения о календаре обновлены"
+      ],
+      "Calendar search activated": [
+        "Активирован поиск в календарях"
       ],
       "Calendar updated": [
         "Календарь обновлен"
@@ -6622,6 +6708,9 @@
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
       ],
+      "We're setting up Calendar search": [
+        "Мы настраиваем поиск в календаре"
+      ],
       "We've locked some calendars to protect your data": [
         "Мы закрыли некоторые календари, чтобы защитить ваши данные"
       ],
@@ -6765,6 +6854,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Перейти к событию"
+      ],
       "Open in a new tab": [
         "Открыть в новой вкладке"
       ]
@@ -6775,12 +6867,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Вы уверены, что хотите навсегда удалить ${ count } группу контактов?",
-        "Вы уверены, что хотите навсегда удалить ${ count } группы контактов?",
-        "Вы уверены, что хотите навсегда удалить ${ count } групп контактов?",
-        "Вы уверены, что хотите навсегда удалить ${ count } групп контактов?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
