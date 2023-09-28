@@ -31,3 +31,4 @@ export * from './lib/mockUseSpotlightOnFeature';
 export * from './lib/mockUseFeature';
 export * from './lib/mockUseWelcomeFlags';
 export * from './lib/mockUseUser';
+export * from './lib/mockUseFlag';
