@@ -5,7 +5,7 @@ import Portal from '@proton/components/components/portal/Portal';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useDownload, usePreview } from '../../hooks/useDownload';
+import { useDownload, usePreview } from '../../hooks/attachments/useDownload';
 import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 
 export interface AttachmentPreviewControls {

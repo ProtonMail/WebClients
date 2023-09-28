@@ -83,7 +83,7 @@ describe('formatDownload', () => {
 
         const expectedAttachment = {
             Name: `${attachmentName}.pgp`,
-            MIMEType: 'application/pgp',
+            MIMEType: 'application/pgp-encrypted',
             ID: '1',
         };
 

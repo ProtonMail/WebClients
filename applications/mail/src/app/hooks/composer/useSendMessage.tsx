@@ -30,7 +30,7 @@ import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions
 import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
-import { useGetAttachment } from '../useAttachment';
+import { useGetAttachment } from '../attachments/useAttachment';
 import useDelaySendSeconds from '../useDelaySendSeconds';
 import { ComposeTypes, OnCompose } from './useCompose';
 import { useSendModifications } from './useSendModifications';

@@ -2,11 +2,16 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { FeatureFlag } from '@proton/components';
+import { useFlag } from '@proton/components/containers/unleash';
 import { useUserSettings } from '@proton/components/hooks/';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import ItemAttachmentThumbnails from 'proton-mail/components/list/ItemAttachmentThumbnails';
+import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
@@ -56,6 +61,7 @@ const ItemColumnLayout = ({
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
+    const canSeeThumbnailsFeature = useFlag(FeatureFlag.AttachmentThumbnails);
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
@@ -91,6 +97,13 @@ const ItemColumnLayout = ({
 
     const isStarred = testIsStarred(element || ({} as Element));
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
+
+    const showThumbnails = canShowAttachmentThumbnails(
+        isCompactView,
+        conversationMode,
+        element,
+        canSeeThumbnailsFeature
+    );
 
     return (
         <div
@@ -166,11 +179,13 @@ const ItemColumnLayout = ({
                                         labelID={labelID}
                                     />
                                 )}
-                                <ItemAttachmentIcon
-                                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                                    element={element}
-                                    className="ml-1 flex-align-self-center"
-                                />
+                                {!showThumbnails && (
+                                    <ItemAttachmentIcon
+                                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                        element={element}
+                                        className="ml-1 flex-align-self-center"
+                                    />
+                                )}
                                 <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
                                     {isStarred && <ItemStar element={element} />}
                                 </span>
@@ -185,11 +200,13 @@ const ItemColumnLayout = ({
                                     labelID={labelID}
                                 />
                             )}
-                            <ItemAttachmentIcon
-                                icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                                element={element}
-                                className="ml-1 flex-align-self-center"
-                            />
+                            {!showThumbnails && (
+                                <ItemAttachmentIcon
+                                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                    element={element}
+                                    className="ml-1 flex-align-self-center"
+                                />
+                            )}
                             <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
                                 <ItemStar element={element} />
                             </span>
@@ -198,6 +215,14 @@ const ItemColumnLayout = ({
                 </div>
                 <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
             </div>
+
+            {showThumbnails && (
+                <ItemAttachmentThumbnails
+                    attachmentsMetadata={element.AttachmentsMetadata}
+                    numAttachments={element.NumAttachments}
+                    className="mt-1"
+                />
+            )}
 
             {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap flex-align-items-center max-w100 no-scroll">
