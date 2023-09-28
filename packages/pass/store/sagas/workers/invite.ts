@@ -2,7 +2,7 @@ import { type PendingInvite } from '@proton/pass/types/data/invites';
 
 import { api } from '../../../api';
 import { PassCrypto } from '../../../crypto';
-import type { VaultInviteCreateRequest } from '../../../types';
+import type { VaultInviteCreateRequest, VaultInviteResendRequest } from '../../../types';
 import { getPrimaryPublicKeyForEmail } from './address';
 
 export const createVaultInvite = async ({ shareId, email, role }: VaultInviteCreateRequest) =>
@@ -34,3 +34,9 @@ export const loadPendingShareInvites = async (shareId: string): Promise<PendingI
         modifyTime: invite.ModifyTime,
     }));
 };
+
+export const resendVaultInvite = async ({ shareId, inviteId }: VaultInviteResendRequest) =>
+    api({
+        url: `pass/v1/share/${shareId}/invite/${inviteId}/reminder`,
+        method: 'post',
+    });
