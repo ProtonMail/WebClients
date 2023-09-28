@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type VaultInviteCreateRequest } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
+import type { PendingInvite, ShareMember, VaultRemoveAccessRequest } from '@proton/pass/types/data/invites';
 import { pipe } from '@proton/pass/utils/fp';
 
 import withCacheBlock from '../with-cache-block';
@@ -46,18 +46,24 @@ export const syncShareMembers = createAction('share::members', (shareId: string,
 
 export const vaultRemoveAccessIntent = createAction(
     'vault::remove-access::intent',
-    withRequestStart((payload: { shareId: string; userShareId: string }) => ({ payload }))
+    withRequestStart((payload: VaultRemoveAccessRequest) => withCacheBlock({ payload }))
 );
 
 export const vaultRemoveAccessSuccess = createAction(
     'vault::remove-access::success',
-    withRequestSuccess(() => ({ payload: {} }))
+    withRequestSuccess((shareId: string, userShareId: string) =>
+        withNotification({
+            type: 'info',
+            text: c('info').t`User's access removed`,
+        })({ payload: { shareId, userShareId } })
+    )
 );
 
 export const vaultRemoveAccessFailure = createAction(
     'vault::remove-access::failure',
     withRequestFailure((error: unknown) =>
         pipe(
+            withCacheBlock,
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed to remove user's access.`,

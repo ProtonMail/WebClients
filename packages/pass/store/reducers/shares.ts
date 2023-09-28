@@ -25,6 +25,7 @@ import {
     vaultEditIntent,
     vaultEditSuccess,
     vaultInviteCreationSuccess,
+    vaultRemoveAccessSuccess,
     vaultSetPrimaryFailure,
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
@@ -145,6 +146,16 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         if (syncShareMembers.match(action)) {
             const { shareId, members } = action.payload;
             return partialMerge(state, { [shareId]: { members, shared: true } });
+        }
+
+        if (vaultRemoveAccessSuccess.match(action)) {
+            const { shareId, userShareId } = action.payload;
+            return partialMerge(state, {
+                [shareId]: {
+                    // FIXME: state not properly updating
+                    members: (state[shareId]?.members ?? []).filter(({ shareId }) => shareId !== userShareId),
+                },
+            });
         }
 
         return state;
