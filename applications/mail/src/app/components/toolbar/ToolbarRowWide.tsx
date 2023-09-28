@@ -124,7 +124,13 @@ const ToolbarRowWide = ({
                         filterAsDropdown={localIsNarrow}
                     />
 
-                    <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
+                    <PagingControls
+                        loading={loading}
+                        page={page}
+                        pageSize={mailSettings.PageSize}
+                        total={total}
+                        onPage={onPage}
+                    />
                 </div>
             </nav>
         </div>
