@@ -12,14 +12,20 @@ export type Props = {
      */
     renewCycle: number;
     isCustomBilling: boolean;
+    isScheduledSubscription: boolean;
     subscription?: Subscription;
     className?: string;
 };
 
-const RenewalNotice = ({ renewCycle, isCustomBilling, subscription, className }: Props) => {
+const RenewalNotice = ({ renewCycle, isCustomBilling, isScheduledSubscription, subscription, className }: Props) => {
     let unixRenewalTime: number = +addMonths(new Date(), renewCycle) / 1000;
     if (isCustomBilling && subscription) {
         unixRenewalTime = subscription.PeriodEnd;
+    }
+
+    if (isScheduledSubscription && subscription) {
+        const periodEndMilliseconds = subscription.PeriodEnd * 1000;
+        unixRenewalTime = +addMonths(periodEndMilliseconds, renewCycle) / 1000;
     }
 
     const renewalTime = (
