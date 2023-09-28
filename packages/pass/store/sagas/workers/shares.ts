@@ -1,7 +1,8 @@
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
 import { type Maybe, type Share, type ShareGetResponse, type ShareRole, ShareType } from '@proton/pass/types';
-import { VaultRemoveAccessRequest, type ShareMember } from '@proton/pass/types/data/invites';
+import type { VaultRemoveAccessRequest } from '@proton/pass/types/data/invites';
+import { type ShareMember } from '@proton/pass/types/data/invites';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 
 import { getAllShareKeys } from './vaults';
