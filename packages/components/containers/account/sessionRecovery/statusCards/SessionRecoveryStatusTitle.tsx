@@ -37,7 +37,9 @@ const SessionRecoveryStatusTitle = ({ status }: Props) => {
                     {statusText}
                 </span>
             </div>
-            <div className="color-weak">{user.Email}</div>
+            <div className="color-weak" data-testid="session_recovery:user_email">
+                {user.Email}
+            </div>
         </>
     );
 };
