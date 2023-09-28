@@ -5,9 +5,12 @@ import { type VaultInviteCreateRequest } from '@proton/pass/types';
 import type { PendingInvite, ShareMember, VaultRemoveAccessRequest } from '@proton/pass/types/data/invites';
 import { pipe } from '@proton/pass/utils/fp';
 
+import type { InviteState } from '../../reducers/invites';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+
+export const syncInvites = createAction<InviteState>('invites::sync');
 
 export const vaultInviteCreationIntent = createAction(
     'vault::invite::intent',
