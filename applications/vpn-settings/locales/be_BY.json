@@ -201,7 +201,7 @@
         "Рэдагаваць карыстальнікаў"
       ],
       "enable desktop notifications": [
-        "уключэнне апавяшчэнняў на працоўным стале"
+        "ўключэнне апавяшчэнняў на працоўным стале"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -2312,6 +2312,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя ў прыладу дадатковыя знешнія апаратныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
       ],
@@ -2989,7 +2992,7 @@
         "неактыўна"
       ],
       "Increase your account security by verifying your email address.": [
-        "Павялічце бяспеку свайго ўліковага запісу праз пацвярджэнне вашага адрасу электроннай пошты."
+        "Павялічце бяспеку свайго ўліковага запісу з дапамогай праверкі адраса электроннай пошты."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
