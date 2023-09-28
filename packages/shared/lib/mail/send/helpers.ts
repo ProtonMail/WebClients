@@ -1,6 +1,7 @@
 import mimemessage from '@protontech/mimemessage';
 
 import { encodeUtf8 } from '@proton/crypto/lib/utils';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { AttachmentDirect } from '../../interfaces/mail/crypto';
 
@@ -21,7 +22,8 @@ const buildAttachment = (attachmentData: { attachment: AttachmentDirect; data: s
     const headers = attachment.Headers || {};
     const contentTypeValue =
         extractContentValue(headers['content-type']) || attachment.MIMEType || 'application/octet-stream';
-    const contentDispositionValue = extractContentValue(headers['content-disposition']) || 'attachment';
+    const contentDispositionValue =
+        extractContentValue(headers['content-disposition']) || ATTACHMENT_DISPOSITION.ATTACHMENT;
     const entity = mimemessage.factory({
         contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
         contentTransferEncoding: 'base64',

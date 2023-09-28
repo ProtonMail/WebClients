@@ -1,5 +1,6 @@
 import { MIMEAttachment, VERIFICATION_STATUS, WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ENCRYPTED_STATUS } from '../../constants';
 
@@ -25,7 +26,7 @@ export const getHeaders = ({
     if (originalHeaders['content-id'] && originalHeaders['content-id'].length > 0) {
         headers['content-id'] = originalHeaders['content-id'][0];
     }
-    if (contentDisposition.toLowerCase() === 'inline') {
+    if (contentDisposition.toLowerCase() === ATTACHMENT_DISPOSITION.INLINE) {
         headers.embedded = 1;
     }
     headers['content-type'] = contentType + filenameOption;

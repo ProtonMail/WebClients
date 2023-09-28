@@ -45,7 +45,7 @@ export const encryptAttachment = async (
 };
 
 export const getSessionKey = async (
-    attachment: Attachment,
+    attachment: Pick<Attachment, 'KeyPackets'>,
     privateKeys: PrivateKeyReference[]
 ): Promise<SessionKey> => {
     // if (attachment.sessionKey) {

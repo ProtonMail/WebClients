@@ -4,18 +4,13 @@ import { useApi, useAuthentication, useHandler, useNotifications } from '@proton
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
+import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
-import {
-    ATTACHMENT_ACTION,
-    UploadResult,
-    checkSizeAndLength,
-    upload,
-} from '../../helpers/attachment/attachmentUploader';
+import { UploadResult, checkSizeAndLength, upload } from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -107,7 +102,7 @@ export const useAttachments = ({
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
-    const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_ACTION, pendingUpload: PendingUpload) => {
+    const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_DISPOSITION, pendingUpload: PendingUpload) => {
         try {
             const upload = await pendingUpload.upload.resultPromise;
 
@@ -126,7 +121,7 @@ export const useAttachments = ({
                 const Attachments = [...getAttachments(message.data), upload.attachment];
                 const embeddedImages = getEmbeddedImages(message);
 
-                if (action === ATTACHMENT_ACTION.INLINE) {
+                if (action === ATTACHMENT_DISPOSITION.INLINE) {
                     embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
                 }
 
@@ -135,7 +130,7 @@ export const useAttachments = ({
                 return { data: { Attachments }, messageImages };
             });
 
-            if (action === ATTACHMENT_ACTION.INLINE) {
+            if (action === ATTACHMENT_DISPOSITION.INLINE) {
                 editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
             }
 
@@ -153,7 +148,7 @@ export const useAttachments = ({
      * Start uploading a file, the choice between attachment or inline is done.
      */
     const handleAddAttachmentsUpload = useHandler(
-        async (action: ATTACHMENT_ACTION, files: File[] = pendingFiles || []) => {
+        async (action: ATTACHMENT_DISPOSITION, files: File[] = pendingFiles || []) => {
             setPendingFiles(undefined);
 
             // Trigger upload state before ensureMessageIsCreated
@@ -198,7 +193,7 @@ export const useAttachments = ({
             return;
         }
 
-        void handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
+        void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.INLINE, files);
     };
 
     /**
@@ -223,7 +218,7 @@ export const useAttachments = ({
         if (!plainText && embeddable) {
             setPendingFiles(files);
         } else {
-            void handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+            void handleAddAttachmentsUpload(ATTACHMENT_DISPOSITION.ATTACHMENT, files);
         }
     });
 
