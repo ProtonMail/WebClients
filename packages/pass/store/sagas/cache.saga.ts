@@ -19,7 +19,7 @@ import { reducerMap } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
 
 function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: WorkerRootSagaOptions) {
-    yield wait(500);
+    yield wait(2_000);
 
     if (getAuth().hasSession() && workerReady(getWorkerState().status)) {
         try {
