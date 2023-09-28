@@ -5,10 +5,11 @@ import aliasDetailsRequest from './alias-details-request.saga';
 import aliasOptionsRequest from './alias-options-request.saga';
 import boot from './boot.saga';
 import cache from './cache.saga';
-import createInvite from './create-invite.saga';
 import events from './events.saga';
 import featureFlags from './feature-flags.saga';
 import itemsImport from './import.saga';
+import inviteCreate from './invite-create.saga';
+import inviteResend from './invite-resend.saga';
 import itemCreation from './item-creation.saga';
 import itemDelete from './item-delete.saga';
 import itemEdit from './item-edit.saga';
@@ -24,7 +25,7 @@ import sessionLockEnable from './session-lock-enable.saga';
 import sessionLockImmediate from './session-lock-immediate.saga';
 import sessionUnlock from './session-unlock.saga';
 import settings from './settings.saga';
-import shareManagePermission from './share-manage-permission.saga';
+import shareManagePermission from './share-remove-member.saga';
 import signout from './signout.saga';
 import sync from './sync.saga';
 import trashDelete from './trash-delete.saga';
@@ -43,9 +44,10 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             aliasDetailsRequest,
             boot,
             cache,
-            createInvite,
             events,
             featureFlags,
+            inviteCreate,
+            inviteResend,
             itemsRequest,
             itemCreation,
             itemEdit,

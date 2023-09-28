@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import { vaultInviteResendIntent, vaultRemoveAccessIntent } from '@proton/pass/store';
+import { inviteResendIntent, shareRemoveMemberAccessIntent } from '@proton/pass/store';
 import { ShareRole } from '@proton/pass/types';
 
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
@@ -32,10 +32,10 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     pending,
     inviteId,
 }: ShareMemberProps) => {
+    const initials = email.toUpperCase().slice(0, 2) ?? '';
+
     const [confirmTransfer, setConfirmTransfer] = useState(false);
     const canTransferOwnership = true;
-
-    const initials = email.toUpperCase().slice(0, 2) ?? '';
 
     const { title, description } = useMemo(() => {
         if (owner) {
@@ -54,23 +54,11 @@ export const ShareMember: VFC<ShareMemberProps> = ({
         return getShareRoleDefinition()[role];
     }, [role, owner, pending]);
 
-    const removeAccess = useActionWithRequest(vaultRemoveAccessIntent, { onSuccess: () => {} });
+    const removeAccess = useActionWithRequest(shareRemoveMemberAccessIntent, {});
+    const resendInvite = useActionWithRequest(inviteResendIntent, {});
 
-    const handleRemoveAccess = () => {
-        if (!userShareId) {
-            return;
-        }
-        removeAccess.dispatch({ shareId, userShareId });
-    };
-
-    const resendInvite = useActionWithRequest(vaultInviteResendIntent, { onSuccess: () => {} });
-
-    const handleRsendAccess = () => {
-        if (!shareId || !inviteId) {
-            return;
-        }
-        resendInvite.dispatch({ shareId, inviteId });
-    };
+    const handleRemoveAccess = () => userShareId && removeAccess.dispatch({ shareId, userShareId });
+    const handleRsendAccess = () => shareId && inviteId && resendInvite.dispatch({ shareId, inviteId });
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">

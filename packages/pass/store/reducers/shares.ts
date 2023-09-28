@@ -8,12 +8,15 @@ import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/u
 
 import {
     bootSuccess,
+    inviteCreationSuccess,
+    inviteResendSuccess,
     shareDeleteSync,
     shareEditSync,
     shareEvent,
+    shareInvitesSync,
+    shareMembersSync,
+    shareRemoveMemberAccessSuccess,
     sharesSync,
-    syncShareInvites,
-    syncShareMembers,
     syncSuccess,
     vaultCreationFailure,
     vaultCreationIntent,
@@ -24,9 +27,6 @@ import {
     vaultEditFailure,
     vaultEditIntent,
     vaultEditSuccess,
-    vaultInviteCreationSuccess,
-    vaultInviteResendSuccess,
-    vaultRemoveAccessSuccess,
     vaultSetPrimaryFailure,
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
@@ -134,27 +134,27 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return objectMap(state!)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
         }
 
-        if (vaultInviteCreationSuccess.match(action)) {
+        if (inviteCreationSuccess.match(action)) {
             const { shareId, invites } = action.payload;
             return partialMerge(state, { [shareId]: { invites, shared: true } });
         }
 
-        if (vaultInviteResendSuccess.match(action)) {
+        if (inviteResendSuccess.match(action)) {
             const { shareId, inviteId } = action.payload;
             return partialMerge(state, { [shareId]: { inviteId, shared: true } });
         }
 
-        if (syncShareInvites.match(action)) {
+        if (shareInvitesSync.match(action)) {
             const { shareId, invites } = action.payload;
             return partialMerge(state, { [shareId]: { invites, shared: true } });
         }
 
-        if (syncShareMembers.match(action)) {
+        if (shareMembersSync.match(action)) {
             const { shareId, members } = action.payload;
             return partialMerge(state, { [shareId]: { members, shared: true } });
         }
 
-        if (vaultRemoveAccessSuccess.match(action)) {
+        if (shareRemoveMemberAccessSuccess.match(action)) {
             const { shareId, userShareId } = action.payload;
             return partialMerge(state, {
                 [shareId]: {
