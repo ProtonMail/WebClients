@@ -1,0 +1,9 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-spotlight-content {
+	&.weak {
+		background: var(--interaction-norm-minor-1);
+	}
+
+	background: var(--interaction-norm);
+}
