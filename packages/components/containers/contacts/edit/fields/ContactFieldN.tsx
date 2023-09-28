@@ -9,7 +9,6 @@ import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/int
 import ContactFieldString from './ContactFieldString';
 
 interface Props {
-    contactID?: string;
     vCardContact: VCardContact;
     vCardProperty: VCardProperty<VcardNValue>;
     isSubmitted: boolean;
@@ -22,7 +21,7 @@ enum FieldsPos {
 }
 
 const ContactFieldN = (
-    { contactID, vCardContact, vCardProperty, isSubmitted, onChangeVCard, ...rest }: Props,
+    { vCardContact, vCardProperty, isSubmitted, onChangeVCard, ...rest }: Props,
     firstNameFieldRef: Ref<HTMLInputElement>
 ) => {
     const givenName = vCardProperty.value.givenNames[0] || '';
@@ -43,7 +42,7 @@ const ContactFieldN = (
 
     const givenNameTooLong = !isFirstLastNameValid(givenName);
     const familyNameTooLong = !isFirstLastNameValid(familyName);
-    const requiredError = !contactID && !vCardContact.fn?.[0].value && isSubmitted && !givenName && !familyName;
+    const requiredError = !vCardContact.fn?.[0].value && isSubmitted && !givenName && !familyName;
 
     return (
         <div className="flex flex-col on-mobile-flex-column gap-2">
