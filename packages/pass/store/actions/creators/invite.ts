@@ -1,8 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type { PendingInvite } from '@proton/pass/types/data/invites';
-import type { InviteCreateIntent, InviteResendIntent } from '@proton/pass/types/data/invites.dto';
+import type { InviteAcceptIntent, InviteCreateIntent, InviteResendIntent } from '@proton/pass/types/data/invites.dto';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { InviteState } from '../../reducers/invites';
@@ -30,6 +31,32 @@ export const inviteCreationFailure = createAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Invite creation failed.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
+
+export const inviteAcceptIntent = createAction(
+    'invite::accept::intent',
+    withRequestStart((payload: Omit<InviteAcceptIntent, 'inviteKeys'>) => withCacheBlock({ payload }))
+);
+
+export const inviteAcceptSuccess = createAction(
+    'invite::accept::success',
+    withRequestSuccess((token: string, share: Share<ShareType.Vault>, items: ItemRevision[]) => ({
+        payload: { share, items, token },
+    }))
+);
+
+export const inviteAcceptFailure = createAction(
+    'invite::accept::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be accepted`,
                 error,
             })
         )({ payload: {} })
