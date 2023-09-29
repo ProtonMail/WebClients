@@ -16,6 +16,7 @@ import {
     shareEditSync,
     shareEvent,
     shareInvitesSync,
+    shareLeaveSuccess,
     shareMembersSync,
     shareRemoveMemberAccessSuccess,
     sharesSync,
@@ -181,6 +182,10 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
         if (inviteAcceptSuccess.match(action)) {
             return partialMerge(state, { [action.payload.share.shareId]: action.payload.share });
+        }
+
+        if (shareLeaveSuccess.match(action)) {
+            return objectDelete(state, action.payload.shareId);
         }
 
         return state;
