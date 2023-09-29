@@ -11,6 +11,7 @@ import {
     inviteCreationSuccess,
     inviteResendSuccess,
     shareDeleteSync,
+    shareEditMemberAccessSuccess,
     shareEditSync,
     shareEvent,
     shareInvitesSync,
@@ -152,6 +153,19 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         if (shareMembersSync.match(action)) {
             const { shareId, members } = action.payload;
             return partialMerge(state, { [shareId]: { members, shared: true } });
+        }
+
+        if (shareEditMemberAccessSuccess.match(action)) {
+            const { shareId, userShareId, shareRoleId } = action.payload;
+            const members = state[shareId].members ?? [];
+
+            return partialMerge(state, {
+                [shareId]: {
+                    members: members.map<ShareMember>((member) =>
+                        member.shareId === userShareId ? { ...member, shareRoleId } : member
+                    ),
+                },
+            });
         }
 
         if (shareRemoveMemberAccessSuccess.match(action)) {
