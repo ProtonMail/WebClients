@@ -12,6 +12,7 @@ import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
 import { ShareMember } from '../Share/ShareMember';
+import { SharePendingMember } from '../Share/SharePendingMember';
 import { SharedVaultItem } from '../Vault/SharedVaultItem';
 
 type Props = { shareId: string };
@@ -48,11 +49,10 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
 
                 <div className="flex gap-y-3">
                     {vault.invites?.map((pending) => (
-                        <ShareMember
+                        <SharePendingMember
                             shareId={shareId}
                             key={pending.inviteId}
                             email={pending.invitedEmail}
-                            pending
                             inviteId={pending.inviteId}
                         />
                     ))}
@@ -63,7 +63,6 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                             email={member.email}
                             shareId={shareId}
                             userShareId={member.shareId}
-                            pending={false}
                             role={member.shareRoleId}
                             owner={member.owner}
                         />
