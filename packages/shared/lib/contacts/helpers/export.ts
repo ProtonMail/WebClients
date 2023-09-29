@@ -16,7 +16,7 @@ import { serialize } from '../vcard';
 
 export const getFileName = (contact: VCardContact) => {
     // cover up for the case no FN is present in the contact (we can find such vcards in the DB)
-    const contactName = contact.fn[0]?.value || '';
+    const contactName = contact.fn?.[0]?.value || '';
     const contactEmail = contact.email?.[0]?.value || '';
     const name = contactName || contactEmail;
 

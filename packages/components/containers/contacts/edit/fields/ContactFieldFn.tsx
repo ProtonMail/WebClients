@@ -4,28 +4,40 @@ import { c } from 'ttag';
 
 import { Input, InputProps } from '@proton/atoms';
 import { isContactNameValid } from '@proton/shared/lib/contacts/property';
-import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ErrorZone } from '../../../../components';
 
 interface Props extends Omit<InputProps, 'onChange'> {
+    vCardContact: VCardContact;
     vCardProperty: VCardProperty<string>;
     isSubmitted: boolean;
     onChange: (vCardProperty: VCardProperty) => void;
 }
 
-const ContactFieldFn = ({ vCardProperty, isSubmitted, onChange, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
-    const label = getAllFieldLabels().fn;
+const ContactFieldFn = (
+    { vCardContact, vCardProperty, isSubmitted, onChange, ...rest }: Props,
+    ref: Ref<HTMLInputElement>
+) => {
+    // The version field is not present when creating new contacts
+    const isNewContact = !vCardContact?.version;
+
+    const label = c('Contact field label').t`Enter a display name or nickname`;
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         const newValue = target.value;
         onChange({ ...vCardProperty, value: newValue });
     };
 
-    const requiredError = isSubmitted && requiredValidator(vCardProperty.value);
+    const givenName = vCardContact.n?.value.givenNames.join(' ')?.trim() ?? null;
+    const familyName = vCardContact.n?.value.familyNames.join(' ')?.trim() ?? null;
     const nameTooLongError = !isContactNameValid(vCardProperty.value);
+
+    // The fn field can be left empty when creating a new contact as long as something is present in the first or last name field
+    const requiredError = isNewContact
+        ? isSubmitted && !givenName && !familyName && requiredValidator(vCardProperty.value)
+        : isSubmitted && requiredValidator(vCardProperty.value);
 
     return (
         <>
@@ -38,8 +50,11 @@ const ContactFieldFn = ({ vCardProperty, isSubmitted, onChange, ...rest }: Props
                 error={!!requiredError || nameTooLongError}
                 {...rest}
             />
-            {!!requiredError ? <ErrorZone>{requiredError}</ErrorZone> : null}
             {nameTooLongError ? <ErrorZone>{c('Error').t`Contact name is too long`}</ErrorZone> : null}
+            {!!requiredError && !isNewContact ? <ErrorZone>{requiredError}</ErrorZone> : null}
+            {!!requiredError && isNewContact ? (
+                <ErrorZone>{c('Error').t`Please provide either a first name, a last name or a display name`}</ErrorZone>
+            ) : null}
         </>
     );
 };

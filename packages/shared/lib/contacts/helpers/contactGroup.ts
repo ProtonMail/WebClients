@@ -1,5 +1,5 @@
 import { ContactGroupLimitReachedProps } from '@proton/components/containers/contacts/modals/ContactGroupLimitReachedModal';
-import { MAX_RECIPIENTS } from '@proton/shared/lib/contacts/constants';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -11,7 +11,7 @@ export const hasReachedContactGroupMembersLimit = (
     mailSettings?: MailSettings,
     strict = true
 ) => {
-    const { RecipientLimit = MAX_RECIPIENTS } = mailSettings || {};
+    const { RecipientLimit = CONTACT_GROUP_MAX_MEMBERS } = mailSettings || {};
 
     return strict ? numbersOfContacts < RecipientLimit : numbersOfContacts <= RecipientLimit;
 };
