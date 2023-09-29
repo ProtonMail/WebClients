@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import { shareRemoveMemberAccessIntent } from '@proton/pass/store';
+import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '@proton/pass/store';
 import { shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
@@ -45,8 +45,15 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
     const removeAccess = useActionWithRequest(shareRemoveMemberAccessIntent, {
         requestId: shareRemoveMemberRequest(userShareId),
     });
+    const editAccess = useActionWithRequest(shareEditMemberAccessIntent, {
+        requestId: shareRemoveMemberRequest(userShareId),
+    });
 
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
+
+    const handleEditRole = (shareRoleId: ShareRole) => {
+        editAccess.dispatch({ shareId, userShareId, shareRoleId });
+    };
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
@@ -61,15 +68,24 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
             <QuickActionsDropdown color="weak" shape="ghost" disabled={owner}>
                 <DropdownMenuButton
                     label={c('Action').t`Can view`}
-                    icon={role !== ShareRole.READ ? 'checkmark-circle' : 'circle'}
+                    icon={role === ShareRole.READ ? 'checkmark' : undefined}
+                    onClick={() => handleEditRole(ShareRole.READ)}
+                    disabled={editAccess.loading}
+                    className={role !== ShareRole.READ ? 'pl-11' : ''}
                 />
                 <DropdownMenuButton
                     label={c('Action').t`Can edit`}
-                    icon={role !== ShareRole.WRITE ? 'checkmark-circle' : 'circle'}
+                    icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
+                    onClick={() => handleEditRole(ShareRole.WRITE)}
+                    disabled={editAccess.loading}
+                    className={role !== ShareRole.WRITE ? 'pl-11' : ''}
                 />
                 <DropdownMenuButton
                     label={c('Action').t`Can manage`}
-                    icon={role !== ShareRole.ADMIN ? 'checkmark-circle' : 'circle'}
+                    icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
+                    onClick={() => handleEditRole(ShareRole.ADMIN)}
+                    disabled={editAccess.loading}
+                    className={role !== ShareRole.ADMIN ? 'pl-11' : ''}
                 />
 
                 {canTransferOwnership && (
