@@ -90,3 +90,35 @@ export const shareEditMemberAccessFailure = createAction(
         )({ payload: {} })
     )
 );
+
+export const shareLeaveIntent = createAction(
+    'share::leave::intent',
+    withRequestStart((payload: { shareId: string }) => withCacheBlock({ payload }))
+);
+
+export const shareLeaveSuccess = createAction(
+    'share::leave::success',
+    withRequestSuccess((shareId: string) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Successfully left the vault`,
+            })
+        )({ payload: { shareId } })
+    )
+);
+
+export const shareLeaveFailure = createAction(
+    'share::leave::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Could not leave vault.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
