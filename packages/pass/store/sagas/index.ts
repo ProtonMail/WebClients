@@ -42,6 +42,7 @@ import vaultCreation from './vault-creation.saga';
 import vaultDelete from './vault-delete.saga';
 import vaultEdit from './vault-edit.saga';
 import vaultSetPrimary from './vault-set-primary.saga';
+import vaultTransferOwner from './vault-transfer-owner.saga';
 import wakeup from './wakeup.saga';
 
 export function* workerRootSaga(options: WorkerRootSagaOptions) {
@@ -88,6 +89,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             vaultEdit,
             vaultDelete,
             vaultSetPrimary,
+            vaultTransferOwner,
             wakeup,
         ].map((saga) => saga(options))
     );
