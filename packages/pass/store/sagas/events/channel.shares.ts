@@ -52,10 +52,14 @@ function* onSharesEvent(
     // only do this if share has changed
     yield fork(function* () {
         for (const share of remoteShares) {
-            yield put(shareMembersSync(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
+            if (share.Shared) {
+                const members: ShareMember[] = yield loadShareMembers(share.ShareID);
+                yield put(shareMembersSync(share.ShareID, members));
+            }
 
             if (share.Owner) {
-                yield put(shareInvitesSync(share.ShareID, (yield loadInvites(share.ShareID)) as PendingInvite[]));
+                const pending: PendingInvite[] = yield loadInvites(share.ShareID);
+                if (pending.length > 0) yield put(shareInvitesSync(share.ShareID, pending));
             }
         }
     });
