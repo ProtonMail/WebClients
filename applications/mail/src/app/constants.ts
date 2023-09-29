@@ -8,7 +8,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
-
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const DEFAULT_EO_EXPIRATION_DAYS = 28;
