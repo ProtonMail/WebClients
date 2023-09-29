@@ -25,7 +25,6 @@ export type ActiveImporter = {
     errorCode?: ApiImporterActive['ErrorCode'];
     importState: ApiImporterActive['State'];
     mapping?: ApiImporterFolder[];
-    processed?: ApiImporterActive['Processed'];
     startDate: ApiImporterActive['CreateTime'];
     total?: ApiImporterActive['Total'];
 };
