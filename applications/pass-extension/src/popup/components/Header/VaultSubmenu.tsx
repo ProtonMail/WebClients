@@ -52,6 +52,7 @@ type VaultItemProps = {
     onDelete?: () => void;
     onInvite?: () => void;
     onManage?: () => void;
+    onLeave?: () => void;
 };
 
 const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
@@ -70,8 +71,9 @@ export const VaultItem: VFC<VaultItemProps> = ({
     onEdit,
     onInvite,
     onManage,
+    onLeave,
 }) => {
-    const withActions = onEdit || onDelete || onInvite || onManage;
+    const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
     const showSharing = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
 
     return (
@@ -117,6 +119,17 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             />
                         )}
 
+                        {showSharing && share.shared && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={handleClickEvent(onLeave)}
+                                icon="cross-circle"
+                                label={c('Action').t`Leave vault`}
+                                danger
+                            />
+                        )}
+
+                        {/* TODO: dont show this button if not owner */}
                         <DropdownMenuButton
                             disabled={!onDelete}
                             onClick={handleClickEvent(onDelete)}
@@ -176,6 +189,7 @@ export const VaultSubmenu: VFC<{
     handleVaultCreateClick: () => void;
     handleVaultInviteClick: (vault: VaultShare) => void;
     handleVaultManageClick: (vault: VaultShare) => void;
+    handleVaultLeaveClick: (vault: VaultShare) => void;
     handleRestoreTrash: () => void;
     handleEmptyTrash: () => void;
 }> = ({
@@ -187,6 +201,7 @@ export const VaultSubmenu: VFC<{
     handleVaultCreateClick,
     handleVaultInviteClick,
     handleVaultManageClick,
+    handleVaultLeaveClick,
     handleRestoreTrash,
     handleEmptyTrash,
 }) => {
@@ -248,6 +263,7 @@ export const VaultSubmenu: VFC<{
                             onEdit={() => handleVaultEditClick(vault)}
                             onInvite={() => handleVaultInviteClick(vault)}
                             onManage={() => handleVaultManageClick(vault)}
+                            onLeave={() => handleVaultLeaveClick(vault)}
                         />
                     );
                 })}
