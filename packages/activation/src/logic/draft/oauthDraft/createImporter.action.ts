@@ -44,7 +44,6 @@ type Props = {
 interface ImportRawData {
     importType: ImportType;
     Folders?: ApiMailImporterFolder[];
-    Contacts?: APIContacts;
     Calendars?: APICalendar[];
     error?: string;
 }
@@ -53,11 +52,6 @@ interface APICalendar {
     Source: string;
     ID: string;
     Description: string;
-}
-
-interface APIContacts {
-    NumContacts: number;
-    NumGroups: number;
 }
 
 export enum Separator {
