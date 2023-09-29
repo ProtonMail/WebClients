@@ -8,6 +8,7 @@ import cache from './cache.saga';
 import events from './events.saga';
 import featureFlags from './feature-flags.saga';
 import itemsImport from './import.saga';
+import inviteAccept from './invite-accept.saga';
 import inviteCreate from './invite-create.saga';
 import inviteResend from './invite-resend.saga';
 import itemCreation from './item-creation.saga';
@@ -47,6 +48,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             cache,
             events,
             featureFlags,
+            inviteAccept,
             inviteCreate,
             inviteResend,
             itemsRequest,

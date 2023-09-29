@@ -8,6 +8,7 @@ import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/u
 
 import {
     bootSuccess,
+    inviteAcceptSuccess,
     inviteCreationSuccess,
     inviteResendSuccess,
     shareDeleteSync,
@@ -176,6 +177,10 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     members: (state[shareId]?.members ?? []).filter(({ shareId }) => shareId !== userShareId),
                 },
             });
+        }
+
+        if (inviteAcceptSuccess.match(action)) {
+            return partialMerge(state, { [action.payload.share.shareId]: action.payload.share });
         }
 
         return state;

@@ -55,6 +55,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                     invitedEmail: invite.InvitedEmail,
                     inviterEmail: invite.InviterEmail,
                     createTime: invite.CreateTime,
+                    keys: invite.Keys,
                     vault: {
                         content: decodeVaultContent(encodedVault),
                         memberCount: encryptedVault.MemberCount!,
