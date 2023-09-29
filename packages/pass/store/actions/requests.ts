@@ -23,4 +23,4 @@ export const reportProblem = `report-problem-request`;
 
 export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
 export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
-export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;
+export const inviteRespondRequest = (token: string) => `invite::respond::${token}`;

@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
-import { inviteAcceptIntent } from '@proton/pass/store';
-import { inviteAcceptRequest } from '@proton/pass/store/actions/requests';
+import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store';
+import { inviteRespondRequest } from '@proton/pass/store/actions/requests';
 import type { Invite } from '@proton/pass/types/data/invites';
 
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
@@ -18,7 +18,12 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
     const { onInviteResponse } = useInviteContext();
 
     const acceptInvite = useActionWithRequest(inviteAcceptIntent, {
-        requestId: inviteAcceptRequest(invite.token),
+        requestId: inviteRespondRequest(invite.token),
+        onSuccess: onInviteResponse,
+    });
+
+    const rejectInvite = useActionWithRequest(inviteRejectIntent, {
+        requestId: inviteRespondRequest(invite.token),
         onSuccess: onInviteResponse,
     });
 
@@ -28,7 +33,9 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
             inviterEmail: invite.inviterEmail,
         });
 
-    const loading = acceptInvite.loading;
+    const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
+
+    const loading = acceptInvite.loading || rejectInvite.loading;
 
     return (
         <ModalTwo size="small" open onClose={onInviteResponse}>
@@ -59,7 +66,7 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
                 <Button size="large" shape="solid" color="norm" disabled={loading} onClick={handleAcceptInvite}>{c(
                     'Action'
                 ).t`Join shared vault`}</Button>
-                <Button size="large" shape="solid" color="weak" disabled={loading} onClick={onInviteResponse}>{c(
+                <Button size="large" shape="solid" color="weak" disabled={loading} onClick={handleRejectInvite}>{c(
                     'Action'
                 ).t`Reject invitation`}</Button>
             </ModalTwoFooter>

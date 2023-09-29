@@ -3,7 +3,12 @@ import { c } from 'ttag';
 
 import type { ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type { PendingInvite } from '@proton/pass/types/data/invites';
-import type { InviteAcceptIntent, InviteCreateIntent, InviteResendIntent } from '@proton/pass/types/data/invites.dto';
+import type {
+    InviteAcceptIntent,
+    InviteCreateIntent,
+    InviteRejectIntent,
+    InviteResendIntent,
+} from '@proton/pass/types/data/invites.dto';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { InviteState } from '../../reducers/invites';
@@ -57,6 +62,30 @@ export const inviteAcceptFailure = createAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Invitation could not be accepted`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
+
+export const inviteRejectIntent = createAction(
+    'invite::reject::intent',
+    withRequestStart((payload: InviteRejectIntent) => withCacheBlock({ payload }))
+);
+
+export const inviteRejectSuccess = createAction(
+    'invite::reject::success',
+    withRequestSuccess((token: string) => ({ payload: { token } }))
+);
+
+export const inviteRejectFailure = createAction(
+    'invite::reject::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Invitation could not be rejected`,
                 error,
             })
         )({ payload: {} })

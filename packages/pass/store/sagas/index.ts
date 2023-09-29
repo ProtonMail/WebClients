@@ -10,6 +10,7 @@ import featureFlags from './feature-flags.saga';
 import itemsImport from './import.saga';
 import inviteAccept from './invite-accept.saga';
 import inviteCreate from './invite-create.saga';
+import inviteReject from './invite-reject.saga';
 import inviteResend from './invite-resend.saga';
 import itemCreation from './item-creation.saga';
 import itemDelete from './item-delete.saga';
@@ -50,6 +51,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             featureFlags,
             inviteAccept,
             inviteCreate,
+            inviteReject,
             inviteResend,
             itemsRequest,
             itemCreation,
