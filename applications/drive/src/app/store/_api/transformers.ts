@@ -98,6 +98,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isVolumeSoftDeleted: share.VolumeSoftDeleted,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
+        state: share.State,
     };
 }
 

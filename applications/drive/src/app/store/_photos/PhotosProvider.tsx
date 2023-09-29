@@ -19,9 +19,9 @@ export const PhotosContext = createContext<{
 } | null>(null);
 
 export const PhotosProvider: FC = ({ children }) => {
-    const { getPhotosShare, getDefaultShareId } = useSharesState();
+    const { getActivePhotosShare, getDefaultShareId } = useSharesState();
     const defaultShareId = getDefaultShareId();
-    const share = getPhotosShare();
+    const share = getActivePhotosShare();
     const request = useDebouncedRequest();
     const [photosLoading, withPhotosLoading] = useLoading();
 
