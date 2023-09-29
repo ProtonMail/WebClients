@@ -5,8 +5,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '@proton/pass/store';
-import { shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
+import {
+    shareEditMemberAccessIntent,
+    shareRemoveMemberAccessIntent,
+    vaultTransferOwnerIntent,
+} from '@proton/pass/store';
+import { shareRemoveMemberRequest, vaultTransferOwnerRequest } from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
 import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
@@ -27,6 +31,8 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
     const initials = email.toUpperCase().slice(0, 2) ?? '';
 
     const [confirmTransfer, setConfirmTransfer] = useState(false);
+
+    // TODO find if current user is owner
     const canTransferOwnership = true;
 
     const { title, description } = useMemo(() => {
@@ -50,8 +56,17 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
         requestId: shareRemoveMemberRequest(userShareId),
     });
 
+    const transferOwnership = useActionWithRequest({
+        action: vaultTransferOwnerIntent,
+        requestId: vaultTransferOwnerRequest(userShareId),
+    });
+
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
     const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
+    const handleTransferOwnership = () => {
+        transferOwnership.dispatch({ shareId, userShareId });
+        setConfirmTransfer(false);
+    };
 
     const loading = removeAccess.loading || editAccess.loading;
 
@@ -108,7 +123,8 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
                 open={confirmTransfer}
                 onClose={() => setConfirmTransfer(false)}
                 buttons={[
-                    <Button size="large" shape="solid" color="norm">{c('Action').t`Confirm`}</Button>,
+                    <Button size="large" shape="solid" color="norm" onClick={handleTransferOwnership}>{c('Action')
+                        .t`Confirm`}</Button>,
                     <Button size="large" shape="solid" color="weak" onClick={() => setConfirmTransfer(false)}>{c(
                         'Action'
                     ).t`Cancel`}</Button>,

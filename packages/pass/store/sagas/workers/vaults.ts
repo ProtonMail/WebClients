@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
+import type { VaultTransferOwnerIntent } from '@proton/pass/types';
 import {
     type Share,
     type ShareContent,
@@ -108,3 +109,10 @@ export const editVault = async (
         eventId,
     };
 };
+
+export const vaultTransferOwner = async ({ shareId, userShareId }: VaultTransferOwnerIntent) =>
+    api({
+        url: `pass/v1/vault/${shareId}/owner`,
+        method: 'put',
+        data: { NewOwnerShareID: userShareId },
+    });
