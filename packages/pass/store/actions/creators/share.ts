@@ -1,9 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { Share } from '@proton/pass/types';
+import type { Share, ShareRole } from '@proton/pass/types';
 import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
-import type { ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
+import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
 import { pipe } from '@proton/pass/utils/fp';
 import { isVaultShare } from '@proton/pass/utils/pass/share';
 
@@ -56,6 +56,35 @@ export const shareRemoveMemberAccessFailure = createAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed to remove user's access.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
+
+export const shareEditMemberAccessIntent = createAction(
+    'share::member::edit-access::intent',
+    withRequestStart((payload: ShareEditMemberAccessIntent) => withCacheBlock({ payload }))
+);
+
+export const shareEditMemberAccessSuccess = createAction(
+    'share::member::edit-access::success',
+    withRequestSuccess((shareId: string, userShareId: string, shareRoleId: ShareRole) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`User's access sucessfuly updated`,
+        })({ payload: { shareId, userShareId, shareRoleId } })
+    )
+);
+
+export const shareEditMemberAccessFailure = createAction(
+    'share::member:edit-access::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to edit user's access.`,
                 error,
             })
         )({ payload: {} })
