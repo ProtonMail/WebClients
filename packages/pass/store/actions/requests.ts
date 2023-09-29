@@ -22,4 +22,5 @@ export const settingsEdit = withRequestNamespace(`settings-edit`);
 export const reportProblem = `report-problem-request`;
 
 export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
-export const inviteResendRequest = (inviteId: string) => `share::members::remove::${inviteId}`;
+export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
+export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;

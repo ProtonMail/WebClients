@@ -12,6 +12,7 @@ import {
     emptyTrashFailure,
     emptyTrashIntent,
     emptyTrashSuccess,
+    inviteAcceptSuccess,
     itemAutofillIntent,
     itemCreationDismiss,
     itemCreationFailure,
@@ -321,6 +322,10 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (shareDeleteSync.match(action)) {
             return objectDelete(state, action.payload.shareId);
+        }
+
+        if (inviteAcceptSuccess.match(action)) {
+            return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
         }
 
         return state;
