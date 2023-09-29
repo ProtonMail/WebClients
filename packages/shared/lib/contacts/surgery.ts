@@ -32,6 +32,20 @@ export const prepareForEdition = (vCardContact: VCardContact) => {
         result.email = [{ field: 'email', value: '', uid: createContactPropertyUid() }];
     }
 
+    if (!result.n) {
+        result.n = {
+            field: 'n',
+            value: {
+                familyNames: [''],
+                givenNames: [''],
+                additionalNames: [''],
+                honorificPrefixes: [''],
+                honorificSuffixes: [''],
+            },
+            uid: createContactPropertyUid(),
+        };
+    }
+
     return result;
 };
 

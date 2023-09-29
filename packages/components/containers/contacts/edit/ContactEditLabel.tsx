@@ -67,7 +67,7 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
         );
     }
 
-    if (field === 'fn' || fixedType || !fieldTypes.map(({ value: type }) => type).includes(type)) {
+    if (field === 'fn' || field === 'n' || fixedType || !fieldTypes.map(({ value: type }) => type).includes(type)) {
         return <ContactLabelProperty className="pt-2" field={field} type={type} />;
     }
 
