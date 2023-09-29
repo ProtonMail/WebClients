@@ -177,7 +177,7 @@ describe('useLink', () => {
         const LINK_NAME = 'LINK_NAME';
 
         const tests = [
-            { type: ShareType.standart, name: `dec:${LINK_NAME}` },
+            { type: ShareType.standard, name: `dec:${LINK_NAME}` },
 
             { type: ShareType.default, name: 'My files' },
             { type: ShareType.photos, name: 'Photos' },

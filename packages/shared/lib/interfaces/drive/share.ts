@@ -23,6 +23,7 @@ export interface ShareMetaShort {
     Flags: number;
     PossibleKeyPackets?: { KeyPacket: string }[];
     VolumeSoftDeleted: boolean;
+    State: number;
 }
 
 export interface ShareMeta extends ShareMetaShort {
