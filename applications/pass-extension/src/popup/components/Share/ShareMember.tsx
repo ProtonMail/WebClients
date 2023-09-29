@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
-import { inviteResendIntent, shareRemoveMemberAccessIntent } from '@proton/pass/store';
+import { shareRemoveMemberAccessIntent } from '@proton/pass/store';
+import { shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
@@ -17,21 +18,14 @@ import { getShareRoleDefinition } from './ShareRoleOptions';
 import './ShareMember.scss';
 
 export type ShareMemberProps = {
-    shareId: string;
     email: string;
-    owner?: boolean;
-    inviteId?: string;
-} & ({ role: ShareRole; userShareId: string; pending: false } | { role?: never; userShareId?: never; pending: true });
+    owner: boolean;
+    role: ShareRole;
+    shareId: string;
+    userShareId: string;
+};
 
-export const ShareMember: VFC<ShareMemberProps> = ({
-    email,
-    role,
-    shareId,
-    userShareId,
-    owner = false,
-    pending,
-    inviteId,
-}: ShareMemberProps) => {
+export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId, userShareId }: ShareMemberProps) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
 
     const [confirmTransfer, setConfirmTransfer] = useState(false);
@@ -44,21 +38,15 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                 description: c('Info').t`Can grant and revoke access to this vault, and delete it.`,
             };
         }
-        if (pending) {
-            return {
-                title: c('Info').t`Pending invitation`,
-                description: c('Info').t`The user did not accept the invitation yet.`,
-            };
-        }
 
         return getShareRoleDefinition()[role];
-    }, [role, owner, pending]);
+    }, [role, owner]);
 
-    const removeAccess = useActionWithRequest(shareRemoveMemberAccessIntent, {});
-    const resendInvite = useActionWithRequest(inviteResendIntent, {});
+    const removeAccess = useActionWithRequest(shareRemoveMemberAccessIntent, {
+        requestId: shareRemoveMemberRequest(userShareId),
+    });
 
-    const handleRemoveAccess = () => userShareId && removeAccess.dispatch({ shareId, userShareId });
-    const handleRsendAccess = () => shareId && inviteId && resendInvite.dispatch({ shareId, inviteId });
+    const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
@@ -83,13 +71,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                     label={c('Action').t`Can manage`}
                     icon={role !== ShareRole.ADMIN ? 'checkmark-circle' : 'circle'}
                 />
-                {pending && (
-                    <DropdownMenuButton
-                        label={c('Action').t`Resend invitation`}
-                        icon={'paper-plane'}
-                        onClick={handleRsendAccess}
-                    />
-                )}
+
                 {canTransferOwnership && (
                     <DropdownMenuButton
                         label={c('Action').t`Transfer ownership`}
