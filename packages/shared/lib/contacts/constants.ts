@@ -33,7 +33,6 @@ export enum CATEGORIES {
 }
 
 export const OTHER_INFORMATION_FIELDS = [
-    'bday',
     'anniversary',
     'gender',
     'lang',
@@ -45,7 +44,6 @@ export const OTHER_INFORMATION_FIELDS = [
     'logo',
     'org',
     'member',
-    'note',
     'url',
 ];
 
@@ -81,6 +79,8 @@ export const MAX_IMPORT_FILE_SIZE_STRING = '10 MB';
 export const MAX_CONTACT_ID_CHARS_DISPLAY = 40;
 export const MAX_FILENAME_CHARS_DISPLAY = 100;
 export const CONTACT_NAME_MAX_LENGTH = 190;
-export const MAX_RECIPIENTS = 100;
+// We remove one to avoid issue with space when computing the full name
+export const CONTACT_FIRST_LAST_NAME_MAX_LENGTH = CONTACT_NAME_MAX_LENGTH / 2 - 1;
+export const CONTACT_GROUP_MAX_MEMBERS = 100;
 
 export const UID_PREFIX = 'contact-property';

@@ -165,6 +165,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
 VERSION:4.0
 TEL;PREF=1:newtel
 NOTE:NewNote
+N:;;;;
 TITLE:NewTitle
 END:VCARD`.replaceAll('\n', '\r\n');
 
@@ -188,8 +189,14 @@ END:VCARD`.replaceAll('\n', '\r\n');
 
         const { getByTestId, getByText } = render(<ContactEditModal open={true} {...props} />);
 
-        const name = getByTestId('Name');
-        fireEvent.change(name, { target: { value: 'New name' } });
+        const firstName = getByTestId('First name');
+        fireEvent.change(firstName, { target: { value: 'Bruno' } });
+
+        const lastName = getByTestId('Last name');
+        fireEvent.change(lastName, { target: { value: 'Mars' } });
+
+        const displayName = getByTestId('Enter a display name or nickname');
+        fireEvent.change(displayName, { target: { value: 'New name' } });
 
         const email = getByTestId('Email');
         fireEvent.change(email, { target: { value: 'new@email.com' } });
@@ -206,7 +213,40 @@ END:VCARD`.replaceAll('\n', '\r\n');
             ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
         ).Data;
 
+        const encryptedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED
+        ).Data;
+
         expect(signedCardContent).toContain('FN;PREF=1:New name');
         expect(signedCardContent).toContain('ITEM1.EMAIL;PREF=1:new@email.com');
+        expect(encryptedCardContent).toContain('N:Mars;Bruno;;;');
+    });
+
+    it('should trigger an error if display name is empty when creating a contact', async () => {
+        const { getByText } = render(<ContactEditModal open={true} {...props} />);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        const errorZone = getByText('Please provide either a first name, a last name or a display name');
+        expect(errorZone).toBeVisible();
+    });
+
+    it('should trigger an error if display name is empty when editing a contact', async () => {
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+EMAIL:jdoe@example.com
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard);
+
+        const { getByText } = render(<ContactEditModal open={true} {...props} vCardContact={vCardContact} />);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        const errorZone = getByText('This field is required');
+        expect(errorZone).toBeVisible();
     });
 });

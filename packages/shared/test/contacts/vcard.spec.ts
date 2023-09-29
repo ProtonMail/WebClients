@@ -227,6 +227,15 @@ describe('serialize', () => {
 
             expect(serialize(contact)).toEqual(vcf);
         });
+
+        it('no value is passed to FN field', () => {
+            const contact = {
+                version: { field: 'version', value: '4.0', uid: createContactPropertyUid() },
+                fn: [{ field: 'fn', value: '', uid: createContactPropertyUid(), params: { pref: '1' } }],
+            };
+
+            expect(serialize(contact)).toEqual([`BEGIN:VCARD`, `VERSION:4.0`, `END:VCARD`].join('\r\n'));
+        });
     });
 
     describe('round trips with parse', () => {

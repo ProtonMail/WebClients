@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Ref, forwardRef } from 'react';
 
 import Icon from '../icon/Icon';
 import { OrderableElement, OrderableHandle } from '../orderable';
@@ -11,13 +11,13 @@ interface Props {
     disableSort?: boolean;
 }
 
-const OrderableTableRow = ({ index, cells = [], className, disableSort, ...rest }: Props) => {
+const OrderableTableRow = ({ index, cells = [], className, disableSort, ...rest }: Props, ref: Ref<any>) => {
     if (disableSort) {
         return <TableRow cells={['', ...cells]} className={className} {...rest} />;
     }
 
     return (
-        <OrderableElement index={index}>
+        <OrderableElement index={index} ref={ref}>
             <TableRow
                 cells={[
                     <OrderableHandle key="icon">
@@ -34,4 +34,4 @@ const OrderableTableRow = ({ index, cells = [], className, disableSort, ...rest 
     );
 };
 
-export default OrderableTableRow;
+export default forwardRef(OrderableTableRow);
