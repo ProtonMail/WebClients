@@ -101,6 +101,7 @@ interface API_REQUEST {
     payload: {
         id: string;
         arg: object;
+        appVersion: string;
         hasAbortController?: boolean;
     };
 }

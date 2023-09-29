@@ -9,9 +9,11 @@ import { deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
 import { generateUID } from '../../helpers';
+import { useConfig } from '../../hooks';
 import ApiContext from './apiContext';
 
 const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
+    const { APP_VERSION } = useConfig();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
     const handleIframeApi = (arg: any) => {
@@ -72,7 +74,10 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
                 };
             }
             postMessageFromIframe(
-                { type: DRAWER_EVENTS.API_REQUEST, payload: { arg: newArg, id, hasAbortController } },
+                {
+                    type: DRAWER_EVENTS.API_REQUEST,
+                    payload: { arg: newArg, id, appVersion: APP_VERSION, hasAbortController },
+                },
                 parentApp
             );
             window.addEventListener('message', handler);
