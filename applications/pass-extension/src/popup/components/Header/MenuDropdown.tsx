@@ -73,7 +73,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         pipe(cb, tap(close));
 
     const leaveVault = useActionWithRequest(shareLeaveIntent, {
-        requestId: shareLeaveRequest(shareId ?? ''),
+        requestId: shareLeaveRequest(leaveShareId ?? ''),
     });
 
     const handleVaultDelete = (destinationShareId: MaybeNull<string>) => {
