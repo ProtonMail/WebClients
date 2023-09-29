@@ -2,7 +2,6 @@ import type { VFC } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
 import { Info } from '@proton/components/components';
 import { inviteResendIntent } from '@proton/pass/store';
 import noop from '@proton/utils/noop';
@@ -10,8 +9,7 @@ import noop from '@proton/utils/noop';
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
-
-import './ShareMember.scss';
+import { ShareMemberAvatar } from './ShareMemberAvatar';
 
 export type SharePendingMemberProps = {
     email: string;
@@ -24,10 +22,11 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, invite
 
     const resendInvite = useActionWithRequest(inviteResendIntent, { requestId: `invite::resend::${inviteId}` });
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
+    const loading = resendInvite.loading;
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
-            <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
+            <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex flex-align-items-center gap-1">
