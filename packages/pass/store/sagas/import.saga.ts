@@ -20,6 +20,8 @@ import {
     importItemsSuccess,
     itemsBatchImported,
     notification,
+    startEventPolling,
+    stopEventPolling,
     vaultCreationIntent,
     vaultCreationSuccess,
 } from '../actions';
@@ -60,6 +62,8 @@ function* importWorker(
     { onItemsChange, onImportProgress, telemetry }: WorkerRootSagaOptions,
     { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
 ) {
+    yield put(stopEventPolling());
+
     let totalItems: number = 0;
     const ignored: string[] = data.ignored;
     const importVaults = groupWith((a, b) => a.shareId === b.shareId, data.vaults).map((group) => ({
@@ -143,6 +147,7 @@ function* importWorker(
         yield put(importItemsFailure(error, meta.sender?.endpoint));
     } finally {
         yield put(acknowledgeRequest(meta.request.id));
+        yield put(startEventPolling());
     }
 }
 
