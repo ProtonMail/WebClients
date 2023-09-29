@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { MAX_RECIPIENTS } from '@proton/shared/lib/contacts/constants';
+import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -156,7 +156,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
 
     const contactEmailsLength = model.contactEmails.length;
 
-    const maxContacts = mailSettings?.RecipientLimit || MAX_RECIPIENTS;
+    const maxContacts = mailSettings?.RecipientLimit || CONTACT_GROUP_MAX_MEMBERS;
     const cannotAddMoreContactText = c('Action').ngettext(
         msgid`At most ${maxContacts} contact is allowed per contact group`,
         `At most ${maxContacts} contacts are allowed per contact group`,

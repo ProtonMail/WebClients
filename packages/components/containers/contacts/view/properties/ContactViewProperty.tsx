@@ -20,7 +20,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
             >
                 <div
                     className={clsx([
-                        'contact-view-row-label flex-no-min-children on-mobile-max-w100 flex-item-noshrink flex-align-items-start label max-w100p',
+                        'contact-view-row-label flex-no-min-children on-mobile-max-w100 flex-item-noshrink flex-align-items-start label w-1/5',
                     ])}
                 >
                     <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w100">
@@ -35,7 +35,6 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                 <span
                     className={clsx([
                         'contact-view-row-content mr-2 flex-item-fluid pt-2 pl-0 md:pl-7',
-                        !['note'].includes(field) && 'text-ellipsis',
                         ['note'].includes(field) && 'text-pre-wrap',
                     ])}
                 >
