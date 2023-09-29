@@ -19,11 +19,13 @@ import {
 } from '@proton/components/hooks';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
+import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
 export const DrawerContext = createContext<{
@@ -203,7 +205,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                             return;
                         }
 
-                        const { arg, id, hasAbortController } = event.data.payload;
+                        const { arg, id, appVersion, hasAbortController } = event.data.payload;
 
                         try {
                             let updatedArgs: any = arg;
@@ -225,6 +227,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                                 ...updatedArgs,
                                 headers: {
                                     ...updatedArgs.headers,
+                                    ...getAppVersionHeaders(getClientID(appInView), appVersion),
                                     'x-pm-source': 'drawer',
                                 },
                             });
