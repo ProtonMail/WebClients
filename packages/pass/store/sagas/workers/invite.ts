@@ -1,5 +1,10 @@
 import { type PendingInvite } from '@proton/pass/types/data/invites';
-import type { InviteAcceptIntent, InviteCreateIntent, InviteResendIntent } from '@proton/pass/types/data/invites.dto';
+import type {
+    InviteAcceptIntent,
+    InviteCreateIntent,
+    InviteRejectIntent,
+    InviteResendIntent,
+} from '@proton/pass/types/data/invites.dto';
 
 import { api } from '../../../api';
 import { PassCrypto } from '../../../crypto';
@@ -50,3 +55,9 @@ export const acceptInvite = async ({ inviteToken, inviterEmail, inviteKeys }: In
         })
     ).Share!;
 };
+
+export const rejectInvite = async ({ inviteToken }: InviteRejectIntent) =>
+    api({
+        url: `pass/v1/invite/${inviteToken}`,
+        method: 'delete',
+    });
