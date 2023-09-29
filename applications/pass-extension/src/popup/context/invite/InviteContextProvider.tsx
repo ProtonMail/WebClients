@@ -11,22 +11,22 @@ import { VaultInviteManager } from '../../components/Invite/VaultInviteManager';
 
 export type InviteContextValue = {
     shareId: MaybeNull<string>;
-    createInvite: (shareId: string) => void;
-    acceptInvite: (invite: Invite) => void;
-    rejectInvite: (invite: Invite) => void;
-    manageAccess: (shareId: string) => void;
     close: () => void;
+    createInvite: (shareId: string) => void;
+    manageAccess: (shareId: string) => void;
+    onInviteResponse: () => void;
+    respondToInvite: (invite: Invite) => void;
 };
 
 export type InviteView = 'invite' | 'manage';
 
 const InviteContext = createContext<InviteContextValue>({
     shareId: null,
-    createInvite: noop,
-    acceptInvite: noop,
-    rejectInvite: noop,
-    manageAccess: noop,
     close: noop,
+    createInvite: noop,
+    manageAccess: noop,
+    onInviteResponse: noop,
+    respondToInvite: noop,
 });
 
 export const InviteContextProvider: FC = ({ children }) => {
@@ -39,12 +39,8 @@ export const InviteContextProvider: FC = ({ children }) => {
         setView('invite');
     }, []);
 
-    const acceptInvite = useCallback(async (invite: Invite) => setInvite(invite), []);
-
-    const rejectInvite = useCallback(async () => {
-        /* reject flow */
-        setInvite(null);
-    }, []);
+    const respondToInvite = useCallback(async (invite: Invite) => setInvite(invite), []);
+    const onInviteResponse = useCallback(() => setInvite(null), []);
 
     const manageAccess = useCallback((shareId: string) => {
         setShareId(shareId);
@@ -57,7 +53,14 @@ export const InviteContextProvider: FC = ({ children }) => {
     }, []);
 
     const contextValue = useMemo<InviteContextValue>(
-        () => ({ shareId, createInvite, acceptInvite, rejectInvite, manageAccess, close }),
+        () => ({
+            shareId,
+            close,
+            createInvite,
+            manageAccess,
+            onInviteResponse,
+            respondToInvite,
+        }),
         [shareId]
     );
 
