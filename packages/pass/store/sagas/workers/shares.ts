@@ -15,17 +15,12 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         .then(({ EventID }) => EventID!)
         .catch(() => '');
 
-const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
-    const [shareInfo, shareKeys, eventId] = await Promise.all([
-        api({ url: `pass/v1/share/${shareId}`, method: 'get' }),
-        getAllShareKeys(shareId),
-        getShareLatestEventId(shareId),
-    ]);
-
-    const share = await PassCrypto.openShare<ShareType.Vault>({
-        encryptedShare: shareInfo.Share!,
-        shareKeys,
-    });
+export const decryptShareResponse = async (
+    encryptedShare: ShareGetResponse
+): Promise<Maybe<Share<ShareType.Vault>>> => {
+    const shareId = encryptedShare.ShareID;
+    const [shareKeys, eventId] = await Promise.all([getAllShareKeys(shareId), getShareLatestEventId(shareId)]);
+    const share = await PassCrypto.openShare<ShareType.Vault>({ encryptedShare, shareKeys });
 
     if (share) {
         return {
@@ -35,13 +30,18 @@ const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareTyp
             vaultId: share.vaultId,
             eventId,
             content: decodeVaultContent(share.content),
-            primary: Boolean(shareInfo.Share?.Primary),
+            primary: Boolean(encryptedShare.Primary),
             shared: share.shared,
             owner: share.owner,
             targetMembers: share.targetMembers,
             shareRoleId: share.shareRoleId,
         };
     }
+};
+
+const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
+    const encryptedShare = await api({ url: `pass/v1/share/${shareId}`, method: 'get' });
+    return decryptShareResponse(encryptedShare.Share!);
 };
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>

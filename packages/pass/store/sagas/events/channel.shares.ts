@@ -22,7 +22,7 @@ import {
 import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
-import { loadPendingShareInvites } from '../workers/invite';
+import { loadInvites } from '../workers/invite';
 import { requestItemsForShareId } from '../workers/items';
 import { loadShare, loadShareMembers } from '../workers/shares';
 import { eventChannelFactory } from './channel.factory';
@@ -55,9 +55,7 @@ function* onSharesEvent(
             yield put(shareMembersSync(share.ShareID, (yield loadShareMembers(share.ShareID)) as ShareMember[]));
 
             if (share.Owner) {
-                yield put(
-                    shareInvitesSync(share.ShareID, (yield loadPendingShareInvites(share.ShareID)) as PendingInvite[])
-                );
+                yield put(shareInvitesSync(share.ShareID, (yield loadInvites(share.ShareID)) as PendingInvite[]));
             }
         }
     });
