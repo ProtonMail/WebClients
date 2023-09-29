@@ -13,7 +13,7 @@ import {
     Icon,
 } from '@proton/components';
 import { selectAllTrashedItems, selectAllVaultWithItemsCount, selectShare } from '@proton/pass/store';
-import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
@@ -93,7 +93,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
             quickActions={
                 withActions && (
                     <>
-                        {onEdit && (
+                        {onEdit && share?.shareRoleId !== ShareRole.READ && (
                             <DropdownMenuButton
                                 label={c('Action').t`Edit vault`}
                                 icon="pen"
@@ -106,7 +106,11 @@ export const VaultItem: VFC<VaultItemProps> = ({
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onManage)}
                                 icon="users"
-                                label={c('Action').t`Manage access`}
+                                label={
+                                    share.shareRoleId === ShareRole.ADMIN
+                                        ? c('Action').t`Manage access`
+                                        : c('Action').t`See members`
+                                }
                             />
                         )}
 
@@ -119,7 +123,17 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             />
                         )}
 
-                        {showSharing && share.shared && (
+                        {share?.owner && (
+                            <DropdownMenuButton
+                                disabled={!onDelete}
+                                onClick={handleClickEvent(onDelete)}
+                                label={c('Action').t`Delete vault`}
+                                icon="trash"
+                                danger
+                            />
+                        )}
+
+                        {showSharing && share.shared && !share.owner && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onLeave)}
@@ -128,15 +142,6 @@ export const VaultItem: VFC<VaultItemProps> = ({
                                 danger
                             />
                         )}
-
-                        {/* TODO: dont show this button if not owner */}
-                        <DropdownMenuButton
-                            disabled={!onDelete}
-                            onClick={handleClickEvent(onDelete)}
-                            label={c('Action').t`Delete vault`}
-                            icon="trash"
-                            danger
-                        />
                     </>
                 )
             }
