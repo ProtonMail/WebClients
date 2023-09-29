@@ -48,12 +48,14 @@ const LOCKED_VOLUME_MOCK_1 = {
     lockedVolumeId: 'volumeId1',
     defaultShare: SHARE_MOCK_1,
     devices: [],
+    photos: [],
 };
 
 const LOCKED_VOLUME_MOCK_2 = {
     lockedVolumeId: 'volumeId2',
     defaultShare: SHARE_MOCK_2,
     devices: [],
+    photos: [],
 };
 
 const mockGetLockedShares = jest.fn();
@@ -66,7 +68,7 @@ const sharesStateMock: ReturnType<typeof useSharesState> = {
     getDefaultShareId: jest.fn(),
     setLockedVolumesForRestore: jest.fn(),
     lockedVolumesForRestore: [],
-    getPhotosShare: jest.fn(),
+    getActivePhotosShare: jest.fn(),
 };
 
 const generateAddressKeys = async () => {
@@ -162,7 +164,7 @@ describe('useLockedVolume', () => {
 
         it("should return locked volumes if there's no new prepared shares", async () => {
             mockGetLockedShares.mockImplementation(() => {
-                return [{ defaultShare: { shareId: 'shareId' }, devices: [] }];
+                return [{ defaultShare: { shareId: 'shareId' }, devices: [], photos: [] }];
             });
             mockGetShareWithKey.mockImplementation(() => {
                 return [{ shareId: 'shareId' }];
@@ -188,7 +190,7 @@ describe('useLockedVolume', () => {
 
         it('should return extended volume list with new prepared volumes', async () => {
             mockGetLockedShares.mockImplementation(() => {
-                return [{ defaultShare: { shareId: 'shareId' }, devices: [] }];
+                return [{ defaultShare: { shareId: 'shareId' }, devices: [], photos: [] }];
             });
             mockGetShareWithKey.mockImplementation(() => {
                 return [{ shareId: 'shareId' }];
