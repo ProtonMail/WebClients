@@ -113,6 +113,7 @@ interface API_RESPONSE {
         isApiError?: boolean;
         data: any;
         serverTime: Date;
+        output?: 'raw';
     };
 }
 
