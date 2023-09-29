@@ -35,6 +35,7 @@ import {
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
     vaultSetPrimarySync,
+    vaultTransferOwnershipSuccess,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
@@ -132,6 +133,10 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
         if (shareDeleteSync.match(action)) {
             return objectDelete(state, action.payload.shareId);
+        }
+
+        if (vaultTransferOwnershipSuccess.match(action)) {
+            // TODO update the vault with new owner
         }
 
         if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {

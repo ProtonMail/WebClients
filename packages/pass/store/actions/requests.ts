@@ -4,10 +4,11 @@ export const boot = () => 'boot';
 export const syncing = () => 'syncing';
 export const wakeup = (endpoint: ExtensionEndpoint, tabId: TabId) => `wakeup-${endpoint}-${tabId}`;
 
-export const vaultCreate = (shareId: string) => `vault-create-request-${shareId}`;
-export const vaultEdit = (shareId: string) => `vault-edit-request-${shareId}`;
-export const vaultDelete = (shareId: string) => `vault-delete-request-${shareId}`;
-export const vaultSetPrimary = (shareId: string) => `vault-set-primary-request-${shareId}`;
+export const vaultCreate = (shareId: string) => `vault::create::request::${shareId}`;
+export const vaultEdit = (shareId: string) => `vault::edit::request::${shareId}`;
+export const vaultDelete = (shareId: string) => `vault::delete::request::${shareId}`;
+export const vaultSetPrimary = (shareId: string) => `vault::et::primary::request-${shareId}`;
+export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
 
 export const items = () => 'items';
 export const importItems = () => `import-items`;
@@ -19,6 +20,7 @@ export const settingsEdit = (group: string) => `settings::edit::${group}`;
 export const reportProblem = `report-problem-request`;
 
 export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
+export const shareEditMemberRoleRequest = (userShareId: string) => `share::members::edit-role::${userShareId}`;
 export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`;
 export const shareAccessOptionsRequest = (shareId: string) => `share::access-options::${shareId}`;
 
