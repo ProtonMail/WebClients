@@ -28,7 +28,6 @@ import {
     WELCOME_FLAGS_CACHE_KEY,
     getWelcomeFlagsValue,
     useApi,
-    useAuthentication,
     useCache,
     useConfig,
     useLoadFeature,
@@ -252,10 +251,8 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
 };
 
 const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>(props: Props<T, M, E, EvtM>) => {
-    const config = useConfig();
-    const { UID } = useAuthentication();
     return (
-        <UnleashFlagProvider config={config} UID={UID}>
+        <UnleashFlagProvider>
             <FeaturesProvider>
                 <ExperimentsProvider>
                     <InnerStandardPrivateApp<T, M, E, EvtM> {...props} />

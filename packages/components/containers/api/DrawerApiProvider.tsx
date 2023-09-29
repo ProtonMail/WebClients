@@ -31,7 +31,7 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
             }
 
             if (event.data.type === DRAWER_EVENTS.API_RESPONSE && event.data.payload.id === id) {
-                const { serverTime, data, success, isApiError } = event.data.payload;
+                const { output, serverTime, data, success, isApiError } = event.data.payload;
 
                 window.removeEventListener('message', handler);
                 if (timeout) {
@@ -41,7 +41,11 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
                 updateServerTime(serverTime);
 
                 if (success) {
-                    resolve(data);
+                    if (output === 'raw') {
+                        resolve({ ...data, headers: new Headers(data.headers), json: async () => data.json });
+                    } else {
+                        resolve(data);
+                    }
                 } else {
                     if (isApiError) {
                         reject(deserializeApiErrorData(data));
