@@ -150,9 +150,11 @@ describe('readCSV', () => {
         const parsedCsvContacts = await readCsv(csv);
         const preVcardsContacts = prepare(parsedCsvContacts);
 
-        expect(preVcardsContacts[0][0][0].field).toEqual('fn');
-        expect(preVcardsContacts[0][1][0].field).toEqual('note');
+        expect(preVcardsContacts[0][0][0].field).toEqual('n');
+        expect(preVcardsContacts[0][1][0].field).toEqual('fn');
         expect(preVcardsContacts[0][2][0].field).toEqual('note');
+        expect(preVcardsContacts[0][3][0].field).toEqual('note');
+        expect(preVcardsContacts[0].length).toEqual(4);
     });
 
     it('should map once birthday, anniversary and gender', async () => {
@@ -183,10 +185,11 @@ describe('readCSV', () => {
         const parsedCsvContacts = await readCsv(csv);
         const preVcardsContacts = prepare(parsedCsvContacts);
 
-        expect(preVcardsContacts[0][0][0].field).toEqual('fn');
-        expect(preVcardsContacts[0][1][0].field).toEqual('bday');
-        expect(preVcardsContacts[0][2][0].field).toEqual('anniversary');
-        expect(preVcardsContacts[0][3][0].field).toEqual('gender');
-        expect(preVcardsContacts[0].length).toEqual(4);
+        expect(preVcardsContacts[0][0][0].field).toEqual('n');
+        expect(preVcardsContacts[0][1][0].field).toEqual('fn');
+        expect(preVcardsContacts[0][2][0].field).toEqual('bday');
+        expect(preVcardsContacts[0][3][0].field).toEqual('anniversary');
+        expect(preVcardsContacts[0][4][0].field).toEqual('gender');
+        expect(preVcardsContacts[0].length).toEqual(5);
     });
 });

@@ -1,15 +1,14 @@
-import { ComponentProps } from 'react';
-
-import { c } from 'ttag';
+import { ComponentProps, useEffect, useRef, useState } from 'react';
 
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { DropdownActions, OrderableTableBody, OrderableTableRow, TableRow } from '../../../../components';
-import EmailsTableCell from './EmailsTableCell';
-import NameTableCell from './NameTableCell';
+import { OrderableTableBody } from '../../../../components';
+import MergeTableBodyRow from './MergeTableBodyRow';
 
 interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan'> {
     contacts: ContactFormatted[];
+    vcardContacts?: VCardContact[];
     highlightedID: string;
     isChecked: { [ID: string]: boolean };
     beDeleted: { [ID: string]: boolean };
@@ -28,56 +27,46 @@ const MergeTableBody = ({
     onToggleDelete,
     ...rest
 }: Props) => {
+    const ref = useRef<any>(null);
+    const observerRef = useRef<IntersectionObserver | null>(null);
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    useEffect(() => {
+        observerRef.current = new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting));
+    }, []);
+
+    useEffect(() => {
+        if (!observerRef.current || !ref.current) {
+            return;
+        }
+
+        observerRef.current.observe(ref.current?.node);
+
+        return () => {
+            if (observerRef.current) {
+                observerRef.current.disconnect();
+            }
+        };
+    }, [ref]);
+
     return (
         <OrderableTableBody colSpan={4} {...rest} data-testid="merge-model:merge-table">
-            {contacts.map(({ ID, Name, emails }, j) => {
-                const deleted = beDeleted[ID];
-                const options = [
-                    !deleted && {
-                        text: c('Action').t`View`,
-                        onClick() {
-                            onClickDetails(ID);
-                        },
-                    },
-                    {
-                        text: deleted ? c('Action').t`Unmark for deletion` : c('Action').t`Mark for deletion`,
-                        onClick() {
-                            onToggleDelete(ID);
-                        },
-                    },
-                ].filter(Boolean) as { text: string; onClick: () => void }[];
-                const cells = [
-                    <NameTableCell
-                        key="name"
-                        name={Name}
-                        contactID={ID}
-                        highlightedID={highlightedID}
-                        checked={isChecked[ID]}
-                        deleted={deleted}
-                        greyedOut={deleted}
-                        onToggle={onClickCheckbox}
-                    />,
-                    <EmailsTableCell
-                        key="email"
-                        contactID={ID}
-                        highlightedID={highlightedID}
-                        emails={emails}
-                        greyedOut={deleted}
-                    />,
-                    <DropdownActions
-                        key="options"
-                        size="small"
-                        list={options}
-                        data-testid="merge-model:action-button"
-                    />,
-                ];
-
-                return deleted ? (
-                    <TableRow key={`${ID}`} cells={[null, ...cells]} />
-                ) : (
-                    <OrderableTableRow key={`${ID}`} index={j} cells={cells} />
-                );
-            })}
+            {contacts.map((Contact, i) => (
+                <MergeTableBodyRow
+                    ref={ref}
+                    index={i}
+                    key={Contact.ID}
+                    ID={Contact.ID}
+                    Contact={Contact}
+                    highlightedID={highlightedID}
+                    isChecked={isChecked}
+                    beDeleted={beDeleted}
+                    onClickCheckbox={onClickCheckbox}
+                    onClickDetails={onClickDetails}
+                    onToggleDelete={onToggleDelete}
+                    isIntersecting={isIntersecting}
+                />
+            ))}
         </OrderableTableBody>
     );
 };

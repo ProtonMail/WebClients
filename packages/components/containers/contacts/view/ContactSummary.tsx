@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
@@ -25,9 +25,13 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
     const loadImageDirectRef = useRef<() => void>(null);
 
     const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
-    const name = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
+    const displayName = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
+    const nameProperty = getSortedProperties(vCardContact, 'n')[0] as VCardProperty<VcardNValue>;
+    const givenName = nameProperty?.value?.givenNames.join(' ').trim() || '';
+    const familyName = nameProperty?.value?.familyNames.join(' ').trim() || '';
+    const computedName = `${givenName} ${familyName}`;
 
-    const nameIsEmail = validateEmailAddress(name);
+    const nameIsEmail = validateEmailAddress(displayName);
 
     return (
         <>
@@ -53,22 +57,25 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                 >
                     <ContactImageSummary
                         photo={photo}
-                        name={name}
+                        name={displayName}
                         loadImageDirectRef={loadImageDirectRef}
                         onToggleLoadDirectBanner={setShowLoadImageBanner}
                     />
                 </div>
-                <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-no-min-children flex-item-fluid">
+                <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-column">
                     <h2
                         className={clsx(
-                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines',
+                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w100',
                             // Several email addresses are a single word but too long, for this case, we break at any char
                             nameIsEmail && 'text-break'
                         )}
-                        title={name}
+                        title={displayName}
                     >
-                        {name}
+                        {displayName}
                     </h2>
+                    <h3 className="color-weak text-ellipsis" style={{ whiteSpace: 'break-spaces' }}>
+                        {computedName}
+                    </h3>
                 </div>
             </div>
         </>

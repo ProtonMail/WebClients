@@ -4,8 +4,12 @@ import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { isBase64Image } from '@proton/shared/lib/helpers/validators';
 
 export const getAllFields = () => [
-    // translator: this field is used to specify the full name of the contact (e.g. Jane Appleseed)
-    { text: c('Contact field label').t`Name`, value: 'fn' },
+    // translator: this field is used to specify the display name of the contact (e.g. Jane Appleseed)
+    { text: c('Contact field label').t`Display name`, value: 'fn' },
+    // translator: this field is used to specify the first name of the contact (e.g. Jane)
+    { text: c('Contact field label').t`First name`, value: 'firstName' },
+    // translator: this field is used to specify the last name of the contact (e.g. Appleseed)
+    { text: c('Contact field label').t`Last name`, value: 'lastName' },
     // translator: this field is used to specify the email of the contact (e.g. jane.appleseed@pm.me)
     { text: c('Contact field label').t`Email`, value: 'email' },
     // translator: this field is used to specify the phone number of the contact
@@ -67,14 +71,11 @@ export const getEditableFields = () => [
 export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Photo`, value: 'photo' },
     { text: c('Contact field label').t`Organization`, value: 'org' },
-    // translator: this field is used to specify the birth date of the contact
-    { text: c('Contact field label').t`Birthday`, value: 'bday' },
     // translator: this field is used to specify the anniversary date of the contact (e.g. marriage, or equivalent)
     { text: c('Contact field label').t`Anniversary`, value: 'anniversary' },
     { text: c('Contact field label').t`Title`, value: 'title' },
     { text: c('Contact field label').t`Role`, value: 'role' },
     { text: c('Contact field label').t`Member`, value: 'member' },
-    { text: c('Contact field label').t`Note`, value: 'note' },
     { text: c('Contact field label').t`URL`, value: 'url' },
     { text: c('Contact field label').t`Gender`, value: 'gender' },
     { text: c('Contact field label').t`Language`, value: 'lang' },
@@ -83,8 +84,12 @@ export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Logo`, value: 'logo' },
 ];
 
+// The first and last name fields are here since they are splitted from the N field
 export const getAllFieldLabels = () => ({
-    fn: c('Contact field label').t`Name`,
+    lastName: c('Contact field label').t`Last name`,
+    firstName: c('Contact field label').t`First name`,
+    n: c('Contact field label').t`Name`,
+    fn: c('Contact field label').t`Display name`,
     email: c('Contact field label').t`Email`,
     tel: c('Contact field label').t`Phone`,
     adr: c('Contact field label').t`Address`,
@@ -121,6 +126,7 @@ export const getTypeLabels = () => ({
 
 export const getAllTypes: () => { [key: string]: { text: string; value: string }[] } = () => ({
     fn: [],
+    n: [],
     email: [
         { text: c('Property type').t`Email`, value: '' },
         { text: c('Property type').t`Home`, value: 'home' },

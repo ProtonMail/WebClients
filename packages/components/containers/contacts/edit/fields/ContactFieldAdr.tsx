@@ -44,7 +44,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col gap-3">
                 <Input
                     id={`${uid}-postalCode`}
                     value={address.postalCode || ''}
@@ -52,14 +52,13 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     onChange={handleChange('postalCode')}
                     data-testid="postalCode"
                 />
-            </div>
-            <div className="mb-4">
                 <Input
                     id={`${uid}-locality`}
                     value={address.locality || ''}
                     placeholder={c('Label').t`City`}
                     onChange={handleChange('locality')}
                     data-testid="city"
+                    className="flex-item-grow-2"
                 />
             </div>
             {address.postOfficeBox ? (
@@ -73,8 +72,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb-4">
-                <label className="text-sm color-weak" htmlFor={`${uid}-region`} />
+            <div className="mb-4 flex flex-col gap-3">
                 <Input
                     id={`${uid}-region`}
                     value={address.region || ''}
@@ -82,8 +80,6 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     onChange={handleChange('region')}
                     data-testid="region"
                 />
-            </div>
-            <div>
                 <Input
                     id={`${uid}-country`}
                     value={address.country || ''}

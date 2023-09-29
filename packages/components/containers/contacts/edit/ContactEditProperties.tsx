@@ -14,6 +14,7 @@ import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/conta
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
 import { Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
@@ -28,6 +29,8 @@ const ICONS: { [key: string]: IconName } = {
     email: 'envelope',
     tel: 'phone',
     adr: 'map-pin',
+    bday: 'candles-cake',
+    note: 'note',
     other: 'info-circle',
 };
 
@@ -72,6 +75,8 @@ const ContactEditProperties = (
         email: c('Title').t`Email addresses`,
         tel: c('Title').t`Phone numbers`,
         adr: c('Title').t`Addresses`,
+        bday: c('Title').t`Birthday`,
+        note: c('Title').t`Notes`,
         other: c('Title').t`Other information`,
     };
 
@@ -93,7 +98,9 @@ const ContactEditProperties = (
         });
     const sortable = inputSortable && properties.length > 1;
 
-    const canAdd = !fields.includes('fn');
+    // Only allow adding a property if there are no properties or if the field is not fn or bday
+    const canAdd = properties.length === 0 || !['fn', 'bday'].includes(field || '');
+
     const rows = useMemo(() => {
         const isOtherFields = fields === OTHER_INFORMATION_FIELDS;
         const filteredTypes = isOtherFields
@@ -105,6 +112,7 @@ const ContactEditProperties = (
         return properties.map((property) => (
             <ContactEditProperty
                 key={property.uid}
+                vCardContact={vCardContact}
                 ref={ref}
                 isSubmitted={isSubmitted}
                 onRemove={onRemove}
@@ -142,6 +150,58 @@ const ContactEditProperties = (
         return null;
     }
 
+    const handleAdd = () => {
+        if (!canAdd || !onAdd) {
+            return;
+        }
+
+        // Other fields (at the bottom of the form) don't have fields and can be added at anytime
+        if (!field) {
+            onAdd();
+            return;
+        }
+
+        const vcardPropertyField: any = vCardContact[field as keyof VCardContact];
+        const presentData = vcardPropertyField?.map((item: any) => item.value).filter(isTruthy);
+
+        // We add a field if all the fields are filled, or there is no data yet
+        if (rows?.length === presentData?.length || !presentData) {
+            onAdd();
+            return;
+        }
+
+        // We find the first empty row and focus on it, the row can be an input or a textarea
+        const firstEmptyRow = vcardPropertyField?.findIndex((field: any) => {
+            // Address field are objects and not a string, we need to make sure that all the values are empty
+            if (field.field === 'adr') {
+                return Object.values(field.value).every((value: any) => !value);
+            }
+
+            return !field.value;
+        });
+
+        if (firstEmptyRow === -1) {
+            return;
+        }
+
+        // We didn't use ref here because the ref is not available for the child rows
+        const contactFieldToFocus = document.querySelector(
+            `[data-contact-property-id="${vcardPropertyField[firstEmptyRow]?.uid}"]`
+        );
+
+        const input = contactFieldToFocus?.getElementsByTagName('input')?.[0];
+        if (input) {
+            input.focus();
+            return;
+        }
+
+        const textarea = contactFieldToFocus?.getElementsByTagName('textarea')?.[0];
+        if (textarea) {
+            textarea.focus();
+            return;
+        }
+    };
+
     return (
         <div className="border-bottom mb-4" data-testid={title}>
             <h3 className="mb-4 flex flex-nowrap flex-align-items-center flex-item-noshrink">
@@ -177,10 +237,11 @@ const ContactEditProperties = (
                     </div>
                     <div className="flex flex-nowrap w95">
                         <Button
-                            color="norm"
+                            color="weak"
                             shape="outline"
+                            size="small"
                             className="mb-4"
-                            onClick={onAdd}
+                            onClick={handleAdd}
                             data-testid={field ? `add-${field}` : 'add-other'}
                         >
                             {c('Action').t`Add`}
