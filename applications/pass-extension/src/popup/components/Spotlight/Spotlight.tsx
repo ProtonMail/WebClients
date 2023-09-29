@@ -22,7 +22,7 @@ export const Spotlight: VFC = () => {
     const timer = useRef<NodeJS.Timeout>();
     const [state, setState] = useState<SpotlightState>({ open: false, message: null });
 
-    const { acceptInvite } = useInviteContext();
+    const { respondToInvite } = useInviteContext();
 
     const latestInvite = useSelector(selectMostRecentInvite);
     const onboarding = useOnboardingMessage();
@@ -40,14 +40,11 @@ export const Spotlight: VFC = () => {
                       action: {
                           label: c('Label').t`Respond`,
                           type: 'button',
-                          onClick: () => {
-                              console.log(latestInvite);
-                              acceptInvite(latestInvite);
-                          },
+                          onClick: () => respondToInvite(latestInvite),
                       },
                   }
                 : null,
-        [latestInvite, acceptInvite]
+        [latestInvite, respondToInvite]
     );
 
     useEffect(() => {
