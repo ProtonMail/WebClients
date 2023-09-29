@@ -3,7 +3,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { Info, Prompt } from '@proton/components/components';
 import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '@proton/pass/store';
@@ -13,9 +12,8 @@ import { ShareRole } from '@proton/pass/types';
 import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
+import { ShareMemberAvatar } from './ShareMemberAvatar';
 import { getShareRoleDefinition } from './ShareRoleOptions';
-
-import './ShareMember.scss';
 
 export type ShareMemberProps = {
     email: string;
@@ -50,14 +48,13 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
     });
 
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
+    const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
 
-    const handleEditRole = (shareRoleId: ShareRole) => {
-        editAccess.dispatch({ shareId, userShareId, shareRoleId });
-    };
+    const loading = removeAccess.loading || editAccess.loading;
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
-            <Avatar className="mr-4 rounded-lg pass-member--avatar">{initials}</Avatar>
+            <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex flex-align-items-center gap-1">
