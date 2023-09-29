@@ -221,7 +221,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                                 };
                             }
 
-                            const res = await api({
+                            let res = await api({
                                 ...updatedArgs,
                                 headers: {
                                     ...updatedArgs.headers,
@@ -234,6 +234,15 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                                 removeAbortController(id);
                             }
 
+                            if (updatedArgs.output === 'raw') {
+                                res = {
+                                    ok: res.ok,
+                                    status: res.status,
+                                    json: await res.json(),
+                                    headers: Object.fromEntries(res.headers.entries()),
+                                };
+                            }
+
                             postMessageToIframe(
                                 {
                                     type: DRAWER_EVENTS.API_RESPONSE,
@@ -242,6 +251,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                                         success: true,
                                         data: res,
                                         serverTime: serverTime(),
+                                        output: updatedArgs.output,
                                     },
                                 },
                                 appInView
