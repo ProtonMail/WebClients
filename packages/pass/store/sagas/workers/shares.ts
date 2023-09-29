@@ -61,6 +61,8 @@ export const loadShare = async <T extends ShareType>(shareId: string, targetType
     }
 };
 
+export const deleteShare = async (shareId: string) => api({ url: `pass/v1/share/${shareId}`, method: 'delete' });
+
 export const loadShareMembers = async (shareId: string): Promise<ShareMember[]> => {
     const { Shares: members } = await api({
         url: `pass/v1/share/${shareId}/user`,

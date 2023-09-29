@@ -28,6 +28,7 @@ import sessionLockImmediate from './session-lock-immediate.saga';
 import sessionUnlock from './session-unlock.saga';
 import settings from './settings.saga';
 import shareEditRole from './share-edit-role.saga';
+import shareLeave from './share-leave.saga';
 import shareManagePermission from './share-remove-member.saga';
 import signout from './signout.saga';
 import sync from './sync.saga';
@@ -68,6 +69,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             reportProblem,
             shareManagePermission,
             shareEditRole,
+            shareLeave,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
