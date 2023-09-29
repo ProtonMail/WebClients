@@ -95,10 +95,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     };
 
     const handleLeaveVault = () => {
-        console.log('*** handleLeaveVault with shareId', leaveShareId);
-
         if (leaveShareId !== null) {
-            console.log('*** handleLeaveVault');
             leaveVault.dispatch({ shareId: leaveShareId });
         }
     };
