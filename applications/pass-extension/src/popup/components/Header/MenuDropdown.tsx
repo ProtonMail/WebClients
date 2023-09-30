@@ -25,9 +25,10 @@ import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
-import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { handleVaultDeletionEffects } from '../../context/items/ItemEffects';
+import { useConfirm } from '../../hooks/useConfirm';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
@@ -65,43 +66,24 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const inviteContext = useInviteContext();
     const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShare>>(null);
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
-    const [deleteAllConfirm, setDeleteAllConfirm] = useState(false);
-    const [leaveShareId, setLeaveShareId] = useState<MaybeNull<string>>(null);
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = <P extends any[], R extends any>(cb: (...args: P) => R): ((...args: P) => R) =>
         pipe(cb, tap(close));
 
-    const leaveVault = useActionWithRequest(shareLeaveIntent, {
-        requestId: shareLeaveRequest(leaveShareId ?? ''),
+    const leaveVault = useActionWithRequest({
+        action: shareLeaveIntent,
+        requestId: ({ shareId }) => shareLeaveRequest(shareId),
     });
 
-    const handleVaultDelete = (destinationShareId: MaybeNull<string>) => {
-        if (deleteVault !== null) {
-            handleVaultDeletionEffects(deleteVault.shareId, {
-                shareId,
-                setShareBeingDeleted,
-                setShareId,
-            });
-
-            dispatch(
-                vaultDeleteIntent({
-                    id: deleteVault.shareId,
-                    content: deleteVault.content,
-                    destinationShareId,
-                })
-            );
-        }
+    const handleVaultDelete = (vault: VaultShare, destinationShareId: MaybeNull<string>) => {
+        handleVaultDeletionEffects(vault.shareId, { shareId, setShareBeingDeleted, setShareId });
+        dispatch(vaultDeleteIntent({ id: vault.shareId, content: vault.content, destinationShareId }));
     };
 
-    const handleLeaveVault = () => {
-        if (leaveShareId !== null) {
-            leaveVault.dispatch({ shareId: leaveShareId });
-        }
-    };
-
+    const handleLeaveVault = useConfirm(leaveVault.dispatch);
+    const handleEmptyTrash = useConfirm(() => dispatch(emptyTrashIntent()));
     const handleRestoreTrash = () => dispatch(restoreTrashIntent());
-    const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent());
 
     const feedbackLinks: SubmenuLinkItem[] = [
         {
@@ -210,27 +192,26 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         <VaultSubmenu
-                            selectedShareId={shareId}
                             inTrash={inTrash}
-                            handleRestoreTrash={handleRestoreTrash}
-                            handleEmptyTrash={() => setDeleteAllConfirm(true)}
-                            handleVaultDeleteClick={setDeleteVault}
+                            selectedShareId={shareId}
                             handleVaultSelectClick={withClose((vaultShareId) => {
                                 unselectItem();
                                 setShareId(vaultShareId);
                                 setSearch('');
                             })}
-                            handleVaultEditClick={withClose((vault: VaultShare) =>
-                                setVaultModalProps({ open: true, payload: { type: 'edit', vault } })
-                            )}
-                            handleVaultCreateClick={withClose(() =>
-                                setVaultModalProps({ open: true, payload: { type: 'new' } })
-                            )}
-                            handleVaultInviteClick={withClose(({ shareId }) => inviteContext.createInvite(shareId))}
-                            handleVaultManageClick={withClose(({ shareId }) => inviteContext.manageAccess(shareId))}
-                            handleVaultLeaveClick={({ shareId }) => {
-                                setLeaveShareId(shareId);
-                            }}
+                            handleVaultEditClick={(vault) =>
+                                setVaultModalProps({
+                                    open: true,
+                                    payload: { type: 'edit', vault },
+                                })
+                            }
+                            handleVaultDeleteClick={setDeleteVault}
+                            handleVaultCreateClick={() => setVaultModalProps({ open: true, payload: { type: 'new' } })}
+                            handleVaultInviteClick={({ shareId }) => inviteContext.createInvite(shareId)}
+                            handleVaultManageClick={({ shareId }) => inviteContext.manageAccess(shareId)}
+                            handleVaultLeaveClick={handleLeaveVault.prompt}
+                            handleEmptyTrash={handleEmptyTrash.prompt}
+                            handleRestoreTrash={handleRestoreTrash}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
@@ -278,18 +259,13 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
             {vaultModalProps !== null && <VaultModal {...vaultModalProps} onClose={() => setVaultModalProps(null)} />}
 
-            <VaultDeleteModal
-                vault={deleteVault}
-                open={deleteVault !== null}
-                onClose={() => setDeleteVault(null)}
-                onSubmit={handleVaultDelete}
-            />
+            <VaultDeleteModal vault={deleteVault} onClose={() => setDeleteVault(null)} onSubmit={handleVaultDelete} />
 
             <ConfirmationModal
                 title={c('Title').t`Permanently remove all items ?`}
-                open={deleteAllConfirm}
-                onClose={() => setDeleteAllConfirm(false)}
-                onSubmit={handleDeleteAllItemsInTrash}
+                open={handleEmptyTrash.pending}
+                onClose={handleEmptyTrash.cancel}
+                onSubmit={handleEmptyTrash.confirm}
                 alertText={c('Warning')
                     .t`All your trashed items will be permanently deleted. You can not undo this action.`}
                 submitText={c('Action').t`Delete all`}
@@ -297,9 +273,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
             <ConfirmationModal
                 title={c('Title').t`Leave vault ?`}
-                open={leaveShareId !== null}
-                onClose={() => setLeaveShareId(null)}
-                onSubmit={handleLeaveVault}
+                open={handleLeaveVault.pending}
+                onClose={handleLeaveVault.cancel}
+                onSubmit={handleLeaveVault.confirm}
                 alertText={c('Warning')
                     .t`You will no longer have access to this vault. To join it again, you will need a new invitation.`}
                 submitText={c('Action').t`Leave`}
