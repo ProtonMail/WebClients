@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { Info } from '@proton/components/components';
 import { inviteResendIntent } from '@proton/pass/store';
+import { inviteResendRequest } from '@proton/pass/store/actions/requests';
 import noop from '@proton/utils/noop';
 
-import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
@@ -20,8 +21,9 @@ export type SharePendingMemberProps = {
 export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, inviteId, shareId }) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
 
-    const resendInvite = useActionWithRequest(inviteResendIntent, { requestId: `invite::resend::${inviteId}` });
+    const resendInvite = useActionWithRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
+
     const loading = resendInvite.loading;
 
     return (
