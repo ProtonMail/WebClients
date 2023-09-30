@@ -9,7 +9,7 @@ import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '@pro
 import { shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
-import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
@@ -40,10 +40,13 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
         return getShareRoleDefinition()[role];
     }, [role, owner]);
 
-    const removeAccess = useActionWithRequest(shareRemoveMemberAccessIntent, {
+    const removeAccess = useActionWithRequest({
+        action: shareRemoveMemberAccessIntent,
         requestId: shareRemoveMemberRequest(userShareId),
     });
-    const editAccess = useActionWithRequest(shareEditMemberAccessIntent, {
+
+    const editAccess = useActionWithRequest({
+        action: shareEditMemberAccessIntent,
         requestId: shareRemoveMemberRequest(userShareId),
     });
 

@@ -12,7 +12,7 @@ import { ShareRole } from '@proton/pass/types';
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import type { InviteFormValues } from '../../../shared/form/types';
 import { validateShareInviteValues } from '../../../shared/form/validator/validate-vaultInvite';
-import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
@@ -25,7 +25,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
     const { close, manageAccess } = useInviteContext();
 
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const createInvite = useActionWithRequest(inviteCreationIntent, { onSuccess: () => manageAccess(shareId) });
+    const createInvite = useActionWithRequest({ action: inviteCreationIntent, onSuccess: () => manageAccess(shareId) });
 
     const form = useFormik<InviteFormValues>({
         initialValues: { step: 'email', email: '', role: ShareRole.READ },
