@@ -8,7 +8,7 @@ import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store';
 import { inviteRespondRequest } from '@proton/pass/store/actions/requests';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { useActionWithRequest } from '../../../shared/hooks/useRequestStatusEffect';
+import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { VaultIcon } from '../Vault/VaultIcon';
 
@@ -17,12 +17,14 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
     const { itemCount, memberCount } = vault;
     const { onInviteResponse } = useInviteContext();
 
-    const acceptInvite = useActionWithRequest(inviteAcceptIntent, {
+    const acceptInvite = useActionWithRequest({
+        action: inviteAcceptIntent,
         requestId: inviteRespondRequest(invite.token),
         onSuccess: onInviteResponse,
     });
 
-    const rejectInvite = useActionWithRequest(inviteRejectIntent, {
+    const rejectInvite = useActionWithRequest({
+        action: inviteRejectIntent,
         requestId: inviteRespondRequest(invite.token),
         onSuccess: onInviteResponse,
     });
