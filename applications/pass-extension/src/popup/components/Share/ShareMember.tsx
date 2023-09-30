@@ -1,19 +1,23 @@
 import type { VFC } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Info, Prompt } from '@proton/components/components';
+import { Info } from '@proton/components/components';
 import {
+    selectShareOrThrow,
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
 } from '@proton/pass/store';
 import { shareRemoveMemberRequest, vaultTransferOwnerRequest } from '@proton/pass/store/actions/requests';
+import type { ShareType } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 
+import { ConfirmationModal } from '../../../shared/components/confirmation/ConfirmationModal';
 import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
+import { useConfirm } from '../../hooks/useConfirm';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
@@ -29,11 +33,9 @@ export type ShareMemberProps = {
 
 export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId, userShareId }: ShareMemberProps) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
+    const share = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
 
-    const [confirmTransfer, setConfirmTransfer] = useState(false);
-
-    // TODO find if current user is owner
-    const canTransferOwnership = true;
+    const canTransferOwnership = share.owner;
 
     const { title, description } = useMemo(() => {
         if (owner) {
@@ -63,10 +65,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
 
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
     const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
-    const handleTransferOwnership = () => {
-        transferOwnership.dispatch({ shareId, userShareId });
-        setConfirmTransfer(false);
-    };
+    const handleTransferOwnership = useConfirm(transferOwnership.dispatch);
 
     const loading = removeAccess.loading || editAccess.loading;
 
@@ -107,7 +106,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
                     <DropdownMenuButton
                         label={c('Action').t`Transfer ownership`}
                         icon="shield-half-filled"
-                        onClick={() => setConfirmTransfer(true)}
+                        onClick={() => handleTransferOwnership.prompt({ shareId, userShareId })}
                     />
                 )}
                 <DropdownMenuButton
@@ -118,20 +117,13 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
                 />
             </QuickActionsDropdown>
 
-            <Prompt
-                title="Transfer ownership"
-                open={confirmTransfer}
-                onClose={() => setConfirmTransfer(false)}
-                buttons={[
-                    <Button size="large" shape="solid" color="norm" onClick={handleTransferOwnership}>{c('Action')
-                        .t`Confirm`}</Button>,
-                    <Button size="large" shape="solid" color="weak" onClick={() => setConfirmTransfer(false)}>{c(
-                        'Action'
-                    ).t`Cancel`}</Button>,
-                ]}
-            >
-                <p>{c('Info').t`Are you sure you want to transfer vault ownership to ${email}?`}</p>
-            </Prompt>
+            <ConfirmationModal
+                title={c('Title').t`Transfer ownership`}
+                open={handleTransferOwnership.pending}
+                onClose={handleTransferOwnership.cancel}
+                onSubmit={handleTransferOwnership.confirm}
+                alertText={c('Warning').t`Are you sure you want to transfer vault ownership to ${email}?`}
+            />
         </div>
     );
 };
