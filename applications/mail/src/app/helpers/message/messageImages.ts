@@ -1,4 +1,5 @@
 import { PrivateAuthenticationStore } from '@proton/components/containers';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
 
@@ -136,8 +137,7 @@ export const restoreAllPrefixedAttributes = (content: string) => {
 export const removeProxyURLAttributes = (content: string) => {
     // Using create element will create a DOM element that will not be added to the window's document, but images will be loaded
     // Use a DOMParser instead so that images are not loaded.
-    const parser = new DOMParser();
-    const document = parser.parseFromString(content, 'text/html');
+    const document = parseStringToDOM(content);
 
     const foundElements = document.querySelectorAll(getRemoteSelector());
 
