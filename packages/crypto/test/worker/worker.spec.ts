@@ -1176,6 +1176,27 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
     });
 
     it('isE2EEForwardingKey', async () => {
+        const charlieKeyEncrypted = await CryptoWorker.importPublicKey({
+            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xYYEZAdtGBYJKwYBBAHaRw8BAQdAcNgHyRGEaqGmzEqEwCobfUkyrJnY8faB
+vsf9R2c5Zzb+CQMI0YEeYODMnX7/8Bm7rq3beejbyFxINLDKMehud14ePBBw
+0t2bzVTtdpNDh1ck070XBO5oRF8zRzFw2ziyShz5KyA0MwQxu+B0q9rbJ2pl
+C80bY2hhcmxlcyA8Y2hhcmxlc0Bwcm90b24ubWU+wooEExYIADwFAmQHbRgJ
+kBVybZgcw4XXFiEEZdoDX5cqZdV40VFfFXJtmBzDhdcCGwMCHgECGQECCwcC
+FQgCFgACIgEAACSmAP9qmNejs8qOXqzc+dVKylYhKFmxKcGN12hVTc68Pm+e
+GAEAu815H/7eYnspb45gPyyc9/6oB+RsWUWAB/TU6VsltQLHnwRkB20YEgor
+BgEEAZdVAQUBAQdAsZsaCbB01k4hE1oeO6LfpMDQNYQpNSGAfVsCsZF2MiAX
+/woJil81dTgz/5kZrYgWFVflUJOTBRD+CQMIjcTRUSYiwLP/ectAkFq9iyz9
+qXjJe4T8RAwMG7UDIhE89gwTwfbSBOxKWpg5v3H/Yk4Fi7LKrg5K3pdVxvrL
+sAAEJmKlJMGXnZ4HOB75NsJ4BBgWCAAqBQJkB20YCZAVcm2YHMOF1xYhBGXa
+A1+XKmXVeNFRXxVybZgcw4XXAhtQAACX/wD+IhLNYGwFHxWeg5V8QT5VCTpg
+CLtxNKNwyN+wh7P0Vi0BAMqj1oIyFSiFjKq+FmOfxpLe32Yhk9z7NEm0IfNB
+iaEO
+=Szic
+-----END PGP PRIVATE KEY BLOCK-----`,
+        });
+
         const charlieKey = await CryptoWorker.importPrivateKey({
             armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
@@ -1213,6 +1234,7 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
             passphrase: null,
         });
 
+        await expect(CryptoWorker.isE2EEForwardingKey({ key: charlieKeyEncrypted })).to.eventually.be.true;
         await expect(CryptoWorker.isE2EEForwardingKey({ key: charlieKey })).to.eventually.be.true;
         await expect(CryptoWorker.isE2EEForwardingKey({ key: bobKey })).to.eventually.be.false;
     });
