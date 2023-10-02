@@ -1,3 +1,5 @@
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
     // Gmail creates both div.gmail_quote and blockquote.gmail_quote. The div
@@ -83,14 +85,13 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
         const blockquoteHTML = blockquote.outerHTML || '';
         const [beforeHTML = '', afterHTML = ''] = split(parentHTML, blockquoteHTML);
 
-        const after = document.createElement('div');
-        after.innerHTML = afterHTML;
+        const after = parseStringToDOM(afterHTML);
 
         // The "real" blockquote will be determined based on the fact:
         // - That there is no text after the current blockquote element
         // - That there is no "important" element after the current blockquote element
-        const hasImageAfter = after.querySelector(ELEMENTS_AFTER_BLOCKQUOTES.join(','));
-        const hasTextAfter = after?.textContent?.trim().length;
+        const hasImageAfter = after.body.querySelector(ELEMENTS_AFTER_BLOCKQUOTES.join(','));
+        const hasTextAfter = after.body?.textContent?.trim().length;
 
         if (!hasImageAfter && !hasTextAfter) {
             return [beforeHTML, blockquoteHTML] as [string, string];
