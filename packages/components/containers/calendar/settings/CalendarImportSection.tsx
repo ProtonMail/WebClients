@@ -12,7 +12,7 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { FeatureFlag, useFlag } from '../../unleash';
+import { useFlag } from '../../unleash';
 import { ImportModal } from '../importModal';
 
 interface Props {
@@ -23,7 +23,7 @@ interface Props {
 
 const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const isImporterInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
+    const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
     const hasActiveCalendars = !!activeWritableCalendars.length;

@@ -13,7 +13,6 @@ import {
 } from '@proton/testing/index';
 
 import { FeatureCode } from '../features';
-import { FeatureFlag } from '../unleash';
 import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {
@@ -31,7 +30,7 @@ describe('MessagesSection', () => {
         mockUseNotifications();
 
         mockUseFlag().mockImplementation((code) => {
-            return code === FeatureFlag.WebMailPageSizeSetting;
+            return code === 'WebMailPageSizeSetting';
         });
 
         mockUseUser();
@@ -103,7 +102,7 @@ describe('MessagesSection', () => {
         describe('when PageSize selection is disabled', () => {
             beforeEach(() => {
                 mockUseFlag().mockImplementation((code) => {
-                    return code !== FeatureFlag.WebMailPageSizeSetting;
+                    return code !== 'WebMailPageSizeSetting';
                 });
             });
 
