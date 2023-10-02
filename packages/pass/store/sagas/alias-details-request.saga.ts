@@ -3,9 +3,9 @@ import { put, takeLeading } from 'redux-saga/effects';
 import { api } from '@proton/pass/api';
 import type { AliasDetailsResponse } from '@proton/pass/types';
 
-import { aliasDetailsRequestFailure, aliasDetailsRequestSuccess, aliasDetailsRequested } from '../actions';
+import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '../actions';
 
-function* requestAliasDetails(action: ReturnType<typeof aliasDetailsRequested>) {
+function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) {
     const {
         payload: { shareId, itemId, aliasEmail },
     } = action;
@@ -18,16 +18,16 @@ function* requestAliasDetails(action: ReturnType<typeof aliasDetailsRequested>) 
         });
 
         yield put(
-            aliasDetailsRequestSuccess({
+            getAliasDetailsSuccess({
                 aliasEmail,
                 mailboxes: Mailboxes.map(({ Email, ID }) => ({ id: ID, email: Email })),
             })
         );
     } catch (e) {
-        yield put(aliasDetailsRequestFailure({ aliasEmail }, e));
+        yield put(getAliasDetailsFailure({ aliasEmail }, e));
     }
 }
 
 export default function* watcher() {
-    yield takeLeading(aliasDetailsRequested.match, requestAliasDetails);
+    yield takeLeading(getAliasDetailsIntent.match, requestAliasDetails);
 }
