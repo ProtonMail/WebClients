@@ -9,6 +9,7 @@ import { selectVaultWithItemsCount } from '@proton/pass/store';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
+import { useShareAccessOptionsPolling } from '../../hooks/useShareAccessOptionsPolling';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
 import { ShareMember } from '../Share/ShareMember';
@@ -20,6 +21,7 @@ type Props = { shareId: string };
 export const VaultInviteManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
+    const busy = useShareAccessOptionsPolling(shareId) && vault.members === undefined;
 
     return (
         <SidebarModal onClose={close} open>
@@ -44,6 +46,7 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                         ]}
                     />
                 }
+                loading={busy}
             >
                 <SharedVaultItem vault={vault} className="mt-3 mb-6" />
 
