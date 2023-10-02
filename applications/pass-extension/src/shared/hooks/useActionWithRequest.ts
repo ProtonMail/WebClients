@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import type { AnyAction } from 'redux';
+
 import { selectRequestStatus } from '@proton/pass/store';
 import type { WithRequest } from '@proton/pass/store/actions/with-request';
 import { uniqueId } from '@proton/pass/utils/string';
 
-type UseActionWithRequestOptions<P extends any[], R extends WithRequest> = {
+type UseActionWithRequestOptions<P extends any[], R extends WithRequest<AnyAction, 'start'>> = {
     action: (requestId: string, ...args: P) => R;
     onStart?: () => void;
     onSuccess?: () => void;
@@ -32,7 +34,7 @@ type UseActionWithRequestOptions<P extends any[], R extends WithRequest> = {
  * utilize the `withRequestStart|Failure|Success` action preparators when building the
  * action creators.
  */
-export const useActionWithRequest = <P extends any[], R extends WithRequest>(
+export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyAction, 'start'>>(
     options: UseActionWithRequestOptions<P, R>
 ) => {
     const optionsRef = useRef<UseActionWithRequestOptions<P, R>>(options);
@@ -67,20 +69,26 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest>(
         }
     }, [status]);
 
-    return useMemo(
-        () => ({
-            dispatch: (...args: P) => {
-                const nextRequestId = (() => {
-                    if (typeof options.requestId === 'function') return options.requestId(...args);
-                    return requestId;
-                })();
+    return useMemo(() => {
+        const actionCreator = (...args: P) => {
+            const nextRequestId = (() => {
+                if (typeof options.requestId === 'function') return options.requestId(...args);
+                return requestId;
+            })();
 
-                setRequestId(nextRequestId);
-                dispatch(options.action(nextRequestId, ...args));
+            setRequestId(nextRequestId);
+            return options.action(nextRequestId, ...args);
+        };
+
+        return {
+            dispatch: (...args: P) => dispatch(actionCreator(...args)),
+            revalidate: (...args: P) => {
+                const action = actionCreator(...args);
+                action.meta.request.revalidate = true;
+                return dispatch(action);
             },
             status,
             loading,
-        }),
-        [requestId, status, loading]
-    );
+        };
+    }, [requestId, status, loading]);
 };
