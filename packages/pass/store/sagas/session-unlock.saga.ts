@@ -1,15 +1,14 @@
-import { fork, put, takeLeading } from 'redux-saga/effects';
+import { put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { unlockSession } from '@proton/pass/auth/session.lock';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { acknowledgeRequest, sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '../actions';
+import { sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '../actions';
 import type { WorkerRootSagaOptions } from '../types';
 
 function* unlockSessionWorker(
     { onSessionUnlocked, onSignout }: WorkerRootSagaOptions,
-    { payload, meta: { request, callback: onUnlockResult } }: ReturnType<typeof sessionUnlockIntent>
+    { payload, meta: { callback: onUnlockResult } }: ReturnType<typeof sessionUnlockIntent>
 ) {
     try {
         const sessionLockToken: string = yield unlockSession(payload.pin);
@@ -32,11 +31,6 @@ function* unlockSessionWorker(
 
         yield put(failureMessage);
         onUnlockResult?.(failureMessage);
-    } finally {
-        yield fork(function* () {
-            yield wait(500);
-            yield put(acknowledgeRequest(request.id));
-        });
     }
 }
 

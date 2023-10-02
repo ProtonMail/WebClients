@@ -12,49 +12,35 @@ import withCallback from '../with-callback';
 import withNotification from '../with-notification';
 import withRequest from '../with-request';
 
-export const aliasOptionsRequested = createAction(
-    'alias options requested',
+export const getAliasOptionsIntent = createAction(
+    'alias::options::get::intent',
+
     (
         payload: { shareId: string },
-        callback?: ActionCallback<
-            ReturnType<typeof aliasOptionsRequestSuccess> | ReturnType<typeof aliasOptionsRequestFailure>
-        >
+        callback?: ActionCallback<ReturnType<typeof getAliasOptionsSuccess> | ReturnType<typeof getAliasOptionsFailure>>
     ) =>
         pipe(
+            withRequest({ id: requests.aliasOptions(), type: 'start' }),
             withCacheBlock,
-            withCallback(callback),
-            withRequest({
-                id: requests.aliasOptions(),
-                type: 'start',
-            })
+            withCallback(callback)
         )({ payload })
 );
 
-export const aliasOptionsRequestSuccess = createAction(
-    'alias options request success',
+export const getAliasOptionsSuccess = createAction(
+    'alias::options::get::success',
     (payload: { options: AliasOptions }) =>
-        withRequest({
-            id: requests.aliasOptions(),
-            type: 'success',
-        })({ payload })
+        withRequest({ id: requests.aliasOptions(), type: 'success', persistent: true })({ payload })
 );
 
-export const aliasOptionsRequestFailure = createAction('alias options request failure', (error: unknown) =>
+export const getAliasOptionsFailure = createAction('alias::options::get::failure', (error: unknown) =>
     pipe(
-        withRequest({
-            id: requests.aliasOptions(),
-            type: 'failure',
-        }),
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Requesting alias options failed`,
-            error,
-        })
+        withRequest({ id: requests.aliasOptions(), type: 'failure' }),
+        withNotification({ type: 'error', text: c('Error').t`Requesting alias options failed`, error })
     )({ payload: {}, error })
 );
 
-export const aliasDetailsRequested = createAction(
-    'alias details requested',
+export const getAliasDetailsIntent = createAction(
+    'alias::details::get::intent',
     (payload: { shareId: string; itemId: string; aliasEmail: string }) =>
         pipe(
             withCacheBlock,
@@ -65,23 +51,17 @@ export const aliasDetailsRequested = createAction(
         )({ payload })
 );
 
-export const aliasDetailsRequestSuccess = createAction(
-    'alias details request success',
+export const getAliasDetailsSuccess = createAction(
+    'alias::details::get::success',
     (payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) =>
-        withRequest({
-            id: requests.aliasDetails(payload.aliasEmail),
-            type: 'success',
-        })({ payload })
+        withRequest({ id: requests.aliasDetails(payload.aliasEmail), type: 'success' })({ payload })
 );
 
-export const aliasDetailsRequestFailure = createAction(
-    'alias details request success',
+export const getAliasDetailsFailure = createAction(
+    'alias::details::get::failure',
     (payload: { aliasEmail: string }, error: unknown) =>
         pipe(
-            withRequest({
-                id: requests.aliasDetails(payload.aliasEmail),
-                type: 'failure',
-            }),
+            withRequest({ id: requests.aliasDetails(payload.aliasEmail), type: 'failure' }),
             withNotification({
                 type: 'error',
                 text: c('Error').t`Requesting alias details failed`,
@@ -90,7 +70,7 @@ export const aliasDetailsRequestFailure = createAction(
         )({ payload })
 );
 
-export const aliasDetailsEditSuccess = createAction(
-    'alias details edit success',
+export const aliasDetailsSync = createAction(
+    'alias::details::sync',
     (payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => ({ payload })
 );

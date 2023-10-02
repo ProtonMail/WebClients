@@ -4,14 +4,14 @@ import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
 import type { ItemRevision } from '@proton/pass/types';
 
-import { acknowledgeRequest, vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '../actions';
+import { vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '../actions';
 import { selectItemsByShareId } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
 import { takeEveryBefore } from './utils/take.before';
 import { moveItems } from './workers/items';
 
 function* deleteVault(
-    { payload: { id, content, destinationShareId }, meta }: ReturnType<typeof vaultDeleteIntent>,
+    { payload: { id, content, destinationShareId } }: ReturnType<typeof vaultDeleteIntent>,
     stateBeforeAction: State,
     { onItemsChange }: WorkerRootSagaOptions
 ): Generator {
@@ -30,8 +30,6 @@ function* deleteVault(
         onItemsChange?.();
     } catch (e) {
         yield put(vaultDeleteFailure({ id, content }, e));
-    } finally {
-        yield put(acknowledgeRequest(meta.request.id));
     }
 }
 
