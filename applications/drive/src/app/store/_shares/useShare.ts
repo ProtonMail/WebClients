@@ -63,13 +63,33 @@ export default function useShare() {
         }
 
         const share = await getShareWithKey(abortSignal, shareId);
-        const { decryptedPassphrase, sessionKey } = await driveCrypto.decryptSharePassphrase(share);
+
+        const { decryptedPassphrase, sessionKey } = await driveCrypto.decryptSharePassphrase(share).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt share passphrase', {
+                    cause: {
+                        e,
+                        shareId,
+                    },
+                })
+            )
+        );
         const privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: share.key,
             passphrase: decryptedPassphrase,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to import share private key', {
+                    cause: {
+                        e,
+                        shareId,
+                    },
+                })
+            )
+        );
 
         sharesKeys.set(shareId, privateKey, sessionKey);
+
         return {
             privateKey,
             sessionKey,
