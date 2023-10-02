@@ -13,6 +13,7 @@ import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { QuickActionsDropdown } from '../../components/Dropdown/QuickActionsDropdown';
 import { VAULT_ICON_MAP } from '../../components/Vault/constants';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
+import { VaultTag } from '../Vault/VaultTag';
 import { PanelHeader } from './Header';
 import { Panel } from './Panel';
 
@@ -46,6 +47,7 @@ export const ItemViewPanel: FC<Props> = ({
 }) => {
     const vaults = useSelector(selectAllVaults);
     const hasMultipleVaults = vaults.length > 1;
+    const showVaultTag = hasMultipleVaults || vault.shared;
 
     return (
         <Panel
@@ -134,14 +136,21 @@ export const ItemViewPanel: FC<Props> = ({
                             </QuickActionsDropdown>,
                         ];
                     })()}
-                    {...(hasMultipleVaults
-                        ? {
-                              subtitle: vault.content.name,
-                              subtitleIcon: vault.content.display.icon
-                                  ? VAULT_ICON_MAP[vault.content.display.icon]
-                                  : 'pass-all-vaults',
-                          }
-                        : {})}
+                    subtitle={
+                        showVaultTag ? (
+                            <VaultTag
+                                title={vault.content.name}
+                                color={vault.content.display.color}
+                                count={vault.targetMembers}
+                                shared={vault.shared}
+                                icon={
+                                    vault.content.display.icon
+                                        ? VAULT_ICON_MAP[vault.content.display.icon]
+                                        : 'pass-all-vaults'
+                                }
+                            />
+                        ) : undefined
+                    }
                 />
             }
         >

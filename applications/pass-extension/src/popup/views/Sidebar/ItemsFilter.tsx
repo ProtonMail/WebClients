@@ -7,6 +7,7 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import type { ItemTypeFilter } from '@proton/pass/types';
 
 import { itemTypeToIconName } from '../../../shared/items';
+import { CountLabel } from '../../components/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../components/Dropdown/DropdownMenuButton';
 import { useItems } from '../../hooks/useItems';
 
@@ -86,8 +87,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
                             onClick={() => onChange(type)}
                             isSelected={type === value}
                             size="small"
-                            label={label}
-                            extra={<span className="color-weak">({count})</span>}
+                            label={<CountLabel label={label} count={count} />}
                             icon={icon}
                         />
                     ))}
