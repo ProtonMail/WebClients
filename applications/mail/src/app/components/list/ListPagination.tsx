@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components/components';
-import { FeatureFlag, useFlag } from '@proton/components/containers';
+import { useFlag } from '@proton/components/containers';
 import { PageSizeSelector } from '@proton/components/containers/messages/PageSizeSelector';
 import { useMailSettings } from '@proton/components/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const ListPagination = ({ onPrevious, onNext, onPage, page, disabled, total }: Props) => {
-    const isPageSizeSettingEnabled = useFlag(FeatureFlag.WebMailPageSizeSetting);
+    const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
 
     const [{ ViewMode = VIEW_MODE.GROUP } = {}] = useMailSettings();
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
