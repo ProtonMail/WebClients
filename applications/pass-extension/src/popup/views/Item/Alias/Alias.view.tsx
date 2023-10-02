@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { InlineLinkButton, useNotifications } from '@proton/components';
 import {
-    aliasDetailsRequested,
+    getAliasDetailsIntent,
     selectLoginItemByUsername,
     selectMailboxesForAlias,
     selectRequestInFlight,
@@ -54,7 +54,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
 
     useEffect(() => {
         if (!optimistic && mailboxesForAlias === undefined) {
-            dispatch(aliasDetailsRequested({ shareId: vault.shareId, itemId, aliasEmail: aliasEmail! }));
+            dispatch(getAliasDetailsIntent({ shareId: vault.shareId, itemId, aliasEmail: aliasEmail! }));
         }
     }, [optimistic, vault, itemId, mailboxesForAlias]);
 
