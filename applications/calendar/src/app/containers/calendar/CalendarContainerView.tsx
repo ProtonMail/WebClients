@@ -3,7 +3,7 @@ import { ReactNode, Ref, useCallback, useEffect, useMemo, useRef, useState } fro
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button, CircleLoader, Href } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -447,12 +447,7 @@ const CalendarContainerView = ({
 
                 return (
                     <Tooltip key="createEvent" title={createEventText}>
-                        <Button
-                            icon
-                            className="inline-flex"
-                            onClick={onClick}
-                            disabled={noSelection || !onCreateEvent}
-                        >
+                        <Button icon className="inline-flex" onClick={onClick} disabled={noSelection || !onCreateEvent}>
                             <Icon name="calendar-grid" alt={createEventText} />
                         </Button>
                     </Tooltip>
@@ -616,15 +611,15 @@ const CalendarContainerView = ({
         >
             {createEventText}
         </PrimaryButton>,
-        <AppLink
+        <ButtonLike
+            as={AppLink}
             key="footer-button-2"
             to={toLink}
             selfOpening
-            className="button button-outline-weak"
             data-testid="calendar-drawer:open-in-app-button"
         >
             {c('Link to calendar app').t`Open in ${CALENDAR_APP_NAME}`}
-        </AppLink>,
+        </ButtonLike>,
     ];
 
     const bottom = isDrawerApp ? <DrawerAppFooter offsetNotifications buttons={footerButtons} /> : undefined;
