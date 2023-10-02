@@ -221,7 +221,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             label={c('Label').t`Settings`}
                             labelClassname="flex-item-fluid"
                             icon={'cog-wheel'}
-                            extra={<Icon name="arrow-out-square" className="ml-3 color-weak" />}
+                            extra={<Icon name="arrow-out-square" className="ml-auto color-weak" />}
                         />
 
                         {canLock && (
