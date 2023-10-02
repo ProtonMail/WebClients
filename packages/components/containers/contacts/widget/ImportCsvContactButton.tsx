@@ -6,7 +6,7 @@ import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/a
 import { Loader, PrimaryButton } from '../../../components';
 import { useFeature, useUser } from '../../../hooks';
 import { FeatureCode } from '../../features';
-import { FeatureFlag, useFlag } from '../../unleash';
+import { useFlag } from '../../unleash';
 
 interface Props {
     onImport: () => void;
@@ -21,7 +21,7 @@ const ImportCsvContactButton = ({
 }: Props) => {
     const [user, loadingUser] = useUser();
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const isImporterInMaintenance = useFlag(FeatureFlag.MaintenanceImporter);
+    const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
     if (loadingUser || easySwitchFeature.loading) {
         return <Loader />;
