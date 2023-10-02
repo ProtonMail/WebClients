@@ -26,7 +26,7 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, invite
     const removeInvite = useActionWithRequest({ action: inviteRemoveIntent, requestId: inviteRemoveRequest(inviteId) });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
 
-    const loading = resendInvite.loading;
+    const loading = resendInvite.loading || removeInvite.loading;
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
