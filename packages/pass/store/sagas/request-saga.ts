@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { acknowledgeRequest } from '../actions';
+import { invalidateRequest } from '../actions';
 import { isActionWithRequest } from '../actions/with-request';
 
 /**
@@ -12,10 +12,9 @@ import { isActionWithRequest } from '../actions/with-request';
  */
 export default function* watcher() {
     yield takeEvery(isActionWithRequest, function* ({ meta: { request } }) {
-        const { type, persistent, id } = request;
-        if ((type === 'success' || type === 'failure') && !persistent) {
+        if (request.type !== 'start' && !request.maxAge) {
             yield wait(500);
-            yield put(acknowledgeRequest(id));
+            yield put(invalidateRequest(request.id));
         }
     });
 }
