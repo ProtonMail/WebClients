@@ -18,6 +18,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
+import { CountLabel } from '../Dropdown/CountLabel';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { VaultIcon, type VaultIconName } from '../Vault/VaultIcon';
 
@@ -53,6 +54,7 @@ type VaultItemProps = {
     onInvite?: () => void;
     onManage?: () => void;
     onLeave?: () => void;
+    shared?: boolean;
 };
 
 const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
@@ -72,6 +74,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
     onInvite,
     onManage,
     onLeave,
+    shared = false,
 }) => {
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
     const showSharing = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
@@ -80,11 +83,11 @@ export const VaultItem: VFC<VaultItemProps> = ({
         <DropdownMenuButton
             onClick={() => onSelect()}
             isSelected={selected}
-            label={label}
-            extra={`(${count})`}
+            label={<CountLabel label={label} count={count} />}
+            extra={shared && <Icon name="users" color="var(--text-weak)" />}
             icon={
                 <VaultIcon
-                    className="flex-item-noshrink mr-2"
+                    className="flex-item-noshrink"
                     size={16}
                     color={share?.content.display.color}
                     icon={share?.content.display.icon}
@@ -160,9 +163,8 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
 
     return (
         <DropdownMenuButton
-            label={getVaultOptionInfo('trash').label}
+            label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
             icon="trash"
-            extra={<span className="color-weak">({count})</span>}
             isSelected={selected}
             onClick={onSelect}
             quickActions={
@@ -234,9 +236,9 @@ export const VaultSubmenu: VFC<{
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <span className="flex flex-align-items-center flex-nowrap gap-1">
+                <span className="flex flex-align-items-center flex-nowrap gap-2">
                     <VaultIcon
-                        className="mr-3"
+                        className="flex-item-noshrink"
                         size={16}
                         color={selectedVaultOption?.color}
                         icon={selectedVaultOption?.icon}
@@ -269,6 +271,7 @@ export const VaultSubmenu: VFC<{
                             onInvite={() => handleVaultInviteClick(vault)}
                             onManage={() => handleVaultManageClick(vault)}
                             onLeave={() => handleVaultLeaveClick(vault)}
+                            shared={vault.shared}
                         />
                     );
                 })}
