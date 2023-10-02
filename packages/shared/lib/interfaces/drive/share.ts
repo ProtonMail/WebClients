@@ -2,7 +2,6 @@ export interface CreateDriveShare {
     AddressID: string;
     RootLinkID: string;
     Name: string;
-    Type?: number; // TODO: UNUSED - remove it when BE removes it
     ShareKey: string;
     SharePassphrase: string;
     SharePassphraseSignature: string;
