@@ -7,7 +7,7 @@ type WithSRPPayload<T extends any> = T & {
 };
 export enum ShareType {
     default = 1,
-    standart,
+    standard,
     device,
 }
 
