@@ -6,7 +6,7 @@ import { merge } from '@proton/pass/utils/object';
 export type RequestType = 'start' | 'failure' | 'success';
 export type NamespaceSeperator = typeof NS_SEPERATOR;
 export type NamespacedRequest = `${string}${NamespaceSeperator}${string}`;
-export type RequestOptions<T extends string = string> = { type: RequestType; id: T };
+export type RequestOptions<T extends string = string> = { type: RequestType; id: T; persistent?: boolean };
 export type WithRequest<T = AnyAction, R extends string = string> = T & { meta: { request: RequestOptions<R> } };
 
 const NS_SEPERATOR = '::' as const;

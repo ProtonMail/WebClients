@@ -22,6 +22,7 @@ import itemUsed from './item-used.saga';
 import itemsRequest from './items-request.saga';
 import notification from './notification.saga';
 import reportProblem from './report-problem.saga';
+import request from './request-saga';
 import sessionLockDisable from './session-lock-disable.saga';
 import sessionLockEnable from './session-lock-enable.saga';
 import sessionLockImmediate from './session-lock-immediate.saga';
@@ -67,6 +68,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             itemUsed,
             notification,
             reportProblem,
+            request,
             shareManagePermission,
             shareEditRole,
             shareLeave,
