@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
-import { normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
@@ -45,7 +44,8 @@ const checkNameErrors = (name: string, filters: Filter[]): string => {
     if (!name) {
         return c('Error').t`This field is required`;
     }
-    if (filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
+    const trimmedName = name.trim();
+    if (filters.find(({ Name }: Filter) => Name.trim() === trimmedName)) {
         return c('Error').t`Filter with this name already exists`;
     }
     return '';

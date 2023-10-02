@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { normalize } from '@proton/shared/lib/helpers/string';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import {
@@ -62,7 +61,8 @@ const checkNameErrors = (filters: Filter[], name: string): string => {
     if (!name) {
         return c('Error').t`This field is required`;
     }
-    if (filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
+    const trimmedName = name.trim();
+    if (filters.find(({ Name }: Filter) => Name.trim() === trimmedName)) {
         return c('Error').t`Filter with this name already exists`;
     }
     return '';
