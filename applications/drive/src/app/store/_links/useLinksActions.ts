@@ -100,21 +100,66 @@ export function useLinksActions({
 
         const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateLookupHash(link.name, newParentHashKey),
-            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey),
+            generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to generate lookup hash during move', {
+                        cause: {
+                            e,
+                            shareId,
+                            newParentLinkId,
+                            linkId,
+                        },
+                    })
+                )
+            ),
+            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to encrypt link passphrase during move', {
+                        cause: {
+                            e,
+                            shareId,
+                            newParentLinkId,
+                            linkId,
+                        },
+                    })
+                )
+            ),
         ]);
 
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
             privateKeys: currentParentPrivateKey,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt link name session key during move', {
+                    cause: {
+                        e,
+                        shareId,
+                        newParentLinkId,
+                        linkId,
+                    },
+                })
+            )
+        );
+
         const { message: encryptedName } = await CryptoProxy.encryptMessage({
             textData: link.name,
             stripTrailingSpaces: true,
             sessionKey: sessionKeyName,
             encryptionKeys: newParentPrivateKey,
             signingKeys: addressKey,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to encrypt link name during move', {
+                    cause: {
+                        e,
+                        shareId,
+                        newParentLinkId,
+                        linkId,
+                    },
+                })
+            )
+        );
 
         await debouncedRequest(
             queryMoveLink(shareId, linkId, {
@@ -131,6 +176,7 @@ export function useLinksActions({
             }
             throw err;
         });
+
         const originalParentId = link.parentLinkId;
         return originalParentId;
     };
