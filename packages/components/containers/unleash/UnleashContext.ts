@@ -11,6 +11,4 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
 }
 
-enum DriveFeatureFlag {}
-
-export type FeatureFlag = `${MailFeatureFlag}` | `${DriveFeatureFlag}` | `${AccountFlag}`;
+export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}`;
