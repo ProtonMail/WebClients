@@ -16,7 +16,6 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -43,7 +42,6 @@ import {
     useGetUserKeys,
     useNotifications,
     useUser,
-    useUserSettings,
 } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';
@@ -60,7 +58,6 @@ interface Props extends ModalProps {
 
 const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...rest }: Props) => {
     const [user] = useUser();
-    const [userSettings] = useUserSettings();
     const api = useApi();
     const { call, stop, start } = useEventManager();
 
@@ -251,23 +248,17 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                         getEncryptedArmoredOrganizationKey(organizationKey?.privateKey, keyPassword),
                     ]);
 
-                    const routeConfig = consumeSessionRecovery({
-                        UserKeys: armoredUserKeys,
-                        KeySalt: keySalt,
-                        OrganizationKey: armoredOrganizationKey,
+                    await srpVerify({
+                        api,
+                        credentials: {
+                            password: newPassword,
+                        },
+                        config: consumeSessionRecovery({
+                            UserKeys: armoredUserKeys,
+                            KeySalt: keySalt,
+                            OrganizationKey: armoredOrganizationKey,
+                        }),
                     });
-
-                    if (userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE) {
-                        await api(routeConfig);
-                    } else {
-                        await srpVerify({
-                            api,
-                            credentials: {
-                                password: newPassword,
-                            },
-                            config: routeConfig,
-                        });
-                    }
 
                     await innerMutatePassword({
                         api,
