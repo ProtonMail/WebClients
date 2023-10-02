@@ -501,7 +501,7 @@ const CalendarContainerView = ({
             viewSelector={
                 !isSearching && (
                     <ViewSelector
-                        data-testid="calendar-view:view-options"
+                        data-testid="calendar-view:view-options-dropdown"
                         view={view}
                         range={range}
                         onChange={onChangeView}
@@ -608,10 +608,21 @@ const CalendarContainerView = ({
     );
 
     const footerButtons = [
-        <PrimaryButton key="footer-button-1" onClick={() => onCreateEvent?.()} disabled={!onCreateEvent}>
+        <PrimaryButton
+            key="footer-button-1"
+            onClick={() => onCreateEvent?.()}
+            disabled={!onCreateEvent}
+            data-testid="calendar-drawer:create-event-button"
+        >
             {createEventText}
         </PrimaryButton>,
-        <AppLink key="footer-button-2" to={toLink} selfOpening className="button button-outline-weak">
+        <AppLink
+            key="footer-button-2"
+            to={toLink}
+            selfOpening
+            className="button button-outline-weak"
+            data-testid="calendar-drawer:open-in-app-button"
+        >
             {c('Link to calendar app').t`Open in ${CALENDAR_APP_NAME}`}
         </AppLink>,
     ];
