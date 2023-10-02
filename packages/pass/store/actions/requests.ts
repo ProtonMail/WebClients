@@ -20,6 +20,8 @@ export const reportProblem = `report-problem-request`;
 
 export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
 export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`;
+export const shareAccessOptionsRequest = (shareId: string) => `share::access-options::${shareId}`;
+
 export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
 export const inviteRespondRequest = (token: string) => `invite::respond::${token}`;
 export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
