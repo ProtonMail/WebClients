@@ -6,7 +6,7 @@ import { useSharesStateProvider } from './useSharesState';
 function createTestShare(
     shareId: string,
     volumeId: string,
-    flags = { isLocked: false, isDefault: false, isVolumeSoftDeleted: false, type: ShareType.standart }
+    flags = { isLocked: false, isDefault: false, isVolumeSoftDeleted: false, type: ShareType.standard }
 ): Share {
     return {
         shareId,
@@ -45,7 +45,7 @@ describe('useSharesState', () => {
         isLocked: true,
         isDefault: false,
         isVolumeSoftDeleted: false,
-        type: ShareType.standart,
+        type: ShareType.standard,
     });
     const mainShare2 = createTestShare('mainShare2', 'volume2', {
         isLocked: true,
@@ -63,7 +63,7 @@ describe('useSharesState', () => {
         isLocked: true,
         isDefault: false,
         isVolumeSoftDeleted: false,
-        type: ShareType.standart,
+        type: ShareType.standard,
     });
     const mainShare3 = createTestShare('mainShare3', 'volume3', {
         isLocked: false,
