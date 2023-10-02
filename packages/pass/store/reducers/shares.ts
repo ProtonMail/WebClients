@@ -10,6 +10,7 @@ import {
     bootSuccess,
     inviteAcceptSuccess,
     inviteCreationSuccess,
+    inviteRemoveSuccess,
     inviteResendSuccess,
     shareDeleteSync,
     shareEditMemberAccessSuccess,
@@ -145,6 +146,16 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         if (inviteResendSuccess.match(action)) {
             const { shareId, inviteId } = action.payload;
             return partialMerge(state, { [shareId]: { inviteId, shared: true } });
+        }
+
+        if (inviteRemoveSuccess.match(action)) {
+            const { shareId, inviteId } = action.payload;
+
+            return partialMerge(state, {
+                [shareId]: {
+                    invites: (state[shareId]?.invites ?? []).filter((invite) => invite.inviteId !== inviteId),
+                },
+            });
         }
 
         if (shareInvitesSync.match(action)) {
