@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
 import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store';
-import { settingEditIntent } from '@proton/pass/store/actions';
+import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { RecursivePartial } from '@proton/pass/types';
@@ -105,7 +105,7 @@ export const Behaviors: VFC = () => {
 
     return (
         <>
-            {getSettings(settings, (update) => dispatch(settingEditIntent('behaviors', update))).map((section, i) => (
+            {getSettings(settings, (update) => dispatch(settingsEditIntent('behaviors', update))).map((section, i) => (
                 <SettingsPanel key={`settings-section-${i}`} title={section.label}>
                     {section.settings.map((setting, j) => (
                         <Checkbox

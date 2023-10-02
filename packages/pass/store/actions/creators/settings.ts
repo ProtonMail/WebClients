@@ -5,34 +5,30 @@ import type { ExtensionEndpoint, RecursivePartial } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { ProxiedSettings } from '../../reducers/settings';
-import { settingsEdit } from '../requests';
 import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
-import withRequest from '../with-request';
+import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
 
-export const settingEditIntent = createAction(
-    'setting update intent',
-    (ns: string, payload: RecursivePartial<ProxiedSettings>) =>
-        pipe(withRequest({ type: 'start', id: settingsEdit(ns) }), withCacheBlock)({ payload })
+export const settingsEditIntent = createAction(
+    'settings::edit::intent',
+    withRequestStart((payload: RecursivePartial<ProxiedSettings>) => withCacheBlock({ payload }))
 );
 
-export const settingEditFailure = createAction(
-    'settings edit failure',
-    (ns: string, error: unknown, receiver?: ExtensionEndpoint) =>
+export const settingsEditFailure = createAction(
+    'settings::edit::failure',
+    withRequestFailure((error: unknown, receiver?: ExtensionEndpoint) =>
         pipe(
-            withRequest({ type: 'failure', id: settingsEdit(ns) }),
             withNotification({ type: 'error', text: c('Error').t`Settings update failed`, receiver, error }),
             withCacheBlock
         )({ payload: {} })
+    )
 );
 
-export const settingEditSuccess = createAction(
-    'settings edit success',
-    (ns: string, payload: RecursivePartial<ProxiedSettings>, receiver?: ExtensionEndpoint) =>
-        pipe(
-            withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, receiver }),
-            withRequest({ type: 'success', id: settingsEdit(ns) })
-        )({ payload })
+export const settingsEditSuccess = createAction(
+    'settings::edit::success',
+    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, receiver?: ExtensionEndpoint) =>
+        withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, receiver })({ payload })
+    )
 );
 
-export const syncLocalSettings = createAction<RecursivePartial<ProxiedSettings>>('sync local settings');
+export const syncLocalSettings = createAction<RecursivePartial<ProxiedSettings>>('settings::local::sync');

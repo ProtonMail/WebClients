@@ -12,7 +12,7 @@ import { ShareRole } from '@proton/pass/types';
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import type { InviteFormValues } from '../../../shared/form/types';
 import { validateShareInviteValues } from '../../../shared/form/validator/validate-vaultInvite';
-import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
+import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
