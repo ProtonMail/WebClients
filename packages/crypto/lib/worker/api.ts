@@ -713,12 +713,18 @@ export class Api extends KeyManagementApi {
 
     /**
      * Whether a key is a E2EE forwarding recipient key, where all its encryption-capable (sub)keys are setup
-     * for forwarding
+     * for forwarding.
+     * NB: this function also accepts `PublicKeyReference`s in order to determine the status of inactive (undecryptable)
+     * private keys. Such keys can only be imported using `importPublicKey`, but it's important that the encrypted
+     * private key is imported (not the corresponding public key).
+     * @throws if a PublicKeyReference containing a public key is given
      */
-    async isE2EEForwardingKey({ key: keyReference }: { key: PrivateKeyReference }) {
+    async isE2EEForwardingKey({ key: keyReference }: { key: KeyReference }) {
+        // We support PublicKeyReference to determine the status of inactive/undecryptable address keys.
+        // A PublicKeyReference can contain an encrypted private key.
         const key = this.keyStore.get(keyReference._idx);
         if (!key.isPrivate()) {
-            return false;
+            throw new Error('Unexpected public key');
         }
         const forForwarding = await isForwardingKey(key);
         return forForwarding;
