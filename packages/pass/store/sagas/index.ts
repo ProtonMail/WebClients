@@ -11,6 +11,7 @@ import itemsImport from './import.saga';
 import inviteAccept from './invite-accept.saga';
 import inviteCreate from './invite-create.saga';
 import inviteReject from './invite-reject.saga';
+import inviteRemove from './invite-remove.saga';
 import inviteResend from './invite-resend.saga';
 import itemCreation from './item-creation.saga';
 import itemDelete from './item-delete.saga';
@@ -55,6 +56,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             inviteCreate,
             inviteReject,
             inviteResend,
+            inviteRemove,
             itemsRequest,
             itemCreation,
             itemEdit,

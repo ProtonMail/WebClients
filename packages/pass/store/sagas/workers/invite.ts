@@ -3,6 +3,7 @@ import type {
     InviteAcceptIntent,
     InviteCreateIntent,
     InviteRejectIntent,
+    InviteRemoveIntent,
     InviteResendIntent,
 } from '@proton/pass/types/data/invites.dto';
 
@@ -42,6 +43,9 @@ export const createInvite = async ({ shareId, email, role }: InviteCreateIntent)
 
 export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
     api({ url: `pass/v1/share/${shareId}/invite/${inviteId}/reminder`, method: 'post' });
+
+export const removeInvite = async ({ shareId, inviteId }: InviteRemoveIntent) =>
+    api({ url: `pass/v1/share/${shareId}/invite/${inviteId}`, method: 'delete' });
 
 export const acceptInvite = async ({ inviteToken, inviterEmail, inviteKeys }: InviteAcceptIntent) => {
     return (
