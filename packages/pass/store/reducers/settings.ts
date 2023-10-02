@@ -13,7 +13,7 @@ import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
-    settingEditSuccess,
+    settingsEditSuccess,
     syncLocalSettings,
     syncLock,
 } from '../actions';
@@ -65,7 +65,7 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
         });
     }
 
-    if (settingEditSuccess.match(action)) {
+    if (settingsEditSuccess.match(action)) {
         const update = { ...state };
 
         /* `disallowedDomains` update should act as a setter */

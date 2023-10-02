@@ -8,7 +8,7 @@ import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store';
 import { inviteRespondRequest } from '@proton/pass/store/actions/requests';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
+import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { VaultIcon } from '../Vault/VaultIcon';
 

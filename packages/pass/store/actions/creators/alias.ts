@@ -5,6 +5,7 @@ import type { AliasMailbox } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { AliasOptions } from '../../reducers';
+import { ALIAS_OPTIONS_VALIDITY_WINDOW } from '../../sagas/alias-options-request.saga';
 import * as requests from '../requests';
 import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
@@ -29,7 +30,9 @@ export const getAliasOptionsIntent = createAction(
 export const getAliasOptionsSuccess = createAction(
     'alias::options::get::success',
     (payload: { options: AliasOptions }) =>
-        withRequest({ id: requests.aliasOptions(), type: 'success', persistent: true })({ payload })
+        withRequest({ id: requests.aliasOptions(), type: 'success', maxAge: ALIAS_OPTIONS_VALIDITY_WINDOW })({
+            payload,
+        })
 );
 
 export const getAliasOptionsFailure = createAction('alias::options::get::failure', (error: unknown) =>
