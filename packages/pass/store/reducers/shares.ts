@@ -8,17 +8,17 @@ import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/u
 
 import {
     bootSuccess,
+    getShareAccessOptionsSuccess,
     inviteAcceptSuccess,
     inviteCreationSuccess,
     inviteRemoveSuccess,
     inviteResendSuccess,
+    shareAccessChange,
     shareDeleteSync,
     shareEditMemberAccessSuccess,
     shareEditSync,
     shareEvent,
-    shareInvitesSync,
     shareLeaveSuccess,
-    shareMembersSync,
     shareRemoveMemberAccessSuccess,
     sharesSync,
     syncSuccess,
@@ -158,14 +158,14 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             });
         }
 
-        if (shareInvitesSync.match(action)) {
-            const { shareId, invites } = action.payload;
-            return partialMerge(state, { [shareId]: { invites, shared: true } });
+        if (shareAccessChange.match(action)) {
+            const { shareId, owner, shared, shareRoleId } = action.payload;
+            return partialMerge(state, { [shareId]: { owner, shared, shareRoleId } });
         }
 
-        if (shareMembersSync.match(action)) {
-            const { shareId, members } = action.payload;
-            return partialMerge(state, { [shareId]: { members, shared: true } });
+        if (getShareAccessOptionsSuccess.match(action)) {
+            const { shareId, invites, members } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, members } });
         }
 
         if (shareEditMemberAccessSuccess.match(action)) {

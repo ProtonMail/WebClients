@@ -2,8 +2,11 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { Share, ShareRole } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
-import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
+import type {
+    ShareAccessOptions,
+    ShareEditMemberAccessIntent,
+    ShareRemoveMemberAccessIntent,
+} from '@proton/pass/types/data/shares.dto';
 import { pipe } from '@proton/pass/utils/fp';
 import { isVaultShare } from '@proton/pass/utils/pass/share';
 
@@ -12,9 +15,9 @@ import withCacheBlock from '../with-cache-block';
 import withNotification from '../with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
 
-export const shareEditSync = createAction('share edit sync', (payload: { id: string; share: Share }) => ({ payload }));
+export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) => ({ payload }));
 
-export const shareDeleteSync = createAction('share delete sync', (share: Share) =>
+export const shareDeleteSync = createAction('share::delete::sync', (share: Share) =>
     withNotification({
         type: 'info',
         text: isVaultShare(share)
@@ -23,15 +26,7 @@ export const shareDeleteSync = createAction('share delete sync', (share: Share) 
     })({ payload: { shareId: share.shareId } })
 );
 
-export const sharesSync = createAction('new shares sync', (payload: SynchronizationResult) => ({ payload }));
-
-export const shareInvitesSync = createAction('share::invites::sync', (shareId: string, invites: PendingInvite[]) => ({
-    payload: { shareId, invites },
-}));
-
-export const shareMembersSync = createAction('share::members::sync', (shareId: string, members: ShareMember[]) => ({
-    payload: { shareId, members },
-}));
+export const sharesSync = createAction('shares::sync', (payload: SynchronizationResult) => ({ payload }));
 
 export const shareRemoveMemberAccessIntent = createAction(
     'share::member::remove-access::intent',
@@ -119,6 +114,31 @@ export const shareLeaveFailure = createAction(
                 text: c('Error').t`Could not leave vault.`,
                 error,
             })
-        )({ payload: {} })
+        )({ payload: {}, error })
     )
+);
+
+export const getShareAccessOptionsIntent = createAction(
+    'share::access-options::intent',
+    withRequestStart((shareId: string) => withCacheBlock({ payload: { shareId } }))
+);
+
+export const getShareAccessOptionsSuccess = createAction(
+    'share::access-options::success',
+    withRequestSuccess((payload: ShareAccessOptions) => ({ payload }), { maxAge: 15 })
+);
+
+export const getShareAccessOptionsFailure = createAction(
+    'share::access-options::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({ type: 'error', text: c('Error').t`Could not resolve share members`, error })
+        )({ payload: {}, error })
+    )
+);
+
+export const shareAccessChange = createAction(
+    'share::access::change',
+    (payload: Pick<Share, 'shareId' | 'owner' | 'shared' | 'shareRoleId'>) => ({ payload })
 );
