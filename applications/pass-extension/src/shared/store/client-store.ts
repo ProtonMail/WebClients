@@ -5,11 +5,12 @@ import reducer from '@proton/pass/store/reducers';
 import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
 
 import { proxyActionsMiddleware } from './proxy-actions.middleware';
+import { requestMiddleware } from './request-middleware';
 
 const createClientStore = (endpoint: ExtensionEndpoint, tabId: TabId) => {
     const store = configureStore({
         reducer,
-        middleware: [proxyActionsMiddleware({ endpoint, tabId })],
+        middleware: [requestMiddleware, proxyActionsMiddleware({ endpoint, tabId })],
         enhancers:
             ENV === 'development'
                 ? [
