@@ -2,29 +2,29 @@
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
-import type { Api, Maybe, Share, SharesGetResponse } from '@proton/pass/types';
+import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
+import { hasShareAccessChanged } from '@proton/pass/utils/pass/share';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
 import {
-    shareInvitesSync,
-    shareMembersSync,
+    getShareAccessOptionsIntent,
+    shareAccessChange,
     sharesSync,
     vaultCreationSuccess,
     vaultSetPrimarySync,
 } from '../../actions';
+import { shareAccessOptionsRequest } from '../../actions/requests';
 import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
-import { loadInvites } from '../workers/invite';
 import { requestItemsForShareId } from '../workers/items';
-import { loadShare, loadShareMembers } from '../workers/shares';
+import { loadShare } from '../workers/shares';
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
@@ -47,22 +47,6 @@ function* onSharesEvent(
 
     const remoteShares = event.Shares;
     const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
-
-    // DO NOT MERGE THIS : TMP FOR DEVELOPMENT
-    // only do this if share has changed
-    yield fork(function* () {
-        for (const share of remoteShares) {
-            if (share.Shared) {
-                const members: ShareMember[] = yield loadShareMembers(share.ShareID);
-                yield put(shareMembersSync(share.ShareID, members));
-            }
-
-            if (share.Owner) {
-                const pending: PendingInvite[] = yield loadInvites(share.ShareID);
-                if (pending.length > 0) yield put(shareInvitesSync(share.ShareID, pending));
-            }
-        }
-    });
 
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
@@ -93,6 +77,26 @@ function* onSharesEvent(
     if (remotePrimaryShareId && localPrimaryShareId !== remotePrimaryShareId) {
         yield put(vaultSetPrimarySync({ id: remotePrimaryShareId }));
     }
+
+    yield fork(function* () {
+        for (const share of remoteShares) {
+            const shareId = share.ShareID;
+            const localShare = localShares.find((localShare) => localShare.shareId === shareId);
+
+            if (localShare && hasShareAccessChanged(localShare, share)) {
+                yield put(
+                    shareAccessChange({
+                        shareId,
+                        owner: share.Owner,
+                        shared: share.Shared,
+                        shareRoleId: share.ShareRoleID as ShareRole,
+                    })
+                );
+
+                yield put(getShareAccessOptionsIntent(shareAccessOptionsRequest(share.ShareID), share.ShareID));
+            }
+        }
+    });
 }
 
 /* The event-manager can be used to implement
