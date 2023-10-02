@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
@@ -58,22 +59,6 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
         }
     };
 
-    const boldHours = (
-        <b key="session-recovery-hours">{
-            // translator: Full sentence "For security reasons, you’ll have to wait 72 hours before you can change your password."
-            c('session_recovery:initiation:info').t`72 hours`
-        }</b>
-    );
-
-    const boldRecoveryMethod = (
-        <b key="bold-recovery-method">
-            {
-                // translator: Full sentence "If you have a recovery method set up, try account recovery instead. This will allow you to change your password straight away."
-                c('session_recovery:initiation:info').t`recovery method`
-            }
-        </b>
-    );
-
     const handleClose = submitting ? noop : onClose;
 
     return (
@@ -88,19 +73,17 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                 </div>
 
                 <p>
-                    {
-                        // translator: Full sentence "For security reasons, you’ll have to wait 72 hours before you can change your password."
+                    {getBoldFormattedText(
                         c('session_recovery:initiation:info')
-                            .jt`For security reasons, you’ll have to wait ${boldHours} before you can change your password.`
-                    }
+                            .t`For security reasons, you’ll have to wait **72 hours** before you can change your password.`
+                    )}
                 </p>
                 {hasRecoveryMethod && (
                     <p>
-                        {
-                            // translator: Full sentence "If you have a recovery method set up, try account recovery instead. This will allow you to change your password straight away."
+                        {getBoldFormattedText(
                             c('session_recovery:initiation:info')
-                                .jt`If you have a ${boldRecoveryMethod} set up, try account recovery instead. This will allow you to change your password straight away.`
-                        }
+                                .t`If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.`
+                        )}
                     </p>
                 )}
             </ModalContent>
