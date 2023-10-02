@@ -14,7 +14,6 @@ import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 
 import {
-    acknowledgeRequest,
     importItemsFailure,
     importItemsIntent,
     importItemsSuccess,
@@ -146,7 +145,6 @@ function* importWorker(
     } catch (error: any) {
         yield put(importItemsFailure(error, meta.sender?.endpoint));
     } finally {
-        yield put(acknowledgeRequest(meta.request.id));
         yield put(startEventPolling());
     }
 }

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import {
-    aliasOptionsRequestSuccess,
-    aliasOptionsRequested,
+    getAliasOptionsIntent,
+    getAliasOptionsSuccess,
     itemCreationIntent,
     itemCreationSuccess,
     selectAliasLimits,
@@ -28,8 +28,8 @@ export const createAliasService = () => {
 
         return new Promise((resolve) =>
             store.dispatch(
-                aliasOptionsRequested({ shareId }, (result) => {
-                    if (aliasOptionsRequestSuccess.match(result)) {
+                getAliasOptionsIntent({ shareId }, (result) => {
+                    if (getAliasOptionsSuccess.match(result)) {
                         const { options } = result.payload;
                         return resolve({ ok: true, needsUpgrade, options });
                     }
