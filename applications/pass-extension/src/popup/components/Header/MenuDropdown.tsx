@@ -25,7 +25,7 @@ import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
-import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
+import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { handleVaultDeletionEffects } from '../../context/items/ItemEffects';
 import { useConfirm } from '../../hooks/useConfirm';

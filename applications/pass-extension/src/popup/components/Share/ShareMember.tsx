@@ -9,7 +9,7 @@ import { shareEditMemberAccessIntent, shareRemoveMemberAccessIntent } from '@pro
 import { shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
-import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
+import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
