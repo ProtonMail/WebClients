@@ -3,9 +3,8 @@ import type { VFC } from 'react';
 import { c } from 'ttag';
 
 import { Info } from '@proton/components/components';
-import { inviteResendIntent } from '@proton/pass/store';
-import { inviteResendRequest } from '@proton/pass/store/actions/requests';
-import noop from '@proton/utils/noop';
+import { inviteRemoveIntent, inviteResendIntent } from '@proton/pass/store';
+import { inviteRemoveRequest, inviteResendRequest } from '@proton/pass/store/actions/requests';
 
 import { useActionWithRequest } from '../../../shared/hooks/useRequestWithAction';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
@@ -23,6 +22,9 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, invite
 
     const resendInvite = useActionWithRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
+
+    const removeInvite = useActionWithRequest({ action: inviteRemoveIntent, requestId: inviteRemoveRequest(inviteId) });
+    const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
 
     const loading = resendInvite.loading;
 
@@ -48,7 +50,13 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, invite
                     disabled={resendInvite.loading}
                 />
 
-                <DropdownMenuButton label={c('Action').t`Remove access`} icon="circle-slash" danger onClick={noop} />
+                <DropdownMenuButton
+                    label={c('Action').t`Remove access`}
+                    icon="circle-slash"
+                    danger
+                    onClick={handleRemoveInvite}
+                    disabled={removeInvite.loading}
+                />
             </QuickActionsDropdown>
         </div>
     );

@@ -7,6 +7,7 @@ import type {
     InviteAcceptIntent,
     InviteCreateIntent,
     InviteRejectIntent,
+    InviteRemoveIntent,
     InviteResendIntent,
 } from '@proton/pass/types/data/invites.dto';
 import { pipe } from '@proton/pass/utils/fp';
@@ -115,6 +116,35 @@ export const inviteResendFailure = createAction(
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed resending invite.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
+
+export const inviteRemoveIntent = createAction(
+    'invite::remove::intent',
+    withRequestStart((payload: InviteRemoveIntent) => withCacheBlock({ payload }))
+);
+
+export const inviteRemoveSuccess = createAction(
+    'invite::remove::success',
+    withRequestSuccess((shareId: string, inviteId: string) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Invite successfully removed`,
+        })({ payload: { shareId, inviteId } })
+    )
+);
+
+export const inviteRemoveFailure = createAction(
+    'invite::remove::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed removing the invite.`,
                 error,
             })
         )({ payload: {} })
