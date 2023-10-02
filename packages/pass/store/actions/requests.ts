@@ -25,3 +25,4 @@ export const shareRemoveMemberRequest = (userShareId: string) => `share::members
 export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`;
 export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
 export const inviteRespondRequest = (token: string) => `invite::respond::${token}`;
+export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
