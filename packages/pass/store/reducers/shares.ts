@@ -136,7 +136,14 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (vaultTransferOwnershipSuccess.match(action)) {
-            // TODO update the vault with new owner
+            const { shareId, userShareId } = action.payload;
+            const members = (state[shareId].members ?? []).map((member) => {
+                if (member.owner) return { ...member, owner: false };
+                if (member.shareId === userShareId) return { ...member, owner: true };
+                return member;
+            });
+
+            return partialMerge(state, { [shareId]: { owner: false, shareRoleId: ShareRole.ADMIN, members } });
         }
 
         if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {
