@@ -12,6 +12,11 @@ export type RequestOptions<T extends RequestType = RequestType> = Extract<
     { type: T }
 >;
 
+export type RequestProgress<T> =
+    | { type: 'progress'; value: number }
+    | { type: 'done'; result: T }
+    | { type: 'error'; error: unknown };
+
 export type WithRequest<A extends object, T extends RequestType> = A & {
     meta: { request: RequestOptions<T> };
 };
