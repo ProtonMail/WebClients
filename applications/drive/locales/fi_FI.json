@@ -25,6 +25,9 @@
       "Add address": [
         "Lisää osoite"
       ],
+      "Add birthday": [
+        "Lisää syntymäpäivä"
+      ],
       "Add contact": [
         "Lisää yhteystieto"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Lisää uusi ryhmä"
+      ],
+      "Add note": [
+        "Lisää merkintä"
       ],
       "Add phone number": [
         "Lisää puhelinnumero"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
       "Email": [
         "Sähköpostiosoite"
+      ],
+      "Enter a display name or nickname": [
+        "Syötä näyttönimi tai lempinimi"
+      ],
+      "First name": [
+        "Etunimi"
       ],
       "Gender": [
         "Sukupuoli"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Kieli"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Logo": [
         "Logo"
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Syötä 6-numeroa"
       ],
+      "Error decrypting a computer": [
+        "Virhe purettaessa tietokoneen salausta"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "Tiedostovalintaa ladataan jo"
+      ],
+      "First name is too long": [
+        "Etunimi on liian pitkä"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Kansiota \"${ name }\" ladataan jo"
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
+      ],
+      "Last name is too long": [
+        "Sukunimi on liian pitkä"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Syötä ainakin etunimi, sukunimi tai näyttönimi"
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -2174,7 +2204,7 @@
         "Tämä kenttä vaaditaan"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength }-merkkiä."
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -3078,7 +3108,7 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } yhteystieto",
-        "${ contactsLength } yhteystiedot"
+        "${ contactsLength } yhteystietoa"
       ],
       "${ doneCount } finished": [
         "${ doneCount } valmistunut",
@@ -3124,7 +3154,7 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
-        "${ selectedContactsLength }/${ contactsLength } yhteystiedot valittu"
+        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } valittu"
@@ -3709,6 +3739,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Syötä salasana purkaaksesi salauksen ja nähdäksesi sisällön."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Huomioi, että ryhmiin lisättyjä osoitteita EI poisteta."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Huomioi, että ryhmään lisättyjä osoitteita EI poisteta."
@@ -5216,11 +5249,17 @@
       "Filter groups": [
         "Suodata ryhmiä"
       ],
+      "First name": [
+        "Etunimi"
+      ],
       "Group name": [
         "Ryhmän nimi"
       ],
       "Image URL": [
         "Kuvan URL"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Name": [
         "Nimi"
@@ -5763,11 +5802,17 @@
       "CSV field": [
         "CSV-kenttä"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
+      "First name": [
+        "Etunimi"
+      ],
       "Import": [
         "Tuonti"
       ],
-      "Name": [
-        "Nimi"
+      "Last name": [
+        "Sukunimi"
       ],
       "Values": [
         "Arvot"
@@ -5854,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Laskutusjakso"
+      ],
+      "Birthday": [
+        "Syntymäpäivä"
       ],
       "Browser might run out of memory": [
         "Selaimen käytettävissä oleva keskusmuisti ei välttämättä riitä"
@@ -6077,6 +6125,9 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
+      ],
+      "Notes": [
+        "Muistiinpanot"
       ],
       "Number of files": [
         "Tiedostomäärä"
@@ -6405,6 +6456,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
         "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Haluatko varmasti poistaa nämä yhteystietoryhmät pysyvästi?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Haluatko varmasti poistaa yhteystietoryhmän pysyvästi?"
