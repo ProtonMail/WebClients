@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Aggiungi destinatario in Ccn"
       ],
+      "Add birthday": [
+        "Aggiungi compleanno"
+      ],
       "Add Cc recipients": [
         "Aggiungi destinatario in Cc"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
+      ],
+      "Add note": [
+        "Aggiungi nota"
       ],
       "Add participant": [
         "Aggiungi partecipante"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
-      "Go to first page": [
-        "Vai alla prima pagina"
-      ],
       "Go to label": [
         "Vai all'etichetta"
-      ],
-      "Go to last page": [
-        "Vai all'ultima pagina"
       ],
       "Go to next page": [
         "Vai alla pagina successiva"
@@ -1238,7 +1238,7 @@
     },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
-        "${ nameToDisplay } Posta in arrivo"
+        "Posta di ${ nameToDisplay }"
       ],
       "5 trackers removed": [
         "5 tracker rimossi"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Compleanno"
       ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
       "Email": [
         "Email"
+      ],
+      "Enter a display name or nickname": [
+        "Inserisci un nome visualizzato o un nickname"
+      ],
+      "First name": [
+        "Nome"
       ],
       "Gender": [
         "Sesso"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Lingua"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Logo": [
         "Logo"
@@ -2144,7 +2156,7 @@
         "Capo Verde"
       ],
       "Cayman Islands": [
-        "Isole Caiman"
+        "Isole Cayman"
       ],
       "Central African Republic": [
         "Repubblica Centrafricana"
@@ -2468,7 +2480,7 @@
         "Montenegro"
       ],
       "Montserrat": [
-        "Montserrato"
+        "Montserrat"
       ],
       "Morocco": [
         "Marocco"
@@ -2477,7 +2489,7 @@
         "Mozambico"
       ],
       "Myanmar": [
-        "Birmania"
+        "Myanmar (Birmania)"
       ],
       "Namibia": [
         "Namibia"
@@ -2780,7 +2792,7 @@
         "Zimbabwe"
       ],
       "Åland Islands": [
-        "Isole Aland"
+        "Isole Åland"
       ]
     },
     "CustomFilter": {
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
       ],
+      "Could not save preference": [
+        "Impossibile salvare la preferenza"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Errore di decriptazione: decriptazione del contenuto crittografato di questo messaggio non riuscita."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
+      "First name is too long": [
+        "Il nome è troppo lungo"
+      ],
       "Folder name cannot be empty.": [
         "Il nome della cartella non può essere vuoto."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
+      ],
+      "Last name is too long": [
+        "Il cognome è troppo lungo"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numero massimo di allegati (${ attachmentsCountLimit }) superato"
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Fornisci un nome, un cognome o un nome visualizzato"
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -3905,10 +3929,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -5123,7 +5147,7 @@
         "Per i messaggi più recenti di ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "Per ulteriori risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi di posta elettronica."
+        "Per più risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi di posta elettronica."
       ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
@@ -5145,7 +5169,7 @@
         "Nascondi il messaggio originale"
       ],
       "How hide-my-email aliases works": [
-        "Funzionamento degli alias Hide-my-email"
+        "Come funzionano gli alias Hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Sto inviando questo messaggio ad un utente non-${ MAIL_APP_NAME }."
@@ -5194,7 +5218,7 @@
         "Includi Spam/Cestino nei risultati di ricerca."
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella superiore"
+        "Ereditato dalla cartella principale"
       ],
       "Insert image": [
         "Inserisci immagine"
@@ -5308,7 +5332,7 @@
         "Spostamento messaggi. Potrebbe richiedere del tempo."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
+        "Dai un nome alla tua cartella e seleziona la cartella principale nella quale deve verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
@@ -5441,7 +5465,7 @@
         "Stampa email"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Proteggi la tua email dalla divulgazione alle mailing list o agli spammer con ${ maskMyEmailButton }."
+        "Proteggi la tua email dalle mailing list e dagli spammer con ${ maskMyEmailButton }."
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -5613,7 +5637,7 @@
         "Si è verificato un errore con la firma usata per verificare i dettagli del contatto, il che potrebbe risultare da un ripristino della password."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua casella di posta con alias Hide-my-email."
+        "Non possono inviarti spam se non conoscono il tuo indirizzo email. Proteggi la tua posta in arrivo con gli alias Hide-my-email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -5681,7 +5705,7 @@
         "Questi messaggi verranno segnalati come spam. Vorresti anche terminare la sottoscrizione a future email?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Questo messaggio verrà spostato nelle Bozze in questo modo potrai modificarlo. Sarà necessario pianificare nuovamente il suo invio."
+        "Questo messaggio verrà spostato nelle bozze così che potrai modificarlo. Dovrai pianificare nuovamente il suo invio."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Questo messaggio verrà inviato la mattina alle ${ formattedTime }"
@@ -5795,7 +5819,7 @@
         "Effettua l'upgrade per supportare la nostra missione della privacy per tutti."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Effettua l'upgrade per supportare la privacy e ottenere ulteriori funzionalità."
+        "Effettua l'upgrade per supportare la privacy e ottenere più funzionalità."
       ],
       "Upgrade to unlock premium features.": [
         "Effettua l'upgrade per sbloccare funzionalità premium."
@@ -5974,7 +5998,7 @@
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Il tuo account ${ BRAND_NAME } include SimpleLogin. Installa l'estensione del browser con un clic per iniziare."
+        "Il tuo account ${ BRAND_NAME } include SimpleLogin. Installa l'estensione per il browser con un clic per iniziare."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
@@ -6380,6 +6404,9 @@
       "Contacts": [
         "Contatti"
       ],
+      "Conversations per page": [
+        "Conversazioni per pagina"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -6544,6 +6571,9 @@
       ],
       "Mark as": [
         "Segna come"
+      ],
+      "Messages per page": [
+        "Messaggi per pagina"
       ],
       "Move ${ sidebarElementName }": [
         "Sposta ${ sidebarElementName }"
@@ -6889,7 +6919,7 @@
         "O puoi eliminare uno dei tuoi calendari e crearne uno nuovo collegato a un indirizzo email attivo."
       ],
       "Outbox": [
-        "In Uscita"
+        "Posta in uscita"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -7372,7 +7402,7 @@
         "Scopri tutti i servizi ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Sono disponibili ulteriori opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
+        "Sono disponibili più opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
       ],
       "Select a theme": [
         "Seleziona un tema"
@@ -7432,7 +7462,7 @@
         "Ignora gruppo"
       ],
       "No parent folder": [
-        "Nessuna cartella superiore"
+        "Nessuna cartella principale"
       ]
     },
     "Option group": {
@@ -7502,6 +7532,9 @@
       "Filter labels": [
         "Filtra etichette"
       ],
+      "First name": [
+        "Nome"
+      ],
       "Group name": [
         "Nome gruppo"
       ],
@@ -7510,6 +7543,9 @@
       ],
       "Image URL": [
         "URL dell'immagine"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Link": [
         "Link"
@@ -8049,22 +8085,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e molto altro."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
@@ -8423,7 +8459,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+        "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Include password illimitate, generatore di password, e molto altro."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -8433,16 +8469,16 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Sono inclusi alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica con i dati delle carte di credito e altro ancora."
+        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Include alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica dei dati delle carte di credito, e molto altro."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la cronologia delle versioni, la condivisione di file crittografati e molto altro."
       ]
     },
     "summer2023:Footer": {
@@ -8505,11 +8541,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
+      "First name": [
+        "Nome"
+      ],
       "Import": [
         "Importa"
       ],
-      "Name": [
-        "Nome"
+      "Last name": [
+        "Cognome"
       ],
       "Values": [
         "Valori"
@@ -8605,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Birthday": [
+        "Compleanno"
       ],
       "Blind Carbon Copy": [
         "Copia carbone nascosta"
@@ -8914,6 +8959,9 @@
       ],
       "No trackers found": [
         "Nessun tracker trovato"
+      ],
+      "Notes": [
+        "Note"
       ],
       "Open actions dropdown": [
         "Apri menu delle azioni"
