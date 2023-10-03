@@ -45,6 +45,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
     return (
         <SidebarModal onClose={close} open>
             <Panel
+                loading={createInvite.loading}
                 header={
                     <PanelHeader
                         actions={[
@@ -65,6 +66,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
                                 color="norm"
                                 pill
                                 disabled={createInvite.loading || !form.isValid || !form.dirty}
+                                loading={createInvite.loading}
                                 form={FORM_ID}
                             >
                                 {form.values.step === 'email' ? c('Action').t`Continue` : c('Action').t`Send invite`}
