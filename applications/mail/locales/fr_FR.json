@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Ajouter des destinataires en copie cachée"
       ],
+      "Add birthday": [
+        "Ajouter une date de naissance"
+      ],
       "Add Cc recipients": [
         "Ajouter des destinataires en copie"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Ajouter un nouveau groupe"
+      ],
+      "Add note": [
+        "Ajouter une note"
       ],
       "Add participant": [
         "Ajouter des participants"
@@ -183,7 +189,7 @@
         "Fermer"
       ],
       "Close & discard": [
-        "Fermer & annuler"
+        "Fermer & abandonner"
       ],
       "Close composer": [
         "Fermer l'éditeur"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
-      "Go to first page": [
-        "Aller à la première page"
-      ],
       "Go to label": [
         "Afficher le label"
-      ],
-      "Go to last page": [
-        "Aller à la dernière page"
       ],
       "Go to next page": [
         "Aller à la page suivante"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Saisissez un nom d'affichage ou un surnom."
+      ],
+      "First name": [
+        "Prénom"
       ],
       "Gender": [
         "Genre"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Logo": [
         "Logo"
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche dans le contenu ne peut pas être activée dans ce navigateur. Nous vous invitons à quitter la navigation privée ou à essayer avec un autre navigateur."
       ],
+      "Could not save preference": [
+        "La préférence n'a pas pu être enregistrée."
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement : le contenu chiffré de ce message n'a pas pu être déchiffré."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
       ],
+      "First name is too long": [
+        "Le prénom est trop long."
+      ],
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Last name is too long": [
+        "Le nom de famille est trop long."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Le nombre maximum de (${ attachmentsCountLimit }) pièces jointes a été dépassé."
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
         "Corrigez les conflits en surbrillance pour continuer."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Indiquez un prénom, un nom de famille ou un nom d'affichage."
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -4849,7 +4873,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
+        "Voulez-vous vraiment abandonner votre importation ?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Archives ?"
@@ -6380,6 +6404,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Conversations per page": [
+        "Conversations par page"
+      ],
       "Copy": [
         "Copier"
       ],
@@ -6544,6 +6571,9 @@
       ],
       "Mark as": [
         "Marquer comme"
+      ],
+      "Messages per page": [
+        "Messages par page"
       ],
       "Move ${ sidebarElementName }": [
         "Déplacer ${ sidebarElementName }"
@@ -7277,7 +7307,7 @@
         "Rechercher dans le contenu des messages"
       ],
       "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Nombre illimité de dossiers, de labels et de filtres"
       ],
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses e-mail"
@@ -7502,6 +7532,9 @@
       "Filter labels": [
         "Filtrer les labels"
       ],
+      "First name": [
+        "Prénom"
+      ],
       "Group name": [
         "Nom du groupe"
       ],
@@ -7510,6 +7543,9 @@
       ],
       "Image URL": [
         "URL de l'image"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Link": [
         "Lien"
@@ -8505,10 +8541,16 @@
       "CSV field": [
         "Champ CSV"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
+      "First name": [
+        "Prénom"
+      ],
       "Import": [
         "Importer"
       ],
-      "Name": [
+      "Last name": [
         "Nom"
       ],
       "Values": [
@@ -8605,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Birthday": [
+        "Date de naissance"
       ],
       "Blind Carbon Copy": [
         "Copie carbone invisible"
@@ -8914,6 +8959,9 @@
       ],
       "No trackers found": [
         "Aucun traqueur n'a été trouvé."
+      ],
+      "Notes": [
+        "Notes"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -9235,7 +9283,7 @@
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ce groupe de contacts ?"
+        "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
