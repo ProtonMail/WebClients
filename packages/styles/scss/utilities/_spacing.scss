@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // when updating margin sizes, please update them in Storybook accordingly
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
 
@@ -33,6 +35,8 @@ $queries: (
 // generate css custom props
 :root {
 	@each $spacingname, $size in $spacings {
+		$spacingname: str-replace($spacingname, '\\\.', '-');
+
 		--space-#{$spacingname}: #{pixel-to-rem($size)};
 	}
 }
