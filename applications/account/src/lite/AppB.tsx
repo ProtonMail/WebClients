@@ -19,6 +19,7 @@ import {
     RightToLeftProvider,
     StandardErrorPage,
     ThemeProvider,
+    UnleashFlagProvider,
     getSessionTrackingEnabled,
     useActiveBreakpoint,
 } from '@proton/components';
@@ -133,27 +134,29 @@ const App = () => {
                                                 <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
                                                     <AuthenticationProvider store={authenticationValue}>
                                                         <CacheProvider cache={cache}>
-                                                            <FeaturesProvider>
-                                                                <ExperimentsProvider>
-                                                                    <NotificationsChildren />
-                                                                    <ErrorBoundary
-                                                                        component={<StandardErrorPage big />}
-                                                                    >
-                                                                        {isLogout ? null : (
-                                                                            <Setup UID={UID} onLogin={handleLogin}>
-                                                                                <MainContainer
-                                                                                    config={enhancedConfig}
-                                                                                    action={action}
-                                                                                    fullscreen={fullscreen}
-                                                                                    redirect={redirect}
-                                                                                    app={app}
-                                                                                    searchParams={searchParams}
-                                                                                />
-                                                                            </Setup>
-                                                                        )}
-                                                                    </ErrorBoundary>
-                                                                </ExperimentsProvider>
-                                                            </FeaturesProvider>
+                                                            <UnleashFlagProvider>
+                                                                <FeaturesProvider>
+                                                                    <ExperimentsProvider>
+                                                                        <NotificationsChildren />
+                                                                        <ErrorBoundary
+                                                                            component={<StandardErrorPage big />}
+                                                                        >
+                                                                            {isLogout ? null : (
+                                                                                <Setup UID={UID} onLogin={handleLogin}>
+                                                                                    <MainContainer
+                                                                                        config={enhancedConfig}
+                                                                                        action={action}
+                                                                                        fullscreen={fullscreen}
+                                                                                        redirect={redirect}
+                                                                                        app={app}
+                                                                                        searchParams={searchParams}
+                                                                                    />
+                                                                                </Setup>
+                                                                            )}
+                                                                        </ErrorBoundary>
+                                                                    </ExperimentsProvider>
+                                                                </FeaturesProvider>
+                                                            </UnleashFlagProvider>
                                                         </CacheProvider>
                                                     </AuthenticationProvider>
                                                 </ApiProvider>

@@ -14,6 +14,9 @@ import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
+import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
+import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
+import { useSessionRecoveryLocalStorage } from './sessionRecovery/SessionRecoveryLocalStorageManager';
 
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
@@ -21,6 +24,15 @@ const PasswordsSection = () => {
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
+    const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
+    const [
+        sessionRecoveryPasswordResetModal,
+        setSessionRecoveryPasswordResetModalOpen,
+        renderSessionRecoveryPasswordResetModal,
+    ] = useModalState();
+
+    const { dismissSessionRecoveryCancelled } = useSessionRecoveryLocalStorage();
+    const [skipInfoStep, setSkipInfoStep] = useState(false);
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
     const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Login password`;
@@ -37,11 +49,27 @@ const PasswordsSection = () => {
 
     useSearchParamsEffect(
         (params) => {
-            if (!loading && params.get('action') === 'change-password') {
-                handleChangePassword(changePasswordMode);
-                params.delete('action');
-                return params;
+            if (loading) {
+                return;
             }
+            const action = params.get('action');
+
+            if (!action) {
+                return;
+            }
+
+            if (action === 'change-password') {
+                handleChangePassword(changePasswordMode);
+            } else if (action === 'session-recovery-password-reset-available') {
+                setSkipInfoStep(false);
+                setSessionRecoveryPasswordResetModalOpen(true);
+            } else if (action === 'session-recovery-reset-password') {
+                setSkipInfoStep(true);
+                setSessionRecoveryPasswordResetModalOpen(true);
+            }
+
+            params.delete('action');
+            return params;
         },
         [loading]
     );
@@ -57,7 +85,24 @@ const PasswordsSection = () => {
     return (
         <>
             {renderChangePasswordModal && tmpPasswordMode && (
-                <ChangePasswordModal mode={tmpPasswordMode} {...changePasswordModal} />
+                <ChangePasswordModal
+                    mode={tmpPasswordMode}
+                    onSessionRecovery={() => {
+                        changePasswordModal.onClose();
+                        setSessionRecoveryModalOpen(true);
+                    }}
+                    onSuccess={() => {
+                        dismissSessionRecoveryCancelled();
+                    }}
+                    {...changePasswordModal}
+                />
+            )}
+            {renderSessionRecoveryModal && <InitiateSessionRecoveryModal {...sessionRecoveryModal} />}
+            {renderSessionRecoveryPasswordResetModal && (
+                <PasswordResetAvailableAccountModal
+                    skipInfoStep={skipInfoStep}
+                    {...sessionRecoveryPasswordResetModal}
+                />
             )}
             <SettingsSection>
                 <SettingsLayout>

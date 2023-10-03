@@ -24,3 +24,4 @@ export { default as AuthSecurityKeyContent } from './fido/AuthSecurityKeyContent
 export { default as TotpInputs } from './totp/TotpInputs';
 
 export * from './constants';
+export * from './sessionRecovery';

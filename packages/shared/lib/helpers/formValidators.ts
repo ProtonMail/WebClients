@@ -34,6 +34,7 @@ export const numberValidator = (value: string) => (!isNumber(value) ? c('Error')
 export const confirmPasswordValidator = (a: string, b: string) => (a !== b ? c('Error').t`Passwords do not match` : '');
 export const confirmEmailValidator = (a: string, b: string) =>
     a !== b ? c('Error').t`The email addresses do not match` : '';
+export const usernameValidator = (a: string, b: string) => (a !== b ? c('Error').t`Incorrect username` : '');
 export const defaultMinPasswordLength = 8;
 export const getMinPasswordLengthMessage = (length = defaultMinPasswordLength) =>
     c('Validation').ngettext(
