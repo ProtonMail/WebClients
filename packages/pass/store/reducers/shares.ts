@@ -139,8 +139,7 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (inviteCreationSuccess.match(action)) {
-            const { shareId, invites } = action.payload;
-            return partialMerge(state, { [shareId]: { invites, shared: true } });
+            return partialMerge(state, { [action.payload.shareId]: { shared: true } });
         }
 
         if (inviteResendSuccess.match(action)) {
@@ -150,12 +149,12 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
         if (inviteRemoveSuccess.match(action)) {
             const { shareId, inviteId } = action.payload;
+            const share = state[shareId];
+            const members = share.members ?? [];
+            const invites = (share.invites ?? []).filter((invite) => invite.inviteId !== inviteId);
+            const shared = members.length > 1 || invites.length > 0;
 
-            return partialMerge(state, {
-                [shareId]: {
-                    invites: (state[shareId]?.invites ?? []).filter((invite) => invite.inviteId !== inviteId),
-                },
-            });
+            return partialMerge(state, { [shareId]: { invites, shared } });
         }
 
         if (shareAccessChange.match(action)) {

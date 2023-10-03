@@ -2,7 +2,6 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ItemRevision, Share, ShareType } from '@proton/pass/types';
-import type { PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
     InviteCreateIntent,
@@ -26,7 +25,12 @@ export const inviteCreationIntent = createAction(
 
 export const inviteCreationSuccess = createAction(
     'invite::create::success',
-    withRequestSuccess((shareId: string, invites: PendingInvite[]) => ({ payload: { shareId, invites } }))
+    withRequestSuccess((shareId: string) =>
+        withNotification({
+            type: 'info',
+            text: c('Error').t`Invite successfully sent`,
+        })({ payload: { shareId } })
+    )
 );
 
 export const inviteCreationFailure = createAction(
