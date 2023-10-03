@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Προσθήκη παραληπτών κρυφής κοινοποίησης"
       ],
+      "Add birthday": [
+        "Προσθήκη γενεθλίων"
+      ],
       "Add Cc recipients": [
         "Προσθήκη παραληπτών κοινοποίησης"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
+      ],
+      "Add note": [
+        "Προσθήκη σημείωσης"
       ],
       "Add participant": [
         "Προσθήκη συμμετέχοντα"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
-      "Go to first page": [
-        "Μετάβαση στην πρώτη σελίδα"
-      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
-      ],
-      "Go to last page": [
-        "Μετάβαση στην τελευταία σελίδα"
       ],
       "Go to next page": [
         "Μετάβαση στην επόμενη σελίδα"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
       "Email": [
         "Email"
+      ],
+      "Enter a display name or nickname": [
+        "Εισαγάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
+      ],
+      "First name": [
+        "Όνομα"
       ],
       "Gender": [
         "Φύλο"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Γλώσσα"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Logo": [
         "Λογότυπο"
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
+      "Could not save preference": [
+        "Δεν ήταν δυνατή η αποθήκευση της προτίμησης"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Σφάλμα αποκρυπτογράφησης: η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου αυτού του μηνύματος απέτυχε."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
+      "First name is too long": [
+        "Το όνομα είναι πολύ μεγάλο"
+      ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Last name is too long": [
+        "Το επώνυμο είναι πολύ μεγάλο"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ attachmentsCountLimit })"
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -6380,6 +6404,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Conversations per page": [
+        "Συνομιλίες ανά σελίδα"
+      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -6544,6 +6571,9 @@
       ],
       "Mark as": [
         "Σήμανση ως"
+      ],
+      "Messages per page": [
+        "Μηνύματα ανά σελίδα"
       ],
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
@@ -7502,6 +7532,9 @@
       "Filter labels": [
         "Φιλτράρισμα ετικετών"
       ],
+      "First name": [
+        "Όνομα"
+      ],
       "Group name": [
         "Όνομα ομάδας"
       ],
@@ -7510,6 +7543,9 @@
       ],
       "Image URL": [
         "URL εικόνας"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Link": [
         "Σύνδεσμος"
@@ -8505,11 +8541,17 @@
       "CSV field": [
         "CSV πεδίο"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "First name": [
+        "Όνομα"
+      ],
       "Import": [
         "Εισαγωγή"
       ],
-      "Name": [
-        "Όνομα"
+      "Last name": [
+        "Επώνυμο"
       ],
       "Values": [
         "Τιμές"
@@ -8605,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Birthday": [
+        "Γενέθλια"
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
@@ -8914,6 +8959,9 @@
       ],
       "No trackers found": [
         "Δεν βρέθηκαν ιχνηλάτες"
+      ],
+      "Notes": [
+        "Σημειώσεις"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"

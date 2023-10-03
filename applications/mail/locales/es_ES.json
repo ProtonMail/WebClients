@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Añadir destinatarios en copia oculta"
       ],
+      "Add birthday": [
+        "Añadir una fecha de nacimiento"
+      ],
       "Add Cc recipients": [
         "Añadir destinatarios en copia"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Añadir grupo"
+      ],
+      "Add note": [
+        "Añadir una nota"
       ],
       "Add participant": [
         "Añadir participante"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
-      "Go to first page": [
-        "Ir a la primera página"
-      ],
       "Go to label": [
         "Ir a la etiqueta"
-      ],
-      "Go to last page": [
-        "Ir a la última página"
       ],
       "Go to next page": [
         "Ir a la página siguiente"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Fecha de nacimiento"
       ],
+      "Display name": [
+        "Nombre a mostrar"
+      ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Enter a display name or nickname": [
+        "Introduce un nombre a mostrar o un apodo"
+      ],
+      "First name": [
+        "Nombre"
       ],
       "Gender": [
         "Género"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Apellido"
       ],
       "Logo": [
         "Logo"
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
+      "Could not save preference": [
+        "No se ha podido guardar la preferencia."
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre."
       ],
+      "First name is too long": [
+        "El nombre es demasiado largo."
+      ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
+      ],
+      "Last name is too long": [
+        "El apellido es demasiado largo."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de adjuntos (${ attachmentsCountLimit }) superado"
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Proporciona al menos un nombre, apellido o nombre a mostrar"
       ],
       "Port is required": [
         "Puerto requerido"
@@ -6380,6 +6404,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Conversations per page": [
+        "Conversaciones por página"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -6544,6 +6571,9 @@
       ],
       "Mark as": [
         "Marcar como"
+      ],
+      "Messages per page": [
+        "Mensajes por página"
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -7502,6 +7532,9 @@
       "Filter labels": [
         "Filtrar etiquetas"
       ],
+      "First name": [
+        "Nombre"
+      ],
       "Group name": [
         "Nombre del grupo"
       ],
@@ -7510,6 +7543,9 @@
       ],
       "Image URL": [
         "URL de la imagen"
+      ],
+      "Last name": [
+        "Apellido"
       ],
       "Link": [
         "Enlace"
@@ -8505,11 +8541,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nombre para mostrar"
+      ],
+      "First name": [
+        "Nombre"
+      ],
       "Import": [
         "Importar"
       ],
-      "Name": [
-        "Nombre"
+      "Last name": [
+        "Apellido"
       ],
       "Values": [
         "Valores"
@@ -8605,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Birthday": [
+        "Fecha de nacimiento"
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"
@@ -8914,6 +8959,9 @@
       ],
       "No trackers found": [
         "No se han encontrado rastreadores"
+      ],
+      "Notes": [
+        "Notas"
       ],
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"

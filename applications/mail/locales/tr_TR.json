@@ -411,14 +411,8 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Go to first page": [
-        "İlk sayfaya git"
-      ],
       "Go to label": [
         "Etikete git"
-      ],
-      "Go to last page": [
-        "Son sayfaya git"
       ],
       "Go to next page": [
         "Sonraki sayfaya git"
@@ -4440,17 +4434,11 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
-      ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -5537,7 +5525,7 @@
         "Konu: "
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "support team": [
         "destek ekibi"
@@ -8481,11 +8469,11 @@
       "CSV field": [
         "CSV alanı"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Import": [
         "İçe aktar"
-      ],
-      "Name": [
-        "Ad"
       ],
       "Values": [
         "Değerler"
