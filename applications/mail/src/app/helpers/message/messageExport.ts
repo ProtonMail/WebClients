@@ -1,6 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
@@ -39,8 +40,7 @@ export const prepareExport = (message: MessageState) => {
 
     // Using create element will create a DOM element that will not be added to the window's document, but images will be loaded
     // Use a DOMParser instead so that images are not loaded.
-    const parser = new DOMParser();
-    const dom = parser.parseFromString(document.innerHTML, 'text/html');
+    const dom = parseStringToDOM(document.innerHTML);
 
     // Embedded images
     insertActualEmbeddedImages(dom.body);
