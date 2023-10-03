@@ -79,12 +79,7 @@ const ItemRowLayout = ({
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
-    const showThumbnails = canShowAttachmentThumbnails(
-        isCompactView,
-        conversationMode,
-        element,
-        canSeeThumbnailsFeature
-    );
+    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, canSeeThumbnailsFeature);
 
     return (
         <div className="flex-nowrap flex-column w100">
