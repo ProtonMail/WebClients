@@ -547,7 +547,7 @@
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
+        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
       ],
       "All items permanently removed": [
         "Seluruh item dihapus secara permanen"
@@ -631,7 +631,7 @@
         "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan meminta Anda untuk menyimpan atau memperbarui kredensial."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Apabila dinonakifkan, ${ PASS_APP_NAME } tidak akan menyarankan Anda untuk membuat alias email setiap kali Anda mengisi formulir pendaftaran."
+        "Apabila dinonakifkan, ${ PASS_APP_NAME } tidak akan menyarankan Anda untuk membuat alias surel setiap kali Anda mengisi formulir pendaftaran."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menyarankan membuat kata sandi yang kuat pada formulir pendaftaran."
@@ -700,7 +700,7 @@
         "Memuat..."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alamat email samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat surel pribadi Anda melalui alamat surel samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
       ],
       "Multiple vaults": [
         "Dukungan lebih dari satu brankas"
@@ -996,7 +996,7 @@
         "Unduh log"
       ],
       "Email aliases": [
-        "Alias email"
+        "Alias surel"
       ],
       "Empty trash": [
         "Kosongkan sampah"
@@ -1161,7 +1161,7 @@
         "Keamanan"
       ],
       "Select an email address": [
-        "Pilih alamat email"
+        "Pilih alamat surel"
       ],
       "Select your password manager": [
         "Pilih pengelola kata sandi Anda"
@@ -1306,7 +1306,7 @@
         "Masukkan awalan"
       ],
       "Enter email or username": [
-        "Masukkan email atau nama pengguna"
+        "Masukkan surel atau nama pengguna"
       ],
       "Enter password": [
         "Masukkan kata sandi"
@@ -1401,7 +1401,7 @@
         "Berikan izin"
       ],
       "Hide my email": [
-        "Hide-my-email"
+        "Hide-my-surel"
       ],
       "Import - ${ date }": [
         "Impor - ${ date }"
@@ -1443,7 +1443,7 @@
         "Pembaruan tersedia"
       ],
       "Use my email": [
-        "Gunakan email saya"
+        "Gunakan surel saya"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Selamat datang di ${ brandNameJSX }"
@@ -1489,7 +1489,7 @@
         "Penjelasan masalah diperlukan"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" saat ini digunakan pada item login \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima email yang dikirim ke \"${ aliasEmail }\""
+        "Alias \"${ name }\" saat ini digunakan pada item login \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima surel yang dikirim ke \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You can not undo this action.": [
         "Seluruh item yang telah Anda buang ke sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
