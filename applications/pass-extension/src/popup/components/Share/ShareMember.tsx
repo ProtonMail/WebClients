@@ -112,7 +112,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                         className={role !== ShareRole.ADMIN ? 'pl-11' : ''}
                     />
 
-                    {canTransfer && (
+                    {canTransfer && role === ShareRole.ADMIN && (
                         <DropdownMenuButton
                             label={c('Action').t`Transfer ownership`}
                             icon="shield-half-filled"
