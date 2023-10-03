@@ -1,12 +1,11 @@
 import { THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 import { scaleImageFile } from './image';
 
 function parseSvg(string: string) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(string, 'image/svg+xml');
-    return doc;
+    return parseStringToDOM(string, 'image/svg+xml');
 }
 
 async function setSvgSize(imageBlob: Blob, size: number) {
