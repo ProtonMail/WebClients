@@ -95,7 +95,7 @@ type GetBlocksCallback = (
     linkId: string,
     pagination: Pagination,
     revisionId?: string
-) => Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }>;
+) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }>;
 type GetKeysCallback = (abortSignal: AbortSignal, link: LinkDownload) => Promise<DecryptFileKeys>;
 
 export type Pagination = { FromBlockIndex: number; PageSize: number };
