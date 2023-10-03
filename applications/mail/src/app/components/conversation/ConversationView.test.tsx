@@ -1,6 +1,7 @@
 import { fireEvent, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import range from '@proton/utils/range';
@@ -11,6 +12,7 @@ import {
     updateConversation,
 } from '../../logic/conversations/conversationsActions';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
+import * as messageDraftActions from '../../logic/messages/draft/messagesDraftActions';
 import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
 import { store } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
@@ -133,6 +135,52 @@ describe('ConversationView', () => {
 
             await rerender({ conversationID: conversation2.ID });
             getByText(conversation2.Subject as string);
+        });
+
+        it('should reorder by date when old conversation draft is sent', async () => {
+            const conversationID = 'conversationID';
+            const makeMessage = (title: string, time: number): Message =>
+                ({
+                    ID: title,
+                    Subject: title,
+                    Time: time,
+                    Sender: { Name: title, Address: `${title.replaceAll(' ', '')}@test.fr` },
+                    Attachments: [] as any,
+                    Flags: {},
+                    ConversationID: conversationID,
+                } as Message);
+            const conversationState = {
+                Conversation: { ID: conversationID, Subject: 'a subject' },
+                Messages: [
+                    makeMessage('test-message 1', new Date('2020-01-01').getTime()),
+                    makeMessage('test-message 2', new Date('2020-01-02').getTime()),
+                    makeMessage('test-message 3', new Date('2020-01-03').getTime()),
+                ],
+                loadRetry: 0,
+                errors: {},
+            };
+
+            store.dispatch(initializeConversation(conversationState as ConversationState));
+            conversationState.Messages.forEach((message) => {
+                store.dispatch(initializeMessage({ localID: message.ID, data: message }));
+            });
+            const { getAllByText } = await setup();
+
+            const elements = getAllByText('test-message', { exact: false });
+            expect(elements[0].textContent).toContain('test-message 1');
+            expect(elements[1].textContent).toContain('test-message 2');
+            expect(elements[2].textContent).toContain('test-message 3');
+
+            // Consider message 2 is a draft and user sends it later
+            store.dispatch(messageDraftActions.sent(makeMessage('test-message 2', new Date('2020-01-04').getTime())));
+            // Wait for react to reflect store update
+            await wait(50);
+
+            // List order should change after draft is sent because of the date change
+            const elementsReordered = getAllByText('test-message ', { exact: false });
+            expect(elementsReordered[0].textContent).toContain('test-message 1');
+            expect(elementsReordered[1].textContent).toContain('test-message 3');
+            expect(elementsReordered[2].textContent).toContain('test-message 2');
         });
     });
 
