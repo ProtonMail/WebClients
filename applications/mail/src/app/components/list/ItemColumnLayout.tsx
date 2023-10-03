@@ -97,12 +97,7 @@ const ItemColumnLayout = ({
     const isStarred = testIsStarred(element || ({} as Element));
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
-    const showThumbnails = canShowAttachmentThumbnails(
-        isCompactView,
-        conversationMode,
-        element,
-        canSeeThumbnailsFeature
-    );
+    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, canSeeThumbnailsFeature);
 
     return (
         <div
