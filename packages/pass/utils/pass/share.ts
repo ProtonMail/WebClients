@@ -19,4 +19,5 @@ export const isShareManageable = (share: Share) => share.owner || share.shareRol
 export const hasShareAccessChanged = (current: Share, incoming: ShareGetResponse) =>
     current.owner !== incoming.Owner ||
     current.shareRoleId !== incoming.ShareRoleID ||
-    current.shared !== incoming.Shared;
+    current.shared !== incoming.Shared ||
+    current.targetMembers !== incoming.TargetMembers;
