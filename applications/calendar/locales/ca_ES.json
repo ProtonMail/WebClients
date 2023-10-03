@@ -33,6 +33,9 @@
       "Add address": [
         "Afegeix una adreça"
       ],
+      "Add birthday": [
+        "Afegir una data de naixement"
+      ],
       "Add contact": [
         "Afegeix un contacte"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Afegeix un grup"
+      ],
+      "Add note": [
+        "Afegeix una nota"
       ],
       "Add notification": [
         "Afegeix una notificació"
@@ -1106,8 +1112,14 @@
       "Birthday": [
         "Aniversari"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
       "Email": [
         "Correu electrònic"
+      ],
+      "First name": [
+        "Nom"
       ],
       "Gender": [
         "Gènere"
@@ -1117,6 +1129,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Logo": [
         "Logo"
@@ -2308,6 +2323,9 @@
       "Failed to get original occurrence in series": [
         "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie."
       ],
+      "First name is too long": [
+        "El nom és massa llarg."
+      ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
@@ -2352,6 +2370,9 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
+      ],
+      "Last name is too long": [
+        "El cognom és massa llarg."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
@@ -3652,6 +3673,9 @@
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
       ],
@@ -3830,6 +3854,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -4191,6 +4218,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Es permet un màxim d'${ maxAttendees } participant per invitació.",
+        "Es permet un màxim de ${ maxAttendees } participants per invitació."
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "No es permet crear invitacions en un calendari compartit"
       ]
@@ -5339,6 +5370,9 @@
       "Filter groups": [
         "Filtra grups"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Group name": [
         "Nom del grup"
       ],
@@ -5347,6 +5381,9 @@
       ],
       "Indexing...": [
         "Indexació..."
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Name": [
         "Nom"
@@ -6057,11 +6094,17 @@
       "CSV field": [
         "Camp CSV"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
+      "First name": [
+        "Nom"
+      ],
       "Import": [
         "Importa"
       ],
-      "Name": [
-        "Nom"
+      "Last name": [
+        "Cognom"
       ],
       "Values": [
         "Valors"
@@ -6144,6 +6187,9 @@
       ],
       "Billing cycle": [
         "Cicle de facturació"
+      ],
+      "Birthday": [
+        "Data de naixement"
       ],
       "Calendar": [
         "Calendari"
@@ -6303,6 +6349,9 @@
       ],
       "Night theme": [
         "Tema de nit"
+      ],
+      "Notes": [
+        "Notes"
       ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
@@ -6601,6 +6650,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
         "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Esteu segur que voleu eliminar aquests grups de contacte permanentment?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "N'esteu segur, de voler eliminar permanentment aquest grup de contactes?"
