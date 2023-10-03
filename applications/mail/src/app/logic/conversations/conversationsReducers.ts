@@ -323,3 +323,14 @@ export const updateFromLoadElements = (
         }
     });
 };
+
+export const updateMessageOnSend = (state: Draft<ConversationsState>, { payload: Sent }: PayloadAction<Message>) => {
+    const conversationState = getConversation(state, Sent.ConversationID);
+
+    if (conversationState?.Messages?.length) {
+        const messageIndex = conversationState.Messages.findIndex((message) => message.ID === Sent.ID);
+        if (messageIndex !== -1) {
+            conversationState.Messages[messageIndex] = Sent;
+        }
+    }
+};
