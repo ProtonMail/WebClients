@@ -88,7 +88,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                 </div>
             </div>
 
-            {!me && canManage && (
+            {!me && canManage && !owner && (
                 <QuickActionsDropdown color="weak" shape="ghost">
                     <DropdownMenuButton
                         label={c('Action').t`Can view`}
