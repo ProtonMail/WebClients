@@ -110,6 +110,7 @@ export { default as useLastSubscriptionEnd } from './useLastSubscriptionEnd';
 export { default as useSvgGraphicsBbox } from './useSvgGraphicsBbox';
 export { default as useApiEnvironmentConfig } from './useApiEnvironmentConfig';
 export { default as useRelocalizeText } from './useRelocalizeText';
+export * from './useSessionRecovery';
 export { default as useToggle } from './useToggle';
 export { default as useTraceUpdate } from './useTraceUpdate';
 export { default as useUser, useGetUser } from './useUser';
