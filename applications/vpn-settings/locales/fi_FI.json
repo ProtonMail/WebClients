@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Kiellä allekirjoittamaton posti"
       ],
+      "Edit": [
+        "Muokkaa"
+      ],
       "Edit address": [
         "Muokkaa osoitetta"
       ],
@@ -1871,7 +1874,7 @@
         "Tämä kenttä vaaditaan"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength }-merkkiä."
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
@@ -5552,9 +5555,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Vahvista sähköpostiosoite"
-      ],
       "Confirm password": [
         "Vahvista salasana"
       ],
