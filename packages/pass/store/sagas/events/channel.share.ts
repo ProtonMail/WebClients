@@ -7,6 +7,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type {
     Api,
     ItemRevision,
+    Maybe,
     MaybeNull,
     PassEventListResponse,
     Share,
@@ -123,10 +124,12 @@ const onShareEventError = (shareId: string) =>
             logger.info(`[Saga::SharesChannel] share ${logId(shareId)} disabled`);
             channel.close();
 
-            const share: Share = yield select(selectShare(shareId));
-            onShareEventDisabled?.(shareId);
-            onItemsChange?.();
-            yield put(shareDeleteSync(share));
+            const share: Maybe<Share> = yield select(selectShare(shareId));
+            if (share) {
+                onShareEventDisabled?.(shareId);
+                onItemsChange?.();
+                yield put(shareDeleteSync(share));
+            }
         }
     };
 
